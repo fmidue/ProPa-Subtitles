@@ -1,0 +1,694 @@
+0:00:01.900,0:00:05.320
+Welcome back.
+
+0:00:05.320,0:00:12.030
+Now, I want to start working a bit
+with this whiteboard here.
+
+0:00:12.030,0:00:18.570
+So, drawing a few things or writing down a
+few things, later switching to slides again.
+
+0:00:18.570,0:00:23.830
+And in particular, I want to start by discussing
+a few notions, a few concepts that in some
+
+0:00:23.830,0:00:27.570
+sense are, of course, very familiar to you, and
+very obvious.
+
+0:00:27.570,0:00:32.259
+But maybe in the distinction between programming
+and mathematics, there are some subtleties
+
+0:00:32.259,0:00:33.970
+that I want to discuss.
+
+0:00:33.970,0:00:38.970
+And in particular, this will lead also to
+distinctions I later want to make in the slides.
+
+0:00:38.970,0:00:45.040
+So, let's talk about variables, functions,
+expressions, commands. And the latter two
+
+0:00:45.040,0:00:49.890
+are the two things that I particularly want
+to focus on later in the slides.
+
+0:00:49.890,0:00:54.500
+Okay, but let's start with some obvious notions,
+like, what is a variable? And of course,
+
+0:00:54.500,0:01:00.730
+a variable is something that you see all the
+time, whether in maths lectures, or in programming,
+
+0:01:00.730,0:01:02.990
+so, a variable is...
+
+0:01:02.990,0:01:03.990
+...
+
+0:01:03.990,0:01:10.840
+something like this x. Let's say, we write
+a function: f(x) is x squared plus one.
+
+0:01:10.840,0:01:14.390
+So, that's a variable, of course (the x).
+
+0:01:14.390,0:01:20.850
+Likewise, you, of course, will know variables from
+programming, maybe in C or Java-
+
+0:01:20.850,0:01:22.440
+like language.
+
+0:01:22.440,0:01:31.890
+And similarly so in an untyped language, like
+Python, just that you wouldn't write the explicit "int" (integer) here.
+
+0:01:31.890,0:01:40.050
+Let's say we introduce a variable. Its
+value is zero at the beginning, then maybe we print it out
+
+0:01:40.050,0:01:46.490
+in some way, depending on what exactly the
+procedure is for doing that in our language,
+
+0:01:46.490,0:01:50.079
+but something like a "print" function probably
+exists.
+
+0:01:50.079,0:01:59.369
+And then I increment this i-value and print it
+again, and maybe I write for-loops, etc.
+
+0:01:59.369,0:02:01.220
+So, that's how you work with variables.
+
+0:02:01.220,0:02:04.850
+And that's also not something new to all of
+you.
+
+0:02:04.850,0:02:08.119
+But of course, then there are also many
+other uses in logic, mathematics.
+
+0:02:08.119,0:02:11.720
+So, for example, you write or use variables
+and expressions like this.
+
+0:02:11.720,0:02:18.129
+So, in set theory, we say something like,
+you want to have the set of all even numbers, say.
+
+0:02:18.129,0:02:26.120
+And you could do this by saying, well, let's
+take two times x for every x from the natural numbers.
+
+0:02:26.120,0:02:27.989
+So, that's a use of variables.
+
+0:02:27.989,0:02:33.640
+In logic, we have things like quantifiers
+where you could say, well, "for all x, it should
+
+0:02:33.640,0:02:45.340
+hold" or "it does hold for certain predicates
+that if p of x and q of x holds, then it also
+
+0:02:45.340,0:02:50.450
+holds that some other predicate r is true
+for x."
+
+0:02:50.450,0:03:00.970
+Or we write equations with variables, maybe
+two times f of x, for the function from above, is 20.
+
+0:03:00.970,0:03:09.450
+And then we know ways of solving this by discovering
+what the x is, or we have expressions and
+
+0:03:09.450,0:03:13.809
+also know some expressions where we say
+something like, let's take all the values
+
+0:03:13.809,0:03:15.790
+from zero to ten.
+
+0:03:15.790,0:03:20.800
+And sum them up. Or in the spirit of equations,
+
+0:03:20.800,0:03:22.459
+we can also have systems of equations.
+
+0:03:22.459,0:03:29.430
+So, for example, one thing we sometimes want
+to do is finding solutions for equations like this.
+
+0:03:29.430,0:03:36.889
+Well, let's take two variables now, then,
+you know, with linear equations, it's enough
+
+0:03:36.889,0:03:45.510
+to have two equations over these two variables,
+to, in most cases, at least, solve this for x and y.
+
+0:03:45.510,0:03:52.500
+So, we’re considering this as one system
+of equations. And all these are cases and uses of variables.
+
+0:03:52.500,0:03:56.189
+Well, there’s nothing new or surprising
+here, I think.
+
+0:03:56.189,0:04:03.629
+However, there's actually one
+thing that is different between one of these
+
+0:04:03.629,0:04:07.400
+examples and almost all the others, and that's
+exactly the programming example.
+
+0:04:07.400,0:04:15.180
+So, what's a bit strange, compared to all
+the other examples here, is that in programming,
+
+0:04:15.180,0:04:20.590
+the i might be different in these two places,
+right?
+
+0:04:20.590,0:04:28.430
+So, it's not the case that i is zero and again,
+zero, but these two print statements to do different things.
+
+0:04:28.430,0:04:30.930
+And that's not the case in all the other examples.
+
+0:04:30.930,0:04:32.160
+Why is that?
+
+0:04:32.160,0:04:43.800
+So, if you calculate, say, here, of course,
+the x might vary because we want to take
+
+0:04:43.800,0:04:48.610
+every x from the natural numbers, but then in
+the expression here, we have only one value.
+
+0:04:48.610,0:04:50.030
+What do I mean by this?
+
+0:04:50.030,0:05:01.020
+For example, we could replace this two
+times x by x plus x and of course, even though
+
+0:05:01.020,0:05:07.650
+there are now two occurrences of x, whenever
+we choose one x, we would expect that these
+
+0:05:07.650,0:05:09.979
+two occurrences of x are the very same thing.
+
+0:05:09.979,0:05:18.870
+So indeed, we expect that whether we write this
+two times x, or x plus x, the set should be
+
+0:05:18.870,0:05:22.820
+the same mathematically. That's a trivial
+thing.
+
+0:05:22.820,0:05:27.110
+But it's an important difference between this
+example, and all the others.
+
+0:05:27.110,0:05:30.380
+Yeah, likewise, here, we do have two occurrences
+of x.
+
+0:05:30.380,0:05:34.510
+But of course, in order for this system of
+equations to even make sense, we expect that
+
+0:05:34.510,0:05:36.970
+both x's are the same value.
+
+0:05:36.970,0:05:42.850
+Otherwise, we wouldn't be asking to solve
+this system of equations, if you don't expect
+
+0:05:42.850,0:05:44.930
+that x and y might be different.
+
+0:05:44.930,0:05:50.800
+But of course, x in both lines is the same,
+and y in both lines is the same.
+
+0:05:50.800,0:05:54.439
+Okay, that's something different between programming,
+and mathematics.
+
+0:05:54.439,0:05:56.440
+That's, first of all, just an observation.
+
+0:05:56.440,0:06:02.680
+And, of course, this doesn't mean that every
+x is always the same, right?
+
+0:06:02.680,0:06:10.120
+Of course, by saying all of x (all x), we want
+this to be true for many different x, but
+
+0:06:10.120,0:06:16.629
+in the scope, once we have chosen one x here,
+then in the scope of the expression of the
+
+0:06:16.629,0:06:22.430
+formula, each x should be the same.
+
+0:06:22.430,0:06:26.669
+And that's not the case in programming here
+or in imperative programming, the scope would
+
+0:06:26.669,0:06:29.770
+be opened by this declaration of the i.
+
+0:06:29.770,0:06:36.350
+And then all these parts of the program are
+in the scope of i, so they are in the syntactic
+
+0:06:36.350,0:06:45.050
+region in which i is defined,
+and still different i here will have different
+
+0:06:45.050,0:06:46.950
+values and different results.
+
+0:06:46.950,0:06:52.050
+Okay, so that's different between this programming
+example, and all the others.
+
+0:06:52.050,0:06:58.560
+Okay, maybe we should simply for the moment,
+take this and come back to that and what it
+
+0:06:58.560,0:07:06.729
+means for programming or functional programming in comparison to other paradigms later on.
+
+0:07:06.729,0:07:07.729
+Okay, variables.
+
+0:07:07.729,0:07:10.050
+So, let's move on to functions.
+
+0:07:10.050,0:07:14.210
+That's also something that you know, and shouldn't
+be surprising.
+
+0:07:14.210,0:07:16.380
+So, let's look at functions.
+
+0:07:16.380,0:07:18.240
+Okay, what do we know about functions?
+
+0:07:18.240,0:07:19.240
+What are typical functions?
+
+0:07:19.240,0:07:29.990
+Well, the f of x equals x squared plus one
+from above, that was, of course, a typical mathematical function.
+
+0:07:29.990,0:07:36.900
+And you know what you can do with this, for
+example, you can evaluate it for some input,
+
+0:07:36.900,0:07:41.069
+and then you get, in this case, 26, because
+five squared is 25.
+
+0:07:41.069,0:07:42.169
+And you get 26.
+
+0:07:42.169,0:07:45.970
+And maybe you should just say what the type
+of the function is.
+
+0:07:45.970,0:07:54.491
+So, typically, in most parts
+of mathematics or analysis, at least, we talk
+
+0:07:54.491,0:07:55.690
+about functions on the reals.
+
+0:07:55.690,0:07:59.779
+So, this would be a function from the reals
+to the reals.
+
+0:07:59.779,0:08:05.759
+And actually, given that it's a square and
+plus one, we can even say that it goes
+
+0:08:05.759,0:08:09.400
+from the reals to the positive reals only.
+
+0:08:09.400,0:08:14.290
+So, it cannot be zero or even negative, the
+result will always be positive
+
+0:08:14.290,0:08:15.940
+(just as in this case).
+
+0:08:15.940,0:08:19.120
+Okay, so that's the function, and then we build
+expressions over functions.
+
+0:08:19.120,0:08:20.120
+What does this mean?
+
+0:08:20.120,0:08:25.629
+We build in more complex mathematical terms
+built from, for example, function calls.
+
+0:08:25.629,0:08:33.659
+So, we could say something like: f of five, plus
+f of five, and we know that it's 52
+
+0:08:33.659,0:08:39.390
+because it's the same as two times f of five
+and f of five is 26.
+
+0:08:39.390,0:08:41.640
+Okay, nothing surprising here.
+
+0:08:41.640,0:08:47.540
+And of course, we can do the same thing more
+generally, even with a variable, it would be
+
+0:08:47.540,0:08:55.290
+true that f of x plus f of x is the same as
+two times f of x.
+
+0:08:55.290,0:09:02.630
+Even though x is a variable, whatever we put
+in for x, this statement will hold.
+
+0:09:02.630,0:09:03.630
+Why?
+
+0:09:03.630,0:09:06.000
+Because in the given scope, x is fixed.
+
+0:09:06.000,0:09:15.740
+Again, very different from what we saw above,
+for the "print(i)" example, right?
+
+0:09:15.740,0:09:18.510
+That was completely different.
+
+0:09:18.510,0:09:24.010
+There, we didn't have that "print(i)" as always
+the same thing.
+
+0:09:24.010,0:09:30.930
+Okay, now you could say, well, in the case
+of print i, it doesn't even make sense to
+
+0:09:30.930,0:09:33.200
+say something like print i plus print i, right?
+
+0:09:33.200,0:09:35.200
+So, where is the contradiction?
+
+0:09:35.200,0:09:38.150
+Well, let's look at a different example.
+
+0:09:38.150,0:09:41.740
+Let's say we don't want to print, we want
+to read stuff, then of course, we could have
+
+0:09:41.740,0:09:48.920
+a situation that we, for example, want to
+have an expression like this.
+
+0:09:48.920,0:09:55.000
+So "read()", and maybe we have to give an input
+there to say what you want to read. But let's
+
+0:09:55.000,0:09:57.880
+say we always read integers. So, we don't
+even write anything there.
+
+0:09:57.880,0:10:03.360
+Then we could have an expression like this.
+
+0:10:03.360,0:10:08.850
+And we could just say I don't
+want to give an argument there.
+
+0:10:08.850,0:10:14.840
+And that's definitely not the same in any
+imperative language that you probably have
+
+0:10:14.840,0:10:20.320
+in mind to do something like this.
+
+0:10:20.320,0:10:26.010
+Why is this? Because on the left-hand side,
+I would read two values, maybe five and seven
+
+0:10:26.010,0:10:29.450
+and then I would add them up: five plus seven
+is 12.
+
+0:10:29.450,0:10:33.210
+On the right-hand side, I would only read
+one value, maybe the five and then double
+
+0:10:33.210,0:10:34.520
+it, and the result would be 10.
+
+0:10:34.520,0:10:37.220
+And I wouldn't even read the second value.
+
+0:10:37.220,0:10:44.640
+So definitely, these are completely different
+expressions of programs, much in contradiction
+
+0:10:44.640,0:10:48.530
+to what we saw over here.
+
+0:10:48.530,0:10:52.410
+Okay, should we be worried about this?
+
+0:10:52.410,0:10:56.780
+Apparently, C programmers are not overly worried
+about things like this, because that's exactly
+
+0:10:56.780,0:11:03.840
+what they do, writing programs in this style,
+or with these features, one might say maybe
+
+0:11:03.840,0:11:06.210
+it's very specific about "read" and "print".
+
+0:11:06.210,0:11:11.050
+So, we have to be careful when we do read
+or print and for all the other things in the
+
+0:11:11.050,0:11:13.140
+language, we are closer to mathematics.
+
+0:11:13.140,0:11:14.140
+But that's not actually true.
+
+0:11:14.140,0:11:18.040
+Once you say, well, it's just special functions
+that behave like this.
+
+0:11:18.040,0:11:23.200
+In C, essentially, also in Python, all functions
+are special in that sense, because whatever
+
+0:11:23.200,0:11:25.480
+you do, you always have these kinds of side
+effects.
+
+0:11:25.480,0:11:30.290
+Even if you don't read or print directly,
+you can have assignment statements, etc.
+
+0:11:30.290,0:11:37.990
+So basically, all syntactic parts, or small
+expressions might have side effects, which
+
+0:11:37.990,0:11:43.420
+lead to situations like we see here.
+
+0:11:43.420,0:11:46.800
+Okay.
+
+0:11:46.800,0:11:47.800
+Why is this a problem?
+
+0:11:47.800,0:11:49.960
+Why could this be considered a problem?
+
+0:11:49.960,0:11:58.870
+Well, we give up all kinds of tools from mathematics,
+if we accept that the same expressions, even
+
+0:11:58.870,0:12:04.760
+though containing the same variables actually
+lead to different results.
+
+0:12:04.760,0:12:10.010
+What would be some example from mathematics?
+All kinds of manipulations of formulas, and
+
+0:12:10.010,0:12:15.120
+you will see that functional programming is basically about
+manipulating formulas.
+
+0:12:15.120,0:12:17.260
+As opposed to imperative programming.
+
+0:12:17.260,0:12:18.910
+Let's take an example.
+
+0:12:18.910,0:12:24.860
+And let's, again, take this function from above. We had:
+f of x is x squared plus one.
+
+0:12:24.860,0:12:26.960
+And we had this other expression.
+
+0:12:26.960,0:12:33.410
+I say something like two times
+f(x) is 20.
+
+0:12:33.410,0:12:42.890
+And the typical task in algebra or an arithmetics
+part of a maths course, very simple maths,
+
+0:12:42.890,0:12:44.940
+and we'll be to solve this for x.
+
+0:12:44.940,0:12:45.940
+What would we do?
+
+0:12:45.940,0:12:51.140
+Well, for example, you could say, well, let's
+use the definition of f of x, right?
+
+0:12:51.140,0:12:57.560
+Something like two times x squared plus one
+is 20.
+
+0:12:57.560,0:13:10.840
+And then you would solve this by doing small
+steps.
+
+0:13:10.840,0:13:21.270
+And here, additionally, you have maybe said
+upfront, that x should be
+
+0:13:21.270,0:13:29.030
+a positive real, then we can really simply take
+the square root here, and we would have solved this
+
+0:13:29.030,0:13:30.700
+for x equals three.
+
+0:13:30.700,0:13:32.790
+And of course, this really makes sense.
+
+0:13:32.790,0:13:39.310
+Saying that this now must be the solution
+of what we had above, because we have performed
+
+0:13:39.310,0:13:45.260
+equivalent steps only, makes sense because
+we assume and simply take as given that each
+
+0:13:45.260,0:13:52.470
+x in all these lines is the same. It's a variable,
+but in the scope of our calculation, it shouldn't change.
+
+0:13:52.470,0:14:02.310
+Again, not true for the i example with the
+assignment statements in my assumed C or Java
+
+0:14:02.310,0:14:04.830
+or whatever program we saw above.
+
+0:14:04.830,0:14:12.030
+Okay, and of course, the same is true, if
+we manipulate systems of equations again,
+
+0:14:12.030,0:14:17.880
+if we solve this with linear algebra methods,
+then, of course, again, we must use and assume
+
+0:14:17.880,0:14:25.920
+that in the scope of this system of equations,
+x is always the same thing, y is always the same thing.
+
+0:14:25.920,0:14:33.860
+Okay, so that's the fundamental difference
+between programming in an imperative language and mathematics.
+
+0:14:33.860,0:14:40.070
+And now, the main message of the next lecture
+will actually be that programming in a declarative
+
+0:14:40.070,0:14:47.420
+language like Haskell (as we start with; but
+also later in Prolog it is like that) is like this mathematical
+
+0:14:47.420,0:14:51.200
+way of looking at things (in particular
+at variables and expressions).
+
+0:14:51.200,0:14:58.080
+So, in some sense, all Haskell programming
+is like manipulating equations as we have seen here.
+
+0:14:58.080,0:15:00.940
+Of course, not for f of x and square, but
+for our domains.
+
+0:15:00.940,0:15:06.990
+For example, Pictures in our first CodeWorld
+tasks and examples, but of course later arbitrary
+
+0:15:06.990,0:15:12.690
+data structures. The point is programming
+in Haskell is basically about writing equations
+
+0:15:12.690,0:15:21.660
+and transforming expressions and solving equations
+or looking for solutions.
+
+0:15:21.660,0:15:26.290
+Okay, evaluating expressions and similarly
+will later be less the case for Prolog
+
+0:15:26.290,0:15:31.780
+well, and with a different background, more in
+terms of the earlier example where I talked
+
+0:15:31.780,0:15:38.380
+about logical formulas rather than somehow
+expressions.
+
+0:15:38.380,0:15:50.790
+But, again, with this idea that we manipulate
+expressions or formulas and not execute commands,
+
+0:15:50.790,0:15:55.620
+which might change, for example, the assignment
+of variables.
+
+0:15:55.620,0:15:56.790
+Okay.

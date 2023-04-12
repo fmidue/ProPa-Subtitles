@@ -1,0 +1,653 @@
+0:00:02.270,0:00:06.580
+Okay, moving over to CodeWorld.
+
+0:00:06.580,0:00:13.430
+What we see here is exactly the expression
+that I built up on the whiteboard.
+
+0:00:13.430,0:00:23.580
+If the syntax tree were almost exactly what
+I actually had there… it was that this whole polygon
+
+0:00:23.580,0:00:32.920
+call was inlined into this expression.
+
+0:00:32.920,0:00:35.440
+So,
+
+0:00:35.440,0:00:48.160
+I had this thing is what I draw as a tree
+on the whiteboard, and a well-defined expression.
+
+0:00:48.160,0:00:52.330
+And it draws something similar to what we
+started from last week.
+
+0:00:52.330,0:00:57.800
+Okay, but let me not actually focus so much
+on the output picture here
+
+0:00:57.800,0:01:05.070
+because what I really want to do here is to discuss
+a few bits of syntax so that you are prepared
+
+0:01:05.070,0:01:11.920
+also for your own first CodeWorld programs
+for the first exercise tasks.
+
+0:01:11.920,0:01:14.010
+Okay, so what do we have here?
+
+0:01:14.010,0:01:17.790
+We have this somehow boilerplate code that
+is always there.
+
+0:01:17.790,0:01:20.789
+So, this is given; importing the library.
+
+0:01:20.789,0:01:26.560
+And this is basically saying that right now we
+are going to draw something but not yet do
+
+0:01:26.560,0:01:27.560
+an animation.
+
+0:01:27.560,0:01:33.020
+So, then I would have to change this to another
+primitive, but let's not do this at the moment,
+
+0:01:33.020,0:01:37.859
+and where I want to draw this scene, and I
+have this expression for it.
+
+0:01:37.859,0:01:38.859
+Okay.
+
+0:01:38.859,0:01:42.979
+And in this case already, I introduced the
+name for the subexpression.
+
+0:01:42.979,0:01:44.520
+And I this now.
+
+0:01:44.520,0:01:47.349
+Okay, now this equal sign here is very important.
+
+0:01:47.349,0:01:48.759
+It's not an assignment statement.
+
+0:01:48.759,0:01:49.759
+Yes.
+
+0:01:49.759,0:01:56.819
+So, I started the lectures light this week
+with saying that functional programming is
+
+0:01:56.819,0:02:01.750
+essentially programming without assignment
+commands, but actually without any commands.
+
+0:02:01.750,0:02:04.789
+But importantly, no assignment commands.
+
+0:02:04.789,0:02:08.929
+So, this shouldn't be seen as: I have a variable “scene”.
+
+0:02:08.929,0:02:11.850
+And then we assign something to that variable.
+
+0:02:11.850,0:02:16.720
+And maybe further down, we would change this
+and define something else,
+
+0:02:16.720,0:02:18.810
+something like this.
+
+0:02:18.810,0:02:21.600
+And you already see on the left, there's an
+error.
+
+0:02:21.600,0:02:23.850
+And this also probably won't go away.
+
+0:02:23.850,0:02:30.010
+If I complete this. This doesn't make sense
+because we are not assigning stuff to variables,
+
+0:02:30.010,0:02:36.500
+we are declaring some values, and we can't
+have two declarations for the same value.
+
+0:02:36.500,0:02:41.100
+That would be like in a system of equations
+to say x equals five, but it's also equal
+
+0:02:41.100,0:02:42.100
+seven.
+
+0:02:42.100,0:02:45.850
+That would simply be a mathematical contradiction.
+We can't have this.
+
+0:02:45.850,0:02:49.930
+And so, these are not assignment statements,
+they are simply declarations of values.
+
+0:02:49.930,0:02:55.080
+Okay, that also means that the order of definitions
+or declarations shouldn't be important.
+
+0:02:55.080,0:02:59.840
+So, you already see that I use “triangle” here,
+which is defined later further down in the
+
+0:02:59.840,0:03:06.350
+code, but there is no notion of “later” here
+because these are not things that happen in
+
+0:03:06.350,0:03:07.350
+some order.
+
+0:03:07.350,0:03:12.790
+They are simply equation definitions.
+
+0:03:12.790,0:03:18.480
+And if you write down a system of linear equations,
+three times x plus five y is 11.
+
+0:03:18.480,0:03:22.760
+And some other equation, then the order in
+which you write down the equations is not important.
+
+0:03:22.760,0:03:25.360
+What is important is what the equation, say
+about the values.
+
+0:03:25.360,0:03:32.350
+So, if I change the order here, that's technically
+different program, but it is just as well
+
+0:03:32.350,0:03:36.670
+defined, and, of course, computes the same
+picture.
+
+0:03:36.670,0:03:42.420
+Okay, because we are not assigning stuff to
+variables, we are simply defining values.
+
+0:03:42.420,0:03:47.130
+Okay, this was one thing to keep in mind.
+
+0:03:47.130,0:03:51.080
+Then there are some things I should say about
+the syntax.
+
+0:03:51.080,0:03:56.980
+So, in particular, you might wonder what this
+actually means that you write circle 0.1.
+
+0:03:56.980,0:04:01.790
+If I said on the whiteboard, that
+circle is a function, which takes a number,
+
+0:04:01.790,0:04:05.220
+shouldn't it somehow be written like this?
+
+0:04:05.220,0:04:11.209
+That  probably looks more to what
+you're used to.
+
+0:04:11.209,0:04:19.480
+Or let me, in a comment, write this, so you are
+usually used to mathematical syntax, like
+
+0:04:19.480,0:04:25.509
+defining a function f of x is, for example,
+sinus of something.
+
+0:04:25.509,0:04:27.889
+So, f of x is sin of x.
+
+0:04:27.889,0:04:34.030
+That's how you would write down a function
+definition and an expression involving trigonometric
+
+0:04:34.030,0:04:36.039
+function like sinus.
+
+0:04:36.039,0:04:44.360
+In mathematics, well, as the difference in
+Haskell, mainly, we don't use as much parenthesis
+
+0:04:44.360,0:04:51.240
+brackets, because applying a function to a
+value is simply written as f of x.
+
+0:04:51.240,0:04:55.479
+We don't have to put the argument in
+brackets.
+
+0:04:55.479,0:05:03.289
+Instead, we simply write f x and the same
+here on the right also to apply sinus to something,
+
+0:05:03.289,0:05:08.250
+you don't have to say sinus and in brackets
+the x, but simply sinus applied to x.
+
+0:05:08.250,0:05:09.680
+Okay.
+
+0:05:09.680,0:05:12.599
+And this also applies to functions that take
+more than one argument.
+
+0:05:12.599,0:05:16.969
+So, if you have a function which takes two
+arguments, then again, in mathematics, we would
+
+0:05:16.969,0:05:23.199
+maybe write something like f of x and y is
+and then, some definition.
+
+0:05:23.199,0:05:32.029
+And in Haskell, instead, we simply write without
+the brackets and without the comma, x y.
+
+0:05:32.029,0:05:34.430
+And then we write down the definition.
+
+0:05:34.430,0:05:35.610
+Okay.
+
+0:05:35.610,0:05:42.270
+And that's also why, for example, what I drew
+in the syntax tree as the translated call,
+
+0:05:42.270,0:05:51.189
+with three arguments, so it's not written
+here, like, translated, and then the first
+
+0:05:51.189,0:05:54.639
+argument and the second argument and something
+else.
+
+0:05:54.639,0:05:59.699
+But instead, it's simply written like here,
+Translated, space, the first argument, space,
+
+0:05:59.699,0:06:05.499
+the second argument, space, the third argument,
+and this I have to put in brackets, but not
+
+0:06:05.499,0:06:09.580
+because translated expects brackets there.
+
+0:06:09.580,0:06:13.500
+But simply because if I were to write it like
+that, then it wouldn't be clear, what's the
+
+0:06:13.500,0:06:20.189
+argument to what, right and one could think
+that the “colored” function is the third argument
+
+0:06:20.189,0:06:22.900
+to translate it and not the whole expression
+here.
+
+0:06:22.900,0:06:28.629
+So there, I have to use brackets.
+
+0:06:28.629,0:06:35.840
+But it's much fewer brackets than if I had
+written this in the mathematical style.
+
+0:06:35.840,0:06:41.339
+Let me figure this out here, then I would
+have written it like that.
+
+0:06:41.339,0:06:46.990
+And also the “colored” would be written like
+this, because it takes two arguments.
+
+0:06:46.990,0:06:48.620
+Okay.
+
+0:06:48.620,0:06:51.310
+So, that’s not what we do.
+
+0:06:51.310,0:06:52.310
+What we do is this.
+
+0:06:52.310,0:07:00.259
+And actually, once you start submitting solutions
+to Autotool, it will also warn you about too
+
+0:07:00.259,0:07:02.150
+many brackets.
+
+0:07:02.150,0:07:08.509
+You can't even write this because of the commas
+which have no place in function application
+
+0:07:08.509,0:07:09.509
+in Haskell.
+
+0:07:09.509,0:07:14.199
+But even if you write something without the
+commas and try to add more brackets here,
+
+0:07:14.199,0:07:19.159
+because you feel safer, like adding brackets
+around all arguments, then Autotool will tell
+
+0:07:19.159,0:07:21.810
+you that these brackets are superfluous.
+
+0:07:21.810,0:07:28.580
+And you are advised to actually and make the
+suggested changes, so that your programs look
+
+0:07:28.580,0:07:33.490
+how a program in Haskell usually looks like.
+
+0:07:33.490,0:07:39.689
+Okay, that was some simple syntax remarks.
+
+0:07:39.689,0:07:45.779
+I already talked about the order of definitions
+being unimportant.
+
+0:07:45.779,0:07:50.619
+And this, of course, becomes more and more
+relevant if we introduce further names.
+
+0:07:50.619,0:07:57.469
+So, for example, I might want, in the spirit
+of my earlier comments in the slides, and
+
+0:07:57.469,0:08:02.499
+on the whiteboard, also introduce names for
+further subexpressions where I could say: this
+
+0:08:02.499,0:08:09.559
+colored red triangle is also something that
+I'm interested in maybe reusing, let me say,
+
+0:08:09.559,0:08:19.139
+this red form should also be given
+a name.
+
+0:08:19.139,0:08:25.759
+And then I could, for example, say, well, I
+actually move this out of the above expression
+
+0:08:25.759,0:08:26.979
+and give it a name.
+
+0:08:26.979,0:08:28.649
+And then I use this name here.
+
+0:08:28.649,0:08:35.460
+Okay, so what I did here in this line was
+that I also said that this should be a picture.
+
+0:08:35.460,0:08:37.720
+Actually, I wouldn't have to do this.
+
+0:08:37.720,0:08:47.160
+Because Haskell does type inference, so even
+if I throw away all of these type notations,
+
+0:08:47.160,0:08:50.910
+Haskell still knows that this is a picture,
+even though I haven't written it down here.
+
+0:08:50.910,0:08:51.910
+Okay.
+
+0:08:51.910,0:08:59.310
+And if I do something stupid, if I say something
+like redForm is simply “red”, then this would
+
+0:08:59.310,0:09:00.310
+be a type error.
+
+0:09:00.310,0:09:01.310
+All right.
+
+0:09:01.310,0:09:05.390
+So, it works out that well, it should be a
+“Picture”, but it is just “Color”. It doesn't make
+
+0:09:05.390,0:09:06.390
+sense
+
+0:09:06.390,0:09:11.960
+even without any annotations, and if
+I give a correct definition, then it works.
+
+0:09:11.960,0:09:16.730
+Okay, and if I run this, then I get the same
+picture, but simply with renamed stuff.
+
+0:09:16.730,0:09:18.680
+Names for subexpression.
+
+0:09:18.680,0:09:21.910
+I didn't change anything about the values
+that I compute.
+
+0:09:21.910,0:09:27.310
+And again, the order in which things are defined
+here is completely irrelevant.
+
+0:09:27.310,0:09:34.200
+If the values are defined,
+then that is fine.
+
+0:09:34.200,0:09:39.410
+Okay, what can I do if I have introduced the
+name? Of course, this allows me to reuse
+
+0:09:39.410,0:09:45.950
+Definitions. So for example, I could say in
+addition to these two forms, I want to have
+
+0:09:45.950,0:09:52.120
+another form, so I use this binary operator,
+it can also be applied to several arguments,
+
+0:09:52.120,0:09:56.760
+like a plus. You can write a + b + c,
+even though plus is a binary operator.
+
+0:09:56.760,0:09:57.760
+It's associative.
+
+0:09:57.760,0:10:00.210
+So, you can write a sequence of additions.
+
+0:10:00.210,0:10:04.380
+And the same is true for this operator for
+combining pictures.
+
+0:10:04.380,0:10:09.650
+For example, I could say I want to combine
+another red form or the same red form, but
+
+0:10:09.650,0:10:15.900
+now not in this moved form, but actually,
+just as it is, and then what will I get?
+
+0:10:15.900,0:10:25.790
+Well, I expect to see another triangle here
+at the origin.
+
+0:10:25.790,0:10:27.530
+Okay.
+
+0:10:27.530,0:10:32.210
+And of course, I can also rotate it, for example,
+I can say, well, let me rotate this.
+
+0:10:32.210,0:10:36.600
+So, we know that this would be in radians.
+
+0:10:36.600,0:10:41.220
+So, let me take half of the number pi.
+
+0:10:41.220,0:10:43.380
+And what will happen?
+
+0:10:43.380,0:10:47.450
+I get this picture.
+
+0:10:47.450,0:10:51.370
+And of course, I haven't really moved or rotated
+that red form, right?
+
+0:10:51.370,0:10:54.580
+It's not like it's a rotated of the red form,
+
+0:10:54.580,0:10:56.830
+and now somehow, this red form is also rotated.
+
+0:10:56.830,0:10:58.110
+Of course not.
+
+0:10:58.110,0:11:02.260
+That would be not in the spirit of mathematical
+expressions.
+
+0:11:02.260,0:11:07.450
+That would be like, applying an action
+and an effect of moving this red form.
+
+0:11:07.450,0:11:09.170
+But that's not what's happening.
+
+0:11:09.170,0:11:11.530
+Red form is just this red triangle.
+
+0:11:11.530,0:11:16.890
+And then I use it here for some value, and
+here for something else.
+
+0:11:16.890,0:11:20.790
+And it's not just because I did this rotation
+after the translation, in some sense.
+
+0:11:20.790,0:11:25.370
+So, this is not about timewise sequencing.
+
+0:11:25.370,0:11:36.180
+Even if I do it like this, I simply say, first,
+I combined things in this way, then this doesn't
+
+0:11:36.180,0:11:39.880
+mean that now the red form is rotated,
+
+0:11:39.880,0:11:42.990
+and then if I use it again, then somehow it's
+always rotated.
+
+0:11:42.990,0:11:44.720
+No, that's not the case.
+
+0:11:44.720,0:11:52.820
+The outcome here will be the exact same picture,
+because there is a red triangle, and I use
+
+0:11:52.820,0:11:58.370
+it here, and rotate it and use the result.
+
+0:11:58.370,0:12:01.850
+And I use the red form again, and move it.
+
+0:12:01.850,0:12:09.410
+And then I use this resulting value as part
+of my overall scene.
+
+0:12:09.410,0:12:17.060
+Okay, so this was something that I wanted
+to show.
+
+0:12:17.060,0:12:23.490
+And then I also already wanted to show that
+you don't have to have these definitions on
+
+0:12:23.490,0:12:24.490
+the top level.
+
+0:12:24.490,0:12:31.120
+So, you don't have to introduce a new name,
+or name your subexpressions in the scope of
+
+0:12:31.120,0:12:37.090
+the complete module. That would be unfortunate,
+because then maybe you have very many of these
+
+0:12:37.090,0:12:41.950
+definitions that are not all really related
+to each other.
+
+0:12:41.950,0:12:46.770
+So, for example, you might want to say, well,
+actually, I need this red form only in the
+
+0:12:46.770,0:12:52.360
+context of this scene definition, but not
+elsewhere.
+
+0:12:52.360,0:12:58.220
+So, you might want to say, well, I want to
+use this here, and locally in a sense, and
+
+0:12:58.220,0:13:04.120
+then what you could do is something like this,
+you can say, like mathematics, I want to compute
+
+0:13:04.120,0:13:09.290
+2 times y where y is x plus one, for example.
+
+0:13:09.290,0:13:20.670
+So, you can say I want to compute this expression.
+In there, I want to use this value name “redForm”,
+
+0:13:20.670,0:13:30.810
+and I move this definition locally into this
+scope.
+
+0:13:30.810,0:13:38.680
+Then it's again, well-defined, and computes the
+same picture, of course. I have simply expressed
+
+0:13:38.680,0:13:40.160
+this in a different way.
+
+0:13:40.160,0:13:46.050
+And now I don't have redForm as a global
+value that can be used anywhere else.
+
+0:13:46.050,0:13:49.880
+So, it's now really defined locally for this
+“scene” definition.
+
+0:13:49.880,0:13:53.150
+So, this allows us to group things together.
+
+0:13:53.150,0:13:59.560
+Maybe that's not so important in your first
+exercise tasks, but later, it is a useful
+
+0:13:59.560,0:14:06.140
+technique to organize your code to have local
+definitions in this way.
+
+0:14:06.140,0:14:07.250
+Okay.
+
+0:14:07.250,0:14:13.510
+I think that was all the syntax and features
+that I wanted to show right now.

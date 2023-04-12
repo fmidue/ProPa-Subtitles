@@ -1,0 +1,483 @@
+0:00:01.800,0:00:09.760
+Back to the whiteboard. I wanted to briefly
+discuss expressions and compositionality in
+
+0:00:09.760,0:00:11.630
+terms of syntax trees.
+
+0:00:11.630,0:00:24.529
+So, in the slides, I had this arithmetic expression.
+
+0:00:24.529,0:00:29.650
+And I mentioned that it's built up of subexpressions
+and they could be visualized in a tree.
+
+0:00:29.650,0:00:35.750
+And I assume that you have seen such trees
+before in some form.
+
+0:00:35.750,0:00:43.510
+So, in a top-down decomposition and taking
+into account the usual rules for precedents
+
+0:00:43.510,0:00:51.859
+between arithmetic operations, so, that multiplications
+have a tighter binding
+
+0:00:51.859,0:00:56.539
+than addition, for example. So, we should have
+the following structures. So, 2 times 10,
+
+0:00:56.539,0:01:05.780
+we have this multiplication, which has an argument
+3 and something which is squared.
+
+0:01:05.780,0:01:07.140
+And what is squared?
+
+0:01:07.140,0:01:16.000
+Well, the sum of two things, of which the first is
+the variable x, and the second is the number 1.
+
+0:01:16.000,0:01:23.320
+So, this would be the syntax tree depiction
+of the above expression.
+
+0:01:23.320,0:01:27.860
+And in this way, we can easily identify the
+subexpressions.
+
+0:01:27.860,0:01:35.250
+So, whenever I point to some node in this tree,
+then what I have rooted at that point would
+
+0:01:35.250,0:01:36.250
+be a subexpression.
+
+0:01:36.250,0:01:40.930
+So, x plus 1 is, of course, a subexpression.
+
+0:01:40.930,0:01:48.870
+And the same applies to any other thing that
+I identify.
+
+0:01:48.870,0:01:55.490
+Even just this 3, of course, is also a
+subexpression.
+
+0:01:55.490,0:02:01.920
+Okay, now, I talked about compositional typing,
+and compositional evaluation.
+
+0:02:01.920,0:02:07.160
+So, typing is not very interesting in this
+example, because everything is just a number,
+
+0:02:07.160,0:02:12.120
+we will see another example, in the CodeWorld
+spirit, later.
+
+0:02:12.120,0:02:17.740
+And here, we can talk about compositional
+evaluation.
+
+0:02:17.740,0:02:27.340
+And again, it is exactly what you are used
+to when you calculate in arithmetic by hand.
+
+0:02:27.340,0:02:35.780
+So, let's say that for the x, we have from
+the context, some value, so this x is in scope.
+
+0:02:35.780,0:02:44.720
+And let us say, for example, that the value
+is 5, then we can compositionally evaluate
+
+0:02:44.720,0:02:48.920
+each subexpression, and that will lead to
+a value for the whole thing, right?
+
+0:02:48.920,0:02:55.670
+So, of course, the value of a constant is just
+this constant, the value of addition of
+
+0:02:55.670,0:03:02.720
+two values is the addition of those
+two values. It will just give 6, this is 36,
+
+0:03:02.720,0:03:04.069
+This is 3.
+
+0:03:04.069,0:03:05.260
+This is 39.
+
+0:03:05.260,0:03:08.360
+No, it's multiplication.
+
+0:03:08.360,0:03:12.490
+So, this is 108.
+
+0:03:12.490,0:03:24.060
+And this is 2 if I haven't made a mistake,
+which is, of course, possible.
+
+0:03:24.060,0:03:26.370
+And this would be 110.
+
+0:03:26.370,0:03:32.130
+And of course, the order in which I have evaluated
+things here is completely irrelevant, right?
+
+0:03:32.130,0:03:34.490
+It wouldn't have made a difference.
+
+0:03:34.490,0:03:40.220
+If I had started at different nodes, the overall
+result would, of course, have been the same,
+
+0:03:40.220,0:03:41.220
+right?
+
+0:03:41.220,0:03:42.920
+And that is not at all surprising, I hope.
+
+0:03:42.920,0:03:43.920
+Yes.
+
+0:03:43.920,0:03:46.160
+So, this is trivial.
+
+0:03:46.160,0:03:51.930
+This kind of compositionality, but only because
+these are mathematical operations and functions.
+
+0:03:51.930,0:03:53.330
+It is not.
+
+0:03:53.330,0:04:02.849
+So, if we simply switch to a very small but
+different example.
+
+0:04:02.849,0:04:09.230
+So, let's look again, at something I did in
+an earlier video, let's say we have, or let's
+
+0:04:09.230,0:04:17.229
+consider things that look like expressions,
+like a function call maybe in an imperative
+
+0:04:17.229,0:04:18.229
+language.
+
+0:04:18.229,0:04:28.340
+And let's take two such calls to make subexpressions
+of a larger expression.
+
+0:04:28.340,0:04:34.439
+And now, once I have depicted this, it's,
+of course, also compositional.
+
+0:04:34.439,0:04:39.779
+Right, it's compositional syntactically, but
+semantically, it's not compositional at all.
+
+0:04:39.779,0:04:41.460
+Why is that?
+
+0:04:41.460,0:04:47.889
+Because it's not really true that I only need
+to know the values of these two read-calls.
+
+0:04:47.889,0:04:52.539
+I, for example, also need to know the order
+in which they are evaluated.
+
+0:04:52.539,0:04:58.260
+Now, of course, in any given language, we
+might say, we always evaluate the first thing
+
+0:04:58.260,0:05:00.939
+and then the second thing, but it's not compositional,
+right?
+
+0:05:00.939,0:05:06.340
+It's not the same as in the previous example.
+
+0:05:06.340,0:05:13.080
+Because really, if I think of this, as, let
+me first evaluate some subexpression like
+
+0:05:13.080,0:05:14.199
+this one.
+
+0:05:14.199,0:05:23.240
+And maybe this means reading from the input,
+some value 5. Let's say, this is my prompt
+
+0:05:23.240,0:05:28.699
+where I read stuff from the console, from
+the user, then the result of evaluating the
+
+0:05:28.699,0:05:30.800
+right thing would be 5.
+
+0:05:30.800,0:05:33.990
+And let's say that afterwards, 7 is read.
+
+0:05:33.990,0:05:39.819
+And let's say we use this for evaluating the
+left-hand side, or the left branch of this
+
+0:05:39.819,0:05:44.699
+tree, then the result would be 7 minus
+5, would be 2.
+
+0:05:44.699,0:05:54.639
+But, of course, this depended on the order.
+If I had first evaluated the left branch,
+
+0:05:54.639,0:06:00.800
+then this would have been the 5, and then
+evaluating the other side would have been
+
+0:06:00.800,0:06:05.729
+the 7, and then suddenly, the result would
+have been -2.
+
+0:06:05.729,0:06:08.020
+Yes, that's a trivial example.
+
+0:06:08.020,0:06:17.029
+But it already shows that the order of evaluation
+is important if we have effects.
+
+0:06:17.029,0:06:24.689
+And it's also the reason why we can't rename
+subexpressions, or simply replacing two common
+
+0:06:24.689,0:06:29.330
+subexpressions, for example, by a common name
+and assigning the value
+
+0:06:29.330,0:06:35.039
+of the subexpression to that name before as
+we did in the other examples in the slides.
+
+0:06:35.039,0:06:37.749
+Okay, so that's that.
+
+0:06:37.749,0:06:44.169
+And then I mentioned, I also want to talk
+about the CodeWorld example, because this will
+
+0:06:44.169,0:06:51.430
+be used in the next video for playing around
+on the CodeWorld website again. And the expression
+
+0:06:51.430,0:06:58.349
+from which I will start there is on the slides,
+and I will not write it down here in linear
+
+0:06:58.349,0:07:02.110
+form, but I’ll directly draw the tree.
+
+0:07:02.110,0:07:08.409
+And in terms of that, we can then talk about
+the types. And then in the CodeWorld website,
+
+0:07:08.409,0:07:10.860
+we will actually play with the example.
+
+0:07:10.860,0:07:18.689
+So, let me draw this syntax tree of the expression
+I will then use in slides.
+
+0:07:18.689,0:07:27.110
+Frankly, I'm not very good at drawing this
+symbol, okay.
+
+0:07:27.110,0:07:32.879
+You will see it and when I type it out, in
+the… So, that's supposed to be the ampersand
+
+0:07:32.879,0:07:33.879
+symbol (&).
+
+0:07:33.879,0:07:38.099
+Okay, and it's used on the top level here, because
+we want to combine two pictures.
+
+0:07:38.099,0:07:43.969
+And one of these pictures will be a circle
+So, it is similar to an example I started from
+
+0:07:43.969,0:07:45.930
+last week.
+
+0:07:45.930,0:07:54.169
+And then there is another subtree or subexpression.
+It is one of these translated calls. That was
+
+0:07:54.169,0:07:59.349
+for movement of pictures. It had three arguments,
+something in the x direction, something in
+
+0:07:59.349,0:08:02.800
+the y direction, and something that should
+be moved.
+
+0:08:02.800,0:08:12.119
+And again, similarly to last week, I will
+have here a red coloured triangle or arbitrary
+
+0:08:12.119,0:08:13.119
+polygon.
+
+0:08:13.119,0:08:19.939
+So, the expression, or the syntax tree of
+the expression we will be looking at is this
+
+0:08:19.939,0:08:22.639
+one, and actually, I don't draw it fully.
+
+0:08:22.639,0:08:31.150
+So down here, there will be a longer expression,
+basically, some pairs of numbers in such square
+
+0:08:31.150,0:08:32.150
+brackets.
+
+0:08:32.150,0:08:39.259
+Okay, so this will be an expression that you
+will type out in the editor.
+
+0:08:39.259,0:08:45.699
+And what I wanted to talk about here is types,
+because differently than in the number examples
+
+0:08:45.699,0:08:46.920
+from above,
+
+0:08:46.920,0:08:52.130
+now also in the program, we will have
+some more interesting types.
+
+0:08:52.130,0:09:00.209
+So, what you probably already know or remember
+from the example last week is that overall,
+
+0:09:00.209,0:09:05.579
+there was something like “scene”, which is a picture.
+So, somehow, ultimately up here we want to
+
+0:09:05.579,0:09:08.750
+Have the type “Picture”.
+
+0:09:08.750,0:09:15.300
+And to make sure that this will be
+a picture, we have to look at the subexpressions
+
+0:09:15.300,0:09:18.920
+top down, or you could start at the least
+and work bottom up.
+
+0:09:18.920,0:09:22.110
+Of course, this doesn't make a difference
+if it's compositional.
+
+0:09:22.110,0:09:28.400
+So, what we have here, or what we will find is
+that this operator here, takes two pictures
+
+0:09:28.400,0:09:30.149
+and combines them into one picture.
+
+0:09:30.149,0:09:36.060
+So, what we expect is that both on the left
+and on the right, we have pictures. So far
+
+0:09:36.060,0:09:38.190
+that's like with numbers, we combine numbers
+to numbers.
+
+0:09:38.190,0:09:43.560
+So, here we combine pictures to pictures,
+but then further down in the tree, we can
+
+0:09:43.560,0:09:50.430
+have other things, for example, the 0.1 here
+is not of course a picture, it's a floating
+
+0:09:50.430,0:09:57.180
+point number and actually, it will be a Double
+in this specific library.
+
+0:09:57.180,0:10:05.430
+And similarly all the other numbers that we
+have here. Sorry about this. All the other
+
+0:10:05.430,0:10:11.150
+numbers we have here are Doubles.
+
+0:10:11.150,0:10:16.390
+And what do we move?
+
+0:10:16.390,0:10:18.579
+Well, let’s work out things out from below.
+
+0:10:18.579,0:10:20.230
+So, what is this here?
+
+0:10:20.230,0:10:25.750
+I said it's a list of pairs of numbers.
+
+0:10:25.750,0:10:30.470
+And actually, there is a specific type for
+points in CodeWorld.
+
+0:10:30.470,0:10:40.660
+So, what actually will be typewise, is a
+list of points. So, a list syntax. (The square
+
+0:10:40.660,0:10:42.270
+brackets of list syntax.)
+
+0:10:42.270,0:10:47.379
+And the thing which will be occurring in the
+list is this point type.
+
+0:10:47.379,0:10:53.730
+And then “polygon” is a function which takes
+such a list of points and gives a picture
+
+0:10:53.730,0:10:58.920
+So, the type at this node will be a Picture.
+
+0:10:58.920,0:11:00.420
+And then what about “colored”?
+
+0:11:00.420,0:11:07.120
+Well, “colored” should take a colour and a
+Picture and return a Picture.
+
+0:11:07.120,0:11:12.460
+So, what we need here is a colour. And “red”
+is indeed a colour constant, then the colour
+
+0:11:12.460,0:11:18.509
+and the Picture can be combined by the “colored”
+function into a Picture.
+
+0:11:18.509,0:11:23.529
+And then now everything works out because
+the “translated” call expects two Doubles and
+
+0:11:23.529,0:11:25.060
+a Picture and returns a Picture.
+
+0:11:25.060,0:11:31.940
+So compositionally, at each node, the things
+fit together and overall we get the desired
+
+0:11:31.940,0:11:35.569
+type, in a compositional manner.
