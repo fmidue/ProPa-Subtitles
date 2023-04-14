@@ -6,4 +6,5 @@ Suggest changes per pull requests, please.
 
 | GitHub username | Lines |
 | :-- | --: |
+| ejude44 | 6 |
 | Nick46000 | 4 |
