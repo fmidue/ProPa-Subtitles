@@ -10,3 +10,4 @@ Suggest changes per pull requests, please.
 | MagnolieH | 14 |
 | ejude44 | 6 |
 | Nick46000 | 4 |
+| Katashiii | 3 |
