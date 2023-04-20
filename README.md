@@ -9,5 +9,6 @@ Suggest changes per pull requests, please.
 | michalitv21 | 19 |
 | MagnolieH | 14 |
 | ejude44 | 6 |
+| TMUniversal | 5 |
 | Nick46000 | 4 |
 | Katashiii | 3 |
