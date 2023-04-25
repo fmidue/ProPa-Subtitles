@@ -1,81 +1,81 @@
 0:00:02.011,0:00:05.370
-Willkommen zu unserer ersten virtuellen 
+Willkommen zu unserer ersten virtuellen
 Übungsbesprechung für Programmierparadigmen.
 
 0:00:05.370,0:00:11.520
-Wir starten mit der ersten Aufgabe und es ging 
+Wir starten mit der ersten Aufgabe und es ging
 hier darum, dass wir ein einfaches Bild in
 
 0:00:11.520,0:00:18.600
-CodeWorld realisieren sollten. Unter dem Link hier 
+CodeWorld realisieren sollten. Unter dem Link hier
 können wir uns angucken, wie das aussehen soll.
 
 0:00:18.600,0:00:27.840
-Wir sollen so einen gelben kreis haben, der über 
+Wir sollen so einen gelben kreis haben, der über
 einem grünen Rechteck platziert ist.
 
 0:00:27.840,0:00:34.620
-Unsere Vorgabe sagt, wir haben eine 'main' Funktion die 
+Unsere Vorgabe sagt, wir haben eine 'main' Funktion die
 ein 'drawingOf scene' hat und 'scene' sollen wir
 
 0:00:34.620,0:00:41.790
-jetzt entsprechend vervollständigen. Das ist bis 
+jetzt entsprechend vervollständigen. Das ist bis
 jetzt 'undefined'. Also 'undefined' ist hier ein
 
 0:00:41.790,0:00:51.450
-Platzhalter für irgendwas was wir einfügen müssen 
+Platzhalter für irgendwas was wir einfügen müssen
 und genau das soll dann so aussehen wie hier.
 
 0:00:51.450,0:00:59.400
-Ich würde sagen, da wir einen gelben 
+Ich würde sagen, da wir einen gelben
 Kreis und ein grünes Rechteck haben,
 
 0:00:59.400,0:01:18.600
-definieren wir erstmal zwei Hilfsdefinitionen. 
+definieren wir erstmal zwei Hilfsdefinitionen.
 'yellowCircle' und 'greenRectangle'.
 
 0:01:26.520,0:01:29.490
-Ich habe jetzt hier überall erst mal 'undefined' 
+Ich habe jetzt hier überall erst mal 'undefined'
 reingeschrieben. Das können wir grundsätzlich
 
 0:01:29.490,0:01:34.110
-immer als ganz normalen Haskell-Wert für 
+immer als ganz normalen Haskell-Wert für
 Platzhalter verwenden. Das darf man halt
 
 0:01:34.110,0:01:41.280
-nur nie auswerten, sonst stürzt das Programm 
+nur nie auswerten, sonst stürzt das Programm
 ab. Das heißt, wenn wir jetzt entsprechend das
 
 0:01:41.280,0:01:46.050
-Programm kompilieren und starten, bekommen 
+Programm kompilieren und starten, bekommen
 wir kein Bild, sondern eine Fehlermeldung,
 
 0:01:46.050,0:01:53.520
-weil wir irgendwo 'undefined' ausgewertet haben. 
+weil wir irgendwo 'undefined' ausgewertet haben.
 Hier in Zeile 15, also noch genau das aus der
 
 0:01:53.520,0:02:04.590
-Aufgabenvorgabe. Wenn wir CodeWorld benutzen, 
+Aufgabenvorgabe. Wenn wir CodeWorld benutzen,
 können wir das umgehen, weil es in CodeWorld das
 
 0:02:04.590,0:02:17.310
-praktische und vordefinierte Bild 'blank' gibt. 
+praktische und vordefinierte Bild 'blank' gibt.
 Es ist einfach ein leeres Bild. Dann kompiliert es
 
 0:02:17.310,0:02:24.851
-auch immer noch logischerweise, aber wir sehen 
-halt nichts und es stürzt aber auch eben nicht ab.
+auch immer noch logischerweise, aber wir sehen
+halt nichts und es stürzt aber auch eben nicht ab.
 
 0:02:24.851,0:02:31.800
-Wir können noch für die Definitionen, die wir 
+Wir können noch für die Definitionen, die wir
 eingefügt haben, die Typsignatur dran schreiben.
 
 0:02:31.800,0:02:39.900
-Das ist immer eine gute Idee, zumindest für 
+Das ist immer eine gute Idee, zumindest für
 Dokumentationszwecke. Haskell inferiert
 
 0:02:39.900,0:02:46.620
-natürlich die Typsignatur, je nachdem welchen 
+natürlich die Typsignatur, je nachdem welchen
 Ausdruck wir dementsprechend dahin schreiben, aber
 
 0:02:46.620,0:02:56.430
@@ -83,116 +83,116 @@ es ist immer ganz gut das auch noch mal hinzuschreiben.
 Zumindest für die Top-Level-Definition.
 
 0:03:01.370,0:03:06.920
-Und was machen wir jetzt mit diesen beiden 
+Und was machen wir jetzt mit diesen beiden
 Hilfsdefinitionen? Wir haben gesagt, unsere
 
 0:03:06.920,0:03:16.550
-Szene soll der gelbe Kreis und das grüne Rechteck 
+Szene soll der gelbe Kreis und das grüne Rechteck
 sein, also sagen wir einfach 'yellowCircle' und
 
 0:03:16.550,0:03:27.440
-'greenRectangle' sind unsere Szene. So weit, 
+'greenRectangle' sind unsere Szene. So weit,
 so gut. Jetzt können wir natürlich nochmal
 
 0:03:27.440,0:03:34.730
-kompilieren. Funktioniert immer noch, ist aber 
+kompilieren. Funktioniert immer noch, ist aber
 auch immer noch nichts zu sehen. Gut, dann der
 
 0:03:34.730,0:03:43.220
-gelbe Kreis. Für Kreise haben wir 'solidCircle', 
-wenn sie ausgefüllt sein sollen, so wie in unserem Fall.
+gelbe Kreis. Für Kreise haben wir 'solidCircle',
+wenn sie ausgefüllt sein sollen, so wie in unserem Fall.
 
 0:03:43.220,0:03:54.000
-Ansonsten einfach 'circle' und wir geben den 
-Radius an und wählen einfach mal 1. Dann haben wir schon mal einen Kreis.
+Ansonsten einfach 'circle' und wir geben den
+Radius an und wählen einfach mal 1. Dann haben wir schon mal einen Kreis.
 
 0:03:54.000,0:03:57.786
-Das ist ja schon mal ganz 
+Das ist ja schon mal ganz
 gut. Der ist allerdings noch nicht gelb.
 
 0:03:57.786,0:04:19.165
-Deswegen  benutzen wir 'colored yellow' auf das Bild, was 
+Deswegen  benutzen wir 'colored yellow' auf das Bild, was
 durch 'solidCircle 1' definiert wird.
 
 0:04:19.165,0:04:31.070
-Dann haben wir unseren gelben Kreis. Dann können wir das 
+Dann haben wir unseren gelben Kreis. Dann können wir das
 ganze hier auch machen, für das grüne Rechteck.
 
 0:04:31.070,0:04:44.210
-'colored green' für die grüne Farbe und dann 
+'colored green' für die grüne Farbe und dann
 'solidRectangle' und jetzt können wir uns
 
 0:04:44.210,0:04:56.218
-wieder irgendwelche Werte überlegen. 22 ist ganz 
+wieder irgendwelche Werte überlegen. 22 ist ganz
 gut, dann füllt es genau den Bildschirm aus.
 
 0:04:56.218,0:05:07.661
-Ok, jetzt wollen wir das natürlich noch so haben, 
-wie hier, wo das ganze getrennt ist, die beiden Formen.
+Ok, jetzt wollen wir das natürlich noch so haben,
+wie hier, wo das ganze getrennt ist, die beiden Formen.
 
 0:05:07.661,0:05:14.660
-Dafür können wir jetzt einfach den Kreis 
+Dafür können wir jetzt einfach den Kreis
 anheben oder halt das Rechteck absenken.
 
 0:05:14.660,0:05:23.540
-Wir heben hier mal den Kreis an. Dafür nutzen wir 
+Wir heben hier mal den Kreis an. Dafür nutzen wir
 'translated' und geben eine Verschiebung
 
 0:05:23.540,0:05:29.450
-an, entlang der x-Achse, die hier 0 ist, weil 
+an, entlang der x-Achse, die hier 0 ist, weil
 wir das einfach nur nach oben heben wollen,
 
 0:05:29.450,0:05:39.345
-und entlang der y-Achse. Wir nehmen einfach mal 6 
+und entlang der y-Achse. Wir nehmen einfach mal 6
 hier. Dann können wir uns das wieder angucken.
 
 0:05:39.345,0:05:46.760
-Ja, genau und das war es im Prinzip auch schon. Dann 
+Ja, genau und das war es im Prinzip auch schon. Dann
 sind wir fertig. Man kann das natürlich jetzt
 
 0:05:46.760,0:05:52.820
-auch auf sehr viele andere Arten noch lösen. 
+auch auf sehr viele andere Arten noch lösen.
 Wie gesagt, man hätte auch das Rechteck nach
 
 0:05:52.820,0:05:59.210
-unten verschieben können, um denselben Effekt zu 
+unten verschieben können, um denselben Effekt zu
 erreichen. Man kann das natürlich auch hier oben,
 
 0:05:59.210,0:06:07.590
-man muss es nicht unbedingt in 2 Unterdefinitionen 
+man muss es nicht unbedingt in 2 Unterdefinitionen
 teilen. Wir hätten zum Beispiel auch
 
 0:06:07.590,0:06:12.660
 das ganze als einen Ausdruck hinschreiben können,
 
 0:06:12.660,0:06:17.820
-indem wir einfach die Definition 
+indem wir einfach die Definition
 hier entsprechend reinkopieren.
 
 0:06:17.820,0:06:30.540
-Das hat genau denselben Effekt, wie zu erwarten. 
+Das hat genau denselben Effekt, wie zu erwarten.
 Man könnte auch noch sagen, es ist übersichtlicher,
 
 0:06:30.540,0:06:44.370
-wenn wir es in die nächste Zeile schreiben. Dann 
+wenn wir es in die nächste Zeile schreiben. Dann
 könnten wir das auch so machen. Auch dasselbe.
 
 0:06:44.370,0:06:49.830
-Es gibt viele Möglichkeiten, wie man seinen 
+Es gibt viele Möglichkeiten, wie man seinen
 code natürlich strukturieren kann. Ich würde
 
 0:06:49.830,0:06:58.980
-es präferieren das so zu machen, mit zusätzlichen 
+es präferieren das so zu machen, mit zusätzlichen
 Definitionen, weil sich dann die Beschreibung hier
 
 0:06:58.980,0:07:07.800
-oben irgendwie schöner liest, meiner Meinung nach. 
+oben irgendwie schöner liest, meiner Meinung nach.
 Aber das ist Geschmackssache und das kann man
 
 0:07:07.800,0:07:13.680
-machen die man will, obwohl es natürlich Vorteile 
+machen die man will, obwohl es natürlich Vorteile
 hat, wenn man dann, wie wir gleich in Aufgabe 2
 
 0:07:13.680,0:07:23.170
-sehen werden, komplexere Bilder erstellt. 
+sehen werden, komplexere Bilder erstellt.
 Okay, das ist dann im Prinzip Aufgabe 1.
