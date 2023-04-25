@@ -1,0 +1,2957 @@
+0:00:01.680,0:00:03.040
+Back to slides for a while.
+
+0:00:04.400,0:00:10.080
+As a brief recap, both from last week and
+actually also from the preceding video today,
+
+0:00:10.720,0:00:13.440
+let me recall a few notions/observations.
+
+0:00:14.000,0:00:21.600
+Before we will then, again, see this both
+for the CodeWorld library, specifically,
+
+0:00:21.600,0:00:25.360
+and then also for some more practical
+examples; to play around with, and also
+
+0:00:25.920,0:00:30.640
+more expressivity in terms of new syntax
+features that we haven't seen yet.
+
+0:00:31.760,0:00:37.120
+So, what we discussed previously was
+expressions, as opposed to commands:
+
+0:00:37.120,0:00:39.200
+expressions as syntactic structures.
+
+0:00:39.760,0:00:46.640
+And I gave you, as a way to remember this or to
+distinguish what are expressions in languages that
+
+0:00:46.640,0:00:53.840
+you know, for example: it would be the things that
+could occur after "=" in a variable assignment.
+
+0:00:54.720,0:00:59.520
+As things that evaluate to something,
+then can be assigned to a variable.
+
+0:00:59.520,0:01:02.800
+So, that would be the things that you would
+call an expression, also in other languages.
+
+0:01:02.800,0:01:06.320
+And the point was that in Haskell, for
+example, basically everything is an expression.
+
+0:01:07.440,0:01:11.840
+Programming there consists, almost
+exclusively, of expression writing.
+
+0:01:12.960,0:01:13.760
+What are values?
+
+0:01:15.200,0:01:18.000
+Values are the results of
+evaluating an expression.
+
+0:01:18.720,0:01:24.400
+So, they are obtained by combining
+values of subexpressions.
+
+0:01:24.400,0:01:28.640
+There also was this idea that
+evaluation order should not be relevant.
+
+0:01:29.600,0:01:36.400
+If you have an expression which is combined out
+of subexpressions in such an expression-style way,
+
+0:01:39.200,0:01:43.040
+values can actually be replaced by expressions
+and expressions can be replaced by their values.
+
+0:01:43.840,0:01:48.400
+In a language where all that matters
+is expressions and their values.
+
+0:01:50.480,0:01:57.120
+Opposed to that are commands, syntactic structures
+that are not so much characterized by what,
+
+0:01:57.120,0:02:00.960
+if anything at all, they evaluate to,
+but rather by what effect they have.
+
+0:02:00.960,0:02:04.240
+So, things like assignment statements
+that would change storage cells,
+
+0:02:04.240,0:02:10.800
+or keywords/commands for looping, or things
+that are not about evaluating some expression,
+
+0:02:10.800,0:02:13.440
+but about doing something
+or about having an effect.
+
+0:02:14.960,0:02:19.680
+And that's a different kind of
+structure in a programming language.
+
+0:02:19.680,0:02:24.880
+And it's still a more dominant structure
+in imperative programming languages,
+
+0:02:24.880,0:02:28.560
+because they are about doing something
+rather than about calculating values.
+
+0:02:31.040,0:02:36.640
+And there was this important observation already
+alluded to above, that if you are in a pure
+
+0:02:36.640,0:02:40.480
+setting (so you don't have commands, and also the
+expressions that we have are pure expressions),
+
+0:02:41.040,0:02:44.880
+then any pure expressions that have the
+same value can be replaced by each other,
+
+0:02:44.880,0:02:46.720
+without changing the behaviour of the program.
+
+0:02:46.720,0:02:51.360
+That's what I did when I calculated
+with programs in the previous video.
+
+0:02:51.360,0:02:55.200
+And that's also what, for example, a
+compiler can use for optimizing a program.
+
+0:03:01.120,0:03:08.880
+More specifically for the CodeWorld sublanguage:
+there now, our expressions are about pictures.
+
+0:03:09.520,0:03:12.160
+So, the values of expressions are pictures or
+
+0:03:12.160,0:03:16.000
+ingredients needed for Pictures,
+like colours, coordinates, etc.
+
+0:03:16.000,0:03:17.360
+They can be named, etc.
+
+0:03:17.360,0:03:20.320
+You have done this already in
+the first exercise, of course.
+
+0:03:21.280,0:03:23.120
+And for this, you have used functions/operators.
+
+0:03:24.960,0:03:27.600
+Here I list some along with their types.
+
+0:03:27.600,0:03:33.680
+You were not forced to use types in the first
+exercise tasks, but if you have looked at the
+
+0:03:33.680,0:03:35.200
+documentation, you would
+have found something like:
+
+0:03:35.200,0:03:39.440
+The "circle" function takes a radius, which
+is a real number, and gives a picture.
+
+0:03:39.440,0:03:40.960
+There are other notations,
+
+0:03:40.960,0:03:46.800
+that are not exactly like that in Haskell, but we
+have them on this slide, in order to be similar to
+
+0:03:50.560,0:03:54.240
+functions and their types, the way you are
+used to from mathematics, from set theory.
+
+0:03:54.240,0:03:56.320
+So, for example, the "polygon"
+
+0:03:56.320,0:04:01.840
+function is also about returning a picture, but
+it actually takes a list of coordinate pairs.
+
+0:04:01.840,0:04:07.040
+Of course, a pair of coordinates is what would, in
+mathematics, be presented by a Cartesian product.
+
+0:04:07.040,0:04:10.880
+So, taking R x R in order to
+get pairs of real numbers.
+
+0:04:10.880,0:04:14.560
+And a list of such things will be an argument
+of the polygon function to get a picture.
+
+0:04:15.840,0:04:19.520
+For "colored", you take two arguments, a
+colour and a picture, and return a picture.
+
+0:04:19.520,0:04:21.120
+We talked about this before.
+
+0:04:21.120,0:04:25.280
+And likewise, for more than two arguments,
+you get something like a three-way
+
+0:04:25.840,0:04:29.760
+Cartesian/cross product of two times a
+real number (for x- and y-directions)
+
+0:04:29.760,0:04:32.320
+for a movement, and then some
+picture that you want to move.
+
+0:04:32.320,0:04:34.720
+And the result is a picture,
+namely, the moved picture.
+
+0:04:35.840,0:04:40.080
+Actually, concerning the types: You may
+have seen this already, for example,
+
+0:04:40.080,0:04:46.240
+in error messages in CodeWorld - if your program
+didn't work, and there was an error message,
+
+0:04:46.240,0:04:49.680
+then you might have seen the types of these
+functions, and they looked a bit different.
+
+0:04:49.680,0:04:51.040
+I will come back to this later.
+
+0:04:51.040,0:04:54.640
+That actually, for syntactical reasons, or reasons
+
+0:04:54.640,0:04:59.200
+about organization of function application
+in Haskell, you will rarely see this cross.
+
+0:04:59.200,0:05:04.000
+You will see some other syntactic means
+of expressing, for example, a binary
+
+0:05:04.560,0:05:06.480
+function or a function with three arguments, etc.
+
+0:05:06.480,0:05:09.200
+But mathematically, in
+spirit, this is what we have.
+
+0:05:09.200,0:05:13.760
+For example, a combination: the and-symbol (&)
+here takes two pictures and returns one picture.
+
+0:05:16.080,0:05:20.400
+I already talked in the previous video about
+properties/laws that we can think about.
+
+0:05:21.200,0:05:23.840
+They are like arithmetic laws in mathematics.
+
+0:05:23.840,0:05:28.880
+But they now talk about the
+functions that we have in our domain.
+
+0:05:28.880,0:05:32.480
+In this case, I talked
+about rotation and colouring.
+
+0:05:32.480,0:05:35.920
+But I also started writing down the
+law for translation and colouring,
+
+0:05:35.920,0:05:37.840
+and this would be the complete version of that.
+
+0:05:37.840,0:05:41.520
+And the list of functions that we consider grows.
+
+0:05:41.520,0:05:44.080
+So, there will be more things
+that we can do with pictures.
+
+0:05:44.080,0:05:46.720
+Then you could always also think about new laws.
+
+0:05:46.720,0:05:49.040
+You don't have to prove them, of course.
+
+0:05:49.040,0:05:53.760
+In this lecture, the point is: If you
+are aware of reasonable properties/laws
+
+0:05:53.760,0:05:57.920
+about the functions that you're working
+with, then you can write nicer programs.
+
+0:05:57.920,0:06:00.960
+And you can refactor your
+programs with much more confidence
+
+0:06:00.960,0:06:05.840
+than by just guessing what
+you should do or not do.
+
+0:06:08.240,0:06:13.920
+Now, inside the CodeWorld library we can make the
+next step and move from pictures to animations.
+
+0:06:13.920,0:06:18.400
+That's a very small step, actually,
+because an animation, as I already
+
+0:06:19.920,0:06:25.440
+indicated before on an intuitive level,
+is just a picture that changes with time.
+
+0:06:25.440,0:06:31.280
+And mathematically, such a dependence on time
+would simply be by introducing parameters.
+
+0:06:31.280,0:06:37.280
+This is an example you see here, which
+is a small variation of the example from
+
+0:06:37.280,0:06:44.640
+last week, where we basically had
+no animation here, just a drawing.
+
+0:06:44.640,0:06:50.000
+We didn't have this t parameter in the
+recent example that I walked through
+
+0:06:50.000,0:06:53.280
+in the expression-style discussion in CodeWorld.
+
+0:06:53.280,0:06:57.200
+In one of them, there was a fixed value here.
+
+0:06:57.200,0:07:01.040
+So, there was a colored red triangle
+which was moved to somewhere.
+
+0:07:01.040,0:07:04.880
+And now, by saying "well, actually, let
+me make this dependent on the time t",
+
+0:07:05.760,0:07:07.120
+this is already an animation.
+
+0:07:07.120,0:07:12.720
+I simply have to change the call above, here, to
+also express that now I want to have an animation.
+
+0:07:12.720,0:07:17.440
+And I am making this happen by
+the function here, and also,
+
+0:07:18.800,0:07:23.040
+instead of defining a scene as a Picture,
+I define a function from Double to Picture.
+
+0:07:23.040,0:07:29.840
+So, this is something like the R from the previous
+slides, the mathematical R, the real numbers.
+
+0:07:31.520,0:07:34.400
+So, the function depends on time, so
+its first variable is the parameter t,
+
+0:07:35.120,0:07:39.440
+in the straightforward mathematical
+interpretation and style.
+
+0:07:40.640,0:07:42.400
+This parameter is never set by us here.
+
+0:07:42.400,0:07:49.120
+So, you never see me, in this short piece of
+code, setting the t to some specific value.
+
+0:07:49.760,0:07:51.680
+We can do this and play
+around with the example code.
+
+0:07:51.680,0:07:55.920
+We can also consider specific calls of
+the scene-function with the values 1, 2,
+
+0:07:55.920,0:07:58.080
+3, whatever, with specific values.
+
+0:07:58.080,0:08:02.000
+But for an animation this is not
+something that I, as a programmer, do.
+
+0:08:03.760,0:08:07.520
+Another observation is: There is no
+for-loop or other explicit control.
+
+0:08:07.520,0:08:12.240
+If you were considering a moving
+triangle in another language,
+
+0:08:12.240,0:08:17.200
+you might consider that you write a for-loop,
+which actually takes a variable t for time,
+
+0:08:17.200,0:08:23.280
+and then steps through different time steps:
+t = 1, 2, 3, 4, whatever, in a for-loop; and
+
+0:08:23.280,0:08:31.440
+then use this to make repeated calls to a drawing
+function to simulate or animate a moving triangle.
+
+0:08:31.440,0:08:34.400
+That's not what's happening here,
+because we're more concerned about
+
+0:08:34.400,0:08:36.480
+expressing this mathematically.
+
+0:08:36.480,0:08:41.440
+And mathematically, this expression
+is the perfect way of describing what
+
+0:08:42.240,0:08:46.240
+it means that the position of
+the triangle depends on the time.
+
+0:08:47.360,0:08:49.600
+So, there is no explicit control.
+
+0:08:50.400,0:08:53.840
+Instead, somehow, this
+animationOf-construct takes care of this.
+
+0:08:55.040,0:09:00.240
+And as a user of the library, we
+don't need to know how it does that.
+
+0:09:00.240,0:09:05.040
+It does that by making clever decisions
+about how often to call the scene-function,
+
+0:09:05.040,0:09:11.680
+maybe in sync with the browser's refresh rate,
+decides when and with which values it should
+
+0:09:11.680,0:09:15.760
+call the scene-function, and then combines all
+the pictures that result into a nice animation
+
+0:09:15.760,0:09:19.520
+(that can be shown in the browser, in the
+case that you will use CodeWorld online, or
+
+0:09:20.640,0:09:22.480
+in other ways if you use it offline).
+
+0:09:23.680,0:09:27.680
+The point is, the animationOf-construct does this.
+
+0:09:27.680,0:09:32.160
+It is a function which takes another function,
+in this case a scene-function, as an argument.
+
+0:09:32.160,0:09:34.640
+It is not something that we
+have implemented ourselves.
+
+0:09:34.640,0:09:38.880
+It's a part of the library, or semantics
+of what an animation is in CodeWorld.
+
+0:09:39.520,0:09:44.000
+And we can simply use it, and
+will make more and more use of it.
+
+0:09:44.000,0:09:49.840
+Also you, in the next exercise tasks.
+
+0:09:52.480,0:09:55.840
+The use of functions to describe dynamic behaviours
+
+0:09:55.840,0:10:00.000
+shouldn't come as a surprise to
+you (or most of you), I think.
+
+0:10:00.560,0:10:03.840
+Much of engineering outside
+computer science works that way.
+
+0:10:04.480,0:10:10.800
+And at least from your high-school physics, you
+also have seen many examples in mechanics, where a
+
+0:10:10.800,0:10:15.200
+lot of behaviours or situations in
+experiments are described that way.
+
+0:10:15.200,0:10:22.000
+So, let's look at this case
+of, basically, throwing a ball.
+
+0:10:22.640,0:10:28.240
+I think in German physics schoolbooks,
+this would be called "Schiefer Wurf".
+
+0:10:28.240,0:10:30.640
+Where we throw something at a start angle.
+
+0:10:31.200,0:10:34.240
+And if you looked up in such physics textbooks
+
+0:10:35.120,0:10:40.480
+how the experiment can be described, then you
+would find something like these formulas here:
+
+0:10:41.360,0:10:48.800
+describing the x- and y-positions based
+on the parameter t (the current time).
+
+0:10:48.800,0:10:50.160
+And there is some starting
+
+0:10:50.800,0:10:54.640
+velocity in the x-direction and some
+starting velocity in the y-direction.
+
+0:10:54.640,0:10:58.240
+And then since in the x-direction
+it is a uniform movement, it's
+
+0:10:59.520,0:11:03.360
+basically this multiplication of
+this factor and the current time.
+
+0:11:03.360,0:11:09.440
+And in the y-direction, because there's also
+gravity, which basically leads to this curve
+
+0:11:10.880,0:11:15.680
+that results here, we also have
+to have this other component.
+
+0:11:15.680,0:11:20.800
+This is the mathematics of what
+throwing a ball in this fashion means.
+
+0:11:20.800,0:11:24.720
+And that is a complete description
+of the dynamics of the system.
+
+0:11:24.720,0:11:28.320
+And it also serves as the
+implementation if you like.
+
+0:11:29.120,0:11:32.400
+So, in CodeWorld, you could
+write a small program which
+
+0:11:32.400,0:11:35.280
+basically animates this movement of this ball.
+
+0:11:35.280,0:11:38.080
+And what you write down is
+really what we see above
+
+0:11:38.080,0:11:42.080
+from the mathematics side, except that
+you have to write it in Haskell style.
+
+0:11:43.280,0:11:52.640
+You will recognize these expressions down here for
+the x- and y-values, of course, in program syntax.
+
+0:11:52.640,0:11:56.000
+Not, for example, this fraction syntax here.
+
+0:11:56.000,0:11:58.880
+But apart from that, and
+setting some specific parameters
+
+0:11:59.440,0:12:05.760
+and specific constants, that's really
+the implementation of what we see above.
+
+0:12:05.760,0:12:09.840
+Very closely matched with the
+mathematics/physics side to programming.
+
+0:12:12.160,0:12:14.240
+Also, this is not something
+that's super surprising.
+
+0:12:14.880,0:12:20.400
+But it is also interesting, because
+it will be useful for illustrating,
+
+0:12:20.400,0:12:23.600
+by playing with this program,
+the use of specific concepts.
+
+0:12:23.600,0:12:25.120
+For example, scope.
+
+0:12:25.120,0:12:28.160
+One difference that you
+might already observe here,
+
+0:12:28.160,0:12:33.520
+is for example that the x and y up here are
+explicit functions that take this t parameter.
+
+0:12:33.520,0:12:39.520
+Whereas down here, where I compute x
+and y, because I want to use them for
+
+0:12:41.280,0:12:47.680
+describing the position of my small ball (which is
+this "circle 0.1"), they are not functions of t.
+
+0:12:47.680,0:12:49.600
+Why don't they have to be functions of t?
+
+0:12:50.160,0:12:52.320
+Because they are local definitions.
+
+0:12:52.320,0:12:55.840
+So, we describe the scene-function.
+
+0:12:55.840,0:12:57.520
+The function takes an argument t.
+
+0:12:57.520,0:12:59.280
+Then there on the right-hand
+side, the t is in scope.
+
+0:12:59.280,0:13:00.400
+It can be used.
+
+0:13:00.400,0:13:06.080
+And if I introduce a local definition here
+for x (or even several ones for x and for y),
+
+0:13:06.080,0:13:11.680
+then the t is in scope, but I don't have to, like
+above here, explicitly pass the t as an argument.
+
+0:13:11.680,0:13:13.120
+This is something that you can play around with.
+
+0:13:13.120,0:13:16.160
+So, what happens if you move
+these x and y to the top level?
+
+0:13:16.160,0:13:18.560
+I talked about organization of programs before.
+
+0:13:18.560,0:13:23.840
+Having local definitions or top-level/global
+definitions is something that we can observe here.
+
+0:13:24.640,0:13:29.360
+Also, this is a program largely without keywords.
+
+0:13:29.360,0:13:31.040
+Because we are in expression-style.
+
+0:13:31.040,0:13:36.160
+Just as the mathematical world doesn't know
+keywords, only knows mathematical symbols,
+
+0:13:36.160,0:13:42.080
+variables, operators and combinations
+of expressions; the same applies here.
+
+0:13:42.080,0:13:43.040
+So, there are no keywords.
+
+0:13:43.600,0:13:46.400
+The "where" could be
+considered a keyword, probably,
+
+0:13:46.400,0:13:49.360
+but it's really just something
+for organizing our expression.
+
+0:13:49.360,0:13:50.720
+It's not like the "while" or
+
+0:13:51.360,0:13:57.520
+"for" loop keywords in an imperative language,
+that it really drives the whole computation.
+
+0:13:57.520,0:13:59.520
+So, this "where" here is a keyword, but it's
+
+0:14:00.160,0:14:03.680
+really just a helper for organizing
+our mathematical expressions.
+
+0:14:03.680,0:14:07.680
+What's really important about this
+program is the expressions that we build.
+
+0:14:14.320,0:14:18.000
+Speaking of expressions, which
+I seem to do all the time,
+
+0:14:18.000,0:14:25.040
+we will, of course, need a few more ingredients
+than just operators, constants, and variables.
+
+0:14:25.040,0:14:31.600
+So, I gave this idealized idea, that
+there are only mathematical functions,
+
+0:14:31.600,0:14:36.960
+mathematical symbols, variables, and
+constants, to build larger programs.
+
+0:14:36.960,0:14:40.320
+There will be something more needed,
+but it will still be expression-style.
+
+0:14:41.520,0:14:45.200
+So, the "where" keyword from the
+previous slide was already an example,
+
+0:14:45.200,0:14:52.640
+where something was introduced that is not just a
+value, or something that is itself an expression.
+
+0:14:52.640,0:14:55.040
+So, it's a keyword for organizing expressions.
+
+0:14:55.040,0:14:57.840
+And actually, there will be
+further syntactic constructs
+
+0:14:59.200,0:15:04.480
+that allow us to build more interesting,
+larger, and more useful expressions.
+
+0:15:05.040,0:15:07.360
+And I call this "rich expressions".
+
+0:15:07.360,0:15:11.840
+I will introduce these features
+one by one in the following
+
+0:15:12.640,0:15:18.480
+material, and in each case motivated
+by some example in CodeWorld.
+
+0:15:21.920,0:15:23.680
+Let us discuss this case.
+
+0:15:23.680,0:15:29.760
+Let's assume that, differently from the example
+we saw today (where we had continuous distribution
+
+0:15:30.320,0:15:36.400
+throughout time, so our function was dependent
+on time to express continuous distribution
+
+0:15:36.400,0:15:42.480
+of pictures through time, namely as animations),
+we instead want to have a discrete distribution,
+
+0:15:43.040,0:15:44.720
+in some sense, throughout space.
+
+0:15:44.720,0:15:47.280
+So, we don't want to have a moving triangle,
+
+0:15:47.280,0:15:52.800
+but maybe we want to have many triangles
+which are static, but are separated in space.
+
+0:15:52.800,0:15:56.960
+So, they appear at different places
+on our coordinates plane, for example.
+
+0:15:59.360,0:16:00.960
+Now, of course, the magic
+
+0:16:03.440,0:16:06.240
+of the animationOf-function provided
+before is not applicable anymore.
+
+0:16:06.240,0:16:08.800
+Because there is no obvious way how to distribute
+
+0:16:08.800,0:16:11.360
+things throughout space,
+unlike time moving forwards.
+
+0:16:11.360,0:16:15.840
+So for every point we simply have
+to say where our triangle is.
+
+0:16:16.640,0:16:19.680
+Now, we maybe want to have a
+certain pattern on the screen,
+
+0:16:19.680,0:16:23.680
+how these different triangles
+should statically be placed.
+
+0:16:23.680,0:16:28.000
+And that's not something that somehow can come
+from something like the animationOf-function.
+
+0:16:30.160,0:16:33.360
+So, now it is something that
+the programmer would have to do.
+
+0:16:33.360,0:16:34.880
+And of course, the programmer could do that.
+
+0:16:34.880,0:16:40.000
+The programmer could take our old scene-function,
+which given the parameter places the triangle at
+
+0:16:40.000,0:16:45.520
+some point, and previously used this parameter
+in the animationOf-function to express movement.
+
+0:16:45.520,0:16:47.760
+Now we could simply say: Let's instead make
+
+0:16:47.760,0:16:51.680
+individual calls to the scene-function
+with different values for this parameter.
+
+0:16:51.680,0:16:55.440
+Then, certainly, we can express the
+places that are of interest to us.
+
+0:16:55.440,0:16:57.280
+But then we would have to replicate these calls.
+
+0:16:57.280,0:17:01.520
+We would have to write down
+"scene of 1", "scene of 1.5",
+
+0:17:01.520,0:17:05.520
+if that's the two copies that we want
+to have of our "scene", of our triangle.
+
+0:17:05.520,0:17:09.120
+And if you want to have ten copies of
+the triangle, then you would have to ask
+
+0:17:09.120,0:17:13.520
+ten calls to this scene-function
+which draws one triangle.
+
+0:17:13.520,0:17:15.920
+But that is not something you want
+to do by hand, probably, right?
+
+0:17:15.920,0:17:18.240
+It is also not something that you
+want to write down in the program:
+
+0:17:19.280,0:17:21.840
+ten times the same code, just
+with different arguments.
+
+0:17:23.280,0:17:23.920
+What to do instead?
+
+0:17:24.480,0:17:27.840
+Let's think about imperative programming.
+
+0:17:27.840,0:17:28.800
+What would we do?
+
+0:17:28.800,0:17:30.240
+That would probably take a for-loop.
+
+0:17:30.240,0:17:36.400
+We would say we want ten copies
+of our call of the scene-function.
+
+0:17:36.400,0:17:42.320
+Then let's write a for-loop in which we use
+the loop variable in such a way that we get
+
+0:17:42.320,0:17:45.840
+our ten copies of the triangle, for example.
+
+0:17:46.720,0:17:48.160
+But we don't have that, right?
+
+0:17:48.160,0:17:53.040
+That's something that I said from the
+start, that we don't think in terms of
+
+0:17:53.040,0:17:59.360
+such control constructs, where we express
+what to do, or express a repeated effect.
+
+0:17:59.360,0:18:01.040
+That wouldn't be expression-style.
+
+0:18:01.040,0:18:05.280
+It is not something that is available
+in that way in a functional language.
+
+0:18:05.280,0:18:06.080
+We don't have this.
+
+0:18:06.720,0:18:09.040
+Well, then probably we should have something else.
+
+0:18:10.720,0:18:12.880
+We want to be able to express this, of course.
+
+0:18:12.880,0:18:13.840
+So, what do we have instead?
+
+0:18:16.880,0:18:21.280
+What we have, are the so-called
+"list comprehensions", which
+
+0:18:21.280,0:18:24.960
+are our first kind of "rich
+expressions" to consider.
+
+0:18:25.840,0:18:27.680
+And you see an example here.
+
+0:18:27.680,0:18:32.080
+You may also already have seen such
+comprehensions in other programming languages,
+
+0:18:32.720,0:18:35.440
+but they originated in functional programming.
+
+0:18:36.320,0:18:37.440
+So, what do we have here?
+
+0:18:37.440,0:18:40.640
+We have our old scene-function in a sense.
+
+0:18:40.640,0:18:41.840
+So, it's the same thing.
+
+0:18:41.840,0:18:47.040
+I just rename the parameter from t to d,
+because now it is not anymore about time,
+
+0:18:47.040,0:18:51.040
+but maybe about distance (so, where
+I want to place my triangles).
+
+0:18:51.760,0:18:56.400
+So, this is unchanged from before, because
+I still want to call this function.
+
+0:18:57.040,0:18:59.360
+But then I use it differently.
+
+0:18:59.360,0:19:01.680
+Rather than passing it to an animationOf-call,
+
+0:19:01.680,0:19:06.880
+I instead pass it to a drawingOf-call,
+but actually I pass several copies.
+
+0:19:06.880,0:19:08.560
+And I do this in a list.
+
+0:19:08.560,0:19:12.640
+So, the square brackets here are for list syntax.
+
+0:19:12.640,0:19:16.880
+And in particular, I combined two things
+here: I have some function "pictures".
+
+0:19:16.880,0:19:18.960
+It's given down here with its type.
+
+0:19:18.960,0:19:20.000
+So, what does it say?
+
+0:19:20.000,0:19:22.400
+It gives a picture and it
+takes a list of pictures.
+
+0:19:22.400,0:19:25.440
+You might think it is a set of
+pictures, but it is actually a list.
+
+0:19:26.480,0:19:29.600
+So, several pictures are turned into one picture.
+
+0:19:29.600,0:19:31.840
+You could think of the pictures-function
+
+0:19:33.200,0:19:39.600
+as a version of the &-operator, but now it
+can work on arbitrarily many pictures at once.
+
+0:19:39.600,0:19:45.920
+Whereas the &-operator was a binary operator,
+which basically combines two pictures.
+
+0:19:48.160,0:19:52.000
+Here we have several pictures
+that we combine into one.
+
+0:19:52.000,0:19:54.391
+And what are our pictures that
+we want to combine into one?
+
+0:19:54.391,0:19:57.440
+They are this expression here, which is
+repeated here, a "list comprehension".
+
+0:19:57.440,0:20:02.960
+Because it comprehensively describes several
+elements of the list at a time.
+
+0:20:02.960,0:20:04.500
+And how does it do that?
+
+0:20:04.500,0:20:07.410
+Well, it contains calls of the scene-function
+for some values.
+
+0:20:07.410,0:20:12.460
+And these values are drawn from some other
+list.
+
+0:20:12.460,0:20:16.470
+What it is saying, in a sense, precisely is:
+
+0:20:16.470,0:20:27.479
+Let the d variable be taken from 0, 1, 2,
+3, 4, 5, so six calls (basically six copies);
+
+0:20:27.479,0:20:34.170
+and for each of these values, call the scene-function,
+which will give one version of this moved
+
+0:20:34.170,0:20:40.830
+triangle; put them all into a list; pass that
+list of six pictures to the pictures-function,
+
+0:20:40.830,0:20:43.300
+which will turn them into one picture.
+
+0:20:43.300,0:20:44.450
+And that's the picture that we draw.
+
+0:20:44.450,0:20:52.970
+So, from this piece of code you should expect
+six triangles at different places throughout
+
+0:20:52.970,0:20:56.410
+the space of our coordinate system.
+
+0:20:56.410,0:21:01.210
+So, in some sense, of course this reminds
+us of a for-loop.
+
+0:21:01.210,0:21:03.870
+You could say this is a for-loop, but it really
+isn't.
+
+0:21:03.870,0:21:05.109
+And that's important for several reasons.
+
+0:21:05.109,0:21:07.190
+This is not a for-loop.
+
+0:21:07.190,0:21:09.810
+For example, there really is not "one after
+another".
+
+0:21:09.810,0:21:18.400
+So, it is not like: first, draw this; then,
+draw this; somehow put them into an order.
+
+0:21:18.400,0:21:23.179
+What comes out here is a list of values, and
+these are completely independent.
+
+0:21:23.179,0:21:26.840
+None of them is computed before or after the
+other, mathematically.
+
+0:21:26.840,0:21:31.510
+Of course, on our sequential computer, they
+will be evaluated in some order, but this
+
+0:21:31.510,0:21:33.309
+is completely irrelevant for the values.
+
+0:21:33.309,0:21:37.410
+Mathematically, it is just a list of, in this
+case, six values.
+
+0:21:37.410,0:21:41.669
+And there is not a before- or after-notion,
+which is, of course, the crucial notion for
+
+0:21:41.669,0:21:42.669
+a for-loop.
+
+0:21:42.669,0:21:45.059
+For a for-loop, you want to know whether it
+will work backwards or forwards.
+
+0:21:45.059,0:21:46.730
+So, does it count up or down?
+
+0:21:46.730,0:21:51.730
+These all are things that are important for
+a for-loop or any kind of loop in an imperative
+
+0:21:51.730,0:21:53.839
+language, but not for list comprehensions.
+
+0:21:53.839,0:21:56.690
+So, these are independent computations.
+
+0:21:56.690,0:22:02.169
+There is also no effect, where somehow one
+iteration influences the next one.
+
+0:22:02.169,0:22:09.810
+So, the scene-call for the value, let's say
+d = 1, cannot have any effect on the "scene"-call
+
+0:22:09.810,0:22:15.880
+for the value d = 4, no matter whether 4 occurs
+after or before 1 in this list.
+
+0:22:15.880,0:22:20.870
+So, these are independent computations, whereas
+in a for-loop, of course, you do expect (for
+
+0:22:20.870,0:22:26.050
+example, via global variables or local variables
+that you assign values to) that the order
+
+0:22:26.050,0:22:31.529
+in which things happen in the loop is important,
+and that the second run through the loop body
+
+0:22:31.529,0:22:36.860
+could really have an impact on what happens
+in the fifth or sixth or whatever iteration.
+
+0:22:36.860,0:22:42.859
+That's not something that happens here, because
+this is really like a mathematical set comprehension.
+
+0:22:42.859,0:22:47.490
+This notation that you know from mathematics:
+Let me take the set of all "2 * n", where
+
+0:22:47.490,0:22:50.070
+n comes from the natural numbers.
+
+0:22:50.070,0:22:53.760
+This is what you should think of when you
+think about a list comprehension.
+
+0:22:53.760,0:22:58.500
+It is also very close in syntax, and that's
+by design.
+
+0:22:58.500,0:23:01.609
+So, you could think of this as the "element
+symbol".
+
+0:23:01.609,0:23:03.890
+So, d is an element of this list.
+
+0:23:03.890,0:23:09.600
+And for each such element, I compute whatever
+is written here.
+
+0:23:09.600,0:23:11.130
+Then I get different pictures.
+
+0:23:11.130,0:23:16.070
+I put them into a list, just as here they
+are put into a set.
+
+0:23:16.070,0:23:19.880
+And that list, like here this set, is then
+what I pass on.
+
+0:23:19.880,0:23:24.499
+In this case, it is what is passed to the pictures-function,
+in order to combine my different pictures
+
+0:23:24.499,0:23:27.490
+into one big one, which is then drawn.
+
+0:23:27.490,0:23:32.760
+This is the way to think about a list comprehension,
+not like a for-loop (where one thing happens
+
+0:23:32.760,0:23:39.499
+after another).
+
+0:23:39.499,0:23:43.620
+To further explain list comprehensions: a
+few artificial examples.
+
+0:23:43.620,0:23:47.409
+Not about pictures, just numbers, pairs of
+numbers, etc.
+
+0:23:47.409,0:23:55.499
+Though, to start: something already shown
+on the previous slide was a notation for simply
+
+0:23:55.499,0:23:56.790
+having a list of values.
+
+0:23:56.790,0:23:58.320
+There was this "0..5".
+
+0:23:58.320,0:24:02.070
+It was "all the numbers from 0 to 5".
+
+0:24:02.070,0:24:04.710
+Actually, this also comes in richer forms.
+
+0:24:04.710,0:24:12.810
+For example, one could get odd numbers by
+starting with 1,3.. and then an upper bound.
+
+0:24:12.810,0:24:17.050
+Then it would give all the odd numbers up
+to that number.
+
+0:24:17.050,0:24:21.089
+So, in this case, where the last number is
+10 (which is not an odd number), it would
+
+0:24:21.089,0:24:22.089
+stop at 9.
+
+0:24:22.089,0:24:27.140
+And this could be used as one of the lists,
+for example, that you put into a list comprehension
+
+0:24:27.140,0:24:30.770
+(to draw values like d on the previous slide).
+
+0:24:30.770,0:24:35.070
+Generally, these list comprehensions can have
+this form.
+
+0:24:35.070,0:24:39.040
+Here we can see the parts that make up a list
+comprehension.
+
+0:24:39.040,0:24:40.040
+In general, we have:
+
+0:24:40.040,0:24:46.100
+The body, that's the thing that you want to
+compute for any combination of values drawn
+
+0:24:46.100,0:24:48.070
+from the later parts.
+
+0:24:48.070,0:24:51.440
+So, that's what ends up in the final set.
+
+0:24:51.440,0:24:58.070
+Usually, this will contain some variable or
+variables, which are bound in this later part
+
+0:24:58.070,0:24:59.869
+of the list comprehension.
+
+0:24:59.869,0:25:01.920
+And here we have generators.
+
+0:25:01.920,0:25:08.310
+Something like "x from this 1..10" would be
+a generator, because it generates new elements
+
+0:25:08.310,0:25:10.290
+for which you compute the body.
+
+0:25:10.290,0:25:12.160
+And then, there also can be guards.
+
+0:25:12.160,0:25:13.589
+Some predicate, some condition.
+
+0:25:13.589,0:25:15.190
+Basically, a Boolean value.
+
+0:25:15.190,0:25:21.420
+You have not seen this yet, but there is a
+function "even" in Haskell, which takes a number
+
+0:25:21.420,0:25:25.730
+and gives "true" if that number is even;
+otherwise it gives "false".
+
+0:25:25.730,0:25:31.869
+So, what we are saying here is: For each x
+from 1 to 10, check whether that number is
+
+0:25:31.869,0:25:32.869
+even.
+
+0:25:32.869,0:25:35.489
+That will be true for 2, 4, 6, 8, 10.
+
+0:25:35.489,0:25:42.310
+And then for any number drawn from this generator
+which also passes this guard expression, the
+
+0:25:42.310,0:25:43.350
+body will be computed.
+
+0:25:43.350,0:25:45.830
+And the results will be accumulated in the
+list.
+
+0:25:45.830,0:25:50.799
+So, this will be square numbers of all the
+even numbers between 1 and 10.
+
+0:25:50.799,0:25:55.160
+So: 2^2, 4^2, 6^2, 8^2, and 10^2.
+
+0:25:55.160,0:25:57.660
+It gives these results.
+
+0:25:57.660,0:26:05.700
+Some other syntactic possibility is that inside
+this list of things, like generators and guards,
+
+0:26:05.700,0:26:08.570
+we can also define local variables.
+
+0:26:08.570,0:26:13.790
+So let's say that we want to do something
+that results in the same list, but in a different
+
+0:26:13.790,0:26:14.950
+way.
+
+0:26:14.950,0:26:15.950
+What we do here is:
+
+0:26:15.950,0:26:23.929
+Let x be anything from 1 to 10 (so this will
+choose 1 to 10, one after the other, for x).
+
+0:26:23.929,0:26:28.080
+Then, for each such x, we compute some auxiliary
+value.
+
+0:26:28.080,0:26:34.700
+So, we compute y from the x that we have drawn
+here, and then we give the guard expression
+
+0:26:34.700,0:26:35.700
+on the y.
+
+0:26:35.700,0:26:40.589
+So, what this is doing is that it takes all
+the numbers from 1 to 10, computes the squares,
+
+0:26:40.589,0:26:43.630
+and checks whether the squares are divisible
+by 4.
+
+0:26:43.630,0:26:47.440
+Which, of course, ends up with the same result
+as here.
+
+0:26:47.440,0:26:52.260
+Because this will be exactly the squares of
+even numbers, because of course, the square
+
+0:26:52.260,0:26:57.210
+is dividable by 4 exactly if the original
+number is even.
+
+0:26:57.210,0:27:00.290
+But it just happens in this case.
+
+0:27:00.290,0:27:05.839
+The point is that we can define local values
+in between, and use them.
+
+0:27:05.839,0:27:10.060
+Another thing to notice in this example is
+this "==".
+
+0:27:10.060,0:27:12.670
+This is the equality operator.
+
+0:27:12.670,0:27:14.239
+And it is really different from this.
+
+0:27:14.239,0:27:21.280
+So, this is defining y to be x^2, and this
+"==" is the operator which checks whether
+
+0:27:21.280,0:27:30.730
+this call computing the modulo of y at division
+by 4 is equal to the value 0.
+
+0:27:30.730,0:27:38.760
+Then we can have cases where we not only have
+several guards, but also have several generators.
+
+0:27:38.760,0:27:40.360
+This happens here.
+
+0:27:40.360,0:27:45.639
+Instead of having just one variable, like
+here, or one generator variable and one computed
+
+0:27:45.639,0:27:51.049
+auxiliary variable, we can actually have two
+variables which are drawn from generators.
+
+0:27:51.049,0:27:57.339
+So, here we are saying: Let's take x from [1,
+2, 3] and also y from [1, 2, 3] and then compute
+
+0:27:57.339,0:28:00.250
+something like the product of x and y.
+
+0:28:00.250,0:28:09.170
+And then what we get are all the products
+of a value from [1, 2, 3] and another value
+
+0:28:09.170,0:28:10.410
+from [1, 2, 3].
+
+0:28:10.410,0:28:18.200
+So, this 1 will be from multiplying 1 * 1,
+and then we get all the other combinations
+
+0:28:18.200,0:28:21.570
+as well.
+
+0:28:21.570,0:28:29.250
+Once you have more than one variable in the
+body of a list comprehension, the question
+
+0:28:29.250,0:28:34.729
+becomes: In which order are the things combined
+into a result list?
+
+0:28:34.729,0:28:40.109
+In the previous example with the multiplication,
+that was not obvious from the result, because
+
+0:28:40.109,0:28:42.380
+we can't see which factors were combined.
+
+0:28:42.380,0:28:45.030
+But, for example, if you consider this example:
+
+0:28:45.030,0:28:50.741
+The x comes from [1, 2, 3] and y from [4,
+5], and we build the pair of the values x
+
+0:28:50.741,0:28:57.099
+and y (maybe as coordinates); then we see
+in the result how things are arranged.
+
+0:28:57.099,0:29:03.289
+You see that first the x from [1, 2, 3] is
+picked as 1, and then this is combined with
+
+0:29:03.289,0:29:06.229
+each possible choice for the y from [4, 5].
+
+0:29:06.229,0:29:07.900
+So, we have (1,4) and (1,5).
+
+0:29:07.900,0:29:13.880
+And then we get all combinations where x has
+chosen the second element of its generator
+
+0:29:13.880,0:29:19.159
+and this is combined with y being 4 and 5
+in these two elements, and so on.
+
+0:29:19.159,0:29:22.410
+So, we get this list of results.
+
+0:29:22.410,0:29:28.240
+This is, of course, the Cartesian product
+of these two lists considered as sets.
+
+0:29:28.240,0:29:36.880
+And the order in which it is output is by
+first making a choice for x, and then all
+
+0:29:36.880,0:29:40.550
+possible choices for y, and then taking the
+next choice for x, etc.
+
+0:29:40.550,0:29:47.550
+This also means that if you change the order
+of such generators, you get the same values,
+
+0:29:47.550,0:29:49.730
+but possibly in a different order.
+
+0:29:49.730,0:29:53.130
+So, take the same body, but switch the order
+of these generators; then the resulting list
+
+0:29:53.130,0:29:56.210
+has a slightly different order.
+
+0:29:56.210,0:30:01.510
+Because now first the y is chosen, and then
+for each valid choice for y, for example for
+
+0:30:01.510,0:30:05.909
+the choice "y is 4", we consider all choices
+for the x.
+
+0:30:05.909,0:30:09.190
+So, we get (1,4), (2,4), (3,4).
+
+0:30:09.190,0:30:15.760
+And if there was another variable here, like
+z, then that should be either known from the
+
+0:30:15.760,0:30:22.110
+context, or somehow from the part of the program
+in which this expression occurs, or the z
+
+0:30:22.110,0:30:26.800
+should be set by another generator here.
+
+0:30:26.800,0:30:33.190
+So, we can't have variables that are not known
+at all, either from the context or from this
+
+0:30:33.190,0:30:36.440
+list of generators.
+
+0:30:36.440,0:30:38.080
+This can also become more interesting.
+
+0:30:38.080,0:30:41.300
+The generators themselves can depend on each
+other.
+
+0:30:41.300,0:30:47.979
+Or more precisely, a later generator list
+can depend on something which is occurring
+
+0:30:47.979,0:30:50.610
+earlier in the list of generators/guards.
+
+0:30:50.610,0:30:57.080
+So, what this is saying, is: I want to have
+all the pairs x and y where x comes from [1,
+
+0:30:57.080,0:31:00.130
+2, 3] and y comes from [1 .. x] (1 to x).
+
+0:31:00.130,0:31:05.150
+So for the choice "x is 1", then for y we
+also have the choice "1", because [1 .. 1]
+
+0:31:05.150,0:31:06.229
+(1 to 1) is just [1].
+
+0:31:06.229,0:31:08.120
+So, we only get (1,1).
+
+0:31:08.120,0:31:12.219
+But for the choice "x is 2" we get that y
+is chosen from 1 to 2.
+
+0:31:12.219,0:31:13.229
+So, we get (2,1) and (2,2).
+
+0:31:13.229,0:31:19.820
+And for "3", we get (3,1), (3,2), (3,3), because
+for a different x we have different choices,
+
+0:31:19.820,0:31:25.070
+because we have different lists in this place.
+
+0:31:25.070,0:31:26.290
+It wouldn't work the other way around.
+
+0:31:26.290,0:31:31.250
+We couldn't mention y here, if y occurs as
+a later generator variable.
+
+0:31:31.250,0:31:38.410
+Of course, you could use y at this place,
+because y is the first generator variable
+
+0:31:38.410,0:31:40.440
+here.
+
+0:31:40.440,0:31:43.300
+And this can become interesting also in different
+ways.
+
+0:31:43.300,0:31:49.260
+For example, you could also decide to actually
+pick x and y at once.
+
+0:31:49.260,0:31:52.039
+For this, we actually have to have a list
+of pairs here.
+
+0:31:52.039,0:31:56.210
+So, you also see here: It doesn't just work
+for numbers (actually, we have seen it before
+
+0:31:56.210,0:31:59.649
+in the context of pictures), but it also works
+for other data types in Haskell.
+
+0:31:59.649,0:32:00.979
+So, let's say we take strings.
+
+0:32:00.979,0:32:05.490
+If you have a list of pairs of strings, then
+we could also have a generator expression
+
+0:32:05.490,0:32:12.580
+which says "let me pick all the (x,y) pairs
+from this list".
+
+0:32:12.580,0:32:17.250
+And then, of course, we wouldn't get a Cartesian
+product as above (where every choice for
+
+0:32:17.250,0:32:19.070
+this is combined with every choice for that).
+
+0:32:19.070,0:32:23.880
+Now here, what we say, is: The first choices
+x and y are this and this.
+
+0:32:23.880,0:32:25.779
+And then we collect their concatenation.
+
+0:32:25.779,0:32:26.779
+That's what this symbol does.
+
+0:32:26.779,0:32:29.330
+So, we concatenate "a" and "b", which gives
+the string "ab".
+
+0:32:29.330,0:32:32.080
+And the next choice is not somehow "a" with
+"c".
+
+0:32:32.080,0:32:38.960
+Instead, the next choice is really: We apply
+this pair pattern and get its ingredients
+
+0:32:38.960,0:32:41.479
+from the next pair of the generator list.
+
+0:32:41.479,0:32:44.779
+So, the next choice would be: x is "c" and
+y is "d".
+
+0:32:44.779,0:32:49.870
+So, the next thing to be computed here would
+be the string "cd", and that's it.
+
+0:32:49.870,0:32:53.979
+No crosswise comparison, because here we bind
+x and y.
+
+0:32:53.979,0:32:57.570
+We choose x and y at once from all these pairs.
+
+0:32:57.570,0:33:00.940
+Whereas here, we had independent choices for
+the x and for the y.
+
+0:33:00.940,0:33:03.260
+That's why we get more results up here.
+
+0:33:03.260,0:33:07.180
+Here, we use this matching against the pair.
+
+0:33:07.180,0:33:17.390
+That's also something that often would be
+written down in mathematical set notation.
+
+0:33:17.390,0:33:24.339
+Taking a step back again, let's ask where
+we are now, concerning expressiveness.
+
+0:33:24.339,0:33:27.289
+Some takeaways from the examples we have seen:
+
+0:33:27.289,0:33:31.860
+We can now via a function express non-constant
+behaviour.
+
+0:33:31.860,0:33:35.720
+So, functions in the mathematical sense.
+
+0:33:35.720,0:33:41.450
+No weird keywords for imperative behaviour,
+no loops, just pure expressions.
+
+0:33:41.450,0:33:47.690
+Such a description, like for our animations,
+defines behaviour as a whole.
+
+0:33:47.690,0:33:49.210
+So, not in a piecemeal fashion.
+
+0:33:49.210,0:33:55.420
+That is not really a concept of "run this
+piece of animation, then that piece, and then
+
+0:33:55.420,0:33:56.420
+something else".
+
+0:33:56.420,0:34:04.409
+That was not something that happens in such
+a description of an animation in terms of
+
+0:34:04.409,0:34:05.450
+mathematical functions.
+
+0:34:05.450,0:34:09.659
+Indeed, there is not even a concept of "this
+piece of animation stops at some point".
+
+0:34:09.659,0:34:14.120
+We didn't say "use this from 0 to 10 seconds"
+or something like that.
+
+0:34:14.120,0:34:20.289
+We said: f(t) is something, namely an expression
+which describes a picture, in which a t might
+
+0:34:20.289,0:34:21.289
+occur.
+
+0:34:21.289,0:34:27.360
+And that then is an ever-running animation.
+
+0:34:27.360,0:34:33.219
+It does this for increasing t however long
+this may be.
+
+0:34:33.219,0:34:37.660
+There is no end point.
+
+0:34:37.660,0:34:42.890
+Of course, this doesn't mean that we don't
+want to express possibly non-continuous behaviour.
+
+0:34:42.890,0:34:48.890
+You might want to run an animation just for
+some time, or switch from some function to
+
+0:34:48.890,0:34:54.130
+another function (from some animation to another
+animation), based on some condition about
+
+0:34:54.130,0:34:57.909
+time (for example, time intervals).
+
+0:34:57.909,0:35:00.580
+But we are not going to do this by resorting
+to sequential commands.
+
+0:35:00.580,0:35:05.650
+We are not going to use imperative keywords,
+or semicolons for composition in a sequential
+
+0:35:05.650,0:35:06.650
+way.
+
+0:35:06.650,0:35:08.479
+Like saying: "this animation and then that
+animation".
+
+0:35:08.479,0:35:15.670
+That would be too big a deviation from the
+mathematical idea of expressing functions.
+
+0:35:15.670,0:35:17.250
+So, we need something else.
+
+0:35:17.250,0:35:20.210
+Unfortunately, list comprehensions are not
+the answer either.
+
+0:35:20.210,0:35:30.250
+We just introduced them in the last examples
+for avoiding duplication of expressions.
+
+0:35:30.250,0:35:34.599
+For example, for expressing this discrete
+distribution.
+
+0:35:34.599,0:35:38.820
+But it's not something that is used to define
+functions.
+
+0:35:38.820,0:35:40.080
+List comprehensions define values.
+
+0:35:40.080,0:35:42.870
+They are list values, but they are values.
+
+0:35:42.870,0:35:49.000
+So, they are not defining, for example, an
+animation which consists of several pieces.
+
+0:35:49.000,0:35:51.159
+So, we need something else.
+
+0:35:51.159,0:35:58.340
+And actually, some keywords which are used
+inside expressions.
+
+0:35:58.340,0:36:01.479
+What we need is some way to express conditionals.
+
+0:36:01.479,0:36:08.460
+And this is done, as in probably almost all
+programming languages that you know, by "if-then"
+
+0:36:08.460,0:36:09.460
+or "if-then-else".
+
+0:36:09.460,0:36:10.780
+Actually here, by "if-then-else".
+
+0:36:10.780,0:36:12.469
+So let's look at an example.
+
+0:36:12.469,0:36:14.800
+The "if", "then", and "else" are, of course,
+keywords.
+
+0:36:14.800,0:36:17.019
+But they are used inside expressions.
+
+0:36:17.019,0:36:19.110
+So let's consider these examples.
+
+0:36:19.110,0:36:23.920
+This example scene is, again, an animation;
+because: from time to something.
+
+0:36:23.920,0:36:25.479
+And what does it say?
+
+0:36:25.479,0:36:29.459
+It makes a check on the time, whether it is
+smaller than 3 or not.
+
+0:36:29.459,0:36:34.349
+And if so, then it computes this expression,
+which depends on the t.
+
+0:36:34.349,0:36:40.390
+And if you look at it a bit, you will see
+that it will basically animate a moving circle
+
+0:36:40.390,0:36:46.930
+which moves somehow diagonally (because x
+and y will always have the same value, namely
+
+0:36:46.930,0:36:48.530
+the current time in seconds).
+
+0:36:48.530,0:36:53.670
+So, this will be a small circle that from the
+origin moves in a diagonal fashion here.
+
+0:36:53.670,0:36:57.349
+But it does so only until t becomes 3.
+
+0:36:57.349,0:37:02.520
+Because when t is 3 plus something, then this
+"if-then-else" will actually mean that the
+
+0:37:02.520,0:37:07.310
+"then" branch is not important and the "else"
+branch will be the relevant one.
+
+0:37:07.310,0:37:08.590
+What do we have there?
+
+0:37:08.590,0:37:09.590
+What is "blank"?
+
+0:37:09.590,0:37:10.590
+This "blank" is a picture.
+
+0:37:10.590,0:37:13.520
+It's a predefined picture which shows nothing.
+
+0:37:13.520,0:37:14.750
+It's an empty picture.
+
+0:37:14.750,0:37:17.740
+Which you might consider to be a stupid picture
+to have.
+
+0:37:17.740,0:37:23.370
+But actually here in this case, that is a
+nice way to express that after three seconds
+
+0:37:23.370,0:37:25.290
+our animation shouldn't show anything anymore.
+
+0:37:25.290,0:37:28.770
+So, it will show the empty picture, namely
+nothing.
+
+0:37:28.770,0:37:36.860
+Now, this notation here (this way of expressing
+things) is similar to and reminds of conditionals
+
+0:37:36.860,0:37:38.650
+in mathematics.
+
+0:37:38.650,0:37:44.590
+These are keywords in Haskell, but they are
+just ways of organizing an expression, actually
+
+0:37:44.590,0:37:47.260
+organizing several cases of expressions.
+
+0:37:47.260,0:37:53.000
+Mathematically, they are functions like f(x)
+is: If x is more than zero (or some other
+
+0:37:53.000,0:37:56.290
+property), then this expression; otherwise
+this expression.
+
+0:37:56.290,0:37:58.250
+And it will always evaluate to one of them.
+
+0:37:58.250,0:38:01.770
+It won't evaluate to both of them, nor to
+one after the other.
+
+0:38:01.770,0:38:04.510
+It's a pure expression depending on the value
+of x.
+
+0:38:04.510,0:38:07.010
+This is what we evaluate, or this.
+
+0:38:07.010,0:38:14.620
+And the same happens up here.
+
+0:38:14.620,0:38:20.580
+We can also compare the situation to other
+languages you know, like C or Java.
+
+0:38:20.580,0:38:27.610
+There you also have an "if" construct and
+an "if-else" construct.
+
+0:38:27.610,0:38:29.780
+So, this is the syntax for C or Java.
+
+0:38:29.780,0:38:33.490
+There are, or course, some syntactical differences
+to what we've just seen.
+
+0:38:33.490,0:38:38.130
+But actually, the more important difference
+is that we even have these two versions: just
+
+0:38:38.130,0:38:39.920
+an "if" or an "if-else".
+
+0:38:39.920,0:38:44.400
+Whereas in an expression language, the form
+without the "else" does not make any sense.
+
+0:38:44.400,0:38:47.750
+So in Haskell we always have, and must have,
+if-then-else.
+
+0:38:47.750,0:38:51.250
+Because we have a condition here, and either
+this condition is true or false.
+
+0:38:51.250,0:38:54.410
+And even if it is false, we must have some
+value.
+
+0:38:54.410,0:38:55.410
+That's different here.
+
+0:38:55.410,0:38:56.410
+Why is it different?
+
+0:38:56.410,0:39:00.740
+Because in C or Java we are writing commands,
+and it's meaningful to say: there is no command.
+
+0:39:00.740,0:39:07.090
+You can say: If something holds, then do all
+these commands, and otherwise don't do anything.
+
+0:39:07.090,0:39:11.640
+That's a reasonable thing to say in a command-based
+language, where you have commands that execute.
+
+0:39:11.640,0:39:14.770
+Then you can say: Well, in some cases I don't
+do anything.
+
+0:39:14.770,0:39:15.770
+That's fine.
+
+0:39:15.770,0:39:21.010
+But in a mathematical/expression-based language,
+you must have some value.
+
+0:39:21.010,0:39:24.050
+Everything must evaluate to some value, and
+you cannot say: under certain conditions,
+
+0:39:24.050,0:39:25.330
+I don't evaluate to anything.
+
+0:39:25.330,0:39:26.590
+You have to have some value.
+
+0:39:26.590,0:39:30.750
+So, you cannot have an "if-then" without the
+"else" branch.
+
+0:39:30.750,0:39:32.110
+Because you have to compute a value.
+
+0:39:32.110,0:39:35.150
+Whereas here, you say you do some things,
+and in some case you don't do anything.
+
+0:39:35.150,0:39:36.150
+That's fine.
+
+0:39:36.150,0:39:39.240
+That is some action.
+
+0:39:39.240,0:39:41.810
+It will be a no-action, but there is no value
+required.
+
+0:39:41.810,0:39:49.960
+So actually, the "if-then-else" in Haskell
+is not really so similar to "if-else", as
+
+0:39:49.960,0:39:52.480
+keywords, in C or Java.
+
+0:39:52.480,0:39:56.860
+It's actually more similar to this conditional
+operator in those languages.
+
+0:39:56.860,0:40:02.100
+Which is also something that in C or Java
+you use on the expression level; not with
+
+0:40:02.100,0:40:05.800
+commands (here, here, and here), but actually
+with expressions.
+
+0:40:05.800,0:40:11.250
+This is something that could occur in an expression
+on the right-hand side of a variable assignment,
+
+0:40:11.250,0:40:17.080
+whereas something like this cannot occur in
+C or Java on the right-hand side of a variable
+
+0:40:17.080,0:40:18.080
+assignment.
+
+0:40:18.080,0:40:20.310
+Because it is about commands, and not about
+expressions.
+
+0:40:20.310,0:40:30.000
+It is also a bit strange that you have two
+ways of expressing conditionals in C and Java.
+
+0:40:30.000,0:40:33.640
+But that's because you have these two levels:
+you have the commands and you have the expressions.
+
+0:40:33.640,0:40:37.040
+And in a language where you have only expressions
+(where everything is expression-based), you
+
+0:40:37.040,0:40:39.620
+have only one of these forms.
+
+0:40:39.620,0:40:47.370
+This also means, for example, that in Haskell
+(with all of this talk about syntactic compositionality
+
+0:40:47.370,0:40:50.840
+I already mentioned) you can name arbitrary
+parts of these expressions.
+
+0:40:50.840,0:40:53.080
+You can name the expression as a whole.
+
+0:40:53.080,0:40:57.020
+You can put an "if-then-else" as an expression
+inside a function call.
+
+0:40:57.020,0:40:58.230
+You can name parts of it.
+
+0:40:58.230,0:41:04.270
+Whereas for example here, you cannot name
+this part of an "if".
+
+0:41:04.270,0:41:09.880
+That's the discussion I had in an earlier
+video about expressions versus commands in
+
+0:41:09.880,0:41:13.480
+terms of naming subparts of a program.
+
+0:41:13.480,0:41:17.760
+Which is easily possible here, but not in
+the command-based setting, which is where
+
+0:41:17.760,0:41:21.910
+the "if" and "if-else" of Java live in.
+
+0:41:21.910,0:41:24.260
+It's a bit different for this, because it's
+expression-based.
+
+0:41:24.260,0:41:29.570
+But well, in Haskell everything is expression-based.
+
+0:41:29.570,0:41:36.630
+For the if-then-else in the earlier example,
+we somehow intuitively want an "if-then" without
+
+0:41:36.630,0:41:37.630
+an "else".
+
+0:41:37.630,0:41:39.780
+Which we cannot have.
+
+0:41:39.780,0:41:43.580
+Then there must be some neutral value in an
+algebraic sense.
+
+0:41:43.580,0:41:49.040
+So, there cannot be no value, but of course,
+there are certain values that correspond to
+
+0:41:49.040,0:41:50.040
+"nothing".
+
+0:41:50.040,0:41:53.260
+Like in the picture case: the "blank" is something
+like "no picture".
+
+0:41:53.260,0:41:54.260
+But it is a picture.
+
+0:41:54.260,0:41:55.450
+It's an empty picture.
+
+0:41:55.450,0:41:56.450
+It's a neutral value.
+
+0:41:56.450,0:41:58.310
+It's not "no value".
+
+0:41:58.310,0:42:00.940
+And the same is true for many types.
+
+0:42:00.940,0:42:03.710
+So let's say we have the same situation in
+a list context.
+
+0:42:03.710,0:42:07.800
+We want to say: If a condition is true, then
+we have some non-empty list, and otherwise
+
+0:42:07.800,0:42:08.890
+there isn't really anything.
+
+0:42:08.890,0:42:11.360
+But there isn't nothing; there is the empty
+list.
+
+0:42:11.360,0:42:16.830
+So, we can use the empty list, because the
+empty list is algebraically a neutral value
+
+0:42:16.830,0:42:18.330
+in the type of lists.
+
+0:42:18.330,0:42:25.390
+That is an observation that will probably
+be useful for at least one of the next exercise
+
+0:42:25.390,0:42:26.840
+tasks.
+
+0:42:26.840,0:42:30.570
+And then there's another thing which I also
+mentioned already on the previous slide, and
+
+0:42:30.570,0:42:33.660
+with which I want to finish this video now.
+
+0:42:33.660,0:42:41.570
+It is this remark that "if-then-else" is an
+expression, so it can be part of a larger
+
+0:42:41.570,0:42:42.570
+expression.
+
+0:42:42.570,0:42:44.850
+You can name its parts, itself, etc.
+
+0:42:44.850,0:42:52.130
+So, what I want to emphasize here is really
+this point of not hesitating, of really freely
+
+0:42:52.130,0:42:55.460
+using "if-then-else" as part of other expressions.
+
+0:42:55.460,0:43:02.350
+I have observed many times in the past that
+students somehow are concerned or hesitant
+
+0:43:02.350,0:43:07.260
+to write something like this, where the "if-then-else"
+is not somehow on the top-level (as you are
+
+0:43:07.260,0:43:12.240
+probably used to from other languages like
+C or Java, where you can't really have this
+
+0:43:12.240,0:43:18.960
+inside some expression; you always have the
+"if-then" as keywords on the outside, on the
+
+0:43:18.960,0:43:19.960
+top-level).
+
+0:43:19.960,0:43:22.610
+But there's no reason for this hesitation
+in an expression-based language.
+
+0:43:22.610,0:43:27.910
+So, you can have something like this: f is
+a function which takes three arguments, and
+
+0:43:27.910,0:43:31.590
+maybe x and y are the first two arguments,
+and the last argument actually depends on
+
+0:43:31.590,0:43:32.590
+some condition.
+
+0:43:32.590,0:43:36.150
+You can write something like "if", "condition"
+(expression), "then" some picture, some other
+
+0:43:36.150,0:43:38.840
+picture (or whatever is the type here).
+
+0:43:38.840,0:43:40.960
+The meaning of this is the same as below.
+
+0:43:40.960,0:43:46.740
+So, it is the same as if you would say: if
+the condition is true, then you want to apply
+
+0:43:46.740,0:43:52.640
+f to x and y and this first expression, otherwise
+you want to apply f to x and y and the last
+
+0:43:52.640,0:43:53.640
+expression.
+
+0:43:53.640,0:43:58.030
+So of course, you can write this and often
+students at this stage do write this code
+
+0:43:58.030,0:43:59.030
+like this.
+
+0:43:59.030,0:44:05.180
+But actually, this code is expressing the
+same, and it's actually nicer because it avoids
+
+0:44:05.180,0:44:06.180
+repetition.
+
+0:44:06.180,0:44:11.650
+It is more explicitly expressing that in any
+case, you will apply f to x and y, and you
+
+0:44:11.650,0:44:15.880
+only still have to decide whether the last
+argument is exp2 or exp3.
+
+0:44:15.880,0:44:21.720
+This is perfectly expressed in the first line,
+and somewhat hidden (and takes more checking)
+
+0:44:21.720,0:44:23.150
+in the last line.
+
+0:44:23.150,0:44:29.190
+So in that sense, in situations like this,
+I would prefer the first line, because it's
+
+0:44:29.190,0:44:31.420
+more clearly expressing what's going on.
+
+0:44:31.420,0:44:37.070
+But for this, you have to accept that "if-then-else"
+is just an expression that can be used as
+
+0:44:37.070,0:44:45.240
+subexpression of whatever: other expressions,
+functions, calls, etc.
+
+0:44:45.240,0:44:48.550
+Okay, I have to correct myself.
+
+0:44:48.550,0:44:53.220
+I actually didn't yet want to close the video.
+
+0:44:53.220,0:44:59.570
+I actually want to make a few more remarks
+on syntax and types, and also syntax of types.
+
+0:44:59.570,0:45:04.580
+So, I actually announced this earlier in the
+video that I have something to say on this,
+
+0:45:04.580,0:45:08.300
+also probably for your next exercise tasks.
+
+0:45:08.300,0:45:12.550
+Let's do this and then finish.
+
+0:45:12.550,0:45:20.760
+Earlier, I showed this and claimed that these
+were the types of some of the primitives you
+
+0:45:20.760,0:45:22.990
+have seen and have been using
+
+0:45:22.990,0:45:27.220
+And I said that this is like mathematical
+notation, like the Cartesian product.
+
+0:45:27.220,0:45:33.740
+For example, for a three-arguments-functions
+like "translated", I said that there is this
+
+0:45:33.740,0:45:38.450
+Cartesian product of twice the real numbers,
+and then the Picture type.
+
+0:45:38.450,0:45:42.300
+And I also said: This is not exactly what
+you see if you look up the definitions of
+
+0:45:42.300,0:45:43.300
+these functions.
+
+0:45:43.300,0:45:49.440
+And indeed, what you instead will see is something
+like that, also when you look into the online
+
+0:45:49.440,0:45:50.440
+documentation.
+
+0:45:50.440,0:45:56.540
+But this is really just, for certain reasons,
+a different way of writing things down.
+
+0:45:56.540,0:45:59.930
+For example, if let's look at the "translated"
+function.
+
+0:45:59.930,0:46:04.220
+It's a function with three arguments and whose
+result is Picture.
+
+0:46:04.220,0:46:10.570
+Then how it's actually written as a type in
+Haskell, is this notation, where even before
+
+0:46:10.570,0:46:13.350
+the first few arguments you also have this
+arrow symbol.
+
+0:46:13.350,0:46:19.930
+So instead of having these three arguments
+somehow denoted by having these two Cartesian
+
+0:46:19.930,0:46:24.200
+products here, and then the function arrow
+to the result, actually the way it's written
+
+0:46:24.200,0:46:29.430
+is: first argument type, arrow, second argument
+type, arrow, third argument type, and then
+
+0:46:29.430,0:46:32.940
+the result type.
+
+0:46:32.940,0:46:36.920
+Other than that, and of course switching from
+this mathematical symbol for the real numbers
+
+0:46:36.920,0:46:40.800
+to the actual type "Double" in Haskell, that's
+equivalent to up here.
+
+0:46:40.800,0:46:43.370
+And all the other types are also likewise
+and similar.
+
+0:46:43.370,0:46:46.800
+Here, inside the list, there is also a different
+thing.
+
+0:46:46.800,0:46:50.500
+So, you really want a list of pairs.
+
+0:46:50.500,0:46:56.911
+It is not a function like here, where you
+say: turn this three-argument-function into
+
+0:46:56.911,0:47:01.650
+a notation like this, where we always have
+the function arrow.
+
+0:47:01.650,0:47:05.770
+This would not make sense here, because this
+is really a set of pairs.
+
+0:47:05.770,0:47:10.240
+And then the notation in Haskell simply is
+not with the cross for the Cartesian product,
+
+0:47:10.240,0:47:13.360
+but actually also at type level you simply
+write pairs.
+
+0:47:13.360,0:47:21.120
+So, this is the type of pairs of Doubles and
+Doubles.
+
+0:47:21.120,0:47:27.930
+Then, in terms of syntax on the expression-
+rather than type-level, I have already earlier
+
+0:47:27.930,0:47:32.250
+(in one of the example videos) commented at
+some length on this difference between the
+
+0:47:32.250,0:47:34.700
+mathematical notation and the function notation.
+
+0:47:34.700,0:47:40.520
+So, this shouldn't be news to you at this point,
+that we write in this form without that many
+
+0:47:40.520,0:47:43.200
+brackets or commas.
+
+0:47:43.200,0:47:45.970
+For nested function application, of course
+we do need brackets sometimes.
+
+0:47:45.970,0:47:52.360
+For example, where an f call occurs as an
+argument in the position of the g call, then
+
+0:47:52.360,0:47:54.590
+we can't avoid these brackets.
+
+0:47:54.590,0:47:56.840
+Because that wouldn't be clear, who calls
+what.
+
+0:47:56.840,0:48:03.110
+But this is how we would then express that
+this together is the second argument of this
+
+0:48:03.110,0:48:04.110
+g call.
+
+0:48:04.110,0:48:11.300
+We have also seen something like this already
+in more complex expressions with "rotated"
+
+0:48:11.300,0:48:12.300
+and "colored" and whatever.
+
+0:48:12.300,0:48:18.320
+The same syntax as this one in particular,
+where function application is with spaces
+
+0:48:18.320,0:48:21.830
+and without commas, is what is used at function
+definition sites.
+
+0:48:21.830,0:48:27.770
+Again, you have seen this at least for "scene
+t = something" (scene of t is something).
+
+0:48:27.770,0:48:31.200
+And it also applies if we have functions with
+more than one argument.
+
+0:48:31.200,0:48:37.000
+So, something which in Java or C would look
+like so: We declare that f is a function which
+
+0:48:37.000,0:48:41.770
+takes an integer and a character and returns
+a float.
+
+0:48:41.770,0:48:47.960
+This would in Haskell turn into this more
+mathematical way of writing down the types.
+
+0:48:47.960,0:48:52.790
+So, integer and character are the two argument
+types, and float is the return type.
+
+0:48:52.790,0:48:57.490
+There are of course syntax differences like
+that these types are written in uppercase.
+
+0:48:57.490,0:49:03.180
+But that of course is just how the language
+works on the lexical level.
+
+0:49:03.180,0:49:08.200
+And then, naming the function: where here
+the function is named in the type, and in
+
+0:49:08.200,0:49:09.790
+the definition it's named again.
+
+0:49:09.790,0:49:16.390
+We have f of "a" and "b" not in brackets and
+commas, etc., but simply "f a b =" and then
+
+0:49:16.390,0:49:19.320
+we have the body of the function definition.
+
+0:49:19.320,0:49:24.660
+Of course, there are differences as well,
+like that in the Java code here we would have
+
+0:49:24.660,0:49:30.660
+commands and we might not even have a return
+from this call, because a function in Java
+
+0:49:30.660,0:49:31.810
+need not return something.
+
+0:49:31.810,0:49:36.060
+Well, here it would return a float, but you
+could have "void", for example.
+
+0:49:36.060,0:49:37.460
+And then maybe the function doesn't return
+anything.
+
+0:49:37.460,0:49:39.290
+So, it is not really a mathematical function.
+
+0:49:39.290,0:49:42.510
+In contrast, in Haskell, of course, there
+has to be some expression here.
+
+0:49:42.510,0:49:49.080
+So, there must always come a float out of a
+call of f on a and b (on some values, some
+
+0:49:49.080,0:49:50.080
+arguments).
+
+0:49:50.080,0:49:55.890
+And also there are differences like the semantics
+of these local variables.
+
+0:49:55.890,0:50:00.250
+What they do is different in Haskell from
+these imperative languages.
+
+0:50:00.250,0:50:03.650
+Here you could have assignments, where you
+overwrite a and b.
+
+0:50:03.650,0:50:09.830
+Here a and b are inputs and they can be used
+on the right-hand side, but they cannot be
+
+0:50:09.830,0:50:10.830
+changed.
+
+0:50:10.830,0:50:17.800
+So, the role of variables is different, which
+you already know from previous examples, of
+
+0:50:17.800,0:50:19.140
+course.
+
+0:50:19.140,0:50:22.590
+Then there is an issue of whitespace and layout
+in Haskell.
+
+0:50:22.590,0:50:28.640
+Haskell is a layout-sensitive language, which
+means that if you group things like local
+
+0:50:28.640,0:50:31.780
+definitions, then the horizontal layout is
+important.
+
+0:50:31.780,0:50:40.670
+The layout in the sense: in which column things
+start.
+
+0:50:40.670,0:50:41.670
+What does this mean?
+
+0:50:41.670,0:50:43.200
+Let's consider "let" and "in".
+
+0:50:43.200,0:50:46.490
+This is another way to organize local definitions.
+
+0:50:46.490,0:50:51.820
+We already saw something like: "f x is something,
+where ..." and then we had some local definitions.
+
+0:50:51.820,0:50:57.240
+Where the things that are locally defined
+are mentioned after the main expression.
+
+0:50:57.240,0:51:00.910
+We can also have it the other way around,
+but then we don't use "where" but rather "let-in".
+
+0:51:00.910,0:51:07.410
+So, what this is saying here is: We want to
+compute the expression f c + f d, and inside
+
+0:51:07.410,0:51:10.570
+there we want to use some things, for example,
+the y and the f.
+
+0:51:10.570,0:51:13.740
+Actually, y is used here, and f is a function
+which will be used here.
+
+0:51:13.740,0:51:17.280
+So, it is not a top-level function which occurs
+somewhere else in the program, but it's local
+
+0:51:17.280,0:51:18.610
+to this expression.
+
+0:51:18.610,0:51:24.900
+And then we say "let something and something
+in" and then we use what we have defined before.
+
+0:51:24.900,0:51:29.710
+Differently than in the "where" case, where
+we have mentioned the local definitions after
+
+0:51:29.710,0:51:31.710
+the expression in which they are used.
+
+0:51:31.710,0:51:33.920
+This is something that you can write down.
+
+0:51:33.920,0:51:38.360
+And it's important that these things start
+in the same column here.
+
+0:51:38.360,0:51:44.780
+So in that sense, the layout (how far you
+indent things) is important.
+
+0:51:44.780,0:51:50.590
+We could also avoid this and write explicit
+grouping.
+
+0:51:50.590,0:51:55.720
+So, this is also valid in Haskell, where I
+don't use layout.
+
+0:51:55.720,0:52:02.830
+I simply say: I want to group these two definitions,
+and then we actually use semicolons and these
+
+0:52:02.830,0:52:03.830
+curly brackets.
+
+0:52:03.830,0:52:05.770
+And this is equivalent.
+
+0:52:05.770,0:52:10.330
+Then we don't have to be careful about the
+layout, because these curly brackets and the
+
+0:52:10.330,0:52:15.060
+semicolon explain what the grouping is.
+
+0:52:15.060,0:52:21.390
+But if you don't use this, then you have to
+be careful of the layout, as in other layout-sensitive
+
+0:52:21.390,0:52:23.720
+languages like Python (which came after).
+
+0:52:23.720,0:52:29.140
+This also means that, for example, these two
+pieces of program are not accepted.
+
+0:52:29.140,0:52:35.420
+They would be rejected or not mean what you
+think they mean, because the layout cannot
+
+0:52:35.420,0:52:37.050
+be used to group things.
+
+0:52:37.050,0:52:43.100
+Which also means that if you write Haskell
+code, then you should prefer an editor in
+
+0:52:43.100,0:52:48.890
+which you can ensure that indenting via spaces
+and via tabs is not mixed.
+
+0:52:48.890,0:52:54.980
+You should usually use spaces instead of tab
+characters, because the compiler cannot, by
+
+0:52:54.980,0:53:02.940
+default, know what indentation level a tab
+symbol corresponds to in your editor.
+
+0:53:02.940,0:53:08.290
+So, things might look okay to you when you
+look in your editor, but actually what a compiler
+
+0:53:08.290,0:53:09.350
+sees is something like that.
+
+0:53:09.350,0:53:17.920
+So, that's a typical trap to fall into, if
+you haven't programmed in a layout-sensitive
+
+0:53:17.920,0:53:21.800
+language before.
+
+0:53:21.800,0:53:28.370
+And now really finally for this video, let
+me conclude by talking again about brackets,
+
+0:53:28.370,0:53:30.930
+basically, and writing expressions.
+
+0:53:30.930,0:53:38.330
+I mentioned already that we use fewer brackets
+than you might expect if you haven't programmed
+
+0:53:38.330,0:53:41.010
+in a language with this kind of syntax rules
+before.
+
+0:53:41.010,0:53:46.350
+So, for example, we don't need to bracket
+the x argument in a call like this, because
+
+0:53:46.350,0:53:50.880
+this expression is just the same and is uniquely
+parsable.
+
+0:53:50.880,0:53:51.910
+So, it's clear what this means.
+
+0:53:51.910,0:53:53.470
+We don't need extra brackets here.
+
+0:53:53.470,0:53:58.610
+And similarly, in calls like this, we don't
+need brackets around these two function calls
+
+0:53:58.610,0:54:02.010
+whose results are added.
+
+0:54:02.010,0:54:07.090
+Because this function application (basically
+this space here) binds tighter than all operators.
+
+0:54:07.090,0:54:12.560
+So, it is not necessary to say that you want
+(f x) and then add this to (g y).
+
+0:54:12.560,0:54:17.040
+Actually, even if you write it like that,
+the parser will consider this as one unit
+
+0:54:17.040,0:54:19.240
+which is added to this other expression.
+
+0:54:19.240,0:54:22.140
+So, this is one thing.
+
+0:54:22.140,0:54:28.200
+And we have already mentioned that Autotool
+will also warn you about redundant brackets
+
+0:54:28.200,0:54:30.800
+and encourage you to remove them.
+
+0:54:30.800,0:54:36.280
+Then there is another thing that students
+sometimes do if they have read Haskell example
+
+0:54:36.280,0:54:39.430
+code at other places or on the internet.
+
+0:54:39.430,0:54:43.980
+So, there is this possibility to save even
+more brackets by using the dollar-operator.
+
+0:54:43.980,0:54:51.400
+Which would allow, for example, to avoid all
+brackets in this expression by writing something
+
+0:54:51.400,0:54:52.560
+like that.
+
+0:54:52.560,0:54:57.950
+But I have to say I don't like the dollar-operator,
+in particular in beginners' code, because
+
+0:54:57.950,0:55:03.570
+it gets easily misused, or used in a way that
+doesn't really improve readability.
+
+0:55:03.570,0:55:09.540
+So actually, again, Autotool will discourage
+or even forbid the use of the dollar-operator.
+
+0:55:09.540,0:55:14.040
+But I wanted to mention it at least, because
+I know that some students read about it in
+
+0:55:14.040,0:55:19.610
+other places and then maybe are wondering
+why they cannot use it in their exercise submissions.
+
+0:55:19.610,0:55:25.620
+That's basically because I am the dictator
+here, and I prefer not to let you use this
+
+0:55:25.620,0:55:26.920
+too early, at least.
+
+0:55:26.920,0:55:30.780
+For more advanced Haskell programmers, this
+can be an important function to use in structuring
+
+0:55:30.780,0:55:36.160
+their code, but not for you, I would say at
+this point.
+
+0:55:36.160,0:55:43.360
+And as mentioned, sometimes Autotool gives
+warnings about things like redundant brackets
+
+0:55:43.360,0:55:45.910
+or even overuse of this dollar-symbol.
+
+0:55:45.910,0:55:49.680
+And sometimes these are not just warnings,
+but they are really enforced.
+
+0:55:49.680,0:55:52.430
+So, you will always have to read the feedback.
+
+0:55:52.430,0:55:56.940
+And if the feedback is red, then you know
+that you really have to change something,
+
+0:55:56.940,0:55:58.860
+because you're not yet meeting the criteria.
+
+0:55:58.860,0:56:05.020
+Be it correctness, or be it style criteria
+like the ones mentioned here and others later
+
+0:56:05.020,0:56:05.520
+on.

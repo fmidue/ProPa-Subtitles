@@ -1,0 +1,168 @@
+0:00:02.800,0:00:06.700
+Lassen Sie mich auch kurz dieses Beispiel aus
+den Folien in Aktion zeigen.
+
+0:00:06.700,0:00:17.260
+Das war also das Beispiel für die Physik-Animation/Simulation.
+Also das Werfen eines Balls.
+
+0:00:17.260,0:00:23.470
+Und was ich hier erklären oder kurz diskutieren wollte
+war die Frage des Umfangs.
+
+0:00:23.470,0:00:31.460
+Also, der Punkt, dass hier die x und y verwenden können
+das t ohne ein explizites irgendwie Funktion
+
+0:00:31.460,0:00:32.460
+Argument.
+
+0:00:32.460,0:00:33.820
+Warum ist das so?
+
+0:00:33.820,0:00:38.610
+Weil das, was ich sagte... weil sie in der
+lokalen Definition hier sind, richtig?
+
+0:00:38.610,0:00:44.280
+Und dieser Geltungsbereich des t erstreckt sich auch über
+lokale Definitionen.
+
+0:00:44.280,0:00:50.840
+Was hätten wir also tun müssen, wenn wir das irgendwie
+dies als Top-Level-Definition haben wollten?
+
+0:00:50.840,0:00:55.010
+Es würde also nicht direkt funktionieren und es wäre
+überraschend, wenn es funktionieren würde.
+
+0:00:55.010,0:00:57.010
+Warum sollte es?
+
+0:00:57.010,0:01:04.489
+Wenn wir sie also einfach auf der obersten Ebene
+hätten, dann würde das nicht funktionieren.
+
+0:01:04.489,0:01:06.110
+Und Sie sehen es schon hier. Warum ist das so?
+
+0:01:06.110,0:01:11.960
+Wir bekommen alle diese Pfeile, wo irgendwie,
+Haskell ist nicht glücklich darüber, dass es diese Variable
+
+0:01:11.960,0:01:13.020
+nicht im Gültigkeitsbereich ist.
+
+0:01:13.020,0:01:14.020
+Ja.
+
+0:01:14.020,0:01:15.020
+Okay.
+
+0:01:15.020,0:01:17.190
+Und wie könnte ich sie dann in den Gültigkeitsbereich bringen?
+
+0:01:17.190,0:01:22.860
+Nun, da ich sie jetzt aus dem lokalen
+diesem lokalen Bereich, ist das t hier nicht bekannt.
+
+0:01:22.860,0:01:26.030
+Also, dieses t hier ist lokal für diese Funktion.
+
+0:01:26.030,0:01:27.250
+Die andere Funktion kennt es also nicht.
+
+0:01:27.250,0:01:28.870
+Ich könnte es also tatsächlich einführen, oder?
+
+0:01:28.870,0:01:33.570
+Ich könnte sagen: "Nun, ich mache aus x und y
+zu Funktionen machen, die t als Argument nehmen,
+
+0:01:33.570,0:01:35.190
+dann funktioniert das.
+
+0:01:35.190,0:01:38.420
+Aber natürlich sind das jetzt nicht die x und
+y, die hier verwendet werden.
+
+0:01:38.420,0:01:45.220
+Sie verwenden also immer noch die x und y von hier,
+denn auch diese x und y sind jetzt im Geltungsbereich
+
+0:01:45.220,0:01:48.220
+für diese ganze Funktion.
+
+0:01:48.220,0:01:54.170
+Aber diese x und y sind einfach die Namen von
+anderen Funktionen auf der obersten Ebene.
+
+0:01:54.170,0:01:59.850
+Lassen Sie mich diese lokalen Definitionen loswerden
+damit ich sicher sein kann, dass dieses x und dieses y tatsächlich
+
+0:01:59.850,0:02:01.380
+auf diese x und y beziehen.
+
+0:02:01.380,0:02:03.800
+Aber jetzt gibt es natürlich einen weiteren Fehler.
+
+0:02:03.800,0:02:08.319
+Und wenn man es sich genau ansieht, läuft es auf
+ein Typproblem hinaus.
+
+0:02:08.319,0:02:13.790
+Also, x und y werden hier als Zahlen verwendet,
+aber ich habe sie gerade in Funktionen umgewandelt.
+
+0:02:13.790,0:02:22.880
+Was ich also tun könnte, ist
+das t an diese Funktionen weitergeben.
+
+0:02:22.880,0:02:28.490
+Okay, dann würde anscheinend alles kompiliert werden.
+
+0:02:28.490,0:02:31.330
+Zumindest gibt es keine offensichtlichen Fehler,
+die hier angezeigt werden.
+
+0:02:31.330,0:02:36.380
+Und tatsächlich, wenn ich es kompiliere und ausführe, wird
+es funktionieren, hoffe ich.
+
+0:02:36.380,0:02:42.310
+Ja, es funktioniert und es tut dasselbe wie
+vorher, aber natürlich ist es nicht so schön
+
+0:02:42.310,0:02:43.310
+ausgedrückt, richtig?
+
+0:02:43.310,0:02:50.260
+Also, diese lokale Definition verwendet und eigentlich
+das Scoping von lokalen Variablen oder Variablen
+
+0:02:50.260,0:02:54.840
+die in den Bereich der Funktionsdefinition eingeführt wurden...
+dies erstreckt sich auch auf die lokalen Definitionen
+
+0:02:54.840,0:02:55.840
+hier,
+
+0:02:55.840,0:02:58.790
+wie wir es vorher hatten, ist natürlich eine schöne
+Sache zu haben.
+
+0:02:58.790,0:03:04.010
+Einfach, wir können diese Ausdrücke
+hier.
+
+0:03:04.010,0:03:10.760
+Und sie beziehen sich auf dieses t, usw.
+
+0:03:10.760,0:03:14.220
+Wenn wir das also in die Funktion zurückübersetzen
+Funktion, die Sie vorher gesehen haben.
+
+0:03:14.220,0:03:19.060
+Ich muss das jetzt nicht machen, Sie können die
+Originalversion aus dem Moodle-Kurs herunterladen.

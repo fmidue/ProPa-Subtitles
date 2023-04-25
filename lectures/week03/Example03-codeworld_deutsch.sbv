@@ -1,0 +1,319 @@
+0:00:02.469,0:00:04.359
+Lassen Sie uns dieses Beispiel diskutieren.
+
+0:00:04.359,0:00:10.549
+Also, das ist etwas, das in den
+Folien, als Beispiel für die Verwendung einer Funktion
+
+0:00:10.549,0:00:12.490
+um eine Animation auszudrücken.
+
+0:00:12.490,0:00:19.210
+Führen wir also zunächst dieses Beispiel aus und sehen, was
+passiert. Nun, wie vermutet, gibt es dieses
+
+0:00:19.210,0:00:24.419
+Dreieck, das sich nach rechts bewegt, weil
+es diese Änderung von t gibt.
+
+0:00:24.419,0:00:25.749
+Und das geschieht kontinuierlich.
+
+0:00:25.749,0:00:31.619
+Es gibt also keine diskrete Abtastung
+hier, zumindest nicht sichtbar, denn die animationOf
+
+0:00:31.619,0:00:38.090
+Funktion stellt intern irgendwie sicher,
+dass das im Browser gut aussieht.
+
+0:00:38.090,0:00:39.090
+Okay, wie macht sie das?
+
+0:00:39.090,0:00:46.170
+Und das wurde auch erwähnt, im Wesentlichen
+wird die "scene"-Funktion für einen einzelnen Wert aufgerufen
+
+0:00:46.170,0:00:47.170
+Wert.
+
+0:00:47.170,0:00:54.260
+Wir könnten also auch sagen, wir könnten selbst
+die "scene"-Funktion zu verschiedenen Zeitpunkten,
+
+0:00:54.260,0:00:56.170
+Zeitstempeln aufrufen, sozusagen.
+
+0:00:56.170,0:01:07.060
+Und das wird auch später bei List Comprehensions verwendet als
+Beispiel für diskrete, separate Zeichnungen
+
+0:01:07.060,0:01:08.400
+dieses Dreiecks.
+
+0:01:08.400,0:01:13.250
+Hier muss ich diesen drawingOf-Aufruf hinzufügen.
+
+0:01:13.250,0:01:20.340
+Und dann würde das zum Beispiel jetzt irgendwie
+drei Zeitschritte (drei Schnappschüsse) von
+
+0:01:20.340,0:01:29.590
+dieses Dreiecks zeichnen. Also, an den Stellen
+an den Punkten, die ich durch Ändern der
+
+0:01:29.590,0:01:36.110
+Werte hier. Natürlich kann ich auch etwas anderes
+nehmen, zum Beispiel drei, und dann gibt es eine weitere
+
+0:01:36.110,0:01:40.799
+Kopie irgendwo anders.
+
+0:01:40.799,0:01:47.729
+Ich sollte natürlich keinen Tippfehler machen.
+
+0:01:47.729,0:01:49.119
+Und dann würde das funktionieren.
+
+0:01:49.119,0:01:50.119
+So.
+
+0:01:50.119,0:01:55.900
+Wie wir später sehen werden, könnten wir auch... wenn Sie
+mehr als zwei Werte, zwei Bilder, die Sie
+
+0:01:55.900,0:02:00.880
+kombinieren möchten, könnten Sie auch diese Funktion "Bilder" verwenden
+Funktion verwenden, nur um das hier zu veranschaulichen.
+
+0:02:00.880,0:02:09.939
+Und dann kann ich beliebig viele Bilder einfügen.
+In diesem Fall, Aufrufe dieser "scene"-Funktion
+
+0:02:09.939,0:02:14.819
+in diese Liste, und die Ausgabe hier ist dann
+dasselbe sein.
+
+0:02:14.819,0:02:23.290
+Okay, das ist also durch die Kombination vieler
+solcher Aufrufe auf eine Art und Weise, die wir nicht
+
+0:02:23.290,0:02:24.700
+explizit zu kontrollieren.
+
+0:02:24.700,0:02:32.350
+Auch die animationOf-Funktion funktioniert,
+dann sagen wir eigentlich nicht, zu welchen Zeitmarken
+
+0:02:32.350,0:02:33.800
+wir die Funktion sehen wollen.
+
+0:02:33.800,0:02:41.110
+Aber die animationOf-Funktion
+tut dies für uns, indem sie solche Kopien des
+
+0:02:41.110,0:02:45.430
+Dreiecks verwendet und sie über die Zeit anzeigt.
+
+0:02:45.430,0:02:53.780
+Okay, das gibt uns auch einige Mittel
+oder Möglichkeiten, dies zu manipulieren. Für
+
+0:02:53.780,0:02:59.940
+könnten wir zum Beispiel sagen, wir wollen
+das Ganze schneller machen.
+
+0:02:59.940,0:03:00.940
+Ja.
+
+0:03:00.940,0:03:03.350
+Also, sagen wir, wir wollen eine schnellere Szene haben.
+
+0:03:03.350,0:03:11.300
+Und natürlich könnte man sagen, wir machen das, indem
+wir das hier irgendwie ändern, richtig?
+
+0:03:11.300,0:03:16.751
+Oder wir könnten sagen, na ja, wir wollen nicht die
+Definition der "scene"-Funktion ändern, weil
+
+0:03:16.751,0:03:20.349
+vielleicht wird das anderswo verwendet, oder zumindest
+irgendwie eine Sache ist, die wir nicht ändern
+
+0:03:20.349,0:03:24.030
+wollen, weil es eine feste Semantik gibt
+für uns gibt.
+
+0:03:24.030,0:03:29.599
+Aber wir wollen trotzdem irgendwie eine schnellere
+Animation hier oder eine schnellere Version der
+
+0:03:29.599,0:03:30.599
+"scene"-Funktion
+
+0:03:30.599,0:03:32.720
+dieser Animation. Jetzt ist das natürlich nicht definiert.
+
+0:03:32.720,0:03:34.319
+Also, wie kann ich sie definieren?
+
+0:03:34.319,0:03:43.080
+Nun, ich könnte natürlich damit anfangen, ich könnte sagen,
+Nun, lassen Sie es mich genau so definieren wie vorher.
+
+0:03:43.080,0:03:44.610
+Aber ich möchte das hier nicht wirklich kopieren.
+
+0:03:44.610,0:03:51.421
+Also, lassen Sie mich sagen, dass die quickerScene
+Funktion ist genau die gleiche wie die scene
+
+0:03:51.421,0:03:52.540
+Funktion.
+
+0:03:52.540,0:03:56.680
+Das würde funktionieren und würde nichts an dem ändern
+nichts an dem, was wir sehen.
+
+0:03:56.680,0:04:01.409
+Aber lassen Sie mich sagen, dass ich eigentlich wollte, dass die
+quickerScene-Funktion ein zusätzliches
+
+0:04:01.409,0:04:06.080
+Argument, das ausdrückt, um wie viel die Dinge
+schneller sein soll.
+
+0:04:06.080,0:04:07.850
+Lassen Sie mich sagen, dass ich das wollte.
+
+0:04:07.850,0:04:11.690
+Es ist ein weiteres Argument hier.
+
+0:04:11.690,0:04:20.239
+Und was ich hier sagen will, ist, dass ich zum Beispiel
+ich möchte, dass die Szene um einen Faktor
+
+0:04:20.239,0:04:21.829
+von fünf.
+
+0:04:21.829,0:04:26.240
+Okay, darum geht es bei diesem Parameter,
+dieser f-Parameter.
+
+0:04:26.240,0:04:31.180
+Und dann soll es irgendwie eine schnellere Version
+der Szene sein.
+
+0:04:31.180,0:04:35.710
+Natürlich, wenn ich einfach sage, es ist gleich Szene,
+wird das nicht passieren.
+
+0:04:35.710,0:04:40.340
+Lassen Sie mich sagen, was ich möchte, dass der Fall ist
+zu einem bestimmten Zeitpunkt?
+
+0:04:40.340,0:04:47.050
+Nun, wenn ich möchte, dass sich die Szene schneller bewegt,
+dann sollte ich sagen, dass ich eigentlich irgendwie
+
+0:04:47.050,0:04:48.130
+die Zeit zu beschleunigen.
+
+0:04:48.130,0:04:54.370
+Ich kann das tun, indem ich den Faktor multipliziere.
+Ich kann sagen, wenn quickerScene
+
+0:04:54.370,0:04:56.650
+aufgerufen wird mit der Zeit 1,
+
+0:04:56.650,0:05:02.160
+dann will ich eigentlich scene mit der Zeit
+5 aufrufen, was auch passiert, wenn ich hier
+
+0:05:02.160,0:05:04.090
+das Argument 5 gebe.
+
+0:05:04.090,0:05:09.390
+Okay, was habe ich damit erreicht?
+
+0:05:09.390,0:05:15.340
+Ich erhalte die gleiche Animation, aber sie ist schneller
+ohne die Funktion scene zu ändern.
+
+0:05:15.340,0:05:19.139
+Da ich nur eine Funktionskomposition durchführe, definiere ich neue Funktionen.
+
+0:05:19.139,0:05:24.111
+Und in diesem Fall habe ich die quickerScene
+Funktion durch den Aufruf der "scene"-Funktion, aber
+
+0:05:24.111,0:05:26.030
+mit einem anderen Argument.
+
+0:05:26.030,0:05:31.820
+Okay, und es gibt verschiedene Möglichkeiten, dies
+auszudrücken, aber dies ist diejenige, die wahrscheinlich
+
+0:05:31.820,0:05:34.180
+die für Sie im Moment am zugänglichsten ist.
+
+0:05:34.180,0:05:37.020
+Okay, und dann kann ich wirklich Dinge kombinieren.
+
+0:05:37.020,0:05:42.190
+Zum Beispiel kann ich sagen, dass ich eigentlich
+beide Animationen ausführen, ich möchte die Szene
+
+0:05:42.190,0:05:43.900
+und die quickerScene.
+
+0:05:43.900,0:05:45.380
+So,
+
+0:05:45.380,0:05:47.300
+was muss ich tun? Dann habe ich eine neue Funktion definiert?
+
+0:05:47.300,0:05:54.310
+Sagen wir also, ich möchte diese neue Funktion haben,
+welche die Kombination der beiden anderen Funktionen ist.
+
+0:05:54.310,0:05:59.000
+Es wird eine Animation sein, also muss sie von
+Doppelgänger zum Bild.
+
+0:05:59.000,0:06:03.380
+Und was ich hier tun möchte, ist, dass ich
+diese kombinierte Sache.
+
+0:06:03.380,0:06:12.150
+Okay, was soll dann "kombiniert" sein?
+Ich sollte definieren, was es an einem bestimmten Punkt t ist.
+
+0:06:12.150,0:06:13.740
+Und was tue ich dann?
+
+0:06:13.740,0:06:21.139
+Nun, was ich wirklich will, ist, es sollte sein
+die ursprüngliche Szene, kombiniert mit meiner
+
+0:06:21.139,0:06:26.470
+quickerScene, aber natürlich zum gleichen Zeitpunkt
+Zeit.
+
+0:06:26.470,0:06:34.280
+Okay, wenn ich das jetzt ausführe, was sollte ich erwarten
+passieren / zu sehen?
+
+0:06:34.280,0:06:41.539
+Nun, ich sollte eine Kombination aus der
+Originalanimation und der schnelleren, der schnelleren
+
+0:06:41.539,0:06:42.539
+Animation.
+
+0:06:42.539,0:06:46.530
+Lassen Sie mich das tun und überprüfen.
+
+0:06:46.530,0:06:48.159
+Und voilà, das ist genau das, was passiert.

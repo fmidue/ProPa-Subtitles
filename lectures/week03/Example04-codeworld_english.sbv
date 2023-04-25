@@ -1,0 +1,168 @@
+0:00:02.800,0:00:06.700
+Let me also briefly show this example from
+the slides in action.
+
+0:00:06.700,0:00:17.260
+So, this was the physics animation/simulation example.
+So, throwing a ball.
+
+0:00:17.260,0:00:23.470
+And what I wanted to explain or briefly discuss
+here was the scope issue.
+
+0:00:23.470,0:00:31.460
+So, the point that here the x and y can use
+the t without an explicit somehow function
+
+0:00:31.460,0:00:32.460
+argument.
+
+0:00:32.460,0:00:33.820
+Why is that?
+
+0:00:33.820,0:00:38.610
+Because what I said… because they are in
+the local definition here, right?
+
+0:00:38.610,0:00:44.280
+And this scope from the t extends also through
+local definitions.
+
+0:00:44.280,0:00:50.840
+So, what would we have had to do if we somehow
+wanted to have this as a top-level definition?
+
+0:00:50.840,0:00:55.010
+So, it wouldn't directly work and would be
+surprising if it worked.
+
+0:00:55.010,0:00:57.010
+Why should it?
+
+0:00:57.010,0:01:04.489
+So, if we simply had these on the
+top level, then this wouldn’t work.
+
+0:01:04.489,0:01:06.110
+And you see it already here. Why is that?
+
+0:01:06.110,0:01:11.960
+We get all these arrows, where somehow,
+Haskell is not happy that there is this variable
+
+0:01:11.960,0:01:13.020
+not in scope.
+
+0:01:13.020,0:01:14.020
+Yes.
+
+0:01:14.020,0:01:15.020
+Okay.
+
+0:01:15.020,0:01:17.190
+And then how could I bring it in scope?
+
+0:01:17.190,0:01:22.860
+Well, since I have moved this now, out of
+this local scope, the t is not known here.
+
+0:01:22.860,0:01:26.030
+So, this t here is local for this function.
+
+0:01:26.030,0:01:27.250
+So, the other function doesn’t know it.
+
+0:01:27.250,0:01:28.870
+So, I could actually introduce it, right?
+
+0:01:28.870,0:01:33.570
+I could say, well, let me make these x and
+y into functions, which take t as an argument,
+
+0:01:33.570,0:01:35.190
+then this works.
+
+0:01:35.190,0:01:38.420
+But of course, these are now not the x and
+y that are used here.
+
+0:01:38.420,0:01:45.220
+So, they are still using the x and y from here,
+because again, now these x and y are in scope
+
+0:01:45.220,0:01:48.220
+for this whole function.
+
+0:01:48.220,0:01:54.170
+But this x and y, they are simply names of
+some other functions on the top level.
+
+0:01:54.170,0:01:59.850
+Let me actually get rid of these local definitions
+so that I'm sure that this x and this y actually
+
+0:01:59.850,0:02:01.380
+refer to these x and y.
+
+0:02:01.380,0:02:03.800
+But now, of course, there's another error.
+
+0:02:03.800,0:02:08.319
+And if you look at it basically, it boils
+down to a type issue.
+
+0:02:08.319,0:02:13.790
+So, now x and y are used here as numbers,
+but I have just turned them into functions.
+
+0:02:13.790,0:02:22.880
+So, what I could do is to actually
+pass the t along to these functions.
+
+0:02:22.880,0:02:28.490
+Okay, then everything would compile, apparently.
+
+0:02:28.490,0:02:31.330
+At least there are no obvious errors that
+are shown here.
+
+0:02:31.330,0:02:36.380
+And actually, if I compile and run it, it
+Will work, I hope.
+
+0:02:36.380,0:02:42.310
+Yes, it does work and it does the same as
+before, but of course, it's not as nicely
+
+0:02:42.310,0:02:43.310
+expressed, right?
+
+0:02:43.310,0:02:50.260
+So, this local definition use and actually
+the scoping of local variables or variables
+
+0:02:50.260,0:02:54.840
+introduced in the scope of function definition…
+this also extending to the local definitions
+
+0:02:54.840,0:02:55.840
+here,
+
+0:02:55.840,0:02:58.790
+as we had before, is of course, a nice
+thing to have.
+
+0:02:58.790,0:03:04.010
+Simply, we can have these expressions
+here.
+
+0:03:04.010,0:03:10.760
+And they are referring to this t, etc.
+
+0:03:10.760,0:03:14.220
+So, actually translating this back into the
+function that you saw before.
+
+0:03:14.220,0:03:19.060
+I don't have to do this now, you can download
+the original version from the Moodle course.
