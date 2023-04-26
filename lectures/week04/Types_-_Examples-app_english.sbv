@@ -1,0 +1,348 @@
+0:00:01.760,0:00:07.760
+Okay, so let us discuss a
+few types and example values.
+
+0:00:07.760,0:00:15.360
+Maybe not exactly all the cases from the
+last slide but similar ones that combined
+
+0:00:15.360,0:00:21.280
+base types: lists, tuples, in some mixed fashion.
+
+0:00:21.840,0:00:29.920
+Okay, let's start with the
+type of lists of integer lists.
+
+0:00:29.920,0:00:31.600
+Okay, so this is a type.
+
+0:00:32.800,0:00:34.640
+What are some of its values?
+
+0:00:34.640,0:00:39.600
+And I will simply list this and talk through this,
+maybe also some values and some non-values to
+
+0:00:40.640,0:00:42.720
+make clear what is going on here.
+
+0:00:43.280,0:00:47.200
+So, of course, you always have the empty
+list. The empty list is a list of any type,
+
+0:00:47.200,0:00:51.200
+the empty list is both a list of integers,
+but also list of lists of integers.
+
+0:00:53.280,0:00:56.880
+The list which is not the empty
+list but contains the empty list.
+
+0:00:56.880,0:00:59.200
+Yes, this is the kind of list that you get in
+
+0:00:59.200,0:01:03.600
+set theory where you have a singleton
+set, which contains the empty set.
+
+0:01:04.480,0:01:06.800
+Then, the corresponding thing
+in Haskell would be this,
+
+0:01:06.800,0:01:09.840
+the singleton list which contains
+one element, which is the empty list.
+
+0:01:09.840,0:01:12.400
+This is something of the type
+"list of list of integers".
+
+0:01:13.200,0:01:18.080
+It wouldn't be something of type list of integers,
+because then the inner list doesn't make sense.
+
+0:01:18.080,0:01:20.640
+Okay, but this type that's
+written there, it is okay.
+
+0:01:21.200,0:01:24.800
+Of course, these are somewhat
+basic and trivial lists.
+
+0:01:24.800,0:01:27.360
+But let's also look at something like this.
+
+0:01:28.640,0:01:31.520
+This is, of course, also a list of integer lists.
+
+0:01:31.520,0:01:32.320
+Why?
+
+0:01:32.320,0:01:39.840
+Because this is an integer list, this is an integer list and
+together we have a list of integer lists.
+
+0:01:39.840,0:01:41.520
+Okay, and of course, this could go on, right,
+
+0:01:41.520,0:01:45.920
+where both the inner and the outer
+lists could have more values or more lists.
+
+0:01:45.920,0:01:50.080
+And what we can do is replace one of
+the integers by something else, by True
+
+0:01:52.160,0:01:52.960
+or 'a' or whatever, right?
+
+0:01:52.960,0:01:59.520
+This would be wrong because then we would
+violate the homogeneousness of the lists.
+
+0:01:59.520,0:02:04.080
+Of course, it's also not
+possible to have just this.
+
+0:02:04.080,0:02:07.440
+This is a list of integers,
+it is not a list of lists of integers.
+
+0:02:07.440,0:02:09.520
+So, it is not a value of this type.
+
+0:02:09.520,0:02:13.120
+And likewise, of course, something like
+
+0:02:14.160,0:02:18.480
+this is not of correct type because
+it is, again, not homogeneous.
+
+0:02:18.480,0:02:22.160
+We have here an integer, and here a list
+of integers, these are not things
+
+0:02:22.160,0:02:25.600
+that can go together in one outer
+list so this is also not okay.
+
+0:02:27.120,0:02:29.280
+Yes, so these are nested lists.
+
+0:02:29.280,0:02:32.800
+And of course, this can be
+repeated for other types.
+
+0:02:35.440,0:02:41.280
+Okay, let's make an example of tuples and of
+course, you could have pairs, and then on the pairs,
+
+0:02:41.280,0:02:45.440
+for example, we can project on the first and
+second component of corresponding functions.
+
+0:02:45.440,0:02:47.760
+But we don't need to have
+pairs, we can also have triples.
+
+0:02:48.480,0:02:51.280
+So, something like this.
+
+0:02:51.280,0:02:56.640
+And, as mentioned before, tuples
+are always of a fixed length.
+
+0:02:56.640,0:02:58.560
+So, if I have a triple, then it always has to have
+
+0:02:59.120,0:03:02.960
+three components, but they
+might be of different types.
+
+0:03:02.960,0:03:09.200
+But of course, one tuple type, it's
+fixed, what can go in which position?
+
+0:03:09.200,0:03:12.720
+So, for example, for this type, some values would be this
+
+0:03:12.720,0:03:18.480
+where we have an integer here, then we have a
+string, say "abc", then you have a Boolean value.
+
+0:03:19.520,0:03:23.600
+And of course, it could choose this, we could
+change this to another integer, we could
+
+0:03:25.520,0:03:31.360
+put other strings here and we could put False
+here and consider all the combinations, but what
+
+0:03:31.360,0:03:38.160
+we can't do is take, for example, the same three
+components, but give them in a different order.
+
+0:03:38.960,0:03:45.440
+Even though this would be
+the same three components,
+
+0:03:45.440,0:03:49.440
+it's not something of the given type,
+because the order is not respected.
+
+0:03:50.560,0:03:53.440
+The types don't match the position.
+
+0:03:55.520,0:03:58.320
+Okay, and one further example.
+
+0:03:58.320,0:04:00.160
+So, let's mix.
+
+0:04:00.160,0:04:01.600
+For example, lists and pairs.
+
+0:04:01.600,0:04:02.960
+So, let's consider this type.
+
+0:04:02.960,0:04:05.520
+Here we have list type.
+
+0:04:05.520,0:04:10.480
+And what we have in the list
+are pairs of, for example,
+
+0:04:11.200,0:04:17.920
+Bools and integers, let me make these brackets clear,
+this is a round bracket and this is a square bracket.
+
+0:04:18.800,0:04:20.880
+Then what could be some values of that type?
+
+0:04:20.880,0:04:24.240
+So, the empty list, of
+course, it's always possible.
+
+0:04:24.240,0:04:27.840
+So, of course, this means that the
+empty list can have different types.
+
+0:04:27.840,0:04:34.880
+Unsurprisingly, because there's no element
+inside that would predetermine some specific type.
+
+0:04:36.480,0:04:40.320
+And then, of course, the non-empty
+lists now must contain pairs.
+
+0:04:40.320,0:04:42.240
+So, of course, this is not possible, right?
+
+0:04:42.240,0:04:46.960
+We can't have a list of the empty
+list, and a type of lists of pairs.
+
+0:04:46.960,0:04:52.560
+But for example, you could have a singleton
+list, which contains a pair of a true value
+
+0:04:52.560,0:04:59.360
+and the number 4, for example, or we could
+have a list of more than one element, or
+
+0:04:59.360,0:05:09.200
+say the list of the pair of (False,
+5), and (True, 4), and so on.
+
+0:05:09.200,0:05:14.720
+What we can't, of course, do is somehow switch
+some components, yes, this would not be okay.
+
+0:05:16.240,0:05:23.840
+But if it respects the order, then we can get further
+list elements here which are pairs.
+
+0:05:25.600,0:05:29.520
+Okay, and maybe one further example.
+
+0:05:33.280,0:05:42.640
+Let's say lists of pairs of
+integers and lists of Bools.
+
+0:05:44.400,0:05:48.720
+So, let this be our type,
+then what are some values?
+
+0:05:49.280,0:05:51.840
+Well, for example, it can
+of course, the empty list,
+
+0:05:52.560,0:05:56.000
+but also the list which
+contains a pair
+
+0:05:56.560,0:06:02.240
+of an integer number and a list of Bools,
+which could, for example, be the empty list.
+
+0:06:03.200,0:06:04.400
+Yes, this would be okay.
+
+0:06:05.040,0:06:11.120
+Or the list which consists of a pair
+which has 0 as its first component,
+
+0:06:11.120,0:06:16.880
+and then a non-singleton list like
+neither empty nor singleton list,
+
+0:06:16.880,0:06:21.120
+let's say False and True combined in one list.
+
+0:06:25.680,0:06:28.640
+Yes, of course, this didn't
+appear in the examples above.
+
+0:06:28.640,0:06:31.120
+Of course, lists are not sets.
+
+0:06:31.120,0:06:33.120
+So, I could have put False, False there,
+
+0:06:33.120,0:06:36.080
+for example, it would also have been
+okay; or False, False, True, True.
+
+0:06:36.080,0:06:36.960
+So, these are lists.
+
+0:06:38.640,0:06:41.280
+And let me make just one more example here.
+
+0:06:41.280,0:06:47.680
+So, let's say a list which is neither empty nor
+the singleton list, it's a list of two elements.
+
+0:06:47.680,0:06:55.040
+The first element is a pair of a natural number of
+an integer and a list, let's say the empty list.
+
+0:06:55.040,0:07:03.200
+And the second pair is a pair with a number,
+say 2 and a list, which would be a list of Bools.
+
+0:07:03.200,0:07:06.320
+So, it could, for example, be the
+singleton list containing True.
+
+0:07:09.920,0:07:14.240
+Okay, and of course, there are many more
+example values for each of the types above
+
+0:07:14.240,0:07:22.640
+these are just for illustration of
+how these things are mixed and play together.
+
+0:07:24.160,0:07:39.600
+If you want to express more complex
+structures than just plain or flat lists.

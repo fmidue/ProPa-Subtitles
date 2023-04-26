@@ -1,0 +1,549 @@
+0:00:01.280,0:00:03.860
+Okay, eine weitere Diskussion über ein Beispiel.
+
+0:00:03.860,0:00:08.720
+Und eigentlich ist es eines der Beispiele aus
+der letzten Übungswoche.
+
+0:00:08.720,0:00:13.519
+Und natürlich werde ich das jetzt hier nicht in Gänze besprechen
+weil das die Aufgabe der Übungsvideos ist
+
+0:00:13.519,0:00:14.929
+Videos, die auch gemacht werden.
+
+0:00:14.929,0:00:19.570
+Es wird also eine ausführliche Diskussion über das
+Beispielen und Alternativen und so weiter.
+
+0:00:19.570,0:00:24.680
+Aber auf eine Sache wollte ich hinweisen
+auf eine Sache hinweisen, die ich schon hier in der Vorlesung ansprechen wollte, und zwar
+
+0:00:24.680,0:00:30.840
+weil es eigentlich eine Bemerkung war, die ich
+gegen Ende der letzten Vorlesungswoche,
+
+0:00:30.840,0:00:34.230
+und das lässt sich hier sehr schön veranschaulichen.
+
+0:00:34.230,0:00:41.120
+Also, wenn ich mich recht erinnere, gab es diese Bemerkung
+dass man nicht davor zurückschrecken sollte, if-then-else
+
+0:00:41.120,0:00:42.120
+als Unterausdruck zu verwenden.
+
+0:00:42.120,0:00:47.409
+Auf den Folien, ich glaube, es war die letzte
+Folie (nicht ganz, eigentlich) in der letzten Woche, gab es einen Kommentar
+
+0:00:47.409,0:00:59.110
+wie: wenn Sie etwas haben wie, nun ja, eine
+Bedingung und wenn diese Bedingung erfüllt ist,
+
+0:00:59.110,0:01:01.739
+dann wendet man eine Funktion auf etwas an;
+
+0:01:01.739,0:01:06.180
+sonst, sagen wir mal, Ausdruck eins, das war
+eine kompliziertere Version auf der Folie, wie
+
+0:01:06.180,0:01:11.390
+f x y (if exp1 then exp2 else exp3), sagen wir,
+wir haben etwas wie wenn eine Bedingung erfüllt ist,
+
+0:01:11.390,0:01:15.560
+dann etwas, das f auf einen Ausdruck anwendet.
+
+0:01:15.560,0:01:21.829
+Und wenn nicht, dann wenden wir die
+dieselbe Funktion auf einen anderen Ausdruck.
+
+0:01:21.829,0:01:26.840
+Okay, und dann war da noch dieser Befehl in den
+Folien, der eigentlich das Gleiche macht,
+
+0:01:26.840,0:01:28.780
+Ich glaube, es war andersherum geschrieben
+auf der Folie.
+
+0:01:28.780,0:01:29.939
+Aber natürlich ist es eine Gleichung.
+
+0:01:29.939,0:01:30.939
+Es spielt also keine Rolle, in welcher Reihenfolge.
+
+0:01:30.939,0:01:37.560
+Ich mache das - das ist semantisch das Gleiche
+als würde ich sagen: "Lass mich f auf etwas anwenden".
+
+0:01:37.560,0:01:38.560
+Was ist dieses Etwas?
+
+0:01:38.560,0:01:45.320
+Nun, wenn die Bedingung erfüllt ist, dann
+ist es Ausdruck eins, sonst ist es Ausdruck zwei.
+
+0:01:45.320,0:01:52.560
+Und ich habe jedes Mal, wenn ich diese Vorlesung halte, festgestellt,
+dass die Studierenden irgendwie damit zu kämpfen haben.
+
+0:01:52.560,0:01:53.560
+Das ist richtig.
+
+0:01:53.560,0:01:59.420
+Das ist eine gültige Transformation, die man
+die auf Haskell-Code angewendet werden kann, aber sie wird selten gemacht,
+
+0:01:59.420,0:02:00.520
+zumindest am Anfang.
+
+0:02:00.520,0:02:05.950
+Und das hat, denke ich, mit der Natur von
+if-then-else, als ein Ausdruckskonzept
+
+0:02:05.950,0:02:11.510
+in Haskell und ähnlichen Sprachen, im Vergleich zu
+völlig anderen Sprachen wie imperativen
+
+0:02:11.510,0:02:17.680
+Sprachen, in denen if-then-else normalerweise
+als eine Sache der Befehlsebene verstanden wird, wo
+
+0:02:17.680,0:02:22.099
+eine solche Verschachtelung nicht sehr günstig erscheint oder
+gar nicht möglich ist.
+
+0:02:22.099,0:02:27.370
+Okay, nun, es war ein abstrakter Kommentar, und
+nun, wir haben eine Aktion in Ihren Beiträgen durchgeführt.
+
+0:02:27.370,0:02:29.120
+Das ist nicht genau.
+
+0:02:29.120,0:02:34.620
+Ich will nicht einen bestimmten Studenten nennen, aber
+ich musste mir die Einsendungen für die erste Aufgabe
+
+0:02:34.620,0:02:35.980
+dieser Woche ansehen.
+
+0:02:35.980,0:02:40.950
+Und typische Lösungen sahen so aus, natürlich
+mit der ganzen Form, aber es
+
+0:02:40.950,0:02:46.379
+gibt auch Versionen wie hier, die scene-Funktion.
+Ich habe zwei Versionen, weil sie auf zwei
+
+0:02:46.379,0:02:47.440
+verschiedene Arten verwendet werden können.
+
+0:02:47.440,0:02:53.650
+Also, wenn irgendwie der Zeitparameter kleiner ist
+als pi, dann wird etwas gezeichnet, Gras und
+
+0:02:53.650,0:02:56.480
+die gedrehte Sonne, und ansonsten wird nur Gras
+gezeichnet.
+
+0:02:56.480,0:03:01.849
+Es ist hier natürlich so organisiert, dass Sonne und
+Gras tatsächlich Namen erhalten und als
+
+0:03:01.849,0:03:06.049
+wiederverwendbare Konstrukte, anstatt etwas
+kompliziert.
+
+0:03:06.049,0:03:10.409
+Zum Beispiel, dieses farbige grüne Rechteck
+an diesen beiden Stellen, so dass es Gras gibt,
+
+0:03:10.409,0:03:15.500
+Gras statt zweimal dieser Ausdruck;
+ist natürlich schon schön.
+
+0:03:15.500,0:03:19.049
+Aber es gibt noch etwas, das verbessert werden kann
+Hier gibt es noch etwas, das verbessert werden kann, entsprechend dieser Bemerkung von oben,
+
+0:03:19.049,0:03:22.170
+die eine Version ist, wenn man sie ausführt, und
+es ist die Aufgabe wert.
+
+0:03:22.170,0:03:25.610
+Also, da ist nichts Schlechtes dran.
+
+0:03:25.610,0:03:28.510
+Also, das ist in Ordnung.
+
+0:03:28.510,0:03:30.230
+Und hier verschwindet die Sonne.
+
+0:03:30.230,0:03:39.040
+Und einige andere Lösungen unter vielen Versionen
+die man mehr und irgendwie machen kann, nämlich
+
+0:03:39.040,0:03:43.200
+die Sonne an einem bestimmten Ort untergehen zu lassen und dann
+sie dort zu lassen, ist auch schön, im Grunde
+
+0:03:43.200,0:03:44.950
+diese Drehung zu stoppen
+
+0:03:44.950,0:03:51.159
+schon, bevor wir einen Halbkreis gemacht haben
+oder so etwas wie das Anhalten an irgendeinem Punkt über
+
+0:03:51.159,0:03:58.030
+dem Horizont, dann gibt es wieder dieses if-then-else,
+also wenn irgendeine Stoppbedingung noch nicht erfüllt ist,
+
+0:03:58.030,0:04:04.310
+zeichnen wir Gras und die Sonne dreht sich irgendwohin,
+und wenn nicht, dann zeichnen wir auch das Gras und
+
+0:04:04.310,0:04:07.270
+die Sonne dreht sich an einen anderen Ort, nämlich
+zu diesem Haltepunkt, richtig?
+
+0:04:07.270,0:04:09.670
+Und wenn Sie das ausführen, dann erhalten wir ein ähnliches
+Bild.
+
+0:04:09.670,0:04:15.220
+Also, es sieht jetzt-, oder eine ähnliche Animation, die
+jetzt das Drehen anschaut, das sieht genauso aus,
+
+0:04:15.220,0:04:20.260
+und dann hört es hier auf, weil jetzt die Sonne
+nach diesen 95 % des Halbkreises, die Sonne
+
+0:04:20.260,0:04:21.260
+anhält.
+
+0:04:21.260,0:04:26.970
+Okay, und das sind gute Lösungen, aber da ist
+in gewisser Weise etwas Seltsames, oder etwas
+
+0:04:26.970,0:04:27.970
+Unerwünschtes.
+
+0:04:27.970,0:04:31.490
+Es gibt nämlich zwei Fälle, in denen man dieses
+then-else und beide haben etwas gemeinsam, richtig?
+
+0:04:31.490,0:04:35.990
+Sie zeichnen beide entweder Gras und etwas,
+oder nur Gras, oder Gras und etwas,
+
+0:04:35.990,0:04:38.759
+oder Ihr Gras und etwas anderes.
+
+0:04:38.759,0:04:42.340
+Okay, und nun, Duplikation ist der Feind
+der Programmierer.
+
+0:04:42.340,0:04:48.090
+Man könnte also fragen, ob es nicht schöner wäre, wenn
+nicht zu sagen, wenn die Bedingung erfüllt ist, dann zeichnen wir
+
+0:04:48.090,0:04:50.560
+Gras und noch etwas anderes.
+
+0:04:50.560,0:04:53.620
+Andernfalls malen wir Gras und noch etwas
+anderes.
+
+0:04:53.620,0:04:57.060
+Ja, sowohl im "dann"- als auch im "sonst"-Zweig müssen
+wir das Gras zeichnen.
+
+0:04:57.060,0:05:01.509
+Warum also sagen wir das überhaupt innerhalb des then-else
+wenn es ein unveränderter Teil ist?
+
+0:05:01.509,0:05:05.830
+Irgendwie ist das Gras also nicht etwas, das
+zwischen dem "then"- und dem "else"-Zweig unterscheidet,
+
+0:05:05.830,0:05:09.990
+also sollte es nicht notwendig sein, es in den
+Then-Else-Teilen.
+
+0:05:09.990,0:05:12.789
+Okay, und wie können wir das tatsächlich tun?
+
+0:05:12.789,0:05:13.789
+Aber was können wir tun?
+
+0:05:13.789,0:05:16.770
+Nun, das ist genau ein Beispiel für dieses
+Pattern hier, richtig?
+
+0:05:16.770,0:05:18.889
+Also, wenn eine Bedingung erfüllt ist, richtig?
+
+0:05:18.889,0:05:25.630
+Das ist die Bedingung hier, dann machen wir etwas
+mit einem Unterausdruck, sonst machen wir
+
+0:05:25.630,0:05:26.630
+dasselbe
+
+0:05:26.630,0:05:31.110
+aber mit einem anderen Unterausdruck, und dann sagt das
+Rezept hier, nun, lass uns dies ausdrücken,
+
+0:05:31.110,0:05:32.810
+wie wir das Etwas tun.
+
+0:05:32.810,0:05:35.370
+Also, was ist das mit einer Funktion, richtig?
+
+0:05:35.370,0:05:39.610
+Sie beschreibt eine Berechnung, und nur das Argument
+ist konditional.
+
+0:05:39.610,0:05:41.910
+Okay, wie passt das hier rein?
+
+0:05:41.910,0:05:46.360
+Nun, betrachten wir diese Operation, das Gras
+neben etwas anderem, als eine Funktion.
+
+0:05:46.360,0:05:49.750
+Sagen wir, dieses "Gras und ..." ist unsere Funktion
+f.
+
+0:05:49.750,0:05:53.780
+Was wir hier haben, ist wenn eine Bedingung, dann
+"Gras und".
+
+0:05:53.780,0:05:55.970
+Und das ist der sich ändernde Unterausdruck.
+
+0:05:55.970,0:05:58.061
+Andernfalls, wieder "Gras und".
+
+0:05:58.061,0:06:00.620
+Und das ist ein sich ändernder Unterausdruck.
+
+0:06:00.620,0:06:05.319
+Wir hätten also eigentlich sagen sollen, oder
+sagen können, dass die Szene
+
+0:06:05.319,0:06:08.870
+von t ist "Gras und",
+
+0:06:08.870,0:06:14.180
+also werden wir immer Gras zeichnen, nicht nur unter
+bestimmten Bedingungen, und nun, was ist (nach) dem "und"?
+
+0:06:14.180,0:06:15.639
+Was müssen wir auch zeichnen?
+
+0:06:15.639,0:06:22.259
+Nun, wenn t kleiner ist als diese Stoppzeit,
+dann zeichnen wir die eine Art von gedrehter Sonne,
+
+0:06:22.259,0:06:24.729
+und sonst zeichnen wir die andere Art von gedrehter
+Sonne.
+
+0:06:24.729,0:06:30.199
+Wir verschieben also diesen gemeinsamen Teil dieser beiden
+Ausdrücke außerhalb von if-then-else, weil
+
+0:06:30.199,0:06:33.319
+dies nicht von der Bedingung abhängt, es hängt nicht
+einmal vom t ab, richtig?
+
+0:06:33.319,0:06:39.470
+Vorher sah es so aus, als ob das Gras von dieser Bedingung
+irgendwie von dieser Bedingung abhängt, und vielleicht auch
+
+0:06:39.470,0:06:41.560
+vom t ab, aber Gras ist hier eine Konstante.
+
+0:06:41.560,0:06:43.810
+Es hängt also nicht von einem t ab.
+
+0:06:43.810,0:06:47.970
+Okay, so vermeiden wir natürlich etwas Duplikation,
+aber keine große Menge an Duplikation.
+
+0:06:47.970,0:06:52.560
+Aber in anderen Ausdrücken könnte es eine größere
+Refactoring sein oder ein hilfreicheres Refactoring, das
+
+0:06:52.560,0:06:55.840
+eine Menge doppelten Code einspart.
+
+0:06:55.840,0:07:00.819
+Und um noch deutlicher auszudrücken, dass die Szene immer
+Gras enthält, und dann unter bestimmten Bedingungen,
+
+0:07:00.819,0:07:02.030
+verschiedene Versionen der Sonne.
+
+0:07:02.030,0:07:05.259
+Okay, funktioniert das immer noch?
+
+0:07:05.259,0:07:10.760
+Ja, natürlich, denn mathematisch gesehen
+haben wir genau das Gleiche gesagt.
+
+0:07:10.760,0:07:15.800
+Denn was ich hier und auf einer Folie
+letzte Woche gegeben habe, ist wirklich eine mathematische Identität.
+
+0:07:15.800,0:07:17.900
+Ja, es macht absolut Sinn.
+
+0:07:17.900,0:07:20.889
+Das ist also etwas, das uns motiviert, diese
+Auszug.
+
+0:07:20.889,0:07:26.910
+Okay, jetzt können wir uns fragen, ob
+das nur wegen dieses syntaktischen Zufalls
+
+0:07:26.910,0:07:30.580
+dass es genau so aussah wie "Gras und"
+und das haben wir hier gar nicht, richtig?
+
+0:07:30.580,0:07:33.000
+Wie können wir also das Gras aus der scene1
+Funktion entfernen?
+
+0:07:33.000,0:07:40.449
+Ja, ich habe hier gerade zu Szene1 gewechselt, was
+natürlich immer noch funktioniert, und dann könnte die Frage
+
+0:07:40.449,0:07:47.319
+sein, was jetzt, also ich kann das
+"Gras und" außerhalb von diesem Ding, weil es
+
+0:07:47.319,0:07:51.800
+nicht sowohl im "dann" als auch im "sonst" vorkommt
+Zweig vorkommt.
+
+0:07:51.800,0:07:57.410
+Aber das tut es nicht, denken wir noch einmal an letzte
+Woche hatten wir dieses schöne Konzept eines neutralen
+
+0:07:57.410,0:08:01.169
+Element, und ich habe darüber gesprochen
+für Listen, aber auch für Bilder, eigentlich
+
+0:08:01.169,0:08:03.330
+Bild war das motivierende Beispiel.
+
+0:08:03.330,0:08:04.330
+Was ist Gras?
+
+0:08:04.330,0:08:10.979
+Wir wollen den Else-Zweig als Gras sehen und
+etwas, und das geht ganz einfach, indem wir sagen,
+
+0:08:10.979,0:08:14.659
+Betrachten wir dieses Gras als "Gras und leer".
+
+0:08:14.659,0:08:20.500
+Ja, das leere Bild ist etwas, das ich immer
+neben mein Gras stellen kann, zum Beispiel.
+
+0:08:20.500,0:08:22.479
+Und die Frage ist natürlich, würde ich das tun
+das machen?
+
+0:08:22.479,0:08:23.479
+Oder?
+
+0:08:23.479,0:08:29.039
+Das sieht jetzt blöd aus, warum habe ich das verkompliziert
+als Verzweigung von Gras zu "Gras und leer"?
+
+0:08:29.039,0:08:33.270
+Nun, für sich genommen wäre das wahrscheinlich tatsächlich
+eine dumme Änderung sein.
+
+0:08:33.270,0:08:40.710
+Aber jetzt habe ich mein Programm tatsächlich umformuliert
+so umformuliert, dass ich diesen Trick
+
+0:08:40.710,0:08:45.820
+wieder anwenden kann, oder dieses Refactoring, weil
+jetzt sehe ich deutlicher, dass eigentlich das Gras
+
+0:08:45.820,0:08:49.690
+etwas ist, was gemeinsam ist und auch dieses
+"Gras und etwas", das diesen beiden Zweigen
+
+0:08:49.690,0:08:57.020
+gemeinsam ist, weil ich das Nichts deutlich gemacht habe,
+die beiden Hauptleerstellen explizit gemacht, aber dann
+
+0:08:57.020,0:09:03.100
+kann ich das wieder herausziehen, ich kann sagen, na ja,
+meine scene1 ist immer Gras.
+
+0:09:03.100,0:09:06.800
+Lassen Sie uns das ausdrücken, indem wir das hier haben.
+
+0:09:06.800,0:09:16.000
+Das ist immer Gras und dann konditioniert auf
+habe ich entweder die Sonne gedreht oder einfach
+
+0:09:16.000,0:09:21.490
+syntaktisch das "Gras und" weggeworfen
+hier, ansonsten habe ich blank, was das auch gut
+
+0:09:21.490,0:09:22.490
+ausdrückt.
+
+0:09:22.490,0:09:27.030
+Wir haben immer das Gras, unter bestimmten Bedingungen
+ich habe etwas Sonne gedreht, unter anderen Bedingungen
+
+0:09:27.030,0:09:31.200
+nach einiger Zeit habe ich nichts, vielleicht nur
+das Gras.
+
+0:09:31.200,0:09:36.730
+Und wieder ist dies konzeptionell ansprechender
+als die ursprüngliche Version, denn ich habe
+
+0:09:36.730,0:09:41.640
+dieses doppelte Auftreten von Gras eliminiert habe
+und ich habe konzeptionell deutlicher gemacht, was
+
+0:09:41.640,0:09:46.029
+tatsächlich von der Zeit abhängig ist, nämlich,
+erkennen, ob
+
+0:09:46.029,0:09:50.330
+ich ein Bild habe, und wenn ich ein Bild von
+das ist-, dass auch klar zu sehen ist, unter welchen
+
+0:09:50.330,0:09:53.290
+Bedingungen ich neben dem Gras nichts habe.
+
+0:09:53.290,0:09:55.480
+Okay, und natürlich würde es trotzdem laufen.
+
+0:09:55.480,0:10:00.260
+Schauen wir uns das mal an.
+
+0:10:00.260,0:10:03.730
+Und es funktioniert immer noch genau so.
+
+0:10:03.730,0:10:08.120
+Okay, wir haben das Programm ein wenig massiert mit
+diesem Hinweis.
+
+0:10:08.120,0:10:15.010
+Vielleicht machen Sie diese Art von Refactoring in Zukunft
+diese Art von Refactoring bereits selbst durchführen.

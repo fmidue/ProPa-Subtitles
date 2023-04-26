@@ -1,0 +1,494 @@
+0:00:02.010,0:00:03.940
+Okay, willkommen zurück.
+
+0:00:03.940,0:00:11.060
+Und lassen Sie mich diese Woche wieder mit ein bisschen
+Programmierung beginnen, und zwar mit
+
+0:00:11.060,0:00:17.539
+einem der Beispiele von letzter Woche arbeiten und
+ein wenig damit herumspielen, um einige Konzepte in Erinnerung zu rufen.
+
+0:00:17.539,0:00:23.930
+Also, wir hatten dieses Beispiel, ich glaube, es war Beispiel
+vier.
+
+0:00:23.930,0:00:27.810
+Und nun, auf den Folien, war dieses
+Bild "Schiefer Wurf".
+
+0:00:27.810,0:00:35.000
+Und dann gab es diese Animation, die im Grunde
+diese mathematische Formel in Haskell übersetzt.
+
+0:00:35.000,0:00:39.690
+Und was ich letzte Woche schon kurz besprochen
+habe, war Scoping.
+
+0:00:39.690,0:00:46.589
+Also, wie Namen für Variablen als Funktionsargumente eingeführt
+Funktionsargumente, zum Beispiel, wie sie
+
+0:00:46.589,0:00:49.639
+verwendet werden können, oder wo sie verwendet werden können, was
+der Geltungsbereich ist.
+
+0:00:49.639,0:00:56.050
+Also zum Beispiel, dieses t hier, das ein Argument ist
+für die scene-Funktion ist, wird hier und hier verwendet.
+
+0:00:56.050,0:01:02.379
+Ja, es muss nicht irgendwie weitergereicht werden
+als Funktionsargument an diese lokalen Definitionen
+
+0:01:02.379,0:01:07.830
+weitergegeben werden, denn sie sind Gegenstand oder Teil
+der scene-Definition sind.
+
+0:01:07.830,0:01:13.010
+Deshalb sind sie auch keine globalen Definitionen,
+globale Funktionen, die würden nur
+
+0:01:13.010,0:01:15.520
+hier nur auf einer obersten Ebene leben würden, dann hätten sie keinen
+Zugriff auf t haben.
+
+0:01:15.520,0:01:20.250
+Also, das war eine Sache, dass dieser Bereich von
+dieses t über die gesamte rechte Seite
+
+0:01:20.250,0:01:21.350
+der Funktionsdefinition erstreckt.
+
+0:01:21.350,0:01:26.480
+Also, natürlich auch innerhalb dieser lokalen Definitionen
+für x und y. Auf der anderen Seite, diese x und
+
+0:01:26.480,0:01:33.980
+y hier verwendet werden, weil dieses "where ... blah,
+blah, blah" ist eine lokale Definition relativ
+
+0:01:33.980,0:01:36.450
+zu diesem Ausdruck auf der rechten Seite hier.
+
+0:01:36.450,0:01:39.330
+Okay, deshalb können diese x und y verwendet werden
+hier verwendet werden.
+
+0:01:39.330,0:01:44.530
+Und diese x und y bedeuten wirklich das, was
+nach diesem "where" kommt. Und ich habe auch besprochen, dass
+
+0:01:44.530,0:01:48.510
+Sie auch das "let" hätten verwenden können, wo Sie
+zuerst sagen würden, "let x equals y equals etc...
+
+0:01:48.510,0:01:53.130
+in", und dann hätten Sie diesen Ausdruck,
+der äquivalent wäre.
+
+0:01:53.130,0:01:56.290
+Okay, dann möchte ich etwas damit
+herumspielen.
+
+0:01:56.290,0:02:00.390
+Und es gibt natürlich einige Dinge, die
+wir tun können, die bereits besprochen wurden
+
+0:02:00.390,0:02:08.200
+auch in den Übungsvideos, zum Beispiel,
+dass es schön ist, ein paar Namen für Teile
+
+0:02:08.200,0:02:09.580
+der Definition einzuführen.
+
+0:02:09.580,0:02:13.639
+So könnte man zum Beispiel in diesem Fall sagen,
+Nun, das ist offensichtlich der Ball, der
+
+0:02:13.639,0:02:14.639
+herum bewegt wird.
+
+0:02:14.639,0:02:18.470
+Vielleicht wollen wir das also explizit machen.
+
+0:02:18.470,0:02:24.799
+Führen Sie also eine Funktion mit genau diesem
+Aufruf.
+
+0:02:24.799,0:02:28.829
+Und natürlich ist dies äquivalent zu dem vorherigen
+Stück Code.
+
+0:02:28.829,0:02:33.319
+Aber wir können auch expliziter sagen, zum Beispiel,
+sagen, was der Typ dieser Funktion ist, und das
+
+0:02:33.319,0:02:39.650
+könnte zumindest als zusätzliche Dokumentation dienen.
+
+0:02:39.650,0:02:43.950
+Und vielleicht ist es auch hilfreich, wenn Sie
+dieses Zitat ein wenig refaktorieren.
+
+0:02:43.950,0:02:47.620
+Okay, was könnten wir hier umgestalten?
+
+0:02:47.620,0:02:53.310
+Nun, zum Beispiel, und das ist etwas, was ich
+letzte Woche nicht gemacht habe, wir sollten vielleicht nicht
+
+0:02:53.310,0:02:57.510
+nur einen Ball mit einer festen Geschwindigkeit haben,
+also diese 3 und 6 irgendwie, natürlich,
+
+0:02:57.510,0:03:05.099
+die Geschwindigkeit kodieren, während diese 9,81
+die Gravitationskonstante kodiert.
+
+0:03:05.099,0:03:11.319
+Okay, sagen wir also, wir wollen parametrisch sein
+dann könnten wir zum Beispiel sagen,
+
+0:03:11.319,0:03:13.400
+Nun, vielleicht sind diese drei und sechs nicht wichtig.
+
+0:03:13.400,0:03:20.269
+Vielleicht ist das Wichtigste hier der Winkel
+in dem sich die Kugel zu bewegen beginnt.
+
+0:03:20.269,0:03:23.670
+Und das hängt tatsächlich von dem Verhältnis zwischen
+diesen beiden Konstanten hier ab.
+
+0:03:23.670,0:03:29.500
+Sagen wir also, wir führen eine Geschwindigkeit ein,
+und anstelle von drei und sechs haben wir dann
+
+0:03:29.500,0:03:31.189
+v und 2 × v.
+
+0:03:31.189,0:03:32.189
+Okay.
+
+0:03:32.189,0:03:36.939
+Und natürlich, wenn v auf 3 gesetzt wird, ist das
+genau das gleiche Bild wie vorher, die gleiche
+
+0:03:36.939,0:03:39.079
+Animation, es hat sich nichts geändert.
+
+0:03:39.079,0:03:46.439
+Aber jetzt könnte man natürlich auch einige
+Andere Konstanten hier und man erhält einen sich schneller bewegenden Ball,
+
+0:03:46.439,0:03:49.019
+aber im gleichen Winkel starten.
+
+0:03:49.019,0:03:50.279
+So.
+
+0:03:50.279,0:03:54.090
+Und wenn wir das haben, können wir noch weiter gehen
+und sagen, nun, lassen Sie uns das parametrisieren. Lassen Sie uns tatsächlich
+
+0:03:54.090,0:03:55.349
+mehrere Kugeln zeichnen.
+
+0:03:55.349,0:03:56.349
+Ja.
+
+0:03:56.349,0:03:57.349
+Wie könnte man das machen?
+
+0:03:57.349,0:04:03.439
+Derzeit wird der Ball als Funktion verwendet,
+um letztlich die Abhängigkeit von der Zeit auszudrücken durch
+
+0:04:03.439,0:04:06.189
+diese x- und y-Koordinaten, die vom Zeitparameter
+dem Zeitparameter t abhängen.
+
+0:04:06.189,0:04:11.370
+Deshalb haben wir diese Animation, in der
+der Ball eine Bewegung macht.
+
+0:04:11.370,0:04:14.829
+Wenn Sie mehrere Bälle haben wollen, dann können Sie
+kann man den gleichen Trick anwenden, den wir letzte
+
+0:04:14.829,0:04:17.519
+Woche schon mit einer List Comprehension gemacht haben.
+In der Übung,
+
+0:04:17.519,0:04:21.450
+haben wir unsere List Comprehension nur mit
+Zahlen gemacht, aber wir haben schon letzte Woche gesehen
+
+0:04:21.450,0:04:23.380
+dass wir eine List Comprehension auch auf Bilder anwenden können.
+
+0:04:23.380,0:04:29.280
+Wir könnten also etwas sagen wie: lass mich direkt
+viele Bälle werfen.
+
+0:04:29.280,0:04:30.320
+Ja.
+
+0:04:30.320,0:04:36.910
+Und irgendwie sind sie aufgebaut oder parametrisiert
+durch die Geschwindigkeit.
+
+0:04:36.910,0:04:41.130
+Sagen wir also, ich möchte etwas machen wie
+fünf Bälle.
+
+0:04:41.130,0:04:47.410
+Also, für v zwischen zwei und sechs, statt
+nur drei, dann muss ich vielleicht
+
+0:04:47.410,0:04:49.500
+dieses v hier loswerden.
+
+0:04:49.500,0:04:52.370
+Und vielleicht klappt es dann.
+
+0:04:52.370,0:04:53.370
+Nein, das tut es nicht.
+
+0:04:53.370,0:04:54.370
+Okay, warum klappt es nicht?
+
+0:04:54.370,0:04:56.470
+Nun, schauen wir mal, was CodeWorld
+uns sagt.
+
+0:04:56.470,0:04:59.550
+Es hat natürlich mit dem Umfang zu tun.
+
+0:04:59.550,0:05:00.550
+Ja, okay.
+
+0:05:00.550,0:05:07.670
+Hmm, ich bin mir nicht sicher, ob
+diese Nachricht uns genau das sagt,
+
+0:05:07.670,0:05:10.020
+aber letztendlich ist es das, was hier passiert
+hier.
+
+0:05:10.020,0:05:13.480
+Wir haben hier nämlich das v verwendet. Aber woher könnte es
+kommen?
+
+0:05:13.480,0:05:15.540
+Man könnte denken, na ja, vielleicht kommt es von
+hierher.
+
+0:05:15.540,0:05:18.960
+Aber das ist nicht wahr, denn der Geltungsbereich von
+dieses v ist diese List Comprehension.
+
+0:05:18.960,0:05:19.960
+Richtig?
+
+0:05:19.960,0:05:24.940
+Also, erstens verwenden wir das v hier nicht
+was irgendwie verdächtig ist, dass wir im Hauptteil des
+
+0:05:24.940,0:05:27.390
+dieser Liste nicht den Parameter v verwenden.
+
+0:05:27.390,0:05:31.640
+Und außerdem gibt es keine Möglichkeit, wie dieser v-Parameter
+irgendwie diese lokalen Definitionen erreichen könnte
+
+0:05:31.640,0:05:36.800
+hier erreichen könnte, denn der Bereich eines solchen Generators
+ist die List Comprehension.
+
+0:05:36.800,0:05:42.330
+Okay, was können wir also tun, um dieses
+v an diesen Ort zu bringen?
+
+0:05:42.330,0:05:45.560
+Nun, wir müssen x und y in Funktionen verwandeln.
+
+0:05:45.560,0:05:48.770
+Sie sind nicht mehr nur Werte, sie sind
+Funktionen, weil sie von v abhängen, was
+
+0:05:48.770,0:05:53.920
+das ist doch ganz natürlich, oder? Für verschiedene Geschwindigkeiten,
+werden wir unterschiedliche x- und y-Koordinaten haben.
+
+0:05:53.920,0:05:55.410
+Dies sind also Funktionen.
+
+0:05:55.410,0:06:02.060
+Wir könnten hier also Parameter einführen, die
+in Funktionen verwandeln, und dann werden diese Pfeile
+
+0:06:02.060,0:06:04.340
+hier unten, verschwinden.
+
+0:06:04.340,0:06:14.290
+Okay, das ist schön, und es ist schön. Und es ist sogar
+schöner, oder zumindest möglich, auch Typsignaturen bereitzustellen.
+
+0:06:14.290,0:06:17.950
+Für solche lokalen Definitionen können wir sagen, na ja,
+x und y sind jetzt in Funktionen umgewandelt worden
+
+0:06:17.950,0:06:19.060
+von Double nach Double.
+
+0:06:19.060,0:06:24.140
+Ja, das ist genau das, was hier passiert,
+wir erhalten den Double, der von hier kommt,
+
+0:06:24.140,0:06:27.760
+dann berechnen wir einen neuen Double, der die
+x-Koordinate sein soll.
+
+0:06:27.760,0:06:32.950
+Aber dann haben wir immer noch nicht irgendwie die
+Verbindung von diesem v nach unten zu den Verwendungsstellen hergestellt.
+
+0:06:32.950,0:06:35.650
+Was müssen wir also tun?
+
+0:06:35.650,0:06:42.970
+Nun, wenn x und y jetzt Funktionen sind, dann können
+wir nicht einfach sagen, dass wir x und y als Werte verwenden.
+
+0:06:42.970,0:06:48.811
+Ja, x ist jetzt eine Funktion: Wenn man die Geschwindigkeit gibt,
+gibt es einen Double-Wert zurück, der als
+
+0:06:48.811,0:06:49.880
+Koordinate verwendet wird.
+
+0:06:49.880,0:06:54.240
+Wir müssen also auch dieses v hier übergeben.
+
+0:06:54.240,0:07:04.650
+Und wenn wir das tun, dann hätte man erwarten können
+dass die Typen zusammenpassen.
+
+0:07:04.650,0:07:10.720
+Warum ist das nicht der Fall?
+
+0:07:10.720,0:07:16.680
+Lassen Sie mich nachsehen.
+
+0:07:16.680,0:07:22.370
+Okay, nun, das war ein weiterer Fehler.
+
+0:07:22.370,0:07:24.730
+Eine weitere Sache, die gefehlt hat.
+
+0:07:24.730,0:07:29.630
+Nun, natürlich kann ich nicht einfach sagen, dass diese
+Liste der Bälle...
+
+0:07:29.630,0:07:32.330
+diese Liste von Bildern ist kombiniert mit dieser
+Klippe.
+
+0:07:32.330,0:07:37.600
+Also, wenn Sie sich tatsächlich an das Beispiel
+von letzter Woche (Beispiel 3 oder
+
+0:07:37.600,0:07:42.280
+so ähnlich), in dem ich etwas Ähnliches gemacht habe,
+als ich die List Comprehension in einem Bild verwendet habe.
+
+0:07:42.280,0:07:48.250
+Ich musste auch sagen, na ja, eigentlich möchte ich
+diese Liste von Bildern in ein Bild verwandeln.
+
+0:07:48.250,0:07:51.000
+Und das ist es, was diese Primitive "pictures" tut.
+
+0:07:51.000,0:07:56.860
+Das war also ein Problem, das alle anderen überlagert hat
+alle anderen überlagerte,
+
+0:07:56.860,0:08:03.330
+aber auch dieser Aspekt, dass x keine Funktion ist
+nicht funktionierte, sodass ich keine Möglichkeit hatte,
+
+0:08:03.330,0:08:06.810
+das v von hier nach dort zu übertragen. Das war auch eine berechtigte
+Anliegen.
+
+0:08:06.810,0:08:09.100
+Und jetzt habe ich sie alle zusammen behoben.
+
+0:08:09.100,0:08:12.540
+Okay, was erhalte ich also, wenn ich das jetzt ausführe?
+
+0:08:12.540,0:08:17.450
+Nun, ich sollte fünf Kugeln erhalten, die im gleichen Winkel starten
+demselben Winkel starten, sich aber mit unterschiedlichen Geschwindigkeiten bewegen
+
+0:08:17.450,0:08:26.370
+denn der Parameter v für die Geschwindigkeit wirkt sich sowohl auf
+die x- und y-Koordinaten auswirkt, und wenn ich das dann tatsächlich
+
+0:08:26.370,0:08:34.870
+dann erhalte ich so etwas wie das hier.
+
+0:08:34.870,0:08:40.930
+Okay, lassen Sie es uns noch einmal sehen.
+
+0:08:40.930,0:08:42.149
+Ja, gut.
+
+0:08:42.149,0:08:48.840
+Und natürlich ist es nicht irgendwie mit
+dieser zusätzlichen Funktion "ball".
+
+0:08:48.840,0:08:52.360
+Natürlich hätte ich das Gleiche auch ohne
+diese Umleitung auf "ball".
+
+0:08:52.360,0:08:56.940
+So könnte ich zum Beispiel jetzt folgendes einfügen
+wieder einfügen, sodass ball x y eigentlich:
+
+0:08:56.940,0:08:58.770
+übersetzt x y Kreis.
+
+0:08:58.770,0:09:00.920
+So muss ich das nicht in einer extra Funktion machen.
+
+0:09:00.920,0:09:03.210
+Das war nur zur Veranschaulichung.
+
+0:09:03.210,0:09:08.779
+Natürlich hätte ich es auch so schreiben
+können.
+
+0:09:08.779,0:09:19.330
+Ich verschiebe das wieder hierher.
+
+0:09:19.330,0:09:27.700
+Und das macht dann genau das Gleiche, denn
+Ich habe gerade meine Definitionen umstrukturiert.
+
+0:09:27.700,0:09:31.350
+Aber vielleicht gefällt mir die vorherige Version besser.
+
+0:09:31.350,0:09:36.840
+Mal sehen, ob ich darauf zurückkommen kann.
+
+0:09:36.840,0:09:37.840
+Ja.
+
+0:09:37.840,0:09:44.540
+Ich vermisse hier unten den Aufruf "translated".
+
+0:09:44.540,0:09:51.630
+So, das ist also die Version, die ich am Ende habe.

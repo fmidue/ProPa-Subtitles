@@ -1,0 +1,494 @@
+0:00:02.010,0:00:03.940
+Okay, welcome back.
+
+0:00:03.940,0:00:11.060
+And let me start this week again by a bit
+of programming, actually working with one
+
+0:00:11.060,0:00:17.539
+of the examples from last week and playing
+around with it a bit to recall some concepts.
+
+0:00:17.539,0:00:23.930
+So, we had this example, I think it was example
+four.
+
+0:00:23.930,0:00:27.810
+And well, on the slides, there was this
+picture “Parabolic throwing” (Physics famous example: projectile motion).
+
+0:00:27.810,0:00:35.000
+And then there was this animation, which basically
+translates that mathematical formula to Haskell.
+
+0:00:35.000,0:00:39.690
+And what I already briefly discussed last
+week on this example was scoping.
+
+0:00:39.690,0:00:46.589
+So, how names introduced for variables as
+function arguments, for example, how they
+
+0:00:46.589,0:00:49.639
+can be used, or where they can be used, what
+the scope is.
+
+0:00:49.639,0:00:56.050
+So for example, this t here, which is an argument
+to the scene function, is used here and here.
+
+0:00:56.050,0:01:02.379
+Yes, it doesn't have to be passed somehow
+forward as a function argument to these local
+
+0:01:02.379,0:01:07.830
+definitions, because they are subject or part
+of the scene definition.
+
+0:01:07.830,0:01:13.010
+That's why they are not global definitions,
+global functions that would only be living
+
+0:01:13.010,0:01:15.520
+on a top level here, then they couldn't have
+got access to t.
+
+0:01:15.520,0:01:20.250
+So, this was one thing that this scope from
+this t extends over the whole right-hand side
+
+0:01:20.250,0:01:21.350
+of the function definition.
+
+0:01:21.350,0:01:26.480
+So, of course, also inside these local definitions
+for x and y. On the other hand, these x and
+
+0:01:26.480,0:01:33.980
+y can be used here because this “where … blah,
+blah, blah” is a local definition relative
+
+0:01:33.980,0:01:36.450
+to this right-hand side expression here.
+
+0:01:36.450,0:01:39.330
+Okay, so that's why these x and y can be used
+here.
+
+0:01:39.330,0:01:44.530
+And these x and y really mean what comes
+after this “where”. And I also discussed that
+
+0:01:44.530,0:01:48.510
+you could also have used the “let”, where you
+would first say, “let x equals y equals etc…
+
+0:01:48.510,0:01:53.130
+in”, and then you would have this expression
+that would be equivalent.
+
+0:01:53.130,0:01:56.290
+Okay, then I want to play around with this
+a bit.
+
+0:01:56.290,0:02:00.390
+And there are some things, of course, that
+we can do, that have already been discussed
+
+0:02:00.390,0:02:08.200
+also in the exercise videos, for example,
+that it's nice to introduce some names for
+
+0:02:08.200,0:02:09.580
+parts of the definition.
+
+0:02:09.580,0:02:13.639
+So, for example, in this case, you could say,
+well, this apparently is the ball that is
+
+0:02:13.639,0:02:14.639
+moved around.
+
+0:02:14.639,0:02:18.470
+So, maybe we want to actually make this explicit.
+
+0:02:18.470,0:02:24.799
+So, introduce a function with exactly this
+call.
+
+0:02:24.799,0:02:28.829
+And of course, this is equivalent to the previous
+piece of code.
+
+0:02:28.829,0:02:33.319
+But we can also more explicitly, for example,
+say what the type of this function is, and that
+
+0:02:33.319,0:02:39.650
+might at least serve as additional documentation.
+
+0:02:39.650,0:02:43.950
+And maybe it's also helpful if you want to
+refactor this quote a bit.
+
+0:02:43.950,0:02:47.620
+Okay, what could we decide to refactor here?
+
+0:02:47.620,0:02:53.310
+Well, for example, and that's something I
+didn't do last week, we might want to not
+
+0:02:53.310,0:02:57.510
+have just one ball with one fixed velocities,
+so these 3 and 6 somehow, of course,
+
+0:02:57.510,0:03:05.099
+encodes the velocity, whereas this 9.81
+encodes the gravity constant.
+
+0:03:05.099,0:03:11.319
+Okay, so let's say we want to be parametric
+over this, then we could, for example, say,
+
+0:03:11.319,0:03:13.400
+well, maybe these three and six are not important.
+
+0:03:13.400,0:03:20.269
+Maybe the important thing here is the angle
+at which the ball starts moving.
+
+0:03:20.269,0:03:23.670
+And that actually depends on the ratio between
+these two constants here.
+
+0:03:23.670,0:03:29.500
+So, maybe, let's say we introduce some velocity,
+and then instead of three and six, you have
+
+0:03:29.500,0:03:31.189
+v and 2 × v.
+
+0:03:31.189,0:03:32.189
+Okay.
+
+0:03:32.189,0:03:36.939
+And of course, for v set to 3, that's
+exactly the same picture as before, the same
+
+0:03:36.939,0:03:39.079
+animation, nothing will have changed.
+
+0:03:39.079,0:03:46.439
+But now, of course, it could also take some
+Other constants here and get a faster moving ball,
+
+0:03:46.439,0:03:49.019
+but starting at the same angle.
+
+0:03:49.019,0:03:50.279
+Okay.
+
+0:03:50.279,0:03:54.090
+And then once we have this, you could go further
+and say, well, let’s parameterize this. Let’s actually
+
+0:03:54.090,0:03:55.349
+draw several balls.
+
+0:03:55.349,0:03:56.349
+Yes.
+
+0:03:56.349,0:03:57.349
+How could you do this?
+
+0:03:57.349,0:04:03.439
+So, currently, the ball is used as a function
+to express ultimately dependence on time via
+
+0:04:03.439,0:04:06.189
+these x and y coordinates, which depend on
+the time parameter t.
+
+0:04:06.189,0:04:11.370
+So, that's why we have this animation where
+the ball is making a movement.
+
+0:04:11.370,0:04:14.829
+If you want to have several balls, then you
+can do the kind of trick that we did last
+
+0:04:14.829,0:04:17.519
+week already with a list comprehension.
+In the exercise,
+
+0:04:17.519,0:04:21.450
+we have done our list comprehension with just
+numbers, but we have already seen last week
+
+0:04:21.450,0:04:23.380
+that we can use a list comprehension on pictures.
+
+0:04:23.380,0:04:29.280
+So, we could say something like: let me actually
+throw many balls.
+
+0:04:29.280,0:04:30.320
+Yes.
+
+0:04:30.320,0:04:36.910
+And somehow they are built or parameterized
+by the velocity.
+
+0:04:36.910,0:04:41.130
+So, let's say I want to do something like
+five balls.
+
+0:04:41.130,0:04:47.410
+So, for v chosen from two to six, instead
+of just a fixed three, then maybe I have to
+
+0:04:47.410,0:04:49.500
+get rid of this v here.
+
+0:04:49.500,0:04:52.370
+And maybe it will work.
+
+0:04:52.370,0:04:53.370
+No, it doesn't.
+
+0:04:53.370,0:04:54.370
+Okay, why doesn't it work?
+
+0:04:54.370,0:04:56.470
+Well, let's see what CodeWorld is telling
+us.
+
+0:04:56.470,0:04:59.550
+It has to do with scope, of course.
+
+0:04:59.550,0:05:00.550
+Yes, okay.
+
+0:05:00.550,0:05:07.670
+Hmm, I'm not sure whether
+this message tells us exactly this,
+
+0:05:07.670,0:05:10.020
+but ultimately, that is what is happening
+here.
+
+0:05:10.020,0:05:13.480
+Namely, we used the v here. But where could it
+come from?
+
+0:05:13.480,0:05:15.540
+One could think, well, maybe it comes from
+here.
+
+0:05:15.540,0:05:18.960
+But that's not true, because the scope of
+this v is this list comprehension.
+
+0:05:18.960,0:05:19.960
+Right?
+
+0:05:19.960,0:05:24.940
+So, first of all, we don't use the v here
+that somehow suspicious that in the body of
+
+0:05:24.940,0:05:27.390
+this list comprehension, we don't use the v parameter.
+
+0:05:27.390,0:05:31.640
+And also, there's no way how this v parameter
+could somehow reach these local definitions
+
+0:05:31.640,0:05:36.800
+here, because the scope of such a generator,
+is the list comprehension.
+
+0:05:36.800,0:05:42.330
+Okay, so what can we do in order to get this
+v down to this place?
+
+0:05:42.330,0:05:45.560
+Well, we must turn x and y into functions.
+
+0:05:45.560,0:05:48.770
+They are not any more just values, they are
+functions because they depend on v, which
+
+0:05:48.770,0:05:53.920
+is very natural, right? For different velocities,
+we will have different x and y coordinates.
+
+0:05:53.920,0:05:55.410
+So, these are functions.
+
+0:05:55.410,0:06:02.060
+So, we could introduce parameters here, turning
+these into functions, and then these arrows
+
+0:06:02.060,0:06:04.340
+down here, disappear.
+
+0:06:04.340,0:06:14.290
+Okay, that's nice, and is it nice. And it is even
+nicer, or possible at least, to also provide types signatures.
+
+0:06:14.290,0:06:17.950
+For such local definitions, we can say, well,
+x and y have now been turned into functions
+
+0:06:17.950,0:06:19.060
+from Double to Double.
+
+0:06:19.060,0:06:24.140
+Yes, it’s exactly what's happening here,
+we get the Double, which comes from here,
+
+0:06:24.140,0:06:27.760
+then we compute a new Double, which is supposed
+to be the x coordinate.
+
+0:06:27.760,0:06:32.950
+But then we still haven't somehow made the
+connection from this v down to the use sites.
+
+0:06:32.950,0:06:35.650
+What do we have to do?
+
+0:06:35.650,0:06:42.970
+Well, if x and y are now functions, then we
+cannot simply say that we use x and y as values.
+
+0:06:42.970,0:06:48.811
+Yes, x is now function: given the velocity,
+it gives back a Double value which is to be
+
+0:06:48.811,0:06:49.880
+used as a coordinate.
+
+0:06:49.880,0:06:54.240
+So, we also need to pass this v here.
+
+0:06:54.240,0:07:04.650
+And if we do this, then one could have expected
+that the types work out.
+
+0:07:04.650,0:07:10.720
+Why is that not a case?
+
+0:07:10.720,0:07:16.680
+Let me check.
+
+0:07:16.680,0:07:22.370
+Okay, well, that was another mistake.
+
+0:07:22.370,0:07:24.730
+Another thing that was missing.
+
+0:07:24.730,0:07:29.630
+Well, of course, I cannot simply say, this
+list of balls…
+
+0:07:29.630,0:07:32.330
+this list of Pictures is combined with this
+cliff.
+
+0:07:32.330,0:07:37.600
+So, if you actually remember the example
+from last week (example 3 or something
+
+0:07:37.600,0:07:42.280
+like that), where I did something like this,
+when I used the list comprehension in a Picture.
+
+0:07:42.280,0:07:48.250
+I also had to say, well, actually, I want
+to turn this list of Pictures into a Picture.
+
+0:07:48.250,0:07:51.000
+And that's what this “pictures” primitive does.
+
+0:07:51.000,0:07:56.860
+So, this was an issue that was overlaying
+all the others,
+
+0:07:56.860,0:08:03.330
+but also this aspect of x not being function
+before, so, I didn't have a way to communicate
+
+0:08:03.330,0:08:06.810
+the v from here to there. It was also a valid
+concern.
+
+0:08:06.810,0:08:09.100
+And now I fixed them all together.
+
+0:08:09.100,0:08:12.540
+Okay, so what will I get if I now run this?
+
+0:08:12.540,0:08:17.450
+Well, I should get five balls that start at
+the same angle, but move at different velocities
+
+0:08:17.450,0:08:26.370
+because this parameter v for velocity impacts both
+the x and y coordinates, and then if I actually
+
+0:08:26.370,0:08:34.870
+do this, I get something like this.
+
+0:08:34.870,0:08:40.930
+Okay, let's see it again.
+
+0:08:40.930,0:08:42.149
+Okay.
+
+0:08:42.149,0:08:48.840
+And well, of course, it is not somehow tied
+to this extra function “ball”.
+
+0:08:48.840,0:08:52.360
+Of course, I could have done the same without
+this indirection to “ball”.
+
+0:08:52.360,0:08:56.940
+So, I could, for example, now inline this
+again, so ball x y is actually:
+
+0:08:56.940,0:08:58.770
+translated x y circle.
+
+0:08:58.770,0:09:00.920
+So, I don't have to do this in an extra function.
+
+0:09:00.920,0:09:03.210
+It was just for illustration.
+
+0:09:03.210,0:09:08.779
+Of course, I could also have written it like
+this.
+
+0:09:08.779,0:09:19.330
+I’ll move this again here.
+
+0:09:19.330,0:09:27.700
+And then this does exactly the same thing, because
+I have just restructured my definitions.
+
+0:09:27.700,0:09:31.350
+But maybe I like the previous version better.
+
+0:09:31.350,0:09:36.840
+Let me see whether I can get back to this.
+
+0:09:36.840,0:09:37.840
+Yes.
+
+0:09:37.840,0:09:44.540
+I'm missing the “translated” call down here.
+
+0:09:44.540,0:09:51.630
+So, then that's the version I end up with.
