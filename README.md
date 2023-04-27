@@ -10,6 +10,6 @@ Suggest changes per pull requests, please.
 | Gotai | 31 |
 | michalitv21 | 19 |
 | MagnolieH | 14 |
+| TMUniversal | 8 |
 | ejude44 | 6 |
-| TMUniversal | 5 |
 | Katashiii | 3 |
