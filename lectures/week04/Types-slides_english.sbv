@@ -13,16 +13,16 @@ argument positions.
 That wasn't actually true.
 
 0:00:23.610,0:00:27.420
-That was slide 47, whereas last week's lectures
-ended with slide 52.
+That was slide 56, whereas last week's lectures
+ended with slide 61.
 
 0:00:27.420,0:00:33.340
 So, there was some other material afterwards,
 namely, talking about syntax.
 
 0:00:33.340,0:00:42.210
-That said, I want to call out another observation
-from the exercises here.
+That said, I want to call out here another observation
+from the exercises.
 
 0:00:42.210,0:00:49.039
 Actually, this is not exactly from this year's
@@ -39,7 +39,7 @@ make here again, even though it's not exactly
 the example that was used in this year's exercises.
 
 0:01:01.660,0:01:04.680
-It's about common subexpressions.
+It's again about well, common subexpressions.
 
 0:01:04.680,0:01:08.571
 So, it appears here in the case of an if-then-else,
@@ -110,7 +110,7 @@ is taken, and it is computed again.
 It's not a very expensive computation.
 
 0:02:19.430,0:02:24.780
-Yes, just computing the sine may not be the
+Yes, just computing the sinus may not be the
 most problematic case, but it would be both
 
 0:02:24.780,0:02:29.769
@@ -142,7 +142,7 @@ and also slightly more efficient.
 
 0:02:58.060,0:03:06.390
 Because we don't compute this very same mathematical
-expression twice.
+expression twice. Okay that's one thing.
 
 0:03:06.390,0:03:10.920
 There is a concern that sometimes comes up
@@ -153,7 +153,7 @@ student originally writing this code didn't
 do this renaming, that well, maybe in the
 
 0:03:17.569,0:03:23.219
-"else" branch we don't need the cosine (the
+"else" branch we don't need the cosinus (the
 x value).
 
 0:03:23.219,0:03:27.180
@@ -164,12 +164,12 @@ then we compute this, and then we have to
 compute this a second time.
 
 0:03:28.920,0:03:31.840
-But if this condition is false, we go to the
+But maybe if this condition is wrong, we go to the
 "else" branch.
 
 0:03:31.840,0:03:34.900
 And maybe in the "else" branch we don't have
-the cosine or the sine.
+the cosinus or the sinus.
 
 0:03:34.900,0:03:36.569
 Maybe the "else" branch is really "blank".
@@ -233,7 +233,7 @@ So, what this is saying is that x, if you
 happen to need it later on, will be evaluated
 
 0:04:37.919,0:04:39.840
-using this expression.
+by this expression.
 
 0:04:39.840,0:04:46.199
 So, it is not computing the x at all yet, just
@@ -243,7 +243,7 @@ declaring: If x is relevant at some point,
 then that's what the value would be.
 
 0:04:48.850,0:04:49.850
-And the same goes for y.
+And the same for y.
 
 0:04:49.850,0:04:52.250
 Then, we check the y, of course.
@@ -355,7 +355,7 @@ for detecting the number of digits of a number.
 
 0:06:41.130,0:06:43.970
 Instead of working with division and rounding
-of values, etc.
+of values, etcetera.
 
 0:06:43.970,0:06:51.490
 So, they already worked with functions that
@@ -426,8 +426,8 @@ which has a fixed bit length like 32 or 64
 bits.
 
 0:07:56.190,0:08:04.270
-So, there is a finite range of integer numbers
-that can be represented in Int.
+So, there is a fixed range(a small finite range) of integer/natural numbers
+that can be represented.
 
 0:08:04.270,0:08:06.650
 Whereas Integer is the mathematical integer
@@ -452,12 +452,11 @@ So, the number three, just a constant written
 3, can be an Int, can be a Float, can be an
 
 0:08:31.760,0:08:34.580
-Integer, or can be a Rational, or many other
+Integer, or can be a Rational, and many other
 types.
 
 0:08:34.580,0:08:39.070
-So for a number you don't see, as given, which
-type it is.
+So you dont see a number given which type it is.
 
 0:08:39.070,0:08:41.310
 That is basically polymorphic or overloaded.
@@ -496,7 +495,7 @@ different role in some situations on the next
 slide.
 
 0:09:14.500,0:09:19.730
-But if we need to convert between some of
+But in general if we need to convert between some of
 these number types, then we can do so.
 
 0:09:19.730,0:09:23.740
@@ -569,7 +568,7 @@ Well, in the case of "from Integer to Int",
 there is some loss of precision, of course.
 
 0:10:21.570,0:10:26.850
-There must be, because of the limited expressiveness.
+There must be, because of the limited expressiveness of the Int type.
 
 0:10:26.850,0:10:31.260
 But there's no loss of precision in terms
@@ -587,7 +586,7 @@ In the opposite direction, in some sense,
 there are functions that really have a rounding
 
 0:10:43.760,0:10:46.840
-error/discrepancy.
+error or rounding discrepancy.
 
 0:10:46.840,0:10:52.410
 Because if you have 3.5 and you want an integer,
@@ -676,7 +675,7 @@ So if you have something like f x = 2 * x
 + 3.5, then you don't have to somehow make
 
 0:12:30.360,0:12:37.040
-your own distinction about 3.5 being a floating-point
+your own considerations about 3.5 being a floating-point
 number, and about this being an integer number.
 
 0:12:37.040,0:12:41.800
@@ -749,14 +748,14 @@ also be a floating-point number.
 
 0:13:42.699,0:13:48.319
 So if you write something like this, then
-we don't have to convert, because the language
+we don't have to convert, because the compiler or language
 
 0:13:48.319,0:13:52.230
 overloads both the constants and the mathematical
 operations.
 
 0:13:52.230,0:13:57.470
-That's the case here, because we leave the
+That's only the case here, because we leave the
 compiler the choice of what types to assign
 
 0:13:57.470,0:13:58.470
@@ -1083,7 +1082,7 @@ We have seen some of them already.
 I used the mathematical constant pi.
 
 0:19:18.490,0:19:19.490
-I used this sine function.
+I used this sinus function.
 
 0:19:19.490,0:19:24.110
 There also is this function for square root;
@@ -1258,11 +1257,11 @@ down type signatures, at least for the top-level
 functions.
 
 0:22:19.789,0:22:24.530
-This has benefits like the compiler being
+This has many benefits like the compiler being
 better able to help you with type errors.
 
 0:22:24.530,0:22:29.419
-But among other things, it saves you from
+But among other things, it also saves you from
 dealing with certain complicated looking types
 
 0:22:29.419,0:22:30.460
@@ -1299,7 +1298,7 @@ interfaces, where Floating and Ord are basically
 interfaces (in Java, you would say they are
 
 0:23:10.320,0:23:11.700
-interfaces).
+interfaces (classes)).
 
 0:23:11.700,0:23:13.940
 But you don't need this at this point.
@@ -1413,14 +1412,14 @@ So, this is one thing.
 And then, there is a type of character values.
 
 0:25:14.290,0:25:16.570
-It is called Char.
+It is called Char(Character).
 
 0:25:16.570,0:25:25.919
-It has the expected values, like all the letters
+It has the expected values, like all the numbers or the keys
 that you can have, also special characters
 
 0:25:25.919,0:25:27.870
-like "a new line", etc.
+like "a new line", etcetera.
 
 0:25:27.870,0:25:37.270
 There are operations like moving forwards
@@ -1586,7 +1585,7 @@ And then, there's another way to combine or
 arrange values in a more complex structure.
 
 0:28:19.960,0:28:22.049
-Besides lists, there are tuple types.
+So similar to lists, there are tuple types.
 
 0:28:22.049,0:28:26.630
 But the difference with them is that, on the
@@ -1639,7 +1638,7 @@ And of course, later on, when we define our
 own datatypes, they can also be used in lists
 
 0:29:22.540,0:29:23.950
-and tuples, etc.
+and tuples, etcetera.
 
 0:29:23.950,0:29:34.179
 So, there is a combinatorial domain of type
