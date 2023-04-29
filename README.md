@@ -8,7 +8,7 @@ Suggest changes per pull requests, please.
 | :-- | --: |
 | Nick46000 | 82 |
 | TMUniversal | 53 |
-| Gotai | 31 |
+| Gotai | 39 |
 | michalitv21 | 19 |
 | MagnolieH | 14 |
 | ejude44 | 6 |
