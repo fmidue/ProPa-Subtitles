@@ -1,0 +1,1586 @@
+0:00:01.430,0:00:06.260
+Let us also discuss a bit more syntax today.
+
+0:00:06.260,0:00:11.980
+And essentially, this will be more stuff on
+programming by case distinction.
+
+0:00:11.980,0:00:16.170
+So, this is of course an important aspect for
+defining functions.
+
+0:00:16.170,0:00:19.550
+We have seen this before and we have used
+it in exercises.
+
+0:00:19.550,0:00:24.030
+And so far, this has been by "if-then-else"
+expressions.
+
+0:00:24.030,0:00:30.140
+You might even have had reasons in your exercise
+submissions to nest if-then-else expressions.
+
+0:00:30.140,0:00:33.620
+And once you start doing that, this becomes
+a bit cumbersome.
+
+0:00:33.620,0:00:40.700
+So, there are other options, and some of them
+will be discussed now (more ways of doing
+
+0:00:40.700,0:00:42.030
+case distinction).
+
+0:00:42.030,0:00:44.730
+Actually, this will not be finished today.
+
+0:00:44.730,0:00:52.230
+In particular, pattern-matching (which is
+also a way of programming by case distinction
+
+0:00:52.230,0:00:53.560
+in Haskell) will be handled in a different
+week.
+
+0:00:53.560,0:00:58.191
+But let's first look at the situation with
+if-then-else again and what we can do if this
+
+0:00:58.191,0:01:05.059
+takes too much nesting.
+
+0:01:05.059,0:01:07.240
+First, remember how an if-then-else looks.
+
+0:01:07.240,0:01:11.000
+So, that was an example that I used last week.
+
+0:01:11.000,0:01:15.159
+And you have done similar things in the exercises.
+
+0:01:15.159,0:01:19.810
+So, in a function definition on the right-hand
+side (as an expression), we can use if-then-else.
+
+0:01:19.810,0:01:23.520
+There must be a condition and then two expressions.
+
+0:01:23.520,0:01:26.840
+They must be of the same type, otherwise it
+wouldn't make sense.
+
+0:01:26.840,0:01:28.260
+And they must always be there.
+
+0:01:28.260,0:01:33.759
+So, we cannot, for example, omit the "else",
+because then this wouldn't evaluate to some
+
+0:01:33.759,0:01:35.880
+reasonable value or some value at all.
+
+0:01:35.880,0:01:43.580
+This was the Haskell syntax, and I explained
+this corresponding to this mathematical syntax.
+
+0:01:43.580,0:01:45.900
+So far, so good.
+
+0:01:45.900,0:01:50.840
+Now, as I just mentioned, as soon as you have
+more than one condition, or you have more
+
+0:01:50.840,0:01:55.560
+complex conditions, then on this side you
+would have to nest an if-then-else expression.
+
+0:01:55.560,0:01:58.960
+So, maybe in the "then" branch you will have
+to have another "if-then-else" to check the
+
+0:01:58.960,0:02:00.040
+second condition.
+
+0:02:00.040,0:02:02.920
+And this quickly becomes not so nice.
+
+0:02:02.920,0:02:04.960
+Of course, in mathematics, there is a different
+approach.
+
+0:02:04.960,0:02:09.679
+In mathematics, in an expression like this,
+people tend to write more than two cases.
+
+0:02:09.679,0:02:12.950
+So, we have the one case, another case, and
+another case, ..., and then the "else" case.
+
+0:02:12.950,0:02:17.819
+So, mathematicians don't nest these kinds of
+expressions, they simply give a longer list
+
+0:02:17.819,0:02:25.299
+of conditions and expressions here.
+
+0:02:25.299,0:02:29.669
+Something like this can be mirrored in Haskell
+as well.
+
+0:02:29.669,0:02:31.760
+That could look like this.
+
+0:02:31.760,0:02:38.529
+You probably haven't seen this definition
+kind before, except if you have used HLint
+
+0:02:38.529,0:02:41.670
+and it has suggested it, which it tends to
+do for nested if-then-else.
+
+0:02:41.670,0:02:48.480
+So, this could be an example we are viewing
+again: compute some "scene" from a time parameter.
+
+0:02:48.480,0:02:53.841
+And maybe there are more complex conditions
+than simply, if t is smaller than this, then
+
+0:02:53.841,0:02:56.290
+... else ..., or maybe there are more conditions.
+
+0:02:56.290,0:02:57.680
+So, we could have something like this.
+
+0:02:57.680,0:03:01.430
+And actually, if you just read this, you probably
+know what is meant here.
+
+0:03:01.430,0:03:07.199
+So, under the condition that t is smaller-equal
+pi, we should do something.
+
+0:03:07.199,0:03:13.389
+Under the condition that that is not the case,
+but t is actually greater than pi but less-equal
+
+0:03:13.389,0:03:16.629
+than the double of pi, then we should have
+something else.
+
+0:03:16.629,0:03:24.530
+And under a third condition, namely that t
+is actually greater than 2*pi, then yet another
+
+0:03:24.530,0:03:26.599
+expression should be evaluated.
+
+0:03:26.599,0:03:33.879
+So, this is also a way of expressing conditional
+behaviour, and it very directly corresponds
+
+0:03:33.879,0:03:37.109
+to what mathematicians like to write.
+
+0:03:37.109,0:03:46.249
+Here is a function definition f(x) = ..., and
+then maybe also three mutually exclusive conditions
+
+0:03:46.249,0:03:49.010
+on the x value.
+
+0:03:49.010,0:03:55.839
+And depending on what we have here, we get
+different expressions.
+
+0:03:55.839,0:04:02.219
+Now, just as here, we could write any Boolean
+condition: anything that can be evaluated
+
+0:04:02.219,0:04:04.180
+or checked in mathematics.
+
+0:04:04.180,0:04:07.569
+Here we can write anything that is of Boolean
+type.
+
+0:04:07.569,0:04:12.519
+Often, of course, these will be comparisons
+like here, or combinations of comparisons.
+
+0:04:12.519,0:04:13.869
+But that need not be the case.
+
+0:04:13.869,0:04:17.440
+You could have written any expression which
+evaluates to a Boolean.
+
+0:04:17.440,0:04:23.259
+It doesn't have to be arithmetic comparisons
+combined with "and" and "or" etc.
+
+0:04:23.259,0:04:30.419
+You can write anything here, any predicate,
+anything which evaluates to a Boolean value.
+
+0:04:30.419,0:04:34.330
+And as I already mentioned, once you start
+writing nested if-then-else expressions, then
+
+0:04:34.330,0:04:38.050
+HLint will suggest writing things like this.
+
+0:04:38.050,0:04:40.880
+This HLint is a component inside Autotool.
+
+0:04:40.880,0:04:46.860
+So, you will benefit from these suggestions
+also in Autotool without using HLint as a
+
+0:04:46.860,0:04:52.770
+separate tool.
+
+0:04:52.770,0:05:00.650
+Let us discuss some more details, in particular
+about, for example, the order in which we
+
+0:05:00.650,0:05:02.130
+write conditions like this.
+
+0:05:02.130,0:05:03.800
+So, these conditions are called guards.
+
+0:05:03.800,0:05:06.260
+This is expressing a function with guards.
+
+0:05:06.260,0:05:10.139
+And a guard is this kind of Boolean expression
+that can be written here.
+
+0:05:10.139,0:05:14.580
+In if-then-else it's clear what happens: You
+have "if" and then you either do the left
+
+0:05:14.580,0:05:16.110
+or the right, the "then" or the "else".
+
+0:05:16.110,0:05:19.740
+So, there is no question of order because
+the "then" and the "else" are clear about
+
+0:05:19.740,0:05:26.790
+in which cases they execute (or the corresponding
+expression is evaluated).
+
+0:05:26.790,0:05:31.940
+Here, we now of course at least have to ask
+what happens if, for example, these guards
+
+0:05:31.940,0:05:33.069
+overlap.
+
+0:05:33.069,0:05:36.069
+Or does it matter in which order you write
+them down?
+
+0:05:36.069,0:05:41.820
+I will discuss this on the factorial example,
+which is also a very simple example for recursion,
+
+0:05:41.820,0:05:42.850
+of course.
+
+0:05:42.850,0:05:46.719
+So, the factorial function as defined in mathematics.
+
+0:05:46.719,0:05:53.090
+It could be written via an if-then-else, of
+course, but more mathematically looking, you
+
+0:05:53.090,0:05:54.090
+would write:
+
+0:05:54.090,0:06:00.080
+The factorial of an integer is 1 if the
+integer is zero (that is the starting of the
+
+0:06:00.080,0:06:04.789
+factorial function), and if the argument is
+greater than zero, then you want to compute
+
+0:06:04.789,0:06:09.990
+n times factorial of the predecessor.
+
+0:06:09.990,0:06:14.310
+That looks reasonable.
+
+0:06:14.310,0:06:15.969
+Now what about the order of the clauses?
+
+0:06:15.969,0:06:20.819
+So, does it matter in which order I write
+these things down?
+
+0:06:20.819,0:06:22.919
+Well, it depends on the conditions.
+
+0:06:22.919,0:06:26.789
+In this case here, these two conditions are
+mutually exclusive:
+
+0:06:26.789,0:06:33.060
+There is no input n possible that would be
+both zero and greater than zero.
+
+0:06:33.060,0:06:39.999
+And since that is the case, the following
+variant, where I simply switched the two lines
+
+0:06:39.999,0:06:42.639
+here, is equivalent.
+
+0:06:42.639,0:06:47.060
+Because simply the value of n will decide
+which of them is taken, and the order in which
+
+0:06:47.060,0:06:51.229
+these are written down does not matter.
+
+0:06:51.229,0:06:55.219
+Now I will consider further examples where
+I change the guards, etc.
+
+0:06:55.219,0:07:00.009
+And what I would have done in the past is
+to have a separate window open, in which I
+
+0:07:00.009,0:07:05.360
+have this program in Haskell and edit the
+program, and let it run to see the effects
+
+0:07:05.360,0:07:09.330
+of changing the order of things and changing
+conditions in the guards, etc.
+
+0:07:09.330,0:07:13.749
+I don't want to do this now, because that
+would be too much stopping and restarting
+
+0:07:13.749,0:07:15.199
+my video recording.
+
+0:07:15.199,0:07:20.360
+So, what I suggest, if you want to follow
+the arguments here, is that you do this yourself.
+
+0:07:20.360,0:07:26.639
+You can stop the video and copy the code into
+an editor window and then run this in GHCi,
+
+0:07:26.639,0:07:30.409
+all the versions of the code that I discuss.
+
+0:07:30.409,0:07:35.120
+So, here I will simply say what happens and
+you can check yourself (if you have copied
+
+0:07:35.120,0:07:36.120
+the code).
+
+0:07:36.120,0:07:39.150
+But I will not actually demonstrate this here
+for all the versions.
+
+0:07:39.150,0:07:40.340
+I will simply talk about this.
+
+0:07:40.340,0:07:47.150
+So, probably this will be a bit shorter than
+if it was like I have done in the past.
+
+0:07:47.150,0:07:48.539
+In this example, we will see:
+
+0:07:48.539,0:07:53.689
+No matter which of these two versions we see
+here is taken, if you run it on something
+
+0:07:53.689,0:07:59.289
+like 12 or whatever, some nice non-negative
+number (here you see already that negative
+
+0:07:59.289,0:08:06.419
+numbers might be a problem, but let's only
+call "factorial" on non-negative inputs now),
+
+0:08:06.419,0:08:16.319
+then these two versions that we see here and
+here, behave the same.
+
+0:08:16.319,0:08:18.180
+What if the guard conditions overlap?
+
+0:08:18.180,0:08:23.580
+So, if you don't have that simply the input
+value is uniquely determining which of the
+
+0:08:23.580,0:08:28.159
+two lines is taken?
+
+0:08:28.159,0:08:33.920
+This could correspond to changing that greater
+(>) from the previous slide to greater-equal
+
+0:08:33.920,0:08:35.110
+(>=).
+
+0:08:35.110,0:08:37.579
+Then suddenly there is a difference.
+
+0:08:37.579,0:08:43.409
+Suddenly, this version still works fine, but
+this one is problematic.
+
+0:08:43.409,0:08:49.970
+Maybe you can already guess what would happen,
+or you can check on the side, what happens
+
+0:08:49.970,0:08:58.050
+if you take this code and run it again maybe
+with input 12.
+
+0:08:58.050,0:09:09.070
+What you should see is a runtime error.
+
+0:09:09.070,0:09:12.910
+Why is that?
+
+0:09:12.910,0:09:18.350
+If you run this and you start with 12, then
+12 is greater-equal 0; then you will have
+
+0:09:18.350,0:09:21.990
+12 * factorial 11.
+
+0:09:21.990,0:09:23.470
+And then 11 is again in this case.
+
+0:09:23.470,0:09:25.810
+So, it is 11 * factorial 10.
+
+0:09:25.810,0:09:28.650
+This goes down, down, down, ... until factorial
+0.
+
+0:09:28.650,0:09:34.300
+Then what happens is that factorial 0 would
+match the second case.
+
+0:09:34.300,0:09:38.100
+But actually, Haskell will evaluate these
+from top to bottom.
+
+0:09:38.100,0:09:41.760
+So, it will first check whether the first guard
+is satisfied.
+
+0:09:41.760,0:09:47.380
+And for the input "n = 0", actually this first
+guard is satisfied, because 0 is greater-equal
+
+0:09:47.380,0:09:48.380
+0.
+
+0:09:48.380,0:09:52.820
+So, what will happen is: 0 * factorial (-1).
+
+0:09:52.820,0:09:58.360
+And actually, Haskell will not somehow magically
+say: "Well, 0 * something is irrelevant."
+
+0:09:58.360,0:10:03.310
+Instead, it will actually try to compute factorial
+of -1.
+
+0:10:03.310,0:10:09.750
+And then for factorial of -1, if you go again
+into the recursion, then we have -1, and -1
+
+0:10:09.750,0:10:13.610
+is not greater or equal to 0.
+
+0:10:13.610,0:10:15.380
+So, what is factorial (-1)?
+
+0:10:15.380,0:10:16.380
+We don't know.
+
+0:10:16.380,0:10:17.380
+The compiler doesn't know.
+
+0:10:17.380,0:10:18.380
+The runtime system doesn’t know.
+
+0:10:18.380,0:10:19.380
+So, there will be a runtime error.
+
+0:10:19.380,0:10:20.380
+This doesn't happen here.
+
+0:10:20.380,0:10:21.380
+Why not?
+
+0:10:21.380,0:10:27.490
+Because here it is not the case that once
+we have factorial of zero, we again make a
+
+0:10:27.490,0:10:28.960
+recursive call.
+
+0:10:28.960,0:10:34.259
+Because evaluating/checking from top to bottom,
+factorial of zero will match the first case.
+
+0:10:34.259,0:10:36.279
+So, the output will be 1.
+
+0:10:36.279,0:10:37.279
+And then the recursion stops.
+
+0:10:37.279,0:10:44.480
+So, if you have a base case like here, then
+this base case should be first in such a sequence
+
+0:10:44.480,0:10:48.540
+of checks.
+
+0:10:48.540,0:10:57.340
+Sometimes, the compiler will be able to warn
+about cases like this, because essentially,
+
+0:10:57.340,0:11:01.160
+the runtime error that we get from this is
+that this is not fully defined.
+
+0:11:01.160,0:11:05.890
+Integers contain negative numbers, but for
+negative numbers we don't give a case.
+
+0:11:05.890,0:11:11.279
+Sometimes, the compiler will be able to warn
+about this.
+
+0:11:11.279,0:11:18.940
+Okay, but let's say we don't make this mistake.
+
+0:11:18.940,0:11:23.690
+Let's say we stay with the correct order.
+
+0:11:23.690,0:11:27.779
+What is the problem, then?
+
+0:11:27.779,0:11:33.190
+We don't have the problem that if we start
+with 12, we get to zero and then 0 * factorial
+
+0:11:33.190,0:11:34.190
+(-1).
+
+0:11:34.190,0:11:35.250
+We don't get this problem.
+
+0:11:35.250,0:11:41.010
+But if we, right away, call this function
+with -1, we again have a runtime error.
+
+0:11:41.010,0:11:46.920
+So, if we call with -1, then neither the base
+case matches nor the recursive case.
+
+0:11:46.920,0:11:51.560
+So, we get a runtime error.
+
+0:11:51.560,0:11:58.199
+As mentioned before, with appropriate settings,
+the compiler can warn us about this.
+
+0:11:58.199,0:12:05.230
+And in Autotool, we will henceforth enable
+these warnings, so that if you program with
+
+0:12:05.230,0:12:13.630
+guards, for example, and you are not careful
+to make sure that there's always a case that
+
+0:12:13.630,0:12:15.380
+matches, then the compiler will complain.
+
+0:12:15.380,0:12:18.800
+The compiler, of course, cannot know for sure
+whether you have matched all cases.
+
+0:12:18.800,0:12:21.250
+So, the compiler will be overcautious.
+
+0:12:21.250,0:12:26.440
+So, it might warn you even though actually,
+with some mathematical insight, one can see
+
+0:12:26.440,0:12:28.880
+that your code is covering all cases.
+
+0:12:28.880,0:12:34.500
+The compiler tries to warn you about cases
+where it doesn't know, because it can't tell,
+
+0:12:34.500,0:12:37.880
+that you have covered all cases.
+
+0:12:37.880,0:12:43.079
+One way to make sure that you covered all
+cases, and also to let the compiler be certain
+
+0:12:43.079,0:12:47.160
+that you've covered all cases, is that you
+have something like a catch-all clause.
+
+0:12:47.160,0:12:53.410
+In the example from before, instead of having
+two conditions, one being n==0 and the other
+
+0:12:53.410,0:12:58.230
+being something like n>0 or n>=0, you could
+say "otherwise".
+
+0:12:58.230,0:13:05.399
+Then, checking from top to bottom, for every
+input that is not zero this last line will
+
+0:13:05.399,0:13:06.399
+be taken.
+
+0:13:06.399,0:13:13.000
+At least then we won't have a runtime error,
+in the sense that for some input, the factorial
+
+0:13:13.000,0:13:15.540
+function doesn't know what to compute.
+
+0:13:15.540,0:13:21.320
+So, now in GHCi, this wouldn't lead to a runtime
+error.
+
+0:13:21.320,0:13:25.670
+Of course, it could still be a problem if
+you call with negative values, but then not
+
+0:13:25.670,0:13:31.190
+because of a runtime error (of a missing case),
+but actually because of non-termination.
+
+0:13:31.190,0:13:36.860
+Because then, you will run (if you call this
+with negative inputs) into an infinite recursion.
+
+0:13:36.860,0:13:39.050
+Because you never stop for negative values.
+
+0:13:39.050,0:13:40.300
+But that is a separate problem.
+
+0:13:40.300,0:13:46.779
+And of course, a problem that no compiler
+can, in general, catch; simply because of
+
+0:13:46.779,0:13:52.910
+the "halting problem".
+
+0:13:52.910,0:13:53.910
+That was this observation.
+
+0:13:53.910,0:13:56.660
+In this case, negative inputs would be a problem.
+
+0:13:56.660,0:14:00.389
+We could also fix this in some sense by saying:
+
+0:14:00.389,0:14:05.700
+We take the base case whenever we have a non-positive
+value; not only for zero, but also for negative
+
+0:14:05.700,0:14:06.700
+values.
+
+0:14:06.700,0:14:10.579
+Now this would be something which passes the
+compiler, because the compiler can tell that
+
+0:14:10.579,0:14:12.820
+we have covered all cases.
+
+0:14:12.820,0:14:18.170
+It also never has a problem at runtime in
+terms of not knowing which case to take, precisely
+
+0:14:18.170,0:14:19.430
+because of this last case.
+
+0:14:19.430,0:14:20.920
+So, the compiler guarantees this.
+
+0:14:20.920,0:14:26.639
+Then it's true that you never run out of cases
+to consider, so to speak, because the "otherwise"
+
+0:14:26.639,0:14:28.070
+case always applies.
+
+0:14:28.070,0:14:36.620
+And it also doesn't have a non-termination
+problem, simply because at some point after
+
+0:14:36.620,0:14:42.629
+reducing this many times, or right away if
+called with a negative value, we will always
+
+0:14:42.629,0:14:49.519
+reach this case (either immediately or after
+a finite number of steps).
+
+0:14:49.519,0:14:53.760
+So, some lessons here:
+
+0:14:53.760,0:14:58.649
+The order matters in selecting which line
+to take.
+
+0:14:58.649,0:15:03.470
+The semantics will consider the order.
+
+0:15:03.470,0:15:06.009
+That also means that we can exploit this order.
+
+0:15:06.009,0:15:08.350
+So, we can maybe simplify some later conditions.
+
+0:15:08.350,0:15:12.040
+We will see this in an example in a moment.
+
+0:15:12.040,0:15:23.029
+We can simplify some later conditions since
+we know that the preceding guards have already
+
+0:15:23.029,0:15:24.089
+been checked.
+
+0:15:24.089,0:15:29.459
+Exhaustiveness matters because we want to
+avoid runtime errors.
+
+0:15:29.459,0:15:37.350
+Now, some further remarks.
+
+0:15:37.350,0:15:40.610
+The compiler checks ahead of time are nice,
+but they are not perfect.
+
+0:15:40.610,0:15:44.230
+They can't be perfect because of, for example,
+"the halting problem".
+
+0:15:44.230,0:15:48.560
+So, it's impossible in general to detect infinite
+recursion, for example, but also some other
+
+0:15:48.560,0:15:50.339
+problems that a program might have.
+
+0:15:50.339,0:16:00.920
+Haskell does a pretty good job of preventing
+preventable errors, but it can't fix all problems.
+
+0:16:00.920,0:16:06.860
+Even the simpler checks that are not aiming
+for perfection are not as powerful as one
+
+0:16:06.860,0:16:08.220
+might sometimes hope.
+
+0:16:08.220,0:16:13.149
+Sometimes, from some mathematical insight
+into your problem, you might think the compiler
+
+0:16:13.149,0:16:17.019
+should be able to tell that a certain definition
+is exhaustive.
+
+0:16:17.019,0:16:19.519
+But sometimes that's not happening, and for
+a good reason.
+
+0:16:19.519,0:16:20.550
+Here is an example.
+
+0:16:20.550,0:16:26.930
+It will warn you against trying to rely on
+certain properties, about relations from mathematics,
+
+0:16:26.930,0:16:27.930
+for example.
+
+0:16:27.930,0:16:33.680
+You might think that if you write a condition
+like this, f x y is: if x and y are equal,
+
+0:16:33.680,0:16:39.629
+then something, and if x and y are not equal,
+then something else; you might assume that
+
+0:16:39.629,0:16:41.810
+this would be statically safe.
+
+0:16:41.810,0:16:45.490
+Well, the compiler won't be able to tell that
+this is safe because "basically, these two
+
+0:16:45.490,0:16:50.480
+things are opposites of each other, so only
+and exactly one of them will be true".
+
+0:16:50.480,0:16:54.360
+That is a reasonable thing to assume, but
+actually not so simple.
+
+0:16:54.360,0:17:00.110
+There is a good reason why this is not considered
+safe in general by the compiler.
+
+0:17:00.110,0:17:06.830
+And the reason is that certainly this is true
+(that in these two things, always one of them
+
+0:17:06.830,0:17:13.250
+will be true) for base types like numbers,
+characters, or strings; but actually, in Haskell
+
+0:17:13.250,0:17:18.760
+you can overload equality and inequality for
+your own types, and nobody can prevent you
+
+0:17:18.760,0:17:24.371
+as a programmer from writing a new type with
+equality and inequality checks, where there
+
+0:17:24.371,0:17:29.050
+are some pairs of values x and y where neither
+of these two conditions is true.
+
+0:17:29.050,0:17:32.410
+And then the compiler cannot promise that
+one of them will always be true.
+
+0:17:32.410,0:17:34.930
+Maybe it's not even the case for your own
+type.
+
+0:17:34.930,0:17:40.440
+So, in that sense, it's better to, again,
+replace the second condition by "otherwise",
+
+0:17:40.440,0:17:53.590
+because then also the compiler can say that
+definitely one of the two cases will be applicable.
+
+0:17:53.590,0:18:01.790
+Also, in an ideal world, we wouldn't depend
+so much on massaging our guard conditions.
+
+0:18:01.790,0:18:06.790
+So, let's return to this issue, where we had
+problems with negative inputs.
+
+0:18:06.790,0:18:13.190
+And the fix was to switch from "n==0" to "n≤0"
+in the first case, because then we would have
+
+0:18:13.190,0:18:20.850
+covered all cases and also didn't run into
+infinite recursion for negative inputs.
+
+0:18:20.850,0:18:26.040
+One might argue that this is not what one
+wants: that this factorial function returns
+
+0:18:26.040,0:18:29.400
+one for all negative numbers, if you change
+to "n≤0" here.
+
+0:18:29.400,0:18:35.240
+So, the real fix (the conceptually most appealing
+fix) would be to use the type system to even
+
+0:18:35.240,0:18:37.500
+prevent that you get negative inputs here.
+
+0:18:37.500,0:18:44.630
+So, the Integer type contains negative numbers,
+but one could use a more expressive type system
+
+0:18:44.630,0:18:49.220
+which actually can guarantee that the factorial
+function will, in a given program, never be
+
+0:18:49.220,0:18:50.910
+called on negative numbers.
+
+0:18:50.910,0:18:56.400
+That is possible, but it
+is really a topic for another lecture, and
+
+0:18:56.400,0:18:57.770
+maybe not even for this course.
+
+0:18:57.770,0:19:03.741
+It is actually for another course or seminar
+or an advanced lecture, not necessarily this
+
+0:19:03.741,0:19:04.741
+semester.
+
+0:19:04.741,0:19:16.760
+I just wanted to mention that such a more
+static fix is also possible.
+
+0:19:16.760,0:19:18.000
+But let's not go in this direction.
+
+0:19:18.000,0:19:24.270
+For now, let's apply our insights we gained
+from discussing the factorial example to the
+
+0:19:24.270,0:19:25.690
+situation we considered earlier.
+
+0:19:25.690,0:19:27.480
+We had the "scene" function.
+
+0:19:27.480,0:19:29.890
+And mathematically, I wrote it like this:
+
+0:19:29.890,0:19:36.550
+I check whether t is smaller-equal to pi,
+then I check the next period from pi to 2*pi,
+
+0:19:36.550,0:19:40.260
+and then above 2*pi (this could be something
+that I want to express).
+
+0:19:40.260,0:19:46.180
+Now given what we know about the order of
+checking such guards, and what we know about
+
+0:19:46.180,0:19:52.310
+exhaustiveness, we can revise this a bit.
+
+0:19:52.310,0:19:58.990
+So, the ideal way to write this would be something
+like this, which is both shorter and has some
+
+0:19:58.990,0:20:02.680
+additional benefits like predictable exhaustiveness.
+
+0:20:02.680,0:20:04.130
+What is the difference here?
+
+0:20:04.130,0:20:06.300
+The first condition is still as above.
+
+0:20:06.300,0:20:13.870
+In the second condition, it isn't required
+to check that t is greater than pi, because
+
+0:20:13.870,0:20:18.760
+we know the second line will only be checked
+if this first line didn't hold.
+
+0:20:18.760,0:20:24.090
+So, we will only reach the second line if
+the first condition wasn't true.
+
+0:20:24.090,0:20:30.300
+And since these are floating-point numbers,
+we really know that if t is not smaller-equal
+
+0:20:30.300,0:20:32.590
+to pi, then t will be greater than pi.
+
+0:20:32.590,0:20:36.830
+So, actually, in this guard here, this check
+is redundant in that sense.
+
+0:20:36.830,0:20:43.460
+That is because, anyway, we reach the second
+line only if this first one was not valid.
+
+0:20:43.460,0:20:50.380
+And somewhat similarly, we can argue that
+in the last line we don't have to check this,
+
+0:20:50.380,0:20:55.680
+because if this wouldn't be true, then we
+would have already taken the case before that.
+
+0:20:55.680,0:21:01.530
+So, by writing "otherwise" here, we express
+the same conditions, and we help the compiler
+
+0:21:01.530,0:21:08.010
+to know that this is a valid and full expression.
+
+0:21:08.010,0:21:16.070
+So, we avoided syntactic repetition, we avoided
+redundant checks by exploiting the order and
+
+0:21:16.070,0:21:20.220
+what we know about exhaustiveness.
+
+0:21:20.220,0:21:26.330
+And in some way, I would argue that we also
+made the definition more readable.
+
+0:21:26.330,0:21:31.520
+So, you might try to apply strategies like
+this in your next exercise tasks, when you
+
+0:21:31.520,0:21:37.420
+have complex conditions like above.
+
+0:21:37.420,0:21:43.290
+Let us look at a few more examples and different
+ways of writing definitions.
+
+0:21:43.290,0:21:49.570
+So far, we have always considered the case
+that we basically have one "function head",
+
+0:21:49.570,0:21:52.230
+if you want, and then possibly several guards.
+
+0:21:52.230,0:21:56.680
+Actually, we can also write several lines
+for a function definition.
+
+0:21:56.680,0:22:02.100
+So, instead of having "factorial n" and then
+this guard and this guard, we could also have
+
+0:22:02.100,0:22:03.320
+this head several times.
+
+0:22:03.320,0:22:09.490
+So, saying: factorial n under the condition
+that n equals zero is one, and factorial n
+
+0:22:09.490,0:22:14.530
+under the condition "otherwise" (which isn't
+really a condition, because it is always true),
+
+0:22:14.530,0:22:16.640
+computes n * factorial (n – 1).
+
+0:22:16.640,0:22:19.890
+So, this would be equivalent to the versions
+we have seen before.
+
+0:22:19.890,0:22:24.790
+Why would we even do this (to write this several
+times)?
+
+0:22:24.790,0:22:30.750
+Well, thanks to the top-down evaluation order,
+regarding selecting cases, we can then,
+
+0:22:30.750,0:22:33.240
+for example, write it also like this.
+
+0:22:33.240,0:22:38.860
+Which might be more appealing, to say: factorial
+n under some condition is one, and factorial
+
+0:22:38.860,0:22:42.160
+n without any condition is this.
+
+0:22:42.160,0:22:46.730
+And since this evaluates from top to bottom,
+it has the same semantics as what we have
+
+0:22:46.730,0:22:49.420
+written up here.
+
+0:22:49.420,0:22:54.920
+It's also, of course again, vulnerable to
+changes of the order.
+
+0:22:54.920,0:22:59.750
+So, if we change orders here, then that might
+completely change what is computed, or whether
+
+0:22:59.750,0:23:01.630
+it terminates.
+
+0:23:01.630,0:23:09.540
+Another syntactic option is something like
+a check like this: factorial n under the condition
+
+0:23:09.540,0:23:11.880
+that n equals zero, is something.
+
+0:23:11.880,0:23:15.060
+This condition "n == 0" in mathematics, you
+would write differently.
+
+0:23:15.060,0:23:17.270
+You would simply say: factorial of zero is
+one.
+
+0:23:17.270,0:23:21.130
+Instead of saying: factorial of n, if that
+equals zero, is one.
+
+0:23:21.130,0:23:24.210
+Then we can write the first line also like
+this.
+
+0:23:24.210,0:23:28.740
+And then, it really pays off that we write
+several lines instead of relying on guards.
+
+0:23:28.740,0:23:34.470
+Here, we say: factorial of zero is one, and
+factorial of n is this.
+
+0:23:34.470,0:23:41.460
+And since we check from top to bottom, actually
+the last line means factorial for any non-zero
+
+0:23:41.460,0:23:44.240
+n, because zero is already dealt with here.
+
+0:23:44.240,0:23:49.760
+And this is now again something that you would
+also find similarly written in a textbook
+
+0:23:49.760,0:23:52.520
+definition (in mathematics) of the factorial
+function.
+
+0:23:52.520,0:23:57.750
+It says: factorial 0 is this and factorial
+of n (in the background: for any other thing
+
+0:23:57.750,0:24:00.750
+than zero) is this expression.
+
+0:24:00.750,0:24:05.510
+You can mix these styles and find, for your
+function that you want to express, what is
+
+0:24:05.510,0:24:12.280
+the nicest way to express the case distinctions
+that you need for solving your problem.
+
+0:24:12.280,0:24:13.490
+This can be mixed.
+
+0:24:13.490,0:24:19.080
+So, let's look at another example, where we
+have several input values and then we also
+
+0:24:19.080,0:24:28.650
+mix this kind of guard style and matching-against-constants
+style.
+
+0:24:28.650,0:24:29.830
+This is such an example.
+
+0:24:29.830,0:24:37.930
+This is the Ackermann function that you might
+know from your lecture on complexity theory.
+
+0:24:37.930,0:24:40.000
+And even if you don't, it is not really important.
+
+0:24:40.000,0:24:43.530
+It's a function that has some interesting
+and complex conditions.
+
+0:24:43.530,0:24:45.220
+So, it has different base cases.
+
+0:24:45.220,0:24:50.680
+Either the first or the second input is zero,
+but there are also some conditions on the
+
+0:24:50.680,0:24:53.540
+other input in each case.
+
+0:24:53.540,0:24:58.520
+You can express both, the matching against
+the constant, but also the additional condition
+
+0:24:58.520,0:25:00.450
+on the other input.
+
+0:25:00.450,0:25:01.960
+And here it is the other way around.
+
+0:25:01.960,0:25:07.610
+We have the condition by a constant match
+on the second argument, and some explicitly
+
+0:25:07.610,0:25:11.510
+formulated constraint on the first input.
+
+0:25:11.510,0:25:18.480
+And there is also a case where we have numeric
+checks on both inputs.
+
+0:25:18.480,0:25:22.600
+Then in each case we have some expression
+that needs to be computed.
+
+0:25:22.600,0:25:26.200
+It doesn't really matter what the function
+exactly does; the point is, we have this way
+
+0:25:26.200,0:25:29.120
+of expressing our conditions.
+
+0:25:29.120,0:25:31.880
+And again, this is matched from top to bottom.
+
+0:25:31.880,0:25:36.740
+So, if the first input is zero and the second
+one is a non-negative number, then the first
+
+0:25:36.740,0:25:38.940
+base case will be taken.
+
+0:25:38.940,0:25:44.720
+And if you try this with GHC, then you will
+get some non-exhaustiveness warnings because
+
+0:25:44.720,0:25:51.510
+the compiler, here again, will try to find
+out whether you have matched all cases or
+
+0:25:51.510,0:25:52.510
+not.
+
+0:25:52.510,0:25:57.390
+You might want to take a look at the warnings
+and try to interpret them, to see how far
+
+0:25:57.390,0:26:03.370
+the compiler has managed to analyse this program
+and the different cases that occur here.
+
+0:26:03.370,0:26:08.440
+That was just an example.
+
+0:26:08.440,0:26:11.350
+Let us actually return to some general remarks.
+
+0:26:11.350,0:26:16.290
+And this will be almost the end of this video.
+
+0:26:16.290,0:26:21.810
+So, let's recap what the general rules for
+function definitions are.
+
+0:26:21.810,0:26:23.110
+We can have one or more equations.
+
+0:26:23.110,0:26:24.110
+We started with one.
+
+0:26:24.110,0:26:27.580
+But now we have seen that we can have several
+equations for one function.
+
+0:26:27.580,0:26:29.910
+And they will be checked from top to bottom.
+
+0:26:29.910,0:26:39.080
+And these equations can have guards, but they
+don't have to, as we have just seen with the
+
+0:26:39.080,0:26:40.580
+factorial function.
+
+0:26:40.580,0:26:43.810
+There can be one or more arguments.
+
+0:26:43.810,0:26:49.290
+So far, these arguments will be variable names
+on which maybe you want to express some conditions
+
+0:26:49.290,0:26:55.990
+via guards, or they can be constants like
+zero or one that we have seen in some of the
+
+0:26:55.990,0:26:56.990
+examples.
+
+0:26:56.990,0:26:58.370
+The variable names can be anonymous.
+
+0:26:58.370,0:27:05.550
+That means, as you will see in an example
+shortly on the last slide for today, we can
+
+0:27:05.550,0:27:09.630
+have cases where we can match against a variable,
+but we will never use this variable again.
+
+0:27:09.630,0:27:13.560
+And then, in order not to have the compiler
+complain that we named a variable that we
+
+0:27:13.560,0:27:18.510
+are not using, we can use the "_" as a variable
+that we will never use.
+
+0:27:18.510,0:27:25.300
+This will be useful, as you will see on the
+next slide.
+
+0:27:25.300,0:27:28.200
+Inside one equation, the variable names have
+to be unique.
+
+0:27:28.200,0:27:33.390
+So, as we saw few slides back, we can have
+two equations for factorial with the same
+
+0:27:33.390,0:27:35.870
+variable name, but these are different equations.
+
+0:27:35.870,0:27:39.300
+In one equation, we can't have two different
+variable names.
+
+0:27:39.300,0:27:42.420
+We can't have ackermann of n and n (ackermann
+n n).
+
+0:27:42.420,0:27:46.630
+We can have ackermann of n and m, but not
+ackermann of n and n.
+
+0:27:46.630,0:27:50.260
+Because in one line, in one equation, the
+variable names must be unique.
+
+0:27:50.260,0:27:53.290
+This does not apply to anonymous variables.
+
+0:27:53.290,0:28:00.480
+We can have several anonymous variables in
+one line, and this does not somehow pose a
+
+0:28:00.480,0:28:01.480
+danger.
+
+0:28:01.480,0:28:07.170
+And finally, this is maybe not something that
+you would try, but in case you would (because
+
+0:28:07.170,0:28:13.500
+maybe you have seen mathematical definitions
+that use a feature like "solving conditions
+
+0:28:13.500,0:28:20.750
+on inputs via mathematical expressions"):
+
+0:28:20.750,0:28:27.220
+Something like a function definition in mathematics
+which says, for example, f(2*n)= ... (something
+
+0:28:27.220,0:28:33.460
+which involves "f(n)"); this is a definition
+kind that people sometimes write in mathematics
+
+0:28:33.460,0:28:39.140
+(because maybe they want to define a function
+for all even integers, so, they say: f(2*n)=
+
+0:28:39.140,0:28:41.400
+...); but this is not something that Haskell
+would accept.
+
+0:28:41.400,0:28:46.520
+Because then, Haskell would have to work out
+from some given input like 12 whether this
+
+0:28:46.520,0:28:47.740
+matches 2*n or not.
+
+0:28:47.740,0:28:53.820
+So, Haskell would actually have to solve arithmetic
+equations in a way that is not as generally
+
+0:28:53.820,0:28:56.020
+possible as one would want in a compiler.
+
+0:28:56.020,0:28:57.270
+So, it is not possible.
+
+0:28:57.270,0:29:03.000
+So, in these argument positions we can have
+simple things, like constants, variable names,
+
+0:29:03.000,0:29:09.070
+later also some patterns over data types,
+but not something like an arithmetic expression
+
+0:29:09.070,0:29:12.080
+of arbitrary kind, like 2*n.
+
+0:29:12.080,0:29:21.200
+Because that would require "solving" equations,
+just for deciding which function definition
+
+0:29:21.200,0:29:25.530
+to take for a certain input situation.
+
+0:29:25.530,0:29:28.830
+This is just a side remark.
+
+0:29:28.830,0:29:33.350
+Let me actually finish by, mainly, showing
+an example for this.
+
+0:29:33.350,0:29:35.100
+What do I mean by anonymous variables?
+
+0:29:35.100,0:29:38.000
+And why are they useful?
+
+0:29:38.000,0:29:42.020
+Well, let's consider this example.
+
+0:29:42.020,0:29:50.720
+So, let's say we want to define the logic operations
+on the Boolean type.
+
+0:29:50.720,0:29:53.410
+We could say "not True = False" and "not False
+= True".
+
+0:29:53.410,0:29:58.860
+But actually, in the second line we don't
+have to write "not False = True", because
+
+0:29:58.860,0:30:04.040
+the only thing that can be here would be "False",
+because "True" is already handled.
+
+0:30:04.040,0:30:10.220
+Then we could say: Well, let's write "not
+x = True", so using a variable named x here.
+
+0:30:10.220,0:30:14.610
+But this also would not be so nice, because
+then the x is unused on the right-hand side.
+
+0:30:14.610,0:30:18.800
+And with certain settings, the compiler would
+even complain that you introduce a variable
+
+0:30:18.800,0:30:22.520
+x but then in the scope you don't even make
+use of the x.
+
+0:30:22.520,0:30:25.600
+And then the solution is "_", which basically
+says "I don't care".
+
+0:30:25.600,0:30:30.860
+So, "not" of "True" is "False", and "not" of
+whatever is "True", which, given the order
+
+0:30:30.860,0:30:34.140
+in which it is evaluated, is a perfect definition.
+
+0:30:34.140,0:30:37.450
+And it's also very intuitively written.
+
+0:30:37.450,0:30:41.200
+And similarly, you could proceed for other
+logical operations.
+
+0:30:41.200,0:30:46.790
+So, let's say, for example, we want to implement
+the conjunction of Boolean values.
+
+0:30:46.790,0:30:51.380
+Then we could say: "True and True is True",
+and we could write three cases like "True
+
+0:30:51.380,0:30:55.150
+and False is False", "False and True is False",
+and "False and False is False".
+
+0:30:55.150,0:30:59.970
+But why should we do this, if we can also
+say: "whatever and whatever is False", given
+
+0:30:59.970,0:31:03.060
+that "True and True" has already been checked
+by the first line?
+
+0:31:03.060,0:31:09.070
+Then this very compactly defines how conjunction
+works.
+
+0:31:09.070,0:31:14.490
+And similarly, we could use a different style.
+
+0:31:14.490,0:31:20.040
+We could say: "b and True is b" and "whatever
+and whatever is False".
+
+0:31:20.040,0:31:23.040
+Then we would handle two cases in the first
+line.
+
+0:31:23.040,0:31:32.260
+It is maybe a matter of taste, a bit, which
+of these two versions to choose.
+
+0:31:32.260,0:31:35.660
+It's not really important for your exercise
+tasks.
+
+0:31:35.660,0:31:41.820
+In reality, there is a slight difference between
+these two versions of the function, in particular
+
+0:31:41.820,0:31:47.780
+if you combine it with expensive computations
+like the Ackermann function in one of the
+
+0:31:47.780,0:31:48.970
+argument positions.
+
+0:31:48.970,0:31:57.620
+But these will be cases that won't appear
+in the ways you, for example, want to use
+
+0:31:57.620,0:31:59.760
+conjunction and combining conditions.
+
+0:31:59.760,0:32:03.710
+So, I will not talk further about this part.

@@ -6,8 +6,10 @@ Suggest changes per pull requests, please.
 
 | GitHub username | Lines |
 | :-- | --: |
+| Nick46000 | 82 |
+| TMUniversal | 53 |
+| Gotai | 31 |
 | michalitv21 | 19 |
 | MagnolieH | 14 |
 | ejude44 | 6 |
-| Nick46000 | 4 |
 | Katashiii | 3 |
