@@ -1,0 +1,258 @@
+0:00:00.000,0:00:11.490
+Diese Aufgabe ist keine CodeWorld Aufgabe,
+sondern eine andere Haskell-Aufgabe in der
+
+0:00:11.490,0:00:16.770
+wir jetzt den Editor lokal verwenden. Bei
+mir ist das hier auf der linken Seite der
+
+0:00:16.770,0:00:27.120
+Editor und rechts ist ein Terminal. Bei dieser
+Aufgabe sollen wir List-Comprehension verwenden,
+
+0:00:27.120,0:00:38.070
+um das zu implementieren, was
+hier beschrieben ist. Das heißt,
+
+0:00:38.070,0:00:48.960
+wir erzeugen die eine Liste von Integer-Paaren.
+Das ist unsere Aufgabe. List-Comprehension,
+
+0:00:48.960,0:00:58.680
+dafür verwenden wir diese eckigen Klammern
+und wir schreiben zunächst als erstes was wir
+
+0:00:58.680,0:01:08.940
+zurückgeben wollen, nämlich genau diese Tupel
+von Werten x und y, die wir jetzt definieren
+
+0:01:08.940,0:01:21.690
+müssen. Danach kommt dieser senkrechte
+Strich und mit x beginnen. Wir können in
+
+0:01:21.690,0:01:32.100
+Haskell Werte definieren als Listen mit einem
+Linkspfeil, ich schreibe jetzt hier '<-', und
+
+0:01:32.100,0:01:39.540
+dann können wir Listen angeben und x nimmt
+dann alle Werte dieser Listenelementen an.
+
+0:01:39.540,0:02:00.330
+Hier steht, dass x und y c-Nummern sein sollen
+und c-Nummern, also c-Digit-Nummern, sind Zahlen,
+
+0:02:00.330,0:02:10.380
+die genau c Ziffern haben. Also für die
+zweiziffrigen Zahlen wäre das z.B. 10 bis
+
+0:02:10.380,0:02:27.080
+99. Wie kriegen wir zwei- oder c-ziffrige Zahlen?
+Indem wir zehn hoch und dann c nehmen bzw. c - 1
+
+0:02:27.080,0:02:43.070
+also 10 hoch 1 wäre 10, was bei den zweiziffrigen
+Zahlen zum Beispiel der Fall wäre, und bei diesen
+
+0:02:43.070,0:02:49.880
+Listen können wir jetzt sagen, wir nehmen alle
+Zahlen, die von diesem Wert gehen bis zu einem
+
+0:02:49.880,0:03:02.750
+Endwert und der Endwert wäre in dem Fall 10
+hoch c. Das ist sozusagen 100. Aber 100 brauchen
+
+0:03:02.750,0:03:10.550
+wir nicht mehr, also - 1. So, jetzt könnten
+wir uns diese zahlen anschauen wollen, dann
+
+0:03:10.550,0:03:25.610
+öffne ich das ganze Mal in dem ghci, also dadurch
+kompiliere ich das Programm und jetzt sagt mir
+
+0:03:25.610,0:03:34.880
+Haskell hier, dass ein Fehler vorliegt und wir
+schauen uns mal diese Fehlernachricht an: "error:
+
+0:03:34.880,0:03:45.080
+Variable not in scope: y :: Integer". Hier wird
+auch angezeigt, wo der Fehler ist, nämlich in
+
+0:03:45.080,0:03:55.160
+Zeile 24 und genau an dieser Stelle. Ähnliche
+Meldungen bekommen wir auch Autotool. Dort wird
+
+0:03:55.160,0:04:04.640
+die Zeile und die Spalte angegeben. Jetzt können
+wir diese Stelle im Code suchen und mein Editor
+
+0:04:04.640,0:04:13.130
+markiert diese Stelle auch schon und gibt mir
+hier unten dieselbe Fehlermeldung an. Also y ist
+
+0:04:13.130,0:04:19.130
+noch nicht definiert, das sagt dieser Fehler. Das
+heißt, bevor wir irgendwie eine Ausgabe erhalten
+
+0:04:19.130,0:04:29.200
+müssen wir y definieren. Wir könnten jetzt
+sagen, dass y ebenfalls eine Liste sein soll,
+
+0:04:29.200,0:04:36.520
+in dem Fall nehmen wir mal die leere Liste
+und wenn ich das mir jetzt noch mal neue lade,
+
+0:04:36.520,0:04:45.490
+dann gibt es keinen Fehler mehr und wenn ich
+jetzt 'list' aufrufe, also den Wert 'list'
+
+0:04:45.490,0:04:52.180
+ausgeben lassen, erhalte ich die leere Liste.
+Warum ist das so? Ja die List-Comprehension macht
+
+0:04:52.180,0:04:58.900
+das Kreuzprodukt aus diesen beiden Teilen,
+aus den Listen von x und y in dem Fall,
+
+0:04:58.900,0:05:08.020
+weil nichts weiter definiert ist, das heißt, wir
+erhalten ja eine null elementrige Liste, weil y
+
+0:05:08.020,0:05:16.990
+eben keine Elemente enthält. Wenn ich hier einen
+Zahlenwert eingebe, einen festen, z.B. 1, dann
+
+0:05:16.990,0:05:28.420
+gibt uns 'list' jetzt in dem Fall, wenn ich neu
+lade, die Liste aller dreistelligen Zahlen aus.
+
+0:05:33.750,0:05:40.110
+Ich formatiere hier das etwas anders und
+schreibe das y jetzt auf die nächste Zeile,
+
+0:05:40.110,0:05:51.690
+um die Spaltenbreite etwas geringer zu machen und
+die Lesbarkeit etwas zu erhöhen. Jetzt schauen wir
+
+0:05:51.690,0:05:58.110
+uns noch mal an was die einschränken hier sind
+für y. y ist auch wieder eine c-Digit-Number,
+
+0:05:58.110,0:06:08.220
+und zwar soll sie allerdings mindestens zweimal
+so groß sein wie x. Jetzt könnten wir natürlich
+
+0:06:08.220,0:06:30.120
+erst mal alle c-Digit-Number nehmen, also wieder
+10 hoch (c-1), allerdings lassen sich hier Zahlen
+
+0:06:30.120,0:06:37.530
+einsparen, die wir nämlich gar nicht betrachten
+müssen, deshalb ist hier die bessere Wahl, dass
+
+0:06:37.530,0:06:48.240
+wir hier direkt schon sagen, dass wir 2 * x wählen
+als den geringsten Wert den y annehmen kann, denn
+
+0:06:48.240,0:06:59.520
+alle x-Werte sind ja bereits c-Digit-Nummern, also
+Zahlen mit genau c-Ziffern. Das heißt, wir können
+
+0:06:59.520,0:07:07.350
+hier in dem Fall die Einschränkung etwas kleiner
+machen und damit erhalten wir auch ein geringeres
+
+0:07:07.350,0:07:24.220
+Kreuzprodukt. Also an zu betrachtenden Zahlen
+[...]. Dann gelten jetzt für x und y allerdings
+
+0:07:24.220,0:07:31.780
+noch nicht alle Einschränkungen, denn hier steht
+noch die Summe von x und y soll ebenfalls eine
+
+0:07:31.780,0:07:48.550
+c-Digit-Number sein. Das heißt, jetzt können wir
+eine weitere Einschränkung für x und y angeben,
+
+0:07:50.740,0:08:04.810
+indem wir einen booleschen Ausdruck hinschreiben.
+Und in dem Fall sollen x und y eine c-Digit-Number
+
+0:08:04.810,0:08:15.220
+sein. Wann sind sie eine c-Digit-Number?
+Nämlich genau dann, wenn x und y größer als
+
+0:08:15.220,0:08:25.270
+10 hoch (c - 1) ist oder gleich groß. Da wir
+aber schon wissen, dass x und y mindestens so
+
+0:08:25.270,0:08:30.970
+groß sind, brauchen wir diesen Test nicht.
+Allerdings brauchen wir einen zweiten Test,
+
+0:08:30.970,0:08:39.880
+nämlich dass sie auch kleiner sind als 10 hoch (c
+- 1). Also schreiben wir diesen Test jetzt hier
+
+0:08:39.880,0:08:56.980
+hin, x und y sollen kleiner sein als 10 hoch c.
+Wenn wir das abspeichern, dann erhalten wir jetzt,
+
+0:08:56.980,0:09:05.260
+wenn wir die Liste ausgeben, die Liste aller
+dieser Zahlen. Jetzt könnte man meinen,
+
+0:09:05.260,0:09:10.840
+das Programm ist fertig. Im Prinzip ist
+das auch so, allerdings lässt sich es noch
+
+0:09:10.840,0:09:18.400
+weiter verbessern. Wenn wir uns den Code genau
+anschauen, dann sehen wir hier, dass wir Common
+
+0:09:18.400,0:09:27.780
+Subexpression Elimination anwenden können. Denn
+hier steht dieselbe Zahl wie dort zum Beispiel.
+
+0:09:31.020,0:09:39.000
+Dafür können wir diese Zahlen als Konstanten
+definieren, indem wir hier 'where' schreiben und
+
+0:09:39.000,0:09:55.290
+wir nehmen die erste c-Digit-Zahl und die letzte
+c-Digit-Zahl als Konstanten. Ich sage die untere
+
+0:09:57.810,0:10:19.230
+c-Digit-Zahl ist minC und das ist eben genau
+diese Zahl hier und die obere c-Digit-Zahl maxC,
+
+0:10:19.230,0:10:35.880
+die ist 10 hoch (c - 1) und diese füge ich
+jetzt auch in den entsprechenden Stellen ein.
+
+0:10:40.330,0:10:44.080
+Das ist maxC
+
+0:10:48.780,0:11:11.760
+und das ist auch maxC und hier das ist maxC
++ 1 bzw. ist das maxC, wenn wir hier sagen
+
+0:11:11.760,0:11:20.880
+x und y sind kleiner gleich maxC. Also dieses
+minC, das hätten wir nicht einführen müssen,
+
+0:11:20.880,0:11:31.770
+weil dieser Wert nur einmal vorkommt. Aaber
+ich denke, das ist trotzdem lesbarer, wenn es
+
+0:11:31.770,0:11:43.500
+eingeführt ist. Deshalb behalte ich das mal
+so. Jetzt ist die Ausgabe natürlich noch immer
+
+0:11:43.500,0:11:56.250
+dieselben. Allerdings muss jetzt die Berechnung
+für maxC nur noch einmal erfolgen und nicht mehr
+
+0:11:56.250,0:12:03.900
+dreimal, also es wird da etwas Rechenzeit gespart
+durch die Common Subexpression Elimination.

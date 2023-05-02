@@ -1,0 +1,347 @@
+0:00:01.600,0:00:10.160
+now let's continue with task four here in the
+same way as in the last task we have to take our
+
+0:00:10.160,0:00:16.560
+image from last week the little tree and
+add an animation to it and the whole thing
+
+0:00:16.560,0:00:19.680
+should look something like this there's this tree
+
+0:00:19.680,0:00:25.920
+and it shakes like it's hit by some
+wind and then importantly it stops
+
+0:00:28.000,0:00:32.320
+okay so I went ahead and filled
+the basic structure in from
+
+0:00:33.120,0:00:36.960
+our solution for last week's
+task so we have our tree
+
+0:00:37.600,0:00:45.760
+here just stands there does nothing so now we have
+to do something with this t parameter again and
+
+0:00:48.800,0:01:00.000
+the first thing I would do is again introduce a
+where block with some offset which I initially
+
+0:01:02.400,0:01:08.720
+define to be t and then I basically just say okay
+
+0:01:11.920,0:01:13.920
+let's just start by translating
+
+0:01:16.240,0:01:22.640
+the crown by some offset because
+this is what it looks like here
+
+0:01:23.840,0:01:30.960
+the crown kind of moves to the right
+to the left so let's start with that
+
+0:01:33.520,0:01:34.720
+let's have a look at this
+
+0:01:35.840,0:01:42.800
+what does this actually do obviously not the right
+thing but it's a good start so it starts moving
+
+0:01:45.360,0:01:47.920
+but it doesn't come back so
+
+0:01:48.720,0:01:58.080
+how do we fix this? well here we can use the
+sine function to add a kind of boundary to the
+
+0:01:58.080,0:02:05.040
+left and the right of this movement because
+it will now oscillate between left and right
+
+0:02:07.440,0:02:13.040
+movement and this looks kind of
+like the shaking we are aiming for
+
+0:02:14.480,0:02:24.800
+but it's way too far to the right and the left so
+let's dampen this a little bit by adding a factor
+
+0:02:27.840,0:02:37.280
+so now the distance from the center of the
+tree is not so big anymore and it looks
+
+0:02:38.640,0:02:43.040
+almost like the one here if we squint a little bit
+
+0:02:48.960,0:02:53.840
+but it doesn't stop it keeps
+going and going so at some point
+
+0:02:54.400,0:03:06.000
+we need to make sure it stops so I'm introducing
+a conditional that says as long as t is let's say
+
+0:03:10.320,0:03:10.800
+below
+
+0:03:13.680,0:03:17.840
+1.5 times pi which is
+
+0:03:19.600,0:03:29.440
+three iterations so we first uh move to the
+left then to the right then to the left and
+
+0:03:29.440,0:03:38.720
+then to the right again then if we are below this
+threshold we use this sign as the offset and else
+
+0:03:41.840,0:03:48.560
+we use a zero offset meaning we stop
+moving so let's have a look at this
+
+0:03:53.440,0:03:59.840
+so now to the left and one more to the right
+
+0:04:01.760,0:04:14.480
+oh no it's just this case just to the left to
+the right and then there's some jump because
+
+0:04:16.720,0:04:24.160
+I intended to speed this actually
+up by multiplying the t in the sine
+
+0:04:25.600,0:04:27.840
+parameter
+
+0:04:30.640,0:04:36.560
+and then our boundary works out okay
+
+0:04:38.000,0:04:50.000
+so this is the crown moving now what about the
+branches let's see the branches have to definitely
+
+0:04:50.000,0:05:01.760
+not just shift left and right they have to rotate
+kind of so let's try that let's just say we had
+
+0:05:03.360,0:05:16.880
+rotated the branches and let's use the offset,
+for instance, let's just see what happens
+
+0:05:20.960,0:05:25.200
+okay it looks kind of strange
+maybe we should use the
+
+0:05:29.040,0:05:32.480
+offset to actually rotate in the other direction
+
+0:05:36.480,0:05:47.200
+okay this looks better but still kind of
+strange because well you would assume the
+
+0:05:48.080,0:05:55.280
+branches rotate around this spot when actually
+they rotate around this spot somewhere here
+
+0:05:56.800,0:06:04.640
+and this is because in Codeworld
+we have this problem with rotation
+
+0:06:05.440,0:06:13.280
+and translation because rotation is always
+rotating around the center of some image
+
+0:06:16.080,0:06:25.840
+you have the property that to
+translate an image from x and y after
+
+0:06:27.920,0:06:30.720
+rotating it by some
+
+0:06:32.560,0:06:36.720
+angle the picture is p here
+
+0:06:39.520,0:06:47.840
+this is not the same as
+doing it the other way around
+
+0:06:52.560,0:06:56.720
+so this is important to keep in
+mind because it means that we
+
+0:06:56.720,0:07:04.880
+need to actually in order to rotate these
+things correctly we need to do the rotation
+
+0:07:06.480,0:07:23.840
+further inside the branch picture so what we do is
+we add an additional parameter to branches: offset
+
+0:07:25.920,0:07:41.680
+and now branches takes a Double named offset and
+now in this we add could add this here to where
+
+0:07:41.680,0:07:53.600
+we rotated the branches to kind of go in these two
+directions we say okay let's add the offset here
+
+0:07:56.720,0:08:02.720
+see what happens; because we now move them over
+this translated here which makes a difference
+
+0:08:08.800,0:08:23.360
+so what do we end up with now? oh well it's
+gotten worse hmm what's the problem now?
+
+0:08:24.160,0:08:33.280
+well now you can see that it actually the
+branches rotate around this specific position
+
+0:08:34.640,0:08:38.080
+right? because we got rid of the
+
+0:08:38.880,0:08:44.640
+extra wobbling introduced by this translated
+primitive so to speak when we still have
+
+0:08:46.720,0:08:54.080
+the center of the newly created
+rectangles here if you look at this
+
+0:08:56.800,0:09:02.400
+these are the branches if we look
+at a single branch that we rotate
+
+0:09:05.680,0:09:13.600
+we start with a solid rectangle and when we
+rotate it we rotate it around the middle but we
+
+0:09:13.600,0:09:21.360
+would like to rotate it around the place where
+it attaches to the trunk so how do we do this?
+
+0:09:22.560,0:09:29.360
+we add another translated
+primitive translated and we
+
+0:09:32.400,0:09:38.000
+raise the branch by half of its height
+
+0:09:40.720,0:09:42.560
+so this means that now the
+
+0:09:44.720,0:09:50.160
+bottom end of the branch is at
+the origin of the coordinate plane
+
+0:09:53.760,0:10:02.880
+and this means we rotate around this point then so
+let's see if it actually works obviously we have
+
+0:10:02.880,0:10:13.680
+to do some additional adjustment now but the basic
+principle works because if we inspect this now
+
+0:10:16.320,0:10:22.800
+we have the solid rectangle it's
+translated up by 1 then it's colored brown
+
+0:10:23.520,0:10:30.080
+rotated around the origin point
+then translated upwards but this
+
+0:10:30.080,0:10:36.640
+upwards translation is now wrong because we
+introduced this additional translation here so
+
+0:10:37.680,0:10:45.840
+let's get rid of this so we no longer
+need to translate this branch to the left
+
+0:10:48.160,0:10:55.280
+and this branch to the right so now they meet
+in the middle obviously this translated 0 0 is
+
+0:10:57.520,0:11:04.240
+meaningless at the moment but we needed to
+push the branches back down a bit so to speak
+
+0:11:05.840,0:11:21.680
+so now we just introduce some additional
+offset here like -1.7 something like this
+
+0:11:27.760,0:11:30.800
+no, not 1.7
+
+0:11:39.680,0:11:46.240
+0.75 is what I was wanted to
+go for, was it? yeah kind of
+
+0:11:49.680,0:11:51.920
+okay now the last thing:
+
+0:11:54.000,0:12:00.560
+our rotation is still in the wrong
+direction so I need to change the
+
+0:12:03.120,0:12:15.840
+sign of the offset here which I forgot to
+do previously but then looks okay so now
+
+0:12:18.640,0:12:22.400
+what we can realize is that if you look at this
+
+0:12:23.360,0:12:28.800
+expression we're just getting kind of
+long let's break this into two lines
+
+0:12:31.040,0:12:40.240
+so now these two look quite similar
+especially the first part here so
+
+0:12:41.600,0:12:44.640
+we could definitely just take this
+
+0:12:48.720,0:12:56.160
+and factor it outside of this
+so we put this here and then do
+
+0:13:00.640,0:13:05.840
+kind of like this
+
+0:13:09.520,0:13:21.520
+okay so we got rid of one translated call here but
+if we look even more carefully you can see that
+
+0:13:21.520,0:13:28.480
+the first thing we do with these branches out here
+is to translate them so you can even take this
+
+0:13:30.640,0:13:36.880
+and basically pull it out here which then we can
+
+0:13:38.320,0:13:52.320
+combine by saying okay let's just
+subtract 0.75 from 2.5 so we have 1.75
+
+0:14:01.040,0:14:07.600
+and now we have our final animation
+
+0:14:10.160,0:14:18.000
+it stops at some point and we even
+cleaned up our code a little bit
+
+0:14:20.960,0:14:30.080
+okay I think one of the main takeaways here is to
+always keep in mind is that this is not a valid
+
+0:14:30.080,0:14:36.880
+equality but rather an inequality in Codeworld
+so if you have rotation and translation combined
+
+0:14:36.880,0:14:43.840
+always keep an eye out to do them in the right
+order otherwise you get strange animations

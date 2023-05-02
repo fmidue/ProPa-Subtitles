@@ -1,0 +1,415 @@
+0:00:01.760,0:00:06.720
+For the last part of this exercise
+series we move away from code world to
+
+0:00:06.720,0:00:08.320
+regular Haskell programming.
+
+0:00:09.040,0:00:18.480
+And the first question probably is how do we
+interactively check what our program does.
+
+0:00:18.480,0:00:23.040
+In this case we don't have a nice
+run button like with code world.
+
+0:00:23.040,0:00:30.080
+So if we have a task like this how do
+we actually how do we work with this?
+
+0:00:31.360,0:00:36.560
+And the answer is we use ghci to load this file.
+
+0:00:37.200,0:00:47.040
+And see what the actual values in it are
+or play around with functions later on.
+
+0:00:47.040,0:00:48.560
+So how do we do this?
+
+0:00:48.560,0:00:55.960
+Well, the basic way is to use a command
+prompt and load the file like this.
+
+0:00:55.960,0:00:57.840
+It then loads your file.
+
+0:00:58.720,0:01:03.040
+And if I now type in a name
+from this file, for example "c".
+
+0:01:04.880,0:01:09.040
+I can see that is actually the
+constant that is defined here.
+
+0:01:09.040,0:01:12.640
+If I type in "list" I will get an error
+
+0:01:12.640,0:01:17.520
+because "list" is undefined and trying to
+evaluate undefined results in a runtime error.
+
+0:01:18.480,0:01:27.840
+Okay, now ghci always also checks
+if I made a mistake in my program.
+
+0:01:27.840,0:01:30.160
+Let's say I have a syntax error.
+
+0:01:30.160,0:01:35.600
+You can already see my editors
+also highlighting errors.
+
+0:01:35.600,0:01:46.240
+So if I type ":r" you can reload the file and
+now ghci is telling me that there's an error.
+
+0:01:46.240,0:01:53.840
+In this case it's a parse error.
+Could have been a type error or what have you.
+
+0:01:56.080,0:02:01.680
+Let's put the "undefined" back in and
+reload the file and everything works fine.
+
+0:02:07.040,0:02:14.720
+Now in ghci you can also evaluate
+expressions on their own.
+
+0:02:14.720,0:02:19.920
+So we don't have to write them into the
+into our solution to test something out.
+
+0:02:21.200,0:02:22.960
+For example, let's
+
+0:02:28.320,0:02:29.120
+just evaluate this.
+
+0:02:32.160,0:02:34.000
+What is our set of two-digit numbers?
+
+0:02:34.000,0:02:40.240
+Here we can just type in a list expression
+for this, and ghci will evaluate this.
+
+0:02:40.960,0:02:47.120
+And you can use all kinds of Haskell
+functions to test something out in ghci.
+
+0:02:47.920,0:02:54.160
+Okay, now let's start with the task!
+
+0:02:57.040,0:03:00.800
+We should build a list comprehension here that
+
+0:03:05.840,0:03:10.960
+produces a list of pairs of x and
+y, such that x and y are c-digit numbers.
+
+0:03:10.960,0:03:16.000
+c is defined here as this
+constant and y is at least
+
+0:03:16.000,0:03:21.680
+twice as big as x and the sum of
+x and y is also a c-digit number.
+
+0:03:21.680,0:03:29.680
+And as I also already evaluated here, for example,
+this set of two-digit numbers is [10..99].
+
+0:03:32.880,0:03:35.520
+Obviously, one-digit numbers would be [1..9].
+
+0:03:37.360,0:03:45.920
+The three-digit numbers are then
+[100..999], and these are a lot.
+
+0:03:45.920,0:03:49.200
+Okay, so how do we start?
+
+0:03:49.200,0:04:01.920
+Well, list comprehensions have this left-hand
+side and this dash and a right-hand side.
+
+0:04:02.880,0:04:08.560
+And I'm using these underscores here
+which are specially treated by Haskell.
+
+0:04:09.600,0:04:16.400
+They're called holes and you can use them to see
+what type Haskell is expecting at some point.
+
+0:04:17.600,0:04:19.760
+If I load them in ghci now...
+
+0:04:21.080,0:04:27.400
+- I need to save the file, load them here -
+
+0:04:29.120,0:04:32.000
+It tells me that it found a hole and
+
+0:04:32.880,0:04:38.880
+the type of the hole is a pair of two
+Integers which is the first thing here.
+
+0:04:38.880,0:04:44.080
+Then it says it found a hole of
+type Bool, so some condition here.
+
+0:04:47.920,0:04:55.840
+So we should fill in pairs here let's call
+them "x" and "y" like in the task description.
+
+0:04:56.480,0:05:03.360
+Now, "x" and "y", as my editor
+complaints, are not in scope.
+
+0:05:03.360,0:05:05.440
+So I need to define them somewhere.
+
+0:05:06.000,0:05:10.240
+This is where the generators in
+list comprehensions come from.
+
+0:05:11.840,0:05:17.200
+Let's say I draw x and y from these two things.
+
+0:05:17.200,0:05:18.560
+I don't know what they are yet.
+
+0:05:20.080,0:05:25.600
+Then I again load this file
+and now can again see that
+
+0:05:26.320,0:05:33.840
+Haskell is expecting two lists of
+Integers in place of these holes.
+
+0:05:33.840,0:05:34.720
+I really like using these
+
+0:05:37.120,0:05:43.280
+holes to incrementally work with programs
+and build them up in small steps.
+
+0:05:43.280,0:05:47.360
+You cannot evaluate them, but
+that's okay for the moment.
+
+0:05:49.440,0:05:52.160
+So what are x and y in this case?
+
+0:05:52.160,0:05:58.400
+Well, let's take the first condition of x and y.
+
+0:05:58.400,0:06:06.640
+x and y are c-digit numbers.
+Let's fix c to 3 for the moment.
+
+0:06:07.440,0:06:09.680
+What are all three-digit numbers?
+
+0:06:09.680,0:06:15.840
+Well, all three-digit numbers, as
+we just did in ghci, are [100..999],
+
+0:06:21.840,0:06:23.920
+and let's do the same thing here.
+
+0:06:26.160,0:06:36.160
+Okay, now we have gotten rid of all the
+holes, so let's see what this list is.
+
+0:06:38.240,0:06:43.680
+It's a very long list and ghci does
+take some time to actually print it out.
+
+0:06:44.400,0:06:48.240
+I hit "ctrl-c" to interrupt this.
+
+0:06:51.280,0:06:53.600
+We want to just look at a small fraction,
+
+0:06:53.600,0:07:00.800
+we can use the take function and maybe
+look at the first 20 elements - like this.
+
+0:07:01.440,0:07:08.960
+And we see that we have all these pairs, for
+example, we have everything starting with 100
+
+0:07:08.960,0:07:18.960
+and then for y we take all from 100 onwards
+to 999 and so on and then for 101 and so on.
+
+0:07:18.960,0:07:27.600
+Okay, but this is not the only condition, we
+also have that y is at least twice as big as x.
+
+0:07:27.600,0:07:37.600
+So actually, y does not start with 100 but it
+always starts with the value twice as big as x.
+
+0:07:37.600,0:07:46.640
+We can just use the starting value not of
+100 here, but actually make it depend on x
+
+0:07:47.600,0:07:50.880
+so now we have 2*x here.
+
+0:07:50.880,0:08:00.400
+If we reload the file and again take a look at the
+first 20 elements we will see that now instead of
+
+0:08:00.400,0:08:09.040
+(100,100) the first element, for example,
+is (100,200), and then we have (100,201).
+
+0:08:10.640,0:08:17.040
+Okay, now here's the third condition
+that our list has to fulfill:
+
+0:08:21.760,0:08:26.080
+And this is that the sum of x
+and y is also a c-digit number.
+
+0:08:27.680,0:08:31.040
+In our case we are just going
+with three for the moment.
+
+0:08:31.040,0:08:38.160
+So what does it mean for x+y to
+also be a three-digit number?
+
+0:08:38.160,0:08:46.720
+Well, the simplest condition here is that
+it's just a number smaller than 1000.
+
+0:08:47.520,0:08:49.520
+So it's at most 999.
+
+0:08:50.080,0:08:53.840
+And we don't need to check the
+lower bound actually, because
+
+0:08:55.280,0:09:05.680
+just by adding it we can never drop out
+of this range to the left or towards zero.
+
+0:09:07.840,0:09:16.080
+Okay, then you can obviously
+just reload this and take a look.
+
+0:09:16.640,0:09:23.600
+So the first 20 elements - well these are the
+same because this holds for all these elements.
+
+0:09:27.200,0:09:40.080
+But if make c smaller in a second, or
+parameterize by c, we'll see that actually
+
+0:09:43.280,0:09:47.040
+there are now fewer elements in this list.
+
+0:09:49.680,0:09:56.240
+Okay, so now this is our comprehension for c=3.
+
+0:09:58.560,0:10:02.720
+But, we should make it so
+that we can change this c,
+
+0:10:03.760,0:10:08.800
+and it automatically changes
+the list to what we want.
+
+0:10:09.760,0:10:10.560
+How do we do this?
+
+0:10:12.480,0:10:23.040
+We need to figure out how one of these 100,
+999 and 1000 actually correspond to the c.
+
+0:10:27.520,0:10:43.520
+Let's do this in small steps well
+100 = 10^2 and 999 = (10^3)-1
+
+0:10:54.960,0:10:56.960
+and 1000 = 10^3.
+
+0:11:00.960,0:11:08.560
+Remember, this is the case for c=3 so,
+everywhere there's a three we can put in the c.
+
+0:11:12.720,0:11:17.040
+And the 2 obviously is c-1.
+
+0:11:19.680,0:11:20.800
+And that's it.
+
+0:11:20.800,0:11:24.480
+So reload the list.
+
+0:11:26.800,0:11:30.720
+Take a look, it's still the
+same first elements but now if I
+
+0:11:31.520,0:11:40.800
+change this to 2 - reload this -
+these are now different elements.
+
+0:11:40.800,0:11:52.480
+And let's choose c=1, now we can
+probably take a look at the whole list.
+
+0:11:52.480,0:11:58.080
+And we see that we have all the values
+that we can add up to still get a one-digit
+
+0:12:01.280,0:12:06.880
+number, where the second number is
+at least twice as big as the first.
+
+0:12:07.680,0:12:12.400
+It goes all the way up to 3+6 which is 9 and then
+
+0:12:13.440,0:12:18.560
+any increase here would mean that
+we drop out of this condition.
+
+0:12:26.080,0:12:28.000
+This is how we solve this.
+
+0:12:28.000,0:12:38.880
+There are some other things you can do - some
+minor differences - but basically, this is the
+
+0:12:43.600,0:12:45.280
+standard solution, I would say.
+
+0:12:45.280,0:12:47.760
+You could actually go ahead and say:
+
+0:12:48.320,0:13:07.600
+"I'm always including the full range for y and
+then add a filter here that says that y >= 2*x."
+
+0:13:11.120,0:13:12.160
+This would also work.
+
+0:13:15.040,0:13:22.880
+But it behaves slightly different
+because it will generate all these pairs
+
+0:13:22.880,0:13:29.360
+with the full range and then filter out the
+ones that are not matching this criterion,
+
+0:13:30.000,0:13:40.400
+while when you write 2*x here it
+will only generate starting from 2*x.
+
+0:13:40.400,0:13:57.600
+So you will have less checks performed here
+but semantically there's no difference.

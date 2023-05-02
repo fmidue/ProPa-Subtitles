@@ -1,0 +1,385 @@
+0:00:00.000,0:00:05.760
+Bei dieser Aufgabe geht es darum eine
+Animation zu malen. Wie beim letzten
+
+0:00:05.760,0:00:10.050
+Mal auch können wir uns anschauen
+wie die Animation aussehen soll.
+
+0:00:10.050,0:00:18.810
+Dafür gibt es eine URL und wenn ich die öffne,
+dann sehen wir besonders soll die hier aufgehen
+
+0:00:18.810,0:00:28.200
+und sich wieder senken. Das ganze basiert dabei
+auf der Aufgabe, die wir vorher schon hatten und
+
+0:00:28.200,0:00:38.430
+ich füge jetzt einfach mal den Code dafür ein,
+der dazu schon existiert. Jetzt gibt es hier
+
+0:00:38.430,0:00:45.360
+erst mal eine Fehlermeldung, weil 'scene'
+bereits definiert ist. Ich füge den Code
+
+0:00:45.360,0:00:58.560
+dazu hier in die neue 'scene' Funktion ein,
+die jetzt eben nicht mehr nur ein Wert ist,
+
+0:00:58.560,0:01:02.940
+sondern diesmal haben wir eine Funktion, das
+heißt, hier gibt es noch einen 'Double' Parameter.
+
+0:01:05.520,0:01:13.980
+Ich benenne jetzt mal die Teile hier um.
+Letztes Mal hieß das einfach 'greenRectrangle',
+
+0:01:13.980,0:01:29.600
+jetzt nenne ich das 'grass' und genau so mache ich
+das mit dem 'yellowCircle', den nenne ich 'sun'.
+
+0:01:29.600,0:01:40.820
+Ich extrahiere noch diesen Teil hier mit
+dem Verschieben und setze den hier hin
+
+0:01:41.330,0:01:52.280
+und dann schauen wir uns das ganze erst noch
+einmal an. Das ist die Szene vom letzten Mal,
+
+0:01:52.280,0:01:58.970
+also einfach ein Bild. Jetzt wollen wir eine
+Animation draus machen. Und zwar soll sich
+
+0:01:58.970,0:02:06.710
+die Sonne eben von links nach rechts bewegen. Das
+bedeutet zunächst einmal, unser Startpunkt sollte
+
+0:02:06.710,0:02:16.160
+nicht mehr dort oben sein, sondern hier links.
+Das heißt, wir verschieben nicht mehr nach oben,
+
+0:02:16.160,0:02:30.290
+sondern nach links. Wenn wir das machen, dann
+sehen wir jetzt, dass unsere Sonne links ist. Ok,
+
+0:02:30.290,0:02:33.410
+und die Sonne sollte hinter dem Gras
+sein. Das können wir einfach beheben,
+
+0:02:33.410,0:02:43.070
+indem wir das Gras in den Vordergrund holen. Und
+jetzt kommt der Teil, in dem wir eine Animation
+
+0:02:43.070,0:02:55.220
+daraus machen. Wir müssen jetzt irgendwie,
+denn es war zu bringen, dass eben unsere
+
+0:02:55.220,0:03:02.420
+Sonne sich bewegt. Wir haben dafür den 't'
+Parameter und den können wir dafür benutzen.
+
+0:03:02.420,0:03:13.490
+Das heißt, wir nutzen die 'rotated'
+Funktion dafür und damit können wir
+
+0:03:13.490,0:03:18.110
+sozusagen unsere Sonne drehen,
+um diese verschobene Achse,
+
+0:03:18.110,0:03:29.240
+wenn wir das außerhalb von diesem 'translated'
+machen. Also wir können 'rotated t' und dann
+
+0:03:29.240,0:03:38.570
+diese Funktion nehmen und wenn wir das machen,
+dann sehen wir zwei Probleme. Zum einen
+
+0:03:38.570,0:03:43.380
+die Sonne bewegt sich verkehrt herum
+und sie hört nicht auf sich zu bewegen.
+
+0:03:43.380,0:03:54.360
+Das verkehrt herum Bewegen können wir
+beheben, indem wir bei 'rotated (-t)' sagen,
+
+0:03:54.360,0:04:01.800
+denn wenn wir halt genau einfach den
+negativen Wert nehmen, dann läuft die
+
+0:04:01.800,0:04:14.490
+Rotation genau anders herum. Dann brauchen
+wir auch noch einen Endpunkt für das Rotieren.
+
+0:04:19.830,0:04:35.010
+Dafür können wir einen Wert einführen ('stopAt')
+und wir sagen, dass das bei 'pi' aufhören soll.
+
+0:04:36.360,0:04:43.590
+Dann müssen wir eine Fallunterscheidung machen
+in der wir sozusagen feststellen, ob wir schon
+
+0:04:43.590,0:04:56.700
+den Endpunkt erreicht haben oder nicht. Also wir
+können jetzt hier sagen, wenn 't' kleiner als
+
+0:04:56.700,0:05:13.860
+'stopAt' ist, dann soll rotiert werden, wie schon
+vorher, bzw. wie hier aufgeschrieben und ansonsten
+
+0:05:15.390,0:05:27.360
+soll dann auch rotiert werden, allerdings soll der
+Wert dabei 'stopAt' sein. Damit erreichen wir,
+
+0:05:27.360,0:05:33.840
+dass dann der Wert sozusagen fix ist und nicht
+mehr weiter rotiert wird. Und wenn wir das machen,
+
+0:05:33.840,0:05:40.830
+dann sehen wir, dass die Sonne verschwindet
+und bleibt. Wir können den Wert auch noch
+
+0:05:40.830,0:05:47.640
+anpassen und sozusagen wenn wir wollen, dass
+die Sonne nicht vollständig verschwindet,
+
+0:05:47.640,0:05:56.650
+können wir ja sagen '0,95 * pi'. Dann ist das
+noch ein kurzes Stück davor. Und wenn wir das
+
+0:05:56.650,0:06:05.380
+jetzt noch einmal ausführen sehen wir, dass
+die Sonne so halb verschwunden bleibt. Okay,
+
+0:06:05.380,0:06:14.770
+wenn wir uns diesen Code jetzt hier anschauen, ich
+formatiere das mal noch ein kleines wenig anders,
+
+0:06:14.770,0:06:30.820
+dann sieht das so aus, wie in Video 13 bereits
+vorgeführt wird, eine Vereinfachung dieses
+
+0:06:30.820,0:06:37.090
+Beispiels. Das ganze Spiel dieser Vereinfachung können wir jetzt aber auch noch weiter treiben.
+
+0:06:37.090,0:06:54.010
+Und zwar hatten wir hier schon das 'if then else'
+lokal nach dem '&'. Wir können aber feststellen,
+
+0:06:54.010,0:07:01.570
+dass hier noch mehr Teile gleich sind. Und
+was da zunächst auffällt ist, dass nämlich
+
+0:07:03.130,0:07:10.390
+bei dem 'rotated' dieser Teil und auch dieses
+Ende gleich sind. Das heißt, wir können das
+
+0:07:10.390,0:07:24.250
+'if then else' hineinziehen, indem wir sagen
+'rotated', dann die Klammer einsetzen, das ist
+
+0:07:24.250,0:07:34.930
+sozusagen (-t) oder 'stopAt', und danach führen
+wir dieses 'translated' aus. Also das verschieben
+
+0:07:34.930,0:07:44.680
+wir nach unten und entfernen das in dem anderen
+Fall und entfernen auch hier dieses 'rotated'.
+
+0:07:47.240,0:07:55.400
+So und jetzt formatiere ich den Code nochmal neu.
+
+0:08:08.810,0:08:20.390
+Das sollte jetzt dasselbe tun wie vorher und
+ist nur anders aufgeschrieben. Wir können
+
+0:08:20.390,0:08:32.660
+jetzt die Klammern ihr auch entfernen, die sind
+überflüssig. Und jetzt könnte man sich überlegen,
+
+0:08:32.660,0:08:40.790
+dass man das ganze noch weiter vereinfachen
+möchte, nämlich dass man gar nicht 'if then
+
+0:08:40.790,0:08:55.490
+else' verwenden möchte, sondern die 'minimum'
+Funktion oder die 'maximum' Funktion. Was wir
+
+0:08:55.490,0:09:03.890
+eigentlich haben wollen, ist nämlich das
+Minimum aus 't' und 'stopAt' zu nehmen und
+
+0:09:05.480,0:09:14.150
+das können wir auch einfach hinschreiben. Wir
+können sagen 0 minus das Minimum aus 't' und
+
+0:09:14.150,0:09:23.390
+'stopAt'. Das soll der Wert sein, den wir hier
+eintragen, also den wir hier verwenden für die
+
+0:09:23.390,0:09:30.740
+Rotation. Das ist nämlich genau, ich mache das
+noch einmal kurz rückgängig, wir hatten vorher:
+
+0:09:30.740,0:09:39.440
+Wenn 't' kleiner als 'stopAt' ist. Und jetzt
+nehmen wir das Minimum aus 't' und 'stopAt',
+
+0:09:39.440,0:09:44.180
+was ja im Prinzip auch genau
+das ist, was wir haben wollen.
+
+0:09:50.890,0:10:09.250
+Das können wir jetzt auch so verwenden. Und noch
+eine weitere Vereinfachung hier, 0 minus kann man
+
+0:10:09.250,0:10:14.920
+auch noch besser schreiben. Es gibt nämlich eine
+'negate' Funktion und die kann man hier einfach
+
+0:10:14.920,0:10:28.960
+verwenden. Die macht dasselbe und sagt einfach
+nochmal deutlicher, dass wir einfach den negativen
+
+0:10:28.960,0:10:36.340
+Wert von dem Ergebnis dort haben wollen. Und schon
+haben wir den Code noch weiter vereinfacht und
+
+0:10:36.340,0:10:41.950
+wenn wir jetzt noch ein bisschen kleinlich sein
+wollen und feststellen, wir wollen, dass die Sonne
+
+0:10:41.950,0:10:48.310
+nicht von ganz unten startet, wenn man ganz genau
+hinschaut, dann sieht man, dass das im Moment nach
+
+0:10:48.310,0:10:59.980
+der Fall ist, sondern ein klein wenig später. Dann
+könnte man, in der Animation können wir uns das
+
+0:10:59.980,0:11:08.710
+noch mal anschauen, wie das hier ist, da startet
+die Sonne nämlich auch erst, wenn die schon zu
+
+0:11:08.710,0:11:15.190
+sehen ist. Wenn wir das hier auch machen wollen,
+neben dem vorgegebenen Beispiel, dann können
+
+0:11:15.190,0:11:22.870
+wir einfach noch einen zweiten Wert einfügen,
+'startAt'. Da sagen wir auch einfach wieder,
+
+0:11:22.870,0:11:34.330
+wir wollen ein kleines bisschen später sozusagen
+anfangen, nämlich wenn die Rotation schon etwas
+
+0:11:34.330,0:11:42.190
+fortgeschritten ist. Und da könnten wir jetzt auch
+wieder eine Fallunterscheidung machen mit 'if then
+
+0:11:42.190,0:11:49.720
+else', oder wir sagen hier in dem Fall wir wollen,
+dass dieser Zeitpunkt hier etwas später anfängt.
+
+0:11:49.720,0:11:57.130
+Das heißt wir nehmen hier das Maximum und können
+hier sagen wir wollen das Maximum von 'startAt'
+
+0:11:57.130,0:12:12.820
+und 't' haben. Also Maximum von 't' und 'startAt'
+und dann erreichen wir, dass die ganze Animation
+
+0:12:12.820,0:12:24.070
+später startet. Ok, es gibt prinzipiell auch einen
+ganz anderen Ansatz die Rotation durchzuführen.
+
+0:12:24.070,0:12:34.540
+Den möchte ich hier auch noch zeigen. Man kann
+nämlich auch sich überlegen, dass man keine
+
+0:12:34.540,0:12:44.110
+Rotation durchführt, also nicht diese verschobene
+Sonne rotiert, sondern dass man die Sonne zu jedem
+
+0:12:44.110,0:12:52.412
+Zeitpunkt immer wieder neu verschiebt. Ich benenne
+'scene' hier mal in 'scene2' um und führe eine neue
+
+0:12:52.412,0:13:08.680
+'scene' ein, um das hier zu demonstrieren. Also
+wir könnten jetzt auch sagen, wir wollen die Sonne
+
+0:13:08.680,0:13:19.840
+verschieben und zwar um zwei Werte, nämlich
+'x' und 'y' und diese Werte, die ergeben sich aus
+
+0:13:19.840,0:13:28.270
+trigonometrischen Funktionen. Also was wir wissen
+ist, dass wir ein Kreis ja auch erzeugen können
+
+0:13:28.270,0:13:36.880
+durch Sinus und Cosinus und dementsprechend
+können wir sagen, wir haben für 'x' etwas,
+
+0:13:36.880,0:13:46.720
+das sich aus Cosinus von 't' ergibt und für 'y'
+etwas, das sich aus 'sin t' ergibt. Und ich kann
+
+0:13:46.720,0:13:53.970
+das einfach mal so naiv ihr reinpacken und dann
+sehen wir, ja hier haben hier so einen kleinen
+
+0:13:53.970,0:14:04.260
+Kreis irgendwie, auf dem sich die Sonne bewegt, in
+der verkehrten Richtung. Warum bewegt die sich in
+
+0:14:04.260,0:14:14.250
+die falsche Richtung? Die Rotation in die richtige
+Richtung können wir beheben, indem wir einfach das
+
+0:14:14.250,0:14:26.130
+negieren hier, in dem Fall den Cosinus, damit die
+Rotation auch links startet und dann nach rechts
+
+0:14:26.130,0:14:36.540
+übergeht. Damit wir dann noch den richtigen Radius
+bekommen, nehmen wir auch wieder einfach die 6,
+
+0:14:36.540,0:14:51.840
+die wir vorher schon hatten und multiplizieren
+das ganze. Also '-6 * cos t' und '6 * sin t'. Und
+
+0:14:51.840,0:15:02.250
+jetzt haben wir die Rotation der Sonne. Jetzt ist
+natürlich auch wieder der Fall, dass hier zu weit
+
+0:15:02.250,0:15:08.790
+rotiert wird. Das ist dann genauso möglich
+wieder zu beheben, wie in dem anderen Fall. Ich
+
+0:15:08.790,0:15:15.510
+mache das jetzt einfach mal, indem ich das hier
+kopiere, also wir wollen wieder so einen Start-
+
+0:15:15.510,0:15:24.120
+und Endzeitpunkt haben, können hierfür wieder den
+Teil mit dem Minimum und Maximum verwenden. Ich
+
+0:15:24.120,0:15:33.360
+nenne das jetzt einfach t', also ein etwas anderes
+t als das, was sich eben aus diesem Start- und
+
+0:15:33.360,0:15:41.310
+Endzeitpunkt ergeben und diese ''startAt' und
+'stopAt' definiere ich dann auch entsprechend
+
+0:15:41.310,0:15:50.880
+hier in dieser Szene und wenn man das jetzt
+ausführt, dann sehen wir, dass die Sonne später
+
+0:15:50.880,0:16:01.470
+anfängt und dann noch wieder so halb verschwunden
+hinter dem Gras endend aufhört. Und damit haben die
+
+0:16:01.470,0:16:08.490
+Aufgaben erledigt. Das sind zwei mögliche
+Ansätze, wie man diese Aufgabe lösen kann.
