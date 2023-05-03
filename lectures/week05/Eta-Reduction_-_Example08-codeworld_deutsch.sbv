@@ -1,0 +1,558 @@
+0:00:01.600,0:00:04.880
+Okay, ich wollte mit einem weiteren kurzen Video
+
+0:00:04.880,0:00:11.440
+einen Aspekt demonstrieren und erklären,
+der bei einigen von Ihnen bereits aufgetreten ist;
+
+0:00:11.440,0:00:16.880
+in Ihren Beiträgen, zu denen Sie als Feedback von
+Autotool etwas erhalten haben, das etwas von Eta-Reduktion gesagt hat.
+
+0:00:17.760,0:00:18.080
+Ja.
+
+0:00:18.080,0:00:21.360
+Also, so etwas wie 'Eta-Reduktion
+den folgenden Ausdruck'.
+
+0:00:22.080,0:00:23.200
+Und was bedeutet das?
+
+0:00:24.400,0:00:24.960
+Eta-Reduktion.
+
+0:00:25.840,0:00:26.340
+Ja, genau.
+
+0:00:26.960,0:00:31.440
+Es ist verwandt mit funktionaler Programmierung höherer Ordnung
+Programmierung, auf die wir später eingehen werden.
+
+0:00:32.000,0:00:37.760
+Aber eigentlich kann ich schon jetzt
+ein paar Erklärungen geben, damit Sie nicht so
+
+0:00:37.760,0:00:41.360
+überrascht sind, wenn dies in Ihrem Feedback auftaucht.
+
+0:00:42.160,0:00:42.660
+So.
+
+0:00:43.200,0:00:45.920
+Also, ich werde zuerst das und ein Beispiel machen,
+
+0:00:45.920,0:00:49.360
+das völlig künstlich ist,
+und dann ein kleines Experiment machen.
+
+0:00:49.360,0:00:50.720
+Okay, also was bedeutet das?
+
+0:00:50.720,0:00:55.600
+Und wann, oder ob es auftritt
+in Situationen wie der folgenden.
+
+0:00:55.600,0:01:00.800
+Also, nehmen wir an, wir haben eine Funktion, die wir
+in einer Szene verwenden. Die nimmt einige Argumente,
+
+0:01:00.800,0:01:07.920
+vielleicht eine Farbe, und vielleicht nimmt sie ein anderes
+Bild, ein Objekt, die Sonne, den Mond, was auch immer.
+
+0:01:07.920,0:01:14.560
+Und sie nimmt auch einen Zeitwert, und
+gibt schließlich ein Bild zurück.
+
+0:01:14.560,0:01:18.400
+Ja, das ist etwas, das
+in Ihren Einsendungen vorkommen könnte.
+
+0:01:18.400,0:01:21.840
+Und vielleicht wird es folgendermaßen
+definiert, wir haben eine Farbe,
+
+0:01:21.840,0:01:23.680
+wir bekommen ein Bild, wir bekommen die aktuelle Zeit.
+
+0:01:24.400,0:01:26.240
+Und dann, na ja, haben Sie einige Ausdrücke.
+
+0:01:26.240,0:01:31.760
+Also, sagen wir, wir haben eine zusätzliche
+Funktion, ich weiß nicht, wie sie heißt,
+
+0:01:32.400,0:01:34.560
+die irgendwie Bilder kombiniert und manipuliert.
+
+0:01:35.520,0:01:38.480
+Und es ist wahrscheinlich nicht der Name, den diese
+Funktion wirklich hat, aber sagen wir mal
+
+0:01:39.120,0:01:40.800
+das ist die Definition für diese Funktion.
+
+0:01:40.800,0:01:47.440
+Und dann in dieser f-Funktion, die Sie verwenden, um
+Ihre Szene zu komponieren oder einen Teil Ihrer Szene zu zeichnen,
+
+0:01:47.440,0:01:59.120
+wollen Sie etwas sagen wie, nun, ich will
+manipulieren und kombinieren, und vielleicht wird diese
+
+0:01:59.120,0:02:01.280
+Farbe wird an die andere Funktion weitergegeben.
+
+0:02:01.840,0:02:06.560
+Und vielleicht werden Sie für das Bild
+hier an dieser Stelle tatsächlich ändern.
+
+0:02:06.560,0:02:11.120
+Was Sie also vielleicht tun möchten, ist
+dieses Bild mit einem anderen Bild kombinieren,
+
+0:02:13.200,0:02:17.040
+und ein Rechteck mit zwei dieser Abmessungen.
+
+0:02:18.240,0:02:21.360
+Und dann übergibt man dies an die
+'manipulateAndCombine'-Funktion weiter,
+
+0:02:21.360,0:02:24.960
+die natürlich auch, na ja, sie hat
+einige Argumente und hat auch,
+
+0:02:25.600,0:02:30.640
+natürlich auch einen Zeitparameter, der dann
+irgendwo in der Definition verwendet wird, offensichtlich.
+
+0:02:30.640,0:02:31.140
+Okay.
+
+0:02:31.600,0:02:34.000
+Das ist natürlich keine
+gültige Definition hier jetzt,
+
+0:02:34.000,0:02:37.520
+wegen all dieser drei Stellen
+aber sagen wir mal, es ist definiert,
+
+0:02:38.160,0:02:44.320
+und Sie werden dies an die andere
+Funktion weiter, und Sie geben auch die Zeit weiter.
+
+0:02:44.320,0:02:46.080
+Und das macht absolut Sinn.
+
+0:02:46.080,0:02:49.600
+Wir haben hier drei Argumente, die
+Color, das Picture und den Double-Wert.
+
+0:02:49.600,0:02:53.040
+Und die Funktionsdefinition hat die gleichen
+drei Argumente, die Color, das Picture und
+
+0:02:53.760,0:02:56.800
+den Double-Wert für die Zeit, und
+dann verwendet sie unsere Funktion.
+
+0:02:56.800,0:03:00.640
+Und nehmen wir an, dass diese wirklich
+diese Parameter hat, damit das funktioniert.
+
+0:03:01.600,0:03:04.960
+Wenn Sie nun etwas
+so etwas in Ihren Eingaben,
+
+0:03:04.960,0:03:08.480
+dann würde Autotool vorschlagen
+dass Sie Eta-Reduktion verwenden sollten.
+
+0:03:08.480,0:03:16.560
+Und der Hinweis, den Autotool geben würde, wäre
+so etwas wie "Schmeißen wir das weg",
+
+0:03:16.560,0:03:18.240
+Lassen Sie uns das Argument "t" wegwerfen.
+
+0:03:18.240,0:03:24.880
+Was Autotool an dieser Stelle also sagen würde, ist, na ja,
+warum definieren Sie Ihre Funktion nicht so?
+
+0:03:30.800,0:03:34.800
+Was vielleicht etwas überraschend ist,
+da dieses 't' plötzlich verschwunden ist.
+
+0:03:35.600,0:03:36.240
+Ja.
+
+0:03:36.240,0:03:41.440
+Aber in der Tat, wenn Sie tatsächlich definieren würden
+die Funktion 'manipulateAndCombine' definieren und
+
+0:03:41.440,0:03:46.160
+dann Ihre 'f'-Funktion wie hier schreiben würden, wie
+von Autotool vorgeschlagen, dann würde es trotzdem funktionieren,
+
+0:03:46.160,0:03:49.440
+trotz der Tatsache, dass wir hier die Color,
+
+0:03:49.440,0:03:53.520
+das Picture und das Double-Argument haben, aber
+das Argument 't' kommt hier gar nicht vor.
+
+0:03:53.520,0:03:58.720
+Wir haben also eine Funktion mit drei Argumenten, aber wir
+haben aber eine Funktion mit nur zwei Argumenten definiert.
+
+0:03:59.440,0:04:00.320
+Wie kann das sein?
+
+0:04:01.200,0:04:05.040
+Nun, das ist der Sinn der Eta-Reduktion.
+
+0:04:05.040,0:04:09.280
+Nämlich, dass wir, anstatt diese Funktion
+f' als eine Funktion mit drei Argumenten zu betrachten, die
+
+0:04:09.280,0:04:12.560
+ein Picture zurückgibt, kann man es auch
+nur als eine Funktion betrachten,
+
+0:04:12.560,0:04:16.880
+die zwei Argumente annimmt, nämlich Color
+und Picture, und dann tatsächlich zurückgibt
+
+0:04:18.000,0:04:23.040
+eine Funktion von Double nach Picture, was genau das ist
+genau das, was diese rechte Seite hier definiert.
+
+0:04:24.880,0:04:29.360
+Ja, wir müssen einfach nicht
+die Zeit an dieser Stelle einzuführen.
+
+0:04:29.360,0:04:34.080
+Wenn sie nicht in diesem Ausdruck verwendet wird, wenn sie
+nur an diese andere Funktion weitergegeben wird,
+
+0:04:34.080,0:04:37.920
+dann könnte man genauso gut sagen, anstatt
+sagen, dass 'f' von 'c' und 'p' und 't' diese Funktion ist,
+
+0:04:37.920,0:04:42.960
+dieser ganze Ausdruck von 't', könnte man genauso gut
+f' von 'c' und 'p' ist nur dieser Ausdruck.
+
+0:04:43.920,0:04:44.480
+Das stimmt.
+
+0:04:44.480,0:04:50.800
+Also, wir verschieben irgendwie die Bereitstellung dieses Zeitarguments
+Argument, das macht mathematisch gesehen absolut Sinn,
+
+0:04:50.800,0:04:56.160
+denn wenn es eine Funktion ist, dann könnte sie ein anderes
+ein weiteres Argument nehmen und was mit diesem
+
+0:04:56.160,0:04:59.200
+zusätzlichen Argument, es würde auch
+an die andere Funktion weitergegeben werden,
+
+0:04:59.200,0:05:02.960
+aber wir müssen das nicht schreiben, weil
+das ist automatisch so, wie Funktionen funktionieren.
+
+0:05:04.240,0:05:06.240
+Okay, also wäre dies eigentlich auch eine akzeptierte
+
+0:05:06.880,0:05:12.800
+Definition und würde sich genauso verhalten wie die andere
+Version und Autotool betrachtet diese Version,
+
+0:05:12.800,0:05:18.160
+schöner, eleganter, besserer Stil, weil wir
+diesen künstlichen Zeitparameter nicht einführen.
+
+0:05:18.160,0:05:21.520
+Wenn Sie ihn an dieser Stelle nicht verwenden wollen
+verwenden, wenn Sie ihn nur an eine
+
+0:05:21.520,0:05:24.480
+andere Funktion weitergeben, brauchen wir
+müssen wir ihn an dieser Stelle nicht einführen.
+
+0:05:25.760,0:05:26.260
+So.
+
+0:05:26.640,0:05:31.120
+Das ist also irgendwie der syntaktische Grund
+warum das funktioniert und wie es interpretiert wird.
+
+0:05:31.680,0:05:40.720
+Und es ist auch der Grund, warum wir in Haskell,
+Argumente mit dieser Pfeilschreibweise schreiben, ja.
+
+0:05:40.720,0:05:46.720
+Wenn Sie zurückgehen oder sich an die vorherige
+Folie erinnern, gab es eine Diskussion darüber, warum
+
+0:05:47.600,0:05:55.520
+dies nicht irgendwie geschrieben wird als: Wir nehmen drei
+Argumente, wie es in einer Java-Typsignatur der Fall wäre.
+
+0:05:56.080,0:05:58.160
+Ja, wo wir etwas wie das hier hätten.
+
+0:05:58.160,0:06:02.400
+Und dann würden wir hier auch schreiben
+es mit Kommas und Klammern.
+
+0:06:05.120,0:06:10.160
+Ja, das wäre auch eine vernünftige
+Weg, um die Syntax von Haskell zu definieren.
+
+0:06:10.160,0:06:13.920
+Aber eigentlich würde es nicht gut funktionieren, weil
+es würde nicht mit der Eta-Reduktion funktionieren, wenn man
+
+0:06:13.920,0:06:20.160
+Typsignaturen so schreibt, und wenn man
+Funktionsdefinitionen oder Argumente so schreiben würde,
+
+0:06:20.160,0:06:26.560
+dann gäbe es keine unmittelbare syntaktische
+Möglichkeit, diesen 't'-Parameter wegzulassen.
+
+0:06:26.560,0:06:30.320
+Ja, dann hätten wir auch
+alle unsere Klammern hier, wahrscheinlich.
+
+0:06:33.360,0:06:37.040
+Und es wäre nicht so einfach zu sagen,
+na ja, lassen wir das letzte 't' weg, weil
+
+0:06:37.040,0:06:40.320
+wir würden erwarten, dass 'f' immer die
+drei Argumente in einem Tripel.
+
+0:06:40.320,0:06:47.840
+Ja, das würde nicht so schön aussehen oder wäre
+ein Argument wegzulassen, wäre kein so schönes Refactoring.
+
+0:06:47.840,0:06:53.760
+Aber mit der bisherigen bzw. mit der aktuell
+vorherrschenden Version von Typsignaturen
+
+0:06:53.760,0:07:01.840
+und Funktionsdefinitionen in Haskell, ist es ein
+sehr einfacher Schritt, dieses letzte Argument wegzulassen.
+
+0:07:02.720,0:07:05.760
+Okay, das ist es also, was das abstrakt bedeutet.
+
+0:07:05.760,0:07:10.080
+Schauen wir uns auch ein konkretes und kleines Beispiel an.
+
+0:07:10.080,0:07:12.480
+Ich habe es aus einem anderen Puffer kopiert.
+
+0:07:15.280,0:07:22.000
+Okay, also ist es jetzt wirklich ein vollständiges Programm,
+denn es hat auch eine sinnvolle Hauptdefinition.
+
+0:07:22.000,0:07:25.280
+Jetzt ist die Frage, was
+passiert hier, wenn ich das jetzt ausführe?
+
+0:07:25.280,0:07:29.360
+Ja, was definiere ich eine
+Funktion von Double nach Picture?
+
+0:07:29.360,0:07:32.240
+Aber noch mal, eigentlich braucht die Funktion
+kein Argument.
+
+0:07:32.240,0:07:35.280
+Ja, ich würde einfach sagen, öffne
+gleich und dann etwas.
+
+0:07:35.280,0:07:36.560
+Warum ist das sinnvoll?
+
+0:07:37.120,0:07:41.840
+Nun, es ist sinnvoll, weil Rechteck
+eigentlich eine Funktion von zwei Argumenten ist,
+
+0:07:41.840,0:07:46.640
+einer x- und der y-Koordinate, indem man einfach
+nur
+
+0:07:46.640,0:07:51.280
+ein Argument auf der rechten Seite hier bereitstellt.
+Ich habe eine Funktion erstellt, die noch
+
+0:07:51.280,0:07:54.560
+auf ihr zweites Argument wartet und
+erst dann ein Picture zurückgeben wird.
+
+0:07:54.560,0:07:56.640
+Das ist genau das, was der Typ Ihnen sagt.
+
+0:07:56.640,0:08:01.120
+Die 'Öffnung' ist etwas, das auf eine
+Zeit, ein Double und gibt ein Picture zurück.
+
+0:08:01.120,0:08:02.560
+Aber ich muss das nicht aufschreiben.
+
+0:08:02.560,0:08:08.800
+Ich könnte es gleichwertig aufschreiben, ich könnte sagen,
+nun, 'Öffnung' der Zeit ist 'Rechteck 10' und Zeit.
+
+0:08:08.800,0:08:13.760
+Aber das muss ich nicht, denn das ist
+direkt und in gewissem Sinne ausdrucksstärker ist.
+
+0:08:13.760,0:08:17.840
+Was wird passieren, wenn ich das ausführe, und vielleicht
+können Sie das nicht erkennen.
+
+0:08:17.840,0:08:23.600
+Aber wenn ich tatsächlich das explizite Argument schreibe,
+sollten Sie wissen, was passiert, was passieren wird
+
+0:08:23.600,0:08:30.400
+ist eine Animation, wir erhöhen einfach die Zeit, eine
+von zwei Dimensionen des Rechtecks wird wachsen.
+
+0:08:31.280,0:08:35.760
+Ja, wenn ich das ausführe, bekomme ich eine
+Animation eines sich öffnenden Rechtecks.
+
+0:08:35.760,0:08:41.840
+Also, es ist die y-Koordinate, denn das zweite
+Argument hier, und genau das Gleiche wäre passiert,
+
+0:08:41.840,0:08:47.120
+wenn ich es in eta-reduzierter Form geschrieben hätte,
+indem ich einfach sage, dass "opening" ein "rectangle 10" ist, in Erwartung
+
+0:08:47.120,0:08:52.880
+auf sein nächstes Argument, welches die Zeit sein wird, denn
+'opening' wird das Argument von 'animationOf' sein.
+
+0:08:52.880,0:09:00.000
+Wenn ich also diese eta-reduzierte Version
+und sie ausführe, wird es dasselbe sein.
+
+0:09:01.760,0:09:05.760
+Okay, an dieser Stelle könnte man sich auch fragen, wo
+
+0:09:05.760,0:09:08.400
+dies sehr spezifisch ist, dass es
+in der y-Richtung wächst.
+
+0:09:08.400,0:09:14.560
+Wenn ich also das, was ich wollte, andersherum haben wollte, eine
+Weg, um das zu bekommen, wäre, dann müssen wir
+
+0:09:14.560,0:09:19.760
+den Parameter 't' wirklich explizit einführen,
+denn jetzt wollen wir wissen, um auszudrücken, dass
+
+0:09:19.760,0:09:26.160
+Das erste Argument ist der Zeitparameter für das
+Rechteck, damit es in x-Richtung wächst.
+
+0:09:26.160,0:09:31.600
+Also, dann hätten wir den Vorteil der
+Eta-Reduktion verloren, wir müssten
+
+0:09:31.600,0:09:36.800
+diesen 't'-Parameter einführen, aber eigentlich ist Haskell
+eine funktionale Sprache ist, die Unterstützung für
+
+0:09:37.520,0:09:43.920
+Programmierung auf Funktionsebene unterstützt,
+Funktionen als Bürger erster Klasse zu verwenden.
+
+0:09:43.920,0:09:47.520
+Man könnte eigentlich auch dasselbe
+ausdrücken, indem man sagt, na ja,
+
+0:09:47.520,0:09:51.360
+wenn Sie ein Rechteck haben wollen, das sich
+in x-Richtung öffnet, dann werden wir nicht
+
+0:09:51.920,0:09:55.120
+und wir wollen nicht explizit
+den Parameter 't' aufschreiben.
+
+0:09:55.120,0:09:56.400
+Was wir wirklich wollen.
+
+0:09:56.400,0:09:58.320
+Wir wollen das Rechteck spiegeln.
+
+0:09:58.320,0:10:00.560
+Hier wollen wir die Reihenfolge der Argumente umkehren.
+
+0:10:00.560,0:10:05.680
+Anstatt also zu sagen, ich muss einen
+'t'-Parameter einführen muss, kann ich immer noch die
+
+0:10:07.360,0:10:10.640
+Eta-Reduktion ohne
+den zusätzlichen Parameter einzuführen
+
+0:10:10.640,0:10:15.280
+verwenden, wenn ich dafür sorge, dass ich die
+Reihenfolge Rechteck seine Argumente nimmt.
+
+0:10:15.280,0:10:17.440
+Und dies kann wiederum mit einer Funktion geschehen,
+
+0:10:17.440,0:10:21.440
+und wenig überraschend, vielleicht,
+wird diese Funktion 'flip' genannt.
+
+0:10:22.800,0:10:25.760
+Dies ist also wieder ein wohldefiniertes Haskell-Programm.
+
+0:10:25.760,0:10:32.800
+Es vertauscht die Reihenfolge der Argumente der Funktion 'Rechteck'
+Funktion, dann liefert es eines ihrer Argumente,
+
+0:10:33.600,0:10:38.320
+nämlich die y-Koordinate, denn durch die Umkehrung
+hier ist die y-Koordinate nun die erste
+
+0:10:38.320,0:10:42.320
+und die x-Koordinate, nun ja, sie ist
+wartet noch auf einen Zeitparameter,
+
+0:10:42.320,0:10:44.560
+der kommt, wenn die Animation läuft.
+
+0:10:45.280,0:10:51.840
+Wenn ich dies also ausführe, erhalte ich das
+öffnende Rechteck in diese Richtung.
+
+0:10:52.640,0:10:59.840
+Wenn ich das 'flip' weglasse, erhalte ich das sich öffnende
+Rechteck in der anderen Dimension.
+
+0:11:02.160,0:11:05.600
+Okay, und das alles dank der Eta-Reduktion,
+
+0:11:06.160,0:11:13.840
+nämlich die Vermeidung von Parametern, die
+ohnehin nur an andere Funktionen weitergegeben werden.
+
+0:11:15.840,0:11:18.240
+Es funktioniert nur, wenn das der letzte Parameter ist.
+
+0:11:18.240,0:11:26.480
+Deshalb musste ich den 'flip' in dem Fall anwenden
+Fall, dass ich die umgekehrte Richtung machen will.

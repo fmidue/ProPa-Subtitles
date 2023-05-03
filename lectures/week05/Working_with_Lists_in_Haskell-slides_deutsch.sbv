@@ -1,0 +1,1867 @@
+0:00:01.780,0:00:08.250
+Okay, ich wollte also damit beginnen,
+einige Beobachtungen aus den Übungen zu geben.
+
+0:00:08.250,0:00:17.580
+Und in gewissem Maße habe ich
+das natürlich schon im vorherigen Video getan.
+
+0:00:17.580,0:00:26.180
+Insbesondere habe ich dort über den Aspekt
+der Eta-Reduktion gesprochen, vor dem Autotool oder HLint
+
+0:00:26.180,0:00:27.180
+manchmal
+warnen.
+
+0:00:27.180,0:00:28.180
+Einige von Ihnen haben das
+schon in ihren eigenen Einreichungen gesehen.
+
+0:00:28.180,0:00:34.540
+Ich muss das hier in dieser Folie nicht
+noch einmal durchsprechen, weil es im vorherigen Video
+
+0:00:34.540,0:00:35.540
+steht.
+
+0:00:35.540,0:00:41.909
+Hier haben Sie also nur ein weiteres
+Beispiel, etwas, das wahrscheinlich letztes Jahr aufgetreten ist.
+
+0:00:41.909,0:00:49.249
+Also, wieder die gleiche Idee: eine Funktion zu
+haben, die ein Argument nimmt, das sie einfach an
+
+0:00:49.249,0:00:52.839
+eine andere
+Funktion weitergibt.
+
+0:00:52.839,0:00:56.449
+Jemand hat also eine Ball-Funktion definiert, die
+eine "time" annimmt und ein Bild liefert.
+
+0:00:56.449,0:00:57.749
+Und wie
+ist "ball" definiert?
+
+0:00:57.749,0:01:04.089
+Zu jedem Zeitpunkt t gibt sie einen Vollkreis mit
+dem Radius t, was genau dasselbe ist, wie einfach
+
+0:01:04.089,0:01:06.600
+zu sagen: "ball
+ist diese solidCircle-Funktion".
+
+0:01:06.600,0:01:12.330
+Definiert man "ball" als Alias, einen anderen
+Namen für die solidCircle-Funktion, dann drückt das die gleiche
+
+0:01:12.330,0:01:20.130
+Idee aus, als würde man sagen: "ball zu einem
+gegebenen Zeitpunkt t ist solidCircle zu diesem gegebenen Zeitpunkt t".
+
+0:01:20.130,0:01:23.810
+Und die zweite Version
+ist etwas eleganter.
+
+0:01:23.810,0:01:27.289
+Schon rein pragmatisch
+gesehen, könnte man sagen:
+
+0:01:27.289,0:01:29.689
+Wenigstens muss man sich keine
+Gedanken über den Parameternamen machen.
+
+0:01:29.689,0:01:35.030
+In diesem Fall ist vielleicht t die offensichtliche Wahl;
+aber in einer anderen Situation haben Sie vielleicht keine
+
+0:01:35.030,0:01:36.550
+gute Idee, wie Sie
+Ihren Parameter benennen sollen.
+
+0:01:36.550,0:01:44.110
+Nun, wenn Sie die Eta-Reduktion verwenden,
+müssen Sie die Parameter nicht immer benennen.
+
+0:01:44.110,0:01:52.210
+Und dieses Beispiel haben wir auch in der
+aufgezeichneten Videodemonstration mit dem sich öffnenden Rechteck gesehen.
+
+0:01:52.210,0:01:58.960
+Und ich möchte hier betonen, dass die flip-Funktion, die
+ich dort verwendet habe, um dies in ein Rechteck
+
+0:01:58.960,0:02:02.400
+zu verwandeln, das sich in die
+andere Richtung öffnet, keine Picture-spezifische Primitive war.
+
+0:02:02.400,0:02:05.020
+Es wurde also
+nicht das Bild gespiegelt.
+
+0:02:05.020,0:02:06.450
+Es wurde
+die rectangle-Funktion gespiegelt.
+
+0:02:06.450,0:02:09.700
+Es würde also auf jede
+Funktion mit zwei Argumenten zutreffen.
+
+0:02:09.700,0:02:14.650
+In diesem Fall, für die rectangle-Funktion,
+hat es genau den Effekt, dass
+
+0:02:14.650,0:02:19.959
+die Form des Rechtecks geometrisch gespiegelt wird,
+weil wir die Parameterargumente der rectangle-Funktion gespiegelt
+
+0:02:19.959,0:02:20.959
+haben.
+
+0:02:20.959,0:02:23.760
+Aber die flip-Funktion selbst ist keine
+Funktion, die nur auf Bilder wirkt.
+
+0:02:23.760,0:02:28.040
+Sie ist eine Funktion, die auf andere
+Funktionen wirkt; in diesem Fall auf die rectangle-Funktion.
+
+0:02:28.040,0:02:34.989
+Und Sie haben das in Aktion gesehen,
+was das eigentlich bedeutet, für diesen Fall.
+
+0:02:34.989,0:02:38.140
+Und eine weitere Bemerkung
+vielleicht an dieser Stelle ist:
+
+0:02:38.140,0:02:44.260
+Die Tatsache, dass wir die Eta-Reduktion haben, bzw. dass
+diese angewendet werden kann, hat auch einen gewissen Einfluss
+
+0:02:44.260,0:02:46.890
+auf das Design
+von APIs in Haskell.
+
+0:02:46.890,0:02:54.540
+Wenn Sie also darüber nachdenken müssen, wie zum
+Beispiel die Parameterreihenfolge Ihrer selbst definierten Funktion sein
+
+0:02:54.540,0:02:59.599
+soll, lohnt es sich, darüber nachzudenken, welches
+der Parameter ist, der vielleicht oft an
+
+0:02:59.599,0:03:00.769
+eine andere
+Stelle weitergegeben wird.
+
+0:03:00.769,0:03:04.439
+Denn dann würde es Sinn ergeben, diesen
+Parameter zum letzten Parameter zu machen, weil
+
+0:03:04.439,0:03:08.489
+Sie dann diesen Trick,
+dieses Eta-Reduktions-Refactoring anwenden können.
+
+0:03:08.489,0:03:14.720
+Das ist eigentlich auch der Grund, so
+könnte man argumentieren, warum CodeWorld in den
+
+0:03:14.720,0:03:16.879
+Transformationsfunktionen immer das Bild
+als letztes Argument hat.
+
+0:03:16.879,0:03:22.780
+Wenn Sie zum Beispiel an die
+"translated"-Funktion denken, sie nimmt zwei Koordinaten und
+
+0:03:22.780,0:03:23.780
+das
+Bild.
+
+0:03:23.780,0:03:27.010
+Sie könnte auch das Bild und dann die
+beiden Koordinaten nehmen, aber dann könnte man in manchen
+
+0:03:27.010,0:03:31.060
+Situationen, in denen es sinnvoll
+ist, nicht die Eta-Reduktion anwenden.
+
+0:03:31.060,0:03:37.430
+Es macht also Sinn, beim Entwurf einer
+API, beim Entwurf der Funktionstypen einer Bibliothek, z.B.
+
+0:03:37.430,0:03:42.870
+in Haskell oder anderen ähnlichen Sprachen,
+das Datenstrukturargument (das in diesem Fall
+
+0:03:42.870,0:03:46.909
+das Picture-Argument ist, und nicht die
+Parameterargumente für das Bewegen in x- und
+
+0:03:46.909,0:03:53.930
+y-Richtung) immer als
+letztes Argument zu setzen.
+
+0:03:53.930,0:03:57.160
+Denn das eröffnet Möglichkeiten,
+die Eta-Reduktion gut zu nutzen.
+
+0:03:57.160,0:04:01.980
+Es ist für Sie im Moment nicht superrelevant,
+weil Sie keine eigenen Bibliotheken definieren oder Bibliotheken
+
+0:04:01.980,0:04:05.030
+für den Verbrauch
+von anderen entwerfen.
+
+0:04:05.030,0:04:16.049
+Aber es ist vielleicht trotzdem interessant,
+sich zumindest dieser Wahl bewusst zu sein.
+
+0:04:16.049,0:04:24.380
+Dann noch eine weitere Beobachtung, die auch
+immer wieder auftaucht, insbesondere in Aufgabe 7.
+
+0:04:24.380,0:04:33.530
+Das war aus einigen Ihrer Einreichungen
+ersichtlich, nämlich die übermäßige Verwendung von access-by-index.
+
+0:04:33.530,0:04:39.680
+Als Faustregel in Haskell gilt: Wenn man auf
+eine Datenstruktur per Index zugreift, dann war das meist
+
+0:04:39.680,0:04:41.210
+nicht die beste
+Wahl des Ausdrucks.
+
+0:04:41.210,0:04:44.419
+Und manchmal werden wir
+das sogar aktiv verhindern.
+
+0:04:44.419,0:04:51.440
+Und das habe ich im Fall von Aufgabe 7
+mit meiner Moodle-Nachricht vor ein paar Tagen (anderes Jahr) versucht zu verhindern.
+
+0:04:51.440,0:04:56.440
+Ich habe erklärt, dass man wirklich mit der
+Liste als Ganzes arbeiten sollte, und nicht mit
+
+0:04:56.440,0:04:57.820
+einigen
+Spezialfällen.
+
+0:04:57.820,0:05:03.400
+Ich habe gesehen, dass einige Studierende Indexzugriffe verwenden, was
+in Haskell zwar möglich ist, aber normalerweise nicht die beste
+
+0:05:03.400,0:05:04.400
+Wahl
+ist.
+
+0:05:04.400,0:05:09.710
+Und selbst die Aufgabenbeschreibung wies in diesem Fall darauf
+hin, dass man versuchen sollte, eine List Comprehension zu
+
+0:05:09.710,0:05:10.710
+verwenden.
+
+0:05:10.710,0:05:12.500
+Was meine
+ich also damit?
+
+0:05:12.500,0:05:15.860
+Stellen Sie sich
+etwas wie folgt vor:
+
+0:05:15.860,0:05:22.620
+Man nimmt eine Liste, aus dieser
+Liste entnimmt man nacheinander einige Argumente.
+
+0:05:22.620,0:05:26.250
+Irgendein Argument wird aus dieser Liste gezogen, und
+dann berechnen wir etwas aus diesem Argument, stellen alle
+
+0:05:26.250,0:05:29.020
+Ergebnisse in eine Liste, und dann machen
+wir was auch immer mit dieser Liste.
+
+0:05:29.020,0:05:36.770
+Das ist also ein schöner, reichhaltiger Ausdruck in der
+Form, wie ich ihn auch letzte Woche in Beispielen vorgestellt
+
+0:05:36.770,0:05:38.400
+habe.
+
+0:05:38.400,0:05:44.160
+Natürlich könnten Sie, und manche Studierende haben
+das auch getan, stattdessen Code wie diesen schreiben.
+
+0:05:44.160,0:05:46.090
+Also, was
+sagt das aus?
+
+0:05:46.090,0:05:47.729
+Es
+besagt:
+
+0:05:47.729,0:05:53.110
+Gib mir die Liste und ich nehme die Länge
+und dann baue ich einen Index von null auf
+
+0:05:53.110,0:05:58.460
+(denn, wie Sie feststellen werden, beginnt die
+Listenindizierung in Haskell mit dem Index null).
+
+0:05:58.460,0:06:08.830
+Berechnen Sie also den Index als jeden Wert von null
+bis zur Länge der Liste -1, und greifen Sie dann
+
+0:06:08.830,0:06:13.729
+mit diesem Index auf die Listenelemente zu, berechnen
+Sie daraus etwas und machen Sie was auch
+
+0:06:13.729,0:06:14.729
+immer
+damit.
+
+0:06:14.729,0:06:20.010
+Die Ausdrücke, die Sie hier sehen, sind
+äquivalent in dem Sinne, dass sie das Gleiche
+
+0:06:20.010,0:06:21.560
+berechnen, aber der
+erste ist der idiomatische.
+
+0:06:21.560,0:06:23.950
+Der erste ist das,
+was wirklich die Absicht ausdrückt.
+
+0:06:23.950,0:06:31.139
+Der zweite arbeitet irgendwie künstlich mit Indizes
+und ist nicht sehr elegant, und auch
+
+0:06:31.139,0:06:32.740
+nicht sehr
+gut wartbar.
+
+0:06:32.740,0:06:43.690
+Dies wird manchmal Indexitis genannt (die
+Krankheit, zu viele Indizes zu verwenden).
+
+0:06:43.690,0:06:51.141
+Das mag in einigen anderen Sprachen die
+einzige Möglichkeit sein, mit Datenstrukturen zu arbeiten, aber
+
+0:06:51.141,0:06:52.479
+sicher nicht
+in Haskell.
+
+0:06:52.479,0:06:58.479
+Versuchen Sie also, im Sinne
+des ersten Beispiels hier zu arbeiten.
+
+0:06:58.479,0:07:04.560
+Das bringt uns auch zu
+einem allgemeineren Arbeiten mit Listen.
+
+0:07:04.560,0:07:10.460
+Dies wird also das Thema der nächsten paar Folien
+und wahrscheinlich auch des größten Teils dieses Videos sein.
+
+0:07:10.460,0:07:14.669
+Natürlich können Sie in Haskell nicht nur
+mit List Comprehensions arbeiten, wenn Sie mit Listen
+
+0:07:14.669,0:07:15.669
+arbeiten.
+
+0:07:15.669,0:07:16.669
+Es gibt
+noch andere Funktionen.
+
+0:07:16.669,0:07:20.710
+Es gibt tatsächlich eine kleine, aber
+mächtige Bibliothek von Funktionen auf Listen.
+
+0:07:20.710,0:07:26.020
+Aber selbst dann ist
+die Listenindizierung der letzte Ausweg.
+
+0:07:26.020,0:07:29.050
+Also, normalerweise ist es keine
+gute Idee, mit Listenindizes zu arbeiten.
+
+0:07:29.050,0:07:30.889
+Ich kann das
+nicht genug betonen.
+
+0:07:30.889,0:07:39.599
+Dennoch zunächst ein paar allgemeinere Anmerkungen
+zu Listen und dann werde ich einige
+
+0:07:39.599,0:07:45.620
+der Funktionen vorstellen, die Sie vielleicht
+für einige der nächsten Übungsaufgaben verwenden möchten.
+
+0:07:45.620,0:07:53.240
+Generell fällt auf, wenn Sie sich die
+nächsten paar Vorlesungen und Übungen anschauen, dass wir
+
+0:07:53.240,0:07:58.509
+von nun an in den Beispielen in Vorlesungen
+und Übungen sehr viel mit Listen arbeiten werden.
+
+0:07:58.509,0:08:02.129
+Bislang haben wir die meisten
+Beispiele mit der CodeWorld-Bibliothek gemacht.
+
+0:08:02.129,0:08:07.970
+Sie haben also den Typ Picture
+und alle möglichen Operationen darauf kennengelernt.
+
+0:08:07.970,0:08:14.600
+Und in ähnlicher Weise wird es im nächsten
+Material hauptsächlich um Listen und Funktionen gehen, die auf
+
+0:08:14.600,0:08:15.840
+Listen
+arbeiten.
+
+0:08:15.840,0:08:22.090
+Wir haben hier also
+zwei etwas gegensätzliche Fälle.
+
+0:08:22.090,0:08:27.319
+In gewissem Sinne ist der Picture-Typ nicht abstrakt, weil
+Sie ihn tatsächlich zeichnen können und eine Menge darüber sehen,
+
+0:08:27.319,0:08:33.230
+was Ihr Code macht, aber er ist in dem Sinne
+abstrakt, dass Sie nicht wirklich Operationen haben, um in das
+
+0:08:33.230,0:08:34.270
+Innere des
+Picture zu schauen.
+
+0:08:34.270,0:08:36.870
+Alle Operationen, die Sie durchgeführt
+haben, sind also *auf* Bildern.
+
+0:08:36.870,0:08:38.710
+Sie haben nie
+*innerhalb* eines Picture geschaut.
+
+0:08:38.710,0:08:40.480
+Bei Listen ist
+das Gegenteil der Fall.
+
+0:08:40.480,0:08:46.320
+Für Listen werden wir uns verschiedene Möglichkeiten
+der Fallunterscheidung und des Einblicks in das Innere
+
+0:08:46.320,0:08:49.420
+von
+Listen ansehen.
+
+0:08:49.420,0:08:57.950
+Denn sie sind einer der grundlegenden zerlegbaren
+Typen in Haskell, anders als der Typ
+
+0:08:57.950,0:08:59.850
+Picture.
+
+0:08:59.850,0:09:03.470
+Warum dieser
+Fokus auf Listen?
+
+0:09:03.470,0:09:05.580
+Nicht, weil Listen immer
+die beste Datenstruktur sind.
+
+0:09:05.580,0:09:11.070
+Das sind sie sicherlich nicht so oft, insbesondere
+wenn Sie mehr Code in der realen Welt schreiben.
+
+0:09:11.070,0:09:16.880
+Es gibt geeignetere Datenstrukturen, um
+etwas in Haskell zu tun.
+
+0:09:16.880,0:09:21.100
+Und bis zu einem gewissen Grad werden Sie
+auch sehen, wie Sie Ihre eigenen Datentypen definieren können.
+
+0:09:21.100,0:09:22.770
+Aber das ist nicht
+das, womit wir anfangen werden.
+
+0:09:22.770,0:09:26.900
+Wir werden jetzt mit Listen beginnen, weil
+es sie schon gibt, sie haben syntaktische
+
+0:09:26.900,0:09:30.200
+Unterstützung wie List Comprehensions,
+aber auch andere Funktionen.
+
+0:09:30.200,0:09:37.210
+Wir werden also, hauptsächlich aus didaktischen Gründen,
+um schnell Beispiele schreiben zu können, mit Listen
+
+0:09:37.210,0:09:38.210
+arbeiten.
+
+0:09:38.210,0:09:40.000
+Nicht, weil Sie
+immer Listen verwenden sollten.
+
+0:09:40.000,0:09:45.810
+Das ist eine wichtige andere Lektion,
+die ich im Voraus machen möchte.
+
+0:09:45.810,0:09:50.130
+Es gibt eine
+Menge Listenunterstützung in Haskell.
+
+0:09:50.130,0:09:53.460
+Sie sehen das schon an
+der speziellen Syntax wie List Comprehensions.
+
+0:09:53.460,0:09:58.470
+In gewissem Sinne ist das
+teilweise auf historische Präzedenzfälle zurückzuführen.
+
+0:09:58.470,0:10:03.700
+Ich habe, ich glaube in der ersten
+Vorlesung, Lisp als eine alte funktionale Sprache erwähnt.
+
+0:10:03.700,0:10:09.890
+In gewissem Sinne könnte man es also als Vorgänger
+von Haskell sehen, auch wenn es eine Menge Unterschiede gibt.
+
+0:10:09.890,0:10:11.950
+Der Name Lisp
+kommt von "Listenprozessor".
+
+0:10:11.950,0:10:17.690
+Dort waren also Listen
+das A und O.
+
+0:10:17.690,0:10:26.000
+Auch Haskell hat eine Menge Unterstützung
+für Listenverarbeitung, trotz meiner vorherigen Bemerkungen,
+
+0:10:26.000,0:10:30.380
+dass man eigentlich oft
+andere Datenstrukturen verwenden sollte.
+
+0:10:30.380,0:10:36.340
+Ich habe bereits erwähnt, dass es eine
+spezielle syntaktische Unterstützung gibt, die auch für unsere
+
+0:10:36.340,0:10:38.290
+Beispielbetrachtungen
+hilfreich ist.
+
+0:10:38.290,0:10:42.570
+Für alle anderen Datenstrukturen
+trifft das nicht zu.
+
+0:10:42.570,0:10:49.600
+Eine weitere Sache, die ich
+wiederholen möchte, ist: Haskell-Listen sind homogen.
+
+0:10:49.600,0:10:50.730
+Das ist anders
+als bei Lisp.
+
+0:10:50.730,0:10:55.710
+In Lisp könnten Sie alles in dieselbe
+Liste packen, während in Haskell Listen homogen sind.
+
+0:10:55.710,0:11:00.530
+Das bedeutet, dass Sie keine unterschiedlichen Typen
+von Elementen in derselben Liste haben können.
+
+0:11:00.530,0:11:04.160
+Sie können eine Liste von Zeichen haben, Sie können
+eine Liste von Zeichenketten haben, Sie können eine Liste von
+
+0:11:04.160,0:11:07.390
+Zahlen haben, Sie können eine Liste von Paaren von
+Zeichenketten und Zeichen haben; aber Sie können keine Liste
+
+0:11:07.390,0:11:11.770
+haben, in der verschiedene
+Arten von Werten gemischt sind.
+
+0:11:11.770,0:11:14.910
+Es gibt andere Datenstrukturen, die
+das erlauben, aber nicht Listen.
+
+0:11:14.910,0:11:20.610
+Das müssen Sie also immer im Hinterkopf
+haben, wenn Sie zum Beispiel über die Funktionen
+
+0:11:20.610,0:11:27.330
+nachdenken, die ich
+Ihnen jetzt zeigen werde.
+
+0:11:27.330,0:11:32.750
+Ich möchte Ihnen ein paar Funktionen
+aus der Standardbibliothek für Listen vorstellen.
+
+0:11:32.750,0:11:39.450
+In gewissem Sinne könnte man diese als eine
+kleine domänenspezifische Sprache von Funktionen auf Listen betrachten.
+
+0:11:39.450,0:11:43.100
+Es ist eine
+domänenspezifische Sprache auf Listen.
+
+0:11:43.100,0:11:48.860
+Und zu einem guten Teil sind es Accessor-Funktionen,
+also: etwas aus einer Liste herausholen; genau die
+
+0:11:48.860,0:11:52.060
+Art von Funktionen, die
+Sie für Pictures nicht haben.
+
+0:11:52.060,0:11:55.450
+Denn für Bilder konnten Sie nur neue
+Bilder konstruieren, Sie konnten ein Bild nicht
+
+0:11:55.450,0:11:57.840
+auseinandernehmen.
+
+0:11:57.840,0:12:03.460
+Ich werde diese Funktionen nicht vorstellen, indem
+ich die Definitionen zeige oder die Semantik in
+
+0:12:03.460,0:12:04.730
+irgendeinem mathematischen
+Sinn erkläre.
+
+0:12:04.730,0:12:11.040
+Ich werde einfach Beispiele und die Namen
+der Funktionen nennen, und dann sollten diese
+
+0:12:11.040,0:12:14.450
+Beispiele deutlich genug sein, um Ihnen
+zu sagen, was die Funktion tut.
+
+0:12:14.450,0:12:18.820
+Sie können diese Funktionen also
+fortan beim Schreiben Ihrer Übungsaufgaben verwenden.
+
+0:12:18.820,0:12:20.200
+Also, was
+haben wir?
+
+0:12:20.200,0:12:25.080
+Wir haben etwa eine Funktion,
+die auf einen Präfix einer Liste zugreift.
+
+0:12:25.080,0:12:27.900
+Sagen wir also, wir haben eine
+Liste mit den Werten 1 bis 10.
+
+0:12:27.900,0:12:29.440
+Wir wollen die
+ersten drei Elemente nehmen.
+
+0:12:29.440,0:12:31.831
+Wir können einfach sagen:
+"take 3" aus dieser Liste.
+
+0:12:31.831,0:12:36.020
+Und was wir erhalten, ist genau das,
+was Sie hier auf der rechten Seite sehen.
+
+0:12:36.020,0:12:42.840
+Ich zeige links immer einen Ausdruck
+auf Listen (unter Verwendung einiger der Listenfunktionen),
+
+0:12:42.840,0:12:48.280
+und rechts sehen Sie dann, wozu
+dieser auswertet (wenn Sie diesen Ausdruck z.B.
+
+0:12:48.280,0:12:54.740
+in den Haskell-Interpreter
+GHCi eingeben würden).
+
+0:12:54.740,0:12:57.620
+Sie können also
+einen Präfix nehmen.
+
+0:12:57.620,0:12:59.010
+Sie können
+einen Präfix weglassen.
+
+0:12:59.010,0:13:02.830
+Wenn Sie die ersten drei Elemente von 1
+bis 10 weglassen, dann erhalten Sie die Liste, die
+
+0:13:02.830,0:13:06.970
+aus allen Elementen von
+4 bis 10 besteht.
+
+0:13:06.970,0:13:08.570
+Das ist
+nicht überraschend.
+
+0:13:08.570,0:13:11.110
+Und Sie können prüfen,
+ob eine Liste leer ist.
+
+0:13:11.110,0:13:14.140
+Dies ist
+also die "null"-Funktion.
+
+0:13:14.140,0:13:17.880
+Man könnte sie auch für "isNull"
+halten, aber eigentlich heißt sie nur "null".
+
+0:13:17.880,0:13:19.500
+Also, wir geben
+ihr die Liste.
+
+0:13:19.500,0:13:21.910
+Und wenn Sie ihr eine leere
+Liste geben, dann gibt sie True zurück.
+
+0:13:21.910,0:13:26.580
+Und wenn Sie ihr eine nicht-leere Liste geben, zum
+Beispiel eine nicht-leere Zeichenkette (wovon wir wissen, dass sie einfach
+
+0:13:26.580,0:13:35.100
+eine Liste von Zeichen ist), dann wird die
+Ausgabe False sein, weil dies keine leere Liste ist.
+
+0:13:35.100,0:13:40.490
+Im Allgemeinen können Sie nicht nur prüfen, ob eine Liste
+leer ist oder nicht, sondern auch die Länge einer Liste berechnen.
+
+0:13:40.490,0:13:41.910
+Auch dies
+ist nicht überraschend.
+
+0:13:41.910,0:13:48.460
+Gegeben eine Liste, gibt das Ihnen die Anzahl der
+Elemente in der Liste; in diesem Fall die Anzahl der
+
+0:13:48.460,0:13:50.340
+Zeichen, natürlich nicht nur
+die Anzahl der eindeutigen Elemente.
+
+0:13:50.340,0:13:53.450
+Wenn Sie also fünf 'a's
+haben, gibt es Ihnen auch 5.
+
+0:13:53.450,0:13:55.960
+Es wird nicht zählen,
+wie viele verschiedene Elemente vorkamen.
+
+0:13:55.960,0:13:57.990
+Es wird einfach sagen,
+wie lang die Liste ist.
+
+0:13:57.990,0:14:01.760
+In diesem Fall ist
+die Antwort also 5.
+
+0:14:01.760,0:14:04.970
+Sie können auf das
+erste Element einer Liste zugreifen.
+
+0:14:04.970,0:14:10.750
+Es ist etwas ähnlich wie "take 1",
+aber "take 1" würde das Ergebnis als Liste zurückgeben.
+
+0:14:10.750,0:14:16.250
+Also wäre "take 1" dieser Liste die Singleton-Liste,
+die 1 enthält (etwa so: [1]), während "head
+
+0:14:16.250,0:14:18.420
+[1..10]" nur 1
+ist (etwa so: 1).
+
+0:14:18.420,0:14:23.510
+Oder im Fall einer Zeichenkette ist head "abcde"
+nicht eine Zeichenkette, die aus dem Buchstaben 'a' besteht
+
+0:14:23.510,0:14:26.200
+(wie hier: "a"), sondern das
+Zeichen 'a' (wie hier: 'a').
+
+0:14:26.200,0:14:34.350
+Denn dieser String ist eine Liste von
+Zeichen, und dies ist das erste Zeichen darin.
+
+0:14:34.350,0:14:36.530
+Sie können auch auf
+das letzte Element zugreifen.
+
+0:14:36.530,0:14:44.440
+In diesem Fall wäre last [1..10] die
+Zahl 10, und last "abcde" ist das
+
+0:14:44.440,0:14:47.510
+Zeichen
+'e'.
+
+0:14:47.510,0:14:49.950
+Dann können Sie auf
+den "tail" einer Liste zugreifen.
+
+0:14:49.950,0:14:55.180
+Also, "head" bedeutet, dass Sie das erste Element der
+Liste erhalten, und "tail" bedeutet, dass Sie den ganzen
+
+0:14:55.180,0:14:56.180
+Rest
+erhalten.
+
+0:14:56.180,0:15:02.170
+Wenn Sie also das erste Element
+wegnehmen, bleibt die Liste "bcde" übrig.
+
+0:15:02.170,0:15:08.520
+Wir könnten auch "tail" auf
+[1..10] anwenden und würden [2..10] erhalten.
+
+0:15:08.520,0:15:11.690
+In diesem Sinne
+korrespondiert "tail" zu "head".
+
+0:15:11.690,0:15:15.270
+Es gibt Ihnen das, was übrig
+bleibt, wenn Sie den Kopf wegnehmen.
+
+0:15:15.270,0:15:17.140
+Und etwas Ähnliches
+gibt es für "last".
+
+0:15:17.140,0:15:19.890
+Also gibt "last" das letzte
+Element in der Liste an.
+
+0:15:19.890,0:15:22.870
+Und "init" liefert die
+Liste ohne dieses letzte Element.
+
+0:15:22.870,0:15:26.230
+Hier ergibt "last" also
+"e", und "init" ergibt "abcd".
+
+0:15:26.230,0:15:28.470
+Natürlich sind dies Listen
+und nicht nur Zeichen.
+
+0:15:28.470,0:15:32.770
+Hier bekommen wir ein Zeichen, weil es ein
+Element aus der Liste ist, aber "tail" und
+
+0:15:32.770,0:15:34.220
+"init" müssen
+immer Listen zurückgeben.
+
+0:15:34.220,0:15:38.840
+In diesem Fall ist es also
+eine Liste von Zeichen, ein String.
+
+0:15:38.840,0:15:46.870
+Dann gibt es noch ausgefallenere Möglichkeiten, eine Liste aufzuteilen,
+und zwar nicht nur in den Kopf und den Rest,
+
+0:15:46.870,0:15:51.970
+oder das Letzte und das, was
+davor kommt, sondern an irgendeinem beliebigen Punkt.
+
+0:15:51.970,0:15:56.270
+Sie könnten also sagen, ich habe eine Zeichenkette /
+Liste und möchte sie an einem beliebigen Punkt aufteilen.
+
+0:15:56.270,0:16:02.170
+Und das bedeutet dann, dass Sie so viele
+Elemente vom Anfang der Liste nehmen, wie die
+
+0:16:02.170,0:16:03.170
+Zahl
+sagt.
+
+0:16:03.170,0:16:06.900
+In diesem Fall also "abc", und der
+Rest wird in ein zweites Ergebnis gepackt.
+
+0:16:06.900,0:16:12.810
+In gewissem Sinne könnte man dies also
+als eine Kombination aus "take" und "drop" sehen.
+
+0:16:12.810,0:16:19.800
+Sie erhalten "take 3" und Sie erhalten "drop 3",
+aber beide werden von einer Funktion zurückgegeben, anstatt zwei
+
+0:16:19.800,0:16:22.840
+verschiedene Funktionen für
+diese Aufgabe zu haben.
+
+0:16:22.840,0:16:27.310
+Dann gibt es
+noch den berüchtigten Index-Zugriff.
+
+0:16:27.310,0:16:33.300
+Man kann also in Haskell mit diesem Operator
+auf ein Element an einem bestimmten Index zugreifen.
+
+0:16:33.300,0:16:35.100
+Die Zählung
+beginnt bei 0.
+
+0:16:35.100,0:16:41.080
+Aber wie ich schon sagte, ist ein solcher
+Index-Zugriff in Code, den Sie in Ihren Übungen
+
+0:16:41.080,0:16:42.640
+schreiben,
+fast verboten.
+
+0:16:42.640,0:16:47.580
+Sie sollen also normalerweise Ihren
+Code ohne den Index-Operator schreiben.
+
+0:16:47.580,0:16:52.040
+Einfach, weil es in Haskell eine
+sehr schlechte Angewohnheit ist, diesen zu benutzen.
+
+0:16:52.040,0:16:54.560
+Normalerweise gibt es
+einen besseren Weg.
+
+0:16:54.560,0:17:00.720
+Dann gibt es noch andere Operationen, die
+auf einer Liste als Ganzes arbeiten, anstatt auf
+
+0:17:00.720,0:17:02.030
+Teile
+davon zuzugreifen.
+
+0:17:02.030,0:17:04.630
+Zum Beispiel ist
+die Funktion "reverse" nützlich.
+
+0:17:04.630,0:17:07.660
+Sie nimmt eine Liste und
+gibt sie in umgekehrter Reihenfolge zurück.
+
+0:17:07.660,0:17:14.020
+Bei einer Zeichenkette erzeugt sie also einfach die
+Zeichenkette, als ob Sie sie rückwärts lesen würden.
+
+0:17:14.020,0:17:16.060
+Ich denke, das
+ist sehr natürlich.
+
+0:17:16.060,0:17:18.800
+Die Umkehrung der leeren
+Liste ist die leere Liste.
+
+0:17:18.800,0:17:21.750
+Die Umkehrung des leeren Strings
+ist natürlich auch der leere String.
+
+0:17:21.750,0:17:24.880
+Dann können Sie Listen
+oder Strings miteinander kombinieren.
+
+0:17:24.880,0:17:28.770
+Hier wieder für Strings geschrieben, aber es
+funktioniert auch mit anderen Arten von Listen.
+
+0:17:28.770,0:17:31.650
+Aber beides muss natürlich die
+gleiche Art von Listen sein.
+
+0:17:31.650,0:17:36.860
+Sie können also nicht den String
+"abc" und die Liste [1..10] verketten.
+
+0:17:36.860,0:17:39.580
+Aber Sie könnten z.B.
+diese beiden Listen konkatenieren.
+
+0:17:39.580,0:17:41.490
+Und was
+macht es?
+
+0:17:41.490,0:17:44.750
+Es gibt die kombinierte
+Liste oder Zeichenkette zurück.
+
+0:17:44.750,0:17:48.950
+Dann gibt es noch andere
+Möglichkeiten, zwei Listen zu kombinieren.
+
+0:17:48.950,0:17:51.330
+Zum Beispiel können
+Sie zwei Listen "zippen".
+
+0:17:51.330,0:17:56.010
+Das bedeutet, dass sie nicht
+verkettet (hintereinander) werden, sondern paarweise
+
+0:17:56.010,0:17:57.310
+kombiniert
+werden.
+
+0:17:57.310,0:18:03.310
+In diesem Fall ergibt das Zippen der Zeichenkette "abc"
+und der Zeichenkette "def" also eine Liste von Paaren,
+
+0:18:03.310,0:18:07.820
+in der das erste Zeichen aus der ersten
+Liste und das erste Zeichen aus der zweiten Liste
+
+0:18:07.820,0:18:08.820
+kombiniert
+werden.
+
+0:18:08.820,0:18:15.480
+Also 'a' und 'd', dann das zweite
+Element des ersten Arguments und das zweite Element
+
+0:18:15.480,0:18:18.040
+des zweiten Arguments, ('b',
+'e'), und so weiter.
+
+0:18:18.040,0:18:21.701
+Wenn eine der beiden Listen kürzer ist
+als die andere, dann wird vorzeitig abgebrochen.
+
+0:18:21.701,0:18:30.040
+Es hört an dem Punkt auf, an dem
+eine der beiden Listen keine weiteren Elemente mehr hat.
+
+0:18:30.040,0:18:32.270
+Und es gibt eine Version von
+++, die mit verschachtelten Listen arbeitet.
+
+0:18:32.270,0:18:36.420
+Also, diese Verkettung (++) nimmt
+zwei Listen und verkettet sie.
+
+0:18:36.420,0:18:41.420
+Aber manchmal haben Sie den Fall, dass
+Sie mehr als zwei Listen haben und
+
+0:18:41.420,0:18:42.420
+alle
+verketten wollen.
+
+0:18:42.420,0:18:44.630
+Dann können Sie
+die Funktion "concat" verwenden.
+
+0:18:44.630,0:18:50.940
+Sie nimmt eine Liste von Listen (es könnte
+auch eine Liste von Strings sein) und verkettet
+
+0:18:50.940,0:18:52.020
+alle
+inneren Listen.
+
+0:18:52.020,0:18:57.010
+Sie setzt also gewissermaßen die "++"-Operation
+zwischen all diese Stellen, an denen vorher
+
+0:18:57.010,0:18:58.250
+ein
+Komma stand.
+
+0:18:58.250,0:19:02.130
+Sie erhalten also [1,2]
+++ [] ++ [3].
+
+0:19:02.130,0:19:11.030
+Und die leere Liste trägt nicht zur
+Verkettung bei, also würden Sie in diesem
+
+0:19:11.030,0:19:13.649
+Fall die
+Ausgabeliste [1,2,3] erhalten.
+
+0:19:13.649,0:19:18.990
+Und mit diesen Funktionen können Sie
+schon eine ganze Menge Code schreiben.
+
+0:19:18.990,0:19:24.250
+Insbesondere könnten Sie am Anfang den Test
+auf Leere ("null"), den Zugriff auf den
+
+0:19:24.250,0:19:31.810
+Kopf ("head") und den Rest einer Liste oder eines
+Strings ("tail") verwenden, um Code zu schreiben, der eine
+
+0:19:31.810,0:19:32.810
+Liste
+rekursiv zerlegt.
+
+0:19:32.810,0:19:35.460
+Ich weiß, dass einige von Ihnen bereits
+über Pattern-Matching Bescheid wissen, da wir dies in
+
+0:19:35.460,0:19:37.070
+den Übungsaufgaben
+gesehen haben.
+
+0:19:37.070,0:19:43.280
+Aber eigentlich können Sie bis zu dem Punkt,
+an dem wir Pattern-Matching in der Vorlesung vorstellen,
+
+0:19:43.280,0:19:47.740
+davon ausgehen, dass alle Übungsaufgaben, die
+Sie schreiben, eine Lösung ohne Pattern-Matching haben.
+
+0:19:47.740,0:19:52.860
+Wenn Sie also Pattern-Matching verwenden, ist das nicht
+verboten, es sei denn, es wird durch Autotool
+
+0:19:52.860,0:19:53.860
+tatsächlich
+verhindert.
+
+0:19:53.860,0:20:00.020
+Aber in jedem Fall können Sie, solange
+wir Pattern-Matching in der Vorlesung nicht behandelt haben,
+
+0:20:00.020,0:20:07.530
+davon ausgehen, dass die Übungsaufgaben Lösungen
+haben, die ohne Pattern-Matching sein sollen.
+
+0:20:07.530,0:20:15.280
+Wir haben nun verschiedene Wahlmöglichkeiten,
+wenn wir eine Listenfunktion schreiben.
+
+0:20:15.280,0:20:20.620
+Wir können zum Beispiel entscheiden, ob wir
+mit Fallunterscheidung und Rekursion arbeiten oder ob wir
+
+0:20:20.620,0:20:27.340
+einfach einige der Funktionen, die wir gerade
+gesehen haben, kombinieren oder eventuell List Comprehensions
+
+0:20:27.340,0:20:28.340
+verwenden.
+
+0:20:28.340,0:20:30.850
+Lassen Sie mich dies an einem
+Beispiel aus einer früheren Übung diskutieren.
+
+0:20:30.850,0:20:36.830
+Dort bestand die Aufgabe darin, zu entscheiden,
+ob ein bestimmter String ein Palindrom ist.
+
+0:20:36.830,0:20:40.150
+Das
+Prädikat is-a-palindrome?
+
+0:20:40.150,0:20:48.300
+Und eine Möglichkeit, darüber nachzudenken, ist, sich zunächst
+zu überlegen, dass ein Palindrom mit Sicherheit vorliegt,
+
+0:20:48.300,0:20:56.150
+wenn Sie eine sehr kurze Zeichenkette haben,
+die nur null oder ein Element enthält.
+
+0:20:56.150,0:21:01.620
+Man prüft also die Länge dieses Strings
+(was möglich ist, weil Strings Listen sind), prüft,
+
+0:21:01.620,0:21:03.460
+ob sie kleiner
+als 2 ist.
+
+0:21:03.460,0:21:08.840
+Und wenn ja, dann wird True zurückgegeben,
+denn dann ist der String gesichert ein Palindrom.
+
+0:21:08.840,0:21:12.910
+Und wenn sie nicht so kurz ist, dann
+entweder durch Pattern-Matching (was ich gerade gesagt habe,
+
+0:21:12.910,0:21:17.770
+werde ich noch nicht zeigen) oder durch Verwendung
+der head- und last-Funktionen, also Prüfung, ob das erste
+
+0:21:17.770,0:21:23.780
+Element und das letzte Element dieser Zeichenkette das
+gleiche Zeichen sind, und wenn ja, dann auch prüfen,
+
+0:21:23.780,0:21:29.300
+ob, wenn Sie dieses erste und letzte Element
+entfernen (was Sie mit "init" und "tail" tun könnten),
+
+0:21:29.300,0:21:31.050
+dann auch der
+Rest ein Palindrom ist.
+
+0:21:31.050,0:21:35.740
+Dies ist also durchaus eine gültige Definition, um
+zu prüfen, ob eine Zeichenkette ein Palindrom ist.
+
+0:21:35.740,0:21:38.430
+Sie verwendet
+keine Indizierung.
+
+0:21:38.430,0:21:47.490
+Es ist keine sehr idiomatische Lösung für diese Aufgabe,
+aber sie vermeidet zumindest die Verwendung von Listenindizierung (welche
+
+0:21:47.490,0:21:50.730
+man bei der Lösung
+dieser Aufgabe auch verwenden könnte).
+
+0:21:50.730,0:21:56.081
+Aber es lohnt es sich, darüber nachzudenken, ob wir
+mit einigen der vorhandenen Funktionen dieses Prädikat / diese
+
+0:21:56.081,0:21:57.760
+Eigenschaft viel
+einfacher ausdrücken können.
+
+0:21:57.760,0:21:59.150
+Und tatsächlich,
+das können wir.
+
+0:21:59.150,0:22:01.790
+Wir können einfach
+etwas wie folgt schreiben.
+
+0:22:01.790,0:22:07.190
+Wir können sagen, was viel deklarativer ist, dass ein
+String ein Palindrom ist, wenn es der Fall ist, dass
+
+0:22:07.190,0:22:09.620
+die Umkehrung des
+Strings ihn nicht verändert.
+
+0:22:09.620,0:22:13.300
+Nun, eigentlich "verändert" die Umkehrung einer Zeichenkette
+sie nie, sie gibt nur eine andere
+
+0:22:13.300,0:22:15.870
+Zeichenkette zurück, die die
+Umkehrung der ursprünglichen Zeichenkette ist.
+
+0:22:15.870,0:22:19.850
+Aber dann können wir prüfen, ob die
+Umkehrung des Strings gleich dem String selbst ist.
+
+0:22:19.850,0:22:22.440
+Das ist eine
+Definition von "isPalindrome".
+
+0:22:22.440,0:22:27.140
+Und sie ist sicherlich besser als die
+Definition, die wir hier oben gesehen haben.
+
+0:22:27.140,0:22:30.530
+Man könnte meinen, dass die erste Version
+effizienter ist, weil man hier zuerst den String
+
+0:22:30.530,0:22:35.940
+umdrehen muss, was sicherlich
+eine teure Berechnung ist.
+
+0:22:35.940,0:22:37.560
+Aber eigentlich wissen
+Sie das nicht.
+
+0:22:37.560,0:22:43.730
+Die meisten von Ihnen haben wahrscheinlich noch
+kein sehr klares Bild vom Kostenmodell von Haskell.
+
+0:22:43.730,0:22:45.760
+Sie sollten also nicht
+mit solchen Vorurteilen arbeiten.
+
+0:22:45.760,0:22:53.040
+Versuchen Sie, bei den Übungsaufgaben die elegante
+und ausdrucksstarke Version zu wählen und nicht die,
+
+0:22:53.040,0:22:57.980
+bei der Sie (mit einer gewissen
+imperativen Programmiermentalität) denken, dass dies die effizientere
+
+0:22:57.980,0:22:59.460
+Version
+sein muss.
+
+0:22:59.460,0:23:03.440
+Das können Sie im Moment noch
+nicht wirklich erkennen, würde ich sagen.
+
+0:23:03.440,0:23:06.930
+Versuchen Sie also, im
+Sinne dieser Aufgabe zu denken.
+
+0:23:06.930,0:23:19.660
+Hier hätte ich diese
+Einreichung eindeutig der obigen vorgezogen.
+
+0:23:19.660,0:23:26.380
+Eine vielleicht etwas überraschende Beobachtung ist, dass
+wir in Haskell sogar mit unendlichen Listen arbeiten
+
+0:23:26.380,0:23:27.380
+können.
+
+0:23:27.380,0:23:30.880
+So gibt es Ausdrücke und
+Werte, die unendliche Listen repräsentieren.
+
+0:23:30.880,0:23:32.930
+Etwa das,
+was Sie hier sehen.
+
+0:23:32.930,0:23:39.860
+Wir haben schon einmal etwas Ähnliches gesehen, wo
+wir einen Ausdruck wie [1..10] oder [1,3..9] verwendet haben,
+
+0:23:39.860,0:23:46.309
+wo wir alle ungeraden Zahlen
+von 1 bis 9 erhalten haben.
+
+0:23:46.309,0:23:51.220
+Sie können die obere Grenze auch weglassen
+und einfach sagen, dass Sie [1,3...] haben wollen.
+
+0:23:51.220,0:23:58.730
+Dann erhalten Sie mathematisch (zumindest
+konzeptionell) die Liste aller ungeraden Zahlen.
+
+0:23:58.730,0:23:59.730
+Eine
+unendliche Liste!
+
+0:23:59.730,0:24:04.170
+Auch wenn Sie sie nicht in einer expliziten
+Listenform aufschreiben können, so können Sie sie doch
+
+0:24:04.170,0:24:05.170
+als
+Ausdruck aufschreiben.
+
+0:24:05.170,0:24:11.280
+Und das bedeutet semantisch die
+unendliche Liste aller ungeraden Zahlen.
+
+0:24:11.280,0:24:13.800
+Was können Sie nun
+mit einer solchen Liste machen?
+
+0:24:13.800,0:24:15.120
+Natürlich können Sie
+sie nicht ausgeben.
+
+0:24:15.120,0:24:16.260
+Aber Sie können
+mit ihr arbeiten.
+
+0:24:16.260,0:24:19.690
+Zum Beispiel können Sie andere
+Listen in Bezug auf sie definieren.
+
+0:24:19.690,0:24:26.950
+So könnten Sie zum Beispiel sagen: Ich
+möchte die Quadrate von allem aus einer
+
+0:24:26.950,0:24:27.950
+solchen
+Liste haben.
+
+0:24:27.950,0:24:36.450
+Sie könnten [1,3...] haben, oder Sie können nur
+[1...] haben (was die unendliche Liste aller natürlichen
+
+0:24:36.450,0:24:42.520
+Zahlen ist), und diese List Comprehension
+als Ganzes ist die unendliche Liste aller
+
+0:24:42.520,0:24:43.520
+Quadratzahlen aller
+natürlichen Zahlen.
+
+0:24:43.520,0:24:45.280
+Wir erhalten
+alle Quadratzahlen.
+
+0:24:45.280,0:24:50.810
+Das kann man nicht ausgeben, aber es
+ist definiert und man kann damit arbeiten.
+
+0:24:50.810,0:24:51.810
+Wie können
+Sie damit arbeiten?
+
+0:24:51.810,0:24:54.000
+Zumindest kann man
+mit Präfixen davon arbeiten.
+
+0:24:54.000,0:24:59.231
+Wir können dies also als einen Ausdruck definieren,
+der für eine unendliche Liste steht, und dann
+
+0:24:59.231,0:25:03.640
+könnten Sie entscheiden, dass Sie nur einen Teil
+davon betrachten wollen (nachdem Sie es als ganze unendliche
+
+0:25:03.640,0:25:05.620
+Liste
+definiert haben).
+
+0:25:05.620,0:25:13.150
+Zum Beispiel können Sie etwas sagen wie:
+Gib mir die ersten drei Elemente der
+
+0:25:13.150,0:25:14.480
+Liste
+aller Quadratzahlen.
+
+0:25:14.480,0:25:20.180
+Und das bedeutet, dass Sie diese obere
+Schranke nicht irgendwie in diese Liste einbauen müssen.
+
+0:25:20.180,0:25:25.120
+Vielleicht wissen Sie bei der Definition der
+Quadratzahlen nicht, wie viele von ihnen Sie brauchen
+
+0:25:25.120,0:25:26.120
+werden.
+
+0:25:26.120,0:25:27.850
+Also definieren Sie sie
+als eine unendliche Liste.
+
+0:25:27.850,0:25:32.040
+Aber dann, an einem bestimmten Nutzungspunkt,
+sagen Sie: Gib mir die ersten drei.
+
+0:25:32.040,0:25:37.640
+Und dann bekommen Sie wirklich die ersten
+drei, und die anderen werden nicht einmal berechnet.
+
+0:25:37.640,0:25:43.740
+Die Funktionalität besteht hier also nicht
+darin, dass Haskell versucht, diese unendliche Liste
+
+0:25:43.740,0:25:50.880
+aller Quadratzahlen zu berechnen und dann
+feststellt, dass es das nicht kann.
+
+0:25:50.880,0:25:51.880
+Nein.
+
+0:25:51.880,0:25:56.140
+Was stattdessen passiert, ist, dass Haskell
+herausfindet, dass es nur die ersten drei
+
+0:25:56.140,0:25:57.620
+dieser
+Elemente benötigt.
+
+0:25:57.620,0:25:59.380
+Also wird es
+tatsächlich nur [1,4,9] berechnen.
+
+0:25:59.380,0:26:01.290
+Und das
+funktioniert im Allgemeinen.
+
+0:26:01.290,0:26:07.260
+Es ist nicht auf diese Idee beschränkt, eine
+feste Anzahl von Elementen zu nehmen, wo man vielleicht
+
+0:26:07.260,0:26:11.960
+sagen könnte, das ist ein Spezialfall, dass diese Zahl
+irgendwie benutzt wird, um zu entscheiden, wie weit man gehen
+
+0:26:11.960,0:26:12.960
+muss.
+
+0:26:12.960,0:26:15.600
+Nein, das funktioniert
+für fast alle Listenfunktionen.
+
+0:26:15.600,0:26:18.210
+Sie können eine unendliche Liste
+nicht umkehren, das ergibt keinen Sinn.
+
+0:26:18.210,0:26:22.960
+Sie können auch nicht das
+letzte Element einer unendlichen Liste erhalten.
+
+0:26:22.960,0:26:27.370
+Und einige Anwendungen der
+Rekursion sind auch problematisch.
+
+0:26:27.370,0:26:31.700
+Aber viele der Listenfunktionen, die Sie bereits
+gesehen haben, und auch weitere, operieren (ohne
+
+0:26:31.700,0:26:35.720
+Probleme) auf unendlichen Listen, vorausgesetzt,
+die Ausgabe ist etwas, das nur
+
+0:26:35.720,0:26:37.450
+endliche
+Berechnungen erfordert.
+
+0:26:37.450,0:26:42.020
+Zum Beispiel könnten Sie etwas sagen wie:
+Ich möchte die unendliche Liste aller natürlichen Zahlen
+
+0:26:42.020,0:26:47.260
+einschließlich null ([0..]) und
+die endliche Zeichenkette "ab" zippen.
+
+0:26:47.260,0:26:48.260
+Was würden
+Sie erhalten?
+
+0:26:48.260,0:26:49.580
+Wie ich schon
+über die "zip"-Funktion sagte:
+
+0:26:49.580,0:26:52.830
+Sie hört auf, wenn eine der
+beiden Listen keine weiteren Elemente hat.
+
+0:26:52.830,0:26:57.080
+In diesem Fall ist also diese
+endliche Liste diejenige, die zuerst stoppt.
+
+0:26:57.080,0:26:58.760
+Sie enthält nur
+'a' und 'b'.
+
+0:26:58.760,0:27:05.250
+Von dieser unendlichen Liste aller nichtnegativen Zahlen
+werden also nur die 0 und die 1
+
+0:27:05.250,0:27:06.620
+verbraucht, der Rest
+wird nie berechnet.
+
+0:27:06.620,0:27:08.760
+Und dies ist kein
+Sonderfall für das erste Argument.
+
+0:27:08.760,0:27:12.760
+Wenn Sie hier die beiden
+Argumente vertauschen, wird es auch funktionieren.
+
+0:27:12.760,0:27:15.170
+Das liegt an der
+Eigenschaft der "Lazy Evaluation".
+
+0:27:15.170,0:27:19.130
+Das war etwas, was ich im ersten Video
+heute erwähnt habe, wo ich über die Vermeidung
+
+0:27:19.130,0:27:22.940
+der Berechnung der Ackermann-Funktion gesprochen habe, wo
+ich gesagt habe, dass Haskell nur die Dinge
+
+0:27:22.940,0:27:24.770
+berechnen wird, die
+es unbedingt braucht.
+
+0:27:24.770,0:27:31.030
+In diesem Fall wird die Restliste nach der
+ersten 0 und 1 nicht benötigt, also wird sie
+
+0:27:31.030,0:27:42.190
+nie
+berechnet.
+
+0:27:42.190,0:27:44.060
+Das bedeutet nicht, dass
+irgendeine Magie im Spiel ist.
+
+0:27:44.060,0:27:47.980
+Haskell löst also
+nicht beliebige mathematische Probleme.
+
+0:27:47.980,0:27:54.610
+Betrachten wir dieses Beispiel hier, wo
+wir die Liste aller Quadratzahlen haben.
+
+0:27:54.610,0:28:01.210
+Was eine unendliche Liste ist, denn wir machen das
+für alle Zahlen ab 1 und so weiter, ad infinitum.
+
+0:28:01.210,0:28:02.210
+Und was
+wollen wir dann?
+
+0:28:02.210,0:28:06.070
+Wir wollen die Ergebnisliste aller m aus
+dieser unendlichen Liste so berechnen, dass m kleiner
+
+0:28:06.070,0:28:07.309
+als
+100 ist.
+
+0:28:07.309,0:28:14.210
+Sie könnten erwarten, dass dies genau
+die Liste der Quadratzahlen in [1..81] berechnet
+
+0:28:14.210,0:28:15.520
+und
+dann aufhört.
+
+0:28:15.520,0:28:17.960
+Das ist aber nicht
+das, was passieren wird.
+
+0:28:17.960,0:28:23.520
+Was passieren wird, ist, dass diese Auswertung
+nach der Erzeugung eines endlichen Präfixes hängen bleibt.
+
+0:28:23.520,0:28:28.380
+Sie wird also die Quadratzahlen von 1
+bis 81 erzeugen, und dann wird sie ewig
+
+0:28:28.380,0:28:30.400
+weiterrechnen.
+
+0:28:30.400,0:28:32.980
+Warum ist
+das so?
+
+0:28:32.980,0:28:41.760
+Weil Haskell kein Wissen oder algebraische Beweise
+verwendet, um abzuleiten, dass, da diese Liste
+
+0:28:41.760,0:28:47.650
+ansteigend ist und wir die Zahlen quadrieren, dies
+auch eine ansteigende Liste sein wird, sodass wir,
+
+0:28:47.650,0:28:51.390
+sobald wir die 100 gesehen haben,
+nie wieder eine *kleinere* Zahl sehen können.
+
+0:28:51.390,0:28:56.500
+Das wäre für diesen sehr speziellen Ausdruck
+möglich, aber im Allgemeinen könnte man hier
+
+0:28:56.500,0:29:04.010
+eine Liste haben, die nach einer Million
+Zahlen wieder etwas ergibt, das kleiner als 100
+
+0:29:04.010,0:29:05.010
+ist.
+
+0:29:05.010,0:29:06.910
+Und das sollte dann
+in die Ausgabeliste gehen.
+
+0:29:06.910,0:29:12.420
+Es ist also sehr spezifisch,
+dass die Quadratzahlen immer größer werden.
+
+0:29:12.420,0:29:18.130
+Aber Haskell sollte dieses Wissen nicht nutzen,
+weil das im Grunde der "referenziellen Transparenz" widersprechen
+
+0:29:18.130,0:29:19.130
+würde.
+
+0:29:19.130,0:29:20.300
+Was war
+das nochmal?
+
+0:29:20.300,0:29:25.140
+Die Idee war, dass, wenn man einen
+Ausdruck hat, dieser mit jedem anderen Ausdruck austauschbar
+
+0:29:25.140,0:29:29.320
+sein sollte, der die gleichen Werte berechnet
+(den gleichen Wert - oder die gleichen Werte,
+
+0:29:29.320,0:29:31.800
+im Fall
+einer Liste).
+
+0:29:31.800,0:29:38.470
+Während wir also anhand dieses speziellen Ausdrucks sehen
+könnten, dass wir, wenn wir einmal "100" gesehen haben,
+
+0:29:38.470,0:29:42.950
+nie wieder eine kleinere Zahl sehen werden, nehmen
+wir an, dass es sich um einen anderen Ausdruck
+
+0:29:42.950,0:29:48.080
+handelt, der ebenfalls die Quadratzahlen
+berechnet, aber auf eine andere Weise.
+
+0:29:48.080,0:29:50.620
+Auf irgendeine, vielleicht
+weniger offensichtliche Weise.
+
+0:29:50.620,0:29:55.670
+So dass Haskell, oder irgendein anderes Computerprogramm, im
+Allgemeinen nicht beweisen kann, dass das, was hier
+
+0:29:55.670,0:29:57.390
+berechnet wird,
+die Quadratzahlen sind.
+
+0:29:57.390,0:30:00.050
+Es sollte also
+keine Annahmen darüber machen.
+
+0:30:00.050,0:30:03.500
+Andersherum
+formuliert:
+
+0:30:03.500,0:30:07.700
+Dieser Ausdruck und jeder andere Ausdruck,
+der ebenfalls die Quadratzahlen berechnet, sollten hier
+
+0:30:07.700,0:30:09.290
+austauschbar
+sein.
+
+0:30:09.290,0:30:13.670
+Und nur die Tatsache, dass wir aus diesem
+speziellen Ausdruck erkennen können, dass es sich um
+
+0:30:13.670,0:30:18.450
+die Quadratzahlen handelt, bedeutet nicht, dass dies
+auch für jeden anderen Ausdruck möglich ist, der
+
+0:30:18.450,0:30:20.660
+uns zufällig die
+gleiche Liste liefert.
+
+0:30:20.660,0:30:23.130
+Aber die beiden Programme
+sollten sich nicht unterschiedlich verhalten.
+
+0:30:23.130,0:30:28.630
+Die einzige Möglichkeit, das sicherzustellen, ist also,
+dass Haskell auch in diesem Fall tatsächlich
+
+0:30:28.630,0:30:32.610
+alle Zahlen ausprobiert, die
+aus dieser Liste kommen.
+
+0:30:32.610,0:30:38.860
+Und da es sie nicht alle in einer
+endlichen Zeit ausprobieren kann, wird es hier keine endliche
+
+0:30:38.860,0:30:39.860
+Liste
+erzeugen.
+
+0:30:39.860,0:30:43.730
+Das ist also etwas ganz anderes als
+der Fall, in dem wir "take 3" hatten.
+
+0:30:43.730,0:30:50.390
+Denn dort lässt die 3 Haskell,
+das Laufzeitsystem, die Auswertung des Programms
+
+0:30:50.390,0:30:53.120
+wirklich wissen, wann
+es fertig ist.
+
+0:30:53.120,0:30:56.960
+Es hängt nicht von den
+Elementen in der Liste ab.
+
+0:30:56.960,0:31:04.110
+Dies ist also ein warnendes Beispiel,
+dass man keine mathematische Magie erwarten sollte.
+
+0:31:04.110,0:31:05.980
+Alles wird durch
+Lazy Evaluation gesteuert.
+
+0:31:05.980,0:31:12.710
+Nach diesem Prinzip (lazy evaluation) verwendet Haskell die
+Fallunterscheidung, um zu wissen, was zu tun ist,
+
+0:31:12.710,0:31:17.170
+und wertet nur die Argumente aus, die
+benötigt werden, um diese Fallunterscheidungen zu treffen.
+
+0:31:17.170,0:31:25.370
+Und das erlaubt uns oft endliche Berechnungen
+mit unendlichen Daten, aber es ist kein mathematischer
+
+0:31:25.370,0:31:36.290
+magischer
+Rätsellöser.
+
+0:31:36.290,0:31:40.600
+Zum Abschluss für heute möchte
+ich noch dieses Beispiel besprechen.
+
+0:31:40.600,0:31:44.880
+Dies ist, wie der
+Name schon sagt, eine Sortierfunktion.
+
+0:31:44.880,0:31:48.990
+Und tatsächlich implementiert sie im
+Wesentlichen die Idee von Quicksort.
+
+0:31:48.990,0:31:54.150
+Sie sehen also einige der Funktionen
+in Aktion, die wir bisher eingeführt haben.
+
+0:31:54.150,0:32:03.790
+Wir haben eine Fallunterscheidung: Wir sagen also, dass
+die leere Liste nach der leeren Liste sortiert wird.
+
+0:32:03.790,0:32:08.980
+Und ansonsten führen wir
+einige lokale Berechnungen durch.
+
+0:32:08.980,0:32:16.179
+Wir wählen also ein Pivot-Element und verwenden
+List Comprehensions, um im Grunde unsere Eingabeliste
+
+0:32:16.179,0:32:18.270
+in kleinere und
+größere Werte aufzuteilen.
+
+0:32:18.270,0:32:22.650
+Und dann haben wir rekursive Aufrufe
+auf diesen "kleineren" und "größeren" Elementen.
+
+0:32:22.650,0:32:28.190
+Und dann kombinieren wir die Ergebnisse
+mit dieser Verkettungsfunktion, die Sie auch schon
+
+0:32:28.190,0:32:29.559
+gesehen
+haben.
+
+0:32:29.559,0:32:34.020
+Und am Ende erhalten
+wir hoffentlich eine sortierte Liste.
+
+0:32:34.020,0:32:39.210
+Ich möchte das diskutieren, aber eigentlich möchte ich
+einige Aspekte sehen, die besser in einem Editor
+
+0:32:39.210,0:32:41.890
+erklärt werden, wo wir
+auch das Programm laufen sehen.
+
+0:32:41.890,0:32:46.909
+Tatsächlich werde ich also ein
+separates Video für diesen Teil machen.

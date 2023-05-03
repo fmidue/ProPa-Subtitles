@@ -1,0 +1,558 @@
+0:00:01.600,0:00:04.880
+Okay, I wanted to use another short video
+
+0:00:04.880,0:00:11.440
+to demonstrate and explain an aspect
+that has already occurred for some of you
+
+0:00:11.440,0:00:16.880
+in your submissions; where you got feedback from
+Autotool which said something about eta-reduction.
+
+0:00:17.760,0:00:18.080
+Yes.
+
+0:00:18.080,0:00:21.360
+So, something like 'Eta reduce
+the following expression'.
+
+0:00:22.080,0:00:23.200
+So, what does this mean?
+
+0:00:24.400,0:00:24.960
+Eta-reduction.
+
+0:00:25.840,0:00:26.340
+Okay.
+
+0:00:26.960,0:00:31.440
+It is related to higher order functional
+programming, which we'll capture later.
+
+0:00:32.000,0:00:37.760
+But actually, already at this point, I can
+give a few explanations so that you are not so
+
+0:00:37.760,0:00:41.360
+surprised, maybe, if this appears in your feedback.
+
+0:00:42.160,0:00:42.660
+Okay.
+
+0:00:43.200,0:00:45.920
+So, I will first do this and some example,
+
+0:00:45.920,0:00:49.360
+which is completely artificial,
+and then make a small experiment.
+
+0:00:49.360,0:00:50.720
+Okay, so what does it mean?
+
+0:00:50.720,0:00:55.600
+And when, or whether it appears
+in situations like the following.
+
+0:00:55.600,0:01:00.800
+So, let's say you have some function, which
+you use in your scene, it takes some arguments,
+
+0:01:00.800,0:01:07.920
+maybe a colour, and maybe it takes some other
+picture, an object, the sun, the moon, whatever.
+
+0:01:07.920,0:01:14.560
+And it also takes a time value, and
+it ultimately returns a picture.
+
+0:01:14.560,0:01:18.400
+Yeah, that's something that
+could occur in your submissions.
+
+0:01:18.400,0:01:21.840
+And maybe it is defined in the
+following ways, we have a colour,
+
+0:01:21.840,0:01:23.680
+we get a picture, we get the current time.
+
+0:01:24.400,0:01:26.240
+And then, well, you have some expressions.
+
+0:01:26.240,0:01:31.760
+So, let's say we have some additional
+function, I don't know what it's called,
+
+0:01:32.400,0:01:34.560
+that somehow combines and manipulates pictures.
+
+0:01:35.520,0:01:38.480
+And it's probably not the name that this
+function really has, but let's say
+
+0:01:39.120,0:01:40.800
+that is the definition for this.
+
+0:01:40.800,0:01:47.440
+And then in this f function that you use to
+compose your scene, or to draw part of your scene,
+
+0:01:47.440,0:01:59.120
+you want to say something like, well, I want
+to manipulate and combine, and maybe this
+
+0:01:59.120,0:02:01.280
+colour is passed on to the other function.
+
+0:02:01.840,0:02:06.560
+And maybe for the picture, you will
+actually change it here at this point.
+
+0:02:06.560,0:02:11.120
+So, maybe what you want to do is that you want
+to combine this picture with some other picture,
+
+0:02:13.200,0:02:17.040
+and a rectangle of two of these dimensions.
+
+0:02:18.240,0:02:21.360
+And then you pass this on to the
+'manipulateAndCombine' function,
+
+0:02:21.360,0:02:24.960
+which of course is also, well, it has
+some arguments and also has,
+
+0:02:25.600,0:02:30.640
+of course, a time parameter which, then, it is
+used somewhere in the definition, obviously.
+
+0:02:30.640,0:02:31.140
+Okay.
+
+0:02:31.600,0:02:34.000
+This is, of course, not a
+valid definition here now,
+
+0:02:34.000,0:02:37.520
+because of all these three places
+but let's say it is defined,
+
+0:02:38.160,0:02:44.320
+and you will pass this on to the other
+function, and you also pass the time along.
+
+0:02:44.320,0:02:46.080
+And this makes perfect sense.
+
+0:02:46.080,0:02:49.600
+We have three arguments here, the
+Color, the Picture, and the Double.
+
+0:02:49.600,0:02:53.040
+And the function definition has the same
+three arguments, the Color, the Picture, and
+
+0:02:53.760,0:02:56.800
+the Double for the time, and
+then it uses our function.
+
+0:02:56.800,0:03:00.640
+And let's assume that this really has
+these parameters so that this works out.
+
+0:03:01.600,0:03:04.960
+Now, if you had something
+like this in your submissions,
+
+0:03:04.960,0:03:08.480
+then Autotool would suggest
+that you should eta-reduce.
+
+0:03:08.480,0:03:16.560
+And the hint that Autotool would give would be
+something like let's throw away these,
+
+0:03:16.560,0:03:18.240
+let's throw away the 't' argument.
+
+0:03:18.240,0:03:24.880
+So, what Autotool would say at this point is well,
+why don't you define your function like this?
+
+0:03:30.800,0:03:34.800
+Which might be a bit surprising,
+since this 't' has suddenly disappeared.
+
+0:03:35.600,0:03:36.240
+Yes.
+
+0:03:36.240,0:03:41.440
+But indeed, if you would actually define
+the 'manipulateAndCombine' function and
+
+0:03:41.440,0:03:46.160
+then wrote your 'f' function like here, like
+suggested by Autotool, then it would still work,
+
+0:03:46.160,0:03:49.440
+despite the fact that here we have the Color,
+
+0:03:49.440,0:03:53.520
+the Picture and the Double argument, but
+the 't' argument doesn't even appear here.
+
+0:03:53.520,0:03:58.720
+So, we have a three argument function, but we
+defined a function only with two arguments.
+
+0:03:59.440,0:04:00.320
+How can this be?
+
+0:04:01.200,0:04:05.040
+Well, that is the point of eta-reduction.
+
+0:04:05.040,0:04:09.280
+Namely, that instead of considering this
+'f' as a function of three arguments that
+
+0:04:09.280,0:04:12.560
+returns a Picture, you could also
+consider it as just a function,
+
+0:04:12.560,0:04:16.880
+which takes two arguments, namely Color
+and Picture, and then actually returns
+
+0:04:18.000,0:04:23.040
+a function from Double to Picture, which is
+exactly what this right-hand side here defines.
+
+0:04:24.880,0:04:29.360
+Yes, we simply don't need to
+introduce the time at this point.
+
+0:04:29.360,0:04:34.080
+If it's not used in this expression, if it's
+only passed onwards to this other function,
+
+0:04:34.080,0:04:37.920
+then you might as well say instead of
+saying 'f' of 'c' and 'p' and 't' is this function,
+
+0:04:37.920,0:04:42.960
+this whole expression of 't', you might as
+well say 'f' of 'c' and 'p' is just this expression.
+
+0:04:43.920,0:04:44.480
+Okay.
+
+0:04:44.480,0:04:50.800
+So, we somehow defer the provision of this time
+argument, it makes perfect sense mathematically,
+
+0:04:50.800,0:04:56.160
+because if it's a function, then it could take
+another argument and what would happen with this
+
+0:04:56.160,0:04:59.200
+additional argument, it would also
+be passed on to the other function,
+
+0:04:59.200,0:05:02.960
+but we don't have to write this because
+this is automatic by how functions work.
+
+0:05:04.240,0:05:06.240
+Okay, so actually, this would also be an accepted
+
+0:05:06.880,0:05:12.800
+definition and would behave exactly as the other
+version and Autotool considers this version,
+
+0:05:12.800,0:05:18.160
+nicer, more elegant, better style because we
+don't introduce this artificial time parameter.
+
+0:05:18.160,0:05:21.520
+If you're not going to use it at this
+point, if you're only going to pass it
+
+0:05:21.520,0:05:24.480
+on to some other function, we don't
+need to introduce it at this point.
+
+0:05:25.760,0:05:26.260
+Okay.
+
+0:05:26.640,0:05:31.120
+So, this is somehow the syntactic reason
+why this works and how this is interpreted.
+
+0:05:31.680,0:05:40.720
+And it's also the reason why we, in Haskell,
+write arguments with this arrow notation, yes.
+
+0:05:40.720,0:05:46.720
+If you go back or remember the previous
+slide, there was discussion about why
+
+0:05:47.600,0:05:55.520
+is this not written somehow as: we take three
+arguments as it would be in a Java type signature.
+
+0:05:56.080,0:05:58.160
+Yes, where we would have something like this.
+
+0:05:58.160,0:06:02.400
+And then here would also write
+it with commas and brackets.
+
+0:06:05.120,0:06:10.160
+Yes, it would also be a reasonable
+way of defining the syntax of Haskell.
+
+0:06:10.160,0:06:13.920
+But actually, it wouldn't work nicely because
+it wouldn't work with eta-reduction, if you
+
+0:06:13.920,0:06:20.160
+wrote type signatures like this, and if you
+wrote function definitions or arguments like this,
+
+0:06:20.160,0:06:26.560
+then there wouldn't be an immediate syntactic
+possibility for omitting this 't' parameter.
+
+0:06:26.560,0:06:30.320
+Yes, then we would also have
+all our brackets here, probably.
+
+0:06:33.360,0:06:37.040
+And it wouldn't be so easy to say,
+well, let's omit the last 't' because
+
+0:06:37.040,0:06:40.320
+we would expect that 'f' always takes
+the three arguments in a triple.
+
+0:06:40.320,0:06:47.840
+Yeah, this wouldn't look so nice or would
+be such a nice refactoring to omit one argument.
+
+0:06:47.840,0:06:53.760
+But with the previous or with the actual
+predominant version of type signatures
+
+0:06:53.760,0:07:01.840
+and function definitions in Haskell, it's a
+very simple step to omit this last argument.
+
+0:07:02.720,0:07:05.760
+Okay, so that's what this means, abstractly.
+
+0:07:05.760,0:07:10.080
+Let's also look at a concrete and small example.
+
+0:07:10.080,0:07:12.480
+I copied it from another buffer.
+
+0:07:15.280,0:07:22.000
+Okay, so it is now really a complete program,
+because it also has a meaningful main definition.
+
+0:07:22.000,0:07:25.280
+Now the question is what will
+happen here if I run this now?
+
+0:07:25.280,0:07:29.360
+Yes, what do I define a
+function from Double to Picture?
+
+0:07:29.360,0:07:32.240
+But again, actually, the function
+doesn't take an argument.
+
+0:07:32.240,0:07:35.280
+Yes, I'd simply say opening
+equals and then something.
+
+0:07:35.280,0:07:36.560
+Why does this make sense?
+
+0:07:37.120,0:07:41.840
+Well, it does make sense because rectangle
+is actually a function of two arguments,
+
+0:07:41.840,0:07:46.640
+an x and the y coordinate by simply
+using it only or providing it only
+
+0:07:46.640,0:07:51.280
+One argument on the right-hand side here, what
+I have created is a function, which is still
+
+0:07:51.280,0:07:54.560
+awaiting its second argument and
+only then will return a Picture.
+
+0:07:54.560,0:07:56.640
+That is exactly what the type is telling you.
+
+0:07:56.640,0:08:01.120
+The 'opening' is something which awaits a
+time, a Double and gives a Picture.
+
+0:08:01.120,0:08:02.560
+But I don't have to write this down.
+
+0:08:02.560,0:08:08.800
+I could equivalently write this down, I could say,
+well, 'opening' of time is 'rectangle 10' and time.
+
+0:08:08.800,0:08:13.760
+But I don't have to, because this is more
+direct, and in some sense, more expressive.
+
+0:08:13.760,0:08:17.840
+What will happen if I run this, and maybe
+from this you wouldn't be able to tell.
+
+0:08:17.840,0:08:23.600
+But if I actually write the explicit argument,
+you should know what happens, what will happen
+
+0:08:23.600,0:08:30.400
+is an animation, we are just increasing time, one
+of two dimensions of the rectangle will grow.
+
+0:08:31.280,0:08:35.760
+Yes, if I run this, I get a
+animation of an opening rectangle.
+
+0:08:35.760,0:08:41.840
+So, it's the y coordinate, because the second
+argument here, and the very same thing would have
+
+0:08:41.840,0:08:47.120
+happened if I had written it in eta reduced form,
+simply saying 'opening' is 'rectangle 10', awaiting
+
+0:08:47.120,0:08:52.880
+its next argument, which will be the time because
+'opening' will be the argument of 'animationOf'.
+
+0:08:52.880,0:09:00.000
+So, if I have this eta-reduced version
+and run it, it will be the same.
+
+0:09:01.760,0:09:05.760
+Okay, at this point, one might also wonder where
+
+0:09:05.760,0:09:08.400
+this is very specific that it
+grows in the y direction.
+
+0:09:08.400,0:09:14.560
+So, if what I wanted the other way around, one
+way, to get this would be well, then we have
+
+0:09:14.560,0:09:19.760
+to really introduce the 't' parameter explicitly,
+because now we want to know, to express that
+
+0:09:19.760,0:09:26.160
+first argument is the time parameter for the
+rectangle so that it grows in the x direction.
+
+0:09:26.160,0:09:31.600
+So, then we would have lost the advantage
+of eta-reduction, we would have to introduce
+
+0:09:31.600,0:09:36.800
+this 't' parameter, but actually Haskell being
+a functional language, which has support for
+
+0:09:37.520,0:09:43.920
+programming on the function level really,
+using functions as first class citizens.
+
+0:09:43.920,0:09:47.520
+You could actually also express
+the same thing by saying, well,
+
+0:09:47.520,0:09:51.360
+if you want to have a rectangle, it is
+opening in the x direction, then we won’t
+
+0:09:51.920,0:09:55.120
+and we don't want to explicitly
+write down the 't' parameter.
+
+0:09:55.120,0:09:56.400
+What we really want.
+
+0:09:56.400,0:09:58.320
+We want to flip the rectangle.
+
+0:09:58.320,0:10:00.560
+Here, we want to flip the order of the arguments.
+
+0:10:00.560,0:10:05.680
+So, instead of saying I need to introduce
+a 't' parameter, I can still make use of
+
+0:10:07.360,0:10:10.640
+eta-reduction without
+introducing the extra parameter
+
+0:10:10.640,0:10:15.280
+if I make sure that I change in which
+order rectangle takes its arguments.
+
+0:10:15.280,0:10:17.440
+And this again can be done with a function,
+
+0:10:17.440,0:10:21.440
+and unsurprisingly, maybe,
+this function is called 'flip'.
+
+0:10:22.800,0:10:25.760
+So, this is a well-defined Haskell program again.
+
+0:10:25.760,0:10:32.800
+It flips the order of the argument of the 'rectangle'
+function, then it provides one of its arguments,
+
+0:10:33.600,0:10:38.320
+namely the y coordinate, because of the flipping
+here, the y coordinate is now the first one
+
+0:10:38.320,0:10:42.320
+and the x coordinate, well, it's
+still awaiting a time parameter,
+
+0:10:42.320,0:10:44.560
+which will come when the animation runs.
+
+0:10:45.280,0:10:51.840
+So, if I run this, I get the
+opening rectangle in this direction.
+
+0:10:52.640,0:10:59.840
+If I omit the 'flip', I get the opening
+rectangle in the other dimension.
+
+0:11:02.160,0:11:05.600
+Okay, and all by virtue of eta-reduction,
+
+0:11:06.160,0:11:13.840
+namely avoiding parameters that are
+anyway only passed on to other functions.
+
+0:11:15.840,0:11:18.240
+It only works if that is the last parameter.
+
+0:11:18.240,0:11:26.480
+That's why I needed to apply the 'flip' in the
+case that I want to do opposite direction.

@@ -1,0 +1,884 @@
+0:00:02.000,0:00:06.720
+Okay, betrachten wir dieses
+Beispiel aus den Folien.
+
+0:00:07.360,0:00:09.520
+Und ich lade es gerade.
+
+0:00:09.520,0:00:10.720
+Ja, ich habe es in meinen Editor geladen,
+
+0:00:11.840,0:00:19.120
+denn ich möchte einige
+Ergänzungen und Überprüfungen zu dieser Funktion zeigen.
+
+0:00:21.040,0:00:26.400
+Und wenn Sie ganz genau hinschauen, können Sie sehen,
+dass ich einen Fehler in dieses Programm eingebaut habe.
+
+0:00:26.400,0:00:30.240
+Es ist nicht wirklich ein korrektes Quicksort und
+wir werden sehen, ob Sie diesen Fehler finden werden
+
+0:00:30.240,0:00:35.920
+Wir werden sehen, ob Sie diesen Fehler finden; nun, das werden wir, denn ich werde Ihnen
+einige Techniken zum Testen von Haskell-Programmen.
+
+0:00:36.640,0:00:43.840
+Okay, aber zuerst lassen Sie uns einfach den Interpreter starten
+den Interpreter und laden Sie dieses Beispiel.
+
+0:00:46.480,0:00:52.080
+Okay, dann können wir die
+Funktion 'sort' mit einigen Eingaben aufrufen,
+
+0:00:56.400,0:00:59.760
+sagen wir mal, wir wollen sie für diese kleine Liste aufrufen,
+
+0:00:59.760,0:01:03.120
+und wir können sehen, dass sie tatsächlich
+die richtige Ausgabe erzeugt.
+
+0:01:03.120,0:01:07.840
+Also, irgendwie ist der Fehler nicht
+sofort offensichtlich.
+
+0:01:08.640,0:01:12.800
+Okay, aber sagen wir mal, wir wollen sicherstellen
+dass dies immer der Fall ist.
+
+0:01:12.800,0:01:24.240
+Also, lassen Sie uns vielleicht zuerst
+diesen einen Fall, den wir hier gerade gesehen haben
+
+0:01:31.680,0:01:35.200
+als wiederholten Testfall,
+damit wir ihn immer ausführen können.
+
+0:01:36.480,0:01:41.200
+Okay, das würde man in einer anderen Sprache als
+einen Unit-Test in einer anderen Sprache nennen,
+
+0:01:41.840,0:01:49.200
+also schreiben wir einfach eine 'main' Definition,
+die immer denselben Test ausführt.
+
+0:01:51.040,0:01:56.800
+Und wenn ich dann das nächste Mal meine Datei lade, kann ich
+einfach ausführen und es wird "True" angezeigt.
+
+0:01:57.440,0:01:59.840
+Okay, das wäre also ein Unit-Test
+Unit-Tests, obwohl das nicht sehr attraktiv ist,
+
+0:02:01.360,0:02:03.920
+irgendwie nicht sehr attraktiv, nur solche Tests zu haben.
+
+0:02:03.920,0:02:06.320
+Also, wie testen wir stattdessen in Haskell?
+
+0:02:06.320,0:02:10.080
+Und ein Grund, warum ich Ihnen das jetzt zeige,
+ist, dass auch Autotool
+
+0:02:10.080,0:02:13.600
+auf die Art und Weise funktionieren wird, die ich jetzt vorstellen werde.
+
+0:02:13.600,0:02:17.760
+Bis jetzt wurden Ihre Einsendungen
+meist nur von Menschen inspiziert.
+
+0:02:17.760,0:02:19.760
+Autotool hat also ein gewisses Feedback gegeben,
+
+0:02:19.760,0:02:25.440
+aber die Korrektheit Ihrer CodeWorld
+Aufgaben wurde von Menschen überprüft, die sie sich ansahen.
+
+0:02:26.080,0:02:29.040
+Okay, denn da ist nicht
+viel Automatisierung möglich ist.
+
+0:02:29.040,0:02:34.080
+Aber für zukünftige Übungsaufgaben, na ja,
+diejenigen, die nicht in CodeWorld sind, sondern
+
+0:02:34.080,0:02:37.280
+wo man vielleicht Listenverarbeitungsfunktionen
+verarbeitende Funktionen wie diese schreiben muss,
+
+0:02:37.280,0:02:41.840
+werden sich die Prüfungen mehr auf
+die Semantik der Funktionen.
+
+0:02:41.840,0:02:44.720
+Und die Art des Feedbacks, das Sie
+wird ähnlich sein wie die
+
+0:02:45.520,0:02:48.880
+Rückmeldung, die Sie jetzt sehen können, wenn
+ich das hier im Beispiel mache,
+
+0:02:48.880,0:02:54.160
+denn wir verwenden im Grunde das gleiche
+Test-Framework in Autotool verwenden.
+
+0:02:54.880,0:02:58.320
+Okay, also zunächst einmal wollen wir nicht
+
+0:02:58.320,0:03:01.520
+oder, na ja, unsere Funktionen testen
+auf einige feste Eingaben testen.
+
+0:03:01.520,0:03:06.480
+Außerdem würde es das den Studierenden sehr einfach machen,
+zu betrügen, indem sie einfach Funktionen
+
+0:03:07.200,0:03:10.800
+schreiben, die mit
+genau diese Beispieleingaben funktionieren.
+
+0:03:10.800,0:03:13.920
+Stattdessen wollen wir Folgendes ausdrücken
+einige allgemeinere Eigenschaften
+
+0:03:13.920,0:03:19.120
+unserer Funktionen, oder Ihrer
+Eingaben ausdrücken und diese dann überprüfen.
+
+0:03:20.080,0:03:23.280
+Okay, und der Weg, dies zu tun, oder eine
+Weg, dies in Haskell zu tun, ist die Verwendung
+
+0:03:24.000,0:03:30.080
+eine bestimmte Bibliothek, die ich hier
+importieren werde, sie heißt 'QuickCheck'.
+
+0:03:30.880,0:03:33.360
+Und so wird sie importiert.
+
+0:03:33.360,0:03:39.120
+Und das wird von nun an oft
+in den Vorlagen für Ihre Übungsaufgaben auftauchen.
+
+0:03:39.840,0:03:46.720
+Und das ermöglicht es uns
+umfassendere Testsuiten zu schreiben.
+
+0:03:46.720,0:03:51.360
+Insbesondere solche, die sich nicht nur auf feste
+Eingaben beziehen, so dass wir allgemeine Eigenschaften aufschreiben können.
+
+0:03:51.920,0:03:54.320
+Und diese Eigenschaften werden dann getestet.
+
+0:03:55.600,0:04:04.640
+Okay, im Moment wird dafür eine Syntax verwendet, die
+Ihnen noch nicht bekannt ist, aber nach und nach werden Sie
+
+0:04:06.320,0:04:07.600
+in der Lage sein, dies selbst zu tun.
+
+0:04:07.600,0:04:11.600
+Vielleicht möchten Sie also auch
+Ihre eigenen Testsuiten schreiben, bevor Sie
+
+0:04:11.600,0:04:14.800
+etwas in Autotool hochladen, dann müssen
+Sie sich nicht nur auf unsere Tests verlassen.
+
+0:04:15.440,0:04:20.640
+Okay, und wie könnte so eine Eigenschaft aussehen?
+Nun, vielleicht möchte ich die sehr grundlegende
+
+0:04:20.640,0:04:25.680
+Eigenschaft ausdrücken, nämlich dass das Sortieren einer Liste, die
+bereits sortiert ist, keinen Schaden anrichtet.
+
+0:04:26.480,0:04:27.280
+Wie könnte ich das tun?
+
+0:04:27.280,0:04:29.440
+Wie kann ich eine solche Eigenschaft ausdrücken?
+
+0:04:29.440,0:04:38.080
+Was ich wirklich sagen will, ist so etwas wie: Ich will nicht
+eine feste Liste sortieren, sondern zum Beispiel,
+
+0:04:38.080,0:04:47.440
+Ich möchte eine beliebige Liste der Form '1..n' sortieren,
+denn ich möchte über eine beliebige
+
+0:04:49.840,0:04:54.080
+sortierte Liste, und was sollte
+das Ergebnis eines solchen Swap-Aufrufs sein?
+
+0:04:54.080,0:04:55.840
+Nun, es wäre die Liste selbst.
+
+0:04:57.920,0:05:01.040
+Nun kann ich das nicht direkt als Check schreiben, oder?
+
+0:05:01.040,0:05:06.000
+Ich hätte es also nicht so schreiben können, denn
+woher kommt das 'n'? Das 'n' sollte etwas sein,
+
+0:05:06.720,0:05:09.360
+nicht fix sein, das wäre
+irgendwie allgemeingültig sein.
+
+0:05:09.360,0:05:12.640
+Nun, die Art und Weise, wie wir das machen, in
+QuickCheck' wie folgt.
+
+0:05:12.640,0:05:17.280
+Wir können sagen, nun, lass mich einfach
+diese Eigenschaft für alle 'n' prüfen.
+
+0:05:21.120,0:05:25.440
+Und das ist erst einmal nur eine
+Syntax, die Sie als gegeben hinnehmen müssen.
+
+0:05:26.000,0:05:31.680
+Sie werden später lernen, was das
+allgemein bedeutet, oder wie dies
+
+0:05:32.560,0:05:37.840
+im Allgemeinen zu interpretieren ist.
+
+0:05:38.640,0:05:40.800
+Lassen Sie mich diesen Puffer löschen
+
+0:05:44.240,0:05:51.840
+weil er meinen Editor aus einem Grund verlangsamt
+aus irgendeinem Grund, den ich nicht ganz verstehe.
+
+0:06:01.440,0:06:08.080
+Okay, lassen Sie uns das bedenken
+und starten wir den Interpreter neu.
+
+0:06:19.440,0:06:28.240
+Laden Sie das Beispiel erneut, und dann kann ich meine Testsuite aufrufen
+Suite aufrufen und sie sagt, okay, sie hat 100 Tests bestanden.
+
+0:06:28.240,0:06:30.880
+Okay, die Frage ist jetzt
+welche Tests hat es bestanden?
+
+0:06:30.880,0:06:37.280
+Oder vielleicht wurde es nur für n=1 geprüft.
+Nun, um sicherzustellen, dass das nicht der Fall ist,
+
+0:06:37.280,0:06:40.640
+kann ich anstelle von 'quickCheck' die Funktion 'verboseCheck' verwenden.
+
+0:06:43.600,0:06:50.480
+Ja, so erhalten wir eine ausführlichere
+Testausgabe, denn was dann passieren wird, ist
+
+0:06:51.600,0:06:55.760
+dass ich darüber informiert werde
+welche Eingaben geprüft werden.
+
+0:06:56.640,0:06:58.080
+Und was Sie hier sehen, ist
+
+0:06:58.800,0:07:03.360
+wo es 100 Tests bestanden hat und
+Was sind diese Tests, die Testfälle?
+
+0:07:03.360,0:07:09.600
+Nun, das 'n' hat sich als
+26, 32, -61, und viele andere Werte.
+
+0:07:10.720,0:07:14.880
+Okay, also 100 zufällige Auswahlmöglichkeiten für dieses "n" hier.
+
+0:07:14.880,0:07:17.760
+Und bei allen wurde diese Eigenschaft
+geprüft, sie war immer in Ordnung.
+
+0:07:18.320,0:07:21.520
+Nun, das ist schon etwas,
+natürlich, was wir hier sehen,
+
+0:07:21.520,0:07:24.240
+ist es ein bisschen blöd, das
+auf negative Zahlen zu prüfen.
+
+0:07:24.240,0:07:29.280
+Also sollten wir das wahrscheinlich ausschließen
+und eine Möglichkeit, das zu tun, ist hier zu sagen,
+
+0:07:29.280,0:07:33.280
+dass man nur
+positive 'n', das ist wie,
+
+0:07:33.280,0:07:39.600
+im Grunde eine Quantifizierung über nur die
+positiven natürlichen Zahlen, den positiven ganzen Zahlen.
+
+0:07:40.240,0:07:47.280
+Und wenn wir das neu laden, und wieder
+die Testsuite laufen lassen, dann hat sie jetzt wieder
+
+0:07:47.280,0:07:51.760
+100 Tests durchgeführt, und wenn Sie die Werte
+überprüfen, werden Sie sehen, dass sie nur
+
+0:07:52.320,0:07:55.040
+auf ein positives 'n' geprüft hat, was sehr schön ist.
+
+0:07:56.240,0:08:03.200
+Okay, lassen Sie mich nun wieder zu 'quickCheck' wechseln,
+weil ich nicht immer alle diese Werte sehen will,
+
+0:08:04.720,0:08:05.600
+all diese Werte.
+
+0:08:07.520,0:08:10.640
+Und dann haben wir eine Eigenschaft,
+wir haben unseren Fehler noch nicht gefunden.
+
+0:08:10.640,0:08:13.200
+Okay, also müssen wir etwas anderes machen,
+vielleicht ein paar weitere Tests.
+
+0:08:13.200,0:08:14.160
+Was könnten wir noch testen?
+
+0:08:14.160,0:08:19.920
+Nun, wir könnten sagen, es sollte nicht nur der Fall sein
+dass wir, wenn wir die Liste '1..n' sortieren, '1..n' erhalten.
+
+0:08:19.920,0:08:22.480
+Sondern es sollte auch der Fall sein, wenn wir eine
+
+0:08:24.000,0:08:28.240
+Liste, die genau in der umgekehrten
+Reihenfolge ist, auch das richtige Ergebnis liefert.
+
+0:08:29.040,0:08:31.680
+Als Eigenschaft könnten wir also
+versuchen zu überprüfen, ist diese.
+
+0:08:34.800,0:08:40.160
+Ja, gegeben ein 'n'.
+
+0:08:40.160,0:08:44.080
+Wenn wir die Liste '1..n' nehmen und sie umkehren,
+dann ist es genau das Gegenteil,
+
+0:08:44.080,0:08:46.160
+und sie sortieren, sollten wir immer noch '1..n' erhalten.
+
+0:08:47.440,0:08:47.940
+Also gut.
+
+0:08:48.400,0:08:49.920
+Und da wir bereits dabei
+
+0:08:52.400,0:08:59.360
+sind, weitere Tests zu schreiben, vielleicht
+lassen Sie uns direkt, wir überprüfen das jetzt.
+
+0:08:59.360,0:09:04.000
+Wir würden auch durchlaufen, das müssen Sie mir glauben,
+vielleicht schreiben wir an dieser Stelle auch ein paar
+
+0:09:05.040,0:09:06.400
+zusätzliche Tests.
+
+0:09:07.440,0:09:15.360
+Also, zum Beispiel, anstatt einfach zu sagen
+dass wir Listen von '1..n' sortieren wollen, vielleicht
+
+0:09:15.360,0:09:21.840
+allgemeiner sein und sagen, wie, oder was passieren
+soll, wenn man eine beliebige Liste sortiert.
+
+0:09:31.200,0:09:32.480
+Ja, genau,
+
+0:09:32.480,0:09:36.480
+Ich kann auch einfach quantifizieren
+über eine beliebige Liste 'xs',
+
+0:09:37.760,0:09:45.200
+dann wäre es natürlich blöd zu
+erwarten, dass die Sortierung von 'xs' gleich 'xs' ist.
+
+0:09:45.200,0:09:48.960
+Aber schauen wir doch mal nach
+was passiert, wenn ich das tue.
+
+0:09:48.960,0:09:50.720
+Also, ich sollte jetzt ein Gegenbeispiel bekommen.
+
+0:09:52.800,0:09:57.360
+In der Tat, es gab zwei Tests
+die 100 Fälle bestanden haben.
+
+0:09:57.360,0:09:59.920
+Das sind die ersten beiden, und
+dann gibt es ein Gegenbeispiel.
+
+0:10:01.040,0:10:02.240
+Das sieht etwas seltsam aus.
+
+0:10:02.240,0:10:06.480
+Warum ist '[0, 0]' ein Gegenbeispiel zu dieser Gleichung?
+
+0:10:10.560,0:10:13.440
+Nun, es ist sowieso die falsche Gleichung.
+
+0:10:13.440,0:10:18.640
+Aber auch für diesen Fall hätten wir eigentlich
+erwarten können, dass es tatsächlich funktioniert.
+
+0:10:19.280,0:10:22.560
+Und nun, vielleicht sollte ich an dieser Stelle
+sollte ich offenlegen, wo der Fehler liegt.
+
+0:10:22.560,0:10:23.920
+Wenn ich nämlich
+
+0:10:25.840,0:10:32.400
+so geschrieben hätte, dann wären wir auch gescheitert,
+aber mit einem aussagekräftigeren Gegenbeispiel.
+
+0:10:33.120,0:10:33.760
+Aber gut.
+
+0:10:33.760,0:10:35.520
+Aber das liegt nur daran, dass die Eigenschaft falsch ist.
+
+0:10:35.520,0:10:39.440
+Wie auch immer, lassen Sie mich eine Eigenschaft aufschreiben, die
+eigentlich für die Sortierfunktion richtig sein sollte.
+
+0:10:39.440,0:10:44.800
+Was ist, wenn ich die Liste
+umkehre und dann sortiere?
+
+0:10:45.360,0:10:48.160
+Sollte ich dann immer dasselbe erhalten wie die Liste?
+
+0:10:48.160,0:10:49.040
+Die ursprüngliche Liste?
+
+0:10:49.040,0:10:52.720
+Nein, aber ich sollte immer das Gleiche erhalten
+als wenn ich die ursprüngliche Liste sortiert hätte.
+
+0:10:52.720,0:10:58.080
+Ja, das Umkehren einer Liste sollte keinen Unterschied machen,
+wenn ich die Liste danach trotzdem sortiere.
+
+0:10:59.200,0:11:00.400
+Lassen Sie uns diese Eigenschaft überprüfen.
+
+0:11:10.960,0:11:15.120
+Auch diese besteht alle Tests.
+
+0:11:15.120,0:11:17.600
+Also ist das schon auch noch richtig.
+
+0:11:18.960,0:11:20.560
+Okay, wie kann ich nun meinen Fehler finden?
+
+0:11:22.080,0:11:24.240
+Auch wenn ich dir schon gezeigt habe
+Ihnen gezeigt habe, was der Fehler ist.
+
+0:11:24.240,0:11:27.280
+Also, das war eine Eigenschaft, die gar nicht wahr war.
+
+0:11:27.280,0:11:32.720
+Also, versuchen wir mal, eine Eigenschaft zu finden,
+die diesen Fehler tatsächlich aufdeckt.
+
+0:11:33.840,0:11:40.720
+Nun, hier ist etwas, ich kann mir eine
+Eigenschaft, die die Funktion 'length' betrifft.
+
+0:11:41.520,0:11:47.840
+Also, vielleicht ist es vernünftig zu erwarten
+dass, wenn ich eine beliebige Liste nehme, und dann
+
+0:11:48.960,0:11:56.720
+die Länge der sortierten Liste berechne, sollte diese
+gleich der Länge der ursprünglichen Liste ist.
+
+0:11:56.720,0:11:59.760
+Dies ist also eine Eigenschaft der
+Sortierung, die wahr sein sollte.
+
+0:11:59.760,0:12:02.800
+Selbst wenn ich keine bestimmte
+Implementierung des Sortierens im Sinn habe,
+
+0:12:02.800,0:12:04.880
+ist dies etwas, das man erwarten kann.
+
+0:12:04.880,0:12:08.720
+Wenn Ihre Aufgabe also darin bestünde, eine
+Sortierfunktion zu schreiben, dann könnte unsere Testsuite
+
+0:12:10.160,0:12:11.840
+diese letzte Eigenschaft enthalten.
+
+0:12:14.160,0:12:15.760
+Und siehe da, es gibt ein Gegenbeispiel.
+
+0:12:16.400,0:12:27.280
+Wenn ich nämlich die Funktion 'sort' für '[3, 3]' aufrufe,
+gibt es ein sehr seltsames Ergebnis, das
+
+0:12:28.160,0:12:30.560
+gegen diese Längeneigenschaft verstößt.
+
+0:12:30.560,0:12:37.760
+Und der Grund dafür ist, dass ich bei der Aufteilung hier
+einen Fehler eingeführt habe, indem ich nicht in '<' und
+
+0:12:37.760,0:12:44.080
+'≥', sondern in '≤' und '≥'.
+Okay, wenn ich also diesen Fehler behebe, dann läuft meine
+
+0:12:44.080,0:12:51.520
+Testreihe noch einmal durch, und um sicherzugehen,
+dass wir das auf einigen sinnvollen Listen testen
+
+0:12:51.520,0:13:00.480
+füge ich jetzt noch einmal den 'verboseCheck'
+hier ein, damit wir sehen können, was passiert ist.
+
+0:13:01.680,0:13:08.400
+Und dann können wir sehen, dass der
+Checker recht willkürliche Eingabelisten unterschiedlicher Länge gewählt hat
+
+0:13:08.400,0:13:14.000
+von unterschiedlicher Länge ausgewählt und bestätigt
+dass sie alle diese Eigenschaft erfüllen.
+
+0:13:15.440,0:13:19.600
+Okay, und auf diese Weise, auch ohne zu wissen
+was die Lösung der Sortierfunktion ist,
+
+0:13:19.600,0:13:25.520
+könnte man sich bestimmte
+Tests, die erwartet werden sollten.
+
+0:13:25.520,0:13:31.840
+Wir legen also Eigenschaften der Sortierfunktion fest,
+und dann können wir diese zur Überprüfung der Korrektheit verwenden.
+
+0:13:32.880,0:13:35.360
+Okay, und das sind weitere
+Dinge, die ich mir ausdenken könnte.
+
+0:13:35.360,0:13:40.720
+Also, eine Idee wäre, durch alle
+Listenverarbeitungsfunktionen durchzugehen, die Sie kennen,
+
+0:13:40.720,0:13:43.680
+und darüber nachzudenken, wie sie mit der Sortierung interagieren.
+
+0:13:43.680,0:13:47.520
+Also, was war eine andere Eigenschaft, die
+wir dort hatten, oder eine andere Funktion?
+
+0:13:47.520,0:13:49.680
+Wir hatten also eine Verkettungsfunktion.
+
+0:13:50.320,0:13:54.720
+Also den Operator "++",
+und womit arbeitet er?
+
+0:13:54.720,0:13:56.320
+Nun, er arbeitet mit zwei Listen.
+
+0:13:56.320,0:14:00.400
+Um das zu tun, müssen Sie also
+quantifizieren; sagen wir, 'xs' und 'ys'.
+
+0:14:00.960,0:14:05.280
+Und was könnte dann eine nützliche Eigenschaft sein?
+Nun, wir könnten etwas sagen wie,
+
+0:14:05.280,0:14:11.120
+was sollte das Ergebnis sein, wenn ich meine
+zwei Listen verkette und sie dann sortiere?
+
+0:14:12.320,0:14:15.840
+Wie sollte sich das verhalten?
+
+0:14:18.960,0:14:20.880
+Ja, was denken Sie denn?
+
+0:14:20.880,0:14:24.720
+Was sollte passieren, wenn ich an Listen
+anhänge und sie dann sortiere?
+
+0:14:25.440,0:14:31.440
+Nun, das hängt natürlich sehr
+stark vom Inhalt von 'xs' und 'ys' ab.
+
+0:14:31.440,0:14:38.800
+Aber wahrscheinlich kann man sagen, dass
+dies dasselbe ist, als wenn ich es andersherum mache.
+
+0:14:39.440,0:14:44.240
+Was also, wenn ich die Reihenfolge
+in der 'xs' und 'ys' angehängt werden,
+
+0:14:44.240,0:14:49.040
+das sollte keinen Unterschied machen, wenn ich danach
+die Listen sowieso sortieren werde.
+
+0:14:49.040,0:14:54.320
+Wir könnten diese Eigenschaft also verwenden, um zu prüfen
+ein weiteres Verhalten der Sortierfunktion zu überprüfen,
+
+0:14:54.320,0:15:00.000
+und es wird auch die Tests bestehen, da bin ich mir sicher.
+
+0:15:03.040,0:15:08.080
+Okay, in den Fällen, in denen die Tests nicht bestanden wurden,
+
+0:15:08.640,0:15:11.360
+war es interessant, dass
+wir kleine Gegenbeispiele erhielten.
+
+0:15:11.360,0:15:13.680
+Also, wenn wir getestet und positiv aufgelöst haben,
+
+0:15:13.680,0:15:17.600
+wurden sie beide geprüft, unsere Listen
+der Länge 20, 25, was auch immer.
+
+0:15:17.600,0:15:20.080
+Aber wenn ich eine Eigenschaft hatte, die nicht wahr war,
+
+0:15:20.080,0:15:24.640
+bekam ich sehr kleine Zählbeispiele
+'[3, 3]', oder '[0, 0]', oder '[0, -1]'.
+
+0:15:24.640,0:15:30.480
+Das liegt daran, dass QuickCheck nicht nur versucht, die
+Gegenbeispiele zu finden, sondern sobald es herausgefunden hat
+
+0:15:30.480,0:15:36.560
+dass eine Eigenschaft nicht wahr ist, versucht es auch
+schlauerweise versucht, ein möglichst kleines
+
+0:15:36.560,0:15:41.920
+Gegenbeispiel zu finden, das auch nützlich wäre
+für Sie nützlich ist, wenn Sie eine Rückmeldung von Autotool erhalten.
+
+0:15:41.920,0:15:44.480
+Sie erhalten also nicht irgendeinen großen
+
+0:15:45.360,0:15:50.000
+Ausdruck oder einen großen Funktionsaufruf
+mit einem großen Argument, der falsch ist.
+
+0:15:50.000,0:15:54.160
+Sondern in den meisten Fällen ein kleines Gegenbeispiel.
+
+0:15:54.960,0:15:58.400
+Okay, lassen Sie uns also nicht versuchen
+weitere Fehler einzuführen.
+
+0:15:58.400,0:16:03.920
+Aber lassen Sie uns versuchen, diese Testsuite
+zu verwenden, um unser Programm ein wenig zu refaktorieren.
+
+0:16:03.920,0:16:08.560
+Das ist auch eine gute Angewohnheit, wenn
+wir eine Testsuite eingerichtet haben,
+
+0:16:08.560,0:16:12.640
+können wir unser Programm tatsächlich manipulieren
+Programm manipulieren, und die Testsuite wird
+
+0:16:12.640,0:16:16.160
+prüfen, dass wir keine Fehler machen oder
+hoffentlich keine neuen Fehler einführen.
+
+0:16:16.720,0:16:19.200
+Was könnte ich also an dem Programm
+verbessern, nachdem ich es jetzt korrigiert habe?
+
+0:16:19.200,0:16:24.000
+Nun, eine Sache, die ich in einer Übung
+Ich oder die Tutoren würden sich
+
+0:16:24.640,0:16:28.240
+hier bemängeln würde, ist, dass Sie
+einen gemeinsamen Unterausdruck oder das Ende
+
+0:16:28.240,0:16:32.560
+der Liste zweimal berechnet wird, was
+Das ist nicht wirklich schön zu machen.
+
+0:16:33.120,0:16:35.440
+Was wäre hier also ein Lösungsvorschlag?
+
+0:16:35.440,0:16:36.480
+Also, vielleicht sollten wir
+
+0:16:38.240,0:16:46.400
+stattdessen diese beiden Aufrufe ersetzen durch
+etwas, das als lokaler Wert berechnet wird.
+
+0:16:47.360,0:16:55.040
+Sagen wir also, der Rest der Liste ist dieser
+tail, und dann verwenden wir zweimal diesen Namen hier.
+
+0:16:57.680,0:17:02.320
+Okay, lassen Sie uns überprüfen, ob dies
+etwas am Verhalten geändert hat.
+
+0:17:02.320,0:17:03.840
+Nein, das hat es nicht, es funktioniert immer noch.
+
+0:17:04.560,0:17:09.600
+Okay, dann haben wir 'head' und 'tail'
+hier, das kann weiter verbessert werden.
+
+0:17:09.600,0:17:17.520
+Wir könnten also einerseits sagen: Na ja,
+es ergibt Sinn, das in einem Schritt zu machen, sozusagen.
+
+0:17:17.520,0:17:20.240
+Diese eine Zeile ändert zwar nicht die
+Anzahl der Schritte, aber zumindest
+
+0:17:21.760,0:17:26.293
+bringt diese beiden Codes irgendwie näher zusammen.
+
+0:17:26.293,0:17:38.640
+Okay, und dann eigentlich,
+könnten wir auch sagen, na ja,
+
+0:17:38.640,0:17:42.080
+wir nehmen das erste Element und den Rest,
+das ist eigentlich ein Fall von Splitting.
+
+0:17:42.080,0:17:47.280
+Und in den Folien über Listenfunktionen habe ich
+eine 'splitAt'-Funktion eingeführt, mit der man sagen kann:
+
+0:17:47.280,0:17:50.400
+Wir geben eine Zahl an, und dann
+so viele Elemente vom Anfang
+
+0:17:50.400,0:17:52.480
+der Liste, und dann den Rest.
+
+0:17:52.480,0:17:55.760
+Das ist vielleicht die nette Anwendung des Aufteilens.
+
+0:17:56.640,0:17:58.640
+Wir würden also 'splitAt 1' verwenden.
+
+0:17:58.640,0:18:02.400
+Anstatt Kopf und Ende zu sagen,
+sagen Sie einfach: "Teilen wir die Liste
+
+0:18:02.400,0:18:06.720
+an Position eins, dann erhalten wir
+das erste Element und den Rest."
+
+0:18:07.920,0:18:09.360
+Funktioniert das?
+
+0:18:09.360,0:18:10.720
+Nein, es lässt sich nicht einmal kompilieren.
+
+0:18:10.720,0:18:11.840
+Warum ist das so?
+
+0:18:11.840,0:18:16.080
+Nun, im Grunde, weil die Aufteilung eine Liste ergibt.
+
+0:18:16.080,0:18:19.040
+Und dieser "Drehpunkt" hier soll
+nur ein Element sein.
+
+0:18:19.040,0:18:24.160
+Was ich also sagen kann, ist: Lass mich
+die Liste an Position eins teilen,
+
+0:18:24.160,0:18:29.280
+und dann bekomme ich ein Einzelelement
+Liste und entnehme daraus den 'Pivot'.
+
+0:18:29.280,0:18:33.760
+Und ich erhalte den "Rest", der eine beliebige lange Liste sein
+kann, und der "Rest" wird an diesen beiden Stellen verwendet.
+
+0:18:36.160,0:18:39.600
+Okay, und dann, hoffentlich, meine Testsuite.
+
+0:18:40.560,0:18:42.960
+Beides: Das Programm kompiliert trotzdem wieder,
+
+0:18:42.960,0:18:49.040
+also kann ich dieses Modul tatsächlich laden; und dann kann
+ich es auch ausführen und sehen, dass die Tests wieder funktionieren.
+
+0:18:49.040,0:18:52.320
+Und um sicherzustellen, dass die Tests
+wirklich etwas testen,
+
+0:18:52.320,0:18:58.320
+kann ich natürlich ausprobieren, was passieren würde, wenn
+ich einen anderen Fehler in mein Programm einführe
+
+0:18:58.320,0:19:03.680
+Sagen wir, ich mache versehentlich die Kombination von größer
+und Kleiner-Kombination versehentlich auf die falsche Weise.
+
+0:19:05.760,0:19:10.240
+Dann würde ich sofort einige Testfehler bekommen.
+
+0:19:10.240,0:19:17.280
+Hier bekomme ich also, zum Beispiel: Die erste Eigenschaft
+ist dann falsch, wenn die Eingabe 'n' gleich 2 ist.
+
+0:19:17.280,0:19:19.760
+Das stimmt aber nicht, wir sortieren von '1..n'.
+
+0:19:20.320,0:19:25.440
+1..2' ist bei diesem fehlerhaften Programm '1..2'.
+
+0:19:25.440,0:19:33.760
+Während es in der ursprünglichen
+Version ist es tatsächlich korrekt.
+
+0:19:35.120,0:19:39.760
+Okay, vielleicht möchten Sie mit diesen Eigenschaften und
+dem Programm herumspielen, nur um einen
+
+0:19:39.760,0:19:47.040
+Eindruck davon zu bekommen, wie diese Art
+des Testens funktioniert, welche Art von
+
+0:19:47.040,0:19:51.600
+Fehler gefunden werden können, und auch welche
+Eigenschaften Sie sich vorstellen könnten
+
+0:19:51.600,0:19:55.040
+für die Sortierfunktion und
+sie dann auf diese Weise überprüfen.
+
+0:19:55.040,0:19:58.000
+Und wenn Sie mehr sehen wollen
+welche Daten verwendet wurden,
+
+0:19:58.000,0:20:05.840
+können Sie jederzeit den 'quickCheck' durch
+verboseCheck' ersetzen, wie ich es vorhin im Video getan habe.

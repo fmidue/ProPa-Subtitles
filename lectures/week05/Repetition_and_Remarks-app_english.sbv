@@ -1,0 +1,778 @@
+0:00:01.439,0:00:03.760
+Okay, welcome back.
+
+0:00:03.760,0:00:10.379
+I want to start this week's videos by actually
+a short repetition or going into a bit more
+
+0:00:10.379,0:00:16.299
+detail about some things that I think I skipped
+over a bit too quickly at the end of the last
+
+0:00:16.299,0:00:18.610
+week or the last video there.
+
+0:00:18.610,0:00:25.000
+I talked about ways of defining functions,
+and in particular, some syntactic constraints.
+
+0:00:25.000,0:00:30.310
+And that one might not expect for mathematics,
+but in Haskell some things
+
+0:00:30.310,0:00:31.310
+are actually forbidden.
+
+0:00:31.310,0:00:33.800
+And I didn't give examples for this.
+
+0:00:33.800,0:00:35.399
+So, I want to do this now.
+
+0:00:35.399,0:00:43.489
+So, this refers to slide 72, at the end of
+last week, where I talked about uniqueness
+
+0:00:43.489,0:00:49.559
+of variable names, and that is enforced in
+Haskell, and also that it's not possible in
+
+0:00:49.559,0:00:54.649
+Haskell, unlike in some more mathematical definitions
+to give functions, or function definitions,
+
+0:00:54.649,0:00:59.600
+where in an argument position one has an expression
+that needs computation or solving.
+
+0:00:59.600,0:01:04.040
+And one reason why I actually had this on
+the slides was that in Prolog things will
+
+0:01:04.040,0:01:05.440
+be a bit different in both aspects.
+
+0:01:05.440,0:01:11.480
+So, it's better to now really emphasize this
+again, and show you what exactly I mean by
+
+0:01:11.480,0:01:14.920
+things that are not forbidden in Haskell,
+and not allowed in Haskell.
+
+0:01:14.920,0:01:16.450
+Okay, let's start with an example.
+
+0:01:16.450,0:01:18.500
+So, first about uniqueness of variable names.
+
+0:01:18.500,0:01:24.650
+So, we had that functions can be defined by
+equations, and we had different possibilities,
+
+0:01:24.650,0:01:31.380
+we could have arguments for just variables,
+or we had constants so far, we will see further
+
+0:01:31.380,0:01:32.380
+possibilities later.
+
+0:01:32.380,0:01:36.890
+But at least we had the possibility to write
+something like f of zero and something else.
+
+0:01:36.890,0:01:42.860
+And for example, we also had the idea that,
+or the feature that we can leave one argument
+
+0:01:42.860,0:01:47.090
+anonymous, just say something, but not give
+it a variable name because we don't care.
+
+0:01:47.090,0:01:49.670
+So, something like this is perfectly okay.
+
+0:01:49.670,0:01:53.110
+Means that function f takes two arguments.
+
+0:01:53.110,0:01:57.390
+And whenever the first argument is zero, and
+we don't care what the second argument is,
+
+0:01:57.390,0:02:01.150
+that's why this anonymous underscore, and
+then the result is one.
+
+0:02:01.150,0:02:03.060
+Okay, so this is okay.
+
+0:02:03.060,0:02:08.119
+And then we could also say, for example, and
+in cases where the first argument is not zero,
+
+0:02:08.119,0:02:12.250
+but the two arguments are the same, then we
+want to return two for example, right, you
+
+0:02:12.250,0:02:19.970
+could say something like, if f gets two arguments,
+which are the same, so, we say something like
+
+0:02:19.970,0:02:23.450
+f of x and x, the same argument, then the
+result would be two.
+
+0:02:23.450,0:02:27.310
+And maybe in all other cases, we don't care.
+
+0:02:27.310,0:02:28.940
+And they simply return three.
+
+0:02:28.940,0:02:34.420
+Yes, this would be mathematically something
+that you could interpret and take as well.
+
+0:02:34.420,0:02:37.561
+First argument is zero, the outcome is one,
+if the two arguments are the same, the outcome
+
+0:02:37.561,0:02:38.620
+is two.
+
+0:02:38.620,0:02:40.370
+In all other cases, the outcome is three.
+
+0:02:40.370,0:02:43.420
+So, this would be-, you could interpret it.
+
+0:02:43.420,0:02:45.940
+But actually, in Haskell, it's not allowed.
+
+0:02:45.940,0:02:46.940
+Yes.
+
+0:02:46.940,0:02:52.540
+And it could be made possible, but simply
+the language designers decided not to have
+
+0:02:52.540,0:02:56.020
+this, mainly to avoid accidental cases.
+
+0:02:56.020,0:03:02.290
+Yes, you could always somehow have some type
+constraints.
+
+0:03:02.290,0:03:06.790
+Rephrase this by something like this, so this
+disallowed line could, of course, be written
+
+0:03:06.790,0:03:12.400
+like this, say, I have two arguments, x and
+y, they get different variable names.
+
+0:03:12.400,0:03:17.500
+But under the conditions, we use a guard, under
+the condition that x is actually equal to
+
+0:03:17.500,0:03:18.940
+zero, I returned the two.
+
+0:03:18.940,0:03:22.280
+Yes, it is something that you can write and
+actually that you have to write if you want
+
+0:03:22.280,0:03:26.340
+to express the thing from this line and in
+Haskell you have to write it like this, a
+
+0:03:26.340,0:03:27.890
+bit more cumbersome.
+
+0:03:27.890,0:03:36.160
+And, but certainly possible, and avoiding
+possible ambiguities if this was simply
+
+0:03:36.160,0:03:44.520
+allowed to have the same variable name in
+such a line where we decide which function
+
+0:03:44.520,0:03:47.820
+definition line to take on what the behaviour
+will be.
+
+0:03:47.820,0:03:52.800
+Okay, this was the first remark about uniqueness
+of variable names in defining case.
+
+0:03:52.800,0:03:57.709
+Of course, x could be used in a different
+line, that would be no contradiction.
+
+0:03:57.709,0:04:00.910
+But in the same line, we can't use the same
+variable name twice.
+
+0:04:00.910,0:04:06.709
+Okay, that was the first thing and there was
+this other remark about expressions in
+
+0:04:06.709,0:04:11.930
+these argument positions that are somehow
+arithmetic expressions, for example, or other
+
+0:04:11.930,0:04:16.310
+expressions that require a solution, finding
+or solving computation.
+
+0:04:16.310,0:04:17.640
+What do I mean by this?
+
+0:04:17.640,0:04:22.590
+Well, for example, mathematics, something
+one could also do or could imagine being valid,
+
+0:04:22.590,0:04:23.590
+something like have a function.
+
+0:04:23.590,0:04:24.940
+Now it takes only one argument.
+
+0:04:24.940,0:04:29.250
+If the argument is zero, then I want to return
+one.
+
+0:04:29.250,0:04:36.190
+If the argument is one, then I want to return
+two and maybe I have another case, like something
+
+0:04:36.190,0:04:37.190
+two times n.
+
+0:04:37.190,0:04:44.440
+So, if f is applied to the double of a number,
+then for some reason this would be f of n.
+
+0:04:44.440,0:04:48.590
+And I put this in bracket even though it wouldn't
+be needed, but let's be safe.
+
+0:04:48.590,0:04:52.410
+To make sure that there is not a reason why
+something is fishy here.
+
+0:04:52.410,0:04:58.180
+Let's say we call f recursively on the number
+n and want to add one, yes, it would be something
+
+0:04:58.180,0:05:02.190
+like a division function.
+
+0:05:02.190,0:05:05.260
+Or actually something more like a logarithmic
+function.
+
+0:05:05.260,0:05:08.350
+Yes, f 0 is one, f 1 is something else.
+
+0:05:08.350,0:05:10.470
+And f of two times n is f of n plus something.
+
+0:05:10.470,0:05:15.250
+Okay, that mathematically could be interpreted
+in a reasonable way.
+
+0:05:15.250,0:05:20.440
+But again, this is not something that we can
+write in Haskell, the compiler would accept,
+
+0:05:20.440,0:05:25.250
+because it would mean that when you call f
+of a function with a value like 15, or 16, or
+
+0:05:25.250,0:05:33.070
+whatever 20, the compiler would have to actually
+perform some algebraic simplification or theory
+
+0:05:33.070,0:05:40.290
+proving or equation solving to decide whether
+or not your 15 or 16 matches this pattern.
+
+0:05:40.290,0:05:43.270
+Yes, it is of the form two times n,
+and what the n actually is.
+
+0:05:43.270,0:05:45.360
+And that's not something that happens in Haskell.
+
+0:05:45.360,0:05:54.889
+Yes, in Haskell, and cases are more simple,
+you must be able to, given the value decide
+
+0:05:54.889,0:06:00.720
+by looking at what appears in these positions,
+whether it matches or not, and for
+
+0:06:00.720,0:06:05.700
+two times n that would require too much thinking
+so to speak, so it is not allowed.
+
+0:06:05.700,0:06:08.699
+In Prolog, as I said, situations are a bit
+different.
+
+0:06:08.699,0:06:10.500
+And you will see this later.
+
+0:06:10.500,0:06:13.540
+But for Haskell, that's, so far, the rules.
+
+0:06:13.540,0:06:15.430
+Okay.
+
+0:06:15.430,0:06:21.491
+And then there was another thing not so much
+related to things that are forbidden, but
+
+0:06:21.491,0:06:27.139
+more about when things are actually computed
+also, in some corner cases.
+
+0:06:27.139,0:06:34.590
+And I made reference to this
+when I was talking about the last slide 73,
+
+0:06:34.590,0:06:39.400
+and actually, I need to look at the slides
+myself to see what the definitions there were,
+
+0:06:39.400,0:06:41.259
+because I don't have them in mind.
+
+0:06:41.259,0:06:44.630
+Yes, so I had this, let me copy this here,
+actually.
+
+0:06:44.630,0:06:54.370
+So, I was defining two different ways of writing
+the conjunction of Boolean values.
+
+0:06:54.370,0:06:58.050
+And actually, it is predefined and uses one
+of these two definitions, namely the first
+
+0:06:58.050,0:06:59.330
+one.
+
+0:06:59.330,0:07:03.630
+But one could also define the operator
+oneself.
+
+0:07:03.630,0:07:08.960
+And then the two candidate definitions, the
+first one was well to say, well, True and
+
+0:07:08.960,0:07:18.570
+True is certainly True, and in all other cases
+the result is False.
+
+0:07:18.570,0:07:27.100
+Yes, again, with these "don't care patterns",
+I'd say whatever comes here or here, the
+
+0:07:27.100,0:07:29.870
+output will be False.
+
+0:07:29.870,0:07:37.270
+Okay, and here's another version, which was
+also mathematically correct.
+
+0:07:37.270,0:07:40.080
+But I mentioned that it has slightly different
+behaviour.
+
+0:07:40.080,0:07:41.930
+And I didn't go into detail what that is.
+
+0:07:41.930,0:07:45.699
+And I want to say a few more words about this
+now instead.
+
+0:07:45.699,0:07:53.229
+Okay, so you could say if I have any Boolean,
+and the second argument is True, then I cannot
+
+0:07:53.229,0:07:57.880
+as above claim that the output is True, because
+the b here could be False.
+
+0:07:57.880,0:08:01.539
+But what I can say is that b and True, is
+definitely b.
+
+0:08:01.539,0:08:04.300
+Okay.
+
+0:08:04.300,0:08:17.139
+And I can also say that in all our cases,
+is again, basically, the outcome is False.
+
+0:08:17.139,0:08:22.150
+Yes, slightly different definition but defining
+the same function, y.
+
+0:08:22.150,0:08:27.009
+Where the second case will only apply if the
+first case didn't apply.
+
+0:08:27.009,0:08:31.340
+And the first case only doesn't apply if the
+second argument is not True.
+
+0:08:31.340,0:08:33.839
+And then, indeed, the outcomes would be False.
+
+0:08:33.839,0:08:36.010
+So, both definitions are all valid.
+
+0:08:36.010,0:08:40.270
+The second one's a bit more complicated looking,
+but it's-, well, it's all the same.
+
+0:08:40.270,0:08:43.300
+Now, what's the difference between these definitions?
+
+0:08:43.300,0:08:46.850
+I mentioned last week that there's difference
+in efficiency.
+
+0:08:46.850,0:08:53.570
+In particular, if one of
+the arguments to the conjunction is a very
+
+0:08:53.570,0:08:55.700
+expensive computation.
+
+0:08:55.700,0:08:59.380
+And I can demonstrate this, but I won't demonstrate
+it.
+
+0:08:59.380,0:09:03.760
+I probably won't run it, but I can use the
+Ackermann function that also occurred on a
+
+0:09:03.760,0:09:07.520
+slide, namely slide 71.
+
+0:09:07.520,0:09:10.420
+And I will not repeat the definition, it's
+in the slides.
+
+0:09:10.420,0:09:13.830
+The important thing to know about the Ackermann
+function is that even for small inputs, it
+
+0:09:13.830,0:09:15.670
+can be very costly to compute.
+
+0:09:15.670,0:09:21.420
+So, let's actually look at an expression like
+this.
+
+0:09:21.420,0:09:28.290
+False, constant False and then the thing that
+we have a second argument, and again, I'll
+
+0:09:28.290,0:09:33.180
+write it in brackets, even though they wouldn't
+be needed just to make sure that we are on
+
+0:09:33.180,0:09:41.490
+the same page of what the precedence relationship
+between the operators and the comparison is.
+
+0:09:41.490,0:09:46.810
+So, let's say I want to compute values and
+the comparison of the Ackermann function called
+
+0:09:46.810,0:09:52.640
+on values four and two, I want simply to check
+that the outcome with the result of this is
+
+0:09:52.640,0:09:53.870
+greater than zero.
+
+0:09:53.870,0:09:58.100
+That will be the case but actually, since
+the compiler doesn't know what the Ackermann function
+
+0:09:58.100,0:10:03.850
+is really, this will be computed at runtime
+or at compile time, then the compilation will
+
+0:10:03.850,0:10:10.600
+take very long because Ackermann of four
+is already a large value with long computation.
+
+0:10:10.600,0:10:13.180
+Okay, what is the outcome of this call?
+
+0:10:13.180,0:10:17.561
+Well, of course, the outcome is False in both
+cases, whether we use this or this definition,
+
+0:10:17.561,0:10:20.410
+of course, ultimately, the result will be False.
+
+0:10:20.410,0:10:25.890
+But the question is, how long will it take
+to find out that the outcome is False?
+
+0:10:25.890,0:10:28.760
+Okay, let's check.
+
+0:10:28.760,0:10:38.810
+Well, let's just take the first definition.
+What will happen if we call- if we take
+
+0:10:38.810,0:10:41.920
+this expression, this call with the first
+definition.
+
+0:10:41.920,0:10:47.970
+Well, what have we learned about how computation
+works, we did with this factorial function.
+
+0:10:47.970,0:10:52.740
+But of course, the same rules apply here,
+where we check our function definition lines
+
+0:10:52.740,0:10:56.550
+from top to bottom.
+
+0:10:56.550,0:11:01.540
+And then we see, well, let's look at the first
+line.
+
+0:11:01.540,0:11:03.280
+Does it match this call?
+
+0:11:03.280,0:11:04.640
+Well, apparently not.
+
+0:11:04.640,0:11:06.910
+And how do we notice?
+
+0:11:06.910,0:11:13.519
+Well, when we check, or when the system checks
+such a call against the candidate function
+
+0:11:13.519,0:11:18.490
+definition line, it looks at the arguments,
+in this case, this argument and this argument
+
+0:11:18.490,0:11:23.700
+from left to right, and sees whether they
+match what's written in the function line,
+
+0:11:23.700,0:11:24.850
+the definition.
+
+0:11:24.850,0:11:30.890
+Okay, here already for the first argument
+we see False is not True.
+
+0:11:30.890,0:11:35.410
+So, whatever the Ackermann function is, or
+the result Ackermann function is, we don't
+
+0:11:35.410,0:11:39.050
+even need to check whether its outcome is
+True or False.
+
+0:11:39.050,0:11:43.190
+Because already in the first argument position,
+we see that False and True do not match.
+
+0:11:43.190,0:11:48.019
+So, actually, we will not use the first line.
+
+0:11:48.019,0:11:50.320
+This also means you don't have to compute
+the Ackermann function.
+
+0:11:50.320,0:11:54.840
+Instead, we will switch automatically to the
+second line.
+
+0:11:54.840,0:11:59.660
+And what then happens is, the first argument
+is a "don't care" argument.
+
+0:11:59.660,0:12:05.140
+The second argument is a "don't care" argument
+because of these two anonymous variable occurrences
+
+0:12:05.140,0:12:06.140
+up here.
+
+0:12:06.140,0:12:10.890
+So, actually, the outcome will be False,
+well, this is not really surprising, of course.
+
+0:12:10.890,0:12:24.019
+But the point is, this will be without computing
+the Ackermann function at all.
+
+0:12:24.019,0:12:31.019
+Yes, it is less costly because the Ackermann function
+is avoided.
+
+0:12:31.019,0:12:34.680
+Okay.
+
+0:12:34.680,0:12:44.040
+However, that's only true for the first definition
+of the conjunction.
+
+0:12:44.040,0:12:54.260
+Yes, of course, even for the
+second definition of the conjunction, the
+
+0:12:54.260,0:12:55.260
+outcome will be False.
+
+0:12:55.260,0:12:59.029
+But it will take a very long time to compute.
+
+0:12:59.029,0:13:04.880
+Why is that?
+
+0:13:04.880,0:13:12.630
+Well, let's see, when we want to find out
+whether or not this and what the outcome should
+
+0:13:12.630,0:13:21.440
+be, then we have to again, compare this expression
+here against the first, and the second line
+
+0:13:21.440,0:13:24.870
+of our new definition of conjunction.
+
+0:13:24.870,0:13:30.690
+Let's check the first line where we have to
+check whether False could be here, the variable
+
+0:13:30.690,0:13:35.269
+could of course... the variable could be instantiated
+to the value False, so there's no reason to
+
+0:13:35.269,0:13:38.490
+reject the first line just based on the first
+argument position.
+
+0:13:38.490,0:13:42.769
+So, instead, what we have to do is you also
+have to look at the second positions, we have
+
+0:13:42.769,0:13:46.920
+to check whether the conditions here actually
+evaluates to True.
+
+0:13:46.920,0:13:51.889
+Now, to do this, we have to compute the Ackermann
+function, we will get some
+
+0:13:51.889,0:13:59.300
+result, and ultimately, we will end up of
+course, computing False overall.
+
+0:13:59.300,0:14:06.670
+Because either this will be True, then we
+will return the first argument, which is False,
+
+0:14:06.670,0:14:12.800
+or this call will not return True, but then
+it will switch to the second line of the conjunction
+
+0:14:12.800,0:14:16.130
+and we also return False in both cases,
+of course, you get False as result.
+
+0:14:16.130,0:14:21.980
+But now the second definition, this is much
+more costly because you compute the Ackermann function.
+
+0:14:21.980,0:14:26.100
+Of course, the same would be true in general,
+in any programming language, right, or some
+
+0:14:26.100,0:14:34.340
+languages do have special rules for conjunction
+or for "if-else" in order to avoid some computations.
+
+0:14:34.340,0:14:35.660
+And the same happens here, right?
+
+0:14:35.660,0:14:39.480
+So, we have one definition with the first
+definition above, we get these short-circuiting
+
+0:14:39.480,0:14:44.490
+semantics, where in order to compute the
+conjunction, we don't always have to compute
+
+0:14:44.490,0:14:51.130
+both arguments, though the same is built into
+functions in C or Java or Python.
+
+0:14:51.130,0:14:53.750
+But actually there, it needs support from
+the compiler.
+
+0:14:53.750,0:14:57.400
+Here, it's simply a consequence of how function
+definitions works, right?
+
+0:14:57.400,0:15:04.130
+So, there's nothing magical about the and-function.
+All functions that you define have this feature
+
+0:15:04.130,0:15:09.050
+or this behaviour, that they only compute the argument
+if it's absolutely necessary.
+
+0:15:09.050,0:15:12.600
+And this depends on the definition that we
+give.
+
+0:15:12.600,0:15:16.820
+And here we see that for the same function,
+the conjunction, we have choices to define it
+
+0:15:16.820,0:15:18.089
+in two different ways.
+
+0:15:18.089,0:15:25.700
+And we as a programmer can basically decide
+for which cases, depending on which of the
+
+0:15:25.700,0:15:32.269
+two arguments is an expensive computation we
+can avoid superfluous work.
+
+0:15:32.269,0:15:34.840
+Yes, so we don't have to bake it into the compiler.
+
+0:15:34.840,0:15:37.490
+It depends on the way how we define our functions.
+
+0:15:37.490,0:15:43.820
+It's called lazy evaluation, and we'll return
+to this later but I wanted to already point
+
+0:15:43.820,0:15:47.209
+this out, at least at this example.
+
+0:15:47.209,0:15:54.339
+Okay, and then, the other thing I want to
+point out, I will do in CodeWorld.

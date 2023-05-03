@@ -1,0 +1,884 @@
+0:00:02.000,0:00:06.720
+Okay, let us consider this
+example from the slides.
+
+0:00:07.360,0:00:09.520
+And I'm loading it.
+
+0:00:09.520,0:00:10.720
+Yeah, I have loaded it into
+
+0:00:11.840,0:00:19.120
+my editor because I want to show some
+additions and checks on this function.
+
+0:00:21.040,0:00:26.400
+And actually, if you look very carefully, you could see
+that I have introduced a bug into this program,
+
+0:00:26.400,0:00:30.240
+it's not actually a correct Quicksort and
+we will see whether you will find this
+
+0:00:30.240,0:00:35.920
+bug; well, we will, because I will show you
+some techniques for testing Haskell programs.
+
+0:00:36.640,0:00:43.840
+Okay, but first, let's simply start
+the interpreter and load this example.
+
+0:00:46.480,0:00:52.080
+Okay, then we can call the
+'sort' function on some inputs,
+
+0:00:56.400,0:00:59.760
+let's say we want to call it on this small list,
+
+0:00:59.760,0:01:03.120
+and we can see that it actually
+produces the correct output.
+
+0:01:03.120,0:01:07.840
+So, somehow, the bug is not
+very obvious immediately.
+
+0:01:08.640,0:01:12.800
+Okay, but let's say we want to make
+sure that this is always the case.
+
+0:01:12.800,0:01:24.240
+So, let's actually maybe first preserve
+this one case that we just saw here
+
+0:01:31.680,0:01:35.200
+as a repeated test case, so
+that we can always run it.
+
+0:01:36.480,0:01:41.200
+Okay, so that's what you would call
+a unit test in some other language,
+
+0:01:41.840,0:01:49.200
+so we simply write a 'main' definition,
+which always runs the same test.
+
+0:01:51.040,0:01:56.800
+And then next time I load my file, I can
+simply run this and it will say "True".
+
+0:01:57.440,0:01:59.840
+Okay, now, this would be unit
+testing, though this is not very,
+
+0:02:01.360,0:02:03.920
+somehow attractive to just have tests like that.
+
+0:02:03.920,0:02:06.320
+So, how do we instead test in Haskell.
+
+0:02:06.320,0:02:10.080
+And one reason for showing you
+this now is that also Autotool
+
+0:02:10.080,0:02:13.600
+will work in the way I will present now.
+
+0:02:13.600,0:02:17.760
+So far, your submissions were
+only mostly inspected by people.
+
+0:02:17.760,0:02:19.760
+So, Autotool did give some feedback,
+
+0:02:19.760,0:02:25.440
+but the correctness of your CodeWorld
+tasks was checked by people looking at it.
+
+0:02:26.080,0:02:29.040
+Okay, because there is not
+much automation possible there.
+
+0:02:29.040,0:02:34.080
+But for future exercise tasks, well,
+those that are not inside CodeWorld, but
+
+0:02:34.080,0:02:37.280
+maybe where you have to write list
+processing functions like this one,
+
+0:02:37.280,0:02:41.840
+the checks will be more about
+the semantics of the functions.
+
+0:02:41.840,0:02:44.720
+And the kind of feedback you
+will get will be similar to the
+
+0:02:45.520,0:02:48.880
+feedback that you can see now when
+I do this here on the example,
+
+0:02:48.880,0:02:54.160
+because we use basically the same
+testing framework inside Autotool.
+
+0:02:54.880,0:02:58.320
+Okay, so the first thing is, we don't want to fix
+
+0:02:58.320,0:03:01.520
+or, well, to test our functions
+on some fixed inputs.
+
+0:03:01.520,0:03:06.480
+Also, because that would make it very simple
+for students to cheat by simply writing
+
+0:03:07.200,0:03:10.800
+functions that work on
+exactly those example inputs.
+
+0:03:10.800,0:03:13.920
+So, instead, we want to express
+some more general properties
+
+0:03:13.920,0:03:19.120
+of our functions, or of your
+submissions and then check those.
+
+0:03:20.080,0:03:23.280
+Okay, and the way to do this, or one
+way to do this in Haskell is to use
+
+0:03:24.000,0:03:30.080
+a certain library, which I will
+import here, it's called 'QuickCheck'.
+
+0:03:30.880,0:03:33.360
+And this is how it is imported.
+
+0:03:33.360,0:03:39.120
+And this will from now on often appear
+in the templates for your exercise tasks.
+
+0:03:39.840,0:03:46.720
+And what this allows us to do is to
+write more comprehensive test suites.
+
+0:03:46.720,0:03:51.360
+In particular, ones that are not just about fixed
+inputs, so we can write down general properties.
+
+0:03:51.920,0:03:54.320
+And then these properties will be tested.
+
+0:03:55.600,0:04:04.640
+Okay, for now, this uses some syntax that will
+not be known to you yet, but one by one, you will
+
+0:04:06.320,0:04:07.600
+be able to do this yourself.
+
+0:04:07.600,0:04:11.600
+So, maybe you want to write also
+your own test suites before actually
+
+0:04:11.600,0:04:14.800
+upload something to Autotool, then you
+don't have to rely just on our tests.
+
+0:04:15.440,0:04:20.640
+Okay, so what could such a property look like?
+Well, maybe I want to express the very basic
+
+0:04:20.640,0:04:25.680
+property, namely that sorting a list that
+is already sorted, doesn't do any harm.
+
+0:04:26.480,0:04:27.280
+How could I do this?
+
+0:04:27.280,0:04:29.440
+How do I express a property like this?
+
+0:04:29.440,0:04:38.080
+What I really want to say is something like: I don't
+want to sort some fixed list, but for example,
+
+0:04:38.080,0:04:47.440
+I want to sort any list of the form '1..n',
+because I want to talk about any
+
+0:04:49.840,0:04:54.080
+sorted list, and what should be
+the outcome of such a swapped call?
+
+0:04:54.080,0:04:55.840
+Well, it would be that list itself.
+
+0:04:57.920,0:05:01.040
+Now, I can't write this as a check directly, right?
+
+0:05:01.040,0:05:06.000
+So, I couldn't have written it like this because
+where does the 'n' come from? The 'n' should be something,
+
+0:05:06.720,0:05:09.360
+not be fixed, which would
+be somehow all-quantified.
+
+0:05:09.360,0:05:12.640
+Well, the way we do this, in
+'QuickCheck' is as follows.
+
+0:05:12.640,0:05:17.280
+We can say, well, let me actually
+check this property for all 'n'.
+
+0:05:21.120,0:05:25.440
+And so for now, this is just some
+syntax that you have to take as given.
+
+0:05:26.000,0:05:31.680
+And you will later learn what this
+means in general, or how this is
+
+0:05:32.560,0:05:37.840
+to be interpreted in general.
+
+0:05:38.640,0:05:40.800
+Let me kill this buffer
+
+0:05:44.240,0:05:51.840
+because it seems to slow down my editor for
+some reason that I don't quite understand.
+
+0:06:01.440,0:06:08.080
+Okay, let's consider this
+and restart the interpreter.
+
+0:06:19.440,0:06:28.240
+Load the example again, and then I can call my test
+suite and it says, okay, it has passed 100 tests.
+
+0:06:28.240,0:06:30.880
+Okay, now the question is
+what tests has it passed?
+
+0:06:30.880,0:06:37.280
+Or maybe this was just checked for n=1.
+Well, to make sure that that is not the case,
+
+0:06:37.280,0:06:40.640
+I can, instead of 'quickCheck', use 'verboseCheck'.
+
+0:06:43.600,0:06:50.480
+Yes, so, we're given a more verbose testing
+output, because what will then happen is
+
+0:06:51.600,0:06:55.760
+that I get notified about
+which inputs are checked.
+
+0:06:56.640,0:06:58.080
+And then what you see here is
+
+0:06:58.800,0:07:03.360
+where it has passed 100 tests and
+what are these tests, the test cases?
+
+0:07:03.360,0:07:09.600
+Well, the 'n' has been shown to be
+26, 32, -61, and many other values.
+
+0:07:10.720,0:07:14.880
+Okay, so 100 random choices for this 'n' here.
+
+0:07:14.880,0:07:17.760
+And for all of them, this property
+was checked, it was always okay.
+
+0:07:18.320,0:07:21.520
+Well, this is already something,
+of course, what we see here,
+
+0:07:21.520,0:07:24.240
+it's a bit stupid to check
+this on negative numbers.
+
+0:07:24.240,0:07:29.280
+So, we should probably exclude this
+and one way to do this is to say here,
+
+0:07:29.280,0:07:33.280
+that you want to have only
+positive 'n', it's like,
+
+0:07:33.280,0:07:39.600
+basically a quantification over only the
+positive natural numbers, the positive integers.
+
+0:07:40.240,0:07:47.280
+And then if we reload this, and again,
+run the test suite, now it has, again,
+
+0:07:47.280,0:07:51.760
+run 100 tests, and if you check, inspect
+the values here, you will see that it has only
+
+0:07:52.320,0:07:55.040
+checked for positive 'n', which is nice.
+
+0:07:56.240,0:08:03.200
+Okay, so let me again switch back to 'quickCheck',
+because I don't always want to see these,
+
+0:08:04.720,0:08:05.600
+all these values.
+
+0:08:07.520,0:08:10.640
+And then we have one property,
+we haven't yet found our mistake.
+
+0:08:10.640,0:08:13.200
+Okay, so we have to do something else,
+maybe some more tests.
+
+0:08:13.200,0:08:14.160
+What else could we test?
+
+0:08:14.160,0:08:19.920
+Well, we could say, not only should it be the case
+that if you sort the list '1..n', we get '1..n'.
+
+0:08:19.920,0:08:22.480
+But it should also be the case if we sort a
+
+0:08:24.000,0:08:28.240
+list, which is exactly in the opposite
+order, that it also gives the right result.
+
+0:08:29.040,0:08:31.680
+So, on property, we could
+try to check is this one.
+
+0:08:34.800,0:08:40.160
+Yes, given an 'n'.
+
+0:08:40.160,0:08:44.080
+If we take the list, '1..n', reverse it,
+so it’s the exact opposite,
+
+0:08:44.080,0:08:46.160
+and we sort it, we should still get '1..n'.
+
+0:08:47.440,0:08:47.940
+Okay.
+
+0:08:48.400,0:08:49.920
+And since we are already
+
+0:08:52.400,0:08:59.360
+in the process of writing more tests, maybe
+let's directly, we'll check this now.
+
+0:08:59.360,0:09:04.000
+We would also run through, you have to believe
+me, maybe at this point, let's also write some
+
+0:09:05.040,0:09:06.400
+additional tests.
+
+0:09:07.440,0:09:15.360
+So, for example, instead of simply saying
+that we want to sort lists of '1..n', maybe
+
+0:09:15.360,0:09:21.840
+let's be more general and say how, or what should
+happen, if you sort an arbitrary list.
+
+0:09:31.200,0:09:32.480
+Yes, so,
+
+0:09:32.480,0:09:36.480
+I can also simply quantify
+over an arbitrary list 'xs',
+
+0:09:37.760,0:09:45.200
+then, of course, it would be stupid to
+expect that sorting of 'xs' is equal to 'xs'.
+
+0:09:45.200,0:09:48.960
+But actually, let's check
+what happens if I do this.
+
+0:09:48.960,0:09:50.720
+So, I should get a counter example now.
+
+0:09:52.800,0:09:57.360
+Indeed, there were two tests
+which passed 100 cases.
+
+0:09:57.360,0:09:59.920
+These are the first two ones, and
+then there's a counter example.
+
+0:10:01.040,0:10:02.240
+This looks somewhat strange.
+
+0:10:02.240,0:10:06.480
+Why is '[0, 0]' a counter example to this equation?
+
+0:10:10.560,0:10:13.440
+Well, it's the wrong equation anyway.
+
+0:10:13.440,0:10:18.640
+But also, actually, for this case, we
+could have expected it actually works.
+
+0:10:19.280,0:10:22.560
+And well, maybe at this point, I
+should disclose where the error is.
+
+0:10:22.560,0:10:23.920
+Namely, if I had
+
+0:10:25.840,0:10:32.400
+written it like this, then we would also have
+failed but with a more meaningful counter example.
+
+0:10:33.120,0:10:33.760
+Okay.
+
+0:10:33.760,0:10:35.520
+But that's just because the property is wrong.
+
+0:10:35.520,0:10:39.440
+Anyway, let me write down a property which should
+actually be correct for the sorting function.
+
+0:10:39.440,0:10:44.800
+So, what about if I reverse
+the list and then sort it?
+
+0:10:45.360,0:10:48.160
+Should I always get the same as the list?
+
+0:10:48.160,0:10:49.040
+The original list?
+
+0:10:49.040,0:10:52.720
+No, but I should always get the same
+as if I had sorted the original list.
+
+0:10:52.720,0:10:58.080
+Yes, reversing a list shouldn't make a difference
+if afterwards I'm anyway going to sort the list.
+
+0:10:59.200,0:11:00.400
+Let's check this property.
+
+0:11:10.960,0:11:15.120
+This also passes all the tests.
+
+0:11:15.120,0:11:17.600
+So, this is already also still correct.
+
+0:11:18.960,0:11:20.560
+Okay, so how can I find my bug?
+
+0:11:22.080,0:11:24.240
+Even though I've already
+shown you what the bug is.
+
+0:11:24.240,0:11:27.280
+So, this was a property which wasn't even true.
+
+0:11:27.280,0:11:32.720
+So, let's try to find some property,
+which actually discloses this error.
+
+0:11:33.840,0:11:40.720
+Well, here's something, I can think of some
+property involving the 'length' function.
+
+0:11:41.520,0:11:47.840
+So, maybe it's reasonable to expect
+that if I take any list, and then I
+
+0:11:48.960,0:11:56.720
+compute the length of the sorted list, this should
+be the same as the length of the original list.
+
+0:11:56.720,0:11:59.760
+So, this is a property about
+sorting that should be true.
+
+0:11:59.760,0:12:02.800
+Even if I don't have a specific
+implementation of sorting in mind,
+
+0:12:02.800,0:12:04.880
+this is something one could expect.
+
+0:12:04.880,0:12:08.720
+So, if your task were to write a
+sorting function, then our test suite could
+
+0:12:10.160,0:12:11.840
+contain this last property.
+
+0:12:14.160,0:12:15.760
+And see there is a counter example.
+
+0:12:16.400,0:12:27.280
+Namely, if I call the 'sort' function on '[3, 3]',
+there is a very strange result, which
+
+0:12:28.160,0:12:30.560
+violates this length property.
+
+0:12:30.560,0:12:37.760
+And the reason is that in the splitting here, I
+introduced a bug by not splitting into '<' and
+
+0:12:37.760,0:12:44.080
+'≥', but '≤' and '≥'.
+Okay, so if I fix this bug, then my
+
+0:12:44.080,0:12:51.520
+test suite runs through again, and to make sure
+that we test this on some meaningful lists
+
+0:12:51.520,0:13:00.480
+now, let me, again, add the 'verboseCheck'
+here, so that we can see what happened.
+
+0:13:01.680,0:13:08.400
+And then we can see that actually, the
+checker has chosen quite arbitrary input lists
+
+0:13:08.400,0:13:14.000
+of varying length, and has confirmed
+that they all satisfy this property.
+
+0:13:15.440,0:13:19.600
+Okay, and in this way, even without knowing
+what the solution of the sorting function is,
+
+0:13:19.600,0:13:25.520
+one could come up with certain
+tests that should be expected.
+
+0:13:25.520,0:13:31.840
+So, we specify properties of the sorting function,
+and then we can use this for checking correctness.
+
+0:13:32.880,0:13:35.360
+Okay and they are further
+things I could come up with.
+
+0:13:35.360,0:13:40.720
+So, one idea would be to go through all the
+list processing functions that you know,
+
+0:13:40.720,0:13:43.680
+and think about how they interact with sorting.
+
+0:13:43.680,0:13:47.520
+So, what was some other property that
+we had there, or some other function?
+
+0:13:47.520,0:13:49.680
+So, we had a concatenation function.
+
+0:13:50.320,0:13:54.720
+So, the '++' operator,
+and what does it operate on?
+
+0:13:54.720,0:13:56.320
+Well, it operates on two lists.
+
+0:13:56.320,0:14:00.400
+So, in order to do this, you have to
+quantify what to; let's say, 'xs' and 'ys'.
+
+0:14:00.960,0:14:05.280
+And then what could be a useful property?
+Well, we could say something like,
+
+0:14:05.280,0:14:11.120
+what should be the outcome if I concatenate
+my two lists, and then sort them?
+
+0:14:12.320,0:14:15.840
+How should this be behaving?
+
+0:14:18.960,0:14:20.880
+Yeah, what do you think?
+
+0:14:20.880,0:14:24.720
+What should happen if I append
+to lists and then sort them?
+
+0:14:25.440,0:14:31.440
+Well, that, of course, depends very
+much on the contents of 'xs', and 'ys'.
+
+0:14:31.440,0:14:38.800
+But what probably can be said is that this would
+be the same as if I do it the other way around.
+
+0:14:39.440,0:14:44.240
+So, what if I switch the order
+in which 'xs' and 'ys' are appended,
+
+0:14:44.240,0:14:49.040
+this shouldn't make a difference if afterwards
+I'm anyway going to sort the lists.
+
+0:14:49.040,0:14:54.320
+So, we could use this property to check
+some further behaviour of the sort function,
+
+0:14:54.320,0:15:00.000
+and it will also pass the tests, I'm sure.
+
+0:15:03.040,0:15:08.080
+Okay, in the cases where the tests didn't pass,
+
+0:15:08.640,0:15:11.360
+it was interesting that
+we got small counter examples.
+
+0:15:11.360,0:15:13.680
+So, when we tested and positively resolved,
+
+0:15:13.680,0:15:17.600
+they were both checked, our lists
+of length 20, 25, whatever.
+
+0:15:17.600,0:15:20.080
+But when I had a property, which wasn't true,
+
+0:15:20.080,0:15:24.640
+I got very small counter examples
+'[3, 3]', or '[0, 0]', or '[0, -1]'.
+
+0:15:24.640,0:15:30.480
+That's because QuickCheck not only tries to find
+counter examples, but once it has found out
+
+0:15:30.480,0:15:36.560
+that some property is not true, it is also
+cleverly trying to find as small as possible
+
+0:15:36.560,0:15:41.920
+counter example, which would also be useful
+for you when you get feedback from Autotool.
+
+0:15:41.920,0:15:44.480
+So, you will get not some arbitrary big
+
+0:15:45.360,0:15:50.000
+expression or big function call
+with a big argument that is wrong.
+
+0:15:50.000,0:15:54.160
+But some small counter example in most cases.
+
+0:15:54.960,0:15:58.400
+Okay, so let's not try to
+introduce further errors.
+
+0:15:58.400,0:16:03.920
+But actually, let's try to use this test
+suite now to refactor our program a bit.
+
+0:16:03.920,0:16:08.560
+That's also a good habit that once
+we have some test suite in place,
+
+0:16:08.560,0:16:12.640
+we can actually manipulate our
+program, and the test suite will
+
+0:16:12.640,0:16:16.160
+check that we don't make any mistakes or
+hopefully don't introduce new mistakes.
+
+0:16:16.720,0:16:19.200
+So, what could I improve about the
+program now that I fixed it?
+
+0:16:19.200,0:16:24.000
+Well, one thing that in an exercise
+submission, I would, or the tutors
+
+0:16:24.640,0:16:28.240
+would complain about here is that you
+have a common subexpression or tail
+
+0:16:28.240,0:16:32.560
+of list is computed twice, this
+is not really a nice thing to do.
+
+0:16:33.120,0:16:35.440
+So, what would be a suggested fix here?
+
+0:16:35.440,0:16:36.480
+So, maybe we should
+
+0:16:38.240,0:16:46.400
+instead replace these two calls by
+something that is computed as a local value.
+
+0:16:47.360,0:16:55.040
+So, let's say the rest of the list is this
+tail, and then we twice use this name here.
+
+0:16:57.680,0:17:02.320
+Okay, let's check whether this
+changed anything about the behaviour.
+
+0:17:02.320,0:17:03.840
+No, it didn't, it still works.
+
+0:17:04.560,0:17:09.600
+Okay, then we have 'head' and 'tail'
+here, this can be further improved.
+
+0:17:09.600,0:17:17.520
+So, we could, on the one hand, say: Well,
+it makes sense to do this in one step, so to speak.
+
+0:17:17.520,0:17:20.240
+That one line, it won't change
+the number of steps, but at least
+
+0:17:21.760,0:17:26.293
+somehow brings closer together these two codes.
+
+0:17:26.293,0:17:38.640
+Okay, and then actually,
+we could also say, well,
+
+0:17:38.640,0:17:42.080
+taking the first element and the rest,
+that's actually a case of splitting.
+
+0:17:42.080,0:17:47.280
+And in the slides about list functions I
+introduced a 'splitAt' function where you can say:
+
+0:17:47.280,0:17:50.400
+You give a number, and then you
+get that many elements from the
+
+0:17:50.400,0:17:52.480
+beginning of the list, and then all the rest.
+
+0:17:52.480,0:17:55.760
+So, maybe this is the nice use of splitting.
+
+0:17:56.640,0:17:58.640
+So, we would 'splitAt 1'.
+
+0:17:58.640,0:18:02.400
+Instead of saying head and tail,
+you simply say, let's split the list
+
+0:18:02.400,0:18:06.720
+at position one, then we would get
+the first element and the rest.
+
+0:18:07.920,0:18:09.360
+Does this work?
+
+0:18:09.360,0:18:10.720
+No, it doesn't even compile.
+
+0:18:10.720,0:18:11.840
+Why is that?
+
+0:18:11.840,0:18:16.080
+Well, basically, because splitting gives a list.
+
+0:18:16.080,0:18:19.040
+And this 'pivot' here is supposed
+to be just one element.
+
+0:18:19.040,0:18:24.160
+So, what I can say is, let me
+split the list at position one,
+
+0:18:24.160,0:18:29.280
+and then I get a singleton element
+list and I take the 'pivot' from that.
+
+0:18:29.280,0:18:33.760
+And I get the 'rest', which can be an arbitrary long
+list and the 'rest' is used in these two places.
+
+0:18:36.160,0:18:39.600
+Okay, and then, hopefully, my test suite.
+
+0:18:40.560,0:18:42.960
+Both: The program still compiles again,
+
+0:18:42.960,0:18:49.040
+so I can actually load this module; and then I
+can also run it and see the tests work again.
+
+0:18:49.040,0:18:52.320
+And just to make sure the tests
+are really testing something,
+
+0:18:52.320,0:18:58.320
+of course, I can try what would happen if
+I introduced another error into my program
+
+0:18:58.320,0:19:03.680
+let's say I accidentally do the greater
+and smaller combination in the wrong way.
+
+0:19:05.760,0:19:10.240
+Then I would immediately get some test failures.
+
+0:19:10.240,0:19:17.280
+So here, I get, for example, the first property
+is then wrong for the input 'n' being 2.
+
+0:19:17.280,0:19:19.760
+That's not true, let's sort from '1..n'.
+
+0:19:20.320,0:19:25.440
+'1..2' is '1..2' with this buggy program.
+
+0:19:25.440,0:19:33.760
+Whereas in the original
+version it actually is correct.
+
+0:19:35.120,0:19:39.760
+Okay, so maybe you want to play around with
+these properties and the program just to get an
+
+0:19:39.760,0:19:47.040
+impression also, on your own locally, how
+this kind of testing works, what kind of
+
+0:19:47.040,0:19:51.600
+bugs it can find, and also what kind
+of properties you could think of
+
+0:19:51.600,0:19:55.040
+for the sorting function and
+then check them in this way.
+
+0:19:55.040,0:19:58.000
+And if you want to see more
+insight into what data was used,
+
+0:19:58.000,0:20:05.840
+you can always replace the 'quickCheck' by
+'verboseCheck', as I did earlier in the video.
