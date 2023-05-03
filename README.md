@@ -7,8 +7,8 @@ Suggest changes per pull requests, please.
 | GitHub username | Lines |
 | :-- | --: |
 | Nick46000 | 97 |
+| Gotai | 68 |
 | TMUniversal | 53 |
-| Gotai | 45 |
 | michalitv21 | 19 |
 | MagnolieH | 14 |
 | ejude44 | 6 |
