@@ -2,6 +2,8 @@
 
 Suggest changes per pull requests, please.
 
+Note that the *editor settings* provided as an `.editorconfig` file can be enforced by most editors either [directly](https://editorconfig.org/#pre-installed) or [after installing some plugin](https://editorconfig.org/#download).
+
 ## Leader board
 
 | GitHub username | Lines |
