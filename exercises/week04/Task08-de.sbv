@@ -1,0 +1,247 @@
+0:00:03.620,0:00:12.830
+Wir machen weiter mit Tast 8. Hier starten
+wir mit einer einfachen Animationen,
+
+0:00:12.830,0:00:23.450
+bei der wir einen Kreis haben, der immer weiter
+wächst und größer und größer wird. Wir sollen die
+
+0:00:23.450,0:00:30.980
+Animation so abändern, dass es stattdessen so
+aussieht, dass es zwar am Anfang auch wächst,
+
+0:00:30.980,0:00:38.720
+dann irgendwann zum Schrumpfen wechselt
+und dann aufhört und jede von den drei
+
+0:00:38.720,0:00:50.660
+Phasen hat eine eigenständige Farbe. Hier kann man
+natürlich als allererstes erst mal geneigt sein,
+
+0:00:50.660,0:00:57.830
+jede Menge 'if then else' zu verwenden und zu
+schachteln. Das ist allerdings nicht unbedingt
+
+0:00:57.830,0:01:05.660
+die sinnvollste bzw. Standard-Lösungen in
+Haskell, weil wir haben ja die Guards und
+
+0:01:05.660,0:01:14.060
+die sind hier deutlich sinnvoller zu verwenden
+als 'if then else' , weil wir ja mehrere Pfade
+
+0:01:14.060,0:01:19.910
+haben als nur zwei, also in diesem Fall drei
+verschiedene zwischen denen wir wählen sollen,
+
+0:01:19.910,0:01:25.970
+abhängig vom Zeitparameter und daher sind die
+Guards auf jeden Fall die sauberere Lösung,
+
+0:01:25.970,0:01:32.090
+auch wenn man funktional korrekte Lösungen
+natürlich mit in 'if then else' bekommt. Das
+
+0:01:32.090,0:01:44.240
+heißt, was machen wir als erstes? Wir haben Guards
+und da können wir jetzt irgendwelche Bedingungen
+
+0:01:44.240,0:01:59.530
+reinschreiben und wir nehmen erstmal überall
+das Gleiche. Der letzte Fall ist 'otherwise',
+
+0:01:59.530,0:02:12.700
+unser 'default' Fall sozusagen und hier
+schreiben wir jetzt jeweils Bedingungen rein,
+
+0:02:12.700,0:02:17.230
+die vom Zeitparameter abhängen. Das heißt,
+wir wollen die erste Stufe der Animation 5
+
+0:02:17.230,0:02:23.980
+Sekunden machen, dann nochmal 5 Sekunden, also
+bis insgesamt 10 Sekunden. Zwischen 5 und 10
+
+0:02:23.980,0:02:30.610
+Sekunden nehmen wir diese Animation und ganz am
+Ende bleiben wir hier. Das verändert natürlich
+
+0:02:30.610,0:02:37.510
+jetzt unser Animationsverhalten noch nicht,
+weil wir überall das Gleiche angegeben haben,
+
+0:02:37.510,0:02:48.010
+also nach 5 Sekunden sind immer noch beim
+Wachstum, weil das eben derselbe Ausdruck ist
+
+0:02:48.010,0:02:54.940
+wie hier oben. Das heißt, wir wollen jetzt nach 5
+Sekunden zum Schrumpfen übergehen. Das heißt, wir
+
+0:02:54.940,0:03:04.030
+gucken wie groß ist der Kreis eigentlich. 0,5 mal
+5 Sekunden haben wir das laufen lassen, das heißt,
+
+0:03:04.030,0:03:21.910
+wir sind hier bei 2,5 und jetzt soll es irgendwie
+schrumpfen mit Rate von 0,2 pro Zeiteinheit und
+
+0:03:23.800,0:03:30.520
+dann könnte man jetzt erwarten, dass das genau so
+funktioniert. Natürlich funktioniert das nicht,
+
+0:03:30.520,0:03:38.200
+weil wir wieder was übersehen haben, nämlich dass
+der Zeitparameter weiter läuft und nicht wieder
+
+0:03:38.200,0:03:49.420
+bei 0 anfängt, sondern wir fangen hier als erstes
+mit 5 an, bzw. 5,1 oder irgendwas und gehen bis
+
+0:03:49.420,0:03:54.520
+10 hoch, wir wollen aber eigentlich nochmal von
+0 bis 5 anfangen. Das heißt, wir ziehen hier,
+
+0:03:54.520,0:04:06.550
+damit der Zeitparameter hinkommt, so wie wir uns
+das überlegen die 5 wieder ab und dann sieht man
+
+0:04:06.550,0:04:13.150
+das Ganze gleich schon viel runder aus. Jetzt
+haben wir die 5 Sekunden überschritten und bis
+
+0:04:13.150,0:04:19.570
+10 Sekunden runter und danach gehen wir wieder auf
+unsere initiale Animation. Das ist natürlich jetzt
+
+0:04:19.570,0:04:27.880
+noch falsch. Wir wollen hier jetzt entsprechend
+nicht mehr die Größe ändern. Das heißt, wir müssen
+
+0:04:27.880,0:04:36.130
+wieder ausrechnen, wo sind wir jetzt eigentlich?
+5 Sekunden mal 0,2 die Größe reduziert. Das heißt,
+
+0:04:36.130,0:04:45.610
+wir haben insgesamt einen Radius von 1,5 an
+dieser Stelle und wenn wir uns das jetzt angucken,
+
+0:04:48.350,0:04:58.970
+wird es erst größer, dann kleiner und bei 10
+Sekunden hört das auf. Dann sollen wir das jetzt
+
+0:04:58.970,0:05:04.400
+noch unterschiedlich einfärben. Das ist nicht
+sonderlich kompliziert, wir benutzen jeweils
+
+0:05:04.400,0:05:32.510
+wieder 'colored' und müssen uns jetzt drei
+Farben aussuchen. Wenn wir die Farben aus dem
+
+0:05:32.510,0:05:50.150
+Beispiel nehmen, bekommen wir Warnungen, dass die
+Farben eventuell demnächst verschwinden könnten,
+
+0:05:50.150,0:05:56.810
+weil die API umgestellt wird, aber da müssen
+wir uns im Moment erstmal nicht groß darum
+
+0:05:56.810,0:06:02.960
+sorgen, nur für den Fall, dass zum späteren
+Zeitpunkt, eventuell im Laufe des Semesters,
+
+0:06:02.960,0:06:10.730
+dieser Code nicht mehr funktioniert, hier sind die
+entsprechenden Warnungen, die sagen, wir sollen
+
+0:06:10.730,0:06:23.060
+lieber die Parameter der Farbe direkt verwenden.
+Man kann sich dann, sollte das wegfallen,
+
+0:06:23.060,0:06:31.880
+diese Konstante nochmal neu definieren, mit den
+angegebenen Werten. Das ist so die Basislösung,
+
+0:06:31.880,0:06:42.570
+das sieht dann so aus wie hier auch. Hier
+ist die erste Farbe grün die zweite orange,
+
+0:06:44.670,0:06:54.270
+wir haben es jetzt anders gemacht. Wir haben die
+Farben vertauscht, aber das macht letztendlich
+
+0:06:54.270,0:07:02.460
+auch nichts, funktional ist das natürlich
+dasselbe. Wir können jetzt unsere Lösung noch ein
+
+0:07:02.460,0:07:08.700
+bisschen erweitern indem wir die Zeitparameter,
+wann die unterschiedlichen Phasen wechseln,
+
+0:07:08.700,0:07:16.890
+noch abstrahieren . Das heißt, wir können hier
+einen Zeitparameter t1 und hier t2 einfügen und
+
+0:07:16.890,0:07:27.300
+dann entweder definieren wir es global oder
+in einem 'where' Block. t1ist 5 und t2 ist
+
+0:07:27.300,0:07:33.360
+10. Dann können wir das entsprechend anpassen.
+Jetzt müssen wir natürlich noch hier gucken.
+
+0:07:33.360,0:07:42.960
+Was heißt das hier genau? Diese 2,5, wenn wir
+das t1, ändern gilt natürlich nicht mehr. Das
+
+0:07:42.960,0:08:00.720
+sind natürlich dann 0,5 mal t1 und diese 5
+sind hier natürlich auch t1 und die 1,5 sind
+
+0:08:00.720,0:08:20.290
+hier jetzt natürlich dieser Ausdruck. Wir müssen
+dann hier entsprechend die 2 minus t1 einsetzen,
+
+0:08:20.290,0:08:43.390
+das ist eine Klammer zu viel, diese Klammer
+brauchen wir jetzt auch nicht unbedingt und
+
+0:08:43.390,0:08:50.710
+dann haben wir jetzt hoffentlich auch die
+gleiche Animation wie vorher, wenn wir alles
+
+0:08:50.710,0:08:58.180
+richtig gemacht haben. Genau, es stoppt wieder.
+Wenn wir jetzt sagen wollen, die erste Phase soll
+
+0:08:58.180,0:09:06.610
+kürzer sein, dann nehme ich mal 3 Sekunden,
+dann können wir einfach den Parameter ändern,
+
+0:09:06.610,0:09:11.860
+es geht nach 3 Sekunden die entgegengesetzte
+Richtung, wird jetzt natürlich deutlich kleiner,
+
+0:09:11.860,0:09:21.190
+weil wir deutlich länger schrumpfen. Dann
+haben wir am Ende den kleinen Kreis. Was man
+
+0:09:21.190,0:09:26.380
+noch beachten muss, bei dieser Lösung ist, dass
+der t2 Parameter natürlich immer größer als der
+
+0:09:26.380,0:09:33.790
+t1 Parameter sein muss, sonst überspringt man
+die Phase. Wir können natürlich noch angeben,
+
+0:09:33.790,0:09:40.960
+dass das nur die Länge sein soll und dann müssten
+wir hier entsprechend Summe und so weiter... Aber
+
+0:09:40.960,0:09:48.610
+das kommt dann auf der Seite auch noch irgendwie
+zum Tragen, müssen wir jetzt hier aber nicht
+
+0:09:48.610,0:09:53.890
+machen, kann man natürlich auch noch, wenn man
+will, mal ausprobieren, wie sich das auswirkt.

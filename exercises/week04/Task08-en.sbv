@@ -1,0 +1,442 @@
+0:00:00.720,0:00:03.760
+This task is about the modification of a program.
+
+0:00:05.360,0:00:10.560
+Again we have been given a
+result as it shall look like,
+
+0:00:10.560,0:00:15.920
+which we can view in code world and I load it now.
+
+0:00:16.640,0:00:22.000
+There we see, we shall draw a
+circle which is growing bigger, then
+
+0:00:23.520,0:00:29.840
+reducing its size, and finally
+fitting at the final state.
+
+0:00:32.240,0:00:43.840
+Actually how big the circle gets and at what
+rate it is increasing is up to the programmer.
+
+0:00:45.280,0:00:47.200
+We have been given this program here.
+
+0:00:48.000,0:00:53.200
+If we run this, we see that there
+is a circle which is growing,
+
+0:00:53.200,0:00:58.240
+and growing, and growing, and growing,
+and growing, and growing. It never stops.
+
+0:00:58.240,0:00:59.920
+Now we shall modify the program.
+
+0:01:06.960,0:01:11.760
+The balloon function is the
+function that we want to modify,
+
+0:01:11.760,0:01:18.240
+because this draws the solid
+circle that we get in the end.
+
+0:01:20.400,0:01:22.720
+We want to
+
+0:01:24.560,0:01:36.080
+modify this in a way that we have certain time
+steps and certain sizes at specific times.
+
+0:01:40.320,0:01:47.360
+The size of the circle is
+defined by this function here.
+
+0:01:47.360,0:01:50.480
+So in this case we multiply
+
+0:01:51.200,0:02:00.240
+0.5 by t and if we want to increase the
+speed, we just increase the factor before t.
+
+0:02:01.600,0:02:12.400
+So we want to have a smooth motion of the balloon
+
+0:02:12.400,0:02:16.960
+when it's increasing and then
+it's going to the next stage.
+
+0:02:16.960,0:02:20.080
+It shall stay the same size and not suddenly jump
+
+0:02:20.080,0:02:24.000
+to it or to different sizes - so that's
+something we have to consider as well.
+
+0:02:25.040,0:02:29.600
+So we could stop moving the
+circle at a certain point.
+
+0:02:30.160,0:02:36.400
+I use guards here in order to achieve this.
+
+0:02:37.040,0:02:44.800
+So I define a certain time
+point - which is time1 - and
+
+0:02:46.560,0:02:52.160
+I say this is just some turn
+point let's say - two seconds.
+
+0:02:55.600,0:03:04.400
+And we can increase the solid circle
+until this time point is reached and then
+
+0:03:05.520,0:03:17.840
+we can stop the animation - which is not what
+we want to achieve in in this particular case.
+
+0:03:20.960,0:03:27.680
+Or let's just keep these values, so
+we could say, we have 0.5 and then
+
+0:03:28.640,0:03:34.400
+in this case, if we apply this
+nothing changes or nothing happens,
+
+0:03:34.400,0:03:39.520
+but if we say - we have reached
+time1, we want to keep the size.
+
+0:03:39.520,0:03:47.120
+We just apply time1 and then our animation
+would finally stop at this point and the
+
+0:03:48.640,0:03:50.960
+balloon is not growing anymore.
+
+0:03:54.320,0:04:02.000
+We can we have a second stage however
+where the balloon shall shrink.
+
+0:04:03.120,0:04:08.960
+So now we have to figure out a second
+time point let's say it's time2.
+
+0:04:13.040,0:04:20.480
+This one defines also a solid circle
+but with different parameters.
+
+0:04:20.480,0:04:22.960
+We can think about this in a moment.
+
+0:04:26.320,0:04:32.080
+This is time point2. And this one
+shall be bigger than the first one.
+
+0:04:32.800,0:04:42.080
+And we do not check within the guard if - so
+we could check that t is greater equal time1,
+
+0:04:44.880,0:04:52.800
+but as we have learned in the lecture
+this is actually not required to do.
+
+0:04:52.800,0:04:57.840
+And actually it's also bad style -
+we should leave this out - because
+
+0:04:58.400,0:05:04.880
+if the first guard does not apply the second
+will and so we can just skip this step
+
+0:05:05.680,0:05:11.280
+because we know time1 doesn't
+apply anymore so time2 shall apply.
+
+0:05:13.600,0:05:16.800
+We've seen in the animation now that
+
+0:05:18.880,0:05:24.960
+the time2 point is not the exact
+point for stopping the animation.
+
+0:05:24.960,0:05:32.560
+So we could just say here time2 shall be the
+point where it all stops and then we could
+
+0:05:35.360,0:05:40.000
+move to this point and then it will stop properly.
+
+0:05:44.640,0:05:49.360
+I want to define the size of the balloon as well.
+
+0:05:49.920,0:05:58.800
+So i want to have the sizes at the
+stages when it ends - so the first one is
+
+0:05:58.800,0:06:08.320
+size1 and let's say this is six and
+the last one is size2 and this is two
+
+0:06:08.880,0:06:14.720
+and time point2 change it to three so just to
+increase the speed of the animation so that
+
+0:06:15.280,0:06:33.840
+it finishes a bit earlier and now when I want
+to reach size1 at a certain point of time.
+
+0:06:34.400,0:06:41.520
+And i want to reach size1 when time1 is reached.
+
+0:06:43.840,0:06:49.760
+I could simply say size1 is reached exactly when I
+
+0:06:51.040,0:07:00.240
+divide size1 by time1 and multiply by
+t, because if we reach time1 then t and
+
+0:07:00.240,0:07:09.360
+time1 are equal and thus I just divide by time1
+and multiply by time1 and then I reach size1.
+
+0:07:10.000,0:07:19.200
+So running this will finish the first
+stage with a balloon of size six
+
+0:07:21.280,0:07:28.040
+and now we have this jump which
+we have to get rid of of course .
+
+0:07:30.400,0:07:33.920
+Now we have to figure out what
+happens in the second stage.
+
+0:07:33.920,0:07:38.400
+I say I want to get to size2 after reaching time2.
+
+0:07:40.640,0:07:49.280
+First of all, when we start this stage
+the time point is time1 here t is
+
+0:07:51.840,0:07:57.440
+greater than or it's equal to
+time1 but it's less than time2.
+
+0:08:02.400,0:08:10.880
+We have the size1 which is the starting point
+and now we subtract something - we subtract
+
+0:08:12.240,0:08:23.440
+the difference between the sizes at
+this particular time steps. Right?
+
+0:08:27.280,0:08:39.920
+We have size2 minus size1 - oh well -
+
+0:08:39.920,0:08:44.240
+A different way of saying this:
+we add the the difference,
+
+0:08:44.880,0:08:49.200
+right? When we get from size1 to size2.
+
+0:08:49.200,0:08:57.760
+We add the difference which is in this case
+minus 4 or let's say size2 minus size1,
+
+0:08:57.760,0:09:06.000
+which is: 2 minus 6 is -4 and now we
+do again the same trick as before.
+
+0:09:07.760,0:09:18.800
+We have to think of the time moments
+again because when we reach the first
+
+0:09:21.600,0:09:28.960
+time point then we have a certain amount
+of time - which is the difference between
+
+0:09:29.520,0:09:35.840
+time2 and time1 - that's the amount
+that our balloon shall be shrinking.
+
+0:09:38.240,0:09:48.320
+We divide by this time - this is the difference
+right so time2 minus time1 that's the time we want
+
+0:09:50.160,0:09:58.000
+to decrease the size of the border that's
+time2 minus time1 - so in fact 1 second.
+
+0:10:00.640,0:10:07.040
+Then we multiply by t - well t
+is not correct because when we
+
+0:10:07.040,0:10:13.360
+reach time point one then we want to
+have just the size at this time point.
+
+0:10:13.360,0:10:18.800
+So it or all the later time
+points which is t minus time1.
+
+0:10:20.080,0:10:28.160
+We can say t minus time1 and this is
+what we multiply it by in order to
+
+0:10:28.160,0:10:34.320
+achieve the size we have in the last stage.
+
+0:10:35.440,0:10:43.840
+The size of the last stage is just
+- the size of - it's just size 2.
+
+0:10:43.840,0:10:46.320
+That's what we want to reach in the final stage.
+
+0:10:47.280,0:10:54.320
+If we apply this, then we see we get an
+increasing balloon and a shrinking one
+
+0:10:54.320,0:11:00.240
+and we end at the exact size of size 2. Okay?
+
+0:11:06.480,0:11:10.400
+I want to just stress one point,
+
+0:11:11.600,0:11:20.240
+your solution should not contain something like
+this here: t is greater or equal to time two
+
+0:11:23.440,0:11:30.640
+because this would lead to a non-exhaustiveness
+or could lead to non-exhaustiveness warning.
+
+0:11:30.640,0:11:35.840
+And as that may not be able to
+figure out what's happening here,
+
+0:11:35.840,0:11:38.560
+that's why we use the otherwise here. Okay?
+
+0:11:38.560,0:11:46.080
+And now there is just a little detail
+missing and that's the colouring.
+
+0:11:47.600,0:11:51.840
+For all these circles there
+shall be colouring additionally
+
+0:11:53.440,0:12:05.280
+and I want to have different colours here.
+
+0:12:05.280,0:12:07.520
+We we can choose any color.
+
+0:12:07.520,0:12:11.520
+There is no colour given, we have to choose.
+
+0:12:11.520,0:12:18.480
+So we can just say coloured
+green for the first one, and
+
+0:12:22.080,0:12:32.400
+coloured yellow for the second one,
+and coloured red for the third one.
+
+0:12:33.760,0:12:40.240
+It's now like the traffic
+lights - when it stops it's red.
+
+0:12:46.960,0:12:49.600
+We can also extract a function here.
+
+0:12:49.600,0:12:51.360
+In order to draw the circle.
+
+0:12:51.360,0:13:06.960
+We would like that so we can use - say
+coloured circle is with colour and size is
+
+0:13:09.280,0:13:18.080
+coloured spell it like this: colour
+
+0:13:26.640,0:13:34.880
+coloured colour - and then
+solid circle with the given size
+
+0:13:35.520,0:13:42.240
+and then we can refactor the
+code by using the colouredCircle.
+
+0:13:47.200,0:13:58.800
+Say here: colouredCircle green and then we can
+reuse this part in all of our parts in order to
+
+0:14:00.240,0:14:03.760
+reduce the size of the code a bit.
+
+0:14:08.320,0:14:12.160
+colouredCircle and then
+
+0:14:21.040,0:14:30.880
+So size two, this is the same code
+- actually just a bit refactored
+
+0:14:30.880,0:14:39.200
+now we have all our circles coloured by
+giving a parameter for colour and the size.
+
+0:14:40.080,0:14:47.360
+Then we - maybe to decrease the line
+size - we can write the code like this.
+
+0:14:47.920,0:14:51.840
+Then it fits better on this screen
+
+0:14:53.680,0:15:02.560
+and now if we want to change the animation we
+simply can change the time spaces for instance:
+
+0:15:03.280,0:15:13.120
+time1 one, time2 two - and this will be
+a faster animation - still does the same.
+
+0:15:14.400,0:15:21.360
+But be aware you shall not change time2
+below time1 or equal if you do this then
+
+0:15:21.360,0:15:33.360
+one step is missing, because then the the
+second step is skipped because this one covers
+
+0:15:33.920,0:15:38.720
+the second step as well -
+so this should not happen.
+
+0:15:38.720,0:15:45.760
+And also if you change the first value to
+zero or below this step will also be skipped
+
+0:15:45.760,0:15:50.960
+and if you run the code now you
+will see there is just the red ball.
+
+0:15:51.840,0:16:00.240
+So keep in mind that you shall have
+positive values for these circles and
+
+0:16:00.240,0:16:08.400
+if you didn't have it for your submission
+you will not get points for your submission.
+
+0:16:08.400,0:16:16.160
+But if the animation is smoothly,
+thus it does not jump and
+
+0:16:21.200,0:16:28.880
+all the three animation phases
+are visible then you're fine.
