@@ -1,0 +1,1743 @@
+0:00:02.639,0:00:07.759
+In diesem Video möchte ich über das sprechen,
+was man manchmal als "Wholemeal Programming" bezeichnet, in
+
+0:00:07.759,0:00:09.780
+diesem Fall
+auf Listen.
+
+0:00:09.780,0:00:16.379
+Ich habe dieses Konzept der Wholemeal-Programmierung
+im Gegensatz zur Piecemeal-Programmierung bereits kurz erwähnt,
+
+0:00:16.379,0:00:21.220
+als wir über Animationen
+als zeitabhängige Funktionen gesprochen haben.
+
+0:00:21.220,0:00:28.810
+Ich erwähnte, dass wir in CodeWorld, wenn wir
+eine Animation als Funktion definieren, in gewissem Sinne
+
+0:00:28.810,0:00:31.340
+die ganze Animation
+auf einmal programmieren.
+
+0:00:31.340,0:00:37.050
+Sie schreiben also keine Befehlssequenz: Zuerst machen
+Sie dies, dann bewegt sich das Bild dorthin,
+
+0:00:37.050,0:00:38.050
+und dann
+passiert dies.
+
+0:00:38.050,0:00:42.899
+Natürlich verwenden Sie die Fallunterscheidung, um verschiedene
+Fälle zu unterscheiden, aber es gibt eine
+
+0:00:42.899,0:00:48.850
+Funktion als Ganzes, die die gesamte Animation für
+alle Zeitpunkte beschreibt, anstatt eine Abfolge zu haben.
+
+0:00:48.850,0:00:52.910
+Die gleiche Idee der Wholemeal-Programmierung
+kann auch auf Listen angewendet werden.
+
+0:00:52.910,0:00:56.640
+Und sie wird manchmal auch
+in der Literatur verwendet, in Büchern.
+
+0:00:56.640,0:01:02.820
+Wenn Sie versuchen würden, dies ins Deutsche
+zu übersetzen, gibt es, glaube ich, keine Eins-zu-Eins-Übersetzung,
+
+0:01:02.820,0:01:07.130
+sodass "piecemeal programming" (das Gegenteil
+von "wholemeal programming") vielleicht mit "stückweise"
+
+0:01:07.130,0:01:13.350
+/ "allmählich", etwas "unsystematisch", übersetzt
+werden könnte, während für "wholemeal
+
+0:01:13.350,0:01:16.320
+programming" die deutsche Übersetzung
+vielleicht "in einem Rutsch" wäre.
+
+0:01:16.320,0:01:23.840
+Also, etwas auf einmal / in einem Rutsch zu
+tun, statt in vielen verschiedenen kleinen Schritten, indem man
+
+0:01:23.840,0:01:30.369
+einzelne Listenelemente durch
+Indizierung usw. betrachtet.
+
+0:01:30.369,0:01:35.690
+Im Kontext der funktionalen Programmierung
+wird das Konzept der Wholemeal-Programmierung durch diese
+
+0:01:35.690,0:01:38.960
+beiden Zitate hier
+sehr schön zusammengefasst.
+
+0:01:38.960,0:01:45.810
+Also, diesmal kein Zitat eines mittelalterlichen
+Königs, sondern von zwei ehemaligen Oxford-Professoren.
+
+0:01:45.810,0:01:49.689
+Ralf ist nach ein paar Jahren
+in Oxford nun an der Universität Kaiserslautern.
+
+0:01:49.689,0:01:52.539
+Und Richard ist
+tatsächlich schon im Ruhestand.
+
+0:01:52.539,0:01:56.000
+Und beide sprechen hier von
+der gleichen Idee: groß denken.
+
+0:01:56.000,0:02:00.660
+Über eine ganze Lösung auf einmal
+nachzudenken, einen ganzen Lösungsraum, anstatt vielleicht eine
+
+0:02:00.660,0:02:01.660
+einzelne
+Lösung.
+
+0:02:01.660,0:02:07.080
+In dem Zitat von Ralf geht
+es also darum, im Rahmen von Graphenalgorithmen
+
+0:02:07.080,0:02:10.390
+über einen Graphen als Ganzes
+nachzudenken, anstatt über einzelne Pfade.
+
+0:02:10.390,0:02:17.819
+Es ist also alles die gleiche Idee:
+über Datenstrukturen als Ganzes nachzudenken, anstatt zum Beispiel
+
+0:02:17.819,0:02:20.390
+über einzelne
+Elemente zu sprechen.
+
+0:02:20.390,0:02:22.590
+Richard spricht hier
+auch von Indexitis.
+
+0:02:22.590,0:02:29.620
+Das ist auch etwas, was ich bereits erwähnt habe,
+als ich darüber sprach, dass der Index-Zugriff auf Listen
+
+0:02:29.620,0:02:34.319
+ein No-Go in Haskell ist; dass es das gibt,
+aber man immer versuchen sollte, es zu vermeiden und
+
+0:02:34.319,0:02:38.010
+Programme mit anderen Ansätzen
+und anderen Ideen zu schreiben.
+
+0:02:38.010,0:02:44.210
+Das ist also der gleiche Gedanke, den Richard
+hier zum Ausdruck bringt: zu sagen, dass Indexitis eine
+
+0:02:44.210,0:02:47.379
+Krankheit ist, die
+gutes Programmdesign behindert.
+
+0:02:47.379,0:02:54.000
+Und er spricht von gesetzmäßiger Programmkonstruktion, also:
+algebraische Gesetze über Ihre Programme zu haben,
+
+0:02:54.000,0:03:00.349
+wird gefördert und unterstützt, wenn Sie
+über umfassende Operationen auf Ihren Datenstrukturen wie
+
+0:03:00.349,0:03:05.569
+Listen nachdenken, statt
+über stückweisen Zugriff.
+
+0:03:05.569,0:03:10.680
+Auch der Umgang mit unendlichen Listen
+ist in gewissem Sinne ein Ergebnis der
+
+0:03:10.680,0:03:15.840
+Wholemeal-Programmierung, weil man dann nicht (zumindest nicht
+zu viel) über einzelne Listenelemente reden will,
+
+0:03:15.840,0:03:19.390
+sondern vielleicht über Listen
+als Ganzes und deren Verarbeitung.
+
+0:03:19.390,0:03:24.349
+Wir könnten auch für unsere Funktionen, die wir
+bisher gesehen haben, fragen, ob sie gute Beispiele
+
+0:03:24.349,0:03:26.459
+für Wholemeal-
+vs. Piecemeal-Programmierung sind.
+
+0:03:26.459,0:03:32.450
+Die Quicksort-Implementierung von letzter Woche ist
+offensichtlich weder das eine noch das andere.
+
+0:03:32.450,0:03:36.849
+Es gibt dort
+einiges an elementweiser Verarbeitung.
+
+0:03:36.849,0:03:40.860
+List Comprehensions sind oft ein
+gutes Beispiel für Wholemeal Programming.
+
+0:03:40.860,0:03:43.070
+Das ist also auch
+in diesem Beispiel geschehen.
+
+0:03:43.070,0:03:48.840
+Wenn Sie an das "isPalindrome"-Beispiel denken,
+gab es zwei Versionen in den Folien.
+
+0:03:48.840,0:03:52.599
+Es gab diese Version, die einfach
+die Liste mit ihrer Umkehrung verglichen hat.
+
+0:03:52.599,0:03:57.230
+Das ist ein sehr gutes Beispiel
+für Wholemeal-Programmierung, weil wir nicht einzelne Elemente
+
+0:03:57.230,0:04:01.240
+anfassen, sondern einfach eine Eigenschaft
+der Liste als Ganzes ausdrücken.
+
+0:04:01.240,0:04:06.069
+Dann gab es diese mehr rekursive Definition,
+die sich das erste und das letzte Element
+
+0:04:06.069,0:04:08.299
+ansah und dann
+einen rekursiven Aufruf machte.
+
+0:04:08.299,0:04:13.819
+Das ist etwas, das vielleicht nicht
+an Indexitis leidet, weil wir nie explizit
+
+0:04:13.819,0:04:17.500
+über Indizes von Datenelementen
+in der Liste sprechen.
+
+0:04:17.500,0:04:22.370
+Aber auch dieses rekursive
+Verfahren ist nicht wirklich Wholemeal-Programmierung.
+
+0:04:22.370,0:04:26.170
+Es spricht wirklich über das erste Element
+und das letzte Element, macht die Liste
+
+0:04:26.170,0:04:32.130
+kleiner usw., statt der schönen rekursiven Lösung,
+die einfach sagt: Eine Liste ist ein
+
+0:04:32.130,0:04:34.050
+Palindrom, wenn sie dasselbe
+ist wie ihre Umkehrung.
+
+0:04:34.050,0:04:41.160
+Man kann es nicht wirklich
+umfassender auf einen Schlag ausdrücken.
+
+0:04:41.160,0:04:43.550
+Das ist ein
+sehr schönes Beispiel.
+
+0:04:43.550,0:04:49.940
+In gewissem Sinne könnte man auch
+die Version von "isPalindrome", die ich im
+
+0:04:49.940,0:04:53.630
+Video kurz vor diesem entwickelt habe,
+als im Geiste der Wholemeal-Programmierung sehen.
+
+0:04:53.630,0:04:56.670
+Denn es spricht auch
+über die Liste als Ganzes.
+
+0:04:56.670,0:04:59.620
+Es hat eine List Comprehension, dann sagt es
+"und", also alles in dieser Liste soll wahr
+
+0:04:59.620,0:05:00.620
+
+sein.
+
+0:05:00.620,0:05:06.530
+Das ist auch etwas, wo man etwas
+in einem Zug ausdrückt und nicht eine Rekursion
+
+0:05:06.530,0:05:08.790
+über die
+Listenstruktur programmiert.
+
+0:05:08.790,0:05:16.160
+Das wären schöne Beispiele, und Sie
+werden natürlich noch weitere Beispiele sehen.
+
+0:05:16.160,0:05:19.830
+Dies ist ein weiteres Beispiel,
+das wir schon früher gesehen haben.
+
+0:05:19.830,0:05:26.580
+Es tauchte im Zusammenhang mit der Diskussion
+darüber auf, warum wir keine for-Schleifen verwenden.
+
+0:05:26.580,0:05:31.010
+Und in der Tat, wir *brauchen* keine
+for-Schleifen, weil wir verschiedene Möglichkeiten haben, so etwas
+
+0:05:31.010,0:05:36.160
+wie eine Wiederholung, in diesem Fall,
+von Bildern in einer bestimmten Szene auszudrücken.
+
+0:05:36.160,0:05:39.810
+Die Zahlen hier
+sind keine Listenindizes.
+
+0:05:39.810,0:05:43.540
+Wir haben [0..5], aber
+das ist keine Listenindizierung.
+
+0:05:43.540,0:05:49.650
+Es ist nur ein umfassender Weg, um
+auszudrücken, dass wir mehrere Szenen haben, und sie
+
+0:05:49.650,0:05:52.840
+werden alle von dieser
+Funktion da unten berechnet.
+
+0:05:52.840,0:06:00.770
+Das ist also in gewisser Weise der
+ganzheitliche Ansatz, weil wir die Anwendung von "scene"
+
+0:06:00.770,0:06:03.380
+auf diese Elemente in
+einem Zug ausgedrückt haben.
+
+0:06:03.380,0:06:08.230
+Es gibt keinen Schleifenzähler,
+keine explizite Schleifensteuerung oder Ähnliches.
+
+0:06:08.230,0:06:13.560
+Es sind also die gleichen Gründe, die ich dort
+erwähnt habe, warum dies nicht dasselbe ist wie eine Schleifenbildung
+
+0:06:13.560,0:06:14.630
+in einer
+imperativen Sprache.
+
+0:06:14.630,0:06:19.610
+Im gleichen Sinne ist dies ein
+Wholemeal-Ansatz im Gegensatz zu einem Piecemeal-Ansatz.
+
+0:06:19.610,0:06:25.260
+Es gab keine konzeptionelle Überlegung,
+dass eines nach dem anderen passiert.
+
+0:06:25.260,0:06:28.460
+Das ist hier
+einfach nicht der Fall.
+
+0:06:28.460,0:06:35.190
+Man hätte diese Berechnung natürlich auch
+irgendwie rekursiv durchführen können, indem man
+
+0:06:35.190,0:06:37.850
+eine rekursive Funktion definiert, aber
+warum sollten wir das tun?
+
+0:06:37.850,0:06:39.470
+Warum sollten wir
+uns damit beschäftigen?
+
+0:06:39.470,0:06:44.600
+Eine Rekursion hier zu programmieren, hätte
+eine Art Traversierungsordnung offengelegt, die wir nicht
+
+0:06:44.600,0:06:49.150
+brauchen, wenn wir einfach nur an
+"wir haben diese Bilder" interessiert sind.
+
+0:06:49.150,0:06:55.290
+Wie ich bereits erwähnt habe, erhalten wir
+in der mathematischen Mengenschreibweise einfach: "für alle
+
+0:06:55.290,0:06:59.250
+Zahlen in einem bestimmten Bereich, ..." oder vielleicht
+sogar "alle Zahlen", wenn wir unendliche Listen haben,
+
+0:06:59.250,0:07:02.030
+wir berechnen irgendeinen Wert, und
+wir bekommen das Ergebnis davon.
+
+0:07:02.030,0:07:03.030
+Das
+war's.
+
+0:07:03.030,0:07:11.970
+In einem Rutsch, anstatt einen Schleifenzähler zu
+schreiben und ein Programm in einer Schleife.
+
+0:07:11.970,0:07:17.780
+Natürlich wird die individuelle Auswertung dieser
+Bilder (die Berechnung der verschiedenen Szenen)
+
+0:07:17.780,0:07:21.260
+immer noch in irgendeiner Reihenfolge
+auf einer sequenziellen Maschine passieren.
+
+0:07:21.260,0:07:24.240
+Und außerdem ist die Liste eine
+Sequenz, sie ist keine mathematische Menge.
+
+0:07:24.240,0:07:26.360
+Sie hat also
+eine gewisse Ordnung.
+
+0:07:26.360,0:07:28.940
+Aber die einzelnen Werte
+sind unabhängig von der Reihenfolge.
+
+0:07:28.940,0:07:33.440
+Es ist also egal, ob ich zuerst
+die dritte Sache und dann die nullte
+
+0:07:33.440,0:07:34.440
+Sache berechne,
+oder umgekehrt.
+
+0:07:34.440,0:07:38.840
+Die Werte werden davon unabhängig
+sein, weil es unabhängige Berechnungen sind.
+
+0:07:38.840,0:07:46.500
+Es gibt keinen Effekt, der irgendwie die dritte
+Berechnung beeinflusst, basierend auf dem, was in der
+
+0:07:46.500,0:07:47.500
+ersten Berechnung
+passiert ist.
+
+0:07:47.500,0:07:51.720
+Das liegt daran, dass es sich um
+Werte handelt, die aus Ausdrücken berechnet werden.
+
+0:07:51.720,0:07:57.750
+In der Tat kann man einige Eigenschaften
+zeigen, die in einer inkrementellen, iterativen Schleifenform nicht
+
+0:07:57.750,0:07:59.590
+gelten
+würden.
+
+0:07:59.590,0:08:08.070
+Also, irgendwie diese Idee auszudrücken, dass die
+Ergebnisse nicht davon abhängen, in welcher Reihenfolge wir
+
+0:08:08.070,0:08:09.310
+sie
+berechnen.
+
+0:08:09.310,0:08:16.200
+Eine Möglichkeit, diese Idee zu erfassen,
+wäre die Äquivalenz, die hier gezeigt wird.
+
+0:08:16.200,0:08:18.040
+Was sie
+aussagt, ist:
+
+0:08:18.040,0:08:28.340
+Wenn ich einige Zahlen von null bis n nehme und
+dann "f von a" (f a) auf jedem Element berechne
+
+0:08:28.340,0:08:36.510
+und dann die Ergebnisse in eine Liste schreibe, ist
+es dasselbe, als wenn ich diese Zahlenliste zuerst umkehre,
+
+0:08:36.510,0:08:44.150
+sodass ich die Zahlen von n bis null
+bekomme, immer noch f auf jedem dieser Werte berechne
+
+0:08:44.150,0:08:47.060
+und dann die
+Liste wieder umkehre.
+
+0:08:47.060,0:08:53.740
+Natürlich brauche ich dieses zweite "reverse",
+um die Ergebnisse in der richtigen Reihenfolge
+
+0:08:53.740,0:08:54.740
+
+anzuordnen.
+
+0:08:54.740,0:09:02.320
+Aber der Punkt ist, dass *wenn* ich ein bestimmtes "f"
+für ein bestimmtes "a" berechne, keinen Einfluss auf die Werte
+
+0:09:02.320,0:09:04.100
+hat, die
+ich erhalte.
+
+0:09:04.100,0:09:06.900
+Deshalb werden diese
+beiden Listen gleich sein.
+
+0:09:06.900,0:09:12.860
+Wenn ich die Zahlen in umgekehrter
+Reihenfolge nehme, erhalte ich die gleichen Werte.
+
+0:09:12.860,0:09:17.250
+Ich bekomme sie nur in umgekehrter Reihenfolge,
+also muss ich am Ende wieder umkehren.
+
+0:09:17.250,0:09:26.370
+Und so etwas wäre zum Beispiel
+bei einer for-Schleife nicht der Fall.
+
+0:09:26.370,0:09:33.110
+Wir können das tatsächlich überprüfen, indem wir uns einen
+C-ähnlichen oder Java-ähnlichen oder Python-ähnlichen Code oder was auch
+
+0:09:33.110,0:09:34.110
+immer
+ansehen.
+
+0:09:34.110,0:09:38.510
+Nehmen wir also zwei for-Schleifen, die in
+etwa den beiden Richtungen entsprechen, in denen
+
+0:09:38.510,0:09:42.760
+man eine solche
+Iteration berechnen könnte.
+
+0:09:42.760,0:09:51.830
+In den oberen beiden Zeilen haben wir eine
+for-Schleife, die ebenfalls von null bis n geht, diesen
+
+0:09:51.830,0:09:56.010
+Schleifenzähler inkrementiert und dann immer "f von a"
+berechnet, und dies dann in einer Liste, oder
+
+0:09:56.010,0:09:57.610
+in diesem Fall
+einem Array, speichert.
+
+0:09:57.610,0:10:03.180
+Und hier haben wir den umgekehrten Fall, wo wir
+von n auf null gehen und abwärts zählen und
+
+0:10:03.180,0:10:07.690
+die Ergebnisse ebenfalls in einer
+Liste oder in einem Array ablegen.
+
+0:10:07.690,0:10:14.030
+Aber in C oder Java ist es nicht so,
+dass wir dies immer durch dies ersetzen können, aus verschiedenen
+
+0:10:14.030,0:10:19.750
+Gründen, wie Seiteneffekte, wie Dinge, die die
+f-Aufrufe zusätzlich zur Berechnung von Werten tun könnten.
+
+0:10:19.750,0:10:25.690
+Es handelt sich also nicht um zwei Codestücke,
+die in einer Sprache wie Java oder C
+
+0:10:25.690,0:10:26.690
+immer
+austauschbar sind.
+
+0:10:26.690,0:10:31.380
+Natürlich gibt es auch diese Schleifenindizierung, die
+an sich schon gegen den Geist der Wholemeal-Programmierung
+
+0:10:31.380,0:10:32.380
+
+ist.
+
+0:10:32.380,0:10:36.370
+Man könnte sagen: Aber gut, zumindest mit
+Java-Iteratoren könnte man das umgehen, und dann
+
+0:10:36.370,0:10:38.390
+sähe es nicht
+nach Array-Indizierung aus.
+
+0:10:38.390,0:10:45.950
+Aber selbst dann wären diese beiden
+Codestücke, oder ähnliche Codestücke, nicht gleichwertig.
+
+0:10:45.950,0:10:51.250
+Und selbst wenn man spezielle Situationen hat, in
+denen sich das f sehr gut verhält (es macht
+
+0:10:51.250,0:10:57.820
+keine Schreib- oder Lesevorgänge oder was auch
+immer, es ändert keine Variablenwerte), selbst dann
+
+0:10:57.820,0:11:00.880
+ist das schwieriger zu
+handhaben als eine Gleichung.
+
+0:11:00.880,0:11:06.790
+Wir können die Gleichung aus der vorherigen Folie
+in diese allgemeinere Version umwandeln, bei der das
+
+0:11:06.790,0:11:09.550
+"reverse" auf die
+andere Seite wechselt.
+
+0:11:09.550,0:11:11.460
+Das macht diese
+beiden Ausdrücke symmetrischer.
+
+0:11:11.460,0:11:16.510
+Und natürlich gilt das
+nicht nur für Nummerierungs-Listen.
+
+0:11:16.510,0:11:23.380
+Wir können beliebige Listen nehmen, und diese Eigenschaft
+gilt immer noch für jedes f und jede
+
+0:11:23.380,0:11:29.930
+Liste, die wir haben, und sogar für
+eine ganze Klasse von Funktionen anstelle dieses "reverse".
+
+0:11:29.930,0:11:35.690
+Und sie kann direkt zur Manipulation
+von Programmen durch algebraische Transformationen verwendet
+
+0:11:35.690,0:11:39.620
+werden, so wie wir es in der
+Vorlesung schon bei anderen Gesetzen gesehen haben.
+
+0:11:39.620,0:11:47.370
+Das ist also das, was Richard in
+dem anderen Zitat als gesetzmäßige Programmkonstruktion bezeichnet hat.
+
+0:11:47.370,0:11:52.080
+Über Gesetze nachzudenken, denen die
+Funktionen in unseren Programmen genügen.
+
+0:11:52.080,0:11:54.330
+Sie könnten auch
+für QuickCheck-Tests verwendet werden.
+
+0:11:54.330,0:11:55.770
+Dort sind wir
+auch an Eigenschaften interessiert.
+
+0:11:55.770,0:11:59.750
+Und dies könnte eine Eigenschaft sein,
+die in diesem Zusammenhang von Interesse ist.
+
+0:11:59.750,0:12:06.870
+Außerdem ist diese Eigenschaft tatsächlich
+wieder für das "isPalindrome"-Beispiel relevant.
+
+0:12:06.870,0:12:13.949
+Wahrscheinlich haben viele von Ihnen eine Lösung
+für "isPalindrome" (zusammen mit Klein-/Großbuchstaben), die irgendwie so
+
+0:12:13.949,0:12:19.170
+etwas wie ein "reverse" einer Liste nutzt,
+bei der jedes Element aus einem String
+
+0:12:19.170,0:12:24.430
+an die toUpper-
+oder toLower-Funktion gegeben wurde.
+
+0:12:24.430,0:12:27.230
+Und wenn Sie dann so etwas sehen,
+können Sie es durch das hier ersetzen.
+
+0:12:27.230,0:12:30.720
+Und vielleicht macht das die Gesamtberechnung
+effizienter, denn dann können Sie einen Teil
+
+0:12:30.720,0:12:32.120
+der Berechnung
+ändern oder einsparen.
+
+0:12:32.120,0:12:33.510
+Oder vielleicht ist
+es auch andersherum.
+
+0:12:33.510,0:12:38.650
+Vielleicht haben Sie die zweite Zeile in
+Ihrem Code, und wenn Sie das "reverse" außerhalb
+
+0:12:38.650,0:12:45.300
+dieser Liste verschieben, erkennen Sie, dass
+Sie diesen Ausdruck als gemeinsamen Unterausdruck mit
+
+0:12:45.300,0:12:48.110
+einem anderen Teil
+Ihrer Funktionsdefinition sharen können.
+
+0:12:48.110,0:12:53.250
+Und dann haben Sie plötzlich ein effizienteres
+Programm, bei dem Sie eine Liste nicht
+
+0:12:53.250,0:12:55.900
+zweimal mit toUpper
+oder toLower durchlaufen müssen.
+
+0:12:55.900,0:12:58.960
+Das ist also ein Vorteil, wenn
+man Gesetze wie diese zur Verfügung hat.
+
+0:12:58.960,0:13:08.980
+Und er kommt daher,
+wie wir unsere Berechnungen ausdrücken.
+
+0:13:08.980,0:13:15.610
+Um diesen Punkt zu verdeutlichen, lassen Sie uns
+ein anderes Beispiel betrachten, das etwas künstlich ist.
+
+0:13:15.610,0:13:21.120
+Nehmen wir an, wir wollen jedes Element
+eines Arrays oder einer Liste mit seiner Position
+
+0:13:21.120,0:13:25.160
+in dieser Struktur multiplizieren
+und alle resultierenden Werte zusammenzählen.
+
+0:13:25.160,0:13:26.520
+Das ist ein
+ganz einfaches Problem.
+
+0:13:26.520,0:13:35.190
+In jeder imperativen Sprache, die Sie kennen,
+würden Sie es oft auf ähnliche Weise
+
+0:13:35.190,0:13:36.190
+lösen
+wie dies.
+
+0:13:36.190,0:13:40.470
+Wir brauchen also ein paar Deklarationen, aber
+die sind hier nicht wirklich das Problem.
+
+0:13:40.470,0:13:45.970
+Natürlich müssen wir uns darüber im Klaren sein,
+wie wir die Ergebnisberechnung starten, wie wir diese
+
+0:13:45.970,0:13:46.970
+initialisieren,
+usw.
+
+0:13:46.970,0:13:47.970
+Aber das ist
+hier nicht der Punkt.
+
+0:13:47.970,0:13:50.839
+Der Punkt ist, dass wir
+dann durch diese Schleife gehen.
+
+0:13:50.839,0:13:56.730
+Wir müssen also sicherstellen, wo wir beginnen, wir
+müssen eine Endbedingung haben, wir müssen inkrementieren, und
+
+0:13:56.730,0:14:03.690
+dann haben wir unsere Berechnung, die
+wir in jeder Iteration der Schleife durchführen.
+
+0:14:03.690,0:14:05.560
+Und das sieht
+ungefähr richtig aus.
+
+0:14:05.560,0:14:10.720
+Das ist ein gültiges Programm, um
+das zu berechnen, was oben geschrieben steht.
+
+0:14:10.720,0:14:16.740
+Aber man könnte sagen, und sollte wohl
+auch zugeben, dass dies unter dem Indexitis-Problem leidet.
+
+0:14:16.740,0:14:18.420
+Wie äußert
+sich das hier?
+
+0:14:18.420,0:14:25.529
+Zum Beispiel müssen wir im Voraus wissen,
+wie Array-Indizes in der Sprache gezählt werden.
+
+0:14:25.529,0:14:31.779
+Wir könnten also leicht einen "off-by-one"-Fehler machen, wenn
+wir vergessen, dass wir bei null anfangen müssen
+
+0:14:31.779,0:14:32.779
+zu
+zählen.
+
+0:14:32.779,0:14:35.700
+Wir müssen sicherstellen, dass
+wir hier inkrementieren statt dekrementieren.
+
+0:14:35.700,0:14:40.870
+Wir müssen sicherstellen, dass wir hier die richtige
+Endbedingung haben, dass wir prüfen, dass i kleiner als
+
+0:14:40.870,0:14:44.650
+n ist, und nicht zum Beispiel, dass i
+gleich n ist, oder kleiner-gleich n, oder etwas
+
+0:14:44.650,0:14:45.650
+in
+der Art.
+
+0:14:45.650,0:14:50.120
+Tatsächlich gibt es hier also mindestens drei
+Stellen, an denen wir einen Fehler machen könnten.
+
+0:14:50.120,0:14:53.860
+Wir könnten hier einen Fehler machen,
+indem wir mit dem falschen Startindex beginnen.
+
+0:14:53.860,0:14:58.880
+Wir könnten hier einen Fehler machen, indem wir uns
+um 1 vertun, anstatt mit n zu vergleichen, indem
+
+0:14:58.880,0:15:01.350
+wir z.B. mit n -
+1 oder n + 1 vergleichen.
+
+0:15:01.350,0:15:05.760
+Und auch hier gibt es das Problem, dass
+wir sicherstellen müssen, dass wir die richtige Vorstellung davon
+
+0:15:05.760,0:15:07.450
+haben, wie
+Arrays gezählt werden.
+
+0:15:07.450,0:15:11.900
+Ist also der erste Eintrag 0,
+oder ist der erste Eintrag 1?
+
+0:15:11.900,0:15:15.970
+Wie machen wir hier
+also den richtigen Index-Zugriff?
+
+0:15:15.970,0:15:24.260
+Das liegt daran, dass diese Lösung auf Indexzugriff
+und Schleifenbildung basiert, und zwar auf diese explizite
+
+0:15:24.260,0:15:28.570
+
+Weise.
+
+0:15:28.570,0:15:33.030
+Schauen wir uns im Gegensatz dazu an, wie
+das gleiche Problem in Haskell gelöst werden könnte.
+
+0:15:33.030,0:15:39.800
+In Haskell könnten wir natürlich auch eine
+rekursive Funktion schreiben, die im Wesentlichen die
+
+0:15:39.800,0:15:44.399
+gleiche Art von Iteration durchführt wie
+die for-Schleife in der vorherigen Folie.
+
+0:15:44.399,0:15:48.589
+Aber tatsächlich würde ich dies als Lösung für dieses
+Problem in einer eher ganzheitlichen Art und Weise, diesem
+
+0:15:48.589,0:15:52.089
+Geiste,
+vorschlagen.
+
+0:15:52.089,0:15:55.029
+Ich würde argumentieren, dass dies
+sehr schön, kurz und deklarativ ist.
+
+0:15:55.029,0:15:58.390
+Es drückt genau das
+aus, was wir tun wollen.
+
+0:15:58.390,0:15:59.600
+Es nimmt
+diese Liste.
+
+0:15:59.600,0:16:05.000
+Es sagt, dass wir im Grunde
+jedes Listenelement mit aufeinanderfolgenden Zahlen kombinieren wollen.
+
+0:16:05.000,0:16:10.360
+Wir können das ausdrücken, indem wir sagen: Lasst
+uns das mit 0, 1, 2, ([0..]) paaren.
+
+0:16:10.360,0:16:15.340
+Dann nimmt es alle diese Paare, die
+es gebildet hat, und berechnet die Multiplikation,
+
+0:16:15.340,0:16:17.040
+und dann
+wird das aufsummiert.
+
+0:16:17.040,0:16:24.470
+Kürzer und deklarativer kann man es
+nicht machen, um in einem Rutsch auszudrücken,
+
+0:16:24.470,0:16:26.690
+was
+hier passiert.
+
+0:16:26.690,0:16:29.300
+Beachten Sie den Unterschied
+im Ansatz zur vorherigen Lösung.
+
+0:16:29.300,0:16:34.220
+Es gibt keine Ergebnisvariable, die irgendwie
+immer wieder in einer Schleife überschrieben wird.
+
+0:16:34.220,0:16:37.680
+Wir brauchen keine
+explizite Endbedingung zu haben.
+
+0:16:37.680,0:16:41.870
+Es gibt nicht einmal einen Verweis
+auf die Länge der Liste (n).
+
+0:16:41.870,0:16:47.149
+Das wird hier einfach nicht benötigt, denn
+das "zip" wird einfach so viele Elemente aus
+
+0:16:47.149,0:16:51.510
+dieser unendlichen Liste abarbeiten, wie nötig
+sind, um genügend Zahlen zu haben.
+
+0:16:51.510,0:16:56.880
+Es gibt also keinen Vergleich gegen einen Endwert,
+wie n oder n - 1 oder so etwas.
+
+0:16:56.880,0:17:01.130
+Wir können auf diese Weise
+auch keine wirklichen Fehler machen.
+
+0:17:01.130,0:17:03.010
+Es handelt sich nur um
+einen Ausdruck, der etwas errechnet.
+
+0:17:03.010,0:17:09.069
+Es gibt keine Schleife mit
+einer Schleifenbedingung, kein Überschreiben der Ergebnisvariablen
+
+0:17:09.069,0:17:10.069
+oder
+ähnliches.
+
+0:17:10.069,0:17:16.360
+Bei diesem zip-Trick ist es auch sehr interessant,
+dass wir nicht im Voraus wissen müssen, wie
+
+0:17:16.360,0:17:18.270
+viele Werte
+wir benötigen werden.
+
+0:17:18.270,0:17:23.179
+Denn es werden einfach so viele aus dieser
+unendlichen Liste verbraucht, wie für unsere gegebene endliche Liste
+
+0:17:23.179,0:17:28.020
+benötigt werden (unter der Annahme,
+dass diese Liste endlich ist).
+
+0:17:28.020,0:17:34.679
+Sie könnten natürlich argumentieren, dass dies geschummelt ist,
+weil ich hier die Funktion "sum" verwendet habe.
+
+0:17:34.679,0:17:39.600
+Also, vielleicht ist das nur kurz, weil
+ich die "sum"-Funktion verwendet habe, anstatt diese
+
+0:17:39.600,0:17:41.390
+wiederholte Akkumulation
+der Addition.
+
+0:17:41.390,0:17:46.110
+Aber ich würde argumentieren, dass
+dies nicht wirklich der Punkt ist.
+
+0:17:46.110,0:17:51.160
+Einerseits ist es eine Komfortfunktion, aber auch
+ohne diese zur Verfügung zu haben oder von
+
+0:17:51.160,0:17:55.800
+jemand anderem programmiert, wären es nur
+ein paar Tastenanschläge gewesen, um die Summation
+
+0:17:55.800,0:17:56.800
+
+auszudrücken.
+
+0:17:56.800,0:17:59.800
+Also, auch wenn wir die Funktion "sum" nicht haben,
+können wir das mit vielleicht zehn weiteren Tastenanschlägen schreiben.
+
+0:17:59.800,0:18:04.280
+Wir können die Summierung auch mit einer Funktion höherer
+Ordnung (siehe später) ausdrücken, und wir würden immer noch diesen
+
+0:18:04.280,0:18:07.660
+schönen deklarativen
+Ausdruck erhalten.
+
+0:18:07.660,0:18:14.030
+Und auch wenn Sie sich in der
+C-, Python- oder Java-Version irgendwie erlauben würden,
+
+0:18:14.030,0:18:18.340
+eine bequeme Array-Summenfunktion zu verwenden, hätte
+dies das Programm von der vorherigen
+
+0:18:18.340,0:18:22.340
+Folie nicht wirklich deklarativer
+oder angenehmer zu handhaben gemacht.
+
+0:18:22.340,0:18:28.430
+Wenn Sie sich also tatsächlich hinsetzen und versuchen, darüber
+nachzudenken, wie Sie die auf einer for-Schleife basierende Version
+
+0:18:28.430,0:18:32.100
+mit einer Hilfsfunktion für die Summierung
+programmieren würden, dann müssen Sie nachdenken:
+
+0:18:32.100,0:18:34.670
+Was mache ich
+mit den Array-Elementen?
+
+0:18:34.670,0:18:35.670
+Wo speichere
+ich sie?
+
+0:18:35.670,0:18:39.900
+Überschreibe ich mein ursprüngliches Array, sodass ich
+dann die Summenfunktion auf diesem Array aufrufen kann
+
+0:18:39.900,0:18:42.230
+(aber dann habe
+ich meine Eingabedaten zerstört)?
+
+0:18:42.230,0:18:48.670
+Oder führe ich ein Hilfsarray ein, in
+dem ich zuerst alle Multiplikationen speichere und
+
+0:18:48.670,0:18:53.970
+dann meine Summenfunktion auf dieses Hilfsarray anwende,
+und dann muss ich es wieder verwerfen?
+
+0:18:53.970,0:19:02.070
+Solche Dinge tauchen in diesem stückweisen Ansatz
+mit Schleifen auf, während wir hier einfach einen
+
+0:19:02.070,0:19:12.600
+Ausdruck haben, der alles sagt, was
+es zu diesem Problem zu sagen gibt.
+
+0:19:12.600,0:19:18.010
+Wenn also das Vorhandensein oder Nichtvorhandensein der Summenfunktion nicht
+das ist, was die beiden Fälle, die Haskell-Version und
+
+0:19:18.010,0:19:23.780
+die imperative Version, wirklich unterscheidet, dann lassen
+Sie uns diskutieren, was die eigentlichen Aspekte
+
+0:19:23.780,0:19:24.990
+hier
+sind.
+
+0:19:24.990,0:19:30.340
+Es geht hauptsächlich um die Ausdruckskraft und die
+Empfänglichkeit für Änderungen und Refactoring, also wie einfach es
+
+0:19:30.340,0:19:33.980
+ist, diesen Code zu
+pflegen oder zu ändern.
+
+0:19:33.980,0:19:39.290
+Nehmen wir an, wir haben beschlossen, dass die Zählung
+der Positionen eigentlich bei 1 statt bei 0 beginnen
+
+0:19:39.290,0:19:40.290
+
+sollte.
+
+0:19:40.290,0:19:43.809
+Wir haben wieder die gleiche Berechnung, aber jetzt
+wollen wir tatsächlich, dass das erste Element mit 1
+
+0:19:43.809,0:19:44.809
+multipliziert
+wird.
+
+0:19:44.809,0:19:49.580
+Das ließe sich sicherlich sowohl für die
+imperative als auch für die Haskell-Version machen.
+
+0:19:49.580,0:19:52.650
+Schauen wir uns
+die C-ähnliche Version an.
+
+0:19:52.650,0:19:58.240
+Dort hatten wir vorher diese Schleife, und jetzt
+könnten wir eigentlich diese Änderung vornehmen, indem wir sagen:
+
+0:19:58.240,0:20:04.720
+Also, wir fangen tatsächlich bei
+1 mit unserer Indexvariablen an.
+
+0:20:04.720,0:20:09.100
+Das bedeutet aber auch, dass wir darauf achten müssen,
+dass wir nicht bis unter n zählen, sondern tatsächlich
+
+0:20:09.100,0:20:10.100
+bis
+n.
+
+0:20:10.100,0:20:13.059
+Sonst würden wir einen
+Schritt zu früh aufhören.
+
+0:20:13.059,0:20:17.730
+Und wir müssen sicherstellen, dass wir beim Zugriff
+auf unsere Arrays, da sich deren Nummerierungsschema nicht geändert
+
+0:20:17.730,0:20:22.100
+hat (nur weil ich die erste Multiplikation
+mit 1 statt mit 0 berechnen will,
+
+0:20:22.100,0:20:26.970
+heißt das nicht, dass C irgendwie beschlossen
+hat, dass es den Zugriff auf Arrays ändern
+
+0:20:26.970,0:20:33.360
+wird), während ich mit 1 multipliziere, immer noch
+auf das Arrayelement an Position 0 zugreifen muss.
+
+0:20:33.360,0:20:37.080
+Um diese Änderung vorzunehmen, musste ich also
+tatsächlich 3 Stellen in diesem Code ändern.
+
+0:20:37.080,0:20:42.010
+Man könnte es auch anders machen,
+aber auch dann gibt es dieses Fehlerpotential.
+
+0:20:42.010,0:20:45.190
+Es gibt mehrere Stellen, an
+denen ich einen Fehler machen kann.
+
+0:20:45.190,0:20:47.080
+Ich muss entscheiden,
+wo fange ich an?
+
+0:20:47.080,0:20:48.340
+Wo höre
+ich auf?
+
+0:20:48.340,0:20:52.230
+Wie greife ich auf
+die Elemente der Datenstruktur zu?
+
+0:20:52.230,0:20:58.910
+Es gibt also mehrere Stellen, an
+denen ich einen Fehler machen kann.
+
+0:20:58.910,0:21:06.010
+Und alles muss zusammenpassen, um wirklich
+auszudrücken, was ich hier an meiner
+
+0:21:06.010,0:21:11.400
+Berechnung
+ändern wollte.
+
+0:21:11.400,0:21:17.230
+Im Gegensatz dazu, in der Haskell-Version, wenn
+ich diese Änderung machen will, ich will das
+
+0:21:17.230,0:21:20.640
+erste Element mit 1 statt mit
+0 multiplizieren, was ändere ich dann?
+
+0:21:20.640,0:21:23.799
+Ich ändere eine
+0 in eine 1.
+
+0:21:23.799,0:21:28.260
+Das ist alles, was ich tun
+muss, um diese gewünschte Änderung auszudrücken.
+
+0:21:28.260,0:21:33.330
+Ich muss mir keine Gedanken über die
+Schleifenendbedingung machen, weil es keine Schleifenendbedingung gibt.
+
+0:21:33.330,0:21:36.280
+Und dann habe ich über n oder
+n - 1 oder n + 1 gesprochen.
+
+0:21:36.280,0:21:37.850
+Auch darüber muss
+ich hier nicht reden.
+
+0:21:37.850,0:21:40.200
+Ich nehme nur die
+Änderung vor, die relevant ist.
+
+0:21:40.200,0:21:47.540
+Ich muss auch nicht darüber nachdenken, wie meine Liste
+indiziert ist (wie greife ich auf das nullte, oder erste
+
+0:21:47.540,0:21:49.640
+oder zweite Element zu?),
+denn es gibt keine Indizierung.
+
+0:21:49.640,0:21:54.510
+Da ich auf die Elemente dieser Liste
+nicht per Index zugreife, muss ich daran auch
+
+0:21:54.510,0:21:55.510
+nichts
+ändern.
+
+0:21:55.510,0:21:58.010
+In diesem Sinne ist dies die
+minimale Änderung, und die gewünschte Änderung.
+
+0:21:58.010,0:21:59.640
+Es sollten keine
+weiteren Änderungen nötig sein.
+
+0:21:59.640,0:22:07.470
+In diesem Sinne könnte man sagen, dass dies
+ein wartungsfreundlicheres Programm ist, weil wir die gewünschten Änderungen
+
+0:22:07.470,0:22:11.100
+an einer lokalen
+Stelle vornehmen können.
+
+0:22:11.100,0:22:16.150
+Natürlich will ich nicht schwindeln; man könnte argumentieren,
+dass man bei der C-Version die Änderung auch
+
+0:22:16.150,0:22:18.679
+durch eine kleinere
+Bearbeitung hätte vornehmen können.
+
+0:22:18.679,0:22:24.770
+Man könnte sagen: Auch in der C-Version hätte ich das,
+was ich auf der vorherigen Folie gemacht habe, nicht tun müssen.
+
+0:22:24.770,0:22:28.270
+Ich hätte stattdessen die
+Multiplikation hier unten ändern können.
+
+0:22:28.270,0:22:39.260
+Also, den Array-Anfang und das Array-Ende so lassen,
+wie sie waren, und einfach irgendwie diesen Multiplikator hier
+
+0:22:39.260,0:22:40.260
+
+ändern.
+
+0:22:40.260,0:22:44.860
+Und zufälligerweise hätte das
+auch zu demselben Verhalten geführt.
+
+0:22:44.860,0:22:47.480
+Aber ich würde argumentieren, es ist
+nur Indexitis in einer anderen Form.
+
+0:22:47.480,0:22:51.480
+Also, ich muss noch die Stelle
+finden, wo ich diese Änderung vornehmen kann.
+
+0:22:51.480,0:22:56.590
+Es ist irgendwie seltsam, dass ich jetzt denken
+muss, dass ich das (i+1)-te Ding mit dem Array
+
+0:22:56.590,0:22:57.790
+bei Index
+i multipliziere.
+
+0:22:57.790,0:23:01.880
+Ich muss aufpassen, dass ich
+hier nicht einen "off-by-one"-Fehler mache.
+
+0:23:01.880,0:23:12.520
+Ich habe es vermieden, den Iterationskopf der Schleife
+hier zu ändern, aber es ist nicht wirklich schön,
+
+0:23:12.520,0:23:16.980
+dass ich diese seltsamen Unterschiede habe,
+was ich mit welchem Arrayelement multipliziere.
+
+0:23:16.980,0:23:23.590
+Also ich könnte diese Änderung als besser
+ansehen als die auf der vorherigen Folie.
+
+0:23:23.590,0:23:28.790
+Aber schon allein die Tatsache, dass es diese
+zwei getrennten Änderungen *gibt*, die zum gewünschten Verhalten
+
+0:23:28.790,0:23:34.160
+führen, könnte auch als
+Grund zur Sorge gesehen werden.
+
+0:23:34.160,0:23:37.120
+Ich möchte ändern, wo
+ich meine Multiplikation beginne.
+
+0:23:37.120,0:23:41.100
+In der Haskell-Version gibt es genau eine Stelle, an
+der ich diese Änderung vornehme, und sie drückt alles
+
+0:23:41.100,0:23:42.440
+aus, was
+es auszudrücken gibt.
+
+0:23:42.440,0:23:47.100
+In der C-Version gibt es mehrere Möglichkeiten, dies
+zu tun, und jede dieser Möglichkeiten birgt das Potenzial,
+
+0:23:47.100,0:23:54.179
+Fehler zu machen, indem ich nicht alle 3
+Stellen ändere, oder nur die falsche Stelle, an
+
+0:23:54.179,0:23:55.980
+der eine Änderung
+vorgenommen werden könnte.
+
+0:23:55.980,0:24:02.870
+Das erfordert sicherlich mehr Nachdenken seitens
+des Programmierers als diese sehr deklarative Art,
+
+0:24:02.870,0:24:07.620
+bei der wir genau eine Stelle
+haben, die einen Unterschied zwischen den
+
+0:24:07.620,0:24:12.320
+beiden Versionen
+des Programms macht.
+
+0:24:12.320,0:24:18.980
+Warum also muss die C-Version
+all diese bürokratischen Entscheidungen treffen?
+
+0:24:18.980,0:24:24.860
+Entscheidungen, die aus algorithmischer Sicht nicht
+wirklich von Bedeutung sind, aber einfach
+
+0:24:24.860,0:24:28.230
+da sind, weil Sie sicherstellen müssen, dass
+Sie alles richtig machen, was den Schleifenstart, das
+
+0:24:28.230,0:24:31.090
+Schleifenende und die
+Array-Indizierung usw. betrifft.
+
+0:24:31.090,0:24:32.090
+Warum ist
+das so?
+
+0:24:32.090,0:24:37.181
+Nun, konzeptionell liegt es daran, dass es in
+der C-Version keine Trennung zwischen den Werten, die
+
+0:24:37.181,0:24:40.580
+Sie aufzählen und verarbeiten wollen, auf der einen
+Seite und der Schleifensteuerung auf der anderen Seite gibt.
+
+0:24:40.580,0:24:42.130
+Es ist alles
+ein großes Durcheinander.
+
+0:24:42.130,0:24:48.160
+In diesem Beispiel ist es noch kein *großes*
+Durcheinander, sondern Dinge, die synchronisiert gehalten werden müssen.
+
+0:24:48.160,0:24:52.570
+In größeren Beispielen kann es wirklich zu einem
+großen Durcheinander werden, sich mit all diesen Aspekten auf
+
+0:24:52.570,0:24:55.540
+einmal zu beschäftigen, weil es
+keine Trennung dieser Belange gibt.
+
+0:24:55.540,0:24:59.309
+Im Gegensatz dazu haben wir
+in der Haskell-Version diese perfekte Trennung.
+
+0:24:59.309,0:25:05.660
+Sie ergibt sich in diesem
+speziellen Beispiel tatsächlich aus diesem Ausdruck.
+
+0:25:05.660,0:25:12.679
+Wir drücken aus, dass wir die Dinge, die
+aus welcher Liste auch immer hier kommen, mit
+
+0:25:12.679,0:25:20.429
+Werten ab k und wie weit wir auch immer
+gehen müssen, bis wir alle Werte verarbeitet haben, kombinieren wollen.
+
+0:25:20.429,0:25:24.470
+Hier befindet sich gewissermaßen
+die Schleifensteuerung, wenn Sie wollen.
+
+0:25:24.470,0:25:25.720
+Aber es *gibt*
+keine explizite Schleifensteuerung.
+
+0:25:25.720,0:25:29.200
+Man drückt einfach aus,
+was berechnet werden soll.
+
+0:25:29.200,0:25:34.260
+Ganz grundsätzlich braucht diese
+Haskell-Version keine explizite Schleifenkontrolle.
+
+0:25:34.260,0:25:36.740
+Sie greift nicht per
+Index auf Datenstrukturelemente zu.
+
+0:25:36.740,0:25:41.440
+Das ist wieder der Punkt, den ich jetzt
+schon mehrfach gemacht habe, dass man in Haskell die
+
+0:25:41.440,0:25:46.680
+Verwendung von Indexierungsoperatoren fast
+immer vermeiden sollte und kann.
+
+0:25:46.680,0:25:50.510
+Denn so denkt man in Haskell
+nicht über Datenstrukturen nach (durch stückweisen Zugriff
+
+0:25:50.510,0:25:51.660
+auf
+einzelne Elemente).
+
+0:25:51.660,0:25:56.070
+Man denkt über Datenstrukturen als Ganzes nach,
+und die Operation, die auf der Datenstruktur
+
+0:25:56.070,0:25:57.750
+als
+Ganzes passiert.
+
+0:25:57.750,0:26:00.200
+Wir brauchen also den
+Schleifenzähler nicht zu inkrementieren.
+
+0:26:00.200,0:26:04.570
+Wir brauchen in der Haskell-Version nicht über
+die Schleifenendbedingung zu sprechen, einfach wegen dieser
+
+0:26:04.570,0:26:10.360
+Ausdruckskraft, die gerade in
+diesem Fall unendliche Listen haben.
+
+0:26:10.360,0:26:16.830
+Das ist der Punkt, dass wir hier
+eine unendliche Liste im Grunde als Strukturierungswerkzeug verwenden
+
+0:26:16.830,0:26:22.070
+können, und trotzdem werden nur genau so
+viele Elemente aus dieser Liste berechnet, wie benötigt
+
+0:26:22.070,0:26:23.070
+
+werden.
+
+0:26:23.070,0:26:28.419
+Das ist also gewissermaßen eine Aufgabe, die
+der Auswertungsmechanismus der Sprache für uns übernimmt.
+
+0:26:28.419,0:26:30.920
+Wir müssen uns als
+Programmierer darüber keine Gedanken machen.
+
+0:26:30.920,0:26:35.930
+Das ist es, was uns hier hilft
+und all diese bürokratischen Entscheidungen, die die C-Version
+
+0:26:35.930,0:26:36.930
+treffen
+muss, vermeidet:
+
+0:26:36.930,0:26:37.930
+Wo fange ich
+mit dem Zählen an?
+
+0:26:37.930,0:26:39.130
+Wie
+wird inkrementiert?
+
+0:26:39.130,0:26:40.299
+Wo beende
+ich die Zählung?
+
+0:26:40.299,0:26:43.900
+Bin ich sicher, dass ich genau so
+viele Iterationen gemacht habe, wie ich brauche?
+
+0:26:43.900,0:26:45.030
+Oder eine
+zu viel?
+
+0:26:45.030,0:26:46.030
+Eine
+zu wenig?
+
+0:26:46.030,0:26:48.660
+Wie greife ich auf
+Elemente per Index zu?
+
+0:26:48.660,0:26:55.380
+All diese Dinge verschwinden, wenn wir
+die Lösung auf diese deklarativere Weise ausdrücken.
+
+0:26:55.380,0:27:03.040
+Jetzt könnten Sie denken, dass
+das alles nur Propaganda ist.
+
+0:27:03.040,0:27:04.540
+Zumindest könnten
+Sie misstrauisch werden.
+
+0:27:04.540,0:27:07.650
+Vielleicht mache ich mir
+etwas über die Effizienz vor.
+
+0:27:07.650,0:27:14.240
+Sicherlich könnten Sie denken, dass der
+C-Code effizienter ist als mein deklarativer Code.
+
+0:27:14.240,0:27:22.400
+Es scheint eine vernünftige Sache zu sein, anzunehmen,
+dass wir zum Beispiel hier wahrscheinlich diese zusätzliche
+
+0:27:22.400,0:27:23.400
+Liste
+berechnen.
+
+0:27:23.400,0:27:27.510
+Das braucht also zusätzlichen Speicher, und
+dann durchlaufen wir die Daten mehrfach.
+
+0:27:27.510,0:27:32.470
+Selbst als ich die C-Version mit dieser
+Hilfsfunktion "sum" besprochen habe, habe ich erwähnt,
+
+0:27:32.470,0:27:36.760
+dass wir wahrscheinlich entweder unser erstes
+Array überschreiben oder ein Hilfsarray erstellen wollen.
+
+0:27:36.760,0:27:39.510
+In der Haskell-Version haben
+wir natürlich auch diese Aspekte.
+
+0:27:39.510,0:27:42.730
+Das ist also
+vermutlich weniger effizient.
+
+0:27:42.730,0:27:47.920
+Wir sollten uns also nicht für diese deklarative Version
+entscheiden, so nett ich sie Ihnen auch zu verkaufen versuche.
+
+0:27:47.920,0:27:52.520
+Denn dieses Programm ist einfach effizienter, weil
+es eine sehr enge Schleife macht und genau
+
+0:27:52.520,0:27:55.210
+das tut,
+was nötig ist.
+
+0:27:55.210,0:27:58.390
+Vielleicht ist es nicht schön ausgedrückt, weil
+ich an all diesen Stellen Fehler machen kann,
+
+0:27:58.390,0:28:00.650
+aber zumindest tut es
+das auf eine effiziente Weise.
+
+0:28:00.650,0:28:06.049
+Das könnte also Ihr Gegenargument dafür sein, überhaupt
+zu versuchen, ein Programm wie dieses zu schreiben,
+
+0:28:06.049,0:28:11.840
+wo alles besser wartbar ist, weil
+wir eine klarere Trennung der Belange haben.
+
+0:28:11.840,0:28:19.300
+Das könnte eine Sorge sein,
+die Sie an diesem Punkt haben.
+
+0:28:19.300,0:28:21.970
+Nun,
+eigentlich nicht.
+
+0:28:21.970,0:28:25.070
+Das mag als berechtigte Sorge erscheinen,
+aber sie trifft nicht wirklich zu.
+
+0:28:25.070,0:28:26.750
+Wir haben
+ja Compiler.
+
+0:28:26.750,0:28:32.330
+Und Compiler können deklarativen Code, wie Sie ihn
+gerade gesehen haben, sehr gut in eine enge
+
+0:28:32.330,0:28:36.480
+C-ähnliche Schleife übersetzen, ohne
+dass dazwischenliegende Datenstrukturen verwendet werden.
+
+0:28:36.480,0:28:38.650
+Das ist also
+nicht wirklich ein Problem.
+
+0:28:38.650,0:28:45.039
+Natürlich könnte das Programm am Ende immer
+noch weniger effizient sein als ein handgeschriebenes
+
+0:28:45.039,0:28:50.160
+C-Programm, aber das
+macht keine Größenordnungen aus.
+
+0:28:50.160,0:28:54.440
+Zum Beispiel kann der
+Compiler sogar Parallelisierungsmöglichkeiten erkennen.
+
+0:28:54.440,0:28:58.789
+Dank des Aspekts der unabhängigen Werte, den
+wir beim Vergleich von List Comprehensions mit
+
+0:28:58.789,0:29:04.360
+for-Schleifen besprochen haben, ist es (in einem Programm,
+wie wir gerade gesehen haben) einfacher, Stellen zu erkennen,
+
+0:29:04.360,0:29:09.250
+an denen eine Parallelisierung stattfinden könnte;
+viel einfacher als z.B. in einem C-Programm.
+
+0:29:09.250,0:29:15.450
+Das alles hat auch mit dem Aspekt der
+gesetzmäßigen Programmkonstruktion aus dem Zitat von Richard zu tun.
+
+0:29:15.450,0:29:18.330
+Die Tatsache, dass wir Gesetze über unsere Programme
+haben, kann also auch von einem Compiler ausgenutzt werden.
+
+0:29:18.330,0:29:24.860
+Der Compiler kann Gesetze anwenden,
+um Ineffizienzen zu beseitigen, Datenstruktur-Traversierungen, Datenstrukturen
+
+0:29:24.860,0:29:25.860
+
+selbst.
+
+0:29:25.860,0:29:27.090
+Das ist genau
+das, was GHC macht.
+
+0:29:27.090,0:29:33.450
+GHC führt zwar nicht von sich
+aus Parallelität ein, aber achtet zum Beispiel
+
+0:29:33.450,0:29:38.320
+sehr auf die Traversierung von
+Datenstrukturen und kann viele davon eliminieren.
+
+0:29:38.320,0:29:45.809
+Als Programmierer können wir es uns also tatsächlich
+leisten, schöne deklarative Ausdrücke zu schreiben, weil wir
+
+0:29:45.809,0:29:50.610
+uns auf den Compiler verlassen,
+dass er unsere Programme optimiert.
+
+0:29:50.610,0:29:56.160
+Und der Compiler kann eine Menge Optimierungen durchführen,
+wegen der Gesetze, die für unsere Programme gelten,
+
+0:29:56.160,0:29:57.650
+und wegen
+der Purheit.
+
+0:29:57.650,0:30:02.250
+Alles ist standardmäßig pur, anders als in
+C, wo wir zusätzliche Annotationen benötigen würden,
+
+0:30:02.250,0:30:07.820
+und selbst dann kann der Compiler nicht
+so viele Änderungen am Code vornehmen, wie er
+
+0:30:07.820,0:30:11.120
+aus einer, sozusagen,
+eher algorithmischen Perspektive möchte.
+
+0:30:11.120,0:30:16.900
+In einer funktionalen Sprache ist also viel
+mehr Transformation von Programmen auf automatische Weise möglich,
+
+0:30:16.900,0:30:27.340
+weil es mehr semantisches Wissen über die
+Programme gibt als in einer imperativen Sprache.
+
+0:30:27.340,0:30:28.809
+Wir könnten auch
+mehr über Refactoring sprechen.
+
+0:30:28.809,0:30:31.380
+Das möchte ich an
+dieser Stelle aber nicht tun.
+
+0:30:31.380,0:30:36.120
+Das war ein Exkurs
+in dieses Thema der Wholemeal-Programmierung.
+
+0:30:36.120,0:30:43.240
+Ich möchte also nicht zu viel
+Zeit der Vorlesungszeit dieser Woche darauf verwenden.
+
+0:30:43.240,0:30:49.129
+Außerdem könnten Sie natürlich argumentieren oder sich
+fragen, warum ich dieses künstliche Beispiel gemacht habe.
+
+0:30:49.129,0:30:50.820
+Natürlich um
+der Präsentation willen.
+
+0:30:50.820,0:30:53.789
+Ist dies also wirklich
+repräsentativ für reale Situationen?
+
+0:30:53.789,0:30:55.650
+Meine uneingeschränkte
+Behauptung ist: Ja!
+
+0:30:55.650,0:30:58.360
+Das kann ich Ihnen
+in dieser Vorlesung nicht beweisen.
+
+0:30:58.360,0:31:03.270
+Aber das ist die Erfahrung, die
+man macht, wenn man deklarativ programmiert.
+
+0:31:03.270,0:31:04.410
+Also, das
+ist wirklich repräsentativ.
+
+0:31:04.410,0:31:08.210
+Es ist nicht nur etwas, das
+in diesem kleinen Beispiel passiert ist.
+
+0:31:08.210,0:31:09.850
+Diese Unterschiede
+sind real.
+
+0:31:09.850,0:31:12.029
+Und sie
+sind relevant.

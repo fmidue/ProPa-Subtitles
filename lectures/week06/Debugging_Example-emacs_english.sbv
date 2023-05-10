@@ -1,0 +1,801 @@
+0:00:01.600,0:00:05.440
+Okay, before heading to the slides for this week,
+
+0:00:05.440,0:00:10.880
+I want to do a short video about basically
+debugging a small Haskell program.
+
+0:00:11.440,0:00:19.440
+So, this is motivated by an email I got from
+one student in the last few days (previous year) about task 10,
+
+0:00:19.440,0:00:23.440
+there was this program for which a student
+didn't know why it's not working.
+
+0:00:23.440,0:00:27.200
+And well, the point is not to
+point out this wrong program.
+
+0:00:27.200,0:00:33.760
+But actually, the conversation we then had over
+email was very interesting, in terms of suggesting
+
+0:00:33.760,0:00:40.320
+how to approach such problems, then I thought it
+would be nice to demonstrate this here also in a
+
+0:00:40.320,0:00:46.320
+short video so that you can also maybe get an
+idea how you could cope with similar problems.
+
+0:00:46.320,0:00:51.520
+I don't know-, I hope the student won't
+be annoyed that I use the example here.
+
+0:00:52.160,0:00:56.320
+Okay, anyway, so this was the program
+that the student had at that point,
+
+0:00:56.320,0:01:01.440
+and the student already knew that something was
+wrong, because the test suite was not working.
+
+0:01:02.080,0:01:11.840
+So, let me actually reproduce
+this and call the test suite.
+
+0:01:13.280,0:01:18.400
+Okay, so that was an error in the second
+test, which I have actually abbreviated.
+
+0:01:18.400,0:01:20.880
+So, there was a long description
+here in the test suite.
+
+0:01:20.880,0:01:26.240
+What his second test means but
+apparently, it fails for some inputs.
+
+0:01:27.440,0:01:27.940
+Okay.
+
+0:01:28.240,0:01:32.560
+And so, what does this mean, how to interpret
+this... Well, to see what's happening here,
+
+0:01:32.560,0:01:37.280
+we can actually-, we can see what
+input is the function called on here,
+
+0:01:37.280,0:01:42.000
+we can see that basically, the character
+is appended to a string, which is also
+
+0:01:42.000,0:01:46.800
+a short string here, the one element string,
+and then the character is appended again.
+
+0:01:46.800,0:01:50.160
+So, apparently, this property
+failed for something of the form,
+
+0:01:51.040,0:01:57.920
+we can simply call this "aba", why there
+was some string "b" and 'a' was appended
+
+0:01:57.920,0:02:02.800
+at the beginning and at the end, and for
+this, somehow, the property seems to fail.
+
+0:02:02.800,0:02:08.480
+And indeed, if we call this function as given
+above, and it says that ABA is not a palindrome,
+
+0:02:08.480,0:02:11.200
+whereas we know that it is, so something is wrong.
+
+0:02:11.200,0:02:15.840
+And the student already said something like,
+they have thought about the problem in the cases.
+
+0:02:15.840,0:02:17.920
+And the first case you have, of course, fine,
+
+0:02:17.920,0:02:22.160
+it's checking for short strings,
+which are definitely palindromes.
+
+0:02:22.160,0:02:28.080
+And then there was an idea here, about reversing
+the list and then comparing it piecewise using
+
+0:02:28.080,0:02:32.160
+the capitalization via toUpper and the students
+thought, well, this should work in their mind.
+
+0:02:32.720,0:02:36.560
+They have worked out that this
+runs, okay, but apparently doesn't.
+
+0:02:36.560,0:02:38.960
+And the question would be
+what to do in such a case.
+
+0:02:39.600,0:02:41.280
+Okay, so you need to debug.
+
+0:02:41.280,0:02:44.000
+Now, coming from an imperative
+programming background,
+
+0:02:44.000,0:02:49.520
+most of you probably think of debugging in
+terms of adding print statements to their code,
+
+0:02:49.520,0:02:52.640
+right, you have some code, a loop, maybe you
+want to know what's happening in the loop.
+
+0:02:52.640,0:02:56.240
+So, you add a print statement that prints
+out a loop counter or some other variables.
+
+0:02:56.880,0:03:00.240
+Now, that's not something that we
+can really do in Haskell immediately
+
+0:03:00.240,0:03:03.760
+because we do expression-based
+programming, not command-based programming.
+
+0:03:03.760,0:03:09.760
+There is no place in your sequence of commands
+that somehow you can insert a print statement into.
+
+0:03:09.760,0:03:12.560
+That simply isn't the way this program works.
+
+0:03:12.560,0:03:14.000
+So, not only do we have a different
+
+0:03:15.120,0:03:19.600
+programming paradigm, and a different testing
+paradigm as we saw last week, by going from
+
+0:03:19.600,0:03:24.960
+unit tests to property tests. You also need, or
+we can employ, a different debugging paradigm.
+
+0:03:25.600,0:03:27.680
+So, what would debugging mean here?
+
+0:03:27.680,0:03:32.640
+Since computation is always
+happening via expressions, the proper
+
+0:03:32.640,0:03:36.080
+idea is to inspect expressions for somehow
+
+0:03:36.720,0:03:43.280
+knowing that for this three element string,
+we will go into the second case here.
+
+0:03:43.280,0:03:45.840
+The question would be: What value does this
+
+0:03:45.840,0:03:50.320
+expression have when we
+call this as being this ABA?
+
+0:03:51.440,0:03:54.480
+Yes, because probably the
+student had some expectation
+
+0:03:54.480,0:03:57.200
+that this should evaluate to
+true because it is a palindrome.
+
+0:03:57.200,0:04:02.000
+But for whatever reason, this actually
+evaluated to False, as we see here.
+
+0:04:02.000,0:04:05.360
+So, then we could dig deeper and find
+out "what about subexpressions", right?
+
+0:04:05.360,0:04:06.400
+Expressions are compositional.
+
+0:04:06.400,0:04:10.160
+So, if an expression doesn't give the proper
+value, then either you have used the wrong
+
+0:04:10.160,0:04:13.920
+function, maybe this "and" is wrong and
+could be an "or", or something else.
+
+0:04:13.920,0:04:17.200
+Or maybe the arguments are wrong. Because
+everything is compositional, these are
+
+0:04:17.200,0:04:22.480
+basically the only two choices, or the only
+two reasons why the outcome could be wrong.
+
+0:04:22.480,0:04:28.960
+So, what we need to do is to dive into these
+expressions and see where something comes up,
+
+0:04:28.960,0:04:30.320
+that is not expected.
+
+0:04:30.320,0:04:33.760
+And if you think back to the very first
+lecture where I worked with CodeWorld,
+
+0:04:33.760,0:04:36.640
+there was this nice feature that
+you could inspect an expression.
+
+0:04:36.640,0:04:41.840
+So, you had a drawn picture, and you could select
+subexpressions and see what picture they generate.
+
+0:04:42.640,0:04:49.520
+Now in this visual way, in CodeWorld's surroundings, that's,
+of course, a very nice inspection facility
+
+0:04:49.520,0:04:50.720
+for all kind of debugging.
+
+0:04:50.720,0:04:54.240
+Of course, this doesn't work here because we
+don't have a picture that we can click.
+
+0:04:54.240,0:04:57.200
+So, instead, we have to work with the interpreter
+
+0:04:57.200,0:05:01.520
+and produce subexpression that are
+of interest and see what they evaluate to.
+
+0:05:01.520,0:05:02.480
+So, how can we do this?
+
+0:05:03.040,0:05:05.440
+Well, for this, you should really
+not just work in Autotool,
+
+0:05:05.440,0:05:10.080
+you should have an interpreter on your
+machine in order to be able to do this.
+
+0:05:10.080,0:05:13.360
+Okay, we want to know what this
+expression evaluates to, and why
+
+0:05:13.360,0:05:15.520
+it does, and for these particular inputs.
+
+0:05:15.520,0:05:17.280
+What we actually want to have is: we want to
+
+0:05:17.840,0:05:25.120
+evaluate this expression, but in the context
+where s, the input, is our failing input ABA and
+
+0:05:25.120,0:05:29.600
+s' is whatever was computed from it, right,
+because s and s' occur in this expression.
+
+0:05:29.600,0:05:32.080
+So, we can't simply type this expression.
+
+0:05:32.080,0:05:34.640
+If I just type this expression
+into the interpreter prompt,
+
+0:05:34.640,0:05:38.240
+I get an error because the
+s and s' are unknown.
+
+0:05:38.240,0:05:41.440
+Okay, now, so in the interpreter
+session, you can simply
+
+0:05:42.240,0:05:48.080
+provide values, you can open the scope, you can
+say, well, I want to check this property here,
+
+0:05:48.080,0:05:55.760
+for the case that s is my original input, ABA,
+because that's what's happening with this case.
+
+0:05:55.760,0:05:59.840
+What we can say here is let s equals ABA.
+
+0:06:00.720,0:06:04.480
+Now, this is like a "let ... in" in function equations.
+
+0:06:04.480,0:06:08.240
+But the scope is now for the
+rest of the interpreter session,
+
+0:06:08.240,0:06:12.480
+instead of for the right-hand side
+of a function. Okay, I can do this.
+
+0:06:12.480,0:06:14.560
+And then I can actually also do this.
+
+0:06:14.560,0:06:18.640
+I can simply copy this line from here,
+because I also want the s' to be
+
+0:06:18.640,0:06:24.000
+in scope of exactly the kind of computation
+that happens in the program at this point.
+
+0:06:24.880,0:06:28.240
+Okay, so now I have s in scope
+and have s' in scope.
+
+0:06:28.240,0:06:29.840
+Okay, they have the expected values.
+
+0:06:29.840,0:06:30.960
+And now the question
+
+0:06:31.600,0:06:36.800
+would be, what does this evaluate to and why
+doesn't it evaluate to True, as one could expect?
+
+0:06:38.080,0:06:43.040
+Indeed, it evaluates to False,
+calling isPalindrome on "aba" is False.
+
+0:06:43.040,0:06:44.800
+But then the question is, well, why is that?
+
+0:06:44.800,0:06:51.040
+And the only way to investigate this is
+to go deeper and take this subexpression
+
+0:06:51.040,0:06:52.560
+and check what this evaluates to.
+
+0:06:54.320,0:06:56.880
+Yes, that's the compositional debugging here.
+
+0:06:59.280,0:07:02.000
+So, this evaluates to a
+list of some Trues and some
+
+0:07:02.000,0:07:05.200
+Falses, and that's probably not
+what the student intended.
+
+0:07:05.200,0:07:08.480
+Probably the student also
+didn't expect that there would be nine
+
+0:07:10.000,0:07:12.720
+values, of course, the student
+eventually repaired their program.
+
+0:07:12.720,0:07:16.640
+So, maybe this is also the thought process
+that went into this, but doesn't really matter.
+
+0:07:16.640,0:07:19.600
+The point is, at this point, one could
+realize that something is going wrong,
+
+0:07:19.600,0:07:22.320
+because we have these nine results.
+
+0:07:22.320,0:07:27.040
+Yes, actually, the idea was to take this
+three-element String and compare elementwise.
+
+0:07:27.040,0:07:29.040
+So, we should only have 3 Boolean values.
+
+0:07:29.040,0:07:30.800
+Something is wrong, what is wrong?
+
+0:07:30.800,0:07:36.960
+Well, you could go deeper by finding
+out or outputting not exactly this
+
+0:07:38.400,0:07:43.120
+check here, but actually the values
+of x and y that are used in there.
+
+0:07:43.120,0:07:45.760
+So, we could, for example,
+simply output the pair (x,y).
+
+0:07:48.400,0:07:49.920
+And then we see what's going wrong.
+
+0:07:50.640,0:07:55.760
+We don't compare 'a' to 'a', 'b' to 'b', 'a' to 'a', but
+we compare everything to everything, right?
+
+0:07:55.760,0:07:57.120
+That's why we have nine comparisons.
+
+0:07:57.120,0:08:00.000
+And also some of them are wrong,
+even though we have a palindrome.
+
+0:08:00.960,0:08:05.920
+Okay, so at this point, I think it becomes
+obvious what the-, maybe the errors I’m
+
+0:08:05.920,0:08:10.800
+thinking about the problem was, where we
+don't want to, in the list comprehension,
+
+0:08:10.800,0:08:17.120
+draw the x and y variables from s and s'
+independently, we want to draw them in lockstep.
+
+0:08:17.120,0:08:21.200
+So, the first one from s, the first one
+from s' and the second one from s
+
+0:08:21.200,0:08:24.000
+and the second one from s', et cetera.
+
+0:08:24.000,0:08:27.440
+This is not what it is doing here. What this is
+doing is building a Cartesian product.
+
+0:08:27.440,0:08:28.880
+That's what the student realized.
+
+0:08:31.280,0:08:35.760
+Okay, so now what if you need something
+else? And if you go back to the slides,
+
+0:08:35.760,0:08:38.560
+you'll find actually some
+examples for doing just that.
+
+0:08:39.360,0:08:45.280
+So, one way to do this, to get the pairwise
+corresponding elements from s and s' in the
+
+0:08:45.280,0:08:50.960
+list comprehension, is to not have two generators
+for x and y, but to have a combined generator
+
+0:08:52.800,0:09:01.680
+for pairs, and it runs over
+the zipping of s and s'.
+
+0:09:03.280,0:09:06.960
+Okay, and if you would check
+this now, then it would both
+
+0:09:06.960,0:09:10.320
+work in the examples and also pass the test suite.
+
+0:09:12.000,0:09:18.400
+Okay, story finished, this would now be a
+repair of the program found by this debugging
+
+0:09:19.200,0:09:22.480
+setup with inspecting
+subexpressions in the interpreter.
+
+0:09:23.840,0:09:28.720
+Okay, then I also want to show another way.
+
+0:09:29.600,0:09:31.920
+It may be a more familiar way to you,
+
+0:09:31.920,0:09:36.160
+which somewhat corresponds to this inserting
+print status, but it's not exactly that.
+
+0:09:36.160,0:09:42.240
+And I want to show this so that you could use
+it if you encounter problems in your exercise.
+
+0:09:42.240,0:09:48.080
+For this reason, I go back to the original wrong
+program and try a different debugging strategy.
+
+0:09:48.080,0:09:53.280
+So, again, I can load this, and it is wrong.
+
+0:09:53.280,0:09:55.840
+It's failing for exactly
+the same reason as before.
+
+0:09:59.680,0:10:01.040
+Still the wrong on this input.
+
+0:10:01.600,0:10:04.240
+And now what is this other way of debugging?
+
+0:10:04.800,0:10:11.040
+Well, one could attempt or could be tempted
+to do this printing-out of values of
+
+0:10:12.400,0:10:18.000
+subexpressions on the run while the program is
+running and not in a separate interpreter run.
+
+0:10:18.000,0:10:20.240
+That's not in a session as added here.
+
+0:10:20.240,0:10:22.560
+And there are some facilities for doing this.
+
+0:10:22.560,0:10:29.200
+And in order to do this, you will need to import
+the debugging module and then in this module,
+
+0:10:29.200,0:10:34.320
+you could find the implementation of various
+functions that can be used for debugging.
+
+0:10:34.880,0:10:39.360
+And well, I will simply now use the
+one that I know will work in this case,
+
+0:10:40.080,0:10:46.240
+in general, you would have to make
+a good decision about what to do.
+
+0:10:46.240,0:10:46.960
+Okay.
+
+0:10:46.960,0:10:53.680
+And so, the idea here is I want to print or
+I want to see the value of this expression,
+
+0:10:53.680,0:10:55.920
+when it's encountered.
+
+0:10:55.920,0:11:02.000
+Okay, and there is a function in said
+module with a cryptic name somewhat.
+
+0:11:03.120,0:11:06.720
+So, what does it do? I simply add it
+to the program at this point.
+
+0:11:08.720,0:11:14.320
+And then I go back and load
+the module and run this again.
+
+0:11:14.320,0:11:21.440
+Now I get two Falses and the first False
+is actually when this subexpression was
+
+0:11:21.440,0:11:24.960
+encountered and computed, and then of
+course, the final output is also False.
+
+0:11:24.960,0:11:26.545
+That's why we have two Falses and the first
+False is from printing the subexpression.
+
+0:11:26.545,0:11:32.240
+And the second False is from printing
+the outcome of the function call,
+
+0:11:32.240,0:11:34.960
+which in this case is of course,
+also the whole subexpression.
+
+0:11:34.960,0:11:36.480
+That's why we have two Falses.
+
+0:11:36.480,0:11:40.640
+But then I could again, go deeper
+and see, well, why is it False?
+
+0:11:41.600,0:11:47.200
+What was actually the list that was used here?
+
+0:11:47.200,0:11:56.880
+Yes, so I move inside the expression, I reload
+my module, I call it- call the function again.
+
+0:11:56.880,0:12:03.040
+And now I see what the value was at that point.
+And it is again, the same wrong nine element list instead
+
+0:12:03.040,0:12:09.920
+of a three element list with some Trues and some
+Falses, which ultimately led to the outcome False.
+
+0:12:09.920,0:12:13.600
+Okay, then I could go deeper
+and say, well, why is that?
+
+0:12:14.560,0:12:19.840
+Yes, so how do these values appear?
+
+0:12:19.840,0:12:29.280
+So, maybe I even want to do the trace inside here
+to directly see the result of the comparison here.
+
+0:12:34.560,0:12:37.840
+I reload this.
+
+0:12:39.120,0:12:40.320
+I run this.
+
+0:12:40.320,0:12:41.440
+Okay.
+Now, this is interesting.
+
+0:12:41.440,0:12:43.920
+We don't get nine values now, why not?
+
+0:12:44.480,0:12:47.360
+Well, because of lazy evaluation.
+
+0:12:48.720,0:12:49.360
+Yes.
+
+0:12:49.360,0:12:54.640
+So, the list that would be computed
+in this subexpression here would consist of
+
+0:12:54.640,0:13:01.600
+all these nine values, and when I actually
+use the and combinator to do a Boolean and
+
+0:13:01.600,0:13:06.720
+over a list of values, then, of course,
+this can stop as soon as a False is seen.
+
+0:13:06.720,0:13:08.800
+And that's what you see in action here.
+
+0:13:08.800,0:13:13.120
+So, if I say I always want to output
+the result of this comparison,
+
+0:13:13.120,0:13:17.040
+while the program is running, you see that
+actually from this nine element list here
+
+0:13:17.040,0:13:20.480
+only the first True is output,
+then this second False is output,
+
+0:13:20.480,0:13:25.280
+and all the remaining values will be
+never computed, so these comparisons never happen.
+
+0:13:25.280,0:13:30.480
+But anyway, the final outcome is False,
+because even after seeing true and False,
+
+0:13:30.480,0:13:33.120
+the and function knows that
+the final output is False.
+
+0:13:33.120,0:13:36.320
+So, it's still the same error
+as before, you now simply better
+
+0:13:36.320,0:13:40.160
+see which of these comparisons are
+actually performed on the first two.
+
+0:13:40.720,0:13:44.160
+And you could make this more apparent
+by using a slightly different
+
+0:13:46.160,0:13:49.680
+trace function here and instead
+of outputting the result
+
+0:13:49.680,0:13:54.400
+of the comparison and actually output
+the values that go into the comparison.
+
+0:13:54.400,0:13:56.240
+If I trace this now,
+
+0:13:59.440,0:14:03.600
+then I actually see that first 'a' and 'a' are
+compared, which is probably what was expected
+
+0:14:04.160,0:14:09.120
+when this program was written, but then 'a' and 'b'
+are compared and this is why this is deemed not to
+
+0:14:09.120,0:14:15.360
+be a palindrome because this 'a' and this 'b' are
+compared, or maybe this 'b' and this 'a', I don't know.
+
+0:14:15.360,0:14:18.080
+Anyway, something is not lining up and
+
+0:14:18.080,0:14:20.480
+the comparison compares things
+that shouldn't be compared.
+
+0:14:21.120,0:14:25.440
+And then maybe at this point, one could
+say-, could realize what the problem is,
+
+0:14:25.440,0:14:27.200
+we know already what the problem was, right?
+
+0:14:27.200,0:14:32.000
+The problem was that we shouldn't draw x
+and y from s and s' independently,
+
+0:14:32.000,0:14:44.320
+but actually, we should draw both of them
+at once, from the zipping of s and s'.
+
+0:14:44.320,0:14:45.200
+Okay.
+
+0:14:45.200,0:14:53.920
+And if I now run this with my debug annotation,
+I see that actually I get exactly three
+
+0:14:53.920,0:15:00.000
+comparisons: 'a' compared to 'a', 'b' to 'b', 'a' to 'a'. As
+expected, all of these comparisons are true.
+
+0:15:00.000,0:15:02.560
+That's why also the final output is True.
+
+0:15:03.600,0:15:09.040
+Okay, and now probably I fixed my problem,
+I could, of course, run the test suite.
+
+0:15:10.240,0:15:14.400
+This will give many outputs because
+now I run the test suite while
+
+0:15:14.400,0:15:18.320
+also outputting all these characters,
+these very strange characters,
+
+0:15:18.320,0:15:21.680
+some special characters that
+are simply generated at random.
+
+0:15:22.320,0:15:27.840
+So, probably I don't want this ultimately, I
+of course, want to get rid of my tracing again.
+
+0:15:27.840,0:15:30.880
+So, I want to have the pure solution.
+
+0:15:30.880,0:15:35.200
+Also, because of the debugging, you can't submit
+this to Autotool, so you have to take it out again.
+
+0:15:37.120,0:15:43.520
+But now, we hopefully have a program that is
+correct, and indeed it passes the test suite.
+
+0:15:45.840,0:15:52.880
+Okay, I hope this is useful if you
+encounter problems in some tasks,
+
+0:15:52.880,0:15:58.160
+don't simply try to hammer away in Autotool,
+but actually work offline and use facilities
+
+0:15:58.160,0:16:08.480
+like the interpreter to really investigate what your
+program is doing and run some examples, et cetera.

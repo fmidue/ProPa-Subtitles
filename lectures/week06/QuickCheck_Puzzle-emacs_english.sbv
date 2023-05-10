@@ -1,0 +1,332 @@
+0:00:01.840,0:00:05.760
+Okay, after having praised polymorphism so much
+
+0:00:05.760,0:00:11.440
+in the last video, I want to post
+another short video to provide a
+
+0:00:11.440,0:00:16.320
+warning in particular about an interaction
+that polymorphism can have with testing.
+
+0:00:16.880,0:00:22.960
+So, there will be a short
+session in an interpreter session here,
+
+0:00:22.960,0:00:27.680
+where I want to point out something which may,
+at first, be a bit surprising or puzzling.
+
+0:00:27.680,0:00:30.560
+And then we will see what is going on.
+
+0:00:30.560,0:00:34.160
+And it has to do with polymorphism
+as a warning, okay.
+
+0:00:34.160,0:00:38.320
+And so, let me actually call ghci.
+
+0:00:38.880,0:00:44.960
+And let me not load some source file,
+but simply the QuickCheck library,
+
+0:00:45.680,0:00:48.320
+so that I can write some quick tests.
+
+0:00:48.320,0:00:53.280
+Okay, and let's actually try to test our
+polymorphic reverse function that I have
+
+0:00:54.400,0:00:58.000
+introduced in or discussed in the previous video.
+
+0:00:58.000,0:01:02.400
+So, what could be a nice
+property of the reverse function?
+
+0:01:02.400,0:01:07.760
+So, for example, it certainly is
+the case that if I take the length
+
+0:01:09.280,0:01:15.840
+of a reverse list, then that is the
+same as the length of the list itself.
+
+0:01:15.840,0:01:16.080
+Right.
+
+0:01:16.080,0:01:19.440
+So, reversing a list doesn't
+change the length of that list.
+
+0:01:19.440,0:01:21.040
+That seems a reasonable property.
+
+0:01:21.680,0:01:25.840
+So, let me check this, and it
+says, yes, actually, that is true.
+
+0:01:26.720,0:01:27.120
+Okay.
+
+0:01:27.120,0:01:30.240
+And I could think of some further properties of
+
+0:01:30.240,0:01:34.560
+the reverse function, also check
+them and find: Well, they are all true.
+
+0:01:35.760,0:01:42.400
+Okay, then at some point, I might become
+a bit over ambitious, or maybe a bit crazy
+
+0:01:42.400,0:01:47.520
+and claim well, let me actually from the
+property above, simply omit the length call,
+
+0:01:48.560,0:01:54.880
+that would give the claim
+that reverse of xs is xs.
+
+0:01:56.080,0:01:58.960
+This is wrong, I would expect, right?
+
+0:01:58.960,0:02:02.160
+So, reversing a list is not the
+same as simply having that list.
+
+0:02:03.120,0:02:06.720
+However, if I run this, it is accepted.
+
+0:02:06.720,0:02:10.960
+And that's not by happenstance by
+somehow the random generated that
+
+0:02:10.960,0:02:14.320
+accidentally created 100
+lists where this is actually true.
+
+0:02:14.320,0:02:15.040
+No, it's not true.
+
+0:02:15.840,0:02:16.640
+That's not the case.
+
+0:02:16.640,0:02:18.560
+It is always successful.
+
+0:02:18.560,0:02:24.960
+Nevertheless, if I actually call the reverse
+function, it really doesn't have this property.
+
+0:02:24.960,0:02:27.520
+Reverse of "abc" is not "abc", it's "cba".
+
+0:02:28.880,0:02:29.600
+Yes.
+
+0:02:29.600,0:02:34.160
+And indeed, if I do this for many examples,
+
+0:02:34.160,0:02:38.240
+it always doesn't show the behaviour that I
+have successfully tested with QuickCheck.
+
+0:02:39.520,0:02:40.560
+So, what has happened?
+
+0:02:42.160,0:02:46.640
+Well, what I told you to do
+in order to investigate what
+
+0:02:46.640,0:02:50.080
+is going on with QuickCheck tests, either for your own
+
+0:02:51.600,0:02:57.360
+peace of mind to know what has actually been
+tested or just out of curiosity.
+
+0:02:57.920,0:03:03.120
+And you can always replace quickCheck by verboseCheck,
+and you will see what input was checked.
+
+0:03:03.120,0:03:06.720
+Apparently, it didn't check
+"abc" or [1..10], because
+
+0:03:06.720,0:03:10.480
+then it wouldn't have made those
+wrong claims that everything was okay.
+
+0:03:11.120,0:03:13.280
+Let's do a verbose check of the same property.
+
+0:03:14.400,0:03:18.240
+Ah, now, this looks interesting and strange.
+
+0:03:18.240,0:03:19.040
+What has happened?
+
+0:03:19.600,0:03:25.280
+Actually, the property has been tested 100
+times, but on very strange lists on lists,
+
+0:03:25.280,0:03:27.760
+which always contain this trivial element.
+
+0:03:28.560,0:03:33.280
+And indeed, if I take a list like this, where
+everything is the same, namely this strange
+
+0:03:33.280,0:03:39.040
+empty value here, then of course, reversing
+this list is the same as the list itself.
+
+0:03:39.040,0:03:45.120
+Because if the list contains only one element
+several times, but all elements are the same,
+
+0:03:45.120,0:03:47.360
+then of course, reversing
+doesn't change the list.
+
+0:03:48.640,0:03:50.560
+Okay, so what is the lesson here?
+
+0:03:50.560,0:03:53.280
+If you check a polymorphic
+function, like the reverse function,
+
+0:03:53.280,0:03:55.360
+it's really important on what to check it.
+
+0:03:56.080,0:04:00.800
+Simply saying QuickCheck please, test this, then
+QuickCheck could, and in this case it does, take
+
+0:04:01.680,0:04:04.880
+an element type for the lists
+to check here, for example,
+
+0:04:04.880,0:04:09.520
+that is not strong enough to actually
+show that our property was wrong.
+
+0:04:11.360,0:04:11.860
+Yes.
+
+0:04:12.480,0:04:20.320
+So, what happened that these strange lists
+were tested, and they all are okay,
+
+0:04:20.320,0:04:24.560
+but this doesn't tell me anything about
+the real function, not much at least.
+
+0:04:25.120,0:04:29.600
+At least it doesn't tell me that reverse
+is the identity, which it looks like.
+
+0:04:30.160,0:04:33.360
+Okay, so what can we do or what should we
+do when we test a polymorphic function?
+
+0:04:33.360,0:04:37.440
+We should make sure what we test or what type
+it is, you shouldn't leave this to QuickCheck,
+
+0:04:37.440,0:04:40.480
+because this can lead to these
+artefacts or wrong results.
+
+0:04:41.040,0:04:41.840
+How can we say this?
+
+0:04:41.840,0:04:45.680
+Well, for example, you could say well,
+let's check this on lists of integers.
+
+0:04:45.680,0:04:48.160
+And I can do this by in the property,
+
+0:04:48.720,0:04:55.200
+you're assigning or declaring that this xs
+should be a list of integers, for example, right?
+
+0:04:55.200,0:05:02.640
+Then I prevent that QuickCheck makes a decision
+and chooses this strange element and type here.
+
+0:05:03.440,0:05:08.480
+Okay, and if I do this, then actually,
+QuickCheck finds out that the property does
+
+0:05:08.480,0:05:12.960
+not hold. Right here, very quickly, it finds
+a counter example, namely for the list [0,1].
+
+0:05:13.520,0:05:17.920
+It's not true that reversing
+it gives the same list.
+
+0:05:17.920,0:05:21.920
+And I could also have done this with string.
+
+0:05:21.920,0:05:25.120
+For example, I could say
+for every String this will hold.
+
+0:05:25.680,0:05:29.680
+I would expect that QuickCheck finds
+a counterexample. It says no, for a string "ab",
+
+0:05:29.680,0:05:34.080
+it's not true, the property, or I could
+even have taken lists of Bools here,
+
+0:05:34.080,0:05:37.600
+it would have found a counterexample
+that is [True, False] in the context of it.
+
+0:05:37.600,0:05:43.360
+So, for any non-trivial type, you get a counterexample,
+except for the case, where we don't give a type,
+
+0:05:43.360,0:05:47.040
+where we simply leave it to QuickCheck and
+QuickCheck makes a very poor choice,
+
+0:05:47.040,0:05:52.640
+Namely, this one. Okay, so we have to
+be very aware of this when we write tests.
+
+0:05:52.640,0:05:56.640
+And of course, in our tests for your
+Autotool submissions, we take care of this.
+
+0:05:56.640,0:06:00.720
+But if you want to test on your own, and
+you have a polymorphic function, you need to
+
+0:06:01.760,0:06:07.440
+invest a bit of thinking, what actually you
+want to check your polymorphic function on.
+
+0:06:08.240,0:06:14.720
+In this case, we shouldn't check it on this
+trivial type. Okay, it is not a defect per se,
+
+0:06:14.720,0:06:16.800
+In logic or anything like that, it's
+
+0:06:16.800,0:06:22.000
+some care that you have to use in order
+to know what you're actually testing.
+
+0:06:22.000,0:06:24.880
+And if you're uncertain, you can
+always use verbose check and then
+
+0:06:24.880,0:06:31.600
+you see what has happened behind the scenes.
