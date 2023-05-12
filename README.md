@@ -13,6 +13,6 @@ Note that the *editor settings* provided as an `.editorconfig` file can be enfor
 | TMUniversal | 53 |
 | michalitv21 | 19 |
 | MagnolieH | 14 |
+| Knallkopp465 | 12 |
 | ejude44 | 6 |
-| Knallkopp465 | 6 |
 | Katashiii | 3 |
