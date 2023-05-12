@@ -14,4 +14,5 @@ Note that the *editor settings* provided as an `.editorconfig` file can be enfor
 | michalitv21 | 19 |
 | MagnolieH | 14 |
 | ejude44 | 6 |
+| Knallkopp465 | 6 |
 | Katashiii | 3 |
