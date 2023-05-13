@@ -40,7 +40,7 @@ surprised, maybe, if this appears in your feedback.
 Okay.
 
 0:00:43.200,0:00:45.920
-So, I will first do this and some example,
+So, I will first do this on some example,
 
 0:00:45.920,0:00:49.360
 which is completely artificial,
@@ -117,7 +117,7 @@ and a rectangle of two of these dimensions.
 
 0:02:18.240,0:02:21.360
 And then you pass this on to the
-'manipulateAndCombine' function,
+"manipulateAndCombine" function,
 
 0:02:21.360,0:02:24.960
 which of course is also, well, it has
@@ -174,7 +174,7 @@ And the hint that Autotool would give would be
 something like let's throw away these,
 
 0:03:16.560,0:03:18.240
-let's throw away the 't' argument.
+let's throw away the "t" argument.
 
 0:03:18.240,0:03:24.880
 So, what Autotool would say at this point is well,
@@ -182,17 +182,17 @@ why don't you define your function like this?
 
 0:03:30.800,0:03:34.800
 Which might be a bit surprising,
-since this 't' has suddenly disappeared.
+since this "t" has suddenly disappeared.
 
 0:03:35.600,0:03:36.240
 Yes.
 
 0:03:36.240,0:03:41.440
 But indeed, if you would actually define
-the 'manipulateAndCombine' function and
+the "manipulateAndCombine" function and
 
 0:03:41.440,0:03:46.160
-then wrote your 'f' function like here, like
+then wrote your "f" function like here, like
 suggested by Autotool, then it would still work,
 
 0:03:46.160,0:03:49.440
@@ -200,7 +200,7 @@ despite the fact that here we have the Color,
 
 0:03:49.440,0:03:53.520
 the Picture and the Double argument, but
-the 't' argument doesn't even appear here.
+the "t" argument doesn't even appear here.
 
 0:03:53.520,0:03:58.720
 So, we have a three argument function, but we
@@ -214,7 +214,7 @@ Well, that is the point of eta-reduction.
 
 0:04:05.040,0:04:09.280
 Namely, that instead of considering this
-'f' as a function of three arguments that
+"f" as a function of three arguments that
 
 0:04:09.280,0:04:12.560
 returns a Picture, you could also
@@ -238,11 +238,11 @@ only passed onwards to this other function,
 
 0:04:34.080,0:04:37.920
 then you might as well say instead of
-saying 'f' of 'c' and 'p' and 't' is this function,
+saying "f" of "c" and "p" and "t" is this function,
 
 0:04:37.920,0:04:42.960
-this whole expression of 't', you might as
-well say 'f' of 'c' and 'p' is just this expression.
+this whole expression of "t", you might as
+well say "f" of "c" and "p" is just this expression.
 
 0:04:43.920,0:04:44.480
 Okay.
@@ -322,7 +322,7 @@ wrote function definitions or arguments like this,
 
 0:06:20.160,0:06:26.560
 then there wouldn't be an immediate syntactic
-possibility for omitting this 't' parameter.
+possibility for omitting this "t" parameter.
 
 0:06:26.560,0:06:30.320
 Yes, then we would also have
@@ -330,10 +330,10 @@ all our brackets here, probably.
 
 0:06:33.360,0:06:37.040
 And it wouldn't be so easy to say,
-well, let's omit the last 't' because
+well, let's omit the last "t" because
 
 0:06:37.040,0:06:40.320
-we would expect that 'f' always takes
+we would expect that "f" always takes
 the three arguments in a triple.
 
 0:06:40.320,0:06:47.840
@@ -400,7 +400,7 @@ only then will return a Picture.
 That is exactly what the type is telling you.
 
 0:07:56.640,0:08:01.120
-The 'opening' is something which awaits a
+The "opening" is something which awaits a
 time, a Double and gives a Picture.
 
 0:08:01.120,0:08:02.560
@@ -408,7 +408,7 @@ But I don't have to write this down.
 
 0:08:02.560,0:08:08.800
 I could equivalently write this down, I could say,
-well, 'opening' of time is 'rectangle 10' and time.
+well, "opening t" is "rectangle 10 t".
 
 0:08:08.800,0:08:13.760
 But I don't have to, because this is more
@@ -436,11 +436,11 @@ argument here, and the very same thing would have
 
 0:08:41.840,0:08:47.120
 happened if I had written it in eta reduced form,
-simply saying 'opening' is 'rectangle 10', awaiting
+simply saying "opening" is "rectangle 10", awaiting
 
 0:08:47.120,0:08:52.880
 its next argument, which will be the time because
-'opening' will be the argument of 'animationOf'.
+"opening" will be the argument of "animationOf".
 
 0:08:52.880,0:09:00.000
 So, if I have this eta-reduced version
@@ -458,7 +458,7 @@ So, if what I wanted the other way around, one
 way, to get this would be well, then we have
 
 0:09:14.560,0:09:19.760
-to really introduce the 't' parameter explicitly,
+to really introduce the "t" parameter explicitly,
 because now we want to know, to express that
 
 0:09:19.760,0:09:26.160
@@ -470,7 +470,7 @@ So, then we would have lost the advantage
 of eta-reduction, we would have to introduce
 
 0:09:31.600,0:09:36.800
-this 't' parameter, but actually Haskell being
+this "t" parameter, but actually Haskell being
 a functional language, which has support for
 
 0:09:37.520,0:09:43.920
@@ -487,7 +487,7 @@ opening in the x direction, then we won’t
 
 0:09:51.920,0:09:55.120
 and we don't want to explicitly
-write down the 't' parameter.
+write down the "t" parameter.
 
 0:09:55.120,0:09:56.400
 What we really want.
@@ -500,7 +500,7 @@ Here, we want to flip the order of the arguments.
 
 0:10:00.560,0:10:05.680
 So, instead of saying I need to introduce
-a 't' parameter, I can still make use of
+a "t" parameter, I can still make use of
 
 0:10:07.360,0:10:10.640
 eta-reduction without
@@ -515,7 +515,7 @@ And this again can be done with a function,
 
 0:10:17.440,0:10:21.440
 and unsurprisingly, maybe,
-this function is called 'flip'.
+this function is called "flip".
 
 0:10:22.800,0:10:25.760
 So, this is a well-defined Haskell program again.
@@ -540,7 +540,7 @@ So, if I run this, I get the
 opening rectangle in this direction.
 
 0:10:52.640,0:10:59.840
-If I omit the 'flip', I get the opening
+If I omit the "flip", I get the opening
 rectangle in the other dimension.
 
 0:11:02.160,0:11:05.600
@@ -554,5 +554,5 @@ anyway only passed on to other functions.
 It only works if that is the last parameter.
 
 0:11:18.240,0:11:26.480
-That's why I needed to apply the 'flip' in the
+That's why I needed to apply the "flip" in the
 case that I want to do opposite direction.
