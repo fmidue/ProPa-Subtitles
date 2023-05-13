@@ -1,6 +1,6 @@
 0:00:02.639,0:00:07.759
 In this video, I want to talk about what is
-sometimes called wholemeal programming, in
+sometimes called 'wholemeal programming', in
 
 0:00:07.759,0:00:09.780
 this case on lists.
@@ -48,16 +48,16 @@ If you tried to translate this to German,
 there's no one-to-one translation, I think,
 
 0:01:02.820,0:01:07.130
-so piecemeal programming (the opposite of
-wholemeal programming) could maybe be translated
+so 'piecemeal programming' (the opposite of
+'wholemeal programming') could maybe be translated
 
 0:01:07.130,0:01:13.350
-as "stückweise" / "allmählich", somewhat
-"unsystematisch", whereas for wholemeal programming,
+as 'stückweise' / 'allmählich', somewhat
+'unsystematisch', whereas for wholemeal programming,
 
 0:01:13.350,0:01:16.320
-the German translation would maybe be "in
-einem Rutsch".
+the German translation would maybe be 'in
+einem Rutsch'.
 
 0:01:16.320,0:01:23.840
 So, to do something at once / in one go, rather
@@ -278,7 +278,7 @@ in a certain scene.
 The numbers here are not list indices.
 
 0:05:39.810,0:05:43.540
-We have [0..5], but this is not list indexing.
+We have "[0..5]", but this is not list indexing.
 
 0:05:43.540,0:05:49.650
 It is just a comprehensive way to express
@@ -333,15 +333,15 @@ exposed some kind of traversal order which
 
 0:06:44.600,0:06:49.150
 we don't need, if we are simply interested
-in "we have these pictures".
+in 'we have these pictures'.
 
 0:06:49.150,0:06:55.290
 As I already mentioned, in the mathematical
-set notation, we simply get: "for all numbers
+set notation, we simply get: 'for all numbers
 
 0:06:55.290,0:06:59.250
-in a certain range, ..." or maybe even "all
-the numbers" if we have infinite lists, we
+in a certain range, ...' or maybe even 'all
+the numbers' if we have infinite lists, we
 
 0:06:59.250,0:07:02.030
 compute some value, and we get the result
@@ -418,7 +418,7 @@ What it is saying is:
 
 0:08:18.040,0:08:28.340
 If I take some numbers from zero to n, and
-then compute "f of a" (f a) on each element,
+then compute 'f of a' ("f a") on each element,
 
 0:08:28.340,0:08:36.510
 and then put the results in a list, it is
@@ -426,7 +426,7 @@ the same as if I first reversed this number
 
 0:08:36.510,0:08:44.150
 list, so I get the numbers from n to zero,
-still computing f on each of those values
+still computing "f" on each of those values
 
 0:08:44.150,0:08:47.060
 and then reversing the list again.
@@ -481,7 +481,7 @@ which also goes from zero to n, incrementing
 
 0:09:51.830,0:09:56.010
 this loop counter and then always computing
-"f of a", and then storing this in a list,
+'f of a', and then storing this in a list,
 
 0:09:56.010,0:09:57.610
 or an array in this case.
@@ -553,7 +553,7 @@ numbered lists.
 
 0:11:16.510,0:11:23.380
 We can take arbitrary lists, and this property
-will still be true for whatever f and list
+will still be true for whatever "f" and list
 
 0:11:23.380,0:11:29.930
 we have, and actually for a whole class of
@@ -576,7 +576,7 @@ To think about laws that the functions in
 our programs satisfy.
 
 0:11:52.080,0:11:54.330
-They could also be used for QuickCheck testing.
+They could also be used for "QuickCheck" testing.
 
 0:11:54.330,0:11:55.770
 There we are also interested in properties.
@@ -706,7 +706,7 @@ For example, we need to know upfront how array
 indices are counted in the language.
 
 0:14:25.529,0:14:31.779
-So, we could easily make an off-by-one error,
+So, we could easily make an 'off-by-one' error,
 if we forget that we have to start counting
 
 0:14:31.779,0:14:32.779
@@ -729,7 +729,7 @@ something like that.
 
 0:14:45.650,0:14:50.120
 So, in fact, there are at least three places
-here where we could make an off-by-one error.
+here where we could make an 'off-by-one' error.
 
 0:14:50.120,0:14:53.860
 We could make a mistake here by starting from
@@ -799,7 +799,7 @@ each list element with consecutive numbers.
 
 0:16:05.000,0:16:10.360
 We can express this by saying: let's pair
-this by zipping with 0, 1, 2, ([0..]).
+this by zipping with 0, 1, 2, ("[0..]").
 
 0:16:10.360,0:16:15.340
 Then it takes all these pairs that it has
@@ -1053,7 +1053,7 @@ How do I access the data structure elements?
 
 0:20:52.230,0:20:58.910
 So, there are several places where I can make
-an off-by-one error.
+an 'off-by-one' error.
 
 0:20:58.910,0:21:06.010
 And everything has to fit together in order
@@ -1071,7 +1071,7 @@ the first element by 1 instead of 0, then
 what do I change?
 
 0:21:20.640,0:21:23.799
-I change one 0 into one 1.
+I change one 0 into one 1 (from "[0..]" to "[1..]").
 
 0:21:23.799,0:21:28.260
 That's all I need to do in order to express
@@ -1162,7 +1162,7 @@ that I multiply the (i+1)-th thing with the
 array at index i.
 
 0:22:57.790,0:23:01.880
-I have to make sure that I don't make an off-by-one
+I have to make sure that I don't make an 'off-by-one'
 error here.
 
 0:23:01.880,0:23:12.520
