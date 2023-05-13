@@ -30,7 +30,7 @@ the interpreter and load this example.
 
 0:00:46.480,0:00:52.080
 Okay, then we can call the
-'sort' function on some inputs,
+"sort" function on some inputs,
 
 0:00:56.400,0:00:59.760
 let's say we want to call it on this small list,
@@ -60,7 +60,7 @@ Okay, so that's what you would call
 a unit test in some other language,
 
 0:01:41.840,0:01:49.200
-so we simply write a 'main' definition,
+so we simply write a "main" definition,
 which always runs the same test.
 
 0:01:51.040,0:01:56.800
@@ -152,7 +152,7 @@ way to do this in Haskell is to use
 
 0:03:24.000,0:03:30.080
 a certain library, which I will
-import here, it's called 'QuickCheck'.
+import here, it's called "QuickCheck".
 
 0:03:30.880,0:03:33.360
 And this is how it is imported.
@@ -206,7 +206,7 @@ What I really want to say is something like: I don't
 want to sort some fixed list, but for example,
 
 0:04:38.080,0:04:47.440
-I want to sort any list of the form '1..n',
+I want to sort any list of the form "1..n",
 because I want to talk about any
 
 0:04:49.840,0:04:54.080
@@ -221,7 +221,7 @@ Now, I can't write this as a check directly, right?
 
 0:05:01.040,0:05:06.000
 So, I couldn't have written it like this because
-where does the 'n' come from? The 'n' should be something,
+where does the "n" come from? The "n" should be something,
 
 0:05:06.720,0:05:09.360
 not be fixed, which would
@@ -229,11 +229,11 @@ be somehow all-quantified.
 
 0:05:09.360,0:05:12.640
 Well, the way we do this, in
-'QuickCheck' is as follows.
+"QuickCheck" is as follows.
 
 0:05:12.640,0:05:17.280
 We can say, well, let me actually
-check this property for all 'n'.
+check this property for all "n".
 
 0:05:21.120,0:05:25.440
 And so for now, this is just some
@@ -266,11 +266,11 @@ Okay, now the question is
 what tests has it passed?
 
 0:06:30.880,0:06:37.280
-Or maybe this was just checked for n=1.
+Or maybe this was just checked for "n" = 1.
 Well, to make sure that that is not the case,
 
 0:06:37.280,0:06:40.640
-I can, instead of 'quickCheck', use 'verboseCheck'.
+I can, instead of "quickCheck", use "verboseCheck".
 
 0:06:43.600,0:06:50.480
 Yes, so, we're given a more verbose testing
@@ -288,11 +288,11 @@ where it has passed 100 tests and
 what are these tests, the test cases?
 
 0:07:03.360,0:07:09.600
-Well, the 'n' has been shown to be
+Well, the "n" has been shown to be
 26, 32, -61, and many other values.
 
 0:07:10.720,0:07:14.880
-Okay, so 100 random choices for this 'n' here.
+Okay, so 100 random choices for this "n" here.
 
 0:07:14.880,0:07:17.760
 And for all of them, this property
@@ -312,7 +312,7 @@ and one way to do this is to say here,
 
 0:07:29.280,0:07:33.280
 that you want to have only
-positive 'n', it's like,
+positive "n", it's like,
 
 0:07:33.280,0:07:39.600
 basically a quantification over only the
@@ -327,10 +327,10 @@ run 100 tests, and if you check, inspect
 the values here, you will see that it has only
 
 0:07:52.320,0:07:55.040
-checked for positive 'n', which is nice.
+checked for positive "n", which is nice.
 
 0:07:56.240,0:08:03.200
-Okay, so let me again switch back to 'quickCheck',
+Okay, so let me again switch back to "quickCheck",
 because I don't always want to see these,
 
 0:08:04.720,0:08:05.600
@@ -349,7 +349,7 @@ What else could we test?
 
 0:08:14.160,0:08:19.920
 Well, we could say, not only should it be the case
-that if you sort the list '1..n', we get '1..n'.
+that if you sort the list "1..n", we get "1..n".
 
 0:08:19.920,0:08:22.480
 But it should also be the case if we sort a
@@ -363,14 +363,14 @@ So, on property, we could
 try to check is this one.
 
 0:08:34.800,0:08:40.160
-Yes, given an 'n'.
+Yes, given an "n".
 
 0:08:40.160,0:08:44.080
-If we take the list, '1..n', reverse it,
+If we take the list, "1..n", reverse it,
 so it’s the exact opposite,
 
 0:08:44.080,0:08:46.160
-and we sort it, we should still get '1..n'.
+and we sort it, we should still get "1..n".
 
 0:08:47.440,0:08:47.940
 Okay.
@@ -391,7 +391,7 @@ additional tests.
 
 0:09:07.440,0:09:15.360
 So, for example, instead of simply saying
-that we want to sort lists of '1..n', maybe
+that we want to sort lists of "1..n", maybe
 
 0:09:15.360,0:09:21.840
 let's be more general and say how, or what should
@@ -402,11 +402,11 @@ Yes, so,
 
 0:09:32.480,0:09:36.480
 I can also simply quantify
-over an arbitrary list 'xs',
+over an arbitrary list "xs" ,
 
 0:09:37.760,0:09:45.200
 then, of course, it would be stupid to
-expect that sorting of 'xs' is equal to 'xs'.
+expect that sorting of "xs"  is equal to "xs" .
 
 0:09:45.200,0:09:48.960
 But actually, let's check
@@ -427,7 +427,7 @@ then there's a counter example.
 This looks somewhat strange.
 
 0:10:02.240,0:10:06.480
-Why is '[0, 0]' a counter example to this equation?
+Why is "[0, 0]" a counter example to this equation?
 
 0:10:10.560,0:10:13.440
 Well, it's the wrong equation anyway.
@@ -500,7 +500,7 @@ which actually discloses this error.
 
 0:11:33.840,0:11:40.720
 Well, here's something, I can think of some
-property involving the 'length' function.
+property involving the "length" function.
 
 0:11:41.520,0:11:47.840
 So, maybe it's reasonable to expect
@@ -532,7 +532,7 @@ contain this last property.
 And see there is a counter example.
 
 0:12:16.400,0:12:27.280
-Namely, if I call the 'sort' function on '[3, 3]',
+Namely, if I call the "sort" function on "[3, 3]",
 there is a very strange result, which
 
 0:12:28.160,0:12:30.560
@@ -540,10 +540,10 @@ violates this length property.
 
 0:12:30.560,0:12:37.760
 And the reason is that in the splitting here, I
-introduced a bug by not splitting into '<' and
+introduced a bug by not splitting into "<" and
 
 0:12:37.760,0:12:44.080
-'≥', but '≤' and '≥'.
+">=", but "<=" and ">=".
 Okay, so if I fix this bug, then my
 
 0:12:44.080,0:12:51.520
@@ -551,7 +551,7 @@ test suite runs through again, and to make sure
 that we test this on some meaningful lists
 
 0:12:51.520,0:13:00.480
-now, let me, again, add the 'verboseCheck'
+now, let me, again, add the "verboseCheck"
 here, so that we can see what happened.
 
 0:13:01.680,0:13:08.400
@@ -593,7 +593,7 @@ we had there, or some other function?
 So, we had a concatenation function.
 
 0:13:50.320,0:13:54.720
-So, the '++' operator,
+So, the "++" operator,
 and what does it operate on?
 
 0:13:54.720,0:13:56.320
@@ -601,7 +601,7 @@ Well, it operates on two lists.
 
 0:13:56.320,0:14:00.400
 So, in order to do this, you have to
-quantify what to; let's say, 'xs' and 'ys'.
+quantify what to; let's say, "xs"  and "ys".
 
 0:14:00.960,0:14:05.280
 And then what could be a useful property?
@@ -623,7 +623,7 @@ to lists and then sort them?
 
 0:14:25.440,0:14:31.440
 Well, that, of course, depends very
-much on the contents of 'xs', and 'ys'.
+much on the contents of "xs" , and "ys".
 
 0:14:31.440,0:14:38.800
 But what probably can be said is that this would
@@ -631,7 +631,7 @@ be the same as if I do it the other way around.
 
 0:14:39.440,0:14:44.240
 So, what if I switch the order
-in which 'xs' and 'ys' are appended,
+in which "xs"  and "ys" are appended,
 
 0:14:44.240,0:14:49.040
 this shouldn't make a difference if afterwards
@@ -663,7 +663,7 @@ But when I had a property, which wasn't true,
 
 0:15:20.080,0:15:24.640
 I got very small counter examples
-'[3, 3]', or '[0, 0]', or '[0, -1]'.
+"[3, 3]", or "[0, 0]", or "[0, -1]".
 
 0:15:24.640,0:15:30.480
 That's because QuickCheck not only tries to find
@@ -745,7 +745,7 @@ changed anything about the behaviour.
 No, it didn't, it still works.
 
 0:17:04.560,0:17:09.600
-Okay, then we have 'head' and 'tail'
+Okay, then we have "head" and "tail"
 here, this can be further improved.
 
 0:17:09.600,0:17:17.520
@@ -769,7 +769,7 @@ that's actually a case of splitting.
 
 0:17:42.080,0:17:47.280
 And in the slides about list functions I
-introduced a 'splitAt' function where you can say:
+introduced a "splitAt" function where you can say:
 
 0:17:47.280,0:17:50.400
 You give a number, and then you
@@ -782,7 +782,7 @@ beginning of the list, and then all the rest.
 So, maybe this is the nice use of splitting.
 
 0:17:56.640,0:17:58.640
-So, we would 'splitAt 1'.
+So, we would "splitAt 1".
 
 0:17:58.640,0:18:02.400
 Instead of saying head and tail,
@@ -805,7 +805,7 @@ Why is that?
 Well, basically, because splitting gives a list.
 
 0:18:16.080,0:18:19.040
-And this 'pivot' here is supposed
+And this "pivot" here is supposed
 to be just one element.
 
 0:18:19.040,0:18:24.160
@@ -814,11 +814,11 @@ split the list at position one,
 
 0:18:24.160,0:18:29.280
 and then I get a singleton element
-list and I take the 'pivot' from that.
+list and I take the "pivot" from that.
 
 0:18:29.280,0:18:33.760
-And I get the 'rest', which can be an arbitrary long
-list and the 'rest' is used in these two places.
+And I get the "rest", which can be an arbitrary long
+list and the "rest" is used in these two places.
 
 0:18:36.160,0:18:39.600
 Okay, and then, hopefully, my test suite.
@@ -847,13 +847,14 @@ Then I would immediately get some test failures.
 
 0:19:10.240,0:19:17.280
 So here, I get, for example, the first property
-is then wrong for the input 'n' being 2.
+is then wrong for the input "n" being 2.
 
 0:19:17.280,0:19:19.760
-That's not true, let's sort from '1..n'.
+So it's not true, that "sort ["1..n"] == [1..n]" holds.
 
 0:19:20.320,0:19:25.440
-'1..2' is '1..2' with this buggy program.
+That is (in this test), "sort [1..2]" is not "[1..2]"
+with this buggy program.
 
 0:19:25.440,0:19:33.760
 Whereas in the original
@@ -880,5 +881,5 @@ And if you want to see more
 insight into what data was used,
 
 0:19:58.000,0:20:05.840
-you can always replace the 'quickCheck' by
-'verboseCheck', as I did earlier in the video.
+you can always replace the "quickCheck" by
+"verboseCheck", as I did earlier in the video.
