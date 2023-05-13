@@ -90,7 +90,7 @@ dies, irgendwie, die Eigenschaft scheint zu scheitern.
 
 0:02:02.800,0:02:08.480
 Und tatsächlich, wenn wir diese Funktion wie oben angegeben aufrufen
-aufruft, und sie sagt, dass ABA kein Palindrom ist,
+aufruft, und sie sagt, dass "aba" kein Palindrom ist,
 
 0:02:08.480,0:02:11.200
 obwohl wir wissen, dass es eins ist, also stimmt etwas nicht.
@@ -111,7 +111,7 @@ Und dann gab es hier eine Idee, die Liste
 umzukehren und sie dann stückweise zu vergleichen, indem man
 
 0:02:28.080,0:02:32.160
-Großschreibung über toUpper erreicht. Und die Studierenden
+Großschreibung über "toUpper" erreicht. Und die Studierenden
 dachten, na ja, das müsste eigentlich funktionieren.
 
 0:02:32.720,0:02:36.560
@@ -186,7 +186,7 @@ Die Frage wäre dann: Welchen Wert hat dieser
 
 0:03:45.840,0:03:50.320
 Ausdruck hat, wenn wir
-als diesen ABA aufrufen?
+als diesen "aba" aufrufen?
 
 0:03:51.440,0:03:54.480
 Ja, denn wahrscheinlich hatte der
@@ -212,8 +212,8 @@ Wenn also ein Ausdruck nicht den richtigen
 Wert ergibt, dann haben Sie entweder die falsche
 
 0:04:10.160,0:04:13.920
-Funktion verwendet, vielleicht ist dieses "und" falsch und
-könnte ein "oder" sein, oder etwas anderes.
+Funktion verwendet, vielleicht ist dieses "and" falsch und
+könnte ein "or" sein, oder etwas anderes.
 
 0:04:13.920,0:04:17.200
 Oder vielleicht sind die Argumente falsch. Weil
@@ -283,11 +283,11 @@ Was wir eigentlich wollen, ist: Wir wollen
 
 0:05:17.840,0:05:25.120
 diesen Ausdruck auswerten, aber in dem Kontext
-wobei s, die Eingabe, unsere fehlerhafte Eingabe ABA ist und
+wobei "s", die Eingabe, unsere fehlerhafte Eingabe "aba" ist und
 
 0:05:25.120,0:05:29.600
-s' ist das, was daraus berechnet wurde, richtig,
-denn s und s' kommen in diesem Ausdruck vor.
+ "s'"  ist das, was daraus berechnet wurde, richtig,
+denn "s" und  "s'"  kommen in diesem Ausdruck vor.
 
 0:05:29.600,0:05:32.080
 Wir können diesen Ausdruck also nicht einfach eintippen.
@@ -298,7 +298,7 @@ in die Eingabeaufforderung des Interpreters ein,
 
 0:05:34.640,0:05:38.240
 erhalte ich einen Fehler, weil die
-s und s' unbekannt sind.
+"s" und  "s'"  unbekannt sind.
 
 0:05:38.240,0:05:41.440
 Okay, also, in der Interpreter
@@ -309,11 +309,11 @@ Werte bereitstellen, man kann den Bereich öffnen, man kann
 Man kann sagen: "Ich möchte diese Eigenschaft hier überprüfen,
 
 0:05:48.080,0:05:55.760
-für den Fall, dass s meine ursprüngliche Eingabe ist, ABA",
+für den Fall, dass "s" meine ursprüngliche Eingabe ist, "aba"",
 denn das ist es, was in diesem Fall passiert.
 
 0:05:55.760,0:05:59.840
-Was wir hier sagen können, ist: "let s = ABA".
+Was wir hier sagen können, ist: "let s = "aba"".
 
 0:06:00.720,0:06:04.480
 Das ist wie ein "let ... in" in Funktionsgleichungen.
@@ -331,15 +331,15 @@ Und dann kann ich tatsächlich auch das tun.
 
 0:06:14.560,0:06:18.640
 Ich kann einfach diese Zeile von hier kopieren,
-denn ich möchte auch, dass das s'
+denn ich möchte auch, dass das  "s'"
 
 0:06:18.640,0:06:24.000
 im Bereich genau der Art von Berechnungen
 die an dieser Stelle im Programm stattfindet.
 
 0:06:24.880,0:06:28.240
-Okay, jetzt habe ich also s im Bereich
-und s' im Geltungsbereich.
+Okay, jetzt habe ich also "s" im Bereich
+und  "s'"  im Geltungsbereich.
 
 0:06:28.240,0:06:29.840
 Okay, sie haben die erwarteten Werte.
@@ -440,15 +440,15 @@ Ich denke, das Problem war, dass wir
 nicht wollen, in der List Comprehension,
 
 0:08:10.800,0:08:17.120
-die Variablen x und y von s und s'
+die Variablen x und y von "s" und  "s'"
 unabhängig voneinander zu ziehen, sondern wir wollen sie im Gleichschritt ziehen.
 
 0:08:17.120,0:08:21.200
 Also, die erste von s, die erste
-von s' und die zweite von s
+von  "s'"  und die zweite von s
 
 0:08:21.200,0:08:24.000
-und die zweite von s', usw.
+und die zweite von  "s'" , usw.
 
 0:08:24.000,0:08:27.440
 Das ist nicht das, was es hier tut. Was es hier tut,
@@ -467,7 +467,7 @@ Beispiele, wie man genau das tun kann.
 
 0:08:39.360,0:08:45.280
 Also, eine Möglichkeit, dies zu tun, ist, die paarweise
-entsprechenden Elemente von s und s' in der
+entsprechenden Elemente von "s" und  "s'"  in der
 
 0:08:45.280,0:08:50.960
 List Comprehension zu erhalten, ist, nicht zwei Generatoren
@@ -475,7 +475,7 @@ für x und y zu haben, sondern einen kombinierten Generator
 
 0:08:52.800,0:09:01.680
 für Paare, und der läuft über
-das Zippen von s und s'.
+das Zippen (mit "zip") von "s" und  "s'" .
 
 0:09:03.280,0:09:06.960
 Okay, und wenn du das jetzt überprüfen würdest
@@ -653,7 +653,7 @@ Unterausdruck berechnet wird, besteht aus
 
 0:12:54.640,0:13:01.600
 all diesen neun Werten, und wenn ich tatsächlich
-den Kombinator "und" verwende, um ein Boolesches "und"
+den Kombinator "and" verwende, um ein Boolesches "and"
 
 0:13:01.600,0:13:06.720
 über eine Liste von Werten zu machen, dann kann das
@@ -683,7 +683,7 @@ Aber trotzdem ist das Endergebnis False,
 denn selbst nachdem sie True und False gesehen hat,
 
 0:13:30.480,0:13:33.120
-weiß die Funktion "und", dass
+weiß die Funktion "and", dass
 die endgültige Ausgabe False ist.
 
 0:13:33.120,0:13:36.320
@@ -736,12 +736,12 @@ sagen -, könnte erkennen, was das Problem ist,
 wir wissen bereits, was das Problem war, richtig?
 
 0:14:27.200,0:14:32.000
-Das Problem war, dass wir x und y nicht unabhängig voneinander aus s und s' ziehen sollten,
-sondern y von s und s' unabhängig voneinander ziehen sollten,
+Das Problem war, dass wir x und y nicht unabhängig voneinander aus "s" und  "s'"  ziehen sollten,
+sondern y von "s" und  "s'"  unabhängig voneinander ziehen sollten,
 
 0:14:32.000,0:14:44.320
 sondern eigentlich sollten wir beide auf einmal
-ziehen, aus dem Zipping von s und s'.
+ziehen, aus dem Zipping von "s" und  "s'" .
 
 0:14:44.320,0:14:45.200
 Aha.

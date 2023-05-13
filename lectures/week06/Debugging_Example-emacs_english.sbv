@@ -90,7 +90,7 @@ this, somehow, the property seems to fail.
 
 0:02:02.800,0:02:08.480
 And indeed, if we call this function as given
-above, and it says that ABA is not a palindrome,
+above, and it says that "aba" is not a palindrome,
 
 0:02:08.480,0:02:11.200
 whereas we know that it is, so something is wrong.
@@ -111,7 +111,7 @@ And then there was an idea here, about reversing
 the list and then comparing it piecewise using
 
 0:02:28.080,0:02:32.160
-the capitalization via toUpper and the students
+the capitalization via "toUpper" and the students
 thought, well, this should work in their mind.
 
 0:02:32.720,0:02:36.560
@@ -186,7 +186,7 @@ The question would be: What value does this
 
 0:03:45.840,0:03:50.320
 expression have when we
-call this as being this ABA?
+call this as being this "aba"?
 
 0:03:51.440,0:03:54.480
 Yes, because probably the
@@ -283,11 +283,11 @@ What we actually want to have is: we want to
 
 0:05:17.840,0:05:25.120
 evaluate this expression, but in the context
-where s, the input, is our failing input ABA and
+where s, the input, is our failing input "aba" and
 
 0:05:25.120,0:05:29.600
-s' is whatever was computed from it, right,
-because s and s' occur in this expression.
+"s'" is whatever was computed from it, right,
+because "s" and "s'" occur in this expression.
 
 0:05:29.600,0:05:32.080
 So, we can't simply type this expression.
@@ -298,7 +298,7 @@ into the interpreter prompt,
 
 0:05:34.640,0:05:38.240
 I get an error because the
-s and s' are unknown.
+"s" and "s'" are unknown.
 
 0:05:38.240,0:05:41.440
 Okay, now, so in the interpreter
@@ -309,11 +309,11 @@ provide values, you can open the scope, you can
 say, well, I want to check this property here,
 
 0:05:48.080,0:05:55.760
-for the case that s is my original input, ABA,
+for the case that "s" is my original input, "aba",
 because that's what's happening with this case.
 
 0:05:55.760,0:05:59.840
-What we can say here is let s equals ABA.
+What we can say here is "let s = "aba"".
 
 0:06:00.720,0:06:04.480
 Now, this is like a "let ... in" in function equations.
@@ -331,15 +331,15 @@ And then I can actually also do this.
 
 0:06:14.560,0:06:18.640
 I can simply copy this line from here,
-because I also want the s' to be
+because I also want the "s'" to be
 
 0:06:18.640,0:06:24.000
 in scope of exactly the kind of computation
 that happens in the program at this point.
 
 0:06:24.880,0:06:28.240
-Okay, so now I have s in scope
-and have s' in scope.
+Okay, so now I have "s" in scope
+and have "s'" in scope.
 
 0:06:28.240,0:06:29.840
 Okay, they have the expected values.
@@ -411,7 +411,7 @@ out or outputting not exactly this
 
 0:07:38.400,0:07:43.120
 check here, but actually the values
-of x and y that are used in there.
+of "x" and "y" that are used in there.
 
 0:07:43.120,0:07:45.760
 So, we could, for example,
@@ -440,15 +440,15 @@ thinking about the problem was, where we
 don't want to, in the list comprehension,
 
 0:08:10.800,0:08:17.120
-draw the x and y variables from s and s'
+draw the "x" and "y" variables from "s" and "s'"
 independently, we want to draw them in lockstep.
 
 0:08:17.120,0:08:21.200
 So, the first one from s, the first one
-from s' and the second one from s
+from "s'" and the second one from s
 
 0:08:21.200,0:08:24.000
-and the second one from s', et cetera.
+and the second one from "s'", et cetera.
 
 0:08:24.000,0:08:27.440
 This is not what it is doing here. What this is
@@ -467,15 +467,15 @@ examples for doing just that.
 
 0:08:39.360,0:08:45.280
 So, one way to do this, to get the pairwise
-corresponding elements from s and s' in the
+corresponding elements from "s" and "s'" in the
 
 0:08:45.280,0:08:50.960
 list comprehension, is to not have two generators
-for x and y, but to have a combined generator
+for "x" and "y", but to have a combined generator
 
 0:08:52.800,0:09:01.680
 for pairs, and it runs over
-the zipping of s and s'.
+the zipping (using "zip") of "s" and "s'".
 
 0:09:03.280,0:09:06.960
 Okay, and if you would check
@@ -737,11 +737,11 @@ we know already what the problem was, right?
 
 0:14:27.200,0:14:32.000
 The problem was that we shouldn't draw x
-and y from s and s' independently,
+and y from "s" and "s'" independently,
 
 0:14:32.000,0:14:44.320
 but actually, we should draw both of them
-at once, from the zipping of s and s'.
+at once, from the zipping of "s" and "s'".
 
 0:14:44.320,0:14:45.200
 Okay.
