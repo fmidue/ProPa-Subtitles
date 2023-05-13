@@ -29,21 +29,21 @@ Also, lassen Sie mich GHCi tatsächlich aufrufen.
 
 0:00:38.880,0:00:44.960
 Und lassen Sie mich nicht irgendeine Quelldatei laden,
-sondern einfach die QuickCheck-Bibliothek,
+sondern einfach die "QuickCheck"-Bibliothek,
 
 0:00:45.680,0:00:48.320
 sodass ich ein paar schnelle Tests schreiben kann.
 
 0:00:48.320,0:00:53.280
 Okay, und lassen Sie uns tatsächlich versuchen, unsere
-polymorphe Umkehrfunktion zu testen, die
+polymorphe "reverse"-Funktion zu testen, die
 
 0:00:54.400,0:00:58.000
 ich im vorherigen Video vorgestellt oder besprochen habe.
 
 0:00:58.000,0:01:02.400
 Was könnte also eine nette
-Eigenschaft der Umkehrfunktion sein?
+Eigenschaft der "reverse"-Funktion sein?
 
 0:01:02.400,0:01:07.760
 So ist es zum Beispiel sicherlich
@@ -74,7 +74,7 @@ Okay.
 Und mir fallen noch ein paar weitere Eigenschaften der
 
 0:01:30.240,0:01:34.560
-Umkehrfunktion ausdenken, sie auch prüfen
+"reverse"-Funktion ausdenken, sie auch prüfen
 und finde: Nun, sie sind alle wahr.
 
 0:01:35.760,0:01:42.400
@@ -87,7 +87,7 @@ Eigenschaft oben einfach den length-Aufruf weglassen.
 
 0:01:48.560,0:01:54.880
 Das würde die Behauptung ergeben,
-dass das Umgedrehte von xs auch xs ist.
+dass das Umgedrehte von "xs" auch "xs" ist.
 
 0:01:56.080,0:01:58.960
 Das ist falsch, würde ich erwarten, richtig?
@@ -131,7 +131,7 @@ Und in der Tat, wenn ich das für viele Beispiele mache,
 
 0:02:34.160,0:02:38.240
 zeigt es immer nicht das Verhalten, das ich mit
-erfolgreich mit QuickCheck getestet habe.
+erfolgreich mit "QuickCheck" getestet habe.
 
 0:02:39.520,0:02:40.560
 Was ist also passiert?
@@ -141,19 +141,19 @@ Nun, ich habe Ihnen gesagt, was Sie tun sollen
 um herauszufinden, was
 
 0:02:46.640,0:02:50.080
-mit den QuickCheck-Tests los ist, entweder zu Ihrer eigenen
+mit den "QuickCheck"-Tests los ist, entweder zu Ihrer eigenen
 
 0:02:51.600,0:02:57.360
 Seelenfriedens zu wissen, was tatsächlich getestet
 wurde, oder einfach aus Neugier.
 
 0:02:57.920,0:03:03.120
-Und Sie können quickCheck jederzeit durch verboseCheck ersetzen,
+Und Sie können "quickCheck" jederzeit durch "verboseCheck" ersetzen,
 und Sie werden sehen, welche Eingaben geprüft wurden.
 
 0:03:03.120,0:03:06.720
 Offensichtlich hat es nicht geprüft
-"abc" oder [1..10] geprüft, denn
+"abc" oder "[1..10]" geprüft, denn
 
 0:03:06.720,0:03:10.480
 dann hätte es nicht diese falschen
@@ -196,14 +196,14 @@ Okay, was ist also die Lehre daraus?
 
 0:03:50.560,0:03:53.280
 Wenn Sie eine polymorphe
-Funktion prüft, wie die Umkehrfunktion,
+Funktion prüft, wie die "reverse"-Funktion,
 
 0:03:53.280,0:03:55.360
 ist es wirklich wichtig, worauf man sie prüft.
 
 0:03:56.080,0:04:00.800
-Einfach zu sagen, QuickCheck bitte, prüfe dies, dann
-QuickCheck könnte, und in diesem Fall tut es das, einen
+Einfach zu sagen, "QuickCheck" bitte, prüfe dies, dann
+"QuickCheck" könnte, und in diesem Fall tut es das, einen
 
 0:04:01.680,0:04:04.880
 Elementtyp für die Listen
@@ -234,7 +234,7 @@ wenn wir eine polymorphe Funktion testen?
 
 0:04:33.360,0:04:37.440
 Wir sollten sicherstellen, dass das, was wir testen oder welcher Typ
-es ist, das sollte man nicht QuickCheck überlassen,
+es ist, das sollte man nicht "QuickCheck" überlassen,
 
 0:04:37.440,0:04:40.480
 denn das kann zu diesen
@@ -251,16 +251,16 @@ lassen Sie uns das auf Listen von ganzen Zahlen überprüfen.
 Und ich kann das in der Eigenschaft tun,
 
 0:04:48.720,0:04:55.200
-zuweisen oder deklarieren, dass dieses xs
+zuweisen oder deklarieren, dass dieses "xs"
 eine Liste von ganzen Zahlen sein soll, zum Beispiel, richtig?
 
 0:04:55.200,0:05:02.640
-Dann verhindere ich, dass QuickCheck eine Entscheidung trifft
+Dann verhindere ich, dass "QuickCheck" eine Entscheidung trifft
 und wählt dieses seltsame Element und den Typ hier.
 
 0:05:03.440,0:05:08.480
 Okay, und wenn ich das mache, dann eigentlich,
-findet QuickCheck heraus, dass die Eigenschaft
+findet "QuickCheck" heraus, dass die Eigenschaft
 
 0:05:08.480,0:05:12.960
 nicht hält. Genau hier, ganz schnell, findet es
@@ -278,7 +278,7 @@ Zum Beispiel könnte ich sagen,
 für jede Zeichenkette wird dies gelten.
 
 0:05:25.680,0:05:29.680
-Ich würde erwarten, dass QuickCheck
+Ich würde erwarten, dass "QuickCheck"
 ein Gegenbeispiel findet. Es sagt nein, für einen String "ab",
 
 0:05:29.680,0:05:34.080
@@ -287,15 +287,15 @@ hier sogar Listen von Bools genommen haben,
 
 0:05:34.080,0:05:37.600
 dann hätte es ein Gegenbeispiel gefunden,
-das im Zusammenhang mit der Eigenschaft [True, False] ist.
+das im Zusammenhang mit der Eigenschaft "[True, False]" ist.
 
 0:05:37.600,0:05:43.360
 Also, für jeden nicht-trivialen Typ erhält man ein Gegenbeispiel,
 außer in dem Fall, in dem wir keinen Typ angeben,
 
 0:05:43.360,0:05:47.040
-wo wir es einfach QuickCheck überlassen und
-QuickCheck trifft eine sehr schlechte Wahl,
+wo wir es einfach "QuickCheck" überlassen und
+"QuickCheck" trifft eine sehr schlechte Wahl,
 
 0:05:47.040,0:05:52.640
 nämlich diese. Okay, also müssen wir
