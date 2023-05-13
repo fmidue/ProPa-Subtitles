@@ -9,7 +9,7 @@ Note that the *editor settings* provided as an `.editorconfig` file can be enfor
 | GitHub username | Lines |
 | :-- | --: |
 | Nick46000 | 166 |
-| Gotai | 91 |
+| Gotai | 150 |
 | TMUniversal | 53 |
 | michalitv21 | 19 |
 | MagnolieH | 14 |
