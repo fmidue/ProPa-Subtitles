@@ -96,7 +96,7 @@ on Integers, and then we got a new Integer
 list, etc.
 
 0:01:50.619,0:01:54.209
-Also, we had concatenation that could be used
+Also, we had concatenation ("++") that could be used
 on Strings.
 
 0:01:54.209,0:01:56.630
@@ -193,7 +193,7 @@ like this.
 So, we don't want this.
 
 0:03:27.959,0:03:32.110
-We want ++ to work on Strings and numbers,
+We want "++" to work on Strings and numbers,
 but we don't want it to work on both at the
 
 0:03:32.110,0:03:33.110
@@ -207,7 +207,7 @@ Well, if we did this, then even though this
 is a homogeneous list, and this is a homogeneous
 
 0:03:38.540,0:03:43.219
-list, and ++ can be used on both kinds of
+list, and "++" can be used on both kinds of
 lists, then we would end up with a non-homogeneous
 
 0:03:43.219,0:03:44.219
@@ -224,8 +224,8 @@ and then numbers 3 and 4.
 And that is not something that we want.
 
 0:03:50.860,0:03:55.749
-That would destroy the strictness of "lists
-are always homogeneous".
+That would destroy the strictness of 'lists
+are always homogeneous'.
 
 0:03:55.749,0:03:59.900
 And similarly, we want to ask whether a number
@@ -248,7 +248,7 @@ Yes, in many languages, this would be okay,
 and the answer would be False ('a' does not
 
 0:04:14.999,0:04:16.150
-occur in this list [1,2,3]).
+occur in this list "[1,2,3]").
 
 0:04:16.150,0:04:17.489
 We don't want this.
@@ -297,7 +297,7 @@ type of "reverse" is, then we might have had
 to give you two types.
 
 0:05:04.750,0:05:12.820
-So, maybe: reverse on characters, which when
+So, maybe: 'reverse on characters', which when
 given a list of characters, gives you a list
 
 0:05:12.820,0:05:17.360
@@ -363,10 +363,10 @@ list type is the same as the input list type,
 because we have the same variable here.
 
 0:06:14.740,0:06:17.860
-This is not the same as being untyped.
+This is not the same as being 'untyped'.
 
 0:06:17.860,0:06:21.509
-Let's consider the type of ++, the concatenation
+Let's consider the type of "++", the concatenation
 operator.
 
 0:06:21.509,0:06:23.099
@@ -381,7 +381,7 @@ But it is still impossible to write something
 like this.
 
 0:06:29.961,0:06:31.669
-So, this is not "anything goes".
+So, this is not 'anything goes'.
 
 0:06:31.669,0:06:34.180
 It doesn't mean: any two lists and I give
@@ -414,11 +414,11 @@ of arbitrary types, they have to be of the
 *same* type.
 
 0:07:03.720,0:07:06.289
-Otherwise, ++ will not be applicable.
+Otherwise, "++" will not be applicable.
 
 0:07:06.289,0:07:14.889
 And that is how this is rejected then, even
-though ++ works both on Strings and on number
+though "++" works both on Strings and on number
 
 0:07:14.889,0:07:17.500
 lists.
@@ -476,7 +476,7 @@ Similarly for "last" and "init".
 All these functions are polymorphic.
 
 0:08:05.669,0:08:09.669
-That's what a type variable means: "polymorphic"
+That's what a type variable means: 'polymorphic'
 is what I have here as the heading.
 
 0:08:09.669,0:08:13.879
@@ -488,7 +488,7 @@ because they can take many forms, basically.
 
 0:08:15.919,0:08:22.180
 Working with data of different forms, in that
-sense "polymorph".
+sense 'polymorph'.
 
 0:08:22.180,0:08:25.450
 And of course, a function doesn't have to
@@ -774,7 +774,7 @@ What if you have several input lists and want
 to be flexible in that?
 
 0:13:03.540,0:13:07.730
-We talked about ++ already, but let's also
+We talked about "++" already, but let's also
 talk about the "zip" function.
 
 0:13:07.730,0:13:08.810
@@ -801,7 +801,7 @@ to be homogeneous lists because every list
 in Haskell is homogeneous.
 
 0:13:28.430,0:13:34.130
-However, unlike in the case of the ++ concatenation
+However, unlike in the case of the "++" concatenation
 operator, they don't have to be the same kind
 
 0:13:34.130,0:13:35.130
@@ -829,8 +829,8 @@ characters, for example.
 How does this work?
 
 0:13:57.240,0:14:04.560
-Unlike in the case of ++, we do not only want
-to allow "ab" ++ "cd" and numbers ++ numbers,
+Unlike in the case of "++", we do not only want
+to allow ""ab" ++ "cd"" and "numbers ++ numbers",
 
 0:14:04.560,0:14:06.730
 and disallowing any mixed use.
@@ -848,7 +848,7 @@ a String and a list of numbers.
 
 0:14:18.589,0:14:23.600
 So, apparently the type must be different
-than the type of ++ because for ++ we said:
+than the type of "++" because for "++" we said:
 
 0:14:23.600,0:14:30.550
 We give it two lists of same element type,
@@ -867,7 +867,7 @@ because if it did, then by the same argument
 
 0:14:41.610,0:14:46.611
 that I used before to say that the type of
-++ statically rejects something like this,
+"++" statically rejects something like this,
 
 0:14:46.611,0:14:48.019
 also this would be rejected.
@@ -939,7 +939,7 @@ they don't *have* to be the same type.
 
 0:15:57.019,0:16:02.010
 In that sense, we can more flexibly use this
-than for example the ++.
+than for example the "++".
 
 0:16:02.010,0:16:06.600
 This is important: Different type variables
@@ -993,7 +993,7 @@ It's a list of pairs of "a = Char" and "b
 
 0:17:00.720,0:17:05.870
 That's why this now makes sense, whereas still
-a mixed call for the ++ function does not
+a mixed call for the "++" function does not
 
 0:17:05.870,0:17:10.640
 make sense because there the requirement
@@ -1016,14 +1016,14 @@ of "a"s being integers.
 
 0:17:25.770,0:17:32.262
 So, the different type variables here prevent
-this problem for "zip", but for ++ we definitely
+this problem for "zip", but for "++" we definitely
 
 0:17:32.262,0:17:34.330
 want that both are of the same type.
 
 0:17:34.330,0:17:39.700
 That's why the "a" occurs twice in the type
-of the ++ operator.
+of the "++" operator.
 
 0:17:39.700,0:17:48.650
 Unfortunately, it is not necessarily the case
@@ -1218,7 +1218,7 @@ Let's look at some simpler examples.
 
 0:21:29.030,0:21:34.700
 So, for example, if we write down a function
-like this: f (x,y) = x, and we don't say,
+like this: "f (x,y) = x", and we don't say,
 
 0:21:34.700,0:21:37.040
 are these numbers, are these characters, what
@@ -1276,7 +1276,7 @@ would also figure out automatically that the
 
 0:22:27.230,0:22:31.260
 two input lists can be of different types,
-unlike in the case of the ++ operator.
+unlike in the case of the "++" operator.
 
 0:22:31.260,0:22:36.360
 So, if this is not declared, the compiler
@@ -1295,26 +1295,26 @@ So, if we write a similar function, which
 somehow says "if pi>3 then x else y", then
 
 0:22:53.060,0:22:58.180
-again, the compiler will figure out that x
-and y can be anything, so it is going to use
+again, the compiler will figure out that "x"
+and "y" can be anything, so it is going to use
 
 0:22:58.180,0:22:59.240
 a type variable.
 
 0:22:59.240,0:23:05.250
 Because if you look at this if-then-else,
-nothing is really done with the x and y, so
+nothing is really done with the "x" and y, so
 
 0:23:05.250,0:23:09.910
 there is no something that forces them to
 be numbers or so.
 
 0:23:09.910,0:23:13.960
-Clearly, pi is a number, but x and y may be
+Clearly, pi is a number, but "x" and "y" may be
 anything.
 
 0:23:13.960,0:23:18.370
-And something of type of x or y will come
+And something of type of "x" or "y" will come
 out of this.
 
 0:23:18.370,0:23:23.490
@@ -1344,7 +1344,7 @@ is: here must be a condition, and the then-
 and else-branches must have the same type.
 
 0:23:45.890,0:23:50.640
-Since in this case, x or y, one of the two
+Since in this case, "x" or "y", one of the two
 pair components, is given back, in the then-
 
 0:23:50.640,0:23:53.500
@@ -1395,7 +1395,7 @@ works out.
 And you can write down a more specific type.
 
 0:24:36.050,0:24:41.500
-So, if you say: I want my f-function to be
+So, if you say: I want my "f"-function to be
 from pairs of integers and integers to integers,
 
 0:24:41.500,0:24:42.710
@@ -1444,7 +1444,7 @@ Maybe surprisingly, or maybe not surprisingly
 to you, this holds not just for arbitrary
 
 0:25:35.960,0:25:37.130
-f and lists.
+"f" and lists.
 
 0:25:37.130,0:25:39.850
 So, I said we could put any list here.
@@ -1557,7 +1557,7 @@ mentioned that in an imperative setting, these
 
 0:27:42.170,0:27:47.490
 loops may not be equivalent, depending, for
-example, on what the f is doing.
+example, on what the "f" is doing.
 
 0:27:47.490,0:27:49.700
 So, there could be a difference here.
@@ -1567,7 +1567,7 @@ And now we know that even if they *are* equivalent
 in certain situations, for example because
 
 0:27:54.170,0:27:59.920
-we know more about the f and about what's
+we know more about the "f" and about what's
 happening, at least they are not as general.
 
 0:27:59.920,0:28:01.590
