@@ -51,15 +51,15 @@ dem Radius t, was genau dasselbe ist, wie einfach
 
 0:01:04.089,0:01:06.600
 zu sagen: "ball
-ist diese solidCircle-Funktion".
+ist diese "solidCircle"-Funktion".
 
 0:01:06.600,0:01:12.330
 Definiert man "ball" als Alias, einen anderen
-Namen für die solidCircle-Funktion, dann drückt das die gleiche
+Namen für die "solidCircle"-Funktion, dann drückt das die gleiche
 
 0:01:12.330,0:01:20.130
 Idee aus, als würde man sagen: "ball zu einem
-gegebenen Zeitpunkt t ist solidCircle zu diesem gegebenen Zeitpunkt t".
+gegebenen Zeitpunkt t ist "solidCircle" zu diesem gegebenen Zeitpunkt t".
 
 0:01:20.130,0:01:23.810
 Und die zweite Version
@@ -90,7 +90,7 @@ Und dieses Beispiel haben wir auch in der
 aufgezeichneten Videodemonstration mit dem sich öffnenden Rechteck gesehen.
 
 0:01:52.210,0:01:58.960
-Und ich möchte hier betonen, dass die flip-Funktion, die
+Und ich möchte hier betonen, dass die "flip"-Funktion, die
 ich dort verwendet habe, um dies in ein Rechteck
 
 0:01:58.960,0:02:02.400
@@ -103,30 +103,30 @@ nicht das Bild gespiegelt.
 
 0:02:05.020,0:02:06.450
 Es wurde
-die rectangle-Funktion gespiegelt.
+die "rectangle"-Funktion gespiegelt.
 
 0:02:06.450,0:02:09.700
 Es würde also auf jede
 Funktion mit zwei Argumenten zutreffen.
 
 0:02:09.700,0:02:14.650
-In diesem Fall, für die rectangle-Funktion,
+In diesem Fall, für die "rectangle"-Funktion,
 hat es genau den Effekt, dass
 
 0:02:14.650,0:02:19.959
 die Form des Rechtecks geometrisch gespiegelt wird,
-weil wir die Parameterargumente der rectangle-Funktion gespiegelt
+weil wir die Parameterargumente der "rectangle"-Funktion gespiegelt
 
 0:02:19.959,0:02:20.959
 haben.
 
 0:02:20.959,0:02:23.760
-Aber die flip-Funktion selbst ist keine
+Aber die "flip"-Funktion selbst ist keine
 Funktion, die nur auf Bilder wirkt.
 
 0:02:23.760,0:02:28.040
 Sie ist eine Funktion, die auf andere
-Funktionen wirkt; in diesem Fall auf die rectangle-Funktion.
+Funktionen wirkt; in diesem Fall auf die "rectangle"-Funktion.
 
 0:02:28.040,0:02:34.989
 Und Sie haben das in Aktion gesehen,
@@ -434,7 +434,7 @@ Wir haben hier also
 zwei etwas gegensätzliche Fälle.
 
 0:08:22.090,0:08:27.319
-In gewissem Sinne ist der Picture-Typ nicht abstrakt, weil
+In gewissem Sinne ist der "Picture"-Typ nicht abstrakt, weil
 Sie ihn tatsächlich zeichnen können und eine Menge darüber sehen,
 
 0:08:27.319,0:08:33.230
@@ -780,19 +780,20 @@ aber "take 1" würde das Ergebnis als Liste zurückgeben.
 
 0:14:10.750,0:14:16.250
 Also wäre "take 1" dieser Liste die Singleton-Liste,
-die 1 enthält (etwa so: [1]), während "head
+die 1 enthält (etwa so: [1]),
 
 0:14:16.250,0:14:18.420
-[1..10]" nur 1
+während "head [1..10]" nur 1
 ist (etwa so: 1).
 
 0:14:18.420,0:14:23.510
-Oder im Fall einer Zeichenkette ist head "abcde"
+Oder im Fall einer Zeichenkette ist "head abcde"
 nicht eine Zeichenkette, die aus dem Buchstaben 'a' besteht
 
 0:14:23.510,0:14:26.200
 (wie hier: "a"), sondern das
 Zeichen 'a' (wie hier: 'a').
+(Achtung: 'a' ist ein "Char", "a" ist ein "String", also "[Char]")
 
 0:14:26.200,0:14:34.350
 Denn dieser String ist eine Liste von
@@ -911,7 +912,7 @@ Dann gibt es
 noch den berüchtigten Index-Zugriff.
 
 0:16:27.310,0:16:33.300
-Man kann also in Haskell mit diesem Operator
+Man kann also in Haskell mit diesem Operator "!!"
 auf ein Element an einem bestimmten Index zugreifen.
 
 0:16:33.300,0:16:35.100
@@ -972,7 +973,7 @@ ist natürlich auch der leere String.
 
 0:17:21.750,0:17:24.880
 Dann können Sie Listen
-oder Strings miteinander kombinieren.
+oder Strings miteinander kombinieren (mit "++").
 
 0:17:24.880,0:17:28.770
 Hier wieder für Strings geschrieben, aber es
@@ -1004,7 +1005,7 @@ Möglichkeiten, zwei Listen zu kombinieren.
 
 0:17:48.950,0:17:51.330
 Zum Beispiel können
-Sie zwei Listen "zippen".
+Sie zwei Listen 'zippen' (mit der "zip"-Funktion).
 
 0:17:51.330,0:17:56.010
 Das bedeutet, dass sie nicht
@@ -1031,8 +1032,8 @@ Also 'a' und 'd', dann das zweite
 Element des ersten Arguments und das zweite Element
 
 0:18:15.480,0:18:18.040
-des zweiten Arguments, ('b',
-'e'), und so weiter.
+des zweiten Arguments,
+('b','e'), und so weiter.
 
 0:18:18.040,0:18:21.701
 Wenn eine der beiden Listen kürzer ist
@@ -1047,7 +1048,7 @@ Und es gibt eine Version von
 ++, die mit verschachtelten Listen arbeitet.
 
 0:18:32.270,0:18:36.420
-Also, diese Verkettung (++) nimmt
+Also, diese Verkettung ("++") nimmt
 zwei Listen und verkettet sie.
 
 0:18:36.420,0:18:41.420
@@ -1079,8 +1080,8 @@ ein
 Komma stand.
 
 0:18:58.250,0:19:02.130
-Sie erhalten also [1,2]
-++ [] ++ [3].
+Sie erhalten also
+[1,2] ++ [] ++ [3].
 
 0:19:02.130,0:19:11.030
 Und die leere Liste trägt nicht zur
@@ -1191,7 +1192,7 @@ entweder durch Pattern-Matching (was ich gerade gesagt habe,
 
 0:21:12.910,0:21:17.770
 werde ich noch nicht zeigen) oder durch Verwendung
-der head- und last-Funktionen, also Prüfung, ob das erste
+der "head"- und "last"-Funktionen, also Prüfung, ob das erste
 
 0:21:17.770,0:21:23.780
 Element und das letzte Element dieser Zeichenkette das
@@ -1246,7 +1247,7 @@ die Umkehrung des
 Strings ihn nicht verändert.
 
 0:22:09.620,0:22:13.300
-Nun, eigentlich "verändert" die Umkehrung einer Zeichenkette
+Nun, eigentlich 'verändert' die Umkehrung einer Zeichenkette
 sie nie, sie gibt nur eine andere
 
 0:22:13.300,0:22:15.870
@@ -1563,7 +1564,7 @@ Argumente vertauschen, wird es auch funktionieren.
 
 0:27:12.760,0:27:15.170
 Das liegt an der
-Eigenschaft der "Lazy Evaluation".
+Eigenschaft der 'Lazy Evaluation'.
 
 0:27:15.170,0:27:19.130
 Das war etwas, was ich im ersten Video
@@ -1676,7 +1677,7 @@ dass die Quadratzahlen immer größer werden.
 
 0:29:12.420,0:29:18.130
 Aber Haskell sollte dieses Wissen nicht nutzen,
-weil das im Grunde der "referenziellen Transparenz" widersprechen
+weil das im Grunde der 'referenziellen Transparenz' widersprechen
 
 0:29:18.130,0:29:19.130
 würde.
