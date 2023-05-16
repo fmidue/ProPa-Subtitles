@@ -793,6 +793,7 @@ nicht eine Zeichenkette, die aus dem Buchstaben 'a' besteht
 0:14:23.510,0:14:26.200
 (wie hier: "a"), sondern das
 Zeichen 'a' (wie hier: 'a').
+(Achtung: 'a' ist ein Char, "a" ist ein String, also [Char].)
 
 0:14:26.200,0:14:34.350
 Denn dieser String ist eine Liste von
@@ -911,7 +912,7 @@ Dann gibt es
 noch den berüchtigten Index-Zugriff.
 
 0:16:27.310,0:16:33.300
-Man kann also in Haskell mit diesem Operator
+Man kann also in Haskell mit diesem Operator '!!'
 auf ein Element an einem bestimmten Index zugreifen.
 
 0:16:33.300,0:16:35.100
@@ -972,7 +973,7 @@ ist natürlich auch der leere String.
 
 0:17:21.750,0:17:24.880
 Dann können Sie Listen
-oder Strings miteinander kombinieren.
+oder Strings miteinander kombinieren (mit '++').
 
 0:17:24.880,0:17:28.770
 Hier wieder für Strings geschrieben, aber es
@@ -1004,7 +1005,7 @@ Möglichkeiten, zwei Listen zu kombinieren.
 
 0:17:48.950,0:17:51.330
 Zum Beispiel können
-Sie zwei Listen "zippen".
+Sie zwei Listen "zippen" (mit der zip-Funktion).
 
 0:17:51.330,0:17:56.010
 Das bedeutet, dass sie nicht
@@ -1031,8 +1032,7 @@ Also 'a' und 'd', dann das zweite
 Element des ersten Arguments und das zweite Element
 
 0:18:15.480,0:18:18.040
-des zweiten Arguments, ('b',
-'e'), und so weiter.
+des zweiten Arguments, ('b','e'), und so weiter.
 
 0:18:18.040,0:18:21.701
 Wenn eine der beiden Listen kürzer ist
@@ -1079,8 +1079,8 @@ ein
 Komma stand.
 
 0:18:58.250,0:19:02.130
-Sie erhalten also [1,2]
-++ [] ++ [3].
+Sie erhalten also
+[1,2] ++ [] ++ [3].
 
 0:19:02.130,0:19:11.030
 Und die leere Liste trägt nicht zur
