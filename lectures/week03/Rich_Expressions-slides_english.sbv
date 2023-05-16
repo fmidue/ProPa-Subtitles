@@ -166,7 +166,7 @@ documentation, you would
 have found something like:
 
 0:03:35.200,0:03:39.440
-The "circle" function takes a radius, which
+The 'circle' function takes a radius, which
 is a real number, and gives a picture.
 
 0:03:39.440,0:03:40.960
@@ -197,7 +197,7 @@ get pairs of real numbers.
 
 0:04:10.880,0:04:14.560
 And a list of such things will be an argument
-of the polygon function to get a picture.
+of the 'polygon' function to get a picture.
 
 0:04:15.840,0:04:19.520
 For "colored", you take two arguments, a
@@ -392,7 +392,7 @@ around with the example code.
 
 0:07:51.680,0:07:55.920
 We can also consider specific calls of
-the scene-function with the values 1, 2,
+the 'scene' function with the values 1, 2,
 
 0:07:55.920,0:07:58.080
 3, whatever, with specific values.
@@ -449,14 +449,14 @@ don't need to know how it does that.
 
 0:09:00.240,0:09:05.040
 It does that by making clever decisions
-about how often to call the scene-function,
+about how often to call the 'scene' function,
 
 0:09:05.040,0:09:11.680
 maybe in sync with the browser's refresh rate,
 decides when and with which values it should
 
 0:09:11.680,0:09:15.760
-call the scene-function, and then combines all
+call the 'scene' function, and then combines all
 the pictures that result into a nice animation
 
 0:09:15.760,0:09:19.520
@@ -471,7 +471,7 @@ The point is, the animationOf-construct does this.
 
 0:09:27.680,0:09:32.160
 It is a function which takes another function,
-in this case a scene-function, as an argument.
+in this case a 'scene' function, as an argument.
 
 0:09:32.160,0:09:34.640
 It is not something that we
@@ -636,7 +636,7 @@ Why don't they have to be functions of t?
 Because they are local definitions.
 
 0:12:52.320,0:12:55.840
-So, we describe the scene-function.
+So, we describe the 'scene' function.
 
 0:12:55.840,0:12:57.520
 The function takes an argument t.
@@ -796,7 +796,7 @@ on our coordinates plane, for example.
 Now, of course, the magic
 
 0:16:03.440,0:16:06.240
-of the animationOf-function provided
+of the 'animationOf' function provided
 before is not applicable anymore.
 
 0:16:06.240,0:16:08.800
@@ -820,7 +820,7 @@ should statically be placed.
 
 0:16:23.680,0:16:28.000
 And that's not something that somehow can come
-from something like the animationOf-function.
+from something like the 'animationOf' function.
 
 0:16:30.160,0:16:33.360
 So, now it is something that
@@ -830,18 +830,18 @@ the programmer would have to do.
 And of course, the programmer could do that.
 
 0:16:34.880,0:16:40.000
-The programmer could take our old scene-function,
+The programmer could take our old 'scene' function,
 which given the parameter places the triangle at
 
 0:16:40.000,0:16:45.520
 some point, and previously used this parameter
-in the animationOf-function to express movement.
+in the 'animationOf' function to express movement.
 
 0:16:45.520,0:16:47.760
 Now we could simply say: Let's instead make
 
 0:16:47.760,0:16:51.680
-individual calls to the scene-function
+individual calls to the 'scene' function
 with different values for this parameter.
 
 0:16:51.680,0:16:55.440
@@ -864,7 +864,7 @@ And if you want to have ten copies of
 the triangle, then you would have to ask
 
 0:17:09.120,0:17:13.520
-ten calls to this scene-function
+ten calls to this 'scene' function
 which draws one triangle.
 
 0:17:13.520,0:17:15.920
@@ -893,7 +893,7 @@ That would probably take a for-loop.
 
 0:17:30.240,0:17:36.400
 We would say we want ten copies
-of our call of the scene-function.
+of our call of the 'scene' function.
 
 0:17:36.400,0:17:42.320
 Then let's write a for-loop in which we use
@@ -954,7 +954,7 @@ but they originated in functional programming.
 So, what do we have here?
 
 0:18:37.440,0:18:40.640
-We have our old scene-function in a sense.
+We have our old 'scene' function in a sense.
 
 0:18:40.640,0:18:41.840
 So, it's the same thing.
@@ -989,7 +989,7 @@ So, the square brackets here are for list syntax.
 
 0:19:12.640,0:19:16.880
 And in particular, I combined two things
-here: I have some function "pictures".
+here: I have some function 'pictures'.
 
 0:19:16.880,0:19:18.960
 It's given down here with its type.
@@ -1009,7 +1009,7 @@ pictures, but it is actually a list.
 So, several pictures are turned into one picture.
 
 0:19:29.600,0:19:31.840
-You could think of the pictures-function
+You could think of the 'pictures' function
 
 0:19:33.200,0:19:39.600
 as a version of the &-operator, but now it
@@ -1039,7 +1039,7 @@ elements of the list at a time.
 And how does it do that?
 
 0:20:04.500,0:20:07.410
-Well, it contains calls of the scene-function
+Well, it contains calls of the 'scene' function
 for some values.
 
 0:20:07.410,0:20:12.460
@@ -1054,12 +1054,12 @@ Let the d variable be taken from 0, 1, 2,
 3, 4, 5, so six calls (basically six copies);
 
 0:20:27.479,0:20:34.170
-and for each of these values, call the scene-function,
+and for each of these values, call the 'scene' function,
 which will give one version of this moved
 
 0:20:34.170,0:20:40.830
 triangle; put them all into a list; pass that
-list of six pictures to the pictures-function,
+list of six pictures to the 'pictures' function,
 
 0:20:40.830,0:20:43.300
 which will turn them into one picture.
@@ -1209,7 +1209,7 @@ And that list, like here this set, is then
 what I pass on.
 
 0:23:19.880,0:23:24.499
-In this case, it is what is passed to the pictures-function,
+In this case, it is what is passed to the 'pictures' function,
 in order to combine my different pictures
 
 0:23:24.499,0:23:27.490
@@ -1317,7 +1317,7 @@ Basically, a Boolean value.
 
 0:25:15.190,0:25:21.420
 You have not seen this yet, but there is a
-function "even" in Haskell, which takes a number
+function 'even' in Haskell, which takes a number
 
 0:25:21.420,0:25:25.730
 and gives "true" if that number is even;
