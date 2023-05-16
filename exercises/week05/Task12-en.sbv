@@ -1,0 +1,302 @@
+0:00:01.360,0:00:02.640
+Now for Task 12.
+
+0:00:02.640,0:00:10.080
+We should implement a function that checks if
+some Integer is not present in a list of Integers.
+
+0:00:10.080,0:00:16.320
+So if this Integer v is not
+an element of this list xs.
+
+0:00:17.520,0:00:26.160
+Okay, so again, we should only use one
+equation, maybe with guards, to do this.
+
+0:00:26.160,0:00:32.000
+And we have some test cases
+given that we should fulfill.
+
+0:00:38.240,0:00:38.960
+How do we do this?
+
+0:00:40.240,0:00:47.680
+Let's start with adding some
+guards to distinguish some cases.
+
+0:00:49.200,0:01:04.320
+The first case checks if head
+xs is actually equivalent to v.
+
+0:01:06.880,0:01:16.160
+If this is the case we found v in
+the list so we return False, right.
+
+0:01:17.600,0:01:23.600
+This is the simplest thing we can think of.
+
+0:01:24.240,0:01:27.760
+Okay so what happens if this is not the case?
+
+0:01:31.280,0:01:40.320
+Well, if the head element is not the element
+we are looking for, or not looking for,
+
+0:01:43.840,0:01:52.240
+then we should look in the rest of the
+list if this element is not present there.
+
+0:01:52.240,0:02:03.440
+So we do notElem on the tail of xs.
+
+0:02:03.440,0:02:11.920
+And we should also give it the
+element we are not looking for.
+
+0:02:14.800,0:02:20.560
+Okay, so does this work?
+
+0:02:20.560,0:02:24.720
+Well, probably not but let's try it anyway.
+
+0:02:27.760,0:02:39.360
+So let's say we're looking
+for whether 1 is not in [1].
+
+0:02:43.680,0:02:47.520
+Well, we get the correct answer there.
+
+0:02:47.520,0:02:50.320
+Let's see if one is not in the list [2,5,1,6].
+
+0:03:00.160,0:03:04.720
+notElem is also giving the right answer there.
+
+0:03:04.720,0:03:09.040
+So our base case and our recursion seem to work.
+
+0:03:09.040,0:03:11.200
+Okay let's try a negative example.
+
+0:03:11.200,0:03:14.320
+What if it's actually not in the list.
+
+0:03:14.320,0:03:19.760
+Well, we're trying to get
+the head of an empty list.
+
+0:03:20.960,0:03:28.080
+So, this is because we forgot to handle
+the case that the list could be empty.
+
+0:03:28.640,0:03:36.080
+So if the list is empty, what's our result?
+
+0:03:36.080,0:03:41.600
+Well, no element is present in
+the empty list so we return True
+
+0:03:43.920,0:03:47.520
+if we check that v is not in the empty list.
+
+0:03:48.080,0:03:59.840
+Okay, so this gives us a base case in the
+negative, or in this case positive, case.
+
+0:04:01.040,0:04:03.840
+So notElem 1 [2,5,6] now returns True.
+
+0:04:04.480,0:04:10.800
+Okay let's check that it also fulfills
+this test suite we're given here.
+
+0:04:12.560,0:04:13.440
+Looks good.
+
+0:04:13.440,0:04:15.040
+So what do we actually test here?
+
+0:04:15.760,0:04:16.480
+We test that
+
+0:04:18.960,0:04:28.880
+if we call notElem x [] we should always get
+True no matter what element we choose (for x).
+
+0:04:28.880,0:04:30.240
+This is why we added this case,
+
+0:04:33.680,0:04:36.240
+because this should be the
+base case of the recursion.
+
+0:04:40.720,0:04:45.680
+For a singleton list [x] we
+can always say that if we try
+
+0:04:45.680,0:04:51.280
+notElem x [x] list we should always get False.
+
+0:04:51.280,0:04:58.480
+And therefore we use not here because we always
+state true facts in these QuickCheck tests.
+
+0:04:59.520,0:05:07.920
+Okay, then [y] does not contain
+x, if x and y are different.
+
+0:05:08.840,0:05:11.360
+This is how we write this in QuickCheck.
+
+0:05:13.440,0:05:18.960
+This also seems like a logical
+thing to do or to test.
+
+0:05:19.520,0:05:25.120
+And then we test that a combined
+list does not contain an element v
+
+0:05:25.120,0:05:35.600
+exactly if it is not contained in one of the
+lists from which the combined list is made out of.
+
+0:05:35.600,0:05:41.280
+So, if we have a list xs and a list
+ys then (checking whether) v is not
+
+0:05:41.280,0:05:44.880
+an element of the combination of these two lists
+
+0:05:48.720,0:05:58.960
+is the same as checking whether it's not
+an element of xs and not an element of ys.
+
+0:05:58.960,0:06:02.400
+Then it is also not an element of the combination.
+
+0:06:03.200,0:06:07.040
+Okay, this is what these tests do.
+
+0:06:07.040,0:06:17.840
+And we more or less do, at least for the first few
+tests, we can see that these are our cases here.
+
+0:06:20.320,0:06:25.360
+Okay, so is there another way to to solve this?
+
+0:06:27.200,0:06:33.120
+Sure, for example, we can realize that we
+are actually dealing with Booleans here.
+
+0:06:33.120,0:06:37.920
+So on this side we have boolean
+values and here we have Boolean values
+
+0:06:37.920,0:06:48.000
+so we can rewrite this using Boolean connectives.
+
+0:06:48.000,0:07:00.400
+So, instead of these guards let's say in one
+Boolean expression what notElem really is.
+
+0:07:01.280,0:07:13.280
+So we have the first condition here that says it's
+true if xs is null, so you can just write null xs.
+
+0:07:15.440,0:07:17.600
+And then we add the second condition.
+
+0:07:18.800,0:07:22.080
+And if we look carefully at these
+two conditions we see that this is
+
+0:07:23.840,0:07:41.360
+(head xs /= v) && (notElem v (tail xs))
+
+0:07:43.600,0:07:54.000
+This just says in one expression without
+any guards, that either the list is empty or
+
+0:07:54.720,0:08:00.960
+the first element is different (to v) and the
+rest list also does not contain the element.
+
+0:08:02.720,0:08:11.840
+And that's the definition of what it means
+for v to not be an element of this list.
+
+0:08:13.120,0:08:22.080
+Okay, this is possible because we are
+dealing with a Boolean valued output.
+
+0:08:24.320,0:08:29.520
+And we can use these (&&) and (||)
+connectives to write a thing like this.
+
+0:08:29.520,0:08:36.000
+And sometimes you would prefer this version
+with guards over this expression and
+
+0:08:36.000,0:08:43.680
+sometimes depending on the context this
+single expression might be favorable.
+
+0:08:45.120,0:08:52.640
+But there's another solution that is interesting.
+Maybe a bit more declarative.
+
+0:08:56.160,0:08:59.400
+We use the observation that ...
+
+0:09:04.720,0:09:16.240
+If v is not an element of xs then there
+are no elements in xs that are equal to v.
+
+0:09:17.520,0:09:25.920
+This means that if we take all the
+elements of xs via a list comprehension;
+
+0:09:25.920,0:09:30.800
+And only take those that are equal to v;
+
+0:09:32.000,0:09:38.160
+Then we get all the elements that
+are equal to v in that list and
+
+0:09:38.160,0:09:43.200
+for an element to not be in the
+list this list now has to be empty.
+
+0:09:45.120,0:09:57.120
+This says if there is no element in xs
+such that x == v, then v is not in xs.
+
+0:09:58.240,0:10:04.000
+This is a nice declarative alternative to this
+Boolean expression with recursion, because
+
+0:10:05.440,0:10:07.280
+as you can see there's no recursion here.
+
+0:10:07.840,0:10:16.800
+And this is also correct as we
+can see by running the tests.
+
+0:10:16.800,0:10:21.680
+(Maybe we should save it
+first and now run the tests)
+
+0:10:23.280,0:10:24.960
+It passes all the tests,
+
+0:10:27.200,0:10:36.560
+but it's way harder to see by looking at
+the code that it fulfills these properties.
+
+0:10:37.360,0:10:41.440
+But we can run them and then verify
+that this actually works out.
+
+0:10:43.600,0:10:53.840
+This is a nice observation that we can make here
+to get this solution with list comprehensions.

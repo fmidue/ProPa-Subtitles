@@ -1,0 +1,167 @@
+0:00:00.000,0:00:07.230
+In dieser Aufgabe soll eine Funktion 'notElem'
+geschrieben werden, die zurück gibt, ob ein
+
+0:00:07.230,0:00:18.000
+Element in einer Liste existiert, also ob das
+Element v in der Liste XS existiert. Dafür können
+
+0:00:18.000,0:00:26.730
+wir Guards verwenden, um Fallentscheidungen
+zu treffen, um gewisse Fälle zu haben,
+
+0:00:26.730,0:00:36.240
+in denen wir eben schauen, ob die Liste ein
+entsprechendes Element enthält oder nicht.
+
+0:00:36.240,0:00:48.300
+Also wenn der Kopf der liste genau dem v Element
+entspricht, dann wissen wir, dass das ganze nicht
+
+0:00:48.300,0:00:57.150
+stimmt. Jetzt können wir uns ja überlegen, was
+ist noch für Fälle gibt. Also wir könnten sagen,
+
+0:00:57.660,0:01:25.530
+in allen anderen Fällen wissen wir, dass 'notElem'
+für die Restliste gelten muss. Also wenn das
+
+0:01:25.530,0:01:34.440
+erste Element nicht dem den gesuchten Element
+entspricht, oder dem nicht gesuchten Element, dann
+
+0:01:34.440,0:01:46.290
+suchen wir halt weiter im Rest der Liste, also
+im 'tail'. Wir können das ganze wieder in ghci,
+
+0:01:46.290,0:01:56.790
+als Task12 und habe mir auch wieder Testfäll,
+die wir hier ausführen können und da schlägt
+
+0:01:56.790,0:02:09.270
+auch schon ein Test fehl und der sagt, dass hier
+der Test bei leeren Liste fehlgeschlagen ist. Wir
+
+0:02:09.270,0:02:14.700
+haben die leere Liste vergessen, also hier muss
+noch ein Fall eingeführt werde, für die leere
+
+0:02:14.700,0:02:28.530
+Liste und in dem Fall sollte 'True' rauskommen.
+Denn die leere Liste enthält unser Element auf
+
+0:02:28.530,0:02:39.090
+jeden Fall nicht. Das wissen wir ja. Jetzt führen
+wir den Test noch einmal aus und jetzt schlägt der
+
+0:02:39.090,0:02:46.440
+Test immer noch fehl bei den leeren Listen. Warum
+ist das der Fall? Die Reihenfolge der Guards ist
+
+0:02:46.440,0:02:53.310
+hier entscheidend und es wird zuerst das erste
+überprüft und was passiert hier? Hier wird 'head'
+
+0:02:53.310,0:03:02.100
+auf der leeren Liste ausgeführt. Das ist genau die
+Fehlermeldung, die hier auch steht. Wenn 'head'
+
+0:03:02.100,0:03:11.790
+auf der leeren Liste ausgeführt wird, also in dem
+Testfall ist die Liste leer, dann gibt es einen
+
+0:03:11.790,0:03:16.560
+Fehlerfall, weil 'head' für die leere Liste nicht
+definiert ist. Deshalb müssen wir zuerst prüfen,
+
+0:03:16.560,0:03:24.180
+ob die Liste leer ist, bevor weitere Testfälle
+erfolgen können, bevor wir überhaupt weiter
+
+0:03:24.180,0:03:31.680
+andere Operationen ausführen können. Wenn wir das
+behoben haben, dann funktioniert unsere 'notElem'
+
+0:03:31.680,0:03:42.300
+Funktion. Das Ganze lässt sich natürlich auch
+noch anders aufschreiben, also ich denke mir jetzt
+
+0:03:42.300,0:03:53.880
+mal eine alternative Variante für 'notElem' aus,
+übernehme den Typ von hier oben, also der Typ soll
+
+0:03:53.880,0:04:09.660
+natürlich gleich sein und auch die Parameter.
+Was könnten wir auch machen? Wir könnten das
+
+0:04:09.660,0:04:19.290
+Ganze als booleschen Ausdruck schreiben, also
+dieses, was wir hier als Guard geschrieben haben,
+
+0:04:19.290,0:04:27.390
+könnten wir sozusagen auch umschreiben. Wenn die
+Liste leer ist dann, wissen wir dass das ganze
+
+0:04:27.390,0:04:41.550
+'True' ist und 'False' ist das ganze, wenn 'head'
+gleich genau dem gesuchten Element ist. Das heißt,
+
+0:04:41.550,0:04:52.650
+wenn das nicht der Fall ist und 'notElem' für
+den Rest gilt, dann wissen wir, dass das ganze
+
+0:04:52.650,0:05:11.040
+'True' ist. Also 'head xs != v && notElem v
+(tail xs)'. Dann wissen wir, dass das Ganze
+
+0:05:11.040,0:05:19.410
+auch 'True' ist. Das sind die einzigen Fälle,
+die sozusagen noch auftreten können. Damit haben
+
+0:05:19.410,0:05:25.320
+wir alles abgedeckt. Wenn wir das so in unserer
+Testsuite laufen lassen, dann stelle wir fest,
+
+0:05:25.320,0:05:34.890
+dass auch hier die Tests erfolgreich durchlaufen.
+Also eine anders aufgeschriebene Variante von
+
+0:05:34.890,0:05:48.110
+der ersten Implementierung. Wie können wir
+das ganze auch noch lösen? Wir können auch
+
+0:05:48.110,0:06:03.050
+List Comprehension verwenden. Das heißt, wenn wir
+definieren 'notElem' wie folgt, wir schreiben eine
+
+0:06:03.050,0:06:09.350
+List Comprehension, das habe ich schon gesagt,
+wir haben wieder v und xs und wir überprüfen für
+
+0:06:09.350,0:06:30.570
+jedes Element, ob es in der Liste drin ist. Das
+heißt, wir überprüfen für jedes Element aus xs,
+
+0:06:30.570,0:06:43.560
+ob es in der Liste enthalten ist. Also ob x gleich
+v ist und wenn das der Fall ist, dann geben wir
+
+0:06:43.560,0:06:59.010
+das entsprechende Element zurück und nur wenn
+die Liste leer ist, dann wissen wir dass auch
+
+0:06:59.010,0:07:07.800
+das Element tatsächlich nicht Liste enthalten
+ist, denn hier wird eine Liste konstruiert,
+
+0:07:07.800,0:07:15.150
+die alle Elemente enthält, die gleich dem v sind
+und wenn diese Liste leer ist, dann wissen wir,
+
+0:07:15.150,0:07:21.900
+dass unser Element nicht in der Liste ist. Das
+können wir auch noch einmal durchführen, durch
+
+0:07:21.900,0:07:29.760
+unsere Testsuite, und sehen, dass das
+entsprechend auch erfolgreich durchläuft.
