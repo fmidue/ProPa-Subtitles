@@ -1,0 +1,430 @@
+0:00:01.840,0:00:10.160
+Okay, I decided that before I go further on with
+slides, in particular talking about higher-order
+
+0:00:10.160,0:00:15.840
+functions on lists, it would probably be good to
+make another whiteboard style video where I again,
+
+0:00:15.840,0:00:21.200
+briefly talk about the syntax of function
+definitions, in particular anonymous functions, sections
+
+0:00:21.200,0:00:26.720
+that we could then pass on to those
+other, higher-order functions on lists.
+
+0:00:26.720,0:00:32.080
+And because the notes I took inside
+the slides in the previous video,
+
+0:00:32.080,0:00:35.440
+maybe they didn't work so nicely in all cases.
+
+0:00:36.160,0:00:40.800
+Also because of my technical
+problems, so I'm back to this setup here.
+
+0:00:40.800,0:00:43.520
+And well, what I'm going to
+tell is mainly repetition.
+
+0:00:43.520,0:00:46.240
+So, let's recall.
+
+0:00:46.240,0:00:51.120
+So, how do we usually write new functions here?
+
+0:00:51.120,0:00:54.160
+So, I introduce some function
+that I want to use somewhere,
+
+0:00:54.160,0:00:58.080
+it's a function from the integers to the integers.
+
+0:00:58.640,0:01:05.760
+And usually, I would say something like
+newFunction with some useful name.
+
+0:01:05.760,0:01:09.440
+And it takes an argument and
+maybe it computes x plus x.
+
+0:01:09.440,0:01:09.940
+Okay?
+
+0:01:10.480,0:01:12.080
+Doesn't really matter what it computes.
+
+0:01:12.080,0:01:15.040
+Okay, so that's how so far
+you have introduced functions.
+
+0:01:15.760,0:01:17.360
+Okay, what we can do now,
+
+0:01:17.360,0:01:22.560
+that is what I introduced as part of
+the slides on lambda abstractions.
+
+0:01:22.560,0:01:27.200
+You could now have written with the
+same signature above, but instead of
+
+0:01:27.200,0:01:31.120
+the definition line (this one equation),
+we could also have written this equation.
+
+0:01:36.400,0:01:41.200
+Yes, using this lambda syntax. So,
+the lambda would look like this.
+
+0:01:41.200,0:01:44.560
+But as you have seen on the slides, in
+
+0:01:45.520,0:01:49.440
+ASCII syntax, we use the backslash
+for this, instead of the lambda symbol.
+
+0:01:49.440,0:01:54.320
+But when I write it down, I will sometimes
+write the explicit Greek lambda for this.
+
+0:01:55.280,0:01:59.360
+So, that's why it's called lambda expressions/abstractions.
+
+0:01:59.360,0:02:03.440
+So, we could have written this line
+instead of the one before, right.
+
+0:02:04.720,0:02:10.000
+Okay, in a named function definition, and in the
+same way, we could actually also just use the
+
+0:02:10.000,0:02:15.680
+right-hand side directly in some function call
+where we otherwise would pass the “newFunction”.
+
+0:02:15.680,0:02:19.360
+So, let's say we have somewhere a function call f.
+
+0:02:19.360,0:02:24.960
+And then it needs an argument, which is a function
+from Int to Int, and we could have
+
+0:02:25.840,0:02:31.760
+passed a new function as
+an argument to that other function f.
+
+0:02:31.760,0:02:33.680
+Or we could also write f.
+
+0:02:33.680,0:02:37.520
+And then instead of using this name, or even
+introducing this name, you could directly
+
+0:02:37.520,0:02:42.480
+pass a lambda expression to this.
+
+0:02:45.280,0:02:51.760
+Okay, and the important thing here is that here, we
+need these brackets around the lambda expression,
+
+0:02:51.760,0:02:54.880
+we don't need this here
+in the definition line as above.
+
+0:02:55.680,0:03:01.040
+And if you pass it as an argument to some other
+function, we usually have to use these parentheses.
+
+0:03:01.040,0:03:01.680
+Why?
+
+0:03:01.680,0:03:04.160
+Because, for example, there could be
+another argument later on, right?
+
+0:03:04.160,0:03:06.320
+So, maybe f takes more than one argument.
+
+0:03:06.320,0:03:09.440
+And then we need to know
+basically what the scope is.
+
+0:03:10.080,0:03:12.560
+So, this introduces a variable x, what's the scope?
+
+0:03:12.560,0:03:18.800
+Well, in a place like this, it's until the end
+of the expression, end of the line, basically,
+
+0:03:20.000,0:03:22.240
+because that's the right hand
+side of a function definition.
+
+0:03:22.240,0:03:24.720
+But for example, in an application like this,
+
+0:03:24.720,0:03:29.920
+we need to know how far this x stretches
+to the right, the definition or the scope.
+
+0:03:30.480,0:03:37.440
+And it goes, in this case, until this
+bracket is closed, which was opened here.
+
+0:03:37.440,0:03:40.720
+Okay, so that's why can't
+simply write this without these
+
+0:03:41.680,0:03:44.960
+two brackets. It wouldn't be unique or clear,
+
+0:03:44.960,0:03:45.840
+what we mean by this.
+
+0:03:47.520,0:03:50.800
+Okay, so that's the part
+about lambda abstractions,
+
+0:03:50.800,0:03:52.960
+and how they are used, what their role is.
+
+0:03:53.520,0:03:55.920
+Then there were these comments about sections.
+
+0:03:55.920,0:03:59.360
+And maybe it's also useful to
+simply show how these sections
+
+0:03:59.920,0:04:02.720
+correspond to anonymous functions
+with lambda abstractions.
+
+0:04:02.720,0:04:04.800
+So, let me make another quick note.
+
+0:04:04.800,0:04:09.440
+So, we had some things like "smaller
+than five" as a predicate, for example,
+
+0:04:09.440,0:04:15.680
+you could also have this or maybe something like
+this: > 0.5. So, this would be
+
+0:04:15.680,0:04:21.200
+the section syntax because we apply this
+binary operator to just one argument.
+
+0:04:22.320,0:04:24.400
+In this case, the one we see here.
+
+0:04:26.240,0:04:31.280
+Okay, and this is really equivalent to: …
+Let me also write this now with brackets
+
+0:04:32.320,0:04:33.760
+inside a lambda abstraction.
+
+0:04:35.280,0:04:41.920
+And inside the lambda abstraction, this would
+be the same as an anonymous function which takes
+
+0:04:41.920,0:04:51.200
+an argument and then computes x > 0.5.
+And if you use a section the other way around,
+
+0:04:51.200,0:04:55.840
+where we provide the left-hand side, the
+left arguments…. So, if you had instead written
+
+0:04:56.400,0:05:07.200
+“0.5 >” and used this as our new function,
+then this is equivalent to lambda x where 0.5
+
+0:05:08.560,0:05:14.160
+is greater x. So, that's the rule of having
+the sectioning to the left or to the right,
+
+0:05:15.280,0:05:19.760
+expressed as lambda abstractions, it's
+clear, it becomes more clear maybe
+
+0:05:19.760,0:05:27.040
+we are the unknown or the
+still-waited-for function argument
+
+0:05:27.040,0:05:27.540
+will go.
+
+0:05:31.680,0:05:32.560
+Okay, that's that.
+
+0:05:33.120,0:05:39.280
+And then also for later users, it's
+interesting or important and relevant to know
+
+0:05:39.280,0:05:44.160
+that, of course, now that we have functions
+as first-class values, we can also operate
+
+0:05:44.160,0:05:48.320
+on them in the way that mathematics allows
+to operate on functions extensionally.
+
+0:05:48.320,0:05:53.760
+Not by looking inside the syntax, or the function
+definition of a function-argument used in a function.
+
+0:05:53.760,0:06:00.400
+So, we don't somehow get to look into how this is
+defined, and then make case distinctions on this.
+
+0:06:00.400,0:06:01.840
+That's not something that we can do.
+
+0:06:01.840,0:06:08.000
+But operations that work semantically on
+functions in mathematics can also be used here.
+
+0:06:08.000,0:06:13.040
+And the most well known
+I think, is function composition, right?
+
+0:06:13.040,0:06:17.200
+So, if in mathematics, you have functions,
+and the domain and co-domain of two functions
+
+0:06:17.200,0:06:21.920
+agree in a certain way, then you can
+compose them. You should know
+
+0:06:22.960,0:06:28.080
+from your discrete mathematics course, for
+example, or other maths lectures in this notation.
+
+0:06:28.080,0:06:32.400
+If you have some function f and some function g,
+then you can compose them and get a new function.
+
+0:06:32.400,0:06:44.000
+Yes, so if you have something like: g is a
+function from the rationals to natural numbers,
+
+0:06:44.000,0:06:51.680
+and f is a function from natural numbers
+to real numbers, for example, then you can
+
+0:06:52.320,0:07:02.320
+make from this: “function f compose g”, which
+goes from the rationals to the reals,
+
+0:07:02.320,0:07:07.360
+because basically, a rational number comes
+in, a natural number comes out, and then this,
+
+0:07:07.360,0:07:13.440
+via composition, is passed to the second
+function, to f, and the outcome is a real number.
+
+0:07:14.400,0:07:17.840
+Okay, that's a typical operation
+on functions in mathematics.
+
+0:07:17.840,0:07:22.000
+And well, the same is possible in Haskell,
+of course, we don't use this
+
+0:07:22.560,0:07:26.400
+strange or funny circle here,
+we need some other syntax.
+
+0:07:26.400,0:07:31.920
+And actually, we also need to
+think about these domain sets.
+
+0:07:31.920,0:07:33.600
+And of course, the function is polymorphic, right?
+
+0:07:33.600,0:07:38.960
+I simply use the rationals, naturals and real
+numbers here, for the sake of an example.
+
+0:07:38.960,0:07:44.960
+But essentially, we need to have
+sets that agree in the middle.
+
+0:07:44.960,0:07:45.200
+Right?
+
+0:07:45.200,0:07:49.920
+So, what we have in Haskell
+is the following operator.
+
+0:07:51.040,0:07:52.480
+It's just written as a dot.
+
+0:07:54.320,0:07:58.720
+Okay, as an operator, so again, in
+these brackets. And what's its type?
+
+0:07:59.440,0:08:02.560
+Well, it's very polymorphic.
+
+0:08:02.560,0:08:08.640
+So, it has some type variables b and c and the
+function between those types.
+
+0:08:08.640,0:08:11.840
+And there must be another
+function, goes from a to b.
+
+0:08:11.840,0:08:15.760
+And the important part here is that
+these two are the same type variable that
+
+0:08:15.760,0:08:20.400
+corresponds to the fact that in mathematics,
+we need agreement on these two sets here.
+
+0:08:21.200,0:08:22.320
+And then what's the outcome?
+
+0:08:22.320,0:08:27.520
+Well, the outcome is, again, a function, but a
+function from a to c. And how is it defined?
+
+0:08:27.520,0:08:33.040
+Well, given an f, given a
+g, how can we define this?
+
+0:08:33.040,0:08:40.320
+Well, we can say, this is actually a
+lambda abstraction, which takes an a,
+
+0:08:42.480,0:08:51.120
+passes it to g, where g is basically a function
+of this type, so we can give it an (a) value.
+
+0:08:51.120,0:08:55.200
+I have used the same term variable as
+type variable here. That's, of course, not
+
+0:08:55.200,0:08:57.040
+forced, but I just did it like that.
+
+0:08:57.680,0:09:00.880
+If I apply g to something of type (a), I get a (b),
+
+0:09:01.440,0:09:07.840
+and (b) is something of type (b). It is something I can
+pass into the other function, the function f.
+
+0:09:09.360,0:09:17.120
+Okay, so what I get here is f of g of a,
+which is exactly intuitively the mathematical
+
+0:09:17.120,0:09:30.320
+notion of function composition, and now it's
+available as an operator in Haskell as well.
