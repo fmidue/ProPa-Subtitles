@@ -11,24 +11,24 @@ Concerning use of quotation marks, try to follow rules that mirror the following
 - `When we call the 'rectangle' function, something happens on screen.`
 - `Wenn wir die rectangle-Funktion aufrufen, erscheint ein Rechteck auf dem Bildschirm.`
 - `We could say: "This 'rectangle' function is a strange thing."`
-- `Wir könnten sagen: "Diese rectangle-Funktion ist echt merkwürdig."`
-- `Wir könnten sagen: "Jeder Aufruf von 'rectangle' macht etwas mit uns."`
+- `Wir kÃ¶nnten sagen: "Diese rectangle-Funktion ist echt merkwÃ¼rdig."`
+- `Wir kÃ¶nnten sagen: "Jeder Aufruf von 'rectangle' macht etwas mit uns."`
 - `Doing what we just did is a bit "funny".`
 - `Was wir gerade getan haben, ist "lustig".`
 - `The QuickCheck library has been copied in many other programming languages.`
 - `Die Bibliothek QuickCheck wurde in vielen Programmiersprachen nachgeahmt.`
 - `The variable xs is used here to stand for a list.`
-- `Die Variable xs wird hier als Platzhalter für eine Liste benutzt.`
+- `Die Variable xs wird hier als Platzhalter fÃ¼r eine Liste benutzt.`
 - `For the case n = 1 everything is very simple.`
 - `Der Fall n = 1 ist wirklich einfach.`
 - `The type String is pre-defined, but we can also define our own types like Tree.`
-- `Der Typ 'String' ist vordefiniert, aber wir können auch eigene Typen wie 'Tree' definieren.`
+- `Der Typ 'String' ist vordefiniert, aber wir kÃ¶nnen auch eigene Typen wie 'Tree' definieren.`
 
 ## Leader board
 
 | GitHub username | Lines |
 | :-- | --: |
-| Nick46000 | 304 |
+| Nick46000 | 511 |
 | Gotai | 296 |
 | TMUniversal | 53 |
 | michalitv21 | 19 |
