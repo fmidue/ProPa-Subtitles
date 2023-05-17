@@ -238,8 +238,8 @@ If you recall our earlier discussion in the
 previous week when we had this convenient
 
 0:04:24.380,0:04:28.620
-"sum" function and I said: even if we didn't
-have the "sum" function available on lists,
+'sum' function and I said: even if we didn't
+have the 'sum' function available on lists,
 
 0:04:28.620,0:04:31.759
 we could simply write it with very few keystrokes.
@@ -249,7 +249,7 @@ Basically, these are the keystrokes that we
 need.
 
 0:04:34.129,0:04:36.229
-So, this is the "sum" function.
+So, this is the 'sum' function.
 
 0:04:36.229,0:04:39.770
 It takes some list and puts "+" between all
@@ -260,7 +260,7 @@ That's what summing the elements of a list
 means.
 
 0:04:43.569,0:04:46.990
-And the "foldl1" function is polymorphic.
+And the 'foldl1' function is polymorphic.
 
 0:04:46.990,0:04:48.670
 That's why we can use it so easily.
@@ -271,7 +271,7 @@ values, then we cannot add them, but we can
 
 0:04:53.230,0:04:56.600
 maybe conjunct them, or disjunct them, with
-"and" and "or".
+'and' and 'or'.
 
 0:04:56.600,0:05:01.069
 And then we can use the same polymorphic function,
@@ -305,7 +305,7 @@ elements of some type like trees, dictionaries,
 
 0:05:36.729,0:05:44.289
 or something not just list-structured, we
-will also have a "map" function, not with
+will also have a 'map' function, not with
 
 0:05:44.289,0:05:47.749
 exactly the same name, but with the same ideas.
@@ -370,7 +370,7 @@ So, we have now a new list which is a list
 of "b"s and is the result of this function
 
 0:06:42.050,0:06:46.770
-(whatever was the first argument to the "map"
+(whatever was the first argument to the 'map'
 call) on the corresponding elements from
 
 0:06:46.770,0:06:49.169
@@ -380,14 +380,14 @@ here.
 How could we use this?
 
 0:06:52.000,0:07:00.430
-For example, we could call it with the "even"
+For example, we could call it with the 'even'
 predicate on some list of integers.
 
 0:07:00.430,0:07:02.999
 So, let's discuss what would happen here.
 
 0:07:02.999,0:07:04.999
-The function "even" goes from Int to Bool.
+The function 'even' goes from Int to Bool.
 
 0:07:04.999,0:07:10.039
 In this case, "a" would be Int and "b" would
@@ -405,7 +405,7 @@ And, well, which Bools?
 
 0:07:16.870,0:07:21.039
 For each element here, we would apply the
-"even" predicate, so checking whether the
+'even' predicate, so checking whether the
 
 0:07:21.039,0:07:25.189
 number is even or not, and accumulating the
@@ -475,7 +475,7 @@ So, this is a partial application.
 It's a function.
 
 0:08:23.389,0:08:27.539
-Actually, "dilated" takes a number and a Picture
+Actually, 'dilated' takes a number and a Picture
 and gives a Picture.
 
 0:08:27.539,0:08:31.560
@@ -524,7 +524,7 @@ And that is a very brief way to express this.
 And another example:
 
 0:09:15.390,0:09:18.120
-The so-called "filter" function.
+The so-called 'filter' function.
 
 0:09:18.120,0:09:20.390
 A slightly different type.
@@ -554,7 +554,7 @@ Bool.
 
 0:09:40.330,0:09:44.180
 Which was allowed in the previous case with
-the "map" function, but it was not enforced
+the 'map' function, but it was not enforced
 
 0:09:44.180,0:09:45.180
 there.
@@ -580,7 +580,7 @@ we outputted the results of applying the function
 to elements from here.
 
 0:10:00.210,0:10:05.390
-Now for the filter- instead of the map-function,
+Now for the 'filter' instead of the 'map' function,
 we instead return a list of "a"s.
 
 0:10:05.390,0:10:06.390
@@ -605,11 +605,11 @@ might not satisfy this predicate, and then
 they are discarded.
 
 0:10:25.130,0:10:28.150
-Let's think about using this with the "even"
+Let's think about using this with the 'even'
 predicate again.
 
 0:10:28.150,0:10:33.480
-In the previous slide, I had "map" and "even"
+In the previous slide, I had 'map' and 'even'
 and [1,2,...,10], and then the outcome was
 
 0:10:33.480,0:10:34.810
@@ -623,8 +623,8 @@ False, True, etc., because 1 is not even,
 but 2 is even, 3 is not even, etc.
 
 0:10:44.350,0:10:46.310
-What would happen if we apply "filter" and
-"even"?
+What would happen if we apply 'filter' and
+'even'?
 
 0:10:46.310,0:10:47.720
 What does it say?
@@ -662,13 +662,13 @@ We get the list of numbers which satisfy the
 predicate.
 
 0:11:21.150,0:11:24.560
-This was one example, with the "even" predicate.
+This was one example, with the 'even' predicate.
 
 0:11:24.560,0:11:28.470
 We can think of other examples.
 
 0:11:28.470,0:11:32.800
-Let's take the "isPalindrome" function that
+Let's take the 'isPalindrome' function that
 we used in the slides (and you also programmed
 
 0:11:32.800,0:11:34.980
@@ -687,7 +687,7 @@ We simply have to filter that complete dictionary
 by this isPalindrome-predicate.
 
 0:11:49.680,0:11:57.700
-So, this would be a list of Strings, and "isPalindrome"
+So, this would be a list of Strings, and 'isPalindrome'
 is a function from String to Bool, so the
 
 0:11:57.700,0:12:01.560
@@ -706,7 +706,7 @@ those which are greater than 50%.
 
 0:12:14.750,0:12:20.910
 Then we could pass this section, this anonymous
-function, to the filter-function.
+function, to the 'filter' function.
 
 0:12:20.910,0:12:25.280
 So, the predicate would be from Double to Bool
@@ -748,7 +748,7 @@ So, we don't delete something from the list.
 We give back a new list which has fewer elements.
 
 0:13:07.370,0:13:11.070
-Now we could ask ourselves how "map" and "filter"
+Now we could ask ourselves how 'map' and 'filter'
 are defined.
 
 0:13:11.070,0:13:18.470
@@ -756,7 +756,7 @@ Actually, you should be able to come up with
 this on your own.
 
 0:13:18.470,0:13:22.620
-Namely, "map" and "filter", applying a function
+Namely, 'map' and 'filter', applying a function
 to each element of a list or selecting elements
 
 0:13:22.620,0:13:29.040
@@ -768,13 +768,13 @@ comprehension for, so far.
 
 0:13:30.040,0:13:36.460
 Indeed, you could think of what you see on
-this slide as the definitions of "map" and
+this slide as the definitions of 'map' and
 
 0:13:36.460,0:13:37.460
-"filter".
+'filter'.
 
 0:13:37.460,0:13:43.200
-The "map"-function takes a function, takes
+The 'map' function takes a function, takes
 a list, and what does it do?
 
 0:13:43.200,0:13:50.660
@@ -785,7 +785,7 @@ f to it, and accumulates the outcomes in a
 list.
 
 0:13:51.660,0:13:55.990
-This is not actually how "map" is defined
+This is not actually how 'map' is defined
 in the standard library, because there are
 
 0:13:55.990,0:14:00.690
@@ -797,11 +797,11 @@ as I mentioned).
 
 0:14:01.690,0:14:06.330
 But for the specific case of lists, you could
-think of "map" as being defined like this.
+think of 'map' as being defined like this.
 
 0:14:06.330,0:14:10.290
 So, whenever, so far, we wrote something like
-this, we could also have used the map-function.
+this, we could also have used the 'map' function.
 
 0:14:10.290,0:14:14.459
 You couldn't have used that sometimes, because
@@ -812,7 +812,7 @@ But from now on, where appropriate, you can
 use this.
 
 0:14:18.370,0:14:21.630
-And similarly "filter", about selecting things
+And similarly 'filter', about selecting things
 from a list.
 
 0:14:21.630,0:14:25.670
@@ -828,10 +828,10 @@ like "even a", for example), and then the
 "a" is kept.
 
 0:14:38.141,0:14:41.350
-This is exactly as was described for the filter-function.
+This is exactly as was described for the 'filter' function.
 
 0:14:41.350,0:14:48.550
-So, "map" and "filter" are somehow replacements
+So, 'map' and 'filter' are somehow replacements
 for certain kinds of list comprehensions,
 
 0:14:48.550,0:14:49.550
@@ -853,8 +853,8 @@ how complicated (maybe using several generators,
 more than one guard expression, etc.), can
 
 0:15:10.660,0:15:13.230
-be implemented with "map" and "filter", and
-actually, we might use the "concat" function
+be implemented with 'map' and 'filter', and
+actually, we might use the 'concat' function
 
 0:15:13.230,0:15:15.860
 in addition (which was introduced earlier).
@@ -868,13 +868,13 @@ flattens list levels.
 
 0:15:21.560,0:15:25.680
 So, if we have a list of lists of "a"s, then
-"concat" gives us a list of "a"s by concatenating
+'concat' gives us a list of "a"s by concatenating
 
 0:15:25.680,0:15:27.430
 all the inner lists.
 
 0:15:27.430,0:15:31.780
-And if you have "map", "filter", and "concat",
+And if you have 'map', 'filter', and 'concat',
 then you don't need list comprehensions anymore.
 
 0:15:31.780,0:15:35.500
@@ -882,8 +882,8 @@ Because whatever you could express with even
 complicated list comprehension expressions
 
 0:15:35.500,0:15:38.590
-can also be expressed with "map", "filter",
-and "concat".
+can also be expressed with 'map', 'filter',
+and 'concat'.
 
 0:15:38.590,0:15:41.871
 And indeed, that is what the compiler does.
@@ -894,18 +894,18 @@ then at some point during the compilation
 
 0:15:52.530,0:15:59.310
 process, they essentially get replaced by
-expressions involving "map", "filter", and
+expressions involving 'map', 'filter', and
 
 0:15:59.310,0:16:00.630
-"concat".
+'concat'.
 
 0:16:00.630,0:16:06.920
 Given this relationship to list comprehensions,
 a further question might be whether if we
 
 0:16:06.920,0:16:12.050
-now switch from list comprehensions to "map"
-and "filter" (and maybe "foldl1" and other
+now switch from list comprehensions to 'map'
+and 'filter' (and maybe 'foldl1' and other
 
 0:16:12.050,0:16:16.180
 similar functions), is this still wholemeal
@@ -922,7 +922,7 @@ were about using list comprehensions instead
 of explicit recursion or instead of list indexing.
 
 0:16:27.140,0:16:31.940
-So, now, if I go to "map" and "filter" and
+So, now, if I go to 'map' and 'filter' and
 other higher-order functions, is this still
 
 0:16:31.940,0:16:33.210
@@ -961,7 +961,7 @@ Then we won't have list comprehensions anymore,
 because they are about lists.
 
 0:17:04.710,0:17:08.399
-But these "map" and "filter" and similar functions,
+But these 'map' and 'filter' and similar functions,
 they are available for other data types as
 
 0:17:08.399,0:17:09.399
@@ -976,8 +976,8 @@ And this is actually a benefit of this more
 general perspective.
 
 0:17:21.049,0:17:25.680
-Discussing this on lists with the "map" and
-"filter" versions for lists, I actually want
+Discussing this on lists with the 'map' and
+'filter' versions for lists, I actually want
 
 0:17:25.680,0:17:28.510
 to discuss a short example.
@@ -988,10 +988,10 @@ is.
 
 0:17:31.559,0:17:38.720
 And then we can look at basically two solutions,
-with list comprehensions and with "map" and
+with list comprehensions and with 'map' and
 
 0:17:38.720,0:17:40.409
-"filter", and discuss the comparison.
+'filter', and discuss the comparison.
 
 0:17:40.409,0:17:49.320
 In a similar way to when I compared for-loops
@@ -1043,7 +1043,7 @@ And we want to look at what does it mean to
 express this with list comprehensions (both
 
 0:18:34.980,0:18:42.970
-ways), and with "map" and "filter".
+ways), and with 'map' and 'filter'.
 
 0:18:42.970,0:18:43.970
 Let's look at this.
@@ -1121,13 +1121,13 @@ but I had to rearrange this list comprehension.
 
 0:20:05.750,0:20:10.230
 What is the message here if I do this, instead,
-with "map" and "filter"?
+with 'map' and 'filter'?
 
 0:20:10.230,0:20:13.370
 It becomes more symmetric, in a way.
 
 0:20:13.370,0:20:15.960
-Writing this with "map" and "filter", what
+Writing this with 'map' and 'filter', what
 would I do?
 
 0:20:15.960,0:20:22.070
@@ -1146,11 +1146,11 @@ I can use function composition, which I introduced
 in the previous whiteboard video, and compose
 
 0:20:31.929,0:20:34.480
-two functions, namely uses of "filter" and
-"map".
+two functions, namely uses of 'filter' and
+'map'.
 
 0:20:34.480,0:20:39.399
-The "filter" function is the one which will
+The 'filter' function is the one which will
 make the job of only keeping the elements
 
 0:20:39.399,0:20:41.409
@@ -1188,7 +1188,7 @@ This, simply, means to switch the order of
 the constituents of this function composition.
 
 0:21:14.380,0:21:19.400
-Now, I first apply "map" to square each element
+Now, I first apply 'map' to square each element
 of my given list.
 
 0:21:19.400,0:21:23.080
@@ -1248,7 +1248,7 @@ more useful.
 
 0:22:31.779,0:22:38.960
 So, let's recall this law that we mentioned
-a while back, about "reverse" and list comprehensions.
+a while back, about 'reverse' and list comprehensions.
 
 0:22:38.960,0:22:45.809
 Actually, it was discussed already that thanks
@@ -1258,7 +1258,7 @@ to polymorphism, we can also put other completely
 polymorphic functions on lists in this place.
 
 0:22:49.529,0:22:54.679
-And we said something like: "reverse" of a
+And we said something like: 'reverse' of a
 list comprehension where we apply a function
 
 0:22:54.679,0:22:58.759
@@ -1267,11 +1267,11 @@ reversing), is the same as doing the same
 
 0:22:58.759,0:23:02.980
 but on the reversed list, and then not having
-the ultimate "reverse" call.
+the ultimate 'reverse' call.
 
 0:23:02.980,0:23:09.029
 And now that we know that this is basically
-a "map" call, we can express this with function
+a 'map' call, we can express this with function
 
 0:23:09.029,0:23:13.940
 composition, by saying: "reverse after map f
@@ -1285,7 +1285,7 @@ It uses the expression of this list comprehension
 by map.
 
 0:23:18.850,0:23:24.870
-And of course, this is also a "map" call,
+And of course, this is also a 'map' call,
 namely, on the outcome of "reverse".
 
 0:23:24.870,0:23:31.120
@@ -1329,7 +1329,7 @@ Because list comprehension syntax does not
 exist for other data types.
 
 0:24:06.980,0:24:10.320
-But "map" and polymorphic functions do.
+But 'map' and polymorphic functions do.
 
 0:24:10.320,0:24:13.649
 So, that's one thing, that we can express laws
@@ -1346,7 +1346,7 @@ Do they also satisfy such laws?
 So, for example, we could ask ourselves:
 
 0:24:21.379,0:24:24.750
-Now we have "map" and "filter", do they also
+Now we have 'map' and 'filter', do they also
 commute in some way?
 
 0:24:24.750,0:24:30.039
@@ -1380,7 +1380,7 @@ Actually, I would invite you to think a bit
 about this, because this will improve your
 
 0:24:52.690,0:24:55.441
-understanding of what "map" and "filter" are
+understanding of what 'map' and 'filter' are
 doing.
 
 0:24:55.441,0:25:03.440
