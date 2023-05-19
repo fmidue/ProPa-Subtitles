@@ -29,7 +29,7 @@ Concerning use of quotation marks, try to follow rules that mirror the following
 | GitHub username | Lines |
 | :-- | --: |
 | Nick46000 | 511 |
-| Gotai | 461 |
+| Gotai | 483 |
 | TMUniversal | 53 |
 | michalitv21 | 19 |
 | MagnolieH | 14 |
