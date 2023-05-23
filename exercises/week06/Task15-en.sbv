@@ -1,0 +1,575 @@
+0:00:01.920,0:00:03.840
+Let's take a look at Task 15.
+
+0:00:05.200,0:00:11.040
+This one is a bit tricky since it
+requires additional knowledge about
+
+0:00:12.880,0:00:23.760
+infinite sets, how to enumerate them, and
+then find a way to define this in Haskell.
+
+0:00:25.120,0:00:27.760
+Okay so what's the task?
+
+0:00:28.320,0:00:34.160
+We should give definitions for these
+three lists ints, pairs, and triples
+
+0:00:34.800,0:00:41.040
+and ints should be the set, or
+the list, of all integer numbers.
+
+0:00:41.680,0:00:49.600
+That is all the natural numbers
+and the negative whole numbers.
+
+0:00:52.880,0:00:58.160
+And then we should define the set
+of all pairs of natural numbers
+
+0:00:59.600,0:01:06.400
+and finally the set of all triples of two
+natural numbers and one integer number.
+
+0:01:08.320,0:01:10.560
+Okay, so let's start with the integers.
+
+0:01:11.520,0:01:17.920
+Astractly, what we would like to define
+is something like starting with 0
+
+0:01:19.840,0:01:26.640
+then we take all the natural numbers
+and then something like this.
+
+0:01:26.640,0:01:35.440
+We say, okay, we have a list comprehension or
+a list containing all the negative numbers so
+
+0:01:35.440,0:01:41.600
+we would have all the positive numbers
+and 0 and then all the negative numbers.
+
+0:01:41.600,0:01:48.400
+But of course, this does not work because
+there are infinitely many positive numbers so
+
+0:01:49.920,0:02:03.360
+this results basically in us saying okay we're
+starting with 0, then there's 1,2,3,4,5 etc.
+
+0:02:03.360,0:02:11.760
+So there are all these infinitely many numbers
+but we never actually get to the -1 part.
+
+0:02:11.760,0:02:13.200
+So there are elements missing.
+
+0:02:13.200,0:02:17.120
+And now we need a clever way to
+
+0:02:19.840,0:02:25.360
+enumerate all these elements such that we
+can actually encounter them in the list.
+
+0:02:27.280,0:02:32.080
+For integers, this is not too tricky
+if you think about it for a second.
+
+0:02:33.120,0:02:42.880
+You just start with 0 then you go to 1 and then
+to -1 then to -2 and 2 or the other way around.
+
+0:02:43.440,0:02:46.560
+You could also do -1 here and then 1.
+
+0:02:48.560,0:02:55.360
+And then you go on and this way
+each of these numbers is enumerated.
+
+0:02:55.360,0:03:03.840
+And now the question is how do we
+encode this in terms of Haskell syntax?
+
+0:03:04.480,0:03:14.640
+Okay, so let's start with a list comprehension;
+seems like a good starting point.
+
+0:03:14.640,0:03:22.400
+So we want to have these values
+and then from where to where?
+
+0:03:23.520,0:03:28.880
+Hmm, okay so this is a bit
+tricky to write it seems.
+
+0:03:30.240,0:03:31.840
+There's a
+
+0:03:32.880,0:03:42.320
+small function that we can use from the prelude
+that is called concat that is really helpful here.
+
+0:03:42.320,0:03:45.840
+So we switch over to ghci.
+
+0:03:54.720,0:03:58.720
+concat of a list of lists flattens the list.
+
+0:03:58.720,0:04:06.960
+So if you, for example, have a list
+[1,2] and [3,4], something like that,
+
+0:04:06.960,0:04:13.840
+then concat [[1,2],[3,4]] will give us
+the list without the nesting of lists.
+
+0:04:17.280,0:04:32.640
+We can use this here to take n and
+-n and then let n range from 1 to
+
+0:04:37.520,0:04:41.840
+infinity ... or just keep going.
+
+0:04:42.640,0:04:45.280
+Now obviously there's a type error here because
+
+0:04:45.280,0:04:49.200
+this is not a list of Integers
+but a list of lists of Integers.
+
+0:04:52.400,0:04:56.480
+And now we use concat to flatten this list.
+
+0:05:03.440,0:05:10.080
+Okay, let's load this into ghci and take a look.
+
+0:05:10.080,0:05:16.320
+So we use take and then some number
+like 20, or something like that,
+
+0:05:16.320,0:05:22.720
+because obviously this is an infinite list
+and we cannot print out all the elements.
+
+0:05:22.720,0:05:29.280
+So now we have this list where
+we have 1,-1,2,-2,3,-3 and so on.
+
+0:05:31.360,0:05:32.720
+Only the 0 is missing.
+
+0:05:33.680,0:05:42.160
+So what we can do is, we can just
+add it to the front of the list.
+
+0:05:44.160,0:05:49.520
+We could also just start with 0 here.
+
+0:05:49.520,0:05:56.800
+If we do that then we have two 0's, obviously,
+since we have 0 here and -0 is still 0.
+
+0:05:56.800,0:06:02.640
+And the task requires that we
+don't have any duplicate elements.
+
+0:06:05.840,0:06:16.640
+You can just fix this by saying okay, just take
+the tail; drop the first element of this list.
+
+0:06:16.640,0:06:20.160
+If we now take a look at this list,
+
+0:06:20.160,0:06:24.160
+we have exactly what we sketched
+out here; what we wanted to define.
+
+0:06:29.040,0:06:33.840
+Alright, so that's a list of all integers.
+
+0:06:35.040,0:06:41.040
+Now the list of all pairs of natural numbers:
+
+0:06:43.280,0:06:49.520
+Again let's start with a list comprehension
+and we want some pairs x and y.
+
+0:06:50.640,0:07:00.800
+And our first approach might be to say,
+natural numbers okay these are basically these.
+
+0:07:01.760,0:07:04.000
+Let's just try it this way, right.
+
+0:07:07.280,0:07:13.920
+Take all the natural numbers into x and then all
+the natural numbers into y and build all pairs.
+
+0:07:15.040,0:07:16.800
+This is how list comprehensions work, right?
+
+0:07:17.600,0:07:22.080
+This probably is what we want.
+
+0:07:23.520,0:07:24.960
+Well let's take a look.
+
+0:07:28.240,0:07:33.760
+Okay, so now we're getting
+(0,0), (0,1), (0,2), (0,3).
+
+0:07:36.720,0:07:44.320
+So the first element always stays 0 and then we
+enumerate all the other natural natural numbers.
+
+0:07:47.360,0:07:53.600
+But that's a problem because we will
+never arrive at 1 in the first component
+
+0:07:54.160,0:07:59.360
+because there is an infinite amount of natural
+numbers that we can have in the second component.
+
+0:08:00.080,0:08:07.040
+Okay, so this is where it becomes a bit tricky
+because you have to think about how to actually
+
+0:08:10.400,0:08:18.560
+enumerate these in a way such that you
+pass each combination, so to speak.
+
+0:08:18.560,0:08:20.560
+So that everything occurs in the list.
+
+0:08:23.360,0:08:25.680
+Okay, so what's the trick?
+
+0:08:25.680,0:08:34.080
+There's something called diagonalization where if
+you would plot these pairs you want to enumerate
+
+0:08:34.080,0:08:42.640
+in a two-dimensional table, you would make
+a diagonal movement through this table.
+
+0:08:47.760,0:08:55.520
+It's not really that important to understand
+here, but the key observation is that on such a
+
+0:08:55.520,0:09:11.040
+diagonal in this traversal scheme the components
+have a constant sum on each of these diagonals.
+
+0:09:11.040,0:09:18.000
+So the trick is to print out or to generate first
+
+0:09:20.800,0:09:31.280
+all pairs with components that sum up to 0,
+then all pairs with components that sum up to 1,
+
+0:09:31.280,0:09:39.520
+which is (0,1) and (1,0),
+and then for 2 and so on.
+
+0:09:39.520,0:09:54.000
+So we would have (0,2) then
+(1,1) and then (2,0) and so on.
+
+0:09:54.560,0:09:56.080
+And for each of these
+
+0:09:58.400,0:10:06.720
+constant 0, 1, 2, and so on there's only a
+finite number of these combinations, right.
+
+0:10:07.680,0:10:19.120
+So each pair necessarily has a sum of its
+two components and if we enumerate all these
+
+0:10:21.760,0:10:32.000
+lists of pairs with a constant sum we will
+eventually enumerate all components, right.
+
+0:10:32.000,0:10:41.920
+So the trick here is to say x+y
+
+0:10:47.520,0:10:58.080
+has to be equal to some, let's call it c for
+constant, and this constant moves from 0 upwards.
+
+0:11:03.040,0:11:10.000
+For the same reason, the other version didn't
+work this will also not work this way because
+
+0:11:12.960,0:11:16.960
+we're still taking all the
+combinations of x and y here.
+
+0:11:17.600,0:11:25.920
+And so the list hangs after the first element
+because we are now trying to find an element with
+
+0:11:26.880,0:11:33.360
+components that sum up to 0 in all
+these tuples we've created so far.
+
+0:11:34.400,0:11:39.760
+So we need a slightly different
+
+0:11:40.720,0:11:49.120
+approach that doesn't have infinite
+lists for x and y to draw from.
+
+0:11:49.680,0:11:59.840
+The straightforward way would be to say, if we
+want x and y to sum up to c, then obviously x
+
+0:11:59.840,0:12:10.400
+cannot be greater than c, same for y and even
+more precisely y cannot be greater than c-x.
+
+0:12:14.080,0:12:23.760
+Okay, now we get some pairs and these
+are exactly what we sketched out here.
+
+0:12:23.760,0:12:27.600
+So we start with (0,0) so
+all the pairs that sum up to
+
+0:12:27.600,0:12:41.760
+0, then we have all the pairs that sum up to
+1 then 2, 3, 4 and the first of the 5-pairs.
+
+0:12:44.800,0:12:52.560
+Okay, this works but we can realize that
+we're still doing a bit of extra work here.
+
+0:12:53.120,0:13:02.080
+Because if we look at it; well let's take
+this constraint here into consideration;
+
+0:13:02.080,0:13:14.560
+we say that x goes from 0 to c and y goes from 0
+to c-x and we want to check that x and y equals c.
+
+0:13:15.520,0:13:30.080
+Well, if we carefully look at this we see that
+y actually fulfills this only for c-x, right.
+
+0:13:30.080,0:13:40.160
+So we don't need to draw y from a range and have
+this condition, we can directly compute y as c-x.
+
+0:13:44.960,0:13:53.760
+Okay, let's check this again - that we didn't
+break anything - so we still have the 0 the 1s,
+
+0:13:56.320,0:14:01.840
+the 2s, the 3s, and so on,
+so this still works, okay.
+
+0:14:04.080,0:14:08.640
+Very good now this is where it gets really tricky.
+
+0:14:09.680,0:14:15.840
+We really have to think about
+it quite a bit but once you get
+
+0:14:15.840,0:14:17.920
+the idea it's actually pretty straight forward.
+
+0:14:19.680,0:14:20.800
+Let's try to figure it out.
+
+0:14:21.920,0:14:28.160
+So we should give the set of all triples of
+two natural numbers and an integer number.
+
+0:14:32.160,0:14:36.080
+There's no straightforward way to actually
+
+0:14:40.240,0:14:46.480
+enumerate these that immediately
+comes to mind but if we would write a
+
+0:14:48.000,0:14:54.080
+comprehension that magically works, kind of, we
+would probably want to write something like this:
+
+0:14:55.280,0:15:09.520
+(x, y, z) and x and y are taken out
+of the pairs list and z is taking
+
+0:15:10.160,0:15:16.720
+out of the integers (ints) because we have
+enumerated all the integers and all the pairs.
+
+0:15:16.720,0:15:22.160
+And what we would like to do is combine
+this in a way that this actually works.
+
+0:15:22.160,0:15:30.000
+In the finite case, if pairs and ints were
+finite, this would actually do the right thing.
+
+0:15:30.640,0:15:38.000
+But since they are infinite we have to make
+sure that we reach every element at some point.
+
+0:15:39.920,0:15:42.880
+Okay, because we look
+
+0:15:46.800,0:15:56.480
+for triples we have the same problem as with
+pairs we always start with the (0,0,_) pair and
+
+0:15:56.480,0:16:08.720
+then enumerate all the integers which means we
+never get into the (0,1,_) pair from the list.
+
+0:16:10.560,0:16:17.360
+Okay, so what's the observation you can make here?
+
+0:16:18.080,0:16:23.760
+You can try to figure out some way like
+you did here with the sum to actually
+
+0:16:27.120,0:16:34.560
+enumerate them all together
+as a one single expression.
+
+0:16:37.440,0:16:40.160
+But there's another observation you can make.
+
+0:16:40.160,0:16:43.440
+We have this set of pairs, right?
+
+0:16:43.440,0:16:47.280
+And this set of pairs contains all
+the combinations of natural numbers,
+
+0:16:49.600,0:16:53.280
+every single combination there is.
+
+0:16:53.920,0:16:59.680
+And we have two lists pairs
+and ints and we want to have
+
+0:17:00.880,0:17:04.640
+all the combinations of
+elements of these two lists.
+
+0:17:05.680,0:17:14.720
+So if we take the pairs list as a
+way to produce all the different
+
+0:17:14.720,0:17:25.360
+possibilities how to index two lists, if we
+look at it that way we can see that we have to
+
+0:17:25.360,0:17:33.760
+combine the 0th element of the of one list with
+the 0th element of the second list and so on.
+
+0:17:33.760,0:17:39.280
+Take element 0 from the first list
+and element 1 from the second list,
+
+0:17:39.920,0:17:46.240
+element 1 from the first list element 0
+from the second list, then element 0 from
+
+0:17:48.800,0:17:51.840
+the first list element 2 from
+the second list and so on.
+
+0:17:52.400,0:17:55.680
+And by doing this along this schema
+
+0:17:56.960,0:18:03.200
+with these pairs we will eventually
+reach every combination exactly once.
+
+0:18:05.680,0:18:11.440
+And this is why the task states
+that you are allowed to use the
+
+0:18:11.440,0:18:15.120
+list indexing operator (!!) here
+because it makes it really easy.
+
+0:18:18.000,0:18:32.000
+Because all you have to do is say, I'm
+getting indices i and j from pairs and then
+
+0:18:35.520,0:18:39.600
+we take that element.
+
+0:18:39.600,0:18:56.800
+So (x,y) is the pairs list and index i and
+
+0:19:02.560,0:19:11.440
+z is the integer list at index j.
+
+0:19:16.000,0:19:25.440
+Okay, so now there's a a type error here
+because the indexing function expects us to use
+
+0:19:27.360,0:19:46.160
+Ints but we have Integers here so we need one
+conversion fromIntegral and fromIntegral here.
+
+0:19:48.720,0:19:58.160
+Okay, let's change the layout
+so that it's easier to read.
+
+0:20:04.240,0:20:08.400
+These brackets are redundant. Let's remove them.
+
+0:20:13.120,0:20:22.640
+Okay let's load this up and take
+a look at the first 20 triples.
+
+0:20:24.160,0:20:30.240
+Well, we start with a triple of all zeros
+then we have (0,0,1), (0,1,0), (0,0,-1).
+
+0:20:34.800,0:20:41.600
+You can already see that this is quite
+complicated to actually to figure out
+
+0:20:45.440,0:20:49.600
+a nice pattern here like we
+did with with our constant sum.
+
+0:20:52.960,0:20:57.520
+But by carefully thinking
+about it, we see that if we
+
+0:20:57.520,0:21:04.240
+actually take every combination of possible
+indexing from this pair and then use
+
+0:21:05.600,0:21:17.600
+these indices to index pairs and ints then we
+will actually enumerate all of these triples.
+
+0:21:19.040,0:21:24.880
+Okay, that's basically the task.
+
+0:21:27.280,0:21:36.960
+Once you've understood how to actually do
+this last part it might seem quite easy.
+
+0:21:36.960,0:21:45.040
+But actually coming up with this idea
+is not not necessarily straightforward.
+
+0:21:45.760,0:21:52.880
+If you're not used to thinking about these things
+a lot which is why this was an optional task
+
+0:21:56.080,0:21:58.560
+that is quite difficult.

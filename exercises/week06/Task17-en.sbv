@@ -1,0 +1,240 @@
+0:00:01.360,0:00:06.240
+Okay so I'm going to do task number 17.
+Here we should here we should write a
+
+0:00:06.240,0:00:11.760
+function hasEvenEvens for the given type
+signature. This is the type signature.
+
+0:00:12.480,0:00:18.080
+And this function should give us true or false
+based on whether the list… a given list I mean,
+
+0:00:19.120,0:00:28.240
+has an even amount of even numbers or not. So what
+we're saying is: if we give a function this list,
+
+0:00:28.800,0:00:35.680
+it should give us false because we have one even
+number. If we give it this list, it should give us
+
+0:00:36.880,0:00:44.400
+true. It has two even numbers. What about
+this one? This should give false. This one?
+
+0:00:44.400,0:00:49.680
+This one… still false. No matter how many odd
+numbers we add, it doesn't change anything.
+
+0:00:50.960,0:00:54.720
+And what about the empty list? Well…
+this one should give us true because
+
+0:00:55.360,0:01:00.640
+it contains exactly zero even numbers,
+and zero itself is an even number.
+
+0:01:02.880,0:01:06.080
+Okay, so there are multiple
+approaches I'm going to show you
+
+0:01:08.000,0:01:14.320
+an intuitive solution. We're going to… I'm
+going to copy it here. And we're going to
+
+0:01:14.880,0:01:23.840
+try to explain it. So, let's say the given list is
+called “list”. And first, we're going to extract
+
+0:01:24.880,0:01:30.240
+the even numbers from this list. So, we don't want
+all of the elements, we just want the even ones.
+
+0:01:31.360,0:01:36.800
+We do it like this. We say x is an
+element from list and x is an even number.
+
+0:01:38.640,0:01:48.880
+By the way, I've seen some people do like
+this. They put the even condition first,
+
+0:01:48.880,0:01:52.320
+and then they say x is an element
+from the list. This doesn't work
+
+0:01:54.880,0:02:00.400
+because at this point when Haskell is doing
+evaluation, it starts from top to bottom and
+
+0:02:00.400,0:02:07.440
+from left to right, and where it reads here:
+okay so you want an element x where x is even.
+
+0:02:07.440,0:02:13.760
+But we don't even know what x is at this point.
+So, when Haskell reaches here, it will give you
+
+0:02:13.760,0:02:20.160
+an error message. So, the right way to do it is to
+specify first that x is an element from this list,
+
+0:02:20.160,0:02:28.000
+and then you say x is even. Okay, so nice! Now
+we have the even numbers from the original list.
+
+0:02:29.840,0:02:39.360
+Now let's do this. What we have here now is the
+number of the even numbers from the original list.
+
+0:02:41.280,0:02:48.480
+And now it's as simple as testing whether
+this number itself is even or not.
+
+0:02:49.600,0:02:56.400
+And that's it. That's the solution. Okay,
+now I'm going to show you other solutions.
+
+0:02:57.040,0:03:03.840
+There are as you can see, so many possibilities
+to solve it. So, let's see this one.
+
+0:03:08.160,0:03:10.800
+Actually, let's just put it here directly
+
+0:03:13.760,0:03:17.840
+and explain it. Okay so we
+don't need this one anymore.
+
+0:03:21.360,0:03:28.400
+Okay, so what we're saying here,
+basically, is: let's take the given list
+
+0:03:29.360,0:03:37.040
+and let's consider it to be two parts: the
+first element (the head of the list) and
+
+0:03:38.560,0:03:46.000
+the rest of the list (which is the tail). So, we
+don't know about the tail. We don't know what it
+
+0:03:46.000,0:03:51.040
+contains exactly. All we know is that
+it either gives us true or false. So,
+
+0:03:51.040,0:03:58.240
+we know that hasEvenEvens of the tail could
+be true or false. And depending on that we see
+
+0:03:58.240,0:04:03.760
+what will happen when we add another element,
+which is, in this case, the head of the list.
+
+0:04:05.040,0:04:10.160
+So, if we have a list that gives us true, this
+means it has an even number of even numbers
+
+0:04:10.160,0:04:16.560
+already, and when we add an old number, it doesn't
+change anything. In total we're going to have
+
+0:04:17.200,0:04:23.520
+an even number of even numbers. So, it still
+gives us true. But if we add an even number,
+
+0:04:23.520,0:04:29.120
+it ruins everything: now we have an odd number
+of even numbers. So, it should give us false.
+
+0:04:30.080,0:04:36.400
+And what if we have a list that doesn't
+fulfill this function? (which means
+
+0:04:36.400,0:04:43.120
+hasEvenEvens of tail of the list
+gives us false). So, this means this
+
+0:04:43.120,0:04:50.640
+part… the tail of the list has an odd number of
+even numbers. So, adding another odd number here,
+
+0:04:51.440,0:05:01.600
+which is the head… adding this number means
+now we have… So, if we added an odd number,
+
+0:05:01.600,0:05:05.680
+it doesn't change anything at all, as
+we said. But if we add an even number,
+
+0:05:06.960,0:05:12.240
+now in total, we're going to have an even number
+of even numbers. So, now it gives us true again.
+
+0:05:14.640,0:05:20.240
+Okay now, so let's look at the solution.
+What we are basically saying here is that
+
+0:05:22.000,0:05:28.720
+the only way for our function to return true
+is either when the list is empty or when we
+
+0:05:28.720,0:05:38.720
+are adding an even number to a list that
+contains an odd number of even numbers, or
+
+0:05:39.600,0:05:47.040
+we are adding an odd number to a list that
+contains an even number of even numbers.
+
+0:05:48.480,0:05:56.400
+Everything else should give us false.
+And of course you can write it in simpler
+
+0:05:56.400,0:06:02.480
+ways… in different ways. I'm going to show you
+something exactly equivalent to this function…
+
+0:06:03.120,0:06:08.480
+another way of writing it without
+guards at all. It is this one.
+
+0:06:13.280,0:06:20.400
+So, let's compare them. Let's look here. So,
+what we're saying here is this could be empty
+
+0:06:20.400,0:06:29.040
+and that will give us true or this case… The same
+case from here, or this case. We don't even need
+
+0:06:29.040,0:06:35.520
+to mention “true” or “false” at all because these
+things here themselves are boolean expressions and
+
+0:06:35.520,0:06:43.280
+they evaluate to boolean (to true or false). So,
+this here… this thing here that I'm marking here
+
+0:06:43.920,0:06:48.800
+is either true or false. And this here is either
+true or false. This here is either true or false.
+
+0:06:49.600,0:06:58.560
+So, we're just basically dealing with boolean
+values. And of course, you can notice that
+
+0:06:58.560,0:07:07.040
+what we are saying here is that a and b are not
+allowed to be true together or false together.
+
+0:07:08.880,0:07:21.200
+This means we can even write it this way. Either
+the list is empty, or a and b are not equal.
+
+0:07:22.960,0:07:29.840
+And let's test it actually. Let's see if it works.
+Just give me a second please.
+
+0:07:38.800,0:07:43.840
+Let's reload the file and let's run main.
+
+0:07:48.480,0:07:50.640
+It's working.

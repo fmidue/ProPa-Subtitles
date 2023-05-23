@@ -1,0 +1,283 @@
+0:00:00.400,0:00:04.800
+Hello! For this task we are writing a function
+called 'fibSum', for the given type signature
+
+0:00:04.800,0:00:11.360
+down here, which is a list of integers to a single
+integer, which given a list of 'x 1' to 'x n'
+
+0:00:11.360,0:00:17.680
+computes the sum of 'j' times 'x i' or 'i sub j'
+fibonacci number. Up here we have a little example
+
+0:00:17.680,0:00:24.400
+of how that's supposed to look; So we do 'x 1'
+times 'x 1' plus 2 times 'x 2' plus 3 times 'x 4'
+
+0:00:24.400,0:00:31.840
+plus 4 times 'x 5' plus 5 times 'x 8'. We're not
+taking 4 times 'x 4', because we suppose the 'x i'
+
+0:00:31.840,0:00:37.280
+is supposed to correspond to the 'j'th fibonacci
+number the 'j', the fourth fibonacci number here,
+
+0:00:37.280,0:00:43.200
+is 5 so we're taking 'x 5', and the same goes for
+this over here the fifth option number is 8 so
+
+0:00:43.200,0:00:48.960
+not we're not picking 'x 5' we're picking 'x
+8' and so on, of course. So what do we need
+
+0:00:48.960,0:00:54.480
+for this? Obviously we need the fibonacci numbers
+somehow, and the test already tells us that the
+
+0:00:54.480,0:00:58.400
+fibonacci numbers here start with 1 and 2, and we
+should take a look at the 'fibList' function below
+
+0:00:59.120,0:01:03.840
+which we'll do in a moment. Most importantly
+though we are not allowed to use any form of
+
+0:01:03.840,0:01:08.720
+recursion to solve the test, which is why most of
+these functions here are hidden from the prelude.
+
+0:01:10.720,0:01:17.600
+Now if we take a look at the 'fib list' function
+and just try it out like the comment tells us.
+
+0:01:20.080,0:01:24.560
+We can see that it indeed generates a
+list of all the fibonacci numbers starting
+
+0:01:24.560,0:01:32.080
+with 1 and 2 so 1 2 3 5 8 13 21 34 55 etc
+and that's our list of fibonacci numbers.
+
+0:01:33.440,0:01:38.480
+Next we have a function called 'nextFib',
+which computes the smallest fibonacci number
+
+0:01:38.480,0:01:41.600
+that is greater than or equal to 'n', which
+you might ask: "well how is this helpful?".
+
+0:01:43.760,0:01:48.400
+It's being used here in the 'isFib'
+function, which is also defined for us, which
+
+0:01:49.360,0:01:53.840
+determines whether the input integer is actually
+a fibonacci number or not, and it gives us a
+
+0:01:53.840,0:01:59.040
+corresponding boolean output. The comment already
+tells us that this following function is probably
+
+0:01:59.040,0:02:05.760
+what we actually want to use, so now that the task
+basically already did the heavy lifting for us by
+
+0:02:05.760,0:02:10.320
+providing us with these helper functions, and most
+importantly this 'fib' function, what do we need
+
+0:02:10.320,0:02:15.760
+to solve the task? Well let's just work through
+it kind of iteratively here and start by defining
+
+0:02:16.560,0:02:23.520
+our input list as 'xs', and see: "what do we
+want to do?". First of all we want to do a
+
+0:02:23.520,0:02:30.960
+lot of multiplication, so let's do that in a list
+comprehension. We call the variables 'i', 'n', and
+
+0:02:30.960,0:02:38.080
+we're taking those from a 'zip' of incrementing
+integers, which corresponds to our 'j' from the
+
+0:02:38.080,0:02:44.800
+example up here, those just increment one two
+three four five etc. and our input list our 'x's,
+
+0:02:46.240,0:02:53.920
+and of course we wanna sum those up. Now is this
+already enough to solve the task? Obviously not,
+
+0:02:53.920,0:02:57.920
+because the fibonacci numbers don't come
+into play at all, so something's wrong.
+
+0:03:00.320,0:03:03.520
+If we take a look at what's being generated
+here, all the pairs that are being
+
+0:03:03.520,0:03:11.440
+generated are basically just incrementing numbers,
+and our input list there's no filtering going on,
+
+0:03:12.080,0:03:18.400
+and we are only supposed to check the 'x i's where
+the 'i' corresponds to the 'j'th fibonacci number,
+
+0:03:18.400,0:03:25.680
+so if we have a 1 here we know we are supposed to
+check 'x i' and later on if we have 4 here we're
+
+0:03:25.680,0:03:31.280
+supposed to check the 'x i' where 'i' is the
+5th fibonacci number, like in our example here.
+
+0:03:31.280,0:03:37.760
+Right now we would just get a list
+that... well actually just take a
+
+0:03:37.760,0:03:45.840
+look. Let's just take a look at what
+we get by copying it over into ghci...
+
+0:03:47.520,0:03:55.120
+oops probably need to modify this a little bit...
+and we can see this is just generating pairs of
+
+0:03:55.840,0:03:59.840
+input lists with an incrementing integer,
+it's not doing any filtering yet,
+
+0:04:01.040,0:04:08.800
+so we might say "well this kind of looks like an
+index" and the 'i' here corresponds to the 'i' in
+
+0:04:08.800,0:04:16.320
+our equation up here, the 'x i', so why don't
+we just filter out all the 'i's that are not
+
+0:04:16.320,0:04:22.080
+fibonacci numbers, right? So we use the 'isFib'
+function to as a guard in our list comprehension
+
+0:04:22.080,0:04:28.640
+to filter out all the cases, where 'i' is
+not a fibonacci number. Just save that again,
+
+0:04:29.440,0:04:39.280
+reload, and from the main function try it out, you
+can see it doesn't quite work yet. If we want to
+
+0:04:39.280,0:04:45.200
+see where it fails we once again copy just our
+list over, modify to fit our first test case...
+
+0:04:49.200,0:04:55.120
+and take a look at the pairs generated now, we can
+see it's already a lot less, but it's not quite
+
+0:04:55.120,0:05:03.760
+right yet being: 1 1 2 2 3 3 5 5 8 8 13 13. So
+the first three are correct but then something's
+
+0:05:03.760,0:05:12.560
+up. We are correctly filtering out all the 'x i's
+which don't correspond to fibonacci numbers, but
+
+0:05:12.560,0:05:19.040
+now we've lost our incrementing integer for our
+multiplication factor, so this over here should
+
+0:05:19.040,0:05:24.960
+be five this should be four, this should be a five
+etc. These are also being filtered by the 'isFib'
+
+0:05:24.960,0:05:32.480
+function. So how do we get that incrementing
+back? Let's just put this aside for a moment,
+
+0:05:33.440,0:05:39.040
+put it in the comment down here, and let's
+basically start with: now we're calling it
+
+0:05:39.040,0:05:45.680
+'j' so we don't get confused later on, and we're
+taking the 'j's and the 'n's, and once again we
+
+0:05:45.680,0:05:52.800
+are zipping from just incrementing list of
+integers, and it's starting to look kind of
+
+0:05:52.800,0:05:58.480
+like the function that we have before. So how
+do we don't go into the wrong direction again?
+
+0:05:59.760,0:06:06.960
+That's not quite the one direction you'll
+see. Now we need to zip this up with a list
+
+0:06:06.960,0:06:15.040
+of our filtered input list basically, so how do
+we do that now? Well, if we look at what we got,
+
+0:06:16.400,0:06:20.480
+i already mentioned that we already have a list
+that basically all the 'n's in here are correct,
+
+0:06:20.480,0:06:26.240
+so we have one two three five eight thirteen
+that's correct. So how can we still use that?
+
+0:06:26.240,0:06:30.960
+You can just use the same list command,
+but now instead of doing multiplications
+
+0:06:31.680,0:06:37.360
+you're just taking all the 'n's out
+keeping everything else the same...
+
+0:06:40.400,0:06:46.400
+Once again using our guard with 'isFib', all
+right. And now we have a little list comprehension
+
+0:06:46.400,0:06:53.440
+that just filters the input list for all the
+'x i's where the 'i's are corresponding to a
+
+0:06:53.440,0:07:02.640
+fibonacci number. And if we save this now, reload,
+and in the main function we can see all the test
+
+0:07:02.640,0:07:10.720
+cases pass, so this solves the task already.
+We can we could improve on this a little bit,
+
+0:07:10.720,0:07:16.240
+because this is starting to kind of look a little
+bit confusing, it's not quite that bad yet, but
+
+0:07:16.240,0:07:24.640
+you can do a little better by just refactoring it
+to just call this 'n s' and we'll define this in
+
+0:07:24.640,0:07:32.720
+a where block which just defines that. So now we
+have a list comprehension up here, which is being
+
+0:07:33.520,0:07:38.160
+summed up, which just does our multiplications,
+and we have a list comprehension down here,
+
+0:07:38.160,0:07:43.840
+which filters our input list accordingly
+to the fibonacci number and our task
+
+0:07:44.800,0:07:51.360
+and... yeah that's it if we just save this now,
+just to make sure that we haven't messed something
+
+0:07:51.360,0:07:57.840
+up somewhere, reload again, in the main module we
+can see the test passed and the task is solved!

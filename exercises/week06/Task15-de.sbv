@@ -1,0 +1,351 @@
+0:00:00.000,0:00:07.680
+In dieser Aufgabe sind unendliche Listen in
+Haskell zu definieren und die Herausforderung
+
+0:00:07.680,0:00:15.420
+besteht dabei, die Listen so zu definieren,
+dass die Reihenfolge der Zahlen so ist,
+
+0:00:15.420,0:00:22.380
+dass möglichst kleine Zahlen am Anfang
+stehen und nicht die Zahlen, die sehr
+
+0:00:22.380,0:00:30.660
+groß sind und irgendwo sehr weit am Ende stehen,
+beziehungsweise gar nicht angezeigt werden können,
+
+0:00:30.660,0:00:39.150
+weil Haskell nie zu dem Ziel kommt. Was wäre
+denn ein solcher Fall? Ein solcher Fall wäre,
+
+0:00:39.150,0:00:52.020
+wenn man z.B. die unendlichen Listen
+so definieren würde. Das heißt,
+
+0:00:52.020,0:01:07.980
+man hat die unendlichen Zahlen definiert als
+die Zahlen von null bis unendlich und dann die,
+
+0:01:07.980,0:01:22.470
+hier müsste man wahrscheinlich -1 bis, was
+weiß ich, oder sagen wir das einfach so:
+
+0:01:22.470,0:01:35.250
+Ein x mit 1 bis unendlich und dann das ganze
+als 'negate'. Das heißt, die negativen werte so.
+
+0:01:35.250,0:01:40.950
+Das würde dazu führen, dass -1 nämlich hier
+erstmal gar nicht auftaucht in den Werten.
+
+0:01:49.140,0:01:57.180
+Wenn ich das Programm lade und jetzt hier die
+ersten 100 Werte anzeigen lassen von Ints,
+
+0:01:57.180,0:02:03.630
+dann stellen wir fest, dass hier nur positive
+Zahlen stehen, besser wäre das ganze alternierend
+
+0:02:03.630,0:02:13.110
+zu haben, denn dann könnte man nämlich die
+-1 auch schon relativ zeitig sehen und müsste
+
+0:02:13.110,0:02:20.550
+nicht unendlich viele Werte abrufen. Das heißt,
+wenn man -1 finden möchte, in dieser Liste, dann
+
+0:02:20.550,0:02:25.710
+terminiert das Programm gar nicht, weil Haskell
+immer noch damit beschäftigt ist, alle positiven
+
+0:02:25.710,0:02:34.020
+Zahlen aufzuzählen. Das wollen wir eben nicht. Was
+können wir hier für einen Trick anwenden, um das
+
+0:02:34.020,0:02:44.520
+zu erreichen? Eine List Comprehension ist schon
+das, was wir haben wollen und wir könnten das so
+
+0:02:44.520,0:02:59.370
+machen, dass wir den Wert, den wir haben, durch
+zwei dividieren. Wenn wir das machen, dann
+
+0:02:59.370,0:03:09.570
+erhalten wir schon mal eine Liste, die null am
+Anfang enthält und dann immer zweimal jeden Wert.
+
+0:03:09.570,0:03:15.840
+Wie hilft uns das weiter? Jetzt müssen wir nur
+noch dafür sorgen, dass jeder zweite Wert davon
+
+0:03:15.840,0:03:23.040
+negiert wird und das können wir erreichen, indem
+wir mit -1 multiplizieren, aber nur dann, wenn wir
+
+0:03:23.040,0:03:34.770
+das brauchen. Ich definiere hier mal die Funktion
+'alternate', die von x abhängig genau entweder 1
+
+0:03:34.770,0:03:43.770
+oder -1 liefern soll. Also 'alternate' von x,
+also das wird hier in einem 'where' definiert,
+
+0:03:43.770,0:03:55.030
+weil wir das hier lokal brauchen. 'aternate'
+von x soll so definiert sein, dass 'x 'mod' 2',
+
+0:03:55.030,0:04:15.040
+wenn das 0 ist, dann multiplizieren wir mit -1
+und im anderen Fall, wenn das nicht der Fall ist,
+
+0:04:15.040,0:04:21.490
+dann multiplizieren wir mit 1, sodass sich
+die Zahl nicht verändert und wenn wir das
+
+0:04:21.490,0:04:25.780
+jetzt noch einmal ausführen und uns die ersten
+100 Werte anschauen, dann sehen wir jetzt hier
+
+0:04:25.780,0:04:32.800
+genau, dass dieses verhalten auftritt, dass 0 als
+erstes kommt und dann - 1 und 1 und so weiter. Es
+
+0:04:32.800,0:04:36.850
+ist kein Wert doppelt, aber es sind alle Werte
+vorhanden und wir könnten ja noch mehr Werte
+
+0:04:36.850,0:04:43.150
+anzeigen, also kann uns sie auf 1000 Werte geben
+lassen und sehen, dass sich das Schema fortsetzt.
+
+0:04:47.710,0:04:52.000
+Die nächste Aufgabe beschäftigt sich
+nicht mit den Integerzahlen, sondern mit
+
+0:04:52.000,0:04:58.570
+natürlichen Zahlen und hier sollen jetzt eben
+alle natürlichen Zahlen zurückgegeben werden,
+
+0:04:58.570,0:05:10.930
+alle Paare von zwei natürlichen Zahlen. Das ist
+ein Problem, was man mithilfe von Hilbert lösen
+
+0:05:10.930,0:05:18.220
+kann, wenn man das kennt, Hilberts Hotel, das
+so ziemlich den Ansatz hat, alle diese Paare
+
+0:05:18.220,0:05:24.580
+durchzunummerieren, beschäftigt sich mit der
+Frage, ob das überhaupt möglich ist, alle diese
+
+0:05:24.580,0:05:31.900
+Zahlenpaare mit natürlichen Zahlen auszudrücken,
+oder die sozusagen durchzunummerieren und das
+
+0:05:31.900,0:05:40.480
+ist möglich und das kann man eben hier auch in
+der Aufgabe ausnutzen. Und zwar wird hier auch
+
+0:05:40.480,0:05:52.840
+wieder eine List Comprehension genutzt, in der wir
+letztendlich x und y haben wollen und wir nutzen
+
+0:05:52.840,0:06:01.240
+halt diesen Ansatz, den auch Hilbert nimmt,
+und nehmen die natürlichen Zahlen sozusagen,
+
+0:06:01.240,0:06:11.250
+um abzuzählen, was wir haben wollen, aber das ist
+der gleiche Ansatz wie dort, aber wir zählen hier
+
+0:06:11.250,0:06:19.800
+die diagonalen, die wir haben wollen, wenn wir
+sozusagen tabellarisch x und y auflisten würden.
+
+0:06:19.800,0:06:29.820
+Also x in der Horizontalen und y der Vertikalen
+und dann eben die Paare dort in die Tabelle alle
+
+0:06:29.820,0:06:35.250
+eintragen würden, dann könnten wir sozusagen die
+diagonalen, oben links in der ecke beginnend,
+
+0:06:35.250,0:06:42.990
+weiter abgehen, nach rechts oder nach unten,
+was im Prinzip dasselbe ist, weil die Zahlen,
+
+0:06:42.990,0:06:47.760
+wenn man eins nach rechts geht, liegt genau auf
+der Diagonalen, wie wenn man eins nach unten geht
+
+0:06:47.760,0:06:53.790
+und so weiter. Das heißt eins nach rechts und
+eins nach unten liegt auf derselben Diagonalen,
+
+0:06:53.790,0:07:06.690
+wie zwei nach rechts und so weiter. Das heißt,
+wir können sagen x ist eben genau eine Zahl, die
+
+0:07:06.690,0:07:19.980
+auch wieder aus dem Bereich 0 bis und dann aber n
+in diesem Fall stammt. Und y ist genau die Zahl,
+
+0:07:19.980,0:07:29.820
+die 'n - x' ist. Das ist sozusagen dann die andere
+Zahl in der Diagonalen. In der zweiten Diagonale
+
+0:07:29.820,0:07:38.820
+entstehen zwei Werte, nämlich 1 0 und 0 1, also
+alle, die in der Summe 1 ergeben, alle Zahlenpaare
+
+0:07:39.990,0:07:51.330
+in der zweiten Diagonalen stehen alle Zahlen die
+in der Summe 2 ergeben und so weiter. Das können
+
+0:07:51.330,0:07:58.050
+wir hier als 'pairs' auch anschauen. Vielleicht
+lasse ich erstmal nur die ersten 100 ausgeben,
+
+0:07:58.050,0:08:09.570
+dann sehen wir hier alle mit der Summe 0,
+alle mit der Summe 1, alle mit der Summe 2,
+
+0:08:09.570,0:08:18.770
+alle mit der Summe 3 und es wird immer eine Zahl
+mehr, alle mit der Summe 4 und so weiter. Es kommt
+
+0:08:18.770,0:08:29.090
+immer eine Zahl pro Diagonale hinzu. Dann die
+dritte Aufgabe. Die sagt aus, dass wir nun die
+
+0:08:29.090,0:08:37.580
+Zahlen aller Triple von zwei natürlichen Zahlen
+und einer Integerzahl bestimmen sollen. Das heißt,
+
+0:08:37.580,0:08:44.390
+der dritte Wert kann auch negativ sein, die
+anderen Zahlen sind nicht negativ. Dafür ist
+
+0:08:44.390,0:08:52.100
+es gut, dass wir 'ints' und 'pairs' bereits schon
+definiert haben, denn die können wir jetzt in dem
+
+0:08:52.100,0:09:09.890
+Fall wieder verwenden. Wir wollen jetzt drei
+Zahlen haben x, y und z. Wir wollen genau alle
+
+0:09:09.890,0:09:15.710
+natürlichen Zahlen, also wir wollen alle Triple
+mit allen natürlichen Zahlenkombinationen und
+
+0:09:15.710,0:09:22.670
+den entsprechenden Integerzahlen. Dafür können
+wir 'pairs' verwenden, um uns erstmal die Paare
+
+0:09:22.670,0:09:28.340
+zu geben, mit denen wir dann in den unendlichen
+Listen nachschauen, was wir kombinieren wollen,
+
+0:09:28.340,0:09:34.220
+denn so können wir alle Kombinationen ausdrücken.
+Wir wissen, dass 'pairs' uns die Kombination aller
+
+0:09:34.220,0:09:40.490
+natürlichen Zahlen liefert und mit natürlichen
+Zahlen können wir in den Listen nachschlagen,
+
+0:09:40.490,0:09:51.260
+was wir brauchen. Also wir können uns Indizes
+geben lassen, mithilfe von 'pairs' und dann
+
+0:09:51.260,0:10:16.480
+erhalten wir x und y, wenn wir in 'pairs' an
+der Stelle i nachschlagen. x und y erhalten wir,
+
+0:10:16.480,0:10:25.990
+wenn wir in 'pairs' an der Stelle i nachschlagen,
+dann erhalten wir sozusagen genau einen Wert hier
+
+0:10:25.990,0:10:35.680
+raus, i läuft über alle natürlichen Zahlen, weil
+das die Liste an Kombination von natürlichen
+
+0:10:35.680,0:10:46.270
+Zahlen ist und mit j können wir den das z
+nachschlagen, was wir noch benötigen, denn
+
+0:10:46.270,0:10:53.530
+das ist nämlich eins aus diesen Integerzahlen. Und
+dafür können wir j verwenden, weil j nämlich auch
+
+0:10:53.530,0:10:58.420
+eine natürliche Zahl ist. Genaugenommen läuft es
+hier dann, durch per die Verwendung von 'pairs',
+
+0:10:58.420,0:11:03.460
+auch über alle natürlichen Zahlen, sodass wir
+dadurch alle Kombinationen auch bekommen. Ich
+
+0:11:03.460,0:11:19.510
+formatiere das hier mal leicht um, sodass das
+besser sichtbar bleibt. Also wir haben hier x
+
+0:11:19.510,0:11:34.060
+und y und kriegen hier noch z, indem wir in 'ints'
+nachschlagen, an der stelle j und dann erhalten
+
+0:11:34.060,0:11:41.920
+wir die entsprechenden Zahlen. Wenn wir das auch
+kompilieren, dann gibt es ein Fehler. Und zwar
+
+0:11:41.920,0:11:49.420
+sagt er hier, dass 'Int' nicht mit 'Integer'
+kombinierbar ist. Das liegt daran, dass unsere
+
+0:11:49.420,0:12:04.330
+Nachschlagefunktion '!!' halt eben den Typ Liste
+nach 'Int' nach a hat. Das heißt, wir brauchen
+
+0:12:04.330,0:12:10.990
+hier ein 'Int'. Das können wir korrigieren,
+indem wir hier 'fromIntegral' verwenden. Und
+
+0:12:10.990,0:12:17.530
+dasselbe machen wir bei j auch, denn auch das
+ist ein 'Integer', mit 'fromIntegral' können
+
+0:12:17.530,0:12:28.180
+das zu einem 'Int' konvertieren und können damit
+diese lookup-Funktion verwenden. Und jetzt können
+
+0:12:28.180,0:12:37.210
+wir auch von der 'triples' Funktion uns Werte
+ausgeben lassen und sehen, dass das hier auch
+
+0:12:37.210,0:12:51.640
+eine immer weiter steigende Werte sind. Wir sehen,
+das hier die Integerzahlen etwas steiler steigen,
+
+0:12:51.640,0:13:05.980
+aber im groben steigen schon alle Zahlen hier. Es
+sind die Paare jeweils am Anfang, also wir haben
+
+0:13:05.980,0:13:15.970
+ja 0 0 auch zweimal drin, gleich am Anfang,
+einmal mit 0, einmal mit -1 und dann taucht
+
+0:13:15.970,0:13:21.670
+es aber auch später wieder auf, also hier mit 0
+0 auch mit 1, hier taucht 0 0 mit -2 auf, hier
+
+0:13:21.670,0:13:33.190
+taucht 0 0 mit 2 auf und zwischendrin tauchen
+dann eben auch noch andere Zahlenpaare auf,
+
+0:13:34.270,0:13:45.370
+die sich dann auch später wieder in anderen
+Kombinationen wiederholen, mit anderen,
+
+0:13:45.370,0:13:56.950
+auch negativen Zahlen also 1 0 0 zum Beispiel
+hier, dann auch wieder mit 1 0 1 und so weiter.

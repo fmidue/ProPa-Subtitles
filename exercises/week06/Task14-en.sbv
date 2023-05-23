@@ -1,0 +1,269 @@
+0:00:02.320,0:00:04.080
+Let's take a look at Task 14.
+
+0:00:04.640,0:00:15.440
+Here we are asked to extend our tree program or
+animation from Task 4 into a continuous animation
+
+0:00:15.440,0:00:24.640
+where the trees change their leaf
+color according to the seasons.
+
+0:00:26.160,0:00:30.800
+So the leaves turn orange and
+then the trees lose their leaves.
+
+0:00:32.080,0:00:41.280
+And also it's not just a single tree but the
+tree from Task 4 should get some friends.
+
+0:00:42.000,0:00:47.520
+And they all together change the color
+of their leaves according to the season.
+
+0:00:49.200,0:00:56.080
+Okay, so if you've done the codeword tasks up
+to this point this shouldn't be too difficult.
+
+0:00:58.080,0:01:08.160
+We have some helper functions given here
+that let us do the month letterings.
+
+0:01:08.160,0:01:14.640
+And also a transparent color definition
+that we can use to make the leaves go away,
+
+0:01:16.240,0:01:17.680
+as we'll see shortly.
+
+0:01:18.320,0:01:23.600
+Okay, for now, i've pasted
+
+0:01:25.440,0:01:34.320
+the tree from Task 4 in here and it just does this
+short shaking animation like it did in Task 4.
+
+0:01:35.120,0:01:43.920
+So now you should make this
+animation never-ending.
+
+0:01:46.240,0:01:56.000
+It's easy just we did it with this offset
+parameter in our solution for Task 4.
+
+0:01:56.000,0:02:03.120
+And this depended on the time whether or not the
+tree was doing something or just standing still.
+
+0:02:03.120,0:02:12.480
+So we just take out the condition and
+now the tree always does the movement.
+
+0:02:15.120,0:02:25.200
+Okay, so then let's maybe add the
+lettering indicating which month it is.
+
+0:02:26.880,0:02:29.920
+We just use the month function.
+
+0:02:32.960,0:02:37.520
+Let's start by giving it a fixed value.
+
+0:02:38.560,0:02:41.760
+The month function takes an
+Integer, basically saying
+
+0:02:42.640,0:02:49.840
+which month it is, 1 corresponding
+to January up to 12 to December.
+
+0:02:50.560,0:02:51.360
+Straightforward.
+
+0:02:51.360,0:02:59.840
+Okay, so now it's the month is shown behind the
+tree that's probably not the best looking option
+
+0:03:01.440,0:03:10.800
+so we translate a bit down.
+
+0:03:16.800,0:03:22.560
+Uhm ... missing an s there; Okay.
+
+0:03:25.680,0:03:29.920
+So this is all very static now.
+
+0:03:31.520,0:03:33.680
+How do we get the month to change?
+
+0:03:33.680,0:03:46.560
+Well, let's define the month
+m depending on the time.
+
+0:03:50.320,0:03:51.120
+If we look at this
+
+0:03:53.360,0:03:59.840
+example, here it seems like every second
+the month is changing so let's do this too.
+
+0:04:01.040,0:04:02.080
+How do we do this?
+
+0:04:02.080,0:04:14.160
+Well, we can floor the time giving us the number
+of seconds that have passed, full seconds.
+
+0:04:14.160,0:04:22.640
+And then, since you want to get a
+value between 1 and 12, we can just
+
+0:04:26.560,0:04:32.400
+get the rest from the division
+by 12 using mod (modulo) 12.
+
+0:04:32.400,0:04:34.960
+And this gives us a value between 0 and 11.
+
+0:04:36.000,0:04:41.840
+So we add 1 to it so we get
+a value between 1 and 12.
+
+0:04:42.640,0:04:55.840
+So this will now start in January and go all the
+way up to December and then circle back around.
+
+0:05:00.480,0:05:13.280
+Okay, so now we can use this value m to actually
+tell the tree which colors the leaves should have.
+
+0:05:13.280,0:05:20.080
+So let's just pass this as an additional
+parameter to the tree function.
+
+0:05:20.960,0:05:26.640
+Add the parameter here, and
+for the trunk and the branches
+
+0:05:27.280,0:05:36.240
+this is not important but the crown
+should receive this information.
+
+0:05:37.280,0:05:41.840
+So we also add this parameter to the crown
+
+0:05:43.760,0:05:50.080
+and now the color needs to
+change according to this m value.
+
+0:05:51.440,0:05:53.200
+Let's define a function leafColor
+
+0:05:54.560,0:06:01.360
+that takes this Integer and gives us
+the color for the respective season.
+
+0:06:03.520,0:06:22.880
+So leafColor takes some Integer and returns
+some Color, and what should that be?
+
+0:06:23.760,0:06:28.880
+Well, let's start with the options we have.
+
+0:06:28.880,0:06:42.480
+We have green, orange, and the transparent one.
+
+0:06:43.280,0:06:45.840
+And it should be green from ...
+
+0:06:45.840,0:06:51.120
+If you look at our reference
+here, from March till July.
+
+0:06:51.840,0:06:56.960
+So m should be between 3 and 7
+
+0:07:04.080,0:07:17.120
+from August to October we have orange
+that means m is between 8 and 10.
+
+0:07:17.920,0:07:29.840
+And in all other cases the color of the
+leaves is transparent so they vanish.
+
+0:07:31.040,0:07:35.040
+Okay, so we start out with no leaves
+switch to green leaves in March,
+
+0:07:35.920,0:07:43.120
+continue till July switch to orange leaves,
+and then lose the leaves again in November.
+
+0:07:43.120,0:07:46.720
+Okay, very good.
+
+0:07:47.920,0:07:52.240
+Straightforward changes, I would say.
+
+0:07:52.960,0:07:57.840
+Now let's add some additional trees here.
+
+0:07:59.040,0:08:11.840
+They should have different sizes so
+we use dilated to scale down a bit.
+
+0:08:12.720,0:08:17.440
+Let's add two trees, like in the reference.
+
+0:08:20.240,0:08:28.880
+Obviously, we need to place them somewhere,
+but, okay, they are behind this big tree now.
+
+0:08:33.120,0:08:35.440
+Let's translate this one maybe
+
+0:08:38.560,0:08:47.920
+a bit to the right and slightly up so it
+looks like it's standing further away.
+
+0:08:50.320,0:08:57.440
+And we're doing the same with the
+second tree in the other direction.
+
+0:09:08.560,0:09:09.600
+Let's see how it looks.
+
+0:09:12.400,0:09:21.840
+Okay, this is basically what
+we have in the reference.
+
+0:09:23.280,0:09:34.080
+Three trees of different sizes changing the
+color of their leaves according to the season.
+
+0:09:35.520,0:09:40.800
+Okay, there are probably a lot of
+other ways to achieve the same effect.
+
+0:09:41.360,0:09:49.840
+What's important here is that you remember
+to share as much of this code as possible.
+
+0:09:51.360,0:10:01.760
+We are obviously reusing the tree and scaling it
+down and moving it around, but we also could have
+
+0:10:01.760,0:10:08.000
+in theory done all this checking on m, for
+example, here with lots of different guards
+
+0:10:09.200,0:10:15.840
+and then repeating this right-hand side over
+and over again with different color values here.
+
+0:10:24.400,0:10:26.960
+Making sure to reuse as much code and
+
+0:10:28.000,0:10:44.720
+duplicate as little as possible is the
+key here to obtaining a clean solution.

@@ -1,0 +1,200 @@
+0:00:00.834,0:00:06.125
+Ok, dann schauen wir jetzt die Aufgabe 17 an.
+Da haben wir einmal die „hasEvenEvens“-Funktion ...
+
+0:00:06.125,0:00:15.209
+und die soll jetzt überprüfen, ob eine Integer-Liste,
+die als Eingabe kommt … Ob die eine gerade Anzahl gerader Zahlen enthält.
+
+0:00:15.209,0:00:21.750
+Da können wir jetzt eigentlich in zwei Wegen drangehen: Wir können entweder eine rekursive Lösung erarbeiten oder wir können eine „list comprehension“ benutzen.
+
+0:00:21.750,0:00:25.875
+Die rekursive Lösung haben wahrscheinlich die meisten gemacht,
+das zeige ich jetzt mal als Erstes.
+
+0:00:25.875,0:00:31.042
+Also, wir brauchen jetzt einmal wahrscheinlich guards,
+man kann es natürlich mit if und else machen, das dauert dann länger ...
+
+0:00:31.042,0:00:41.625
+und wir überprüfen jetzt einfach zwei Fälle: Einmal ob wir die leere Liste haben.
+Wir haben einmal der Fall „null xs“, das heißt die Liste ist leer, da ist gar nichts drin.
+
+0:00:41.625,0:00:49.500
+Wenn das der Fall ist, dann soll es natürlich sofort true sein,
+denn dann haben wir gar kein Element und 0 ist auch eine gerade Zahl.
+
+0:00:49.500,0:00:52.667
+Okay und dann haben jetzt noch den anderen Fall, ....
+
+0:00:52.667,0:00:59.042
+dass wir mindestens ein Element haben und dann können wir jetzt einfach gucken:
+Ist das ein gerades oder ein ungerades Element und was machen wir dann.
+
+0:00:59.042,0:01:09.834
+Also wir machen zum Beispiel (eine) if-Bedingung.
+Wir können hier auch noch mehr guards machen, aber das ist so ein bisschen übersichtlicher und dann ist das erste Element jetzt gerade oder nicht.
+
+0:01:09.834,0:01:21.875
+„even (head xs)“ und wenn das der Fall ist, dass es gerade ist,
+dann muss der Rest der Liste ja gerade eine ungerade Anzahl ...
+
+0:01:21.875,0:01:31.292
+an geraden Element enthalten, weil sonst wäre das + unser noch gerades Element was vorne steht halt nicht insgesamt gerade. Das heißt der rest muss ungerade sein.
+
+0:01:31.292,0:01:41.125
+Also wir nehmen „not“ und dann berechnen wir den Rest davon,
+... das wäre jetzt hier in dem Fall die Funktion selbst ...
+
+0:01:41.125,0:01:51.459
+ Und da tun jetzt aber nur den Rest der Liste rein, anstatt alles.
+Also den "head", den schneiden wir sozusagen ab und nehmen nur den ganzen Rest.
+
+0:01:51.459,0:02:00.459
+Das heißt jetzt also, wenn wir den ganzen restlichen Wert berechnet haben und das hier ist jetzt insgesamt nicht gerade, ...
+
+0:02:00.459,0:02:12.792
+dann wäre das „not“ davor, dann wird es also insgesamt ein true statt ein false und das wäre dann auch richtig. Eine Liste mit ungerader Anzahl an Elementen +1 wäre dann wieder gerade.
+
+0:02:12.792,0:02:31.792
+Und im else-Fall würden wir dann einfach nur diese Rest-Liste verwerten,
+anstatt da „not“ vorzuschreiben, ...denn dann haben wir ja vorne ein ungerades Element, das heißt der ganze Rest muss eine gerade Anzahl (haben).
+
+0:02:31.792,0:02:37.042
+Das hier können wir jetzt noch verkürzen
+und die doppelten Berechnungen da wegnehmen.
+
+0:02:37.042,0:02:42.042
+Denn wir haben hier ja zweimal den gleichen Teilausdruck
+stehen, dieses „hasEvenEvens (tail xs)“ steht da zweimal.
+
+0:02:42.042,0:02:59.625
+Das können wir uns also kopieren. Das nennen wir hier dann irgendwie zum Beispiel „rest“ und dann fügen wir das hier ein.
+
+0:02:59.625,0:03:06.375
+Wenn ich mich hier jetzt nicht vertippt habe,
+dann sollte das auch direkt (funktionieren) …
+
+0:03:06.375,0:03:11.417
+Ja, also das wäre jetzt zum Beispiel eine Möglichkeit wie man das lösen könnte.
+
+0:03:11.417,0:03:19.667
+Was auch noch geht, ist das Ganze weiter zu verkürzen, indem man gar keine guards hat, sondern alles in den gleichen Ausdrucken (packen) würden.
+
+0:03:19.667,0:03:36.625
+(Da) können wir jetzt hier kopieren
+und können da jetzt einfach das hier zusammenfassen...
+
+0:03:36.625,0:03:42.709
+und zwar indem wir sagen entweder haben wir halt „null xs“,
+dann soll es ja true sein oder ...
+
+0:03:42.709,0:03:49.417
+wir müssen jetzt noch das hier reinbringen
+und wenn man sich das hier mal genau anguckt, dann steht ja eigentlich nur, dass...
+
+0:03:49.417,0:03:59.917
+wenn das erste Element even ist, also wenn bei „even (head xs)“ true rauskommt,
+dann darf bei „hasEvenEvens (tail xs)“ nur false rauskommen ...
+
+0:03:59.917,0:04:04.417
+Und genau anderherum, wenn das false ist, das „even (head xs)“,
+dann darf da nur true rauskommen.
+
+0:04:04.417,0:04:08.334
+Immer genau das Gegenteil muss der Fall sein, sonst haben wir die falsche Anzahl.
+
+0:04:08.334,0:04:13.750
+Das heißt wir können jetzt hier einfach schreiben: „even head xs“.
+
+0:04:13.750,0:04:26.875
+Das ist ja ein Boolean-Wert, da kommt eben true und false raus
+und dann können wir sagen, das soll genau ungleich sein dem Boolean-Wert,
+der bei unserem „hasEvenEvens“ von dem Rest der Liste rauskommt...
+
+0:04:26.875,0:04:30.334
+zum Beispiel.
+
+0:04:30.959,0:04:34.084
+So jetzt haben wir das Ganze in einer einzigen logischen Aussage zusammengefasst.
+
+0:04:34.084,0:04:37.750
+Da steht aber im Endeffekt nichts anderes als hier schon,
+nur ein bisschen kürzer gefasst.
+
+0:04:37.750,0:04:49.584
+Das hier ist ja eigentlich …
+Diese ganze If-Klausel hier, die ist ja genau das Gleiche, wie diese Ungleichung ...
+
+0:04:49.584,0:04:53.042
+und wir sehen das funktioniert auch.
+
+0:04:53.042,0:05:00.042
+Davon kann man jetzt noch Variationen machen: Man kann hier auch noch mehr Fälle einfügen, zum Beispiel anstatt hier „otherwise“ zu schreiben,
+könnte man hier auch erst mal gucken ...
+
+0:05:00.042,0:05:06.042
+ was passiert mit einer Liste, wo nur ein Element drin ist
+und dann die restlichen Fälle ...
+
+0:05:06.042,0:05:17.084
+oder man könnte das hier auch noch anders aufschreiben,
+aber im Endeffekt sind diese ganzen Lösungen ja …
+Kann man die zusammenfassen unter so einer rekursiven Lösungsmöglichkeit.
+
+0:05:17.792,0:05:18.292
+Also wenn das bei euch ein bisschen anders aussah als hier, ist es eigentlich fast schon äquivalent zu diesen Sachen, solange das diesen Ansatz hat, ...
+
+0:05:24.584,0:05:37.459
+aber es gibt halt noch eine andere Möglichkeit wie man das lösen kann und der (Weg) ist auch schön kurz … Und zwar indem man eine „list comprehension“ benutzt.
+
+0:05:37.459,0:05:43.750
+Dann kann man das auch in einer Zeile lösen und wir müssen einfach nur kurz überlegen, was wir jetzt genau machen wollen: Wir wollen ja wissen ...
+
+0:05:43.750,0:05:48.542
+wie viele gerade Zahlen wir haben und ob die Anzahl gerade ist. Das heißt, ...
+
+0:05:49.000,0:05:56.667
+(wir müssen) das jetzt ein bisschen aufteilen, erstmal überlegen welche Bausteine können wir gebrauchen, dann können wir erst mal überlegen – wir brauchen vielleicht erst mal die Liste von geraden Zahlen, die wir da haben.
+
+0:05:56.667,0:06:02.042
+Das können wir erst mal machen, das geht ja relativ einfach mit einer „list compression“. Wir sagen erstmal wir haben Elemente x, ...
+
+0:06:02.042,0:06:11.042
+die kommen aus unserer Eingabe-Liste xs und wir nehmen jetzt einfach nur alle die gerade sind. Also es muss gelten „even x“, jeweils.
+
+0:06:11.042,0:06:15.917
+Jetzt haben einfach eine Liste aller geraden Zahlen,
+die in unserer Eingabe-Liste (sind) ...
+
+0:06:15.917,0:06:26.042
+und jetzt kann man sagen wir nehmen die Länge davon
+und da gucken wir einfach, ob diese Länge gerade ist.
+
+0:06:26.042,0:06:30.042
+So, und dann haben wir auch schon die Aufgabe gelöst.
+
+0:06:30.042,0:06:35.042
+Was wir jetzt da machen ist,
+wir ziehen einfach alle geraden Zahlen raus, schmeißen alle ungeraden weg, ...
+
+0:06:35.042,0:06:42.000
+dann nehmen wir die Länge dieser Liste, das ist dann genau die Anzahl der geraden Zahlen und dann gucken wir einfach, ob das gerade ist.
+
+0:06:42.000,0:06:55.000
+Und das funktioniert natürlich genauso gut wie die anderen Lösung ...
+und besteht auch alle Tests.
+
+0:06:55.000,0:07:02.625
+Also, es lohnt sich meist bei den Aufgaben mal kurz nachzudenken und zu überlegen, was man genau braucht man das vielleicht ein bisschen abstrakter ...
+
+0:07:02.625,0:07:06.542
+auszudrücken, als tatsächlich immer die ganzen Rekursionsschritte durchzugehen, ...
+
+0:07:06.542,0:07:11.959
+außer das wird eine Aufgabe explizit gefordert, dass man irgendwie „Divide and Conquer“ oder sowas benutzen sollte, dann muss man das natürlich (machen).
+
+0:07:11.959,0:07:17.190
+Aber ansonsten kann man die Aufgaben meist auch relativ schnell elegant lösen,
+mit solchen Sachen.

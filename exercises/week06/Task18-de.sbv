@@ -1,0 +1,419 @@
+0:00:00.000,0:00:11.490
+In dieser Aufgabe betrachten wir eine Liste von
+Zahlen und sollen daraus eine neue Zahl berechnen.
+
+0:00:12.870,0:00:20.310
+Diese Berechnung, die wir da durchführen, die
+müssen wir uns hier etwas genauer anschauen. Und
+
+0:00:20.310,0:00:28.230
+zwar wird hier immer eine Zahl multipliziert
+mit einer Zahl aus der Liste und die Zahl,
+
+0:00:28.230,0:00:35.400
+mit der multipliziert wird, ist immer eine
+aufsteigende Zahl, also die erste Zahl wird mit
+
+0:00:35.400,0:00:49.110
+1 multipliziert, die zweite Zahl mit 2, die dritte
+Zahl mit 3, die fünfte Zahl mit 4, die achte Zahl
+
+0:00:49.110,0:01:00.180
+mit 5. Das bedeutet, wir suchen immer die Zahl aus
+der Liste aus, die an fibonacci-ster Stelle steht,
+
+0:01:00.180,0:01:11.250
+wobei wir das erste Element, sozusagen
+Fibonaccizahl 1, suchen das Element an der
+
+0:01:11.250,0:01:18.210
+Stelle Fibonaccizahl 2 und wir multiplizieren dann
+immer mit der entsprechenden Zahl, also dreimal
+
+0:01:18.210,0:01:31.650
+mit dem Element an der Fibonaccizahl 3 Stelle, 4
+mal dem Element an der Fibonaccizahl 4 Stelle, die
+
+0:01:31.650,0:01:43.770
+dann im x5 ist, also das fünfte Element, und 5 mal
+dem an Fibonaccizahl fünfter Stelle, was dann eben
+
+0:01:43.770,0:01:55.620
+Element 8 wäre. Das heißt, wir haben ja auch noch
+etwas gegeben, dass wir uns auch noch anschauen
+
+0:01:55.620,0:02:01.240
+können, hier ist 'fibList' gegeben und hier steht
+der Hinweis, dass wir uns auch angucken können,
+
+0:02:01.240,0:02:13.930
+dass das wirklich die Fibonaccizahlen berechnet.
+Dafür können wir den ghci laden, können uns diese
+
+0:02:13.930,0:02:33.220
+Funktion dort definieren und dann uns anzeigen
+lassen mit 'take 100' die ersten 100 Elemente der
+
+0:02:33.220,0:02:39.370
+Fibonaccizahlen und dann sehen wir, dass das genau
+eben diese Fibonaccizahlen sind. Diese Funktion
+
+0:02:39.370,0:02:48.160
+gibt uns die Fibonaccizahlen zurück. Das wissen
+wir jetzt und es sind hier noch weitere Funktionen
+
+0:02:48.160,0:03:04.120
+definiert, insbesondere interessiert uns diese
+'isFib'. Das sagt uns sozusagen, ob eine Zahl,
+
+0:03:04.120,0:03:11.860
+die wir angeben, auch eine Fibonaccizahl ist
+und das können wir verwenden, um zu überprüfen,
+
+0:03:11.860,0:03:23.170
+ob eine gewisse Zahl eine Fibonaccizahl. Die Frage
+ist natürlich, wie uns das ganze weiterhilft. Wir
+
+0:03:23.170,0:03:32.320
+sollen diese 'fibSum' Funktion definieren, die
+die Zahl berechnen soll, aus der gegebenen liste.
+
+0:03:32.320,0:03:42.040
+Jetzt gibt es natürlich die Herausforderung
+zunächst einmal die Zahlen zu finden, die relevant
+
+0:03:42.040,0:03:52.780
+sind und dann müssen wir die entsprechenden Zahlen
+natürlich auch noch multiplizieren. Zunächst
+
+0:03:52.780,0:04:08.670
+einmal, um die zahlen herauszufinden, können wir
+uns überlegen, wie wir die Zahlen filtern können,
+
+0:04:08.670,0:04:15.090
+aus der entsprechenden Liste. Und zwar können wir
+ja alle Elemente in der Liste durchnummerieren.
+
+0:04:15.090,0:04:25.200
+Also der wissen, dass in der liste Zahlen stehen
+und wir können ja zu jedem Element dazu schreiben,
+
+0:04:25.200,0:04:32.670
+welches Element das ist, indem wir die 'zip'
+Funktion verwenden und dann können wir das
+
+0:04:32.670,0:04:40.140
+ausnutzen, um daraus die Zahlen zu filtern,
+die einen Fibonacci-Index haben. Also wir
+
+0:04:40.140,0:04:50.970
+können mit 'zip' uns Indizes beschaffen, indem
+wir 'zip' und dann die unendliche Liste von 1
+
+0:04:50.970,0:05:02.640
+bis unendlich geben lassen und dann das ganze
+mit unserer gegebenen Liste zippen, dann haben
+
+0:05:02.640,0:05:18.720
+wir eine Liste in der Tupel von Integer stehen,
+also Paare von Integer, also zweier Tupel. Aus
+
+0:05:18.720,0:05:27.300
+dieser Liste können wir mit List Comprehension die
+Zahlen, die wir haben möchten, herausholen. Dafür
+
+0:05:27.300,0:05:37.170
+kann ich jetzt hier das Paar i und x sozusagen
+definieren, dass ich in der List Comprehension
+
+0:05:37.170,0:05:46.890
+hier extrahieren möchte und wir interessieren
+uns für den Index hier insofern nur, dass wir die
+
+0:05:46.890,0:05:58.140
+Zahlen haben möchten, die einen Fibonacci-Index
+haben. Das heißt, wir können 'isFib' als Filter
+
+0:05:58.140,0:06:08.610
+verwenden, mit dem Parameter i und können in
+der List Comprehension x zurückliefern, um
+
+0:06:08.610,0:06:17.160
+dann die entsprechenden Zahlen zu bekommen. Jetzt
+stimmt das ganze Programm natürlich noch nicht,
+
+0:06:17.160,0:06:25.350
+denn jetzt bekommen wir erst mal nur die Zahlen
+heraus und vom Typ her ist das sogar falsch,
+
+0:06:25.350,0:06:35.880
+weil wir sollen eine Funktion schreiben [Integer]
+nach Integer. Jetzt können wir hier die Summe über
+
+0:06:35.880,0:06:42.450
+diese Liste bilden und das ist natürlich noch
+nicht das, was wir haben wollen. Ich kann das ja
+
+0:06:42.450,0:06:54.300
+mal laden in ghci und wenn ich da 'main' Funktion
+aufrufe dann liefern die Testfälle schon mal
+
+0:06:54.300,0:07:00.750
+einen Fehlerfall, aber das ist auch ganz klar,
+dass es noch nicht das richtige Ergebnis ist,
+
+0:07:00.750,0:07:06.090
+denn hier fehlt noch die Multiplikation. Wir
+haben jetzt alle Zahlen, die wir haben wollen,
+
+0:07:06.090,0:07:16.350
+aber wir müssen diese Zahlen auch noch
+multiplizieren mit jeweils der Stelligkeit,
+
+0:07:16.350,0:07:28.800
+die diese in dieser Liste haben, denn hier ist zum
+Beispiel '1 * 1' und '2 * 2' und so weiter. Das,
+
+0:07:28.800,0:07:39.000
+was da durchgeführt werden soll, bisher haben wir
+nur die Summe aus 1, 2, 3, 5, 8 und so weiter.
+
+0:07:39.000,0:07:49.680
+Also es gilt diese Multiplikation noch. Und dafür
+können wir erneut wieder das 'zip' verwenden und
+
+0:07:49.680,0:07:57.720
+wir können sozusagen, nachdem wir diese Liste
+erstellt haben, können wir hier diese erstellte
+
+0:07:57.720,0:08:11.720
+Liste wieder zippen mit einer unendlich Liste,
+die die Indizes verteilt und wir nutzen da auch
+
+0:08:11.720,0:08:19.790
+schon aus, dass dieses 'zip' hat eben nur
+so viele Zahlen mit unserer Liste verknüpft,
+
+0:08:19.790,0:08:25.580
+wie es auch Elemente in der entsprechenden Liste
+gibt, also in der xs Liste und das nutzen wir hier
+
+0:08:25.580,0:08:33.800
+erneut aus. Wir zippen diese Liste und extrahieren
+dann die Elemente genau so, wie wir das vorher
+
+0:08:33.800,0:08:43.820
+gemacht hatten über List Comprehension. Also
+hier sind das jetzt die Elemente aus der Liste,
+
+0:08:43.820,0:08:50.900
+also die Fibonaccizahlen, wir können die
+vielleicht sogar f nennen, und davor ist noch
+
+0:08:50.900,0:09:00.590
+jeweils der Index der dazu gehört. Diese Elemente
+holen wir heraus und dann multiplizieren wir die
+
+0:09:00.590,0:09:12.500
+beiden und dann haben wir somit unsere
+Summe der Zahlen, die wir haben wollen,
+
+0:09:12.500,0:09:20.060
+das sehen wir jetzt hier in dem Fall daran schon
+mal, dass unser Test funktioniert und entsprechend
+
+0:09:20.060,0:09:26.390
+diese Summen hier gebildet werden. Und jetzt
+kann man natürlich noch den Code optimieren,
+
+0:09:26.390,0:09:33.260
+sodass er lesbarer wird. Also wir haben eine
+ziemlich lange Zeile hat an Code und das wird
+
+0:09:33.260,0:09:40.700
+relativ unübersichtlich, insbesondere auch durch
+die Schachtelung von diesen Klammern. Hier sollte
+
+0:09:40.700,0:09:46.040
+wenigstens dieser Teil, meines Erachtens,
+extrahiert werden und wir können das hier zum
+
+0:09:46.040,0:09:58.250
+Beispiel als die gefilterten Elemente bezeichnen,
+also ich nenne das jetzt hier 'filtered' und diese
+
+0:09:58.250,0:10:07.400
+gefilterten Elemente, das sind eben genau diese
+Elemente die an Fibonacci-ter Stelle stehen,
+
+0:10:07.400,0:10:16.770
+also an Fibonaccistelle 1, Fibonaccistelle
+2 und so weiter. Dann haben wir hier jetzt
+
+0:10:16.770,0:10:26.040
+den anderen Teil in der lokalen Definition für
+die Elemente um die Elemente durchzunummerieren
+
+0:10:26.040,0:10:38.250
+und die entsprechende Multiplikation dann noch
+durchzuführen, die ebenfalls gewünscht wurde.
+
+0:10:45.570,0:10:56.730
+Es gibt natürlich auch noch einen
+anderen Ansatz die Aufgabe zu lösen. Also
+
+0:10:56.730,0:11:11.850
+prinzipiell ist der Ansatz schon sehr ähnlich,
+allerdings könnte man den 'isFib' Teil, also das
+
+0:11:11.850,0:11:23.550
+untere, auch noch anders formulieren. Ich kopiere
+die Funktion jetzt einfach mal und erstelle jetzt
+
+0:11:23.550,0:11:38.250
+hier eine Kopie von der Funktion als die alte
+Definition. In der alternativen Variante könnte
+
+0:11:38.250,0:11:50.280
+man sich jetzt auch überlegen, dass man diese
+Elemente hier so extrahiert, dass man das
+
+0:11:50.280,0:12:05.010
+'isFib' als Resultat zurückliefert, in der Liste.
+Das heißt, wir verwenden jetzt keinen Filter,
+
+0:12:05.010,0:12:27.250
+sondern wir liefern hier als erste Komponente
+dieser Liste, ob die Zahl eine Fibonaccizahl
+
+0:12:27.250,0:12:41.140
+ist. Das heißt, hier erstellen wir eine neue List
+Comprehension und in der laufen wir auch über alle
+
+0:12:41.140,0:13:01.540
+Zahlen wieder, die dort von 1 bis ja so weit wir
+es halt benötigen und überprüfen dann, ob diese
+
+0:13:01.540,0:13:16.690
+Zahl eine Fibonaccizahl ist. Jetzt erhalten wir
+hier eine Liste von Booleans, also die erste Liste
+
+0:13:16.690,0:13:24.340
+sind boolesche Werte und in der zweiten Liste
+haben wir noch immer die Elemente aus unserer
+
+0:13:24.340,0:13:35.920
+Ursprungsliste. Also diese Ursprungsliste hier.
+Jetzt wollen wir nur die Elemente haben, für die
+
+0:13:35.920,0:13:45.430
+'isFib' auch gilt. Das heißt, wir können hier auf
+diese Weise filtern, indem wir sagen, wir wollen
+
+0:13:45.430,0:14:00.250
+hier nur die Elemente haben für die gilt, dass
+es Fibonaccizahlen sind und genau hier in dieser
+
+0:14:00.250,0:14:14.260
+Liste existieren sozusagen immer nur die Werte,
+die ausdrücken, ob die Zahl an der entsprechenden
+
+0:14:14.260,0:14:20.650
+Stelle eine Fibonaccizahl ist. Das will ich auch
+noch mal kurz im ghci zeigen, damit das auch etwas
+
+0:14:20.650,0:14:31.720
+klarer wird. Also ich kann hier mal die ersten 100
+Einträge davon geben, passend zum Beispiel, das
+
+0:14:31.720,0:14:38.050
+habe ich jetzt nicht mehr im Scope, weil ich hier
+das Programm schon geladen habe. Ich öffne einfach
+
+0:14:38.050,0:14:54.760
+einen neuen ghci, in dem ich das durchführe, das
+demonstriere. 100 von 'isFib' ist hier in dem Fall
+
+0:14:54.760,0:15:08.170
+nicht definiert. Das ist natürlich nicht ganz
+so gut, um das zu demonstrieren. Ich definiere
+
+0:15:08.170,0:15:21.760
+einfach die benötigten Teile noch einmal ganz
+kurz, um das demonstrieren zu können. Definieren
+
+0:15:21.760,0:15:37.990
+'fibList' und 'nextFib' und dann kann ich 'isFib'
+definieren und dann kann ich mir die ersten 100
+
+0:15:37.990,0:15:47.710
+Elemente geben lassen und sagen lassen, ob das
+Fibonaccizahlen sind. Wenn wir das jetzt sehen,
+
+0:15:47.710,0:15:52.900
+dann sehen wir hier, die ersten Zahlen sind
+Fibonaccizahlen und dann sind es keine mehr.
+
+0:15:52.900,0:16:01.720
+Wir könnten das ganze auch zum Beispiel zippen
+mit den Zahlen, dann sehen wir das ganze noch
+
+0:16:01.720,0:16:12.820
+deutlicher, wenn wir hier einfach die Zahlen
+dazu zippen, dann sehen wir hier, für die 1 gilt,
+
+0:16:12.820,0:16:19.390
+es ist eine Fibonaccizahl, für die 2 gilt es auch,
+für die 3 auch und für die 4 gilt das nicht, für
+
+0:16:19.390,0:16:25.540
+die die 5 gilt aber, dass es eine Fibonaccizahl
+ist, und so weiter. Und wir haben im Prinzip genau
+
+0:16:25.540,0:16:41.530
+diese Liste definiert durch, beziehungsweise wir
+haben diese Liste von 'True' Werten, aber jetzt
+
+0:16:41.530,0:16:47.380
+in dem Fall nicht verknüpft mit den tatsächlichen
+Zahlen, sondern immer mit den Elementen aus der
+
+0:16:47.380,0:17:00.310
+Liste, hier mit xs von den, die übergeben haben
+und damit bekommen wir heraus, ob das Element
+
+0:17:00.310,0:17:11.920
+in der Liste auch das Fibonacci-ste Element
+ist. Das Element an der ersten Fibonaccistelle,
+
+0:17:11.920,0:17:22.750
+das Element an der zweiten, usw., wenn wir
+hier die entsprechende Liste übergeben. Durch
+
+0:17:22.750,0:17:37.570
+dieses 'True' hier erzwingen wir, dass wir nur die
+Elemente bekommen, für die 'isFib' gilt. Wenn wir
+
+0:17:37.570,0:17:50.110
+das jetzt erneut laden, dann laufen die Tests auch
+noch immer durch. Hier auch nochmal mit Hinweis,
+
+0:17:50.110,0:17:57.610
+also hier ist auch wirklich 'sum' verwendet,
+denn das steht hier unten auch in dem Programm
+
+0:17:57.610,0:18:03.700
+drin und ich habe 'fibSum' angepasst und
+nicht 'fibSum''. Also wir verwenden jetzt
+
+0:18:03.700,0:18:12.190
+auch tatsächlich das andere 'fibSum' und ich
+kann da auch nochmal die Benennung ändern,
+
+0:18:12.190,0:18:20.200
+dann sind wir, dass das Andere auch immer noch
+funktioniert, also es funktionieren beide Fälle
+
+0:18:20.200,0:18:32.710
+für diese 'fibSum' Berechnung und ja man kann
+das sozusagen auf diese beiden Weisen lösen.
