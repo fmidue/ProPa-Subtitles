@@ -28,8 +28,8 @@ Concerning use of quotation marks, try to follow rules that mirror the following
 
 | GitHub username | Lines |
 | :-- | --: |
+| Gotai | 525 |
 | Nick46000 | 511 |
-| Gotai | 296 |
 | TMUniversal | 53 |
 | michalitv21 | 19 |
 | MagnolieH | 14 |
