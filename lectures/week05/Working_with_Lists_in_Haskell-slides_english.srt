@@ -1,1713 +1,1714 @@
-0:00:01.780,0:00:08.250
+74 # slide
+00:00:01,780 --> 00:00:08,250
 Okay, so I wanted to start by giving some
 observations from the exercises.
 
-0:00:08.250,0:00:17.580
+00:00:08,250 --> 00:00:17,580
 And to some extent, I - of course - have already
 done so in the previous video.
 
-0:00:17.580,0:00:26.180
+00:00:17,580 --> 00:00:26,180
 In particular, I talked there about the eta-reduction
 aspect that Autotool or HLint sometimes warn
 
-0:00:26.180,0:00:27.180
+00:00:26,180 --> 00:00:27,180
 you about.
 
-0:00:27.180,0:00:28.180
+00:00:27,180 --> 00:00:28,180
 Some of you have already seen this in their
 own submissions.
 
-0:00:28.180,0:00:34.540
+00:00:28,180 --> 00:00:34,540
 I don't have to talk through this again here
 in this slide because it is in the previous
 
-0:00:34.540,0:00:35.540
+00:00:34,540 --> 00:00:35,540
 video.
 
-0:00:35.540,0:00:41.909
+00:00:35,540 --> 00:00:41,909
 So, here you have just another example, something
 that occurred probably last year.
 
-0:00:41.909,0:00:49.249
+00:00:41,909 --> 00:00:49,249
 So, again, the same idea: having a function
 which takes an argument which it simply passes
 
-0:00:49.249,0:00:52.839
+00:00:49,249 --> 00:00:52,839
 on to another function.
 
-0:00:52.839,0:00:56.449
+00:00:52,839 --> 00:00:56,449
 So, somebody defined a ball function which
 takes a "time" and gives a Picture.
 
-0:00:56.449,0:00:57.749
+00:00:56,449 --> 00:00:57,749
 And how is "ball" defined?
 
-0:00:57.749,0:01:04.089
+00:00:57,749 --> 00:01:04,089
 At any time t, it gives a solid circle of
 radius t, which is exactly the same as simply
 
-0:01:04.089,0:01:06.600
+00:01:04,089 --> 00:01:06,600
 saying: "ball is this solidCircle function".
 
-0:01:06.600,0:01:12.330
+00:01:06,600 --> 00:01:12,330
 Defining "ball" as an alias, a different name
 for the solidCircle function, expresses the
 
-0:01:12.330,0:01:20.130
+00:01:12,330 --> 00:01:20,130
 same idea as saying "ball at a given time
 t is solidCircle at that given time t".
 
-0:01:20.130,0:01:23.810
+00:01:20,130 --> 00:01:23,810
 And the second version is a bit more elegant.
 
-0:01:23.810,0:01:27.289
+00:01:23,810 --> 00:01:27,289
 Even just pragmatically, you could say:
 
-0:01:27.289,0:01:29.689
+00:01:27,289 --> 00:01:29,689
 At least you don't have to think about the
 parameter name.
 
-0:01:29.689,0:01:35.030
+00:01:29,689 --> 00:01:35,030
 In this case, maybe t is the obvious choice;
 but in another situation, you might not have
 
-0:01:35.030,0:01:36.550
+00:01:35,030 --> 00:01:36,550
 a good idea how to name your parameter.
 
-0:01:36.550,0:01:44.110
+00:01:36,550 --> 00:01:44,110
 Well, if you use eta-reduction, you don't
 always have to name the parameters.
 
-0:01:44.110,0:01:52.210
+00:01:44,110 --> 00:01:52,210
 And we also saw this example in the taped
 video demonstration with the opening rectangle.
 
-0:01:52.210,0:01:58.960
+00:01:52,210 --> 00:01:58,960
 And I want to emphasize here that the 'flip' function
 that I used there in order to turn this into
 
-0:01:58.960,0:02:02.400
+00:01:58,960 --> 00:02:02,400
 a rectangle that opens in the other direction,
 was not a Picture-specific primitive.
 
-0:02:02.400,0:02:05.020
+00:02:02,400 --> 00:02:05,020
 So, it was not flipping the Picture.
 
-0:02:05.020,0:02:06.450
+00:02:05,020 --> 00:02:06,450
 It was flipping the 'rectangle' function.
 
-0:02:06.450,0:02:09.700
+00:02:06,450 --> 00:02:09,700
 So, it would apply to any function of two
 arguments.
 
-0:02:09.700,0:02:14.650
+00:02:09,700 --> 00:02:14,650
 In this case, for the 'rectangle' function,
 it exactly has the effect that geometrically,
 
-0:02:14.650,0:02:19.959
+00:02:14,650 --> 00:02:19,959
 the shape of the rectangle is flipped because
 we flipped the parameter arguments of the
 
-0:02:19.959,0:02:20.959
+00:02:19,959 --> 00:02:20,959
 'rectangle' function.
 
-0:02:20.959,0:02:23.760
+00:02:20,959 --> 00:02:23,760
 But the 'flip' function itself, it's not a function
 that operates on pictures only.
 
-0:02:23.760,0:02:28.040
+00:02:23,760 --> 00:02:28,040
 It is a function that operates on other functions;
 in this case, on the 'rectangle' function.
 
-0:02:28.040,0:02:34.989
+00:02:28,040 --> 00:02:34,989
 And you have seen this in action, what this
 actually means, for this case.
 
-0:02:34.989,0:02:38.140
+00:02:34,989 --> 00:02:38,140
 And another remark maybe at this point is:
 
-0:02:38.140,0:02:44.260
+00:02:38,140 --> 00:02:44,260
 The fact that we have eta-reduction, or that
 this can be applied, also has a certain impact
 
-0:02:44.260,0:02:46.890
+00:02:44,260 --> 00:02:46,890
 on the design of APIs in Haskell.
 
-0:02:46.890,0:02:54.540
+00:02:46,890 --> 00:02:54,540
 So, if you have to think about how, for example,
 the parameter order of your self-defined function
 
-0:02:54.540,0:02:59.599
+00:02:54,540 --> 00:02:59,599
 should be, it is worthwhile to think about
 which is the parameter that maybe is often
 
-0:02:59.599,0:03:00.769
+00:02:59,599 --> 00:03:00,769
 passed on to somewhere else.
 
-0:03:00.769,0:03:04.439
+00:03:00,769 --> 00:03:04,439
 Because then it would make sense to make this
 parameter the last parameter, because then
 
-0:03:04.439,0:03:08.489
+00:03:04,439 --> 00:03:08,489
 you can apply this trick, this eta-reduction
 refactoring.
 
-0:03:08.489,0:03:14.720
+00:03:08,489 --> 00:03:14,720
 That is also actually the reason, one could
 argue, for CodeWorld always having the Picture
 
-0:03:14.720,0:03:16.879
+00:03:14,720 --> 00:03:16,879
 as the last argument in the transformation
 functions.
 
-0:03:16.879,0:03:22.780
+00:03:16,879 --> 00:03:22,780
 If you think about the 'translated' function
 for example, it takes two coordinates and
 
-0:03:22.780,0:03:23.780
+00:03:22,780 --> 00:03:23,780
 the Picture.
 
-0:03:23.780,0:03:27.010
+00:03:23,780 --> 00:03:27,010
 It could also take the Picture and then the
 two coordinates, but then one couldn't in
 
-0:03:27.010,0:03:31.060
+00:03:27,010 --> 00:03:31,060
 some situations, where it is useful, apply
 the eta-reduction.
 
-0:03:31.060,0:03:37.430
+00:03:31,060 --> 00:03:37,430
 So, it makes sense in designing an API, designing
 the function types of a library, for example,
 
-0:03:37.430,0:03:42.870
+00:03:37,430 --> 00:03:42,870
 in Haskell or other similar languages, to
 always put the data structure argument (which
 
-0:03:42.870,0:03:46.909
+00:03:42,870 --> 00:03:46,909
 in this case is the Picture argument, and
 not the parameter arguments for moving in
 
-0:03:46.909,0:03:53.930
+00:03:46,909 --> 00:03:53,930
 the x- and y-directions) as the last argument.
 
-0:03:53.930,0:03:57.160
+00:03:53,930 --> 00:03:57,160
 Because this opens up possibilities to make
 good use of eta-reduction.
 
-0:03:57.160,0:04:01.980
+00:03:57,160 --> 00:04:01,980
 It is not super relevant for you at the moment,
 because you are not defining your own libraries,
 
-0:04:01.980,0:04:05.030
+00:04:01,980 --> 00:04:05,030
 or designing libraries for someone else's
 consumption.
 
-0:04:05.030,0:04:16.049
+00:04:05,030 --> 00:04:16,049
 But it is still maybe interesting to at least
 be aware of this choice.
 
-0:04:16.049,0:04:24.380
+00:04:16,049 --> 00:04:24,380
 Then another observation, which is also a
 recurring one, and in particular in task 7.
 
-0:04:24.380,0:04:33.530
+00:04:24,380 --> 00:04:33,530
 That was apparent from some of your submissions,
 namely, the overuse of access-by-index.
 
-0:04:33.530,0:04:39.680
+00:04:33,530 --> 00:04:39,680
 As a rule of thumb in Haskell, if you access
 a data structure by index, then usually that
 
-0:04:39.680,0:04:41.210
+00:04:39,680 --> 00:04:41,210
 was not the best choice of expression.
 
-0:04:41.210,0:04:44.419
+00:04:41,210 --> 00:04:44,419
 And sometimes, we will actually actively prevent
 this.
 
-0:04:44.419,0:04:51.440
+00:04:44,419 --> 00:04:51,440
 And I tried in the case of task 7 to prevent
 this with my Moodle message a few days ago (in another year).
 
-0:04:51.440,0:04:56.440
+00:04:51,440 --> 00:04:56,440
 I explained that you were supposed to really
 work with the list as a whole, and not some
 
-0:04:56.440,0:04:57.820
+00:04:56,440 --> 00:04:57,820
 special cases.
 
-0:04:57.820,0:05:03.400
+00:04:57,820 --> 00:05:03,400
 I saw some people using index access, which
 is possible in Haskell, but usually not the
 
-0:05:03.400,0:05:04.400
+00:05:03,400 --> 00:05:04,400
 best choice.
 
-0:05:04.400,0:05:09.710
+00:05:04,400 --> 00:05:09,710
 And even the task description, in this case,
 indicated that you should try to use a list
 
-0:05:09.710,0:05:10.710
+00:05:09,710 --> 00:05:10,710
 comprehension.
 
-0:05:10.710,0:05:12.500
+00:05:10,710 --> 00:05:12,500
 So, what do I mean by this?
 
-0:05:12.500,0:05:15.860
+00:05:12,500 --> 00:05:15,860
 Consider something like this:
 
-0:05:15.860,0:05:22.620
+00:05:15,860 --> 00:05:22,620
 Some list is taken, from this list we take
 some arguments, one after the other.
 
-0:05:22.620,0:05:26.250
+00:05:22,620 --> 00:05:26,250
 Some argument is being drawn from this list,
 and then we compute something from this argument,
 
-0:05:26.250,0:05:29.020
+00:05:26,250 --> 00:05:29,020
 put all results in a list, and then we do
 whatever with this list.
 
-0:05:29.020,0:05:36.770
+00:05:29,020 --> 00:05:36,770
 So, this is a nice rich expression in the
 form of what I also introduced last week in
 
-0:05:36.770,0:05:38.400
+00:05:36,770 --> 00:05:38,400
 examples.
 
-0:05:38.400,0:05:44.160
+00:05:38,400 --> 00:05:44,160
 Of course, you could, and some people did do,
 instead write code like this.
 
-0:05:44.160,0:05:46.090
+00:05:44,160 --> 00:05:46,090
 So, what this is this saying?
 
-0:05:46.090,0:05:47.729
+00:05:46,090 --> 00:05:47,729
 It is saying:
 
-0:05:47.729,0:05:53.110
+00:05:47,729 --> 00:05:53,110
 Give me the list and I take the length and
 then I will build an index from zero (because,
 
-0:05:53.110,0:05:58.460
+00:05:53,110 --> 00:05:58,460
 as you will find out, list indexing in Haskell
 starts with the index zero).
 
-0:05:58.460,0:06:08.830
+00:05:58,460 --> 00:06:08,830
 So, compute the index to be each value from
 zero to the length of the list -1, and then
 
-0:06:08.830,0:06:13.729
+00:06:08,830 --> 00:06:13,729
 access the list elements by this index, then
 compute something from this, and do whatever
 
-0:06:13.729,0:06:14.729
+00:06:13,729 --> 00:06:14,729
 with it.
 
-0:06:14.729,0:06:20.010
+00:06:14,729 --> 00:06:20,010
 The expressions that you see here are equivalent
 in the sense that they compute the same thing,
 
-0:06:20.010,0:06:21.560
+00:06:20,010 --> 00:06:21,560
 but the first one is the idiomatic one.
 
-0:06:21.560,0:06:23.950
+00:06:21,560 --> 00:06:23,950
 The first one is what really expresses the
 intent.
 
-0:06:23.950,0:06:31.139
+00:06:23,950 --> 00:06:31,139
 The second one is somehow artificially working
 with indices and is not very elegant, and
 
-0:06:31.139,0:06:32.740
+00:06:31,139 --> 00:06:32,740
 also not very well maintainable.
 
-0:06:32.740,0:06:43.690
+00:06:32,740 --> 00:06:43,690
 This is sometimes called indexitis (the sickness
 of using too many indices).
 
-0:06:43.690,0:06:51.141
+00:06:43,690 --> 00:06:51,141
 That might be the only choice to work with
 data structures in some other languages, but
 
-0:06:51.141,0:06:52.479
+00:06:51,141 --> 00:06:52,479
 certainly not in Haskell.
 
-0:06:52.479,0:06:58.479
+00:06:52,479 --> 00:06:58,479
 So, try to work in the spirit of the first
 example here.
 
-0:06:58.479,0:07:04.560
+00:06:58,479 --> 00:07:04,560
 This also brings us to more generally working
 with lists.
 
-0:07:04.560,0:07:10.460
+00:07:04,560 --> 00:07:10,460
 So, this will be the topic of the next few
 slides and probably for most of this video.
 
-0:07:10.460,0:07:14.669
+00:07:10,460 --> 00:07:14,669
 Of course, you cannot only work with list
 comprehensions in Haskell when you work with
 
-0:07:14.669,0:07:15.669
+00:07:14,669 --> 00:07:15,669
 lists.
 
-0:07:15.669,0:07:16.669
+00:07:15,669 --> 00:07:16,669
 There are other functions.
 
-0:07:16.669,0:07:20.710
+00:07:16,669 --> 00:07:20,710
 There is actually a small but powerful library
 of functions on lists.
 
-0:07:20.710,0:07:26.020
+00:07:20,710 --> 00:07:26,020
 But even then, list indexing is the last resort.
 
-0:07:26.020,0:07:29.050
+00:07:26,020 --> 00:07:29,050
 So, usually, it's not a good idea to work with
 list indices.
 
-0:07:29.050,0:07:30.889
+00:07:29,050 --> 00:07:30,889
 I can't stress this enough.
 
-0:07:30.889,0:07:39.599
+00:07:30,889 --> 00:07:39,599
 Nevertheless, first, a few more general comments
 on lists and then I will introduce some of
 
-0:07:39.599,0:07:45.620
+00:07:39,599 --> 00:07:45,620
 the functions that you might want to use for
 some of the next exercise tasks.
 
-0:07:45.620,0:07:53.240
+00:07:45,620 --> 00:07:53,240
 Generally, what is apparent once you look
 at the next few lectures and exercises is
 
-0:07:53.240,0:07:58.509
+00:07:53,240 --> 00:07:58,509
 that we will, from now on, use lists a lot
 in the examples in lectures and exercises.
 
-0:07:58.509,0:08:02.129
+00:07:58,509 --> 00:08:02,129
 So far, most of our examples have been with
 the CodeWorld library.
 
-0:08:02.129,0:08:07.970
+00:08:02,129 --> 00:08:07,970
 So, you got to know the Picture type and all
 kinds of operations on it.
 
-0:08:07.970,0:08:14.600
+00:08:07,970 --> 00:08:14,600
 And similarly, the next material
 will be mostly about lists and functions working
 
-0:08:14.600,0:08:15.840
+00:08:14,600 --> 00:08:15,840
 on lists.
 
-0:08:15.840,0:08:22.090
+00:08:15,840 --> 00:08:22,090
 So, there we have two somewhat opposite cases.
 
-0:08:22.090,0:08:27.319
+00:08:22,090 --> 00:08:27,319
 In some sense, the Picture type is not abstract
 because you can actually draw it and see a
 
-0:08:27.319,0:08:33.230
+00:08:27,319 --> 00:08:33,230
 lot about what your code does, but it is abstract
 in the sense that you don't really have operations
 
-0:08:33.230,0:08:34.270
+00:08:33,230 --> 00:08:34,270
 to look inside the Picture.
 
-0:08:34.270,0:08:36.870
+00:08:34,270 --> 00:08:36,870
 So, all of the operations that you have done
 are *on* Pictures.
 
-0:08:36.870,0:08:38.710
+00:08:36,870 --> 00:08:38,710
 You never looked *inside* a Picture.
 
-0:08:38.710,0:08:40.480
+00:08:38,710 --> 00:08:40,480
 With lists, it's the opposite.
 
-0:08:40.480,0:08:46.320
+00:08:40,480 --> 00:08:46,320
 For lists, we will look at several ways of
 doing case distinction and looking into the
 
-0:08:46.320,0:08:49.420
+00:08:46,320 --> 00:08:49,420
 inside of lists.
 
-0:08:49.420,0:08:57.950
+00:08:49,420 --> 00:08:57,950
 Because they are one of the basic destructible
 types in Haskell, differently from the Picture
 
-0:08:57.950,0:08:59.850
+00:08:57,950 --> 00:08:59,850
 type.
 
-0:08:59.850,0:09:03.470
+00:08:59,850 --> 00:09:03,470
 Why this focus on lists?
 
-0:09:03.470,0:09:05.580
+00:09:03,470 --> 00:09:05,580
 Not because lists are always the best data
 structure.
 
-0:09:05.580,0:09:11.070
+00:09:05,580 --> 00:09:11,070
 They certainly aren't so often, in particular
 once you write more real-world code.
 
-0:09:11.070,0:09:16.880
+00:09:11,070 --> 00:09:16,880
 There are more appropriate data structure
 choices for doing something in Haskell.
 
-0:09:16.880,0:09:21.100
+00:09:16,880 --> 00:09:21,100
 And to some extent, you will also see how
 to define your own datatypes.
 
-0:09:21.100,0:09:22.770
+00:09:21,100 --> 00:09:22,770
 But that's not what we will start with.
 
-0:09:22.770,0:09:26.900
+00:09:22,770 --> 00:09:26,900
 We will start now with lists, because they
 are already existing, they have syntactic
 
-0:09:26.900,0:09:30.200
+00:09:26,900 --> 00:09:30,200
 support like list comprehensions, but also
 other functions.
 
-0:09:30.200,0:09:37.210
+00:09:30,200 --> 00:09:37,210
 So, mostly for didactic reasons, to be able
 to write examples quickly, we will work with
 
-0:09:37.210,0:09:38.210
+00:09:37,210 --> 00:09:38,210
 lists.
 
-0:09:38.210,0:09:40.000
+00:09:38,210 --> 00:09:40,000
 Not because you should always use lists.
 
-0:09:40.000,0:09:45.810
+00:09:40,000 --> 00:09:45,810
 That's an important other lesson that I want
 to make upfront.
 
-0:09:45.810,0:09:50.130
+00:09:45,810 --> 00:09:50,130
 There is a lot of list support in Haskell.
 
-0:09:50.130,0:09:53.460
+00:09:50,130 --> 00:09:53,460
 You see this already with the special syntax
 like list comprehensions.
 
-0:09:53.460,0:09:58.470
+00:09:53,460 --> 00:09:58,470
 In some sense, this is partly due to historical
 precedents.
 
-0:09:58.470,0:10:03.700
+00:09:58,470 --> 00:10:03,700
 I mentioned, I think in the first lecture,
 Lisp as an ancient functional language.
 
-0:10:03.700,0:10:09.890
+00:10:03,700 --> 00:10:09,890
 So, in some sense, it could be seen as a predecessor
 of Haskell, even though there are a lot of differences.
 
-0:10:09.890,0:10:11.950
+00:10:09,890 --> 00:10:11,950
 The name Lisp comes from "list processor".
 
-0:10:11.950,0:10:17.690
+00:10:11,950 --> 00:10:17,690
 So, there, lists were all and everything.
 
-0:10:17.690,0:10:26.000
+00:10:17,690 --> 00:10:26,000
 Even Haskell also has a lot of support for
 list processing, despite my previous comments
 
-0:10:26.000,0:10:30.380
+00:10:26,000 --> 00:10:30,380
 that, in fact, you should often use other
 data structures.
 
-0:10:30.380,0:10:36.340
+00:10:30,380 --> 00:10:36,340
 I already mentioned that there is special
 syntactic support, which is also helpful for
 
-0:10:36.340,0:10:38.290
+00:10:36,340 --> 00:10:38,290
 our example considerations.
 
-0:10:38.290,0:10:42.570
+00:10:38,290 --> 00:10:42,570
 It is not true for all other data structures.
 
-0:10:42.570,0:10:49.600
+00:10:42,570 --> 00:10:49,600
 Another thing that I want to repeat is: Haskell
 lists are homogeneous.
 
-0:10:49.600,0:10:50.730
+00:10:49,600 --> 00:10:50,730
 That is different from Lisp.
 
-0:10:50.730,0:10:55.710
+00:10:50,730 --> 00:10:55,710
 In Lisp, you could put everything in the same
 list, whereas in Haskell lists are homogeneous.
 
-0:10:55.710,0:11:00.530
+00:10:55,710 --> 00:11:00,530
 What this means is that you can't have different
 types of elements in the same list.
 
-0:11:00.530,0:11:04.160
+00:11:00,530 --> 00:11:04,160
 You can have a list of characters, you can
 have a list of strings, you can have a list
 
-0:11:04.160,0:11:07.390
+00:11:04,160 --> 00:11:07,390
 of numbers, you can have a list of pairs of
 strings and characters; but you can't have
 
-0:11:07.390,0:11:11.770
+00:11:07,390 --> 00:11:11,770
 a list where different kinds of values are
 mixed.
 
-0:11:11.770,0:11:14.910
+00:11:11,770 --> 00:11:14,910
 There are other data structures which allow
 this, but not lists.
 
-0:11:14.910,0:11:20.610
+00:11:14,910 --> 00:11:20,610
 So, this must always be in the back
 of your mind when you think, for example,
 
-0:11:20.610,0:11:27.330
+00:11:20,610 --> 00:11:27,330
 about the functions I'm going to show you.
 
-0:11:27.330,0:11:32.750
+00:11:27,330 --> 00:11:32,750
 Let me talk you through a few functions from
 the standard library on lists.
 
-0:11:32.750,0:11:39.450
+00:11:32,750 --> 00:11:39,450
 In some sense, these could be seen as a small
 domain-specific language of functions on lists.
 
-0:11:39.450,0:11:43.100
+00:11:39,450 --> 00:11:43,100
 It is a domain-specific language on lists.
 
-0:11:43.100,0:11:48.860
+00:11:43,100 --> 00:11:48,860
 And to a good extent, they are accessor functions,
 so: getting something out of a list; exactly
 
-0:11:48.860,0:11:52.060
+00:11:48,860 --> 00:11:52,060
 the kind of functions that you don't have
 for Pictures.
 
-0:11:52.060,0:11:55.450
+00:11:52,060 --> 00:11:55,450
 Because for Pictures, you could only construct
 new Pictures, you couldn't take a Picture
 
-0:11:55.450,0:11:57.840
+00:11:55,450 --> 00:11:57,840
 apart.
 
-0:11:57.840,0:12:03.460
+00:11:57,840 --> 00:12:03,460
 I won't introduce these functions by showing
 the definitions or explaining the semantics
 
-0:12:03.460,0:12:04.730
+00:12:03,460 --> 00:12:04,730
 in some mathematical sense.
 
-0:12:04.730,0:12:11.040
+00:12:04,730 --> 00:12:11,040
 I will simply give examples and the names
 of the functions, and then these examples
 
-0:12:11.040,0:12:14.450
+00:12:11,040 --> 00:12:14,450
 should be clear enough to tell you what the
 function is doing.
 
-0:12:14.450,0:12:18.820
+00:12:14,450 --> 00:12:18,820
 So, henceforth, you can use these functions
 in writing your exercise task submissions.
 
-0:12:18.820,0:12:20.200
+00:12:18,820 --> 00:12:20,200
 So, what do we have?
 
-0:12:20.200,0:12:25.080
+00:12:20,200 --> 00:12:25,080
 For example, we have a function to access
 a prefix of a list.
 
-0:12:25.080,0:12:27.900
+00:12:25,080 --> 00:12:27,900
 So, let's say we have a list of the values
 1 to 10.
 
-0:12:27.900,0:12:29.440
+00:12:27,900 --> 00:12:29,440
 We want to take the first three elements.
 
-0:12:29.440,0:12:31.831
+00:12:29,440 --> 00:12:31,831
 We can simply say "take 3 of this list".
 
-0:12:31.831,0:12:36.020
+00:12:31,831 --> 00:12:36,020
 And what we get is exactly what you see here
 on the right.
 
-0:12:36.020,0:12:42.840
+00:12:36,020 --> 00:12:42,840
 I will always show, to the left, an expression
 on lists (using some of the list functions),
 
-0:12:42.840,0:12:48.280
+00:12:42,840 --> 00:12:48,280
 and on the right you will then see what this
 evaluates to (if you, for example, were to
 
-0:12:48.280,0:12:54.740
+00:12:48,280 --> 00:12:54,740
 put this expression into the Haskell interpreter
 GHCi).
 
-0:12:54.740,0:12:57.620
+00:12:54,740 --> 00:12:57,620
 So, you can take a prefix.
 
-0:12:57.620,0:12:59.010
+00:12:57,620 --> 00:12:59,010
 You can drop a prefix.
 
-0:12:59.010,0:13:02.830
+00:12:59,010 --> 00:13:02,830
 If you drop the first three elements from
 1 to 10, then you get the list consisting
 
-0:13:02.830,0:13:06.970
+00:13:02,830 --> 00:13:06,970
 of all the elements from 4 to 10.
 
-0:13:06.970,0:13:08.570
+00:13:06,970 --> 00:13:08,570
 Not surprising.
 
-0:13:08.570,0:13:11.110
+00:13:08,570 --> 00:13:11,110
 And you can check whether a list is empty.
 
-0:13:11.110,0:13:14.140
+00:13:11,110 --> 00:13:14,140
 So, this is the 'null' function.
 
-0:13:14.140,0:13:17.880
+00:13:14,140 --> 00:13:17,880
 You might also consider it to be "isNull",
 but actually the name is just 'null'.
 
-0:13:17.880,0:13:19.500
+00:13:17,880 --> 00:13:19,500
 So, we give it the list.
 
-0:13:19.500,0:13:21.910
+00:13:19,500 --> 00:13:21,910
 And if you give it the empty list, then it
 returns True.
 
-0:13:21.910,0:13:26.580
+00:13:21,910 --> 00:13:26,580
 And if you give it a non-empty list, for example
 a non-empty string (which we know is just
 
-0:13:26.580,0:13:35.100
+00:13:26,580 --> 00:13:35,100
 a list of characters), then the output will
 be False, because this is not an empty list.
 
-0:13:35.100,0:13:40.490
+00:13:35,100 --> 00:13:40,490
 Generally, not just checking being empty or
 not, you can compute the length of a list.
 
-0:13:40.490,0:13:41.910
+00:13:40,490 --> 00:13:41,910
 This is also unsurprising.
 
-0:13:41.910,0:13:48.460
+00:13:41,910 --> 00:13:48,460
 Given a list, it gives you the number of elements
 in the list; in this case, the number of characters,
 
-0:13:48.460,0:13:50.340
+00:13:48,460 --> 00:13:50,340
 of course not just the number of unique elements.
 
-0:13:50.340,0:13:53.450
+00:13:50,340 --> 00:13:53,450
 So, if you have five 'a's, it will also give
 you 5.
 
-0:13:53.450,0:13:55.960
+00:13:53,450 --> 00:13:55,960
 It won't count how many different elements
 occurred.
 
-0:13:55.960,0:13:57.990
+00:13:55,960 --> 00:13:57,990
 It will simply say how long the list is.
 
-0:13:57.990,0:14:01.760
+00:13:57,990 --> 00:14:01,760
 So, in this case, the answer is 5.
 
-0:14:01.760,0:14:04.970
+00:14:01,760 --> 00:14:04,970
 You can access the first element of a list.
 
-0:14:04.970,0:14:10.750
+00:14:04,970 --> 00:14:10,750
 It is a bit similar to "take 1", but "take
 1" would return the outcome as a list.
 
-0:14:10.750,0:14:16.250
+00:14:10,750 --> 00:14:16,250
 So, "take 1" of this list would be the singleton
 list containing 1 (like this: [1]), whereas
 
-0:14:16.250,0:14:18.420
+00:14:16,250 --> 00:14:18,420
 "head [1..10]" is just 1 (like this: 1).
 
-0:14:18.420,0:14:23.510
+00:14:18,420 --> 00:14:23,510
 Or, in the case of a String, head "abcde" is
 not a String consisting of the letter 'a'
 
-0:14:23.510,0:14:26.200
+00:14:23,510 --> 00:14:26,200
 (like this: "a"), but the character 'a'
 (like this: 'a').
 (Attention: 'a' is a Char, "a" is a String, that is [Char].)
 
-0:14:26.200,0:14:34.350
+00:14:26,200 --> 00:14:34,350
 Because this String is a list of characters,
 and this is the first character in there.
 
-0:14:34.350,0:14:36.530
+00:14:34,350 --> 00:14:36,530
 You can also access the last element.
 
-0:14:36.530,0:14:44.440
+00:14:36,530 --> 00:14:44,440
 Then again, in this case, last [1..10] would
 be the number 10, and last "abcde" is the
 
-0:14:44.440,0:14:47.510
+00:14:44,440 --> 00:14:47,510
 character 'e'.
 
-0:14:47.510,0:14:49.950
+00:14:47,510 --> 00:14:49,950
 Then you can take the "tail" of a list.
 
-0:14:49.950,0:14:55.180
+00:14:49,950 --> 00:14:55,180
 So, "head" means you get the first element
 of the list, and "tail" means you get all
 
-0:14:55.180,0:14:56.180
+00:14:55,180 --> 00:14:56,180
 the rest.
 
-0:14:56.180,0:15:02.170
+00:14:56,180 --> 00:15:02,170
 So, if you take the first element away, what
 remains is the list "bcde".
 
-0:15:02.170,0:15:08.520
+00:15:02,170 --> 00:15:08,520
 Also, we could apply "tail" to [1..10] and
 we would get [2..10].
 
-0:15:08.520,0:15:11.690
+00:15:08,520 --> 00:15:11,690
 In that sense, "tail" corresponds to "head".
 
-0:15:11.690,0:15:15.270
+00:15:11,690 --> 00:15:15,270
 It gives you what is left over if you take
 the head away.
 
-0:15:15.270,0:15:17.140
+00:15:15,270 --> 00:15:17,140
 And something similar exists for "last".
 
-0:15:17.140,0:15:19.890
+00:15:17,140 --> 00:15:19,890
 So, "last" gives the last element in the list.
 
-0:15:19.890,0:15:22.870
+00:15:19,890 --> 00:15:22,870
 And "init" gives the list without that last
 element.
 
-0:15:22.870,0:15:26.230
+00:15:22,870 --> 00:15:26,230
 So, here, "last" gave 'e', and "init" gives
 "abcd".
 
-0:15:26.230,0:15:28.470
+00:15:26,230 --> 00:15:28,470
 Of course, these are lists and not just characters.
 
-0:15:28.470,0:15:32.770
+00:15:28,470 --> 00:15:32,770
 Here, we get a character because it is one
 element from the list, but "tail" and "init"
 
-0:15:32.770,0:15:34.220
+00:15:32,770 --> 00:15:34,220
 always have to return lists.
 
-0:15:34.220,0:15:38.840
+00:15:34,220 --> 00:15:38,840
 So, in this case, it is a list of characters,
 a String.
 
-0:15:38.840,0:15:46.870
+00:15:38,840 --> 00:15:46,870
 Then there are more fancy ways of splitting
 a list, and not just into its head and rest,
 
-0:15:46.870,0:15:51.970
+00:15:46,870 --> 00:15:51,970
 or last and whatever comes before that, but
 at some arbitrary point.
 
-0:15:51.970,0:15:56.270
+00:15:51,970 --> 00:15:56,270
 So, you could say, I have a String / list and
 I want to split it at some point.
 
-0:15:56.270,0:16:02.170
+00:15:56,270 --> 00:16:02,170
 And then this means that you take as many
 elements from the front of the list as the
 
-0:16:02.170,0:16:03.170
+00:16:02,170 --> 00:16:03,170
 number says.
 
-0:16:03.170,0:16:06.900
+00:16:03,170 --> 00:16:06,900
 So, in this case, "abc", and the rest is put
 into a second result.
 
-0:16:06.900,0:16:12.810
+00:16:06,900 --> 00:16:12,810
 So, in some sense, you could see this as a
 combination of "take" and "drop".
 
-0:16:12.810,0:16:19.800
+00:16:12,810 --> 00:16:19,800
 You get "take 3" and you get "drop 3", but
 both are returned by one function rather than
 
-0:16:19.800,0:16:22.840
+00:16:19,800 --> 00:16:22,840
 having two different functions for doing this.
 
-0:16:22.840,0:16:27.310
+00:16:22,840 --> 00:16:27,310
 Then there is the infamous index access.
 
-0:16:27.310,0:16:33.300
+00:16:27,310 --> 00:16:33,300
 So, you can, in Haskell, with this operator '!!',
 access an element at a certain index.
 
-0:16:33.300,0:16:35.100
+00:16:33,300 --> 00:16:35,100
 Counting starts with 0.
 
-0:16:35.100,0:16:41.080
+00:16:35,100 --> 00:16:41,080
 But as I already said before, such access-by-index
 is almost forbidden in code that you write
 
-0:16:41.080,0:16:42.640
+00:16:41,080 --> 00:16:42,640
 in your exercises.
 
-0:16:42.640,0:16:47.580
+00:16:42,640 --> 00:16:47,580
 So, usually, you are supposed to write your
 code without using the index operator.
 
-0:16:47.580,0:16:52.040
+00:16:47,580 --> 00:16:52,040
 Simply because in Haskell it is a very bad
 habit to use this.
 
-0:16:52.040,0:16:54.560
+00:16:52,040 --> 00:16:54,560
 Usually, there is a better way.
 
-0:16:54.560,0:17:00.720
+00:16:54,560 --> 00:17:00,720
 Then there are other operations that work
 on a list as a whole rather than accessing
 
-0:17:00.720,0:17:02.030
+00:17:00,720 --> 00:17:02,030
 parts of it.
 
-0:17:02.030,0:17:04.630
+00:17:02,030 --> 00:17:04,630
 For example, the 'reverse' function is useful.
 
-0:17:04.630,0:17:07.660
+00:17:04,630 --> 00:17:07,660
 It takes a list and gives it back in the opposite
 order.
 
-0:17:07.660,0:17:14.020
+00:17:07,660 --> 00:17:14,020
 So, for a String, it simply creates the String
 as if you were reading it backwards.
 
-0:17:14.020,0:17:16.060
+00:17:14,020 --> 00:17:16,060
 I think this is very natural.
 
-0:17:16.060,0:17:18.800
+00:17:16,060 --> 00:17:18,800
 The reverse of the empty list is the empty
 list.
 
-0:17:18.800,0:17:21.750
+00:17:18,800 --> 00:17:21,750
 The reverse of the empty String is the empty
 String, of course.
 
-0:17:21.750,0:17:24.880
+00:17:21,750 --> 00:17:24,880
 Then, you can combine lists or Strings (using '++').
 
-0:17:24.880,0:17:28.770
+00:17:24,880 --> 00:17:28,770
 Here again written for Strings, but it also
 works on other types of lists.
 
-0:17:28.770,0:17:31.650
+00:17:28,770 --> 00:17:31,650
 But both, of course, have to be the same kind
 of lists.
 
-0:17:31.650,0:17:36.860
+00:17:31,650 --> 00:17:36,860
 So, you cannot concatenate the String "abc"
 and the list [1..10].
 
-0:17:36.860,0:17:39.580
+00:17:36,860 --> 00:17:39,580
 But you could concatenate these two lists,
 for example.
 
-0:17:39.580,0:17:41.490
+00:17:39,580 --> 00:17:41,490
 And what does it do?
 
-0:17:41.490,0:17:44.750
+00:17:41,490 --> 00:17:44,750
 It returns the combined list or string.
 
-0:17:44.750,0:17:48.950
+00:17:44,750 --> 00:17:48,950
 Then, there are other ways to combine two
 lists.
 
-0:17:48.950,0:17:51.330
+00:17:48,950 --> 00:17:51,330
 For example, you can "zip" two lists.
 
-0:17:51.330,0:17:56.010
+00:17:51,330 --> 00:17:56,010
 That means that they are not concatenated
 (one after the other), but actually, they
 
-0:17:56.010,0:17:57.310
+00:17:56,010 --> 00:17:57,310
 are pairwise combined.
 
-0:17:57.310,0:18:03.310
+00:17:57,310 --> 00:18:03,310
 So, in this case, zipping the String "abc"
 and the String "def" gives a list of pairs,
 
-0:18:03.310,0:18:07.820
+00:18:03,310 --> 00:18:07,820
 where the first character from the first list
 and the first character from the second list
 
-0:18:07.820,0:18:08.820
+00:18:07,820 --> 00:18:08,820
 are combined.
 
-0:18:08.820,0:18:15.480
+00:18:08,820 --> 00:18:15,480
 So, 'a' and 'd', then the second element of
 the first argument and the second element
 
-0:18:15.480,0:18:18.040
+00:18:15,480 --> 00:18:18,040
 of the second argument, ('b','e'), and so
 on.
 
-0:18:18.040,0:18:21.701
+00:18:18,040 --> 00:18:21,701
 If one of the two lists is shorter than the
 other, then this stops early.
 
-0:18:21.701,0:18:30.040
+00:18:21,701 --> 00:18:30,040
 It stops at the point where one of the two
 lists has no further elements.
 
-0:18:30.040,0:18:32.270
+00:18:30,040 --> 00:18:32,270
 And there is a version of ++ to work with
 nested lists.
 
-0:18:32.270,0:18:36.420
+00:18:32,270 --> 00:18:36,420
 So, this concatenation (++) takes two lists
 and concatenates them.
 
-0:18:36.420,0:18:41.420
+00:18:36,420 --> 00:18:41,420
 But sometimes you have the case where you
 want to have more than two lists and concatenate
 
-0:18:41.420,0:18:42.420
+00:18:41,420 --> 00:18:42,420
 all of them.
 
-0:18:42.420,0:18:44.630
+00:18:42,420 --> 00:18:44,630
 Then you can use the 'concat' function.
 
-0:18:44.630,0:18:50.940
+00:18:44,630 --> 00:18:50,940
 It takes a list of lists (it could also be
 a list of Strings), and it concatenates all
 
-0:18:50.940,0:18:52.020
+00:18:50,940 --> 00:18:52,020
 the inner lists.
 
-0:18:52.020,0:18:57.010
+00:18:52,020 --> 00:18:57,010
 So, in some sense, it puts the "++" operation
 in between all these places where previously
 
-0:18:57.010,0:18:58.250
+00:18:57,010 --> 00:18:58,250
 there was a comma.
 
-0:18:58.250,0:19:02.130
+00:18:58,250 --> 00:19:02,130
 So, this gives you [1,2] ++ [] ++ [3].
 
-0:19:02.130,0:19:11.030
+00:19:02,130 --> 00:19:11,030
 And the empty list doesn't contribute to
 the concatenation, so in this case you would
 
-0:19:11.030,0:19:13.649
+00:19:11,030 --> 00:19:13,649
 get the output list [1,2,3].
 
-0:19:13.649,0:19:18.990
+00:19:13,649 --> 00:19:18,990
 And with these functions, you can already
 write quite a bit of code.
 
-0:19:18.990,0:19:24.250
+00:19:18,990 --> 00:19:24,250
 In particular, in the beginning, you could
 use the test for emptiness ("null"), accessing
 
-0:19:24.250,0:19:31.810
+00:19:24,250 --> 00:19:31,810
 the head ("head"), and the tail of a list
 or a String ("tail"), to write code that recursively
 
-0:19:31.810,0:19:32.810
+00:19:31,810 --> 00:19:32,810
 destructs a list.
 
-0:19:32.810,0:19:35.460
+00:19:32,810 --> 00:19:35,460
 I know that some of you already know about
 pattern-matching, because we have seen this
 
-0:19:35.460,0:19:37.070
+00:19:35,460 --> 00:19:37,070
 in the exercise submissions.
 
-0:19:37.070,0:19:43.280
+00:19:37,070 --> 00:19:43,280
 But actually, until the point where we introduce
 pattern-matching in the lecture, you can assume
 
-0:19:43.280,0:19:47.740
+00:19:43,280 --> 00:19:47,740
 that all the exercise tasks that you write
 have a solution without pattern-matching.
 
-0:19:47.740,0:19:52.860
+00:19:47,740 --> 00:19:52,860
 So, if you use pattern-matching, that is not
 forbidden, unless it is actually prevented
 
-0:19:52.860,0:19:53.860
+00:19:52,860 --> 00:19:53,860
 by Autotool.
 
-0:19:53.860,0:20:00.020
+00:19:53,860 --> 00:20:00,020
 But in any case, as long as we haven't handled
 pattern-matching in the lecture, you can assume
 
-0:20:00.020,0:20:07.530
+00:20:00,020 --> 00:20:07,530
 that the exercise tasks have solutions that
 are intended to be without pattern-matching.
 
-0:20:07.530,0:20:15.280
+00:20:07,530 --> 00:20:15,280
 We now have different choices when we write
 a list function.
 
-0:20:15.280,0:20:20.620
+00:20:15,280 --> 00:20:20,620
 For example, we can decide whether we will
 work by case distinction and recursion or
 
-0:20:20.620,0:20:27.340
+00:20:20,620 --> 00:20:27,340
 by just combining some of these functions
 we have just seen, or possibly using list
 
-0:20:27.340,0:20:28.340
+00:20:27,340 --> 00:20:28,340
 comprehensions.
 
-0:20:28.340,0:20:30.850
+00:20:28,340 --> 00:20:30,850
 So, let me discuss this on an example from
 a previous exercise.
 
-0:20:30.850,0:20:36.830
+00:20:30,850 --> 00:20:36,830
 There, the task was to decide whether a certain
 String was a palindrome.
 
-0:20:36.830,0:20:40.150
+00:20:36,830 --> 00:20:40,150
 The predicate is-a-palindrome?
 
-0:20:40.150,0:20:48.300
+00:20:40,150 --> 00:20:48,300
 And one way to think about this is to first
 consider that a palindrome is certainly present
 
-0:20:48.300,0:20:56.150
+00:20:48,300 --> 00:20:56,150
 if you have a very short String that just
 contains zero or one element.
 
-0:20:56.150,0:21:01.620
+00:20:56,150 --> 00:21:01,620
 So, checking the length of this String (which
 is possible because Strings are lists), checking
 
-0:21:01.620,0:21:03.460
+00:21:01,620 --> 00:21:03,460
 whether it is smaller than 2.
 
-0:21:03.460,0:21:08.840
+00:21:03,460 --> 00:21:08,840
 And if so, then return True, because then
 the String is certainly a palindrome.
 
-0:21:08.840,0:21:12.910
+00:21:08,840 --> 00:21:12,910
 And if it isn't that short, then either by
 pattern-matching (which I just said, I won't
 
-0:21:12.910,0:21:17.770
+00:21:12,910 --> 00:21:17,770
 show yet) or by using the 'head' and 'last' functions,
 so checking whether the first element and
 
-0:21:17.770,0:21:23.780
+00:21:17,770 --> 00:21:23,780
 the last element of this String are the same
 character, and if so, then also check whether
 
-0:21:23.780,0:21:29.300
+00:21:23,780 --> 00:21:29,300
 if you remove this first and last elements
 (which you could do with "init" and "tail"),
 
-0:21:29.300,0:21:31.050
+00:21:29,300 --> 00:21:31,050
 then the remainder is also a palindrome.
 
-0:21:31.050,0:21:35.740
+00:21:31,050 --> 00:21:35,740
 So, certainly, this is a valid definition
 for checking whether a String is a palindrome.
 
-0:21:35.740,0:21:38.430
+00:21:35,740 --> 00:21:38,430
 It doesn't use indexing.
 
-0:21:38.430,0:21:47.490
+00:21:38,430 --> 00:21:47,490
 It is not a very idiomatic solution for this,
 but actually at least avoids using list indexing
 
-0:21:47.490,0:21:50.730
+00:21:47,490 --> 00:21:50,730
 (which one could also use when solving this
 task).
 
-0:21:50.730,0:21:56.081
+00:21:50,730 --> 00:21:56,081
 But actually, it is worthwhile to think whether,
 with some of the existing functions, we can
 
-0:21:56.081,0:21:57.760
+00:21:56,081 --> 00:21:57,760
 express this predicate/property much simpler.
 
-0:21:57.760,0:21:59.150
+00:21:57,760 --> 00:21:59,150
 And indeed, we can.
 
-0:21:59.150,0:22:01.790
+00:21:59,150 --> 00:22:01,790
 We can simply write something like this.
 
-0:22:01.790,0:22:07.190
+00:22:01,790 --> 00:22:07,190
 We can say, which is much more declarative,
 that a String is a palindrome if it is the
 
-0:22:07.190,0:22:09.620
+00:22:07,190 --> 00:22:09,620
 case that reversing it doesn't change it.
 
-0:22:09.620,0:22:13.300
+00:22:09,620 --> 00:22:13,300
 Well, actually reversing a String doesn't
 ever "change" it, it just returns another
 
-0:22:13.300,0:22:15.870
+00:22:13,300 --> 00:22:15,870
 String which is the reverse of the original
 String.
 
-0:22:15.870,0:22:19.850
+00:22:15,870 --> 00:22:19,850
 But then we can check whether the reverse
 of the String is equal to the String itself.
 
-0:22:19.850,0:22:22.440
+00:22:19,850 --> 00:22:22,440
 That is a definition of "isPalindrome".
 
-0:22:22.440,0:22:27.140
+00:22:22,440 --> 00:22:27,140
 And it is certainly preferable to the definition
 seen up here.
 
-0:22:27.140,0:22:30.530
+00:22:27,140 --> 00:22:30,530
 You might think that the first version is
 more efficient, because here you have to first
 
-0:22:30.530,0:22:35.940
+00:22:30,530 --> 00:22:35,940
 reverse the String, which is certainly an
 expensive computation.
 
-0:22:35.940,0:22:37.560
+00:22:35,940 --> 00:22:37,560
 But actually, you don't know.
 
-0:22:37.560,0:22:43.730
+00:22:37,560 --> 00:22:43,730
 Most of you probably don't have a very clear
 picture of the cost model of Haskell yet.
 
-0:22:43.730,0:22:45.760
+00:22:43,730 --> 00:22:45,760
 So, you shouldn't work from such preconceptions.
 
-0:22:45.760,0:22:53.040
+00:22:45,760 --> 00:22:53,040
 Try, in the exercise tasks, to go for the
 elegant and expressive version, and not the
 
-0:22:53.040,0:22:57.980
+00:22:53,040 --> 00:22:57,980
 one for which you think (with some imperative
 programming mindset) that this must be the
 
-0:22:57.980,0:22:59.460
+00:22:57,980 --> 00:22:59,460
 more efficient version.
 
-0:22:59.460,0:23:03.440
+00:22:59,460 --> 00:23:03,440
 You cannot really tell at the moment, I would
 say.
 
-0:23:03.440,0:23:06.930
+00:23:03,440 --> 00:23:06,930
 So, try to think in the spirit of this task.
 
-0:23:06.930,0:23:19.660
+00:23:06,930 --> 00:23:19,660
 Here, I would clearly have preferred this
 submission to the above one.
 
-0:23:19.660,0:23:26.380
+00:23:19,660 --> 00:23:26,380
 Maybe a somewhat surprising observation is
 that in Haskell we can even work with infinite
 
-0:23:26.380,0:23:27.380
+00:23:26,380 --> 00:23:27,380
 lists.
 
-0:23:27.380,0:23:30.880
+00:23:27,380 --> 00:23:30,880
 So, there are expressions and values that represent
 infinite lists.
 
-0:23:30.880,0:23:32.930
+00:23:30,880 --> 00:23:32,930
 For example, what you see here.
 
-0:23:32.930,0:23:39.860
+00:23:32,930 --> 00:23:39,860
 We have seen something similar before, where
 we used some expression like [1..10] or [1,3..9],
 
-0:23:39.860,0:23:46.309
+00:23:39,860 --> 00:23:46,309
 where we got all odd numbers from 1 to 9.
 
-0:23:46.309,0:23:51.220
+00:23:46,309 --> 00:23:51,220
 You can actually leave out the upper bound,
 and simply say you want [1,3..].
 
-0:23:51.220,0:23:58.730
+00:23:51,220 --> 00:23:58,730
 Then you will mathematically get (conceptually,
 at least) the list of all the odd numbers.
 
-0:23:58.730,0:23:59.730
+00:23:58,730 --> 00:23:59,730
 An infinite list!
 
-0:23:59.730,0:24:04.170
+00:23:59,730 --> 00:24:04,170
 Even though you cannot write it down, in an
 explicit list form, you can write it down
 
-0:24:04.170,0:24:05.170
+00:24:04,170 --> 00:24:05,170
 as an expression.
 
-0:24:05.170,0:24:11.280
+00:24:05,170 --> 00:24:11,280
 And this semantically means the infinite list
 of all odd numbers.
 
-0:24:11.280,0:24:13.800
+00:24:11,280 --> 00:24:13,800
 Now, what can you do with such a list?
 
-0:24:13.800,0:24:15.120
+00:24:13,800 --> 00:24:15,120
 Of course, you cannot print it.
 
-0:24:15.120,0:24:16.260
+00:24:15,120 --> 00:24:16,260
 But you can work with it.
 
-0:24:16.260,0:24:19.690
+00:24:16,260 --> 00:24:19,690
 For example, you can define other lists in
 terms of it.
 
-0:24:19.690,0:24:26.950
+00:24:19,690 --> 00:24:26,950
 So, you could, for example, say: I want to
 have the square numbers of everything from
 
-0:24:26.950,0:24:27.950
+00:24:26,950 --> 00:24:27,950
 such a list.
 
-0:24:27.950,0:24:36.450
+00:24:27,950 --> 00:24:36,450
 You could have [1,3..], or you can have just
 [1..] (which is the infinite list of all natural
 
-0:24:36.450,0:24:42.520
+00:24:36,450 --> 00:24:42,520
 numbers), and this list comprehension as a
 whole is the infinite list of all squares
 
-0:24:42.520,0:24:43.520
+00:24:42,520 --> 00:24:43,520
 of all natural numbers.
 
-0:24:43.520,0:24:45.280
+00:24:43,520 --> 00:24:45,280
 We get all the square numbers.
 
-0:24:45.280,0:24:50.810
+00:24:45,280 --> 00:24:50,810
 You cannot print this out, but it is defined
 and you can work with it.
 
-0:24:50.810,0:24:51.810
+00:24:50,810 --> 00:24:51,810
 How can you work with it?
 
-0:24:51.810,0:24:54.000
+00:24:51,810 --> 00:24:54,000
 At least, you can work with prefixes of it.
 
-0:24:54.000,0:24:59.231
+00:24:54,000 --> 00:24:59,231
 So, we can define this as an expression, which
 stands for an infinite list, and then you
 
-0:24:59.231,0:25:03.640
+00:24:59,231 --> 00:25:03,640
 might decide that you want to look at only
 a part of it (after having it defined as a
 
-0:25:03.640,0:25:05.620
+00:25:03,640 --> 00:25:05,620
 whole infinite list).
 
-0:25:05.620,0:25:13.150
+00:25:05,620 --> 00:25:13,150
 For example, you can say something like: Give
 me the first three elements of the list of
 
-0:25:13.150,0:25:14.480
+00:25:13,150 --> 00:25:14,480
 all square numbers.
 
-0:25:14.480,0:25:20.180
+00:25:14,480 --> 00:25:20,180
 And this means that you don't have to build,
 somehow, this upper bound into this list.
 
-0:25:20.180,0:25:25.120
+00:25:20,180 --> 00:25:25,120
 Maybe you don't know, when you define the
 square numbers, how many of them you will
 
-0:25:25.120,0:25:26.120
+00:25:25,120 --> 00:25:26,120
 need.
 
-0:25:26.120,0:25:27.850
+00:25:26,120 --> 00:25:27,850
 So, you define them as an infinite list.
 
-0:25:27.850,0:25:32.040
+00:25:27,850 --> 00:25:32,040
 But then, at a certain usage point, you say:
 Give me the first three.
 
-0:25:32.040,0:25:37.640
+00:25:32,040 --> 00:25:37,640
 And then you really get the first three, and
 the other ones won't even be computed.
 
-0:25:37.640,0:25:43.740
+00:25:37,640 --> 00:25:43,740
 So, the functionality here is not that Haskell
 will try to compute this infinite list of
 
-0:25:43.740,0:25:50.880
+00:25:43,740 --> 00:25:50,880
 all the square numbers and then realize that
 that is not something it can do.
 
-0:25:50.880,0:25:51.880
+00:25:50,880 --> 00:25:51,880
 No.
 
-0:25:51.880,0:25:56.140
+00:25:51,880 --> 00:25:56,140
 Instead, what will happen is that Haskell
 will work out that it will only need the first
 
-0:25:56.140,0:25:57.620
+00:25:56,140 --> 00:25:57,620
 three of these elements.
 
-0:25:57.620,0:25:59.380
+00:25:57,620 --> 00:25:59,380
 So, it will actually only compute [1,4,9].
 
-0:25:59.380,0:26:01.290
+00:25:59,380 --> 00:26:01,290
 And this works in general.
 
-0:26:01.290,0:26:07.260
+00:26:01,290 --> 00:26:07,260
 It is not restricted to this idea, to take
 a fixed number of elements, where you maybe
 
-0:26:07.260,0:26:11.960
+00:26:07,260 --> 00:26:11,960
 could say this is a special case that this
 number is somehow used to decide how far to
 
-0:26:11.960,0:26:12.960
+00:26:11,960 --> 00:26:12,960
 go.
 
-0:26:12.960,0:26:15.600
+00:26:12,960 --> 00:26:15,600
 No, this works for almost all the list functions.
 
-0:26:15.600,0:26:18.210
+00:26:15,600 --> 00:26:18,210
 You cannot reverse an infinite list, that
 doesn't make sense.
 
-0:26:18.210,0:26:22.960
+00:26:18,210 --> 00:26:22,960
 You also can't get the last element of an
 infinite list.
 
-0:26:22.960,0:26:27.370
+00:26:22,960 --> 00:26:27,370
 And some uses of recursion are also problematic.
 
-0:26:27.370,0:26:31.700
+00:26:27,370 --> 00:26:31,700
 But many of the list functions that you have
 already seen, and also further ones, operate
 
-0:26:31.700,0:26:35.720
+00:26:31,700 --> 00:26:35,720
 (without any problems) on infinite lists,
 provided that the output is something that
 
-0:26:35.720,0:26:37.450
+00:26:35,720 --> 00:26:37,450
 requires only finite computation.
 
-0:26:37.450,0:26:42.020
+00:26:37,450 --> 00:26:42,020
 For example, you could say something like:
 I want to zip the infinite list of all the
 
-0:26:42.020,0:26:47.260
+00:26:42,020 --> 00:26:47,260
 natural numbers including zero ([0..]) and
 the finite String "ab".
 
-0:26:47.260,0:26:48.260
+00:26:47,260 --> 00:26:48,260
 What would you get?
 
-0:26:48.260,0:26:49.580
+00:26:48,260 --> 00:26:49,580
 As I said about the 'zip' function:
 
-0:26:49.580,0:26:52.830
+00:26:49,580 --> 00:26:52,830
 It stops when one of the two lists has no
 further elements.
 
-0:26:52.830,0:26:57.080
+00:26:52,830 --> 00:26:57,080
 So, in this case, this finite list is the
 one which will stop first.
 
-0:26:57.080,0:26:58.760
+00:26:57,080 --> 00:26:58,760
 It contains only 'a' and 'b'.
 
-0:26:58.760,0:27:05.250
+00:26:58,760 --> 00:27:05,250
 So, from this infinite list of all non-negative
 numbers, only the 0 and the 1 will be consumed,
 
-0:27:05.250,0:27:06.620
+00:27:05,250 --> 00:27:06,620
 and the rest will never be computed.
 
-0:27:06.620,0:27:08.760
+00:27:06,620 --> 00:27:08,760
 And this is not a special case on the first
 argument.
 
-0:27:08.760,0:27:12.760
+00:27:08,760 --> 00:27:12,760
 If you switch the two arguments here, it will
 also work.
 
-0:27:12.760,0:27:15.170
+00:27:12,760 --> 00:27:15,170
 That is because of the feature of "lazy evaluation".
 
-0:27:15.170,0:27:19.130
+00:27:15,170 --> 00:27:19,130
 It was something that I mentioned in the first
 video today, where I talked about avoiding
 
-0:27:19.130,0:27:22.940
+00:27:19,130 --> 00:27:22,940
 the computation of the Ackermann function,
 where I said that Haskell will only compute
 
-0:27:22.940,0:27:24.770
+00:27:22,940 --> 00:27:24,770
 the things that it absolutely needs.
 
-0:27:24.770,0:27:31.030
+00:27:24,770 --> 00:27:31,030
 In this case, the remainder list of this after
 the first 0 and 1 is not needed, so it will
 
-0:27:31.030,0:27:35.190
+00:27:31,030 --> 00:27:35,190
 never be computed.
 
-0:27:35.190,0:27:42.190
+00:27:35,190 --> 00:27:42,190
 Okay.
 
-0:27:42.190,0:27:44.060
+00:27:42,190 --> 00:27:44,060
 This does not mean that some magic is going
 on.
 
-0:27:44.060,0:27:47.980
+00:27:44,060 --> 00:27:47,980
 So, Haskell does not solve arbitrary mathematical
 problems.
 
-0:27:47.980,0:27:54.610
+00:27:47,980 --> 00:27:54,610
 Let's consider this example here, where we
 have the list of all square numbers.
 
-0:27:54.610,0:28:01.210
+00:27:54,610 --> 00:28:01,210
 Which is an infinite list, because we do this
 for all numbers from 1 and so on, ad infinitum.
 
-0:28:01.210,0:28:02.210
+00:28:01,210 --> 00:28:02,210
 And then, what do we want?
 
-0:28:02.210,0:28:06.070
+00:28:02,210 --> 00:28:06,070
 We want to compute the result list of all
 the m from this infinite list such that m
 
-0:28:06.070,0:28:07.309
+00:28:06,070 --> 00:28:07,309
 is smaller than 100.
 
-0:28:07.309,0:28:14.210
+00:28:07,309 --> 00:28:14,210
 You might expect that this computes exactly
 the list of square numbers in [1..81] and
 
-0:28:14.210,0:28:15.520
+00:28:14,210 --> 00:28:15,520
 then it stops.
 
-0:28:15.520,0:28:17.960
+00:28:15,520 --> 00:28:17,960
 Actually, that is not what is going to happen.
 
-0:28:17.960,0:28:23.520
+00:28:17,960 --> 00:28:23,520
 What is going to happen is that this evaluation
 will hang after producing a finite prefix.
 
-0:28:23.520,0:28:28.380
+00:28:23,520 --> 00:28:28,380
 So, it will produce these square numbers from
 1 to 81, and then it will go on and on and
 
-0:28:28.380,0:28:30.400
+00:28:28,380 --> 00:28:30,400
 on forever.
 
-0:28:30.400,0:28:32.980
+00:28:30,400 --> 00:28:32,980
 Why is that?
 
-0:28:32.980,0:28:41.760
+00:28:32,980 --> 00:28:41,760
 Because Haskell doesn't use knowledge or algebraic
 proving to deduce that, actually, since this
 
-0:28:41.760,0:28:47.650
+00:28:41,760 --> 00:28:47,650
 list is increasing, and we square the numbers,
 this will also be an increasing list, so once
 
-0:28:47.650,0:28:51.390
+00:28:47,650 --> 00:28:51,390
 we have seen the 100, we cannot ever again
 see a *smaller* number.
 
-0:28:51.390,0:28:56.500
+00:28:51,390 --> 00:28:56,500
 That would be possible for this very specific
 expression, but in general, you could have
 
-0:28:56.500,0:29:04.010
+00:28:56,500 --> 00:29:04,010
 a list in here which, after a million numbers,
 again gives something which is smaller than
 
-0:29:04.010,0:29:05.010
+00:29:04,010 --> 00:29:05,010
 100.
 
-0:29:05.010,0:29:06.910
+00:29:05,010 --> 00:29:06,910
 And then, this should go into the output list.
 
-0:29:06.910,0:29:12.420
+00:29:06,910 --> 00:29:12,420
 So, it is very specific that for the square
 numbers, they are ever-increasing.
 
-0:29:12.420,0:29:18.130
+00:29:12,420 --> 00:29:18,130
 But Haskell shouldn't use this knowledge,
 because basically, this would defy "referential
 
-0:29:18.130,0:29:19.130
+00:29:18,130 --> 00:29:19,130
 transparency".
 
-0:29:19.130,0:29:20.300
+00:29:19,130 --> 00:29:20,300
 What was this again?
 
-0:29:20.300,0:29:25.140
+00:29:20,300 --> 00:29:25,140
 The idea was that if you have some expression,
 then it should be interchangeable with any
 
-0:29:25.140,0:29:29.320
+00:29:25,140 --> 00:29:29,320
 other expression which computes the same values
 (the same value - or the same values, in the
 
-0:29:29.320,0:29:31.800
+00:29:29,320 --> 00:29:31,800
 case of a list).
 
-0:29:31.800,0:29:38.470
+00:29:31,800 --> 00:29:38,470
 So, while from this specific expression we
 might see that once we have seen "100", we
 
-0:29:38.470,0:29:42.950
+00:29:38,470 --> 00:29:42,950
 won't ever see a smaller number again, let's
 say that this is some other expression which
 
-0:29:42.950,0:29:48.080
+00:29:42,950 --> 00:29:48,080
 also computes the square numbers, but in some
 other way.
 
-0:29:48.080,0:29:50.620
+00:29:48,080 --> 00:29:50,620
 In some, maybe, less obvious way.
 
-0:29:50.620,0:29:55.670
+00:29:50,620 --> 00:29:55,670
 So that Haskell, or any other computer program,
 cannot in general prove that what is computed
 
-0:29:55.670,0:29:57.390
+00:29:55,670 --> 00:29:57,390
 here are the square numbers.
 
-0:29:57.390,0:30:00.050
+00:29:57,390 --> 00:30:00,050
 So, it shouldn't make any assumptions about
 that.
 
-0:30:00.050,0:30:03.500
+00:30:00,050 --> 00:30:03,500
 Put the other way around:
 
-0:30:03.500,0:30:07.700
+00:30:03,500 --> 00:30:07,700
 This expression and any other expression that
 also computes the square numbers, should be
 
-0:30:07.700,0:30:09.290
+00:30:07,700 --> 00:30:09,290
 interchangeable here.
 
-0:30:09.290,0:30:13.670
+00:30:09,290 --> 00:30:13,670
 And simply the fact that, from this specific
 expression, we can see that it is the square
 
-0:30:13.670,0:30:18.450
+00:30:13,670 --> 00:30:18,450
 numbers, does not mean that this is possible
 for any or every other expression that happens
 
-0:30:18.450,0:30:20.660
+00:30:18,450 --> 00:30:20,660
 to give us the same list.
 
-0:30:20.660,0:30:23.130
+00:30:20,660 --> 00:30:23,130
 But the two programs shouldn't behave differently.
 
-0:30:23.130,0:30:28.630
+00:30:23,130 --> 00:30:28,630
 So, the only way to make sure that is the
 case, is that also in this case Haskell will
 
-0:30:28.630,0:30:32.610
+00:30:28,630 --> 00:30:32,610
 actually try out all the numbers that come
 from this list.
 
-0:30:32.610,0:30:38.860
+00:30:32,610 --> 00:30:38,860
 And since it cannot try them all out in a
 finite time, it will not produce a finite
 
-0:30:38.860,0:30:39.860
+00:30:38,860 --> 00:30:39,860
 list here.
 
-0:30:39.860,0:30:43.730
+00:30:39,860 --> 00:30:43,730
 So, this is completely different from the
 case where we had "take 3".
 
-0:30:43.730,0:30:50.390
+00:30:43,730 --> 00:30:50,390
 Because there, the 3 really allows Haskell,
 the runtime system, the evaluation of the
 
-0:30:50.390,0:30:53.120
+00:30:50,390 --> 00:30:53,120
 program, to know when it is done.
 
-0:30:53.120,0:30:56.960
+00:30:53,120 --> 00:30:56,960
 It does not depend on the elements in the
 list.
 
-0:30:56.960,0:31:04.110
+00:30:56,960 --> 00:31:04,110
 So, this is a cautionary example, that you
 shouldn't expect some mathematical magic.
 
-0:31:04.110,0:31:05.980
+00:31:04,110 --> 00:31:05,980
 Everything is driven by lazy evaluation.
 
-0:31:05.980,0:31:12.710
+00:31:05,980 --> 00:31:12,710
 By this principle (lazy evaluation), Haskell
 uses case distinction to know what to do,
 
-0:31:12.710,0:31:17.170
+00:31:12,710 --> 00:31:17,170
 and evaluates only arguments that are needed
 to make these case distinctions.
 
-0:31:17.170,0:31:25.370
+00:31:17,170 --> 00:31:25,370
 And this often allows us to get finite computations
 involving infinite data, but it is not a mathematical
 
-0:31:25.370,0:31:36.290
+00:31:25,370 --> 00:31:36,290
 magical mystery solver.
 
-0:31:36.290,0:31:40.600
+00:31:36,290 --> 00:31:40,600
 To finish up for today, I want to discuss
 this example.
 
-0:31:40.600,0:31:44.880
+00:31:40,600 --> 00:31:44,880
 This is, as the name suggests, a sorting function.
 
-0:31:44.880,0:31:48.990
+00:31:44,880 --> 00:31:48,990
 And actually, it is essentially implementing
 the idea of Quicksort.
 
-0:31:48.990,0:31:54.150
+00:31:48,990 --> 00:31:54,150
 So, you see some of the features in action
 that we have introduced so far.
 
-0:31:54.150,0:32:03.790
+00:31:54,150 --> 00:32:03,790
 We have case distinction: so, saying that
 the empty list is sorted to the empty list.
 
-0:32:03.790,0:32:08.980
+00:32:03,790 --> 00:32:08,980
 And otherwise, we perform some local computation.
 
-0:32:08.980,0:32:16.179
+00:32:08,980 --> 00:32:16,179
 So, we choose a pivot element and use list
 comprehensions to, basically, split our input
 
-0:32:16.179,0:32:18.270
+00:32:16,179 --> 00:32:18,270
 list into smaller and greater values.
 
-0:32:18.270,0:32:22.650
+00:32:18,270 --> 00:32:22,650
 And then, we have recursive calls on these
 "smaller" and "greater" elements.
 
-0:32:22.650,0:32:28.190
+00:32:22,650 --> 00:32:28,190
 And then, we combine the results with this
 concatenation function that you have also
 
-0:32:28.190,0:32:29.559
+00:32:28,190 --> 00:32:29,559
 already seen.
 
-0:32:29.559,0:32:34.020
+00:32:29,559 --> 00:32:34,020
 And in the end, we hopefully get a sorted
 list.
 
-0:32:34.020,0:32:39.210
+00:32:34,020 --> 00:32:39,210
 I want to discuss this, but actually I want
 to see some aspects that are better explained
 
-0:32:39.210,0:32:41.890
+00:32:39,210 --> 00:32:41,890
 in an editor, where we also see the program
 running.
 
-0:32:41.890,0:32:46.909
+00:32:41,890 --> 00:32:46,909
 So, actually, I will make a separate video
 for this part.

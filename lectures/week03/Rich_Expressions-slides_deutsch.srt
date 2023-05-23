@@ -1,3220 +1,3055 @@
-0:00:01.680,0:00:03.040
-Zurück zu den
-Folien für eine Weile.
+35 # slide
+00:00:01,680 --> 00:00:03,040
+Zurück zu den Folien für eine Weile.
 
-0:00:04.400,0:00:10.080
+00:00:04,400 --> 00:00:10,080
 Als kurze Rekapitulation, sowohl von letzter Woche und
 eigentlich auch vom vorangegangenen Video heute, lassen Sie mich
 
-0:00:10.720,0:00:13.440
+00:00:10,720 --> 00:00:13,440
 ein paar Begriffe/Beobachtungen
 in Erinnerung rufen.
 
-0:00:14.000,0:00:21.600
+00:00:14,000 --> 00:00:21,600
 Bevor wir das dann wieder sehen
 werden, sowohl für die CodeWorld-Bibliothek speziell,
 
-0:00:21.600,0:00:25.360
+00:00:21,600 --> 00:00:25,360
 als auch für einige praktischere Beispiele;
 zum Herumspielen und auch für mehr
 
-0:00:25.920,0:00:30.640
+00:00:25,920 --> 00:00:30,640
 Ausdruckskraft in Bezug auf neue Syntax-Features,
 die wir noch nicht gesehen haben.
 
-0:00:31.760,0:00:37.120
+00:00:31,760 --> 00:00:37,120
 Was wir vorher besprochen haben, waren
 also Ausdrücke im Gegensatz zu Befehlen:
 
-0:00:37.120,0:00:39.200
-Ausdrücke als
-syntaktische Strukturen.
+00:00:37,120 --> 00:00:39,200
+Ausdrücke als syntaktische Strukturen.
 
-0:00:39.760,0:00:46.640
+00:00:39,760 --> 00:00:46,640
 Und ich habe Ihnen, als Gedächtnisstütze oder zur
 Unterscheidung, was Ausdrücke in Sprachen sind, die Sie
 
-0:00:46.640,0:00:53.840
+00:00:46,640 --> 00:00:53,840
 kennen, zum Beispiel gegeben: Es wären die Dinge,
 die nach "=" in einer Variablenzuweisung auftreten können.
 
-0:00:54.720,0:00:59.520
+00:00:54,720 --> 00:00:59,520
 Als Dinge, die zu etwas evaluiert werden
 und dann einer Variablen zugewiesen werden können.
 
-0:00:59.520,0:01:02.800
+00:00:59,520 --> 00:01:02,800
 Das wären also die Dinge, die man
 einen Ausdruck nennen würde, auch in anderen Sprachen.
 
-0:01:02.800,0:01:06.320
+00:01:02,800 --> 00:01:06,320
 Und der Punkt war, dass zum Beispiel
 in Haskell im Grunde alles ein Ausdruck ist.
 
-0:01:07.440,0:01:11.840
+00:01:07,440 --> 00:01:11,840
 Programmieren besteht dort fast ausschließlich
 aus dem Schreiben von Ausdrücken.
 
-0:01:12.960,0:01:13.760
-Was
-sind Werte?
+00:01:12,960 --> 00:01:13,760
+Was sind Werte?
 
-0:01:15.200,0:01:18.000
+00:01:15,200 --> 00:01:18,000
 Werte sind die Ergebnisse
 der Auswertung eines Ausdrucks.
 
-0:01:18.720,0:01:24.400
+00:01:18,720 --> 00:01:24,400
 Sie werden also durch die
 Kombination von Werten von Unterausdrücken erhalten.
 
-0:01:24.400,0:01:28.640
+00:01:24,400 --> 00:01:28,640
 Es gab auch diese Idee, dass die
 Reihenfolge der Auswertung nicht relevant sein sollte.
 
-0:01:29.600,0:01:36.400
+00:01:29,600 --> 00:01:36,400
 Wenn man einen Ausdruck hat, der
 so aus Unterausdrücken kombiniert wird, können
 
-0:01:39.200,0:01:43.040
+00:01:39,200 --> 00:01:43,040
 Werte tatsächlich durch Ausdrücke ersetzt
 werden und Ausdrücke durch ihre Werte.
 
-0:01:43.840,0:01:48.400
+00:01:43,840 --> 00:01:48,400
 In einer Sprache, in der es
 nur auf Ausdrücke und deren Werte ankommt.
 
-0:01:50.480,0:01:57.120
+00:01:50,480 --> 00:01:57,120
 Im Gegensatz dazu stehen Befehle, syntaktische
 Strukturen, die nicht so sehr dadurch charakterisiert
 
-0:01:57.120,0:02:00.960
+00:01:57,120 --> 00:02:00,960
 sind, was sie, wenn überhaupt, auswerten,
 sondern eher dadurch, welche Wirkung sie haben.
 
-0:02:00.960,0:02:04.240
+00:02:00,960 --> 00:02:04,240
 Also Dinge wie Zuweisungsanweisungen, die
 Speicherzellen verändern, oder Schlüsselwörter/Befehle für
 
-0:02:04.240,0:02:10.800
+00:02:04,240 --> 00:02:10,800
 Schleifen, oder Dinge, bei denen es nicht
 um die Auswertung eines Ausdrucks geht, sondern
 
-0:02:10.800,0:02:13.440
+00:02:10,800 --> 00:02:13,440
 darum, etwas zu tun
 oder einen Effekt zu haben.
 
-0:02:14.960,0:02:19.680
+00:02:14,960 --> 00:02:19,680
 Und das ist eine andere
 Art von Struktur in einer Programmiersprache.
 
-0:02:19.680,0:02:24.880
+00:02:19,680 --> 00:02:24,880
 Und es ist immer noch eine
 dominantere Struktur in imperativen Programmiersprachen, weil
 
-0:02:24.880,0:02:28.560
+00:02:24,880 --> 00:02:28,560
 es dort darum geht, etwas zu
 tun und nicht darum, Werte zu berechnen.
 
-0:02:31.040,0:02:36.640
+00:02:31,040 --> 00:02:36,640
 Und es gab diese wichtige Beobachtung, die oben
 schon angedeutet wurde, dass, wenn man in einer reinen
 
-0:02:36.640,0:02:40.480
+00:02:36,640 --> 00:02:40,480
 Umgebung ist (also keine Befehle hat, und
 auch die Ausdrücke, die wir haben, sind reine
 
-0:02:41.040,0:02:44.880
+00:02:41,040 --> 00:02:44,880
 Ausdrücke), dann können alle reinen Ausdrücke, die
 den gleichen Wert haben, durcheinander ersetzt werden, ohne
 
-0:02:44.880,0:02:46.720
+00:02:44,880 --> 00:02:46,720
 dass sich das
 Verhalten des Programms ändert.
 
-0:02:46.720,0:02:51.360
+00:02:46,720 --> 00:02:51,360
 Das ist es, was ich beim Rechnen
 mit Programmen im vorherigen Video gemacht habe.
 
-0:02:51.360,0:02:55.200
+00:02:51,360 --> 00:02:55,200
 Und das ist auch das, was z. B.
 ein Compiler zur Optimierung eines Programms verwenden kann.
 
-0:03:01.120,0:03:08.880
+00:03:01,120 --> 00:03:08,880
 Speziell für die Subsprache CodeWorld: Dort geht
 es jetzt bei unseren Ausdrücken um Bilder.
 
-0:03:09.520,0:03:12.160
+00:03:09,520 --> 00:03:12,160
 Die Werte von Ausdrücken
 sind also Bilder oder Zutaten,
 
-0:03:12.160,0:03:16.000
+00:03:12,160 --> 00:03:16,000
 die für Bilder benötigt
 werden, wie Farben, Koordinaten, etc.
 
-0:03:16.000,0:03:17.360
-Sie können
-benannt werden, usw.
+00:03:16,000 --> 00:03:17,360
+Sie können benannt werden, usw.
 
-0:03:17.360,0:03:20.320
+00:03:17,360 --> 00:03:20,320
 Das haben Sie natürlich schon
 in der ersten Übung gemacht.
 
-0:03:21.280,0:03:23.120
+00:03:21,280 --> 00:03:23,120
 Und dafür haben
 Sie Funktionen/Operatoren verwendet.
 
-0:03:24.960,0:03:27.600
+00:03:24,960 --> 00:03:27,600
 Hier liste ich einige
 zusammen mit ihren Typen auf.
 
-0:03:27.600,0:03:33.680
+00:03:27,600 --> 00:03:33,680
 In den Aufgaben der ersten Übung waren Sie nicht gezwungen,
 Typen zu verwenden, aber wenn Sie in die Dokumentation geschaut
 
-0:03:33.680,0:03:35.200
+00:03:33,680 --> 00:03:35,200
 hätten, hätten Sie
 so etwas gefunden wie:
 
-0:03:35.200,0:03:39.440
+00:03:35,200 --> 00:03:39,440
 Die Funktion "circle" nimmt einen Radius, der eine
 reelle Zahl ist, und gibt ein Bild aus.
 
-0:03:39.440,0:03:40.960
-Es gibt
-noch andere
+00:03:39,440 --> 00:03:40,960
+Es gibt noch andere
 
-0:03:40.960,0:03:46.800
+00:03:40,960 --> 00:03:46,800
 Notationen, die in Haskell nicht genau so sind, aber wir
 haben sie auf dieser Folie, um den Funktionen und ihren Typen
 
-0:03:50.560,0:03:54.240
+00:03:50,560 --> 00:03:54,240
 ähnlich zu sein, so wie Sie es
 aus der Mathematik, aus der Mengenlehre gewohnt sind.
 
-0:03:54.240,0:03:56.320
-So geht
-es zum Beispiel
+00:03:54,240 --> 00:03:56,320
+So geht es zum Beispiel
 
-0:03:56.320,0:04:01.840
+00:03:56,320 --> 00:04:01,840
 bei der Funktion "polygon" auch darum, ein Bild
 zurückzugeben, aber sie nimmt eigentlich eine Liste von Koordinatenpaaren.
 
-0:04:01.840,0:04:07.040
+00:04:01,840 --> 00:04:07,040
 Natürlich ist ein Koordinatenpaar das, was in
 der Mathematik durch ein kartesisches Produkt dargestellt würde.
 
-0:04:07.040,0:04:10.880
+00:04:07,040 --> 00:04:10,880
 Man nimmt also R x R,
 um Paare von reellen Zahlen zu erhalten.
 
-0:04:10.880,0:04:14.560
+00:04:10,880 --> 00:04:14,560
 Und eine Liste solcher Dinge wird ein Argument
 der polygon-Funktion sein, um ein Bild zu erhalten.
 
-0:04:15.840,0:04:19.520
+00:04:15,840 --> 00:04:19,520
 Für "colored" nehmen Sie zwei Argumente, eine Farbe
 und ein Bild, und geben ein Bild zurück.
 
-0:04:19.520,0:04:21.120
-Darüber haben
-wir schon gesprochen.
+00:04:19,520 --> 00:04:21,120
+Darüber haben wir schon gesprochen.
 
-0:04:21.120,0:04:25.280
+00:04:21,120 --> 00:04:25,280
 Und ebenso, für mehr als zwei
 Argumente, erhalten Sie so etwas wie ein
 
-0:04:25.840,0:04:29.760
+00:04:25,840 --> 00:04:29,760
 dreifaches kartesisches/Kreuz-Produkt aus zwei mal
 einer reellen Zahl (für x- und
 
-0:04:29.760,0:04:32.320
+00:04:29,760 --> 00:04:32,320
 y-Richtung) für eine Bewegung, und dann
 irgendein Bild, das Sie bewegen wollen.
 
-0:04:32.320,0:04:34.720
+00:04:32,320 --> 00:04:34,720
 Und das Ergebnis ist ein
 Bild, nämlich das bewegte Bild.
 
-0:04:35.840,0:04:40.080
+00:04:35,840 --> 00:04:40,080
 Was die Typen betrifft: Sie
 haben das vielleicht schon gesehen, z.B.
 
-0:04:40.080,0:04:46.240
+00:04:40,080 --> 00:04:46,240
 in Fehlermeldungen in CodeWorld - wenn Ihr Programm
 nicht funktionierte, und es gab eine Fehlermeldung, dann
 
-0:04:46.240,0:04:49.680
+00:04:46,240 --> 00:04:49,680
 haben Sie vielleicht die Typen dieser Funktionen
 gesehen, und die sahen etwas anders aus.
 
-0:04:49.680,0:04:51.040
-Ich werde
-später darauf zurückkommen.
+00:04:49,680 --> 00:04:51,040
+Ich werde später darauf zurückkommen.
 
-0:04:51.040,0:04:54.640
+00:04:51,040 --> 00:04:54,640
 Dass eigentlich, aus
 syntaktischen Gründen, oder Gründen
 
-0:04:54.640,0:04:59.200
+00:04:54,640 --> 00:04:59,200
 über die Organisation der Funktionsanwendung in
 Haskell, werden Sie dieses Kreuz selten sehen.
 
-0:04:59.200,0:05:04.000
+00:04:59,200 --> 00:05:04,000
 Sie werden andere syntaktische Mittel sehen,
 um zum Beispiel eine binäre Funktion
 
-0:05:04.560,0:05:06.480
+00:05:04,560 --> 00:05:06,480
 oder eine Funktion mit
 drei Argumenten usw. auszudrücken.
 
-0:05:06.480,0:05:09.200
+00:05:06,480 --> 00:05:09,200
 Aber mathematisch, im Geiste, ist
 es das, was wir haben.
 
-0:05:09.200,0:05:13.760
+00:05:09,200 --> 00:05:13,760
 Zum Beispiel eine Verknüpfung: Das Und-Zeichen (&) nimmt
 hier zwei Bilder und gibt ein Bild zurück.
 
-0:05:16.080,0:05:20.400
+00:05:16,080 --> 00:05:20,400
 Ich habe bereits im vorigen Video über
 Eigenschaften/Gesetze gesprochen, die wir uns vorstellen können.
 
-0:05:21.200,0:05:23.840
+00:05:21,200 --> 00:05:23,840
 Sie sind wie die
 arithmetischen Gesetze in der Mathematik.
 
-0:05:23.840,0:05:28.880
+00:05:23,840 --> 00:05:28,880
 Aber sie sprechen jetzt über die
 Funktionen, die wir in unserer Domäne haben.
 
-0:05:28.880,0:05:32.480
+00:05:28,880 --> 00:05:32,480
 In diesem Fall habe ich
 über Rotation und Färbung gesprochen.
 
-0:05:32.480,0:05:35.920
+00:05:32,480 --> 00:05:35,920
 Aber ich habe auch angefangen,
 das Gesetz für Translation und Färbung
 
-0:05:35.920,0:05:37.840
+00:05:35,920 --> 00:05:37,840
 aufzuschreiben, und das wäre
 die vollständige Version davon.
 
-0:05:37.840,0:05:41.520
+00:05:37,840 --> 00:05:41,520
 Und die Liste der
 Funktionen, die wir betrachten, wächst.
 
-0:05:41.520,0:05:44.080
+00:05:41,520 --> 00:05:44,080
 Es wird also noch mehr Dinge
 geben, die wir mit Bildern machen können.
 
-0:05:44.080,0:05:46.720
+00:05:44,080 --> 00:05:46,720
 Dann kann man sich
 auch immer neue Gesetze ausdenken.
 
-0:05:46.720,0:05:49.040
-Man muss sie
-natürlich nicht beweisen.
+00:05:46,720 --> 00:05:49,040
+Man muss sie natürlich nicht beweisen.
 
-0:05:49.040,0:05:53.760
+00:05:49,040 --> 00:05:53,760
 In dieser Vorlesung geht es darum:
 Wenn Sie vernünftige Eigenschaften/Gesetze über die
 
-0:05:53.760,0:05:57.920
+00:05:53,760 --> 00:05:57,920
 Funktionen, mit denen Sie arbeiten, kennen,
 dann können Sie schönere Programme schreiben.
 
-0:05:57.920,0:06:00.960
+00:05:57,920 --> 00:06:00,960
 Und Sie können Ihre Programme
 mit viel mehr Vertrauen refaktorieren,
 
-0:06:00.960,0:06:05.840
+00:06:00,960 --> 00:06:05,840
 als wenn Sie nur raten, was
 Sie tun oder nicht tun sollten.
 
-0:06:08.240,0:06:13.920
+00:06:08,240 --> 00:06:13,920
 Jetzt können wir innerhalb der CodeWorld-Bibliothek den nächsten
 Schritt machen und von Bildern zu Animationen übergehen.
 
-0:06:13.920,0:06:18.400
+00:06:13,920 --> 00:06:18,400
 Das ist eigentlich ein sehr kleiner Schritt,
 denn eine Animation ist, wie ich schon
 
-0:06:19.920,0:06:25.440
+00:06:19,920 --> 00:06:25,440
 vorher auf einer intuitiven Ebene angedeutet habe, nur
 ein Bild, das sich mit der Zeit verändert.
 
-0:06:25.440,0:06:31.280
+00:06:25,440 --> 00:06:31,280
 Und mathematisch wäre eine solche Abhängigkeit von
 der Zeit einfach durch die Einführung von Parametern.
 
-0:06:31.280,0:06:37.280
+00:06:31,280 --> 00:06:37,280
 Das Beispiel, das Sie hier sehen, ist
 eine kleine Abwandlung des Beispiels von letzter Woche,
 
-0:06:37.280,0:06:44.640
+00:06:37,280 --> 00:06:44,640
 wo wir im Grunde keine
 Animation hatten, sondern nur eine Zeichnung.
 
-0:06:44.640,0:06:50.000
+00:06:44,640 --> 00:06:50,000
 In dem letzten Beispiel, das ich in
 der Diskussion über den Ausdrucksstil in CodeWorld durchgespielt
 
-0:06:50.000,0:06:53.280
+00:06:50,000 --> 00:06:53,280
 habe, hatten wir
 diesen t-Parameter nicht.
 
-0:06:53.280,0:06:57.200
+00:06:53,280 --> 00:06:57,200
 In einem der Beispiele gab
 es hier einen festen Wert.
 
-0:06:57.200,0:07:01.040
+00:06:57,200 --> 00:07:01,040
 Es gab also ein farbiges rotes
 Dreieck, das irgendwo hinverschoben wurde.
 
-0:07:01.040,0:07:04.880
+00:07:01,040 --> 00:07:04,880
 Und jetzt, indem ich sage "na ja, eigentlich
 will ich das von der Zeit t abhängig machen",
 
-0:07:05.760,0:07:07.120
-ist das
-schon eine Animation.
+00:07:05,760 --> 00:07:07,120
+ist das schon eine Animation.
 
-0:07:07.120,0:07:12.720
+00:07:07,120 --> 00:07:12,720
 Ich muss einfach den Aufruf oben, hier, ändern, um
 auch auszudrücken, dass ich jetzt eine Animation haben möchte.
 
-0:07:12.720,0:07:17.440
+00:07:12,720 --> 00:07:17,440
 Und das mache ich mit
 der Funktion hier, und außerdem definiere
 
-0:07:18.800,0:07:23.040
+00:07:18,800 --> 00:07:23,040
 ich, statt eine Szene als Bild zu
 definieren, eine Funktion von Double zu Bild.
 
-0:07:23.040,0:07:29.840
+00:07:23,040 --> 00:07:29,840
 Das ist also so etwas wie das R aus
 den vorherigen Folien, das mathematische R, die reellen Zahlen.
 
-0:07:31.520,0:07:34.400
+00:07:31,520 --> 00:07:34,400
 Die Funktion hängt also von der Zeit ab,
 ihre erste Variable ist also der Parameter t, in
 
-0:07:35.120,0:07:39.440
+00:07:35,120 --> 00:07:39,440
 der einfachen mathematischen Interpretation
 und im einfachen Stil.
 
-0:07:40.640,0:07:42.400
+00:07:40,640 --> 00:07:42,400
 Dieser Parameter wird hier
 nie von uns gesetzt.
 
-0:07:42.400,0:07:49.120
+00:07:42,400 --> 00:07:49,120
 Sie sehen also nie, dass ich in diesem kurzen
 Stück Code das t auf einen bestimmten Wert setze.
 
-0:07:49.760,0:07:51.680
+00:07:49,760 --> 00:07:51,680
 Wir können dies tun
 und mit dem Beispielcode herumspielen.
 
-0:07:51.680,0:07:55.920
+00:07:51,680 --> 00:07:55,920
 Wir können auch bestimmte Aufrufe der scene-Funktion
 mit den Werten 1, 2, 3, was auch
 
-0:07:55.920,0:07:58.080
+00:07:55,920 --> 00:07:58,080
 immer, mit
 bestimmten Werten berücksichtigen.
 
-0:07:58.080,0:08:02.000
+00:07:58,080 --> 00:08:02,000
 Aber für eine Animation ist das
 nichts, was ich als Programmierer tun würde.
 
-0:08:03.760,0:08:07.520
+00:08:03,760 --> 00:08:07,520
 Eine weitere Beobachtung ist: Es gibt
 keine for-Schleife oder andere explizite Steuerung.
 
-0:08:07.520,0:08:12.240
+00:08:07,520 --> 00:08:12,240
 Wenn Sie ein sich bewegendes
 Dreieck in einer anderen Sprache betrachten
 
-0:08:12.240,0:08:17.200
+00:08:12,240 --> 00:08:17,200
 würden, könnten Sie sich vorstellen, dass Sie eine for-Schleife
 schreiben, die tatsächlich eine Variable t für die Zeit
 
-0:08:17.200,0:08:23.280
+00:08:17,200 --> 00:08:23,280
 nimmt und dann verschiedene Zeitschritte durchläuft: t = 1, 2,
 3, 4, was auch immer, in einer for-Schleife; und dies
 
-0:08:23.280,0:08:31.440
+00:08:23,280 --> 00:08:31,440
 dann benutzen, um wiederholte Aufrufe an eine Zeichenfunktion zu machen,
 um ein sich bewegendes Dreieck zu simulieren oder zu animieren.
 
-0:08:31.440,0:08:34.400
+00:08:31,440 --> 00:08:34,400
 Das ist nicht das, was hier
 passiert, denn wir sind mehr damit
 
-0:08:34.400,0:08:36.480
+00:08:34,400 --> 00:08:36,480
 beschäftigt, dies
 mathematisch auszudrücken.
 
-0:08:36.480,0:08:41.440
+00:08:36,480 --> 00:08:41,440
 Und mathematisch lässt sich mit
 diesem Ausdruck perfekt beschreiben, was
 
-0:08:42.240,0:08:46.240
+00:08:42,240 --> 00:08:46,240
 es bedeutet, dass die Position
 des Dreiecks von der Zeit abhängt.
 
-0:08:47.360,0:08:49.600
-Es gibt also
-keine explizite Steuerung.
+00:08:47,360 --> 00:08:49,600
+Es gibt also keine explizite Steuerung.
 
-0:08:50.400,0:08:53.840
+00:08:50,400 --> 00:08:53,840
 Stattdessen kümmert sich
 irgendwie dieses animationOf-Konstrukt darum.
 
-0:08:55.040,0:09:00.240
+00:08:55,040 --> 00:09:00,240
 Und als Benutzer der Bibliothek brauchen wir
 nicht zu wissen, wie sie das macht.
 
-0:09:00.240,0:09:05.040
+00:09:00,240 --> 00:09:05,040
 Es macht das, indem es clevere
 Entscheidungen darüber trifft, wie oft die scene-Funktion
 
-0:09:05.040,0:09:11.680
+00:09:05,040 --> 00:09:11,680
 aufgerufen werden soll, vielleicht synchron mit der
 Aktualisierungsrate des Browsers, entscheidet, wann und mit welchen
 
-0:09:11.680,0:09:15.760
+00:09:11,680 --> 00:09:15,760
 Werten es die scene-Funktion aufrufen soll, und
 dann alle Bilder, die dabei entstehen, zu
 
-0:09:15.760,0:09:19.520
+00:09:15,760 --> 00:09:19,520
 einer netten Animation kombiniert (die im Browser angezeigt
 werden kann, falls Sie CodeWorld online benutzen, oder
 
-0:09:20.640,0:09:22.480
+00:09:20,640 --> 00:09:22,480
 auf andere Weise, wenn
 Sie es offline benutzen).
 
-0:09:23.680,0:09:27.680
+00:09:23,680 --> 00:09:27,680
 Der Punkt ist, dass
 das animationOf-Konstrukt dies tut.
 
-0:09:27.680,0:09:32.160
+00:09:27,680 --> 00:09:32,160
 Es ist eine Funktion, die eine andere Funktion,
 in diesem Fall eine scene-Funktion, als Argument nimmt.
 
-0:09:32.160,0:09:34.640
+00:09:32,160 --> 00:09:34,640
 Es ist nicht etwas,
 das wir selbst implementiert haben.
 
-0:09:34.640,0:09:38.880
+00:09:34,640 --> 00:09:38,880
 Es ist ein Teil der Bibliothek, oder der
 Semantik dessen, was eine Animation in CodeWorld ist.
 
-0:09:39.520,0:09:44.000
+00:09:39,520 --> 00:09:44,000
 Und wir können es einfach verwenden,
 und werden es auch immer mehr verwenden.
 
-0:09:44.000,0:09:49.840
+00:09:44,000 --> 00:09:49,840
 Auch Sie, in
 den nächsten Übungsaufgaben.
 
-0:09:52.480,0:09:55.840
+00:09:52,480 --> 00:09:55,840
 Die Verwendung von Funktionen
 zur Beschreibung von dynamischen
 
-0:09:55.840,0:10:00.000
+00:09:55,840 --> 00:10:00,000
 Verhaltensweisen sollte Sie (oder die meisten
 von Ihnen) nicht überraschen, denke ich.
 
-0:10:00.560,0:10:03.840
+00:10:00,560 --> 00:10:03,840
 Ein Großteil der Ingenieurwissenschaften außerhalb
 der Informatik arbeitet auf diese Weise.
 
-0:10:04.480,0:10:10.800
+00:10:04,480 --> 00:10:10,800
 Und zumindest aus dem Physikunterricht in der Schule
 kennen Sie auch viele Beispiele aus der Mechanik, wo
 
-0:10:10.800,0:10:15.200
+00:10:10,800 --> 00:10:15,200
 viele Verhaltensweisen oder Situationen in
 Experimenten auf diese Weise beschrieben werden.
 
-0:10:15.200,0:10:22.000
+00:10:15,200 --> 00:10:22,000
 Schauen wir uns also diesen Fall an, in
 dem es um das Werfen eines Balls geht.
 
-0:10:22.640,0:10:28.240
+00:10:22,640 --> 00:10:28,240
 Ich glaube, in deutschen Physikschulbüchern
 würde man das "Schiefer Wurf" nennen.
 
-0:10:28.240,0:10:30.640
-Wo man etwas
-in einem Startwinkel wirft.
+00:10:28,240 --> 00:10:30,640
+Wo man etwas in einem Startwinkel wirft.
 
-0:10:31.200,0:10:34.240
+00:10:31,200 --> 00:10:34,240
 Und wenn man in solchen
 Physik-Lehrbüchern nachschlägt, wie das Experiment
 
-0:10:35.120,0:10:40.480
+00:10:35,120 --> 00:10:40,480
 beschrieben werden kann, dann würde man so
 etwas wie diese Formeln hier finden: die
 
-0:10:41.360,0:10:48.800
+00:10:41,360 --> 00:10:48,800
 die x- und y-Positionen beschreiben, basierend
 auf dem Parameter t (der aktuellen Zeit).
 
-0:10:48.800,0:10:50.160
-Und es
-gibt eine
+00:10:48,800 --> 00:10:50,160
+Und es gibt eine
 
-0:10:50.800,0:10:54.640
+00:10:50,800 --> 00:10:54,640
 Startgeschwindigkeit in der x-Richtung und
 eine Startgeschwindigkeit in der y-Richtung.
 
-0:10:54.640,0:10:58.240
+00:10:54,640 --> 00:10:58,240
 Und da es sich in x-Richtung
 um eine gleichförmige Bewegung handelt, ist es
 
-0:10:59.520,0:11:03.360
+00:10:59,520 --> 00:11:03,360
 im Grunde die Multiplikation dieses
 Faktors mit der aktuellen Zeit.
 
-0:11:03.360,0:11:09.440
+00:11:03,360 --> 00:11:09,440
 Und in y-Richtung, weil es auch die
 Schwerkraft gibt, die im Grunde zu dieser Kurve
 
-0:11:10.880,0:11:15.680
+00:11:10,880 --> 00:11:15,680
 führt, die sich hier ergibt, müssen
 wir auch diese andere Komponente haben.
 
-0:11:15.680,0:11:20.800
+00:11:15,680 --> 00:11:20,800
 Das ist die Mathematik dessen, was es bedeutet,
 einen Ball auf diese Art und Weise zu werfen.
 
-0:11:20.800,0:11:24.720
+00:11:20,800 --> 00:11:24,720
 Und das ist eine vollständige
 Beschreibung der Dynamik des Systems.
 
-0:11:24.720,0:11:28.320
+00:11:24,720 --> 00:11:28,320
 Und es dient auch als
 die Implementierung, wenn Sie wollen.
 
-0:11:29.120,0:11:32.400
+00:11:29,120 --> 00:11:32,400
 Sie könnten also in CodeWorld
 ein kleines Programm schreiben, das
 
-0:11:32.400,0:11:35.280
+00:11:32,400 --> 00:11:35,280
 im Grunde diese
 Bewegung dieses Balls animiert.
 
-0:11:35.280,0:11:38.080
+00:11:35,280 --> 00:11:38,080
 Und was Sie aufschreiben, ist
 eigentlich das, was wir oben
 
-0:11:38.080,0:11:42.080
+00:11:38,080 --> 00:11:42,080
 von der mathematischen Seite sehen, nur
 dass Sie es im Haskell-Stil schreiben müssen.
 
-0:11:43.280,0:11:52.640
+00:11:43,280 --> 00:11:52,640
 Sie werden diese Ausdrücke hier unten für
 die x- und y-Werte natürlich in Programmsyntax erkennen.
 
-0:11:52.640,0:11:56.000
+00:11:52,640 --> 00:11:56,000
 Nicht zum Beispiel
 diese Bruch-Syntax hier.
 
-0:11:56.000,0:11:58.880
+00:11:56,000 --> 00:11:58,880
 Aber abgesehen davon, und
 dem Setzen einiger spezifischer Parameter
 
-0:11:59.440,0:12:05.760
+00:11:59,440 --> 00:12:05,760
 und spezifischer Konstanten, ist das wirklich
 die Implementierung dessen, was wir oben sehen.
 
-0:12:05.760,0:12:09.840
+00:12:05,760 --> 00:12:09,840
 Es ist sehr eng mit
 der mathematischen/physikalischen Seite der Programmierung verbunden.
 
-0:12:12.160,0:12:14.240
+00:12:12,160 --> 00:12:14,240
 Auch das ist nicht
 etwas, das super überraschend ist.
 
-0:12:14.880,0:12:20.400
+00:12:14,880 --> 00:12:20,400
 Aber es ist auch interessant, weil
 es nützlich ist, um durch das
 
-0:12:20.400,0:12:23.600
+00:12:20,400 --> 00:12:23,600
 Spielen mit diesem Programm die
 Verwendung bestimmter Konzepte zu veranschaulichen.
 
-0:12:23.600,0:12:25.120
-Zum
-Beispiel Scope.
+00:12:23,600 --> 00:12:25,120
+Zum Beispiel Scope.
 
-0:12:25.120,0:12:28.160
+00:12:25,120 --> 00:12:28,160
 Ein Unterschied, den
 Sie hier vielleicht schon
 
-0:12:28.160,0:12:33.520
+00:12:28,160 --> 00:12:33,520
 bemerken, ist zum Beispiel, dass x und y
 hier oben explizite Funktionen sind, die diesen t-Parameter nehmen.
 
-0:12:33.520,0:12:39.520
+00:12:33,520 --> 00:12:39,520
 Hingegen hier unten, wo ich x und
 y berechne, weil ich sie zur Beschreibung der
 
-0:12:41.280,0:12:47.680
+00:12:41,280 --> 00:12:47,680
 Position meiner kleinen Kugel (die dieser "circle 0,1"
 ist) verwenden möchte, sind sie keine Funktionen von t.
 
-0:12:47.680,0:12:49.600
+00:12:47,680 --> 00:12:49,600
 Warum müssen sie keine
 Funktionen von t sein?
 
-0:12:50.160,0:12:52.320
-Weil sie
-lokale Definitionen sind.
+00:12:50,160 --> 00:12:52,320
+Weil sie lokale Definitionen sind.
 
-0:12:52.320,0:12:55.840
-Wir beschreiben
-also die scene-Funktion.
+00:12:52,320 --> 00:12:55,840
+Wir beschreiben also die scene-Funktion.
 
-0:12:55.840,0:12:57.520
-Die Funktion nimmt
-ein Argument t.
+00:12:55,840 --> 00:12:57,520
+Die Funktion nimmt ein Argument t.
 
-0:12:57.520,0:12:59.280
+00:12:57,520 --> 00:12:59,280
 Dann ist dort auf der
 rechten Seite das t im Gültigkeitsbereich.
 
-0:12:59.280,0:13:00.400
-Es kann
-verwendet werden.
+00:12:59,280 --> 00:13:00,400
+Es kann verwendet werden.
 
-0:13:00.400,0:13:06.080
+00:13:00,400 --> 00:13:06,080
 Und wenn ich hier eine lokale Definition für x
 einführe (oder sogar mehrere für x und für y),
 
-0:13:06.080,0:13:11.680
+00:13:06,080 --> 00:13:11,680
 dann ist das t im Gültigkeitsbereich, aber ich muss
 nicht, wie hier oben, das t explizit als Argument übergeben.
 
-0:13:11.680,0:13:13.120
+00:13:11,680 --> 00:13:13,120
 Das ist etwas, mit
 dem Sie herumspielen können.
 
-0:13:13.120,0:13:16.160
+00:13:13,120 --> 00:13:16,160
 Was passiert also, wenn Sie diese x
 und y auf die oberste Ebene verschieben?
 
-0:13:16.160,0:13:18.560
+00:13:16,160 --> 00:13:18,560
 Ich habe bereits über
 die Organisation von Programmen gesprochen.
 
-0:13:18.560,0:13:23.840
+00:13:18,560 --> 00:13:23,840
 Lokale Definitionen oder Top-Level/Global-Definitionen zu haben,
 ist etwas, das wir hier beobachten können.
 
-0:13:24.640,0:13:29.360
+00:13:24,640 --> 00:13:29,360
 Außerdem ist dies ein Programm,
 das weitgehend ohne Schlüsselwörter auskommt.
 
-0:13:29.360,0:13:31.040
-Denn wir befinden
-uns im Expression-Stil.
+00:13:29,360 --> 00:13:31,040
+Denn wir befinden uns im Expression-Stil.
 
-0:13:31.040,0:13:36.160
+00:13:31,040 --> 00:13:36,160
 So wie die mathematische Welt keine
 Schlüsselwörter kennt, sondern nur mathematische Symbole, Variablen,
 
-0:13:36.160,0:13:42.080
+00:13:36,160 --> 00:13:42,080
 Operatoren und Kombinationen von Ausdrücken;
 so ist es auch hier.
 
-0:13:42.080,0:13:43.040
-Es gibt
-also keine Schlüsselwörter.
+00:13:42,080 --> 00:13:43,040
+Es gibt also keine Schlüsselwörter.
 
-0:13:43.600,0:13:46.400
+00:13:43,600 --> 00:13:46,400
 Das "where" könnte man
 vielleicht als Schlüsselwort betrachten,
 
-0:13:46.400,0:13:49.360
+00:13:46,400 --> 00:13:49,360
 aber es ist wirklich nur
 etwas zum Organisieren unseres Ausdrucks.
 
-0:13:49.360,0:13:50.720
-Es ist nicht
-wie die "while"-
+00:13:49,360 --> 00:13:50,720
+Es ist nicht wie die "while"-
 
-0:13:51.360,0:13:57.520
+00:13:51,360 --> 00:13:57,520
 oder "for"-Schleifenschlüsselwörter in einer imperativen Sprache,
 dass es wirklich die ganze Berechnung antreibt.
 
-0:13:57.520,0:13:59.520
+00:13:57,520 --> 00:13:59,520
 Dieses "where" hier ist also
 ein Schlüsselwort, aber es ist
 
-0:14:00.160,0:14:03.680
+00:14:00,160 --> 00:14:03,680
 wirklich nur ein Hilfsmittel, um
 unsere mathematischen Ausdrücke zu organisieren.
 
-0:14:03.680,0:14:07.680
+00:14:03,680 --> 00:14:07,680
 Was wirklich wichtig an diesem Programm
 ist, sind die Ausdrücke, die wir bilden.
 
-0:14:14.320,0:14:18.000
+00:14:14,320 --> 00:14:18,000
 Da wir gerade von Ausdrücken
 sprechen, was ich anscheinend ständig
 
-0:14:18.000,0:14:25.040
+00:14:18,000 --> 00:14:25,040
 tue, brauchen wir natürlich ein paar mehr
 Zutaten als nur Operatoren, Konstanten und Variablen.
 
-0:14:25.040,0:14:31.600
+00:14:25,040 --> 00:14:31,600
 Ich habe also diese idealisierte Vorstellung,
 dass es nur mathematische Funktionen, mathematische Symbole,
 
-0:14:31.600,0:14:36.960
+00:14:31,600 --> 00:14:36,960
 Variablen und Konstanten gibt,
 um größere Programme zu bauen.
 
-0:14:36.960,0:14:40.320
+00:14:36,960 --> 00:14:40,320
 Es wird noch etwas mehr benötigt, aber es
 wird immer noch im Stil von Ausdrücken sein.
 
-0:14:41.520,0:14:45.200
+00:14:41,520 --> 00:14:45,200
 Das "where"-Schlüsselwort aus der vorherigen Folie
 war also schon ein Beispiel, wo
 
-0:14:45.200,0:14:52.640
+00:14:45,200 --> 00:14:52,640
 etwas eingeführt wurde, das nicht nur ein Wert
 ist, oder etwas, das selbst ein Ausdruck ist.
 
-0:14:52.640,0:14:55.040
+00:14:52,640 --> 00:14:55,040
 Es ist also ein
 Schlüsselwort zum Organisieren von Ausdrücken.
 
-0:14:55.040,0:14:57.840
+00:14:55,040 --> 00:14:57,840
 Und tatsächlich wird es
 weitere syntaktische Konstrukte geben,
 
-0:14:59.200,0:15:04.480
+00:14:59,200 --> 00:15:04,480
 die es uns erlauben, interessantere,
 größere und nützlichere Ausdrücke zu bauen.
 
-0:15:05.040,0:15:07.360
-Ich nenne
-dies "rich expressions".
+00:15:05,040 --> 00:15:07,360
+Ich nenne dies "rich expressions".
 
-0:15:07.360,0:15:11.840
+00:15:07,360 --> 00:15:11,840
 Ich werde diese Eigenschaften
 im folgenden Material nacheinander vorstellen,
 
-0:15:12.640,0:15:18.480
+00:15:12,640 --> 00:15:18,480
 und zwar jeweils motiviert
 durch ein Beispiel in CodeWorld.
 
-0:15:21.920,0:15:23.680
-Lassen Sie uns
-diesen Fall besprechen.
+00:15:21,920 --> 00:15:23,680
+Lassen Sie uns diesen Fall besprechen.
 
-0:15:23.680,0:15:29.760
+00:15:23,680 --> 00:15:29,760
 Nehmen wir an, dass wir, anders als bei dem
 Beispiel, das wir heute gesehen haben (wo wir eine
 
-0:15:30.320,0:15:36.400
+00:15:30,320 --> 00:15:36,400
 kontinuierliche Verteilung über die Zeit hatten, sodass
 unsere Funktion von der Zeit abhängig war, um
 
-0:15:36.400,0:15:42.480
+00:15:36,400 --> 00:15:42,480
 eine kontinuierliche Verteilung von Bildern über die Zeit auszudrücken,
 nämlich als Animationen), stattdessen eine diskrete Verteilung in gewissem
 
-0:15:43.040,0:15:44.720
-Sinne über den
-Raum haben wollen.
+00:15:43,040 --> 00:15:44,720
+Sinne über den Raum haben wollen.
 
-0:15:44.720,0:15:47.280
-Wir wollen also
-nicht ein sich bewegendes
+00:15:44,720 --> 00:15:47,280
+Wir wollen also nicht ein sich bewegendes
 
-0:15:47.280,0:15:52.800
+00:15:47,280 --> 00:15:52,800
 Dreieck haben, sondern vielleicht viele Dreiecke,
 die statisch sind, aber räumlich getrennt.
 
-0:15:52.800,0:15:56.960
+00:15:52,800 --> 00:15:56,960
 Sie erscheinen also zum Beispiel
 an verschiedenen Stellen in unserer Koordinatenebene.
 
-0:15:59.360,0:16:00.960
-Jetzt ist
-natürlich die Magie
+00:15:59,360 --> 00:16:00,960
+Jetzt ist natürlich die Magie
 
-0:16:03.440,0:16:06.240
+00:16:03,440 --> 00:16:06,240
 der animationOf-Funktion, die wir
 vorher hatten, nicht mehr anwendbar.
 
-0:16:06.240,0:16:08.800
+00:16:06,240 --> 00:16:08,800
 Denn es gibt keinen offensichtlichen
 Weg, wie man die Dinge im
 
-0:16:08.800,0:16:11.360
+00:16:08,800 --> 00:16:11,360
 Raum verteilen kann, im
 Gegensatz zur vorwärts laufenden Zeit.
 
-0:16:11.360,0:16:15.840
+00:16:11,360 --> 00:16:15,840
 Wir müssen also für jeden Punkt
 einfach sagen, wo sich unser Dreieck befindet.
 
-0:16:16.640,0:16:19.680
+00:16:16,640 --> 00:16:19,680
 Nun wollen wir vielleicht ein
 bestimmtes Muster auf dem Bildschirm haben,
 
-0:16:19.680,0:16:23.680
+00:16:19,680 --> 00:16:23,680
 wie diese verschiedenen Dreiecke
 statisch platziert werden sollen.
 
-0:16:23.680,0:16:28.000
+00:16:23,680 --> 00:16:28,000
 Und das ist nicht etwas, das irgendwie
 von so etwas wie der animationOf-Funktion kommen kann.
 
-0:16:30.160,0:16:33.360
+00:16:30,160 --> 00:16:33,360
 Es ist also etwas,
 das der Programmierer tun müsste.
 
-0:16:33.360,0:16:34.880
+00:16:33,360 --> 00:16:34,880
 Und natürlich könnte
 der Programmierer das tun.
 
-0:16:34.880,0:16:40.000
+00:16:34,880 --> 00:16:40,000
 Der Programmierer könnte unsere alte scene-Funktion nehmen, die
 mit dem Parameter das Dreieck an einem bestimmten Punkt
 
-0:16:40.000,0:16:45.520
+00:16:40,000 --> 00:16:45,520
 platziert, und vorher diesen Parameter in der
 animationOf-Funktion verwendet hat, um die Bewegung auszudrücken.
 
-0:16:45.520,0:16:47.760
+00:16:45,520 --> 00:16:47,760
 Jetzt könnten wir einfach
 sagen: Lasst uns stattdessen
 
-0:16:47.760,0:16:51.680
+00:16:47,760 --> 00:16:51,680
 einzelne Aufrufe der scene-Funktion mit
 unterschiedlichen Werten für diesen Parameter machen.
 
-0:16:51.680,0:16:55.440
+00:16:51,680 --> 00:16:55,440
 Dann können wir natürlich die
 Orte ausdrücken, die uns interessieren.
 
-0:16:55.440,0:16:57.280
+00:16:55,440 --> 00:16:57,280
 Aber dann müssten
 wir diese Aufrufe replizieren.
 
-0:16:57.280,0:17:01.520
+00:16:57,280 --> 00:17:01,520
 Wir müssten "scene von 1",
 "scene von 1,5" aufschreiben, wenn das
 
-0:17:01.520,0:17:05.520
+00:17:01,520 --> 00:17:05,520
 die zwei Kopien sind, die wir von
 unserer "scene", von unserem Dreieck haben wollen.
 
-0:17:05.520,0:17:09.120
+00:17:05,520 --> 00:17:09,120
 Und wenn Sie zehn Kopien des Dreiecks
 haben wollen, dann müssten Sie zehn Aufrufe
 
-0:17:09.120,0:17:13.520
+00:17:09,120 --> 00:17:13,520
 dieser scene-Funktion machen,
 die ein Dreieck zeichnet.
 
-0:17:13.520,0:17:15.920
+00:17:13,520 --> 00:17:15,920
 Aber das ist nichts, was
 Sie von Hand machen wollen, richtig?
 
-0:17:15.920,0:17:18.240
+00:17:15,920 --> 00:17:18,240
 Es ist auch nicht etwas,
 das Sie im Programm aufschreiben wollen:
 
-0:17:19.280,0:17:21.840
+00:17:19,280 --> 00:17:21,840
 zehnmal derselbe Code,
 nur mit anderen Argumenten.
 
-0:17:23.280,0:17:23.920
-Was soll
-man stattdessen tun?
+00:17:23,280 --> 00:17:23,920
+Was soll man stattdessen tun?
 
-0:17:24.480,0:17:27.840
+00:17:24,480 --> 00:17:27,840
 Lassen Sie uns
 über imperative Programmierung nachdenken.
 
-0:17:27.840,0:17:28.800
-Was würden
-wir tun?
+00:17:27,840 --> 00:17:28,800
+Was würden wir tun?
 
-0:17:28.800,0:17:30.240
+00:17:28,800 --> 00:17:30,240
 Das würde wahrscheinlich
 eine for-Schleife erfordern.
 
-0:17:30.240,0:17:36.400
+00:17:30,240 --> 00:17:36,400
 Wir würden sagen, wir wollen
 zehn Kopien unseres Aufrufs der scene-Funktion.
 
-0:17:36.400,0:17:42.320
+00:17:36,400 --> 00:17:42,320
 Dann schreiben wir eine for-Schleife, in der
 wir die Schleifenvariable so verwenden, dass wir unsere
 
-0:17:42.320,0:17:45.840
+00:17:42,320 --> 00:17:45,840
 zehn Kopien des
 Dreiecks bekommen, zum Beispiel.
 
-0:17:46.720,0:17:48.160
-Aber das haben
-wir ja nicht, oder?
+00:17:46,720 --> 00:17:48,160
+Aber das haben wir ja nicht, oder?
 
-0:17:48.160,0:17:53.040
+00:17:48,160 --> 00:17:53,040
 Das ist etwas, was ich von Anfang
 an gesagt habe, dass wir nicht in solchen
 
-0:17:53.040,0:17:59.360
+00:17:53,040 --> 00:17:59,360
 Kontrollkonstrukten denken, wo wir ausdrücken, was zu
 tun ist, oder eine wiederholte Wirkung ausdrücken.
 
-0:17:59.360,0:18:01.040
-Das wäre nicht
-im Sinne von Expression.
+00:17:59,360 --> 00:18:01,040
+Das wäre nicht im Sinne von Expression.
 
-0:18:01.040,0:18:05.280
+00:18:01,040 --> 00:18:05,280
 Es ist nicht etwas, das in einer
 funktionalen Sprache auf diese Weise verfügbar ist.
 
-0:18:05.280,0:18:06.080
-Wir haben
-das nicht.
+00:18:05,280 --> 00:18:06,080
+Wir haben das nicht.
 
-0:18:06.720,0:18:09.040
+00:18:06,720 --> 00:18:09,040
 Nun, dann sollten wir
 vielleicht etwas anderes haben.
 
-0:18:10.720,0:18:12.880
+00:18:10,720 --> 00:18:12,880
 Wir wollen natürlich in
 der Lage sein, dies auszudrücken.
 
-0:18:12.880,0:18:13.840
-Also, was
-haben wir stattdessen?
+00:18:12,880 --> 00:18:13,840
+Also, was haben wir stattdessen?
 
-0:18:16.880,0:18:21.280
+00:18:16,880 --> 00:18:21,280
 Was wir haben, sind die
 sogenannten "List Comprehensions", die unsere erste
 
-0:18:21.280,0:18:24.960
+00:18:21,280 --> 00:18:24,960
 Art von "Rich Expressions" sind,
 die wir in Betracht ziehen.
 
-0:18:25.840,0:18:27.680
-Und ein Beispiel
-sehen Sie hier.
+00:18:25,840 --> 00:18:27,680
+Und ein Beispiel sehen Sie hier.
 
-0:18:27.680,0:18:32.080
+00:18:27,680 --> 00:18:32,080
 Vielleicht haben Sie solche Comprehensions auch
 schon in anderen Programmiersprachen gesehen, aber sie
 
-0:18:32.720,0:18:35.440
+00:18:32,720 --> 00:18:35,440
 haben ihren Ursprung
 in der funktionalen Programmierung.
 
-0:18:36.320,0:18:37.440
-Also, was
-haben wir hier?
+00:18:36,320 --> 00:18:37,440
+Also, was haben wir hier?
 
-0:18:37.440,0:18:40.640
+00:18:37,440 --> 00:18:40,640
 Wir haben gewissermaßen
 unsere alte scene-Funktion.
 
-0:18:40.640,0:18:41.840
-Es ist
-also das Gleiche.
+00:18:40,640 --> 00:18:41,840
+Es ist also das Gleiche.
 
-0:18:41.840,0:18:47.040
+00:18:41,840 --> 00:18:47,040
 Ich habe nur den Parameter von t zu d
 umbenannt, weil es jetzt nicht mehr um die Zeit
 
-0:18:47.040,0:18:51.040
+00:18:47,040 --> 00:18:51,040
 geht, sondern vielleicht um die Entfernung
 (also, wo ich meine Dreiecke platzieren will).
 
-0:18:51.760,0:18:56.400
+00:18:51,760 --> 00:18:56,400
 Das ist also unverändert zu vorher, weil
 ich diese Funktion immer noch aufrufen will.
 
-0:18:57.040,0:18:59.360
+00:18:57,040 --> 00:18:59,360
 Aber dann verwende ich
 sie auf eine andere Weise.
 
-0:18:59.360,0:19:01.680
+00:18:59,360 --> 00:19:01,680
 Anstatt sie an
 einen animationOf-Aufruf zu übergeben,
 
-0:19:01.680,0:19:06.880
+00:19:01,680 --> 00:19:06,880
 übergebe ich sie stattdessen an einen
 drawingOf-Aufruf, aber eigentlich übergebe ich mehrere Kopien.
 
-0:19:06.880,0:19:08.560
-Und das mache
-ich in einer Liste.
+00:19:06,880 --> 00:19:08,560
+Und das mache ich in einer Liste.
 
-0:19:08.560,0:19:12.640
+00:19:08,560 --> 00:19:12,640
 Die eckigen Klammern hier
 stehen also für die Listensyntax.
 
-0:19:12.640,0:19:16.880
+00:19:12,640 --> 00:19:16,880
 Und im Besonderen habe ich hier zwei
 Dinge kombiniert: Ich habe eine Funktion "pictures".
 
-0:19:16.880,0:19:18.960
+00:19:16,880 --> 00:19:18,960
 Sie ist hier unten
 mit ihrem Typ angegeben.
 
-0:19:18.960,0:19:20.000
-Also, was
-sagt sie?
+00:19:18,960 --> 00:19:20,000
+Also, was sagt sie?
 
-0:19:20.000,0:19:22.400
+00:19:20,000 --> 00:19:22,400
 Sie gibt ein Bild an und
 nimmt eine Liste von Bildern auf.
 
-0:19:22.400,0:19:25.440
+00:19:22,400 --> 00:19:25,440
 Man könnte meinen, es sei eine Menge
 von Bildern, aber eigentlich ist es eine Liste.
 
-0:19:26.480,0:19:29.600
+00:19:26,480 --> 00:19:29,600
 Es werden also mehrere
 Bilder in ein Bild umgewandelt.
 
-0:19:29.600,0:19:31.840
-Man kann
-sich die pictures-Funktion
+00:19:29,600 --> 00:19:31,840
+Man kann sich die pictures-Funktion
 
-0:19:33.200,0:19:39.600
+00:19:33,200 --> 00:19:39,600
 als eine Version des &-Operators vorstellen, aber jetzt
 kann sie mit beliebig vielen Bildern gleichzeitig arbeiten.
 
-0:19:39.600,0:19:45.920
+00:19:39,600 --> 00:19:45,920
 Während der &-Operator ein binärer Operator
 war, der im Grunde zwei Bilder kombiniert.
 
-0:19:48.160,0:19:52.000
+00:19:48,160 --> 00:19:52,000
 Hier haben wir mehrere Bilder,
 die wir zu einem kombinieren.
 
-0:19:52.000,0:19:54.391
+00:19:52,000 --> 00:19:54,391
 Und was sind unsere Bilder,
 die wir zu einem kombinieren wollen?
 
-0:19:54.391,0:19:57.440
+00:19:54,391 --> 00:19:57,440
 Sie sind dieser Ausdruck hier, der
 hier wiederholt wird, eine "List Comprehension".
 
-0:19:57.440,0:20:02.960
+00:19:57,440 --> 00:20:02,960
 Denn es beschreibt umfassend mehrere
 Elemente der Liste auf einmal.
 
-0:20:02.960,0:20:04.500
-Und wie
-macht er das?
+00:20:02,960 --> 00:20:04,500
+Und wie macht er das?
 
-0:20:04.500,0:20:07.410
+00:20:04,500 --> 00:20:07,410
 Nun, er enthält Aufrufe
 der scene-Funktion für einige Werte.
 
-0:20:07.410,0:20:12.460
+00:20:07,410 --> 00:20:12,460
 Und diese Werte werden
 aus einer anderen Liste gezogen.
 
-0:20:12.460,0:20:16.470
-Was es in gewissem
-Sinne sagt, ist genau:
+00:20:12,460 --> 00:20:16,470
+Was es in gewissem Sinne sagt, ist genau:
 
-0:20:16.470,0:20:27.479
+00:20:16,470 --> 00:20:27,479
 Lassen Sie die Variable d aus 0, 1, 2,
 3, 4, 5, also sechs Aufrufen (im Grunde sechs Kopien);
 
-0:20:27.479,0:20:34.170
+00:20:27,479 --> 00:20:34,170
 und rufen Sie für jeden dieser Werte die
 scene-Funktion auf, die eine Version dieses bewegten Dreiecks ergibt;
 
-0:20:34.170,0:20:40.830
+00:20:34,170 --> 00:20:40,830
 packen Sie sie alle in eine Liste; übergeben
 Sie diese Liste mit sechs Bildern an die
 
-0:20:40.830,0:20:43.300
+00:20:40,830 --> 00:20:43,300
 pictures-Funktion, die sie
 in ein Bild verwandelt.
 
-0:20:43.300,0:20:44.450
-Und das ist das
-Bild, das wir zeichnen.
+00:20:43,300 --> 00:20:44,450
+Und das ist das Bild, das wir zeichnen.
 
-0:20:44.450,0:20:52.970
+00:20:44,450 --> 00:20:52,970
 Von diesem Stück Code sollten Sie
 also sechs Dreiecke an verschiedenen Stellen
 
-0:20:52.970,0:20:56.410
+00:20:52,970 --> 00:20:56,410
 im Raum
 unseres Koordinatensystems erwarten.
 
-0:20:56.410,0:21:01.210
+00:20:56,410 --> 00:21:01,210
 In gewisser Weise erinnert uns
 das natürlich an eine for-Schleife.
 
-0:21:01.210,0:21:03.870
+00:21:01,210 --> 00:21:03,870
 Man könnte sagen, dass dies eine for-Schleife
 ist, aber das ist es eigentlich nicht.
 
-0:21:03.870,0:21:05.109
+00:21:03,870 --> 00:21:05,109
 Und das ist
 aus mehreren Gründen wichtig.
 
-0:21:05.109,0:21:07.190
-Dies ist
-keine for-Schleife.
+00:21:05,109 --> 00:21:07,190
+Dies ist keine for-Schleife.
 
-0:21:07.190,0:21:09.810
+00:21:07,190 --> 00:21:09,810
 Zum Beispiel gibt es nicht
 wirklich "eins nach dem anderen".
 
-0:21:09.810,0:21:18.400
+00:21:09,810 --> 00:21:18,400
 Es ist also nicht so wie: zuerst zeichne dies;
 dann zeichne das; bringe sie irgendwie in eine Reihenfolge.
 
-0:21:18.400,0:21:23.179
+00:21:18,400 --> 00:21:23,179
 Was hier herauskommt, ist eine Liste von
 Werten, und diese sind völlig unabhängig voneinander.
 
-0:21:23.179,0:21:26.840
+00:21:23,179 --> 00:21:26,840
 Keiner von ihnen wird vor oder
 nach dem anderen berechnet, mathematisch gesehen.
 
-0:21:26.840,0:21:31.510
+00:21:26,840 --> 00:21:31,510
 Natürlich werden sie auf unserem sequenziellen Computer
 in irgendeiner Reihenfolge ausgewertet, aber das ist
 
-0:21:31.510,0:21:33.309
-für die
-Werte völlig irrelevant.
+00:21:31,510 --> 00:21:33,309
+für die Werte völlig irrelevant.
 
-0:21:33.309,0:21:37.410
+00:21:33,309 --> 00:21:37,410
 Mathematisch gesehen handelt es sich nur um
 eine Liste von, in diesem Fall, sechs Werten.
 
-0:21:37.410,0:21:41.669
+00:21:37,410 --> 00:21:41,669
 Und es gibt keinen Vorher- oder Nachher-Zustand,
 was natürlich der entscheidende Begriff für eine
 
-0:21:41.669,0:21:42.669
-for-Schleife
-ist.
+00:21:41,669 --> 00:21:42,669
+for-Schleife ist.
 
-0:21:42.669,0:21:45.059
+00:21:42,669 --> 00:21:45,059
 Bei einer for-Schleife wollen Sie wissen,
 ob sie rückwärts oder vorwärts arbeitet.
 
-0:21:45.059,0:21:46.730
-Zählt sie also
-aufwärts oder abwärts?
+00:21:45,059 --> 00:21:46,730
+Zählt sie also aufwärts oder abwärts?
 
-0:21:46.730,0:21:51.730
+00:21:46,730 --> 00:21:51,730
 Das alles sind Dinge, die für eine for-Schleife oder
 jede Art von Schleife in einer imperativen Sprache wichtig
 
-0:21:51.730,0:21:53.839
+00:21:51,730 --> 00:21:53,839
 sind, aber nicht
 für List Comprehensions.
 
-0:21:53.839,0:21:56.690
+00:21:53,839 --> 00:21:56,690
 Es handelt sich
 also um unabhängige Berechnungen.
 
-0:21:56.690,0:22:02.169
+00:21:56,690 --> 00:22:02,169
 Es gibt auch keinen Effekt, bei
 dem irgendwie eine Iteration die nächste beeinflusst.
 
-0:22:02.169,0:22:09.810
+00:22:02,169 --> 00:22:09,810
 Der scene-Aufruf für den Wert, sagen wir d
 = 1, kann also keine Auswirkung auf den "scene"-Aufruf
 
-0:22:09.810,0:22:15.880
+00:22:09,810 --> 00:22:15,880
 für den Wert d = 4 haben, egal ob
 4 nach oder vor 1 in dieser Liste steht.
 
-0:22:15.880,0:22:20.870
+00:22:15,880 --> 00:22:20,870
 Es handelt sich also um unabhängige Berechnungen,
 während Sie in einer for-Schleife natürlich erwarten (z.
 
-0:22:20.870,0:22:26.050
+00:22:20,870 --> 00:22:26,050
 B. über globale Variablen oder lokale Variablen,
 denen Sie Werte zuweisen), dass die Reihenfolge, in
 
-0:22:26.050,0:22:31.529
+00:22:26,050 --> 00:22:31,529
 der die Dinge in der Schleife passieren, wichtig ist,
 und dass der zweite Durchlauf durch den Schleifenkörper wirklich einen
 
-0:22:31.529,0:22:36.860
+00:22:31,529 --> 00:22:36,860
 Einfluss darauf haben könnte, was in der fünften
 oder sechsten oder was auch immer Iteration passiert.
 
-0:22:36.860,0:22:42.859
+00:22:36,860 --> 00:22:42,859
 Das passiert hier nicht, denn dies
 ist wirklich wie eine Art mathematische Mengen-Komprehension.
 
-0:22:42.859,0:22:47.490
+00:22:42,859 --> 00:22:47,490
 Diese Notation, die Sie aus der Mathematik kennen:
 Ich nehme die Menge aller "2 × n", wobei
 
-0:22:47.490,0:22:50.070
-n aus den
-natürlichen Zahlen kommt.
+00:22:47,490 --> 00:22:50,070
+n aus den natürlichen Zahlen kommt.
 
-0:22:50.070,0:22:53.760
+00:22:50,070 --> 00:22:53,760
 Das ist es, woran Sie denken sollten,
 wenn Sie an eine List Comprehension denken.
 
-0:22:53.760,0:22:58.500
+00:22:53,760 --> 00:22:58,500
 Es ist auch sehr eng in
 der Syntax, und das ist gewollt.
 
-0:22:58.500,0:23:01.609
+00:22:58,500 --> 00:23:01,609
 Sie können sich dies
 also als "Elementsymbol" vorstellen.
 
-0:23:01.609,0:23:03.890
-Also, d ist
-ein Element dieser Liste.
+00:23:01,609 --> 00:23:03,890
+Also, d ist ein Element dieser Liste.
 
-0:23:03.890,0:23:09.600
+00:23:03,890 --> 00:23:09,600
 Und für jedes solche Element berechne
 ich das, was hier geschrieben steht.
 
-0:23:09.600,0:23:11.130
-Dann bekomme
-ich verschiedene Bilder.
+00:23:09,600 --> 00:23:11,130
+Dann bekomme ich verschiedene Bilder.
 
-0:23:11.130,0:23:16.070
+00:23:11,130 --> 00:23:16,070
 Ich füge sie in eine Liste
 ein, so wie hier in eine Menge.
 
-0:23:16.070,0:23:19.880
+00:23:16,070 --> 00:23:19,880
 Und diese Liste, wie hier diese
 Menge, ist dann das, was ich weitergebe.
 
-0:23:19.880,0:23:24.499
+00:23:19,880 --> 00:23:24,499
 In diesem Fall ist es das, was an
 die pictures-Funktion weitergegeben wird, um meine verschiedenen Bilder zu
 
-0:23:24.499,0:23:27.490
+00:23:24,499 --> 00:23:27,490
 einem großen zusammenzufügen,
 das dann gezeichnet wird.
 
-0:23:27.490,0:23:32.760
+00:23:27,490 --> 00:23:32,760
 So muss man sich eine List Comprehension vorstellen,
 nicht wie eine for-Schleife (wo eine Sache nach der
 
-0:23:32.760,0:23:39.499
-anderen
-passiert).
+00:23:32,760 --> 00:23:39,499
+anderen passiert).
 
-0:23:39.499,0:23:43.620
+00:23:39,499 --> 00:23:43,620
 Um List Comprehensions weiter zu
 erklären: ein paar künstliche Beispiele.
 
-0:23:43.620,0:23:47.409
+00:23:43,620 --> 00:23:47,409
 Dabei geht es nicht um Bilder,
 sondern nur um Zahlen, Zahlenpaare, etc.
 
-0:23:47.409,0:23:55.499
+00:23:47,409 --> 00:23:55,499
 Um es vorwegzunehmen: Auf der vorigen
 Folie wurde bereits eine Notation gezeigt, um einfach
 
-0:23:55.499,0:23:56.790
-eine Liste von
-Werten zu haben.
+00:23:55,499 --> 00:23:56,790
+eine Liste von Werten zu haben.
 
-0:23:56.790,0:23:58.320
-Da gab
-es dieses "0..5".
+00:23:56,790 --> 00:23:58,320
+Da gab es dieses "0..5".
 
-0:23:58.320,0:24:02.070
-Das waren "alle Zahlen
-von 0 bis 5".
+00:23:58,320 --> 00:24:02,070
+Das waren "alle Zahlen von 0 bis 5".
 
-0:24:02.070,0:24:04.710
+00:24:02,070 --> 00:24:04,710
 Tatsächlich gibt es das
 auch in reicheren Formen.
 
-0:24:04.710,0:24:12.810
+00:24:04,710 --> 00:24:12,810
 Zum Beispiel könnte man ungerade Zahlen erhalten, indem
 man mit 1,3... beginnt und dann eine obere Grenze.
 
-0:24:12.810,0:24:17.050
+00:24:12,810 --> 00:24:17,050
 Dann würde es alle ungeraden
 Zahlen bis zu dieser Zahl geben.
 
-0:24:17.050,0:24:21.089
+00:24:17,050 --> 00:24:21,089
 In diesem Fall, wo die letzte Zahl 10
 ist (was keine ungerade Zahl ist), würde es also
 
-0:24:21.089,0:24:22.089
-bei
-9 aufhören.
+00:24:21,089 --> 00:24:22,089
+bei 9 aufhören.
 
-0:24:22.089,0:24:27.140
+00:24:22,089 --> 00:24:27,140
 Und das könnte man z. B. als eine der
 Listen verwenden, die man in eine List Comprehension packt (um
 
-0:24:27.140,0:24:30.770
+00:24:27,140 --> 00:24:30,770
 Werte wie d auf
 der vorherigen Folie zu zeichnen).
 
-0:24:30.770,0:24:35.070
+00:24:30,770 --> 00:24:35,070
 Im Allgemeinen können diese
 List Comprehensions diese Form haben.
 
-0:24:35.070,0:24:39.040
+00:24:35,070 --> 00:24:39,040
 Hier sehen wir die Teile, aus
 denen sich eine List Comprehension zusammensetzt.
 
-0:24:39.040,0:24:40.040
-Im Allgemeinen
-haben wir:
+00:24:39,040 --> 00:24:40,040
+Im Allgemeinen haben wir:
 
-0:24:40.040,0:24:46.100
+00:24:40,040 --> 00:24:46,100
 Den Rumpf, das ist das, was Sie für
 jede Kombination von Werten, die aus den späteren Teilen
 
-0:24:46.100,0:24:48.070
-gezogen werden,
-berechnen wollen.
+00:24:46,100 --> 00:24:48,070
+gezogen werden, berechnen wollen.
 
-0:24:48.070,0:24:51.440
+00:24:48,070 --> 00:24:51,440
 Das ist also das, was
 in der endgültigen Menge landet.
 
-0:24:51.440,0:24:58.070
+00:24:51,440 --> 00:24:58,070
 Normalerweise wird dies einige Variable oder Variablen
 enthalten, die in diesem späteren Teil der
 
-0:24:58.070,0:24:59.869
-List Comprehension
-gebunden sind.
+00:24:58,070 --> 00:24:59,869
+List Comprehension gebunden sind.
 
-0:24:59.869,0:25:01.920
-Und hier
-haben wir Generatoren.
+00:24:59,869 --> 00:25:01,920
+Und hier haben wir Generatoren.
 
-0:25:01.920,0:25:08.310
+00:25:01,920 --> 00:25:08,310
 Etwas wie "x aus diesen 1..10" wäre
 ein Generator, weil es neue Elemente erzeugt,
 
-0:25:08.310,0:25:10.290
-für die Sie
-den Rumpf berechnen.
+00:25:08,310 --> 00:25:10,290
+für die Sie den Rumpf berechnen.
 
-0:25:10.290,0:25:12.160
-Und dann kann
-es auch Wächter geben.
+00:25:10,290 --> 00:25:12,160
+Und dann kann es auch Wächter geben.
 
-0:25:12.160,0:25:13.589
-Ein Prädikat,
-eine Bedingung.
+00:25:12,160 --> 00:25:13,589
+Ein Prädikat, eine Bedingung.
 
-0:25:13.589,0:25:15.190
-Im Grunde
-ein Boolescher Wert.
+00:25:13,589 --> 00:25:15,190
+Im Grunde ein Boolescher Wert.
 
-0:25:15.190,0:25:21.420
+00:25:15,190 --> 00:25:21,420
 Sie haben das noch nicht gesehen, aber es gibt
 eine Funktion "even" in Haskell, die eine Zahl nimmt
 
-0:25:21.420,0:25:25.730
+00:25:21,420 --> 00:25:25,730
 und "true" liefert, wenn diese Zahl
 gerade ist; andernfalls liefert sie "false".
 
-0:25:25.730,0:25:31.869
+00:25:25,730 --> 00:25:31,869
 Was wir hier also sagen, ist: Prüfe für jedes
 x von 1 bis 10, ob diese Zahl gerade
 
-0:25:31.869,0:25:32.869
+00:25:31,869 --> 00:25:32,869
 ist.
 
-0:25:32.869,0:25:35.489
-Das wird für 2, 4,
-6, 8, 10 wahr sein.
+00:25:32,869 --> 00:25:35,489
+Das wird für 2, 4, 6, 8, 10 wahr sein.
 
-0:25:35.489,0:25:42.310
+00:25:35,489 --> 00:25:42,310
 Und dann wird für jede aus diesem
 Generator gezogene Zahl, die auch diesen Guard-Ausdruck
 
-0:25:42.310,0:25:43.350
-besteht, der
-Rumpf berechnet.
+00:25:42,310 --> 00:25:43,350
+besteht, der Rumpf berechnet.
 
-0:25:43.350,0:25:45.830
+00:25:43,350 --> 00:25:45,830
 Und die Ergebnisse werden
 in der Liste akkumuliert.
 
-0:25:45.830,0:25:50.799
+00:25:45,830 --> 00:25:50,799
 Das sind also die Quadratzahlen aller
 geraden Zahlen zwischen 1 und 10.
 
-0:25:50.799,0:25:55.160
-Also: 2^2, 4^2,
-6^2, 8^2, und 10^2.
+00:25:50,799 --> 00:25:55,160
+Also: 2^2, 4^2, 6^2, 8^2, und 10^2.
 
-0:25:55.160,0:25:57.660
-Das ergibt
-diese Ergebnisse.
+00:25:55,160 --> 00:25:57,660
+Das ergibt diese Ergebnisse.
 
-0:25:57.660,0:26:05.700
+00:25:57,660 --> 00:26:05,700
 Eine andere syntaktische Möglichkeit ist, dass wir
 innerhalb dieser Liste von Dingen, wie Generatoren und
 
-0:26:05.700,0:26:08.570
+00:26:05,700 --> 00:26:08,570
 Guards, auch lokale
 Variablen definieren können.
 
-0:26:08.570,0:26:13.790
+00:26:08,570 --> 00:26:13,790
 Sagen wir also, wir wollen etwas tun, das die
 gleiche Liste ergibt, aber auf eine andere Art und
 
-0:26:13.790,0:26:14.950
+00:26:13,790 --> 00:26:14,950
 Weise.
 
-0:26:14.950,0:26:15.950
-Was wir
-hier tun, ist:
+00:26:14,950 --> 00:26:15,950
+Was wir hier tun, ist:
 
-0:26:15.950,0:26:23.929
+00:26:15,950 --> 00:26:23,929
 Lassen Sie x irgendetwas von 1 bis 10 sein
 (so wird nacheinander 1 bis 10 für x gewählt).
 
-0:26:23.929,0:26:28.080
+00:26:23,929 --> 00:26:28,080
 Dann berechnen wir für
 jedes solche x einen Hilfswert.
 
-0:26:28.080,0:26:34.700
+00:26:28,080 --> 00:26:34,700
 Wir berechnen also y aus dem x, das
 wir hier gezeichnet haben, und geben dann den Guard-Ausdruck
 
-0:26:34.700,0:26:35.700
-für
-y an.
+00:26:34,700 --> 00:26:35,700
+für y an.
 
-0:26:35.700,0:26:40.589
+00:26:35,700 --> 00:26:40,589
 Das Programm nimmt also alle Zahlen von
 1 bis 10, berechnet die Quadrate und prüft,
 
-0:26:40.589,0:26:43.630
-ob die Quadrate
-durch 4 teilbar sind.
+00:26:40,589 --> 00:26:43,630
+ob die Quadrate durch 4 teilbar sind.
 
-0:26:43.630,0:26:47.440
+00:26:43,630 --> 00:26:47,440
 Das führt natürlich zu
 demselben Ergebnis wie hier.
 
-0:26:47.440,0:26:52.260
+00:26:47,440 --> 00:26:52,260
 Denn das werden genau die Quadrate der
 geraden Zahlen sein, denn natürlich ist das Quadrat
 
-0:26:52.260,0:26:57.210
+00:26:52,260 --> 00:26:57,210
 genau dann durch 4 teilbar,
 wenn die ursprüngliche Zahl gerade ist.
 
-0:26:57.210,0:27:00.290
-Aber das ist nur
-in diesem Fall der Fall.
+00:26:57,210 --> 00:27:00,290
+Aber das ist nur in diesem Fall der Fall.
 
-0:27:00.290,0:27:05.839
+00:27:00,290 --> 00:27:05,839
 Der Punkt ist, dass wir lokale Werte
 dazwischen definieren können und diese verwenden können.
 
-0:27:05.839,0:27:10.060
+00:27:05,839 --> 00:27:10,060
 Eine weitere Sache, die in diesem
 Beispiel zu beachten ist, ist dieses "==".
 
-0:27:10.060,0:27:12.670
-Das ist
-der Gleichheitsoperator.
+00:27:10,060 --> 00:27:12,670
+Das ist der Gleichheitsoperator.
 
-0:27:12.670,0:27:14.239
-Und der ist wirklich
-anders als das hier.
+00:27:12,670 --> 00:27:14,239
+Und der ist wirklich anders als das hier.
 
-0:27:14.239,0:27:21.280
+00:27:14,239 --> 00:27:21,280
 Also, hier wird y als x^2 definiert, und
 dieses "==" ist der Operator, der prüft, ob dieser
 
-0:27:21.280,0:27:30.730
+00:27:21,280 --> 00:27:30,730
 Aufruf, der den Modulo von y bei der
 Division durch 4 berechnet, gleich dem Wert 0 ist.
 
-0:27:30.730,0:27:38.760
+00:27:30,730 --> 00:27:38,760
 Dann können wir Fälle haben, in denen wir
 nicht nur mehrere Wächter haben, sondern auch mehrere Generatoren.
 
-0:27:38.760,0:27:40.360
-Dies ist
-hier der Fall.
+00:27:38,760 --> 00:27:40,360
+Dies ist hier der Fall.
 
-0:27:40.360,0:27:45.639
+00:27:40,360 --> 00:27:45,639
 Anstatt nur eine Variable zu haben, wie
 hier, oder eine Generatorvariable und eine berechnete
 
-0:27:45.639,0:27:51.049
+00:27:45,639 --> 00:27:51,049
 Hilfsvariable, können wir tatsächlich zwei Variablen
 haben, die von Generatoren gezogen werden.
 
-0:27:51.049,0:27:57.339
+00:27:51,049 --> 00:27:57,339
 Hier sagen wir also: Nehmen wir x aus [1, 2, 3]
 und auch y aus [1, 2, 3] und berechnen wir dann so
 
-0:27:57.339,0:28:00.250
-etwas wie das Produkt
-von x und y.
+00:27:57,339 --> 00:28:00,250
+etwas wie das Produkt von x und y.
 
-0:28:00.250,0:28:09.170
+00:28:00,250 --> 00:28:09,170
 Und was wir dann erhalten, sind alle Produkte aus
 einem Wert aus [1, 2, 3] und einem anderen Wert
 
-0:28:09.170,0:28:10.410
+00:28:09,170 --> 00:28:10,410
 aus [1, 2, 3].
 
-0:28:10.410,0:28:18.200
+00:28:10,410 --> 00:28:18,200
 Die 1 ergibt sich also aus der Multiplikation von
 1 × 1, und dann erhalten wir auch alle
 
-0:28:18.200,0:28:21.570
-anderen
-Kombinationen.
+00:28:18,200 --> 00:28:21,570
+anderen Kombinationen.
 
-0:28:21.570,0:28:29.250
+00:28:21,570 --> 00:28:29,250
 Sobald Sie mehr als eine Variable im
 Rumpf einer List Comprehension haben, stellt sich die
 
-0:28:29.250,0:28:34.729
+00:28:29,250 --> 00:28:34,729
 Frage: In welcher Reihenfolge werden
 die Dinge in einer Ergebnisliste kombiniert?
 
-0:28:34.729,0:28:40.109
+00:28:34,729 --> 00:28:40,109
 Im vorherigen Beispiel mit der Multiplikation war
 das aus dem Ergebnis nicht ersichtlich, weil wir
 
-0:28:40.109,0:28:42.380
+00:28:40,109 --> 00:28:42,380
 nicht sehen können,
 welche Faktoren kombiniert wurden.
 
-0:28:42.380,0:28:45.030
+00:28:42,380 --> 00:28:45,030
 Aber wenn Sie zum
 Beispiel dieses Beispiel betrachten:
 
-0:28:45.030,0:28:50.741
+00:28:45,030 --> 00:28:50,741
 Das x kommt aus [1, 2, 3] und y aus
 [4, 5], und wir bilden das Paar der Werte x
 
-0:28:50.741,0:28:57.099
+00:28:50,741 --> 00:28:57,099
 und y (vielleicht als Koordinaten); dann sehen
 wir im Ergebnis, wie die Dinge angeordnet sind.
 
-0:28:57.099,0:29:03.289
+00:28:57,099 --> 00:29:03,289
 Sie sehen, dass zuerst das x aus [1, 2, 3]
 als 1 gewählt wird, und dann wird dies mit jeder
 
-0:29:03.289,0:29:06.229
+00:29:03,289 --> 00:29:06,229
 möglichen Wahl für das
 y aus [4, 5] kombiniert.
 
-0:29:06.229,0:29:07.900
-Wir haben also
-(1,4) und (1,5).
+00:29:06,229 --> 00:29:07,900
+Wir haben also (1,4) und (1,5).
 
-0:29:07.900,0:29:13.880
+00:29:07,900 --> 00:29:13,880
 Und dann erhalten wir alle Kombinationen, bei denen
 x das zweite Element seines Generators gewählt hat
 
-0:29:13.880,0:29:19.159
+00:29:13,880 --> 00:29:19,159
 und dies mit y als 4 und 5
 in diesen beiden Elementen kombiniert wird, und so weiter.
 
-0:29:19.159,0:29:22.410
+00:29:19,159 --> 00:29:22,410
 So erhalten wir
 diese Liste von Ergebnissen.
 
-0:29:22.410,0:29:28.240
+00:29:22,410 --> 00:29:28,240
 Das ist natürlich das kartesische Produkt
 dieser beiden Listen, betrachtet als Mengen.
 
-0:29:28.240,0:29:36.880
+00:29:28,240 --> 00:29:36,880
 Und die Reihenfolge, in der es ausgegeben wird, ist
 so, dass zuerst eine Auswahl für x getroffen wird, dann
 
-0:29:36.880,0:29:40.550
+00:29:36,880 --> 00:29:40,550
 alle möglichen Auswahlen für y, und
 dann die nächste Auswahl für x, usw.
 
-0:29:40.550,0:29:47.550
+00:29:40,550 --> 00:29:47,550
 Das bedeutet auch, dass, wenn Sie die Reihenfolge
 solcher Generatoren ändern, Sie die gleichen Werte erhalten,
 
-0:29:47.550,0:29:49.730
+00:29:47,550 --> 00:29:49,730
 aber möglicherweise in
 einer anderen Reihenfolge.
 
-0:29:49.730,0:29:53.130
+00:29:49,730 --> 00:29:53,130
 Nehmen Sie also denselben Rumpf, aber vertauschen Sie
 die Reihenfolge dieser Generatoren; dann hat die resultierende
 
-0:29:53.130,0:29:56.210
-Liste eine
-etwas andere Reihenfolge.
+00:29:53,130 --> 00:29:56,210
+Liste eine etwas andere Reihenfolge.
 
-0:29:56.210,0:30:01.510
+00:29:56,210 --> 00:30:01,510
 Denn jetzt wird zuerst das y gewählt, und dann
 betrachten wir für jede gültige Wahl für y, zum
 
-0:30:01.510,0:30:05.909
+00:30:01,510 --> 00:30:05,909
 Beispiel für die Wahl "y ist
 4", alle Wahlmöglichkeiten für das x.
 
-0:30:05.909,0:30:09.190
-Wir erhalten also
-(1,4), (2,4), (3,4).
+00:30:05,909 --> 00:30:09,190
+Wir erhalten also (1,4), (2,4), (3,4).
 
-0:30:09.190,0:30:15.760
+00:30:09,190 --> 00:30:15,760
 Und wenn es hier noch eine andere Variable gäbe,
 wie z, dann müsste die entweder aus dem Kontext
 
-0:30:15.760,0:30:22.110
+00:30:15,760 --> 00:30:22,110
 bekannt sein oder irgendwie aus dem Teil des Programms,
 in dem dieser Ausdruck vorkommt, oder das z müsste
 
-0:30:22.110,0:30:26.800
+00:30:22,110 --> 00:30:26,800
 durch einen anderen
 Generator hier gesetzt werden.
 
-0:30:26.800,0:30:33.190
+00:30:26,800 --> 00:30:33,190
 Wir können also keine Variablen haben, die überhaupt nicht
 bekannt sind, weder aus dem Kontext noch aus dieser
 
-0:30:33.190,0:30:36.440
-Liste
-von Generatoren.
+00:30:33,190 --> 00:30:36,440
+Liste von Generatoren.
 
-0:30:36.440,0:30:38.080
-Das kann auch
-noch interessanter werden.
+00:30:36,440 --> 00:30:38,080
+Das kann auch noch interessanter werden.
 
-0:30:38.080,0:30:41.300
+00:30:38,080 --> 00:30:41,300
 Die Generatoren selbst
 können voneinander abhängen.
 
-0:30:41.300,0:30:47.979
+00:30:41,300 --> 00:30:47,979
 Oder genauer gesagt, eine spätere Generatorenliste
 kann von etwas abhängen, das früher in
 
-0:30:47.979,0:30:50.610
+00:30:47,979 --> 00:30:50,610
 der Liste
 der Generatoren/Wächter auftritt.
 
-0:30:50.610,0:30:57.080
+00:30:50,610 --> 00:30:57,080
 Das bedeutet also Folgendes: Ich möchte alle Paare x
 und y haben, bei denen x aus [1, 2, 3]
 
-0:30:57.080,0:31:00.130
+00:30:57,080 --> 00:31:00,130
 und y aus [1 .. x] kommt (1 bis x).
 
-0:31:00.130,0:31:05.150
+00:31:00,130 --> 00:31:05,150
 Also für die Wahl "x ist 1", dann haben wir
 für y auch die Wahl "1", denn [1 .. 1]
 
-0:31:05.150,0:31:06.229
-(1 bis 1) ist
-eben nur [1].
+00:31:05,150 --> 00:31:06,229
+(1 bis 1) ist eben nur [1].
 
-0:31:06.229,0:31:08.120
-Wir erhalten
-also nur (1,1).
+00:31:06,229 --> 00:31:08,120
+Wir erhalten also nur (1,1).
 
-0:31:08.120,0:31:12.219
+00:31:08,120 --> 00:31:12,219
 Aber für die Wahl "x ist 2" erhalten
 wir, dass y von 1 bis 2 gewählt wird.
 
-0:31:12.219,0:31:13.229
-Wir erhalten also
-(2,1) und (2,2).
+00:31:12,219 --> 00:31:13,229
+Wir erhalten also (2,1) und (2,2).
 
-0:31:13.229,0:31:19.820
+00:31:13,229 --> 00:31:19,820
 Und für "3" erhalten wir (3,1), (3,2), (3,3),
 denn für ein anderes x haben wir verschiedene Auswahlmöglichkeiten,
 
-0:31:19.820,0:31:25.070
+00:31:19,820 --> 00:31:25,070
 weil wir an dieser
 Stelle verschiedene Listen haben.
 
-0:31:25.070,0:31:26.290
+00:31:25,070 --> 00:31:26,290
 Andersherum würde
 es nicht funktionieren.
 
-0:31:26.290,0:31:31.250
+00:31:26,290 --> 00:31:31,250
 Wir könnten y hier nicht erwähnen,
 wenn y als spätere Generatorvariable auftritt.
 
-0:31:31.250,0:31:38.410
+00:31:31,250 --> 00:31:38,410
 Natürlich könnte man y an dieser Stelle
 verwenden, weil y hier die erste Generatorvariable
 
-0:31:38.410,0:31:40.440
+00:31:38,410 --> 00:31:40,440
 ist.
 
-0:31:40.440,0:31:43.300
+00:31:40,440 --> 00:31:43,300
 Und das kann auch auf
 andere Art und Weise interessant werden.
 
-0:31:43.300,0:31:49.260
+00:31:43,300 --> 00:31:49,260
 Zum Beispiel könnte man sich auch dafür entscheiden,
 tatsächlich x und y auf einmal zu nehmen.
 
-0:31:49.260,0:31:52.039
+00:31:49,260 --> 00:31:52,039
 Dafür müssen wir hier eigentlich
 eine Liste von Paaren haben.
 
-0:31:52.039,0:31:56.210
+00:31:52,039 --> 00:31:56,210
 Sie sehen also auch hier: Es funktioniert nicht
 nur für Zahlen (eigentlich haben wir das schon
 
-0:31:56.210,0:31:59.649
+00:31:56,210 --> 00:31:59,649
 im Zusammenhang mit Bildern gesehen), sondern es
 funktioniert auch bei anderen Datentypen in Haskell.
 
-0:31:59.649,0:32:00.979
-Nehmen wir
-also Zeichenketten.
+00:31:59,649 --> 00:32:00,979
+Nehmen wir also Zeichenketten.
 
-0:32:00.979,0:32:05.490
+00:32:00,979 --> 00:32:05,490
 Wenn wir eine Liste von Paaren von Zeichenketten
 haben, dann könnten wir auch einen Generator-Ausdruck haben,
 
-0:32:05.490,0:32:12.580
+00:32:05,490 --> 00:32:12,580
 der sagt "lass mich alle
 (x,y) Paare aus dieser Liste auswählen".
 
-0:32:12.580,0:32:17.250
+00:32:12,580 --> 00:32:17,250
 Und dann würden wir natürlich kein kartesisches
 Produkt wie oben bekommen (wo jede Auswahl für
 
-0:32:17.250,0:32:19.070
+00:32:17,250 --> 00:32:19,070
 dies mit jeder Auswahl
 für das kombiniert wird).
 
-0:32:19.070,0:32:23.880
+00:32:19,070 --> 00:32:23,880
 Was wir hier also sagen, ist: Die ersten
 Auswahlmöglichkeiten x und y sind dies und das.
 
-0:32:23.880,0:32:25.779
-Und dann sammeln
-wir ihre Verkettung.
+00:32:23,880 --> 00:32:25,779
+Und dann sammeln wir ihre Verkettung.
 
-0:32:25.779,0:32:26.779
-Das ist es,
-was dieses Symbol macht.
+00:32:25,779 --> 00:32:26,779
+Das ist es, was dieses Symbol macht.
 
-0:32:26.779,0:32:29.330
+00:32:26,779 --> 00:32:29,330
 Wir konkatenieren also "a" und
 "b", was die Zeichenkette "ab" ergibt.
 
-0:32:29.330,0:32:32.080
+00:32:29,330 --> 00:32:32,080
 Und die nächste Auswahl ist
 nicht irgendwie "a" mit "c".
 
-0:32:32.080,0:32:38.960
+00:32:32,080 --> 00:32:38,960
 Stattdessen ist die nächste Auswahl wirklich: Wir
 wenden dieses Paar-Muster an und erhalten seine
 
-0:32:38.960,0:32:41.479
+00:32:38,960 --> 00:32:41,479
 Bestandteile aus dem
 nächsten Paar der Generatorliste.
 
-0:32:41.479,0:32:44.779
+00:32:41,479 --> 00:32:44,779
 Die nächste Wahl wäre also: x
 ist "c" und y ist "d".
 
-0:32:44.779,0:32:49.870
+00:32:44,779 --> 00:32:49,870
 Das nächste, was hier zu berechnen wäre,
 wäre also die Zeichenkette "cd", und das war's.
 
-0:32:49.870,0:32:53.979
+00:32:49,870 --> 00:32:53,979
 Kein kreuzweiser Vergleich, denn hier
 binden wir x und y.
 
-0:32:53.979,0:32:57.570
+00:32:53,979 --> 00:32:57,570
 Wir wählen x und y auf
 einmal aus all diesen Paaren aus.
 
-0:32:57.570,0:33:00.940
+00:32:57,570 --> 00:33:00,940
 Während wir hier unabhängige Auswahlen für
 das x und für das y hatten.
 
-0:33:00.940,0:33:03.260
+00:33:00,940 --> 00:33:03,260
 Deshalb bekommen wir
 hier oben mehr Ergebnisse.
 
-0:33:03.260,0:33:07.180
+00:33:03,260 --> 00:33:07,180
 Hier verwenden wir diesen
 Abgleich gegen das Paar.
 
-0:33:07.180,0:33:17.390
+00:33:07,180 --> 00:33:17,390
 Das ist auch etwas, was man
 oft in der mathematischen Mengenschreibweise niederschreiben würde.
 
-0:33:17.390,0:33:24.339
+00:33:17,390 --> 00:33:24,339
 Gehen wir wieder einen Schritt zurück und fragen uns,
 wo wir jetzt in Bezug auf die Aussagekraft stehen.
 
-0:33:24.339,0:33:27.289
+00:33:24,339 --> 00:33:27,289
 Einige Schlüsse aus den
 Beispielen, die wir gesehen haben:
 
-0:33:27.289,0:33:31.860
+00:33:27,289 --> 00:33:31,860
 Wir können jetzt über
 eine Funktion nicht-konstantes Verhalten ausdrücken.
 
-0:33:31.860,0:33:35.720
-Also, Funktionen
-im mathematischen Sinne.
+00:33:31,860 --> 00:33:35,720
+Also, Funktionen im mathematischen Sinne.
 
-0:33:35.720,0:33:41.450
+00:33:35,720 --> 00:33:41,450
 Keine seltsamen Schlüsselwörter für imperatives
 Verhalten, keine Schleifen, nur reine Ausdrücke.
 
-0:33:41.450,0:33:47.690
+00:33:41,450 --> 00:33:47,690
 Eine solche Beschreibung, wie bei unseren
 Animationen, definiert das Verhalten als Ganzes.
 
-0:33:47.690,0:33:49.210
-Also nicht in
-einer stückweisen Art.
+00:33:47,690 --> 00:33:49,210
+Also nicht in einer stückweisen Art.
 
-0:33:49.210,0:33:55.420
+00:33:49,210 --> 00:33:55,420
 Das ist nicht wirklich ein Konzept von "führe diesen
 Teil der Animation aus, dann diesen Teil und dann
 
-0:33:55.420,0:33:56.420
-etwas
-anderes".
+00:33:55,420 --> 00:33:56,420
+etwas anderes".
 
-0:33:56.420,0:34:04.409
+00:33:56,420 --> 00:34:04,409
 Das war nicht etwas, was in einer
 solchen Beschreibung einer Animation in Form von mathematischen
 
-0:34:04.409,0:34:05.450
-Funktionen
-passiert.
+00:34:04,409 --> 00:34:05,450
+Funktionen passiert.
 
-0:34:05.450,0:34:09.659
+00:34:05,450 --> 00:34:09,659
 In der Tat gibt es nicht einmal ein Konzept
 von "dieses Stück Animation hört an einem bestimmten Punkt auf".
 
-0:34:09.659,0:34:14.120
+00:34:09,659 --> 00:34:14,120
 Wir haben nicht gesagt: "Nimm das von
 0 bis 10 Sekunden" oder so etwas.
 
-0:34:14.120,0:34:20.289
+00:34:14,120 --> 00:34:20,289
 Wir haben gesagt: f(t) ist etwas, nämlich ein Ausdruck,
 der ein Bild beschreibt, in dem ein t vorkommen
 
-0:34:20.289,0:34:21.289
+00:34:20,289 --> 00:34:21,289
 kann.
 
-0:34:21.289,0:34:27.360
+00:34:21,289 --> 00:34:27,360
 Und das ist dann
 eine immer wieder ablaufende Animation.
 
-0:34:27.360,0:34:33.219
+00:34:27,360 --> 00:34:33,219
 Sie tut dies mit zunehmendem t,
 wie lang das auch immer sein mag.
 
-0:34:33.219,0:34:37.660
-Es gibt
-keinen Endpunkt.
+00:34:33,219 --> 00:34:37,660
+Es gibt keinen Endpunkt.
 
-0:34:37.660,0:34:42.890
+00:34:37,660 --> 00:34:42,890
 Das heißt natürlich nicht, dass wir nicht
 auch ein möglicherweise nicht-kontinuierliches Verhalten ausdrücken wollen.
 
-0:34:42.890,0:34:48.890
+00:34:42,890 --> 00:34:48,890
 Man möchte vielleicht eine Animation nur für einige Zeit
 laufen lassen oder von einer Funktion zu einer anderen
 
-0:34:48.890,0:34:54.130
+00:34:48,890 --> 00:34:54,130
 Funktion (von einer Animation zu einer anderen
 Animation) wechseln, basierend auf einer Bedingung über
 
-0:34:54.130,0:34:57.909
-die Zeit
-(z. B. Zeitintervalle).
+00:34:54,130 --> 00:34:57,909
+die Zeit (z. B. Zeitintervalle).
 
-0:34:57.909,0:35:00.580
+00:34:57,909 --> 00:35:00,580
 Aber wir werden dies nicht tun,
 indem wir auf sequenzielle Befehle zurückgreifen.
 
-0:35:00.580,0:35:05.650
+00:35:00,580 --> 00:35:05,650
 Wir werden keine imperativen Schlüsselwörter oder Semikolons
 für die Komposition in einer sequenziellen Weise
 
-0:35:05.650,0:35:06.650
+00:35:05,650 --> 00:35:06,650
 verwenden.
 
-0:35:06.650,0:35:08.479
+00:35:06,650 --> 00:35:08,479
 Zum Beispiel sagen wir: "diese
 Animation und dann diese Animation".
 
-0:35:08.479,0:35:15.670
+00:35:08,479 --> 00:35:15,670
 Das wäre eine zu große Abweichung von
 der mathematischen Idee des Ausdrucks von Funktionen.
 
-0:35:15.670,0:35:17.250
-Wir brauchen
-also etwas anderes.
+00:35:15,670 --> 00:35:17,250
+Wir brauchen also etwas anderes.
 
-0:35:17.250,0:35:20.210
+00:35:17,250 --> 00:35:20,210
 Leider sind List Comprehensions
 auch nicht die Lösung.
 
-0:35:20.210,0:35:30.250
+00:35:20,210 --> 00:35:30,250
 Wir haben sie in den letzten Beispielen nur
 eingeführt, um die Duplizierung von Ausdrücken zu vermeiden.
 
-0:35:30.250,0:35:34.599
+00:35:30,250 --> 00:35:34,599
 Zum Beispiel, um
 diese diskrete Verteilung auszudrücken.
 
-0:35:34.599,0:35:38.820
+00:35:34,599 --> 00:35:38,820
 Aber es ist nicht etwas, das
 zur Definition von Funktionen verwendet wird.
 
-0:35:38.820,0:35:40.080
-List Comprehensions
-definieren Werte.
+00:35:38,820 --> 00:35:40,080
+List Comprehensions definieren Werte.
 
-0:35:40.080,0:35:42.870
+00:35:40,080 --> 00:35:42,870
 Sie sind zwar Listenwerte,
 aber es sind Werte.
 
-0:35:42.870,0:35:49.000
+00:35:42,870 --> 00:35:49,000
 Sie definieren also nicht zum Beispiel
 eine Animation, die aus mehreren Teilen besteht.
 
-0:35:49.000,0:35:51.159
-Wir brauchen
-also etwas anderes.
+00:35:49,000 --> 00:35:51,159
+Wir brauchen also etwas anderes.
 
-0:35:51.159,0:35:58.340
+00:35:51,159 --> 00:35:58,340
 Und zwar einige Schlüsselwörter, die
 innerhalb von Ausdrücken verwendet werden.
 
-0:35:58.340,0:36:01.479
+00:35:58,340 --> 00:36:01,479
 Was wir brauchen, ist
 eine Möglichkeit, Konditionale auszudrücken.
 
-0:36:01.479,0:36:08.460
+00:36:01,479 --> 00:36:08,460
 Und das wird, wie in wahrscheinlich fast
 allen Programmiersprachen, die Sie kennen, durch "if-then" oder
 
-0:36:08.460,0:36:09.460
-"if-then-else"
-gemacht.
+00:36:08,460 --> 00:36:09,460
+"if-then-else" gemacht.
 
-0:36:09.460,0:36:10.780
-Hier eigentlich
-durch "if-then-else".
+00:36:09,460 --> 00:36:10,780
+Hier eigentlich durch "if-then-else".
 
-0:36:10.780,0:36:12.469
-Schauen wir uns
-also ein Beispiel an.
+00:36:10,780 --> 00:36:12,469
+Schauen wir uns also ein Beispiel an.
 
-0:36:12.469,0:36:14.800
+00:36:12,469 --> 00:36:14,800
 Das "if", "then" und
 "else" sind natürlich Schlüsselwörter.
 
-0:36:14.800,0:36:17.019
+00:36:14,800 --> 00:36:17,019
 Aber sie werden
 innerhalb von Ausdrücken verwendet.
 
-0:36:17.019,0:36:19.110
-Betrachten wir
-also diese Beispiele.
+00:36:17,019 --> 00:36:19,110
+Betrachten wir also diese Beispiele.
 
-0:36:19.110,0:36:23.920
+00:36:19,110 --> 00:36:23,920
 Diese Beispielszene ist, wieder, eine Animation;
 denn: von Zeit zu Zeit zu etwas.
 
-0:36:23.920,0:36:25.479
-Und was
-sagt es aus?
+00:36:23,920 --> 00:36:25,479
+Und was sagt es aus?
 
-0:36:25.479,0:36:29.459
+00:36:25,479 --> 00:36:29,459
 Es prüft die Zeit, ob sie
 kleiner als 3 ist oder nicht.
 
-0:36:29.459,0:36:34.349
+00:36:29,459 --> 00:36:34,349
 Und wenn ja, dann berechnet es
 diesen Ausdruck, der von der t abhängt.
 
-0:36:34.349,0:36:40.390
+00:36:34,349 --> 00:36:40,390
 Und wenn man sich das ein wenig anschaut, dann
 sieht man, dass es im Grunde einen beweglichen Kreis animiert,
 
-0:36:40.390,0:36:46.930
+00:36:40,390 --> 00:36:46,930
 der sich irgendwie diagonal bewegt (weil x und
 y immer den gleichen Wert haben werden, nämlich
 
-0:36:46.930,0:36:48.530
-die aktuelle
-Zeit in Sekunden).
+00:36:46,930 --> 00:36:48,530
+die aktuelle Zeit in Sekunden).
 
-0:36:48.530,0:36:53.670
+00:36:48,530 --> 00:36:53,670
 Das wird also ein kleiner Kreis sein,
 der sich hier vom Ursprung aus diagonal bewegt.
 
-0:36:53.670,0:36:57.349
+00:36:53,670 --> 00:36:57,349
 Das tut er aber nur
 solange, bis t zu 3 wird.
 
-0:36:57.349,0:37:02.520
+00:36:57,349 --> 00:37:02,520
 Denn wenn t 3 plus etwas
 ist, dann bedeutet dieses "if-then-else" eigentlich,
 
-0:37:02.520,0:37:07.310
+00:37:02,520 --> 00:37:07,310
 dass der "then"-Zweig nicht wichtig ist
 und der "else"-Zweig der relevante ist.
 
-0:37:07.310,0:37:08.590
-Was haben
-wir denn da?
+00:37:07,310 --> 00:37:08,590
+Was haben wir denn da?
 
-0:37:08.590,0:37:09.590
-Was
-ist "blank"?
+00:37:08,590 --> 00:37:09,590
+Was ist "blank"?
 
-0:37:09.590,0:37:10.590
-Dieses "blank"
-ist ein Bild.
+00:37:09,590 --> 00:37:10,590
+Dieses "blank" ist ein Bild.
 
-0:37:10.590,0:37:13.520
+00:37:10,590 --> 00:37:13,520
 Es ist ein vordefiniertes
 Bild, das nichts zeigt.
 
-0:37:13.520,0:37:14.750
-Es ist
-ein leeres Bild.
+00:37:13,520 --> 00:37:14,750
+Es ist ein leeres Bild.
 
-0:37:14.750,0:37:17.740
+00:37:14,750 --> 00:37:17,740
 Was Sie vielleicht für
 ein dummes Bild halten.
 
-0:37:17.740,0:37:23.370
+00:37:17,740 --> 00:37:23,370
 Aber eigentlich ist das hier in diesem Fall
 eine nette Art auszudrücken, dass unsere Animation nach
 
-0:37:23.370,0:37:25.290
-drei Sekunden nichts
-mehr zeigen soll.
+00:37:23,370 --> 00:37:25,290
+drei Sekunden nichts mehr zeigen soll.
 
-0:37:25.290,0:37:28.770
+00:37:25,290 --> 00:37:28,770
 Es wird also das
 leere Bild gezeigt, nämlich nichts.
 
-0:37:28.770,0:37:36.860
+00:37:28,770 --> 00:37:36,860
 Nun, diese Notation hier (diese Art, Dinge
 auszudrücken) ist ähnlich und erinnert an Konditionale in
 
-0:37:36.860,0:37:38.650
-der
-Mathematik.
+00:37:36,860 --> 00:37:38,650
+der Mathematik.
 
-0:37:38.650,0:37:44.590
+00:37:38,650 --> 00:37:44,590
 Das sind Schlüsselwörter in Haskell, aber sie sind
 nur eine Möglichkeit, einen Ausdruck zu organisieren, eigentlich
 
-0:37:44.590,0:37:47.260
+00:37:44,590 --> 00:37:47,260
 mehrere Fälle von
 Ausdrücken zu organisieren.
 
-0:37:47.260,0:37:53.000
+00:37:47,260 --> 00:37:53,000
 Mathematisch gesehen sind sie Funktionen, so wie f(x)
 ist: Wenn x größer als Null ist (oder eine
 
-0:37:53.000,0:37:56.290
+00:37:53,000 --> 00:37:56,290
 andere Eigenschaft), dann dieser
 Ausdruck; sonst dieser Ausdruck.
 
-0:37:56.290,0:37:58.250
+00:37:56,290 --> 00:37:58,250
 Und es wird immer
 zu einem von beiden ausgewertet.
 
-0:37:58.250,0:38:01.770
+00:37:58,250 --> 00:38:01,770
 Er wird nicht zu beiden auswerten,
 auch nicht zu einem nach dem anderen.
 
-0:38:01.770,0:38:04.510
+00:38:01,770 --> 00:38:04,510
 Es ist ein reiner Ausdruck, der
 von dem Wert von x abhängt.
 
-0:38:04.510,0:38:07.010
-Das ist es, was
-wir auswerten, oder das.
+00:38:04,510 --> 00:38:07,010
+Das ist es, was wir auswerten, oder das.
 
-0:38:07.010,0:38:14.620
-Und das Gleiche
-passiert hier oben.
+00:38:07,010 --> 00:38:14,620
+Und das Gleiche passiert hier oben.
 
-0:38:14.620,0:38:20.580
+00:38:14,620 --> 00:38:20,580
 Wir können die Situation auch mit anderen Sprachen
 vergleichen, die Sie kennen, wie C oder Java.
 
-0:38:20.580,0:38:27.610
+00:38:20,580 --> 00:38:27,610
 Dort haben Sie auch
 ein "if"-Konstrukt und ein "if-else"-Konstrukt.
 
-0:38:27.610,0:38:29.780
-Das ist also die
-Syntax von C oder Java.
+00:38:27,610 --> 00:38:29,780
+Das ist also die Syntax von C oder Java.
 
-0:38:29.780,0:38:33.490
+00:38:29,780 --> 00:38:33,490
 Es gibt natürlich einige syntaktische Unterschiede
 zu dem, was wir gerade gesehen haben.
 
-0:38:33.490,0:38:38.130
+00:38:33,490 --> 00:38:38,130
 Aber eigentlich ist der wichtigere Unterschied, dass
 wir sogar diese zwei Versionen haben: nur
 
-0:38:38.130,0:38:39.920
-ein "if"
-oder ein "if-else".
+00:38:38,130 --> 00:38:39,920
+ein "if" oder ein "if-else".
 
-0:38:39.920,0:38:44.400
+00:38:39,920 --> 00:38:44,400
 Während in einer Ausdruckssprache die Form
 ohne das "else" keinen Sinn ergibt.
 
-0:38:44.400,0:38:47.750
+00:38:44,400 --> 00:38:47,750
 In Haskell haben wir also immer
 "if-then-else" und müssen es auch haben.
 
-0:38:47.750,0:38:51.250
+00:38:47,750 --> 00:38:51,250
 Denn wir haben hier eine Bedingung, und
 entweder ist diese Bedingung wahr oder falsch.
 
-0:38:51.250,0:38:54.410
+00:38:51,250 --> 00:38:54,410
 Und selbst wenn sie falsch
 ist, müssen wir irgendeinen Wert haben.
 
-0:38:54.410,0:38:55.410
-Das ist
-hier anders.
+00:38:54,410 --> 00:38:55,410
+Das ist hier anders.
 
-0:38:55.410,0:38:56.410
-Warum ist
-es anders?
+00:38:55,410 --> 00:38:56,410
+Warum ist es anders?
 
-0:38:56.410,0:39:00.740
+00:38:56,410 --> 00:39:00,740
 Weil wir in C oder Java Befehle schreiben, und
 es ist sinnvoll, zu sagen: Es gibt keinen Befehl.
 
-0:39:00.740,0:39:07.090
+00:39:00,740 --> 00:39:07,090
 Man kann sagen: Wenn etwas zutrifft, dann führe
 alle diese Befehle aus, und ansonsten tue nichts.
 
-0:39:07.090,0:39:11.640
+00:39:07,090 --> 00:39:11,640
 Das ist eine sinnvolle Aussage in einer befehlsbasierten
 Sprache, wo man Befehle hat, die ausgeführt werden.
 
-0:39:11.640,0:39:14.770
+00:39:11,640 --> 00:39:14,770
 Dann kann man sagen: Nun,
 in manchen Fällen tue ich nichts.
 
-0:39:14.770,0:39:15.770
-Das ist
-in Ordnung.
+00:39:14,770 --> 00:39:15,770
+Das ist in Ordnung.
 
-0:39:15.770,0:39:21.010
+00:39:15,770 --> 00:39:21,010
 Aber in einer mathematischen/ausdrucksbasierten Sprache
 müssen Sie irgendeinen Wert haben.
 
-0:39:21.010,0:39:24.050
+00:39:21,010 --> 00:39:24,050
 Alles muss zu irgendeinem Wert ausgewertet werden,
 und Sie können nicht sagen: Unter bestimmten
 
-0:39:24.050,0:39:25.330
-Bedingungen werte ich
-zu nichts aus.
+00:39:24,050 --> 00:39:25,330
+Bedingungen werte ich zu nichts aus.
 
-0:39:25.330,0:39:26.590
-Sie müssen
-einen Wert haben.
+00:39:25,330 --> 00:39:26,590
+Sie müssen einen Wert haben.
 
-0:39:26.590,0:39:30.750
+00:39:26,590 --> 00:39:30,750
 Sie können also kein
 "if-then" ohne den "else"-Zweig haben.
 
-0:39:30.750,0:39:32.110
-Denn Sie müssen
-einen Wert berechnen.
+00:39:30,750 --> 00:39:32,110
+Denn Sie müssen einen Wert berechnen.
 
-0:39:32.110,0:39:35.150
+00:39:32,110 --> 00:39:35,150
 Wohingegen Sie hier sagen, dass Sie einige Dinge
 tun, und in einigen Fällen tun Sie gar nichts.
 
-0:39:35.150,0:39:36.150
-Das ist
-in Ordnung.
+00:39:35,150 --> 00:39:36,150
+Das ist in Ordnung.
 
-0:39:36.150,0:39:39.240
-Das ist
-eine Aktion.
+00:39:36,150 --> 00:39:39,240
+Das ist eine Aktion.
 
-0:39:39.240,0:39:41.810
+00:39:39,240 --> 00:39:41,810
 Es wird eine Nicht-Aktion sein,
 aber es ist kein Wert erforderlich.
 
-0:39:41.810,0:39:49.960
+00:39:41,810 --> 00:39:49,960
 Also eigentlich ist das "if-then-else" in Haskell
 nicht wirklich so ähnlich wie "if-else", als
 
-0:39:49.960,0:39:52.480
-Schlüsselwörter, in
-C oder Java.
+00:39:49,960 --> 00:39:52,480
+Schlüsselwörter, in C oder Java.
 
-0:39:52.480,0:39:56.860
+00:39:52,480 --> 00:39:56,860
 Es ist eigentlich mehr ähnlich wie
 der bedingte Operator in diesen Sprachen.
 
-0:39:56.860,0:40:02.100
+00:39:56,860 --> 00:40:02,100
 Das ist auch etwas, was Sie in C
 oder Java auf der Ausdrucksebene verwenden; nicht mit
 
-0:40:02.100,0:40:05.800
+00:40:02,100 --> 00:40:05,800
 Befehlen (hier, hier und
 hier), sondern tatsächlich mit Ausdrücken.
 
-0:40:05.800,0:40:11.250
+00:40:05,800 --> 00:40:11,250
 Das ist etwas, das in einem Ausdruck
 auf der rechten Seite einer Variablenzuweisung vorkommen könnte,
 
-0:40:11.250,0:40:17.080
+00:40:11,250 --> 00:40:17,080
 während so etwas in C oder Java
 nicht auf der rechten Seite einer Variablenzuweisung vorkommen
 
-0:40:17.080,0:40:18.080
+00:40:17,080 --> 00:40:18,080
 kann.
 
-0:40:18.080,0:40:20.310
+00:40:18,080 --> 00:40:20,310
 Weil es sich um Befehle
 handelt und nicht um Ausdrücke.
 
-0:40:20.310,0:40:30.000
+00:40:20,310 --> 00:40:30,000
 Es ist auch etwas seltsam, dass Sie
 in C und Java zwei Möglichkeiten haben, Konditionale auszudrücken.
 
-0:40:30.000,0:40:33.640
+00:40:30,000 --> 00:40:33,640
 Aber das liegt daran, dass Sie diese zwei Ebenen
 haben: Sie haben die Befehle und Sie haben die Ausdrücke.
 
-0:40:33.640,0:40:37.040
+00:40:33,640 --> 00:40:37,040
 Und in einer Sprache, in der Sie
 nur Ausdrücke haben (in der alles auf Ausdrücken
 
-0:40:37.040,0:40:39.620
+00:40:37,040 --> 00:40:39,620
 basiert), haben Sie
 nur eine dieser Formen.
 
-0:40:39.620,0:40:47.370
+00:40:39,620 --> 00:40:47,370
 Das bedeutet zum Beispiel auch, dass Sie in
 Haskell (mit all dem Gerede über syntaktische Kompositionalität,
 
-0:40:47.370,0:40:50.840
+00:40:47,370 --> 00:40:50,840
 das ich bereits erwähnt habe)
 beliebige Teile dieser Ausdrücke benennen können.
 
-0:40:50.840,0:40:53.080
+00:40:50,840 --> 00:40:53,080
 Sie können den
 Ausdruck als Ganzes benennen.
 
-0:40:53.080,0:40:57.020
+00:40:53,080 --> 00:40:57,020
 Sie können ein "if-then-else" als
 Ausdruck innerhalb eines Funktionsaufrufs setzen.
 
-0:40:57.020,0:40:58.230
-Sie können
-Teile davon benennen.
+00:40:57,020 --> 00:40:58,230
+Sie können Teile davon benennen.
 
-0:40:58.230,0:41:04.270
+00:40:58,230 --> 00:41:04,270
 Während Sie zum Beispiel hier, diesen
 Teil eines "if" nicht benennen können.
 
-0:41:04.270,0:41:09.880
+00:41:04,270 --> 00:41:09,880
 Das ist die Diskussion, die ich in einem
 früheren Video über Ausdrücke versus Befehle in Bezug
 
-0:41:09.880,0:41:13.480
+00:41:09,880 --> 00:41:13,480
 auf die Benennung von
 Teilbereichen eines Programms hatte.
 
-0:41:13.480,0:41:17.760
+00:41:13,480 --> 00:41:17,760
 Was hier problemlos möglich ist, aber
 nicht in der befehlsbasierten Umgebung, in der
 
-0:41:17.760,0:41:21.910
-die "if" und
-"if-else" von Java leben.
+00:41:17,760 --> 00:41:21,910
+die "if" und "if-else" von Java leben.
 
-0:41:21.910,0:41:24.260
+00:41:21,910 --> 00:41:24,260
 Hier ist es ein bisschen
 anders, weil es ausdrucksbasiert ist.
 
-0:41:24.260,0:41:29.570
+00:41:24,260 --> 00:41:29,570
 Aber gut, in
 Haskell ist alles ausdrucksbasiert.
 
-0:41:29.570,0:41:36.630
+00:41:29,570 --> 00:41:36,630
 Für das "if-then-else" im vorherigen Beispiel
 wollen wir irgendwie intuitiv ein "if-then" ohne
 
-0:41:36.630,0:41:37.630
-ein
-"else".
+00:41:36,630 --> 00:41:37,630
+ein "else".
 
-0:41:37.630,0:41:39.780
-Das können wir
-aber nicht haben.
+00:41:37,630 --> 00:41:39,780
+Das können wir aber nicht haben.
 
-0:41:39.780,0:41:43.580
+00:41:39,780 --> 00:41:43,580
 Dann muss es irgendeinen neutralen
 Wert in einem algebraischen Sinn geben.
 
-0:41:43.580,0:41:49.040
+00:41:43,580 --> 00:41:49,040
 Es kann also nicht keinen Wert geben, aber
 natürlich gibt es bestimmte Werte, die dem "Nichts"
 
-0:41:49.040,0:41:50.040
+00:41:49,040 --> 00:41:50,040
 entsprechen.
 
-0:41:50.040,0:41:53.260
+00:41:50,040 --> 00:41:53,260
 Wie im Fall des Bildes: das
 "blank" ist so etwas wie "kein Bild".
 
-0:41:53.260,0:41:54.260
-Aber es
-ist ein Bild.
+00:41:53,260 --> 00:41:54,260
+Aber es ist ein Bild.
 
-0:41:54.260,0:41:55.450
-Es ist
-ein leeres Bild.
+00:41:54,260 --> 00:41:55,450
+Es ist ein leeres Bild.
 
-0:41:55.450,0:41:56.450
-Es ist
-ein neutraler Wert.
+00:41:55,450 --> 00:41:56,450
+Es ist ein neutraler Wert.
 
-0:41:56.450,0:41:58.310
-Es ist
-nicht "kein Wert".
+00:41:56,450 --> 00:41:58,310
+Es ist nicht "kein Wert".
 
-0:41:58.310,0:42:00.940
-Und das Gleiche
-gilt für viele Typen.
+00:41:58,310 --> 00:42:00,940
+Und das Gleiche gilt für viele Typen.
 
-0:42:00.940,0:42:03.710
+00:42:00,940 --> 00:42:03,710
 Nehmen wir also an, wir haben
 die gleiche Situation in einem Listenkontext.
 
-0:42:03.710,0:42:07.800
+00:42:03,710 --> 00:42:07,800
 Wir wollen sagen: Wenn eine Bedingung wahr ist,
 dann haben wir eine nicht-leere Liste, und ansonsten
 
-0:42:07.800,0:42:08.890
-gibt es
-eigentlich nichts.
+00:42:07,800 --> 00:42:08,890
+gibt es eigentlich nichts.
 
-0:42:08.890,0:42:11.360
+00:42:08,890 --> 00:42:11,360
 Aber es gibt nicht nichts;
 es gibt die leere Liste.
 
-0:42:11.360,0:42:16.830
+00:42:11,360 --> 00:42:16,830
 Wir können also die leere Liste verwenden,
 denn die leere Liste ist algebraisch ein neutraler
 
-0:42:16.830,0:42:18.330
-Wert im
-Typ der Listen.
+00:42:16,830 --> 00:42:18,330
+Wert im Typ der Listen.
 
-0:42:18.330,0:42:25.390
+00:42:18,330 --> 00:42:25,390
 Das ist eine Beobachtung, die wahrscheinlich für
 mindestens eine der nächsten Übungsaufgaben nützlich sein
 
-0:42:25.390,0:42:26.840
+00:42:25,390 --> 00:42:26,840
 wird.
 
-0:42:26.840,0:42:30.570
+00:42:26,840 --> 00:42:30,570
 Und dann gibt es noch eine Sache, die
 ich auch schon auf der vorigen Folie erwähnt
 
-0:42:30.570,0:42:33.660
+00:42:30,570 --> 00:42:33,660
 habe, und mit der ich
 dieses Video jetzt beenden möchte.
 
-0:42:33.660,0:42:41.570
+00:42:33,660 --> 00:42:41,570
 Es ist diese Bemerkung, dass "if-then-else" ein
 Ausdruck ist, also Teil eines größeren Ausdrucks sein
 
-0:42:41.570,0:42:42.570
+00:42:41,570 --> 00:42:42,570
 kann.
 
-0:42:42.570,0:42:44.850
+00:42:42,570 --> 00:42:44,850
 Sie können seine Teile,
 sich selbst usw. benennen.
 
-0:42:44.850,0:42:52.130
+00:42:44,850 --> 00:42:52,130
 Was ich hier also betonen möchte, ist wirklich
 dieser Punkt, nicht zu zögern, wirklich frei "if-then-else"
 
-0:42:52.130,0:42:55.460
-als Teil anderer
-Ausdrücke zu verwenden.
+00:42:52,130 --> 00:42:55,460
+als Teil anderer Ausdrücke zu verwenden.
 
-0:42:55.460,0:43:02.350
+00:42:55,460 --> 00:43:02,350
 Ich habe in der Vergangenheit oft beobachtet,
 dass Studierende irgendwie besorgt sind oder zögern, so
 
-0:43:02.350,0:43:07.260
+00:43:02,350 --> 00:43:07,260
 etwas zu schreiben, wo das "if-then-else" nicht irgendwie
 auf der obersten Ebene steht (wie Sie es wahrscheinlich
 
-0:43:07.260,0:43:12.240
+00:43:07,260 --> 00:43:12,240
 von anderen Sprachen wie C oder Java
 gewohnt sind, wo man das nicht wirklich innerhalb
 
-0:43:12.240,0:43:18.960
+00:43:12,240 --> 00:43:18,960
 eines Ausdrucks haben kann; Sie haben das
 "if-then" immer als Schlüsselwörter außen, auf der obersten
 
-0:43:18.960,0:43:19.960
+00:43:18,960 --> 00:43:19,960
 Ebene).
 
-0:43:19.960,0:43:22.610
+00:43:19,960 --> 00:43:22,610
 Aber in einer ausdrucksbasierten Sprache gibt
 es keinen Grund für diese Zurückhaltung.
 
-0:43:22.610,0:43:27.910
+00:43:22,610 --> 00:43:27,910
 Sie können also so etwas haben wie: f
 ist eine Funktion, die drei Argumente annimmt, und
 
-0:43:27.910,0:43:31.590
+00:43:27,910 --> 00:43:31,590
 vielleicht sind x und y die ersten beiden
 Argumente, und das letzte Argument hängt tatsächlich von einer
 
-0:43:31.590,0:43:32.590
-Bedingung
-ab.
+00:43:31,590 --> 00:43:32,590
+Bedingung ab.
 
-0:43:32.590,0:43:36.150
+00:43:32,590 --> 00:43:36,150
 Sie können so etwas schreiben wie "if",
 "Bedingung" (Ausdruck), "then" irgendein Bild, irgendein anderes Bild
 
-0:43:36.150,0:43:38.840
-(oder was auch immer
-hier der Typ ist).
+00:43:36,150 --> 00:43:38,840
+(oder was auch immer hier der Typ ist).
 
-0:43:38.840,0:43:40.960
-Die Bedeutung ist
-die gleiche wie unten.
+00:43:38,840 --> 00:43:40,960
+Die Bedeutung ist die gleiche wie unten.
 
-0:43:40.960,0:43:46.740
+00:43:40,960 --> 00:43:46,740
 Es ist also dasselbe, als wenn Sie sagen würden:
 wenn die Bedingung wahr ist, dann wollen Sie f auf
 
-0:43:46.740,0:43:52.640
+00:43:46,740 --> 00:43:52,640
 x und y und diesen ersten Ausdruck anwenden, ansonsten wollen
 Sie f auf x und y und den letzten Ausdruck
 
-0:43:52.640,0:43:53.640
+00:43:52,640 --> 00:43:53,640
 anwenden.
 
-0:43:53.640,0:43:58.030
+00:43:53,640 --> 00:43:58,030
 Natürlich können Sie das so schreiben und
 oft schreiben Studierende in diesem Stadium diesen
 
-0:43:58.030,0:43:59.030
-Code
-so.
+00:43:58,030 --> 00:43:59,030
+Code so.
 
-0:43:59.030,0:44:05.180
+00:43:59,030 --> 00:44:05,180
 Aber eigentlich drückt dieser Code das Gleiche aus,
 und er ist sogar schöner, weil er Wiederholungen
 
-0:44:05.180,0:44:06.180
+00:44:05,180 --> 00:44:06,180
 vermeidet.
 
-0:44:06.180,0:44:11.650
+00:44:06,180 --> 00:44:11,650
 Er drückt expliziter aus, dass Sie f in jedem
 Fall auf x und y anwenden werden, und Sie
 
-0:44:11.650,0:44:15.880
+00:44:11,650 --> 00:44:15,880
 müssen nur noch entscheiden, ob das
 letzte Argument exp2 oder exp3 ist.
 
-0:44:15.880,0:44:21.720
+00:44:15,880 --> 00:44:21,720
 Dies wird in der ersten Zeile perfekt
 ausgedrückt, und in der letzten Zeile etwas versteckt
 
-0:44:21.720,0:44:23.150
-(und erfordert
-mehr Überprüfung).
+00:44:21,720 --> 00:44:23,150
+(und erfordert mehr Überprüfung).
 
-0:44:23.150,0:44:29.190
+00:44:23,150 --> 00:44:29,190
 In diesem Sinne würde ich also in Situationen
 wie dieser die erste Zeile bevorzugen, weil sie
 
-0:44:29.190,0:44:31.420
-deutlicher ausdrückt, was
-vor sich geht.
+00:44:29,190 --> 00:44:31,420
+deutlicher ausdrückt, was vor sich geht.
 
-0:44:31.420,0:44:37.070
+00:44:31,420 --> 00:44:37,070
 Aber dafür müssen Sie akzeptieren, dass "if-then-else" nur ein
 Ausdruck ist, der als Unterausdruck wovon auch immer
 
-0:44:37.070,0:44:45.240
+00:44:37,070 --> 00:44:45,240
 verwendet werden kann: andere
 Ausdrücke, Funktionen, Aufrufe, etc.
 
-0:44:45.240,0:44:48.550
-Okay, ich
-muss mich korrigieren.
+00:44:45,240 --> 00:44:48,550
+Okay, ich muss mich korrigieren.
 
-0:44:48.550,0:44:53.220
+00:44:48,550 --> 00:44:53,220
 Eigentlich wollte ich das
 Video noch nicht beenden.
 
-0:44:53.220,0:44:59.570
+00:44:53,220 --> 00:44:59,570
 Ich möchte eigentlich noch ein paar Bemerkungen zur Syntax
 und zu Typen machen, und auch zur Syntax von Typen.
 
-0:44:59.570,0:45:04.580
+00:44:59,570 --> 00:45:04,580
 Also, ich habe das eigentlich schon vorhin im
 Video angekündigt, dass ich dazu noch etwas zu sagen
 
-0:45:04.580,0:45:08.300
+00:45:04,580 --> 00:45:08,300
 habe, auch wahrscheinlich
 für Ihre nächsten Übungsaufgaben.
 
-0:45:08.300,0:45:12.550
+00:45:08,300 --> 00:45:12,550
 Lassen Sie uns das
 tun und dann abschließen.
 
-0:45:12.550,0:45:20.760
+00:45:12,550 --> 00:45:20,760
 Vorhin habe ich dies gezeigt und behauptet, dass
 dies die Typen einiger der Primitive sind, die
 
-0:45:20.760,0:45:22.990
-Sie gesehen
-und verwendet haben
+00:45:20,760 --> 00:45:22,990
+Sie gesehen und verwendet haben
 
-0:45:22.990,0:45:27.220
+00:45:22,990 --> 00:45:27,220
 Und ich habe gesagt, dass dies wie
 eine mathematische Notation ist, wie das kartesische Produkt.
 
-0:45:27.220,0:45:33.740
+00:45:27,220 --> 00:45:33,740
 Zum Beispiel, für eine Drei-Argumente-Funktion wie
 "translated", sagte ich, dass es dieses kartesische
 
-0:45:33.740,0:45:38.450
+00:45:33,740 --> 00:45:38,450
 Produkt von zweimal den reellen Zahlen
 gibt, und dann den Typ 'Picture'.
 
-0:45:38.450,0:45:42.300
+00:45:38,450 --> 00:45:42,300
 Und ich habe auch gesagt: Das ist nicht genau
 das, was Sie sehen, wenn Sie die Definitionen dieser
 
-0:45:42.300,0:45:43.300
-Funktionen
-nachschlagen.
+00:45:42,300 --> 00:45:43,300
+Funktionen nachschlagen.
 
-0:45:43.300,0:45:49.440
+00:45:43,300 --> 00:45:49,440
 Und in der Tat, was Sie stattdessen sehen werden,
 ist so etwas, auch wenn Sie in die Online-Dokumentation
 
-0:45:49.440,0:45:50.440
+00:45:49,440 --> 00:45:50,440
 schauen.
 
-0:45:50.440,0:45:56.540
+00:45:50,440 --> 00:45:56,540
 Aber das ist wirklich nur, aus bestimmten
 Gründen, eine andere Art, die Dinge niederzuschreiben.
 
-0:45:56.540,0:45:59.930
+00:45:56,540 --> 00:45:59,930
 Schauen wir uns zum
 Beispiel die Funktion "translated" an.
 
-0:45:59.930,0:46:04.220
+00:45:59,930 --> 00:46:04,220
 Das ist eine Funktion mit drei
 Argumenten und deren Ergebnis ist Picture.
 
-0:46:04.220,0:46:10.570
+00:46:04,220 --> 00:46:10,570
 Wie sie dann tatsächlich als Typ in
 Haskell geschrieben wird, ist diese Notation, wo man
 
-0:46:10.570,0:46:13.350
+00:46:10,570 --> 00:46:13,350
 auch vor den ersten
 paar Argumenten dieses Pfeilsymbol hat.
 
-0:46:13.350,0:46:19.930
+00:46:13,350 --> 00:46:19,930
 Anstatt also diese drei Argumente
 irgendwie durch diese beiden kartesischen Produkte
 
-0:46:19.930,0:46:24.200
+00:46:19,930 --> 00:46:24,200
 hier zu bezeichnen, und dann den
 Funktionspfeil zum Ergebnis, wird es eigentlich
 
-0:46:24.200,0:46:29.430
+00:46:24,200 --> 00:46:29,430
 so geschrieben: erster Argumenttyp, Pfeil, zweiter
 Argumenttyp, Pfeil, dritter Argumenttyp, und dann
 
-0:46:29.430,0:46:32.940
-der
-Ergebnistyp.
+00:46:29,430 --> 00:46:32,940
+der Ergebnistyp.
 
-0:46:32.940,0:46:36.920
+00:46:32,940 --> 00:46:36,920
 Ansonsten, und natürlich die Umstellung von diesem
 mathematischen Symbol für die reellen Zahlen auf
 
-0:46:36.920,0:46:40.800
+00:46:36,920 --> 00:46:40,800
 den eigentlichen Typ 'Double' in Haskell,
 das ist äquivalent zu hier oben.
 
-0:46:40.800,0:46:43.370
+00:46:40,800 --> 00:46:43,370
 Und alle anderen Typen
 sind auch gleich und ähnlich.
 
-0:46:43.370,0:46:46.800
+00:46:43,370 --> 00:46:46,800
 Hier, innerhalb der Liste,
 ist es auch etwas anderes.
 
-0:46:46.800,0:46:50.500
+00:46:46,800 --> 00:46:50,500
 Sie wollen also wirklich
 eine Liste von Paaren.
 
-0:46:50.500,0:46:56.911
+00:46:50,500 --> 00:46:56,911
 Es ist keine Funktion wie hier,
 wo man sagt: Mach diese Drei-Argumenten-Funktion in
 
-0:46:56.911,0:47:01.650
+00:46:56,911 --> 00:47:01,650
 eine Notation wie diese, wo
 wir immer den Funktionspfeil haben.
 
-0:47:01.650,0:47:05.770
+00:47:01,650 --> 00:47:05,770
 Das würde hier keinen Sinn ergeben, denn
 das ist wirklich eine Menge von Paaren.
 
-0:47:05.770,0:47:10.240
+00:47:05,770 --> 00:47:10,240
 Und dann ist die Notation in Haskell
 eben nicht mit dem Kreuz für das kartesische
 
-0:47:10.240,0:47:13.360
+00:47:10,240 --> 00:47:13,360
 Produkt, sondern eigentlich schreibt man
 auch auf Typebene einfach Paare.
 
-0:47:13.360,0:47:21.120
+00:47:13,360 --> 00:47:21,120
 Also, das ist der Typ
 der Paare von Doubles und Doubles.
 
-0:47:21.120,0:47:27.930
+00:47:21,120 --> 00:47:27,930
 Was dann die Syntax auf der Ausdrucks-
 und nicht auf der Typebene angeht, so
 
-0:47:27.930,0:47:32.250
+00:47:27,930 --> 00:47:32,250
 habe ich diesen Unterschied zwischen der
 mathematischen Notation und der Funktionsnotation schon früher
 
-0:47:32.250,0:47:34.700
+00:47:32,250 --> 00:47:34,700
 (in einem der
 Beispielvideos) ausführlich kommentiert.
 
-0:47:34.700,0:47:40.520
+00:47:34,700 --> 00:47:40,520
 Es sollte also an dieser Stelle keine Neuigkeit für Sie
 sein, dass wir in dieser Form ohne so viele Klammern
 
-0:47:40.520,0:47:43.200
-und
-Kommata schreiben.
+00:47:40,520 --> 00:47:43,200
+und Kommata schreiben.
 
-0:47:43.200,0:47:45.970
+00:47:43,200 --> 00:47:45,970
 Bei verschachtelten Funktionsaufrufen brauchen
 wir natürlich manchmal Klammern.
 
-0:47:45.970,0:47:52.360
+00:47:45,970 --> 00:47:52,360
 Wenn zum Beispiel ein f-Aufruf als Argument an
 der Stelle des g-Aufrufs steht, dann kommen wir
 
-0:47:52.360,0:47:54.590
-um diese
-Klammern nicht herum.
+00:47:52,360 --> 00:47:54,590
+um diese Klammern nicht herum.
 
-0:47:54.590,0:47:56.840
+00:47:54,590 --> 00:47:56,840
 Denn dann wäre nicht
 klar, wer was aufruft.
 
-0:47:56.840,0:48:03.110
+00:47:56,840 --> 00:48:03,110
 Aber so würden wir dann ausdrücken,
 dass dies zusammen das zweite Argument dieses
 
-0:48:03.110,0:48:04.110
-g-Aufrufs
-ist.
+00:48:03,110 --> 00:48:04,110
+g-Aufrufs ist.
 
-0:48:04.110,0:48:11.300
+00:48:04,110 --> 00:48:11,300
 So etwas haben wir auch schon in
 komplexeren Ausdrücken mit "rotated" und "colored" und
 
-0:48:11.300,0:48:12.300
-was auch
-immer gesehen.
+00:48:11,300 --> 00:48:12,300
+was auch immer gesehen.
 
-0:48:12.300,0:48:18.320
+00:48:12,300 --> 00:48:18,320
 Die gleiche Syntax wie gerade diese,
 bei welcher der Funktionsaufruf mit Leerzeichen
 
-0:48:18.320,0:48:21.830
+00:48:18,320 --> 00:48:21,830
 und ohne Komma steht,
 wird auch bei Funktionsdefinitionen verwendet.
 
-0:48:21.830,0:48:27.770
+00:48:21,830 --> 00:48:27,770
 Auch das haben Sie zumindest für "scene t
 = something" (scene von t ist etwas) gesehen.
 
-0:48:27.770,0:48:31.200
+00:48:27,770 --> 00:48:31,200
 Und es gilt auch, wenn wir
 Funktionen mit mehr als einem Argument haben.
 
-0:48:31.200,0:48:37.000
+00:48:31,200 --> 00:48:37,000
 Also etwas, das in Java oder C so aussehen
 würde: Wir deklarieren, dass f eine Funktion ist, die
 
-0:48:37.000,0:48:41.770
+00:48:37,000 --> 00:48:41,770
 eine Ganzzahl und ein Zeichen
 entgegennimmt und einen Float zurückgibt.
 
-0:48:41.770,0:48:47.960
+00:48:41,770 --> 00:48:47,960
 In Haskell würde sich das in diese
 mehr mathematische Art verwandeln, die Typen aufzuschreiben.
 
-0:48:47.960,0:48:52.790
+00:48:47,960 --> 00:48:52,790
 Ganzzahl und Zeichen sind also die
 beiden Argumenttypen, und float ist der Rückgabetyp.
 
-0:48:52.790,0:48:57.490
+00:48:52,790 --> 00:48:57,490
 Es gibt natürlich Unterschiede in der Syntax, wie
 zum Beispiel, dass diese Typen in Großbuchstaben geschrieben werden.
 
-0:48:57.490,0:49:03.180
+00:48:57,490 --> 00:49:03,180
 Aber das ist natürlich nur, wie
 die Sprache auf der lexikalischen Ebene funktioniert.
 
-0:49:03.180,0:49:08.200
+00:49:03,180 --> 00:49:08,200
 Und dann die Benennung der Funktion: Hier wird
 die Funktion im Typ benannt, und in der
 
-0:49:08.200,0:49:09.790
-Definition wird
-sie nochmals benannt.
+00:49:08,200 --> 00:49:09,790
+Definition wird sie nochmals benannt.
 
-0:49:09.790,0:49:16.390
+00:49:09,790 --> 00:49:16,390
 Wir haben f von "a" und "b" nicht in Klammern
 und Kommata usw., sondern einfach "f a b =" und
 
-0:49:16.390,0:49:19.320
+00:49:16,390 --> 00:49:19,320
 dann haben wir
 den Rumpf der Funktionsdefinition.
 
-0:49:19.320,0:49:24.660
+00:49:19,320 --> 00:49:24,660
 Natürlich gibt es auch Unterschiede, wie z.
 B., dass wir im Java-Code hier Befehle hätten
 
-0:49:24.660,0:49:30.660
+00:49:24,660 --> 00:49:30,660
 und wir vielleicht nicht einmal einen Rückgabewert
 von diesem Aufruf haben, weil eine Funktion in
 
-0:49:30.660,0:49:31.810
-Java nichts
-zurückgeben muss.
+00:49:30,660 --> 00:49:31,810
+Java nichts zurückgeben muss.
 
-0:49:31.810,0:49:36.060
+00:49:31,810 --> 00:49:36,060
 Nun, hier würde sie einen Float zurückgeben,
 aber Sie könnten zum Beispiel "void" haben.
 
-0:49:36.060,0:49:37.460
+00:49:36,060 --> 00:49:37,460
 Und dann gibt die
 Funktion vielleicht gar nichts zurück.
 
-0:49:37.460,0:49:39.290
+00:49:37,460 --> 00:49:39,290
 Es handelt sich also nicht
 wirklich um eine mathematische Funktion.
 
-0:49:39.290,0:49:42.510
+00:49:39,290 --> 00:49:42,510
 Im Gegensatz dazu muss es
 in Haskell natürlich irgendeinen Ausdruck geben.
 
-0:49:42.510,0:49:49.080
+00:49:42,510 --> 00:49:49,080
 Also muss aus einem Aufruf von f auf a
 und b (auf irgendwelche Werte, irgendwelche Argumente) immer ein Float
 
-0:49:49.080,0:49:50.080
+00:49:49,080 --> 00:49:50,080
 herauskommen.
 
-0:49:50.080,0:49:55.890
+00:49:50,080 --> 00:49:55,890
 Und es gibt auch Unterschiede
 wie die Semantik dieser lokalen Variablen.
 
-0:49:55.890,0:50:00.250
+00:49:55,890 --> 00:50:00,250
 Was sie tun, ist in Haskell
 anders als in diesen imperativen Sprachen.
 
-0:50:00.250,0:50:03.650
+00:50:00,250 --> 00:50:03,650
 Hier könnten Sie Zuweisungen haben, bei
 denen Sie a und b überschreiben.
 
-0:50:03.650,0:50:09.830
+00:50:03,650 --> 00:50:09,830
 Hier sind a und b Eingaben und sie können auf
 der rechten Seite verwendet werden, aber sie können nicht verändert
 
-0:50:09.830,0:50:10.830
+00:50:09,830 --> 00:50:10,830
 werden.
 
-0:50:10.830,0:50:17.800
+00:50:10,830 --> 00:50:17,800
 Die Rolle der Variablen ist also eine andere,
 was Sie natürlich schon aus den vorherigen Beispielen
 
-0:50:17.800,0:50:19.140
+00:50:17,800 --> 00:50:19,140
 kennen.
 
-0:50:19.140,0:50:22.590
+00:50:19,140 --> 00:50:22,590
 Dann gibt es noch ein Problem
 mit Whitespace und Layout in Haskell.
 
-0:50:22.590,0:50:28.640
+00:50:22,590 --> 00:50:28,640
 Haskell ist eine layoutsensitive Sprache, das
 heißt, wenn Sie Dinge wie lokale Definitionen
 
-0:50:28.640,0:50:31.780
+00:50:28,640 --> 00:50:31,780
 gruppieren, dann ist
 das horizontale Layout wichtig.
 
-0:50:31.780,0:50:40.670
+00:50:31,780 --> 00:50:40,670
 Das Layout in dem Sinne:
 in welcher Spalte die Dinge beginnen.
 
-0:50:40.670,0:50:41.670
-Was
-bedeutet das?
+00:50:40,670 --> 00:50:41,670
+Was bedeutet das?
 
-0:50:41.670,0:50:43.200
-Betrachten wir
-"let" und "in".
+00:50:41,670 --> 00:50:43,200
+Betrachten wir "let" und "in".
 
-0:50:43.200,0:50:46.490
+00:50:43,200 --> 00:50:46,490
 Dies ist eine weitere
 Möglichkeit, lokale Definitionen zu organisieren.
 
-0:50:46.490,0:50:51.820
+00:50:46,490 --> 00:50:51,820
 Wir haben schon so etwas gesehen wie: "f x ist
 etwas, wobei ..." und dann hatten wir einige lokale Definitionen.
 
-0:50:51.820,0:50:57.240
+00:50:51,820 --> 00:50:57,240
 Wobei die Dinge, die lokal definiert
 sind, nach dem Hauptausdruck erwähnt werden.
 
-0:50:57.240,0:51:00.910
+00:50:57,240 --> 00:51:00,910
 Wir können es auch andersherum haben, aber
 dann benutzen wir nicht "where", sondern "let-in".
 
-0:51:00.910,0:51:07.410
+00:51:00,910 --> 00:51:07,410
 Was das hier also aussagt, ist: Wir wollen den
 Ausdruck f c + f d berechnen, und darin
 
-0:51:07.410,0:51:10.570
+00:51:07,410 --> 00:51:10,570
 wollen wir einige Dinge verwenden, zum
 Beispiel das y und das f.
 
-0:51:10.570,0:51:13.740
+00:51:10,570 --> 00:51:13,740
 Tatsächlich wird hier y verwendet, und f
 ist eine Funktion, die hier verwendet wird.
 
-0:51:13.740,0:51:17.280
+00:51:13,740 --> 00:51:17,280
 Es ist also keine Top-Level-Funktion, die irgendwo
 anders im Programm vorkommt, sondern sie ist lokal
 
-0:51:17.280,0:51:18.610
-zu
-diesem Ausdruck.
+00:51:17,280 --> 00:51:18,610
+zu diesem Ausdruck.
 
-0:51:18.610,0:51:24.900
+00:51:18,610 --> 00:51:24,900
 Und dann sagen wir "let something and something in"
 und dann verwenden wir das, was wir vorher definiert haben.
 
-0:51:24.900,0:51:29.710
+00:51:24,900 --> 00:51:29,710
 Anders als im "where"-Fall, wo wir
 die lokalen Definitionen nach dem Ausdruck genannt
 
-0:51:29.710,0:51:31.710
-haben, in dem
-sie verwendet werden.
+00:51:29,710 --> 00:51:31,710
+haben, in dem sie verwendet werden.
 
-0:51:31.710,0:51:33.920
-Das ist etwas,
-das man aufschreiben kann.
+00:51:31,710 --> 00:51:33,920
+Das ist etwas, das man aufschreiben kann.
 
-0:51:33.920,0:51:38.360
+00:51:33,920 --> 00:51:38,360
 Und es ist wichtig, dass diese
 Dinge hier in der gleichen Spalte beginnen.
 
-0:51:38.360,0:51:44.780
+00:51:38,360 --> 00:51:44,780
 In diesem Sinne ist also das Layout
 (wie weit Sie die Dinge einrücken) wichtig.
 
-0:51:44.780,0:51:50.590
+00:51:44,780 --> 00:51:50,590
 Wir könnten dies auch vermeiden
 und eine explizite Gruppierung schreiben.
 
-0:51:50.590,0:51:55.720
+00:51:50,590 --> 00:51:55,720
 Das gilt also auch in
 Haskell, wo ich kein Layout verwende.
 
-0:51:55.720,0:52:02.830
+00:51:55,720 --> 00:52:02,830
 Ich sage einfach: Ich möchte diese beiden Definitionen
 gruppieren, und dann verwenden wir tatsächlich Semikolons und diese
 
-0:52:02.830,0:52:03.830
-geschweiften
-Klammern.
+00:52:02,830 --> 00:52:03,830
+geschweiften Klammern.
 
-0:52:03.830,0:52:05.770
-Und das
-ist äquivalent.
+00:52:03,830 --> 00:52:05,770
+Und das ist äquivalent.
 
-0:52:05.770,0:52:10.330
+00:52:05,770 --> 00:52:10,330
 Dann müssen wir nicht auf das Layout
 achten, weil diese geschweiften Klammern und das Semikolon
 
-0:52:10.330,0:52:15.060
-erklären, was
-die Gruppierung ist.
+00:52:10,330 --> 00:52:15,060
+erklären, was die Gruppierung ist.
 
-0:52:15.060,0:52:21.390
+00:52:15,060 --> 00:52:21,390
 Aber wenn Sie das nicht verwenden, dann müssen
 Sie auf das Layout aufpassen wie in anderen layoutsensitiven
 
-0:52:21.390,0:52:23.720
-Sprachen wie Python
-(das danach kam).
+00:52:21,390 --> 00:52:23,720
+Sprachen wie Python (das danach kam).
 
-0:52:23.720,0:52:29.140
+00:52:23,720 --> 00:52:29,140
 Das bedeutet auch, dass z. B.
 diese beiden Programmteile nicht akzeptiert werden.
 
-0:52:29.140,0:52:35.420
+00:52:29,140 --> 00:52:35,420
 Sie würden abgelehnt werden oder nicht das bedeuten, was
 Sie denken, dass sie bedeuten, weil das Layout nicht verwendet
 
-0:52:35.420,0:52:37.050
-werden kann, um
-Dinge zu gruppieren.
+00:52:35,420 --> 00:52:37,050
+werden kann, um Dinge zu gruppieren.
 
-0:52:37.050,0:52:43.100
+00:52:37,050 --> 00:52:43,100
 Das bedeutet auch, dass Sie, wenn Sie
 Haskell-Code schreiben, einen Editor bevorzugen sollten, in dem
 
-0:52:43.100,0:52:48.890
+00:52:43,100 --> 00:52:48,890
 Sie sicherstellen können, dass die Einrückung über
 Leerzeichen und über Tabulatoren nicht vermischt wird.
 
-0:52:48.890,0:52:54.980
+00:52:48,890 --> 00:52:54,980
 Normalerweise sollten Sie Leerzeichen anstelle von
 Tabulatorzeichen verwenden, weil der Compiler standardmäßig
 
-0:52:54.980,0:53:02.940
+00:52:54,980 --> 00:53:02,940
 nicht wissen kann, welcher Einrückungsebene
 ein Tabulatorzeichen in Ihrem Editor entspricht.
 
-0:53:02.940,0:53:08.290
+00:53:02,940 --> 00:53:08,290
 Wenn Sie also in Ihrem Editor nachschauen, sieht
 es für Sie vielleicht ganz gut aus, aber der
 
-0:53:08.290,0:53:09.350
-Compiler sieht
-es tatsächlich so.
+00:53:08,290 --> 00:53:09,350
+Compiler sieht es tatsächlich so.
 
-0:53:09.350,0:53:17.920
+00:53:09,350 --> 00:53:17,920
 Das ist also eine typische Falle, in die man
 tappen kann, wenn man noch nie in einer layoutsensitiven Sprache
 
-0:53:17.920,0:53:21.800
-programmiert
-hat.
+00:53:17,920 --> 00:53:21,800
+programmiert hat.
 
-0:53:21.800,0:53:28.370
+00:53:21,800 --> 00:53:28,370
 Und nun wirklich zum Abschluss dieses Videos möchte
 ich noch einmal über Klammern im Allgemeinen und das
 
-0:53:28.370,0:53:30.930
-Schreiben von
-Ausdrücken sprechen.
+00:53:28,370 --> 00:53:30,930
+Schreiben von Ausdrücken sprechen.
 
-0:53:30.930,0:53:38.330
+00:53:30,930 --> 00:53:38,330
 Ich habe bereits erwähnt, dass wir weniger Klammern
 verwenden, als Sie vielleicht erwarten, wenn Sie noch nie
 
-0:53:38.330,0:53:41.010
+00:53:38,330 --> 00:53:41,010
 in einer Sprache mit dieser
 Art von Syntaxregeln programmiert haben.
 
-0:53:41.010,0:53:46.350
+00:53:41,010 --> 00:53:46,350
 So brauchen wir zum Beispiel das x-Argument
 in einem Aufruf wie diesem nicht einzuklammern, weil
 
-0:53:46.350,0:53:50.880
+00:53:46,350 --> 00:53:50,880
 dieser Ausdruck eben so
 ist und eindeutig parsebar ist.
 
-0:53:50.880,0:53:51.910
-Es ist also
-klar, was das bedeutet.
+00:53:50,880 --> 00:53:51,910
+Es ist also klar, was das bedeutet.
 
-0:53:51.910,0:53:53.470
+00:53:51,910 --> 00:53:53,470
 Wir brauchen hier
 keine zusätzlichen Klammern.
 
-0:53:53.470,0:53:58.610
+00:53:53,470 --> 00:53:58,610
 Und ebenso brauchen wir in Aufrufen wie
 diesem keine Klammern um diese beiden Funktionsaufrufe,
 
-0:53:58.610,0:54:02.010
-deren Ergebnisse
-addiert werden.
+00:53:58,610 --> 00:54:02,010
+deren Ergebnisse addiert werden.
 
-0:54:02.010,0:54:07.090
+00:54:02,010 --> 00:54:07,090
 Denn diese Funktionsanwendung (im Grunde dieser
 Raum hier) bindet fester als alle Operatoren.
 
-0:54:07.090,0:54:12.560
+00:54:07,090 --> 00:54:12,560
 Es ist also nicht nötig zu sagen, dass man
 (f x) will und dies dann zu (g y) addiert.
 
-0:54:12.560,0:54:17.040
+00:54:12,560 --> 00:54:17,040
 Tatsächlich wird der Parser, selbst wenn Sie
 es so schreiben, dies als eine Einheit betrachten,
 
-0:54:17.040,0:54:19.240
+00:54:17,040 --> 00:54:19,240
 die zu diesem
 anderen Ausdruck hinzugefügt wird.
 
-0:54:19.240,0:54:22.140
-Dies ist
-also eine Einheit.
+00:54:19,240 --> 00:54:22,140
+Dies ist also eine Einheit.
 
-0:54:22.140,0:54:28.200
+00:54:22,140 --> 00:54:28,200
 Und wir haben bereits erwähnt, dass
 Autotool Sie auch vor redundanten Klammern warnt
 
-0:54:28.200,0:54:30.800
-und Sie auffordert,
-diese zu entfernen.
+00:54:28,200 --> 00:54:30,800
+und Sie auffordert, diese zu entfernen.
 
-0:54:30.800,0:54:36.280
+00:54:30,800 --> 00:54:36,280
 Dann gibt es noch eine andere Sache,
 die Studierende manchmal machen, wenn sie Haskell-Beispielcode
 
-0:54:36.280,0:54:39.430
+00:54:36,280 --> 00:54:39,430
 an anderen Stellen oder
 im Internet gelesen haben.
 
-0:54:39.430,0:54:43.980
+00:54:39,430 --> 00:54:43,980
 So gibt es die Möglichkeit, noch mehr
 Klammern zu sparen, indem man den Dollar-Operator verwendet.
 
-0:54:43.980,0:54:51.400
+00:54:43,980 --> 00:54:51,400
 Das würde zum Beispiel erlauben, alle Klammern
 in diesem Ausdruck zu vermeiden, indem man so
 
-0:54:51.400,0:54:52.560
-etwas
-schreibt.
+00:54:51,400 --> 00:54:52,560
+etwas schreibt.
 
-0:54:52.560,0:54:57.950
+00:54:52,560 --> 00:54:57,950
 Aber ich muss sagen, dass ich den Dollar-Operator
 nicht mag, insbesondere bei Anfängern, weil er leicht missbraucht
 
-0:54:57.950,0:55:03.570
+00:54:57,950 --> 00:55:03,570
 wird, oder in einer Art und Weise
 verwendet wird, die die Lesbarkeit nicht wirklich verbessert.
 
-0:55:03.570,0:55:09.540
+00:55:03,570 --> 00:55:09,540
 Also eigentlich rät Autotool wieder von der
 Verwendung des Dollar-Operators ab oder verbietet ihn sogar.
 
-0:55:09.540,0:55:14.040
+00:55:09,540 --> 00:55:14,040
 Aber ich wollte es zumindest erwähnen, weil ich
 weiß, dass einige Studierende an anderen Stellen darüber
 
-0:55:14.040,0:55:19.610
+00:55:14,040 --> 00:55:19,610
 lesen und sich dann vielleicht wundern, warum
 sie ihn nicht in ihren Übungsaufgaben verwenden können.
 
-0:55:19.610,0:55:25.620
+00:55:19,610 --> 00:55:25,620
 Das liegt im Grunde daran, dass ich hier der
 Diktator bin, und ich es vorziehe, Sie ihn zumindest nicht
 
-0:55:25.620,0:55:26.920
-zu früh
-verwenden zu lassen.
+00:55:25,620 --> 00:55:26,920
+zu früh verwenden zu lassen.
 
-0:55:26.920,0:55:30.780
+00:55:26,920 --> 00:55:30,780
 Für fortgeschrittene Haskell-Programmierer kann dies eine
 wichtige Funktion sein, um ihren Code zu
 
-0:55:30.780,0:55:36.160
+00:55:30,780 --> 00:55:36,160
 strukturieren, aber nicht für Sie,
 würde ich an dieser Stelle sagen.
 
-0:55:36.160,0:55:43.360
+00:55:36,160 --> 00:55:43,360
 Und wie erwähnt, gibt Autotool manchmal
 Warnungen über Dinge wie redundante Klammern
 
-0:55:43.360,0:55:45.910
+00:55:43,360 --> 00:55:45,910
 oder sogar übermäßige
 Verwendung dieses Dollar-Symbols.
 
-0:55:45.910,0:55:49.680
+00:55:45,910 --> 00:55:49,680
 Und manchmal sind das nicht nur
 Warnungen, sondern sie werden wirklich erzwungen.
 
-0:55:49.680,0:55:52.430
+00:55:49,680 --> 00:55:52,430
 Sie müssen also
 immer die Rückmeldungen lesen.
 
-0:55:52.430,0:55:56.940
+00:55:52,430 --> 00:55:56,940
 Und wenn das Feedback rot ist, dann
 wissen Sie, dass Sie wirklich etwas ändern müssen,
 
-0:55:56.940,0:55:58.860
+00:55:56,940 --> 00:55:58,860
 weil Sie die
 Kriterien noch nicht erfüllen.
 
-0:55:58.860,0:56:05.020
+00:55:58,860 --> 00:56:05,020
 Sei es die Korrektheit, oder seien es
 Stilkriterien wie die hier genannten und andere
 
-0:56:05.020,0:56:05.520
+00:56:05,020 --> 00:56:05,520
 später.

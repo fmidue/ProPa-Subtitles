@@ -1,1429 +1,1430 @@
-0:00:01.959,0:00:10.580
+120 # slide
+00:00:01,959 --> 00:00:10,580
 Now let us come to the video about higher-order
 functions specifically for lists, as a more
 
-0:00:10.580,0:00:14.460
+00:00:10,580 --> 00:00:14,460
 interesting application than the artificial
 examples I have shown you before when I wanted
 
-0:00:14.460,0:00:19.660
+00:00:14,460 --> 00:00:19,660
 to make the syntax available (and explain
 it).
 
-0:00:19.660,0:00:28.239
+00:00:19,660 --> 00:00:28,239
 So, I say on lists here, but as in previous
 parts of the lecture, this is just for examples'
 
-0:00:28.239,0:00:29.239
+00:00:28,239 --> 00:00:29,239
 sake.
 
-0:00:29.239,0:00:33.520
+00:00:29,239 --> 00:00:33,520
 Similar functions to the ones I'm going to
 show you now (and you're going to use in the
 
-0:00:33.520,0:00:37.809
+00:00:33,520 --> 00:00:37,809
 next exercises, probably) are available for
 other data types as well.
 
-0:00:37.809,0:00:42.149
+00:00:37,809 --> 00:00:42,149
 So, lists are just a stand-in, here, for generally
 structured data types.
 
-0:00:42.149,0:00:46.690
+00:00:42,149 --> 00:00:46,690
 And this approach of using higher-order functions,
 defining higher-order functions and working
 
-0:00:46.690,0:00:52.460
+00:00:46,690 --> 00:00:52,460
 with them, is valid and useful for other data
 types as well: for trees or other things that
 
-0:00:52.460,0:00:57.339
+00:00:52,460 --> 00:00:57,339
 are yet to come, or will not even be covered
 in this lecture, but that are useful in practice.
 
-0:00:57.339,0:01:06.630
+00:00:57,339 --> 00:01:06,630
 So, lists, just because lists are so simple,
 and we can directly use them.
 
-0:01:06.630,0:01:10.439
+00:01:06,630 --> 00:01:10,439
 Let's look at a first example, a first higher-order
 function on lists.
 
-0:01:10.439,0:01:13.380
+00:01:10,439 --> 00:01:13,380
 This is this function that has a somewhat
 strange name, maybe.
 
-0:01:13.380,0:01:18.909
+00:01:13,380 --> 00:01:18,909
 So, maybe it is not immediately obvious why
 this is called 'foldl1'.
 
-0:01:18.909,0:01:23.119
+00:01:18,909 --> 00:01:23,119
 There is some systematics behind this because
 there are other versions without the "1",
 
-0:01:23.119,0:01:26.100
+00:01:23,119 --> 00:01:26,100
 and there are versions with an "r" instead
 of the "l" here.
 
-0:01:26.100,0:01:31.399
+00:01:26,100 --> 00:01:31,399
 Let's, for the moment, accept this strange
 name and look at what the function does.
 
-0:01:31.399,0:01:36.159
+00:01:31,399 --> 00:01:36,159
 And then later, we can discuss and see what
 other versions there are.
 
-0:01:36.159,0:01:37.880
+00:01:36,159 --> 00:01:37,880
 So, what is this doing?
 
-0:01:37.880,0:01:41.579
+00:01:37,880 --> 00:01:41,579
 First, let's look at the type.
 
-0:01:41.579,0:01:43.380
+00:01:41,579 --> 00:01:43,380
 It is a polymorphic type.
 
-0:01:43.380,0:01:45.700
+00:01:43,380 --> 00:01:45,700
 And in that, we can, of course, see the higher-orderness
 here.
 
-0:01:45.700,0:01:49.660
+00:01:45,700 --> 00:01:49,660
 Because the first argument is a function,
 namely, a binary function on some type.
 
-0:01:49.660,0:01:51.829
+00:01:49,660 --> 00:01:51,829
 We have a type variable 'a' here.
 
-0:01:51.829,0:01:54.460
+00:01:51,829 --> 00:01:54,460
 So, "'a' to 'a' to 'a'" for whatever 'a' is.
 
-0:01:54.460,0:01:57.640
+00:01:54,460 --> 00:01:57,640
 So, for some type, we have a binary function
 here.
 
-0:01:57.640,0:02:04.030
+00:01:57,640 --> 00:02:04,030
 And actually, down here, we also see that
 it is expected to be left-associative (or
 
-0:02:04.030,0:02:09.690
+00:02:04,030 --> 00:02:09,690
 to be used in that way).
 
-0:02:09.690,0:02:10.950
+00:02:09,690 --> 00:02:10,950
 But that is not something that the type expresses.
 
-0:02:10.950,0:02:17.960
+00:02:10,950 --> 00:02:17,960
 The type simply says that we have a binary
 function and then we have a list of 'a's,
 
-0:02:17.960,0:02:24.750
+00:02:17,960 --> 00:02:24,750
 so, a list of elements of the kind on which
 this function can operate.
 
-0:02:24.750,0:02:27.280
+00:02:24,750 --> 00:02:27,280
 And the outcome will also be one of those
 things.
 
-0:02:27.280,0:02:31.360
+00:02:27,280 --> 00:02:31,360
 Well, not necessarily one of the elements
 from that specific list, but something of
 
-0:02:31.360,0:02:36.230
+00:02:31,360 --> 00:02:36,230
 the same type of the things that we have in
 the list (and the things that this function
 
-0:02:36.230,0:02:37.500
+00:02:36,230 --> 00:02:37,500
 can operate on).
 
-0:02:37.500,0:02:39.250
+00:02:37,500 --> 00:02:39,250
 And what does this function do?
 
-0:02:39.250,0:02:42.800
+00:02:39,250 --> 00:02:42,800
 This is not seen in the type directly, but
 it is explained here.
 
-0:02:42.800,0:02:49.000
+00:02:42,800 --> 00:02:49,000
 So, it puts a function (an operator), namely
 this one, which should be left-associative
 
-0:02:49.000,0:02:54.840
+00:02:49,000 --> 00:02:54,840
 (or be used left-associatively, as we will
 see), and puts it between all elements of
 
-0:02:54.840,0:02:55.840
+00:02:54,840 --> 00:02:55,840
 a non-empty list.
 
-0:02:55.840,0:02:59.980
+00:02:55,840 --> 00:02:59,980
 So, we expect that this list is non-empty,
 and this is actually what the "1" stands for.
 
-0:02:59.980,0:03:04.170
+00:02:59,980 --> 00:03:04,170
 The "l" stands for "left", and the "1" stands
 for "at least one element".
 
-0:03:04.170,0:03:06.500
+00:03:04,170 --> 00:03:06,500
 We won't use this function for an empty list.
 
-0:03:06.500,0:03:12.740
+00:03:06,500 --> 00:03:12,740
 And the function puts an operator between
 all elements of the non-empty list, in a left-associative
 
-0:03:12.740,0:03:13.740
+00:03:12,740 --> 00:03:13,740
 fashion.
 
-0:03:13.740,0:03:14.740
+00:03:13,740 --> 00:03:14,740
 So, what does this mean?
 
-0:03:14.740,0:03:15.740
+00:03:14,740 --> 00:03:15,740
 Let's look at an example.
 
-0:03:15.740,0:03:18.930
+00:03:15,740 --> 00:03:18,930
 Let's say we want to compute the sum of a
 list.
 
-0:03:18.930,0:03:21.740
+00:03:18,930 --> 00:03:21,740
 We have a list, say, of integers.
 
-0:03:21.740,0:03:26.050
+00:03:21,740 --> 00:03:26,050
 So, then 'a' will be Int; and we have a list;
 and we want to compute the sum.
 
-0:03:26.050,0:03:27.140
+00:03:26,050 --> 00:03:27,140
 What does this mean?
 
-0:03:27.140,0:03:32.500
+00:03:27,140 --> 00:03:32,500
 Basically, taking a list and computing the
 sum of it means to put the "+" symbol between
 
-0:03:32.500,0:03:34.010
+00:03:32,500 --> 00:03:34,010
 all neighbouring elements.
 
-0:03:34.010,0:03:39.970
+00:03:34,010 --> 00:03:39,970
 So, we want to compute 1 + 2 + 3 + 4, which
 is exactly what is explained here: putting
 
-0:03:39.970,0:03:41.780
+00:03:39,970 --> 00:03:41,780
 a certain operator there.
 
-0:03:41.780,0:03:48.300
+00:03:41,780 --> 00:03:48,300
 So, "+" is actually associative, so it doesn't
 really matter how we bracket here.
 
-0:03:48.300,0:03:52.091
+00:03:48,300 --> 00:03:52,091
 For other operators like "-", of course, this
 could make a difference, whether we are left-
 
-0:03:52.091,0:03:57.490
+00:03:52,091 --> 00:03:57,490
 or right-associative; whether we consider
 this to be computing this first, and then
 
-0:03:57.490,0:04:03.490
+00:03:57,490 --> 00:04:03,490
 this, and then for the whole list, or whether
 we want to compute somehow differently, like
 
-0:04:03.490,0:04:06.830
+00:04:03,490 --> 00:04:06,830
 first this, then this, and then the whole
 expression.
 
-0:04:06.830,0:04:08.760
+00:04:06,830 --> 00:04:08,760
 For "+", it doesn't matter.
 
-0:04:08.760,0:04:15.620
+00:04:08,760 --> 00:04:15,620
 So, computing the sum of a list, however long
 it might be, is simply described by putting
 
-0:04:15.620,0:04:18.310
+00:04:15,620 --> 00:04:18,310
 a "+" between all neighbouring elements.
 
-0:04:18.310,0:04:24.380
+00:04:18,310 --> 00:04:24,380
 If you recall our earlier discussion in the
 previous week when we had this convenient
 
-0:04:24.380,0:04:28.620
+00:04:24,380 --> 00:04:28,620
 'sum' function and I said: even if we didn't
 have the 'sum' function available on lists,
 
-0:04:28.620,0:04:31.759
+00:04:28,620 --> 00:04:31,759
 we could simply write it with very few keystrokes.
 
-0:04:31.759,0:04:34.129
+00:04:31,759 --> 00:04:34,129
 Basically, these are the keystrokes that we
 need.
 
-0:04:34.129,0:04:36.229
+00:04:34,129 --> 00:04:36,229
 So, this is the 'sum' function.
 
-0:04:36.229,0:04:39.770
+00:04:36,229 --> 00:04:39,770
 It takes some list and puts "+" between all
 neighbouring elements.
 
-0:04:39.770,0:04:43.569
+00:04:39,770 --> 00:04:43,569
 That's what summing the elements of a list
 means.
 
-0:04:43.569,0:04:46.990
+00:04:43,569 --> 00:04:46,990
 And the 'foldl1' function is polymorphic.
 
-0:04:46.990,0:04:48.670
+00:04:46,990 --> 00:04:48,670
 That's why we can use it so easily.
 
-0:04:48.670,0:04:53.230
+00:04:48,670 --> 00:04:53,230
 If we had something like a list of Boolean
 values, then we cannot add them, but we can
 
-0:04:53.230,0:04:56.600
+00:04:53,230 --> 00:04:56,600
 maybe conjunct them, or disjunct them, with
 'and' and 'or'.
 
-0:04:56.600,0:05:01.069
+00:04:56,600 --> 00:05:01,069
 And then we can use the same polymorphic function,
 just with a different operator here.
 
-0:05:01.069,0:05:09.150
+00:05:01,069 --> 00:05:09,150
 We have polymorphism, and we have higher-orderness,
 and they combine to very nice uses here.
 
-0:05:09.150,0:05:15.360
+00:05:09,150 --> 00:05:15,360
 And we will see more functions of that kind,
 and applications of this principle, this combination
 
-0:05:15.360,0:05:16.699
+00:05:15,360 --> 00:05:16,699
 of polymorphism and higher-orderness.
 
-0:05:16.699,0:05:25.050
+00:05:16,699 --> 00:05:25,050
 Here is another example of a higher-order
 function on lists.
 
-0:05:25.050,0:05:31.050
+00:05:25,050 --> 00:05:31,050
 And again, while as shown here it's a function
 on lists, the same principle is applicable
 
-0:05:31.050,0:05:32.050
+00:05:31,050 --> 00:05:32,050
 to other data structures.
 
-0:05:32.050,0:05:36.729
+00:05:32,050 --> 00:05:36,729
 So, for other data structures that contain
 elements of some type like trees, dictionaries,
 
-0:05:36.729,0:05:44.289
+00:05:36,729 --> 00:05:44,289
 or something not just list-structured, we
 will also have a 'map' function, not with
 
-0:05:44.289,0:05:47.749
+00:05:44,289 --> 00:05:47,749
 exactly the same name, but with the same ideas.
 
-0:05:47.749,0:05:50.009
+00:05:47,749 --> 00:05:50,009
 So, what does 'map' mean?
 
-0:05:50.009,0:05:53.900
+00:05:50,009 --> 00:05:53,900
 As written here, it's a polymorphic function
 and it's a higher-order function.
 
-0:05:53.900,0:05:57.360
+00:05:53,900 --> 00:05:57,360
 It is parameterized over whatever function.
 
-0:05:57.360,0:06:01.819
+00:05:57,360 --> 00:06:01,819
 So, the argument here is very general.
 
-0:06:01.819,0:06:03.270
+00:06:01,819 --> 00:06:03,270
 It's a function from something to something.
 
-0:06:03.270,0:06:07.659
+00:06:03,270 --> 00:06:07,659
 So, 'a' and 'b' are possibly different types
 (because they use different type variables).
 
-0:06:07.659,0:06:08.979
+00:06:07,659 --> 00:06:08,979
 And then what do we get?
 
-0:06:08.979,0:06:11.849
+00:06:08,979 --> 00:06:11,849
 The second argument is a list of 'a's and
 it returns a list of 'b's.
 
-0:06:11.849,0:06:13.449
+00:06:11,849 --> 00:06:13,449
 What does the function do?
 
-0:06:13.449,0:06:18.779
+00:06:13,449 --> 00:06:18,779
 It applies this function to all elements of
 a list and gives back a list with the changed
 
-0:06:18.779,0:06:19.779
+00:06:18,779 --> 00:06:19,779
 elements.
 
-0:06:19.779,0:06:20.779
+00:06:19,779 --> 00:06:20,779
 Of course, they are not changed in place.
 
-0:06:20.779,0:06:22.939
+00:06:20,779 --> 00:06:22,939
 We don't want to change this list and turn
 the 'a's into 'b's.
 
-0:06:22.939,0:06:28.419
+00:06:22,939 --> 00:06:28,419
 No, we give *in* a list of 'a's, and we get
 *out* a list of 'b's which will be exactly
 
-0:06:28.419,0:06:34.210
+00:06:28,419 --> 00:06:34,210
 as long, but each element here is the result
 of applying this function to the corresponding
 
-0:06:34.210,0:06:35.210
+00:06:34,210 --> 00:06:35,210
 element here.
 
-0:06:35.210,0:06:42.050
+00:06:35,210 --> 00:06:42,050
 So, we have now a new list which is a list
 of 'b's and is the result of this function
 
-0:06:42.050,0:06:46.770
+00:06:42,050 --> 00:06:46,770
 (whatever was the first argument to the 'map'
 call) on the corresponding elements from
 
-0:06:46.770,0:06:49.169
+00:06:46,770 --> 00:06:49,169
 here.
 
-0:06:49.169,0:06:52.000
+00:06:49,169 --> 00:06:52,000
 How could we use this?
 
-0:06:52.000,0:07:00.430
+00:06:52,000 --> 00:07:00,430
 For example, we could call it with the 'even'
 predicate on some list of integers.
 
-0:07:00.430,0:07:02.999
+00:07:00,430 --> 00:07:02,999
 So, let's discuss what would happen here.
 
-0:07:02.999,0:07:04.999
+00:07:02,999 --> 00:07:04,999
 The function 'even' goes from Int to Bool.
 
-0:07:04.999,0:07:10.039
+00:07:04,999 --> 00:07:10,039
 In this case, 'a' would be Int and 'b' would
 be Bool, which means that the second argument
 
-0:07:10.039,0:07:12.990
+00:07:10,039 --> 00:07:12,990
 should be a list of Ints, which is the case
 here.
 
-0:07:12.990,0:07:15.069
+00:07:12,990 --> 00:07:15,069
 Then the outcome would be a list of Bools.
 
-0:07:15.069,0:07:16.870
+00:07:15,069 --> 00:07:16,870
 And, well, which Bools?
 
-0:07:16.870,0:07:21.039
+00:07:16,870 --> 00:07:21,039
 For each element here, we would apply the
 'even' predicate, so checking whether the
 
-0:07:21.039,0:07:25.189
+00:07:21,039 --> 00:07:25,189
 number is even or not, and accumulating the
 outcomes in the list.
 
-0:07:25.189,0:07:29.590
+00:07:25,189 --> 00:07:29,590
 So, the outcome of this call here will be a
 list with 10 elements.
 
-0:07:29.590,0:07:33.460
+00:07:29,590 --> 00:07:33,460
 The first element is False because "1" is
 not even.
 
-0:07:33.460,0:07:37.529
+00:07:33,460 --> 00:07:37,529
 The second element of the result will be True,
 because the second element from this list
 
-0:07:37.529,0:07:39.910
+00:07:37,529 --> 00:07:39,910
 is "2", which is even, and so on.
 
-0:07:39.910,0:07:43.780
+00:07:39,910 --> 00:07:43,780
 We have False, True, False, True, False, True,
 False, True, False, True.
 
-0:07:43.780,0:07:45.079
+00:07:43,780 --> 00:07:45,079
 Overall, 10 Boolean values.
 
-0:07:45.079,0:07:50.389
+00:07:45,079 --> 00:07:50,389
 And each of them is the result of the check
 for evenness of the corresponding element
 
-0:07:50.389,0:07:52.050
+00:07:50,389 --> 00:07:52,050
 from the original list.
 
-0:07:52.050,0:07:53.759
+00:07:52,050 --> 00:07:53,759
 That is this line.
 
-0:07:53.759,0:07:57.900
+00:07:53,759 --> 00:07:57,900
 But of course, since the function is polymorphic,
 we don't have to apply it to numbers or Booleans.
 
-0:07:57.900,0:08:00.569
+00:07:57,900 --> 00:08:00,569
 We can apply it, for example, to Pictures.
 
-0:08:00.569,0:08:06.490
+00:08:00,569 --> 00:08:06,490
 For example, 'a' and 'b' could both be instantiated
 with Picture, then you would have to give
 
-0:08:06.490,0:08:08.990
+00:08:06,490 --> 00:08:08,990
 in a function from Pictures to Pictures.
 
-0:08:08.990,0:08:11.699
+00:08:08,990 --> 00:08:11,699
 Well, let's think of the CodeWorld library.
 
-0:08:11.699,0:08:15.639
+00:08:11,699 --> 00:08:15,639
 For example, 'dilated 5' is a function from
 Pictures to Pictures.
 
-0:08:15.639,0:08:20.800
+00:08:15,639 --> 00:08:20,800
 Namely, it takes a Picture and scales it by
 a factor 5 in both x and y directions.
 
-0:08:20.800,0:08:22.389
+00:08:20,800 --> 00:08:22,389
 So, this is a partial application.
 
-0:08:22.389,0:08:23.389
+00:08:22,389 --> 00:08:23,389
 It's a function.
 
-0:08:23.389,0:08:27.539
+00:08:23,389 --> 00:08:27,539
 Actually, 'dilated' takes a number and a Picture
 and gives a Picture.
 
-0:08:27.539,0:08:31.560
+00:08:27,539 --> 00:08:31,560
 So, if we apply it partially to just a number,
 then we get a function from Picture to Picture.
 
-0:08:31.560,0:08:37.440
+00:08:31,560 --> 00:08:37,440
 That is something we can pass in here, if
 'a' and 'b' are both Picture.
 
-0:08:37.440,0:08:39.150
+00:08:37,440 --> 00:08:39,150
 Then we have to give a list of Pictures.
 
-0:08:39.150,0:08:42.790
+00:08:39,150 --> 00:08:42,790
 So, let's say we have three Pictures: pic1,
 pic2, pic3.
 
-0:08:42.790,0:08:44.330
+00:08:42,790 --> 00:08:44,330
 Then we can pass this in.
 
-0:08:44.330,0:08:45.630
+00:08:44,330 --> 00:08:45,630
 And what would be the outcome?
 
-0:08:45.630,0:08:49.910
+00:08:45,630 --> 00:08:49,910
 Again, a list of Pictures because 'b' will
 also be Picture in this case.
 
-0:08:49.910,0:08:51.960
+00:08:49,910 --> 00:08:51,960
 And what is the outcome list?
 
-0:08:51.960,0:08:58.410
+00:08:51,960 --> 00:08:58,410
 It's a list of three Pictures, which are these
 three, but each of them is scaled in both
 
-0:08:58.410,0:09:00.030
+00:08:58,410 --> 00:09:00,030
 x and y direction by 5.
 
-0:09:00.030,0:09:06.000
+00:09:00,030 --> 00:09:06,000
 This is expressing: take this list of Pictures,
 and for each of them, scale in this way.
 
-0:09:06.000,0:09:14.390
+00:09:06,000 --> 00:09:14,390
 And that is a very brief way to express this.
 
-0:09:14.390,0:09:15.390
+00:09:14,390 --> 00:09:15,390
 And another example:
 
-0:09:15.390,0:09:18.120
+00:09:15,390 --> 00:09:18,120
 The so-called 'filter' function.
 
-0:09:18.120,0:09:20.390
+00:09:18,120 --> 00:09:20,390
 A slightly different type.
 
-0:09:20.390,0:09:25.620
+00:09:20,390 --> 00:09:25,620
 What are the ingredients now?
 
-0:09:25.620,0:09:26.710
+00:09:25,620 --> 00:09:26,710
 Again, we have a function.
 
-0:09:26.710,0:09:29.220
+00:09:26,710 --> 00:09:29,220
 But now it's not a function from 'a' to some
 'b' (to anything).
 
-0:09:29.220,0:09:32.170
+00:09:29,220 --> 00:09:32,170
 It's a function of type from 'a' to Bool.
 
-0:09:32.170,0:09:33.390
+00:09:32,170 --> 00:09:33,390
 So, it is a predicate.
 
-0:09:33.390,0:09:35.370
+00:09:33,390 --> 00:09:35,370
 The 'a' is still polymorphic.
 
-0:09:35.370,0:09:40.330
+00:09:35,370 --> 00:09:40,330
 But the outcome of this function type is specifically
 Bool.
 
-0:09:40.330,0:09:44.180
+00:09:40,330 --> 00:09:44,180
 Which was allowed in the previous case with
 the 'map' function, but it was not enforced
 
-0:09:44.180,0:09:45.180
+00:09:44,180 --> 00:09:45,180
 there.
 
-0:09:45.180,0:09:46.340
+00:09:45,180 --> 00:09:46,340
 There, 'b' could be anything.
 
-0:09:46.340,0:09:51.710
+00:09:46,340 --> 00:09:51,710
 Then, again, we get a list of 'a's, so, of
 the things to which this predicate (this function)
 
-0:09:51.710,0:09:53.010
+00:09:51,710 --> 00:09:53,010
 can be applied.
 
-0:09:53.010,0:09:54.110
+00:09:53,010 --> 00:09:54,110
 And the outcome is a list of 'a's.
 
-0:09:54.110,0:09:59.120
+00:09:54,110 --> 00:09:59,120
 Previously, it was a list of 'b's because
 we outputted the results of applying the function
 
-0:09:59.120,0:10:00.210
+00:09:59,120 --> 00:10:00,210
 to elements from here.
 
-0:10:00.210,0:10:05.390
+00:10:00,210 --> 00:10:05,390
 Now for the 'filter' instead of the 'map' function,
 we instead return a list of 'a's.
 
-0:10:05.390,0:10:06.390
+00:10:05,390 --> 00:10:06,390
 Which 'a's are this?
 
-0:10:06.390,0:10:08.370
+00:10:06,390 --> 00:10:08,370
 Which 'a' elements will this be?
 
-0:10:08.370,0:10:13.600
+00:10:08,370 --> 00:10:13,600
 The ones from this list which satisfy whatever
 predicate is given here (whatever function
 
-0:10:13.600,0:10:16.940
+00:10:13,600 --> 00:10:16,940
 from 'a' to Bool is given here).
 
-0:10:16.940,0:10:21.380
+00:10:16,940 --> 00:10:21,380
 So, this could be a shorter list than this
 one, because some elements from this list
 
-0:10:21.380,0:10:25.130
+00:10:21,380 --> 00:10:25,130
 might not satisfy this predicate, and then
 they are discarded.
 
-0:10:25.130,0:10:28.150
+00:10:25,130 --> 00:10:28,150
 Let's think about using this with the 'even'
 predicate again.
 
-0:10:28.150,0:10:33.480
+00:10:28,150 --> 00:10:33,480
 In the previous slide, I had 'map' and 'even'
 and [1,2,...,10], and then the outcome was
 
-0:10:33.480,0:10:34.810
+00:10:33,480 --> 00:10:34,810
 [False, True, False, True, ...].
 
-0:10:34.810,0:10:41.780
+00:10:34,810 --> 00:10:41,780
 Ten elements to ten Boolean values, namely,
 False, True, etc., because 1 is not even,
 
-0:10:41.780,0:10:44.350
+00:10:41,780 --> 00:10:44,350
 but 2 is even, 3 is not even, etc.
 
-0:10:44.350,0:10:46.310
+00:10:44,350 --> 00:10:46,310
 What would happen if we apply 'filter' and
 'even'?
 
-0:10:46.310,0:10:47.720
+00:10:46,310 --> 00:10:47,720
 What does it say?
 
-0:10:47.720,0:10:51.750
+00:10:47,720 --> 00:10:51,750
 Take the elements from that list [1..10] which
 satisfy the predicate.
 
-0:10:51.750,0:10:59.690
+00:10:51,750 --> 00:10:59,690
 So, the ones to which the function applied
 gives False would now not be kept.
 
-0:10:59.690,0:11:02.800
+00:10:59,690 --> 00:11:02,800
 So, we don't keep 1, 3, 5, etc.
 
-0:11:02.800,0:11:04.070
+00:11:02,800 --> 00:11:04,070
 The other ones are kept.
 
-0:11:04.070,0:11:07.580
+00:11:04,070 --> 00:11:07,580
 And we don't output True for them, because
 we don't output Bool.
 
-0:11:07.580,0:11:09.270
+00:11:07,580 --> 00:11:09,270
 The output is the elements themselves.
 
-0:11:09.270,0:11:16.260
+00:11:09,270 --> 00:11:16,260
 So, while "map even [1..10]" gives [False,
 True, False, True, ...], "filter even [1..10]"
 
-0:11:16.260,0:11:17.260
+00:11:16,260 --> 00:11:17,260
 gives [2,4,6,8,10].
 
-0:11:17.260,0:11:21.150
+00:11:17,260 --> 00:11:21,150
 We get the list of numbers which satisfy the
 predicate.
 
-0:11:21.150,0:11:24.560
+00:11:21,150 --> 00:11:24,560
 This was one example, with the 'even' predicate.
 
-0:11:24.560,0:11:28.470
+00:11:24,560 --> 00:11:28,470
 We can think of other examples.
 
-0:11:28.470,0:11:32.800
+00:11:28,470 --> 00:11:32,800
 Let's take the 'isPalindrome' function that
 we used in the slides (and you also programmed
 
-0:11:32.800,0:11:34.980
+00:11:32,800 --> 00:11:34,980
 a version of it in the exercises).
 
-0:11:34.980,0:11:38.240
+00:11:34,980 --> 00:11:38,240
 And let's say we have a "completeDictionary",
 as a list of Strings.
 
-0:11:38.240,0:11:44.270
+00:11:38,240 --> 00:11:44,270
 And we want to know which of the words in
 our dictionary are palindromes.
 
-0:11:44.270,0:11:49.680
+00:11:44,270 --> 00:11:49,680
 We simply have to filter that complete dictionary
 by this isPalindrome-predicate.
 
-0:11:49.680,0:11:57.700
+00:11:49,680 --> 00:11:57,700
 So, this would be a list of Strings, and 'isPalindrome'
 is a function from String to Bool, so the
 
-0:11:57.700,0:12:01.560
+00:11:57,700 --> 00:12:01,560
 outcome would be again a list of Strings,
 namely, only those words from the dictionary
 
-0:12:01.560,0:12:02.730
+00:12:01,560 --> 00:12:02,730
 which are palindromes.
 
-0:12:02.730,0:12:10.970
+00:12:02,730 --> 00:12:10,970
 Or let's say we have something like "bonusPercentageList",
 as Double values, and we want to keep only
 
-0:12:10.970,0:12:14.750
+00:12:10,970 --> 00:12:14,750
 those which are greater than 50%.
 
-0:12:14.750,0:12:20.910
+00:12:14,750 --> 00:12:20,910
 Then we could pass this section, this anonymous
 function, to the 'filter' function.
 
-0:12:20.910,0:12:25.280
+00:12:20,910 --> 00:12:25,280
 So, the predicate would be from Double to Bool
 (because that is exactly what this is doing:
 
-0:12:25.280,0:12:30.420
+00:12:25,280 --> 00:12:30,420
 checking for a Double whether it's greater
 than 0.5), this would be a list of Doubles
 
-0:12:30.420,0:12:35.760
+00:12:30,420 --> 00:12:35,760
 (the bonusPercentageList), and the outcome
 would be a possibly shorter list of Doubles,
 
-0:12:35.760,0:12:39.620
+00:12:35,760 --> 00:12:39,620
 namely, only those kept that are greater than
 50%.
 
-0:12:39.620,0:12:49.360
+00:12:39,620 --> 00:12:49,360
 And again, when I say "It selects list elements",
 that doesn't mean it changes this list.
 
-0:12:49.360,0:12:50.760
+00:12:49,360 --> 00:12:50,760
 This is a list which comes in.
 
-0:12:50.760,0:12:51.760
+00:12:50,760 --> 00:12:51,760
 It is the input.
 
-0:12:51.760,0:12:57.410
+00:12:51,760 --> 00:12:57,410
 And out comes another list, which is probably,
 in most cases, a bit shorter because some elements
 
-0:12:57.410,0:12:58.410
+00:12:57,410 --> 00:12:58,410
 will not be selected.
 
-0:12:58.410,0:13:00.000
+00:12:58,410 --> 00:13:00,000
 So, we don't delete something from the list.
 
-0:13:00.000,0:13:07.370
+00:13:00,000 --> 00:13:07,370
 We give back a new list which has fewer elements.
 
-0:13:07.370,0:13:11.070
+00:13:07,370 --> 00:13:11,070
 Now we could ask ourselves how 'map' and 'filter'
 are defined.
 
-0:13:11.070,0:13:18.470
+00:13:11,070 --> 00:13:18,470
 Actually, you should be able to come up with
 this on your own.
 
-0:13:18.470,0:13:22.620
+00:13:18,470 --> 00:13:22,620
 Namely, 'map' and 'filter', applying a function
 to each element of a list or selecting elements
 
-0:13:22.620,0:13:29.040
+00:13:22,620 --> 00:13:29,040
 from a list according to some predicate/property;
 that was exactly what we have been using list
 
-0:13:29.040,0:13:30.040
+00:13:29,040 --> 00:13:30,040
 comprehension for, so far.
 
-0:13:30.040,0:13:36.460
+00:13:30,040 --> 00:13:36,460
 Indeed, you could think of what you see on
 this slide as the definitions of 'map' and
 
-0:13:36.460,0:13:37.460
+00:13:36,460 --> 00:13:37,460
 'filter'.
 
-0:13:37.460,0:13:43.200
+00:13:37,460 --> 00:13:43,200
 The 'map' function takes a function, takes
 a list, and what does it do?
 
-0:13:43.200,0:13:50.660
+00:13:43,200 --> 00:13:50,660
 It selects each element from the list, applies
 f to it, and accumulates the outcomes in a
 
-0:13:50.660,0:13:51.660
+00:13:50,660 --> 00:13:51,660
 list.
 
-0:13:51.660,0:13:55.990
+00:13:51,660 --> 00:13:55,990
 This is not actually how 'map' is defined
 in the standard library, because there are
 
-0:13:55.990,0:14:00.690
+00:13:55,990 --> 00:14:00,690
 different and more general ways to do this
 (which will also be applicable to other types,
 
-0:14:00.690,0:14:01.690
+00:14:00,690 --> 00:14:01,690
 as I mentioned).
 
-0:14:01.690,0:14:06.330
+00:14:01,690 --> 00:14:06,330
 But for the specific case of lists, you could
 think of 'map' as being defined like this.
 
-0:14:06.330,0:14:10.290
+00:14:06,330 --> 00:14:10,290
 So, whenever, so far, we wrote something like
 this, we could also have used the 'map' function.
 
-0:14:10.290,0:14:14.459
+00:14:10,290 --> 00:14:14,459
 You couldn't have used that sometimes, because
 that was excluded from the exercise tasks.
 
-0:14:14.459,0:14:18.370
+00:14:14,459 --> 00:14:18,370
 But from now on, where appropriate, you can
 use this.
 
-0:14:18.370,0:14:21.630
+00:14:18,370 --> 00:14:21,630
 And similarly 'filter', about selecting things
 from a list.
 
-0:14:21.630,0:14:25.670
+00:14:21,630 --> 00:14:25,670
 That is also something we have done so far
 with list comprehensions with these guard
 
-0:14:25.670,0:14:32.490
+00:14:25,670 --> 00:14:32,490
 expressions saying: I take each element from
 a list which satisfies a predicate (something
 
-0:14:32.490,0:14:38.141
+00:14:32,490 --> 00:14:38,141
 like "even a", for example), and then the
 'a' is kept.
 
-0:14:38.141,0:14:41.350
+00:14:38,141 --> 00:14:41,350
 This is exactly as was described for the 'filter' function.
 
-0:14:41.350,0:14:48.550
+00:14:41,350 --> 00:14:48,550
 So, 'map' and 'filter' are somehow replacements
 for certain kinds of list comprehensions,
 
-0:14:48.550,0:14:49.550
+00:14:48,550 --> 00:14:49,550
 at least.
 
-0:14:49.550,0:14:54.090
+00:14:49,550 --> 00:14:54,090
 And that is a way to maybe remember, and better
 understand, these functions from your perspective
 
-0:14:54.090,0:14:57.710
+00:14:54,090 --> 00:14:57,710
 now, because you already know list comprehensions.
 
-0:14:57.710,0:15:04.730
+00:14:57,710 --> 00:15:04,730
 But also the opposite is true, namely: conversely,
 every list comprehension expression, no matter
 
-0:15:04.730,0:15:10.660
+00:15:04,730 --> 00:15:10,660
 how complicated (maybe using several generators,
 more than one guard expression, etc.), can
 
-0:15:10.660,0:15:13.230
+00:15:10,660 --> 00:15:13,230
 be implemented with 'map' and 'filter', and
 actually, we might use the 'concat' function
 
-0:15:13.230,0:15:15.860
+00:15:13,230 --> 00:15:15,860
 in addition (which was introduced earlier).
 
-0:15:15.860,0:15:18.190
+00:15:15,860 --> 00:15:18,190
 It is not a higher-order function.
 
-0:15:18.190,0:15:21.560
+00:15:18,190 --> 00:15:21,560
 It is a polymorphic function which basically
 flattens list levels.
 
-0:15:21.560,0:15:25.680
+00:15:21,560 --> 00:15:25,680
 So, if we have a list of lists of 'a's, then
 'concat' gives us a list of 'a's by concatenating
 
-0:15:25.680,0:15:27.430
+00:15:25,680 --> 00:15:27,430
 all the inner lists.
 
-0:15:27.430,0:15:31.780
+00:15:27,430 --> 00:15:31,780
 And if you have 'map', 'filter', and 'concat',
 then you don't need list comprehensions anymore.
 
-0:15:31.780,0:15:35.500
+00:15:31,780 --> 00:15:35,500
 Because whatever you could express with even
 complicated list comprehension expressions
 
-0:15:35.500,0:15:38.590
+00:15:35,500 --> 00:15:38,590
 can also be expressed with 'map', 'filter',
 and 'concat'.
 
-0:15:38.590,0:15:41.871
+00:15:38,590 --> 00:15:41,871
 And indeed, that is what the compiler does.
 
-0:15:41.871,0:15:52.530
+00:15:41,871 --> 00:15:52,530
 So, if in your Haskell code you use list comprehensions,
 then at some point during the compilation
 
-0:15:52.530,0:15:59.310
+00:15:52,530 --> 00:15:59,310
 process, they essentially get replaced by
 expressions involving 'map', 'filter', and
 
-0:15:59.310,0:16:00.630
+00:15:59,310 --> 00:16:00,630
 'concat'.
 
-0:16:00.630,0:16:06.920
+00:16:00,630 --> 00:16:06,920
 Given this relationship to list comprehensions,
 a further question might be whether if we
 
-0:16:06.920,0:16:12.050
+00:16:06,920 --> 00:16:12,050
 now switch from list comprehensions to 'map'
 and 'filter' (and maybe 'foldl1' and other
 
-0:16:12.050,0:16:16.180
+00:16:12,050 --> 00:16:16,180
 similar functions), is this still wholemeal
 programming in the sense discussed in the
 
-0:16:16.180,0:16:18.850
+00:16:16,180 --> 00:16:18,850
 last week?
 
-0:16:18.850,0:16:23.590
+00:16:18,850 --> 00:16:23,590
 So far, my examples on wholemeal programming
 were about using list comprehensions instead
 
-0:16:23.590,0:16:27.140
+00:16:23,590 --> 00:16:27,140
 of explicit recursion or instead of list indexing.
 
-0:16:27.140,0:16:31.940
+00:16:27,140 --> 00:16:31,940
 So, now, if I go to 'map' and 'filter' and
 other higher-order functions, is this still
 
-0:16:31.940,0:16:33.210
+00:16:31,940 --> 00:16:33,210
 wholemeal programming?
 
-0:16:33.210,0:16:35.190
+00:16:33,210 --> 00:16:35,190
 Yes, absolutely!
 
-0:16:35.190,0:16:38.090
+00:16:35,190 --> 00:16:38,090
 In some sense even more so.
 
-0:16:38.090,0:16:41.760
+00:16:38,090 --> 00:16:41,760
 Since these higher-order functions provide
 a first step in the direction of more abstraction.
 
-0:16:41.760,0:16:46.040
+00:16:41,760 --> 00:16:46,040
 As I said, they are available for other data
 structures as well.
 
-0:16:46.040,0:16:47.190
+00:16:46,040 --> 00:16:47,190
 List comprehensions are for lists.
 
-0:16:47.190,0:16:52.420
+00:16:47,190 --> 00:16:52,420
 So, if we want to do wholemeal programming
 on lists, we can use list comprehensions.
 
-0:16:52.420,0:16:53.760
+00:16:52,420 --> 00:16:53,760
 What about other data structures?
 
-0:16:53.760,0:16:59.930
+00:16:53,760 --> 00:16:59,930
 If we have trees or generally not just lists,
 but some more structured data structures?
 
-0:16:59.930,0:17:04.710
+00:16:59,930 --> 00:17:04,710
 Then we won't have list comprehensions anymore,
 because they are about lists.
 
-0:17:04.710,0:17:08.399
+00:17:04,710 --> 00:17:08,399
 But these 'map' and 'filter' and similar functions,
 they are available for other data types as
 
-0:17:08.399,0:17:09.399
+00:17:08,399 --> 00:17:09,399
 well.
 
-0:17:09.399,0:17:12.639
+00:17:09,399 --> 00:17:12,639
 Then we can think about wholemeal programming
 on other types as well.
 
-0:17:12.639,0:17:21.049
+00:17:12,639 --> 00:17:21,049
 And this is actually a benefit of this more
 general perspective.
 
-0:17:21.049,0:17:25.680
+00:17:21,049 --> 00:17:25,680
 Discussing this on lists with the 'map' and
 'filter' versions for lists, I actually want
 
-0:17:25.680,0:17:28.510
+00:17:25,680 --> 00:17:28,510
 to discuss a short example.
 
-0:17:28.510,0:17:31.559
+00:17:28,510 --> 00:17:31,559
 So, let me first read it here, what the aim
 is.
 
-0:17:31.559,0:17:38.720
+00:17:31,559 --> 00:17:38,720
 And then we can look at basically two solutions,
 with list comprehensions and with 'map' and
 
-0:17:38.720,0:17:40.409
+00:17:38,720 --> 00:17:40,409
 'filter', and discuss the comparison.
 
-0:17:40.409,0:17:49.320
+00:17:40,409 --> 00:17:49,320
 In a similar way to when I compared for-loops
 to list comprehension expressions, when I
 
-0:17:49.320,0:17:54.860
+00:17:49,320 --> 00:17:54,860
 discussed C versus Haskell in the previous
 week.
 
-0:17:54.860,0:17:56.421
+00:17:54,860 --> 00:17:56,421
 So, what do we want to do here?
 
-0:17:56.421,0:17:59.639
+00:17:56,421 --> 00:17:59,639
 We have some numbers in a list.
 
-0:17:59.639,0:18:01.340
+00:17:59,639 --> 00:18:01,340
 We want to square them.
 
-0:18:01.340,0:18:07.509
+00:18:01,340 --> 00:18:07,509
 But we want to do that subject to the condition
 that we are interested in numbers divisible
 
-0:18:07.509,0:18:08.720
+00:18:07,509 --> 00:18:08,720
 by 4.
 
-0:18:08.720,0:18:12.630
+00:18:08,720 --> 00:18:12,630
 But what do we mean by "We are interested
 in numbers divisible by 4"?
 
-0:18:12.630,0:18:14.889
+00:18:12,630 --> 00:18:14,889
 We are not yet clear.
 
-0:18:14.889,0:18:20.539
+00:18:14,889 --> 00:18:20,539
 Is it that we want to make sure that we only
 square numbers divisible by 4?
 
-0:18:20.539,0:18:26.200
+00:18:20,539 --> 00:18:26,200
 Or do we want to check that after we square
 the numbers, they are divisible by 4?
 
-0:18:26.200,0:18:28.029
+00:18:26,200 --> 00:18:28,029
 That's a subtle difference.
 
-0:18:28.029,0:18:30.370
+00:18:28,029 --> 00:18:30,370
 And we want to experiment with both versions.
 
-0:18:30.370,0:18:34.980
+00:18:30,370 --> 00:18:34,980
 And we want to look at what does it mean to
 express this with list comprehensions (both
 
-0:18:34.980,0:18:42.970
+00:18:34,980 --> 00:18:42,970
 ways), and with 'map' and 'filter'.
 
-0:18:42.970,0:18:43.970
+00:18:42,970 --> 00:18:43,970
 Let's look at this.
 
-0:18:43.970,0:18:49.080
+00:18:43,970 --> 00:18:49,080
 Here are two lists comprehension expressions
 for the two cases.
 
-0:18:49.080,0:18:52.799
+00:18:49,080 --> 00:18:52,799
 What is the first line saying?
 
-0:18:52.799,0:18:57.659
+00:18:52,799 --> 00:18:57,659
 It says: I have a list, I take every element
 from the list, I check whether it is divisible
 
-0:18:57.659,0:19:01.509
+00:18:57,659 --> 00:19:01,509
 by 4; and if so, I keep it and square it.
 
-0:19:01.509,0:19:04.179
+00:19:01,509 --> 00:19:04,179
 This is one of the two versions.
 
-0:19:04.179,0:19:09.799
+00:19:04,179 --> 00:19:09,799
 This is the version where I only square numbers
 which are divisible by 4.
 
-0:19:09.799,0:19:15.440
+00:19:09,799 --> 00:19:15,440
 And the other version is: I decide that what
 I want is that the square numbers are divisible
 
-0:19:15.440,0:19:16.440
+00:19:15,440 --> 00:19:16,440
 by 4.
 
-0:19:16.440,0:19:22.840
+00:19:16,440 --> 00:19:22,840
 So, I want to take the numbers from the list,
 and to square them (just in case, to be prepared
 
-0:19:22.840,0:19:29.039
+00:19:22,840 --> 00:19:29,039
 to check them), and I do not check the x for
 divisibility by 4, but the y (which is the
 
-0:19:29.039,0:19:30.169
+00:19:29,039 --> 00:19:30,169
 square of x).
 
-0:19:30.169,0:19:32.360
+00:19:30,169 --> 00:19:32,360
 And only if this passes, then I keep the y.
 
-0:19:32.360,0:19:35.279
+00:19:32,360 --> 00:19:35,279
 These are the two versions.
 
-0:19:35.279,0:19:39.360
+00:19:35,279 --> 00:19:39,360
 And I have to do some work to switch from
 one to the other.
 
-0:19:39.360,0:19:45.860
+00:19:39,360 --> 00:19:45,860
 It is not an obvious transformation from here
 to there, or from here to there.
 
-0:19:45.860,0:19:47.850
+00:19:45,860 --> 00:19:47,850
 And the only difference conceptually is:
 
-0:19:47.850,0:19:51.440
+00:19:47,850 --> 00:19:51,440
 Do I want to square those things which are
 divisible by 4?
 
-0:19:51.440,0:19:56.610
+00:19:51,440 --> 00:19:56,610
 Or do I want to square things and the outcome
 should be divisible by 4?
 
-0:19:56.610,0:19:59.710
+00:19:56,610 --> 00:19:59,710
 This leads to quite different code.
 
-0:19:59.710,0:20:05.750
+00:19:59,710 --> 00:20:05,750
 Well, it is not completely different code,
 but I had to rearrange this list comprehension.
 
-0:20:05.750,0:20:10.230
+00:20:05,750 --> 00:20:10,230
 What is the message here if I do this, instead,
 with 'map' and 'filter'?
 
-0:20:10.230,0:20:13.370
+00:20:10,230 --> 00:20:13,370
 It becomes more symmetric, in a way.
 
-0:20:13.370,0:20:15.960
+00:20:13,370 --> 00:20:15,960
 Writing this with 'map' and 'filter', what
 would I do?
 
-0:20:15.960,0:20:22.070
+00:20:15,960 --> 00:20:22,070
 Well, the first version is: I want to look
 at all the values from the original list which
 
-0:20:22.070,0:20:24.179
+00:20:22,070 --> 00:20:24,179
 are divisible by 4, then I want to square
 them.
 
-0:20:24.179,0:20:25.750
+00:20:24,179 --> 00:20:25,750
 But how can I express this?
 
-0:20:25.750,0:20:31.929
+00:20:25,750 --> 00:20:31,929
 I can use function composition, which I introduced
 in the previous whiteboard video, and compose
 
-0:20:31.929,0:20:34.480
+00:20:31,929 --> 00:20:34,480
 two functions, namely uses of 'filter' and
 'map'.
 
-0:20:34.480,0:20:39.399
+00:20:34,480 --> 00:20:39,399
 The 'filter' function is the one which will
 make the job of only keeping the elements
 
-0:20:39.399,0:20:41.409
+00:20:39,399 --> 00:20:41,409
 which are divisible by 4.
 
-0:20:41.409,0:20:44.169
+00:20:41,409 --> 00:20:44,169
 That's what will happen here.
 
-0:20:44.169,0:20:48.769
+00:20:44,169 --> 00:20:48,769
 And afterwards, I will square the elements
 in the list which I have at this point, after
 
-0:20:48.769,0:20:49.769
+00:20:48,769 --> 00:20:49,769
 filtering.
 
-0:20:49.769,0:20:54.660
+00:20:49,769 --> 00:20:54,660
 This is, again, section syntax: the function
 that takes something and squares it.
 
-0:20:54.660,0:20:57.140
+00:20:54,660 --> 00:20:57,140
 So, this corresponds to the first line here.
 
-0:20:57.140,0:20:59.039
+00:20:57,140 --> 00:20:59,039
 And to the second line corresponds what?
 
-0:20:59.039,0:21:06.190
+00:20:59,039 --> 00:21:06,190
 Well, here I want to say: I want to square
 elements in a list, and I want to only keep
 
-0:21:06.190,0:21:08.619
+00:21:06,190 --> 00:21:08,619
 those where the square is divisible by 4.
 
-0:21:08.619,0:21:14.380
+00:21:08,619 --> 00:21:14,380
 This, simply, means to switch the order of
 the constituents of this function composition.
 
-0:21:14.380,0:21:19.400
+00:21:14,380 --> 00:21:19,400
 Now, I first apply 'map' to square each element
 of my given list.
 
-0:21:19.400,0:21:23.080
+00:21:19,400 --> 00:21:23,080
 So, these two expressions will, of course,
 be applied to this list.
 
-0:21:23.080,0:21:25.230
+00:21:23,080 --> 00:21:25,230
 These are functions after composition.
 
-0:21:25.230,0:21:27.490
+00:21:25,230 --> 00:21:27,490
 They are composing functions into a function.
 
-0:21:27.490,0:21:30.940
+00:21:27,490 --> 00:21:30,940
 And then, this whole expression, this one
 or this one, would be applied to a list.
 
-0:21:30.940,0:21:35.960
+00:21:30,940 --> 00:21:35,960
 When we do this here, this list will have
 each element squared, and afterwards we will
 
-0:21:35.960,0:21:38.230
+00:21:35,960 --> 00:21:38,230
 filter for divisibility by 4.
 
-0:21:38.230,0:21:44.940
+00:21:38,230 --> 00:21:44,940
 So, here, on this level of expression, it simply
 means to swap the order of function composition.
 
-0:21:44.940,0:21:53.139
+00:21:44,940 --> 00:21:53,139
 Whereas on the somewhat lower level of list
 comprehensions, we needed more transformation
 
-0:21:53.139,0:21:56.250
+00:21:53,139 --> 00:21:56,250
 of syntax to switch from one version to the
 other.
 
-0:21:56.250,0:22:03.570
+00:21:56,250 --> 00:22:03,570
 In that sense, this is a nicer and more general
 way of expressing manipulation of lists or
 
-0:22:03.570,0:22:04.570
+00:22:03,570 --> 00:22:04,570
 list elements.
 
-0:22:04.570,0:22:07.659
+00:22:04,570 --> 00:22:07,659
 This is also fine, of course, list comprehensions.
 
-0:22:07.659,0:22:17.640
+00:22:07,659 --> 00:22:17,640
 But this is more pleasing from an algebraic
 perspective.
 
-0:22:17.640,0:22:26.640
+00:22:17,640 --> 00:22:26,640
 And interestingly, also when it comes to expressing
 algebraic laws, this perspective of higher-order
 
-0:22:26.640,0:22:31.779
+00:22:26,640 --> 00:22:31,779
 functions becomes more general and maybe also
 more useful.
 
-0:22:31.779,0:22:38.960
+00:22:31,779 --> 00:22:38,960
 So, let's recall this law that we mentioned
 a while back, about 'reverse' and list comprehensions.
 
-0:22:38.960,0:22:45.809
+00:22:38,960 --> 00:22:45,809
 Actually, it was discussed already that thanks
 to polymorphism, we can also put other completely
 
-0:22:45.809,0:22:49.529
+00:22:45,809 --> 00:22:49,529
 polymorphic functions on lists in this place.
 
-0:22:49.529,0:22:54.679
+00:22:49,529 --> 00:22:54,679
 And we said something like: 'reverse' of a
 list comprehension where we apply a function
 
-0:22:54.679,0:22:58.759
+00:22:54,679 --> 00:22:58,759
 to each element from a given list (and then
 reversing), is the same as doing the same
 
-0:22:58.759,0:23:02.980
+00:22:58,759 --> 00:23:02,980
 but on the reversed list, and then not having
 the ultimate 'reverse' call.
 
-0:23:02.980,0:23:09.029
+00:23:02,980 --> 00:23:09,029
 And now that we know that this is basically
 a 'map' call, we can express this with function
 
-0:23:09.029,0:23:13.940
+00:23:09,029 --> 00:23:13,940
 composition, by saying: "reverse after map f
 is the same as map f after reverse".
 
-0:23:13.940,0:23:15.230
+00:23:13,940 --> 00:23:15,230
 It uses reverse/reverse.
 
-0:23:15.230,0:23:18.850
+00:23:15,230 --> 00:23:18,850
 It uses the expression of this list comprehension
 by map.
 
-0:23:18.850,0:23:24.870
+00:23:18,850 --> 00:23:24,870
 And of course, this is also a 'map' call,
 namely, on the outcome of 'reverse'.
 
-0:23:24.870,0:23:31.120
+00:23:24,870 --> 00:23:31,120
 And then, if we also use function composition
 (this mathematical notion), then we can actually
 
-0:23:31.120,0:23:33.960
+00:23:31,120 --> 00:23:33,960
 say: "reverse after map is the same as map
 after reverse".
 
-0:23:33.960,0:23:37.190
+00:23:33,960 --> 00:23:37,190
 This is also very nice to remember.
 
-0:23:37.190,0:23:41.759
+00:23:37,190 --> 00:23:41,759
 And if we also know that this can be replaced
 by other polymorphic functions, we get a very
 
-0:23:41.759,0:23:43.220
+00:23:41,759 --> 00:23:43,220
 general law.
 
-0:23:43.220,0:23:51.299
+00:23:43,220 --> 00:23:51,299
 And since map can also be similarly defined
 on other data structures, and polymorphic
 
-0:23:51.299,0:23:56.340
+00:23:51,299 --> 00:23:56,340
 functions exist on other data structures,
 we can have the same kind of result then also
 
-0:23:56.340,0:23:58.350
+00:23:56,340 --> 00:23:58,350
 for other things than lists.
 
-0:23:58.350,0:24:03.309
+00:23:58,350 --> 00:24:03,309
 Which wouldn't be clear how to express if
 we want to generalize from these list comprehensions
 
-0:24:03.309,0:24:04.529
+00:24:03,309 --> 00:24:04,529
 to some other data type.
 
-0:24:04.529,0:24:06.980
+00:24:04,529 --> 00:24:06,980
 Because list comprehension syntax does not
 exist for other data types.
 
-0:24:06.980,0:24:10.320
+00:24:06,980 --> 00:24:10,320
 But 'map' and polymorphic functions do.
 
-0:24:10.320,0:24:13.649
+00:24:10,320 --> 00:24:13,649
 So, that's one thing, that we can express laws
 like this.
 
-0:24:13.649,0:24:17.179
+00:24:13,649 --> 00:24:17,179
 Then, of course, we can also ask ourselves:
 what about other higher-order functions?
 
-0:24:17.179,0:24:19.929
+00:24:17,179 --> 00:24:19,929
 Do they also satisfy such laws?
 
-0:24:19.929,0:24:21.379
+00:24:19,929 --> 00:24:21,379
 So, for example, we could ask ourselves:
 
-0:24:21.379,0:24:24.750
+00:24:21,379 --> 00:24:24,750
 Now we have 'map' and 'filter', do they also
 commute in some way?
 
-0:24:24.750,0:24:30.039
+00:24:24,750 --> 00:24:30,039
 If I have a map-call and a filter-call, can
 I also exchange the order of these?
 
-0:24:30.039,0:24:31.239
+00:24:30,039 --> 00:24:31,239
 The answer is: not always.
 
-0:24:31.239,0:24:35.419
+00:24:31,239 --> 00:24:35,419
 We also have to take into account that maybe
 these need to be different predicates, because
 
-0:24:35.419,0:24:37.200
+00:24:35,419 --> 00:24:37,200
 the f might change the type of the list elements.
 
-0:24:37.200,0:24:41.049
+00:24:37,200 --> 00:24:41,049
 So, it is not even clear that p and q could
 have the same types.
 
-0:24:41.049,0:24:43.410
+00:24:41,049 --> 00:24:43,410
 So, certainly, they are not simply the same
 predicate.
 
-0:24:43.410,0:24:45.519
+00:24:43,410 --> 00:24:45,519
 But maybe there is some relationship between
 them.
 
-0:24:45.519,0:24:52.690
+00:24:45,519 --> 00:24:52,690
 Actually, I would invite you to think a bit
 about this, because this will improve your
 
-0:24:52.690,0:24:55.441
+00:24:52,690 --> 00:24:55,441
 understanding of what 'map' and 'filter' are
 doing.
 
-0:24:55.441,0:25:03.440
+00:24:55,441 --> 00:25:03,440
 I am not going to discuss this now, but it's
 a nice thing to consider.
 
-0:25:03.440,0:25:08.960
+00:25:03,440 --> 00:25:08,960
 And generally, it can be said and observed
 that higher-order functions are themselves
 
-0:25:08.960,0:25:14.529
+00:25:08,960 --> 00:25:14,529
 a boon, are of benefit, for this idea of lawful
 program construction.
 
-0:25:14.529,0:25:20.249
+00:25:14,529 --> 00:25:20,249
 Remember the quote by Richard Bird that I
 started the wholemeal programming lecture
 
-0:25:20.249,0:25:23.869
+00:25:20,249 --> 00:25:23,869
 with (in last week's lectures).
 
-0:25:23.869,0:25:28.139
+00:25:23,869 --> 00:25:28,139
 So, we come full circle here.
 
-0:25:28.139,0:25:33.799
+00:25:28,139 --> 00:25:33,799
 Since these higher-order functions are a good
 replacement for list comprehensions, and a
 
-0:25:33.799,0:25:41.510
+00:25:33,799 --> 00:25:41,510
 good way of writing wholemeal programs, it
 makes sense that they have nice properties,
 
-0:25:41.510,0:25:44.529
+00:25:41,510 --> 00:25:44,529
 nice laws, and can be used for program construction.
 
-0:25:44.529,0:25:48.870
+00:25:44,529 --> 00:25:48,870
 For designing programs from ideas about algebraic
 properties, for example.
 
-0:25:48.870,0:25:55.299
+00:25:48,870 --> 00:25:55,299
 Again, this is not something we are going
 to do here, but that you might see in action
 
-0:25:55.299,0:25:59.970
+00:25:55,299 --> 00:25:59,970
 when you see some of the examples and think
 about how they are related.

@@ -1,1648 +1,1649 @@
-0:00:02.060,0:00:11.400
+96 # slide
+00:00:02,060 --> 00:00:11,400
 After this excurse on wholemeal programming,
 let us consider a language feature again.
 
-0:00:11.400,0:00:15.340
+00:00:11,400 --> 00:00:15,340
 And actually, it's a language feature we have
 already been using, and you have also already
 
-0:00:15.340,0:00:21.670
+00:00:15,340 --> 00:00:21,670
 been using implicitly in your exercises, without
 probably noticing it unless you already know
 
-0:00:21.670,0:00:22.670
+00:00:21,670 --> 00:00:22,670
 about it.
 
-0:00:22.670,0:00:25.410
+00:00:22,670 --> 00:00:25,410
 It has to do with types as written here.
 
-0:00:25.410,0:00:31.970
+00:00:25,410 --> 00:00:31,970
 And we can actually also see the need and
 the use for it when we look at lists again.
 
-0:00:31.970,0:00:40.340
+00:00:31,970 --> 00:00:40,340
 But anyway, the concept is more general and
 we will also see applications and usages outside
 
-0:00:40.340,0:00:43.290
+00:00:40,340 --> 00:00:43,290
 the case of lists.
 
-0:00:43.290,0:00:48.680
+00:00:43,290 --> 00:00:48,680
 Let's remember that each Haskell list is homogeneous.
 
-0:00:48.680,0:00:53.170
+00:00:48,680 --> 00:00:53,170
 That means that we cannot have, in the same
 list, elements of different types.
 
-0:00:53.170,0:00:56.780
+00:00:53,170 --> 00:00:56,780
 We can have a String as here in the first
 example line.
 
-0:00:56.780,0:00:59.820
+00:00:56,780 --> 00:00:59,820
 And that means we have a list of characters.
 
-0:00:59.820,0:01:04.210
+00:00:59,820 --> 00:01:04,210
 And we can have a list of Integers and then
 we have numbers in that list.
 
-0:01:04.210,0:01:08.530
+00:01:04,210 --> 00:01:08,530
 But we can't have a list which contains both
 a character and an Integer.
 
-0:01:08.530,0:01:10.811
+00:01:08,530 --> 00:01:10,811
 It is not only that we don't know what to
 write here.
 
-0:01:10.811,0:01:11.869
+00:01:10,811 --> 00:01:11,869
 It is simply ill-typed.
 
-0:01:11.869,0:01:16.360
+00:01:11,869 --> 00:01:16,360
 So, it is not something that would be accepted
 by a Haskell compiler or an interpreter.
 
-0:01:16.360,0:01:20.350
+00:01:16,360 --> 00:01:20,350
 It would simply reject this because it cannot
 give it either of those two types, nor any
 
-0:01:20.350,0:01:21.350
+00:01:20,350 --> 00:01:21,350
 other type.
 
-0:01:21.350,0:01:24.780
+00:01:21,350 --> 00:01:24,780
 It is simply not allowed.
 
-0:01:24.780,0:01:30.219
+00:01:24,780 --> 00:01:30,219
 That is, in some sense, bad news, so to speak,
 depending on how strict one wants typing to
 
-0:01:30.219,0:01:31.280
+00:01:30,219 --> 00:01:31,280
 be.
 
-0:01:31.280,0:01:35.649
+00:01:31,280 --> 00:01:35,649
 At the same time, we have seen that functions
 and operations on lists have been very flexible.
 
-0:01:35.649,0:01:42.749
+00:01:35,649 --> 00:01:42,749
 So, for example, we used "reverse" on Strings
 and this gave us another list of characters,
 
-0:01:42.749,0:01:44.469
+00:01:42,749 --> 00:01:44,469
 namely, the reversed String.
 
-0:01:44.469,0:01:49.619
+00:01:44,469 --> 00:01:49,619
 But we also used the very same function 'reverse'
 on Integers, and then we got a new Integer
 
-0:01:49.619,0:01:50.619
+00:01:49,619 --> 00:01:50,619
 list, etc.
 
-0:01:50.619,0:01:54.209
+00:01:50,619 --> 00:01:54,209
 Also, we had concatenation (++) that could be used
 on Strings.
 
-0:01:54.209,0:01:56.630
+00:01:54,209 --> 00:01:56,630
 It can be used on lists of Integers, etc.
 
-0:01:56.630,0:02:01.119
+00:01:56,630 --> 00:02:01,119
 And we have already depended on this flexibility
 a lot.
 
-0:02:01.119,0:02:03.789
+00:02:01,119 --> 00:02:03,789
 Also, list comprehensions are flexible in
 that sense.
 
-0:02:03.789,0:02:09.060
+00:02:03,789 --> 00:02:09,060
 So, for example, we have used (and you have
 used in the exercises) list comprehensions
 
-0:02:09.060,0:02:14.510
+00:02:09,060 --> 00:02:14,510
 both on the level of numbers or pairs of numbers,
 but also on the level of Strings and maybe
 
-0:02:14.510,0:02:19.459
+00:02:14,510 --> 00:02:19,459
 even pairs of Strings, depending on how you
 solved some of the exercises.
 
-0:02:19.459,0:02:25.650
+00:02:19,459 --> 00:02:25,650
 So, maybe you go back to some of the exercises
 and look at the functions that you have used
 
-0:02:25.650,0:02:27.290
+00:02:25,650 --> 00:02:27,290
 on lists and ask yourself:
 
-0:02:27.290,0:02:28.459
+00:02:27,290 --> 00:02:28,459
 What kind of list was this actually?
 
-0:02:28.459,0:02:30.239
+00:02:28,459 --> 00:02:30,239
 And did it matter?
 
-0:02:30.239,0:02:33.760
+00:02:30,239 --> 00:02:33,760
 And in each case, it would have been one of
 lists which are homogeneous.
 
-0:02:33.760,0:02:38.260
+00:02:33,760 --> 00:02:38,260
 But functions could be used on lists of different
 types.
 
-0:02:38.260,0:02:44.890
+00:02:38,260 --> 00:02:44,890
 But *in* each list, the values have to have
 the same type.
 
-0:02:44.890,0:02:49.870
+00:02:44,890 --> 00:02:49,870
 So, somehow, these two aspects must be reconciled:
 
-0:02:49.870,0:02:56.970
+00:02:49,870 --> 00:02:56,970
 The rigidity saying that every list must be
 homogeneous, which is very strong.
 
-0:02:56.970,0:03:01.180
+00:02:56,970 --> 00:03:01,180
 And on the other hand, flexible use of functions:
 to be able to use something like concatenation
 
-0:03:01.180,0:03:02.560
+00:03:01,180 --> 00:03:02,560
 on different kinds of lists.
 
-0:03:02.560,0:03:05.810
+00:03:02,560 --> 00:03:05,810
 So, of course, we want to be able to write
 something like this.
 
-0:03:05.810,0:03:06.810
+00:03:05,810 --> 00:03:06,810
 We have just seen this.
 
-0:03:06.810,0:03:08.690
+00:03:06,810 --> 00:03:08,690
 We want to concatenate lists of characters.
 
-0:03:08.690,0:03:11.910
+00:03:08,690 --> 00:03:11,910
 We want to concatenate lists of numbers.
 
-0:03:11.910,0:03:16.770
+00:03:11,910 --> 00:03:16,770
 Also for other functions like 'notElem' or
 'elem', we want to be able to ask whether
 
-0:03:16.770,0:03:21.909
+00:03:16,770 --> 00:03:21,909
 2 (a number) is an element of a list of numbers,
 or whether a character is an element of a
 
-0:03:21.909,0:03:25.219
+00:03:21,909 --> 00:03:25,219
 list of characters (that is, of a String).
 
-0:03:25.219,0:03:26.959
+00:03:25,219 --> 00:03:26,959
 But at the same time, we want to prevent calls
 like this.
 
-0:03:26.959,0:03:27.959
+00:03:26,959 --> 00:03:27,959
 So, we don't want this.
 
-0:03:27.959,0:03:32.110
+00:03:27,959 --> 00:03:32,110
 We want ++ to work on Strings and numbers,
 but we don't want it to work on both at the
 
-0:03:32.110,0:03:33.110
+00:03:32,110 --> 00:03:33,110
 same time.
 
-0:03:33.110,0:03:35.080
+00:03:33,110 --> 00:03:35,080
 Why don't we want this?
 
-0:03:35.080,0:03:38.540
+00:03:35,080 --> 00:03:38,540
 Well, if we did this, then even though this
 is a homogeneous list, and this is a homogeneous
 
-0:03:38.540,0:03:43.219
+00:03:38,540 --> 00:03:43,219
 list, and ++ can be used on both kinds of
 lists, then we would end up with a non-homogeneous
 
-0:03:43.219,0:03:44.219
+00:03:43,219 --> 00:03:44,219
 list.
 
-0:03:44.219,0:03:48.330
+00:03:44,219 --> 00:03:48,330
 If we would really append this, we would get
 a list which contains characters 'a' and 'b'
 
-0:03:48.330,0:03:49.500
+00:03:48,330 --> 00:03:49,500
 and then numbers 3 and 4.
 
-0:03:49.500,0:03:50.860
+00:03:49,500 --> 00:03:50,860
 And that is not something that we want.
 
-0:03:50.860,0:03:55.749
+00:03:50,860 --> 00:03:55,749
 That would destroy the strictness of "lists
 are always homogeneous".
 
-0:03:55.749,0:03:59.900
+00:03:55,749 --> 00:03:59,900
 And similarly, we want to ask whether a number
 is in a list of numbers.
 
-0:03:59.900,0:04:04.000
+00:03:59,900 --> 00:04:04,000
 We want to ask whether a character is in a
 list of characters.
 
-0:04:04.000,0:04:07.270
+00:04:04,000 --> 00:04:07,270
 But we don't want to ask whether a character
 is in a list of numbers.
 
-0:04:07.270,0:04:10.579
+00:04:07,270 --> 00:04:10,579
 And, no, we don't want this to evaluate
 to False.
 
-0:04:10.579,0:04:14.999
+00:04:10,579 --> 00:04:14,999
 Yes, in many languages, this would be okay,
 and the answer would be False ('a' does not
 
-0:04:14.999,0:04:16.150
+00:04:14,999 --> 00:04:16,150
 occur in this list [1,2,3]).
 
-0:04:16.150,0:04:17.489
+00:04:16,150 --> 00:04:17,489
 We don't want this.
 
-0:04:17.489,0:04:19.109
+00:04:17,489 --> 00:04:19,109
 We want this to be statically prevented.
 
-0:04:19.109,0:04:21.639
+00:04:19,109 --> 00:04:21,639
 So, this is not even a question it makes sense
 asking.
 
-0:04:21.639,0:04:27.110
+00:04:21,639 --> 00:04:27,110
 If these are of different types, then 'a'
 can't be an element of this list.
 
-0:04:27.110,0:04:30.720
+00:04:27,110 --> 00:04:30,720
 Simply because of the types not making sense.
 
-0:04:30.720,0:04:34.430
+00:04:30,720 --> 00:04:34,430
 So, we don't want that this, dynamically,
 evaluates to False.
 
-0:04:34.430,0:04:41.380
+00:04:34,430 --> 00:04:41,380
 We want that this, statically, is rejected
 as a not meaningful question.
 
-0:04:41.380,0:04:48.229
+00:04:41,380 --> 00:04:48,229
 So, what are the types then of functions like
 those just seen?
 
-0:04:48.229,0:04:54.710
+00:04:48,229 --> 00:04:54,710
 Actually, suspiciously maybe, none of these
 functions have been given types so far, neither
 
-0:04:54.710,0:04:56.259
+00:04:54,710 --> 00:04:56,259
 in the lectures, nor in the exercises.
 
-0:04:56.259,0:04:58.160
+00:04:56,259 --> 00:04:58,160
 We have steered around this.
 
-0:04:58.160,0:05:02.850
+00:04:58,160 --> 00:05:02,850
 If we had, for example, told you what the
 type of "reverse" is, then we might have had
 
-0:05:02.850,0:05:04.750
+00:05:02,850 --> 00:05:04,750
 to give you two types.
 
-0:05:04.750,0:05:12.820
+00:05:04,750 --> 00:05:12,820
 So, maybe: reverse on characters, which when
 given a list of characters, gives you a list
 
-0:05:12.820,0:05:17.360
+00:05:12,820 --> 00:05:17,360
 of character values again; and maybe a "reverseInteger"
 which, given a list of Integers, gives you
 
-0:05:17.360,0:05:18.360
+00:05:17,360 --> 00:05:18,360
 a list of Integers.
 
-0:05:18.360,0:05:23.250
+00:05:18,360 --> 00:05:23,250
 So, this is the kind of types that you have
 seen so far and that occurred in type signatures
 
-0:05:23.250,0:05:25.099
+00:05:23,250 --> 00:05:25,099
 in the exercise templates.
 
-0:05:25.099,0:05:30.729
+00:05:25,099 --> 00:05:30,729
 And if we had done something for reverse,
 giving it as a top-level function, then we
 
-0:05:30.729,0:05:34.660
+00:05:30,729 --> 00:05:34,660
 would have had maybe to decide which of the
 two to choose, or maybe in one exercise, write
 
-0:05:34.660,0:05:36.819
+00:05:34,660 --> 00:05:36,819
 it like this, and in another exercise, write
 it like that.
 
-0:05:36.819,0:05:40.972
+00:05:36,819 --> 00:05:40,972
 That is clearly not something that is somehow
 nicely maintainable in the long run.
 
-0:05:40.972,0:05:43.009
+00:05:40,972 --> 00:05:43,009
 That is not how we want to program.
 
-0:05:43.009,0:05:44.009
+00:05:43,009 --> 00:05:44,009
 So, what instead?
 
-0:05:44.009,0:05:50.510
+00:05:44,009 --> 00:05:50,510
 Well, the point is, we can use variables at
 the level of types as well: type variables.
 
-0:05:50.510,0:05:54.130
+00:05:50,510 --> 00:05:54,130
 So, the type of "reverse" is neither this nor
 this.
 
-0:05:54.130,0:05:55.750
+00:05:54,130 --> 00:05:55,750
 The type of "reverse" is this.
 
-0:05:55.750,0:05:59.020
+00:05:55,750 --> 00:05:59,020
 And the "a" here is a variable, a type variable.
 
-0:05:59.020,0:06:03.389
+00:05:59,020 --> 00:06:03,389
 It uses the same syntax as an ordinary variable,
 but now occurs in a type.
 
-0:06:03.389,0:06:09.889
+00:06:03,389 --> 00:06:09,889
 What it is saying is: 'reverse' is a function
 from lists to lists, where actually the output
 
-0:06:09.889,0:06:14.740
+00:06:09,889 --> 00:06:14,740
 list type is the same as the input list type,
 because we have the same variable here.
 
-0:06:14.740,0:06:17.860
+00:06:14,740 --> 00:06:17,860
 This is not the same as being untyped.
 
-0:06:17.860,0:06:21.509
+00:06:17,860 --> 00:06:21,509
 Let's consider the type of ++, the concatenation
 operator.
 
-0:06:21.509,0:06:23.099
+00:06:21,509 --> 00:06:23,099
 It takes two lists and gives a list.
 
-0:06:23.099,0:06:26.490
+00:06:23,099 --> 00:06:26,490
 So, it is flexible in that sense, you can
 give it two Strings and get a String.
 
-0:06:26.490,0:06:29.961
+00:06:26,490 --> 00:06:29,961
 But it is still impossible to write something
 like this.
 
-0:06:29.961,0:06:31.669
+00:06:29,961 --> 00:06:31,669
 So, this is not "anything goes".
 
-0:06:31.669,0:06:34.180
+00:06:31,669 --> 00:06:34,180
 It doesn't mean: any two lists and I give
 you a list.
 
-0:06:34.180,0:06:40.259
+00:06:34,180 --> 00:06:40,259
 No, it is saying: Give me two lists of the
 same type, and I also give you back a list
 
-0:06:40.259,0:06:41.259
+00:06:40,259 --> 00:06:41,259
 of that type.
 
-0:06:41.259,0:06:46.580
+00:06:41,259 --> 00:06:46,580
 And in that sense, this will be rejected,
 because it is not two lists of the same type.
 
-0:06:46.580,0:06:53.050
+00:06:46,580 --> 00:06:53,050
 So, neither "reverse" nor the concatenation
 care about the element type, but they still
 
-0:06:53.050,0:06:55.379
+00:06:53,050 --> 00:06:55,379
 care about the homogeneity of lists.
 
-0:06:55.379,0:07:01.419
+00:06:55,379 --> 00:07:01,419
 So, in this case, for this reason, it is important
 that these lists, even though they can be
 
-0:07:01.419,0:07:03.720
+00:07:01,419 --> 00:07:03,720
 of arbitrary types, they have to be of the
 *same* type.
 
-0:07:03.720,0:07:06.289
+00:07:03,720 --> 00:07:06,289
 Otherwise, ++ will not be applicable.
 
-0:07:06.289,0:07:14.889
+00:07:06,289 --> 00:07:14,889
 And that is how this is rejected then, even
 though ++ works both on Strings and on number
 
-0:07:14.889,0:07:17.500
+00:07:14,889 --> 00:07:17,500
 lists.
 
-0:07:17.500,0:07:21.270
+00:07:17,500 --> 00:07:21,270
 And actually, we have already seen a lot of
 these examples, we simply didn't write down
 
-0:07:21.270,0:07:22.270
+00:07:21,270 --> 00:07:22,270
 the types.
 
-0:07:22.270,0:07:28.580
+00:07:22,270 --> 00:07:28,580
 So, if you go back to one of the slides where
 I introduced some list functions (there was
 
-0:07:28.580,0:07:34.600
+00:07:28,580 --> 00:07:34,600
 a library of list functions that we used for
 the first few exercises on lists), then most
 
-0:07:34.600,0:07:38.099
+00:07:34,600 --> 00:07:38,099
 of the functions that occurred there have
 such type variables if you actually write
 
-0:07:38.099,0:07:39.099
+00:07:38,099 --> 00:07:39,099
 down their types.
 
-0:07:39.099,0:07:45.060
+00:07:39,099 --> 00:07:45,060
 So, for example, the 'head' function is a
 function from lists to not lists, but elements.
 
-0:07:45.060,0:07:47.200
+00:07:45,060 --> 00:07:47,200
 The 'head' function doesn't give you back
 a list.
 
-0:07:47.200,0:07:49.510
+00:07:47,200 --> 00:07:49,510
 It gives you back something which occurs in
 the list.
 
-0:07:49.510,0:07:52.520
+00:07:49,510 --> 00:07:52,520
 That's why we have here: a list of "a"s to
 one "a".
 
-0:07:52.520,0:07:56.539
+00:07:52,520 --> 00:07:56,539
 Whereas the 'tail' function, for example,
 given a list of "a"s gives you a list of "a"s.
 
-0:07:56.539,0:08:00.370
+00:07:56,539 --> 00:08:00,370
 Because it takes away just one element and
 then still gives you back a list.
 
-0:08:00.370,0:08:03.759
+00:08:00,370 --> 00:08:03,759
 Similarly for "last" and "init".
 
-0:08:03.759,0:08:05.669
+00:08:03,759 --> 00:08:05,669
 All these functions are polymorphic.
 
-0:08:05.669,0:08:09.669
+00:08:05,669 --> 00:08:09,669
 That's what a type variable means: "polymorphic"
 is what I have here as the heading.
 
-0:08:09.669,0:08:13.879
+00:08:09,669 --> 00:08:13,879
 I didn't yet mention that notion, but this
 kind of types are called polymorphic types,
 
-0:08:13.879,0:08:15.919
+00:08:13,879 --> 00:08:15,919
 because they can take many forms, basically.
 
-0:08:15.919,0:08:22.180
+00:08:15,919 --> 00:08:22,180
 Working with data of different forms, in that
 sense "polymorph".
 
-0:08:22.180,0:08:25.450
+00:08:22,180 --> 00:08:25,450
 And of course, a function doesn't have to
 be polymorphic in *everything*.
 
-0:08:25.450,0:08:31.039
+00:08:25,450 --> 00:08:31,039
 For example, the 'length' function doesn't
 go from a list of "a"s to "a" like the "head"
 
-0:08:31.039,0:08:32.039
+00:08:31,039 --> 00:08:32,039
 function.
 
-0:08:32.039,0:08:35.980
+00:08:32,039 --> 00:08:35,980
 It goes from a list of "a"s to Int because
 the output is definitely a number.
 
-0:08:35.980,0:08:40.829
+00:08:35,980 --> 00:08:40,829
 The 'length' function is polymorphic, it works
 on any kind of lists, but it always returns
 
-0:08:40.829,0:08:41.899
+00:08:40,829 --> 00:08:41,899
 an integer number.
 
-0:08:41.899,0:08:44.710
+00:08:41,899 --> 00:08:44,710
 Likewise, there is a function for checking
 whether a list is empty.
 
-0:08:44.710,0:08:49.220
+00:08:44,710 --> 00:08:49,220
 And again, this works on any kind of list,
 so, a list of "a"s here.
 
-0:08:49.220,0:08:50.630
+00:08:49,220 --> 00:08:50,630
 But it returns a Boolean value.
 
-0:08:50.630,0:08:52.950
+00:08:50,630 --> 00:08:52,950
 It doesn't return "a" or a list or whatever.
 
-0:08:52.950,0:08:54.810
+00:08:52,950 --> 00:08:54,810
 It returns a Boolean value.
 
-0:08:54.810,0:09:02.170
+00:08:54,810 --> 00:09:02,170
 So, the type variable is really used for showing
 which parts of inputs and outputs are to be
 
-0:09:02.170,0:09:03.240
+00:09:02,170 --> 00:09:03,240
 used flexibly.
 
-0:09:03.240,0:09:06.130
+00:09:03,240 --> 00:09:06,130
 And this is *not* flexible because the length
 must be a number.
 
-0:09:06.130,0:09:10.660
+00:09:06,130 --> 00:09:10,660
 This is *not* flexible because the outcome
 of such a predicate check should be a Boolean
 
-0:09:10.660,0:09:11.660
+00:09:10,660 --> 00:09:11,660
 value.
 
-0:09:11.660,0:09:13.279
+00:09:11,660 --> 00:09:13,279
 Okay, and polymorphism can also occur nested.
 
-0:09:13.279,0:09:19.990
+00:09:13,279 --> 00:09:19,990
 For example, the 'concat' function: it was for
 concatenating (possibly) more than two lists.
 
-0:09:19.990,0:09:25.910
+00:09:19,990 --> 00:09:25,910
 So, you give it a list of lists of something,
 and it returns a list of those somethings,
 
-0:09:25.910,0:09:29.100
+00:09:25,910 --> 00:09:29,100
 because one list level is reduced.
 
-0:09:29.100,0:09:33.870
+00:09:29,100 --> 00:09:33,870
 One nesting level of the list is eliminated.
 
-0:09:33.870,0:09:36.510
+00:09:33,870 --> 00:09:36,510
 So, from a list of lists, it goes to just
 a list.
 
-0:09:36.510,0:09:41.230
+00:09:36,510 --> 00:09:41,230
 And what are the entries in those lists in
 a list, and in the outcome list?
 
-0:09:41.230,0:09:42.230
+00:09:41,230 --> 00:09:42,230
 Something!
 
-0:09:42.230,0:09:47.430
+00:09:42,230 --> 00:09:47,430
 But the same on the input and on the output
 sides.
 
-0:09:47.430,0:09:51.130
+00:09:47,430 --> 00:09:51,130
 In concrete applications of such polymorphic
 functions, you don't see the polymorphism
 
-0:09:51.130,0:09:52.130
+00:09:51,130 --> 00:09:52,130
 anymore.
 
-0:09:52.130,0:09:56.620
+00:09:52,130 --> 00:09:56,620
 So, if you apply, for example, the "head"
 function to a String, then of course, it is
 
-0:09:56.620,0:09:58.120
+00:09:56,620 --> 00:09:58,120
 not anymore polymorphic.
 
-0:09:58.120,0:10:04.030
+00:09:58,120 --> 00:10:04,030
 At this point, if you give it a concrete list
 which is a String (so it is a list of characters),
 
-0:10:04.030,0:10:07.670
+00:10:04,030 --> 00:10:07,670
 at that point, it's clear that this "a" must
 be characters.
 
-0:10:07.670,0:10:08.670
+00:10:07,670 --> 00:10:08,670
 And then what is the outcome?
 
-0:10:08.670,0:10:09.730
+00:10:08,670 --> 00:10:09,730
 A character, of course.
 
-0:10:09.730,0:10:15.130
+00:10:09,730 --> 00:10:15,130
 So, then this instantiation happens, and "a"
 becomes a concrete type.
 
-0:10:15.130,0:10:17.240
+00:10:15,130 --> 00:10:17,240
 And then also the output type is clear.
 
-0:10:17.240,0:10:20.420
+00:10:17,240 --> 00:10:20,420
 It must be Char because this goes from lists
 of something to this something.
 
-0:10:20.420,0:10:23.890
+00:10:20,420 --> 00:10:23,890
 So, since a String is a list of characters,
 the outcome is a character.
 
-0:10:23.890,0:10:30.860
+00:10:23,890 --> 00:10:30,860
 As a side note, actually, these types, if
 you really look them up in an interpreter
 
-0:10:30.860,0:10:34.952
+00:10:30,860 --> 00:10:34,952
 session, for example, they have even more
 polymorphic types than you see here.
 
-0:10:34.952,0:10:38.089
+00:10:34,952 --> 00:10:38,089
 So, you get something with some additional
 type constraints, like "Foldable".
 
-0:10:38.089,0:10:40.389
+00:10:38,089 --> 00:10:40,389
 But we ignore this in this lecture.
 
-0:10:40.389,0:10:42.700
+00:10:40,389 --> 00:10:42,700
 So, we consider these functions on lists.
 
-0:10:42.700,0:10:48.100
+00:10:42,700 --> 00:10:48,100
 And the polymorphism that interests us is
 the polymorphism in the list entries, not
 
-0:10:48.100,0:10:53.790
+00:10:48,100 --> 00:10:53,790
 the polymorphism over the list structure (replacing
 this with some other data structure than lists).
 
-0:10:53.790,0:10:57.030
+00:10:53,790 --> 00:10:57,030
 That's not the kind of polymorphism that's
 of interest to us.
 
-0:10:57.030,0:11:02.630
+00:10:57,030 --> 00:11:02,630
 So, we talk about these type variables, in
 this case, the list entries.
 
-0:11:02.630,0:11:10.260
+00:11:02,630 --> 00:11:10,260
 But that also applies to other data structures,
 later on.
 
-0:11:10.260,0:11:15.260
+00:11:10,260 --> 00:11:15,260
 Also on the input side, a function need not
 be polymorphic in everything.
 
-0:11:15.260,0:11:20.050
+00:11:15,260 --> 00:11:20,050
 Just as the 'length' and 'null' functions
 are not polymorphic in the output, also in
 
-0:11:20.050,0:11:24.930
+00:11:20,050 --> 00:11:24,930
 the arguments a function could be non-polymorphic,
 or maybe in some of its arguments.
 
-0:11:24.930,0:11:26.620
+00:11:24,930 --> 00:11:26,620
 So, let's look at some further examples.
 
-0:11:26.620,0:11:31.930
+00:11:26,620 --> 00:11:31,930
 This is the infamous and undesirable list
 indexing operator.
 
-0:11:31.930,0:11:37.070
+00:11:31,930 --> 00:11:37,070
 It takes a list, and it works on any kind
 of lists, and it takes a number as an index,
 
-0:11:37.070,0:11:40.480
+00:11:37,070 --> 00:11:40,480
 and it returns an element of the original
 list.
 
-0:11:40.480,0:11:44.670
+00:11:40,480 --> 00:11:44,670
 That's why we have a list of "a"s, an integer
 (which must really be an integer, it can't
 
-0:11:44.670,0:11:50.290
+00:11:44,670 --> 00:11:50,290
 be a Bool or something strange else), and
 the result will be an "a".
 
-0:11:50.290,0:11:51.600
+00:11:50,290 --> 00:11:51,600
 Or the 'take' and 'drop' functions.
 
-0:11:51.600,0:11:56.149
+00:11:51,600 --> 00:11:56,149
 They, again, take a number (because you must
 tell them how much they should take or drop
 
-0:11:56.149,0:11:58.889
+00:11:56,149 --> 00:11:58,889
 from the input list), and then you have a
 list.
 
-0:11:58.889,0:12:03.040
+00:11:58,889 --> 00:12:03,040
 And that list is polymorphic; it doesn't matter
 whether we take from a list of Strings, a
 
-0:12:03.040,0:12:07.480
+00:12:03,040 --> 00:12:07,480
 list of characters, a list of numbers, or
 whatever, it always works.
 
-0:12:07.480,0:12:10.190
+00:12:07,480 --> 00:12:10,190
 But the first argument must be a number and
 not something strange else.
 
-0:12:10.190,0:12:19.230
+00:12:10,190 --> 00:12:19,230
 For example, the 'splitAt' function, which
 had to be used in one of the exercises, again
 
-0:12:19.230,0:12:22.970
+00:12:19,230 --> 00:12:22,970
 takes a number because you have to tell it
 where it should split a list; then you give
 
-0:12:22.970,0:12:23.970
+00:12:22,970 --> 00:12:23,970
 it a list.
 
-0:12:23.970,0:12:24.970
+00:12:23,970 --> 00:12:24,970
 And what do you get back?
 
-0:12:24.970,0:12:25.970
+00:12:24,970 --> 00:12:25,970
 Two lists.
 
-0:12:25.970,0:12:28.850
+00:12:25,970 --> 00:12:28,850
 Of course, two lists of exactly the same type
 as the input list.
 
-0:12:28.850,0:12:33.779
+00:12:28,850 --> 00:12:33,779
 You can't give it a String and get back a
 list of characters (a String) and a list of
 
-0:12:33.779,0:12:34.779
+00:12:33,779 --> 00:12:34,779
 something else.
 
-0:12:34.779,0:12:37.380
+00:12:34,779 --> 00:12:37,380
 If you give it a String, you get back two
 Strings.
 
-0:12:37.380,0:12:42.370
+00:12:37,380 --> 00:12:42,370
 If you give it a list of numbers, you get
 back two lists of numbers, etc.
 
-0:12:42.370,0:12:46.709
+00:12:42,370 --> 00:12:46,709
 That is also important, that in the output
 you can have several things.
 
-0:12:46.709,0:12:53.550
+00:12:46,709 --> 00:12:53,550
 And, for example, in this case they must have
 the same type, but flexibly in the input (in
 
-0:12:53.550,0:12:56.440
+00:12:53,550 --> 00:12:56,440
 the element type), but the same element type
 for both lists.
 
-0:12:56.440,0:13:00.040
+00:12:56,440 --> 00:13:00,040
 And then, you can again have the same question:
 
-0:13:00.040,0:13:03.540
+00:13:00,040 --> 00:13:03,540
 What if you have several input lists and want
 to be flexible in that?
 
-0:13:03.540,0:13:07.730
+00:13:03,540 --> 00:13:07,730
 We talked about ++ already, but let's also
 talk about the 'zip' function.
 
-0:13:07.730,0:13:08.810
+00:13:07,730 --> 00:13:08,810
 So, what about this?
 
-0:13:08.810,0:13:09.950
+00:13:08,810 --> 00:13:09,950
 The idea was:
 
-0:13:09.950,0:13:14.750
+00:13:09,950 --> 00:13:14,750
 You give it two independent lists, and what
 you get back is a list of pairs.
 
-0:13:14.750,0:13:18.209
+00:13:14,750 --> 00:13:18,209
 So, what should be the typing of this?
 
-0:13:18.209,0:13:21.100
+00:13:18,209 --> 00:13:21,100
 Well, let's see.
 
-0:13:21.100,0:13:26.170
+00:13:21,100 --> 00:13:26,170
 Of course, the lists that you give it have
 to be homogeneous lists because every list
 
-0:13:26.170,0:13:28.430
+00:13:26,170 --> 00:13:28,430
 in Haskell is homogeneous.
 
-0:13:28.430,0:13:34.130
+00:13:28,430 --> 00:13:34,130
 However, unlike in the case of the ++ concatenation
 operator, they don't have to be the same kind
 
-0:13:34.130,0:13:35.130
+00:13:34,130 --> 00:13:35,130
 of lists.
 
-0:13:35.130,0:13:36.899
+00:13:35,130 --> 00:13:36,899
 We have actually used this already.
 
-0:13:36.899,0:13:41.860
+00:13:36,899 --> 00:13:41,860
 We zipped things like lists of numbers and
 lists of characters.
 
-0:13:41.860,0:13:47.389
+00:13:41,860 --> 00:13:47,389
 I don't know whether that already occurred
 in exercises, but you can do this.
 
-0:13:47.389,0:13:53.500
+00:13:47,389 --> 00:13:53,500
 You can take a list of numbers and a String
 and get back a list of pairs of numbers and
 
-0:13:53.500,0:13:56.000
+00:13:53,500 --> 00:13:56,000
 characters, for example.
 
-0:13:56.000,0:13:57.240
+00:13:56,000 --> 00:13:57,240
 How does this work?
 
-0:13:57.240,0:14:04.560
+00:13:57,240 --> 00:14:04,560
 Unlike in the case of ++, we do not only want
 to allow "ab" ++ "cd" and numbers ++ numbers,
 
-0:14:04.560,0:14:06.730
+00:14:04,560 --> 00:14:06,730
 and disallowing any mixed use.
 
-0:14:06.730,0:14:09.700
+00:14:06,730 --> 00:14:09,700
 For "zip", we actually want to allow also
 all these combinations.
 
-0:14:09.700,0:14:15.579
+00:14:09,700 --> 00:14:15,579
 So, zipping two Strings, zipping two lists
 of numbers, but also zipping, for example,
 
-0:14:15.579,0:14:18.589
+00:14:15,579 --> 00:14:18,589
 a String and a list of numbers.
 
-0:14:18.589,0:14:23.600
+00:14:18,589 --> 00:14:23,600
 So, apparently the type must be different
 than the type of ++ because for ++ we said:
 
-0:14:23.600,0:14:30.550
+00:14:23,600 --> 00:14:30,550
 We give it two lists of same element type,
 and it gives back a list of the same kind.
 
-0:14:30.550,0:14:35.380
+00:14:30,550 --> 00:14:35,380
 In the case of "zip" it would give back a
 list of pairs probably, but let’s focus
 
-0:14:35.380,0:14:36.639
+00:14:35,380 --> 00:14:36,639
 on the input side here.
 
-0:14:36.639,0:14:41.610
+00:14:36,639 --> 00:14:41,610
 So, the type of "zip" cannot look like this,
 because if it did, then by the same argument
 
-0:14:41.610,0:14:46.611
+00:14:41,610 --> 00:14:46,611
 that I used before to say that the type of
 ++ statically rejects something like this,
 
-0:14:46.611,0:14:48.019
+00:14:46,611 --> 00:14:48,019
 also this would be rejected.
 
-0:14:48.019,0:14:54.449
+00:14:48,019 --> 00:14:54,449
 But there is no need to reject this because
 zipping conceptually also works if you give
 
-0:14:54.449,0:14:56.750
+00:14:54,449 --> 00:14:56,750
 it two different kinds of lists.
 
-0:14:56.750,0:15:01.769
+00:14:56,750 --> 00:15:01,769
 Each list must be homogeneous, but they could
 be of different types.
 
-0:15:01.769,0:15:05.730
+00:15:01,769 --> 00:15:05,730
 Well, the type should look like this.
 
-0:15:05.730,0:15:09.639
+00:15:05,730 --> 00:15:09,639
 So, again, it is using type variables, but
 now more than one.
 
-0:15:09.639,0:15:14.259
+00:15:09,639 --> 00:15:14,259
 To express that the two input lists need not
 be the same kind of lists.
 
-0:15:14.259,0:15:19.410
+00:15:14,259 --> 00:15:19,410
 So, if you had "a" and "a" here, this would
 mean we don't care what kind of list it is,
 
-0:15:19.410,0:15:22.640
+00:15:19,410 --> 00:15:22,640
 but it must be the same list type in the first
 and the second argument.
 
-0:15:22.640,0:15:23.779
+00:15:22,640 --> 00:15:23,779
 What we are saying here, is:
 
-0:15:23.779,0:15:27.980
+00:15:23,779 --> 00:15:27,980
 We don't care what kind of lists we get, we
 don't even care whether the first and the
 
-0:15:27.980,0:15:29.290
+00:15:27,980 --> 00:15:29,290
 second list have the same type.
 
-0:15:29.290,0:15:34.960
+00:15:29,290 --> 00:15:34,960
 So, they must each be a homogeneous list,
 but they could be of different element types.
 
-0:15:34.960,0:15:36.410
+00:15:34,960 --> 00:15:36,410
 And what is the outcome?
 
-0:15:36.410,0:15:37.980
+00:15:36,410 --> 00:15:37,980
 It is a list of pairs.
 
-0:15:37.980,0:15:44.190
+00:15:37,980 --> 00:15:44,190
 And in these pairs, always the first component
 has the type as coming from the first input
 
-0:15:44.190,0:15:51.750
+00:15:44,190 --> 00:15:51,750
 list, and the second component of each pair
 has the type coming from the second argument
 
-0:15:51.750,0:15:54.110
+00:15:51,750 --> 00:15:54,110
 list to "zip".
 
-0:15:54.110,0:15:57.019
+00:15:54,110 --> 00:15:57,019
 The "a" and "b" *can* be the same type, but
 they don't *have* to be the same type.
 
-0:15:57.019,0:16:02.010
+00:15:57,019 --> 00:16:02,010
 In that sense, we can more flexibly use this
 than for example the ++.
 
-0:16:02.010,0:16:06.600
+00:16:02,010 --> 00:16:06,600
 This is important: Different type variables
 can be, but do not have to be, instantiated
 
-0:16:06.600,0:16:07.600
+00:16:06,600 --> 00:16:07,600
 by different types.
 
-0:16:07.600,0:16:12.750
+00:16:07,600 --> 00:16:12,750
 So, this added flexibility doesn't prevent
 uses like: String and String.
 
-0:16:12.750,0:16:14.079
+00:16:12,750 --> 00:16:14,079
 This is still allowed.
 
-0:16:14.079,0:16:17.319
+00:16:14,079 --> 00:16:17,319
 But also String and a list of numbers.
 
-0:16:17.319,0:16:22.160
+00:16:17,319 --> 00:16:22,160
 Hence, now all of these calls make sense.
 
-0:16:22.160,0:16:29.620
+00:16:22,160 --> 00:16:29,620
 If we zip two Strings, then this "a" becomes
 Char and this "b" becomes Char, and the outcome
 
-0:16:29.620,0:16:33.100
+00:16:29,620 --> 00:16:33,100
 list is a list of pairs of Char and Char.
 
-0:16:33.100,0:16:37.470
+00:16:33,100 --> 00:16:37,470
 If you zip two lists of numbers, then this
 "a" becomes Int and "b" becomes Int and the
 
-0:16:37.470,0:16:41.009
+00:16:37,470 --> 00:16:41,009
 outcome is a list of pairs of integers and
 integers.
 
-0:16:41.009,0:16:46.889
+00:16:41,009 --> 00:16:46,889
 And finally, if we zip a String and a list
 of numbers, then this "a" becomes Char because
 
-0:16:46.889,0:16:51.940
+00:16:46,889 --> 00:16:51,940
 this is a list of characters, this "b" becomes
 Int, because this is a list of integers.
 
-0:16:51.940,0:16:53.350
+00:16:51,940 --> 00:16:53,350
 And what is the outcome list?
 
-0:16:53.350,0:17:00.720
+00:16:53,350 --> 00:17:00,720
 It's a list of pairs of "a = Char" and "b
 = Int".
 
-0:17:00.720,0:17:05.870
+00:17:00,720 --> 00:17:05,870
 That's why this now makes sense, whereas still
 a mixed call for the ++ function does not
 
-0:17:05.870,0:17:10.640
+00:17:05,870 --> 00:17:10,640
 make sense because there the requirement
 was a list of "a" and a list of "a".
 
-0:17:10.640,0:17:15.030
+00:17:10,640 --> 00:17:15,030
 So, if you try to use it like this, then the
 compiler would have to decide whether this
 
-0:17:15.030,0:17:16.920
+00:17:15,030 --> 00:17:16,920
 "a" variable is Char or Int.
 
-0:17:16.920,0:17:21.210
+00:17:16,920 --> 00:17:21,210
 It cannot be both at the same time, but it
 would have to be both because this is a list
 
-0:17:21.210,0:17:25.770
+00:17:21,210 --> 00:17:25,770
 of "a"s being characters and this is a list
 of "a"s being integers.
 
-0:17:25.770,0:17:32.262
+00:17:25,770 --> 00:17:32,262
 So, the different type variables here prevent
 this problem for "zip", but for ++ we definitely
 
-0:17:32.262,0:17:34.330
+00:17:32,262 --> 00:17:34,330
 want that both are of the same type.
 
-0:17:34.330,0:17:39.700
+00:17:34,330 --> 00:17:39,700
 That's why the "a" occurs twice in the type
 of the ++ operator.
 
-0:17:39.700,0:17:48.650
+00:17:39,700 --> 00:17:48,650
 Unfortunately, it is not necessarily the case
 that type error messages by the compiler are
 
-0:17:48.650,0:17:51.260
+00:17:48,650 --> 00:17:51,260
 as clear as the comments here.
 
-0:17:51.260,0:17:56.780
+00:17:51,260 --> 00:17:56,780
 Maybe it is not always as directly visible
 from the type error messages if you make a
 
-0:17:56.780,0:18:03.680
+00:17:56,780 --> 00:18:03,680
 type error: what was expected, and what was
 found.
 
-0:18:03.680,0:18:08.600
+00:18:03,680 --> 00:18:08,600
 But at least on calls like this, you can work
 this out on your own.
 
-0:18:08.600,0:18:14.440
+00:18:08,600 --> 00:18:14,440
 With more complex calls, maybe you need some
 help or some digging into different expressions
 
-0:18:14.440,0:18:19.800
+00:18:14,440 --> 00:18:19,800
 to find out where the compiler wasn't happy.
 
-0:18:19.800,0:18:28.710
+00:18:19,800 --> 00:18:28,710
 Of course, you might have seen something like
 this before: types like this, which can express
 
-0:18:28.710,0:18:35.190
+00:18:28,710 --> 00:18:35,190
 that a function is flexibly used over different
 element types of a collection type, for example.
 
-0:18:35.190,0:18:37.020
+00:18:35,190 --> 00:18:37,020
 Probably not if you come from an untyped language.
 
-0:18:37.020,0:18:42.600
+00:18:37,020 --> 00:18:42,600
 But if you come from a language like Java
 or C# or C++, maybe you have seen something
 
-0:18:42.600,0:18:43.760
+00:18:42,600 --> 00:18:43,760
 like Generics in Java.
 
-0:18:43.760,0:18:50.010
+00:18:43,760 --> 00:18:50,010
 So, this is Java Generics syntax, but similarly
 it is available in other languages of that
 
-0:18:50.010,0:18:51.560
+00:18:50,010 --> 00:18:51,560
 family.
 
-0:18:51.560,0:19:00.430
+00:18:51,560 --> 00:19:00,430
 This T parameter that you would have in a
 generic collection method signature corresponds
 
-0:19:00.430,0:19:01.430
+00:19:00,430 --> 00:19:01,430
 to the "a", roughly.
 
-0:19:01.430,0:19:06.970
+00:19:01,430 --> 00:19:06,970
 So, this is saying something like: For any
 T, I have this "reverse" method maybe, or
 
-0:19:06.970,0:19:13.190
+00:19:06,970 --> 00:19:13,190
 a static method, which given a list, which
 is a list over something of this type T, gives
 
-0:19:13.190,0:19:15.830
+00:19:13,190 --> 00:19:15,830
 back a list of something of the same type
 T.
 
-0:19:15.830,0:19:20.690
+00:19:15,830 --> 00:19:20,690
 And again, the T here is used more than once,
 to express that this must always be the same
 
-0:19:20.690,0:19:21.690
+00:19:20,690 --> 00:19:21,690
 type.
 
-0:19:21.690,0:19:27.320
+00:19:21,690 --> 00:19:27,320
 So, this corresponds very much directly to
 the "reverse" annotation here that takes lists
 
-0:19:27.320,0:19:30.990
+00:19:27,320 --> 00:19:30,990
 and gives back lists and they have to be of
 the same type.
 
-0:19:30.990,0:19:35.480
+00:19:30,990 --> 00:19:35,480
 This is not somehow happenstance, that this
 also occurs in other languages.
 
-0:19:35.480,0:19:39.890
+00:19:35,480 --> 00:19:39,890
 But it's also not the case that Haskell is
 somehow modelled along these examples, these
 
-0:19:39.890,0:19:41.520
+00:19:39,890 --> 00:19:41,520
 languages.
 
-0:19:41.520,0:19:43.970
+00:19:41,520 --> 00:19:43,970
 The opposite is true.
 
-0:19:43.970,0:19:49.530
+00:19:43,970 --> 00:19:49,530
 Haskell and similar typed functional languages
 had this feature much earlier than all the
 
-0:19:49.530,0:19:51.070
+00:19:49,530 --> 00:19:51,070
 object-oriented languages, for example.
 
-0:19:51.070,0:19:57.970
+00:19:51,070 --> 00:19:57,970
 And actually, the Java Generics were designed
 by a person (Phil Wadler) who had previously
 
-0:19:57.970,0:19:59.560
+00:19:57,970 --> 00:19:59,560
 been a designer of Haskell.
 
-0:19:59.560,0:20:05.850
+00:19:59,560 --> 00:20:05,850
 So, really the direction is from here to there
 and not in the opposite direction.
 
-0:20:05.850,0:20:09.450
+00:20:05,850 --> 00:20:09,450
 Also, in these languages like Java, C#, etc.,
 they have different design and implementation
 
-0:20:09.450,0:20:16.850
+00:20:09,450 --> 00:20:16,850
 decisions surrounding this polymorphism feature,
 and I would claim that the original version
 
-0:20:16.850,0:20:21.680
+00:20:16,850 --> 00:20:21,680
 that appears in languages like Haskell or
 ML is the cleanest and mathematically most
 
-0:20:21.680,0:20:22.700
+00:20:21,680 --> 00:20:22,700
 pleasing one.
 
-0:20:22.700,0:20:28.220
+00:20:22,700 --> 00:20:28,220
 In the object-oriented languages, certain compromises
 have been made, to integrate for example Generics
 
-0:20:28.220,0:20:33.030
+00:20:28,220 --> 00:20:33,030
 with other language features, that were not
 necessary as compromises in the more pure
 
-0:20:33.030,0:20:39.460
+00:20:33,030 --> 00:20:39,460
 setting of functional languages.
 
-0:20:39.460,0:20:44.530
+00:20:39,460 --> 00:20:44,530
 One aspect that distinguishes polymorphism
 in Haskell and its functional programming
 
-0:20:44.530,0:20:48.160
+00:20:44,530 --> 00:20:48,160
 predecessors from those other languages is
 type inference.
 
-0:20:48.160,0:20:55.300
+00:20:48,160 --> 00:20:55,300
 Not only did polymorphism occur much earlier
 in these languages, but they have type inference.
 
-0:20:55.300,0:20:57.170
+00:20:55,300 --> 00:20:57,170
 We need not declare the polymorphism.
 
-0:20:57.170,0:21:01.200
+00:20:57,170 --> 00:21:01,200
 The compiler will always infer the most general
 type automatically if we don't write down
 
-0:21:01.200,0:21:02.200
+00:21:01,200 --> 00:21:02,200
 a type.
 
-0:21:02.200,0:21:05.650
+00:21:02,200 --> 00:21:05,650
 So, for example, for the 'reverse' function
 we don't have to declare that it doesn't care
 
-0:21:05.650,0:21:12.330
+00:21:05,650 --> 00:21:12,330
 about what the element type is in a list given
 to it.
 
-0:21:12.330,0:21:15.470
+00:21:12,330 --> 00:21:15,470
 Actually, from the definition of the function,
 the compiler will work this out.
 
-0:21:15.470,0:21:19.130
+00:21:15,470 --> 00:21:19,130
 That's different than in Java, for example.
 
-0:21:19.130,0:21:24.270
+00:21:19,130 --> 00:21:24,270
 Let's not look at the list functions, even
 though for all of them, again, the compiler
 
-0:21:24.270,0:21:27.390
+00:21:24,270 --> 00:21:27,390
 would work out the polymorphic types even
 if we didn't write them down.
 
-0:21:27.390,0:21:29.030
+00:21:27,390 --> 00:21:29,030
 Let's look at some simpler examples.
 
-0:21:29.030,0:21:34.700
+00:21:29,030 --> 00:21:34,700
 So, for example, if we write down a function
 like this: 'f (x,y) = x', and we don't say,
 
-0:21:34.700,0:21:37.040
+00:21:34,700 --> 00:21:37,040
 are these numbers, are these characters, what
 are they?
 
-0:21:37.040,0:21:42.280
+00:21:37,040 --> 00:21:42,280
 Then the compiler will infer: Well, this is
 the type, that you see here.
 
-0:21:42.280,0:21:44.470
+00:21:42,280 --> 00:21:44,470
 So, the compiler will say:
 
-0:21:44.470,0:21:49.650
+00:21:44,470 --> 00:21:49,650
 Obviously, this goes from a pair to an element.
 
-0:21:49.650,0:21:55.680
+00:21:49,650 --> 00:21:55,680
 And it doesn't really matter what types these
 elements of the pair have.
 
-0:21:55.680,0:21:59.380
+00:21:55,680 --> 00:21:59,380
 So, it is pairs of "a"s and "b"s, and the
 outcome is "a".
 
-0:21:59.380,0:22:00.550
+00:21:59,380 --> 00:22:00,550
 Why is it "a"?
 
-0:22:00.550,0:22:03.620
+00:22:00,550 --> 00:22:03,620
 Because the function projects to the first
 component.
 
-0:22:03.620,0:22:09.790
+00:22:03,620 --> 00:22:09,790
 From this the compiler knows and infers that
 this is polymorphic, the outcome is of the
 
-0:22:09.790,0:22:16.220
+00:22:09,790 --> 00:22:16,220
 same type as the first component of the pair
 that is given, and the second component may
 
-0:22:16.220,0:22:17.220
+00:22:16,220 --> 00:22:17,220
 be a different type.
 
-0:22:17.220,0:22:18.220
+00:22:17,220 --> 00:22:18,220
 It doesn't *have* to be a different type.
 
-0:22:18.220,0:22:19.310
+00:22:18,220 --> 00:22:19,310
 But it *may* be a different type.
 
-0:22:19.310,0:22:21.940
+00:22:19,310 --> 00:22:21,940
 That's why a different type variable is used
 here.
 
-0:22:21.940,0:22:27.230
+00:22:21,940 --> 00:22:27,230
 And likewise, for the 'zip' function the compiler
 would also figure out automatically that the
 
-0:22:27.230,0:22:31.260
+00:22:27,230 --> 00:22:31,260
 two input lists can be of different types,
 unlike in the case of the ++ operator.
 
-0:22:31.260,0:22:36.360
+00:22:31,260 --> 00:22:36,360
 So, if this is not declared, the compiler
 will still work it out.
 
-0:22:36.360,0:22:44.160
+00:22:36,360 --> 00:22:44,160
 Maybe a bit surprising if you see it first,
 is that in a case like this, the compiler
 
-0:22:44.160,0:22:47.790
+00:22:44,160 --> 00:22:47,790
 will actually force that two types must be
 the same.
 
-0:22:47.790,0:22:53.060
+00:22:47,790 --> 00:22:53,060
 So, if we write a similar function, which
 somehow says "if pi>3 then x else y", then
 
-0:22:53.060,0:22:58.180
+00:22:53,060 --> 00:22:58,180
 again, the compiler will figure out that x
 and y can be anything, so it is going to use
 
-0:22:58.180,0:22:59.240
+00:22:58,180 --> 00:22:59,240
 a type variable.
 
-0:22:59.240,0:23:05.250
+00:22:59,240 --> 00:23:05,250
 Because if you look at this if-then-else,
 nothing is really done with the x and y, so
 
-0:23:05.250,0:23:09.910
+00:23:05,250 --> 00:23:09,910
 there is no something that forces them to
 be numbers or so.
 
-0:23:09.910,0:23:13.960
+00:23:09,910 --> 00:23:13,960
 Clearly, pi is a number, but x and y may be
 anything.
 
-0:23:13.960,0:23:18.370
+00:23:13,960 --> 00:23:18,370
 And something of type of x or y will come
 out of this.
 
-0:23:18.370,0:23:23.490
+00:23:18,370 --> 00:23:23,490
 But actually, the compiler in this case forces
 the two values to be of the *same* type.
 
-0:23:23.490,0:23:25.540
+00:23:23,490 --> 00:23:25,540
 Why is that?
 
-0:23:25.540,0:23:30.210
+00:23:25,540 --> 00:23:30,210
 Because the compiler doesn't try to mathematically
 prove that pi is something greater than 3.
 
-0:23:30.210,0:23:31.790
+00:23:30,210 --> 00:23:31,790
 Of course, in this specific case, that is
 very simple.
 
-0:23:31.790,0:23:34.060
+00:23:31,790 --> 00:23:34,060
 So, the compiler could somehow evaluate this.
 
-0:23:34.060,0:23:41.010
+00:23:34,060 --> 00:23:41,010
 But in general, we could have any mathematical
 expression here, and then the typing of if-then-else
 
-0:23:41.010,0:23:45.890
+00:23:41,010 --> 00:23:45,890
 is: here must be a condition, and the then-
 and else-branches must have the same type.
 
-0:23:45.890,0:23:50.640
+00:23:45,890 --> 00:23:50,640
 Since in this case, x or y, one of the two
 pair components, is given back, in the then-
 
-0:23:50.640,0:23:53.500
+00:23:50,640 --> 00:23:53,500
 and else-branches, so they must be of the
 same type.
 
-0:23:53.500,0:23:58.490
+00:23:53,500 --> 00:23:58,490
 Otherwise, this wouldn't be statically safe
 to know what the outcome type is.
 
-0:23:58.490,0:24:00.270
+00:23:58,490 --> 00:24:00,270
 So, in this case, these must be the same.
 
-0:24:00.270,0:24:01.330
+00:24:00,270 --> 00:24:01,330
 But the compiler works this out.
 
-0:24:01.330,0:24:03.480
+00:24:01,330 --> 00:24:03,480
 So, really, the point here is:
 
-0:24:03.480,0:24:08.290
+00:24:03,480 --> 00:24:08,290
 You can write down the function definition,
 and the compiler will find out the least restrictive
 
-0:24:08.290,0:24:13.560
+00:24:08,290 --> 00:24:13,560
 conditions on the types of the inputs and
 outputs so that it always works, and it always
 
-0:24:13.560,0:24:14.560
+00:24:13,560 --> 00:24:14,560
 makes sense.
 
-0:24:14.560,0:24:18.550
+00:24:14,560 --> 00:24:18,550
 That doesn't mean that you should, from now
 on, forget about writing type signatures.
 
-0:24:18.550,0:24:25.250
+00:24:18,550 --> 00:24:25,250
 Often it is still useful to write your own
 type signatures, be they polymorphic or not.
 
-0:24:25.250,0:24:30.180
+00:24:25,250 --> 00:24:30,180
 Simply to express what you expect about your
 function, and then the compiler can compare
 
-0:24:30.180,0:24:33.740
+00:24:30,180 --> 00:24:33,740
 this, and will compare this, to what the compiler
 works out.
 
-0:24:33.740,0:24:36.050
+00:24:33,740 --> 00:24:36,050
 And you can write down a more specific type.
 
-0:24:36.050,0:24:41.500
+00:24:36,050 --> 00:24:41,500
 So, if you say: I want my f-function to be
 from pairs of integers and integers to integers,
 
-0:24:41.500,0:24:42.710
+00:24:41,500 --> 00:24:42,710
 then that's fine.
 
-0:24:42.710,0:24:43.950
+00:24:42,710 --> 00:24:43,950
 The compiler won't complain about this.
 
-0:24:43.950,0:24:47.680
+00:24:43,950 --> 00:24:47,680
 The compiler will complain if you claim more
 generality for your functions than they really
 
-0:24:47.680,0:24:48.680
+00:24:47,680 --> 00:24:48,680
 provide.
 
-0:24:48.680,0:24:53.490
+00:24:48,680 --> 00:24:53,490
 The compiler will not complain if you give
 a more specific type than the one that the
 
-0:24:53.490,0:25:00.090
+00:24:53,490 --> 00:25:00,090
 compiler would have inferred on its own.
 
-0:25:00.090,0:25:06.830
+00:25:00,090 --> 00:25:06,830
 Another pleasing aspect of polymorphism in
 a language like Haskell is that this polymorphism
 
-0:25:06.830,0:25:09.400
+00:25:06,830 --> 00:25:09,400
 has really interesting semantic consequences.
 
-0:25:09.400,0:25:15.720
+00:25:09,400 --> 00:25:15,720
 We can see this, if we recall from earlier
 in the lecture the following law, where I
 
-0:25:15.720,0:25:22.390
+00:25:15,720 --> 00:25:22,390
 talked about interchanging the order in which
 we reverse a list or apply functions to the
 
-0:25:22.390,0:25:23.940
+00:25:22,390 --> 00:25:23,940
 elements of the list.
 
-0:25:23.940,0:25:30.400
+00:25:23,940 --> 00:25:30,400
 So, you probably remember this law from then.
 
-0:25:30.400,0:25:35.960
+00:25:30,400 --> 00:25:35,960
 Maybe surprisingly, or maybe not surprisingly
 to you, this holds not just for arbitrary
 
-0:25:35.960,0:25:37.130
+00:25:35,960 --> 00:25:37,130
 f and lists.
 
-0:25:37.130,0:25:39.850
+00:25:37,130 --> 00:25:39,850
 So, I said we could put any list here.
 
-0:25:39.850,0:25:41.620
+00:25:39,850 --> 00:25:41,620
 We can take any function here.
 
-0:25:41.620,0:25:46.400
+00:25:41,620 --> 00:25:46,400
 Actually, also the "reverse" can be exchanged
 for something else, namely for any function
 
-0:25:46.400,0:25:47.710
+00:25:46,400 --> 00:25:47,710
 of the same type.
 
-0:25:47.710,0:25:52.190
+00:25:47,710 --> 00:25:52,190
 So, "reverse", we now know, has this type:
 list of "a"s to list of "a"s, for whatever
 
-0:25:52.190,0:25:53.390
+00:25:52,190 --> 00:25:53,390
 "a" is.
 
-0:25:53.390,0:26:00.290
+00:25:53,390 --> 00:26:00,290
 And actually, this law doesn't depend on what
 "reverse" is doing, that it is reversing the
 
-0:26:00.290,0:26:01.290
+00:26:00,290 --> 00:26:01,290
 list.
 
-0:26:01.290,0:26:06.490
+00:26:01,290 --> 00:26:06,490
 We could replace this by any function g which
 has the same type as this here, and the law
 
-0:26:06.490,0:26:09.350
+00:26:06,490 --> 00:26:09,350
 would still hold, no matter how the g is defined.
 
-0:26:09.350,0:26:12.330
+00:26:09,350 --> 00:26:12,330
 And that is, I would say, a bit surprising
 at least.
 
-0:26:12.330,0:26:18.130
+00:26:12,330 --> 00:26:18,130
 So, you could maybe think about what functions
 you can think of that have the same type.
 
-0:26:18.130,0:26:20.030
+00:26:18,130 --> 00:26:20,030
 We have actually already seen some.
 
-0:26:20.030,0:26:23.530
+00:26:20,030 --> 00:26:23,530
 The 'tail' function and the 'init' function,
 for example, have this type.
 
-0:26:23.530,0:26:29.290
+00:26:23,530 --> 00:26:29,290
 But also other functions like taking the first
 5 elements of a list, for example, also have
 
-0:26:29.290,0:26:30.290
+00:26:29,290 --> 00:26:30,290
 this type.
 
-0:26:30.290,0:26:31.580
+00:26:30,290 --> 00:26:31,580
 And also other functions that you can think
 of.
 
-0:26:31.580,0:26:36.210
+00:26:31,580 --> 00:26:36,210
 And whatever of these functions you plug into
 the two places of "reverse" here, this law
 
-0:26:36.210,0:26:38.290
+00:26:36,210 --> 00:26:38,290
 will hold.
 
-0:26:38.290,0:26:43.300
+00:26:38,290 --> 00:26:43,300
 Much more generally than for specific for-loops,
 where you could also maybe find a law.
 
-0:26:43.300,0:26:46.140
+00:26:43,300 --> 00:26:46,140
 So, this is a law that comes almost for free.
 
-0:26:46.140,0:26:53.870
+00:26:46,140 --> 00:26:53,870
 It applies very freely, and depending on just
 the type of this function here.
 
-0:26:53.870,0:26:59.330
+00:26:53,870 --> 00:26:59,330
 And since I mentioned earlier that laws like
 this can be used for program optimization,
 
-0:26:59.330,0:27:04.970
+00:26:59,330 --> 00:27:04,970
 this also means that there is a lot of potential
 for doing this in a compiler, for example.
 
-0:27:04.970,0:27:15.040
+00:27:04,970 --> 00:27:15,040
 Because you can deduce laws from the types
 of functions, like in this case.
 
-0:27:15.040,0:27:21.230
+00:27:15,040 --> 00:27:21,230
 Let's briefly return to how this was formulated
 in the C-like imperative setting.
 
-0:27:21.230,0:27:29.320
+00:27:21,230 --> 00:27:29,320
 Actually, the "reverse"-claim I just discussed,
 earlier occurred in the context of comparing
 
-0:27:29.320,0:27:33.890
+00:27:29,320 --> 00:27:33,890
 these two for-loops, and comparing them to
 a Haskell version.
 
-0:27:33.890,0:27:37.350
+00:27:33,890 --> 00:27:37,350
 And then this "reverse"-claim came about.
 
-0:27:37.350,0:27:42.170
+00:27:37,350 --> 00:27:42,170
 And at that point in the lecture, I already
 mentioned that in an imperative setting, these
 
-0:27:42.170,0:27:47.490
+00:27:42,170 --> 00:27:47,490
 loops may not be equivalent, depending, for
 example, on what the f is doing.
 
-0:27:47.490,0:27:49.700
+00:27:47,490 --> 00:27:49,700
 So, there could be a difference here.
 
-0:27:49.700,0:27:54.170
+00:27:49,700 --> 00:27:54,170
 And now we know that even if they *are* equivalent
 in certain situations, for example because
 
-0:27:54.170,0:27:59.920
+00:27:54,170 --> 00:27:59,920
 we know more about the f and about what's
 happening, at least they are not as general.
 
-0:27:59.920,0:28:01.590
+00:27:59,920 --> 00:28:01,590
 This "reverse"-claim is much more general.
 
-0:28:01.590,0:28:05.710
+00:28:01,590 --> 00:28:05,710
 Now that we also know that the 'reverse' function
 can be replaced by any function from lists
 
-0:28:05.710,0:28:10.400
+00:28:05,710 --> 00:28:10,400
 to lists, polymorphically; that is certainly
 not true for this.
 
-0:28:10.400,0:28:15.810
+00:28:10,400 --> 00:28:15,810
 So, these two loops might be interchangeable
 in certain situations that we can check with
 
-0:28:15.810,0:28:20.800
+00:28:15,810 --> 00:28:20,800
 some work, but they do not generalize in the
 way that this "reverse"-claim generalizes
 
-0:28:20.800,0:28:23.640
+00:28:20,800 --> 00:28:23,640
 to any function of the same type.
 
-0:28:23.640,0:28:29.400
+00:28:23,640 --> 00:28:29,400
 For any specific function like "tail", you
 could also see, well, what does this means
 
-0:28:29.400,0:28:30.870
+00:28:29,400 --> 00:28:30,870
 in the context of for-loops?
 
-0:28:30.870,0:28:36.410
+00:28:30,870 --> 00:28:36,410
 Is there a corresponding result in an imperative
 setting?
 
-0:28:36.410,0:28:41.570
+00:28:36,410 --> 00:28:41,570
 Maybe we can work this out, but we don't get
 a general law like in the case earlier.
 
-0:28:41.570,0:28:43.270
+00:28:41,570 --> 00:28:43,270
 Also Generics don't give you this.
 
-0:28:43.270,0:28:48.050
+00:28:43,270 --> 00:28:48,050
 So, even though Generics in Java, somehow,
 correspond to polymorphic types, they don't
 
-0:28:48.050,0:28:50.360
+00:28:48,050 --> 00:28:50,360
 give you this kind of results.
 
-0:28:50.360,0:28:55.230
+00:28:50,360 --> 00:28:55,230
 This is all nicer in a setting like Haskell.
 
-0:28:55.230,0:28:56.470
+00:28:55,230 --> 00:28:56,470
 And that is not just an accident.
 
-0:28:56.470,0:29:01.380
+00:28:56,470 --> 00:29:01,380
 It comes from the expression-based character
 of the language, where we can talk about laws
 
-0:29:01.380,0:29:03.140
+00:29:01,380 --> 00:29:03,140
 between expressions.
 
-0:29:03.140,0:29:05.470
+00:29:03,140 --> 00:29:05,470
 It comes from the type discipline.
 
-0:29:05.470,0:29:10.730
+00:29:05,470 --> 00:29:10,730
 It comes from the mathematical basis, that
 everything is compositionally designed and
 
-0:29:10.730,0:29:12.850
+00:29:10,730 --> 00:29:12,850
 defined.
 
-0:29:12.850,0:29:22.530
+00:29:12,850 --> 00:29:22,530
 So, in that sense, it is really something
 given as a plus on top of the other expressiveness
 
-0:29:22.530,0:29:23.710
+00:29:22,530 --> 00:29:23,710
 that we already have.

@@ -1,1586 +1,1476 @@
-0:00:01.959,0:00:10.580
+120 # slide
+00:00:01,959 --> 00:00:10,580
 Kommen wir nun zu dem Video über
 Funktionen höherer Ordnung speziell für Listen, als eine
 
-0:00:10.580,0:00:14.460
+00:00:10,580 --> 00:00:14,460
 interessantere Anwendung als die künstlichen Beispiele,
 die ich Ihnen zuvor gezeigt habe, als
 
-0:00:14.460,0:00:19.660
+00:00:14,460 --> 00:00:19,660
 ich die Syntax verfügbar
 machen (und erklären) wollte.
 
-0:00:19.660,0:00:28.239
+00:00:19,660 --> 00:00:28,239
 Ich spreche hier also von Listen, aber wie in
 den vorangegangenen Teilen der Vorlesung ist das nur ein
 
-0:00:28.239,0:00:29.239
+00:00:28,239 --> 00:00:29,239
 Beispiel.
 
-0:00:29.239,0:00:33.520
+00:00:29,239 --> 00:00:33,520
 Ähnliche Funktionen wie die, die ich Ihnen jetzt
 zeige (und die Sie wahrscheinlich in den nächsten
 
-0:00:33.520,0:00:37.809
+00:00:33,520 --> 00:00:37,809
 Übungen verwenden werden), gibt
 es auch für andere Datentypen.
 
-0:00:37.809,0:00:42.149
+00:00:37,809 --> 00:00:42,149
 Listen sind hier also nur
 ein Stellvertreter für allgemein strukturierte Datentypen.
 
-0:00:42.149,0:00:46.690
+00:00:42,149 --> 00:00:46,690
 Und dieser Ansatz, Funktionen höherer Ordnung
 zu verwenden, Funktionen höherer Ordnung zu
 
-0:00:46.690,0:00:52.460
+00:00:46,690 --> 00:00:52,460
 definieren und mit ihnen zu arbeiten, ist auch für
 andere Datentypen gültig und nützlich: für Bäume oder andere Dinge,
 
-0:00:52.460,0:00:57.339
+00:00:52,460 --> 00:00:57,339
 die noch kommen werden, oder die in dieser Vorlesung gar
 nicht behandelt werden, die aber in der Praxis nützlich sind.
 
-0:00:57.339,0:01:06.630
+00:00:57,339 --> 00:01:06,630
 Also, Listen, einfach weil Listen so einfach
 sind, und wir sie direkt verwenden können.
 
-0:01:06.630,0:01:10.439
+00:01:06,630 --> 00:01:10,439
 Schauen wir uns ein erstes Beispiel an,
 eine erste Funktion höherer Ordnung auf Listen.
 
-0:01:10.439,0:01:13.380
+00:01:10,439 --> 00:01:13,380
 Das ist diese Funktion, die
 vielleicht einen etwas seltsamen Namen hat.
 
-0:01:13.380,0:01:18.909
+00:01:13,380 --> 00:01:18,909
 Es ist vielleicht nicht sofort
 ersichtlich, warum sie 'foldl1' heißt.
 
-0:01:18.909,0:01:23.119
+00:01:18,909 --> 00:01:23,119
 Dahinter steckt eine gewisse Systematik, denn
 es gibt andere Versionen ohne die "1",
 
-0:01:23.119,0:01:26.100
+00:01:23,119 --> 00:01:26,100
 und es gibt Versionen mit
 einem "r" anstelle des "l" hier.
 
-0:01:26.100,0:01:31.399
+00:01:26,100 --> 00:01:31,399
 Akzeptieren wir für den Moment diesen seltsamen Namen
 und schauen wir uns an, was die Funktion macht.
 
-0:01:31.399,0:01:36.159
+00:01:31,399 --> 00:01:36,159
 Und dann können wir später diskutieren
 und sehen, welche anderen Versionen es gibt.
 
-0:01:36.159,0:01:37.880
-Also, was
-macht diese Funktion?
+00:01:36,159 --> 00:01:37,880
+Also, was macht diese Funktion?
 
-0:01:37.880,0:01:41.579
+00:01:37,880 --> 00:01:41,579
 Schauen wir uns zunächst
 einmal den Typ an.
 
-0:01:41.579,0:01:43.380
-Es ist
-ein polymorpher Typ.
+00:01:41,579 --> 00:01:43,380
+Es ist ein polymorpher Typ.
 
-0:01:43.380,0:01:45.700
+00:01:43,380 --> 00:01:45,700
 Und darin können wir
 natürlich die higher-orderness sehen.
 
-0:01:45.700,0:01:49.660
+00:01:45,700 --> 00:01:49,660
 Denn das erste Argument ist eine Funktion,
 und zwar eine binäre Funktion auf einem Typ.
 
-0:01:49.660,0:01:51.829
-Wir haben hier
-eine Typvariable 'a'.
+00:01:49,660 --> 00:01:51,829
+Wir haben hier eine Typvariable 'a'.
 
-0:01:51.829,0:01:54.460
+00:01:51,829 --> 00:01:54,460
 Also, "a zu a zu a"
 für was auch immer 'a' ist.
 
-0:01:54.460,0:01:57.640
+00:01:54,460 --> 00:01:57,640
 Wir haben hier also für
 irgendeinen Typ eine binäre Funktion.
 
-0:01:57.640,0:02:04.030
+00:01:57,640 --> 00:02:04,030
 Und tatsächlich sehen wir hier unten auch,
 dass erwartet wird, dass sie links-assoziativ ist
 
-0:02:04.030,0:02:09.690
-(oder auf diese
-Weise verwendet wird).
+00:02:04,030 --> 00:02:09,690
+(oder auf diese Weise verwendet wird).
 
-0:02:09.690,0:02:10.950
+00:02:09,690 --> 00:02:10,950
 Aber das ist nicht
 etwas, das der Typ ausdrückt.
 
-0:02:10.950,0:02:17.960
+00:02:10,950 --> 00:02:17,960
 Der Typ sagt einfach, dass wir eine binäre
 Funktion haben, und dann haben wir eine Liste von
 
-0:02:17.960,0:02:24.750
+00:02:17,960 --> 00:02:24,750
 'a's, also eine Liste von Elementen der
 Art, auf denen diese Funktion operieren kann.
 
-0:02:24.750,0:02:27.280
+00:02:24,750 --> 00:02:27,280
 Und das Ergebnis wird
 auch eines dieser Dinge sein.
 
-0:02:27.280,0:02:31.360
+00:02:27,280 --> 00:02:31,360
 Nun, nicht unbedingt eines der Elemente
 aus dieser speziellen Liste, aber etwas vom
 
-0:02:31.360,0:02:36.230
+00:02:31,360 --> 00:02:36,230
 gleichen Typ der Dinge, die wir in der
 Liste haben (und der Dinge, auf denen diese
 
-0:02:36.230,0:02:37.500
-Funktion
-operieren kann).
+00:02:36,230 --> 00:02:37,500
+Funktion operieren kann).
 
-0:02:37.500,0:02:39.250
-Und was
-macht diese Funktion?
+00:02:37,500 --> 00:02:39,250
+Und was macht diese Funktion?
 
-0:02:39.250,0:02:42.800
+00:02:39,250 --> 00:02:42,800
 Das steht nicht direkt im
 Typ, aber es wird hier erklärt.
 
-0:02:42.800,0:02:49.000
+00:02:42,800 --> 00:02:49,000
 Also, sie setzt eine Funktion (einen Operator),
 nämlich diese, die links-assoziativ sein soll (oder
 
-0:02:49.000,0:02:54.840
+00:02:49,000 --> 00:02:54,840
 links-assoziativ verwendet werden soll, wie wir sehen
 werden), und setzt sie zwischen alle Elemente
 
-0:02:54.840,0:02:55.840
-einer
-nicht-leeren Liste.
+00:02:54,840 --> 00:02:55,840
+einer nicht-leeren Liste.
 
-0:02:55.840,0:02:59.980
+00:02:55,840 --> 00:02:59,980
 Wir erwarten also, dass diese Liste nicht
 leer ist, und dafür steht gerade die "1".
 
-0:02:59.980,0:03:04.170
+00:02:59,980 --> 00:03:04,170
 Das "l" steht für "links", und
 die "1" steht für "mindestens ein Element".
 
-0:03:04.170,0:03:06.500
+00:03:04,170 --> 00:03:06,500
 Wir werden diese Funktion nicht
 für eine leere Liste verwenden.
 
-0:03:06.500,0:03:12.740
+00:03:06,500 --> 00:03:12,740
 Und die Funktion setzt einen Operator zwischen alle
 Elemente der nicht leeren Liste, in einer links-assoziativen
 
-0:03:12.740,0:03:13.740
-
+00:03:12,740 --> 00:03:13,740
 Weise.
 
-0:03:13.740,0:03:14.740
-Also, was
-bedeutet das?
+00:03:13,740 --> 00:03:14,740
+Also, was bedeutet das?
 
-0:03:14.740,0:03:15.740
-Schauen wir uns
-ein Beispiel an.
+00:03:14,740 --> 00:03:15,740
+Schauen wir uns ein Beispiel an.
 
-0:03:15.740,0:03:18.930
+00:03:15,740 --> 00:03:18,930
 Nehmen wir an, wir wollen
 die Summe einer Liste berechnen.
 
-0:03:18.930,0:03:21.740
+00:03:18,930 --> 00:03:21,740
 Wir haben eine Liste,
 sagen wir mit ganzen Zahlen.
 
-0:03:21.740,0:03:26.050
+00:03:21,740 --> 00:03:26,050
 Dann ist 'a' also 'Int'; und wir haben
 eine Liste; und wir wollen die Summe berechnen.
 
-0:03:26.050,0:03:27.140
-Was
-bedeutet das?
+00:03:26,050 --> 00:03:27,140
+Was bedeutet das?
 
-0:03:27.140,0:03:32.500
+00:03:27,140 --> 00:03:32,500
 Eine Liste zu nehmen und die Summe zu
 berechnen, bedeutet im Grunde, das "+"-Symbol zwischen alle benachbarten
 
-0:03:32.500,0:03:34.010
-Elemente
-zu setzen.
+00:03:32,500 --> 00:03:34,010
+Elemente zu setzen.
 
-0:03:34.010,0:03:39.970
+00:03:34,010 --> 00:03:39,970
 Wir wollen also 1 + 2 + 3 + 4
 berechnen, was genau das ist, was hier erklärt wird: einen
 
-0:03:39.970,0:03:41.780
-bestimmten Operator
-dazwischen setzen.
+00:03:39,970 --> 00:03:41,780
+bestimmten Operator dazwischen setzen.
 
-0:03:41.780,0:03:48.300
+00:03:41,780 --> 00:03:48,300
 Also, "+" ist tatsächlich assoziativ, also ist
 es nicht wirklich wichtig, wie wir hier klammern.
 
-0:03:48.300,0:03:52.091
+00:03:48,300 --> 00:03:52,091
 Bei anderen Operatoren wie "-" könnte es natürlich
 einen Unterschied machen, ob wir links- oder rechts-assoziativ
 
-0:03:52.091,0:03:57.490
+00:03:52,091 --> 00:03:57,490
 sind; ob wir das so betrachten,
 dass wir erst dies und dann
 
-0:03:57.490,0:04:03.490
+00:03:57,490 --> 00:04:03,490
 dies und dann für die ganze Liste berechnen,
 oder ob wir irgendwie anders berechnen wollen, wie
 
-0:04:03.490,0:04:06.830
+00:04:03,490 --> 00:04:06,830
 erst dies, dann dies
 und dann den ganzen Ausdruck.
 
-0:04:06.830,0:04:08.760
-Für "+" spielt
-das keine Rolle.
+00:04:06,830 --> 00:04:08,760
+Für "+" spielt das keine Rolle.
 
-0:04:08.760,0:04:15.620
+00:04:08,760 --> 00:04:15,620
 Die Berechnung der Summe einer Liste, wie lang auch immer
 sie sein mag, wird also einfach dadurch beschrieben, dass man
 
-0:04:15.620,0:04:18.310
+00:04:15,620 --> 00:04:18,310
 ein "+" zwischen
 alle benachbarten Elemente setzt.
 
-0:04:18.310,0:04:24.380
+00:04:18,310 --> 00:04:24,380
 Wenn Sie sich an unsere frühere Diskussion
 in der vorigen Woche erinnern, wo wir diese
 
-0:04:24.380,0:04:28.620
+00:04:24,380 --> 00:04:28,620
 bequeme sum-Funktion hatten und ich sagte: selbst wenn
 wir die sum-Funktion für Listen nicht zur Verfügung hätten,
 
-0:04:28.620,0:04:31.759
+00:04:28,620 --> 00:04:31,759
 könnten wir sie einfach
 mit sehr wenigen Tastendrücken schreiben.
 
-0:04:31.759,0:04:34.129
+00:04:31,759 --> 00:04:34,129
 Im Grunde sind das
 die Tastenanschläge, die wir brauchen.
 
-0:04:34.129,0:04:36.229
-Dies ist also
-die Funktion 'sum'.
+00:04:34,129 --> 00:04:36,229
+Dies ist also die Funktion 'sum'.
 
-0:04:36.229,0:04:39.770
+00:04:36,229 --> 00:04:39,770
 Sie nimmt eine Liste und setzt
 ein "+" zwischen alle benachbarten Elemente.
 
-0:04:39.770,0:04:43.569
+00:04:39,770 --> 00:04:43,569
 Das ist es, was das
 Summieren der Elemente einer Liste bedeutet.
 
-0:04:43.569,0:04:46.990
-Und die
-foldl1-Funktion ist polymorph.
+00:04:43,569 --> 00:04:46,990
+Und die foldl1-Funktion ist polymorph.
 
-0:04:46.990,0:04:48.670
+00:04:46,990 --> 00:04:48,670
 Deshalb können wir
 sie so einfach verwenden.
 
-0:04:48.670,0:04:53.230
+00:04:48,670 --> 00:04:53,230
 Wenn wir so etwas wie eine Liste von Booleschen
 Werten hätten, dann können wir sie nicht addieren, aber wir
 
-0:04:53.230,0:04:56.600
+00:04:53,230 --> 00:04:56,600
 können sie vielleicht konjungieren oder
 disjungieren, mit 'and' und 'or'.
 
-0:04:56.600,0:05:01.069
+00:04:56,600 --> 00:05:01,069
 Und dann können wir die gleiche polymorphe
 Funktion verwenden, nur mit einem anderen Operator hier.
 
-0:05:01.069,0:05:09.150
+00:05:01,069 --> 00:05:09,150
 Wir haben Polymorphismus, und wir haben higher-order, und
 sie kombinieren sich hier zu sehr schönen Anwendungen.
 
-0:05:09.150,0:05:15.360
+00:05:09,150 --> 00:05:15,360
 Und wir werden noch mehr Funktionen dieser Art
 sehen, und Anwendungen dieses Prinzips, dieser Kombination von
 
-0:05:15.360,0:05:16.699
-Polymorphismus und
-höherer Ordnung.
+00:05:15,360 --> 00:05:16,699
+Polymorphismus und höherer Ordnung.
 
-0:05:16.699,0:05:25.050
+00:05:16,699 --> 00:05:25,050
 Hier ist ein weiteres Beispiel
 für eine higher-order Funktion auf Listen.
 
-0:05:25.050,0:05:31.050
+00:05:25,050 --> 00:05:31,050
 Und wieder ist es zwar, wie hier gezeigt, eine
 Funktion auf Listen, aber das gleiche Prinzip ist auch
 
-0:05:31.050,0:05:32.050
-auf andere
-Datenstrukturen anwendbar.
+00:05:31,050 --> 00:05:32,050
+auf andere Datenstrukturen anwendbar.
 
-0:05:32.050,0:05:36.729
+00:05:32,050 --> 00:05:36,729
 Für andere Datenstrukturen, die Elemente irgendeines
 Typs enthalten, wie z.B. Bäume, Dictionaries oder
 
-0:05:36.729,0:05:44.289
+00:05:36,729 --> 00:05:44,289
 etwas, das nicht nur aus Listen
 besteht, haben wir also auch eine map-Funktion,
 
-0:05:44.289,0:05:47.749
+00:05:44,289 --> 00:05:47,749
 nicht mit genau demselben
 Namen, aber mit denselben Ideen.
 
-0:05:47.749,0:05:50.009
-Also, was
-bedeutet 'map'?
+00:05:47,749 --> 00:05:50,009
+Also, was bedeutet 'map'?
 
-0:05:50.009,0:05:53.900
+00:05:50,009 --> 00:05:53,900
 Wie hier geschrieben, ist es eine polymorphe
 Funktion und es ist eine Funktion höherer Ordnung.
 
-0:05:53.900,0:05:57.360
+00:05:53,900 --> 00:05:57,360
 Sie ist über
 eine beliebige Funktion parametrisiert.
 
-0:05:57.360,0:06:01.819
+00:05:57,360 --> 00:06:01,819
 Das Argument hier
 ist also sehr allgemein.
 
-0:06:01.819,0:06:03.270
-Es ist eine Funktion
-von etwas zu etwas.
+00:06:01,819 --> 00:06:03,270
+Es ist eine Funktion von etwas zu etwas.
 
-0:06:03.270,0:06:07.659
+00:06:03,270 --> 00:06:07,659
 Also, 'a' und 'b' sind möglicherweise
 unterschiedliche Typen (weil sie unterschiedliche Typvariablen verwenden).
 
-0:06:07.659,0:06:08.979
-Und was
-bekommen wir dann?
+00:06:07,659 --> 00:06:08,979
+Und was bekommen wir dann?
 
-0:06:08.979,0:06:11.849
+00:06:08,979 --> 00:06:11,849
 Das zweite Argument ist eine Liste von 'a'
 und sie gibt eine Liste von 'b' zurück.
 
-0:06:11.849,0:06:13.449
-Was macht
-die Funktion?
+00:06:11,849 --> 00:06:13,449
+Was macht die Funktion?
 
-0:06:13.449,0:06:18.779
+00:06:13,449 --> 00:06:18,779
 Sie wendet diese Funktion auf alle Elemente einer Liste
 an und gibt eine Liste mit den geänderten Elementen
 
-0:06:18.779,0:06:19.779
-
+00:06:18,779 --> 00:06:19,779
 zurück.
 
-0:06:19.779,0:06:20.779
+00:06:19,779 --> 00:06:20,779
 Natürlich werden sie
 nicht in-place geändert.
 
-0:06:20.779,0:06:22.939
+00:06:20,779 --> 00:06:22,939
 Wir wollen ja nicht die Liste
 verändern und die 'a's in 'b's verwandeln.
 
-0:06:22.939,0:06:28.419
+00:06:22,939 --> 00:06:28,419
 Nein, wir geben *hinein* eine Liste von 'a's, und wir
 bekommen *heraus* eine Liste von 'b's, die genauso lang
 
-0:06:28.419,0:06:34.210
+00:06:28,419 --> 00:06:34,210
 sein wird, aber jedes Element hier ist das
 Ergebnis der Anwendung dieser Funktion auf das entsprechende
 
-0:06:34.210,0:06:35.210
-Element
-hier.
+00:06:34,210 --> 00:06:35,210
+Element hier.
 
-0:06:35.210,0:06:42.050
+00:06:35,210 --> 00:06:42,050
 Wir haben jetzt also eine neue Liste, die eine
 Liste von 'b's ist und das Ergebnis dieser Funktion (was
 
-0:06:42.050,0:06:46.770
+00:06:42,050 --> 00:06:46,770
 auch immer das erste Argument des 'map'-Aufrufs
 war) auf die entsprechenden Elemente von hier
 
-0:06:46.770,0:06:49.169
-
+00:06:46,770 --> 00:06:49,169
 ist.
 
-0:06:49.169,0:06:52.000
-Wie könnten
-wir das verwenden?
+00:06:49,169 --> 00:06:52,000
+Wie könnten wir das verwenden?
 
-0:06:52.000,0:07:00.430
+00:06:52,000 --> 00:07:00,430
 Zum Beispiel könnten wir sie mit dem Prädikat
 'even' auf einer Liste von ganzen Zahlen aufrufen.
 
-0:07:00.430,0:07:02.999
+00:07:00,430 --> 00:07:02,999
 Lassen Sie uns also
 besprechen, was hier passieren würde.
 
-0:07:02.999,0:07:04.999
+00:07:02,999 --> 00:07:04,999
 Die Funktion 'even' geht
 von 'Int' nach 'Bool'.
 
-0:07:04.999,0:07:10.039
+00:07:04,999 --> 00:07:10,039
 In diesem Fall wäre 'a' gleich 'Int' und 'b' gleich
 'Bool', was bedeutet, dass das zweite Argument eine
 
-0:07:10.039,0:07:12.990
+00:07:10,039 --> 00:07:12,990
 Liste von 'Int's sein sollte,
 was hier der Fall ist.
 
-0:07:12.990,0:07:15.069
+00:07:12,990 --> 00:07:15,069
 Dann wäre das Ergebnis
 eine Liste von 'Bool's.
 
-0:07:15.069,0:07:16.870
-Und, nun
-ja, welche 'Bool's?
+00:07:15,069 --> 00:07:16,870
+Und, nun ja, welche 'Bool's?
 
-0:07:16.870,0:07:21.039
+00:07:16,870 --> 00:07:21,039
 Für jedes Element hier würden wir das
 Prädikat 'even' anwenden, also prüfen, ob die
 
-0:07:21.039,0:07:25.189
+00:07:21,039 --> 00:07:25,189
 Zahl gerade ist oder nicht, und
 die Ergebnisse in der Liste akkumulieren.
 
-0:07:25.189,0:07:29.590
+00:07:25,189 --> 00:07:29,590
 Das Ergebnis dieses Aufrufs hier wird
 also eine Liste mit 10 Elementen sein.
 
-0:07:29.590,0:07:33.460
+00:07:29,590 --> 00:07:33,460
 Das erste Element ist False,
 denn "1" ist nicht gerade.
 
-0:07:33.460,0:07:37.529
+00:07:33,460 --> 00:07:37,529
 Das zweite Element des Ergebnisses wird True
 sein, weil das zweite Element aus dieser Liste
 
-0:07:37.529,0:07:39.910
-"2" ist, was gerade
-ist, und so weiter.
+00:07:37,529 --> 00:07:39,910
+"2" ist, was gerade ist, und so weiter.
 
-0:07:39.910,0:07:43.780
+00:07:39,910 --> 00:07:43,780
 Wir haben False, True, False, True,
 False, True, False, True, False, True.
 
-0:07:43.780,0:07:45.079
-Insgesamt also
-10 Boolesche Werte.
+00:07:43,780 --> 00:07:45,079
+Insgesamt also 10 Boolesche Werte.
 
-0:07:45.079,0:07:50.389
+00:07:45,079 --> 00:07:50,389
 Und jeder von ihnen ist das Ergebnis
 der Prüfung auf Geradheit des entsprechenden Elements
 
-0:07:50.389,0:07:52.050
-aus der
-ursprünglichen Liste.
+00:07:50,389 --> 00:07:52,050
+aus der ursprünglichen Liste.
 
-0:07:52.050,0:07:53.759
-Das ist
-diese Zeile.
+00:07:52,050 --> 00:07:53,759
+Das ist diese Zeile.
 
-0:07:53.759,0:07:57.900
+00:07:53,759 --> 00:07:57,900
 Aber da die Funktion polymorph ist, müssen wir
 sie natürlich nicht auf Zahlen oder Boolesche Werte anwenden.
 
-0:07:57.900,0:08:00.569
+00:07:57,900 --> 00:08:00,569
 Wir können sie zum
 Beispiel auch auf Bilder anwenden.
 
-0:08:00.569,0:08:06.490
+00:08:00,569 --> 00:08:06,490
 Zum Beispiel könnten 'a' und 'b' beide
 mit 'Picture' instanziiert werden, dann müsste man eine
 
-0:08:06.490,0:08:08.990
+00:08:06,490 --> 00:08:08,990
 Funktion von Pictures
 zu Pictures angeben.
 
-0:08:08.990,0:08:11.699
-Denken wir
-an die CodeWorld-Bibliothek.
+00:08:08,990 --> 00:08:11,699
+Denken wir an die CodeWorld-Bibliothek.
 
-0:08:11.699,0:08:15.639
+00:08:11,699 --> 00:08:15,639
 Zum Beispiel ist 'dilated 5'
 eine Funktion von Pictures zu Pictures.
 
-0:08:15.639,0:08:20.800
+00:08:15,639 --> 00:08:20,800
 Sie nimmt nämlich ein 'Picture' und skaliert es
 um den Faktor 5 in x- und y-Richtung.
 
-0:08:20.800,0:08:22.389
-Dies ist also
-eine partielle Anwendung.
+00:08:20,800 --> 00:08:22,389
+Dies ist also eine partielle Anwendung.
 
-0:08:22.389,0:08:23.389
-Es ist
-eine Funktion.
+00:08:22,389 --> 00:08:23,389
+Es ist eine Funktion.
 
-0:08:23.389,0:08:27.539
+00:08:23,389 --> 00:08:27,539
 Eigentlich nimmt 'dilated' eine Zahl und
 ein 'Picture' und gibt ein 'Picture'.
 
-0:08:27.539,0:08:31.560
+00:08:27,539 --> 00:08:31,560
 Wenn wir es also partiell nur auf eine Zahl
 anwenden, erhalten wir eine Funktion von 'Picture' zu 'Picture'.
 
-0:08:31.560,0:08:37.440
+00:08:31,560 --> 00:08:37,440
 Das ist etwas, was wir hier einfügen
 können, wenn 'a' und 'b' beide 'Picture' sind.
 
-0:08:37.440,0:08:39.150
+00:08:37,440 --> 00:08:39,150
 Dann müssen wir eine
 Liste von Bildern übergeben.
 
-0:08:39.150,0:08:42.790
+00:08:39,150 --> 00:08:42,790
 Also, sagen wir, wir haben
 drei Bilder: pic1, pic2, pic3.
 
-0:08:42.790,0:08:44.330
-Dann können
-wir diese übergeben.
+00:08:42,790 --> 00:08:44,330
+Dann können wir diese übergeben.
 
-0:08:44.330,0:08:45.630
-Und was
-wäre das Ergebnis?
+00:08:44,330 --> 00:08:45,630
+Und was wäre das Ergebnis?
 
-0:08:45.630,0:08:49.910
+00:08:45,630 --> 00:08:49,910
 Wieder eine Liste von Bildern, denn
 'b' ist in diesem Fall auch 'Picture'.
 
-0:08:49.910,0:08:51.960
-Und was
-ist die Ergebnisliste?
+00:08:49,910 --> 00:08:51,960
+Und was ist die Ergebnisliste?
 
-0:08:51.960,0:08:58.410
+00:08:51,960 --> 00:08:58,410
 Es ist eine Liste von drei Bildern, die
 diese drei sind, aber jedes von ihnen ist in
 
-0:08:58.410,0:09:00.030
-x- und y-Richtung
-um 5 skaliert.
+00:08:58,410 --> 00:09:00,030
+x- und y-Richtung um 5 skaliert.
 
-0:09:00.030,0:09:06.000
+00:09:00,030 --> 00:09:06,000
 Das bedeutet: Nimm diese Liste von Bildern
 und skaliere jedes davon auf diese Weise.
 
-0:09:06.000,0:09:14.390
+00:09:06,000 --> 00:09:14,390
 Und das ist eine
 sehr kurze Art, dies auszudrücken.
 
-0:09:14.390,0:09:15.390
-Und noch
-ein Beispiel:
+00:09:14,390 --> 00:09:15,390
+Und noch ein Beispiel:
 
-0:09:15.390,0:09:18.120
-Die
-sogenannte filter-Funktion.
+00:09:15,390 --> 00:09:18,120
+Die sogenannte filter-Funktion.
 
-0:09:18.120,0:09:20.390
-Ein etwas
-anderer Typ.
+00:09:18,120 --> 00:09:20,390
+Ein etwas anderer Typ.
 
-0:09:20.390,0:09:25.620
-Was sind
-nun die Zutaten?
+00:09:20,390 --> 00:09:25,620
+Was sind nun die Zutaten?
 
-0:09:25.620,0:09:26.710
-Wieder haben
-wir eine Funktion.
+00:09:25,620 --> 00:09:26,710
+Wieder haben wir eine Funktion.
 
-0:09:26.710,0:09:29.220
+00:09:26,710 --> 00:09:29,220
 Aber jetzt ist es keine Funktion
 von 'a' zu irgendeinem 'b' (zu irgendwas).
 
-0:09:29.220,0:09:32.170
+00:09:29,220 --> 00:09:32,170
 Es ist eine Funktion vom
 Typ von 'a' zu 'Bool'.
 
-0:09:32.170,0:09:33.390
-Es ist
-also ein Prädikat.
+00:09:32,170 --> 00:09:33,390
+Es ist also ein Prädikat.
 
-0:09:33.390,0:09:35.370
-Das 'a' ist
-immer noch polymorph.
+00:09:33,390 --> 00:09:35,370
+Das 'a' ist immer noch polymorph.
 
-0:09:35.370,0:09:40.330
+00:09:35,370 --> 00:09:40,330
 Aber das Ergebnis dieser
 Funktion ist vom Typ 'Bool'.
 
-0:09:40.330,0:09:44.180
+00:09:40,330 --> 00:09:44,180
 Was im vorherigen Fall mit der
 map-Funktion erlaubt war, aber dort nicht erzwungen
 
-0:09:44.180,0:09:45.180
-
+00:09:44,180 --> 00:09:45,180
 wurde.
 
-0:09:45.180,0:09:46.340
-Dort konnte
-'b' alles sein.
+00:09:45,180 --> 00:09:46,340
+Dort konnte 'b' alles sein.
 
-0:09:46.340,0:09:51.710
+00:09:46,340 --> 00:09:51,710
 Dann bekommen wir wieder eine Liste von 'a's, also
 von den Dingen, auf die dieses Prädikat (diese Funktion)
 
-0:09:51.710,0:09:53.010
-angewendet
-werden kann.
+00:09:51,710 --> 00:09:53,010
+angewendet werden kann.
 
-0:09:53.010,0:09:54.110
-Und das Ergebnis ist
-eine Liste von 'a's.
+00:09:53,010 --> 00:09:54,110
+Und das Ergebnis ist eine Liste von 'a's.
 
-0:09:54.110,0:09:59.120
+00:09:54,110 --> 00:09:59,120
 Zuvor war es eine Liste von 'b's, weil wir
 die Ergebnisse der Anwendung der Funktion auf Elemente von
 
-0:09:59.120,0:10:00.210
-hier aus
-ausgegeben haben.
+00:09:59,120 --> 00:10:00,210
+hier aus ausgegeben haben.
 
-0:10:00.210,0:10:05.390
+00:10:00,210 --> 00:10:05,390
 Jetzt geben wir, für die filter-Funktion
 (statt 'map'), eine Liste von 'a's zurück.
 
-0:10:05.390,0:10:06.390
-Welche 'a's
-sind das?
+00:10:05,390 --> 00:10:06,390
+Welche 'a's sind das?
 
-0:10:06.390,0:10:08.370
-Welche 'a'-Elemente
-sollen das sein?
+00:10:06,390 --> 00:10:08,370
+Welche 'a'-Elemente sollen das sein?
 
-0:10:08.370,0:10:13.600
+00:10:08,370 --> 00:10:13,600
 Diejenigen aus dieser Liste, die das
 hier angegebene Prädikat erfüllen (die hier
 
-0:10:13.600,0:10:16.940
-angegebene Funktion von
-'a' zu 'Bool').
+00:10:13,600 --> 00:10:16,940
+angegebene Funktion von 'a' zu 'Bool').
 
-0:10:16.940,0:10:21.380
+00:10:16,940 --> 00:10:21,380
 Dies könnte also eine kürzere Liste sein
 als diese, denn einige Elemente aus dieser Liste
 
-0:10:21.380,0:10:25.130
+00:10:21,380 --> 00:10:25,130
 könnten das Prädikat nicht erfüllen,
 und dann werden sie verworfen.
 
-0:10:25.130,0:10:28.150
+00:10:25,130 --> 00:10:28,150
 Lassen Sie uns darüber nachdenken, dies
 wieder mit dem Prädikat 'even' zu verwenden.
 
-0:10:28.150,0:10:33.480
+00:10:28,150 --> 00:10:33,480
 In der vorherigen Folie hatte ich 'map' und
 'even' und [1,2,...,10], und dann war das Ergebnis
 
-0:10:33.480,0:10:34.810
-[False, True,
-False, True, ...].
+00:10:33,480 --> 00:10:34,810
+[False, True, False, True, ...].
 
-0:10:34.810,0:10:41.780
+00:10:34,810 --> 00:10:41,780
 Zehn Elemente zu zehn Booleschen Werten, nämlich
 False, True, usw., denn 1 ist nicht gerade,
 
-0:10:41.780,0:10:44.350
+00:10:41,780 --> 00:10:44,350
 aber 2 ist gerade,
 3 ist nicht gerade, usw.
 
-0:10:44.350,0:10:46.310
+00:10:44,350 --> 00:10:46,310
 Was würde passieren, wenn
 wir 'filter' und 'even' anwenden?
 
-0:10:46.310,0:10:47.720
-Was
-bedeutet das?
+00:10:46,310 --> 00:10:47,720
+Was bedeutet das?
 
-0:10:47.720,0:10:51.750
+00:10:47,720 --> 00:10:51,750
 Nimm die Elemente aus der
 Liste [1..10], die das Prädikat erfüllen.
 
-0:10:51.750,0:10:59.690
+00:10:51,750 --> 00:10:59,690
 Diejenigen, auf die die angewandte Funktion "False"
 ergibt, würden nun also nicht behalten werden.
 
-0:10:59.690,0:11:02.800
-Also behalten wir 1,
-3, 5, etc. nicht.
+00:10:59,690 --> 00:11:02,800
+Also behalten wir 1, 3, 5, etc. nicht.
 
-0:11:02.800,0:11:04.070
-Die anderen
-werden beibehalten.
+00:11:02,800 --> 00:11:04,070
+Die anderen werden beibehalten.
 
-0:11:04.070,0:11:07.580
+00:11:04,070 --> 00:11:07,580
 Und wir geben nicht True für
 sie aus, weil wir nicht 'Bool' ausgeben.
 
-0:11:07.580,0:11:09.270
-Die Ausgabe sind
-die Elemente selbst.
+00:11:07,580 --> 00:11:09,270
+Die Ausgabe sind die Elemente selbst.
 
-0:11:09.270,0:11:16.260
+00:11:09,270 --> 00:11:16,260
 Während also "map even [1..10]" die Liste [False, True,
 False, True, ...] liefert, liefert "filter even [1..10]" die
 
-0:11:16.260,0:11:17.260
-Liste
-[2,4,6,8,10].
+00:11:16,260 --> 00:11:17,260
+Liste [2,4,6,8,10].
 
-0:11:17.260,0:11:21.150
+00:11:17,260 --> 00:11:21,150
 Wir erhalten die Liste der
 Zahlen, die das Prädikat erfüllen.
 
-0:11:21.150,0:11:24.560
+00:11:21,150 --> 00:11:24,560
 Dies war ein Beispiel,
 mit dem Prädikat 'even'.
 
-0:11:24.560,0:11:28.470
+00:11:24,560 --> 00:11:28,470
 Wir können uns
 weitere Beispiele ausdenken.
 
-0:11:28.470,0:11:32.800
+00:11:28,470 --> 00:11:32,800
 Nehmen wir die Funktion 'isPalindrome', die wir in
 den Folien verwendet haben (und von der Sie
 
-0:11:32.800,0:11:34.980
+00:11:32,800 --> 00:11:34,980
 in den Übungen auch
 eine Version programmiert haben).
 
-0:11:34.980,0:11:38.240
+00:11:34,980 --> 00:11:38,240
 Und nehmen wir an, wir haben
 ein "completeDictionary", also eine Liste von Strings.
 
-0:11:38.240,0:11:44.270
+00:11:38,240 --> 00:11:44,270
 Und wir wollen wissen, welche der
 Wörter in unserem Wörterbuch Palindrome sind.
 
-0:11:44.270,0:11:49.680
+00:11:44,270 --> 00:11:49,680
 Wir müssen einfach dieses komplette
 Wörterbuch (completeDictionary) nach dem isPalindrom-Prädikat filtern.
 
-0:11:49.680,0:11:57.700
+00:11:49,680 --> 00:11:57,700
 Das wäre also eine Liste von Strings, und 'isPalindrome'
 ist eine Funktion von 'String' nach 'Bool', also wäre
 
-0:11:57.700,0:12:01.560
+00:11:57,700 --> 00:12:01,560
 das Ergebnis wieder eine Liste von Strings,
 nämlich nur die Wörter aus dem Wörterbuch,
 
-0:12:01.560,0:12:02.730
-die
-Palindrome sind.
+00:12:01,560 --> 00:12:02,730
+die Palindrome sind.
 
-0:12:02.730,0:12:10.970
+00:12:02,730 --> 00:12:10,970
 Oder nehmen wir an, wir haben so etwas
 wie "bonusPercentageList", als Double-Werte, und wir wollen nur die
 
-0:12:10.970,0:12:14.750
-behalten, die größer
-als 50 % sind.
+00:12:10,970 --> 00:12:14,750
+behalten, die größer als 50 % sind.
 
-0:12:14.750,0:12:20.910
+00:12:14,750 --> 00:12:20,910
 Dann könnten wir diese Section, diese
 anonyme Funktion, an die filter-Funktion übergeben.
 
-0:12:20.910,0:12:25.280
+00:12:20,910 --> 00:12:25,280
 Das Prädikat wäre also von 'Double' zu 'Bool'
 (denn genau das ist es, was diese Funktion
 
-0:12:25.280,0:12:30.420
+00:12:25,280 --> 00:12:30,420
 tut: für einen Double prüfen, ob er größer
 als 0.5 ist), dies wäre eine Liste von
 
-0:12:30.420,0:12:35.760
+00:12:30,420 --> 00:12:35,760
 Doubles (die bonusPercentageList), und das Ergebnis
 wäre eine möglicherweise kürzere Liste von
 
-0:12:35.760,0:12:39.620
+00:12:35,760 --> 00:12:39,620
 Doubles, nämlich nur die,
 die größer als 50 % sind.
 
-0:12:39.620,0:12:49.360
+00:12:39,620 --> 00:12:49,360
 Und noch einmal: Wenn ich sage "Sie wählt Listenelemente
 aus", bedeutet das nicht, dass das diese Liste verändert.
 
-0:12:49.360,0:12:50.760
-Das ist eine
-Liste, die eingegeben wird.
+00:12:49,360 --> 00:12:50,760
+Das ist eine Liste, die eingegeben wird.
 
-0:12:50.760,0:12:51.760
-Sie ist
-die Eingabe.
+00:12:50,760 --> 00:12:51,760
+Sie ist die Eingabe.
 
-0:12:51.760,0:12:57.410
+00:12:51,760 --> 00:12:57,410
 Und heraus kommt eine andere Liste, die wahrscheinlich in
 den meisten Fällen etwas kürzer ist, weil einige
 
-0:12:57.410,0:12:58.410
-Elemente nicht
-ausgewählt werden.
+00:12:57,410 --> 00:12:58,410
+Elemente nicht ausgewählt werden.
 
-0:12:58.410,0:13:00.000
+00:12:58,410 --> 00:13:00,000
 Wir löschen also nicht
 etwas aus der Liste.
 
-0:13:00.000,0:13:07.370
+00:13:00,000 --> 00:13:07,370
 Wir geben eine neue Liste
 zurück, die weniger Elemente hat.
 
-0:13:07.370,0:13:11.070
+00:13:07,370 --> 00:13:11,070
 Nun könnten wir uns fragen,
 wie 'map' und 'filter' definiert sind.
 
-0:13:11.070,0:13:18.470
+00:13:11,070 --> 00:13:18,470
 Eigentlich sollten Sie
 darauf selbst kommen können.
 
-0:13:18.470,0:13:22.620
+00:13:18,470 --> 00:13:22,620
 Nämlich 'map' und 'filter', das Anwenden einer Funktion
 auf jedes Element einer Liste oder das Auswählen
 
-0:13:22.620,0:13:29.040
+00:13:22,620 --> 00:13:29,040
 von Elementen aus einer Liste nach einem Prädikat/einer
 Eigenschaft; das war genau das, wofür wir bisher
 
-0:13:29.040,0:13:30.040
-List Comprehensions
-verwendet haben.
+00:13:29,040 --> 00:13:30,040
+List Comprehensions verwendet haben.
 
-0:13:30.040,0:13:36.460
+00:13:30,040 --> 00:13:36,460
 Sie können sich das, was Sie auf dieser
 Folie sehen, als die Definitionen von 'map' und 'filter'
 
-0:13:36.460,0:13:37.460
-
+00:13:36,460 --> 00:13:37,460
 vorstellen.
 
-0:13:37.460,0:13:43.200
+00:13:37,460 --> 00:13:43,200
 Die map-Funktion nimmt eine Funktion, nimmt
 eine Liste, und was macht sie?
 
-0:13:43.200,0:13:50.660
+00:13:43,200 --> 00:13:50,660
 Sie wählt jedes Element aus der Liste aus, wendet
 f darauf an, und sammelt die Ergebnisse in einer
 
-0:13:50.660,0:13:51.660
-
+00:13:50,660 --> 00:13:51,660
 Liste.
 
-0:13:51.660,0:13:55.990
+00:13:51,660 --> 00:13:55,990
 Dies ist nicht wirklich die Art und Weise,
 wie 'map' in der Standardbibliothek definiert ist, denn
 
-0:13:55.990,0:14:00.690
+00:13:55,990 --> 00:14:00,690
 es gibt andere und allgemeinere Wege, dies zu tun
 (die auch auf andere Typen anwendbar sind, wie ich
 
-0:14:00.690,0:14:01.690
-bereits
-erwähnt habe).
+00:14:00,690 --> 00:14:01,690
+bereits erwähnt habe).
 
-0:14:01.690,0:14:06.330
+00:14:01,690 --> 00:14:06,330
 Aber für den speziellen Fall von Listen können
 Sie sich vorstellen, dass 'map' so definiert ist.
 
-0:14:06.330,0:14:10.290
+00:14:06,330 --> 00:14:10,290
 Wann immer wir also bisher etwas wie das
 geschrieben haben, hätten wir auch die map-Funktion verwenden können.
 
-0:14:10.290,0:14:14.459
+00:14:10,290 --> 00:14:14,459
 Das hätten Sie manchmal nicht verwenden können,
 denn das war in den Übungsaufgaben ausgeschlossen.
 
-0:14:14.459,0:14:18.370
+00:14:14,459 --> 00:14:18,370
 Aber ab jetzt können Sie
 das, wo es angebracht ist, verwenden.
 
-0:14:18.370,0:14:21.630
+00:14:18,370 --> 00:14:21,630
 Und ähnlich verhält es sich mit
 'filter', um Dinge aus einer Liste auszuwählen.
 
-0:14:21.630,0:14:25.670
+00:14:21,630 --> 00:14:25,670
 Das ist auch etwas, was wir bisher
 mit List Comprehensions gemacht haben, mit diesen Guard-Ausdrücken,
 
-0:14:25.670,0:14:32.490
+00:14:25,670 --> 00:14:32,490
 die sagen: Ich nehme jedes Element aus
 einer Liste, das ein Prädikat erfüllt (etwas
 
-0:14:32.490,0:14:38.141
+00:14:32,490 --> 00:14:38,141
 wie "even a", zum Beispiel),
 und dann wird das 'a' behalten.
 
-0:14:38.141,0:14:41.350
+00:14:38,141 --> 00:14:41,350
 Das ist genau so, wie
 es für die filter-Funktion beschrieben wurde.
 
-0:14:41.350,0:14:48.550
+00:14:41,350 --> 00:14:48,550
 Also, 'map' und 'filter' sind mindestens
 irgendwie ein Ersatz für bestimmte Arten von
 
-0:14:48.550,0:14:49.550
-List
-Comprehensions.
+00:14:48,550 --> 00:14:49,550
+List Comprehensions.
 
-0:14:49.550,0:14:54.090
+00:14:49,550 --> 00:14:54,090
 Und das ist ein Weg, um sich diese Funktionen
 aus Ihrer Perspektive jetzt vielleicht zu merken und besser zu
 
-0:14:54.090,0:14:57.710
+00:14:54,090 --> 00:14:57,710
 verstehen, weil Sie ja
 schon List Comprehensions kennen.
 
-0:14:57.710,0:15:04.730
+00:14:57,710 --> 00:15:04,730
 Aber auch das Gegenteil ist richtig,
 nämlich: Umgekehrt kann jeder List-Comprehension-Ausdruck, egal wie
 
-0:15:04.730,0:15:10.660
+00:15:04,730 --> 00:15:10,660
 kompliziert er ist (vielleicht mit mehreren
 Generatoren, mehr als einem Guard-Ausdruck usw.),
 
-0:15:10.660,0:15:13.230
+00:15:10,660 --> 00:15:13,230
 mit 'map' und 'filter' implementiert werden,
 und eigentlich würden wir zusätzlich die Funktion
 
-0:15:13.230,0:15:15.860
+00:15:13,230 --> 00:15:15,860
 'concat' verwenden (die
 zuvor vorgestellt wurde).
 
-0:15:15.860,0:15:18.190
+00:15:15,860 --> 00:15:18,190
 Es handelt sich nicht
 um eine Funktion höherer Ordnung.
 
-0:15:18.190,0:15:21.560
+00:15:18,190 --> 00:15:21,560
 Es ist eine polymorphe Funktion,
 die im Grunde Listenebenen abflacht.
 
-0:15:21.560,0:15:25.680
+00:15:21,560 --> 00:15:25,680
 Wenn wir also eine Liste von Listen mit "a"s haben,
 dann gibt uns 'concat' eine Liste von "a"s, indem es alle
 
-0:15:25.680,0:15:27.430
-inneren Listen
-miteinander verkettet.
+00:15:25,680 --> 00:15:27,430
+inneren Listen miteinander verkettet.
 
-0:15:27.430,0:15:31.780
+00:15:27,430 --> 00:15:31,780
 Und wenn Sie 'map', 'filter' und 'concat'
 haben, dann brauchen Sie keine List Comprehensions mehr.
 
-0:15:31.780,0:15:35.500
+00:15:31,780 --> 00:15:35,500
 Denn alles, was Sie mit
 noch so komplizierten List-Comprehension-Ausdrücken ausdrücken könnten,
 
-0:15:35.500,0:15:38.590
+00:15:35,500 --> 00:15:38,590
 können Sie auch mit
 'map', 'filter' und 'concat' ausdrücken.
 
-0:15:38.590,0:15:41.871
-Und genau das
-tut der Compiler auch.
+00:15:38,590 --> 00:15:41,871
+Und genau das tut der Compiler auch.
 
-0:15:41.871,0:15:52.530
+00:15:41,871 --> 00:15:52,530
 Wenn Sie also in Ihrem Haskell-Code List Comprehensions
 verwenden, dann werden diese irgendwann während des Kompilierens
 
-0:15:52.530,0:15:59.310
+00:15:52,530 --> 00:15:59,310
 im Wesentlichen durch Ausdrücke ersetzt,
 die 'map', 'filter' und 'concat'
 
-0:15:59.310,0:16:00.630
-
+00:15:59,310 --> 00:16:00,630
 beinhalten.
 
-0:16:00.630,0:16:06.920
+00:16:00,630 --> 00:16:06,920
 Angesichts dieser Beziehung zu List Comprehensions könnte
 eine weitere Frage lauten: Wenn wir nun von
 
-0:16:06.920,0:16:12.050
+00:16:06,920 --> 00:16:12,050
 List Comprehensions zu 'map' und 'filter' (und
 vielleicht 'foldl1' und anderen ähnlichen Funktionen) wechseln, ist
 
-0:16:12.050,0:16:16.180
+00:16:12,050 --> 00:16:16,180
 das dann immer noch Wholemeal-Programmierung in dem
 Sinne, wie es in der letzten Woche
 
-0:16:16.180,0:16:18.850
-besprochen
-wurde?
+00:16:16,180 --> 00:16:18,850
+besprochen wurde?
 
-0:16:18.850,0:16:23.590
+00:16:18,850 --> 00:16:23,590
 Bisher ging es bei meinen Beispielen zur
 Wholemeal-Programmierung um die Verwendung von List Comprehensions
 
-0:16:23.590,0:16:27.140
+00:16:23,590 --> 00:16:27,140
 anstelle von expliziter Rekursion
 oder anstelle von Listenindexierung.
 
-0:16:27.140,0:16:31.940
+00:16:27,140 --> 00:16:31,940
 Wenn ich nun zu 'map' und 'filter' und
 anderen Funktionen höherer Ordnung übergehe, ist das dann immer
 
-0:16:31.940,0:16:33.210
-noch
-Wholemeal-Programmierung?
+00:16:31,940 --> 00:16:33,210
+noch Wholemeal-Programmierung?
 
-0:16:33.210,0:16:35.190
-Ja,
-absolut!
+00:16:33,210 --> 00:16:35,190
+Ja, absolut!
 
-0:16:35.190,0:16:38.090
-In gewisser Weise
-sogar noch mehr.
+00:16:35,190 --> 00:16:38,090
+In gewisser Weise sogar noch mehr.
 
-0:16:38.090,0:16:41.760
+00:16:38,090 --> 00:16:41,760
 Denn diese Funktionen höherer Ordnung sind ein
 erster Schritt in die Richtung von mehr Abstraktion.
 
-0:16:41.760,0:16:46.040
+00:16:41,760 --> 00:16:46,040
 Wie ich schon sagte, gibt
 es sie auch für andere Datenstrukturen.
 
-0:16:46.040,0:16:47.190
-List Comprehensions
-sind für Listen.
+00:16:46,040 --> 00:16:47,190
+List Comprehensions sind für Listen.
 
-0:16:47.190,0:16:52.420
+00:16:47,190 --> 00:16:52,420
 Wenn wir also ganz normal auf Listen
 programmieren wollen, können wir List Comprehensions verwenden.
 
-0:16:52.420,0:16:53.760
-Was ist
-mit anderen Datenstrukturen?
+00:16:52,420 --> 00:16:53,760
+Was ist mit anderen Datenstrukturen?
 
-0:16:53.760,0:16:59.930
+00:16:53,760 --> 00:16:59,930
 Wenn wir Bäume haben oder generell nicht
 nur Listen, sondern einige mehr strukturierte Datenstrukturen?
 
-0:16:59.930,0:17:04.710
+00:16:59,930 --> 00:17:04,710
 Dann haben wir keine List-Comprehensions mehr,
 weil diese sich auf Listen beziehen.
 
-0:17:04.710,0:17:08.399
+00:17:04,710 --> 00:17:08,399
 Aber diese 'map' und 'filter' und ähnliche
 Funktionen, die gibt es dann auch für andere
 
-0:17:08.399,0:17:09.399
-
+00:17:08,399 --> 00:17:09,399
 Datentypen.
 
-0:17:09.399,0:17:12.639
+00:17:09,399 --> 00:17:12,639
 Dann können wir über Wholemeal-Programmierung
 auch auf anderen Typen nachdenken.
 
-0:17:12.639,0:17:21.049
+00:17:12,639 --> 00:17:21,049
 Und das ist eigentlich
 ein Vorteil dieser allgemeineren Sichtweise.
 
-0:17:21.049,0:17:25.680
+00:17:21,049 --> 00:17:25,680
 Um das an Listen mit den 'map'-
 und 'filter'-Versionen für Listen zu besprechen, möchte ich
 
-0:17:25.680,0:17:28.510
+00:17:25,680 --> 00:17:28,510
 tatsächlich ein
 kurzes Beispiel besprechen.
 
-0:17:28.510,0:17:31.559
+00:17:28,510 --> 00:17:31,559
 Also, lassen Sie mich zuerst
 hier vorlesen, was das Ziel ist.
 
-0:17:31.559,0:17:38.720
+00:17:31,559 --> 00:17:38,720
 Und dann können wir uns im Grunde zwei
 Lösungen anschauen, mit List Comprehensions und mit 'map' und
 
-0:17:38.720,0:17:40.409
-'filter', und
-den Vergleich diskutieren.
+00:17:38,720 --> 00:17:40,409
+'filter', und den Vergleich diskutieren.
 
-0:17:40.409,0:17:49.320
+00:17:40,409 --> 00:17:49,320
 In ähnlicher Weise, wie ich for-Schleifen mit
 List-Comprehension-Ausdrücken verglichen habe, als ich in der
 
-0:17:49.320,0:17:54.860
+00:17:49,320 --> 00:17:54,860
 vorigen Woche C
 versus Haskell diskutiert habe.
 
-0:17:54.860,0:17:56.421
-Was wollen wir
-hier also tun?
+00:17:54,860 --> 00:17:56,421
+Was wollen wir hier also tun?
 
-0:17:56.421,0:17:59.639
-Wir haben einige
-Zahlen in einer Liste.
+00:17:56,421 --> 00:17:59,639
+Wir haben einige Zahlen in einer Liste.
 
-0:17:59.639,0:18:01.340
-Wir wollen
-sie quadrieren.
+00:17:59,639 --> 00:18:01,340
+Wir wollen sie quadrieren.
 
-0:18:01.340,0:18:07.509
+00:18:01,340 --> 00:18:07,509
 Aber wir wollen das unter der Bedingung tun,
 dass wir an Zahlen interessiert sind, die durch 4
 
-0:18:07.509,0:18:08.720
-teilbar
-sind.
+00:18:07,509 --> 00:18:08,720
+teilbar sind.
 
-0:18:08.720,0:18:12.630
+00:18:08,720 --> 00:18:12,630
 Aber was meinen wir mit "Wir sind
 an Zahlen interessiert, die durch 4 teilbar sind"?
 
-0:18:12.630,0:18:14.889
-Das ist uns
-noch nicht ganz klar.
+00:18:12,630 --> 00:18:14,889
+Das ist uns noch nicht ganz klar.
 
-0:18:14.889,0:18:20.539
+00:18:14,889 --> 00:18:20,539
 Ist es, dass wir sicherstellen wollen, dass
 wir nur durch 4 teilbare Zahlen quadrieren?
 
-0:18:20.539,0:18:26.200
+00:18:20,539 --> 00:18:26,200
 Oder wollen wir überprüfen, dass die Zahlen, nachdem
 wir sie quadriert haben, durch 4 teilbar sind?
 
-0:18:26.200,0:18:28.029
-Das ist
-ein feiner Unterschied.
+00:18:26,200 --> 00:18:28,029
+Das ist ein feiner Unterschied.
 
-0:18:28.029,0:18:30.370
+00:18:28,029 --> 00:18:30,370
 Und wir wollen
 mit beiden Versionen experimentieren.
 
-0:18:30.370,0:18:34.980
+00:18:30,370 --> 00:18:34,980
 Und wir wollen uns ansehen, was es bedeutet,
 dies mit List Comprehensions (auf beide Arten) und
 
-0:18:34.980,0:18:42.970
-mit 'map'
-und 'filter' auszudrücken.
+00:18:34,980 --> 00:18:42,970
+mit 'map' und 'filter' auszudrücken.
 
-0:18:42.970,0:18:43.970
-Schauen wir uns
-das mal an.
+00:18:42,970 --> 00:18:43,970
+Schauen wir uns das mal an.
 
-0:18:43.970,0:18:49.080
+00:18:43,970 --> 00:18:49,080
 Hier sind zwei List-Comprehension-Ausdrücke
 für die beiden Fälle.
 
-0:18:49.080,0:18:52.799
-Was sagt die
-erste Zeile aus?
+00:18:49,080 --> 00:18:52,799
+Was sagt die erste Zeile aus?
 
-0:18:52.799,0:18:57.659
+00:18:52,799 --> 00:18:57,659
 Sie sagt: Ich habe eine Liste, ich nehme jedes
 Element aus der Liste, ich prüfe, ob es durch 4
 
-0:18:57.659,0:19:01.509
+00:18:57,659 --> 00:19:01,509
 teilbar ist; und wenn ja,
 behalte ich es und quadriere es.
 
-0:19:01.509,0:19:04.179
-Dies ist eine
-der beiden Versionen.
+00:19:01,509 --> 00:19:04,179
+Dies ist eine der beiden Versionen.
 
-0:19:04.179,0:19:09.799
+00:19:04,179 --> 00:19:09,799
 Dies ist die Version, bei der ich
 nur Zahlen quadriere, die durch 4 teilbar sind.
 
-0:19:09.799,0:19:15.440
+00:19:09,799 --> 00:19:15,440
 Und die andere Version ist: Ich entscheide, dass
 ich will, dass die quadrierten Zahlen durch 4
 
-0:19:15.440,0:19:16.440
-teilbar
-sind.
+00:19:15,440 --> 00:19:16,440
+teilbar sind.
 
-0:19:16.440,0:19:22.840
+00:19:16,440 --> 00:19:22,840
 Ich will also die Zahlen aus der Liste nehmen und
 sie quadrieren (nur für den Fall, um zur Überprüfung bereit
 
-0:19:22.840,0:19:29.039
+00:19:22,840 --> 00:19:29,039
 zu sein), und ich prüfe nicht das x auf
 Teilbarkeit durch 4, sondern das y (welches das Quadrat
 
-0:19:29.039,0:19:30.169
-von
-x ist).
+00:19:29,039 --> 00:19:30,169
+von x ist).
 
-0:19:30.169,0:19:32.360
+00:19:30,169 --> 00:19:32,360
 Und nur wenn dieses besteht,
 dann behalte ich das y.
 
-0:19:32.360,0:19:35.279
-Das sind
-die beiden Versionen.
+00:19:32,360 --> 00:19:35,279
+Das sind die beiden Versionen.
 
-0:19:35.279,0:19:39.360
+00:19:35,279 --> 00:19:39,360
 Und ich muss etwas Arbeit leisten, um
 von der einen zur anderen zu wechseln.
 
-0:19:39.360,0:19:45.860
+00:19:39,360 --> 00:19:45,860
 Es ist keine offensichtliche Transformation von hier
 nach dort, oder von hier nach dort.
 
-0:19:45.860,0:19:47.850
+00:19:45,860 --> 00:19:47,850
 Und der einzige
 Unterschied ist konzeptionell:
 
-0:19:47.850,0:19:51.440
+00:19:47,850 --> 00:19:51,440
 Möchte ich die Dinge quadrieren,
 die durch 4 teilbar sind?
 
-0:19:51.440,0:19:56.610
+00:19:51,440 --> 00:19:56,610
 Oder will ich Dinge quadrieren und
 das Ergebnis soll durch 4 teilbar sein?
 
-0:19:56.610,0:19:59.710
-Das führt zu
-ganz anderem Code.
+00:19:56,610 --> 00:19:59,710
+Das führt zu ganz anderem Code.
 
-0:19:59.710,0:20:05.750
+00:19:59,710 --> 00:20:05,750
 Nun, es ist kein völlig anderer Code,
 aber ich musste diese List Comprehension umstellen.
 
-0:20:05.750,0:20:10.230
+00:20:05,750 --> 00:20:10,230
 Was kommt dabei heraus, wenn ich
 das stattdessen mit 'map' und 'filter' mache?
 
-0:20:10.230,0:20:13.370
-Es wird in
-gewisser Weise symmetrischer.
+00:20:10,230 --> 00:20:13,370
+Es wird in gewisser Weise symmetrischer.
 
-0:20:13.370,0:20:15.960
+00:20:13,370 --> 00:20:15,960
 Wenn ich das mit 'map' und
 'filter' schreibe, was würde ich dann tun?
 
-0:20:15.960,0:20:22.070
+00:20:15,960 --> 00:20:22,070
 Nun, die erste Version ist: Ich möchte mir
 alle Werte aus der ursprünglichen Liste ansehen, die
 
-0:20:22.070,0:20:24.179
+00:20:22,070 --> 00:20:24,179
 durch 4 teilbar sind,
 dann möchte ich sie quadrieren.
 
-0:20:24.179,0:20:25.750
-Aber wie kann
-ich das ausdrücken?
+00:20:24,179 --> 00:20:25,750
+Aber wie kann ich das ausdrücken?
 
-0:20:25.750,0:20:31.929
+00:20:25,750 --> 00:20:31,929
 Ich kann die Funktionskomposition verwenden, die ich
 im vorigen Whiteboard-Video vorgestellt habe, und zwei Funktionen
 
-0:20:31.929,0:20:34.480
+00:20:31,929 --> 00:20:34,480
 zusammensetzen, nämlich die Verwendung
 von 'filter' und 'map'.
 
-0:20:34.480,0:20:39.399
+00:20:34,480 --> 00:20:39,399
 Die filter-Funktion ist diejenige, die die Aufgabe
 hat, nur die Elemente zu behalten, die
 
-0:20:39.399,0:20:41.409
-durch 4
-teilbar sind.
+00:20:39,399 --> 00:20:41,409
+durch 4 teilbar sind.
 
-0:20:41.409,0:20:44.169
-Genau das
-wird hier geschehen.
+00:20:41,409 --> 00:20:44,169
+Genau das wird hier geschehen.
 
-0:20:44.169,0:20:48.769
+00:20:44,169 --> 00:20:48,769
 Und danach werde ich die Elemente in der Liste,
 die ich an dieser Stelle habe, nach dem Filtern
 
-0:20:48.769,0:20:49.769
-
+00:20:48,769 --> 00:20:49,769
 quadrieren.
 
-0:20:49.769,0:20:54.660
+00:20:49,769 --> 00:20:54,660
 Das ist wieder die Section-Syntax: die
 Funktion, die etwas nimmt und es quadriert.
 
-0:20:54.660,0:20:57.140
+00:20:54,660 --> 00:20:57,140
 Also, das entspricht
 der ersten Zeile hier.
 
-0:20:57.140,0:20:59.039
-Und der zweiten
-Zeile entspricht was?
+00:20:57,140 --> 00:20:59,039
+Und der zweiten Zeile entspricht was?
 
-0:20:59.039,0:21:06.190
+00:20:59,039 --> 00:21:06,190
 Nun, hier möchte ich sagen: Ich will Elemente in
 einer Liste quadrieren, und ich will nur die behalten, bei
 
-0:21:06.190,0:21:08.619
-denen das Quadrat
-durch 4 teilbar ist.
+00:21:06,190 --> 00:21:08,619
+denen das Quadrat durch 4 teilbar ist.
 
-0:21:08.619,0:21:14.380
+00:21:08,619 --> 00:21:14,380
 Das bedeutet ganz einfach, dass ich die
 Reihenfolge der Bestandteile dieser Funktionskomposition vertauschen möchte.
 
-0:21:14.380,0:21:19.400
+00:21:14,380 --> 00:21:19,400
 Nun wende ich zunächst 'map' an, um
 jedes Element meiner gegebenen Liste zu quadrieren.
 
-0:21:19.400,0:21:23.080
+00:21:19,400 --> 00:21:23,080
 Diese beiden Ausdrücke werden
 natürlich auf diese Liste angewendet.
 
-0:21:23.080,0:21:25.230
+00:21:23,080 --> 00:21:25,230
 Dies sind Funktionen
 nach der Komposition.
 
-0:21:25.230,0:21:27.490
+00:21:25,230 --> 00:21:27,490
 Sie komponieren Funktionen
 zu einer Funktion.
 
-0:21:27.490,0:21:30.940
+00:21:27,490 --> 00:21:30,940
 Und dann würde dieser ganze Ausdruck, dieser
 oder dieser, auf eine Liste angewendet werden.
 
-0:21:30.940,0:21:35.960
+00:21:30,940 --> 00:21:35,960
 Wenn wir das hier tun, wird in dieser
 Liste jedes Element quadriert, und anschließend wird nach
 
-0:21:35.960,0:21:38.230
-der Teilbarkeit
-durch 4 gefiltert.
+00:21:35,960 --> 00:21:38,230
+der Teilbarkeit durch 4 gefiltert.
 
-0:21:38.230,0:21:44.940
+00:21:38,230 --> 00:21:44,940
 Hier, auf dieser Ausdrucksebene, bedeutet es also
 einfach, die Reihenfolge in der Funktionskomposition zu vertauschen.
 
-0:21:44.940,0:21:53.139
+00:21:44,940 --> 00:21:53,139
 Während wir auf der etwas niedrigeren
 Ebene der List Comprehensions mehr Umformung der
 
-0:21:53.139,0:21:56.250
+00:21:53,139 --> 00:21:56,250
 Syntax benötigten, um von einer
 Version zur anderen zu wechseln.
 
-0:21:56.250,0:22:03.570
+00:21:56,250 --> 00:22:03,570
 In diesem Sinne ist dies eine schönere
 und allgemeinere Art, die Manipulation von Listen oder
 
-0:22:03.570,0:22:04.570
-Listenelementen
-auszudrücken.
+00:22:03,570 --> 00:22:04,570
+Listenelementen auszudrücken.
 
-0:22:04.570,0:22:07.659
+00:22:04,570 --> 00:22:07,659
 Das ist natürlich auch
 in Ordnung, List Comprehensions.
 
-0:22:07.659,0:22:17.640
+00:22:07,659 --> 00:22:17,640
 Aber aus algebraischer
 Sicht ist das angenehmer.
 
-0:22:17.640,0:22:26.640
+00:22:17,640 --> 00:22:26,640
 Und interessanterweise, auch wenn es darum
 geht, algebraische Gesetze auszudrücken, wird diese Perspektive
 
-0:22:26.640,0:22:31.779
+00:22:26,640 --> 00:22:31,779
 der Funktionen höherer Ordnung
 allgemeiner und vielleicht auch nützlicher.
 
-0:22:31.779,0:22:38.960
+00:22:31,779 --> 00:22:38,960
 Erinnern wir uns an dieses Gesetz, das wir vor
 einer Weile erwähnt haben, über 'reverse' und List Comprehensions.
 
-0:22:38.960,0:22:45.809
+00:22:38,960 --> 00:22:45,809
 Tatsächlich wurde schon besprochen, dass wir dank
 der Polymorphie auch andere vollständig polymorphe Funktionen
 
-0:22:45.809,0:22:49.529
+00:22:45,809 --> 00:22:49,529
 auf Listen an
 diese Stelle setzen können.
 
-0:22:49.529,0:22:54.679
+00:22:49,529 --> 00:22:54,679
 Und wir sagten so etwas wie: "reverse"
 einer List Comprehension, bei der wir eine Funktion
 
-0:22:54.679,0:22:58.759
+00:22:54,679 --> 00:22:58,759
 auf jedes Element einer gegebenen Liste anwenden (und
 dann umkehren), ist dasselbe, wie wenn wir dasselbe
 
-0:22:58.759,0:23:02.980
+00:22:58,759 --> 00:23:02,980
 tun, aber auf der umgekehrten Liste,
 und dann nicht den finalen reverse-Aufruf haben.
 
-0:23:02.980,0:23:09.029
+00:23:02,980 --> 00:23:09,029
 Und da wir nun wissen, dass dies im
 Grunde ein map-Aufruf ist, können wir dies mit Funktionskomposition
 
-0:23:09.029,0:23:13.940
+00:23:09,029 --> 00:23:13,940
 ausdrücken, indem wir sagen: "reverse nach map
 f ist dasselbe wie map f nach reverse".
 
-0:23:13.940,0:23:15.230
-Es
-verwendet reverse/reverse.
+00:23:13,940 --> 00:23:15,230
+Es verwendet reverse/reverse.
 
-0:23:15.230,0:23:18.850
+00:23:15,230 --> 00:23:18,850
 Es verwendet das Ausdrücken
 dieser List Comprehension durch map.
 
-0:23:18.850,0:23:24.870
+00:23:18,850 --> 00:23:24,870
 Und natürlich ist das auch ein
 "map"-Aufruf, nämlich auf dem Ergebnis von 'reverse'.
 
-0:23:24.870,0:23:31.120
+00:23:24,870 --> 00:23:31,120
 Und wenn wir dann noch die Funktionskomposition
 (diesen mathematischen Begriff) verwenden, dann können wir tatsächlich
 
-0:23:31.120,0:23:33.960
+00:23:31,120 --> 00:23:33,960
 sagen: "reverse nach map ist
 das gleiche wie map nach reverse".
 
-0:23:33.960,0:23:37.190
-Auch das ist
-sehr schön zu merken.
+00:23:33,960 --> 00:23:37,190
+Auch das ist sehr schön zu merken.
 
-0:23:37.190,0:23:41.759
+00:23:37,190 --> 00:23:41,759
 Und wenn wir dann noch wissen, dass dies durch
 andere polymorphe Funktionen ersetzt werden kann, erhalten wir ein sehr
 
-0:23:41.759,0:23:43.220
-allgemeines
-Gesetz.
+00:23:41,759 --> 00:23:43,220
+allgemeines Gesetz.
 
-0:23:43.220,0:23:51.299
+00:23:43,220 --> 00:23:51,299
 Und da map auch auf anderen
 Datenstrukturen ähnlich definiert werden kann, und
 
-0:23:51.299,0:23:56.340
+00:23:51,299 --> 00:23:56,340
 polymorphe Funktionen auf anderen Datenstrukturen existieren, können
 wir das gleiche Ergebnis dann auch für andere
 
-0:23:56.340,0:23:58.350
-Dinge als
-Listen haben.
+00:23:56,340 --> 00:23:58,350
+Dinge als Listen haben.
 
-0:23:58.350,0:24:03.309
+00:23:58,350 --> 00:24:03,309
 Was nicht klar wäre, wie man es
 ausdrückt, wenn wir von diesen List Comprehensions auf
 
-0:24:03.309,0:24:04.529
+00:24:03,309 --> 00:24:04,529
 einen anderen
 Datentyp verallgemeinern wollen.
 
-0:24:04.529,0:24:06.980
+00:24:04,529 --> 00:24:06,980
 Denn für andere Datentypen
 gibt es keine List-Comprehension-Syntax.
 
-0:24:06.980,0:24:10.320
+00:24:06,980 --> 00:24:10,320
 Aber 'map' und
 polymorphe Funktionen schon.
 
-0:24:10.320,0:24:13.649
+00:24:10,320 --> 00:24:13,649
 Das ist also die eine Sache,
 dass wir Gesetze so ausdrücken können.
 
-0:24:13.649,0:24:17.179
+00:24:13,649 --> 00:24:17,179
 Dann können wir uns natürlich auch fragen:
 Was ist mit anderen Funktionen höherer Ordnung?
 
-0:24:17.179,0:24:19.929
-Erfüllen sie
-auch solche Gesetze?
+00:24:17,179 --> 00:24:19,929
+Erfüllen sie auch solche Gesetze?
 
-0:24:19.929,0:24:21.379
-So könnten wir
-uns zum Beispiel fragen:
+00:24:19,929 --> 00:24:21,379
+So könnten wir uns zum Beispiel fragen:
 
-0:24:21.379,0:24:24.750
+00:24:21,379 --> 00:24:24,750
 Jetzt haben wir 'map' und 'filter',
 kommutieren die auch in irgendeiner Weise?
 
-0:24:24.750,0:24:30.039
+00:24:24,750 --> 00:24:30,039
 Wenn ich einen map-Aufruf und einen filter-Aufruf habe,
 kann ich dann auch die Reihenfolge der beiden vertauschen?
 
-0:24:30.039,0:24:31.239
-Die Antwort
-ist: nicht immer.
+00:24:30,039 --> 00:24:31,239
+Die Antwort ist: nicht immer.
 
-0:24:31.239,0:24:35.419
+00:24:31,239 --> 00:24:35,419
 Wir müssen auch berücksichtigen, dass es sich
 vielleicht um unterschiedliche Prädikate handeln muss, weil
 
-0:24:35.419,0:24:37.200
+00:24:35,419 --> 00:24:37,200
 das f den Typ
 der Listenelemente ändern könnte.
 
-0:24:37.200,0:24:41.049
+00:24:37,200 --> 00:24:41,049
 Es ist also nicht einmal klar, dass
 p und q die gleichen Typen haben könnten.
 
-0:24:41.049,0:24:43.410
+00:24:41,049 --> 00:24:43,410
 Sie sind also sicherlich
 nicht einfach das gleiche Prädikat.
 
-0:24:43.410,0:24:45.519
+00:24:43,410 --> 00:24:45,519
 Aber vielleicht gibt es
 eine Beziehung zwischen ihnen.
 
-0:24:45.519,0:24:52.690
+00:24:45,519 --> 00:24:52,690
 Tatsächlich würde ich Sie einladen, ein wenig
 darüber nachzudenken, denn das wird Ihr Verständnis
 
-0:24:52.690,0:24:55.441
+00:24:52,690 --> 00:24:55,441
 dafür verbessern, was
 'map' und 'filter' tun.
 
-0:24:55.441,0:25:03.440
+00:24:55,441 --> 00:25:03,440
 Ich werde das jetzt nicht diskutieren, aber es ist
 eine nette Sache, die man in Betracht ziehen kann.
 
-0:25:03.440,0:25:08.960
+00:25:03,440 --> 00:25:08,960
 Und ganz allgemein kann man sagen
 und beobachten, dass Funktionen höherer Ordnung selbst
 
-0:25:08.960,0:25:14.529
+00:25:08,960 --> 00:25:14,529
 ein Segen, ein Nutzen für
 diese Idee der gesetzmäßigen Programmkonstruktion sind.
 
-0:25:14.529,0:25:20.249
+00:25:14,529 --> 00:25:20,249
 Erinnern Sie sich an das Zitat von Richard
 Bird, mit dem ich die Vorlesung zur Wholemeal-Programmierung begonnen
 
-0:25:20.249,0:25:23.869
+00:25:20,249 --> 00:25:23,869
 habe (in den
 Vorlesungen der letzten Woche).
 
-0:25:23.869,0:25:28.139
-Hier schließt sich
-also der Kreis.
+00:25:23,869 --> 00:25:28,139
+Hier schließt sich also der Kreis.
 
-0:25:28.139,0:25:33.799
+00:25:28,139 --> 00:25:33,799
 Da diese Funktionen höherer Ordnung ein
 guter Ersatz für List Comprehensions sind und
 
-0:25:33.799,0:25:41.510
+00:25:33,799 --> 00:25:41,510
 eine gute Möglichkeit, Wholemeal-Programme zu schreiben, macht
 es Sinn, dass sie nette Eigenschaften, nette
 
-0:25:41.510,0:25:44.529
+00:25:41,510 --> 00:25:44,529
 Gesetze haben und für
 die Programmkonstruktion verwendet werden können.
 
-0:25:44.529,0:25:48.870
+00:25:44,529 --> 00:25:48,870
 Zum Beispiel für die Konstruktion von
 Programmen aus Ideen über algebraische Eigenschaften.
 
-0:25:48.870,0:25:55.299
+00:25:48,870 --> 00:25:55,299
 Auch das ist nichts, was wir hier tun
 werden, aber das werden Sie vielleicht in Aktion
 
-0:25:55.299,0:25:59.970
+00:25:55,299 --> 00:25:59,970
 sehen, wenn Sie einige der Beispiele
 sehen und darüber nachdenken, wie sie zusammenhängen.

@@ -1,1597 +1,1598 @@
-0:00:02.639,0:00:07.759
+84 # slide
+00:00:02,639 --> 00:00:07,759
 In this video, I want to talk about what is
 sometimes called wholemeal programming, in
 
-0:00:07.759,0:00:09.780
+00:00:07,759 --> 00:00:09,780
 this case on lists.
 
-0:00:09.780,0:00:16.379
+00:00:09,780 --> 00:00:16,379
 I already briefly mentioned this concept of
 wholemeal programming, as opposed to piecemeal
 
-0:00:16.379,0:00:21.220
+00:00:16,379 --> 00:00:21,220
 programming, when we talked about animations
 as time-dependent functions.
 
-0:00:21.220,0:00:28.810
+00:00:21,220 --> 00:00:28,810
 I mentioned that in CodeWorld, if we define
 an animation as a function, then in some sense,
 
-0:00:28.810,0:00:31.340
+00:00:28,810 --> 00:00:31,340
 we program the whole animation at once.
 
-0:00:31.340,0:00:37.050
+00:00:31,340 --> 00:00:37,050
 So, you don't write a command sequence: first
 do this, and then the picture moves there,
 
-0:00:37.050,0:00:38.050
+00:00:37,050 --> 00:00:38,050
 and then this happens.
 
-0:00:38.050,0:00:42.899
+00:00:38,050 --> 00:00:42,899
 Of course, you use case distinction to distinguish
 different cases, but there is one function
 
-0:00:42.899,0:00:48.850
+00:00:42,899 --> 00:00:48,850
 as a whole which describes the whole animation
 for all time points, instead of having a sequencing.
 
-0:00:48.850,0:00:52.910
+00:00:48,850 --> 00:00:52,910
 The same idea of wholemeal programming can
 also be applied to lists.
 
-0:00:52.910,0:00:56.640
+00:00:52,910 --> 00:00:56,640
 And it is sometimes used in literature as well,
 in books.
 
-0:00:56.640,0:01:02.820
+00:00:56,640 --> 00:01:02,820
 If you tried to translate this to German,
 there's no one-to-one translation, I think,
 
-0:01:02.820,0:01:07.130
+00:01:02,820 --> 00:01:07,130
 so piecemeal programming (the opposite of
 wholemeal programming) could maybe be translated
 
-0:01:07.130,0:01:13.350
+00:01:07,130 --> 00:01:13,350
 as "stückweise" / "allmählich", somewhat
 "unsystematisch", whereas for wholemeal programming,
 
-0:01:13.350,0:01:16.320
+00:01:13,350 --> 00:01:16,320
 the German translation would maybe be "in
 einem Rutsch".
 
-0:01:16.320,0:01:23.840
+00:01:16,320 --> 00:01:23,840
 So, to do something at once / in one go, rather
 than in many different small steps by looking
 
-0:01:23.840,0:01:30.369
+00:01:23,840 --> 00:01:30,369
 at individual list elements by indexing, etc.
 
-0:01:30.369,0:01:35.690
+00:01:30,369 --> 00:01:35,690
 In the context of functional programming,
 the concept of wholemeal programming is nicely
 
-0:01:35.690,0:01:38.960
+00:01:35,690 --> 00:01:38,960
 summarized by these two quotes here.
 
-0:01:38.960,0:01:45.810
+00:01:38,960 --> 00:01:45,810
 So, this time, no quote by a medieval king,
 but by two former Oxford professors.
 
-0:01:45.810,0:01:49.689
+00:01:45,810 --> 00:01:49,689
 Ralf is now at the University of Kaiserslautern
 after a few years in Oxford.
 
-0:01:49.689,0:01:52.539
+00:01:49,689 --> 00:01:52,539
 And Richard is actually retired by now.
 
-0:01:52.539,0:01:56.000
+00:01:52,539 --> 00:01:56,000
 And they both talk here about the same idea:
 thinking big.
 
-0:01:56.000,0:02:00.660
+00:01:56,000 --> 00:02:00,660
 Thinking about a whole solution at once, a
 whole solution space, instead of maybe an
 
-0:02:00.660,0:02:01.660
+00:02:00,660 --> 00:02:01,660
 individual solution.
 
-0:02:01.660,0:02:07.080
+00:02:01,660 --> 00:02:07,080
 So, the quote by Ralf actually goes on to
 talk about, in a setting of graph algorithms,
 
-0:02:07.080,0:02:10.390
+00:02:07,080 --> 00:02:10,390
 to think about a graph as a whole, rather
 than about individual paths.
 
-0:02:10.390,0:02:17.819
+00:02:10,390 --> 00:02:17,819
 So, it is all the same idea: to think about
 data structures as a whole thing rather than
 
-0:02:17.819,0:02:20.390
+00:02:17,819 --> 00:02:20,390
 talking about individual elements, for example.
 
-0:02:20.390,0:02:22.590
+00:02:20,390 --> 00:02:22,590
 Richard here also talks about indexitis.
 
-0:02:22.590,0:02:29.620
+00:02:22,590 --> 00:02:29,620
 That's also something that I mentioned before,
 when I talked about the index access on lists
 
-0:02:29.620,0:02:34.319
+00:02:29,620 --> 00:02:34,319
 being a no-go in Haskell; that it exists,
 but you should always try to avoid it, and
 
-0:02:34.319,0:02:38.010
+00:02:34,319 --> 00:02:38,010
 write programs by different approaches and
 different ideas.
 
-0:02:38.010,0:02:44.210
+00:02:38,010 --> 00:02:44,210
 So, that is the same sentiment that Richard
 expresses here: to say that indexitis is a
 
-0:02:44.210,0:02:47.379
+00:02:44,210 --> 00:02:47,379
 disease which hinders good program design.
 
-0:02:47.379,0:02:54.000
+00:02:47,379 --> 00:02:54,000
 And he talks about lawful program construction,
 so: having algebraic laws about your programs
 
-0:02:54.000,0:03:00.349
+00:02:54,000 --> 00:03:00,349
 is encouraged and helped if you think about
 comprehensive operations on your data structures
 
-0:03:00.349,0:03:05.569
+00:03:00,349 --> 00:03:05,569
 like lists, instead of piecewise access.
 
-0:03:05.569,0:03:10.680
+00:03:05,569 --> 00:03:10,680
 Also dealing with infinite lists is, in some
 sense, an outcome of wholemeal programming,
 
-0:03:10.680,0:03:15.840
+00:03:10,680 --> 00:03:15,840
 because then you don't want to talk (too much
 at least) about individual list elements,
 
-0:03:15.840,0:03:19.390
+00:03:15,840 --> 00:03:19,390
 but maybe about lists as a whole, and their
 processing.
 
-0:03:19.390,0:03:24.349
+00:03:19,390 --> 00:03:24,349
 We could also ask for our functions we have
 seen so far, whether or not they are good
 
-0:03:24.349,0:03:26.459
+00:03:24,349 --> 00:03:26,459
 examples of wholemeal vs. piecemeal programming.
 
-0:03:26.459,0:03:32.450
+00:03:26,459 --> 00:03:32,450
 So, the Quicksort implementation from last
 week is not obviously either one.
 
-0:03:32.450,0:03:36.849
+00:03:32,450 --> 00:03:36,849
 There is some element-wise processing there.
 
-0:03:36.849,0:03:40.860
+00:03:36,849 --> 00:03:40,860
 List comprehensions are often a good example
 of wholemeal programming.
 
-0:03:40.860,0:03:43.070
+00:03:40,860 --> 00:03:43,070
 So, that also occurred in that example.
 
-0:03:43.070,0:03:48.840
+00:03:43,070 --> 00:03:48,840
 If you think about the "isPalindrome" example,
 there were two versions in the slides.
 
-0:03:48.840,0:03:52.599
+00:03:48,840 --> 00:03:52,599
 There was this version which simply compared
 the list with its reverse.
 
-0:03:52.599,0:03:57.230
+00:03:52,599 --> 00:03:57,230
 This is a very good example of wholemeal programming,
 because we don't touch individual elements,
 
-0:03:57.230,0:04:01.240
+00:03:57,230 --> 00:04:01,240
 but simply express a property of the list
 as a whole.
 
-0:04:01.240,0:04:06.069
+00:04:01,240 --> 00:04:06,069
 Then there was this more recursive definition
 which was looking at the first and the last
 
-0:04:06.069,0:04:08.299
+00:04:06,069 --> 00:04:08,299
 elements and then did a recursive call.
 
-0:04:08.299,0:04:13.819
+00:04:08,299 --> 00:04:13,819
 That's something that maybe doesn't suffer
 from indexitis because we never talk explicitly
 
-0:04:13.819,0:04:17.500
+00:04:13,819 --> 00:04:17,500
 about indices of data elements in the list.
 
-0:04:17.500,0:04:22.370
+00:04:17,500 --> 00:04:22,370
 But even this recursive process is not really
 wholemeal programming.
 
-0:04:22.370,0:04:26.170
+00:04:22,370 --> 00:04:26,170
 It really talks about the first element and
 the last element, makes the list smaller,
 
-0:04:26.170,0:04:32.130
+00:04:26,170 --> 00:04:32,130
 etc., instead of the nice reverse-based solution
 which simply says: a list is a palindrome
 
-0:04:32.130,0:04:34.050
+00:04:32,130 --> 00:04:34,050
 if it is the same as its reverse.
 
-0:04:34.050,0:04:41.160
+00:04:34,050 --> 00:04:41,160
 You can't really express it in a more comprehensive
 overall way in one go.
 
-0:04:41.160,0:04:43.550
+00:04:41,160 --> 00:04:43,550
 That's a very nice example.
 
-0:04:43.550,0:04:49.940
+00:04:43,550 --> 00:04:49,940
 In some sense, the version of "isPalindrome"
 that I developed in the video just before
 
-0:04:49.940,0:04:53.630
+00:04:49,940 --> 00:04:53,630
 this one could also be seen as in the spirit
 of wholemeal programming.
 
-0:04:53.630,0:04:56.670
+00:04:53,630 --> 00:04:56,670
 Because it also talks about the list as a
 whole.
 
-0:04:56.670,0:04:59.620
+00:04:56,670 --> 00:04:59,620
 It has a list comprehension, then it says
 "and", so everything in this list should be
 
-0:04:59.620,0:05:00.620
+00:04:59,620 --> 00:05:00,620
 true.
 
-0:05:00.620,0:05:06.530
+00:05:00,620 --> 00:05:06,530
 That is also something where you express something
 in one go rather than programming a recursion
 
-0:05:06.530,0:05:08.790
+00:05:06,530 --> 00:05:08,790
 over the list structure.
 
-0:05:08.790,0:05:16.160
+00:05:08,790 --> 00:05:16,160
 These would be nice examples, and you will
 see further examples, of course.
 
-0:05:16.160,0:05:19.830
+00:05:16,160 --> 00:05:19,830
 This is another example we have already seen
 earlier.
 
-0:05:19.830,0:05:26.580
+00:05:19,830 --> 00:05:26,580
 It occurred in the context of discussing why
 we do not use for-loops.
 
-0:05:26.580,0:05:31.010
+00:05:26,580 --> 00:05:31,010
 And indeed, we don't *have* for-loops because
 we have different ways to express something
 
-0:05:31.010,0:05:36.160
+00:05:31,010 --> 00:05:36,160
 like a repetition, in this case, of pictures
 in a certain scene.
 
-0:05:36.160,0:05:39.810
+00:05:36,160 --> 00:05:39,810
 The numbers here are not list indices.
 
-0:05:39.810,0:05:43.540
+00:05:39,810 --> 00:05:43,540
 We have [0..5], but this is not list indexing.
 
-0:05:43.540,0:05:49.650
+00:05:43,540 --> 00:05:49,650
 It is just a comprehensive way to express
 that we have several scenes, and they all
 
-0:05:49.650,0:05:52.840
+00:05:49,650 --> 00:05:52,840
 will be computed by this function down there.
 
-0:05:52.840,0:06:00.770
+00:05:52,840 --> 00:06:00,770
 So, this is, in some sense, the wholemeal
 approach, because we expressed the application
 
-0:06:00.770,0:06:03.380
+00:06:00,770 --> 00:06:03,380
 of "scene" to these elements in one go.
 
-0:06:03.380,0:06:08.230
+00:06:03,380 --> 00:06:08,230
 There is no loop counter, no explicit loop
 control, or something like that.
 
-0:06:08.230,0:06:13.560
+00:06:08,230 --> 00:06:13,560
 So, it is the same reasons that I mentioned
 there, why this is not the same as doing looping
 
-0:06:13.560,0:06:14.630
+00:06:13,560 --> 00:06:14,630
 in an imperative language.
 
-0:06:14.630,0:06:19.610
+00:06:14,630 --> 00:06:19,610
 In the same sense, this is wholemeal as opposed
 to a piecemeal approach.
 
-0:06:19.610,0:06:25.260
+00:06:19,610 --> 00:06:25,260
 So, there wasn't any conceptual consideration
 of one happens after another.
 
-0:06:25.260,0:06:28.460
+00:06:25,260 --> 00:06:28,460
 That is simply not happening here.
 
-0:06:28.460,0:06:35.190
+00:06:28,460 --> 00:06:35,190
 One could, of course, have performed this
 computation somehow recursively, defining
 
-0:06:35.190,0:06:37.850
+00:06:35,190 --> 00:06:37,850
 a recursive function, but why should we do
 this?
 
-0:06:37.850,0:06:39.470
+00:06:37,850 --> 00:06:39,470
 Why should we bother with this?
 
-0:06:39.470,0:06:44.600
+00:06:39,470 --> 00:06:44,600
 So, programming a recursion here would have
 exposed some kind of traversal order which
 
-0:06:44.600,0:06:49.150
+00:06:44,600 --> 00:06:49,150
 we don't need, if we are simply interested
 in "we have these pictures".
 
-0:06:49.150,0:06:55.290
+00:06:49,150 --> 00:06:55,290
 As I already mentioned, in the mathematical
 set notation, we simply get: "for all numbers
 
-0:06:55.290,0:06:59.250
+00:06:55,290 --> 00:06:59,250
 in a certain range, ..." or maybe even "all
 the numbers" if we have infinite lists, we
 
-0:06:59.250,0:07:02.030
+00:06:59,250 --> 00:07:02,030
 compute some value, and we get the result
 of that.
 
-0:07:02.030,0:07:03.030
+00:07:02,030 --> 00:07:03,030
 That's it.
 
-0:07:03.030,0:07:11.970
+00:07:03,030 --> 00:07:11,970
 In one go rather than writing a loop counter
 and a looping program.
 
-0:07:11.970,0:07:17.780
+00:07:11,970 --> 00:07:17,780
 Of course, the individual evaluation of these
 Pictures (the computation of the different
 
-0:07:17.780,0:07:21.260
+00:07:17,780 --> 00:07:21,260
 scenes) will still happen in some order on
 a sequential machine.
 
-0:07:21.260,0:07:24.240
+00:07:21,260 --> 00:07:24,240
 And also, the list is a sequence, it is not
 a mathematical set.
 
-0:07:24.240,0:07:26.360
+00:07:24,240 --> 00:07:26,360
 So, it has some order.
 
-0:07:26.360,0:07:28.940
+00:07:26,360 --> 00:07:28,940
 But the individual values are independent
 of order.
 
-0:07:28.940,0:07:33.440
+00:07:28,940 --> 00:07:33,440
 So, it doesn't matter whether I first compute
 the third thing and then the zeroth thing,
 
-0:07:33.440,0:07:34.440
+00:07:33,440 --> 00:07:34,440
 or the other way around.
 
-0:07:34.440,0:07:38.840
+00:07:34,440 --> 00:07:38,840
 The values will be independent of that because
 they are independent computations.
 
-0:07:38.840,0:07:46.500
+00:07:38,840 --> 00:07:46,500
 There is no effect that somehow goes and influences
 the third computation based on what happened
 
-0:07:46.500,0:07:47.500
+00:07:46,500 --> 00:07:47,500
 in the first computation.
 
-0:07:47.500,0:07:51.720
+00:07:47,500 --> 00:07:51,720
 That is because these are values that are
 computed from expressions.
 
-0:07:51.720,0:07:57.750
+00:07:51,720 --> 00:07:57,750
 Indeed, one can show some properties that
 wouldn't hold in an incremental iterative
 
-0:07:57.750,0:07:59.590
+00:07:57,750 --> 00:07:59,590
 looping fashion.
 
-0:07:59.590,0:08:08.070
+00:07:59,590 --> 00:08:08,070
 So, somehow, expressing this idea that the
 results do not depend on in which order we
 
-0:08:08.070,0:08:09.310
+00:08:08,070 --> 00:08:09,310
 compute them.
 
-0:08:09.310,0:08:16.200
+00:08:09,310 --> 00:08:16,200
 One way to capture this idea would be the
 equivalence that is shown here.
 
-0:08:16.200,0:08:18.040
+00:08:16,200 --> 00:08:18,040
 What it is saying is:
 
-0:08:18.040,0:08:28.340
+00:08:18,040 --> 00:08:28,340
 If I take some numbers from zero to n, and
 then compute "f of a" (f a) on each element,
 
-0:08:28.340,0:08:36.510
+00:08:28,340 --> 00:08:36,510
 and then put the results in a list, it is
 the same as if I first reversed this number
 
-0:08:36.510,0:08:44.150
+00:08:36,510 --> 00:08:44,150
 list, so I get the numbers from n to zero,
 still computing f on each of those values
 
-0:08:44.150,0:08:47.060
+00:08:44,150 --> 00:08:47,060
 and then reversing the list again.
 
-0:08:47.060,0:08:53.740
+00:08:47,060 --> 00:08:53,740
 Of course, I need this second "reverse" in
 order to arrange the results in the correct
 
-0:08:53.740,0:08:54.740
+00:08:53,740 --> 00:08:54,740
 sequence.
 
-0:08:54.740,0:09:02.320
+00:08:54,740 --> 00:09:02,320
 But the point is that *when* I compute a certain
 "f" of a certain "a" doesn't influence the
 
-0:09:02.320,0:09:04.100
+00:09:02,320 --> 00:09:04,100
 values that I get.
 
-0:09:04.100,0:09:06.900
+00:09:04,100 --> 00:09:06,900
 Because of that, these two lists will be the
 same.
 
-0:09:06.900,0:09:12.860
+00:09:06,900 --> 00:09:12,860
 If I take the numbers in opposite order, I
 get the same values.
 
-0:09:12.860,0:09:17.250
+00:09:12,860 --> 00:09:17,250
 I just get them in the opposite order, so
 I have to reverse again at the end.
 
-0:09:17.250,0:09:26.370
+00:09:17,250 --> 00:09:26,370
 And something like that wouldn't be true for
 a for-loop, for example.
 
-0:09:26.370,0:09:33.110
+00:09:26,370 --> 00:09:33,110
 We can actually check this be looking at some
 C-like or Java-like code or Python-like code
 
-0:09:33.110,0:09:34.110
+00:09:33,110 --> 00:09:34,110
 or whatever.
 
-0:09:34.110,0:09:38.510
+00:09:34,110 --> 00:09:38,510
 So, let's take two for-loops which roughly
 correspond to the two directions in which
 
-0:09:38.510,0:09:42.760
+00:09:38,510 --> 00:09:42,760
 one could compute such an iteration.
 
-0:09:42.760,0:09:51.830
+00:09:42,760 --> 00:09:51,830
 In the upper two lines, we have a for-loop
 which also goes from zero to n, incrementing
 
-0:09:51.830,0:09:56.010
+00:09:51,830 --> 00:09:56,010
 this loop counter and then always computing
 "f of a", and then storing this in a list,
 
-0:09:56.010,0:09:57.610
+00:09:56,010 --> 00:09:57,610
 or an array in this case.
 
-0:09:57.610,0:10:03.180
+00:09:57,610 --> 00:10:03,180
 And here we have the opposite case, where
 we go from n to zero and count downwards and
 
-0:10:03.180,0:10:07.690
+00:10:03,180 --> 00:10:07,690
 also put the results in a list or in an array.
 
-0:10:07.690,0:10:14.030
+00:10:07,690 --> 00:10:14,030
 But in C or Java it is not true that we can
 always replace this by this, for various reasons,
 
-0:10:14.030,0:10:19.750
+00:10:14,030 --> 00:10:19,750
 like side effects, like things that the f-calls
 could be doing in addition to computing values.
 
-0:10:19.750,0:10:25.690
+00:10:19,750 --> 00:10:25,690
 So, these are not two pieces of code that
 are always interchangeable in a language like
 
-0:10:25.690,0:10:26.690
+00:10:25,690 --> 00:10:26,690
 Java or C.
 
-0:10:26.690,0:10:31.380
+00:10:26,690 --> 00:10:31,380
 Of course, there is also this loop indexing
 which in itself is against the spirit of wholemeal
 
-0:10:31.380,0:10:32.380
+00:10:31,380 --> 00:10:32,380
 programming.
 
-0:10:32.380,0:10:36.370
+00:10:32,380 --> 00:10:36,370
 You could say: But well, at least with Java
 iterators one could work around this, and
 
-0:10:36.370,0:10:38.390
+00:10:36,370 --> 00:10:38,390
 then it wouldn't look like array indexing.
 
-0:10:38.390,0:10:45.950
+00:10:38,390 --> 00:10:45,950
 But even then, these two pieces of code, or
 similar pieces of code, wouldn't be equivalent.
 
-0:10:45.950,0:10:51.250
+00:10:45,950 --> 00:10:51,250
 And even if you have special situations, where
 the f is very well behaving (it is not doing
 
-0:10:51.250,0:10:57.820
+00:10:51,250 --> 00:10:57,820
 any prints or reads or whatever, it is not
 changing variable values), even then this
 
-0:10:57.820,0:11:00.880
+00:10:57,820 --> 00:11:00,880
 is more difficult to handle than an equation.
 
-0:11:00.880,0:11:06.790
+00:11:00,880 --> 00:11:06,790
 We can turn the equation from the previous
 slide to this more general version where the
 
-0:11:06.790,0:11:09.550
+00:11:06,790 --> 00:11:09,550
 "reverse" switches to the other side.
 
-0:11:09.550,0:11:11.460
+00:11:09,550 --> 00:11:11,460
 This makes these two expressions more symmetric.
 
-0:11:11.460,0:11:16.510
+00:11:11,460 --> 00:11:16,510
 And of course, this doesn't apply just to
 numbered lists.
 
-0:11:16.510,0:11:23.380
+00:11:16,510 --> 00:11:23,380
 We can take arbitrary lists, and this property
 will still be true for whatever f and list
 
-0:11:23.380,0:11:29.930
+00:11:23,380 --> 00:11:29,930
 we have, and actually for a whole class of
 functions in place of this 'reverse'.
 
-0:11:29.930,0:11:35.690
+00:11:29,930 --> 00:11:35,690
 And it can directly be used for manipulating
 programs by algebraic transformations in the
 
-0:11:35.690,0:11:39.620
+00:11:35,690 --> 00:11:39,620
 same way as we have seen on previous occasions
 in the lecture already with different laws.
 
-0:11:39.620,0:11:47.370
+00:11:39,620 --> 00:11:47,370
 So, this is what Richard referred to in the
 other quote as lawful program construction.
 
-0:11:47.370,0:11:52.080
+00:11:47,370 --> 00:11:52,080
 To think about laws that the functions in
 our programs satisfy.
 
-0:11:52.080,0:11:54.330
+00:11:52,080 --> 00:11:54,330
 They could also be used for QuickCheck testing.
 
-0:11:54.330,0:11:55.770
+00:11:54,330 --> 00:11:55,770
 There we are also interested in properties.
 
-0:11:55.770,0:11:59.750
+00:11:55,770 --> 00:11:59,750
 And this could be a property that is of interest
 in that context.
 
-0:11:59.750,0:12:06.870
+00:11:59,750 --> 00:12:06,870
 Also, this property is actually relevant for
 the "isPalindrome" example again.
 
-0:12:06.870,0:12:13.949
+00:12:06,870 --> 00:12:13,949
 Probably, many of you have a solution to "isPalindrome"
 (along with lower/upper case characters) which
 
-0:12:13.949,0:12:19.170
+00:12:13,949 --> 00:12:19,170
 somehow has something like "reverse" of a
 list, where each element from a String has
 
-0:12:19.170,0:12:24.430
+00:12:19,170 --> 00:12:24,430
 been given to the 'toUpper' or 'toLower' function.
 
-0:12:24.430,0:12:27.230
+00:12:24,430 --> 00:12:27,230
 And then if you see something like that, you
 can replace it by this.
 
-0:12:27.230,0:12:30.720
+00:12:27,230 --> 00:12:30,720
 And maybe this makes the overall computation
 more efficient because then you can change
 
-0:12:30.720,0:12:32.120
+00:12:30,720 --> 00:12:32,120
 or save some of the computation.
 
-0:12:32.120,0:12:33.510
+00:12:32,120 --> 00:12:33,510
 Or maybe the other way around.
 
-0:12:33.510,0:12:38.650
+00:12:33,510 --> 00:12:38,650
 Maybe you have the second line in your code,
 and when you move the "reverse" outside of
 
-0:12:38.650,0:12:45.300
+00:12:38,650 --> 00:12:45,300
 this list, you realize that you can share
 this expression as a common subexpression
 
-0:12:45.300,0:12:48.110
+00:12:45,300 --> 00:12:48,110
 with some other piece of your function definition.
 
-0:12:48.110,0:12:53.250
+00:12:48,110 --> 00:12:53,250
 And then suddenly you have a more efficient
 program, where you don't need to traverse
 
-0:12:53.250,0:12:55.900
+00:12:53,250 --> 00:12:55,900
 a list with toUpper or toLower two times.
 
-0:12:55.900,0:12:58.960
+00:12:55,900 --> 00:12:58,960
 So, that is a benefit of having laws like
 this available.
 
-0:12:58.960,0:13:08.980
+00:12:58,960 --> 00:13:08,980
 And it comes from how we express our computations.
 
-0:13:08.980,0:13:15.610
+00:13:08,980 --> 00:13:15,610
 Just to drive home this point, let us consider
 another example, which is somewhat artificial.
 
-0:13:15.610,0:13:21.120
+00:13:15,610 --> 00:13:21,120
 Let's assume we want to multiply each element
 of an array or a list by its position in that
 
-0:13:21.120,0:13:25.160
+00:13:21,120 --> 00:13:25,160
 structure, and we want to sum up all the resulting
 values.
 
-0:13:25.160,0:13:26.520
+00:13:25,160 --> 00:13:26,520
 That's an easy enough problem.
 
-0:13:26.520,0:13:35.190
+00:13:26,520 --> 00:13:35,190
 In whatever imperative language you know,
 often you would solve it in a similar manner
 
-0:13:35.190,0:13:36.190
+00:13:35,190 --> 00:13:36,190
 as this one.
 
-0:13:36.190,0:13:40.470
+00:13:36,190 --> 00:13:40,470
 So, we need to have some declarations, but
 these are not really the problem here.
 
-0:13:40.470,0:13:45.970
+00:13:40,470 --> 00:13:45,970
 Of course, we need to be sure about how we
 start the result computation, how we initialize
 
-0:13:45.970,0:13:46.970
+00:13:45,970 --> 00:13:46,970
 this, etc.
 
-0:13:46.970,0:13:47.970
+00:13:46,970 --> 00:13:47,970
 But that is not the point here.
 
-0:13:47.970,0:13:50.839
+00:13:47,970 --> 00:13:50,839
 The point is that then we go through this
 loop.
 
-0:13:50.839,0:13:56.730
+00:13:50,839 --> 00:13:56,730
 So, we need to make sure where we start, we
 need to have an end condition, we need to
 
-0:13:56.730,0:14:03.690
+00:13:56,730 --> 00:14:03,690
 increment, and then we have our computation
 that we do in each iteration of the loop.
 
-0:14:03.690,0:14:05.560
+00:14:03,690 --> 00:14:05,560
 And this looks about right.
 
-0:14:05.560,0:14:10.720
+00:14:05,560 --> 00:14:10,720
 This is a valid program for computing what
 is written above.
 
-0:14:10.720,0:14:16.740
+00:14:10,720 --> 00:14:16,740
 But one could say, and should probably acknowledge,
 that this suffers from the indexitis problem.
 
-0:14:16.740,0:14:18.420
+00:14:16,740 --> 00:14:18,420
 How does this manifest here?
 
-0:14:18.420,0:14:25.529
+00:14:18,420 --> 00:14:25,529
 For example, we need to know upfront how array
 indices are counted in the language.
 
-0:14:25.529,0:14:31.779
+00:14:25,529 --> 00:14:31,779
 So, we could easily make an off-by-one error,
 if we forget that we have to start counting
 
-0:14:31.779,0:14:32.779
+00:14:31,779 --> 00:14:32,779
 from zero.
 
-0:14:32.779,0:14:35.700
+00:14:32,779 --> 00:14:35,700
 We need to make sure that we increment instead
 of decrement here.
 
-0:14:35.700,0:14:40.870
+00:14:35,700 --> 00:14:40,870
 We need to make sure that we have the right
 end condition here, that we check that i is
 
-0:14:40.870,0:14:44.650
+00:14:40,870 --> 00:14:44,650
 smaller than n, and not, for example, that
 i is equal to n, or smaller-equal to n, or
 
-0:14:44.650,0:14:45.650
+00:14:44,650 --> 00:14:45,650
 something like that.
 
-0:14:45.650,0:14:50.120
+00:14:45,650 --> 00:14:50,120
 So, in fact, there are at least three places
 here where we could make an off-by-one error.
 
-0:14:50.120,0:14:53.860
+00:14:50,120 --> 00:14:53,860
 We could make a mistake here by starting from
 the wrong start index.
 
-0:14:53.860,0:14:58.880
+00:14:53,860 --> 00:14:58,880
 We could make a mistake here by being off
 by one, instead of comparing to n comparing
 
-0:14:58.880,0:15:01.350
+00:14:58,880 --> 00:15:01,350
 to n - 1 or n + 1, for example.
 
-0:15:01.350,0:15:05.760
+00:15:01,350 --> 00:15:05,760
 And even here, there is this issue that we
 have to make sure that we have the right idea
 
-0:15:05.760,0:15:07.450
+00:15:05,760 --> 00:15:07,450
 of how arrays are counted.
 
-0:15:07.450,0:15:11.900
+00:15:07,450 --> 00:15:11,900
 So, is the first entry 0, or is the first
 entry 1?
 
-0:15:11.900,0:15:15.970
+00:15:11,900 --> 00:15:15,970
 So, how do we make the correct index access
 here?
 
-0:15:15.970,0:15:24.260
+00:15:15,970 --> 00:15:24,260
 That is because of this solution being based
 on index accessing and looping, in this explicit
 
-0:15:24.260,0:15:28.570
+00:15:24,260 --> 00:15:28,570
 fashion.
 
-0:15:28.570,0:15:33.030
+00:15:28,570 --> 00:15:33,030
 In contrast, let us look at how the same problem
 could be solved in Haskell.
 
-0:15:33.030,0:15:39.800
+00:15:33,030 --> 00:15:39,800
 So, of course in Haskell, we could also write
 a recursive function which essentially does
 
-0:15:39.800,0:15:44.399
+00:15:39,800 --> 00:15:44,399
 the same kind of iteration as the for-loop
 does in the previous slide.
 
-0:15:44.399,0:15:48.589
+00:15:44,399 --> 00:15:48,589
 But actually, I would propose this as a solution
 to this problem in a more wholemeal fashion
 
-0:15:48.589,0:15:52.089
+00:15:48,589 --> 00:15:52,089
 or spirit.
 
-0:15:52.089,0:15:55.029
+00:15:52,089 --> 00:15:55,029
 I would argue that this is very nice, short
 and declarative.
 
-0:15:55.029,0:15:58.390
+00:15:55,029 --> 00:15:58,390
 So, it exactly expresses what we want to do.
 
-0:15:58.390,0:15:59.600
+00:15:58,390 --> 00:15:59,600
 It takes this list.
 
-0:15:59.600,0:16:05.000
+00:15:59,600 --> 00:16:05,000
 It says that we want to basically combine
 each list element with consecutive numbers.
 
-0:16:05.000,0:16:10.360
+00:16:05,000 --> 00:16:10,360
 We can express this by saying: let's pair
 this by zipping with 0, 1, 2, ([0..]).
 
-0:16:10.360,0:16:15.340
+00:16:10,360 --> 00:16:15,340
 Then it takes all these pairs that it has
 created and computes the multiplication, and
 
-0:16:15.340,0:16:17.040
+00:16:15,340 --> 00:16:17,040
 then this is summed up.
 
-0:16:17.040,0:16:24.470
+00:16:17,040 --> 00:16:24,470
 You can't really get it any shorter or more
 declarative than this, in one go expressing
 
-0:16:24.470,0:16:26.690
+00:16:24,470 --> 00:16:26,690
 what's happening here.
 
-0:16:26.690,0:16:29.300
+00:16:26,690 --> 00:16:29,300
 Notice the difference in approach from the
 previous solution.
 
-0:16:29.300,0:16:34.220
+00:16:29,300 --> 00:16:34,220
 There is no result variable that is somehow
 overwritten again and again in a loop.
 
-0:16:34.220,0:16:37.680
+00:16:34,220 --> 00:16:37,680
 We don't need to have an explicit end condition.
 
-0:16:37.680,0:16:41.870
+00:16:37,680 --> 00:16:41,870
 There is no reference, even, to the length
 of the list (n).
 
-0:16:41.870,0:16:47.149
+00:16:41,870 --> 00:16:47,149
 That is simply not needed here because the
 zip will simply exhaust as many elements from
 
-0:16:47.149,0:16:51.510
+00:16:47,149 --> 00:16:51,510
 this infinite list as are needed in order
 to have enough numbers.
 
-0:16:51.510,0:16:56.880
+00:16:51,510 --> 00:16:56,880
 So, there is no comparison against an end value,
 like n or n - 1 or anything like that.
 
-0:16:56.880,0:17:01.130
+00:16:56,880 --> 00:17:01,130
 We also can't make any real errors this way.
 
-0:17:01.130,0:17:03.010
+00:17:01,130 --> 00:17:03,010
 This is just an expression which computes
 something.
 
-0:17:03.010,0:17:09.069
+00:17:03,010 --> 00:17:09,069
 There is no looping with a loop condition,
 no overwriting of result variable or anything
 
-0:17:09.069,0:17:10.069
+00:17:09,069 --> 00:17:10,069
 like that.
 
-0:17:10.069,0:17:16.360
+00:17:10,069 --> 00:17:16,360
 With this "zip" trick, it is also very interesting
 that we don't need to know, in advance, how
 
-0:17:16.360,0:17:18.270
+00:17:16,360 --> 00:17:18,270
 many values we will need.
 
-0:17:18.270,0:17:23.179
+00:17:18,270 --> 00:17:23,179
 Because, simply, there will be as many consumed
 from this infinite list as are needed for
 
-0:17:23.179,0:17:28.020
+00:17:23,179 --> 00:17:28,020
 our given finite list (assuming that this
 list is finite).
 
-0:17:28.020,0:17:34.679
+00:17:28,020 --> 00:17:34,679
 You could, of course, argue that this is cheating
 because I used the 'sum' function here.
 
-0:17:34.679,0:17:39.600
+00:17:34,679 --> 00:17:39,600
 So, maybe this is only short because I used
 the 'sum' function instead of this repeated
 
-0:17:39.600,0:17:41.390
+00:17:39,600 --> 00:17:41,390
 accumulation of the addition.
 
-0:17:41.390,0:17:46.110
+00:17:41,390 --> 00:17:46,110
 But I would argue that this is really besides
 the point.
 
-0:17:46.110,0:17:51.160
+00:17:46,110 --> 00:17:51,160
 On the one hand, it is a convenience function,
 but even without having this available or
 
-0:17:51.160,0:17:55.800
+00:17:51,160 --> 00:17:55,800
 programmed by somebody else, it would have
 been only a few keystrokes to express the
 
-0:17:55.800,0:17:56.800
+00:17:55,800 --> 00:17:56,800
 summation.
 
-0:17:56.800,0:17:59.800
+00:17:56,800 --> 00:17:59,800
 So, even if we don't have the 'sum' function,
 we can write this with maybe ten more keystrokes.
 
-0:17:59.800,0:18:04.280
+00:17:59,800 --> 00:18:04,280
 We can also express the summation with a higher-order
 function (see later), and we would still get
 
-0:18:04.280,0:18:07.660
+00:18:04,280 --> 00:18:07,660
 this nice declarative expression.
 
-0:18:07.660,0:18:14.030
+00:18:07,660 --> 00:18:14,030
 And even if in the C, Python, or Java
 version, you would somehow allow yourself
 
-0:18:14.030,0:18:18.340
+00:18:14,030 --> 00:18:18,340
 to use a convenient array sum function, that
 wouldn't really have made the program from
 
-0:18:18.340,0:18:22.340
+00:18:18,340 --> 00:18:22,340
 the previous slide more declarative or nicer
 to deal with.
 
-0:18:22.340,0:18:28.430
+00:18:22,340 --> 00:18:28,430
 So, if you actually sit down and try to think
 about how you would program the for-loop based
 
-0:18:28.430,0:18:32.100
+00:18:28,430 --> 00:18:32,100
 version with a helper function for summing,
 then you have to think:
 
-0:18:32.100,0:18:34.670
+00:18:32,100 --> 00:18:34,670
 What do I do with the array elements?
 
-0:18:34.670,0:18:35.670
+00:18:34,670 --> 00:18:35,670
 Where do I store them?
 
-0:18:35.670,0:18:39.900
+00:18:35,670 --> 00:18:39,900
 Do I overwrite my original array, so that
 then I can call the 'sum' function on that array
 
-0:18:39.900,0:18:42.230
+00:18:39,900 --> 00:18:42,230
 (but then I have destroyed my input data)?
 
-0:18:42.230,0:18:48.670
+00:18:42,230 --> 00:18:48,670
 Or do I introduce a helper array in which
 I first store all the multiplications and
 
-0:18:48.670,0:18:53.970
+00:18:48,670 --> 00:18:53,970
 then I use my 'sum' function on that helper
 array, and then I have to discard it again?
 
-0:18:53.970,0:19:02.070
+00:18:53,970 --> 00:19:02,070
 Things like this appear in this piecewise
 approach with looping, whereas here we simply
 
-0:19:02.070,0:19:12.600
+00:19:02,070 --> 00:19:12,600
 have one expression which says all there is
 to say about this problem.
 
-0:19:12.600,0:19:18.010
+00:19:12,600 --> 00:19:18,010
 So, if the presence or absence of the sum function
 is not what really differentiates the two
 
-0:19:18.010,0:19:23.780
+00:19:18,010 --> 00:19:23,780
 cases, the Haskell version and imperative
 version, then let's discuss what are the actual
 
-0:19:23.780,0:19:24.990
+00:19:23,780 --> 00:19:24,990
 issues here.
 
-0:19:24.990,0:19:30.340
+00:19:24,990 --> 00:19:30,340
 It's mainly about expressiveness and susceptibility
 to change and refactoring, so how easy it
 
-0:19:30.340,0:19:33.980
+00:19:30,340 --> 00:19:33,980
 is to maintain or change this code.
 
-0:19:33.980,0:19:39.290
+00:19:33,980 --> 00:19:39,290
 Let's say we decided that actually the counting
 of positions should start at 1 instead of
 
-0:19:39.290,0:19:40.290
+00:19:39,290 --> 00:19:40,290
 0.
 
-0:19:40.290,0:19:43.809
+00:19:40,290 --> 00:19:43,809
 We have the same computation again, but now
 we actually want the first element to be multiplied
 
-0:19:43.809,0:19:44.809
+00:19:43,809 --> 00:19:44,809
 by 1.
 
-0:19:44.809,0:19:49.580
+00:19:44,809 --> 00:19:49,580
 This could certainly be done both for the
 imperative and for the Haskell version.
 
-0:19:49.580,0:19:52.650
+00:19:49,580 --> 00:19:52,650
 Let's look at the C-like version.
 
-0:19:52.650,0:19:58.240
+00:19:52,650 --> 00:19:58,240
 There we had this loop before, and now we
 could actually make this change by saying:
 
-0:19:58.240,0:20:04.720
+00:19:58,240 --> 00:20:04,720
 Well, we will actually start at 1 with our
 index variable.
 
-0:20:04.720,0:20:09.100
+00:20:04,720 --> 00:20:09,100
 That also means we have to make sure that
 we don't count to below n, but actually up
 
-0:20:09.100,0:20:10.100
+00:20:09,100 --> 00:20:10,100
 to n.
 
-0:20:10.100,0:20:13.059
+00:20:10,100 --> 00:20:13,059
 Otherwise, we would stop one step too early.
 
-0:20:13.059,0:20:17.730
+00:20:13,059 --> 00:20:17,730
 And we have to make sure that when we access
 our arrays, since their numbering scheme hasn't
 
-0:20:17.730,0:20:22.100
+00:20:17,730 --> 00:20:22,100
 changed (simply because I want to compute
 the first multiplication with 1 instead of
 
-0:20:22.100,0:20:26.970
+00:20:22,100 --> 00:20:26,970
 0, doesn't mean that somehow C has decided
 that it will change how arrays are accessed),
 
-0:20:26.970,0:20:33.360
+00:20:26,970 --> 00:20:33,360
 while I multiply with 1, I still need to access
 the array element at position 0.
 
-0:20:33.360,0:20:37.080
+00:20:33,360 --> 00:20:37,080
 So, actually, in order to make this change,
 I had to change 3 places in this code.
 
-0:20:37.080,0:20:42.010
+00:20:37,080 --> 00:20:42,010
 It could be done in a different way, but even
 then, there is this potential for error.
 
-0:20:42.010,0:20:45.190
+00:20:42,010 --> 00:20:45,190
 There are several places where I can make
 an error.
 
-0:20:45.190,0:20:47.080
+00:20:45,190 --> 00:20:47,080
 I have to decide where do I start?
 
-0:20:47.080,0:20:48.340
+00:20:47,080 --> 00:20:48,340
 Where do I stop?
 
-0:20:48.340,0:20:52.230
+00:20:48,340 --> 00:20:52,230
 How do I access the data structure elements?
 
-0:20:52.230,0:20:58.910
+00:20:52,230 --> 00:20:58,910
 So, there are several places where I can make
 an off-by-one error.
 
-0:20:58.910,0:21:06.010
+00:20:58,910 --> 00:21:06,010
 And everything has to fit together in order
 to really express what I wanted to change
 
-0:21:06.010,0:21:11.400
+00:21:06,010 --> 00:21:11,400
 about my computation here.
 
-0:21:11.400,0:21:17.230
+00:21:11,400 --> 00:21:17,230
 In contrast, in the Haskell version, if I
 want to make this change, I want to multiply
 
-0:21:17.230,0:21:20.640
+00:21:17,230 --> 00:21:20,640
 the first element by 1 instead of 0, then
 what do I change?
 
-0:21:20.640,0:21:23.799
+00:21:20,640 --> 00:21:23,799
 I change one 0 into one 1 (from '[0..]' to '[1..]').
 
-0:21:23.799,0:21:28.260
+00:21:23,799 --> 00:21:28,260
 That's all I need to do in order to express
 this desired change.
 
-0:21:28.260,0:21:33.330
+00:21:28,260 --> 00:21:33,330
 I don't have to think about the loop end condition,
 because there is no loop end condition.
 
-0:21:33.330,0:21:36.280
+00:21:33,330 --> 00:21:36,280
 And then I talked about n or n - 1 or n +
 1.
 
-0:21:36.280,0:21:37.850
+00:21:36,280 --> 00:21:37,850
 I don't have to talk about this here either.
 
-0:21:37.850,0:21:40.200
+00:21:37,850 --> 00:21:40,200
 I only make the change which is relevant.
 
-0:21:40.200,0:21:47.540
+00:21:40,200 --> 00:21:47,540
 I also don't have to think about how my list
 is indexed (how do I access the zeroth, or
 
-0:21:47.540,0:21:49.640
+00:21:47,540 --> 00:21:49,640
 first or second element?) because there is
 no indexing.
 
-0:21:49.640,0:21:54.510
+00:21:49,640 --> 00:21:54,510
 Since I don't access elements of this list
 by index, I don't have to change anything
 
-0:21:54.510,0:21:55.510
+00:21:54,510 --> 00:21:55,510
 about this.
 
-0:21:55.510,0:21:58.010
+00:21:55,510 --> 00:21:58,010
 In that sense, this is the minimal change,
 and the desired change.
 
-0:21:58.010,0:21:59.640
+00:21:58,010 --> 00:21:59,640
 There shouldn't be more need for changes.
 
-0:21:59.640,0:22:07.470
+00:21:59,640 --> 00:22:07,470
 In that sense, one could say this is a more
 maintainable program because we can make
 
-0:22:07.470,0:22:11.100
+00:22:07,470 --> 00:22:11,100
 desired changes in one local place.
 
-0:22:11.100,0:22:16.150
+00:22:11,100 --> 00:22:16,150
 Of course, I don't want to be lying; one could
 argue that on the C version one could also
 
-0:22:16.150,0:22:18.679
+00:22:16,150 --> 00:22:18,679
 have made the change by a smaller edit.
 
-0:22:18.679,0:22:24.770
+00:22:18,679 --> 00:22:24,770
 One could say: Even in the C version, I didn't
 need to do what I did on the previous slide.
 
-0:22:24.770,0:22:28.270
+00:22:24,770 --> 00:22:28,270
 I could instead have changed the multiplication
 down here.
 
-0:22:28.270,0:22:39.260
+00:22:28,270 --> 00:22:39,260
 So, leaving the array start and end as they
 were, and simply somehow changing this multiplier
 
-0:22:39.260,0:22:40.260
+00:22:39,260 --> 00:22:40,260
 here.
 
-0:22:40.260,0:22:44.860
+00:22:40,260 --> 00:22:44,860
 And accidentally, that would actually also
 have led to the same behaviour.
 
-0:22:44.860,0:22:47.480
+00:22:44,860 --> 00:22:47,480
 But I would argue, it's just indexitis in
 a different form.
 
-0:22:47.480,0:22:51.480
+00:22:47,480 --> 00:22:51,480
 So, I still have to find the place where to
 make this change.
 
-0:22:51.480,0:22:56.590
+00:22:51,480 --> 00:22:56,590
 It's somehow strange, that now I have to think
 that I multiply the (i+1)-th thing with the
 
-0:22:56.590,0:22:57.790
+00:22:56,590 --> 00:22:57,790
 array at index i.
 
-0:22:57.790,0:23:01.880
+00:22:57,790 --> 00:23:01,880
 I have to make sure that I don't make an off-by-one
 error here.
 
-0:23:01.880,0:23:12.520
+00:23:01,880 --> 00:23:12,520
 I avoided changing the loop iteration header
 here, but it is not really nice that I have
 
-0:23:12.520,0:23:16.980
+00:23:12,520 --> 00:23:16,980
 these strange differences in what do I multiply
 with which array element.
 
-0:23:16.980,0:23:23.590
+00:23:16,980 --> 00:23:23,590
 So, I might consider this as a better change
 rather than the one on the previous slide.
 
-0:23:23.590,0:23:28.790
+00:23:23,590 --> 00:23:28,790
 But even just the fact that there *are* these
 two separate changes which lead to the desired
 
-0:23:28.790,0:23:34.160
+00:23:28,790 --> 00:23:34,160
 behaviour, could also be seen as ground for
 worry.
 
-0:23:34.160,0:23:37.120
+00:23:34,160 --> 00:23:37,120
 I want to change where I start my multiplying.
 
-0:23:37.120,0:23:41.100
+00:23:37,120 --> 00:23:41,100
 In the Haskell version, there is exactly one
 place where I make this change, and it expresses
 
-0:23:41.100,0:23:42.440
+00:23:41,100 --> 00:23:42,440
 everything there is to express.
 
-0:23:42.440,0:23:47.100
+00:23:42,440 --> 00:23:47,100
 In the C version, there are several ways of
 doing this, and each of these ways has the
 
-0:23:47.100,0:23:54.179
+00:23:47,100 --> 00:23:54,179
 potential for making errors by changing not
 all of the 3 places, or only the wrong place
 
-0:23:54.179,0:23:55.980
+00:23:54,179 --> 00:23:55,980
 where a change could be made.
 
-0:23:55.980,0:24:02.870
+00:23:55,980 --> 00:24:02,870
 So, that certainly takes more thinking by
 the programmer rather than having this very
 
-0:24:02.870,0:24:07.620
+00:24:02,870 --> 00:24:07,620
 declarative way where we have exactly one
 place that makes a difference between these
 
-0:24:07.620,0:24:12.320
+00:24:07,620 --> 00:24:12,320
 two versions of the program.
 
-0:24:12.320,0:24:18.980
+00:24:12,320 --> 00:24:18,980
 So, why is it that the C version has to make
 all these clerical decisions?
 
-0:24:18.980,0:24:24.860
+00:24:18,980 --> 00:24:24,860
 Decisions that are not really significant
 from an algorithmic perspective, but are simply
 
-0:24:24.860,0:24:28.230
+00:24:24,860 --> 00:24:28,230
 there because you have to make sure that you
 get everything right about the loop start,
 
-0:24:28.230,0:24:31.090
+00:24:28,230 --> 00:24:31,090
 the loop end, and array indexing, etc.
 
-0:24:31.090,0:24:32.090
+00:24:31,090 --> 00:24:32,090
 Why is that?
 
-0:24:32.090,0:24:37.181
+00:24:32,090 --> 00:24:37,181
 Well, conceptually, it is because the C version
 doesn't have a separation of the values that
 
-0:24:37.181,0:24:40.580
+00:24:37,181 --> 00:24:40,580
 you want to enumerate and process, on the
 one hand, and loop control on the other hand.
 
-0:24:40.580,0:24:42.130
+00:24:40,580 --> 00:24:42,130
 It is all one big mess.
 
-0:24:42.130,0:24:48.160
+00:24:42,130 --> 00:24:48,160
 In this example, it is not yet a *big* mess,
 but things that have to be kept synchronized.
 
-0:24:48.160,0:24:52.570
+00:24:48,160 --> 00:24:52,570
 In larger examples, it really can become a
 big mess to deal with all of these aspects
 
-0:24:52.570,0:24:55.540
+00:24:52,570 --> 00:24:55,540
 at once because there is no separation of
 these concerns.
 
-0:24:55.540,0:24:59.309
+00:24:55,540 --> 00:24:59,309
 In contrast, in the Haskell version, we have
 this perfect separation.
 
-0:24:59.309,0:25:05.660
+00:24:59,309 --> 00:25:05,660
 It actually comes, in this specific example,
 from this expression.
 
-0:25:05.660,0:25:12.679
+00:25:05,660 --> 00:25:12,679
 We express that we want to combine the things
 from whatever list comes here with values
 
-0:25:12.679,0:25:20.429
+00:25:12,679 --> 00:25:20,429
 starting from k and however far along we have
 to go until we have processed all the values.
 
-0:25:20.429,0:25:24.470
+00:25:20,429 --> 00:25:24,470
 This is somehow where the loop control, if
 you want, is situated.
 
-0:25:24.470,0:25:25.720
+00:25:24,470 --> 00:25:25,720
 But there *is* no explicit loop control.
 
-0:25:25.720,0:25:29.200
+00:25:25,720 --> 00:25:29,200
 You simply express what should be computed.
 
-0:25:29.200,0:25:34.260
+00:25:29,200 --> 00:25:34,260
 So, basically, this Haskell version does not
 need explicit loop control.
 
-0:25:34.260,0:25:36.740
+00:25:34,260 --> 00:25:36,740
 It does not access data structure elements
 by index.
 
-0:25:36.740,0:25:41.440
+00:25:36,740 --> 00:25:41,440
 That is again the point that I have made several
 times now, that in Haskell, you should, and
 
-0:25:41.440,0:25:46.680
+00:25:41,440 --> 00:25:46,680
 can almost always, avoid the use of indexing
 operators.
 
-0:25:46.680,0:25:50.510
+00:25:46,680 --> 00:25:50,510
 Because that's not how you think about data
 structures in Haskell (by piecewise access
 
-0:25:50.510,0:25:51.660
+00:25:50,510 --> 00:25:51,660
 to individual elements).
 
-0:25:51.660,0:25:56.070
+00:25:51,660 --> 00:25:56,070
 You think about data structures as a whole,
 and the operation that happens on the data
 
-0:25:56.070,0:25:57.750
+00:25:56,070 --> 00:25:57,750
 structure as a whole.
 
-0:25:57.750,0:26:00.200
+00:25:57,750 --> 00:26:00,200
 So, we don't need to increment the loop counter.
 
-0:26:00.200,0:26:04.570
+00:26:00,200 --> 00:26:04,570
 We don't need to talk about the loop end condition
 in the Haskell version, simply because of
 
-0:26:04.570,0:26:10.360
+00:26:04,570 --> 00:26:10,360
 this expressiveness, that particularly in
 this case, infinite lists do have.
 
-0:26:10.360,0:26:16.830
+00:26:10,360 --> 00:26:16,830
 That is the point, that we can use an infinite
 list basically as a structuring tool here,
 
-0:26:16.830,0:26:22.070
+00:26:16,830 --> 00:26:22,070
 and still, what will be computed is exactly
 only as many elements from this list as are
 
-0:26:22.070,0:26:23.070
+00:26:22,070 --> 00:26:23,070
 needed.
 
-0:26:23.070,0:26:28.419
+00:26:23,070 --> 00:26:28,419
 So, this is somehow a concern that the evaluation
 mechanism of the language performs for us.
 
-0:26:28.419,0:26:30.920
+00:26:28,419 --> 00:26:30,920
 We don't have to think about this as a programmer.
 
-0:26:30.920,0:26:35.930
+00:26:30,920 --> 00:26:35,930
 That is what is helping us here and avoids
 all these clerical decisions that the C version
 
-0:26:35.930,0:26:36.930
+00:26:35,930 --> 00:26:36,930
 has to make:
 
-0:26:36.930,0:26:37.930
+00:26:36,930 --> 00:26:37,930
 Where do I start counting?
 
-0:26:37.930,0:26:39.130
+00:26:37,930 --> 00:26:39,130
 How to increment?
 
-0:26:39.130,0:26:40.299
+00:26:39,130 --> 00:26:40,299
 Where do I end counting?
 
-0:26:40.299,0:26:43.900
+00:26:40,299 --> 00:26:43,900
 Am I sure that I have done exactly as many
 iterations as I need?
 
-0:26:43.900,0:26:45.030
+00:26:43,900 --> 00:26:45,030
 Or one too many?
 
-0:26:45.030,0:26:46.030
+00:26:45,030 --> 00:26:46,030
 One too few?
 
-0:26:46.030,0:26:48.660
+00:26:46,030 --> 00:26:48,660
 How do I access elements by index?
 
-0:26:48.660,0:26:55.380
+00:26:48,660 --> 00:26:55,380
 All these things disappear if we express the
 solution in this more declarative way.
 
-0:26:55.380,0:27:03.040
+00:26:55,380 --> 00:27:03,040
 Now, you could think this all is just propaganda.
 
-0:27:03.040,0:27:04.540
+00:27:03,040 --> 00:27:04,540
 At least, you could be suspicious.
 
-0:27:04.540,0:27:07.650
+00:27:04,540 --> 00:27:07,650
 Maybe I am fooling myself about efficiency.
 
-0:27:07.650,0:27:14.240
+00:27:07,650 --> 00:27:14,240
 So, certainly, you could think, the C code
 is more efficient than my declarative code.
 
-0:27:14.240,0:27:22.400
+00:27:14,240 --> 00:27:22,400
 It seems like a reasonable thing to assume, that
 for example, here, we probably compute this
 
-0:27:22.400,0:27:23.400
+00:27:22,400 --> 00:27:23,400
 extra list.
 
-0:27:23.400,0:27:27.510
+00:27:23,400 --> 00:27:27,510
 So, this needs extra memory, and then we traverse
 data several times.
 
-0:27:27.510,0:27:32.470
+00:27:27,510 --> 00:27:32,470
 Even when I discussed the C version with this
 helper function "sum", I mentioned that we
 
-0:27:32.470,0:27:36.760
+00:27:32,470 --> 00:27:36,760
 would probably want to either overwrite our
 first array, or create a helper array.
 
-0:27:36.760,0:27:39.510
+00:27:36,760 --> 00:27:39,510
 So, certainly in the Haskell version, we also
 have these aspects.
 
-0:27:39.510,0:27:42.730
+00:27:39,510 --> 00:27:42,730
 So, certainly, this is less efficient.
 
-0:27:42.730,0:27:47.920
+00:27:42,730 --> 00:27:47,920
 So, we shouldn't go for this declarative version,
 however nice I am trying to sell it to you.
 
-0:27:47.920,0:27:52.520
+00:27:47,920 --> 00:27:52,520
 Because this program is simply more efficient,
 because it does a very tight loop and does
 
-0:27:52.520,0:27:55.210
+00:27:52,520 --> 00:27:55,210
 exactly what is needed to do.
 
-0:27:55.210,0:27:58.390
+00:27:55,210 --> 00:27:58,390
 Maybe it is not nicely expressed because
 I can make errors in all these places, but
 
-0:27:58.390,0:28:00.650
+00:27:58,390 --> 00:28:00,650
 at least it does it in an efficient way.
 
-0:28:00.650,0:28:06.049
+00:28:00,650 --> 00:28:06,049
 So, that could be your counterargument to
 even trying to write a program like this,
 
-0:28:06.049,0:28:11.840
+00:28:06,049 --> 00:28:11,840
 where everything is more maintainable because
 we have a clearer separation of concerns.
 
-0:28:11.840,0:28:19.300
+00:28:11,840 --> 00:28:19,300
 That could be a concern that you have at this
 point.
 
-0:28:19.300,0:28:21.970
+00:28:19,300 --> 00:28:21,970
 Well, actually no.
 
-0:28:21.970,0:28:25.070
+00:28:21,970 --> 00:28:25,070
 That might seem like a valid concern, but
 it doesn't really apply.
 
-0:28:25.070,0:28:26.750
+00:28:25,070 --> 00:28:26,750
 We do have compilers.
 
-0:28:26.750,0:28:32.330
+00:28:26,750 --> 00:28:32,330
 And compilers can translate declarative code
 as you have just seen into a tight C-like
 
-0:28:32.330,0:28:36.480
+00:28:32,330 --> 00:28:36,480
 loop without using intermediate data structures,
 just fine.
 
-0:28:36.480,0:28:38.650
+00:28:36,480 --> 00:28:38,650
 So, this is not really an issue.
 
-0:28:38.650,0:28:45.039
+00:28:38,650 --> 00:28:45,039
 Of course, the program might ultimately still
 be less efficient than a handwritten C program,
 
-0:28:45.039,0:28:50.160
+00:28:45,039 --> 00:28:50,160
 but it's not on an order of magnitudes.
 
-0:28:50.160,0:28:54.440
+00:28:50,160 --> 00:28:54,440
 For example, the compiler can even spot parallelization
 opportunities.
 
-0:28:54.440,0:28:58.789
+00:28:54,440 --> 00:28:58,789
 Thanks to the independent values aspect that
 we discussed when comparing list comprehensions
 
-0:28:58.789,0:29:04.360
+00:28:58,789 --> 00:29:04,360
 against for-loops, it is easier (in a program
 as we have just seen) to spot places where
 
-0:29:04.360,0:29:09.250
+00:29:04,360 --> 00:29:09,250
 parallelization could happen; much simpler
 than, for example, in a C program.
 
-0:29:09.250,0:29:15.450
+00:29:09,250 --> 00:29:15,450
 This also all has to do with the lawful program
 construction aspect of the quote by Richard.
 
-0:29:15.450,0:29:18.330
+00:29:15,450 --> 00:29:18,330
 So, the fact that we have laws about our programs
 can also be exploited by a compiler.
 
-0:29:18.330,0:29:24.860
+00:29:18,330 --> 00:29:24,860
 The compiler can apply laws to eliminate inefficiencies,
 data structures traversals, data structures
 
-0:29:24.860,0:29:25.860
+00:29:24,860 --> 00:29:25,860
 themselves.
 
-0:29:25.860,0:29:27.090
+00:29:25,860 --> 00:29:27,090
 This is actually what GHC is doing.
 
-0:29:27.090,0:29:33.450
+00:29:27,090 --> 00:29:33,450
 So, GHC isn't actually on its own introducing
 parallelism, but it pays a lot of attention
 
-0:29:33.450,0:29:38.320
+00:29:33,450 --> 00:29:38,320
 to, for example, traversal of data structures,
 and can eliminate many of them.
 
-0:29:38.320,0:29:45.809
+00:29:38,320 --> 00:29:45,809
 So, as a programmer, we can actually afford
 to write nice declarative expressions because
 
-0:29:45.809,0:29:50.610
+00:29:45,809 --> 00:29:50,610
 we rely on the compiler to optimize our programs.
 
-0:29:50.610,0:29:56.160
+00:29:50,610 --> 00:29:56,160
 And the compiler can perform a lot of optimizations,
 because of the laws that apply to our programs,
 
-0:29:56.160,0:29:57.650
+00:29:56,160 --> 00:29:57,650
 and because of the purity.
 
-0:29:57.650,0:30:02.250
+00:29:57,650 --> 00:30:02,250
 So, everything is pure by default, unlike
 in C, where we would need extra annotations
 
-0:30:02.250,0:30:07.820
+00:30:02,250 --> 00:30:07,820
 and even then, the compiler cannot make as
 many changes to the code as it might want
 
-0:30:07.820,0:30:11.120
+00:30:07,820 --> 00:30:11,120
 from a, so to speak, more algorithmic perspective.
 
-0:30:11.120,0:30:16.900
+00:30:11,120 --> 00:30:16,900
 So, in a functional language, much more transformation
 of programs is possible in an automatic fashion,
 
-0:30:16.900,0:30:27.340
+00:30:16,900 --> 00:30:27,340
 because there is more semantic knowledge about
 the programs than in an imperative language.
 
-0:30:27.340,0:30:28.809
+00:30:27,340 --> 00:30:28,809
 We could also talk more about refactoring.
 
-0:30:28.809,0:30:31.380
+00:30:28,809 --> 00:30:31,380
 I don't want to do this at this point.
 
-0:30:31.380,0:30:36.120
+00:30:31,380 --> 00:30:36,120
 This was an excurse into this subject of wholemeal
 programming.
 
-0:30:36.120,0:30:43.240
+00:30:36,120 --> 00:30:43,240
 So, I don't want to spend too much time of
 this week's lecture time on it.
 
-0:30:43.240,0:30:49.129
+00:30:43,240 --> 00:30:49,129
 Also, of course, you could argue or wonder
 why I made this artificial example.
 
-0:30:49.129,0:30:50.820
+00:30:49,129 --> 00:30:50,820
 For presentation's sake, of course.
 
-0:30:50.820,0:30:53.789
+00:30:50,820 --> 00:30:53,789
 So, is this really representative of real
 situations?
 
-0:30:53.789,0:30:55.650
+00:30:53,789 --> 00:30:55,650
 My wholehearted claim is: Yes!
 
-0:30:55.650,0:30:58.360
+00:30:55,650 --> 00:30:58,360
 I cannot prove this to you in this lecture.
 
-0:30:58.360,0:31:03.270
+00:30:58,360 --> 00:31:03,270
 But that's the experience that comes from
 programming in a declarative fashion.
 
-0:31:03.270,0:31:04.410
+00:31:03,270 --> 00:31:04,410
 So, this is really representative.
 
-0:31:04.410,0:31:08.210
+00:31:04,410 --> 00:31:08,210
 It is not just something that happened in
 this small example.
 
-0:31:08.210,0:31:09.850
+00:31:08,210 --> 00:31:09,850
 These differences are real.
 
-0:31:09.850,0:31:12.029
+00:31:09,850 --> 00:31:12,029
 And they are relevant.

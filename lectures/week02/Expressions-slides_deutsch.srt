@@ -1,1230 +1,1147 @@
-0:00:02.590,0:00:04.640
-Zurück zu
-den Folien.
+22 # slide
+00:00:02,590 --> 00:00:04,640
+Zurück zu den Folien.
 
-0:00:04.640,0:00:14.060
+00:00:04,640 --> 00:00:14,060
 Ich habe erwähnt, dass ich heute
 unter anderem Ausdrücke und Befehle besprechen möchte.
 
-0:00:14.060,0:00:20.060
+00:00:14,060 --> 00:00:20,060
 Ausdrücke sind Dinge, die ich
 in dem Whiteboard-Video besprochen habe.
 
-0:00:20.060,0:00:23.910
+00:00:20,060 --> 00:00:23,910
 Die mathematischen Formeln zum
 Beispiel sind arithmetische Ausdrücke.
 
-0:00:23.910,0:00:28.990
+00:00:23,910 --> 00:00:28,990
 Und Befehle hingegen sind Dinge wie
 "Drucken" oder eine Zuweisung in einer imperativen
 
-0:00:28.990,0:00:30.119
-
+00:00:28,990 --> 00:00:30,119
 Sprache.
 
-0:00:30.119,0:00:36.350
+00:00:30,119 --> 00:00:36,350
 Oft werden Ausdrücke auch "Terme" genannt,
 und Befehle werden oft "Anweisungen" genannt.
 
-0:00:36.350,0:00:44.660
+00:00:36,350 --> 00:00:44,660
 Und ich denke, ich werde in beiden
 Fällen beide Terminologien verwenden, ohne wirklich viel nachzudenken.
 
-0:00:44.660,0:00:47.990
+00:00:44,660 --> 00:00:47,990
 Also, lassen Sie uns
 über ausdrucksbasierte Programmierung nachdenken.
 
-0:00:47.990,0:00:53.420
+00:00:47,990 --> 00:00:53,420
 Lassen Sie mich zuerst sagen, dass wir
 in der heutigen Vorlesung eigentlich gar nicht funktionale
 
-0:00:53.420,0:00:56.260
+00:00:53,420 --> 00:00:56,260
 Programmierung machen, sondern es
 geht mehr um ausdrucksbasierte Programmierung.
 
-0:00:56.260,0:00:59.280
+00:00:56,260 --> 00:00:59,280
 Wir werden Funktionen
 in unseren Ausdrücken verwenden.
 
-0:00:59.280,0:01:03.610
+00:00:59,280 --> 00:01:03,610
 Und auch in den ersten CodeWorld-Aufgaben, die
 Sie bekommen werden, werden Sie Funktionen verwenden.
 
-0:01:03.610,0:01:05.909
+00:01:03,610 --> 00:01:05,909
 Aber Sie werden wahrscheinlich
 nicht Ihre eigenen Funktionen definieren.
 
-0:01:05.909,0:01:09.079
+00:01:05,909 --> 00:01:09,079
 Es geht also hauptsächlich
 darum, Ausdrücke aus Funktionen aufzubauen.
 
-0:01:09.079,0:01:10.590
-Also, was
-ist ein Ausdruck?
+00:01:09,079 --> 00:01:10,590
+Also, was ist ein Ausdruck?
 
-0:01:10.590,0:01:13.710
+00:01:10,590 --> 00:01:13,710
 Nun, es ist wie in der
 Aussage, die ich gerade gemacht habe:
 
-0:01:13.710,0:01:17.810
+00:01:13,710 --> 00:01:17,810
 Bei der funktionalen Programmierung geht es hauptsächlich um
 Ausdrücke, während es bei der imperativen Programmierung um
 
-0:01:17.810,0:01:18.840
-das andere
-geht, um Befehle.
+00:01:17,810 --> 00:01:18,840
+das andere geht, um Befehle.
 
-0:01:18.840,0:01:24.539
+00:01:18,840 --> 00:01:24,539
 Und genau das haben wir gesehen, als
 ich die Unterschiede im Whiteboard-Video besprochen habe.
 
-0:01:24.539,0:01:26.009
-Was ist
-ein Ausdruck?
+00:01:24,539 --> 00:01:26,009
+Was ist ein Ausdruck?
 
-0:01:26.009,0:01:29.469
+00:01:26,009 --> 00:01:29,469
 Nun, Sie kennen eine Menge
 Ausdrücke in allen möglichen Sprachen.
 
-0:01:29.469,0:01:32.770
+00:01:29,469 --> 00:01:32,770
 Zum Beispiel arithmetische Ausdrücke,
 wie sie im Video vorkamen.
 
-0:01:32.770,0:01:39.340
+00:01:32,770 --> 00:01:39,340
 Also, "2 + 3 × (x+1)^2" oder
 die Beispiele, die ich im Video gezeigt habe.
 
-0:01:39.340,0:01:40.840
-Das
-sind Ausdrücke.
+00:01:39,340 --> 00:01:40,840
+Das sind Ausdrücke.
 
-0:01:40.840,0:01:48.109
+00:01:40,840 --> 00:01:48,109
 Dinge, die aus Symbolen, aus
 Variablen, Konstanten und Operationen aufgebaut sind.
 
-0:01:48.109,0:01:50.649
+00:01:48,109 --> 00:01:50,649
 Das ist nicht nur
 etwas für die Arithmetik.
 
-0:01:50.649,0:01:55.669
+00:01:50,649 --> 00:01:55,669
 In der Logik kennen Sie zum
 Beispiel aussagenlogische Formeln, die so aussehen könnten.
 
-0:01:55.669,0:01:57.749
-Und auch das
-ist ein Ausdruck.
+00:01:55,669 --> 00:01:57,749
+Und auch das ist ein Ausdruck.
 
-0:01:57.749,0:02:02.969
+00:01:57,749 --> 00:02:02,969
 Oder in einer Excel-Tabelle könnten Sie Ausdrücke
 verwenden, um zu beschreiben, was der Wert
 
-0:02:02.969,0:02:05.570
-einer bestimmten
-Zelle sein soll.
+00:02:02,969 --> 00:02:05,570
+einer bestimmten Zelle sein soll.
 
-0:02:05.570,0:02:07.759
+00:02:05,570 --> 00:02:07,759
 Ein anderes Beispiel
 wären Ausdrücke in SQL.
 
-0:02:07.759,0:02:14.090
+00:02:07,759 --> 00:02:14,090
 Wenn Sie Datenbankabfragen machen, ist die Sprache,
 in der Sie sie schreiben, SQL, auch
 
-0:02:14.090,0:02:16.290
-eine sehr
-ausdrucksbasierte Sprache.
+00:02:14,090 --> 00:02:16,290
+eine sehr ausdrucksbasierte Sprache.
 
-0:02:16.290,0:02:19.510
+00:02:16,290 --> 00:02:19,510
 Diese Dinge sind
 also aus Teilen aufgebaut.
 
-0:02:19.510,0:02:21.069
-Sie haben
-eine bestimmte Syntax.
+00:02:19,510 --> 00:02:21,069
+Sie haben eine bestimmte Syntax.
 
-0:02:21.069,0:02:27.239
+00:02:21,069 --> 00:02:27,239
 Und Sie erhalten strukturierte Ausdrücke, ähnlich wie ich
 es letzte Woche im CodeWorld-Editor gezeigt habe, wo
 
-0:02:27.239,0:02:33.769
+00:02:27,239 --> 00:02:33,769
 ich auch den Baum untersucht
 habe, der einem Bildausdruck zugrunde liegt.
 
-0:02:33.769,0:02:36.870
+00:02:33,769 --> 00:02:36,870
 Und in der Tat,
 wir können die Syntaxbäume aufschreiben.
 
-0:02:36.870,0:02:40.770
+00:02:36,870 --> 00:02:40,770
 Und vielleicht werde ich das in einem
 weiteren kurzen Video später an einem Beispiel tun.
 
-0:02:40.770,0:02:49.209
+00:02:40,770 --> 00:02:49,209
 Generell, mathematisch gesehen, ist ein Term,
 ein Ausdruck, einfach etwas, das aus
 
-0:02:49.209,0:02:50.209
-einer Signatur
-aufgebaut ist.
+00:02:49,209 --> 00:02:50,209
+einer Signatur aufgebaut ist.
 
-0:02:50.209,0:02:54.469
+00:02:50,209 --> 00:02:54,469
 Wir haben also Konstanten, Funktionen/Operatoren, eventuell
 Variablen, wie ich schon in meinen
 
-0:02:54.469,0:02:58.530
+00:02:54,469 --> 00:02:58,530
 anderen Ausdrucksbeispielen
 besprochen habe.
 
-0:02:58.530,0:03:05.569
-Also, was
-ist der Punkt?
+00:02:58,530 --> 00:03:05,569
+Also, was ist der Punkt?
 
-0:03:05.569,0:03:08.909
+00:03:05,569 --> 00:03:08,909
 Was sind Eigenschaften von Ausdrücken,
 oder genauer gesagt, von reinen/puren Ausdrücken?
 
-0:03:08.909,0:03:10.500
+00:03:08,909 --> 00:03:10,500
 Später werden wir den Unterschied
 diskutieren: ob sie kompositionell sind.
 
-0:03:10.500,0:03:16.069
+00:03:10,500 --> 00:03:16,069
 Wie ich gerade sagte, sind
 Ausdrücke komplett aus Unterausdrücken aufgebaut.
 
-0:03:16.069,0:03:22.690
+00:03:16,069 --> 00:03:22,690
 Wenn Sie also einen Ausdruck nehmen, ihn als Baum aufzeichnen
 und dann auf einen beliebigen Knoten in diesem Baum zeigen, dann
 
-0:03:22.690,0:03:27.989
+00:03:22,690 --> 00:03:27,989
 ist das, was Sie mit diesem Punkt als
 Wurzel erhalten, nur ein weiterer Ausdruck, ein Unterausdruck.
 
-0:03:27.989,0:03:31.129
+00:03:27,989 --> 00:03:31,129
 Für Befehle gilt das nicht,
 wie wir noch sehen werden.
 
-0:03:31.129,0:03:33.969
+00:03:31,129 --> 00:03:33,969
 Ausdrücke haben normalerweise einen Typ oder
 können mit einem Typ versehen werden.
 
-0:03:33.969,0:03:40.090
+00:03:33,969 --> 00:03:40,090
 In dem Beispiel, das wir gerade gesehen
 haben (der arithmetische Ausdruck), hatten natürlich alle
 
-0:03:40.090,0:03:42.659
+00:03:40,090 --> 00:03:42,659
 Unterausdrücke, und auch der
 gesamte Ausdruck, einen numerischen Typ.
 
-0:03:42.659,0:03:48.560
+00:03:42,659 --> 00:03:48,560
 Je nachdem, was x sein könnte, könnte es eine
 natürliche Zahl sein oder eine reelle Zahl, was auch immer.
 
-0:03:48.560,0:03:53.110
+00:03:48,560 --> 00:03:53,110
 Aber der Punkt ist, dass wir
 Ausdrücken und ihren Unterausdrücken Typen zuweisen können.
 
-0:03:53.110,0:03:55.969
-Sie haben
-normalerweise einen Wert.
+00:03:53,110 --> 00:03:55,969
+Sie haben normalerweise einen Wert.
 
-0:03:55.969,0:03:57.409
-Ausdrücke können
-ausgewertet werden.
+00:03:55,969 --> 00:03:57,409
+Ausdrücke können ausgewertet werden.
 
-0:03:57.409,0:04:01.249
-Also, wir nehmen "2
-+ 3 × (x+1)^2".
+00:03:57,409 --> 00:04:01,249
+Also, wir nehmen "2 + 3 × (x+1)^2".
 
-0:04:01.249,0:04:07.400
+00:04:01,249 --> 00:04:07,400
 Und wenn man weiß, was x ist, wenn wir
 (im Gültigkeitsbereich) eine Variable x haben, der wir einen Wert
 
-0:04:07.400,0:04:12.540
+00:04:07,400 --> 00:04:12,540
 zugewiesen haben, dann wissen wir, was
 der Wert des gesamten Ausdrucks ist.
 
-0:04:12.540,0:04:17.200
+00:04:12,540 --> 00:04:17,200
 Und das geschieht ohne irgendwelche versteckten Einflüsse: Wenn
 wir die Variablen kennen, dann wissen wir auch,
 
-0:04:17.200,0:04:19.209
-was das Ergebnis
-eines Ausdrucks ist.
+00:04:17,200 --> 00:04:19,209
+was das Ergebnis eines Ausdrucks ist.
 
-0:04:19.209,0:04:24.160
+00:04:19,209 --> 00:04:24,160
 Und das ändert sich auch nicht,
 wenn wir den Ausdruck mehrmals auswerten.
 
-0:04:24.160,0:04:29.020
+00:04:24,160 --> 00:04:29,020
 Wenn die Variablen dieselben sind, dieselben Werte
 haben, dann wird das Ergebnis der Auswertung
 
-0:04:29.020,0:04:30.090
-immer
-dasselbe sein.
+00:04:29,020 --> 00:04:30,090
+immer dasselbe sein.
 
-0:04:30.090,0:04:36.180
+00:04:30,090 --> 00:04:36,180
 Auch hängt das Ergebnis der Auswertung nicht von
 der Reihenfolge ab, in der wir Teilausdrücke auswerten.
 
-0:04:36.180,0:04:41.849
+00:04:36,180 --> 00:04:41,849
 Also, pure Ausdrücke: Wenn wir "a + b"
 haben und "a" und "b" sind komplexere Unterausdrücke,
 
-0:04:41.849,0:04:45.840
+00:04:41,849 --> 00:04:45,840
 dann ist es egal, in welcher Reihenfolge
 wir die linke und die rechte Seite auswerten.
 
-0:04:45.840,0:04:47.860
-Die Summe wird
-immer die gleiche sein.
+00:04:45,840 --> 00:04:47,860
+Die Summe wird immer die gleiche sein.
 
-0:04:47.860,0:04:54.349
+00:04:47,860 --> 00:04:54,349
 Auch das ist etwas, was für nicht-pure
 Ausdrücke in einer Sprache wie z.B. C im
 
-0:04:54.349,0:04:56.650
-Allgemeinen
-nicht gilt.
+00:04:54,349 --> 00:04:56,650
+Allgemeinen nicht gilt.
 
-0:04:56.650,0:04:58.280
+00:04:56,650 --> 00:04:58,280
 Und diese Kompositionalität
 ist nicht nur syntaktisch.
 
-0:04:58.280,0:05:05.819
+00:04:58,280 --> 00:05:05,819
 Sie erstreckt sich wirklich
 auf Typisierung und Semantik/Auswertung.
 
-0:05:05.819,0:05:12.729
+00:05:05,819 --> 00:05:12,729
 Nehmen wir also unser sehr
 einfaches Beispiel von vor zwei Folien.
 
-0:05:12.729,0:05:13.840
-Was sind
-die Bestandteile hier?
+00:05:12,729 --> 00:05:13,840
+Was sind die Bestandteile hier?
 
-0:05:13.840,0:05:15.630
-Nun, wir haben die
-Konstanten 1, 2 und 3.
+00:05:13,840 --> 00:05:15,630
+Nun, wir haben die Konstanten 1, 2 und 3.
 
-0:05:15.630,0:05:18.060
+00:05:15,630 --> 00:05:18,060
 Sie haben einen Typ:
 Sie sind ganze Zahlen.
 
-0:05:18.060,0:05:20.199
-Wir haben
-einige Operatoren.
+00:05:18,060 --> 00:05:20,199
+Wir haben einige Operatoren.
 
-0:05:20.199,0:05:21.789
-Sie könnten auch
-einen Typ haben.
+00:05:20,199 --> 00:05:21,789
+Sie könnten auch einen Typ haben.
 
-0:05:21.789,0:05:25.930
+00:05:21,789 --> 00:05:25,930
 Normalerweise schreibt man in der Mathematik nicht
 wirklich die Typen dieser sehr einfachen Operatoren auf.
 
-0:05:25.930,0:05:27.080
-Aber natürlich könnte
-man das tun.
+00:05:25,930 --> 00:05:27,080
+Aber natürlich könnte man das tun.
 
-0:05:27.080,0:05:33.330
+00:05:27,080 --> 00:05:33,330
 Und Sie haben binäre Operationen und
 eine unäre Operation (den Quadrat-Operator), und
 
-0:05:33.330,0:05:38.889
+00:05:33,330 --> 00:05:38,889
 wenn Sie dann wissen wollen, was der Wert von
 "zwei plus drei mal etwas" ist, dann gehen wir
 
-0:05:38.889,0:05:43.289
+00:05:38,889 --> 00:05:43,289
 durch diese Unterausdrücke und werten einfach
 alle Unterausdrücke aus und akkumulieren dann
 
-0:05:43.289,0:05:44.500
-die
-Ergebnisse.
+00:05:43,289 --> 00:05:44,500
+die Ergebnisse.
 
-0:05:44.500,0:05:47.220
-Das ist natürlich
-alles sehr trivial.
+00:05:44,500 --> 00:05:47,220
+Das ist natürlich alles sehr trivial.
 
-0:05:47.220,0:05:53.540
+00:05:47,220 --> 00:05:53,540
 Das ist genau das, was Sie tun,
 wenn Sie mit einfachen arithmetischen Ausdrücken rechnen.
 
-0:05:53.540,0:05:58.490
+00:05:53,540 --> 00:05:58,490
 Der Punkt hier ist, dass dies auch für
 alle anderen Beispiele von Ausdrücken gilt, die wir gesehen
 
-0:05:58.490,0:05:59.490
-
+00:05:58,490 --> 00:05:59,490
 haben.
 
-0:05:59.490,0:06:01.819
+00:05:59,490 --> 00:06:01,819
 Und insbesondere gilt
 es für jedes Haskell-Programm.
 
-0:06:01.819,0:06:07.190
+00:06:01,819 --> 00:06:07,190
 Für Haskell-Programme ist ihre Semantik
 also nur durch die Auswertung gegeben.
 
-0:06:07.190,0:06:11.740
+00:06:07,190 --> 00:06:11,740
 Und das ist in imperativen
 Sprachen definitiv nicht der Fall.
 
-0:06:11.740,0:06:19.840
+00:06:11,740 --> 00:06:19,840
 Die Beispiele, die wir letzte Woche gesehen haben,
 mit den Bildern, waren nur eine Instanziierung davon.
 
-0:06:19.840,0:06:22.040
-Nun
-gut.
+00:06:19,840 --> 00:06:22,040
+Nun gut.
 
-0:06:22.040,0:06:26.009
-Was bringt
-uns das?
+00:06:22,040 --> 00:06:26,009
+Was bringt uns das?
 
-0:06:26.009,0:06:32.550
+00:06:26,009 --> 00:06:32,550
 Auch das hat wieder etwas mit dem
 Whiteboard-Video zu tun, das ich vorher gemacht habe.
 
-0:06:32.550,0:06:36.289
+00:06:32,550 --> 00:06:36,289
 Nun, wir können alle möglichen
 Notationen aus der Mathematik verwenden.
 
-0:06:36.289,0:06:44.510
+00:06:36,289 --> 00:06:44,510
 Eine einfache Sache wie "2 + 3
 × (irgendwas)^2" können wir genauso gut als "2
 
-0:06:44.510,0:06:49.730
+00:06:44,510 --> 00:06:49,730
 + 3 × (y^2)" schreiben
 und diesem Unterausdruck einen Namen geben.
 
-0:06:49.730,0:06:56.169
+00:06:49,730 --> 00:06:56,169
 Also eine triviale Sache in diesem Fall,
 aber für komplexere Programme ist eine solche Benennung
 
-0:06:56.169,0:06:58.370
+00:06:56,169 --> 00:06:58,370
 beliebiger Unterausdrücke
 eine wertvolle Sache.
 
-0:06:58.370,0:07:02.759
+00:06:58,370 --> 00:07:02,759
 Sie werden das sehen, wenn
 Sie z.B. komplexere Haskell-Programme bauen.
 
-0:07:02.759,0:07:09.349
+00:07:02,759 --> 00:07:09,349
 Auch das ist etwas, was in einer
 befehlsbasierten Sprache nicht sofort und nicht immer möglich
 
-0:07:09.349,0:07:10.510
-ist, wie
-Sie sehen werden.
+00:07:09,349 --> 00:07:10,510
+ist, wie Sie sehen werden.
 
-0:07:10.510,0:07:17.340
+00:07:10,510 --> 00:07:17,340
 Und, wie ich eigentlich schon mit dem
 "read() + read()"-Beispiel am Whiteboard demonstriert habe,
 
-0:07:17.340,0:07:18.560
-können wir
-Vereinfachungen anwenden.
+00:07:17,340 --> 00:07:18,560
+können wir Vereinfachungen anwenden.
 
-0:07:18.560,0:07:28.530
+00:07:18,560 --> 00:07:28,530
 So ist zum Beispiel vielleicht y^2 eine
 teure Operation, und wir könnten stattdessen y mit
 
-0:07:28.530,0:07:29.530
-y
-multiplizieren.
+00:07:28,530 --> 00:07:29,530
+y multiplizieren.
 
-0:07:29.530,0:07:31.740
+00:07:29,530 --> 00:07:31,740
 Das ist natürlich
 mathematisch in Ordnung.
 
-0:07:31.740,0:07:34.069
-Das ist genau
-dasselbe wie hier.
+00:07:31,740 --> 00:07:34,069
+Das ist genau dasselbe wie hier.
 
-0:07:34.069,0:07:35.069
-Und
-warum?
+00:07:34,069 --> 00:07:35,069
+Und warum?
 
-0:07:35.069,0:07:40.520
+00:07:35,069 --> 00:07:40,520
 Weil y eine Variable ist, die
 im Gültigkeitsbereich immer denselben Wert hat.
 
-0:07:40.520,0:07:48.790
+00:07:40,520 --> 00:07:48,790
 Es ist wie bei dem Beispiel "f(x) +
 f(x) ist 2 × f(x)" aus meinem vorherigen Video.
 
-0:07:48.790,0:07:57.460
+00:07:48,790 --> 00:07:57,460
 Natürlich mag es wieder trivial
 erscheinen, angewandt auf arithmetische Ausdrücke.
 
-0:07:57.460,0:08:02.810
+00:07:57,460 --> 00:08:02,810
 Aber der Punkt ist, dass diese Konzepte viel
 allgemeiner gelten, wenn wir uns der Vorstellung anschließen,
 
-0:08:02.810,0:08:07.120
+00:08:02,810 --> 00:08:07,120
 dass wir nur mit
 Funktionen und Ausdrücken programmieren sollten.
 
-0:08:07.120,0:08:11.990
+00:08:07,120 --> 00:08:11,990
 Wenn wir uns von nicht-puren Ausdrücken fernhalten, wenn wir
 uns von Befehlen fernhalten, dann können wir alles anwenden, was
 
-0:08:11.990,0:08:13.490
-wir aus
-der Algebra kennen.
+00:08:11,990 --> 00:08:13,490
+wir aus der Algebra kennen.
 
-0:08:13.490,0:08:19.340
+00:08:13,490 --> 00:08:19,340
 Alles, was wir aus der Mathematik wissen, in Bezug
 auf das Manipulieren von Formeln, das Umordnen von Formeln
 
-0:08:19.340,0:08:20.340
-
+00:08:19,340 --> 00:08:20,340
 usw.
 
-0:08:20.340,0:08:27.970
+00:08:20,340 --> 00:08:27,970
 All diese Dinge können auf Programme angewandt
 werden, wenn Programme nur aus Ausdrücken aufgebaut sind.
 
-0:08:27.970,0:08:41.760
+00:08:27,970 --> 00:08:41,760
 Dieser letzte Punkt ist das Wichtige hier:
 Dies gilt, wenn Sie nur pure Ausdrücke haben.
 
-0:08:41.760,0:08:45.600
+00:08:41,760 --> 00:08:45,600
 In welchem Sinne unterscheidet sich
 das von der imperativen Programmierung?
 
-0:08:45.600,0:08:51.810
+00:08:45,600 --> 00:08:51,810
 Warum gilt das, was ich gerade gesagt habe,
 nur für bestimmte Arten von Programmen, die wir im
 
-0:08:51.810,0:08:54.380
+00:08:51,810 --> 00:08:54,380
 Moment anstreben
 (ausdrucksbasierte Programme)?
 
-0:08:54.380,0:08:56.410
-Nun, schauen wir
-uns das mal an.
+00:08:54,380 --> 00:08:56,410
+Nun, schauen wir uns das mal an.
 
-0:08:56.410,0:09:01.190
+00:08:56,410 --> 00:09:01,190
 Dies ist ein prototypischer
 Code aus der imperativen Programmierung.
 
-0:09:01.190,0:09:03.210
-Das könnte also
-C oder Java sein.
+00:09:01,190 --> 00:09:03,210
+Das könnte also C oder Java sein.
 
-0:09:03.210,0:09:10.960
+00:09:03,210 --> 00:09:10,960
 Es könnte auch Python sein, mit ein wenig
 Manipulation oder ein paar Änderungen in der Syntax.
 
-0:09:10.960,0:09:13.400
+00:09:10,960 --> 00:09:13,400
 Natürlich haben wir
 hier auch Ausdrücke, richtig?
 
-0:09:13.400,0:09:16.910
+00:09:13,400 --> 00:09:16,910
 Also, ich meine: Diese
 Konstante ist ein Ausdruck.
 
-0:09:16.910,0:09:20.000
+00:09:16,910 --> 00:09:20,000
 Dieser Zusatz hier sieht
 aus wie ein Ausdruck.
 
-0:09:20.000,0:09:22.660
+00:09:20,000 --> 00:09:22,660
 Wir haben Ausdrücke in
 der Bedingung dieser while-Schleife.
 
-0:09:22.660,0:09:28.830
+00:09:22,660 --> 00:09:28,830
 Hier haben wir wieder einen
 arithmetischen Ausdruck, der etwas ausrechnet.
 
-0:09:28.830,0:09:33.690
-Also, was
-ist jetzt anders?
+00:09:28,830 --> 00:09:33,690
+Also, was ist jetzt anders?
 
-0:09:33.690,0:09:39.320
+00:09:33,690 --> 00:09:39,320
 Nun, der Punkt ist, dass es natürlich
 auch hier Ausdrücke gibt, aber sie sind nicht
 
-0:09:39.320,0:09:41.190
-das dominierende
-syntaktische Konstrukt.
+00:09:39,320 --> 00:09:41,190
+das dominierende syntaktische Konstrukt.
 
-0:09:41.190,0:09:45.870
+00:09:41,190 --> 00:09:45,870
 Es gibt eine Menge Dinge in
 diesem Stück Programmcode, die keine Ausdrücke sind.
 
-0:09:45.870,0:09:50.120
+00:09:45,870 --> 00:09:50,120
 Zum Beispiel ist
 "while" ein Schlüsselwort.
 
-0:09:50.120,0:09:55.230
-Die Zuweisung hier
-ist ein Befehl.
+00:09:50,120 --> 00:09:55,230
+Die Zuweisung hier ist ein Befehl.
 
-0:09:55.230,0:10:01.730
+00:09:55,230 --> 00:10:01,730
 Auf der rechten Seite haben wir einen Ausdruck,
 aber als Ganzes ist diese Zeile hier kein Ausdruck.
 
-0:10:01.730,0:10:10.630
+00:10:01,730 --> 00:10:10,630
 Es stimmt also nicht, dass alles syntaktisch aus
 der gleichen Art von Konstrukt besteht wie in
 
-0:10:10.630,0:10:16.190
+00:10:10,630 --> 00:10:16,190
 einer rein ausdrucksbasierten Sprache (und
 wie wirklich in der Mathematik).
 
-0:10:16.190,0:10:23.270
-Warum ist
-das relevant?
+00:10:16,190 --> 00:10:23,270
+Warum ist das relevant?
 
-0:10:23.270,0:10:29.340
+00:10:23,270 --> 00:10:29,340
 Welche Eigenschaften haben Befehle nicht,
 die wir von Ausdrücken kennen?
 
-0:10:29.340,0:10:31.940
-Nun, sie
-sind nicht kompositionell.
+00:10:29,340 --> 00:10:31,940
+Nun, sie sind nicht kompositionell.
 
-0:10:31.940,0:10:38.820
+00:10:31,940 --> 00:10:38,820
 Es ist also nicht so, dass wenn man
 einen Befehl hat, dann sind alle seine kleineren
 
-0:10:38.820,0:10:42.620
-Teile
-selbst Befehle.
+00:10:38,820 --> 00:10:42,620
+Teile selbst Befehle.
 
-0:10:42.620,0:10:45.280
-Das ist schon in
-diesem Ding nicht wahr:
+00:10:42,620 --> 00:10:45,280
+Das ist schon in diesem Ding nicht wahr:
 
-0:10:45.280,0:10:50.050
+00:10:45,280 --> 00:10:50,050
 Diese Schleife ist sicherlich ein Befehl,
 als Ganzes, und es gibt Befehle darin.
 
-0:10:50.050,0:10:54.230
-Aber z.B. das
-hier ist kein Befehl.
+00:10:50,050 --> 00:10:54,230
+Aber z.B. das hier ist kein Befehl.
 
-0:10:54.230,0:11:00.380
+00:10:54,230 --> 00:11:00,380
 Wir haben Ausdrücke, Schlüsselwörter usw.,
 wie auf der vorherigen Folie hervorgehoben.
 
-0:11:00.380,0:11:06.070
+00:11:00,380 --> 00:11:06,070
 Außerdem haben Befehle nicht
 immer einen sinnvollen Typ.
 
-0:11:06.070,0:11:12.830
+00:11:06,070 --> 00:11:12,830
 Es ist zum Beispiel nicht klar,
 was der Typ dieses Befehls ist.
 
-0:11:12.830,0:11:14.820
-Er berechnet nicht
-wirklich einen Wert.
+00:11:12,830 --> 00:11:14,820
+Er berechnet nicht wirklich einen Wert.
 
-0:11:14.820,0:11:17.370
-In der Tat
-hat er keinen Wert.
+00:11:14,820 --> 00:11:17,370
+In der Tat hat er keinen Wert.
 
-0:11:17.370,0:11:19.170
+00:11:17,370 --> 00:11:19,170
 Einige Ausdrücke hier
 haben also einen Wert.
 
-0:11:19.170,0:11:24.370
+00:11:19,170 --> 00:11:24,370
 Dies, zum Beispiel, wird, je nachdem, was
 "b" ist, zu "wahr" oder "falsch" ausgewertet.
 
-0:11:24.370,0:11:27.330
+00:11:24,370 --> 00:11:27,330
 Aber die Schleife als
 Ganzes hat keinen Wert.
 
-0:11:27.330,0:11:32.570
+00:11:27,330 --> 00:11:32,570
 Es gibt keine wirklich sinnvolle Möglichkeit
 zu sagen, was der Wert sein soll.
 
-0:11:32.570,0:11:35.380
-Oder es wäre
-ein trivialer Wert.
+00:11:32,570 --> 00:11:35,380
+Oder es wäre ein trivialer Wert.
 
-0:11:35.380,0:11:40.420
+00:11:35,380 --> 00:11:40,420
 Dasselbe gilt für einige Teilblöcke: Nehmen wir
 nur den Block von hier bis hier.
 
-0:11:40.420,0:11:45.430
+00:11:40,420 --> 00:11:45,430
 Das ist eine Folge von Anweisungen, aber
 es ist nicht etwas, das einen Wert hat.
 
-0:11:45.430,0:11:46.430
-Warum
-eigentlich?
+00:11:45,430 --> 00:11:46,430
+Warum eigentlich?
 
-0:11:46.430,0:11:49.980
+00:11:46,430 --> 00:11:49,980
 Weil es bei einem Befehl
 darauf ankommt, welche Wirkung er hat.
 
-0:11:49.980,0:11:56.300
+00:11:49,980 --> 00:11:56,300
 Wenn Sie sich also diese Zuweisung hier
 ansehen, ist das Interessante für den Programmierer,
 
-0:11:56.300,0:12:00.660
+00:11:56,300 --> 00:12:00,660
 dass j danach einen
 anderen Wert hat als vorher.
 
-0:12:00.660,0:12:04.390
+00:12:00,660 --> 00:12:04,390
 Aber die Anweisung selbst
 hat keinen interessanten Wert.
 
-0:12:04.390,0:12:15.750
+00:12:04,390 --> 00:12:15,750
 Eine weitere Folge dieser fehlenden Kompositionalität ist, dass
 wir nicht, wie früher in der Mathematik, beliebige wohlgeformte
 
-0:12:15.750,0:12:19.420
-kleinere Teile
-benennen können.
+00:12:15,750 --> 00:12:19,420
+kleinere Teile benennen können.
 
-0:12:19.420,0:12:24.320
+00:12:19,420 --> 00:12:24,320
 Wir können also das
 vorherige Beispiel nicht so schreiben.
 
-0:12:24.320,0:12:31.630
+00:12:24,320 --> 00:12:31,630
 Vorher hatten wir diese Schleife: while something
 ... und dann hatten wir diesen Codeblock.
 
-0:12:31.630,0:12:40.250
+00:12:31,630 --> 00:12:40,250
 Und wir können nicht wirklich, in den meisten imperativen
 Sprachen, diesem Codeblock einen Namen geben, und dann einfach
 
-0:12:40.250,0:12:41.350
-den Namen
-hier erwähnen.
+00:12:40,250 --> 00:12:41,350
+den Namen hier erwähnen.
 
-0:12:41.350,0:12:44.460
-Denn dies
-ist kein Ausdruck.
+00:12:41,350 --> 00:12:44,460
+Denn dies ist kein Ausdruck.
 
-0:12:44.460,0:12:51.320
+00:12:44,460 --> 00:12:51,320
 In C oder Java oder Python sind die
 Dinge, die Sie als Ausdrücke betrachten würden, die
 
-0:12:51.320,0:12:55.510
+00:12:51,320 --> 00:12:55,510
 Dinge, die Sie auf die
 rechte Seite einer Zuweisungsanweisung schreiben können.
 
-0:12:55.510,0:12:59.320
+00:12:55,510 --> 00:12:59,320
 Und so etwas wie das hier
 ist nichts, was Sie schreiben könnten.
 
-0:12:59.320,0:13:01.790
+00:12:59,320 --> 00:13:01,790
 Natürlich ist dieser
 Block kein Ausdruck.
 
-0:13:01.790,0:13:02.790
-Er hat
-keinen Wert.
+00:13:01,790 --> 00:13:02,790
+Er hat keinen Wert.
 
-0:13:02.790,0:13:08.500
-Er hat keinen
-sinnvollen Typ, etc.
+00:13:02,790 --> 00:13:08,500
+Er hat keinen sinnvollen Typ, etc.
 
-0:13:08.500,0:13:09.640
+00:13:08,500 --> 00:13:09,640
 Sie könnten
 einige Workarounds ausprobieren.
 
-0:13:09.640,0:13:16.010
+00:13:09,640 --> 00:13:16,010
 Sie könnten Funktionen, Prozeduren, Methoden verwenden,
 je nach der spezifischen Sprache, in der
 
-0:13:16.010,0:13:17.360
-Sie versuchen,
-dies zu tun.
+00:13:16,010 --> 00:13:17,360
+Sie versuchen, dies zu tun.
 
-0:13:17.360,0:13:23.920
+00:13:17,360 --> 00:13:23,920
 Sie könnten also versuchen, eine neue
 Prozedur einzuführen, die im Wesentlichen diesem Codeblock
 
-0:13:23.920,0:13:25.020
-hier
-entspricht.
+00:13:23,920 --> 00:13:25,020
+hier entspricht.
 
-0:13:25.020,0:13:29.430
+00:13:25,020 --> 00:13:29,430
 Aber selbst dann erhalten Sie nicht die gleiche Art
 von Flexibilität, die wir aus der Mathematik gewohnt sind.
 
-0:13:29.430,0:13:35.550
+00:13:29,430 --> 00:13:35,550
 Dort können wir einfach irgendeinen Ausdruck nehmen, ihm
 einen Namen geben und die Notation in diesem
 
-0:13:35.550,0:13:40.760
-Sinne hier
-verwenden und verstehen.
+00:13:35,550 --> 00:13:40,760
+Sinne hier verwenden und verstehen.
 
-0:13:40.760,0:13:48.490
+00:13:40,760 --> 00:13:48,490
 Was ist nun mit den Ausdrücken, die
 in C oder Java oder Python vorkommen?
 
-0:13:48.490,0:13:53.040
+00:13:48,490 --> 00:13:53,040
 Also, auch wenn nicht alles ein Ausdruck
 ist, so wissen wir zumindest, dass es auch
 
-0:13:53.040,0:13:54.300
-in diesen
-Sprachen Ausdrücke gibt.
+00:13:53,040 --> 00:13:54,300
+in diesen Sprachen Ausdrücke gibt.
 
-0:13:54.300,0:13:59.940
+00:13:54,300 --> 00:13:59,940
 Die Dinge, die auf den rechten
 Seiten eines Zuweisungsbefehls vorkommen, zum Beispiel.
 
-0:13:59.940,0:14:01.710
-Was ist
-mit diesen Ausdrücken?
+00:13:59,940 --> 00:14:01,710
+Was ist mit diesen Ausdrücken?
 
-0:14:01.710,0:14:07.260
+00:14:01,710 --> 00:14:07,260
 Betrachten wir die Subsprache, die nur Ausdrücke
 in etwas wie C oder Java enthält.
 
-0:14:07.260,0:14:09.620
+00:14:07,260 --> 00:14:09,620
 Können sie zumindest so behandelt werden,
 wie wir es vorher gesehen haben?
 
-0:14:09.620,0:14:16.040
+00:14:09,620 --> 00:14:16,040
 Bekommen wir also unsere mathematischen Prinzipien zurück,
 wenn wir uns nur auf den Ausdrucksteil einer
 
-0:14:16.040,0:14:17.080
-imperativen
-Sprache konzentrieren?
+00:14:16,040 --> 00:14:17,080
+imperativen Sprache konzentrieren?
 
-0:14:17.080,0:14:21.880
+00:14:17,080 --> 00:14:21,880
 Nun, ich behaupte hier, dass
 das nicht der Fall ist.
 
-0:14:21.880,0:14:22.880
-Warum ist
-das so?
+00:14:21,880 --> 00:14:22,880
+Warum ist das so?
 
-0:14:22.880,0:14:24.730
-Nun, schauen wir
-uns ein Beispiel an.
+00:14:22,880 --> 00:14:24,730
+Nun, schauen wir uns ein Beispiel an.
 
-0:14:24.730,0:14:32.500
+00:14:24,730 --> 00:14:32,500
 Es ist hier ein wenig verworren, entspricht aber eigentlich
 etwas Ähnlichem, das wir zuvor mit konkreten Zahlen und
 
-0:14:32.500,0:14:33.970
-Konstanten
-gesehen haben.
+00:14:32,500 --> 00:14:33,970
+Konstanten gesehen haben.
 
-0:14:33.970,0:14:40.510
+00:14:33,970 --> 00:14:40,510
 Sehen wir uns also einen Ausdruck wie
 diesen an, der aus Ausdrücken aufgebaut ist: "subexpression1
 
-0:14:40.510,0:14:44.140
-+ subexpression2
-× (expression3)^2".
+00:14:40,510 --> 00:14:44,140
++ subexpression2 × (expression3)^2".
 
-0:14:44.140,0:14:48.090
+00:14:44,140 --> 00:14:48,090
 Wir haben das vorher mit Konstanten
 und etwas x + 1 hier gesehen.
 
-0:14:48.090,0:14:54.820
+00:14:48,090 --> 00:14:54,820
 Mathematisch gesehen wissen wir, dass es hier drei
 äquivalente Möglichkeiten gibt, diesen Teil von Ausdrücken zu schreiben.
 
-0:14:54.820,0:15:04.050
+00:14:54,820 --> 00:15:04,050
 So könnten wir zum Beispiel wirklich sagen, benennen
 Sie diesen Ausdruck mit irgendeinem Variablennamen und quadrieren
 
-0:15:04.050,0:15:06.730
-Sie einfach
-diese Variable.
+00:15:04,050 --> 00:15:06,730
+Sie einfach diese Variable.
 
-0:15:06.730,0:15:10.840
+00:15:06,730 --> 00:15:10,840
 Oder wir könnten sagen, das Quadrieren dieser Variable
 ist dasselbe wie das Schreiben von Variable × Variable.
 
-0:15:10.840,0:15:17.590
+00:15:10,840 --> 00:15:17,590
 Oder wir könnten tatsächlich vermeiden, den Unterausdruck
 zu benennen, und diesen Unterausdruck hier einfach wirklich
 
-0:15:17.590,0:15:18.590
-
+00:15:17,590 --> 00:15:18,590
 wiederholen.
 
-0:15:18.590,0:15:22.630
+00:15:18,590 --> 00:15:22,630
 Also: "exp1 + exp2 × exp3 × exp3".
 
-0:15:22.630,0:15:29.290
+00:15:22,630 --> 00:15:29,290
 Das sollte auch mathematisch
 äquivalent zu diesem Codestück sein.
 
-0:15:29.290,0:15:31.680
-Aber stimmt
-das auch?
+00:15:29,290 --> 00:15:31,680
+Aber stimmt das auch?
 
-0:15:31.680,0:15:37.190
+00:15:31,680 --> 00:15:37,190
 In einer imperativen Umgebung, wenn wir
 dies zum Beispiel als rechte Seite einer
 
-0:15:37.190,0:15:43.550
+00:15:37,190 --> 00:15:43,550
 Zuweisungsanweisung haben, also genau denselben Ausdruck
 wie hier, und dann könnte dieses "Benennen
 
-0:15:43.550,0:15:47.550
+00:15:43,550 --> 00:15:47,550
 eines Unterausdrucks" theoretisch so
 ausgedrückt werden, dass es heißt:
 
-0:15:47.550,0:15:52.040
+00:15:47,550 --> 00:15:52,040
 Nun, weisen wir den Wert
 des Unterausdrucks einer Variablen zu.
 
-0:15:52.040,0:15:54.880
+00:15:52,040 --> 00:15:54,880
 (Sie sollte natürlich
 im Gültigkeitsbereich sein.)
 
-0:15:54.880,0:16:01.760
+00:15:54,880 --> 00:16:01,760
 Und dann haben wir, im Sinne
 dieser ersten Zeile hier, zum Beispiel diesen
 
-0:16:01.760,0:16:09.200
+00:16:01,760 --> 00:16:09,200
 rechtsseitigen Ausdruck für unsere Ergebniszuweisung, in
 dem wir den Wert dieser Variablen quadrieren.
 
-0:16:09.200,0:16:19.200
+00:16:09,200 --> 00:16:19,200
 Das sieht aus wie der
 Schritt von dieser zu dieser Zeile.
 
-0:16:19.200,0:16:30.560
+00:16:19,200 --> 00:16:30,560
 Oder wir könnten das Gleiche
 für diese beiden anderen Zeilen versuchen.
 
-0:16:30.560,0:16:35.810
+00:16:30,560 --> 00:16:35,810
 Ist dies eine gültige Transformation
 in C oder Java oder Python?
 
-0:16:35.810,0:16:40.230
-Nein, ist
-es nicht.
+00:16:35,810 --> 00:16:40,230
+Nein, ist es nicht.
 
-0:16:40.230,0:16:46.120
+00:16:40,230 --> 00:16:46,120
 Lassen Sie uns diese
 vier Zeilen hier betrachten.
 
-0:16:46.120,0:16:54.440
+00:16:46,120 --> 00:16:54,440
 Jede von ihnen entspricht einer der hypothetischen
 Umformulierungen des Ausdrucks, den wir auf der vorherigen
 
-0:16:54.440,0:16:58.020
+00:16:54,440 --> 00:16:58,020
 Folie gesehen haben,
 auf der mathematischen Ebene.
 
-0:16:58.020,0:17:05.760
+00:16:58,020 --> 00:17:05,760
 Und nun können wir sie in einer imperativen
 Sprache ausprobieren und sehen, ob sie sich gleich
 
-0:17:05.760,0:17:06.760
-
+00:17:05,760 --> 00:17:06,760
 verhalten.
 
-0:17:06.760,0:17:13.791
+00:17:06,760 --> 00:17:13,791
 In dem Sinne, dass ich in einem beliebigen größeren
 Programm die Zeile wie diese durch eine Zeile wie diese
 
-0:17:13.791,0:17:20.379
+00:17:13,791 --> 00:17:20,379
 oder diese oder diese ersetzen könnte, um
 zu sehen, ob ich das gleiche Programmverhalten habe.
 
-0:17:20.379,0:17:26.860
+00:17:20,379 --> 00:17:26,860
 Und wenn Sie das ausprobieren, werden Sie feststellen,
 dass sich von diesen vier Zeilen eigentlich nur
 
-0:17:26.860,0:17:31.100
+00:17:26,860 --> 00:17:31,100
 die zweite und dritte
 Zeile wirklich gleich verhalten werden.
 
-0:17:31.100,0:17:41.080
+00:17:31,100 --> 00:17:41,080
 Welches andere Zeilenpaar Sie auch immer wählen,
 Sie werden Ausdrücke wählen können, und vielleicht Variablenwerte,
 
-0:17:41.080,0:17:46.670
+00:17:41,080 --> 00:17:46,670
 die in diesen Ausdrücken verwendet werden, oder
 Funktionsaufrufe, die in diesen Ausdrücken vorkommen, und durch
 
-0:17:46.670,0:17:54.390
+00:17:46,670 --> 00:17:54,390
 bestimmte Implementierungen von Prozeduren und Funktionen
 ersetzt werden oder an diese gebunden
 
-0:17:54.390,0:18:00.340
+00:17:54,390 --> 00:18:00,340
 sind, und Sie
 werden Unterschiede beobachten können.
 
-0:18:00.340,0:18:06.129
+00:18:00,340 --> 00:18:06,129
 Die Art und Weise, wie Sie sich davon
 überzeugen können, wäre, das exp3 (der Ausdruck, dem wir
 
-0:18:06.129,0:18:12.960
+00:18:06,129 --> 00:18:12,960
 einen Namen geben wollten) zu ersetzen, und dann
 wiederzuverwenden, zum Beispiel in diesen Zeilen hier:
 
-0:18:12.960,0:18:19.879
+00:18:12,960 --> 00:18:19,879
 Stellen Sie sich vor, dass exp3 der sogenannte
 Ausdruck "i++" ist, der nicht wirklich ein Ausdruck ist.
 
-0:18:19.879,0:18:20.960
-Es ist
-eigentlich eine Anweisung.
+00:18:19,879 --> 00:18:20,960
+Es ist eigentlich eine Anweisung.
 
-0:18:20.960,0:18:30.520
+00:18:20,960 --> 00:18:30,520
 Es ist ein Befehl, den Wert der Variablen
 "i" zu inkrementieren, die irgendwie im Gültigkeitsbereich sein
 
-0:18:30.520,0:18:31.520
-
+00:18:30,520 --> 00:18:31,520
 sollte.
 
-0:18:31.520,0:18:37.750
+00:18:31,520 --> 00:18:37,750
 Und wenn Sie sich zum Beispiel die erste
 Zeile und die letzte Zeile anschauen, dann werden
 
-0:18:37.750,0:18:43.940
+00:18:37,750 --> 00:18:43,940
 Sie sehen, dass hier das "i" einmal
 inkrementiert wird, und hier das "i" zweimal.
 
-0:18:43.940,0:18:48.700
+00:18:43,940 --> 00:18:48,700
 Das ist schon ein beobachtbarer Unterschied
 von Anfang an bei diesem Ausdruck oder
 
-0:18:48.700,0:18:49.700
-diesen
-kleinen Programmteilen.
+00:18:48,700 --> 00:18:49,700
+diesen kleinen Programmteilen.
 
-0:18:49.700,0:18:51.269
-Sie sind
-also nicht austauschbar.
+00:18:49,700 --> 00:18:51,269
+Sie sind also nicht austauschbar.
 
-0:18:51.269,0:18:53.789
-Und das Gleiche
-gilt für andere Paare.
+00:18:51,269 --> 00:18:53,789
+Und das Gleiche gilt für andere Paare.
 
-0:18:53.789,0:18:59.289
+00:18:53,789 --> 00:18:59,289
 Oder, Sie brauchen keine Zustandsmanipulationen, Sie
 brauchen keine Aktualisierung einer Variablen zu haben.
 
-0:18:59.289,0:19:05.669
+00:18:59,289 --> 00:19:05,669
 Sie könnten einfach einen Funktionsaufruf zu etwas
 haben, das vordergründig eine Funktion ist, aber
 
-0:19:05.669,0:19:07.880
+00:19:05,669 --> 00:19:07,880
 eigentlich keine Funktion
 im mathematischen Sinne ist.
 
-0:19:07.880,0:19:13.159
+00:19:07,880 --> 00:19:13,159
 Eine Prozedur in Ihrer Sprache,
 die einen globalen Zustand verändern könnte.
 
-0:19:13.159,0:19:19.779
+00:19:13,159 --> 00:19:19,779
 Es könnte eine Methode sein, die Sie auf
 einem Objekt aufrufen, und die Instanzvariablen des Objekts ändert.
 
-0:19:19.779,0:19:27.070
+00:19:19,779 --> 00:19:27,070
 Dann wiederum können Sie, wenn Sie diese erste
 Zeile und die letzte Zeile nehmen, Unterschiede feststellen.
 
-0:19:27.070,0:19:34.299
+00:19:27,070 --> 00:19:34,299
 Oder "f" ist eine Prozedur, die eine Eingabe/Ausgabe
 vornimmt, wie in den Beispielen "print" oder "read", die
 
-0:19:34.299,0:19:36.480
+00:19:34,299 --> 00:19:36,480
 ich in einem
 früheren Video besprochen habe.
 
-0:19:36.480,0:19:42.350
+00:19:36,480 --> 00:19:42,350
 Auch hier wird sich
 einfach die Semantik ändern.
 
-0:19:42.350,0:19:47.260
+00:19:42,350 --> 00:19:47,260
 Und das liegt daran, dass es
 sich hier nicht um pure Ausdrücke handelt.
 
-0:19:47.260,0:19:50.600
+00:19:47,260 --> 00:19:50,600
 Denn in einer imperativen Sprache
 haben wir keine puren Ausdrücke.
 
-0:19:50.600,0:19:52.940
+00:19:50,600 --> 00:19:52,940
 Wir haben diese Ausdrücke,
 die einen Seiteneffekt haben.
 
-0:19:52.940,0:19:55.610
-Die eigentlich
-Befehle sind.
+00:19:52,940 --> 00:19:55,610
+Die eigentlich Befehle sind.
 
-0:19:55.610,0:20:01.309
+00:19:55,610 --> 00:20:01,309
 Wir können also Teile von
 Ausdrücken nicht willkürlich oder frei benennen.
 
-0:20:01.309,0:20:05.539
-Das ist das
-eigentliche Problem hier.
+00:20:01,309 --> 00:20:05,539
+Das ist das eigentliche Problem hier.
 
-0:20:05.539,0:20:11.690
+00:20:05,539 --> 00:20:11,690
 Dass selbst die Subsprache der Ausdrücke
 in einer imperativen Sprache nicht ausdrucksbasiert
 
-0:20:11.690,0:20:13.750
+00:20:11,690 --> 00:20:13,750
 ist, im Sinne
 von mathematischen Ausdrücken.
 
-0:20:13.750,0:20:20.071
+00:20:13,750 --> 00:20:20,071
 Obwohl diese Zeilen hier also
 aus scheinbar mathematischen Äquivalenzen stammen,
 
-0:20:20.071,0:20:25.259
-sind sie
-keine Programmäquivalenzen.
+00:20:20,071 --> 00:20:25,259
+sind sie keine Programmäquivalenzen.
 
-0:20:25.259,0:20:32.870
+00:20:25,259 --> 00:20:32,870
 Und aus demselben Grund kann z. B.
 die Neuauswertung eines Ausdrucks zu unterschiedlichen Werten führen.
 
-0:20:32.870,0:20:37.889
+00:20:32,870 --> 00:20:37,889
 Oder die Reihenfolge der Auswertung von Unterausdrücken
 wird relevant, denn wir haben ja nicht
 
-0:20:37.889,0:20:38.889
-wirklich
-Funktionen.
+00:20:37,889 --> 00:20:38,889
+wirklich Funktionen.
 
-0:20:38.889,0:20:44.750
+00:20:38,889 --> 00:20:44,750
 Eine mathematische Funktion wäre eine, bei der man
 immer, wenn man die Funktion mit der gleichen
 
-0:20:44.750,0:20:45.970
+00:20:44,750 --> 00:20:45,970
 Eingabe aufruft, die
 gleiche Ausgabe erhält.
 
-0:20:45.970,0:20:50.899
+00:20:45,970 --> 00:20:50,899
 Aber für eine Prozedur, für eine Methode in
 einer imperativen Sprache, ist das nicht unbedingt der Fall.
 
-0:20:50.899,0:20:55.690
+00:20:50,899 --> 00:20:55,690
 Sie müssen nur an
 die "read" Funktion/Methode/Prozedur denken.
 
-0:20:55.690,0:21:00.780
+00:20:55,690 --> 00:21:00,780
 Sie können sie 10 Mal aufrufen,
 und Sie können 10 verschiedene Ergebnisse erhalten.
 
-0:21:00.780,0:21:09.139
+00:21:00,780 --> 00:21:09,139
 Das widerspricht eindeutig jedem Argument
 über die Äquivalenz von syntaktischen Ausdrücken.
 
-0:21:09.139,0:21:19.049
+00:21:09,139 --> 00:21:19,049
 Eine natürliche Frage ist
 nun: Wie schlecht ist das?
 
-0:21:19.049,0:21:21.070
-Oder ist
-es überhaupt schlecht?
+00:21:19,049 --> 00:21:21,070
+Oder ist es überhaupt schlecht?
 
-0:21:21.070,0:21:27.980
+00:21:21,070 --> 00:21:27,980
 Ich habe Ihnen recht künstliche Beispiele gezeigt,
 die zeigen, dass man in einer typisch nicht-puren,
 
-0:21:27.980,0:21:33.480
+00:21:27,980 --> 00:21:33,480
 imperativen Sprache Ausdrücke oder Unterausdrücke
 nicht durch ihren Wert charakterisieren kann.
 
-0:21:33.480,0:21:37.860
+00:21:33,480 --> 00:21:37,860
 Wir haben also keine Eigenschaften,
 die wir aus der Mathematik kennen.
 
-0:21:37.860,0:21:42.620
+00:21:37,860 --> 00:21:42,620
 Wo wir Unterausdrücke in
 einem Term benennen können.
 
-0:21:42.620,0:21:45.639
-Wo wir Ausdrücke
-neu anordnen können.
+00:21:42,620 --> 00:21:45,639
+Wo wir Ausdrücke neu anordnen können.
 
-0:21:45.639,0:21:52.860
+00:21:45,639 --> 00:21:52,860
 Wo wir jeden Ausdruck durch einen anderen Ausdruck
 ersetzen können, wenn er den gleichen Wert hat.
 
-0:21:52.860,0:21:59.429
+00:21:52,860 --> 00:21:59,429
 All diese Eigenschaften, oft auch "referenzielle
 Transparenz" genannt, treffen also in einer
 
-0:21:59.429,0:22:02.809
+00:21:59,429 --> 00:22:02,809
 typischen nicht-puren Sprache
 mit Seiteneffekten nicht zu.
 
-0:22:02.809,0:22:04.450
-Aber beweist
-das irgendetwas?
+00:22:02,809 --> 00:22:04,450
+Aber beweist das irgendetwas?
 
-0:22:04.450,0:22:07.680
-Also, sollten wir
-uns die Mühe machen?
+00:22:04,450 --> 00:22:07,680
+Also, sollten wir uns die Mühe machen?
 
-0:22:07.680,0:22:10.159
+00:22:07,680 --> 00:22:10,159
 Nun, im Moment ist
 das nicht wirklich der Punkt.
 
-0:22:10.159,0:22:17.340
+00:22:10,159 --> 00:22:17,340
 Ich habe bisher nicht argumentiert, dass der
 reine ausdrucksbasierte Stil in irgendeiner Weise besser ist.
 
-0:22:17.340,0:22:24.010
+00:22:17,340 --> 00:22:24,010
 Das Argument, das ich vorgebracht habe, was
 jetzt hoffentlich klar ist (oder immer klarer
 
-0:22:24.010,0:22:26.820
+00:22:24,010 --> 00:22:26,820
 werden sollte), ist, dass
 diese beiden Stile unterschiedlich sind.
 
-0:22:26.820,0:22:30.370
+00:22:26,820 --> 00:22:30,370
 Ob einer von beiden besser
 ist, ist eine andere Frage.
 
-0:22:30.370,0:22:38.090
+00:22:30,370 --> 00:22:38,090
 Aber diese Beobachtung, dass Dinge, die wir aus
 der Mathematik und aus der Algebra, aus dem Umformen
 
-0:22:38.090,0:22:44.950
+00:22:38,090 --> 00:22:44,950
 von Formeln gewohnt sind, nicht direkt auf
 nicht-pure Programme in einer imperativen Sprache anwendbar sind.
 
-0:22:44.950,0:22:49.970
+00:22:44,950 --> 00:22:49,970
 Das ist etwas, was sie wirklich von der
 Mathematik oder von einem mathematischen Programmierstil (um den
 
-0:22:49.970,0:22:55.760
+00:22:49,970 --> 00:22:55,760
 es sowohl bei der funktionalen als auch
 bei der logischen Programmierung weitgehend gehen wird) trennt.
 
-0:22:55.760,0:23:03.110
+00:22:55,760 --> 00:23:03,110
 Was ich im Moment vermitteln wollte, ist
 dieser Unterschied, nicht ein Begriff von "besser".
 
-0:23:03.110,0:23:07.010
+00:23:03,110 --> 00:23:07,010
 Das ist eigentlich die
 Motivation für diesen Kurs.
 
-0:23:07.010,0:23:13.740
+00:23:07,010 --> 00:23:13,740
 Wobei das auf der anderen
 Seite auch recht abstrakt war.
 
-0:23:13.740,0:23:22.100
+00:23:13,740 --> 00:23:22,100
 Mein Plan ist also, dass ich neben den Folien
 hier noch einmal ein oder mehrere zusätzliche Videos machen
 
-0:23:22.100,0:23:23.100
-
+00:23:22,100 --> 00:23:23,100
 werde.
 
-0:23:23.100,0:23:29.690
+00:23:23,100 --> 00:23:29,690
 Wahrscheinlich wieder eines auf dem Whiteboard, in dem
 ich einige der Kompositionalitätsaspekte bespreche, die ich vorhin
 
-0:23:29.690,0:23:35.459
+00:23:29,690 --> 00:23:35,459
 erwähnt habe, und dann auch
 wieder ein Beispiel in CodeWorld.

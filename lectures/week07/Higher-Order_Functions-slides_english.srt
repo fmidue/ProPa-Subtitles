@@ -1,2133 +1,2134 @@
-0:00:01.770,0:00:03.670
+108 # slide
+00:00:01,770 --> 00:00:03,670
 Welcome back, everybody.
 
-0:00:03.670,0:00:09.320
+00:00:03,670 --> 00:00:09,320
 This week, we get to talk about what is called
 higher-order functions.
 
-0:00:09.320,0:00:14.370
+00:00:09,320 --> 00:00:14,370
 And when we say higher-order functions, then
 probably there is also something else like
 
-0:00:14.370,0:00:19.070
+00:00:14,370 --> 00:00:19,070
 a lower-order function; but actually, they
 are not called lower-order functions, but
 
-0:00:19.070,0:00:21.070
+00:00:19,070 --> 00:00:21,070
 rather first-order functions.
 
-0:00:21.070,0:00:25.960
+00:00:21,070 --> 00:00:25,960
 And almost everything you have seen so far
 of Haskell, and certainly everything you have
 
-0:00:25.960,0:00:30.610
+00:00:25,960 --> 00:00:30,610
 written yourself in Haskell (unless you have
 somehow done something in addition to this
 
-0:00:30.610,0:00:33.960
+00:00:30,610 --> 00:00:33,960
 lecture), have been first-order functions.
 
-0:00:33.960,0:00:38.240
+00:00:33,960 --> 00:00:38,240
 Now, higher-order functions are a very essential
 ingredient of the functional programming paradigm.
 
-0:00:38.240,0:00:45.890
+00:00:38,240 --> 00:00:45,890
 Actually, if we had only first-order functions,
 then the paradigm wouldn't be so interesting.
 
-0:00:45.890,0:00:54.590
+00:00:45,890 --> 00:00:54,590
 Higher-order functions are what basically
 gets us from programming *of* functions to
 
-0:00:54.590,0:00:59.320
+00:00:54,590 --> 00:00:59,320
 actually programming *with* functions and
 programming *on* functions, so, dealing with
 
-0:00:59.320,0:01:06.509
+00:00:59,320 --> 00:01:06,509
 functions themselves as ingredients, in a
 sense, as data on which we can program further
 
-0:01:06.509,0:01:07.509
+00:01:06,509 --> 00:01:07,509
 functions.
 
-0:01:07.509,0:01:10.530
+00:01:07,509 --> 00:01:10,530
 So, that is what higher-order is about.
 
-0:01:10.530,0:01:14.939
+00:01:10,530 --> 00:01:14,939
 And you have already seen a few higher-order
 functions, maybe without explicitly noticing
 
-0:01:14.939,0:01:15.939
+00:01:14,939 --> 00:01:15,939
 it.
 
-0:01:15.939,0:01:19.999
+00:01:15,939 --> 00:01:19,999
 Because you didn't have to do anything with
 them other than simply leave them as they
 
-0:01:19.999,0:01:21.530
+00:01:19,999 --> 00:01:21,530
 were given in the task templates.
 
-0:01:21.530,0:01:26.020
+00:01:21,530 --> 00:01:26,020
 Here I will briefly remind you of these instances.
 
-0:01:26.020,0:01:30.859
+00:01:26,020 --> 00:01:30,859
 And then we will look at a few, probably,
 somewhat bizarre looking examples first.
 
-0:01:30.859,0:01:36.591
+00:01:30,859 --> 00:01:36,591
 Also, there is certain new syntax that becomes
 important when we want to program with higher-order
 
-0:01:36.591,0:01:37.591
+00:01:36,591 --> 00:01:37,591
 functions.
 
-0:01:37.591,0:01:38.591
+00:01:37,591 --> 00:01:38,591
 So, I have to introduce *this*.
 
-0:01:38.591,0:01:42.130
+00:01:38,591 --> 00:01:42,130
 And some of this will maybe look very strange
 at the beginning.
 
-0:01:42.130,0:01:48.759
+00:01:42,130 --> 00:01:48,759
 And then we will come back again to more useful
 cases, so, some things that you will actually
 
-0:01:48.759,0:01:56.439
+00:01:48,759 --> 00:01:56,439
 use in the exercises, or that are generally
 important for programming in Haskell.
 
-0:01:56.439,0:02:04.520
+00:01:56,439 --> 00:02:04,520
 As I have just said, so far, we have mainly
 dealt with first-order functions.
 
-0:02:04.520,0:02:09.890
+00:02:04,520 --> 00:02:09,890
 So, functions that take normal data as input
 arguments and ultimately return something
 
-0:02:09.890,0:02:11.580
+00:02:09,890 --> 00:02:11,580
 which is also normal data.
 
-0:02:11.580,0:02:18.280
+00:02:11,580 --> 00:02:18,280
 By "normal data" we mean things like lists,
 numbers, pairs, pairs of numbers, lists of
 
-0:02:18.280,0:02:19.840
+00:02:18,280 --> 00:02:19,840
 numbers, lists of pairs, etc.
 
-0:02:19.840,0:02:25.660
+00:02:19,840 --> 00:02:25,660
 It is concrete data that you can print and
 pass to another function, and the output may
 
-0:02:25.660,0:02:27.020
+00:02:25,660 --> 00:02:27,020
 be also printed.
 
-0:02:27.020,0:02:30.440
+00:02:27,020 --> 00:02:30,440
 So, if you think of functions that you have
 seen, actually the 'reverse' function:
 
-0:02:30.440,0:02:32.020
+00:02:30,440 --> 00:02:32,020
 You give it a list, it gives back a list.
 
-0:02:32.020,0:02:33.630
+00:02:32,020 --> 00:02:33,630
 That is a typical first-order function.
 
-0:02:33.630,0:02:35.800
+00:02:33,630 --> 00:02:35,800
 Or, the addition of numbers is a first-order
 function:
 
-0:02:35.800,0:02:38.280
+00:02:35,800 --> 00:02:38,280
 You give it two numbers, it gives you back
 a number.
 
-0:02:38.280,0:02:40.490
+00:02:38,280 --> 00:02:40,490
 That's first-order, normal data.
 
-0:02:40.490,0:02:46.400
+00:02:40,490 --> 00:02:46,400
 In a few occasions, we have actually at least
 got in touch already with higher-order
 
-0:02:46.400,0:02:48.320
+00:02:46,400 --> 00:02:48,320
 functions, namely 'quickCheck' and 'animationOf'.
 
-0:02:48.320,0:02:54.670
+00:02:48,320 --> 00:02:54,670
 So, if you think about 'quickCheck' as the
 driver of this testing approach, and 'animationOf'
 
-0:02:54.670,0:03:00.630
+00:02:54,670 --> 00:03:00,630
 as one of the main drivers of the CodeWorld
 approach (of this small language for describing
 
-0:03:00.630,0:03:04.630
+00:03:00,630 --> 00:03:04,630
 animations), these two are higher-order functions.
 
-0:03:04.630,0:03:06.390
+00:03:04,630 --> 00:03:06,390
 Because we passed other functions to them.
 
-0:03:06.390,0:03:10.800
+00:03:06,390 --> 00:03:10,800
 In the case of quickCheck, we didn't call
 this out very explicitly.
 
-0:03:10.800,0:03:13.460
+00:03:10,800 --> 00:03:13,460
 But actually, what we gave to 'quickCheck'
 were functions.
 
-0:03:13.460,0:03:19.230
+00:03:13,460 --> 00:03:19,230
 So, I mentioned that I give a property to
 quickCheck: something like expressing that
 
-0:03:19.230,0:03:25.470
+00:03:19,230 --> 00:03:25,470
 whenever we have two lists, then the length
 of their concatenation is the same as the
 
-0:03:25.470,0:03:27.140
+00:03:25,470 --> 00:03:27,140
 sum of the lengths.
 
-0:03:27.140,0:03:32.150
+00:03:27,140 --> 00:03:32,150
 That is something like "for all xs, for all
 ys, the following condition holds".
 
-0:03:32.150,0:03:33.840
+00:03:32,150 --> 00:03:33,840
 Well, this is really a predicate.
 
-0:03:33.840,0:03:35.000
+00:03:33,840 --> 00:03:35,000
 It is a function.
 
-0:03:35.000,0:03:41.280
+00:03:35,000 --> 00:03:41,280
 You give it normal data values like lists,
 and it gives you a Boolean value (True or
 
-0:03:41.280,0:03:42.280
+00:03:41,280 --> 00:03:42,280
 False).
 
-0:03:42.280,0:03:43.280
+00:03:42,280 --> 00:03:43,280
 So, it's a predicate.
 
-0:03:43.280,0:03:49.160
+00:03:43,280 --> 00:03:49,160
 And a predicate is a function from some domain
 to True and False (the Bool type).
 
-0:03:49.160,0:03:52.310
+00:03:49,160 --> 00:03:52,310
 And 'quickCheck' took such a predicate as an
 argument.
 
-0:03:52.310,0:04:02.120
+00:03:52,310 --> 00:04:02,120
 So, if 'quickCheck' is seen as a function, which
 it should be because what we are using here
 
-0:04:02.120,0:04:07.600
+00:04:02,120 --> 00:04:07,600
 from the QuickCheck library is a function;
 you give it a predicate, and it does something
 
-0:04:07.600,0:04:08.600
+00:04:07,600 --> 00:04:08,600
 with it.
 
-0:04:08.600,0:04:12.820
+00:04:08,600 --> 00:04:12,820
 It is a function to which you give another
 function (a predicate) as argument.
 
-0:04:12.820,0:04:15.600
+00:04:12,820 --> 00:04:15,600
 And similarly for 'animationOf'
 
-0:04:15.600,0:04:19.060
+00:04:15,600 --> 00:04:19,060
 If you remember: First, in CodeWorld, we programmed
 Pictures.
 
-0:04:19.060,0:04:24.900
+00:04:19,060 --> 00:04:24,900
 So, then we had something like simply a Picture,
 that is first-order data.
 
-0:04:24.900,0:04:26.979
+00:04:24,900 --> 00:04:26,979
 The first scene calls were using 'drawingOf'.
 
-0:04:26.979,0:04:30.729
+00:04:26,979 --> 00:04:30,729
 And to 'drawingOf' you gave a Picture and
 then it did something with it, namely, put
 
-0:04:30.729,0:04:31.770
+00:04:30,729 --> 00:04:31,770
 it on the screen.
 
-0:04:31.770,0:04:33.610
+00:04:31,770 --> 00:04:33,610
 For 'animationOf' we did something else.
 
-0:04:33.610,0:04:35.300
+00:04:33,610 --> 00:04:35,300
 We had to program a function.
 
-0:04:35.300,0:04:36.759
+00:04:35,300 --> 00:04:36,759
 And what did we do with this function?
 
-0:04:36.759,0:04:38.939
+00:04:36,759 --> 00:04:38,939
 We gave it to 'animationOf'.
 
-0:04:38.939,0:04:44.800
+00:04:38,939 --> 00:04:44,800
 So, we had something like "main = animationOf
 scene" (as an argument, the 'scene' function).
 
-0:04:44.800,0:04:49.389
+00:04:44,800 --> 00:04:49,389
 So, we had animations, functions from "time"
 to Picture.
 
-0:04:49.389,0:04:52.469
+00:04:49,389 --> 00:04:52,469
 And then we gave such a function to 'animationOf'.
 
-0:04:52.469,0:04:54.979
+00:04:52,469 --> 00:04:54,979
 So, 'animationOf' again was a function.
 
-0:04:54.979,0:04:58.729
+00:04:54,979 --> 00:04:58,729
 It took an argument which itself was a function.
 
-0:04:58.729,0:05:04.229
+00:04:58,729 --> 00:05:04,229
 This is the contrast here between 'animationOf'
 and 'drawingOf', for example, or 'quickCheck'
 
-0:05:04.229,0:05:08.819
+00:05:04,229 --> 00:05:08,819
 and other functions that we have seen.
 
-0:05:08.819,0:05:12.129
+00:05:08,819 --> 00:05:12,129
 So, let's indeed look at the type of 'animationOf'.
 
-0:05:12.129,0:05:17.650
+00:05:12,129 --> 00:05:17,650
 We could make a similar observation for 'quickCheck',
 but let's do it on 'animationOf'.
 
-0:05:17.650,0:05:18.650
+00:05:17,650 --> 00:05:18,650
 What do we have here?
 
-0:05:18.650,0:05:19.650
+00:05:18,650 --> 00:05:19,650
 So, this is the type.
 
-0:05:19.650,0:05:25.289
+00:05:19,650 --> 00:05:25,289
 I have never really shown that type in the
 lecture, and partly because you might have
 
-0:05:25.289,0:05:30.490
+00:05:25,289 --> 00:05:30,490
 been surprised at that point because we didn't
 have the concepts for talking about this.
 
-0:05:30.490,0:05:35.129
+00:05:30,490 --> 00:05:35,129
 But actually, if we do give the type, then
 unlike 'drawingOf', where we would simply
 
-0:05:35.129,0:05:41.099
+00:05:35,129 --> 00:05:41,099
 have "the argument as a Picture, and the outcome
 is: do something interactive, in this case,
 
-0:05:41.099,0:05:46.849
+00:05:41,099 --> 00:05:46,849
 drawing it to the browser window", now "animationOf"
 gets a function as argument.
 
-0:05:46.849,0:05:51.699
+00:05:46,849 --> 00:05:51,699
 So, what we are saying here is: the first
 argument of 'animationOf' is itself a function
 
-0:05:51.699,0:05:55.310
+00:05:51,699 --> 00:05:55,310
 from Double to Picture, and then there is
 some output.
 
-0:05:55.310,0:05:57.310
+00:05:55,310 --> 00:05:57,310
 The latter is the interactive aspect.
 
-0:05:57.310,0:06:02.150
+00:05:57,310 --> 00:06:02,150
 But the interesting bit is this part here,
 and in particular, that there are these brackets.
 
-0:06:02.150,0:06:11.550
+00:06:02,150 --> 00:06:11,550
 This is important here, to indicate that this
 whole part here constitutes the input, namely
 
-0:06:11.550,0:06:17.439
+00:06:11,550 --> 00:06:17,439
 the *input* is a function from Double to Picture;
 and not that 'animationOf' is a function somehow
 
-0:06:17.439,0:06:20.590
+00:06:17,439 --> 00:06:20,590
 of two arguments: Double and Picture, and
 then something comes out.
 
-0:06:20.590,0:06:22.319
+00:06:20,590 --> 00:06:22,319
 That would be a wrong way of reading it.
 
-0:06:22.319,0:06:23.589
+00:06:22,319 --> 00:06:23,589
 So, these brackets here are really important.
 
-0:06:23.589,0:06:29.340
+00:06:23,589 --> 00:06:29,340
 And we will come back to this syntax difference
 and its importance.
 
-0:06:29.340,0:06:33.970
+00:06:29,340 --> 00:06:33,970
 An important note here: Every function is
 a value, of course.
 
-0:06:33.970,0:06:37.779
+00:06:33,970 --> 00:06:37,779
 So, usually, you think about functions as
 taking values as arguments.
 
-0:06:37.779,0:06:42.620
+00:06:37,779 --> 00:06:42,620
 And once you realize that a function is itself
 also a value (mathematically), there is no
 
-0:06:42.620,0:06:47.020
+00:06:42,620 --> 00:06:47,020
 real surprise, maybe, that a function can
 take another function as an argument.
 
-0:06:47.020,0:06:52.479
+00:06:47,020 --> 00:06:52,479
 That may be a surprise only because in programming,
 we often cannot do this so simply.
 
-0:06:52.479,0:06:58.669
+00:06:52,479 --> 00:06:58,669
 But mathematically, if we accept (and we should)
 that every function is also a value, then
 
-0:06:58.669,0:07:02.809
+00:06:58,669 --> 00:07:02,809
 clearly, functions that can take values as
 arguments should also be allowed to take functions
 
-0:07:02.809,0:07:05.979
+00:07:02,809 --> 00:07:05,979
 as arguments (if the type allows this, like
 in this case).
 
-0:07:05.979,0:07:09.729
+00:07:05,979 --> 00:07:09,729
 Conversely, not every value is a function.
 
-0:07:09.729,0:07:16.830
+00:07:09,729 --> 00:07:16,830
 We have values in Haskell, like values of
 type Double, to which you cannot pass an argument.
 
-0:07:16.830,0:07:18.360
+00:07:16,830 --> 00:07:18,360
 So, Double itself is not a function.
 
-0:07:18.360,0:07:19.990
+00:07:18,360 --> 00:07:19,990
 "Double → Picture" is a function.
 
-0:07:19.990,0:07:26.460
+00:07:19,990 --> 00:07:26,460
 And to this function you can give an argument,
 like the time Double value 3.5.
 
-0:07:26.460,0:07:30.069
+00:07:26,460 --> 00:07:30,069
 But a value of type Double is of course not
 a function, so you cannot give an argument
 
-0:07:30.069,0:07:31.979
+00:07:30,069 --> 00:07:31,979
 to it.
 
-0:07:31.979,0:07:37.349
+00:07:31,979 --> 00:07:37,349
 That is a really important observation and
 thing to keep in mind:
 
-0:07:37.349,0:07:42.009
+00:07:37,349 --> 00:07:42,009
 Every function is a value, of course, mathematically
 speaking, and that's then embodied here in
 
-0:07:42.009,0:07:46.410
+00:07:42,009 --> 00:07:46,410
 how we can program with these entities. But
 not every value is a function.
 
-0:07:46.410,0:07:51.599
+00:07:46,410 --> 00:07:51,599
 So, saying something like: "Haskell is a functional
 language. So, everything in Haskell is a function."
 
-0:07:51.599,0:07:52.699
+00:07:51,599 --> 00:07:52,699
 ... that wouldn't be true.
 
-0:07:52.699,0:07:54.270
+00:07:52,699 --> 00:07:54,270
 So, we have to be careful of this.
 
-0:07:54.270,0:08:01.159
+00:07:54,270 --> 00:08:01,159
 Also, maybe when I talked about 'quickCheck'
 here, I almost stumbled about this.
 
-0:08:01.159,0:08:05.369
+00:08:01,159 --> 00:08:05,369
 Of course, we also have things that are not
 functions.
 
-0:08:05.369,0:08:11.689
+00:08:05,369 --> 00:08:11,689
 So, here is the type, again, of 'animationOf'.
 
-0:08:11.689,0:08:16.580
+00:08:11,689 --> 00:08:16,580
 And here more explicitly what I already said
 on the previous slide.
 
-0:08:16.580,0:08:21.849
+00:08:16,580 --> 00:08:21,849
 These brackets here are very important because
 without them, the type would mean something
 
-0:08:21.849,0:08:23.379
+00:08:21,849 --> 00:08:23,379
 completely different.
 
-0:08:23.379,0:08:32.130
+00:08:23,379 --> 00:08:32,130
 Remember that on the expression level, basically
 for data, for expressions, for values, we
 
-0:08:32.130,0:08:37.710
+00:08:32,130 --> 00:08:37,710
 (and also Autotool) somehow pushed you into
 the direction of using fewer brackets.
 
-0:08:37.710,0:08:39.930
+00:08:37,710 --> 00:08:39,930
 There were all of these warnings/suggestions
 like:
 
-0:08:39.930,0:08:43.960
+00:08:39,930 --> 00:08:43,960
 "You don't need brackets here, write it more
 simply with fewer brackets."
 
-0:08:43.960,0:08:47.200
+00:08:43,960 --> 00:08:47,200
 On the type level, for example between this
 type and this type, you will not get these
 
-0:08:47.200,0:08:49.480
+00:08:47,200 --> 00:08:49,480
 kinds of warnings because it would be completely
 wrong.
 
-0:08:49.480,0:08:51.870
+00:08:49,480 --> 00:08:51,870
 These mean completely different things.
 
-0:08:51.870,0:08:58.100
+00:08:51,870 --> 00:08:58,100
 This is a thing which takes a function as
 an argument and then something happens.
 
-0:08:58.100,0:09:03.190
+00:08:58,100 --> 00:09:03,190
 And this type here says: We have a function
 to which we give two normal values (two non-function
 
-0:09:03.190,0:09:09.200
+00:09:03,190 --> 00:09:09,200
 values), namely a Double (a number) and a
 Picture, and then something is drawn, for
 
-0:09:09.200,0:09:10.200
+00:09:09,200 --> 00:09:10,200
 example.
 
-0:09:10.200,0:09:14.390
+00:09:10,200 --> 00:09:14,390
 So, with this 'animationOf' version in the
 second line here, you could only provide a
 
-0:09:14.390,0:09:17.010
+00:09:14,390 --> 00:09:17,010
 number and a fixed Picture.
 
-0:09:17.010,0:09:18.710
+00:09:17,010 --> 00:09:18,710
 That wouldn't be the basis for an actual animation.
 
-0:09:18.710,0:09:20.700
+00:09:18,710 --> 00:09:20,700
 For that, we need a function.
 
-0:09:20.700,0:09:24.220
+00:09:20,700 --> 00:09:24,220
 And the brackets here explain/indicate this.
 
-0:09:24.220,0:09:30.430
+00:09:24,220 --> 00:09:30,430
 So, these brackets here are very significant
 and can't be omitted.
 
-0:09:30.430,0:09:38.830
+00:09:30,430 --> 00:09:38,830
 And to drive home this point, I will discuss
 this on a simpler example where we don't have
 
-0:09:38.830,0:09:42.560
+00:09:38,830 --> 00:09:42,560
 this strange 'IO' here, which maybe also confuses
 you.
 
-0:09:42.560,0:09:47.400
+00:09:42,560 --> 00:09:47,400
 So, I will make an example where we have just
 numbers, but the same kind of difference between
 
-0:09:47.400,0:09:52.080
+00:09:47,400 --> 00:09:52,080
 something like this and something like this
 will appear.
 
-0:09:52.080,0:10:02.500
+00:09:52,080 --> 00:10:02,500
 So, this is the example that I want to use
 for this discussion: a simple function you
 
-0:10:02.500,0:10:03.870
+00:10:02,500 --> 00:10:03,870
 have seen many times before.
 
-0:10:03.870,0:10:08.690
+00:10:03,870 --> 00:10:08,690
 So, from the syntax perspective, a function
 which takes two arguments.
 
-0:10:08.690,0:10:12.230
+00:10:08,690 --> 00:10:12,230
 And we know that that's how this is written:
 Int to Int to Int.
 
-0:10:12.230,0:10:16.900
+00:10:12,230 --> 00:10:16,900
 Two inputs which are integers and an output
 which is also an integer.
 
-0:10:16.900,0:10:19.570
+00:10:16,900 --> 00:10:19,570
 Now you can ask yourself: What are some functions
 of that type?
 
-0:10:19.570,0:10:25.390
+00:10:19,570 --> 00:10:25,390
 And I'm sure you can immediately have some
 ideas of functions that you could, right now,
 
-0:10:25.390,0:10:27.870
+00:10:25,390 --> 00:10:27,870
 program in Haskell and they have this type.
 
-0:10:27.870,0:10:34.570
+00:10:27,870 --> 00:10:34,570
 Something like adding two numbers or any kind
 of other arithmetic combination of two inputs,
 
-0:10:34.570,0:10:36.310
+00:10:34,570 --> 00:10:36,310
 x and y, for example.
 
-0:10:36.310,0:10:42.700
+00:10:36,310 --> 00:10:42,700
 In contrast, we have this type where we added
 these brackets, which, we now know, mean that
 
-0:10:42.700,0:10:48.270
+00:10:42,700 --> 00:10:48,270
 this part here means we have a function as
 an argument instead of two numbers as arguments.
 
-0:10:48.270,0:10:57.690
+00:10:48,270 --> 00:10:57,690
 And then, to think about what kind of things
 "live" in this type, so what kind of things
 
-0:10:57.690,0:11:04.310
+00:10:57,690 --> 00:11:04,310
 that you can write in Haskell would have this
 type, as a whole (not only the input type,
 
-0:11:04.310,0:11:05.310
+00:11:04,310 --> 00:11:05,310
 but the type of this 'f' as a whole).
 
-0:11:05.310,0:11:06.860
+00:11:05,310 --> 00:11:06,860
 What could 'f' actually be?
 
-0:11:06.860,0:11:10.290
+00:11:06,860 --> 00:11:10,290
 There are two things we have to wonder about:
 
-0:11:10.290,0:11:11.630
+00:11:10,290 --> 00:11:11,630
 What kind of inputs?
 
-0:11:11.630,0:11:14.430
+00:11:11,630 --> 00:11:14,430
 What can we give to this 'f'? And we know this:
 two numbers.
 
-0:11:14.430,0:11:17.670
+00:11:14,430 --> 00:11:17,670
 And what kind of inputs can we give to this
 'f'?
 
-0:11:17.670,0:11:22.170
+00:11:17,670 --> 00:11:22,170
 And intuitively, we know: well, functions from
 integers to integers.
 
-0:11:22.170,0:11:26.770
+00:11:22,170 --> 00:11:26,770
 Not two arguments, but instead here one is
 input and one is output.
 
-0:11:26.770,0:11:29.320
+00:11:26,770 --> 00:11:29,320
 And then, what can these functions do with
 their inputs?
 
-0:11:29.320,0:11:33.460
+00:11:29,320 --> 00:11:33,460
 For this type, we know what this function
 can do with its numbers.
 
-0:11:33.460,0:11:38.850
+00:11:33,460 --> 00:11:38,850
 It can look at them, add them, subtract them,
 multiply them, do more complicated computations,
 
-0:11:38.850,0:11:40.560
+00:11:38,850 --> 00:11:40,560
 for example.
 
-0:11:40.560,0:11:42.000
+00:11:40,560 --> 00:11:42,000
 What about this function?
 
-0:11:42.000,0:11:45.640
+00:11:42,000 --> 00:11:45,640
 Knowing that it takes a function as an argument
 is nice.
 
-0:11:45.640,0:11:50.670
+00:11:45,640 --> 00:11:50,670
 But now, what does it do with that argument?
 
-0:11:50.670,0:11:51.670
+00:11:50,670 --> 00:11:51,670
 That's the question here.
 
-0:11:51.670,0:11:59.120
+00:11:51,670 --> 00:11:59,120
 And we have to decide, or actually the language
 design decides what 'f' can do with the argument.
 
-0:11:59.120,0:12:00.400
+00:11:59,120 --> 00:12:00,400
 There are different choices.
 
-0:12:00.400,0:12:02.000
+00:12:00,400 --> 00:12:02,000
 For example, we could imagine:
 
-0:12:02.000,0:12:06.970
+00:12:02,000 --> 00:12:06,970
 Maybe if we give to this 'f' a function, then
 maybe 'f' can take this function, look at its
 
-0:12:06.970,0:12:13.000
+00:12:06,970 --> 00:12:13,000
 function definition, and work with the syntax,
 with the body of that function definition,
 
-0:12:13.000,0:12:14.000
+00:12:13,000 --> 00:12:14,000
 for example.
 
-0:12:14.000,0:12:15.020
+00:12:14,000 --> 00:12:15,020
 Should this be allowed or not?
 
-0:12:15.020,0:12:16.660
+00:12:15,020 --> 00:12:16,660
 So, what can 'f' do?
 
-0:12:16.660,0:12:24.000
+00:12:16,660 --> 00:12:24,000
 That's something we need to discuss in order
 to get a good grasp of what really happens in
 
-0:12:24.000,0:12:26.630
+00:12:24,000 --> 00:12:26,630
 such a higher-order function, or what makes
 a higher-order function.
 
-0:12:26.630,0:12:29.860
+00:12:26,630 --> 00:12:29,860
 So, let's do this with these two simple functions.
 
-0:12:29.860,0:12:33.840
+00:12:29,860 --> 00:12:33,840
 And the main point is about the second one,
 of course.
 
-0:12:33.840,0:12:44.190
+00:12:33,840 --> 00:12:44,190
 The first one is just a standard function
 kind, of which you have already seen examples.
 
-0:12:44.190,0:12:56.600
+00:12:44,190 --> 00:12:56,600
 So, let's consider this first example: functions
 of this simple first-order type.
 
-0:12:56.600,0:12:57.850
+00:12:56,600 --> 00:12:57,850
 What could be such functions?
 
-0:12:57.850,0:12:59.110
+00:12:57,850 --> 00:12:59,110
 And I have already mentioned some.
 
-0:12:59.110,0:13:03.690
+00:12:59,110 --> 00:13:03,690
 So, for example, the function which takes two
 arguments x and y (and we know the syntax
 
-0:13:03.690,0:13:15.021
+00:13:03,690 --> 00:13:15,021
 for a two-argument function) and then the
 output could be x + y, or of course, f x y
 
-0:13:15.021,0:13:16.021
+00:13:15,021 --> 00:13:16,021
 = x – y.
 
-0:13:16.021,0:13:22.530
+00:13:16,021 --> 00:13:22,530
 Or maybe 'f' ignores the first argument and
 simply returns the second one.
 
-0:13:22.530,0:13:30.840
+00:13:22,530 --> 00:13:30,840
 Or maybe 'f' will even ignore both arguments
 and return 12 or some other thing.
 
-0:13:30.840,0:13:33.510
+00:13:30,840 --> 00:13:33,510
 We could write more complex expressions on
 the right-hand side.
 
-0:13:33.510,0:13:35.700
+00:13:33,510 --> 00:13:35,700
 So, these are functions of this type.
 
-0:13:35.700,0:13:43.000
+00:13:35,700 --> 00:13:43,000
 And I don't mean one function with these four
 definitions, but basically one of them.
 
-0:13:43.000,0:13:48.810
+00:13:43,000 --> 00:13:48,810
 So, 'f :: ...' and the first one or second one
 or the third one or the fourth one, each of
 
-0:13:48.810,0:13:54.150
+00:13:48,810 --> 00:13:54,150
 these lines, together with the signature above,
 would give a reasonable function of that type
 
-0:13:54.150,0:13:56.460
+00:13:54,150 --> 00:13:56,460
 we see here.
 
-0:13:56.460,0:14:04.450
+00:13:56,460 --> 00:14:04,450
 Let's look in contrast at functions of the
 other type, which was written like this, with
 
-0:14:04.450,0:14:06.040
+00:14:04,450 --> 00:14:06,040
 these extra brackets.
 
-0:14:06.040,0:14:09.930
+00:14:06,040 --> 00:14:09,930
 And I have already indicated or tried to explain
 why they are important.
 
-0:14:09.930,0:14:16.010
+00:14:09,930 --> 00:14:16,010
 And now we see this in more detail.
 
-0:14:16.010,0:14:18.170
+00:14:16,010 --> 00:14:18,170
 So, what would this be?
 
-0:14:18.170,0:14:19.230
+00:14:18,170 --> 00:14:19,230
 So, it's a function.
 
-0:14:19.230,0:14:20.470
+00:14:19,230 --> 00:14:20,470
 It has to take an argument.
 
-0:14:20.470,0:14:21.750
+00:14:20,470 --> 00:14:21,750
 What would be its argument?
 
-0:14:21.750,0:14:25.430
+00:14:21,750 --> 00:14:25,430
 The argument is only one, namely the thing
 that is written in brackets above.
 
-0:14:25.430,0:14:26.640
+00:14:25,430 --> 00:14:26,640
 It takes as argument a function.
 
-0:14:26.640,0:14:28.440
+00:14:26,640 --> 00:14:28,440
 So, let's maybe not call this x.
 
-0:14:28.440,0:14:33.380
+00:14:28,440 --> 00:14:33,380
 Let's call this g or h, which sounds more
 like a function.
 
-0:14:33.380,0:14:36.360
+00:14:33,380 --> 00:14:36,360
 So, this takes only one argument, which is
 a function.
 
-0:14:36.360,0:14:37.750
+00:14:36,360 --> 00:14:37,750
 Let's call it h.
 
-0:14:37.750,0:14:40.840
+00:14:37,750 --> 00:14:40,840
 And then it has to return something.
 
-0:14:40.840,0:14:41.870
+00:14:40,840 --> 00:14:41,870
 What does it have to return?
 
-0:14:41.870,0:14:42.870
+00:14:41,870 --> 00:14:42,870
 An integer.
 
-0:14:42.870,0:14:48.640
+00:14:42,870 --> 00:14:48,640
 Because that is what appears on the right-hand
 side of the outer function arrow above.
 
-0:14:48.640,0:14:50.730
+00:14:48,640 --> 00:14:50,730
 So, what could it return?
 
-0:14:50.730,0:14:53.630
+00:14:50,730 --> 00:14:53,630
 Well, maybe let's use the 'h' somehow.
 
-0:14:53.630,0:14:57.160
+00:14:53,630 --> 00:14:57,160
 We have a function from Int to Int, and we
 should give back an Int.
 
-0:14:57.160,0:14:58.160
+00:14:57,160 --> 00:14:58,160
 What could we do?
 
-0:14:58.160,0:15:01.160
+00:14:58,160 --> 00:15:01,160
 Well, we could take this 'h' and apply it
 to 7.
 
-0:15:01.160,0:15:03.210
+00:15:01,160 --> 00:15:03,210
 Yes, 'h' is a function from Int to Int.
 
-0:15:03.210,0:15:08.020
+00:15:03,210 --> 00:15:08,020
 We give it an Int, it returns an Int, whatever
 h of 7 is.
 
-0:15:08.020,0:15:13.580
+00:15:08,020 --> 00:15:13,580
 And that's the outcome of our f-function,
 given the h-function as an input.
 
-0:15:13.580,0:15:16.470
+00:15:13,580 --> 00:15:16,470
 That would be *a* reasonable definition.
 
-0:15:16.470,0:15:17.470
+00:15:16,470 --> 00:15:17,470
 Or something else.
 
-0:15:17.470,0:15:22.750
+00:15:17,470 --> 00:15:22,750
 Again, I will write down several lines, and
 each of them itself is a reasonable definition
 
-0:15:22.750,0:15:24.680
+00:15:22,750 --> 00:15:24,680
 of 'f' with the type above.
 
-0:15:24.680,0:15:30.280
+00:15:24,680 --> 00:15:30,280
 So, for example, we could also decide to ignore
 the function argument (the argument which
 
-0:15:30.280,0:15:36.150
+00:15:30,280 --> 00:15:36,150
 is a function) here, and just like on the
 left-hand side, return 12 or 17, or whatever.
 
-0:15:36.150,0:15:39.420
+00:15:36,150 --> 00:15:39,420
 That would be a reasonable function f.
 
-0:15:39.420,0:15:41.410
+00:15:39,420 --> 00:15:41,410
 What else could 'f' do with its input?
 
-0:15:41.410,0:15:43.360
+00:15:41,410 --> 00:15:43,360
 The input is a function h.
 
-0:15:43.360,0:15:46.580
+00:15:43,360 --> 00:15:46,580
 What could 'f' do with a function 'h' (from Int
 to Int)?
 
-0:15:46.580,0:15:50.930
+00:15:46,580 --> 00:15:50,930
 Of course, it could apply it to other things
 than 7 above.
 
-0:15:50.930,0:15:52.380
+00:15:50,930 --> 00:15:52,380
 But there are more things that it could do.
 
-0:15:52.380,0:16:01.930
+00:15:52,380 --> 00:16:01,930
 For example, it could apply this h-function
 to the result of 'h' applied to 13, so 'h (h 13)',
 
-0:16:01.930,0:16:05.680
+00:16:01,930 --> 00:16:05,680
 or other combinations.
 
-0:16:05.680,0:16:14.191
+00:16:05,680 --> 00:16:14,191
 Or it could decide to call 'h' once on 4,
 so 'h 4', and add this together with the result of
 
-0:16:14.191,0:16:16.820
+00:16:14,191 --> 00:16:16,820
 'h' on 7, 'h 7'.
 
-0:16:16.820,0:16:20.350
+00:16:16,820 --> 00:16:20,350
 Or, again, very many further possibilities.
 
-0:16:20.350,0:16:27.100
+00:16:20,350 --> 00:16:27,100
 So, again, this is meant as an "or", many
 lines that would be possible.
 
-0:16:27.100,0:16:29.620
+00:16:27,100 --> 00:16:29,620
 And completely different lines on the left
 and on the right, of course.
 
-0:16:29.620,0:16:30.620
+00:16:29,620 --> 00:16:30,620
 That's the important point.
 
-0:16:30.620,0:16:34.200
+00:16:30,620 --> 00:16:34,200
 So, on the left we have a function which takes
 two numbers as arguments and then does something
 
-0:16:34.200,0:16:38.410
+00:16:34,200 --> 00:16:38,410
 with these numbers (and you know many things
 that you could do with numbers), while on
 
-0:16:38.410,0:16:41.440
+00:16:38,410 --> 00:16:41,440
 the right we have a function which takes a
 function as argument.
 
-0:16:41.440,0:16:45.420
+00:16:41,440 --> 00:16:45,420
 And then there are fewer things that you can
 do with this, but still quite a few.
 
-0:16:45.420,0:16:48.560
+00:16:45,420 --> 00:16:48,560
 So, you cannot add 'h' to 'h', for example.
 
-0:16:48.560,0:16:49.590
+00:16:48,560 --> 00:16:49,590
 Since 'h' is a function.
 
-0:16:49.590,0:16:50.630
+00:16:49,590 --> 00:16:50,630
 You cannot add two functions.
 
-0:16:50.630,0:16:53.500
+00:16:50,630 --> 00:16:53,500
 But you can apply 'h' to something, then you
 get a number.
 
-0:16:53.500,0:16:59.020
+00:16:53,500 --> 00:16:59,020
 And with this number, you can continue computing,
 like outputting it directly, passing it again
 
-0:16:59.020,0:17:06.500
+00:16:59,020 --> 00:17:06,500
 to h, combining it with other values that
 come out of h, for other inputs, etc.
 
-0:17:06.500,0:17:16.380
+00:17:06,500 --> 00:17:16,380
 What we see on the right here, we call this
 extensional uses of this function.
 
-0:17:16.380,0:17:22.350
+00:17:16,380 --> 00:17:22,350
 That is a notion from mathematics: function
 extensionality.
 
-0:17:22.350,0:17:32.230
+00:17:22,350 --> 00:17:32,230
 What this means is that we are not looking
 at the syntax of h.
 
-0:17:32.230,0:17:41.460
+00:17:32,230 --> 00:17:41,460
 (I don't know why this above was somehow struck
 through.)
 
-0:17:41.460,0:17:43.920
+00:17:41,460 --> 00:17:43,920
 So, what I mean here: pure extensional uses.
 
-0:17:43.920,0:17:48.030
+00:17:43,920 --> 00:17:48,030
 We are not looking at the syntax of h.
 
-0:17:48.030,0:17:50.420
+00:17:48,030 --> 00:17:50,420
 So, 'f' gets 'h' as an argument.
 
-0:17:50.420,0:17:51.420
+00:17:50,420 --> 00:17:51,420
 It can work with it.
 
-0:17:51.420,0:17:55.860
+00:17:51,420 --> 00:17:55,860
 It can apply it to numbers, work with the
 results, etc.
 
-0:17:55.860,0:17:59.790
+00:17:55,860 --> 00:17:59,790
 But 'f' cannot, for example, look into the syntax
 of 'h' and say:
 
-0:17:59.790,0:18:04.180
+00:17:59,790 --> 00:18:04,180
 "Oh, you are a function from Int to Int. Let
 me look whether you do this by case distinction,
 
-0:18:04.180,0:18:05.530
+00:18:04,180 --> 00:18:05,530
 or whether you are a constant function."
 
-0:18:05.530,0:18:06.800
+00:18:05,530 --> 00:18:06,800
 Or something like that.
 
-0:18:06.800,0:18:10.710
+00:18:06,800 --> 00:18:10,710
 That's not what a function can do with an
 argument which is a function.
 
-0:18:10.710,0:18:12.920
+00:18:10,710 --> 00:18:12,920
 We have pure extensional uses.
 
-0:18:12.920,0:18:19.570
+00:18:12,920 --> 00:18:19,570
 And that means using the argument, in this
 case h, as a mathematical function: applying
 
-0:18:19.570,0:18:26.660
+00:18:19,570 --> 00:18:26,660
 it to values and getting other values out.
 
-0:18:26.660,0:18:30.440
+00:18:26,660 --> 00:18:30,440
 Then, a reasonable question at this point
 is:
 
-0:18:30.440,0:18:35.720
+00:18:30,440 --> 00:18:35,720
 Where do we get those functions from, that
 we can pass as arguments to higher-order functions?
 
-0:18:35.720,0:18:41.410
+00:18:35,720 --> 00:18:41,410
 In the previous slide, where do we get the
 h from that we pass to f?
 
-0:18:41.410,0:18:44.840
+00:18:41,410 --> 00:18:44,840
 I showed you 'f' of 'h' is something, some definitions.
 
-0:18:44.840,0:18:48.950
+00:18:44,840 --> 00:18:48,950
 But if I want to call the function f, I must
 give it some argument, which should be a function.
 
-0:18:48.950,0:18:51.170
+00:18:48,950 --> 00:18:51,170
 Where do I get those functions from?
 
-0:18:51.170,0:18:53.190
+00:18:51,170 --> 00:18:53,190
 That shouldn't be a problem, right?
 
-0:18:53.190,0:18:55.800
+00:18:53,190 --> 00:18:55,800
 Functions are almost everywhere in Haskell.
 
-0:18:55.800,0:18:59.430
+00:18:55,800 --> 00:18:59,430
 There shouldn't be any shortage of supply.
 
-0:18:59.430,0:19:01.180
+00:18:59,430 --> 00:19:01,180
 We have plenty of functions around.
 
-0:19:01.180,0:19:05.970
+00:19:01,180 --> 00:19:05,970
 We simply have to choose some that we consider
 useful to be passed as argument to f.
 
-0:19:05.970,0:19:09.830
+00:19:05,970 --> 00:19:09,830
 So, of course, we could take any predefined
 function.
 
-0:19:09.830,0:19:12.380
+00:19:09,830 --> 00:19:12,380
 They have names, so they can be used as arguments.
 
-0:19:12.380,0:19:16.150
+00:19:12,380 --> 00:19:16,150
 We can refer to them by their name and then
 pass them as argument to f.
 
-0:19:16.150,0:19:21.360
+00:19:16,150 --> 00:19:21,360
 In the previous example, if we take some predefined
 functions from Int to Int.
 
-0:19:21.360,0:19:26.809
+00:19:21,360 --> 00:19:26,809
 We could use functions that we have explicitly
 defined in our own program.
 
-0:19:26.809,0:19:33.200
+00:19:26,809 --> 00:19:33,200
 That is exactly what you did when you passed
 your own 'scene' function, that you programmed,
 
-0:19:33.200,0:19:34.380
+00:19:33,200 --> 00:19:34,380
 as an argument to 'animationOf'.
 
-0:19:34.380,0:19:35.380
+00:19:34,380 --> 00:19:35,380
 The 'animationOf' expects a function.
 
-0:19:35.380,0:19:37.060
+00:19:35,380 --> 00:19:37,060
 You have written a function 'scene'.
 
-0:19:37.060,0:19:40.840
+00:19:37,060 --> 00:19:40,840
 So, you pass one to the other.
 
-0:19:40.840,0:19:49.280
+00:19:40,840 --> 00:19:49,280
 And, an important example way of producing,
 or having, functions are partial applications
 
-0:19:49.280,0:19:53.790
+00:19:49,280 --> 00:19:53,790
 of any of the above kinds of functions (predefined
 functions, own functions).
 
-0:19:53.790,0:19:58.590
+00:19:53,790 --> 00:19:58,590
 Once we have a function with two arguments,
 we can also make a function with one argument.
 
-0:19:58.590,0:20:04.150
+00:19:58,590 --> 00:20:04,150
 There is a simple example here, and I will
 briefly discuss this on the next slide.
 
-0:20:04.150,0:20:12.960
+00:20:04,150 --> 00:20:12,960
 But, for example, plus (+) in Haskell is a
 function from two integers (Int) to one Int.
 
-0:20:12.960,0:20:18.390
+00:20:12,960 --> 00:20:18,390
 And if you pass one Int to the 'plus' function,
 then what you get is a function from one Int
 
-0:20:18.390,0:20:19.390
+00:20:18,390 --> 00:20:19,390
 to one Int.
 
-0:20:19.390,0:20:25.970
+00:20:19,390 --> 00:20:25,970
 We have already discussed this bit when I
 talked about eta-reduction in one of the previous
 
-0:20:25.970,0:20:31.270
+00:20:25,970 --> 00:20:31,270
 videos, where I talked also about why the
 Haskell function syntax is like it is.
 
-0:20:31.270,0:20:34.540
+00:20:31,270 --> 00:20:34,540
 In particular, it is like this to allow partial
 application.
 
-0:20:34.540,0:20:39.410
+00:20:34,540 --> 00:20:39,410
 That is: If I have a two-argument function,
 I can make a one-argument function from it
 
-0:20:39.410,0:20:42.429
+00:20:39,410 --> 00:20:42,429
 by providing the first argument.
 
-0:20:42.429,0:20:46.640
+00:20:42,429 --> 00:20:46,640
 On the previous slide, we had this f, and
 it took an "Int to Int" as an argument.
 
-0:20:46.640,0:20:49.860
+00:20:46,640 --> 00:20:49,860
 It could, for example, take the "(+) 5" as
 an argument.
 
-0:20:49.860,0:20:51.360
+00:20:49,860 --> 00:20:51,360
 That is useful.
 
-0:20:51.360,0:20:57.360
+00:20:51,360 --> 00:20:57,360
 Of course, it depends on what we want to do,
 but the point is we have the possibility to
 
-0:20:57.360,0:21:00.970
+00:20:57,360 --> 00:21:00,970
 make a function from Int to Int by taking
 a function which takes two integer arguments
 
-0:21:00.970,0:21:04.010
+00:21:00,970 --> 00:21:04,010
 and providing one of them.
 
-0:21:04.010,0:21:08.870
+00:21:04,010 --> 00:21:08,870
 And these partial applications we see here,
 they have all the rights of any other function
 
-0:21:08.870,0:21:10.270
+00:21:08,870 --> 00:21:10,270
 or value in Haskell.
 
-0:21:10.270,0:21:13.240
+00:21:10,270 --> 00:21:13,240
 So, they can be passed as an argument to some
 other function.
 
-0:21:13.240,0:21:19.200
+00:21:13,240 --> 00:21:19,200
 They can be stored in a data structure, for
 example.
 
-0:21:19.200,0:21:30.240
+00:21:19,200 --> 00:21:30,240
 So, let us see and let's use, from the slide
 before, the function "f h" is "h is applied to
 
-0:21:30.240,0:21:31.240
+00:21:30,240 --> 00:21:31,240
 7", I think.
 
-0:21:31.240,0:21:37.160
+00:21:31,240 --> 00:21:37,160
 So, that was one of these functions "from
 Int to Int, as a function, goes to Int".
 
-0:21:37.160,0:21:42.610
+00:21:37,160 --> 00:21:42,610
 And let's call this 'f' on one of these partial
 applications.
 
-0:21:42.610,0:21:48.910
+00:21:42,610 --> 00:21:48,910
 It was written like this: plus is a binary
 operation (+) which takes two numbers, we
 
-0:21:48.910,0:21:51.690
+00:21:48,910 --> 00:21:51,690
 give it one number, then we have a function
 from Int to Int.
 
-0:21:51.690,0:21:53.660
+00:21:51,690 --> 00:21:53,660
 And this function, we give to f.
 
-0:21:53.660,0:21:55.280
+00:21:53,660 --> 00:21:55,280
 So, what does this mean?
 
-0:21:55.280,0:22:04.201
+00:21:55,280 --> 00:22:04,201
 Well, then this is h, and the right-hand side
 of 'f h = h 7' means, so this above says, that
 
-0:22:04.201,0:22:10.350
+00:22:04,201 --> 00:22:10,350
 we will have 'h' applied to 7.
 
-0:22:10.350,0:22:20.470
+00:22:10,350 --> 00:22:20,470
 Which means: the plus function (+) applied
 to 5, because this is h, and then applied
 
-0:22:20.470,0:22:24.660
+00:22:20,470 --> 00:22:24,660
 to 7, which is simply 12.
 
-0:22:24.660,0:22:30.910
+00:22:24,660 --> 00:22:30,910
 Right, the plus function (+) applied to 5
 and 7, which is 12.
 
-0:22:30.910,0:22:36.480
+00:22:30,910 --> 00:22:36,480
 So, we simply use 'h' as an argument, and place
 it wherever it needs to be.
 
-0:22:36.480,0:22:40.130
+00:22:36,480 --> 00:22:40,130
 It needs to be the function to which we pass
 7 as argument.
 
-0:22:40.130,0:22:45.179
+00:22:40,130 --> 00:22:45,179
 So, then we have "h 7" is "(+) 5 of 7", (+)
 5 7, which is 12.
 
-0:22:45.179,0:22:50.220
+00:22:45,179 --> 00:22:50,220
 And on the next slide, I think, we will also
 see another syntax quirk.
 
-0:22:50.220,0:22:55.750
+00:22:50,220 --> 00:22:55,750
 So, actually, this "(+) applied to 5" can
 also be written in a different way.
 
-0:22:55.750,0:22:59.081
+00:22:55,750 --> 00:22:59,081
 Equivalently, we can write something like
 this.
 
-0:22:59.081,0:23:00.630
+00:22:59,081 --> 00:23:00,630
 This is called a section.
 
-0:23:00.630,0:23:10.570
+00:23:00,630 --> 00:23:10,570
 So, this strange incomplete-looking addition
 here, this also could be 'h'.
 
-0:23:10.570,0:23:12.740
+00:23:10,570 --> 00:23:12,740
 It is the same as above, just a different
 syntax.
 
-0:23:12.740,0:23:15.820
+00:23:12,740 --> 00:23:15,820
 Then it becomes even more obvious what is
 happening here, in some sense.
 
-0:23:15.820,0:23:18.360
+00:23:15,820 --> 00:23:18,360
 So, then what we have, again, f h is something.
 
-0:23:18.360,0:23:19.360
+00:23:18,360 --> 00:23:19,360
 What is 'f' of 'h'?
 
-0:23:19.360,0:23:20.360
+00:23:19,360 --> 00:23:20,360
 It is 'h' of 7.
 
-0:23:20.360,0:23:23.800
+00:23:20,360 --> 00:23:23,800
 So, it is this 'h' here applied to 7.
 
-0:23:23.800,0:23:31.770
+00:23:23,800 --> 00:23:31,770
 So, it is this incomplete-looking (5 +), which
 is 'h', applied to 7.
 
-0:23:31.770,0:23:38.230
+00:23:31,770 --> 00:23:38,230
 And then we, even more directly, see 5 + 7,
 which is 12.
 
-0:23:38.230,0:23:41.090
+00:23:38,230 --> 00:23:41,090
 And again, this 'h' is used extensionally, here.
 
-0:23:41.090,0:23:46.549
+00:23:41,090 --> 00:23:46,549
 So, it is not like that the f function looks
 at its argument and sees how it is written,
 
-0:23:46.549,0:23:47.549
+00:23:46,549 --> 00:23:47,549
 what it is doing.
 
-0:23:47.549,0:23:49.520
+00:23:47,549 --> 00:23:49,520
 No, it is simply saying: f h is h 7.
 
-0:23:49.520,0:23:54.060
+00:23:49,520 --> 00:23:54,060
 So, it uses the 'h' extensionally as a function.
 
-0:23:54.060,0:24:00.940
+00:23:54,060 --> 00:24:00,940
 And all we can really do is to pass some argument
 to it; in this case, 7.
 
-0:24:00.940,0:24:17.640
+00:24:00,940 --> 00:24:17,640
 (I keep getting these strange changes to what
 I have written. I don't know why this is happening,
 
-0:24:17.640,0:24:28.590
+00:24:17,640 --> 00:24:28,590
 actually. Apparently, I am not yet very firm
 in this new note-taking thing here.)
 
-0:24:28.590,0:24:42.640
+00:24:28,590 --> 00:24:42,640
 So, 'h' is used purely extensionally.
 
-0:24:42.640,0:24:47.730
+00:24:42,640 --> 00:24:47,730
 Which means all you can do with the function,
 really, apart from storing it in data structures,
 
-0:24:47.730,0:24:50.880
+00:24:47,730 --> 00:24:50,880
 passing it around, is to apply it to some
 argument.
 
-0:24:50.880,0:24:52.210
+00:24:50,880 --> 00:24:52,210
 Which happens here with the h, when it is
 applied to 7.
 
-0:24:52.210,0:25:04.500
+00:24:52,210 --> 00:25:04,500
 One way to
 get a better grasp of this partial application
 
-0:25:04.500,0:25:11.840
+00:25:04,500 --> 00:25:11,840
 business is probably to realize that, actually,
 the type "Int to Int to Int" ('Int → Int → Int'),
 
-0:25:11.840,0:25:17.200
+00:25:11,840 --> 00:25:17,200
 that would also be the type of the plus operator
 (+), can also be read as: 'Int → (Int → Int)',
 
-0:25:17.200,0:25:19.840
+00:25:17,200 --> 00:25:19,840
 that is: Int to a bracket that contains
 "Int to Int".
 
-0:25:19.840,0:25:24.660
+00:25:19,840 --> 00:25:24,660
 We just discussed this difference for the
 f function between having brackets around
 
-0:25:24.660,0:25:26.190
+00:25:24,660 --> 00:25:26,190
 this part or not.
 
-0:25:26.190,0:25:32.390
+00:25:26,190 --> 00:25:32,390
 Now I am saying, the case where we don't have
 brackets around this first arrow here is equivalent
 
-0:25:32.390,0:25:36.990
+00:25:32,390 --> 00:25:36,990
 or could be read as this one where we add
 brackets around here.
 
-0:25:36.990,0:25:38.940
+00:25:36,990 --> 00:25:38,940
 And indeed, these brackets can be omitted.
 
-0:25:38.940,0:25:43.160
+00:25:38,940 --> 00:25:43,160
 So, this is, again, where we would say: don't
 write these brackets, because it is clear
 
-0:25:43.160,0:25:47.570
+00:25:43,160 --> 00:25:47,570
 enough that this is a function of two arguments
 which returns an integer.
 
-0:25:47.570,0:25:49.440
+00:25:47,570 --> 00:25:49,440
 We could also see it as this.
 
-0:25:49.440,0:25:55.679
+00:25:49,440 --> 00:25:55,679
 And then what we are actually seeing it as,
 is that this is a function which takes one
 
-0:25:55.679,0:25:58.450
+00:25:55,679 --> 00:25:58,450
 number and gives back a function from Int
 to Int.
 
-0:25:58.450,0:26:02.170
+00:25:58,450 --> 00:26:02,170
 So, this is the viewpoint of partial application.
 
-0:26:02.170,0:26:10.820
+00:26:02,170 --> 00:26:10,820
 On one hand, a function (in this viewpoint)
 which takes two integers and returns one integer.
 
-0:26:10.820,0:26:19.490
+00:26:10,820 --> 00:26:19,490
 Or, from the second perspective: a function
 that takes one integer and returns a function,
 
-0:26:19.490,0:26:25.330
+00:26:19,490 --> 00:26:25,330
 which is a function (in this case) that takes
 one integer, namely this one, and returns
 
-0:26:25.330,0:26:26.559
+00:26:25,330 --> 00:26:26,559
 one integer.
 
-0:26:26.559,0:26:31.940
+00:26:26,559 --> 00:26:31,940
 That is just a viewpoint question between
 this and this syntax.
 
-0:26:31.940,0:26:34.070
+00:26:31,940 --> 00:26:34,070
 But they are the same, mathematically.
 
-0:26:34.070,0:26:38.720
+00:26:34,070 --> 00:26:38,720
 Having a function which takes two numbers
 and gives a number is the same as having a
 
-0:26:38.720,0:26:43.100
+00:26:38,720 --> 00:26:43,100
 function which takes a number and returns
 a function which waits for another number
 
-0:26:43.100,0:26:44.570
+00:26:43,100 --> 00:26:44,570
 and then gives back the result.
 
-0:26:44.570,0:26:50.140
+00:26:44,570 --> 00:26:50,140
 This is, again, something that I discussed
 when I discussed the eta-reduction on the
 
-0:26:50.140,0:26:52.400
+00:26:50,140 --> 00:26:52,400
 example of the opening rectangle before.
 
-0:26:52.400,0:26:55.080
+00:26:52,400 --> 00:26:55,080
 So, both of these viewpoints are valid.
 
-0:26:55.080,0:27:00.670
+00:26:55,080 --> 00:27:00,670
 There is no difference in usage, whether we
 consider one or the other perspective.
 
-0:27:00.670,0:27:05.630
+00:27:00,670 --> 00:27:05,630
 And this is thanks to Haskell' function application
 syntax, and also the reason why Haskell function
 
-0:27:05.630,0:27:12.140
+00:27:05,630 --> 00:27:12,140
 definitions are with this syntax, without
 commas and brackets (but rather with basically
 
-0:27:12.140,0:27:15.370
+00:27:12,140 --> 00:27:15,370
 just space as function application).
 
-0:27:15.370,0:27:18.360
+00:27:15,370 --> 00:27:18,360
 So, to make these two viewpoints equivalent.
 
-0:27:18.360,0:27:20.860
+00:27:18,360 --> 00:27:20,860
 Because mathematically, they are equivalent.
 
-0:27:20.860,0:27:26.059
+00:27:20,860 --> 00:27:26,059
 This also means that, in some sense, many
 first-order functions can also be seen as
 
-0:27:26.059,0:27:27.059
+00:27:26,059 --> 00:27:27,059
 higher-order functions.
 
-0:27:27.059,0:27:32.669
+00:27:27,059 --> 00:27:32,669
 We could even say: this first-order function,
 the addition, is in some sense also higher-order,
 
-0:27:32.669,0:27:34.309
+00:27:32,669 --> 00:27:34,309
 because it also operates on functions.
 
-0:27:34.309,0:27:38.840
+00:27:34,309 --> 00:27:38,840
 Namely, it can be seen as taking a number
 and giving back a function.
 
-0:27:38.840,0:27:42.640
+00:27:38,840 --> 00:27:42,640
 So, it doesn't take a function as argument,
 but it has a function as a result.
 
-0:27:42.640,0:27:45.799
+00:27:42,640 --> 00:27:45,799
 But usually, we don't call a function like
 this higher-order.
 
-0:27:45.799,0:27:56.872
+00:27:45,799 --> 00:27:56,872
 Usually, with "higher-order" we say that one
 of the arguments is a function.
 
-0:27:56.872,0:28:01.040
+00:27:56,872 --> 00:28:01,040
 And, of course, this also fits with our narrative
 that all functions are values.
 
-0:28:01.040,0:28:04.600
+00:28:01,040 --> 00:28:04,600
 A function is something which takes something
 and gives back a value.
 
-0:28:04.600,0:28:10.740
+00:28:04,600 --> 00:28:10,740
 And this value can be a function, like in
 this case.
 
-0:28:10.740,0:28:16.450
+00:28:10,740 --> 00:28:16,450
 And then, this other syntactic speciality that
 I already briefly used on the previous slide,
 
-0:28:16.450,0:28:17.550
+00:28:16,450 --> 00:28:17,550
 are the so-called "sections".
 
-0:28:17.550,0:28:21.070
+00:28:17,550 --> 00:28:21,070
 I did that on this example:
 
-0:28:21.070,0:28:29.970
+00:28:21,070 --> 00:28:29,970
 If we have a binary operator which is written
 like this as a function, and then we provide
 
-0:28:29.970,0:28:36.330
+00:28:29,970 --> 00:28:36,330
 one argument, like the 5, then we can also
 write it as basically: "I am an operator application
 
-0:28:36.330,0:28:38.890
+00:28:36,330 --> 00:28:38,890
 where there is still missing one argument".
 
-0:28:38.890,0:28:43.960
+00:28:38,890 --> 00:28:43,960
 So, the first one is already there, but the
 second part of "+" is still missing.
 
-0:28:43.960,0:28:54.500
+00:28:43,960 --> 00:28:54,500
 And I will, again, discuss this on the next
 slide with a few notes.
 
-0:28:54.500,0:28:57.900
+00:28:54,500 --> 00:28:57,900
 So, let's briefly talk about operator syntax.
 
-0:28:57.900,0:29:01.820
+00:28:57,900 --> 00:29:01,820
 Probably I have to do this first.
 
-0:29:01.820,0:29:06.700
+00:29:01,820 --> 00:29:06,700
 Known from other languages is that there are
 prefix and infix operators.
 
-0:29:06.700,0:29:12.600
+00:29:06,700 --> 00:29:12,600
 And in Haskell there is a special syntax for
 writing an infix operator as prefix, and the
 
-0:29:12.600,0:29:14.910
+00:29:12,600 --> 00:29:14,910
 other way around.
 
-0:29:14.910,0:29:20.630
+00:29:14,910 --> 00:29:20,630
 What I did on one of the previous slides was
 to write something like (+), and then I could
 
-0:29:20.630,0:29:22.650
+00:29:20,630 --> 00:29:22,650
 apply it to arguments like 5 and 7.
 
-0:29:22.650,0:29:25.140
+00:29:22,650 --> 00:29:25,140
 So, this is prefix, because it comes before
 the arguments.
 
-0:29:25.140,0:29:29.490
+00:29:25,140 --> 00:29:29,490
 And of course, also the usual functions like
 the 'mod' function, or f, or "rectangle",
 
-0:29:29.490,0:29:32.549
+00:29:29,490 --> 00:29:32,549
 or typical functions that you have already
 seen.
 
-0:29:32.549,0:29:34.300
+00:29:32,549 --> 00:29:34,300
 So, they are usually written as prefix.
 
-0:29:34.300,0:29:36.330
+00:29:34,300 --> 00:29:36,330
 It means that you have the function and then
 you have two arguments.
 
-0:29:36.330,0:29:39.890
+00:29:36,330 --> 00:29:39,890
 Then there is infix syntax.
 
-0:29:39.890,0:29:43.560
+00:29:39,890 --> 00:29:43,560
 And that's for operators, typically things
 like "1 + 2".
 
-0:29:43.560,0:29:46.990
+00:29:43,560 --> 00:29:46,990
 So, here, the "+" is an infix operator.
 
-0:29:46.990,0:29:53.030
+00:29:46,990 --> 00:29:53,030
 And you have also seen on the slides that
 binary functions that would usually be written
 
-0:29:53.030,0:29:57.890
+00:29:53,030 --> 00:29:57,890
 prefix can also be written infix, if you put
 them in these back-ticks `...`.
 
-0:29:57.890,0:30:00.510
+00:29:57,890 --> 00:30:00,510
 So, the "mod" is a binary function.
 
-0:30:00.510,0:30:02.460
+00:30:00,510 --> 00:30:02,460
 It can be written infix.
 
-0:30:02.460,0:30:04.670
+00:30:02,460 --> 00:30:04,670
 And now these sections.
 
-0:30:04.670,0:30:13.731
+00:30:04,670 --> 00:30:13,731
 They apply to operators/functions that are
 prefix, but that we want to use in a kind
 
-0:30:13.731,0:30:16.120
+00:30:13,731 --> 00:30:16,120
 of infix style with just one of two arguments
 given.
 
-0:30:16.120,0:30:19.419
+00:30:16,120 --> 00:30:19,419
 This is the "5 +" that you saw on the previous
 slide.
 
-0:30:19.419,0:30:20.780
+00:30:19,419 --> 00:30:20,780
 What was this?
 
-0:30:20.780,0:30:27.429
+00:30:20,780 --> 00:30:27,429
 So, if we have a prefix function like the
 "(+)", we can apply it to one of its arguments,
 
-0:30:27.429,0:30:34.380
+00:30:27,429 --> 00:30:34,380
 like 5, and then this also can be written
 as this section "(5 +)" which means:
 
-0:30:34.380,0:30:42.330
+00:30:34,380 --> 00:30:42,330
 I am a function which is waiting for an argument,
 then I will compute "5 plus that argument".
 
-0:30:42.330,0:30:49.690
+00:30:42,330 --> 00:30:49,690
 We also have the other way around, where we
 say: Let me write the section in this way.
 
-0:30:49.690,0:30:51.650
+00:30:49,690 --> 00:30:51,650
 So, we have this binary operator (+).
 
-0:30:51.650,0:30:54.190
+00:30:51,650 --> 00:30:54,190
 And I provide one of its arguments, namely
 the second one.
 
-0:30:54.190,0:31:00.410
+00:30:54,190 --> 00:31:00,410
 Then I get a function to which I can pass
 a value, and then what is computed is that
 
-0:31:00.410,0:31:03.930
+00:31:00,410 --> 00:31:03,930
 value, which was passed last, plus 5.
 
-0:31:03.930,0:31:09.280
+00:31:03,930 --> 00:31:09,280
 Of course in the case of "plus" this doesn't
 make a difference.
 
-0:31:09.280,0:31:15.049
+00:31:09,280 --> 00:31:15,049
 Semantically, this is of course not an interesting
 difference.
 
-0:31:15.049,0:31:30.570
+00:31:15,049 --> 00:31:30,570
 We will compute the same thing, assuming that
 plus (+) is commutative, which at least on
 
-0:31:30.570,0:31:31.570
+00:31:30,570 --> 00:31:31,570
 the integers, it is.
 
-0:31:31.570,0:31:38.380
+00:31:31,570 --> 00:31:38,380
 But for example, if we did this with (-), so
 (5 -).
 
-0:31:38.380,0:31:46.900
+00:31:38,380 --> 00:31:46,900
 This is also possible, because (-) is a binary
 operator.
 
-0:31:46.900,0:31:54.809
+00:31:46,900 --> 00:31:54,809
 And then written as (- 5), they do different
 things.
 
-0:31:54.809,0:31:59.179
+00:31:54,809 --> 00:31:59,179
 Why is that?
 
-0:31:59.179,0:32:09.630
+00:31:59,179 --> 00:32:09,630
 Because one of them will wait for a value,
 and then it will compute 5 minus that other
 
-0:32:09.630,0:32:14.640
+00:32:09,630 --> 00:32:14,640
 value, and the other will wait for another
 value, and then compute that value minus 5.
 
-0:32:14.640,0:32:26.060
+00:32:14,640 --> 00:32:26,060
 Simply, we will apply both of these two versions
 to 7, and then you will see different outcomes.
 
-0:32:26.060,0:32:32.600
+00:32:26,060 --> 00:32:32,600
 The first of these two functions applied to
 7 has the result -2.
 
-0:32:32.600,0:32:35.880
+00:32:32,600 --> 00:32:35,880
 The second, applied to 7, will result in 5.
 
-0:32:35.880,0:32:38.530
+00:32:35,880 --> 00:32:38,530
 Because we could compute 7 - 5.
 
-0:32:38.530,0:32:39.530
+00:32:38,530 --> 00:32:39,530
 Why is this useful?
 
-0:32:39.530,0:32:43.210
+00:32:39,530 --> 00:32:43,210
 Is this all just somehow syntactic games that
 we play?
 
-0:32:43.210,0:32:49.020
+00:32:43,210 --> 00:32:49,020
 Well, it often gives very nice, short, declarative
 predicates, for example.
 
-0:32:49.020,0:33:12.070
+00:32:49,020 --> 00:33:12,070
 In this case above here, it was arithmetic
 functions, but for example it is also used
 
-0:33:12.070,0:33:17.410
+00:33:12,070 --> 00:33:17,410
 for predicates and properties.
 
-0:33:17.410,0:33:33.299
+00:33:17,410 --> 00:33:33,299
 So, for example, something like '< 5' is a
 function from Int to Bool, because '<' is
 
-0:33:33.299,0:33:37.770
+00:33:33,299 --> 00:33:37,770
 an operation between two integers,
 'Int → Int → Bool'.
 
-0:33:37.770,0:33:43.990
+00:33:37,770 --> 00:33:43,990
 And if I write '(< 5)', then it is a function,
 which is waiting for an argument, which could
 
-0:33:43.990,0:33:49.250
+00:33:43,990 --> 00:33:49,250
 be 3 or 7 or whatever, and will return a Boolean,
 namely, whether that thing is smaller than
 
-0:33:49.250,0:33:50.250
+00:33:49,250 --> 00:33:50,250
 5.
 
-0:33:50.250,0:34:05.850
+00:33:50,250 --> 00:34:05,850
 So, if I apply the function you see here to
 3, the answer will be True, because 3 is smaller
 
-0:34:05.850,0:34:06.850
+00:34:05,850 --> 00:34:06,850
 than 5.
 
-0:34:06.850,0:34:10.190
+00:34:06,850 --> 00:34:10,190
 Applying it to 7 would give False, because
 7 is not smaller than 5.
 
-0:34:10.190,0:34:13.050
+00:34:10,190 --> 00:34:13,050
 So, we simply read this as "smaller than five".
 
-0:34:13.050,0:34:15.190
+00:34:13,050 --> 00:34:15,190
 It is doing exactly that.
 
-0:34:15.190,0:34:23.690
+00:34:15,190 --> 00:34:23,690
 And this is just nice syntax for that.
 
-0:34:23.690,0:34:28.700
+00:34:23,690 --> 00:34:28,700
 Let's think again about this (5 -) thing,
 because this might still somehow worry you.
 
-0:34:28.700,0:34:35.379
+00:34:28,700 --> 00:34:35,379
 So, what is this (5 -)?
 
-0:34:35.379,0:35:06.680
+00:34:35,379 --> 00:35:06,680
 So, this written above is a function waiting
 for an argument x and then computing 5 – x.
 
-0:35:06.680,0:35:16.520
+00:35:06,680 --> 00:35:16,520
 And the same way for all the other section
 syntax cases above.
 
-0:35:16.520,0:35:23.380
+00:35:16,520 --> 00:35:23,380
 Apart from the special syntax cases using
 operators, we can also just syntactically
 
-0:35:23.380,0:35:25.170
+00:35:23,380 --> 00:35:25,170
 create new functions on the fly.
 
-0:35:25.170,0:35:30.700
+00:35:25,170 --> 00:35:30,700
 So, instead of using predefined or own explicitly
 defined and named functions that are already
 
-0:35:30.700,0:35:34.771
+00:35:30,700 --> 00:35:34,771
 in the program, we could also (when we want
 to pass a function to another function) simply
 
-0:35:34.771,0:35:37.520
+00:35:34,771 --> 00:35:37,520
 create a new function at that point.
 
-0:35:37.520,0:35:43.980
+00:35:37,520 --> 00:35:43,980
 Such functions are called anonymous, and they
 use the so-called lambda-abstraction syntax.
 
-0:35:43.980,0:35:47.760
+00:35:43,980 --> 00:35:47,760
 We have already seen this before, namely in
 the context of QuickCheck tests.
 
-0:35:47.760,0:35:55.140
+00:35:47,760 --> 00:35:55,140
 There was this syntax, and I said something
 like read this as a "for all", but that was
 
-0:35:55.140,0:35:59.599
+00:35:55,140 --> 00:35:59,599
 only applicable for the case of QuickCheck,
 because there we want to have a predicate,
 
-0:35:59.599,0:36:03.200
+00:35:59,599 --> 00:36:03,200
 something that gave back a truth value.
 
-0:36:03.200,0:36:08.440
+00:36:03,200 --> 00:36:08,440
 And then basically the interpretation of this
 predicate was that for all x the value here
 
-0:36:08.440,0:36:09.440
+00:36:08,440 --> 00:36:09,440
 should hold.
 
-0:36:09.440,0:36:14.240
+00:36:09,440 --> 00:36:14,240
 But in general, this is simply a function
 which, given an x, computes something.
 
-0:36:14.240,0:36:21.340
+00:36:14,240 --> 00:36:21,340
 So, here we introduce an argument or maybe
 several arguments (they can even be anonymous
 
-0:36:21.340,0:36:25.380
+00:36:21,340 --> 00:36:25,380
 again, so we could use the '_'), and then
 the whole thing that we have here is in this
 
-0:36:25.380,0:36:29.109
+00:36:25,380 --> 00:36:29,109
 case a function which, given an x, computes
 x + x.
 
-0:36:29.109,0:36:30.830
+00:36:29,109 --> 00:36:30,830
 And we don't give a name to this function.
 
-0:36:30.830,0:36:36.900
+00:36:30,830 --> 00:36:36,900
 So, we don't write a line "function name = some
 expression".
 
-0:36:36.900,0:36:40.400
+00:36:36,900 --> 00:36:40,400
 Simply this itself is a function, which doesn't
 get its own name.
 
-0:36:40.400,0:36:42.220
+00:36:40,400 --> 00:36:42,220
 In that sense, it is anonymous.
 
-0:36:42.220,0:36:46.780
+00:36:42,220 --> 00:36:46,780
 And we can use it wherever we use functions,
 for example, as arguments to our 'f' from a
 
-0:36:46.780,0:36:51.940
+00:36:46,780 --> 00:36:51,940
 few slides back.
 
-0:36:51.940,0:36:58.690
+00:36:51,940 --> 00:36:58,690
 To recap, discussing this example where we
 had this 'f' which expected a function from
 
-0:36:58.690,0:36:59.980
+00:36:58,690 --> 00:36:59,980
 Int to Int and gave back an Int:
 
-0:36:59.980,0:37:03.740
+00:36:59,980 --> 00:37:03,740
 There are really many ways in which we can
 use this.
 
-0:37:03.740,0:37:07.530
+00:37:03,740 --> 00:37:07,530
 The identity function (id) could be used for
 here.
 
-0:37:07.530,0:37:12.000
+00:37:07,530 --> 00:37:12,000
 So, an existing library function could be
 used as an argument.
 
-0:37:12.000,0:37:15.740
+00:37:12,000 --> 00:37:15,740
 And there are other ones that work on integers,
 for example.
 
-0:37:15.740,0:37:22.590
+00:37:15,740 --> 00:37:22,590
 I just took some existing functions, or partial
 applications of functions from some libraries.
 
-0:37:22.590,0:37:27.510
+00:37:22,590 --> 00:37:27,510
 Then this is something we have explicitly
 discussed: that we can use operators, partially
 
-0:37:27.510,0:37:30.890
+00:37:27,510 --> 00:37:30,890
 apply them, and then get functions that could
 have the appropriate type.
 
-0:37:30.890,0:37:33.330
+00:37:30,890 --> 00:37:33,330
 We can pass an anonymous function.
 
-0:37:33.330,0:37:38.300
+00:37:33,330 --> 00:37:38,300
 So, what I showed here: when we want to pass
 this to f, then we have to put it in brackets
 
-0:37:38.300,0:37:42.200
+00:37:38,300 --> 00:37:42,200
 to make clear that this is the argument to
 this f.
 
-0:37:42.200,0:37:43.680
+00:37:42,200 --> 00:37:43,680
 So, this goes in this place.
 
-0:37:43.680,0:37:46.120
+00:37:43,680 --> 00:37:46,120
 Then we could apply 'f' to this function.
 
-0:37:46.120,0:37:50.230
+00:37:46,120 --> 00:37:50,230
 Or, of course, with the same syntax we can
 then write arbitrary expressions inside this
 
-0:37:50.230,0:38:01.840
+00:37:50,230 --> 00:38:01,840
 body, and create arbitrary anonymous functions.
 
-0:38:01.840,0:38:08.150
+00:38:01,840 --> 00:38:08,150
 And actually, this lambda-abstraction syntax
 is also another point where we can get a clearer
 
-0:38:08.150,0:38:10.390
+00:38:08,150 --> 00:38:10,390
 view on Haskell's function definition syntax.
 
-0:38:10.390,0:38:11.810
+00:38:10,390 --> 00:38:11,810
 Why it is the way it is.
 
-0:38:11.810,0:38:17.180
+00:38:11,810 --> 00:38:17,180
 We talked before about these two perspectives
 on the function type 'Int → Int → Int', seeing
 
-0:38:17.180,0:38:22.470
+00:38:17,180 --> 00:38:22,470
 it as a function of two arguments that returns
 an Int, or seeing it as a function which takes
 
-0:38:22.470,0:38:24.520
+00:38:22,470 --> 00:38:24,520
 one Int and then returns another function.
 
-0:38:24.520,0:38:32.270
+00:38:24,520 --> 00:38:32,270
 With lambda-abstraction syntax, we can actually
 make this even more apparent.
 
-0:38:32.270,0:38:37.170
+00:38:32,270 --> 00:38:37,170
 Let's look at this specific case here.
 
-0:38:37.170,0:38:40.640
+00:38:37,170 --> 00:38:40,640
 Something like an 'add' function which takes
 two integers and gives back an integer.
 
-0:38:40.640,0:38:46.730
+00:38:40,640 --> 00:38:46,730
 And then we can consider this to be the function
 of addition, which takes two arguments and
 
-0:38:46.730,0:38:47.890
+00:38:46,730 --> 00:38:47,890
 gives back their sum.
 
-0:38:47.890,0:38:54.490
+00:38:47,890 --> 00:38:54,490
 Or, we could say: It is a function which takes
 an argument x, and then returns a function;
 
-0:38:54.490,0:38:58.830
+00:38:54,490 --> 00:38:58,830
 and we can explicitly write that one as a
 function which is waiting for some argument
 
-0:38:58.830,0:39:00.670
+00:38:58,830 --> 00:39:00,670
 and then returns the sum of the two.
 
-0:39:00.670,0:39:04.490
+00:39:00,670 --> 00:39:04,490
 So, for these two, we could use both these
 perspectives.
 
-0:39:04.490,0:39:08.780
+00:39:04,490 --> 00:39:08,780
 This one, or the one where we have brackets
 around here from a few slides back.
 
-0:39:08.780,0:39:11.849
+00:39:08,780 --> 00:39:11,849
 But they are equivalent, because these two
 function definitions are equivalent.
 
-0:39:11.849,0:39:16.090
+00:39:11,849 --> 00:39:16,090
 To have a function which takes two arguments
 and gives back their sum is the same as a
 
-0:39:16.090,0:39:19.460
+00:39:16,090 --> 00:39:19,460
 function which takes an argument and then
 gives back a function which takes another
 
-0:39:19.460,0:39:24.510
+00:39:19,460 --> 00:39:24,510
 argument and return the sum of what has been
 provided here and here.
 
-0:39:24.510,0:39:27.130
+00:39:24,510 --> 00:39:27,130
 And we could even go to further extremes and
 say:
 
-0:39:27.130,0:39:32.440
+00:39:27,130 --> 00:39:32,440
 Actually, add is just something which is a
 function which takes an x, and then returns
 
-0:39:32.440,0:39:34.970
+00:39:32,440 --> 00:39:34,970
 a function which takes a y, and then returns
 the sum of these.
 
-0:39:34.970,0:39:40.950
+00:39:34,970 --> 00:39:40,950
 We can even move the first argument to the
 right-hand side, so that we have all arguments
 
-0:39:40.950,0:39:42.060
+00:39:40,950 --> 00:39:42,060
 on the right-hand side.
 
-0:39:42.060,0:39:47.849
+00:39:42,060 --> 00:39:47,849
 And then, we can actually also shorten this
 and, in lambda-abstraction syntax, directly
 
-0:39:47.849,0:39:50.030
+00:39:47,849 --> 00:39:50,030
 introduce several variables at once.
 
-0:39:50.030,0:39:56.700
+00:39:50,030 --> 00:39:56,700
 So, all these four ways are expressing the
 very same thing and will be handled equivalently
 
-0:39:56.700,0:39:58.080
+00:39:56,700 --> 00:39:58,080
 by the compiler.
 
-0:39:58.080,0:40:03.950
+00:39:58,080 --> 00:40:03,950
 So, this explains, again, why we don't use
 the standard mathematical notation.
 
-0:40:03.950,0:40:09.360
+00:40:03,950 --> 00:40:09,360
 Because if we had written addition as a function
 like this, where we say: addition, and then
 
-0:40:09.360,0:40:14.380
+00:40:09,360 --> 00:40:14,380
 brackets where we give it two arguments separated
 by a comma, then it would not have been so
 
-0:40:14.380,0:40:16.470
+00:40:14,380 --> 00:40:16,470
 clear how to express these different perspectives.
 
-0:40:16.470,0:40:19.920
+00:40:16,470 --> 00:40:19,920
 We couldn't simply move from one to the other.
 
-0:40:19.920,0:40:25.010
+00:40:19,920 --> 00:40:25,010
 But in Haskell syntax, they are all equivalent,
 because they capture the same mathematical
 
-0:40:25.010,0:40:27.770
+00:40:25,010 --> 00:40:27,770
 concept of function.
 
-0:40:27.770,0:40:33.050
+00:40:27,770 --> 00:40:33,050
 This video is now getting really long.
 
-0:40:33.050,0:40:36.060
+00:40:33,050 --> 00:40:36,060
 So, now I will finish with this slide.
 
-0:40:36.060,0:40:40.030
+00:40:36,060 --> 00:40:40,030
 Now, some of you are maybe asking themselves:
 
-0:40:40.030,0:40:41.970
+00:40:40,030 --> 00:40:41,970
 Is any of that really useful to us?
 
-0:40:41.970,0:40:47.500
+00:40:41,970 --> 00:40:47,500
 Because it looked all a bit esoteric, maybe,
 because I had to introduce all these different
 
-0:40:47.500,0:40:50.869
+00:40:47,500 --> 00:40:50,869
 ways of writing functions to pass to other
 functions.
 
-0:40:50.869,0:40:58.330
+00:40:50,869 --> 00:40:58,330
 It was all artificial so far, except maybe
 for the things that I cannot explain to you
 
-0:40:58.330,0:41:02.450
+00:40:58,330 --> 00:41:02,450
 now in inner details like "animationOf" and
 "quickCheck" (the drivers of our libraries
 
-0:41:02.450,0:41:08.010
+00:41:02,450 --> 00:41:08,010
 that we have been using), which you cannot
 write yourself yet, in some parts because
 
-0:41:08.010,0:41:11.599
+00:41:08,010 --> 00:41:11,599
 they interact with 'IO' (like drawing something
 on screen, for example).
 
-0:41:11.599,0:41:16.890
+00:41:11,599 --> 00:41:16,890
 That is something that you don't know how
 to do right now, from first principles.
 
-0:41:16.890,0:41:22.190
+00:41:16,890 --> 00:41:22,190
 So, in that sense, even though you have seen
 some higher-order functions, you cannot really
 
-0:41:22.190,0:41:26.120
+00:41:22,190 --> 00:41:26,120
 write your own yet, or haven't, maybe, seen
 a need for this.
 
-0:41:26.120,0:41:29.520
+00:41:26,120 --> 00:41:29,520
 Hence, so far, this might seem a bit esoteric.
 
-0:41:29.520,0:41:36.190
+00:41:29,520 --> 00:41:36,190
 But some usages would be already apparent
 to you maybe now, namely for example, in the
 
-0:41:36.190,0:41:40.300
+00:41:36,190 --> 00:41:40,300
 exercise tasks where you had to draw a game
 level.
 
-0:41:40.300,0:41:42.370
+00:41:40,300 --> 00:41:42,370
 Then what was the ingredient for this?
 
-0:41:42.370,0:41:50.180
+00:41:42,370 --> 00:41:50,180
 It was the 'level' function which took two
 integers and gave back a code for what tile
 
-0:41:50.180,0:41:51.530
+00:41:50,180 --> 00:41:51,530
 to draw on the screen.
 
-0:41:51.530,0:41:54.930
+00:41:51,530 --> 00:41:54,930
 And this 'level' function could be seen as
 data itself.
 
-0:41:54.930,0:41:58.560
+00:41:54,930 --> 00:41:58,560
 You could, for example, instead of having
 it as a top-level definition, simply have
 
-0:41:58.560,0:42:03.750
+00:41:58,560 --> 00:42:03,750
 another function to which you can give a "level"
 function.
 
-0:42:03.750,0:42:12.060
+00:42:03,750 --> 00:42:12,060
 And indeed, the current task from exercise
 5, where there were given several depictions
 
-0:42:12.060,0:42:19.190
+00:42:12,060 --> 00:42:19,190
 of levels; that was realized by having, as
 data, a list of levels, where a level is a
 
-0:42:19.190,0:42:20.190
+00:42:19,190 --> 00:42:20,190
 function.
 
-0:42:20.190,0:42:21.320
+00:42:20,190 --> 00:42:21,320
 So, we had a list of functions.
 
-0:42:21.320,0:42:26.350
+00:42:21,320 --> 00:42:26,350
 And then that was given to a drawing function
 which operated on this list of functions.
 
-0:42:26.350,0:42:28.940
+00:42:26,350 --> 00:42:28,940
 So, there we had functions as data.
 
-0:42:28.940,0:42:35.980
+00:42:28,940 --> 00:42:35,980
 Again, that is something that you haven't
 written yourself, but very soon, actually
 
-0:42:35.980,0:42:42.250
+00:42:35,980 --> 00:42:42,250
 in the next video, we will see more examples
 of uses of higher-order.
 
-0:42:42.250,0:42:49.430
+00:42:42,250 --> 00:42:49,430
 And we will do this in the case of lists,
 because there are several directly useful
 
-0:42:49.430,0:42:51.510
+00:42:49,430 --> 00:42:51,510
 higher-order functions on lists.
 
-0:42:51.510,0:42:58.070
+00:42:51,510 --> 00:42:58,070
 Less esoteric than what I have shown you in
 this video, where I first wanted to get through
 
-0:42:58.070,0:43:05.670
+00:42:58,070 --> 00:43:05,670
 this basic concept of functions as arguments
 to other functions and also provide certain
 
-0:43:05.670,0:43:06.869
+00:43:05,670 --> 00:43:06,869
 syntactic prerequisites.
 
-0:43:06.869,0:43:14.089
+00:43:06,869 --> 00:43:14,089
 Now, in the next video, we can use this to
 do something useful on lists using higher-order
 
-0:43:14.089,0:43:14.589
+00:43:14,089 --> 00:43:14,589
 functions.

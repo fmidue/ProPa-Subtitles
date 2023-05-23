@@ -1,1110 +1,1111 @@
-0:00:02.590,0:00:04.640
+22 # slide
+00:00:02,590 --> 00:00:04,640
 Back to the slides.
 
-0:00:04.640,0:00:14.060
+00:00:04,640 --> 00:00:14,060
 I mentioned that one thing I want to do today
 is to discuss expressions vs. commands.
 
-0:00:14.060,0:00:20.060
+00:00:14,060 --> 00:00:20,060
 Expressions are things that I discussed in
 the whiteboard video.
 
-0:00:20.060,0:00:23.910
+00:00:20,060 --> 00:00:23,910
 The mathematical formulas, for example, are
 arithmetic expressions.
 
-0:00:23.910,0:00:28.990
+00:00:23,910 --> 00:00:28,990
 And commands, on the other hand, are things
 like "print" or an assignment in an imperative
 
-0:00:28.990,0:00:30.119
+00:00:28,990 --> 00:00:30,119
 language.
 
-0:00:30.119,0:00:36.350
+00:00:30,119 --> 00:00:36,350
 Often, expressions are also called "terms",
 and commands are often called "statements".
 
-0:00:36.350,0:00:44.660
+00:00:36,350 --> 00:00:44,660
 And I think I will use, in both cases, either
 terminology, without much thinking, actually.
 
-0:00:44.660,0:00:47.990
+00:00:44,660 --> 00:00:47,990
 So, let's think about expression-based programming.
 
-0:00:47.990,0:00:53.420
+00:00:47,990 --> 00:00:53,420
 Let me actually first say that for today's
 lecture, mainly we are not even doing functional
 
-0:00:53.420,0:00:56.260
+00:00:53,420 --> 00:00:56,260
 programming, but the point is more about expression-based
 programming.
 
-0:00:56.260,0:00:59.280
+00:00:56,260 --> 00:00:59,280
 We will use functions in our expressions.
 
-0:00:59.280,0:01:03.610
+00:00:59,280 --> 00:01:03,610
 And also in the first CodeWorld tasks that
 you will get, you will use functions.
 
-0:01:03.610,0:01:05.909
+00:01:03,610 --> 00:01:05,909
 But you will probably not define your own
 functions.
 
-0:01:05.909,0:01:09.079
+00:01:05,909 --> 00:01:09,079
 So, it is mainly about building expressions
 from functions.
 
-0:01:09.079,0:01:10.590
+00:01:09,079 --> 00:01:10,590
 So, what is an expression?
 
-0:01:10.590,0:01:13.710
+00:01:10,590 --> 00:01:13,710
 Well, it is as in the statement I just made:
 
-0:01:13.710,0:01:17.810
+00:01:13,710 --> 00:01:17,810
 Functional programming is mainly about expressions,
 whereas imperative programming is about the
 
-0:01:17.810,0:01:18.840
+00:01:17,810 --> 00:01:18,840
 other thing, about commands.
 
-0:01:18.840,0:01:24.539
+00:01:18,840 --> 00:01:24,539
 And that is what we saw when I discussed the
 differences in the whiteboard video.
 
-0:01:24.539,0:01:26.009
+00:01:24,539 --> 00:01:26,009
 What's an expression?
 
-0:01:26.009,0:01:29.469
+00:01:26,009 --> 00:01:29,469
 Well, you know many expressions in all
 kinds of languages.
 
-0:01:29.469,0:01:32.770
+00:01:29,469 --> 00:01:32,770
 For example, arithmetic expressions as occurred
 in the video.
 
-0:01:32.770,0:01:39.340
+00:01:32,770 --> 00:01:39,340
 So, "2 + 3 × (x+1)^2" or the examples that
 I showed in the video.
 
-0:01:39.340,0:01:40.840
+00:01:39,340 --> 00:01:40,840
 These are expressions.
 
-0:01:40.840,0:01:48.109
+00:01:40,840 --> 00:01:48,109
 Things that are built from symbols, from variables,
 constants, and operations.
 
-0:01:48.109,0:01:50.649
+00:01:48,109 --> 00:01:50,649
 This is not only something for arithmetics.
 
-0:01:50.649,0:01:55.669
+00:01:50,649 --> 00:01:55,669
 For example, in logic, you know propositional
 logic formulas that could look like this.
 
-0:01:55.669,0:01:57.749
+00:01:55,669 --> 00:01:57,749
 And this is also an expression.
 
-0:01:57.749,0:02:02.969
+00:01:57,749 --> 00:02:02,969
 Or, in an Excel spreadsheet, you might use
 expressions to describe what should be the
 
-0:02:02.969,0:02:05.570
+00:02:02,969 --> 00:02:05,570
 value of a certain cell.
 
-0:02:05.570,0:02:07.759
+00:02:05,570 --> 00:02:07,759
 Other examples would be expressions in SQL.
 
-0:02:07.759,0:02:14.090
+00:02:07,759 --> 00:02:14,090
 When you do database queries, the language
 in which you write them, SQL, is also very
 
-0:02:14.090,0:02:16.290
+00:02:14,090 --> 00:02:16,290
 much an expression-based language.
 
-0:02:16.290,0:02:19.510
+00:02:16,290 --> 00:02:19,510
 So, these things are built up from parts.
 
-0:02:19.510,0:02:21.069
+00:02:19,510 --> 00:02:21,069
 They have a certain syntax.
 
-0:02:21.069,0:02:27.239
+00:02:21,069 --> 00:02:27,239
 And you get structured expressions, similarly
 to what I showed last week in the CodeWorld
 
-0:02:27.239,0:02:33.769
+00:02:27,239 --> 00:02:33,769
 editor, where I also explored the tree underlying
 a picture expression.
 
-0:02:33.769,0:02:36.870
+00:02:33,769 --> 00:02:36,870
 And indeed, we can write down the syntax trees.
 
-0:02:36.870,0:02:40.770
+00:02:36,870 --> 00:02:40,770
 And maybe I will do this on an example in
 another short video later.
 
-0:02:40.770,0:02:49.209
+00:02:40,770 --> 00:02:49,209
 Generally, mathematically speaking, a term,
 an expression, is simply something that is
 
-0:02:49.209,0:02:50.209
+00:02:49,209 --> 00:02:50,209
 built from a signature.
 
-0:02:50.209,0:02:54.469
+00:02:50,209 --> 00:02:54,469
 So, we have constants, functions/operators,
 possibly variables, as discussed earlier in
 
-0:02:54.469,0:02:58.530
+00:02:54,469 --> 00:02:58,530
 my other expression examples.
 
-0:02:58.530,0:03:05.569
+00:02:58,530 --> 00:03:05,569
 So, what's the point?
 
-0:03:05.569,0:03:08.909
+00:03:05,569 --> 00:03:08,909
 What are properties of expressions, or specifically,
 of pure expressions?
 
-0:03:08.909,0:03:10.500
+00:03:08,909 --> 00:03:10,500
 Later, we will discuss the difference: whether
 they are compositional.
 
-0:03:10.500,0:03:16.069
+00:03:10,500 --> 00:03:16,069
 As I just said, expressions are built completely
 from subexpressions.
 
-0:03:16.069,0:03:22.690
+00:03:16,069 --> 00:03:22,690
 So if you take an expression, draw it down
 as a tree, and then point at any node in that
 
-0:03:22.690,0:03:27.989
+00:03:22,690 --> 00:03:27,989
 tree, then what you get rooted at that point
 is just another expression, a subexpression.
 
-0:03:27.989,0:03:31.129
+00:03:27,989 --> 00:03:31,129
 That is not true for commands, as we will
 see.
 
-0:03:31.129,0:03:33.969
+00:03:31,129 --> 00:03:33,969
 Expressions usually have a type, or can be
 given a type.
 
-0:03:33.969,0:03:40.090
+00:03:33,969 --> 00:03:40,090
 In the example we just saw (the arithmetic
 expression), of course all the subexpressions
 
-0:03:40.090,0:03:42.659
+00:03:40,090 --> 00:03:42,659
 and also the whole expression had a numerical
 type.
 
-0:03:42.659,0:03:48.560
+00:03:42,659 --> 00:03:48,560
 Depending on what x might be, it could be
 natural numbers or a real numbers, whatever.
 
-0:03:48.560,0:03:53.110
+00:03:48,560 --> 00:03:53,110
 But, the point is, we can assign types to
 expressions and to their subexpressions.
 
-0:03:53.110,0:03:55.969
+00:03:53,110 --> 00:03:55,969
 They usually have a value.
 
-0:03:55.969,0:03:57.409
+00:03:55,969 --> 00:03:57,409
 Expressions can be evaluated.
 
-0:03:57.409,0:04:01.249
+00:03:57,409 --> 00:04:01,249
 So, we take "2 + 3 × (x+1)^2".
 
-0:04:01.249,0:04:07.400
+00:04:01,249 --> 00:04:07,400
 And if you know what x is, if we have (in
 scope) a variable x, with which we have a
 
-0:04:07.400,0:04:12.540
+00:04:07,400 --> 00:04:12,540
 value assigned, then we know what the value
 of the whole expression is.
 
-0:04:12.540,0:04:17.200
+00:04:12,540 --> 00:04:17,200
 And this happens without any hidden influences:
 If we know the variables, then we know what
 
-0:04:17.200,0:04:19.209
+00:04:17,200 --> 00:04:19,209
 the result of an expression is.
 
-0:04:19.209,0:04:24.160
+00:04:19,209 --> 00:04:24,160
 And it doesn't change if we evaluate the expression
 several times.
 
-0:04:24.160,0:04:29.020
+00:04:24,160 --> 00:04:29,020
 If the variables are the same, have the same
 values, then the result of evaluation will
 
-0:04:29.020,0:04:30.090
+00:04:29,020 --> 00:04:30,090
 always be the same.
 
-0:04:30.090,0:04:36.180
+00:04:30,090 --> 00:04:36,180
 Also, the result of evaluation does not depend
 on the order in which we evaluate subexpressions.
 
-0:04:36.180,0:04:41.849
+00:04:36,180 --> 00:04:41,849
 Therefore, pure expressions: if we have "a
 + b" and "a" and "b" are more complex subexpressions,
 
-0:04:41.849,0:04:45.840
+00:04:41,849 --> 00:04:45,840
 then it doesn't matter in which order we evaluate
 the left and the right side.
 
-0:04:45.840,0:04:47.860
+00:04:45,840 --> 00:04:47,860
 The sum will always be the same.
 
-0:04:47.860,0:04:54.349
+00:04:47,860 --> 00:04:54,349
 Again, something that is not in general true
 for impure expressions in a language like
 
-0:04:54.349,0:04:56.650
+00:04:54,349 --> 00:04:56,650
 C, for example.
 
-0:04:56.650,0:04:58.280
+00:04:56,650 --> 00:04:58,280
 And this compositionality is not just syntactical.
 
-0:04:58.280,0:05:05.819
+00:04:58,280 --> 00:05:05,819
 It really extends to typing and semantics/evaluation.
 
-0:05:05.819,0:05:12.729
+00:05:05,819 --> 00:05:12,729
 So, let's take our very simple example from
 two slides ago.
 
-0:05:12.729,0:05:13.840
+00:05:12,729 --> 00:05:13,840
 What are the ingredients here?
 
-0:05:13.840,0:05:15.630
+00:05:13,840 --> 00:05:15,630
 Well, we have the constants 1, 2, and 3.
 
-0:05:15.630,0:05:18.060
+00:05:15,630 --> 00:05:18,060
 They have a type: the whole numbers ℤ.
 
-0:05:18.060,0:05:20.199
+00:05:18,060 --> 00:05:20,199
 We have some operators.
 
-0:05:20.199,0:05:21.789
+00:05:20,199 --> 00:05:21,789
 They could also be given types.
 
-0:05:21.789,0:05:25.930
+00:05:21,789 --> 00:05:25,930
 Usually, in mathematics you don't really write
 down the types of these very simple operators.
 
-0:05:25.930,0:05:27.080
+00:05:25,930 --> 00:05:27,080
 But of course, you could do that.
 
-0:05:27.080,0:05:33.330
+00:05:27,080 --> 00:05:33,330
 And you have binary operations and a unary
 operation (the square-operator), and then
 
-0:05:33.330,0:05:38.889
+00:05:33,330 --> 00:05:38,889
 if you want to know what the value of "two
 plus three times something" is, then we go
 
-0:05:38.889,0:05:43.289
+00:05:38,889 --> 00:05:43,289
 through these subexpressions and simply evaluate
 all the sub expressions, and then accumulate
 
-0:05:43.289,0:05:44.500
+00:05:43,289 --> 00:05:44,500
 the results.
 
-0:05:44.500,0:05:47.220
+00:05:44,500 --> 00:05:47,220
 This, of course, is all very trivial.
 
-0:05:47.220,0:05:53.540
+00:05:47,220 --> 00:05:53,540
 That's exactly what you do when you calculate
 with simple arithmetic expressions.
 
-0:05:53.540,0:05:58.490
+00:05:53,540 --> 00:05:58,490
 The point here is that this extends to all
 the other examples of expressions we have
 
-0:05:58.490,0:05:59.490
+00:05:58,490 --> 00:05:59,490
 seen.
 
-0:05:59.490,0:06:01.819
+00:05:59,490 --> 00:06:01,819
 And, in particular, it applies to every Haskell
 program.
 
-0:06:01.819,0:06:07.190
+00:06:01,819 --> 00:06:07,190
 So for Haskell programs their semantics is
 only given by evaluation.
 
-0:06:07.190,0:06:11.740
+00:06:07,190 --> 00:06:11,740
 And that's definitely not true in imperative
 languages.
 
-0:06:11.740,0:06:19.840
+00:06:11,740 --> 00:06:19,840
 The examples we saw last week, with the pictures,
 were just one instantiation of this.
 
-0:06:19.840,0:06:22.040
+00:06:19,840 --> 00:06:22,040
 Okay.
 
-0:06:22.040,0:06:26.009
+00:06:22,040 --> 00:06:26,009
 What does this buy us?
 
-0:06:26.009,0:06:32.550
+00:06:26,009 --> 00:06:32,550
 Also, again, somehow relating to the whiteboard
 video that I did previously.
 
-0:06:32.550,0:06:36.289
+00:06:32,550 --> 00:06:36,289
 Well, we can use all kinds of notations from
 mathematics.
 
-0:06:36.289,0:06:44.510
+00:06:36,289 --> 00:06:44,510
 So, a simple thing like if you have "2 + 3
 × (something)^2", we might as well write this
 
-0:06:44.510,0:06:49.730
+00:06:44,510 --> 00:06:49,730
 as "2 + 3 × (y^2)" and give a name to that
 subexpression.
 
-0:06:49.730,0:06:56.169
+00:06:49,730 --> 00:06:56,169
 So, a trivial thing in this case, but for
 more complex programs such naming of arbitrary
 
-0:06:56.169,0:06:58.370
+00:06:56,169 --> 00:06:58,370
 subexpressions is a valuable thing.
 
-0:06:58.370,0:07:02.759
+00:06:58,370 --> 00:07:02,759
 You will see this when you build more complex
 Haskell programs, for example.
 
-0:07:02.759,0:07:09.349
+00:07:02,759 --> 00:07:09,349
 Again, something that's not immediate and
 not always possible in a command-based language,
 
-0:07:09.349,0:07:10.510
+00:07:09,349 --> 00:07:10,510
 as you will see.
 
-0:07:10.510,0:07:17.340
+00:07:10,510 --> 00:07:17,340
 And, as I have actually already demonstrated
 with the "read() + read()" example on the whiteboard,
 
-0:07:17.340,0:07:18.560
+00:07:17,340 --> 00:07:18,560
 we can apply simplifications.
 
-0:07:18.560,0:07:28.530
+00:07:18,560 --> 00:07:28,530
 So, for example, maybe y^2 is an expensive
 operation, and we could instead multiply y
 
-0:07:28.530,0:07:29.530
+00:07:28,530 --> 00:07:29,530
 with y.
 
-0:07:29.530,0:07:31.740
+00:07:29,530 --> 00:07:31,740
 Well, of course, mathematically, that is okay.
 
-0:07:31.740,0:07:34.069
+00:07:31,740 --> 00:07:34,069
 That is exactly the same as here.
 
-0:07:34.069,0:07:35.069
+00:07:34,069 --> 00:07:35,069
 Why?
 
-0:07:35.069,0:07:40.520
+00:07:35,069 --> 00:07:40,520
 Because y is a variable that's always, in
 scope, having the same value.
 
-0:07:40.520,0:07:48.790
+00:07:40,520 --> 00:07:48,790
 It is like the "f(x) + f(x) is 2 × f(x)" example
 from my previous video.
 
-0:07:48.790,0:07:57.460
+00:07:48,790 --> 00:07:57,460
 So, of course, again, it might seem trivial,
 applied to arithmetic expressions.
 
-0:07:57.460,0:08:02.810
+00:07:57,460 --> 00:08:02,810
 But the point is that these concepts apply
 much more generally, if we buy into the notion
 
-0:08:02.810,0:08:07.120
+00:08:02,810 --> 00:08:07,120
 that we should program only with functions
 and expressions.
 
-0:08:07.120,0:08:11.990
+00:08:07,120 --> 00:08:11,990
 If we stay away from impure expressions, if
 we stay away from commands, then we can apply
 
-0:08:11.990,0:08:13.490
+00:08:11,990 --> 00:08:13,490
 everything we know from algebra.
 
-0:08:13.490,0:08:19.340
+00:08:13,490 --> 00:08:19,340
 Everything we know from mathematics, in terms
 of manipulating formulas, rearranging formulas,
 
-0:08:19.340,0:08:20.340
+00:08:19,340 --> 00:08:20,340
 etc.
 
-0:08:20.340,0:08:27.970
+00:08:20,340 --> 00:08:27,970
 All these things can be applied to programs,
 if programs are just built from expressions.
 
-0:08:27.970,0:08:41.760
+00:08:27,970 --> 00:08:41,760
 This last point is the important thing here:
 This applies if you have only pure expressions.
 
-0:08:41.760,0:08:45.600
+00:08:41,760 --> 00:08:45,600
 In what sense is this different from imperative
 programming?
 
-0:08:45.600,0:08:51.810
+00:08:45,600 --> 00:08:51,810
 So, why is what I just said only true in certain
 kinds of programs, that we are aiming for
 
-0:08:51.810,0:08:54.380
+00:08:51,810 --> 00:08:54,380
 at the moment (expression-based programs)?
 
-0:08:54.380,0:08:56.410
+00:08:54,380 --> 00:08:56,410
 Well, let's have a look.
 
-0:08:56.410,0:09:01.190
+00:08:56,410 --> 00:09:01,190
 This is some prototypical imperative programming
 code.
 
-0:09:01.190,0:09:03.210
+00:09:01,190 --> 00:09:03,210
 So, this could be C or Java.
 
-0:09:03.210,0:09:10.960
+00:09:03,210 --> 00:09:10,960
 It could also be Python with a little bit
 of manipulation or few changes in syntax.
 
-0:09:10.960,0:09:13.400
+00:09:10,960 --> 00:09:13,400
 Certainly, we also have expressions here,
 right?
 
-0:09:13.400,0:09:16.910
+00:09:13,400 --> 00:09:16,910
 So, I mean: This constant is an expression.
 
-0:09:16.910,0:09:20.000
+00:09:16,910 --> 00:09:20,000
 This addition here looks like an expression.
 
-0:09:20.000,0:09:22.660
+00:09:20,000 --> 00:09:22,660
 We have expressions in the condition of this
 while-loop.
 
-0:09:22.660,0:09:28.830
+00:09:22,660 --> 00:09:28,830
 Here, we have, again, an arithmetic expression
 which calculates something.
 
-0:09:28.830,0:09:33.690
+00:09:28,830 --> 00:09:33,690
 So, what's different now?
 
-0:09:33.690,0:09:39.320
+00:09:33,690 --> 00:09:39,320
 Well, the point is that of course there are
 expression here as well, but they are not
 
-0:09:39.320,0:09:41.190
+00:09:39,320 --> 00:09:41,190
 the dominating syntactical construct.
 
-0:09:41.190,0:09:45.870
+00:09:41,190 --> 00:09:45,870
 There are many things in this piece of
 program code that are not expressions.
 
-0:09:45.870,0:09:50.120
+00:09:45,870 --> 00:09:50,120
 For example, "while" is a keyword.
 
-0:09:50.120,0:09:55.230
+00:09:50,120 --> 00:09:55,230
 The assignment here is a command.
 
-0:09:55.230,0:10:01.730
+00:09:55,230 --> 00:10:01,730
 On the right side we have an expression, but
 as a whole, this line here is not an expression.
 
-0:10:01.730,0:10:10.630
+00:10:01,730 --> 00:10:10,630
 So, it's not true that everything is, syntactically,
 composed of the same kind of construct like
 
-0:10:10.630,0:10:16.190
+00:10:10,630 --> 00:10:16,190
 in a purely expression-based language (and
 like really in mathematics).
 
-0:10:16.190,0:10:23.270
+00:10:16,190 --> 00:10:23,270
 Why is this relevant?
 
-0:10:23.270,0:10:29.340
+00:10:23,270 --> 00:10:29,340
 What properties do commands not have that
 we know from expressions?
 
-0:10:29.340,0:10:31.940
+00:10:29,340 --> 00:10:31,940
 Well, they are not compositional.
 
-0:10:31.940,0:10:38.820
+00:10:31,940 --> 00:10:38,820
 So, it's not the case that if you have a command,
 then all its smaller-size-contained parts
 
-0:10:38.820,0:10:42.620
+00:10:38,820 --> 00:10:42,620
 are themselves commands.
 
-0:10:42.620,0:10:45.280
+00:10:42,620 --> 00:10:45,280
 That's already not true in this thing:
 
-0:10:45.280,0:10:50.050
+00:10:45,280 --> 00:10:50,050
 This loop is certainly a command, as a whole,
 and there are commands inside.
 
-0:10:50.050,0:10:54.230
+00:10:50,050 --> 00:10:54,230
 But, for example, this here is not a command.
 
-0:10:54.230,0:11:00.380
+00:10:54,230 --> 00:11:00,380
 We have expressions, keywords, etc., as highlighted
 on the previous slide.
 
-0:11:00.380,0:11:06.070
+00:11:00,380 --> 00:11:06,070
 Moreover, commands do not always have a meaningful
 type.
 
-0:11:06.070,0:11:12.830
+00:11:06,070 --> 00:11:12,830
 For example, it's not clear what the type
 of this command is.
 
-0:11:12.830,0:11:14.820
+00:11:12,830 --> 00:11:14,820
 It doesn't really compute a value.
 
-0:11:14.820,0:11:17.370
+00:11:14,820 --> 00:11:17,370
 Indeed, it doesn't have value.
 
-0:11:17.370,0:11:19.170
+00:11:17,370 --> 00:11:19,170
 So, some expressions here have a value.
 
-0:11:19.170,0:11:24.370
+00:11:19,170 --> 00:11:24,370
 This, for example, depending on what "b" is,
 will evaluate to "true" or "false".
 
-0:11:24.370,0:11:27.330
+00:11:24,370 --> 00:11:27,330
 But the loop as a whole doesn't have a value.
 
-0:11:27.330,0:11:32.570
+00:11:27,330 --> 00:11:32,570
 There is no really meaningful way to say what
 the value should be.
 
-0:11:32.570,0:11:35.380
+00:11:32,570 --> 00:11:35,380
 Or it would be a trivial value.
 
-0:11:35.380,0:11:40.420
+00:11:35,380 --> 00:11:40,420
 The same for some subparts: Let's only take
 the block from here to here.
 
-0:11:40.420,0:11:45.430
+00:11:40,420 --> 00:11:45,430
 This is a sequence of statements, but it is
 not something that has a value.
 
-0:11:45.430,0:11:46.430
+00:11:45,430 --> 00:11:46,430
 Why?
 
-0:11:46.430,0:11:49.980
+00:11:46,430 --> 00:11:49,980
 Because for a command, the important thing
 is what effect it has.
 
-0:11:49.980,0:11:56.300
+00:11:49,980 --> 00:11:56,300
 So, if you look at this assignment here, what's
 interesting to the programmer about this is
 
-0:11:56.300,0:12:00.660
+00:11:56,300 --> 00:12:00,660
 that j will afterwards have a different value
 than before.
 
-0:12:00.660,0:12:04.390
+00:12:00,660 --> 00:12:04,390
 But the statement itself doesn't have an interesting
 value.
 
-0:12:04.390,0:12:15.750
+00:12:04,390 --> 00:12:15,750
 As a consequence, also, of this lack of compositionality,
 we cannot, as previously in mathematics, name
 
-0:12:15.750,0:12:19.420
+00:12:15,750 --> 00:12:19,420
 arbitrary well-formed smaller parts.
 
-0:12:19.420,0:12:24.320
+00:12:19,420 --> 00:12:24,320
 So, we cannot write the previous example like
 that.
 
-0:12:24.320,0:12:31.630
+00:12:24,320 --> 00:12:31,630
 Previously, you had this loop: while something
 ... and then we had this code block.
 
-0:12:31.630,0:12:40.250
+00:12:31,630 --> 00:12:40,250
 And we cannot really, in most imperative languages,
 give a name to this code block, and then simply
 
-0:12:40.250,0:12:41.350
+00:12:40,250 --> 00:12:41,350
 mention the name here.
 
-0:12:41.350,0:12:44.460
+00:12:41,350 --> 00:12:44,460
 Because this is not an expression.
 
-0:12:44.460,0:12:51.320
+00:12:44,460 --> 00:12:51,320
 So, in C or Java, or Python, the things that
 you would consider expressions are the things
 
-0:12:51.320,0:12:55.510
+00:12:51,320 --> 00:12:55,510
 that you can write on the right-hand side
 of an assignment statement.
 
-0:12:55.510,0:12:59.320
+00:12:55,510 --> 00:12:59,320
 And something like this is not something that
 you could write.
 
-0:12:59.320,0:13:01.790
+00:12:59,320 --> 00:13:01,790
 Because this block is not an expression.
 
-0:13:01.790,0:13:02.790
+00:13:01,790 --> 00:13:02,790
 It doesn't have a value.
 
-0:13:02.790,0:13:08.500
+00:13:02,790 --> 00:13:08,500
 It doesn't have a meaningful type, etc.
 
-0:13:08.500,0:13:09.640
+00:13:08,500 --> 00:13:09,640
 You could try some workarounds.
 
-0:13:09.640,0:13:16.010
+00:13:09,640 --> 00:13:16,010
 You could use functions, procedures, methods,
 depending on the specific language that you're
 
-0:13:16.010,0:13:17.360
+00:13:16,010 --> 00:13:17,360
 trying to do this in.
 
-0:13:17.360,0:13:23.920
+00:13:17,360 --> 00:13:23,920
 So, you could try to introduce a new procedure
 which, essentially, corresponds to this code
 
-0:13:23.920,0:13:25.020
+00:13:23,920 --> 00:13:25,020
 block here.
 
-0:13:25.020,0:13:29.430
+00:13:25,020 --> 00:13:29,430
 But even then, you don't get the same kind
 of flexibility that we are used to from mathematics.
 
-0:13:29.430,0:13:35.550
+00:13:29,430 --> 00:13:35,550
 There, we can simply take some expression,
 give it a name, and use notation and understand
 
-0:13:35.550,0:13:40.760
+00:13:35,550 --> 00:13:40,760
 notation in this spirit here.
 
-0:13:40.760,0:13:48.490
+00:13:40,760 --> 00:13:48,490
 So, what about the expressions that do occur
 in C or Java or Python?
 
-0:13:48.490,0:13:53.040
+00:13:48,490 --> 00:13:53,040
 So, even if not everything is an expression,
 at least we know that there are expressions
 
-0:13:53.040,0:13:54.300
+00:13:53,040 --> 00:13:54,300
 in these languages as well.
 
-0:13:54.300,0:13:59.940
+00:13:54,300 --> 00:13:59,940
 The things that occur on the right-hand sides
 of an assignment command, for example.
 
-0:13:59.940,0:14:01.710
+00:13:59,940 --> 00:14:01,710
 What about those expressions?
 
-0:14:01.710,0:14:07.260
+00:14:01,710 --> 00:14:07,260
 Let's consider the sublanguage of only expressions
 in something like C or Java.
 
-0:14:07.260,0:14:09.620
+00:14:07,260 --> 00:14:09,620
 Can they at least be treated as we saw before?
 
-0:14:09.620,0:14:16.040
+00:14:09,620 --> 00:14:16,040
 So, do we get back our mathematical principles,
 if we focus only on the expression part of
 
-0:14:16.040,0:14:17.080
+00:14:16,040 --> 00:14:17,080
 an imperative language?
 
-0:14:17.080,0:14:21.880
+00:14:17,080 --> 00:14:21,880
 Well, I claim here that it is not the case.
 
-0:14:21.880,0:14:22.880
+00:14:21,880 --> 00:14:22,880
 Why is that?
 
-0:14:22.880,0:14:24.730
+00:14:22,880 --> 00:14:24,730
 Well, let's look at an example.
 
-0:14:24.730,0:14:32.500
+00:14:24,730 --> 00:14:32,500
 It is a bit convoluted here, but really corresponds
 to something similar we saw before with concrete
 
-0:14:32.500,0:14:33.970
+00:14:32,500 --> 00:14:33,970
 numbers and constants.
 
-0:14:33.970,0:14:40.510
+00:14:33,970 --> 00:14:40,510
 So let's look at an expression like this,
 which is built from expressions: "subexpression1
 
-0:14:40.510,0:14:44.140
+00:14:40,510 --> 00:14:44,140
 + subexpression2 × (expression3)^2".
 
-0:14:44.140,0:14:48.090
+00:14:44,140 --> 00:14:48,090
 We saw that before with constants and some
 "x + 1" here.
 
-0:14:48.090,0:14:54.820
+00:14:48,090 --> 00:14:54,820
 Mathematically, we know that here are three
 equivalent ways of writing this piece of expressions.
 
-0:14:54.820,0:15:04.050
+00:14:54,820 --> 00:15:04,050
 So, we could really say, for example, name
 this expression with some variable name, and
 
-0:15:04.050,0:15:06.730
+00:15:04,050 --> 00:15:06,730
 simply square that variable.
 
-0:15:06.730,0:15:10.840
+00:15:06,730 --> 00:15:10,840
 Or we could say, squaring that variable is
 the same as writing: "variable × variable".
 
-0:15:10.840,0:15:17.590
+00:15:10,840 --> 00:15:17,590
 Or, indeed, we could avoid naming the subexpression,
 and simply repeat that subexpression
 
-0:15:17.590,0:15:18.590
+00:15:17,590 --> 00:15:18,590
 here.
 
-0:15:18.590,0:15:22.630
+00:15:18,590 --> 00:15:22,630
 So, "exp1 + exp2 × exp3 × exp3".
 
-0:15:22.630,0:15:29.290
+00:15:22,630 --> 00:15:29,290
 That should also be mathematically equivalent
 to this piece of code.
 
-0:15:29.290,0:15:31.680
+00:15:29,290 --> 00:15:31,680
 But is it true?
 
-0:15:31.680,0:15:37.190
+00:15:31,680 --> 00:15:37,190
 In an imperative setting, if we have this,
 for example, as the right-hand side of an
 
-0:15:37.190,0:15:43.550
+00:15:37,190 --> 00:15:43,550
 assignment statement, so the very same expression
 as we had here, and then, for example, this
 
-0:15:43.550,0:15:47.550
+00:15:43,550 --> 00:15:47,550
 "naming a sub expression" could be expressed
 in theory as saying:
 
-0:15:47.550,0:15:52.040
+00:15:47,550 --> 00:15:52,040
 Well, let's assign the value of the subexpression
 to a variable.
 
-0:15:52.040,0:15:54.880
+00:15:52,040 --> 00:15:54,880
 (It should be in scope, of course.)
 
-0:15:54.880,0:16:01.760
+00:15:54,880 --> 00:16:01,760
 And then let's, in the spirit of this first
 line here, for example, have this right-hand
 
-0:16:01.760,0:16:09.200
+00:16:01,760 --> 00:16:09,200
 side expression for our result assignment,
 in which we square the value of that variable.
 
-0:16:09.200,0:16:19.200
+00:16:09,200 --> 00:16:19,200
 That looks like the step from this to this
 line.
 
-0:16:19.200,0:16:30.560
+00:16:19,200 --> 00:16:30,560
 Or we could try the same for these other two
 lines.
 
-0:16:30.560,0:16:35.810
+00:16:30,560 --> 00:16:35,810
 Is this a valid transformation in C or Java
 or Python?
 
-0:16:35.810,0:16:40.230
+00:16:35,810 --> 00:16:40,230
 No, it is not.
 
-0:16:40.230,0:16:46.120
+00:16:40,230 --> 00:16:46,120
 Let us consider these four lines here.
 
-0:16:46.120,0:16:54.440
+00:16:46,120 --> 00:16:54,440
 Each of them corresponds to one of the hypothetical
 reformulations of the expression that we saw
 
-0:16:54.440,0:16:58.020
+00:16:54,440 --> 00:16:58,020
 on the previous slide, on the mathematical
 level.
 
-0:16:58.020,0:17:05.760
+00:16:58,020 --> 00:17:05,760
 And now, we can try them out in an imperative
 language, and see whether they behave the
 
-0:17:05.760,0:17:06.760
+00:17:05,760 --> 00:17:06,760
 same.
 
-0:17:06.760,0:17:13.791
+00:17:06,760 --> 00:17:13,791
 In the sense that in any larger program, I
 could replace the line like this by a line
 
-0:17:13.791,0:17:20.379
+00:17:13,791 --> 00:17:20,379
 like this, or this, or this, and see whether
 I have the same program behaviour.
 
-0:17:20.379,0:17:26.860
+00:17:20,379 --> 00:17:26,860
 And if you try this out, you will find out
 that, actually, from those four, only the
 
-0:17:26.860,0:17:31.100
+00:17:26,860 --> 00:17:31,100
 second and third line will really behave the
 same.
 
-0:17:31.100,0:17:41.080
+00:17:31,100 --> 00:17:41,080
 Whichever other pair of lines you pick, you
 will be able to choose expressions, and maybe
 
-0:17:41.080,0:17:46.670
+00:17:41,080 --> 00:17:46,670
 variable values that are used in those expressions,
 or function calls that are occurring in these
 
-0:17:46.670,0:17:54.390
+00:17:46,670 --> 00:17:54,390
 expressions, and replaced by or tied to specific
 implementations of procedures and functions,
 
-0:17:54.390,0:18:00.340
+00:17:54,390 --> 00:18:00,340
 and you will be able to observe differences.
 
-0:18:00.340,0:18:06.129
+00:18:00,340 --> 00:18:06,129
 The way of convincing yourself of that would
 be to replace the exp3 (the expression that
 
-0:18:06.129,0:18:12.960
+00:18:06,129 --> 00:18:12,960
 we wanted to give a name to), and then reuse,
 for example, in these lines here:
 
-0:18:12.960,0:18:19.879
+00:18:12,960 --> 00:18:19,879
 Imagine that exp3 is the so-called expression
 "i++", which isn't really an expression.
 
-0:18:19.879,0:18:20.960
+00:18:19,879 --> 00:18:20,960
 It is really a statement.
 
-0:18:20.960,0:18:30.520
+00:18:20,960 --> 00:18:30,520
 It is a command to increment the value of
 the variable i, which should be in the scope
 
-0:18:30.520,0:18:31.520
+00:18:30,520 --> 00:18:31,520
 somehow.
 
-0:18:31.520,0:18:37.750
+00:18:31,520 --> 00:18:37,750
 And, for example, if you look at the first
 line and the last line, then you will see
 
-0:18:37.750,0:18:43.940
+00:18:37,750 --> 00:18:43,940
 that here the "i" will be incremented once,
 and here the "i" will be incremented twice.
 
-0:18:43.940,0:18:48.700
+00:18:43,940 --> 00:18:48,700
 Which is already an observable difference
 from the outset of this expression or these
 
-0:18:48.700,0:18:49.700
+00:18:48,700 --> 00:18:49,700
 small program parts.
 
-0:18:49.700,0:18:51.269
+00:18:49,700 --> 00:18:51,269
 So, they are not interchangeable.
 
-0:18:51.269,0:18:53.789
+00:18:51,269 --> 00:18:53,789
 And the same applies to other pairs.
 
-0:18:53.789,0:18:59.289
+00:18:53,789 --> 00:18:59,289
 Or, you don't need to have state manipulations,
 you don't need to have an update of a variable.
 
-0:18:59.289,0:19:05.669
+00:18:59,289 --> 00:19:05,669
 You could simply have a function call to something
 which, ostensibly, is a function, but actually
 
-0:19:05.669,0:19:07.880
+00:19:05,669 --> 00:19:07,880
 is not a function in a mathematical sense.
 
-0:19:07.880,0:19:13.159
+00:19:07,880 --> 00:19:13,159
 A procedure in your language which might alter
 some global state.
 
-0:19:13.159,0:19:19.779
+00:19:13,159 --> 00:19:19,779
 It might be a method that you call on an object,
 and it changes instance variables of the object.
 
-0:19:19.779,0:19:27.070
+00:19:19,779 --> 00:19:27,070
 Then again, taking this first line and the
 last line, you will be able to observe differences.
 
-0:19:27.070,0:19:34.299
+00:19:27,070 --> 00:19:34,299
 Or "f" is a procedure that does input/output
 as in the "print" or "read" examples that
 
-0:19:34.299,0:19:36.480
+00:19:34,299 --> 00:19:36,480
 I discussed in a previous video.
 
-0:19:36.480,0:19:42.350
+00:19:36,480 --> 00:19:42,350
 Again, things will simply change the semantics.
 
-0:19:42.350,0:19:47.260
+00:19:42,350 --> 00:19:47,260
 And that is because what we see here are not
 pure expressions.
 
-0:19:47.260,0:19:50.600
+00:19:47,260 --> 00:19:50,600
 Because in an imperative language, we don't
 have pure expressions.
 
-0:19:50.600,0:19:52.940
+00:19:50,600 --> 00:19:52,940
 We have these expressions which have a side
 effect.
 
-0:19:52.940,0:19:55.610
+00:19:52,940 --> 00:19:55,610
 Which are really commands.
 
-0:19:55.610,0:20:01.309
+00:19:55,610 --> 00:20:01,309
 So, we cannot name parts of expressions arbitrarily
 or freely.
 
-0:20:01.309,0:20:05.539
+00:20:01,309 --> 00:20:05,539
 This is really the underlying problem here.
 
-0:20:05.539,0:20:11.690
+00:20:05,539 --> 00:20:11,690
 That even the sublanguage of expressions in
 an imperative language is not expression-based,
 
-0:20:11.690,0:20:13.750
+00:20:11,690 --> 00:20:13,750
 in the sense of mathematical expressions.
 
-0:20:13.750,0:20:20.071
+00:20:13,750 --> 00:20:20,071
 So, despite these lines here originating from
 seemingly mathematical equivalences, they
 
-0:20:20.071,0:20:25.259
+00:20:20,071 --> 00:20:25,259
 are not program equivalences.
 
-0:20:25.259,0:20:32.870
+00:20:25,259 --> 00:20:32,870
 And for the same reason, for example, reevaluating
 an expression can lead to different values.
 
-0:20:32.870,0:20:37.889
+00:20:32,870 --> 00:20:37,889
 Or the order of evaluating subexpressions
 becomes relevant, because we don't really
 
-0:20:37.889,0:20:38.889
+00:20:37,889 --> 00:20:38,889
 have functions.
 
-0:20:38.889,0:20:44.750
+00:20:38,889 --> 00:20:44,750
 A mathematical function would be where whenever
 you call the function with the same input,
 
-0:20:44.750,0:20:45.970
+00:20:44,750 --> 00:20:45,970
 you get the same output.
 
-0:20:45.970,0:20:50.899
+00:20:45,970 --> 00:20:50,899
 But for a procedure, for a method in an imperative
 language, that is not necessarily the case.
 
-0:20:50.899,0:20:55.690
+00:20:50,899 --> 00:20:55,690
 You only have to think about the 'read' function/method/procedure.
 
-0:20:55.690,0:21:00.780
+00:20:55,690 --> 00:21:00,780
 You can call it 10 times, and you can get
 10 different results.
 
-0:21:00.780,0:21:09.139
+00:21:00,780 --> 00:21:09,139
 That clearly runs counter to any argument
 about equivalence of syntactic expressions.
 
-0:21:09.139,0:21:19.049
+00:21:09,139 --> 00:21:19,049
 A natural question now is: How bad is this?
 
-0:21:19.049,0:21:21.070
+00:21:19,049 --> 00:21:21,070
 Or is it bad at all?
 
-0:21:21.070,0:21:27.980
+00:21:21,070 --> 00:21:27,980
 I have shown you quite artificial examples
 that demonstrate that in a typically impure,
 
-0:21:27.980,0:21:33.480
+00:21:27,980 --> 00:21:33,480
 imperative language, you cannot characterize
 expressions or subexpressions by their value.
 
-0:21:33.480,0:21:37.860
+00:21:33,480 --> 00:21:37,860
 So, we don't have properties that we know
 from mathematics.
 
-0:21:37.860,0:21:42.620
+00:21:37,860 --> 00:21:42,620
 Where we can name subexpressions in a term.
 
-0:21:42.620,0:21:45.639
+00:21:42,620 --> 00:21:45,639
 Where we can rearrange expressions.
 
-0:21:45.639,0:21:52.860
+00:21:45,639 --> 00:21:52,860
 Where we can replace each expression by another
 expression, if it has the same value.
 
-0:21:52.860,0:21:59.429
+00:21:52,860 --> 00:21:59,429
 So all these properties, also often called
 "referential transparency", do not apply in
 
-0:21:59.429,0:22:02.809
+00:21:59,429 --> 00:22:02,809
 a typical impure language with side effects.
 
-0:22:02.809,0:22:04.450
+00:22:02,809 --> 00:22:04,450
 But does that prove anything?
 
-0:22:04.450,0:22:07.680
+00:22:04,450 --> 00:22:07,680
 So, should we bother?
 
-0:22:07.680,0:22:10.159
+00:22:07,680 --> 00:22:10,159
 Well, at the moment that is not really the
 point.
 
-0:22:10.159,0:22:17.340
+00:22:10,159 --> 00:22:17,340
 I haven't yet argued that the pure expression-based
 style is better in some sense.
 
-0:22:17.340,0:22:24.010
+00:22:17,340 --> 00:22:24,010
 The argument that I have been making, what
 is hopefully clear now (or should become more
 
-0:22:24.010,0:22:26.820
+00:22:24,010 --> 00:22:26,820
 and more clear), is that these two styles
 are different.
 
-0:22:26.820,0:22:30.370
+00:22:26,820 --> 00:22:30,370
 Whether one of them is better is a different
 question.
 
-0:22:30.370,0:22:38.090
+00:22:30,370 --> 00:22:38,090
 But this observation, that things we are used
 to from mathematics and from algebra, from
 
-0:22:38.090,0:22:44.950
+00:22:38,090 --> 00:22:44,950
 transforming formulas, are not directly applicable
 to impure programs in an imperative language.
 
-0:22:44.950,0:22:49.970
+00:22:44,950 --> 00:22:49,970
 That is something which really separates it
 from mathematics or from a mathematical style
 
-0:22:49.970,0:22:55.760
+00:22:49,970 --> 00:22:55,760
 of programming (which both functional and
 also logic programming will largely be about).
 
-0:22:55.760,0:23:03.110
+00:22:55,760 --> 00:23:03,110
 At the moment, what I wanted to convey is
 this difference, not a notion of "better".
 
-0:23:03.110,0:23:07.010
+00:23:03,110 --> 00:23:07,010
 That is really the motivation for this course.
 
-0:23:07.010,0:23:13.740
+00:23:07,010 --> 00:23:13,740
 While this was, on the other hand, also quite
 abstract.
 
-0:23:13.740,0:23:22.100
+00:23:13,740 --> 00:23:22,100
 So, my plan is that I will again, beside the
 slides here, make some additional video or
 
-0:23:22.100,0:23:23.100
+00:23:22,100 --> 00:23:23,100
 videos.
 
-0:23:23.100,0:23:29.690
+00:23:23,100 --> 00:23:29,690
 Probably one on the whiteboard again, discussing
 some of the compositionality aspects I mentioned
 
-0:23:29.690,0:23:35.459
+00:23:29,690 --> 00:23:35,459
 earlier, and then also again an example in
 CodeWorld.
