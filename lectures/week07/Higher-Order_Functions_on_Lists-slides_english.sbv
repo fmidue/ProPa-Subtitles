@@ -55,7 +55,7 @@ strange name, maybe.
 
 0:01:13.380,0:01:18.909
 So, maybe it is not immediately obvious why
-this is called "foldl1".
+this is called 'foldl1'.
 
 0:01:18.909,0:01:23.119
 There is some systematics behind this because
@@ -91,10 +91,10 @@ Because the first argument is a function,
 namely, a binary function on some type.
 
 0:01:49.660,0:01:51.829
-We have a type variable "a" here.
+We have a type variable 'a' here.
 
 0:01:51.829,0:01:54.460
-So, "a to a to a" for whatever "a" is.
+So, "'a' to 'a' to 'a'" for whatever 'a' is.
 
 0:01:54.460,0:01:57.640
 So, for some type, we have a binary function
@@ -112,7 +112,7 @@ But that is not something that the type expresses.
 
 0:02:10.950,0:02:17.960
 The type simply says that we have a binary
-function and then we have a list of "a"s,
+function and then we have a list of 'a's,
 
 0:02:17.960,0:02:24.750
 so, a list of elements of the kind on which
@@ -183,7 +183,7 @@ list.
 We have a list, say, of integers.
 
 0:03:21.740,0:03:26.050
-So, then "a" will be Int; and we have a list;
+So, then 'a' will be Int; and we have a list;
 and we want to compute the sum.
 
 0:03:26.050,0:03:27.140
@@ -311,7 +311,7 @@ will also have a 'map' function, not with
 exactly the same name, but with the same ideas.
 
 0:05:47.749,0:05:50.009
-So, what does "map" mean?
+So, what does 'map' mean?
 
 0:05:50.009,0:05:53.900
 As written here, it's a polymorphic function
@@ -327,15 +327,15 @@ So, the argument here is very general.
 It's a function from something to something.
 
 0:06:03.270,0:06:07.659
-So, "a" and "b" are possibly different types
+So, 'a' and 'b' are possibly different types
 (because they use different type variables).
 
 0:06:07.659,0:06:08.979
 And then what do we get?
 
 0:06:08.979,0:06:11.849
-The second argument is a list of "a"s and
-it returns a list of "b"s.
+The second argument is a list of 'a's and
+it returns a list of 'b's.
 
 0:06:11.849,0:06:13.449
 What does the function do?
@@ -352,11 +352,11 @@ Of course, they are not changed in place.
 
 0:06:20.779,0:06:22.939
 We don't want to change this list and turn
-the "a"s into "b"s.
+the 'a's into 'b's.
 
 0:06:22.939,0:06:28.419
-No, we give *in* a list of "a"s, and we get
-*out* a list of "b"s which will be exactly
+No, we give *in* a list of 'a's, and we get
+*out* a list of 'b's which will be exactly
 
 0:06:28.419,0:06:34.210
 as long, but each element here is the result
@@ -367,7 +367,7 @@ element here.
 
 0:06:35.210,0:06:42.050
 So, we have now a new list which is a list
-of "b"s and is the result of this function
+of 'b's and is the result of this function
 
 0:06:42.050,0:06:46.770
 (whatever was the first argument to the 'map'
@@ -390,7 +390,7 @@ So, let's discuss what would happen here.
 The function 'even' goes from Int to Bool.
 
 0:07:04.999,0:07:10.039
-In this case, "a" would be Int and "b" would
+In this case, 'a' would be Int and 'b' would
 be Bool, which means that the second argument
 
 0:07:10.039,0:07:12.990
@@ -451,7 +451,7 @@ we don't have to apply it to numbers or Booleans.
 We can apply it, for example, to Pictures.
 
 0:08:00.569,0:08:06.490
-For example, "a" and "b" could both be instantiated
+For example, 'a' and 'b' could both be instantiated
 with Picture, then you would have to give
 
 0:08:06.490,0:08:08.990
@@ -461,7 +461,7 @@ in a function from Pictures to Pictures.
 Well, let's think of the CodeWorld library.
 
 0:08:11.699,0:08:15.639
-For example, "dilated 5" is a function from
+For example, 'dilated 5' is a function from
 Pictures to Pictures.
 
 0:08:15.639,0:08:20.800
@@ -484,7 +484,7 @@ then we get a function from Picture to Picture.
 
 0:08:31.560,0:08:37.440
 That is something we can pass in here, if
-"a" and "b" are both "Picture".
+'a' and 'b' are both Picture.
 
 0:08:37.440,0:08:39.150
 Then we have to give a list of Pictures.
@@ -500,7 +500,7 @@ Then we can pass this in.
 And what would be the outcome?
 
 0:08:45.630,0:08:49.910
-Again, a list of Pictures because "b" will
+Again, a list of Pictures because 'b' will
 also be Picture in this case.
 
 0:08:49.910,0:08:51.960
@@ -536,17 +536,17 @@ What are the ingredients now?
 Again, we have a function.
 
 0:09:26.710,0:09:29.220
-But now it's not a function from "a" to some
-"b" (to anything).
+But now it's not a function from 'a' to some
+'b' (to anything).
 
 0:09:29.220,0:09:32.170
-It's a function of type from "a" to Bool.
+It's a function of type from 'a' to Bool.
 
 0:09:32.170,0:09:33.390
 So, it is a predicate.
 
 0:09:33.390,0:09:35.370
-The "a" is still polymorphic.
+The 'a' is still polymorphic.
 
 0:09:35.370,0:09:40.330
 But the outcome of this function type is specifically
@@ -560,20 +560,20 @@ the 'map' function, but it was not enforced
 there.
 
 0:09:45.180,0:09:46.340
-There, "b" could be anything.
+There, 'b' could be anything.
 
 0:09:46.340,0:09:51.710
-Then, again, we get a list of "a"s, so, of
+Then, again, we get a list of 'a's, so, of
 the things to which this predicate (this function)
 
 0:09:51.710,0:09:53.010
 can be applied.
 
 0:09:53.010,0:09:54.110
-And the outcome is a list of "a"s.
+And the outcome is a list of 'a's.
 
 0:09:54.110,0:09:59.120
-Previously, it was a list of "b"s because
+Previously, it was a list of 'b's because
 we outputted the results of applying the function
 
 0:09:59.120,0:10:00.210
@@ -581,20 +581,20 @@ to elements from here.
 
 0:10:00.210,0:10:05.390
 Now for the 'filter' instead of the 'map' function,
-we instead return a list of "a"s.
+we instead return a list of 'a's.
 
 0:10:05.390,0:10:06.390
-Which "a"s are this?
+Which 'a's are this?
 
 0:10:06.390,0:10:08.370
-Which "a" elements will this be?
+Which 'a' elements will this be?
 
 0:10:08.370,0:10:13.600
 The ones from this list which satisfy whatever
 predicate is given here (whatever function
 
 0:10:13.600,0:10:16.940
-from "a" to Bool is given here).
+from 'a' to Bool is given here).
 
 0:10:16.940,0:10:21.380
 So, this could be a shorter list than this
@@ -825,7 +825,7 @@ a list which satisfies a predicate (something
 
 0:14:32.490,0:14:38.141
 like "even a", for example), and then the
-"a" is kept.
+'a' is kept.
 
 0:14:38.141,0:14:41.350
 This is exactly as was described for the 'filter' function.
@@ -867,8 +867,8 @@ It is a polymorphic function which basically
 flattens list levels.
 
 0:15:21.560,0:15:25.680
-So, if we have a list of lists of "a"s, then
-'concat' gives us a list of "a"s by concatenating
+So, if we have a list of lists of 'a's, then
+'concat' gives us a list of 'a's by concatenating
 
 0:15:25.680,0:15:27.430
 all the inner lists.
@@ -1286,7 +1286,7 @@ by map.
 
 0:23:18.850,0:23:24.870
 And of course, this is also a 'map' call,
-namely, on the outcome of "reverse".
+namely, on the outcome of 'reverse'.
 
 0:23:24.870,0:23:31.120
 And then, if we also use function composition
