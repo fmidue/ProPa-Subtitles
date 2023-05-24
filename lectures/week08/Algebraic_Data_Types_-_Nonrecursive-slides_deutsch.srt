@@ -126,7 +126,7 @@ Wir haben nicht nur die Typen gesehen,
 die in diesem ersten Punkt erwähnt werden.
 
 00:02:45,020 --> 00:02:52,300
-Im Fall der CodeWorld Bibliothek (auf der CodeWorld-Website)
+Im Fall der Bibliothek CodeWorld (auf der CodeWorld-Website)
 haben wir zum Beispiel auch gesehen, dass
 
 00:02:52,300 --> 00:02:56,190
@@ -438,32 +438,32 @@ einfach sein, wenn Sie etwas über Tagen berechnen wollen.
 131 # slide
 00:08:21,160 --> 00:08:32,210
 Wir könnten zum Beispiel berechnen wollen, an welchen
-Tage der Woche eine Übungsstunde stattfindet
+Tage der Woche eine Übungsstunde
 
 00:08:32,210 --> 00:08:33,210
 in dieser Lehrveranstaltung stattfindet.
 
 00:08:33,210 --> 00:08:36,580
-Natürlich ist das in diesem Semester vielleicht
-nicht so eine nützliche Frage, weil wir keine
+(Galt in Corona-Semester: Natürlich ist das in diesem Semester
+vielleicht nicht so eine nützliche Frage, weil wir keine
 
 00:08:36,580 --> 00:08:38,540
 tatsächlichen Übungseinheiten haben.
 
 00:08:38,540 --> 00:08:43,750
-Diese Frage stammt eigentlich aus den Folien vom letzten Jahr,
-wo das mehr Sinn machte.
+Diese Frage stammt eigentlich aus den Folien von einem früheren Jahr,
+wo das mehr Sinn machte.)
 
 00:08:43,750 --> 00:08:53,950
-Aber es ist immer noch eine vernünftige Sache: zu wollen
-generell eine Eigenschaft an unseren Wochentagen zu haben
+Aber es ist immer noch eine sinnvolle Sache: generell
+eine Eigenschaft an unseren Wochentagen haben zu wollen,
 
 00:08:53,950 --> 00:08:55,240
 die diese Form hat.
 
 00:08:55,240 --> 00:09:00,230
 Wenn wir also bestimmte Wochentage auswählen, die
-die Eigenschaft "An diesem Tag findet eine Trainingseinheit
+die Eigenschaft "An diesem Tag findet eine Übungseinheit
 
 00:09:00,230 --> 00:09:04,270
 statt" (oder etwas anderes)
@@ -492,14 +492,14 @@ Eine Möglichkeit, diese Eigenschaft zu berechnen, ist zum Beispiel
 
 00:09:21,980 --> 00:09:27,990
 (Ich glaube, das stammt aus den Daten des letzten Jahres,
-also, wenn es tatsächlich Übungseinheiten gab
+also, als es tatsächlich Übungseinheiten gab
 
 00:09:27,990 --> 00:09:28,990
 letztes Jahr.
 
 00:09:28,990 --> 00:09:34,560
 Und wahrscheinlich hätte derselbe Plan auch dieses Jahr gegolten,
-wenn wir einen tatsächlichen Präsenzkurs gehabt hätten).
+wenn wir einen tatsächlichen Präsenzkurs gehabt hätten.)
 
 00:09:34,560 --> 00:09:40,770
 Also, man kann hier etwas ausdrücken wie:
@@ -582,12 +582,12 @@ Vergleichen und Zahlen wirklich zu einer
 schönen Art wird, diese Funktion auszudrücken.
 
 00:11:06,500 --> 00:11:15,339
-Außerdem besteht eine weitere Gefahr, wenn man diesen Typ "Integer
-→ Bool", denn 'Integer' ist ein viel größerer
+Außerdem besteht eine weitere Gefahr, wenn man diesen Typ
+'Integer → Bool' verwendet, denn 'Integer' ist ein viel größerer
 
 00:11:15,339 --> 00:11:19,279
-Typ ist als nur 1 bis 7, den ich für
-meine Wochentage.
+Typ als nur 1 bis 7, die ich für
+meine Wochentage brauche.
 
 00:11:19,279 --> 00:11:23,970
 Nehmen wir also an, ich hätte eine Funktion wie diese...
@@ -609,29 +609,29 @@ sie?
 
 00:11:36,649 --> 00:11:42,680
 Sie berechnet etwas wie: im "workday"
-aus der vorigen Folie würde es Folgendes berechnen
+aus der vorigen Folie würde es Folgendes berechnen:
 
 00:11:42,680 --> 00:11:48,220
-Falsch, weil der Vergleich "d<6" war,
+False, weil der Vergleich 'd < 6' war,
 also wird aus irgendeinem Grund der 12. Tag der Woche,
 
 00:11:48,220 --> 00:11:51,590
-den es gar nicht gibt, kein Arbeitstag ist.
+den es gar nicht gibt, kein Arbeitstag sein.
 
 00:11:51,590 --> 00:11:58,860
-Für die hier beschriebene Funktion 'exerciseDay' hingegen
+Während die hier beschriebene Funktion 'exerciseDay' hingegen
 für die Eingabe 12 sagen würde: Es ist ein
 
 00:11:58,860 --> 00:12:00,610
-exerciseDay, aus welchem Grund auch immer.
+Übungstag, aus welchem Grund auch immer.
 
 00:12:00,610 --> 00:12:04,820
 Der Grund dafür ist, dass sie in diesen Auffangfall
-Fall hier.
+Fall hier
 
 00:12:04,820 --> 00:12:07,290
-Sie würde True zurückgeben, aber das hat keine
-eine sinnvolle Interpretation.
+True zurückgeben würde, aber das hat keine
+sinnvolle Interpretation.
 
 00:12:07,290 --> 00:12:14,190
 Und wenn ich versuchen würde, diese Funktion auf andere Weise umzuschreiben,
@@ -642,11 +642,11 @@ anstatt einen Auffangfall zu haben,
 oder das für False zu tun, dann wäre plötzlich der 12.
 
 00:12:18,950 --> 00:12:21,149
-Tag der Woche kein Übungstag sein.
+Tag der Woche kein Übungstag.
 
 00:12:21,149 --> 00:12:25,610
-Aus Sicht der Wochentage macht es also nicht wirklich
-Sicht der Wochentage nicht wirklich sinnvoll.
+Aus Sicht der Wochentage ist es also
+nicht wirklich sinnvoll.
 
 00:12:25,610 --> 00:12:34,220
 Die Tage haben also nicht die Eigenschaft, dass
@@ -727,8 +727,8 @@ dann sind wir eigentlich wieder bei demselben Ansatz
 wie auf den vorherigen Folien.
 
 00:13:58,450 --> 00:14:06,280
-Dann wäre Day im Grunde nur ein anderer
-/ ein Tarnname für 'Integer' oder einen anderen
+Dann wäre Day im Grunde nur ein anderer / ein Tarnname
+für 'Integer' oder einen anderen
 
 00:14:06,280 --> 00:14:09,339
 Basistyp, und Montag wäre eine Konstante
@@ -888,7 +888,7 @@ Zahlen rechnen.
 Also, wenn man den Wochenendtag einführen will...
 
 00:16:40,950 --> 00:16:49,920
-Wenn man also mit der Funktion Werktag prüfen will,
+Wenn man also mit der Funktion 'workday' prüfen will,
 ob es ein Arbeitstag ist, können wir jetzt nicht
 
 00:16:49,920 --> 00:16:54,120
@@ -1085,10 +1085,10 @@ Funktionsnamen, die kleingeschrieben werden müssen.
 
 00:20:14,830 --> 00:20:21,989
 Theoretisch könnte man aber denselben Bezeichner in Großbuchstaben
-sowohl als Typname als auch als Wert
+sowohl als Typname als auch als
 
 00:20:21,989 --> 00:20:22,989
-Namen verwenden.
+Wertnamen verwenden.
 
 00:20:22,989 --> 00:20:27,330
 Dies wird normalerweise nicht empfohlen, es sei denn
@@ -1221,7 +1221,7 @@ Erweiterbarkeit.
 
 00:23:00,359 --> 00:23:03,830
 Nehmen wir also an, wir wollen unsere
-Levels reicher machen.
+Levels reichhaltiger machen.
 
 00:23:03,830 --> 00:23:11,269
 Wir haben eine neue Idee für unser Spiel, und wir
@@ -1240,10 +1240,10 @@ irgendwo eine 5 zurückgegeben werden, die für
 
 00:23:23,210 --> 00:23:28,260
 "spike" stehen soll, aber eigentlich
-vergessen wir diesen zusätzlichen Fall in der aTile
+vergessen wir diesen zusätzlichen Fall in der
 
 00:23:28,260 --> 00:23:32,769
-Funktion hinzuzufügen, oder vielleicht hat jemand in unserem Team, der
+aTile-Funktion hinzuzufügen, oder vielleicht hat jemand in unserem Team, der
 dafür verantwortlich ist, vergisst einfach, hier
 
 00:23:32,769 --> 00:23:34,359
@@ -1299,7 +1299,7 @@ Wenn wir nun aber die Level-Funktion erweitern
 und vergessen diese Änderung in der aTile
 
 00:24:27,330 --> 00:24:30,759
-Funktion, dann haben wir plötzlich auch "blank"
+Funktion, dann haben wir plötzlich auch 'blank'
 für unsere neue Stelle, an der wir eigentlich
 
 00:24:30,759 --> 00:24:31,759
@@ -1326,7 +1326,7 @@ Fehler statt dieses seltsamen leeren Bildes bekommen.
 
 00:24:54,879 --> 00:25:01,169
 Dies könnte man erreichen, indem man
-hier in der ursprünglichen Version einfach eine "0" schreibt.
+hier in der ursprünglichen Version einfach eine '0' schreibt.
 
 00:25:01,169 --> 00:25:04,269
 Aber das hat natürlich auch seine Nachteile
@@ -1453,8 +1453,8 @@ Es ist also der Typ unserer level-Funktion,
 und eine Tile-Funktion sieht dann so aus.
 
 00:27:06,659 --> 00:27:09,309
-Sie geht nicht von 'Integer' zu Picture, sondern
-von Tile zu Picture.
+Sie geht nicht von 'Integer' zu 'Picture', sondern
+von 'Tile' zu 'Picture'.
 
 00:27:09,309 --> 00:27:11,870
 Und natürlich ist die Zuweisung hier sehr einfach.
@@ -1481,7 +1481,7 @@ wie im vorigen Fall, wo dies tatsächlich
 
 00:27:38,159 --> 00:27:47,460
 zu Problemen führte, als wir unsere
-Unterstützung/Spektrum der Dinge, die Fliesen sein können, erweitern wollten.
+Unterstützung/Spektrum der Dinge, die 'Tile' sein können, erweitern wollten.
 
 00:27:47,460 --> 00:27:51,690
 Was würde nun passieren, wenn wir Folgendes einführen wollten
@@ -1503,8 +1503,8 @@ Wenn wir also Spikes haben wollen, dann führen wir
 einen neuen Fall von Spikes hier ein, dann können wir
 
 00:28:06,769 --> 00:28:14,879
-in der Level-Funktion verwenden
-und es kann uns nicht passieren, dass wir vergessen zu deklarieren oder zu beschreiben
+dies in der level-Funktion verwenden
+und es kann uns nicht passieren, dass wir vergessen, zu deklarieren oder zu beschreiben,
 
 00:28:14,879 --> 00:28:17,240
 wie das in der aTile-Funktion zu behandeln ist.
@@ -1513,7 +1513,7 @@ wie das in der aTile-Funktion zu behandeln ist.
 Warum?
 
 00:28:18,240 --> 00:28:23,309
-Weil, wenn ich Spike zu diesem Typ hinzufüge, aber ich
+Weil, wenn ich Spike zu diesem Typ hinzufüge, ich
 aber vergesse, in der aTile-Funktion auch einen Fall für ihn hinzuzufügen,
 
 00:28:23,309 --> 00:28:25,450
@@ -1572,7 +1572,7 @@ zu erreichen.
 
 00:29:20,799 --> 00:29:26,059
 Nun könnten Sie sich bei diesem sehr einfachen Beispiel
-vielleicht auch Fragen: Wozu das Ganze?
+vielleicht auch fragen: Wozu das Ganze?
 
 00:29:26,059 --> 00:29:31,090
 Es sieht sehr trivial aus, wenn man "Blank"
@@ -1694,7 +1694,7 @@ Lassen Sie uns nun darüber hinausgehen.
 
 00:31:35,479 --> 00:31:43,190
 Wir bewegen uns in einem Bereich, in dem es nicht nur um
-nur Namenskonstanten geht, die wir leicht
+Namenskonstanten geht, die wir leicht
 
 00:31:43,190 --> 00:31:45,799
 mit Zahlen simulieren können wie in C oder ähnlichem.
@@ -2148,8 +2148,8 @@ Wenn Sie also nur die erste Zeile geschrieben hätten,
 dann könnte der Compiler warnen und fragen: Sie
 
 00:40:02,430 --> 00:40:07,320
-sagen, Sie haben eine Funktion 'travelTime' definiert
-von Connection nach 'Integer' definiert, aber Sie haben sie nur
+sagen, Sie haben eine Funktion 'travelTime'
+von 'Connection' zu 'Integer' definiert, aber Sie haben sie nur
 
 00:40:07,320 --> 00:40:12,650
 für einige Pattern definiert, nämlich für Train,
@@ -2280,10 +2280,10 @@ andere Art und Weise, wie Funktionen verwendet werden können.
 
 00:42:32,890 --> 00:42:38,480
 Wenn wir also an die Funktionen höherer Ordnung zurückdenken
-von letzter Woche, diese Konstruktoren Day und
+von letzter Woche, diese Konstruktoren 'Day' und
 
 00:42:38,480 --> 00:42:44,860
-Train, sie könnten auch Argumente für Funktionen höherer Ordnung sein,
+'Train', sie könnten auch Argumente für Funktionen höherer Ordnung sein,
 wenn wir etwas haben, das
 
 00:42:44,860 --> 00:42:50,130
