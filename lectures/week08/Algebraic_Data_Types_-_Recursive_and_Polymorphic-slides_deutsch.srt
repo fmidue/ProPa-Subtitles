@@ -20,7 +20,7 @@ definieren wir hier? Wir definieren einen Typ Nat
 definiert, dass sie entweder Null oder Nachfolger (Succ) von
 
 00:00:33,840 --> 00:00:40,240
-etwas, das eine Nat (natürliche Zahl) ist. Mit
+etwas, das eine Nat (natürliche Zahl) ist. Damit
 können wir alle natürlichen Zahlen ausdrücken. Wir haben
 
 00:00:40,240 --> 00:00:50,400
@@ -143,6 +143,7 @@ dass alle Fälle behandelt werden. Also
 ist die Fallunterscheidung wirklich vollständig. Und dies
 definiert eine nützliche Funktion für die natürlichen Zahlen.
 
+138 # slide
 00:03:47,360 --> 00:03:53,520
 Wenn wir etwas mehr mit Rekursion spielen,
 können wir auch tatsächlich beliebige
@@ -157,7 +158,7 @@ dass wir zwei rekursive Vorkommen haben.
 
 00:04:04,960 --> 00:04:12,480
 Ein Tree ist also ein Leaf oder ein Node, bei dem eines
-seiner Argumente ein Integer (eine Zahl) ist,
+seiner Argumente ein 'Integer' (eine Zahl) ist,
 
 00:04:12,480 --> 00:04:17,680
 aber er hat auch zwei Argumente, die rekursiv sind
@@ -172,7 +173,7 @@ Typs, und ein Knoten mit einem Blatt und der Zahl 2
 und ein Blatt ist auch ein Wert dieses Typs, aber auch
 
 00:04:31,920 --> 00:04:36,960
-Beispiele, in denen dieses Blatt durch etwas ersetzt wird
+Beispiele, in denen dieses Blatt durch etwas
 dieser Form ersetzt wird, vielleicht mit einer anderen Zahl.
 
 00:04:37,600 --> 00:04:43,920
@@ -205,7 +206,7 @@ tatsächlich verschachtelt ist, wollen wir die Höhe
 
 00:05:19,760 --> 00:05:24,880
 des Baums berechnen wollen, dann sollte das eine Funktion sein
-von Tree zu Integer sein. Wie berechnen wir das? Wir
+von Tree zu 'Integer' sein. Wie berechnen wir das? Wir
 
 00:05:24,880 --> 00:05:29,760
 machen eine Fallunterscheidung: ein Tree kann ein Leaf sein
@@ -242,6 +243,7 @@ Also, das gleiche Muster wie zuvor: Fallunterscheidung,
 Zugriff auf die Unterstrukturen, Rekursion,
 um eine interessante Berechnung durchzuführen.
 
+139 # slide
 00:06:23,920 --> 00:06:30,640
 Dann können wir auch etwas abstrakter werden und
 algebraische Datentypen mit Polymorphismus kombinieren. So,
@@ -280,7 +282,7 @@ für den Basisfall. Wenn wir jedoch einen Node,
 
 00:07:18,320 --> 00:07:22,800
 dann wollen wir immer noch zwei Sub-Trees haben, aber
-in der Mitte wollen wir keinen Integer haben,
+in der Mitte wollen wir keinen 'Integer' haben,
 
 00:07:22,800 --> 00:07:27,600
 sondern etwas anderes. Und da wir uns nicht darauf festlegen wollen
@@ -300,7 +302,7 @@ neuen Typ für jeden Argumenttyp "a". Also, ein "Tree a"
 
 00:07:43,680 --> 00:07:49,840
 ein Baum aus "a"s. Dieses "a" könnte also später
-Int oder Bool oder was auch immer sein. Aber abstrakt,
+Int oder 'Bool' oder was auch immer sein. Aber abstrakt,
 
 00:07:49,840 --> 00:07:55,440
 in der Definition ist es einfach eine Variable, weil
@@ -398,6 +400,7 @@ aber diese Höhenfunktion ist polymorph und sie
 braucht nicht einmal eine Änderung im Vergleich zu dem
 monomorphen Tree-Typ aus der vorherigen Folie.
 
+140 # slide
 00:10:27,920 --> 00:10:33,680
 Schauen wir uns ein weiteres Beispiel an, diesmal aus der
 Standardbibliothek. Es handelt sich also nicht um etwas, das wir
@@ -491,7 +494,7 @@ eine beliebige Kachel, eine nicht-leere
 Tile, werden wir Just zurückgeben,
 
 00:12:36,000 --> 00:12:43,520
-und dann dieses Tile. Für die Funktion aTile bedeutet dies
+und dann dieses Tile. Für die Funktion 'aTile' bedeutet dies
 nun, dass sie keinen Fall für Blank benötigt.
 
 00:12:44,480 --> 00:12:51,520
@@ -530,6 +533,7 @@ haben gerade umgestaltet, um die leere Kachel nicht als
 tatsächliche Kachel. Also haben wir diesen Partialitätsmarker verwendet
 indem wir sagten: die Level-Funktion gibt ein Maybe Tile.
 
+141 # slide
 00:13:43,920 --> 00:13:49,440
 Jetzt gibt es also endlich ein mögliches
 Missverständnis, vor dem ich warnen muss,
