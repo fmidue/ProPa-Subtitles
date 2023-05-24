@@ -1,0 +1,2325 @@
+128 # slide
+00:00:01,819 --> 00:00:05,680
+Welcome back to another week of ProPa.
+
+00:00:05,680 --> 00:00:12,280
+This week we will talk about types again,
+but not polymorphic types, not higher-order
+
+00:00:12,280 --> 00:00:16,410
+types, at least not in the focus.
+
+00:00:16,410 --> 00:00:22,519
+Instead, we will talk about new type constructs
+called algebraic data types.
+
+00:00:22,519 --> 00:00:27,689
+Actually, they can also be combined with polymorphism
+and have interesting higher-order uses.
+
+00:00:27,689 --> 00:00:33,780
+But at least for this first video, we will
+concentrate on very simple algebraic data
+
+00:00:33,780 --> 00:00:41,030
+types: first, simple enumeration types, and
+then non-recursive algebraic data types, and
+
+00:00:41,030 --> 00:00:44,730
+probably also not yet considering polymorphism.
+
+00:00:44,730 --> 00:00:50,110
+These more interesting / complex constructs
+and interactions with polymorphism and maybe
+
+00:00:50,110 --> 00:00:57,070
+higher-order will be the topic of later videos
+also this week.
+
+00:00:57,070 --> 00:01:03,019
+So, what kinds of types have we seen so far?
+
+00:01:03,019 --> 00:01:10,070
+On the one hand, of course, we have dealt
+with things like simple base types like number
+
+00:01:10,070 --> 00:01:12,140
+types or Booleans and characters.
+
+00:01:12,140 --> 00:01:19,110
+So, things that are built into the language,
+and from which other types can be constructed.
+
+00:01:19,110 --> 00:01:24,650
+And in particular, we looked at list and tuple
+constructions which were used to make compound
+
+00:01:24,650 --> 00:01:29,380
+types: lists of pairs of integers and floats,
+and things like that.
+
+00:01:29,380 --> 00:01:34,240
+Of course, there were type variables as of
+last week when we looked at polymorphism.
+
+00:01:34,240 --> 00:01:38,040
+But ultimately, these type variables would
+also be replaced by types we have already
+
+00:01:38,040 --> 00:01:42,119
+seen, like integers or characters or lists
+of those, etc.
+
+00:01:42,119 --> 00:01:47,479
+Then, of course, there are function types
+that we know now from the higher-order part
+
+00:01:47,479 --> 00:01:49,840
+of the lecture, that we can have functions
+that
+
+00:01:49,840 --> 00:01:53,230
+take functions as arguments, for example.
+
+00:01:53,230 --> 00:01:57,259
+Then we have the function arrow also occurring
+in types and parts of types.
+
+00:01:57,259 --> 00:02:03,829
+But ultimately, the things that are between
+the function arrows, so far, would have been
+
+00:02:03,829 --> 00:02:11,570
+base types like these, or compound types made
+from these, mainly.
+
+00:02:11,570 --> 00:02:16,580
+Also remember that when I introduced lists,
+I already said that, ultimately, we don't
+
+00:02:16,580 --> 00:02:19,260
+want to build all of our structures from lists.
+
+00:02:19,260 --> 00:02:25,450
+Because while nice for examples in a lecture
+like this, ultimately, in reality, lists are
+
+00:02:25,450 --> 00:02:31,470
+not always the best structure for keeping
+things in a compound setting, for example.
+
+00:02:31,470 --> 00:02:36,120
+To combine things, you can use lists sometimes,
+but you should not always use a list, so there
+
+00:02:36,120 --> 00:02:37,440
+must be something else as well.
+
+00:02:37,440 --> 00:02:40,860
+Just as we have other data types in other
+languages.
+
+00:02:40,860 --> 00:02:45,070
+We haven't just seen the types that are mentioned
+in this first point.
+
+00:02:45,070 --> 00:02:52,300
+For example, in the case of the CodeWorld
+library (on the CodeWorld website), we have
+
+00:02:52,300 --> 00:02:55,990
+also seen that there can be domain-specific
+types like this Picture type, which is clearly
+
+00:02:55,990 --> 00:02:59,520
+not something that is built into the language
+like integers and floats are.
+
+00:02:59,520 --> 00:03:04,270
+It was something that we used (that was given
+to us from the library), but it is probably
+
+00:03:04,270 --> 00:03:09,450
+something that somebody has defined in the
+language rather than it already being provided
+
+00:03:09,450 --> 00:03:16,570
+by the language itself, by the compiler or
+something like that.
+
+00:03:16,570 --> 00:03:22,030
+That's ultimately what we want to do when
+we create a lot of projects, that we can define
+
+00:03:22,030 --> 00:03:23,060
+our own types.
+
+00:03:23,060 --> 00:03:25,780
+And the library does this for this Picture
+type.
+
+00:03:25,780 --> 00:03:30,790
+It is like in an object-oriented language,
+where you define your own class that is relevant
+
+00:03:30,790 --> 00:03:35,760
+to your domain, and then Picture could be
+a class and has objects and methods that operate
+
+00:03:35,760 --> 00:03:37,090
+on these objects.
+
+00:03:37,090 --> 00:03:40,510
+And the situation is similar here, except
+that we don't have classes in the sense of
+
+00:03:40,510 --> 00:03:41,510
+object-oriented programming.
+
+00:03:41,510 --> 00:03:42,510
+We have types.
+
+00:03:42,510 --> 00:03:44,010
+And Picture is a type.
+
+00:03:44,010 --> 00:03:45,500
+And we have values of that type.
+
+00:03:45,500 --> 00:03:48,140
+And we have functions that operate on values
+of that type.
+
+00:03:48,140 --> 00:03:55,970
+Now, the Picture type itself is not something
+that we will define in the lecture.
+
+00:03:55,970 --> 00:03:59,710
+It could be defined with algebraic data types,
+but that is not something we are going to
+
+00:03:59,710 --> 00:04:00,710
+do.
+
+00:04:00,710 --> 00:04:06,950
+Because for our purposes and uses of CodeWorld,
+it is sufficient if we simply have Picture
+
+00:04:06,950 --> 00:04:07,950
+as an abstract type.
+
+00:04:07,950 --> 00:04:09,650
+So, we know that it exists.
+
+00:04:09,650 --> 00:04:10,870
+We know the operations on it.
+
+00:04:10,870 --> 00:04:13,550
+We don't want to define our own Picture type.
+
+00:04:13,550 --> 00:04:20,820
+But if we wanted to do that, or do something
+similar for another domain than vector graphics,
+
+00:04:20,820 --> 00:04:24,400
+then we would use algebraic data types.
+
+00:04:24,400 --> 00:04:35,550
+So, that's the way to go beyond these base
+types and predetermined combinations of them
+
+00:04:35,550 --> 00:04:37,660
+with constructs like lists and pairs.
+
+00:04:37,660 --> 00:04:40,070
+Now, what are these algebraic data types?
+
+00:04:40,070 --> 00:04:42,740
+Also, in what sense are they algebraic?
+
+00:04:42,740 --> 00:04:43,770
+That sounds a bit mathematical.
+
+00:04:43,770 --> 00:04:46,980
+And we are not going to discuss the mathematics
+behind that.
+
+00:04:46,980 --> 00:04:54,530
+But I still hope that will become apparent
+what is algebraic about these, once we see
+
+00:04:54,530 --> 00:04:55,530
+some signatures.
+
+00:04:55,530 --> 00:05:00,150
+From a first approximation point of view,
+we could say that algebraic data types are
+
+00:05:00,150 --> 00:05:03,510
+something which you might have seen in other
+languages in some form.
+
+00:05:03,510 --> 00:05:12,210
+For example, they can be seen as more general
+(and also more stringent, more statically
+
+00:05:12,210 --> 00:05:19,400
+safe) versions of what is either known as
+enumeration or union types (in very simple
+
+00:05:19,400 --> 00:05:21,530
+forms of algebraic data types).
+
+00:05:21,530 --> 00:05:29,070
+But actually modern languages like Swift have
+features like *recursive* enum types, which
+
+00:05:29,070 --> 00:05:36,300
+are really a far way apart from simple enumeration
+types in C, for example.
+
+00:05:36,300 --> 00:05:41,770
+And these (recursive enum types) are already
+something similar to algebraic data types.
+
+00:05:41,770 --> 00:05:48,840
+And again, the transfer here is not that algebraic
+data types are what Swift has and then made
+
+00:05:48,840 --> 00:05:49,840
+more general.
+
+00:05:49,840 --> 00:05:51,090
+It is actually the other way around.
+
+00:05:51,090 --> 00:05:55,150
+Algebraic data types have been around for
+a long time in functional languages.
+
+00:05:55,150 --> 00:06:02,450
+And then Swift and other modern mainstream
+languages have taken inspiration from that.
+
+00:06:02,450 --> 00:06:06,930
+And ultimately, I would say that algebraic
+data types are still the nicer version of
+
+00:06:06,930 --> 00:06:12,080
+this, whereas the recursive enum types in
+Swift are similar but have made some pragmatic
+
+00:06:12,080 --> 00:06:13,080
+compromises.
+
+00:06:13,080 --> 00:06:18,960
+So, they are not at the same, let's say, mathematical
+level as algebraic data types.
+
+00:06:18,960 --> 00:06:28,830
+But for users, for you, when using these,
+that won't shine through too much, I think.
+
+00:06:28,830 --> 00:06:31,770
+So, let us start very simple indeed.
+
+00:06:31,770 --> 00:06:35,870
+Assume we want to be able to talk about days
+of the week.
+
+00:06:35,870 --> 00:06:39,700
+So, Monday, Tuesday, Wednesday, etc.
+
+00:06:39,700 --> 00:06:45,640
+And on this data, we want to compute things
+like: this is a workday, yes or no, or some
+
+00:06:45,640 --> 00:06:52,110
+other determination of what properties a certain
+day has.
+
+00:06:52,110 --> 00:06:54,150
+How would we currently do this?
+
+00:06:54,150 --> 00:06:56,680
+How would we maybe do this in other languages?
+
+00:06:56,680 --> 00:06:58,580
+How would we do it in Haskell?
+
+00:06:58,580 --> 00:07:05,060
+Typically, we could say: we fix some encoding
+of the weekdays (Monday, Tuesday, etc.) as
+
+00:07:05,060 --> 00:07:06,060
+numbers.
+
+00:07:06,060 --> 00:07:07,600
+And of course, there are some natural choices.
+
+00:07:07,600 --> 00:07:12,080
+For example, we could say: Monday is the first
+day, Tuesday is the second day, etc.
+
+00:07:12,080 --> 00:07:16,650
+So, we would use the numbers from 1 to 7 to
+encode Monday to Sunday.
+
+00:07:16,650 --> 00:07:21,381
+And then if we want to write functions that
+express whether a day is a workday or some
+
+00:07:21,381 --> 00:07:24,970
+other properties, then we could write a function
+like this here.
+
+00:07:24,970 --> 00:07:27,100
+So, workday goes from Integer to Bool.
+
+00:07:27,100 --> 00:07:32,510
+It is a predicate on integers interpreted
+as days of the week.
+
+00:07:32,510 --> 00:07:34,520
+And we want to know whether a day is a workday.
+
+00:07:34,520 --> 00:07:40,920
+Then of course we could say: we simply compare
+the number code of that day versus 6.
+
+00:07:40,920 --> 00:07:48,199
+The 6 means Saturday, so everything smaller
+is a day from Monday to Friday, so is a work
+
+00:07:48,199 --> 00:07:49,199
+day.
+
+00:07:49,199 --> 00:07:51,170
+That is of course possible.
+
+00:07:51,170 --> 00:07:53,360
+We are somewhat lucky in that case.
+
+00:07:53,360 --> 00:07:59,050
+The function is so simple that it is simply
+a comparison because the property we are interested
+
+00:07:59,050 --> 00:08:03,210
+in here really corresponds to a number range,
+in this case, 1 to 5, whereas the opposite
+
+00:08:03,210 --> 00:08:04,950
+would be 6 to 7.
+
+00:08:04,950 --> 00:08:09,550
+So, if we have a property as simple as this
+one, where you can really compute the thing
+
+00:08:09,550 --> 00:08:14,360
+that you want to know by comparing numbers
+against numbers, then this becomes a very
+
+00:08:14,360 --> 00:08:15,360
+simple function.
+
+00:08:15,360 --> 00:08:18,520
+But of course, it need not always be
+so simple if you want to compute something
+
+00:08:18,520 --> 00:08:21,160
+with days.
+
+00:08:21,160 --> 00:08:32,210
+For example, we might want to compute on which
+days of the week there is an exercise session
+
+00:08:32,210 --> 00:08:33,210
+in this course.
+
+00:08:33,210 --> 00:08:36,580
+Of course, in this semester, this is maybe
+not such useful question because we don't
+
+00:08:36,580 --> 00:08:38,540
+have the actual exercise sessions.
+
+00:08:38,540 --> 00:08:43,750
+Actually, this is taken from last year's slides,
+where that made more sense.
+
+00:08:43,750 --> 00:08:53,950
+But it's still a reasonable thing: to want
+in general to have some property on our weekdays
+
+00:08:53,950 --> 00:08:55,240
+that has this form.
+
+00:08:55,240 --> 00:09:00,230
+So, selecting certain days of the week that
+have the property of “that is when an exercise
+
+00:09:00,230 --> 00:09:04,270
+session takes place” (or something else
+takes place).
+
+00:09:04,270 --> 00:09:09,990
+Okay now, this time the answer is not as simple…
+the program is not as simple as doing a comparison
+
+00:09:09,990 --> 00:09:12,460
+like: is d smaller than 6 from the previous
+slide.
+
+00:09:12,460 --> 00:09:13,460
+Why not?
+
+00:09:13,460 --> 00:09:18,290
+Because there is not a consecutive range of
+days where we have exercises and where we
+
+00:09:18,290 --> 00:09:19,290
+don't.
+
+00:09:19,290 --> 00:09:21,980
+So, for example, one way to compute this property
+is…
+
+00:09:21,980 --> 00:09:27,990
+(I think this is from the data from last year,
+so, when there were actually exercise sessions
+
+00:09:27,990 --> 00:09:28,990
+last year.
+
+00:09:28,990 --> 00:09:34,560
+And probably the same plan would have applied
+this year if we had an actual presence-course).
+
+00:09:34,560 --> 00:09:40,770
+So, something can be expressed here like:
+3 is not an exercise day.
+
+00:09:40,770 --> 00:09:41,950
+It corresponds to Wednesday.
+
+00:09:41,950 --> 00:09:45,740
+And the weekend didn't have exercises last
+year either.
+
+00:09:45,740 --> 00:09:49,880
+So, we could say: on Wednesday, Saturday,
+and Sunday, we don't have exercises.
+
+00:09:49,880 --> 00:09:51,970
+And on all dates, we do have exercises.
+
+00:09:51,970 --> 00:09:56,750
+We have this catch-all case here.
+
+00:09:56,750 --> 00:09:58,310
+Of course, this is something that we can write.
+
+00:09:58,310 --> 00:10:03,000
+It is not very readable, maybe.
+
+00:10:03,000 --> 00:10:07,839
+So, already takes some thinking: what is this
+3 actually?
+
+00:10:07,839 --> 00:10:12,520
+Why do we say which are the False cases, and
+then we have a catch-all case for True?
+
+00:10:12,520 --> 00:10:14,760
+Why don't we have it the other way around?
+
+00:10:14,760 --> 00:10:16,430
+Also, we can make off-by-one errors again.
+
+00:10:16,430 --> 00:10:22,470
+So, if I am not sure how my encoding works:
+depending on whether I start counting Monday
+
+00:10:22,470 --> 00:10:27,510
+at 1 or at 0, I could easily misinterpret
+what is happening here.
+
+00:10:27,510 --> 00:10:32,330
+But of course, if I have fixed encoding like:
+Monday starts on 1, etc…, then that's
+
+00:10:32,330 --> 00:10:35,380
+a way to implement the property.
+
+00:10:35,380 --> 00:10:44,391
+We could also want to/try to make this seemingly
+more efficient by saying something like: Maybe
+
+00:10:44,391 --> 00:10:48,460
+I can still make a comparison by first excluding
+all the weekend days.
+
+00:10:48,460 --> 00:10:53,520
+Maybe I can use a guard to say: if the day
+is more than 6, or if it is greater than 5,
+
+00:10:53,520 --> 00:10:54,980
+then it is definitely not an exercise day.
+
+00:10:54,980 --> 00:10:58,170
+So, I could actually write different definitions
+here.
+
+00:10:58,170 --> 00:11:02,860
+But it is not clear that working with these
+comparisons and numbers would truly lead to
+
+00:11:02,860 --> 00:11:06,500
+a nice way of expressing this function.
+
+00:11:06,500 --> 00:11:15,339
+Plus, another danger in having this type “Integer
+→ Bool” because Integer is a much bigger
+
+00:11:15,339 --> 00:11:19,279
+type than just 1 to 7 which I want to use
+for my weekdays.
+
+00:11:19,279 --> 00:11:23,970
+So, assume I have a function like this…
+actually the function from the previous slide.
+
+00:11:23,970 --> 00:11:29,730
+The question is: what happens if I call the
+“exerciseDay” function with an input like
+
+00:11:29,730 --> 00:11:30,790
+12?
+
+00:11:30,790 --> 00:11:33,200
+I can do this because 12 is an Integer.
+
+00:11:33,200 --> 00:11:36,649
+Then, of course, the question is: What does
+it do?
+
+00:11:36,649 --> 00:11:42,680
+It computes something like: in the “workday”
+from the previous slide, it would compute
+
+00:11:42,680 --> 00:11:48,220
+False because the comparison was “d<6”,
+so, for some reason, the 12th day of the week,
+
+00:11:48,220 --> 00:11:51,590
+which doesn't even exist, is not a workday.
+
+00:11:51,590 --> 00:11:58,860
+Whereas for this exerciseDay function as written
+here, for the input 12, it would say: it is
+
+00:11:58,860 --> 00:12:00,610
+an exerciseDay, for whatever reason.
+
+00:12:00,610 --> 00:12:04,820
+That reason is: it would run into this catch-all
+case here.
+
+00:12:04,820 --> 00:12:07,290
+It would return True, but this doesn't have
+a meaningful interpretation.
+
+00:12:07,290 --> 00:12:14,190
+And actually, if I tried to rewrite this function
+in some other way, maybe matching on the exercise
+
+00:12:14,190 --> 00:12:18,950
+days, instead of having a catch-all case,
+or do that for False, then suddenly, the 12th
+
+00:12:18,950 --> 00:12:21,149
+day of the week, would not be an exercise
+day.
+
+00:12:21,149 --> 00:12:25,610
+So, it doesn't really make sense from the
+weekdays point of view.
+
+00:12:25,610 --> 00:12:34,220
+So, days don't have this property that there
+is a 12th weekday or something like that.
+
+00:12:34,220 --> 00:12:41,399
+There is something fishy going on here, and
+it has to do with this naïve encoding/usage
+
+00:12:41,399 --> 00:12:45,149
+of numbers for weekdays.
+
+00:12:45,149 --> 00:12:46,390
+That is not very abstract.
+
+00:12:46,390 --> 00:12:47,880
+It is too low-level.
+
+00:12:47,880 --> 00:12:54,030
+So, what is an alternative?
+
+00:12:54,030 --> 00:13:01,360
+For example, in Haskell, we can define something
+like this, which introduces new values of a
+
+00:13:01,360 --> 00:13:02,360
+new type.
+
+00:13:02,360 --> 00:13:06,580
+So, what we say here is: we introduce a datatype.
+
+00:13:06,580 --> 00:13:08,310
+It gets a name Day.
+
+00:13:08,310 --> 00:13:13,140
+So, not that's something like Picture, something
+that we can use in other types as arguments
+
+00:13:13,140 --> 00:13:14,740
+or results of functions.
+
+00:13:14,740 --> 00:13:19,570
+And then we also introduce what values this
+new type Day has.
+
+00:13:19,570 --> 00:13:26,600
+And it has the new values: Monday, Tuesday,
+Wednesday, etc. up to Sunday.
+
+00:13:26,600 --> 00:13:34,180
+And then we can use these new constants in
+computations, as return values of functions,
+
+00:13:34,180 --> 00:13:35,180
+etc.
+
+00:13:35,180 --> 00:13:39,250
+Now, at first sight, it looks like a union
+type or an enumeration type.
+
+00:13:39,250 --> 00:13:41,480
+Even something like C has this.
+
+00:13:41,480 --> 00:13:48,910
+The difference is, for example, that enumeration
+types in C work by really introducing name
+
+00:13:48,910 --> 00:13:49,910
+constants.
+
+00:13:49,910 --> 00:13:54,430
+So, if we do something like this with the
+syntax that C allows for enumeration types,
+
+00:13:54,430 --> 00:13:58,450
+then we are actually back at the same approach
+as on the previous slides.
+
+00:13:58,450 --> 00:14:06,280
+Then, basically, Day would just be a different
+/ a disguise name for Integers or some other
+
+00:14:06,280 --> 00:14:09,339
+base type, and Monday would be a constant
+(0 or 1).
+
+00:14:09,339 --> 00:14:14,380
+So, it would again depend on does C decide
+to count the things.
+
+00:14:14,380 --> 00:14:19,100
+It might start counting from 0 or 1, but actually,
+ultimately, you would simply introduce new
+
+00:14:19,100 --> 00:14:21,040
+named constants which are Integer constants.
+
+00:14:21,040 --> 00:14:25,640
+They would have these names, but under the
+hood, they would still be 1,2,3,4,5, or something
+
+00:14:25,640 --> 00:14:26,820
+like that.
+
+00:14:26,820 --> 00:14:28,831
+This is not what happens here.
+
+00:14:28,831 --> 00:14:32,779
+What happens here is really that the type
+that is introduced by this definition is a
+
+00:14:32,779 --> 00:14:35,589
+completely new type that is separate from
+all other types in the language.
+
+00:14:35,589 --> 00:14:38,420
+So, it is not an Integer type, or renaming
+of the Integer type.
+
+00:14:38,420 --> 00:14:43,050
+It is really something completely new, and
+the compiler will now allow, for example,
+
+00:14:43,050 --> 00:14:46,500
+to use these constants as numbers because
+they are not numbers.
+
+00:14:46,500 --> 00:14:51,300
+They are new values of the new type which
+was introduced in this declaration.
+
+00:14:51,300 --> 00:14:57,380
+So, they are completely separate from anything
+else already existing in the language or in
+
+00:14:57,380 --> 00:15:02,380
+the user's code.
+
+00:15:02,380 --> 00:15:04,399
+And then, how would we compute on this?
+
+00:15:04,399 --> 00:15:08,470
+For example, now, our exerciseDay function
+could look like this.
+
+00:15:08,470 --> 00:15:12,780
+It would, of course, not anymore go from Integer
+to Bool, but from this new type Day to Bool.
+
+00:15:12,780 --> 00:15:15,820
+So, that's why we use the type name here.
+
+00:15:15,820 --> 00:15:18,850
+So, what's on the left of this equal sign
+here is the type name.
+
+00:15:18,850 --> 00:15:21,100
+And on the right, we have the values names.
+
+00:15:21,100 --> 00:15:25,550
+So, Day can occur here as a type name, and
+then we have a property.
+
+00:15:25,550 --> 00:15:26,950
+So, we return Bool.
+
+00:15:26,950 --> 00:15:34,029
+And when we give our definition of the function,
+we don't mention here 2 or 3 or 6 or 7,
+
+00:15:34,029 --> 00:15:38,579
+or something like that, but we actually mention
+the constants that we introduced for this
+
+00:15:38,579 --> 00:15:39,579
+new type.
+
+00:15:39,579 --> 00:15:41,110
+So, exerciseDay Wednesday is False.
+
+00:15:41,110 --> 00:15:42,339
+Saturday is False.
+
+00:15:42,339 --> 00:15:43,570
+Sunday is False.
+
+00:15:43,570 --> 00:15:44,570
+Everything else is True.
+
+00:15:44,570 --> 00:15:47,360
+Of course, a question here is: What is everything
+else?
+
+00:15:47,360 --> 00:15:52,209
+Well, everything else is exactly the four
+values that are mentioned here, which are
+
+00:15:52,209 --> 00:15:54,230
+not covered in the previous three slides.
+
+00:15:54,230 --> 00:16:01,140
+So, there is nothing like 12th weekday in
+this interpretation here because there is
+
+00:16:01,140 --> 00:16:04,260
+no 8th, 9th, or 10th value here.
+
+00:16:04,260 --> 00:16:06,279
+These are not Integers.
+
+00:16:06,279 --> 00:16:09,680
+These are not somehow just indices.
+
+00:16:09,680 --> 00:16:14,770
+No, we have exactly seven values of this type
+as introduced here.
+
+00:16:14,770 --> 00:16:20,660
+And everything that could go into this anonymous
+place here would be the ones that haven't
+
+00:16:20,660 --> 00:16:21,839
+been covered here.
+
+00:16:21,839 --> 00:16:28,250
+So, it is illegal, simply, from the compiler's
+perspective already to pass anything else
+
+00:16:28,250 --> 00:16:30,899
+here than one of these seven days.
+
+00:16:30,899 --> 00:16:34,890
+Of course, someone would say: we lose some
+opportunities.
+
+00:16:34,890 --> 00:16:37,760
+So, for example, now we cannot compute with
+numbers anymore.
+
+00:16:37,760 --> 00:16:40,950
+So, if you want to introduce the weekend day…
+
+00:16:40,950 --> 00:16:49,920
+So, if you want to check with the workday
+function whether it is a workday, now we can't
+
+00:16:49,920 --> 00:16:54,120
+compute something like: give me the day, and
+then I compare whether it is smaller than
+
+00:16:54,120 --> 00:16:55,120
+6.
+
+00:16:55,120 --> 00:16:56,990
+That doesn't make sense because these are
+not numbers anymore.
+
+00:16:56,990 --> 00:17:02,230
+We lose some tricks that we can do with enum
+types in C, for example, knowing that they
+
+00:17:02,230 --> 00:17:06,279
+are ultimately just numbers, but these tricks
+are simply tricks.
+
+00:17:06,279 --> 00:17:09,749
+They are not well-maintainable way of programming.
+
+00:17:09,749 --> 00:17:12,669
+So, I wouldn't even call this a benefit
+that we lose.
+
+00:17:12,669 --> 00:17:19,640
+It is simply more declarative and clearer
+that these are new values of a new type, and
+
+00:17:19,640 --> 00:17:23,890
+we cannot compute with them by “+” or
+“-“ or “<”, etc. because weekdays
+
+00:17:23,890 --> 00:17:26,069
+don't work that way.
+
+00:17:26,069 --> 00:17:32,869
+They are not numbers, so we shouldn't treat
+them as numbers as a less strictly typed language
+
+00:17:32,869 --> 00:17:34,210
+does.
+
+00:17:34,210 --> 00:17:38,809
+Then there is another issue or concern that
+introduces itself at this point.
+
+00:17:38,809 --> 00:17:42,789
+So, you might think: the C approach must be
+much more efficient.
+
+00:17:42,789 --> 00:17:48,049
+Simple encoding these things as numbers, and
+then computing with numbers is of course certainly
+
+00:17:48,049 --> 00:17:52,889
+much more efficient than this approach where
+we introduce these new Strings and then compare
+
+00:17:52,889 --> 00:17:53,889
+them.
+
+00:17:53,889 --> 00:17:57,759
+Does this mean that I have to compare two
+Strings of length “a” or something like
+
+00:17:57,759 --> 00:18:00,539
+that, instead of simply comparing something
+with the number 6?
+
+00:18:00,539 --> 00:18:01,539
+Well… no.
+
+00:18:01,539 --> 00:18:02,980
+This is just what's on the surface of this
+language.
+
+00:18:02,980 --> 00:18:05,070
+This is not what happens in the implementation.
+
+00:18:05,070 --> 00:18:11,830
+You need not worry that somehow these will
+be stored as Strings, and then at runtime,
+
+00:18:11,830 --> 00:18:16,159
+some of these Strings will be compared against
+some of these or things like that.
+
+00:18:16,159 --> 00:18:18,919
+Of course, the compiler makes a more efficient
+code from this.
+
+00:18:18,919 --> 00:18:23,289
+So, under the hood, it is not a String comparison.
+
+00:18:23,289 --> 00:18:29,609
+That also means that you don't even need
+to try to make your value names short here
+
+00:18:29,609 --> 00:18:32,619
+in the hope that this makes the program more
+efficient.
+
+00:18:32,619 --> 00:18:34,809
+That's complete nonsense.
+
+00:18:34,809 --> 00:18:38,019
+We have to be taught that this is not how
+this works.
+
+00:18:38,019 --> 00:18:42,840
+This is something that the compiler and the
+programmer see (these names), but the machine
+
+00:18:42,840 --> 00:18:46,639
+will never see these names ultimately in the
+compiled code.
+
+00:18:46,639 --> 00:18:50,679
+Under the hood, this will be turned into something
+that resembles the C way, where these are
+
+00:18:50,679 --> 00:18:54,710
+numbers in some sense.
+
+00:18:54,710 --> 00:18:58,350
+But that is not something that the programmer
+has to deal with, or the programmer should
+
+00:18:58,350 --> 00:19:02,629
+even be aware of because that would only need
+to abuse.
+
+00:19:02,629 --> 00:19:09,359
+That is something to bear in mind that these
+are not Strings and there is no String comparison
+
+00:19:09,359 --> 00:19:12,220
+going on.
+
+00:19:12,220 --> 00:19:21,980
+And another thing that should be kept in mind,
+namely, that these are different entities.
+
+00:19:21,980 --> 00:19:26,609
+So, what appears on the left of such a definition
+here does not appear on the right.
+
+00:19:26,609 --> 00:19:33,210
+They are completely different things, also
+in terms of their role in the language.
+
+00:19:33,210 --> 00:19:36,519
+So, what appears on the left here is called
+a type constructor.
+
+00:19:36,519 --> 00:19:40,490
+We construct a new type when we introduce
+a definition like that.
+
+00:19:40,490 --> 00:19:44,690
+And what we have on the right are called data
+constructors.
+
+00:19:44,690 --> 00:19:50,049
+They construct data, they construct values
+which have a type, in this case the type that
+
+00:19:50,049 --> 00:19:51,049
+is constructed here.
+
+00:19:51,049 --> 00:19:54,859
+So, they are different entities: type constructors,
+data constructors.
+
+00:19:54,859 --> 00:19:57,539
+They happen to live in different name spaces.
+
+00:19:57,539 --> 00:20:05,570
+So, there is no confusion if you use the same
+identifier for the type constructor and the
+
+00:20:05,570 --> 00:20:06,570
+data constructor.
+
+00:20:06,570 --> 00:20:07,990
+So, they have to be uppercase, as we already
+see here.
+
+00:20:07,990 --> 00:20:10,370
+So, these identifiers must be uppercase.
+
+00:20:10,370 --> 00:20:14,830
+That distinguishes them from, for example,
+function name, which must be lowercase.
+
+00:20:14,830 --> 00:20:21,989
+But in theory, you could use the same uppercase
+identifier both as a type name and a value
+
+00:20:21,989 --> 00:20:22,989
+name.
+
+00:20:22,989 --> 00:20:27,330
+It is not usually recommended to do that unless
+there are special reasons to do it.
+
+00:20:27,330 --> 00:20:34,630
+We will refrain from doing it in the lecture,
+but you should be aware that, in theory, the
+
+00:20:34,630 --> 00:20:42,229
+same name could be used here and here, or
+even here as a name of a data constructor
+
+00:20:42,229 --> 00:20:43,450
+in another type.
+
+00:20:43,450 --> 00:20:47,320
+That, of course, can lead to confusion.
+
+00:20:47,320 --> 00:20:54,029
+We are not going to do this usually, but the
+compiler will not complain about this because
+
+00:20:54,029 --> 00:21:04,499
+it is valid in the language to use the same
+identifier in such a place and in such a place.
+
+00:21:04,499 --> 00:21:11,210
+On the previous slide, I mentioned this example
+with the 12th day which is, of course, observed
+
+00:21:11,210 --> 00:21:19,940
+as a weekday, and thanks to the introduction
+of this new type, this absurd input was excluded.
+
+00:21:19,940 --> 00:21:21,889
+That was a nice static guarantee.
+
+00:21:21,889 --> 00:21:29,460
+And actually, there are more benefits of using
+this explicit type approach instead of simply
+
+00:21:29,460 --> 00:21:30,460
+number codes.
+
+00:21:30,460 --> 00:21:34,940
+For example, we also get more exhaustiveness
+and redundancy checking.
+
+00:21:34,940 --> 00:21:39,999
+That is something that we talked about when
+we talked about case distinction in Haskell
+
+00:21:39,999 --> 00:21:40,999
+code.
+
+00:21:40,999 --> 00:21:47,720
+So, let's actually think about this based
+on the level example that we had in the exercises.
+
+00:21:47,720 --> 00:21:49,360
+Remember, there was this function.
+
+00:21:49,360 --> 00:21:53,379
+It was interpreted as a description of a level.
+
+00:21:53,379 --> 00:21:56,960
+So, given some coordinates, it returned an
+integer.
+
+00:21:56,960 --> 00:22:01,220
+And this integer code was seen as block, water,
+pearl, etc.
+
+00:22:01,220 --> 00:22:09,789
+We have this aTile function which maps these
+number codes to actual Pictures.
+
+00:22:09,789 --> 00:22:11,889
+Of course, this already has some danger.
+
+00:22:11,889 --> 00:22:14,360
+We can easily confuse things here.
+
+00:22:14,360 --> 00:22:19,229
+So, if somebody writes the level function,
+it might not always be clear / they might
+
+00:22:19,229 --> 00:22:22,299
+not always have in mind what exactly stands
+for what.
+
+00:22:22,299 --> 00:22:27,330
+Sometimes they maybe write 3 instead of 2
+because 2 and 3 are just some numbers.
+
+00:22:27,330 --> 00:22:30,450
+They are not really nice declarative names
+for things.
+
+00:22:30,450 --> 00:22:32,019
+“level” doesn't have a “2”.
+
+00:22:32,019 --> 00:22:33,539
+“level” has “water” or “pearl”
+or whatever.
+
+00:22:33,539 --> 00:22:40,950
+So, in that sense already, this is a bit unfortunate,
+what we have done so far, it corresponds to
+
+00:22:40,950 --> 00:22:43,859
+representing weekdays by 1,2,3,…
+
+00:22:43,859 --> 00:22:48,429
+Of course, at this point you could already
+imagine that it would probably be a good idea
+
+00:22:48,429 --> 00:22:53,169
+to also use an enumeration type here, similarly
+to weekdays.
+
+00:22:53,169 --> 00:22:59,359
+But actually, there is some further cause
+for worry in a function like this, namely,
+
+00:22:59,359 --> 00:23:00,359
+extensibility.
+
+00:23:00,359 --> 00:23:03,830
+So, let's assume that we want to make our
+levels richer.
+
+00:23:03,830 --> 00:23:11,269
+We have some new idea for our game, and we
+introduce a new kind of tile, maybe a spike,
+
+00:23:11,269 --> 00:23:12,659
+that can be somewhere.
+
+00:23:12,659 --> 00:23:17,710
+So, we will start using the value 5 for this
+because 5 doesn't seem to be used yet.
+
+00:23:17,710 --> 00:23:23,210
+So, now we write level functions where at
+some place it will return a 5 which we intend
+
+00:23:23,210 --> 00:23:28,260
+to stand for “spike”, but actually, we
+forget to add this extra case in the aTile
+
+00:23:28,260 --> 00:23:32,769
+function, or maybe someone on our team who
+is responsible for this, simply, forgets to
+
+00:23:32,769 --> 00:23:34,359
+add a new case here.
+
+00:23:34,359 --> 00:23:35,710
+What would happen?
+
+00:23:35,710 --> 00:23:37,399
+The compiler wouldn't warn us about this.
+
+00:23:37,399 --> 00:23:41,109
+We like to be warned by the compiler about
+possible errors in our code.
+
+00:23:41,109 --> 00:23:47,840
+But if I produce 5 here, but also forget to
+adapt the aTile function, then the compiler
+
+00:23:47,840 --> 00:23:49,690
+has no chance of warning me.
+
+00:23:49,690 --> 00:23:50,690
+Why not?
+
+00:23:50,690 --> 00:23:55,409
+Because the 5 will run into this last case.
+
+00:23:55,409 --> 00:24:00,799
+So, actually, even though I add my 5 in my
+level function, the drawing code will, simply,
+
+00:24:00,799 --> 00:24:06,419
+draw nothing for these positions because we
+run into this “blank” case here.
+
+00:24:06,419 --> 00:24:08,820
+This blank case made sense before, right?
+
+00:24:08,820 --> 00:24:14,030
+Because in our examples in the exercise, the
+only number codes we had were 0 up to 4, and
+
+00:24:14,030 --> 00:24:19,659
+0 was intended to stand for “nothing”,
+so of course, 0 would run into this last case,
+
+00:24:19,659 --> 00:24:21,070
+then “blank” would be taken.
+
+00:24:21,070 --> 00:24:27,330
+But now when we extend the level function
+and forget about this change in the aTile
+
+00:24:27,330 --> 00:24:30,759
+function, then suddenly we also have “blank”
+for our new place where we actually want to
+
+00:24:30,759 --> 00:24:31,759
+have spikes.
+
+00:24:31,759 --> 00:24:38,639
+Now, you could say: that is the error in our
+original design for the aTile function.
+
+00:24:38,639 --> 00:24:42,809
+We shouldn't have written the “_” (underscore),
+we should have written 0 here, then the compiler
+
+00:24:42,809 --> 00:24:44,090
+would certainly realize that…
+
+00:24:44,090 --> 00:24:50,549
+At least at runtime, it wouldn't draw blank
+because 5 wouldn't match any of these cases.
+
+00:24:50,549 --> 00:24:54,879
+So, at least at runtime, you would get an
+error instead of this strange blank Picture.
+
+00:24:54,879 --> 00:25:01,169
+This is something you could achieve by simply
+writing a “0” here in the original version.
+
+00:25:01,169 --> 00:25:04,269
+But that of course also has its disadvantages
+because then the compiler would complain about
+
+00:25:04,269 --> 00:25:05,929
+this not being an exhaustive function.
+
+00:25:05,929 --> 00:25:11,080
+And the compiler would be correct because
+if you only say: the aTile function goes from
+
+00:25:11,080 --> 00:25:15,789
+Integer to Picture, and then you only provide
+cases for 0,1,2,3,4, then we haven't written
+
+00:25:15,789 --> 00:25:17,880
+a function in the mathematical sense.
+
+00:25:17,880 --> 00:25:19,090
+And why is that?
+
+00:25:19,090 --> 00:25:21,929
+Because the Integer size is much too big.
+
+00:25:21,929 --> 00:25:24,950
+The level doesn't give an Integer, it gives
+a tile.
+
+00:25:24,950 --> 00:25:30,529
+So, we should use a more descriptive, a more
+meaningful type here.
+
+00:25:30,529 --> 00:25:31,529
+And what could that be?
+
+00:25:31,529 --> 00:25:32,879
+It can't be a number type.
+
+00:25:32,879 --> 00:25:41,409
+It should be an enumeration or an algebraic
+data type.
+
+00:25:41,409 --> 00:25:48,450
+So, that is how it could look like, if you
+introduce a new type called Tile, and we introduce
+
+00:25:48,450 --> 00:25:55,279
+some constants of that type, and we introduce
+exactly one constant for each kind of tile
+
+00:25:55,279 --> 00:25:59,980
+we want to have: Blank (nothing), Pearl, Water,
+Air.
+
+00:25:59,980 --> 00:26:01,649
+This has the clear documentation value.
+
+00:26:01,649 --> 00:26:09,019
+Also, there cannot, from now on, be any confusion
+related to number codes, so, which is which?
+
+00:26:09,019 --> 00:26:10,019
+It is 2 the pearl?
+
+00:26:10,019 --> 00:26:11,019
+or 3 is the pearl?
+
+00:26:11,019 --> 00:26:14,119
+So, there are no number codes anymore, we
+have these descriptive names.
+
+00:26:14,119 --> 00:26:17,419
+And they will be used in all of our functions.
+
+00:26:17,419 --> 00:26:20,009
+It also means that the order is not relevant.
+
+00:26:20,009 --> 00:26:26,000
+Neither is the order relevant when we list
+these things here because there are no numbers
+
+00:26:26,000 --> 00:26:32,009
+involved, and nor is the order relevant when
+we write cases for these constants in our
+
+00:26:32,009 --> 00:26:33,309
+function definitions.
+
+00:26:33,309 --> 00:26:38,769
+So, let's say we use this type, then now,
+of course, our level function would have this
+
+00:26:38,769 --> 00:26:39,769
+type.
+
+00:26:39,769 --> 00:26:42,210
+It doesn't go from (Integer, Integer) to
+Integer, but rather from (Integer, Integer)
+
+00:26:42,210 --> 00:26:43,210
+to Tile.
+
+00:26:43,210 --> 00:26:44,470
+This also makes the roles much clearer.
+
+00:26:44,470 --> 00:26:48,720
+So, these remain Integers because they are
+coordinates, but what comes out is not just
+
+00:26:48,720 --> 00:26:49,720
+a number.
+
+00:26:49,720 --> 00:26:55,330
+It is a Tile because that is what the level
+is: For positions, it gives us a description
+
+00:26:55,330 --> 00:26:58,190
+of what is at that position.
+
+00:26:58,190 --> 00:27:06,659
+So, it is now the type of our level function,
+and then aTile function looks like this.
+
+00:27:06,659 --> 00:27:09,309
+It doesn't go from Integer to Picture, but
+from Tile to Picture.
+
+00:27:09,309 --> 00:27:11,870
+And of course, the mapping here is very straightforward.
+
+00:27:11,870 --> 00:27:18,369
+Also, we don't need a catch-all case because
+we have exactly five values of the Tile type.
+
+00:27:18,369 --> 00:27:25,129
+So, if you give a definition, a line, for
+each of these constants, then this is a complete
+
+00:27:25,129 --> 00:27:29,890
+definition and the compiler knows… the compiler
+will find out that this is a non-redundant,
+
+00:27:29,890 --> 00:27:33,450
+but a complete definition of functions of
+that type.
+
+00:27:33,450 --> 00:27:38,159
+So, there is no need for a catch-all case
+as in the previous case, where this actually
+
+00:27:38,159 --> 00:27:47,460
+led to problems when we wanted to extend our
+support/range of things that can be tiles.
+
+00:27:47,460 --> 00:27:51,690
+Now, what would happen if we wanted to introduce
+a new tile, like the spike thing?
+
+00:27:51,690 --> 00:27:53,850
+We would have to add it to this type.
+
+00:27:53,850 --> 00:27:57,809
+Otherwise, it wouldn't be possible to return
+it in the level.
+
+00:27:57,809 --> 00:28:01,950
+So, we cannot return anything from the level
+function which isn't in this type.
+
+00:28:01,950 --> 00:28:06,769
+So, if we want to have spikes, then we introduce
+a new case of spikes here, then we can use
+
+00:28:06,769 --> 00:28:14,879
+it in the level function, and it cannot happen
+to us that we forget to declare or describe
+
+00:28:14,879 --> 00:28:17,240
+how to handle this in the aTile function.
+
+00:28:17,240 --> 00:28:18,240
+Why?
+
+00:28:18,240 --> 00:28:23,309
+Because if I add Spike to this type, but I
+forget to add also a case for it in the aTile
+
+00:28:23,309 --> 00:28:25,450
+function, then the compiler will complain.
+
+00:28:25,450 --> 00:28:26,450
+The compiler will help me.
+
+00:28:26,450 --> 00:28:29,309
+It will warn if we forget a new value.
+
+00:28:29,309 --> 00:28:34,341
+So, everything has to fit: If I want to use
+a new thing here, I have to add it to the
+
+00:28:34,341 --> 00:28:36,019
+type, then I can use it here.
+
+00:28:36,019 --> 00:28:40,190
+But then also, I can't forget to handle
+it here because the compiler would complain
+
+00:28:40,190 --> 00:28:41,190
+about this.
+
+00:28:41,190 --> 00:28:48,299
+That is the value of this
+kind of checking.
+
+00:28:48,299 --> 00:28:51,639
+And these checks that are possible now: both
+for completeness and for redundancy might
+
+00:28:51,639 --> 00:28:57,049
+seem trivial in a simple function like this,
+but at scale, in larger programs, in larger
+
+00:28:57,049 --> 00:29:02,480
+libraries with many functions with complicated
+invariants maybe, this can be very important.
+
+00:29:02,480 --> 00:29:08,999
+So, everything that we can do to make the
+compiler help us in detecting inconsistencies
+
+00:29:08,999 --> 00:29:10,140
+is valuable.
+
+00:29:10,140 --> 00:29:15,869
+And defining our own types and using them
+in a reasonable way in our functions, both
+
+00:29:15,869 --> 00:29:20,799
+for outputs and for inputs, is a way to achieve
+this.
+
+00:29:20,799 --> 00:29:26,059
+Now, on this very simple example, you might
+also wonder: why even have this?
+
+00:29:26,059 --> 00:29:31,090
+It looks very trivial, to match “Blank”
+to “blank”, “Block” to “block”,
+
+00:29:31,090 --> 00:29:32,090
+etc…
+
+00:29:32,090 --> 00:29:35,580
+Why don't we simply let our level function
+return Pictures instead?
+
+00:29:35,580 --> 00:29:39,071
+Then we can scrap this whole thing, and the
+level function would simply say: given two
+
+00:29:39,071 --> 00:29:45,059
+Integers, I give you a Picture, and then,
+instead of returning the constant uppercase
+
+00:29:45,059 --> 00:29:47,779
+Block, it would simply return the Picture
+block here.
+
+00:29:47,779 --> 00:29:53,529
+That would be a reasonable design, you might
+think, but it would lose a lot of potential
+
+00:29:53,529 --> 00:29:56,960
+for manipulations because you also want to
+use this level function as data.
+
+00:29:56,960 --> 00:29:57,960
+You have seen this.
+
+00:29:57,960 --> 00:30:03,269
+We had this exercise task where you are given
+two level functions and you should decide
+
+00:30:03,269 --> 00:30:08,859
+which one of them is smaller or more densely
+populated.
+
+00:30:08,859 --> 00:30:10,109
+And what did you do there?
+
+00:30:10,109 --> 00:30:15,779
+You applied these level functions to some
+coordinates and compared their outcomes.
+
+00:30:15,779 --> 00:30:21,039
+Now, that is possible with numbers, but numbers
+have a disadvantage, as explained in the previous
+
+00:30:21,039 --> 00:30:23,549
+slide, and discussed here again.
+
+00:30:23,549 --> 00:30:27,620
+If you use Pictures here, then you can't
+compare them.
+
+00:30:27,620 --> 00:30:31,960
+So, given some arbitrary two Pictures, there
+is no way to really, reasonably, compare them.
+
+00:30:31,960 --> 00:30:35,999
+So, you need data here… something which
+can be inspected.
+
+00:30:35,999 --> 00:30:38,710
+And well… constants like this have this
+property.
+
+00:30:38,710 --> 00:30:45,979
+So, going from numbers to this new type allows
+us, both, to have a meaningful drawing function,
+
+00:30:45,979 --> 00:30:51,100
+but also still treat this level as data, where
+we actually can look at the outcome for a
+
+00:30:51,100 --> 00:30:55,539
+certain position and compute with this, like
+comparing a block vs a pearl, etc…
+
+00:30:55,539 --> 00:30:57,440
+comparing in the sense of: is one a block
+and the other is a pearl?
+
+00:30:57,440 --> 00:31:03,980
+Or one is water and the other is a pearl,
+etc., not comparison in the sense of numbers.
+
+00:31:03,980 --> 00:31:07,960
+That's why we want to have something that
+is not a Picture here, something that we can
+
+00:31:07,960 --> 00:31:13,570
+work with, like these constants that we can
+look at, and then we need something like this
+
+00:31:13,570 --> 00:31:15,200
+function.
+
+00:31:15,200 --> 00:31:20,190
+But thanks to this enumeration type, such
+a function can be safely implemented in a
+
+00:31:20,190 --> 00:31:29,159
+non-redundant, but also, an exhaustive way,
+which is checked by the compiler.
+
+00:31:29,159 --> 00:31:33,019
+These were simple enumeration types.
+
+00:31:33,019 --> 00:31:35,479
+Now, let's go beyond that.
+
+00:31:35,479 --> 00:31:43,190
+We move into an area where it is not like
+just name constants that we could easily simulate
+
+00:31:43,190 --> 00:31:45,799
+with numbers like in C or something like that.
+
+00:31:45,799 --> 00:31:50,229
+Let's do more general algebraic data types.
+
+00:31:50,229 --> 00:31:54,210
+In what sense will they be more general?
+
+00:31:54,210 --> 00:31:57,749
+Now, they can encapsulate additional values
+in these alternatives.
+
+00:31:57,749 --> 00:32:05,320
+So far, we had, for example: a Day can be Monday,
+Tuesday, etc., or a Tile can be Water, Pearl,
+
+00:32:05,320 --> 00:32:07,470
+Block, and Blank or whatever.
+
+00:32:07,470 --> 00:32:13,710
+These are the alternatives that we write this
+logical bar “|”. Now, each of these alternatives
+
+00:32:13,710 --> 00:32:23,669
+may take additional values in the sense of
+a record, so, keeping some additional data.
+
+00:32:23,669 --> 00:32:24,669
+What does this mean?
+
+00:32:24,669 --> 00:32:27,499
+The data constructors now can take arguments.
+
+00:32:27,499 --> 00:32:31,049
+They are not just constants, they are now
+functions that take arguments.
+
+00:32:31,049 --> 00:32:37,559
+Syntactically, this means to enrich what we
+can write in these data definitions.
+
+00:32:37,559 --> 00:32:44,059
+So, actually, let me show three data definitions
+that are related to each other / depend on
+
+00:32:44,059 --> 00:32:46,340
+each other, namely, what we see here.
+
+00:32:46,340 --> 00:32:51,899
+I defined a new type Date and it has only
+one alternative.
+
+00:32:51,899 --> 00:32:55,039
+So, there is no vertical bar here for other
+enumeration options.
+
+00:32:55,039 --> 00:33:01,499
+There is only one option, which is: Day is
+a data constructor, and then there are three
+
+00:33:01,499 --> 00:33:05,730
+arguments, and the types are written here,
+because this is a type definition.
+
+00:33:05,730 --> 00:33:13,370
+Some things to note: first, here I use Day
+as a data constructor, whereas a few slides
+
+00:33:13,370 --> 00:33:15,960
+back I used it as a type constructor.
+
+00:33:15,960 --> 00:33:18,330
+I said that I wouldn't usually do this.
+
+00:33:18,330 --> 00:33:21,799
+So, imagine that this is an example that is
+separate from the previous one.
+
+00:33:21,799 --> 00:33:26,879
+So, I wouldn't use this and the other definition
+of data Day (as Monday, Tuesday, etc.) in
+
+00:33:26,879 --> 00:33:27,879
+the same program.
+
+00:33:27,879 --> 00:33:33,269
+So, let's say it is a separate program,
+so that I can avoid this confusion.
+
+00:33:33,269 --> 00:33:40,809
+I define a new type: Date, which has only
+one alternative, namely: Day (as a data constructor),
+
+00:33:40,809 --> 00:33:45,519
+but Day is not constant, it has three arguments
+of type Integer, the idea, of course, being
+
+00:33:45,519 --> 00:33:52,049
+that I will store the day of the month, the
+number of the month…
+
+00:33:52,049 --> 00:33:58,480
+You could say: I should actually use January,
+February, etc. here, instead of numbers, but
+
+00:33:58,480 --> 00:34:02,340
+usually, dates are stored as number number
+number.
+
+00:34:02,340 --> 00:34:06,889
+So, let me do this here as well.
+
+00:34:06,889 --> 00:34:09,320
+Then I have another type, which is Time.
+
+00:34:09,320 --> 00:34:15,210
+I have decided that, for my time, I only want
+to store the hours.
+
+00:34:15,210 --> 00:34:21,070
+So, Time is simply constructed by saying:
+the hours are so-and-so.
+
+00:34:21,070 --> 00:34:26,929
+We can store 11 AM or something like that.
+
+00:34:26,929 --> 00:34:32,460
+What I am actually interested in, is the new
+type Connection which is based on these custom
+
+00:34:32,460 --> 00:34:33,460
+types.
+
+00:34:33,460 --> 00:34:34,460
+So, what is a connection?
+
+00:34:34,460 --> 00:34:38,110
+I want to be able to talk about both train
+and flight connections.
+
+00:34:38,110 --> 00:34:42,600
+So, these would be my alternatives: Train
+or Flight, like Monday and Tuesday, but actually
+
+00:34:42,600 --> 00:34:48,060
+Train and Flight are not simply constants
+as Monday and Tuesday are, but rather they
+
+00:34:48,060 --> 00:34:49,150
+carry some data.
+
+00:34:49,150 --> 00:34:50,260
+And they carry different data.
+
+00:34:50,260 --> 00:34:53,690
+So, each of them has its own set of constructor
+arguments.
+
+00:34:53,690 --> 00:35:01,420
+So, for example, for a train, I want to store
+the date and two Times, namely the departure
+
+00:35:01,420 --> 00:35:03,260
+time and the arrival time.
+
+00:35:03,260 --> 00:35:04,850
+That is something I can say here.
+
+00:35:04,850 --> 00:35:12,480
+And of course, the Day and Time and Time values
+here will be constructed in the way that these
+
+00:35:12,480 --> 00:35:15,090
+two definitions here declare.
+
+00:35:15,090 --> 00:35:17,901
+Also, there are flight connections.
+
+00:35:17,901 --> 00:35:18,970
+And for flights, I store something else.
+
+00:35:18,970 --> 00:35:23,270
+I store the airline, and let's say this is
+stored as a String.
+
+00:35:23,270 --> 00:35:30,080
+And then I also store the date on which this
+flight connection takes place, and two Times
+
+00:35:30,080 --> 00:35:33,260
+for departure and arrival.
+
+00:35:33,260 --> 00:35:39,800
+What you see is that these definitions can
+depend on each other, like I can use an own-defined
+
+00:35:39,800 --> 00:35:42,480
+type in another own-defined type.
+
+00:35:42,480 --> 00:35:44,470
+Also, the order is not relevant here.
+
+00:35:44,470 --> 00:35:48,630
+So, it is just that for function definitions,
+I don't have to define these types before
+
+00:35:48,630 --> 00:35:50,350
+I define these types or something like that.
+
+00:35:50,350 --> 00:35:53,100
+So, this can be mutually dependent.
+
+00:35:53,100 --> 00:35:57,220
+It doesn't happen in this case, but it could
+be, in general.
+
+00:35:57,220 --> 00:36:00,270
+So, now let's look at an example.
+
+00:36:00,270 --> 00:36:04,160
+What would like to know a value of, for example,
+the Connection type.
+
+00:36:04,160 --> 00:36:08,701
+Of course, it becomes a bit more complicated
+to construct these values now because they
+
+00:36:08,701 --> 00:36:11,660
+are just constants like Monday, Tuesday, etc.
+
+00:36:11,660 --> 00:36:15,540
+A value of this type would be either a Train
+or a Flight.
+
+00:36:15,540 --> 00:36:19,270
+So, let's say we want to store a value for
+Train.
+
+00:36:19,270 --> 00:36:26,010
+Then, Train would be the name that appears…
+the constructor's name (just Monday, Tuesday)
+
+00:36:26,010 --> 00:36:28,130
+what we used as a constant.
+
+00:36:28,130 --> 00:36:29,230
+And now, of course, this is a function.
+
+00:36:29,230 --> 00:36:30,960
+So, it takes three arguments.
+
+00:36:30,960 --> 00:36:33,890
+The first argument would be a Date which will
+be constructed like this.
+
+00:36:33,890 --> 00:36:40,050
+So, it will be something with the constructor
+Day and then three numbers, then two Times,
+
+00:36:40,050 --> 00:36:44,700
+namely, of the form Hour and a number (Integer).
+
+00:36:44,700 --> 00:36:49,540
+A possible value of this Connection type could
+look like this.
+
+00:36:49,540 --> 00:36:51,550
+This follows this scheme.
+
+00:36:51,550 --> 00:36:57,120
+It is Train… and that I used Train, tells
+me that I need three arguments here.
+
+00:36:57,120 --> 00:37:00,280
+And what would the types be if I had written
+Flight here instead?
+
+00:37:00,280 --> 00:37:04,670
+Then we would need three arguments and there
+should be a String here in addition.
+
+00:37:04,670 --> 00:37:06,250
+But for Train, I have three arguments.
+
+00:37:06,250 --> 00:37:07,990
+The first one is a Date.
+
+00:37:07,990 --> 00:37:11,540
+And a Date is a Day with three numbers, as
+we see here.
+
+00:37:11,540 --> 00:37:15,960
+And the two Times are things of the form Hour
+and a number (Integer).
+
+00:37:15,960 --> 00:37:17,880
+And now, of course, this can be nested.
+
+00:37:17,880 --> 00:37:19,560
+And this corresponds to trees.
+
+00:37:19,560 --> 00:37:24,890
+And I will draw this on the whiteboard in
+the whiteboard app to illustrate this.
+
+00:37:24,890 --> 00:37:31,480
+But written as a value in the interpreter,
+for example, or in code, would be simply like
+
+00:37:31,480 --> 00:37:40,000
+this, seeing these as functions that are applied
+to arguments.
+
+00:37:40,000 --> 00:37:45,480
+Then how do we compute on such values… values
+of these type that we have just seen?
+
+00:37:45,480 --> 00:37:47,490
+Via something called pattern-matching.
+
+00:37:47,490 --> 00:37:52,420
+That is the underlying concept here.
+
+00:37:52,420 --> 00:37:55,860
+And it is something that we have seen many
+times already, but we have just applied it
+
+00:37:55,860 --> 00:38:01,310
+to values … like this aTile of Block is
+equal to something.
+
+00:38:01,310 --> 00:38:02,700
+It was already pattern-matching.
+
+00:38:02,700 --> 00:38:09,630
+It matched against a constant pattern: Block
+or Pearl, etc. same as for weekdays, and also
+
+00:38:09,630 --> 00:38:11,000
+for numbers, before.
+
+00:38:11,000 --> 00:38:16,950
+Now, this pattern matching concept becomes
+a possibly deeply nested concept.
+
+00:38:16,950 --> 00:38:22,261
+So, if you want to define what the travel
+time for a Connection is, we could say: What
+
+00:38:22,261 --> 00:38:23,261
+is a Connection?
+
+00:38:23,261 --> 00:38:25,080
+A Connection is either a Train or a Flight.
+
+00:38:25,080 --> 00:38:28,100
+That is what the previous definition from
+the previous slide says.
+
+00:38:28,100 --> 00:38:34,300
+And you also know that if it is a Train, then
+it has three arguments: a Date which we maybe
+
+00:38:34,300 --> 00:38:37,280
+want to ignore if we want to compute how long
+the travel takes.
+
+00:38:37,280 --> 00:38:41,830
+It doesn't really depend on the date on
+which the travel happens, but it depends rather
+
+00:38:41,830 --> 00:38:43,450
+on the departure and arrival times.
+
+00:38:43,450 --> 00:38:47,250
+So, we could say something like: travelTime
+of a Train connection, no matter what the
+
+00:38:47,250 --> 00:38:52,460
+date is, on which it takes place, if we have
+the departure as “d” and the arrival as
+
+00:38:52,460 --> 00:38:57,410
+“a”, then the travelTime is the arrival
+hour minus the departure hour plus one because
+
+00:38:57,410 --> 00:39:01,020
+you need some time to get to the railway station
+or something like that.
+
+00:39:01,020 --> 00:39:06,670
+So, this is one alternative because Connection
+has an alternative: it could be a Train, and
+
+00:39:06,670 --> 00:39:07,770
+it could also be a Flight.
+
+00:39:07,770 --> 00:39:09,850
+So, we should also write another case.
+
+00:39:09,850 --> 00:39:12,850
+So, a case for travelTime function for Flight
+connections.
+
+00:39:12,850 --> 00:39:19,080
+And the description/the definition of this
+data constructor tells us how many arguments
+
+00:39:19,080 --> 00:39:20,080
+it has.
+
+00:39:20,080 --> 00:39:25,530
+It has a String argument for the airline,
+but we assume that the travel time doesn't
+
+00:39:25,530 --> 00:39:26,530
+depend on this.
+
+00:39:26,530 --> 00:39:28,380
+Also, the date shouldn't be relevant.
+
+00:39:28,380 --> 00:39:34,550
+We have departure and arrival hours, but for
+a Flight, we have to add two hours for getting
+
+00:39:34,550 --> 00:39:37,310
+to the airport and checking in, etc.
+
+00:39:37,310 --> 00:39:44,390
+So, this could be a descriptive way of explaining
+how travelTime comes into play / is defined
+
+00:39:44,390 --> 00:39:47,370
+for Trains and Flights.
+
+00:39:47,370 --> 00:39:48,480
+Is this a complete case distinction?
+
+00:39:48,480 --> 00:39:53,030
+Yes, it is, because the Connection type has
+exactly these two alternatives.
+
+00:39:53,030 --> 00:39:57,880
+And the compiler will make sure that we don't
+forget anything here.
+
+00:39:57,880 --> 00:40:02,430
+So, if you had only written the first line,
+then the compiler could warn and ask: you
+
+00:40:02,430 --> 00:40:07,320
+say you have defined a function travelTime
+from Connection to Integer, but you have only
+
+00:40:07,320 --> 00:40:12,650
+defined it for some patterns, namely for Train,
+not for Flight.
+
+00:40:12,650 --> 00:40:15,230
+That is where the descriptiveness comes into
+play.
+
+00:40:15,230 --> 00:40:16,640
+Also, overlapping patterns.
+
+00:40:16,640 --> 00:40:22,650
+So, if we have two ways of defining / saying
+something about Train, which is for some reason
+
+00:40:22,650 --> 00:40:27,060
+could be relevant because maybe if the Hour
+is 12, so, if you start at noon, for some
+
+00:40:27,060 --> 00:40:29,630
+reason, then this summand must be different,
+or whatever.
+
+00:40:29,630 --> 00:40:32,550
+So, you could think of further cases here.
+
+00:40:32,550 --> 00:40:38,000
+And then the compiler could check that we
+don't have redundancy, we don't have some
+
+00:40:38,000 --> 00:40:44,380
+case that would be covered by two different
+lines, and it doesn't make sense to have
+
+00:40:44,380 --> 00:40:51,080
+a definition like that, thanks to this precise
+definition of what a Connection is on the
+
+00:40:51,080 --> 00:40:52,080
+previous slide.
+
+00:40:52,080 --> 00:41:01,700
+I will also show this on the whiteboard app
+to illustrate more clearly how this deep nesting
+
+00:41:01,700 --> 00:41:06,770
+works, how we get the values for “d” and
+“a”, for example on some example like
+
+00:41:06,770 --> 00:41:08,010
+on the previous slide.
+
+00:41:08,010 --> 00:41:14,340
+I will show this, how this translates basically
+to selecting parts of the tree when we match
+
+00:41:14,340 --> 00:41:19,840
+against a value.
+
+00:41:19,840 --> 00:41:26,050
+And then at the same time, apart from the
+role of data constructors to serve as names
+
+00:41:26,050 --> 00:41:30,460
+in this pattern-matching, they are also still
+functions, just as I said before.
+
+00:41:30,460 --> 00:41:33,950
+These data constructors have this double role:
+they are things that we can match against
+
+00:41:33,950 --> 00:41:38,140
+in a definition like this, but they are also
+constructors of data.
+
+00:41:38,140 --> 00:41:40,010
+They are normal functions.
+
+00:41:40,010 --> 00:41:41,520
+Here are their types.
+
+00:41:41,520 --> 00:41:50,440
+So, as I said before, a Date is always constructed
+by Day with three arguments, namely three
+
+00:41:50,440 --> 00:41:51,440
+Integers.
+
+00:41:51,440 --> 00:41:56,480
+That means that Day is a function which takes
+three Integers and returns a Date.
+
+00:41:56,480 --> 00:42:03,700
+Something like Day 4 4 2012 is a Date because
+it is the result of this function applied
+
+00:42:03,700 --> 00:42:05,170
+to these three arguments.
+
+00:42:05,170 --> 00:42:07,590
+And likewise, Train and Flight are functions.
+
+00:42:07,590 --> 00:42:11,990
+So, for example, there are two different ways
+to construct Connections.
+
+00:42:11,990 --> 00:42:14,260
+One of them is with the Train constructor.
+
+00:42:14,260 --> 00:42:19,750
+And the type definition for Connection tells
+us that Train has three arguments: Date Time
+
+00:42:19,750 --> 00:42:20,900
+Time.
+
+00:42:20,900 --> 00:42:25,170
+So, actually, Train is a function of this
+type.
+
+00:42:25,170 --> 00:42:31,040
+It can be used to construct values of type
+Connection, but it can also be used in any
+
+00:42:31,040 --> 00:42:32,890
+other way that functions can be used.
+
+00:42:32,890 --> 00:42:38,480
+So, thinking back to higher-order functions
+from last week, these constructors Day and
+
+00:42:38,480 --> 00:42:44,860
+Train, they could also be arguments to higher-order
+functions, if we have something which takes
+
+00:42:44,860 --> 00:42:50,130
+either polymorphically or with concrete types
+something of this form with three arguments
+
+00:42:50,130 --> 00:42:51,130
+and a result.
+
+00:42:51,130 --> 00:42:56,350
+So, they have all the rights that normal function
+has, even though we don't define them with
+
+00:42:56,350 --> 00:42:57,350
+function definitions.
+
+00:42:57,350 --> 00:43:02,100
+So, these functions Day and Train, they are
+introduced when the type Connection or the
+
+00:43:02,100 --> 00:43:03,280
+type Date is defined.
+
+00:43:03,280 --> 00:43:07,950
+They are not used-defined functions, per se,
+as functions like this are.
+
+00:43:07,950 --> 00:43:12,940
+But they are just functions that can be used
+in any way that Haskell allows a function
+
+00:43:12,940 --> 00:43:14,230
+to be used.
+
+00:43:14,230 --> 00:43:21,070
+And that is important for structuring programs
+and making good use of all the facilities
+
+00:43:21,070 --> 00:43:21,670
+that we have.

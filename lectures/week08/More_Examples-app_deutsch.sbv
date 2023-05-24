@@ -1,0 +1,483 @@
+0:00:01.200,0:00:04.800
+Okay, lassen Sie uns noch ein paar Beispiele betrachten.
+
+0:00:04.800,0:00:08.960
+Ich beginne mit dieser Zusatzfunktion
+Funktion beginnen, die ich auf den Folien über
+
+0:00:09.920,0:00:14.080
+die natürlichen Zahlen, wie dort definiert
+dort als rekursiver Datentyp definiert wurde.
+
+0:00:14.080,0:00:16.960
+Und was ich hier kurz zeigen möchte, ist
+
+0:00:18.240,0:00:22.880
+ein Beispiel dafür, wie die Berechnung jetzt funktioniert
+mit dieser Funktion für die natürlichen Zahlen.
+
+0:00:22.880,0:00:27.280
+Natürlich unterscheidet sich das nicht großartig
+anders als das frühere Beispiel
+
+0:00:27.280,0:00:33.120
+mit der Verbindung und dem Abgleich innerhalb
+der Verbindung, um die Reisezeit zu berechnen.
+
+0:00:33.120,0:00:35.440
+Aber wie auch immer, lassen Sie uns das kurz machen.
+
+0:00:35.440,0:00:37.600
+Nehmen wir also an, wir wollen zwei Zahlen addieren.
+
+0:00:38.320,0:00:44.240
+Das würde also
+einem Ausdruck wie diesem.
+
+0:00:44.240,0:00:47.200
+Wir haben also die Addition, die eine
+Funktion, die zwei Argumente annimmt,
+
+0:00:47.200,0:00:49.760
+und diese Argumente sind natürliche Zahlen.
+
+0:00:50.320,0:00:54.320
+Sagen wir also, wir wollen addieren
+2, oder vielleicht 3 plus 2.
+
+0:00:55.200,0:00:57.680
+Das linke Argument wäre dann 3.
+
+0:00:57.680,0:01:03.200
+Aber natürlich ist 3 als Datentyp
+Ausdruck mit diesen Datenkonstruktoren.
+
+0:01:03.200,0:01:11.040
+Also, im Grunde genommen wäre das so
+ein sehr einfacher, nämlich linearer, Baum
+
+0:01:11.680,0:01:16.720
+mit drei Nachfolgekonstruktoren
+und dem Null-Konstruktor, richtig?
+
+0:01:16.720,0:01:20.480
+Das entspricht der natürlichen Zahl
+3, die in diesem Datentyp kodiert ist.
+
+0:01:21.760,0:01:26.080
+Und eigentlich will ich das nur mit 2 machen.
+
+0:01:26.080,0:01:28.080
+Damit die Berechnung nicht zu lang wird.
+
+0:01:28.640,0:01:31.680
+Lassen Sie mich also wirklich 2 und 2 addieren.
+
+0:01:32.560,0:01:39.840
+Dann hätte ich auf beiden Seiten
+denselben Baum (denselben Ausdruck).
+
+0:01:40.720,0:01:41.220
+So.
+
+0:01:42.000,0:01:43.520
+Wie funktioniert nun die Berechnung?
+
+0:01:43.520,0:01:47.520
+Nun, wie zuvor, müssen wir
+prüfen, welchen Fall wir nehmen müssen.
+
+0:01:47.520,0:01:50.240
+Also, wir haben die Additionsfunktion,
+wir haben zwei Regeln dafür.
+
+0:01:50.800,0:01:53.440
+Die erste trifft offensichtlich nicht zu, weil
+
+0:01:53.440,0:01:57.040
+Null nicht mit
+Nachfolger (Succ) erfolgreich ist.
+
+0:01:57.040,0:02:01.440
+Also ist es natürlich die zweite
+Gleichung, die verwendet werden könnte.
+
+0:02:02.400,0:02:03.520
+Und was würde das bedeuten?
+
+0:02:03.520,0:02:06.480
+Nun, das erste Argument
+ist Nachfolger von etwas.
+
+0:02:06.480,0:02:07.920
+Und das Etwas heißt n.
+
+0:02:07.920,0:02:15.200
+Das bedeutet also eigentlich, dass
+dieser Teil an n gebunden ist.
+
+0:02:16.000,0:02:19.280
+Und das zweite Argument der
+Addition ist einfach eine Variable.
+
+0:02:19.280,0:02:25.360
+Also würde das gesamte zweite Argument
+würde als m betrachtet werden.
+
+0:02:25.920,0:02:34.720
+Okay, das ist also dieser Teil, und dann haben wir m
+und n als die Argumente oder Teile von Argumenten.
+
+0:02:35.360,0:02:39.280
+Okay, mit dieser Bindung wird diese Gleichung also
+Passt. Wir nehmen die rechte Seite.
+
+0:02:39.280,0:02:40.720
+Was besagt die rechte Seite?
+
+0:02:40.720,0:02:43.040
+Wie ersetzen wir das?
+
+0:02:43.040,0:02:50.080
+Nun, wir ersetzen sie durch einen
+"Nachfolger von" (Succ) und einen "add"-Aufruf.
+
+0:02:50.080,0:02:53.920
+Das "Nachfolger" ist also eine Funktion, die auf diesen add-Aufruf angewendet wird
+auf diesen add-Aufruf... auf diesen anderen Ausdruck.
+
+0:02:53.920,0:02:54.880
+Was ist also dieses add?
+
+0:02:55.760,0:02:57.200
+Nun, es ist ein Aufruf mit zwei Argumenten.
+
+0:02:57.200,0:02:58.320
+Was sind die beiden Argumente,
+
+0:02:58.320,0:03:00.480
+n und m? Nun, wir wissen, was n und m sind
+
+0:03:00.480,0:03:02.160
+weil sie hier auftauchen.
+
+0:03:03.200,0:03:06.560
+Dies wird also ein Aufruf mit dem linken Argument
+
+0:03:07.200,0:03:17.840
+Nachfolger von null (Succ Zero) und dem rechten
+Argument Nachfolger von Nachfolger von null (Succ (Succ Zero)).
+
+0:03:19.040,0:03:20.320
+Das ist also diese Null hier.
+
+0:03:22.160,0:03:24.480
+Okay, wie geht es dann weiter?
+
+0:03:24.480,0:03:27.680
+Nun, jetzt haben wir wieder diesen Additionsaufruf.
+
+0:03:27.680,0:03:30.800
+Der sollte etwas berechnen, damit
+nicht die erste Gleichung verwendet,
+
+0:03:30.800,0:03:33.040
+weil das erste Argument nicht Null ist.
+
+0:03:33.040,0:03:36.000
+Also nimmt er natürlich wieder die zweite Gleichung.
+
+0:03:36.000,0:03:37.120
+Und was ergibt sie?
+
+0:03:37.120,0:03:38.960
+Nun, dies wird n sein.
+
+0:03:41.120,0:03:41.920
+Und dies wird m sein.
+
+0:03:44.800,0:03:45.920
+Ja.
+
+0:03:45.920,0:03:55.920
+Also, das geht weiter als "Nachfolger der Addition
+von n m". In dieser Situation, die wir hier haben,
+
+0:03:55.920,0:03:57.120
+mit dem Nachfolger von n und m, sollten wir
+
+0:03:57.920,0:04:01.120
+einen weiteren Nachfolger-Aufruf
+und dann einen rekursiven Aufruf von Addition.
+
+0:04:01.120,0:04:03.280
+Wir erhalten also Nachfolger von Nachfolger
+
+0:04:07.040,0:04:09.040
+eines weiteren Additionsaufrufs.
+
+0:04:09.040,0:04:11.120
+Und was sind die beiden
+Argumente dieses Aufrufs?
+
+0:04:11.120,0:04:15.040
+Es ist einfach eine Null von dieser Stelle
+
+0:04:16.960,0:04:29.840
+und das m, das eigentlich immer noch, jetzt und immer
+eigentlich in diesem Aufruf, Nachfolger von Nachfolger von Zero.
+
+0:04:31.520,0:04:33.600
+Okay, und wie geht es nun weiter?
+
+0:04:33.600,0:04:35.680
+Nun, jetzt müssen wir diesen Aufruf auswerten.
+
+0:04:36.720,0:04:38.000
+Nun, das erste Argument ist Zero.
+
+0:04:38.000,0:04:40.320
+Es wird also nicht mehr mit der zweiten Gleichung übereinstimmen.
+
+0:04:40.320,0:04:41.920
+Es wird mit der ersten Gleichung übereinstimmen.
+
+0:04:41.920,0:04:43.360
+Und was steht in der ersten Gleichung?
+
+0:04:43.360,0:04:46.880
+Sie lautet: Addition von null und
+etwas ist dieses etwas.
+
+0:04:48.400,0:04:48.900
+Das ist etwas. Okay?
+
+0:04:49.440,0:04:56.000
+Was bedeutet, dass dies nun tatsächlich
+weiter reduzieren... weiter auswerten, auch.
+
+0:04:57.520,0:05:03.840
+Und das ist jetzt die Null und
+das ist natürlich immer noch das m.
+
+0:05:05.200,0:05:23.840
+Also, der nächste Schritt wird sein "Nachfolger von Nachfolger
+von" und diesen Ausdruck bezeichnen wir dann als m.
+
+0:05:25.200,0:05:25.920
+Dann sind wir fertig.
+
+0:05:25.920,0:05:27.840
+Denn es gibt keine weiteren Funktionsaufrufe mehr.
+
+0:05:27.840,0:05:28.960
+Und was haben Sie berechnet?
+
+0:05:28.960,0:05:31.120
+Wir haben errechnet, dass zwei plus zwei vier ist.
+
+0:05:31.840,0:05:35.200
+Es wäre enttäuschend gewesen
+wenn das nicht so geklappt hätte.
+
+0:05:36.880,0:05:40.400
+Okay, das war also etwas, das ich zeigen wollte.
+
+0:05:41.120,0:05:46.720
+Und dann wollte ich noch zeigen
+ein paar weitere Beispiele für
+
+0:05:48.080,0:05:53.280
+Werten von Datentypen zeigen, insbesondere in dem Fall
+wo wir diese polymorphen Datentypen hatten.
+
+0:05:53.280,0:05:54.800
+Was hatten wir also?
+
+0:05:54.800,0:05:57.920
+Wir hatten etwa diesen Baum-Datentyp auf den
+
+0:05:57.920,0:06:00.320
+Folien und es gab diese
+Version, die polymorph war.
+
+0:06:01.600,0:06:08.320
+Ja, die begann etwa so:
+"Tree a =" und dann die Definition
+
+0:06:08.320,0:06:09.360
+wie auf den Folien.
+
+0:06:13.040,0:06:15.040
+Die, wo wir diese polymorphe Version hatten.
+
+0:06:15.600,0:06:19.840
+Und dann können wir, zum Beispiel,
+uns nach ein paar Werten fragen.
+
+0:06:20.400,0:06:23.040
+Nun, zum Beispiel könnten wir
+uns fragen, was sind Werte
+
+0:06:27.520,0:06:33.840
+vom Typ "Tree Integer"?
+
+0:06:35.840,0:06:42.400
+Und nun, dann haben wir Werte
+wie ein Blatt, oder ein Knoten
+
+0:06:43.920,0:06:48.720
+mit zwei Argumenten, wobei das erste und das
+letzte wieder Integer-Trees sein sollten.
+
+0:06:48.720,0:06:50.960
+Also könnten sie natürlich auch Leaf sein.
+
+0:06:50.960,0:06:55.280
+Und dann haben wir hier etwas wie
+5, weil es eine ganze Zahl ist, richtig?
+
+0:06:55.280,0:06:58.400
+Das sagt uns, dass Sie hier eine Zahl haben.
+
+0:06:59.680,0:07:05.440
+Etwa diese hier, und dann natürlich
+Natürlich kann es weitere Verschachtelungen geben.
+
+0:07:05.440,0:07:11.760
+Sie könnten also einen Knoten haben, sagen wir wieder
+sagen wir, 5 und ein Blatt als linken Teil.
+
+0:07:11.760,0:07:14.480
+Auf der rechten Seite haben wir vielleicht einen weiteren Knoten.
+
+0:07:15.440,0:07:22.240
+Vielleicht hat dieser jetzt wieder Blätter als
+Nachfolger. Und hier könnten wir 7 haben.
+
+0:07:22.240,0:07:25.680
+Wir können dort also keinen booleschen Wert haben, richtig?
+
+0:07:25.680,0:07:30.560
+Wenn wir einen Ganzzahligen Baum haben, dann haben wir an allen
+diesen Stellen Ganzzahlen.
+
+0:07:31.520,0:07:36.080
+Wir können einen Tree of Bools haben, dann können wir
+False und True und False und False und was auch immer,
+
+0:07:36.080,0:07:38.000
+aber an jeder Stelle das Gleiche.
+
+0:07:38.800,0:07:43.840
+So wird dieser Parameter
+verwendet wird und welchen Effekt er hat.
+
+0:07:45.760,0:07:48.160
+Okay, das ist also etwas.
+
+0:07:48.160,0:07:53.440
+Und dann wollen wir uns vielleicht noch etwas ansehen
+wo wir dies mit diesem "Maybe"-Typ kombinieren,
+
+0:07:53.440,0:07:55.120
+der ein weiterer polymorpher Typ war.
+
+0:07:55.120,0:07:58.720
+Und sein Argumenttyp könnte zum Beispiel
+etwa ein Baum-Typ sein, richtig?
+
+0:07:58.720,0:08:00.400
+Schauen wir uns also etwas wie das hier an.
+
+0:08:04.880,0:08:10.880
+Nur um der Beispiele willen.
+Es gibt den folgenden Typ. "Maybe"...
+
+0:08:10.880,0:08:12.240
+Das war dieser Typkonstruktor.
+
+0:08:12.240,0:08:14.400
+Und dann könnten wir hier irgendeinen Typ einfügen.
+
+0:08:14.400,0:08:16.240
+Und natürlich können wir das beliebig verschachteln.
+
+0:08:16.240,0:08:18.320
+So könnte man etwa einen Tree-Typ hier einfügen.
+
+0:08:19.360,0:08:21.360
+Nun, und nehmen wir nicht Tree Integer.
+
+0:08:21.360,0:08:22.640
+Nehmen wir Tree Bool.
+
+0:08:25.360,0:08:28.880
+Okay, nun dieser Tree Bool, der
+würde Bäume wie diese sein,
+
+0:08:28.880,0:08:33.600
+aber mit Trues und Falses
+anstelle von Fünfern und Siebenern.
+
+0:08:34.240,0:08:37.280
+Jetzt, eigentlich, kommt es vor
+als Maybe von Tree Bools.
+
+0:08:37.280,0:08:41.200
+Es kann also nicht direkt ein solcher Baum sein.
+
+0:08:41.200,0:08:46.480
+So wäre etwa ein möglicher Wert
+dieses Typs wäre "Nothing".
+
+0:08:46.480,0:08:47.520
+Wir haben also keinen Tree.
+
+0:08:47.520,0:08:48.080
+Wir haben "Nothing".
+
+0:08:48.080,0:08:51.600
+Das ist einer der beiden Datenkonstruktoren
+des Konstruktors vom Typ Maybe.
+
+0:08:52.880,0:08:56.480
+Aber natürlich könnte man auch
+den "Just"-Fall haben und dann
+
+0:08:56.480,0:09:01.040
+die Konstruktion war das: Maybe von
+etwas könnte Nothing oder Just sein
+
+0:09:01.040,0:09:05.680
+und dann etwas von diesem Ding,
+was das Typargument von Maybe ist.
+
+0:09:05.680,0:09:18.720
+So kann man zum Beispiel Just a Leaf haben, oder wir
+Just und dann einen Knotenbaum mit zwei Blättern (Leaf) haben,
+
+0:09:20.480,0:09:25.040
+und jetzt natürlich ein boolescher
+Wert in der mittleren Position
+
+0:09:27.440,0:09:30.480
+wegen dieser: Maybe Tree Bool.
+
+0:09:30.480,0:09:35.840
+Das Maybe führt zu diesem Just
+und Tree Bool ist dieser Teil.
+
+0:09:36.880,0:09:38.400
+Und das geht natürlich weiter.
+
+0:09:38.400,0:09:40.480
+Richtig, man kann weitere Just
+
+0:09:40.480,0:09:44.800
+und einige Tree dort mit Strukturen
+wie diese oder andere Verschachtelungsstrukturen,
+
+0:09:44.800,0:09:58.080
+aber natürlich immer boolesche Werte statt
+anstelle von Zahlen in den Beschriftungsstellen für jeden Knoten.

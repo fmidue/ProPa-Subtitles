@@ -1,0 +1,319 @@
+0:00:01.440,0:00:07.840
+Okay, let's look at this data value of
+type “Connection” that we had on the slides,
+
+0:00:07.840,0:00:12.480
+and where I promised that I would
+show how it corresponds to a Tree.
+
+0:00:12.480,0:00:15.840
+How this could be thought of as being such.
+
+0:00:15.840,0:00:18.960
+And of course, actually, the
+illustration is very simple.
+
+0:00:18.960,0:00:23.360
+It's very similar to how I previously
+have depicted other expressions.
+
+0:00:23.360,0:00:26.080
+Because it's also just an expression
+where the functions are now not
+
+0:00:26.800,0:00:31.600
+“colored” and “translated” and other things that I
+used when I talked about Picture expressions.
+
+0:00:31.600,0:00:34.640
+But now these are data
+constructors, which are also functions.
+
+0:00:34.640,0:00:38.480
+So, how is this to be interpreted?
+
+0:00:38.480,0:00:46.080
+So, we have something which is constructed
+with this Train data constructor.
+
+0:00:46.080,0:00:56.640
+So, as a Tree, the Train would be the thing which
+appears at the root of the Node of the Tree.
+
+0:00:57.280,0:01:00.640
+And we know that it has three arguments.
+
+0:01:00.640,0:01:05.680
+We know this both from the expression as we see
+here, but also from the data type definitions.
+
+0:01:05.680,0:01:08.240
+So, that means there are three arguments.
+
+0:01:08.240,0:01:13.200
+So, in this expression,
+illustration, three subtrees.
+
+0:01:13.200,0:01:16.880
+And the first one is this
+path, this expression,
+
+0:01:16.880,0:01:20.480
+which, in turn, is Day applied to three arguments.
+
+0:01:20.480,0:01:27.600
+So, at this position in the Tree would have
+this label/constructor/tech name “Day”.
+
+0:01:30.400,0:01:33.600
+Below that, we have three
+arguments, which are three integers.
+
+0:01:33.600,0:01:38.400
+So, they are simply constants
+which appear in the Tree here.
+
+0:01:39.680,0:01:45.200
+Then we have the second argument, second
+subtree of Train, which is of this form.
+
+0:01:45.200,0:01:52.880
+So, it's our constructor, and the argument 11.
+
+0:01:53.520,0:01:55.360
+And, similarly, for the last thing.
+
+0:01:57.040,0:02:03.600
+Okay, and then in that way, of course, any
+value of type “Connection” can be depicted.
+
+0:02:03.600,0:02:07.680
+And if it would be a “Flight” Connection,
+then at the root here would have a Flight.
+
+0:02:07.680,0:02:09.920
+And it would have a different number of arguments.
+
+0:02:09.920,0:02:12.560
+And also, the role would be different.
+
+0:02:12.560,0:02:14.480
+So, the first argument would
+be a string, etc.
+
+0:02:14.480,0:02:20.320
+So, but it will still be a Tree
+that we can easily interpret.
+
+0:02:21.360,0:02:24.560
+Okay, so this is how this is drawn as a Tree.
+
+0:02:24.560,0:02:30.160
+And then I also talked about on the
+next slide, the computation, how it is.
+
+0:02:31.760,0:02:35.120
+I promised that this would also be explained.
+
+0:02:35.120,0:02:42.080
+And for this, we can simply get this code here.
+
+0:02:43.040,0:02:49.840
+And, well, let's make this a bit
+bigger also to see what's going on.
+
+0:02:50.880,0:02:54.960
+Okay, so let's assume that we
+wanted to apply this travelTime
+
+0:02:55.840,0:03:01.520
+function to exactly this
+value that we have up here.
+
+0:03:02.160,0:03:04.080
+Then what has to happen?
+
+0:03:04.080,0:03:06.880
+Well, you first have to decide
+which of the two equations to use.
+
+0:03:06.880,0:03:08.560
+But that's, of course, not very difficult.
+
+0:03:09.680,0:03:10.880
+Right?
+We have two equations.
+
+0:03:10.880,0:03:13.680
+One for trains and one for flights.
+
+0:03:13.680,0:03:15.040
+And only one of them applies.
+
+0:03:15.040,0:03:16.960
+And it doesn't really matter in which order.
+
+0:03:16.960,0:03:21.280
+Even if this would be the first equation
+about flight, it would not match.
+
+0:03:21.280,0:03:26.800
+Because we have a Train value actually at
+the root here of this complete argument.
+
+0:03:26.800,0:03:33.760
+So, in any case, you would always
+end up using this equation here.
+
+0:03:35.760,0:03:37.680
+Okay, and then how is this used?
+
+0:03:37.680,0:03:38.480
+Well, let's see.
+
+0:03:39.840,0:03:42.160
+Basically, by checking: we have Train.
+
+0:03:42.160,0:03:43.440
+So, that's this Train.
+
+0:03:44.080,0:03:47.360
+Then there is an anonymous variable.
+
+0:03:47.360,0:03:49.920
+So, we don't care about the first argument here.
+
+0:03:49.920,0:03:52.960
+Because this is not relevant for
+computing the travel time in hours.
+
+0:03:53.760,0:04:00.080
+It doesn't matter, according to our
+definition, which days this happens on.
+
+0:04:00.080,0:04:03.120
+So, then that's why we don't use this part.
+
+0:04:03.120,0:04:05.680
+Or we don't do anything with it.
+
+0:04:05.680,0:04:08.960
+Then the second argument
+must be an Hour of something.
+
+0:04:08.960,0:04:10.960
+Well, that's exactly what happens here.
+
+0:04:10.960,0:04:15.520
+And well, this Hour in the
+concrete example is 11, of course.
+
+0:04:15.520,0:04:20.240
+And in the function definition, the
+variable (named d) is used for that,
+
+0:04:20.240,0:04:28.240
+which tells us that we will bind this to
+the variable (d) for the right-hand side.
+
+0:04:28.240,0:04:30.400
+Then something similar happens, of course,
+
+0:04:30.400,0:04:34.800
+with the last argument, so this is the third
+argument of Train and it is in Hour.
+
+0:04:36.880,0:04:39.040
+And this, of course, matches with this Hour.
+
+0:04:40.160,0:04:43.840
+So, we have now matched
+against this and against this.
+
+0:04:44.400,0:04:52.480
+And then this tells us that this deeper
+argument, so what we have here, is the (a).
+
+0:04:55.600,0:04:58.800
+Okay, for that first thing,
+it would be a (d) and this is an (a).
+
+0:04:59.520,0:05:00.160
+Okay.
+
+0:05:00.160,0:05:03.040
+And then we have matched the whole left-hand side.
+
+0:05:03.040,0:05:05.280
+Yes, we have found out that this actually matches
+
+0:05:05.280,0:05:07.920
+or this is applicable to the
+value that we have been given.
+
+0:05:08.560,0:05:13.040
+That means that we should use the
+right-hand side of exactly this equation.
+
+0:05:13.040,0:05:18.960
+And the right-hand side says: a minus d plus one.
+
+0:05:18.960,0:05:25.520
+And of course, this is the
+same as 14 minus 11 plus one,
+
+0:05:25.520,0:05:29.360
+we now know. And this is the same as 4.
+
+0:05:31.520,0:05:34.400
+So, travelTime applied to this value,
+
+0:05:35.520,0:05:43.360
+to this data value will result in
+the computation in the integer form.
+
+0:05:44.880,0:05:45.520
+That's it,
+
+0:05:45.520,0:05:48.080
+how this pattern matching
+and this computation works.
+
+0:05:48.080,0:05:51.680
+And that's how it works for all data types.
+
+0:05:51.680,0:05:53.760
+No matter how they are defined.
+
+0:05:53.760,0:05:59.440
+The compiler checks that patterns that are used
+here actually make sense according to the type.
+
+0:06:00.640,0:06:02.800
+The input type of the function and, of course,
+
+0:06:02.800,0:06:05.200
+the data type definition that
+was given for Connections.
+
+0:06:05.200,0:06:09.760
+So, we can't somehow, for example, completely
+forget about this anonymous variable.
+
+0:06:09.760,0:06:14.400
+If you don't write this, then the compiler
+will complain, even before computing anything,
+
+0:06:14.400,0:06:15.840
+that this doesn't make sense.
+
+0:06:15.840,0:06:18.720
+Because Train takes three arguments according
+to the type definition, not just two.
+
+0:06:19.440,0:06:19.680
+Right?
+
+0:06:19.680,0:06:30.400
+And in that sense, everything works together
+and leads to meaningful computation at runtime.

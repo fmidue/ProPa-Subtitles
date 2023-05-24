@@ -1,0 +1,384 @@
+0:00:01.680,0:00:02.180
+Okay.
+
+0:00:02.800,0:00:09.040
+I wanted to discuss the persistency
+aspect of algebraic data types and
+
+0:00:09.680,0:00:13.680
+actually any value in Haskell
+and working with them.
+
+0:00:14.800,0:00:16.320
+And I will do this with this 'Tree' example.
+
+0:00:16.320,0:00:18.240
+It's again the definition from the slides.
+
+0:00:18.240,0:00:20.720
+What has been added is this line here.
+
+0:00:20.720,0:00:24.080
+I added this and you will also
+see this in exercise tasks.
+
+0:00:25.520,0:00:32.880
+Because I needed, if I want to print or show
+the value of this type from the command line.
+
+0:00:32.880,0:00:38.720
+Yeah, this can always be added to an algebraic
+data type definition and then add some
+
+0:00:39.600,0:00:40.720
+printing facility.
+
+0:00:40.720,0:00:42.080
+Okay, as we will see in a moment.
+
+0:00:42.720,0:00:43.040
+Okay.
+
+0:00:43.040,0:00:47.520
+And other than that, here we have the
+normal definition that you have seen before.
+
+0:00:48.560,0:00:57.840
+Okay, let me load this into the interpreter.
+
+0:00:57.840,0:01:08.800
+Okay, then, what can I do? Well,
+for example, I can introduce some trees.
+
+0:01:08.800,0:01:12.960
+So, let's say I start
+with a certain tree, a simple one.
+
+0:01:19.360,0:01:20.880
+And with the value 10.
+
+0:01:23.280,0:01:27.600
+And this is supposed to be an integer tree.
+
+0:01:28.720,0:01:33.760
+So that I then can use it for the insert example.
+
+0:01:34.320,0:01:38.400
+Okay, so 't1' this is my tree now.
+
+0:01:38.400,0:01:42.720
+Okay, and then what can I do, for example:
+I can call the 'insert' function in order.
+
+0:01:42.720,0:01:46.160
+And that lets me bind the
+result to some other tree.
+
+0:01:46.160,0:01:50.960
+And let me say, I want to insert 5 into 't1'.
+
+0:01:52.240,0:01:57.120
+Okay, then my 't2' now looks
+like this, it is a 'Node'.
+
+0:01:57.120,0:02:01.600
+And the first argument is
+'Node', which has the 5.
+
+0:02:01.600,0:02:02.880
+Which I've just inserted.
+
+0:02:02.880,0:02:04.160
+At the root, we still have the 10.
+
+0:02:04.160,0:02:07.760
+And the right subtree is still just a 'Leaf'.
+
+0:02:07.760,0:02:09.680
+And for example, I could do further things.
+
+0:02:09.680,0:02:18.560
+I could say: Well, into this, I actually want to
+insert 12 and then my 't3' is something like this.
+
+0:02:18.560,0:02:20.800
+And I can go on and on.
+
+0:02:20.800,0:02:21.520
+Okay.
+
+0:02:21.520,0:02:27.200
+Now, the thing is that I want to point out is
+that 't1' and 't2' are completely unaffected by
+
+0:02:27.200,0:02:31.840
+these operations I have done in
+order to get larger trees, right?
+
+0:02:31.840,0:02:38.000
+So, it's not like inserting 12 into
+'t2' means that 't2' now contains the 12.
+
+0:02:38.000,0:02:38.320
+No.
+
+0:02:38.320,0:02:41.840
+'t2' is still the tree it has always been.
+
+0:02:41.840,0:02:44.880
+It's just like if numbers and
+equations between numbers, right?
+
+0:02:45.440,0:02:52.800
+If I do, if I say x is 5, and y is x + 3,
+then of course, x doesn't become eight.
+
+0:02:52.800,0:02:53.920
+The y becomes eight.
+
+0:02:53.920,0:02:54.720
+The same happens here.
+
+0:02:54.720,0:03:00.400
+And it's different in many modelling or
+relation approaches in imperative languages
+
+0:03:00.400,0:03:03.360
+for tree structures in particular,
+where you could have pointer trees.
+
+0:03:03.360,0:03:07.120
+And then an insertion means
+to change something in place.
+
+0:03:08.240,0:03:11.920
+Okay, for something like we see here could be
+
+0:03:11.920,0:03:16.240
+obtained in imperative languages
+with cloning or defensive copying.
+
+0:03:16.240,0:03:18.880
+So, maybe you've heard of these notions,
+this is not necessary here.
+
+0:03:18.880,0:03:23.280
+Because by default, and always the language
+concept is that things are immutable.
+
+0:03:24.000,0:03:27.280
+I also mentioned that this need not worry you too much.
+
+0:03:27.280,0:03:35.200
+So, it's not like these three trees that I
+now have are complete copies in memory.
+
+0:03:35.200,0:03:36.080
+That's not the case.
+
+0:03:36.080,0:03:40.000
+For example, 't2' and 't3' will share this part.
+
+0:03:40.720,0:03:45.920
+So, 't2' is this whole tree mathematically
+and 't3' is this whole tree.
+
+0:03:45.920,0:03:51.200
+But if we would look into the runtime system
+to see how it is represented in memory,
+
+0:03:51.200,0:03:57.200
+then this part which is common between 't2' and
+'t3' will be stored only once in memory, right?
+
+0:03:57.200,0:04:01.520
+So, that is our pointer structure
+and this is shared by a pointer.
+
+0:04:01.520,0:04:05.600
+But that's not something that is
+visible from the language level.
+
+0:04:05.600,0:04:08.240
+Yeah, that's an implementation
+detail for optimization purposes.
+
+0:04:08.240,0:04:12.880
+It has to do with the fact that in this
+insertion function, and sometimes I don't touch
+
+0:04:13.440,0:04:18.240
+some subtrees and then, of course, they can
+be preserved and just reused via pointers.
+
+0:04:18.240,0:04:22.800
+And I only change the structure
+along the path of inserted
+
+0:04:23.360,0:04:27.760
+values actually, or on the path to the
+place where I have to insert the value.
+
+0:04:27.760,0:04:28.880
+But things are shared.
+
+0:04:28.880,0:04:31.120
+So, this is not represented twice.
+
+0:04:31.680,0:04:34.880
+But mathematically, 't2' and 't3' are separate trees.
+
+0:04:34.880,0:04:37.840
+So, whatever, if I do something.
+
+0:04:37.840,0:04:44.560
+So, let me say 't3', as I just
+mentioned, shares this part with 't2'.
+
+0:04:44.560,0:04:50.800
+But of course, this does not mean that if I do
+something to 't2', let's say I do a call 'insert'
+
+0:04:51.360,0:04:55.600
+and I want to insert 3 into 't2'.
+
+0:04:55.600,0:04:57.120
+What would this mean?
+
+0:04:57.120,0:04:59.280
+It would create this new tree, right?
+
+0:04:59.280,0:05:04.560
+So, we are now in this part, which
+previously, was this left successor of 't2'.
+
+0:05:04.560,0:05:07.200
+This now turns into this because
+the 3 has been added.
+
+0:05:07.200,0:05:11.840
+But of course, this doesn't
+affect 't3', and it shouldn't affect 't3'.
+
+0:05:11.840,0:05:15.680
+Even though 't2' and 't3' share this part.
+
+0:05:15.680,0:05:19.680
+The fact that I have done something to
+'t2', or with 't2' doesn't change this.
+
+0:05:19.680,0:05:25.040
+So, 't3' is, of course, the tree of just the 5.
+
+0:05:25.600,0:05:29.840
+Yes, so what's happening here is sound
+with respect to mathematical interpretation
+
+0:05:29.840,0:05:34.160
+of expressions, et cetera, the
+implementation, optimizations.
+
+0:05:34.160,0:05:36.560
+But they don't affect the meaning of the programs.
+
+0:05:36.560,0:05:38.880
+So, what we see here is persistency.
+
+0:05:38.880,0:05:46.080
+So, doing something by creating a new tree as
+a function call might give a new structure.
+
+0:05:46.080,0:05:51.840
+But the old thing is not overwritten,
+or changed or affected in some way.
+
+0:05:52.400,0:05:55.520
+Okay, and of course, the very same thing
+applies to our data structures as well.
+
+0:05:55.520,0:05:57.520
+Even, also to lists.
+
+0:05:57.520,0:06:03.440
+Yes, so when we did things like insert something
+into the list, we didn't insert into that list.
+
+0:06:03.440,0:06:06.720
+We created a new list, which
+maybe shared some structure
+
+0:06:06.720,0:06:08.800
+with the original list but
+contained another element.
+
+0:06:09.360,0:06:14.080
+Or if we even, we split the list it didn't
+mean that we really split the original list.
+
+0:06:14.080,0:06:19.120
+It meant that we created two new lists, each
+of which contains half of the original list.
+
+0:06:19.120,0:06:22.560
+Or when we reverse the list,
+that didn't mean that we really
+
+0:06:23.280,0:06:25.360
+changed the order of elements in that list.
+
+0:06:25.360,0:06:27.360
+It meant that we create a new list.
+
+0:06:27.360,0:06:28.880
+Which has reversed order.
+
+0:06:30.800,0:06:34.000
+How this is done efficiently, or how this may be
+
+0:06:34.000,0:06:37.920
+represented efficiently in memory
+is not our concern as a programmer.
+
+0:06:37.920,0:06:41.120
+I mean, when you become more mature
+and more advanced programmer, you maybe
+
+0:06:41.120,0:06:43.840
+want to think about some details like this.
+
+0:06:43.840,0:06:48.640
+But at the moment, we think about
+expressiveness, and about what programs mean.
+
+0:06:49.280,0:06:54.400
+And then we don't have to concern
+ourselves with these details.
+
+0:06:54.400,0:06:58.000
+So, we think about the values, the
+expressions and the values that they have.
+
+0:06:58.640,0:07:02.720
+And then the important thing is that
+things are immutable or as it's called
+
+0:07:02.720,0:07:04.720
+an algorithmic state of persistence.
+
+0:07:04.720,0:07:07.280
+As you see here if you wanted too, et cetera.
+
+0:07:07.280,0:07:11.520
+And 't2' and 't3' are sharing a structure
+but if I insert something into 't2' which
+
+0:07:11.520,0:07:14.480
+basically just means that I create
+a new tree which was output here,
+
+0:07:14.480,0:07:21.200
+and this changes neither 't2' itself, nor
+'t3' which shared some structure with 't2'.
+
+0:07:22.880,0:07:29.840
+Okay, unlike object-oriented languages offer.
