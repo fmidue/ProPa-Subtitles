@@ -589,7 +589,7 @@ actually the function from the previous slide.
 
 00:11:23,970 --> 00:11:29,730
 The question is: what happens if I call the
-“exerciseDay” function with an input like
+'exerciseDay' function with an input like
 
 00:11:29,730 --> 00:11:30,790
 12?
@@ -613,7 +613,7 @@ so, for some reason, the 12th day of the week,
 which doesn't even exist, is not a workday.
 
 00:11:51,590 --> 00:11:58,860
-Whereas for this exerciseDay function as written
+Whereas for this 'exerciseDay' function as written
 here, for the input 12, it would say: it is
 
 00:11:58,860 --> 00:12:00,610
@@ -784,7 +784,7 @@ the user's code.
 And then, how would we compute on this?
 
 00:15:04,399 --> 00:15:08,470
-For example, now, our exerciseDay function
+For example, now, our 'exerciseDay' function
 could look like this.
 
 00:15:08,470 --> 00:15:12,780
@@ -1166,7 +1166,7 @@ And this integer code was seen as block, water,
 pearl, etc.
 
 00:22:01,220 --> 00:22:09,789
-We have this aTile function which maps these
+We have this 'aTile' function which maps these
 number codes to actual Pictures.
 
 00:22:09,789 --> 00:22:11,889
@@ -1176,7 +1176,7 @@ Of course, this already has some danger.
 We can easily confuse things here.
 
 00:22:14,360 --> 00:22:19,229
-So, if somebody writes the level function,
+So, if somebody writes the 'level' function,
 it might not always be clear / they might
 
 00:22:19,229 --> 00:22:22,299
@@ -1262,7 +1262,7 @@ possible errors in our code.
 
 00:23:41,109 --> 00:23:47,840
 But if I produce 5 here, but also forget to
-adapt the aTile function, then the compiler
+adapt the 'aTile' function, then the compiler
 
 00:23:47,840 --> 00:23:49,690
 has no chance of warning me.
@@ -1275,7 +1275,7 @@ Because the 5 will run into this last case.
 
 00:23:55,409 --> 00:24:00,799
 So, actually, even though I add my 5 in my
-level function, the drawing code will, simply,
+'level' function, the drawing code will, simply,
 
 00:24:00,799 --> 00:24:06,419
 draw nothing for these positions because we
@@ -1296,8 +1296,8 @@ so of course, 0 would run into this last case,
 then “blank” would be taken.
 
 00:24:21,070 --> 00:24:27,330
-But now when we extend the level function
-and forget about this change in the aTile
+But now when we extend the 'level' function
+and forget about this change in the 'aTile'
 
 00:24:27,330 --> 00:24:30,759
 function, then suddenly we also have “blank”
@@ -1308,7 +1308,7 @@ have spikes.
 
 00:24:31,759 --> 00:24:38,639
 Now, you could say: that is the error in our
-original design for the aTile function.
+original design for the 'aTile' function.
 
 00:24:38,639 --> 00:24:42,809
 We shouldn't have written the “_” (underscore),
@@ -1338,7 +1338,7 @@ this not being an exhaustive function.
 
 00:25:05,929 --> 00:25:11,080
 And the compiler would be correct because
-if you only say: the aTile function goes from
+if you only say: the 'aTile' function goes from
 
 00:25:11,080 --> 00:25:15,789
 Integer to Picture, and then you only provide
@@ -1419,7 +1419,7 @@ function definitions.
 
 00:26:33,309 --> 00:26:38,769
 So, let's say we use this type, then now,
-of course, our level function would have this
+of course, our 'level' function would have this
 
 00:26:38,769 --> 00:26:39,769
 type.
@@ -1449,8 +1449,8 @@ is: For positions, it gives us a description
 of what is at that position.
 
 00:26:58,190 --> 00:27:06,659
-So, it is now the type of our level function,
-and then aTile function looks like this.
+So, it is now the type of our 'level' function,
+and then 'aTile' function looks like this.
 
 00:27:06,659 --> 00:27:09,309
 It doesn't go from Integer to Picture, but
@@ -1503,11 +1503,11 @@ So, if we want to have spikes, then we introduce
 a new case of spikes here, then we can use
 
 00:28:06,769 --> 00:28:14,879
-it in the level function, and it cannot happen
+it in the 'level' function, and it cannot happen
 to us that we forget to declare or describe
 
 00:28:14,879 --> 00:28:17,240
-how to handle this in the aTile function.
+how to handle this in the 'aTile' function.
 
 00:28:17,240 --> 00:28:18,240
 Why?
@@ -1582,12 +1582,12 @@ to “blank”, “Block” to “block”,
 etc…
 
 00:29:32,090 --> 00:29:35,580
-Why don't we simply let our level function
+Why don't we simply let our 'level' function
 return Pictures instead?
 
 00:29:35,580 --> 00:29:39,071
 Then we can scrap this whole thing, and the
-level function would simply say: given two
+'level' function would simply say: given two
 
 00:29:39,071 --> 00:29:45,059
 Integers, I give you a Picture, and then,
@@ -1603,7 +1603,7 @@ think, but it would lose a lot of potential
 
 00:29:53,529 --> 00:29:56,960
 for manipulations because you also want to
-use this level function as data.
+use this 'level' function as data.
 
 00:29:56,960 --> 00:29:57,960
 You have seen this.
@@ -2097,7 +2097,7 @@ it could also be a Flight.
 So, we should also write another case.
 
 00:39:09,850 --> 00:39:12,850
-So, a case for travelTime function for Flight
+So, a case for 'travelTime' function for Flight
 connections.
 
 00:39:12,850 --> 00:39:19,080
