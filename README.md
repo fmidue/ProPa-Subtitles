@@ -24,6 +24,8 @@ Concerning use of quotation marks, try to follow rules that mirror the following
 - `The type String is pre-defined, but we can also define our own types like Tree.`
 - `Der Typ 'String' ist vordefiniert, aber wir können auch eigene Typen wie 'Tree' definieren.`
 
+The beginnings of individual slides in the respective subtitle files can be annotated as in [this commit](https://github.com/fmidue/ProPa-Subtitles/commit/3f216c790cff243715c61ea989c09c4ecf1fed3f).
+
 ## Leader board
 
 | GitHub username | Lines |
