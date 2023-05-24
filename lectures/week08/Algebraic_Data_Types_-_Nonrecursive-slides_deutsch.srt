@@ -38,6 +38,7 @@ Wechselwirkungen mit Polymorphismus und vielleicht höherer
 Ordnung werden in späteren Videos
 auch in dieser Woche Thema sein.
 
+129 # slide
 00:00:57,110 --> 00:01:03,019
 Welche Arten von Typen
 haben wir also bisher gesehen?
@@ -325,6 +326,7 @@ sagen wir mal, mathematischen Niveau wie algebraische Datentypen.
 Aber für Anwender, für Sie, wenn Sie diese
 verwenden, wird das nicht allzu sehr durchscheinen, denke ich.
 
+130 # slide
 00:06:28,830 --> 00:06:31,920
 Lassen Sie uns
 also ganz einfach anfangen.
@@ -433,6 +435,7 @@ gegen Zahlen vergleicht, dann wird dies eine sehr
 einfache Funktion. Aber natürlich muss es nicht immer so
 einfach sein, wenn Sie etwas über Tagen berechnen wollen.
 
+131 # slide
 00:08:21,160 --> 00:08:32,210
 Wir könnten zum Beispiel berechnen wollen, an welchen
 Tage der Woche eine Übungsstunde stattfindet
@@ -442,10 +445,10 @@ in dieser Lehrveranstaltung stattfindet.
 
 00:08:33,210 --> 00:08:36,580
 Natürlich ist das in diesem Semester vielleicht
-Frage nicht so nützlich, weil wir keine
+nicht so eine nützliche Frage, weil wir keine
 
 00:08:36,580 --> 00:08:38,540
-die tatsächlichen Übungseinheiten haben.
+tatsächlichen Übungseinheiten haben.
 
 00:08:38,540 --> 00:08:43,750
 Diese Frage stammt eigentlich aus den Folien vom letzten Jahr,
@@ -463,7 +466,7 @@ Wenn wir also bestimmte Wochentage auswählen, die
 die Eigenschaft "An diesem Tag findet eine Trainingseinheit
 
 00:09:00,230 --> 00:09:04,270
-Sitzung stattfindet" (oder etwas anderes)
+statt" (oder etwas anderes)
 erfüllen.
 
 00:09:04,270 --> 00:09:09,990
@@ -486,7 +489,6 @@ nicht haben.
 
 00:09:19,290 --> 00:09:21,980
 Eine Möglichkeit, diese Eigenschaft zu berechnen, ist zum Beispiel
-ist...
 
 00:09:21,980 --> 00:09:27,990
 (Ich glaube, das stammt aus den Daten des letzten Jahres,
@@ -496,8 +498,8 @@ also, wenn es tatsächlich Übungseinheiten gab
 letztes Jahr.
 
 00:09:28,990 --> 00:09:34,560
-Und wahrscheinlich hätte derselbe Plan auch dieses Jahr gegolten
-dieses Jahr, wenn wir einen tatsächlichen Präsenzkurs gehabt hätten).
+Und wahrscheinlich hätte derselbe Plan auch dieses Jahr gegolten,
+wenn wir einen tatsächlichen Präsenzkurs gehabt hätten).
 
 00:09:34,560 --> 00:09:40,770
 Also, man kann hier etwas ausdrücken wie:
@@ -507,8 +509,7 @@ Die 3 ist kein Übungstag.
 Er entspricht dem Mittwoch.
 
 00:09:41,950 --> 00:09:45,740
-Und am Wochenende gab es letztes Jahr auch keine Übungen
-Jahr auch nicht.
+Und am Wochenende gab es letztes Jahr auch keine Übungen.
 
 00:09:45,740 --> 00:09:49,880
 Wir könnten also sagen: Am Mittwoch, Samstag,
@@ -571,15 +572,14 @@ mehr als 6 ist, oder wenn er größer als 5 ist,
 dann ist es definitiv kein Übungstag.
 
 00:10:54,980 --> 00:10:58,170
-Ich könnte also tatsächlich verschiedene Definitionen schreiben
-hier schreiben.
+Ich könnte hier also tatsächlich verschiedene Definitionen schreiben.
 
 00:10:58,170 --> 00:11:02,860
 Aber es ist nicht klar, dass die Arbeit mit diesen
-Vergleiche und Zahlen wirklich zu einer
+Vergleichen und Zahlen wirklich zu einer
 
 00:11:02,860 --> 00:11:06,500
-eine schöne Art, diese Funktion auszudrücken.
+schönen Art wird, diese Funktion auszudrücken.
 
 00:11:06,500 --> 00:11:15,339
 Außerdem besteht eine weitere Gefahr, wenn man diesen Typ "Integer
@@ -594,11 +594,11 @@ Nehmen wir also an, ich hätte eine Funktion wie diese...
 eigentlich die Funktion aus der vorherigen Folie.
 
 00:11:23,970 --> 00:11:29,730
-Die Frage ist: Was passiert, wenn ich die Funktion
+Die Frage ist: Was passiert, wenn ich die
 "exerciseDay"-Funktion mit einer Eingabe wie
 
 00:11:29,730 --> 00:11:30,790
-12?
+12 aufrufe?
 
 00:11:30,790 --> 00:11:33,200
 Das kann ich tun, weil 12 eine Ganzzahl ist.
@@ -642,7 +642,7 @@ anstatt einen Auffangfall zu haben,
 oder das für False zu tun, dann wäre plötzlich der 12.
 
 00:12:18,950 --> 00:12:21,149
-Tag der Woche kein Übungstag sein. Tag.
+Tag der Woche kein Übungstag sein.
 
 00:12:21,149 --> 00:12:25,610
 Aus Sicht der Wochentage macht es also nicht wirklich
@@ -665,11 +665,12 @@ Das ist nicht sehr abstrakt.
 00:12:46,390 --> 00:12:47,880
 Es ist zu niedrigschwellig.
 
+132 # slide
 00:12:47,880 --> 00:12:54,030
 Was ist also eine Alternative?
 
 00:12:54,030 --> 00:13:01,360
-In Haskell können wir zum Beispiel etwas definieren
+In Haskell können wir zum Beispiel etwas
 wie dieses definieren, das neue Werte eines
 
 00:13:01,360 --> 00:13:02,360
@@ -780,10 +781,7 @@ in dieser Deklaration eingeführt wurde.
 
 00:14:51,300 --> 00:14:57,380
 Sie sind also völlig unabhängig von allem
-bereits in der Sprache oder im Code des Benutzers existierenden
-
-00:14:57,380 --> 00:15:02,380
-dem Code des Benutzers.
+bereits in der Sprache oder im Code des Benutzers existierenden.
 
 00:15:02,380 --> 00:15:04,399
 Und wie würden wir dann damit rechnen?
@@ -869,7 +867,7 @@ Und alles, was in diesen anonymen
 Platz kommen könnte, wären die, die hier noch nicht
 
 00:16:20,660 --> 00:16:21,839
-die hier nicht behandelt wurden.
+behandelt wurden.
 
 00:16:21,839 --> 00:16:28,250
 Es ist also einfach illegal, aus der Sicht des Compilers
@@ -890,8 +888,8 @@ Zahlen rechnen.
 Also, wenn man den Wochenendtag einführen will...
 
 00:16:40,950 --> 00:16:49,920
-Wenn man also mit der Funktion Werktag prüfen will
-Funktion prüfen will, ob es ein Arbeitstag ist, können wir jetzt nicht
+Wenn man also mit der Funktion Werktag prüfen will,
+ob es ein Arbeitstag ist, können wir jetzt nicht
 
 00:16:49,920 --> 00:16:54,120
 etwas berechnen wie: gib mir den Tag, und
@@ -932,7 +930,7 @@ nicht auf diese Weise funktionieren.
 
 00:17:26,069 --> 00:17:32,869
 Sie sind keine Zahlen, also sollten wir sie auch nicht
-sie nicht wie Zahlen behandeln, wie es eine weniger streng typisierte Sprache
+wie Zahlen behandeln, wie es eine weniger streng typisierte Sprache
 
 00:17:32,869 --> 00:17:34,210
 tut.
@@ -953,15 +951,11 @@ dann mit Zahlen zu rechnen, ist natürlich viel
 effizienter als dieser Ansatz, bei dem
 wir diese neuen Strings einführen und dann vergleichen
 
-00:17:52,889 --> 00:17:53,889
-sie vergleichen.
-
 00:17:53,889 --> 00:17:57,759
-Bedeutet das, dass ich zwei Strings der Länge "a" vergleichen muss?
-Strings der Länge "a" oder so ähnlich
+Bedeutet das, dass ich zwei Strings der Länge 8 oder so ähnlich
 
 00:17:57,759 --> 00:18:00,539
-vergleichen, anstatt einfach etwas
+vergleichen muss, anstatt einfach etwas
 mit der Zahl 6 zu vergleichen?
 
 00:18:00,539 --> 00:18:01,539
@@ -1010,7 +1004,6 @@ Programmierer sehen (diese Namen), aber die Maschine
 
 00:18:42,840 --> 00:18:46,639
 wird diese Namen im kompilierten Code nie sehen.
-kompilierten Code sehen.
 
 00:18:46,639 --> 00:18:50,679
 Unter der Haube wird dies in etwas umgewandelt
@@ -1021,18 +1014,18 @@ Zahlen in gewissem Sinne.
 
 00:18:54,710 --> 00:18:58,350
 Aber das ist nichts, womit sich der Programmierer
-sich damit befassen muss, oder der Programmierer sollte
+befassen muss, oder dem Programmierer
 
 00:18:58,350 --> 00:19:02,629
-überhaupt bewusst sein, denn das würde nur
-zu missbrauchen.
+überhaupt bewusst sein sollte, denn das würde nur
+zu Missbrauch führen.
 
 00:19:02,629 --> 00:19:09,359
 Das ist etwas, was man bedenken muss, dass diese
 keine Strings sind und es findet kein String-Vergleich
 
 00:19:09,359 --> 00:19:12,220
-stattfindet.
+statt.
 
 00:19:12,220 --> 00:19:21,980
 Und eine weitere Sache, die man im Auge behalten sollte,
@@ -1092,7 +1085,7 @@ Funktionsnamen, die kleingeschrieben werden müssen.
 
 00:20:14,830 --> 00:20:21,989
 Theoretisch könnte man aber denselben Bezeichner in Großbuchstaben
-Bezeichner sowohl als Typname als auch als Wert
+sowohl als Typname als auch als Wert
 
 00:20:21,989 --> 00:20:22,989
 Namen verwenden.
@@ -1103,7 +1096,7 @@ es gibt besondere Gründe dafür.
 
 00:20:27,330 --> 00:20:34,630
 Wir werden in der Vorlesung davon absehen, dies zu tun,
-aber Sie sollten sich bewusst sein, dass theoretisch der
+aber Sie sollten sich bewusst sein, dass theoretisch
 
 00:20:34,630 --> 00:20:42,229
 derselbe Name hier und hier verwendet werden könnte, oder
@@ -1123,6 +1116,7 @@ Compiler wird sich nicht darüber beschweren, weil
 es in der Sprache zulässig ist, denselben
 Bezeichner an einer solchen Stelle und an einer solchen Stelle zu verwenden.
 
+133 # slide
 00:21:04,499 --> 00:21:11,210
 Auf der vorherigen Folie habe ich dieses Beispiel erwähnt
 mit dem 12. Tag, der natürlich als Wochentag
@@ -1227,7 +1221,7 @@ Erweiterbarkeit.
 
 00:23:00,359 --> 00:23:03,830
 Nehmen wir also an, wir wollen unsere
-Levels reicher machen wollen.
+Levels reicher machen.
 
 00:23:03,830 --> 00:23:11,269
 Wir haben eine neue Idee für unser Spiel, und wir
@@ -1241,12 +1235,12 @@ Wir werden also den Wert 5 dafür verwenden
 denn 5 scheint noch nicht verwendet zu werden.
 
 00:23:17,710 --> 00:23:23,210
-Also schreiben wir jetzt Levelfunktionen, die an
-irgendwo eine 5 zurückgegeben wird, die wir für
+Also schreiben wir jetzt level-Funktionen, die
+irgendwo eine 5 zurückgegeben werden, die für
 
 00:23:23,210 --> 00:23:28,260
 "spike" stehen soll, aber eigentlich
-vergessen, diesen zusätzlichen Fall in der aTile
+vergessen wir diesen zusätzlichen Fall in der aTile
 
 00:23:28,260 --> 00:23:32,769
 Funktion hinzuzufügen, oder vielleicht hat jemand in unserem Team, der
@@ -1305,7 +1299,7 @@ Wenn wir nun aber die Level-Funktion erweitern
 und vergessen diese Änderung in der aTile
 
 00:24:27,330 --> 00:24:30,759
-Funktion vergessen, dann haben wir plötzlich auch "blank"
+Funktion, dann haben wir plötzlich auch "blank"
 für unsere neue Stelle, an der wir eigentlich
 
 00:24:30,759 --> 00:24:31,759
@@ -1328,11 +1322,11 @@ denn 5 würde auf keinen dieser Fälle passen.
 
 00:24:50,549 --> 00:24:54,879
 Also würde man zumindest zur Laufzeit einen
-Fehler statt dieses seltsamen leeren Bildes.
+Fehler statt dieses seltsamen leeren Bildes bekommen.
 
 00:24:54,879 --> 00:25:01,169
-Dies könnte man erreichen, indem man einfach
-hier in der ursprünglichen Version einfach eine "0" schreiben.
+Dies könnte man erreichen, indem man
+hier in der ursprünglichen Version einfach eine "0" schreibt.
 
 00:25:01,169 --> 00:25:04,269
 Aber das hat natürlich auch seine Nachteile
@@ -1350,7 +1344,7 @@ Integer nach Picture, und dann gibt man nur
 Fälle für 0,1,2,3,4, dann haben wir keine
 
 00:25:15,789 --> 00:25:17,880
-eine Funktion im mathematischen Sinne geschrieben.
+Funktion im mathematischen Sinne geschrieben.
 
 00:25:17,880 --> 00:25:19,090
 Und warum ist das so?
@@ -1376,6 +1370,7 @@ Ein Zahlentyp kann es nicht sein.
 Es sollte eine Aufzählung sein oder ein algebraischer
 Datentyp sein.
 
+134 # slide
 00:25:41,409 --> 00:25:48,450
 So könnte es also aussehen, wenn Sie
 einen neuen Typ namens Tile einführt, und wir führen
@@ -1385,7 +1380,7 @@ einige Konstanten dieses Typs einführen, und wir führen
 genau eine Konstante für jede Art von Kachel
 
 00:25:55,279 --> 00:25:59,980
-die wir haben wollen: Blank (nichts), Pearl, Water,
+die wir haben wollen: Blank (nichts), Block, Pearl, Water,
 Luft.
 
 00:25:59,980 --> 00:26:01,649
@@ -1416,7 +1411,7 @@ Die Reihenfolge ist auch nicht relevant, wenn wir diese Dinge
 hier auflisten, denn es sind keine Zahlen
 
 00:26:26,000 --> 00:26:32,009
-beteiligt sind, und die Reihenfolge ist auch nicht relevant, wenn
+beteiligt und die Reihenfolge ist auch nicht relevant, wenn
 wir Fälle für diese Konstanten in unseren
 
 00:26:32,009 --> 00:26:33,309
@@ -1470,10 +1465,10 @@ wir genau fünf Werte vom Typ Tile haben.
 
 00:27:18,369 --> 00:27:25,129
 Wenn Sie also eine Definition, eine Zeile, für
-jede dieser Konstanten, dann ist dies eine vollständige
+jede dieser Konstanten angeben, dann ist dies eine vollständige
 
 00:27:25,129 --> 00:27:29,890
-Definition und der Compiler weiß... der Compiler
+Definition und der Compiler
 wird herausfinden, dass dies eine Nicht-Redundanz ist,
 
 00:27:29,890 --> 00:27:33,450
@@ -1485,7 +1480,7 @@ Es besteht also keine Notwendigkeit für einen Auffangtatbestand
 wie im vorigen Fall, wo dies tatsächlich
 
 00:27:38,159 --> 00:27:47,460
-zu Problemen führte, als wir unsere Unterstützung
+zu Problemen führte, als wir unsere
 Unterstützung/Spektrum der Dinge, die Fliesen sein können, erweitern wollten.
 
 00:27:47,460 --> 00:27:51,690
@@ -1500,15 +1495,15 @@ Andernfalls wäre es nicht möglich, sie
 im Level zurückzugeben.
 
 00:27:57,809 --> 00:28:01,950
-Wir können also nichts aus dem Level zurückgeben
-Funktion nichts zurückgeben, was nicht zu diesem Typ gehört.
+Wir können also nichts bei der level-Funktion zurückgeben,
+was nicht zu diesem Typ gehört.
 
 00:28:01,950 --> 00:28:06,769
 Wenn wir also Spikes haben wollen, dann führen wir
 einen neuen Fall von Spikes hier ein, dann können wir
 
 00:28:06,769 --> 00:28:14,879
-in der Level-Funktion verwenden, und es kann nicht passieren
+in der Level-Funktion verwenden
 und es kann uns nicht passieren, dass wir vergessen zu deklarieren oder zu beschreiben
 
 00:28:14,879 --> 00:28:17,240
@@ -1519,10 +1514,10 @@ Warum?
 
 00:28:18,240 --> 00:28:23,309
 Weil, wenn ich Spike zu diesem Typ hinzufüge, aber ich
-aber vergesse, in der aTile-Funktion auch einen Fall für ihn hinzuzufügen
+aber vergesse, in der aTile-Funktion auch einen Fall für ihn hinzuzufügen,
 
 00:28:23,309 --> 00:28:25,450
-Funktion hinzuzufügen, dann wird sich der Compiler beschweren.
+dann wird sich der Compiler beschweren.
 
 00:28:25,450 --> 00:28:26,450
 Der Compiler wird mir helfen.
@@ -1576,8 +1571,8 @@ für Ausgaben als auch für Eingaben, ist ein Weg, dies
 zu erreichen.
 
 00:29:20,799 --> 00:29:26,059
-Nun könnten Sie sich bei diesem sehr einfachen Beispiel fragen
-Sie sich vielleicht auch: Wozu das Ganze?
+Nun könnten Sie sich bei diesem sehr einfachen Beispiel
+vielleicht auch Fragen: Wozu das Ganze?
 
 00:29:26,059 --> 00:29:31,090
 Es sieht sehr trivial aus, wenn man "Blank"
@@ -1660,7 +1655,7 @@ aber auch diese Ebene als Daten zu behandeln, wo
 wir uns das Ergebnis für eine bestimmte Position ansehen
 
 00:30:51,100 --> 00:30:55,539
-einer bestimmten Position betrachten und damit rechnen können, wie
+und damit rechnen können, wie
 einen Block mit einer Perle vergleichen, etc...
 
 00:30:55,539 --> 00:30:57,440
@@ -1690,6 +1685,7 @@ solche Funktion sicher in einem
 nicht redundanten, aber auch erschöpfenden Weise implementiert werden,
 was vom Compiler überprüft wird.
 
+135 # slide
 00:31:29,159 --> 00:31:33,019
 Dies waren einfache Aufzählungstypen.
 
@@ -1698,7 +1694,7 @@ Lassen Sie uns nun darüber hinausgehen.
 
 00:31:35,479 --> 00:31:43,190
 Wir bewegen uns in einem Bereich, in dem es nicht nur um
-nur Namenskonstanten, die wir leicht simulieren können
+nur Namenskonstanten geht, die wir leicht
 
 00:31:43,190 --> 00:31:45,799
 mit Zahlen simulieren können wie in C oder ähnlichem.
@@ -1847,7 +1843,7 @@ oder Flug, wie Montag und Dienstag, aber eigentlich
 
 00:34:42,600 --> 00:34:48,060
 Zug und Flug sind nicht einfach Konstanten
-wie Montag und Dienstag, sondern sie sind
+wie Montag und Dienstag, sondern sie
 
 00:34:48,060 --> 00:34:49,150
 tragen einige Daten.
@@ -2013,6 +2009,7 @@ zum Beispiel, oder im Code, wäre das einfach
 00:37:31,480 --> 00:37:40,000
 so, wenn man sie als Funktionen auf Argumenten betrachtet.
 
+136 # slide
 00:37:40,000 --> 00:37:45,480
 Wie können wir dann mit solchen Werten rechnen... Werte
 dieser Art, die wir gerade gesehen haben?
@@ -2024,8 +2021,8 @@ Durch etwas, das man Pattern-Matching nennt.
 Das ist das Konzept, das hier zugrunde liegt.
 
 00:37:52,420 --> 00:37:55,860
-Und das ist etwas, das wir schon oft gesehen haben
-schon oft gesehen, aber wir haben es nur auf
+Und das ist etwas, das wir schon oft gesehen haben,
+aber wir haben es nur auf
 
 00:37:55,860 --> 00:38:01,310
 Werte ... wie dieses aTile von Block ist
@@ -2047,7 +2044,7 @@ ein möglicherweise tief verschachteltes Konzept.
 
 00:38:16,950 --> 00:38:22,261
 Wenn Sie also definieren wollen, was die Reisezeit
-Zeit für eine Verbindung ist, könnten wir sagen: Was
+für eine Verbindung ist, könnten wir sagen: Was
 
 00:38:22,261 --> 00:38:23,261
 ist eine Verbindung?
@@ -2185,7 +2182,7 @@ Und dann könnte der Compiler prüfen, dass wir
 keine Redundanz haben, wir haben nicht irgendeinen
 
 00:40:38,000 --> 00:40:44,380
-Fall, der von zwei verschiedenen Zeilen abgedeckt würde
+Fall, der von zwei verschiedenen
 Zeilen abgedeckt wird, und es ergibt keinen Sinn, eine
 
 00:40:44,380 --> 00:40:51,080
@@ -2286,8 +2283,8 @@ Wenn wir also an die Funktionen höherer Ordnung zurückdenken
 von letzter Woche, diese Konstruktoren Day und
 
 00:42:38,480 --> 00:42:44,860
-Train, sie könnten auch Argumente für Funktionen höherer Ordnung sein
-Funktionen sein, wenn wir etwas haben, das
+Train, sie könnten auch Argumente für Funktionen höherer Ordnung sein,
+wenn wir etwas haben, das
 
 00:42:44,860 --> 00:42:50,130
 entweder polymorph oder mit konkreten Typen
