@@ -13,7 +13,7 @@ nicht überraschen, dass, genau wie Funktionen
 
 00:00:19,280 --> 00:00:24,400
 rekursiv sein können, auch Typen rekursiv sein können. Also, was
-definieren wir hier? Wir definieren einen Typ Nat
+definieren wir hier? Wir definieren einen Typ 'Nat'
 
 00:00:25,440 --> 00:00:33,840
 (für natürliche Zahlen). Und Werte dieses Typs sind
@@ -24,12 +24,12 @@ etwas, das eine 'Nat' (natürliche Zahl) ist. Damit
 können wir alle natürlichen Zahlen ausdrücken. Wir haben
 
 00:00:40,240 --> 00:00:50,400
-Zero, Succ Zero (Nachfolger von Zero), aber auch Succ
-(Succ Zero). Da Succ Zero ein Element von Nat ist,
+'Zero', Succ Zero (Nachfolger von Zero), aber auch Succ
+(Succ Zero). Da Succ Zero ein Element von 'Nat' ist,
 
 00:00:50,400 --> 00:00:54,320
-und da Zero ein Element von Nat ist, also
-Succ Zero usw. Es ist also genau wie im
+und da 'Zero' ein Element von 'Nat' ist, also
+Succ 'Zero' usw. Es ist also genau wie im
 
 00:00:57,200 --> 00:01:03,760
 Verbindungsbeispiel, nur dass jetzt
@@ -44,7 +44,7 @@ Das ist erlaubt, und es gibt unendlich
 so viele Werte dieses Typs, nämlich:
 
 00:01:13,920 --> 00:01:20,560
-beliebig viele Nachfolger von Zero ("Beispiel: Succ (Succ
+beliebig viele Nachfolger von 'Zero' ("Beispiel: Succ (Succ
 (Succ (... Zero))...)"). Also, hier sind einige Werte
 
 00:01:20,560 --> 00:01:27,760
@@ -84,19 +84,19 @@ Argument. Also, mit dem ersten Argument Null, und
 dem zweiten Argument etwas... eine Variable m,
 
 00:02:14,480 --> 00:02:22,000
-dann ist die Addition von Zero und m m. Das erste
+dann ist die Addition von 'Zero' und m gleich m. Das erste
 Argument ist noch nicht rekursiv. Dies ist der
 
 00:02:22,000 --> 00:02:26,400
 Grundfall der Rekursion. Und wenn das erste
-Argument nicht Zero ist, dann muss es Nachfolger von
+Argument nicht 'Zero' ist, dann muss es Nachfolger von
 
 00:02:26,400 --> 00:02:31,120
 etwas sein, denn es gibt keine andere Wahl, weil
-Zero und Succ sind die einzigen beiden Datenkonstruktoren
+Zero und 'Succ' sind die einzigen beiden Datenkonstruktoren
 
 00:02:31,680 --> 00:02:39,920
-des Typs Nat sind. Es ist also der Nachfolger von etwas.
+des Typs 'Nat' sind. Es ist also der Nachfolger von etwas.
 Und dieses Etwas ist eine Variable. Es kann
 
 00:02:41,120 --> 00:02:46,160
@@ -157,7 +157,7 @@ der wichtigste/konzeptionelle Unterschied ist
 dass wir zwei rekursive Vorkommen haben.
 
 00:04:04,960 --> 00:04:12,480
-Ein Tree ist also ein Leaf oder ein Node, bei dem eines
+Ein 'Tree' ist also ein 'Leaf' oder ein 'Node', bei dem eines
 seiner Argumente ein 'Integer' (eine Zahl) ist,
 
 00:04:12,480 --> 00:04:17,680
@@ -166,7 +166,7 @@ rekursive Vorkommen sind, im Grunde ein linker erfolgreicher und ein rechter
 
 00:04:17,680 --> 00:04:24,160
 Nachfolger. So sehen natürlich die Werte dieses Typs
-wie folgt aussehen. Ein Leaf ist also ein Wert dieses
+wie folgt aussehen. Ein 'Leaf' ist also ein Wert dieses
 
 00:04:24,160 --> 00:04:29,280
 Typs, und ein Knoten mit einem Blatt und der Zahl 2
@@ -209,7 +209,7 @@ des Baums berechnen wollen, dann sollte das eine Funktion sein
 von 'Tree' zu 'Integer' sein. Wie berechnen wir das? Wir
 
 00:05:24,880 --> 00:05:29,760
-machen eine Fallunterscheidung: ein Tree kann ein Leaf sein
+machen eine Fallunterscheidung: ein 'Tree' kann ein 'Leaf' sein
 oder ein Knoten mit einigen Argumenten sein. Die Höhe eines
 
 00:05:29,760 --> 00:05:34,320
@@ -265,20 +265,20 @@ immer Zahlen darin speichern wollen. Wir wollen
 grundsätzlich parametrisch sein... polymorph über
 
 00:06:52,560 --> 00:06:59,840
-die Art der Dinge, die im Tree gespeichert werden,
+die Art der Dinge, die im 'Tree' gespeichert werden,
 so wie wir wissen, dass Listen über verschiedene
 
 00:06:59,840 --> 00:07:05,120
 Typen. Was müssen wir also ändern
-dann? Lassen wir dieses "a" für einen Moment beiseite. Also,
+dann? Lassen wir dieses 'a' für einen Moment beiseite. Also,
 
 00:07:05,120 --> 00:07:09,920
-wir haben immer noch Tree als Datendefinition. A
-Tree kann ein Leaf sein und es wird nichts gespeichert,
+wir haben immer noch 'Tree' als Datendefinition. A
+'Tree' kann ein 'Leaf' sein und es wird nichts gespeichert,
 
 00:07:09,920 --> 00:07:18,320
 also gibt es keine Änderung im Datenkonstruktor
-für den Basisfall. Wenn wir jedoch einen Node,
+für den Basisfall. Wenn wir jedoch einen 'Node',
 
 00:07:18,320 --> 00:07:22,800
 dann wollen wir immer noch zwei Sub-Trees haben, aber
@@ -294,14 +294,14 @@ irgendwie irgendwo eingeführt werden, und sie
 
 00:07:32,960 --> 00:07:37,973
 wird hier eingeführt. Im Grunde bedeutet dies also
-sagen ist: Tree ist nicht nur ein einfacher Datentyp. Er
+sagen ist: 'Tree' ist nicht nur ein einfacher Datentyp. Er
 
 00:07:37,973 --> 00:07:43,680
 ist jetzt wirklich ein Typkonstruktor. Er konstruiert einen
-neuen Typ für jeden Argumenttyp "a". Also, ein "Tree a"
+neuen Typ für jeden Argumenttyp 'a'. Also, ein "'Tree' a"
 
 00:07:43,680 --> 00:07:49,840
-ein Baum aus "a"s. Dieses "a" könnte also später
+ein Baum aus 'a's. Dieses 'a' könnte also später
 'Int' oder 'Bool' oder was auch immer sein. Aber abstrakt,
 
 00:07:49,840 --> 00:07:55,440
@@ -321,7 +321,7 @@ Typ jedes Labels als diesen Typ, der hier als Argument
 angegeben wurde. Wir wollen also nicht, dass
 
 00:08:17,040 --> 00:08:21,920
-Tree Integer hier haben. Wir wollen wieder "Tree a" haben,
+'Tree' Integer hier haben. Wir wollen wieder "'Tree' a" haben,
 sowohl für die linken als auch für die rechten Sub-Trees.
 
 00:08:24,560 --> 00:08:30,720
@@ -329,7 +329,7 @@ Dies führt zu recht interessanten Typen dieser
 Datenkonstrukteure. Erinnern Sie sich, ein paar Folien weiter hinten
 
 00:08:30,720 --> 00:08:38,160
-für "Day" und "Train" usw., habe ich die Typen dieser
+für 'Day' und 'Train' usw., habe ich die Typen dieser
 Datenkonstruktoren. Jetzt, mit Polymorphismus,
 
 00:08:38,160 --> 00:08:45,120
@@ -358,7 +358,7 @@ haben, die nicht nur die Höhe von
 
 00:09:18,720 --> 00:09:24,720
 Integer-Bäumen berechnen, sondern auch für Bäume dieser Art
-für jedes "a". Eigentlich ist die Definition genau
+für jedes 'a'. Eigentlich ist die Definition genau
 
 00:09:24,720 --> 00:09:29,040
 die gleiche wie auf der vorherigen Folie. Warum ist das so?
@@ -369,7 +369,7 @@ Elementtyp, sondern die Elemente des Label-Typs.
 Die Berechnung der Höhe ist davon
 
 00:09:37,840 --> 00:09:43,040
-nicht betroffen. Diese "height" ist eigentlich eine polymorphe
+nicht betroffen. Diese 'height' ist eigentlich eine polymorphe
 Funktion auf einen polymorphen Datentyp. Sie nimmt also
 
 00:09:43,040 --> 00:09:48,560
@@ -377,7 +377,7 @@ Bäume eines beliebigen Inhaltstyps und gibt einen Integer zurück.
 Und die Definition ist genau wie zuvor, denn
 
 00:09:48,560 --> 00:09:55,840
-für ein Leaf erhalten wir eine 0, und wir müssen nicht wissen
+für ein 'Leaf' erhalten wir eine 0, und wir müssen nicht wissen
 was dieser Typ ist, um dies zu tun. Und für einen Nicht-Blatt-Baum,
 
 00:09:56,560 --> 00:10:02,880
@@ -462,11 +462,11 @@ Level-Beispiel wieder. Also, lasst uns das noch weiter umgestalten
 weiter. Zuvor hatten wir diesen Aufzählungstyp
 
 00:11:49,840 --> 00:11:54,640
-wo wir auch diesen Blank als mögliche Kachel hatten.
-Wir könnten argumentieren: Blank ist nicht wirklich eine Kachel. Blank
+wo wir auch diesen Blank als mögliche 'Tile' hatten.
+Wir könnten argumentieren: Blank ist nicht wirklich eine 'Tile'. Blank
 
 00:11:54,640 --> 00:12:02,080
-ist nichts. Vielleicht sollte der Kacheltyp also nur für
+ist nichts. Vielleicht sollte der Tile-typ also nur für
 Dinge verwendet werden, die tatsächlich Kacheln sind, wie Block,
 
 00:12:02,080 --> 00:12:07,200
@@ -475,7 +475,7 @@ wo würden wir ausdrücken, dass wir an einigen Koordinaten
 
 00:12:07,200 --> 00:12:13,200
 keine dieser Kacheln vorhanden ist? Früher haben wir
-die leere Kachel eingefügt. Wir werden die
+die leere 'Tile' eingefügt. Wir werden die
 
 00:12:13,200 --> 00:12:18,400
 Level-Funktion ein bisschen weiter. Also, jetzt sind die Ebenen
@@ -490,7 +490,7 @@ das von hier, denn wir haben Maybe Tile
 jetzt haben. Und an den Stellen, an denen wir
 
 00:12:31,200 --> 00:12:36,000
-eine beliebige Kachel, eine nicht-leere
+eine beliebige 'Tile', eine nicht-leere
 Tile, werden wir Just zurückgeben,
 
 00:12:36,000 --> 00:12:43,520
@@ -527,10 +527,10 @@ den Datentyp erweitern, dann sind wir sicher, dass der
 
 00:13:23,760 --> 00:13:32,320
 Compiler feststellen wird, wo wir Fälle hinzufügen müssen usw. Wir
-haben gerade umgestaltet, um die leere Kachel nicht als
+haben gerade umgestaltet, um die leere 'Tile' nicht als
 
 00:13:32,320 --> 00:13:38,720
-tatsächliche Kachel. Also haben wir diesen Partialitätsmarker verwendet
+tatsächliche 'Tile'. Also haben wir diesen Partialitätsmarker verwendet
 indem wir sagten: die Level-Funktion gibt ein Maybe Tile.
 
 141 # slide
@@ -580,7 +580,7 @@ Bäumen? Betrachten wir also diese Funktion, die
 
 00:14:47,760 --> 00:14:55,520
 einen Wert in einen Baum einfügt. Also, die Annahme
-ist, dass ein Tree ein sortierter Tree ist, der geordnet ist.
+ist, dass ein 'Tree' ein sortierter 'Tree' ist, der geordnet ist.
 
 00:14:55,520 --> 00:15:02,080
 Man hat also immer links kleinere
@@ -596,7 +596,7 @@ in diesen Baum einfügen. Und das Einfügen bedeutet nicht
 
 00:15:13,200 --> 00:15:18,400
 dass wir den ursprünglichen Baum überschreiben, es bedeutet
-dass wir einen neuen Tree berechnen. Dieser neue Tree könnte
+dass wir einen neuen 'Tree' berechnen. Dieser neue 'Tree' könnte
 
 00:15:18,400 --> 00:15:22,480
 viel Struktur mit dem vorherigen Baum
@@ -687,7 +687,7 @@ Man überschreibt nicht die 3 mit 8 oder etwas
 ähnliches. Sie würden dies nicht einmal als ein
 
 00:17:33,600 --> 00:17:39,760
-vernünftiges Verhalten der "+"-Operation in irgendeiner
+vernünftiges Verhalten der '+'-Operation in irgendeiner
 Sprache, auch in einer objektorientierten Sprache. Aber
 
 00:17:39,760 --> 00:17:44,720
