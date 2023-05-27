@@ -515,7 +515,7 @@ and Sunday, we don't have exercises.
 And on all dates, we do have exercises.
 
 00:09:51,970 --> 00:09:56,750
-We have this catch-all case ('_') here.
+We have this catch-all case here.
 
 00:09:56,750 --> 00:09:58,310
 Of course, this is something that we can write.
@@ -579,8 +579,8 @@ comparisons and numbers would truly lead to
 a nice way of expressing this function.
 
 00:11:06,500 --> 00:11:15,339
-Plus, another danger in having this type 'Integer
-→ Bool' because Integer is a much bigger
+Plus, another danger in having this type “Integer
+→ Bool” because Integer is a much bigger
 
 00:11:15,339 --> 00:11:19,279
 type than just 1 to 7 which I want to use
@@ -605,11 +605,11 @@ Then, of course, the question is: What does
 it do?
 
 00:11:36,649 --> 00:11:42,680
-It computes something like: in the 'workday'
+It computes something like: in the “workday”
 from the previous slide, it would compute
 
 00:11:42,680 --> 00:11:48,220
-False because the comparison was 'd<6',
+False because the comparison was “d<6”,
 so, for some reason, the 12th day of the week,
 
 00:11:48,220 --> 00:11:51,590
@@ -923,8 +923,8 @@ It is simply more declarative and clearer
 that these are new values of a new type, and
 
 00:17:19,640 --> 00:17:23,890
-we cannot compute with them by '+' or
-'-' or '<', etc. because weekdays
+we cannot compute with them by “+” or
+“-“ or “<”, etc. because weekdays
 
 00:17:23,890 --> 00:17:26,069
 don't work that way.
@@ -957,7 +957,7 @@ them.
 
 00:17:53,889 --> 00:17:57,759
 Does this mean that I have to compare two
-Strings of length 'a' or something like
+Strings of length “a” or something like
 
 00:17:57,759 --> 00:18:00,539
 that, instead of simply comparing something
@@ -1197,10 +1197,10 @@ They are not really nice declarative names
 for things.
 
 00:22:30,450 --> 00:22:32,019
-'level' doesn't have a '2'.
+“level” doesn't have a “2”.
 
 00:22:32,019 --> 00:22:33,539
-'level' has 'water' or 'pearl'
+“level” has “water” or “pearl”
 or whatever.
 
 00:22:33,539 --> 00:22:40,950
@@ -1245,7 +1245,7 @@ So, now we write level functions where at
 some place it will return a 5 which we intend
 
 00:23:23,210 --> 00:23:28,260
-to stand for Spike, but actually, we
+to stand for “spike”, but actually, we
 forget to add this extra case in the aTile
 
 00:23:28,260 --> 00:23:32,769
@@ -1284,7 +1284,7 @@ So, actually, even though I add my 5 in my
 
 00:24:00,799 --> 00:24:06,419
 draw nothing for these positions because we
-run into this 'blank' case here.
+run into this “blank” case here.
 
 00:24:06,419 --> 00:24:08,820
 This blank case made sense before, right?
@@ -1294,18 +1294,18 @@ Because in our examples in the exercise, the
 only number codes we had were 0 up to 4, and
 
 00:24:14,030 --> 00:24:19,659
-0 was intended to stand for 'nothing',
+0 was intended to stand for “nothing”,
 so of course, 0 would run into this last case,
 
 00:24:19,659 --> 00:24:21,070
-then 'blank' would be taken.
+then “blank” would be taken.
 
 00:24:21,070 --> 00:24:27,330
 But now when we extend the 'level' function
 and forget about this change in the 'aTile'
 
 00:24:27,330 --> 00:24:30,759
-function, then suddenly we also have 'blank'
+function, then suddenly we also have “blank”
 for our new place where we actually want to
 
 00:24:30,759 --> 00:24:31,759
@@ -1316,7 +1316,7 @@ Now, you could say: that is the error in our
 original design for the 'aTile' function.
 
 00:24:38,639 --> 00:24:42,809
-We shouldn't have written the '_' (underscore),
+We shouldn't have written the “_” (underscore),
 we should have written 0 here, then the compiler
 
 00:24:42,809 --> 00:24:44,090
@@ -1332,7 +1332,7 @@ error instead of this strange blank Picture.
 
 00:24:54,879 --> 00:25:01,169
 This is something you could achieve by simply
-writing a '0' here in the original version.
+writing a “0” here in the original version.
 
 00:25:01,169 --> 00:25:04,269
 But that of course also has its disadvantages
@@ -1491,7 +1491,7 @@ support/range of things that can be tiles.
 
 00:27:47,460 --> 00:27:51,690
 Now, what would happen if we wanted to introduce
-a new tile, like the Spike thing?
+a new tile, like the spike thing?
 
 00:27:51,690 --> 00:27:53,850
 We would have to add it to this type.
@@ -1581,8 +1581,8 @@ Now, on this very simple example, you might
 also wonder: why even have this?
 
 00:29:26,059 --> 00:29:31,090
-It looks very trivial, to match 'Blank'
-to 'blank', 'Block' to 'block',
+It looks very trivial, to match “Blank”
+to “blank”, “Block” to “block”,
 
 00:29:31,090 --> 00:29:32,090
 etc…
@@ -1724,7 +1724,7 @@ Block, and Blank or whatever.
 
 00:32:07,470 --> 00:32:13,710
 These are the alternatives that we write this
-logical bar '|' (pipeoperator). Now, each of these alternatives
+logical bar “|”. Now, each of these alternatives
 
 00:32:13,710 --> 00:32:23,669
 may take additional values in the sense of
@@ -2084,10 +2084,10 @@ of a Train connection, no matter what the
 
 00:38:47,250 --> 00:38:52,460
 date is, on which it takes place, if we have
-the departure as 'd' and the arrival as
+the departure as “d” and the arrival as
 
 00:38:52,460 --> 00:38:57,410
-'a', then the travelTime is the arrival
+“a”, then the travelTime is the arrival
 hour minus the departure hour plus one because
 
 00:38:57,410 --> 00:39:01,020
@@ -2204,8 +2204,8 @@ I will also show this on the whiteboard app
 to illustrate more clearly how this deep nesting
 
 00:41:01,700 --> 00:41:06,770
-works, how we get the values for 'd' and
-'a', for example on some example like
+works, how we get the values for “d” and
+“a”, for example on some example like
 
 00:41:06,770 --> 00:41:08,010
 on the previous slide.
