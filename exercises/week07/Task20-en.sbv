@@ -1,0 +1,458 @@
+0:00:00.720,0:00:06.800
+This task is about transforming a
+list comprehension expression into an
+
+0:00:06.800,0:00:10.560
+expression using map filter and concat instead.
+
+0:00:13.760,0:00:21.760
+Therefore we've been given first of all
+an expression as list comprehension.
+
+0:00:22.880,0:00:26.480
+This is this a list of
+
+0:00:27.760,0:00:34.800
+pairs, and then we have the alternative
+implementation, where we have to fill in the gaps.
+
+0:00:36.160,0:00:47.280
+Marked as undefined - where
+we use map filter, and concat.
+
+0:00:49.920,0:01:00.720
+For this task we basically can define all
+the parts by looking at what we require.
+
+0:01:00.720,0:01:07.600
+So there is the attempt of going
+sequentially through the list comprehension,
+
+0:01:08.640,0:01:13.360
+but also there could be the attempt
+of just looking at the types first.
+
+0:01:14.560,0:01:22.080
+Because we have been given the
+functions concat: we know concat takes
+
+0:01:22.800,0:01:34.240
+a list of anything - well, it's a list of list
+of things - and turns it into a list of things.
+
+0:01:37.200,0:01:44.160
+Then when we look at this expression you
+see that the closing bracket is at the end:
+
+0:01:46.320,0:01:48.960
+so that's the argument for concat.
+
+0:01:48.960,0:01:55.920
+Then we have a map and this map
+has a first parameter which is
+
+0:01:58.880,0:02:03.360
+in these brackets and the second
+parameter which is a list.
+
+0:02:04.320,0:02:10.160
+Our first attempt could be just to
+fill in arguments as the types fit.
+
+0:02:11.520,0:02:18.560
+We know that he is at some number 50, so we can
+guess that we have to fill in any number here.
+
+0:02:19.840,0:02:26.160
+And in our original expression we have two
+of those things that we could insert we can't
+
+0:02:26.160,0:02:29.920
+insert minus 50 and we could insert x.
+
+0:02:31.120,0:02:34.400
+Well, minus 50 is a concrete value which we could
+
+0:02:34.400,0:02:40.480
+insert it any place where we require
+numbers, so it could be at those two gaps.
+
+0:02:40.480,0:02:46.480
+Obviously it's not correct to place them
+at both parts, because we know that we
+
+0:02:47.120,0:02:54.720
+have two different ranges of these lists.
+
+0:02:56.000,0:03:01.600
+But let's assume first of all, we can
+just fill in those parts like this.
+
+0:03:02.160,0:03:03.840
+Then we have filter.
+
+0:03:04.400,0:03:14.640
+Filter takes a function which based on
+a value of type a and returns a Boolean.
+
+0:03:15.520,0:03:19.760
+Our second argument is the
+list of those integer values.
+
+0:03:20.400,0:03:26.000
+We want to return a Bool
+based on the integer list.
+
+0:03:26.000,0:03:29.440
+Our first attempt could be to just ignore
+
+0:03:30.320,0:03:38.560
+the second argument, or the argument of the
+filter basically, and just return True always.
+
+0:03:38.560,0:03:42.560
+const True would return always
+True and we would filter nothing.
+
+0:03:45.360,0:03:52.480
+For map we have to define again
+something which returns what we require.
+
+0:03:52.480,0:04:04.800
+In this case we have again as first
+argument something which turns
+
+0:04:08.880,0:04:11.360
+the argument into something else.
+
+0:04:11.360,0:04:20.080
+But this time it's not like we filter
+that, we have to return a boolean - we
+
+0:04:20.080,0:04:31.440
+have to return something of type b so that
+we get a list of type b when we apply map.
+
+0:04:35.040,0:04:38.080
+We have to think about what this b is.
+
+0:04:39.680,0:04:55.360
+Therefore we have to go back and consider what
+we get by using these functions around it.
+
+0:04:55.360,0:05:03.600
+So we have this map inside this lambda
+expression here with x and when we have a look:
+
+0:05:03.600,0:05:13.360
+this lambda - this lambda expression here
+
+0:05:16.080,0:05:17.040
+it ends here.
+
+0:05:18.080,0:05:31.840
+So it's basically the first argument
+for the map which is then applied here.
+
+0:05:31.840,0:05:35.120
+With this list of -50 to 50.
+
+0:05:37.520,0:05:50.000
+Whatever we return here will be
+a transforming of the list here.
+
+0:05:56.560,0:06:00.000
+We have to think about what filter
+does: filter returns a list.
+
+0:06:00.000,0:06:06.880
+So we get a list here within the second
+argument of map, which is a list of integers.
+
+0:06:10.000,0:06:17.040
+concat returns a list - or turns
+a list of lists into a list.
+
+0:06:22.240,0:06:23.680
+What we return here
+
+0:06:24.800,0:06:33.040
+has to be in fact something which returns
+tuples, because we want to have a list of tuples.
+
+0:06:34.560,0:06:39.200
+Let me first of all define
+something here what is wrong.
+
+0:06:39.200,0:06:48.240
+So we can use again the const attempt and just say
+we ignore the argument and then return something.
+
+0:06:48.240,0:06:54.480
+Let's just say we we try to return the number
+here and in this case the compiler will
+
+0:06:58.400,0:07:06.400
+return an error, because we want to
+have a pair of integer and integer,
+
+0:07:06.400,0:07:10.560
+which is not possible by just giving a 1 here.
+
+0:07:12.400,0:07:19.120
+So we have to return a pair of integers.
+
+0:07:24.080,0:07:28.560
+And what could these be - these integers?
+
+0:07:28.560,0:07:30.880
+We have one which we get
+
+0:07:32.320,0:07:42.880
+from the filter here back and we have one
+that is defined before that is the x here.
+
+0:07:42.880,0:07:45.840
+So we could simply return those two.
+
+0:07:47.760,0:07:52.480
+Now let me load this program in the ghci.
+
+0:07:57.120,0:08:04.880
+And now we get a list which
+is not correct yet, but
+
+0:08:06.240,0:08:12.880
+actually the types fit, our program compiles
+and we can have a first attempt at using it.
+
+0:08:14.320,0:08:16.640
+We get a lot of values back.
+
+0:08:16.640,0:08:23.200
+When we compare this to our original
+then we see some differences because
+
+0:08:23.200,0:08:29.600
+there were - here are just positive
+values at the end in original and
+
+0:08:29.600,0:08:36.080
+alternative gives us some negative
+values as well in the last set here.
+
+0:08:36.080,0:08:40.560
+We can use main as well which
+gives us a test case for
+
+0:08:42.320,0:08:46.320
+comparing those two lists
+and this one here is this.
+
+0:08:48.000,0:08:57.120
+It uses take so we can use this argument in
+order to see the error which is happening here.
+
+0:08:57.120,0:09:11.840
+So we say take 66 from original and take 66 from
+alternative then we see that at this point here
+
+0:09:12.400,0:09:24.320
+both lists differ so here's minus 49
+and -49 and here's 50 and (plus) 15.
+
+0:09:26.800,0:09:37.680
+Okay. Now we can look in what we have done
+here within our definition of the alternative.
+
+0:09:40.320,0:09:43.520
+Of course we know one of these is wrong.
+
+0:09:43.520,0:09:49.840
+We have -50 here and we have -50
+here and one of these has to be x.
+
+0:09:51.440,0:09:53.360
+And which one is it?
+
+0:09:53.360,0:10:01.280
+Well, we can now look at the approach of
+going right through the list comprehension,
+
+0:10:02.800,0:10:05.120
+which could have been our first attempt as well.
+
+0:10:06.000,0:10:18.240
+If we start converting this list comprehension
+expression, then we see that we have
+
+0:10:18.800,0:10:25.120
+first of all these running over all
+the x values coming from this list.
+
+0:10:26.320,0:10:33.280
+This is expressed by using the map.
+
+0:10:35.600,0:10:43.840
+Its second argument is exactly
+this list here – -50 to 50.
+
+0:10:48.560,0:10:57.760
+So we can use this range expression here in
+order to retrieve the x values as before.
+
+0:10:57.760,0:11:04.000
+Then we use the lambda expression
+here in the first part of the map.
+
+0:11:05.120,0:11:14.080
+This lambda expression continues to be
+the other parts of the list comprehension.
+
+0:11:14.080,0:11:19.920
+The next part is retrieving
+all the values from x to 50.
+
+0:11:20.880,0:11:24.240
+We have again a map here in order to do this.
+
+0:11:24.960,0:11:29.040
+The map has a first argument
+and it has a second argument.
+
+0:11:29.040,0:11:37.760
+In the second argument – well
+that's a bit richer expression here.
+
+0:11:37.760,0:11:53.120
+Because at the end we have what we want to
+range over which is the values from x to 50.
+
+0:11:53.840,0:11:57.440
+That's because filter is applied to that list
+
+0:11:58.000,0:12:01.280
+and filter does what this expression here does.
+
+0:12:01.920,0:12:09.840
+This is a filter expression, because we
+have no left arrow there at this part and
+
+0:12:10.720,0:12:15.200
+this is no let expression -
+so this just filters the list.
+
+0:12:18.000,0:12:21.920
+This part shall be ranging from x to something
+
+0:12:21.920,0:12:25.040
+And this part here is our filter expression.
+
+0:12:28.080,0:12:35.200
+This filter expression is a
+function taking one argument in this
+
+0:12:37.680,0:12:41.360
+concrete example here it is our y.
+
+0:12:43.440,0:12:53.520
+Because that's what we get here in our expression
+it's y, which ranges over from x to 50.
+
+0:12:54.480,0:12:56.000
+This is the first part here y.
+
+0:12:58.240,0:13:03.840
+Then we apply simply this filter here.
+
+0:13:04.400,0:13:15.200
+It's abs of x plus y is greater than
+35 - this is our filter expression.
+
+0:13:18.400,0:13:20.400
+Then there's just one part missing
+
+0:13:21.280,0:13:30.080
+which is implemented already and
+that's this creating of the tuple.
+
+0:13:31.840,0:13:44.000
+We can simply create the tuple by
+applying our map on that filtered list.
+
+0:13:44.000,0:13:51.280
+Which is what we get by
+applying this filter, right?
+
+0:13:51.280,0:13:58.240
+We applied this filter to the
+values of x and y in this case here.
+
+0:13:58.800,0:14:07.200
+And we apply another function using
+map, that's what's written here!
+
+0:14:09.200,0:14:15.040
+This function takes first of
+all the y and because we are
+
+0:14:15.040,0:14:20.080
+in a map already and have the x value
+already, we can just create a tuple.
+
+0:14:21.120,0:14:28.240
+We get the expression that we
+created in our list comprehension.
+
+0:14:29.440,0:14:41.120
+If we now take 66 from alternative and 66 from
+original we get the same values here these places.
+
+0:14:41.840,0:14:54.640
+And when we apply the tests, then we get to the
+same result and we are done with solving the task.
+
+0:14:58.960,0:15:08.320
+Some of you may have seen within Autotool that it
+suggested using a tuple section in this case here.
+
+0:15:09.280,0:15:22.720
+So it it says you can replace the
+function of y to triple x y by just
+
+0:15:23.360,0:15:29.200
+applying x comma and closing bracket, i.e. (,x).
+
+0:15:29.200,0:15:38.160
+If this would look like this and you can write
+this in Autotool and it will accept the answer.
+
+0:15:39.360,0:15:51.040
+If you write this locally in your
+ghci it will probably reject the
+
+0:15:56.800,0:16:05.200
+file loading saying there you use a
+tuple section which is not allowed.
+
+0:16:11.840,0:16:14.880
+It would be required to tell ghci to use
+
+0:16:14.880,0:16:19.200
+tuple sections and then you are allowed
+to apply this trick locally as well.
+
+0:16:19.200,0:16:23.120
+But in Autotool you can just send in this answer!
+
+0:16:23.120,0:16:27.040
+And it would be fine when
+using this tuple section.
+
+0:16:27.600,0:16:36.560
+That's what the comment said which you probably
+might have seen when you had this here.
+
+0:16:36.560,0:16:49.600
+Then Autotool suggests using a tuple section
+here, but this is just a side remark.

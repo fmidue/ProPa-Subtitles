@@ -1,0 +1,499 @@
+0:00:01.120,0:00:04.560
+This task is based on previous CodeWord tasks.
+
+0:00:05.360,0:00:11.920
+And these tasks were about some game with levels.
+
+0:00:14.480,0:00:23.280
+This time we want to write a function
+isLessFilledThan that compares different levels.
+
+0:00:25.440,0:00:32.720
+These levels shall be compared by having a
+coordinate range from -10 to 10 for x and y.
+
+0:00:35.680,0:00:45.440
+We arrange it over this area in order to
+get to check if the levels are the same.
+
+0:00:46.960,0:00:53.200
+A level is defined as a function from
+a pair of integers to an integer.
+
+0:00:55.200,0:01:05.840
+And this function shall be the isLessFilledThen
+function that we have down below here.
+
+0:01:05.840,0:01:12.160
+But this time there's no type given so we
+have to define the type for this function.
+
+0:01:12.160,0:01:24.160
+And the isLessFilledThan function shall
+be of a type where we compare two levels.
+
+0:01:25.120,0:01:32.240
+First of all we can think about having
+two arguments, and both are functions.
+
+0:01:34.160,0:01:37.520
+In fact functions of this type.
+
+0:01:37.520,0:01:38.080
+So we have
+
+0:01:38.880,0:01:47.840
+a function from a pair of integer to integer
+and a function from pair of integer to integer.
+
+0:01:49.360,0:01:51.360
+So let me write this.
+
+0:01:51.360,0:01:57.520
+Pair of integer and integer to integer.
+
+0:01:57.520,0:02:02.960
+That's the function of the level –
+we have this as our first argument.
+
+0:02:05.600,0:02:13.760
+And then we have the same
+type as our second argument.
+
+0:02:15.120,0:02:21.840
+Our return type will be Boolean.
+
+0:02:23.280,0:02:35.840
+Because we just want to return true or
+false as a result when comparing those.
+
+0:02:38.000,0:02:43.680
+We have two arguments which we can define
+here in our implementation as well.
+
+0:02:43.680,0:02:46.480
+So we have level one and level two.
+
+0:02:49.040,0:02:56.240
+Now we want to compare all those parts and
+
+0:02:57.440,0:03:01.360
+for this actually, i think, it's
+helpful to have a list comprehension.
+
+0:03:03.440,0:03:12.320
+Because with the list comprehension we
+can range over a whole set of values and
+
+0:03:13.760,0:03:15.600
+our range is given already.
+
+0:03:16.400,0:03:24.640
+So I define this locally here
+because we want to use it twice.
+
+0:03:27.840,0:03:34.160
+In order to reuse the code
+we can just define it here.
+
+0:03:34.160,0:03:37.880
+That's our range and we want to ...
+
+0:03:39.680,0:03:43.840
+Well, defined here's as range.
+
+0:03:43.840,0:03:46.960
+And we want to use this in
+our list comprehension here.
+
+0:03:52.880,0:04:07.200
+We range over x's and y's these
+are the coordinates of our level.
+
+0:04:12.800,0:04:23.120
+We want them to just express whether the
+
+0:04:29.520,0:04:37.920
+field that's at that coordinate
+satisfies this description here.
+
+0:04:39.520,0:04:48.400
+So that, if it's an air tile and in the first
+part and in the second value has a pearl, then
+
+0:04:51.040,0:04:52.640
+we shall return true.
+
+0:04:52.640,0:04:57.280
+And if both are equal then we return true as well.
+
+0:04:59.440,0:05:06.160
+I think it's helpful to define a
+local function for this comparison.
+
+0:05:07.440,0:05:20.000
+I call it just has is lesser and it compares
+the actual field that's the important thing.
+
+0:05:20.640,0:05:28.000
+So we can say hasLesser if the first
+one is four and the second one is three
+
+0:05:28.000,0:05:35.360
+we return true and in all the
+other cases we compare both values.
+
+0:05:38.720,0:05:42.560
+And when they are equal we return true as well.
+
+0:05:43.600,0:05:53.600
+We can use is lesser here for
+our level 1 and our level two.
+
+0:05:55.920,0:05:58.800
+So we compare level one
+
+0:06:00.560,0:06:10.960
+with level two – well in fact at the moment
+the types do not match of level 1 and level 2.
+
+0:06:14.080,0:06:22.640
+For hasLesser, because level 1 and level 2 are
+functions but we have to give them pairs actually
+
+0:06:23.200,0:06:35.200
+in order to get the actual fields, which have
+these integer values which we can compare.
+
+0:06:36.640,0:06:51.440
+That's why I define the tuple or the
+point as the coordinate of x and y
+
+0:06:52.800,0:06:59.040
+and i give this point to both functions.
+
+0:07:00.240,0:07:09.040
+Okay, now the actual type of the function
+is not correct – of the whole function.
+
+0:07:09.040,0:07:15.120
+Because I use a list comprehension, but
+it returns a list of Booleans in this case
+
+0:07:15.120,0:07:21.520
+and we will actually want to have bool as
+return type, as I specified here earlier.
+
+0:07:22.880,0:07:24.080
+How can we fix this?
+
+0:07:25.200,0:07:31.520
+We can say we don't want to have
+False as an element of our list.
+
+0:07:34.240,0:07:55.520
+If False is not element of our list then we
+are happy with the result of this function.
+
+0:07:59.680,0:08:06.400
+And I add some code in order to test
+if our function does the right thing.
+
+0:08:08.560,0:08:12.080
+Therefore I define some very simple levels.
+
+0:08:12.720,0:08:22.000
+And these are levels which we
+can we can define very basically.
+
+0:08:22.000,0:08:25.840
+But because I just say they have just one field.
+
+0:08:27.600,0:08:35.520
+As I define them as levels they have
+type pair of integer to integer.
+
+0:08:37.200,0:08:42.800
+And the first one is a level which
+contains just a single air field.
+
+0:08:47.680,0:08:57.200
+This air field shall be where x
+equals zero and y equals zero.
+
+0:09:02.080,0:09:11.040
+And an air field has number
+4. So this is the air field.
+
+0:09:11.040,0:09:14.960
+It's it's written here in the text as well.
+
+0:09:15.600,0:09:17.600
+Air field has integer code 4.
+
+0:09:20.240,0:09:24.160
+Very importantly is that we
+define the otherwise case.
+
+0:09:25.920,0:09:35.840
+So if the value does not match zero, so we
+are not at point zero here, then we return
+
+0:09:36.720,0:09:40.240
+zero, which is blank, which outside of our field.
+
+0:09:41.600,0:09:43.840
+Then we define other fields.
+
+0:09:49.360,0:09:52.720
+Let's say –we have a pearl.
+
+0:10:00.240,0:10:03.840
+A pearl is 3.
+
+0:10:04.640,0:10:13.120
+And then we have a field for block.
+
+0:10:14.560,0:10:17.840
+To have another field that we can test.
+
+0:10:18.560,0:10:20.000
+Let's say this says one.
+
+0:10:22.080,0:10:30.000
+Now we can write a function test,
+which we use in order to just check
+
+0:10:32.880,0:10:38.400
+that our function is working as expected.
+
+0:10:38.400,0:10:50.240
+We say that test is working
+correctly when air is less filled
+
+0:10:52.960,0:11:02.400
+than air – this is the
+reflexivity that we can test.
+
+0:11:08.960,0:11:12.000
+That always the x value is the same.
+
+0:11:12.960,0:11:27.840
+We can say this for air, we can say this
+for perl, and we can say this for block.
+
+0:11:32.880,0:11:45.920
+– again: for block –
+
+0:12:08.320,0:12:10.560
+Now I have this file!
+
+0:12:11.600,0:12:16.240
+I can load it in ghci and run
+my tests and they say true.
+
+0:12:16.240,0:12:18.560
+So, this is actually working.
+
+0:12:19.360,0:12:23.840
+I call this the reflexivity.
+
+0:12:47.200,0:12:52.400
+And reflexivity is of type Bool.
+
+0:12:53.120,0:12:57.200
+We can also test that the other parts are working.
+
+0:13:02.480,0:13:13.120
+It shall also be true that
+air is less filled than perl.
+
+0:13:14.400,0:13:17.680
+Because if we have the same at the same field ...
+
+0:13:17.680,0:13:27.280
+When we have an air, we have a pearl in the
+second one, then our predicate shall be true.
+
+0:13:28.720,0:13:36.160
+But it shall not be true if
+it's the other way around.
+
+0:13:46.400,0:13:48.960
+pearl is not less Filled than air.
+
+0:13:49.760,0:13:59.080
+Because if we have a field: If we have
+zero there where this pearl is then ...
+
+0:14:02.320,0:14:09.600
+If at coordinate (0, 0) we have a pearl in
+the first case but air in the second case
+
+0:14:09.600,0:14:10.640
+then that's wrong.
+
+0:14:12.880,0:14:15.840
+We can check that this test is working as well.
+
+0:14:19.440,0:14:24.560
+The last part is to check that it's
+working for other parts correctly as well.
+
+0:14:27.840,0:14:37.440
+It shall not be true that block is less
+filled than air and it shall also not be true
+
+0:14:38.400,0:14:43.840
+that air is less filled than block.
+
+0:14:48.320,0:14:49.520
+This is the case as well.
+
+0:14:50.480,0:14:53.200
+This is just testing but basically we
+
+0:14:53.920,0:14:59.600
+can use this function in order to test
+that it's happening the correct thing here.
+
+0:15:00.960,0:15:07.200
+Instead of using False notElem here, we
+could be a bit smarter here and say that
+
+0:15:07.760,0:15:13.600
+all the values in the list shall be true,
+thus we can use just the and function.
+
+0:15:15.200,0:15:22.720
+So we can simply write and here and we
+can test if the result is still the same.
+
+0:15:22.720,0:15:26.000
+And that is the case.
+
+0:15:26.000,0:15:29.600
+There are other implementation
+variants possible here.
+
+0:15:33.440,0:15:38.400
+For instance you could have written
+the hasLesser function differently.
+
+0:15:39.520,0:15:43.040
+You could have expressed this as
+
+0:15:51.120,0:16:06.240
+hasLesser x y is x equals 4
+and y equals 3 or x equals.
+
+0:16:08.800,0:16:18.640
+This is the same because we are just having
+expressed this not by using pattern match here,
+
+0:16:18.640,0:16:26.320
+but by using a boolean expression
+fulfilling both parts here.
+
+0:16:26.320,0:16:31.520
+So this shall still fulfil the test here.
+
+0:16:33.920,0:16:40.160
+Of course if you have a variant of this
+it's correct in this example as well.
+
+0:16:47.440,0:16:49.840
+There are other variants of
+
+0:16:52.080,0:17:00.080
+expressing this task for instance you
+could have made it the other way around.
+
+0:17:00.080,0:17:11.920
+So apply first generating a list
+of tuples having the tuples for the
+
+0:17:18.000,0:17:20.640
+levels and then comparing those.
+
+0:17:31.040,0:17:37.520
+I write an implementation in order
+to to show how this could look like.
+
+0:17:40.880,0:17:52.080
+The idea here is to basically also range over
+x and y but just in order to get the field.
+
+0:17:56.000,0:17:59.840
+I define field here – locally.
+
+0:18:00.880,0:18:24.000
+field is the actually applied
+level function on the coordinates.
+
+0:18:24.000,0:18:28.160
+But we give this function as parameter to field.
+
+0:18:29.440,0:18:30.640
+That's the basic idea.
+
+0:18:34.880,0:18:37.520
+Say we do a list comprehension here as well.
+
+0:18:38.960,0:18:44.480
+We range over x and y and return then
+
+0:18:49.200,0:18:53.760
+the actual field in the specific level.
+
+0:18:55.440,0:19:00.160
+Now we have these levels here as well.
+
+0:19:00.160,0:19:15.280
+We can return the fields and we can use this
+comprehension again to retrieve all those values.
+
+0:19:17.280,0:19:23.840
+We retrieve these values naming them somehow,
+
+0:19:26.080,0:19:32.240
+for instance field one and field two, for the
+different fields of level one and level two.
+
+0:19:33.520,0:19:37.280
+field of level one and field of level 2
+
+0:19:39.040,0:19:45.360
+We retrieve those by using zip.
+
+0:19:46.080,0:19:56.000
+We can zip field level 1 and field level 2.
+
+0:20:03.680,0:20:05.520
+These parts are both lists.
+
+0:20:05.520,0:20:14.560
+These are the lists of all the fields in the
+actual level of the specific range from -10 to 10.
+
+0:20:16.320,0:20:22.560
+Now we have basically the same
+implementation in a different style.
+
+0:20:22.560,0:20:30.320
+Here using zip and retrieving the fields
+first rather than applying the fields
+
+0:20:32.080,0:20:36.240
+before applying the function.
+
+0:20:41.360,0:20:46.320
+If we reload that and apply it,
+we still get the same result.
+
+0:20:46.960,0:20:49.280
+There are more possibilities of changing the code
+
+0:20:50.880,0:21:00.800
+and there are variants of choosing
+implementations to your liking.

@@ -1,0 +1,385 @@
+0:00:02.621,0:00:08.672
+So, die Aufgabe 22, da haben wir jetzt eine ziemlich lange
+Aufgabenbeschreibung, hier...
+
+0:00:08.672,0:00:13.812
+und schon eine vordefinierte Funktion, die (uns) eine unendliche Liste an Primzahlen gibt
+
+0:00:13.812,0:00:19.673
+und am besten sollte man sich erst mal den Text komplett
+durchlesen und (sich) rausschreiben was man tatsächlich machen muss, ...
+
+0:00:19.673,0:00:22.893
+weil das schon eine ganze Menge ist, wie man hier sieht.
+
+0:00:22.893,0:00:25.416
+ Wir machen das jetzt mal als Erstes.
+
+0:00:25.623,0:00:31.406
+Da wird einfach ein Bild gegeben. da kann ich schon mal gucken wie es aussehen soll, und zwar folgendermaßen:
+
+0:00:31.406,0:00:35.812
+Wir haben hier irgendwelche Quadrate, die wir machen müssen, das steht auch in der Beschreibung noch mal drin...
+
+0:00:35.812,0:00:48.405
+und die sollen halt alle eine andere Farbe haben, also jedes Quadrat eine eigene Farbe und die werden dann jeweils... um eine Primzahl nach rechts versetzt.
+
+0:00:48.405,0:00:57.203
+Was kann man sich hier auch noch herauslesen? Also wir
+haben hier... fünf mal fünf Rechtecke oder Quadrate halt...
+
+0:00:57.203,0:01:03.569
+Die jeweils eine andere Farbe haben müssen und die dann jeweils durch eine andere Primzahl einfach nach rechts versetzt werden
+
+0:01:03.569,0:01:11.404
+und es gibt dann einfach eine aufsteigende Reihenfolge wie sie halt in dieser "primes List" hier drin sind.
+
+0:01:11.404,0:01:17.695
+Was dann jetzt auch noch hier drin steht ist, wegen der Verteilung halt, dass es oft so ist, das sie sich überlappen.
+
+0:01:17.695,0:01:24.060
+(Es) soll halt so sein, dass die größeren Zahlen, also die größeren Quadrate, die weiter weg sind, sollen die kleineren Primzahlen überlappen.
+
+0:01:24.060,0:01:29.027
+Das heißt also, je weiter das Quadrat weg ist von dem Ursprung, desto weiter im Vordergrund soll das halt auch sein.
+
+0:01:29.027,0:01:36.000
+Also das heißt die allerletzte Zahl, die wir benutzen, das die dann am weitesten im Vordergrund steht...
+
+0:01:36.000,0:01:41.123
+und die allererste halt am wenigsten oder weitesten im Hintergrund steht, sozusagen.
+
+0:01:41.123,0:01:47.203
+Und was es jetzt hier auch noch gibt, ist dann... Genau...
+
+0:01:51.638,0:01:58.086
+(dann) steht hier noch, das es ein Parameter gibt, womit man dann steuert, wie viele Quadrate man zeichnen und wie viele Zahlen man dann benutzt.
+
+0:01:58.086,0:02:02.275
+Dann noch etwas zu der Funktion eben, dieses "number" hier, was wir haben.
+
+0:02:02.275,0:02:07.336
+Und zuletzt soll noch hinzugefügt werden, dass
+man das ganze skalieren kann.
+
+0:02:07.336,0:02:10.470
+Das, wenn wir jetzt irgendwie hundert Quadrate zeichnen, dann passt das ja nicht mehr auf den Bildschirm.
+
+0:02:10.558,0:02:15.148
+Deswegen wollen das jetzt irgendwie schrumpfen lassen, wenn das so riesig ist.
+
+0:02:15.148,0:02:18.221
+Das steht dann hier in diesem Block drin.
+
+0:02:18.221,0:02:21.976
+Und das wäre dann in der scene-Funktion auch wieder ein extra Parameter hier.
+
+0:02:21.976,0:02:26.320
+"factor" ist dann dieser Faktor mit dem wir skalieren wollen, hinterher.
+
+0:02:26.320,0:02:33.720
+Und das war es aber immer noch nicht, denn was jetzt noch gefordert ist, (ist) dass wir das ganze aufteilen in eine Funktion f und eine Funktion g.
+
+0:02:33.720,0:02:39.975
+Daraus soll die scene-Funktion hinterher bestehen, das wir hier
+f von irgendwas und ein call zu g dann noch haben.
+
+0:02:39.975,0:02:43.495
+Also in f muss g benutzt werden...
+
+0:02:43.495,0:02:50.030
+Und die sollen jetzt so aufgeteilt werden, dass in f wir nur das Bild aufbauen, hinterher und in g soll die Listen-Manipulation erfolgen.
+
+0:02:50.030,0:02:53.664
+Also da ist dann alles andere drin und in f machen wir nur das Bild.
+
+0:02:53.664,0:02:58.691
+Und dann wird noch zusätzlich gefordert, dass g tatsächlich so generisch wie möglich ist.
+
+0:02:58.691,0:03:03.537
+Das heißt, wir haben da jetzt keine spezifischen Typen in der Typsignatur...
+
+0:03:03.537,0:03:11.773
+sondern stattdessen sollen wir das so generell wie möglich machen, sodass wir jetzt halt irgendwelche Platzhaltertypen benutzen, in der Typsignatur
+
+0:03:11.773,0:03:16.692
+und das dann auf jeder Art von Liste funktionieren würde, was wir da machen, nicht nur auf den Listen die wir jetzt für die Aufgabe brauchen.
+
+0:03:16.692,0:03:21.021
+ So, das ist schonmal eine ganze Menge.
+
+0:03:21.021,0:03:24.593
+Da würde ich jetzt vorschlagen, dass man erst mal mit g anfängt, das ist noch der einfachste Teil...
+
+0:03:24.593,0:03:29.185
+Denn wir müssen jetzt erstmal überlegen: Was müssen wir hier machen, wenn wir jede (beliebige) Liste manipulieren sollen, wie es auch im Text steht.
+
+0:03:29.185,0:03:32.855
+Dann sollten wir vielleicht die Listen benutzen, die wir hier auch vorgegeben haben.
+
+0:03:32.855,0:03:36.705
+Also wir haben hier einmal diese primes-Liste, wo wir unsere Primzahlen haben...
+
+0:03:36.705,0:03:43.356
+und wir haben hier im Text auch noch erwähnt, dass es eine "assortedColors" Liste gibt, mit der man eine unendliche Liste von Farben bekommt...
+
+0:03:43.356,0:03:49.902
+Mal gucken, wo das hier steht ...
+
+0:03:49.902,0:04:12.536
+Ich glaube auch hier oben ...
+
+0:04:12.536,0:04:14.407
+Ach, hier steht es ja.
+
+0:04:14.407,0:04:17.258
+So, das hier ist die andere Liste, die wir benutzen können.
+
+0:04:17.258,0:04:25.837
+Also, wir müssen jetzt wieder g auf zwei Listen beziehen, die aber generell sein müssen. Also jetzt nicht tatsächlich eine Color- und eine Integer-Liste, sondern das müssen dann irgendwelche Platzhaltertypen sein.
+
+0:04:25.837,0:04:33.976
+ Wenn wir jetzt hier g definieren wollen... dann...
+
+0:04:33.976,0:04:39.022
+Können wir tatsächlich sagen: Ja, eine liste, da ist irgendein Typ a drin...
+
+0:04:40.575,0:04:47.193
+es gibt eine Liste da ist ein Typ b drin, das kann auch der gleiche Typ sein
+
+0:04:47.193,0:04:59.408
+und dann würden wir hier jetzt sagen: Was machen wir überhaupt daraus? Also, wir wollen ja irgendwie die beiden Listen so manipulieren, dass wir halt irgendwie eine kompakte Ausgabe für g haben, die f nutzen kann.
+
+0:04:59.408,0:05:06.224
+Das sinnvollste wäre es wenn wir jetzt tatsächlich Primzahlen und Farben haben, dass wir dann ein Paar von Primzahlen und Farbe jeweils ausgeben.
+
+0:05:06.224,0:05:09.170
+also eine Liste von Paaren wollen
+wir dann haben.
+
+0:05:09.170,0:05:14.785
+Das wäre dann hier eine Liste von Paaren a und b, zum Beispiel.
+
+0:05:14.785,0:05:22.766
+Und was man jetzt vielleicht hier noch einbauen kann ist, dass wir auch direkt bestimmen, wie viele Paare wir jetzt da herausnehmen.
+
+0:05:22.766,0:05:28.200
+Das ist (hier) nicht zwingend notwendig, es macht aber Sinn, weil es auch eine Art von "list manipulation" ist.Also wenn wir jetzt hier direkt den...
+
+0:05:28.200,0:05:34.372
+Integer-Parameter von dem wir vorher schon gesagt haben,
+dass wir den für das Ziehen brauchen, dieses "number", dass wir das hier halt irgendwie einbauen.
+
+0:05:34.372,0:05:40.547
+(So), dass wir jetzt direkt sagen: Wir nehmen jetzt von dieser Paarliste nur soundso viele heraus.
+
+0:05:40.547,0:05:55.537
+Wenn wir das jetzt definieren wollen, da sagen wir: Wir haben für g unser Parameter "number", wie viele Paare wollen wir haben von unseren zwei Listen und die werden dann jetzt zu Paaren zusammengestellt.
+
+0:05:55.537,0:06:05.698
+Da haben wir in der Vorlesung schon die zip-Funktion kennengelernt. Die kann genau das machen: Die nimmt zwei Listen und dann packt danach jeweils Tupel.
+
+0:06:05.698,0:06:13.815
+also macht eine Liste von Tupeln. Das ist ja genau das, was wir haben wollen. Das nimmt halt jeweils ein Element aus jeder Liste und macht dann daraus eine Liste von Tupeln.
+
+0:06:13.815,0:06:23.849
+Das heißt wenn wir jetzt hier xs und ys "zusammen-zippen", dann bekommen wir gerade unsere Tupel von Farbe und Primzahl.
+
+0:06:33.307,0:06:41.287
+So, jetzt wollen wir noch das wir nur soundso viele herausnehmen, da haben wir schon das "number" Parameter und setzten jetzt noch ein "take" nochmal davor.
+
+0:06:54.819,0:07:04.296
+Ja, jetzt haben wir schon mal hier definiert... Wir haben jetzt eine Liste von jeweils Farbe und Primzahl...
+
+0:07:04.296,0:07:11.477
+oder hier generell Tupel a und b und nehmen eine bestimmte Anzahl Paare heraus. Das ist jetzt alles was wir in g brauchen.
+
+0:07:11.477,0:07:18.104
+Jetzt müssen wir noch f definieren, die diese Tupel benutzt und dann daraus das Bild zusammensetzt.
+
+0:07:18.235,0:07:20.690
+So, da wäre die Signatur jetzt natürlich...
+
+0:07:20.690,0:07:32.770
+Wir haben einmal diese Tupel-Liste, aber da müssen jetzt tatsächlich konkrete Typen nutzen, denn wir wollen ja jetzt ein Bild zeichnen, nicht nur irgendwas. Also müssen wir auch wissen was da genau drin ist, wenn wir das jetzt zusammensetzen.
+
+0:07:32.964,0:07:36.834
+Also müssen wir jetzt gucken, was wir tatsächlich haben.
+
+0:07:36.834,0:07:50.990
+Das wäre jetzt also zum Beispiel ein Tupel Integer und Color, in diesem Fall. Was dann herauskommen soll, ist dann einfach ein Bild (Picture).
+
+0:07:50.990,0:07:58.885
+Aber wir haben noch eine weitere Sache die wir jetzt hier einbringen müssen, nämlich wir haben ja hier diesen Faktor hier...
+
+0:07:58.885,0:08:06.090
+mit dem wir das Ganze skalieren sollen, das Bild. Das passt dann auch noch in f mit rein. Das wäre jetzt also ein
+Double-Argument.
+
+0:08:06.090,0:08:09.260
+Wir würden dann das Bild hinterher komplett skalieren, wenn es fertig ist.
+
+0:08:09.260,0:08:14.090
+Das verkleinern wir dann, damit auch ruhig alles drauf passt.
+
+0:08:14.090,0:08:20.984
+So, dann müssen wir jetzt noch gucken, was wir jetzt genau machen wollen.
+
+0:08:20.984,0:08:24.765
+Also wir haben ja jetzt das Double-Parameter, das ist der Faktor.
+
+0:08:24.765,0:08:38.246
+Wir haben unsere Paare, unsere Liste und jetzt machen daraus einfach ein Bild. Das heißt wir brauchen jetzt erstmal die pictures-Funktion.
+
+0:08:38.246,0:08:43.368
+Das ist ja grade die Funktion, die zwischen die ganzen Bilder in der Liste jetzt einfach ein & setzt.
+
+0:08:43.477,0:08:48.000
+Also sie macht diese ganzen und-Schritte für uns und macht daraus ein Bild.
+
+0:08:48.000,0:08:50.780
+Und hier machen wir einfach eine list comprehension wo wir unsere Paare nutzen.
+
+0:08:50.780,0:08:58.796
+Also wir haben jetzt hier... Fangen wir mal an mit dem rectangles, die sollen ja alle 5x5 Quadrate sein.
+
+0:08:58.796,0:09:06.815
+Tschuldigung, das müsste "solidRectangle" sein... 5x5.
+
+0:09:06.815,0:09:12.445
+Und das soll ja jetzt immer gefärbt sein, immer in einer anderen Farbe. Also wir haben jetzt hier zum Beispiel...
+
+0:09:12.445,0:09:19.485
+Wenn wir jetzt hier schreiben color..., die nenne ich jetzt c, die Farbe und dann würden wir das Ganze hier in Klammern dahinter setzen.
+
+0:09:19.485,0:09:27.395
+Jetzt haben wir halt unsere 5x5er Quadrate, die sind dann jeweils in Farbe c eingefärbt sind...
+
+0:09:27.395,0:09:33.673
+ und dann müssen das Ganze ist ja noch translaten, und zwar um eine Primzahl nach rechts.
+
+0:09:33.673,0:09:39.320
+Das heißt wir haben hier die Primzahl p, zum
+Beispiel und das wird dann 0 nach oben versetzt.
+
+0:09:39.320,0:09:43.210
+Dann machen wir mal Klammern dahinter, So!
+
+0:09:43.319,0:09:48.148
+Okay, (für) das Ganze müssen wir jetzt nur noch angeben, was p und c tatsächlich sind...
+
+0:09:48.148,0:09:57.700
+und das sind halt gerade Paare die aus unseren unserer Paare-Parameterliste herauskommen.
+
+0:09:57.700,0:10:08.102
+Also hier haben wir ja diese ganze Liste von Paaren, das heißt wir können es ja einfach hier "reinfeeden" und dann haben wir halt hier ein Paar rausgepickt und das verwenden wir dann.
+
+0:10:08.102,0:10:15.960
+Okay, und jetzt haben wir noch einen Fehler, wenn wir darauf gehen, sehen wir, dass das Problem ist...
+
+0:10:15.960,0:10:26.311
+dass "translated" ein Double-Argument braucht, aber die Primzahl ist ein Integer. Deswegen müssen wirhier jetzt noch eine Funktion benutzen: "fromIntegral".
+
+0:10:26.459,0:10:34.640
+Was dann einfach dafür sorgt, das dieser Integer dann in einen Double umgewandelt wird, damit es dann mit translated funktioniert.
+
+0:10:34.856,0:10:42.554
+Jetzt haben eigentlich schon alles was wir brauchen. Wir haben jetzt das Bild, das wird zusammengebaut, insgesamt aus dem ganzen Kram hier.
+
+0:10:42.659,0:10:48.846
+Wir haben jetzt alles gemacht, wir haben unser Viereck, das dann eingefärbt wird und dann um p, also um diese Primzahl nach rechts bewegt (wird).
+
+0:10:48.846,0:10:54.593
+Was wir jetzt noch machen müssen, ist das ganze skalieren, das kann man hier vorschreiben.
+
+0:10:54.711,0:11:08.403
+diluted... dilated, entschuldigung...
+um den Faktor halt und dann unser ganzes Bild dahinter.
+
+0:11:08.508,0:11:18.852
+So, jetzt haben wir eigentlich schon fast alles fertig, jetzt muss man es nur noch in die scene-Funktion einsetzen, was wir gemacht haben. Ich lösche mal den ganzen Text, damit wir das im Bild haben.
+
+0:11:18.852,0:11:29.216
+und da müssen wir einfach nur einsetzen... Wir haben einmal die Funktion f...
+
+0:11:29.216,0:11:37.426
+und die kriegt jetzt einmal den Faktor gegeben und ruft dann...
+
+0:11:37.426,0:11:47.168
+Ne, wenn wir hier in die Typsignatur gucken, wir haben hier immer den Faktor, das ist der Double-Parameter und dann haben wir einmal als Parameterdie Liste von Paaren...
+
+0:11:47.168,0:11:51.032
+ und die kriegen wir ja gerade, indem wir g verwenden.
+Da kriegen wir am Ende eine Liste von Paaren.
+
+0:11:51.032,0:12:06.959
+Also ein call zu g und "feeden" da jetzt die Anzahl rein,
+also numbers und was da jetzt noch reinkommt, sind die beiden Listen.
+Die müssen wir jetzt noch angeben. Also einmal primes...
+
+0:12:06.959,0:12:13.300
+was hier schon definiert war und einmal diese assortedColors, die auch noch mal im Text vorkommt.
+
+0:12:21.578,0:12:33.569
+So, das können wir jetzt mal testen. Da ist jetzt noch ein Koordinatensystem dabei, was bei der main mit drin war.
+
+0:12:33.569,0:12:39.094
+Also wir haben einmal die scene mit 10 Quadraten und einer Skalierung von 0,3...
+
+0:12:39.094,0:12:43.444
+und wir haben einmal das Koordinatensystem noch dazugepackt.
+
+0:12:43.444,0:12:49.768
+Das sieht jetzt schon ganz gut aus, aber man sieht hier jetzt einen Fehler,
+wenn man genau hinsieht. Nämlich stand ja am Anfang der Aufgabenbeschreibung, dass man gucken sollte, dass die...
+
+0:12:49.768,0:12:53.402
+ kleineren Zahlen am meisten im Hintergrund sind und die
+größte Zahl am meisten im Vordergrund.
+
+0:12:53.402,0:12:58.109
+Das heißt die großen Zahlen müssen immer die kleineren überlappen, das ist hier aber genau andersherum, das wollen wir nicht.
+
+0:12:58.109,0:13:02.049
+Das heißt wir müssen jetzt hier noch gucken, dass wir das hinbekommen.
+
+0:13:02.049,0:13:06.000
+Der Grund warum das überhaupt so ist, liegt ja gerade in dieser pictures-Funktion hier.
+
+0:13:06.000,0:13:13.168
+Die macht ja zwischen alles ein & und das & zieht immer das linke Argument in den Vordergrund und das Rechte in den Hintergrund. Das heißt...
+
+0:13:13.168,0:13:18.168
+wenn wir uns das hier angucken... Das geht ja immer weiter nach oben. also wir nehmen uns hier die Paare raus.
+
+0:13:18.168,0:13:26.685
+ Die Paare waren ja "zusammengezipt" aus dieser color- und primes-Liste und da geht die primes ja von zwei immer weiter nach oben.
+
+0:13:26.685,0:13:37.762
+Das heißt sie weiter wir nach oben gehen desto weiter rechts sind wir mit den ganzen & dazwischen. Das heißt, die kleinste Zahl ist dann automatisches ganz links und die größe Zahl ganz rechts.
+
+0:13:37.762,0:13:45.144
+Wir müssen das einfach nur umdrehen, sodass die größte Zahl ganz links ist, also direkt als Erstes hier aufgerufen wird.
+
+0:13:45.144,0:13:54.000
+Dann haben wir auch die richtige Reihenfolge, indem wir das machen, einfach nur reverse davorsetzen.
+
+0:13:54.000,0:14:03.387
+Dann haben wir jetzt also die größten Zahlen ganz vorne in der Liste und die kleineren Zahlen dann ganz weit hinten, indem wir das also umdrehen.
+
+0:14:03.387,0:14:07.533
+Und dann ist das automatisch auch richtig, dass
+bei pictures sofort als allererstes aus der
+
+0:14:07.533,0:14:18.741
+Paare-Liste die großen Zahlen rausgepickt werden und dadurch dann zwischen den ganzen & ganz links sind und dadurch am meisten im Vordergrund landen.
+
+0:14:18.741,0:14:23.849
+So, dann führen wir das jetzt noch eben aus und schauen,
+ob es auch so ist wie es sein soll.
+
+0:14:23.849,0:14:29.484
+und dann sehen wir auch dass es jetzt die Aufgabe erfüllt.
+
+0:14:29.484,0:14:38.916
+Also die kleinste Zahl ist tatsächlich überlappt von der nächsten und die dann wieder von der nächste und so weiter und die (Zahl) die am meisten im Vordergrund ist, ist dann die allerhöchste Zahl.

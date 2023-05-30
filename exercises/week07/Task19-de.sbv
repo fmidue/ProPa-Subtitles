@@ -1,0 +1,383 @@
+0:00:00.000,0:00:05.190
+Als Erstes gucken wir uns diese Woche
+Aufgabe 19 an. Hier sollen wir nochmal
+
+0:00:05.190,0:00:14.160
+eine Summationsfunktion implementieren
+auf Integerlisten und auch nochmal mit
+
+0:00:14.160,0:00:21.630
+divide and conquer, aber diesmal ist divide and
+conquer für uns schon als higher order function
+
+0:00:21.630,0:00:30.510
+gegeben. Das ist genau diese Funktion hier.
+Die beschreibt, was die divide and conquer ist,
+
+0:00:30.510,0:00:37.080
+für uns hier. Wir haben die Signatur, wir
+sehen, wir haben als Parameter eine Funktion,
+
+0:00:37.080,0:00:44.550
+die von irgendeinem Typ a nach Bool geht, die
+aus einem a ein b machen kann, eine Funktion
+
+0:00:44.550,0:00:50.700
+als zweiten Parameter, eine Funktion, die ein
+a in zwei a's zerteilen kann und eine Funktion,
+
+0:00:50.700,0:00:56.790
+die zwei b's zu einem b kombinieren kann. Und am
+Ende bekommen wir eine Funktion, die aus einem
+
+0:00:56.790,0:01:04.380
+a ein b macht. Das Ganze ist divide and conquer
+und anhand der Parameternamen können wir sehen,
+
+0:01:04.380,0:01:11.190
+was diese Funktionen machen sollen. Wir haben
+einmal die Funktion, die aus seiner Eingabe prüft,
+
+0:01:11.190,0:01:16.980
+ob die Eingabe einfach genug ist, dass wir sie
+sofort lösen können, in dem Fall nutzen wir
+
+0:01:16.980,0:01:26.100
+diese Funktion von a nach b 'simpleCases', um das
+Problem sofort zu lösen, für diese Eingabe, oder
+
+0:01:26.100,0:01:33.750
+wir haben eine 'split' Funktion, die aus einem
+a zwei a's macht und eine Kombinationsfunktion,
+
+0:01:33.750,0:01:45.870
+die zwei b's in ein b umwandelt. Wenn wir
+uns dann angucken, wie das implementiert ist,
+
+0:01:45.870,0:01:55.620
+sehen wir genau, wir gucken als Erstes für eine
+Eingabe, ist sie simpel genug, dass wir sie sofort
+
+0:01:55.620,0:02:01.770
+lösen können, dann benutzen wir die Berechnung
+für den einfachen Fall und bekommen unser b,
+
+0:02:01.770,0:02:10.180
+wenn das nicht der Fall ist, splitten wir den
+Input in einen linken und einen rechten Teil und
+
+0:02:10.180,0:02:16.300
+kombinieren die rekursiven Aufrufe auf diesen
+beiden Teilen der 'combine' Funktion. Diese
+
+0:02:16.300,0:02:21.610
+rekursiven Aufrufe geben uns dann natürlich
+hier wieder ein b und das setzen wir in diese
+
+0:02:21.610,0:02:30.400
+'combine' Funktion ein, um unser Gesamtergebnis
+zu erhalten. Das ist im Prinzip das, was wir auch
+
+0:02:30.400,0:02:38.860
+in der vorherigen Aufgabe für die Summation
+schon gemacht haben, aber dieses Mal sollen
+
+0:02:38.860,0:02:45.100
+wir das halt jetzt mit diesem skeleton oder dieser
+higher order function lösen und wir sollen genau
+
+0:02:45.100,0:02:52.360
+diese vier Parameter für diese Funktion angeben
+und in diesem Fall von Summation stehen hier
+
+0:02:52.360,0:02:57.310
+auch nochmal für uns die Typen dran. Wir haben
+als Erstes das Prädikat, das überprüft, ob der
+
+0:02:57.310,0:03:03.530
+Fall einfach genug ist, um ihn direkt zu lösen,
+das hat hier Typ Liste von Integer nach Bool,
+
+0:03:03.530,0:03:13.000
+weil a hier Liste von Integern ist und b Integer,
+das heißt, das erste ist Liste von Integer nach
+
+0:03:13.000,0:03:22.000
+Bool, dann die Funktion, die einen simplen Fall
+löst, geht von Liste von Integern nach Integer,
+
+0:03:22.000,0:03:27.910
+dann haben wir die Funktionen, die eine Liste
+von Integern in zwei splittet, auf der wir dann
+
+0:03:27.910,0:03:33.010
+rekursive Aufrufe ausführen können, und am
+Ende dieser rekursiven Aufrufe kombinieren,
+
+0:03:33.010,0:03:43.870
+dafür brauchen wir eine Funktion, die zwei Integer
+zu einem Integer kombiniert. Hier unten haben
+
+0:03:43.870,0:03:49.960
+jetzt nochmal eine Lösung für die Aufgabe, wo wir
+das ohne die higher order function gemacht haben,
+
+0:03:49.960,0:03:57.220
+wo wir uns jetzt mal dran orientieren können
+und gucken, wie wir das in dieses Grundgerüst,
+
+0:03:57.220,0:04:02.800
+in dieser higher order function, übertragen
+können. Wenn wir jetzt vergleichen,
+
+0:04:02.800,0:04:08.950
+was die Struktur von dieser Implementierung
+hier mit dieser hier oben gemeinsam hat,
+
+0:04:08.950,0:04:17.050
+dann sehen wir schon, wir haben diese Kombination
+von 2 rekursiven Aufrufen und den split hier und
+
+0:04:17.050,0:04:24.580
+das haben wir ziemlich genau so hier auch, wir
+splitten irgendwie, haben zwei rekursive Aufrufe
+
+0:04:24.580,0:04:31.420
+und kombinieren die. Dann sehen wir schon,
+dass unsere Kombinationsfunktion hier zum
+
+0:04:31.420,0:04:45.490
+Beispiel einfach den linken rekursiven Aufruf
+und den rechten rekursiven Aufruf addiert,
+
+0:04:45.490,0:04:51.490
+was ja naheliegend ist, weil wir eine Summation
+durchführen. Natürlich müssen wir das nicht so
+
+0:04:51.490,0:04:59.560
+kompliziert aufschreiben mit Lambda hier,
+sondern wir können auch einfach das Plus
+
+0:04:59.560,0:05:03.520
+direkt hinschreiben, weil wir alles, was wir
+machen, mit dem Lambda sowieso nur ist, die
+
+0:05:03.520,0:05:10.510
+Parameter direkt weitergeben und dann können wir
+hier auch einfach den Operator selbst übergeben,
+
+0:05:10.510,0:05:19.330
+weil der eben auch entsprechend genau die
+passende Signatur hat. Dann das Splitten,
+
+0:05:19.330,0:05:28.840
+was wir hier machen sollen. Als Basiskonstrukt
+können wir hier auch wieder anfangen mit einem
+
+0:05:28.840,0:05:34.630
+Lambda. Wir haben den Parameter, das ist die
+Liste, die wir in zwei Teile splitten wollen und
+
+0:05:34.630,0:05:41.380
+wie wir hier splitten ist, wir splitten die Liste
+in der Mitte. Das n haben wir hier oben berechnet,
+
+0:05:41.380,0:05:49.210
+als Länge der Liste und dann können wir auch
+hier einfach jetzt das 'splitAt' benutzen, für
+
+0:05:50.620,0:06:02.680
+die Länge der Liste, dividiert durch zwei und die
+Liste selbst. Hier brauchen wir jetzt das Lambda,
+
+0:06:02.680,0:06:17.530
+wenn wir das natürlich zweimal hier verwenden,
+dann können wir nicht vereinfachten. Dann zunächst
+
+0:06:17.530,0:06:22.510
+gucken wir und vielleicht einfach mal an, was
+sind denn die einfachen Fälle. Hier in unserer
+
+0:06:22.510,0:06:27.190
+Definition haben wir gesehen, die einfachen
+Fälle sind, wenn die Liste leer ist, dann
+
+0:06:27.190,0:06:32.890
+kommt 0 raus und wenn die Liste nur ein Element
+hat, dann ist die Summe einfach genau dieses eine
+
+0:06:32.890,0:06:49.540
+Element. Das heißt, wir müssen hier prüfen, ob
+die länge der Liste kleiner oder gleich eins ist.
+
+0:06:52.060,0:06:56.980
+Das ist, was wir als einen simplen Fall
+behandeln. Dann müssen wir jetzt noch überlegen,
+
+0:06:58.180,0:07:04.810
+wie behandeln wir den Fall einfach. Wenn die Liste
+leer ist, kommt 0 raus, wenn sie ein Element hat,
+
+0:07:04.810,0:07:16.900
+kommt das Element raus. Das heißt, wir nehmen die
+Liste und prüfen, wenn die Liste leer, 'null xs'
+
+0:07:17.680,0:07:27.700
+gilt, dann soll irgendwas passieren, ansonsten
+irgendwas anderes. Hier ist genau der erste Fall,
+
+0:07:27.700,0:07:37.720
+dann kommt 0 raus und ansonsten nehmen wir
+'head' von xs und weil diese Funktion nur
+
+0:07:37.720,0:07:42.430
+genau aufgerufen wird, nachdem das hier gilt,
+wissen wir, dass diese Liste dann genau ein
+
+0:07:42.430,0:07:52.660
+Element haben muss, wenn sie nicht leer ist, weil
+das entsprechend hier oben die Art und Weise ist,
+
+0:07:52.660,0:07:56.410
+wie die Funktion verwendet werden. Das heißt, wir
+müssen hier nicht noch mal irgendwie prüfen, ob
+
+0:07:56.410,0:08:01.300
+das jetzt tatsächlich auch einelementig ist, die
+Liste, sondern wir können einfach davon ausgehen,
+
+0:08:01.300,0:08:05.890
+dass das stimmt, weil wir diese Überprüfung
+vorher gemacht haben, bevor wir diesen Teil
+
+0:08:05.890,0:08:15.040
+hier ausführen. Funktioniert das jetzt? Probieren
+wir einfach mal aus. Laden wir das ganze ghci,
+
+0:08:16.060,0:08:23.410
+können erst mal hier die 'main' Methode ausführen,
+die einen sehr einfachen Test hat, nämlich dass
+
+0:08:23.410,0:08:31.570
+die Summe der leeren Liste 0 ist. Das scheint
+zu funktionieren. Jetzt können wir überprüfen,
+
+0:08:31.570,0:08:40.370
+ob auch das Beispiel, was wir hier oben gegeben
+haben, funktioniert. Also die Summe von 2, 5 und
+
+0:08:40.370,0:08:51.920
+3 ist 10, wie zu erwarten. Wir können noch einen
+weiteren Test machen, zum Beispiel dieses. Das
+
+0:08:51.920,0:08:57.350
+sieht auch aus, als ob es das richtige Ergebnis
+ist und wenn wir noch etwas sicherer sein wollen,
+
+0:08:57.350,0:09:07.640
+können wir zum Beispiel hier prüfen, wir
+geben noch einen zusätzlichen Text aus,
+
+0:09:07.640,0:09:22.940
+das ist natürlich optional, wir prüfen einfach
+mit QuickCheck, ob für irgendeine Liste xs unsere
+
+0:09:22.940,0:09:30.800
+Funktion, die wir gerade geschrieben haben, mit
+unserer alten Funktion übereinstimmt. Wenn wir
+
+0:09:30.800,0:09:35.630
+wissen, dass unsere alte Lösung richtig war,
+können wir jetzt QuickCheck überprüfen lassen,
+
+0:09:35.630,0:09:42.995
+ob die beiden Funktionen immer das Gleiche tun.
+Wenn wir das also neu laden, sehen wir, dass
+
+0:09:42.995,0:09:51.200
+QuickCheck uns jetzt 100 Listen generiert hat und
+prüft das jeweils die Summe, die wir mit dieser
+
+0:09:51.200,0:09:59.120
+Funktion hier berechnen, immer die gleiche Summe
+ist, die wir hier berechnen. Weil wir ja letztes
+
+0:09:59.120,0:10:04.940
+Mal schon überprüft haben, so zu sagen, dass
+das die richtige Lösung ist, oder eine richtige
+
+0:10:04.940,0:10:11.120
+Lösung, können wir jetzt auch daraus schließen,
+dass das vermutlich auch richtig ist. Man kann
+
+0:10:11.120,0:10:16.860
+das natürlich noch ein paar Mal ausführen,
+QuickCheck generiert immer wieder 100 Listen,
+
+0:10:16.860,0:10:24.120
+wieder 100 neue und dann können wir relativ
+sicher sein, dass die beiden Funktionen das
+
+0:10:24.120,0:10:31.200
+Gleiche berechnen. Was ist jetzt der Vorteil von
+der einen gegenüber der anderen Art und Weise das
+
+0:10:31.200,0:10:39.960
+auszudrücken? Wenn wir es uns einfach angucken,
+das sieht zwar ein bisschen übersichtlicher aus,
+
+0:10:39.960,0:10:47.400
+vielleicht wenn man die Kommentare nicht dabei hat
+kürzer sogar, als die Lösung hier unten, man muss
+
+0:10:47.400,0:10:54.300
+natürlich dann im Kopf haben, was die divide and
+conquer Funktion eigentlich macht, aber man könnte
+
+0:10:54.300,0:11:02.370
+sagen okay, das ist jetzt vielleicht nicht ganz
+so sinnvoll sofort, aber spätestens, wenn man über
+
+0:11:02.370,0:11:05.880
+divide and conquer man dann noch andere Sachen,
+noch andere Algorithmen implementieren will,
+
+0:11:05.880,0:11:13.770
+mit dem gleichen Grundkonzept, wird es natürlich
+wichtig oder praktisch, dass man das Konzept über
+
+0:11:13.770,0:11:19.140
+diese higher order function wieder verwenden kann.
+Das werden wir auch in Zukunft noch sehen wie man
+
+0:11:19.140,0:11:28.050
+das dann für andere Sachen verwenden kann, diese
+divide and conquer Funktion. Da kann man jetzt im
+
+0:11:28.050,0:11:34.650
+Prinzip alle divide and conquer Algorithmen, die
+einen Input in genau zwei Teile teilen, die mit
+
+0:11:34.650,0:11:46.050
+zwei rekursiven Aufrufen arbeiten mit abdecken,
+mit diesem Muster. Dann gilt wie immer, wenn wir
+
+0:11:46.050,0:11:54.810
+in Haskell programmieren, dass wir diese sauberen,
+deklarativen Ansätze, die beschreiben, was
+
+0:11:54.810,0:12:05.880
+passiert, bevorzugen gegenüber den, die einfach
+die interessanten und die generischen Teile
+
+0:12:05.880,0:12:14.850
+vermischen und wem es nicht ganz klar ist, dass
+hier die divide and conquer stattfindet, sieht man
+
+0:12:14.850,0:12:20.860
+ja nicht auf den ersten Blick so ohne weiteres,
+oder dass es das sein soll, wohin gegen hier steht
+
+0:12:20.860,0:12:29.740
+es direkt im Namen, dann ist klar, was passiert.
+Das ist so der Hauptvorteil, den man hier hat.

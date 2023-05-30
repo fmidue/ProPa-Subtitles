@@ -1,0 +1,366 @@
+0:00:00.000,0:00:09.960
+In Aufgabe 21 sollen wir eine Funktion
+schreiben, die zwei Level in unserer Codierung
+
+0:00:09.960,0:00:18.180
+von Integerpaaren nach Integern vergleicht,
+also zwei von den game levels, mit denen
+
+0:00:19.200,0:00:25.260
+wir vorher gearbeitet haben und die Art und
+Weise, in der wir sie vergleichen sollen ist,
+
+0:00:25.260,0:00:33.810
+dass wir auf der Koordinaten range -10 bis 10
+prüfen sollen, ob es das gleiche Level ist,
+
+0:00:33.810,0:00:40.590
+aber ob im ersten Level eventuell schon ein paar
+Perlen vom Spieler eingesammelt worden sind,
+
+0:00:40.590,0:00:53.580
+also an allen Stellen ist das Level gleich, nur an
+manchen Stellen kann es im ersten Level Luft sein,
+
+0:00:53.580,0:00:59.490
+also Integerwert 4 und im zweiten Level
+ist da noch eine Perle an der Stelle,
+
+0:00:59.490,0:01:07.800
+die noch nicht eingesammelt wurde. Deswegen
+heißt es auch 'isLessFilledThan' also weniger mit
+
+0:01:07.800,0:01:18.690
+Perlen gefüllt als das zweite Level. Wir wollen
+auch, dass das ganze reflexiv ist, weil wir im
+
+0:01:18.690,0:01:25.080
+Prinzip eine partielle Ordnung definieren,
+die soll auch reflexiv sein, das heißt, x
+
+0:01:25.080,0:01:40.260
+soll weniger gefüllt sein als x. Wir schon mal den
+Funktionstyp gegeben, wir bekommen zwei von diesen
+
+0:01:40.260,0:01:51.840
+Levelfunktionen und sollen einen Wert 'Bool'
+zurückgeben. Dann geben wir unseren Inputs mal
+
+0:01:51.840,0:02:01.110
+Namen. Weil das Funktionen sind, wähle ich mal f
+und g und als ersten Schritt schreiben wir erstmal
+
+0:02:01.110,0:02:12.070
+eine Funktion, die prüft, ob zwei Level gleich
+sind auf der gegebenen range. Dazu können wir
+
+0:02:12.070,0:02:23.830
+uns eine Hilfsfunktion definieren, die nennen wir
+mal values von irgendeinem Level l, und da nehmen
+
+0:02:23.830,0:02:46.870
+wir einfach eine List Comprehension, nehmen x und
+y aus der entsprechenden range -10 und 10 und dann
+
+0:02:46.870,0:02:55.930
+bilden wir daraus Paare und gucken einfach was
+in dem Level an der Stelle für ein Integerwert
+
+0:02:55.930,0:03:02.590
+ist. Wir brauchen natürlich, wenn wir das
+vergleichen, nicht erst noch irgendwie in
+
+0:03:02.590,0:03:10.000
+pictures oder was auch immer um rechnen, sondern
+die Integerwerte sind hier schon aussagekräftig
+
+0:03:10.000,0:03:16.870
+genug. Wenn wir jetzt als ersten Schritt mal
+wissen wollen, ob zwei Level gleich sind, können
+
+0:03:16.870,0:03:21.190
+wir einfach vergleichen, ob die Werte, die das
+erste Level produziert, gleich den Werten sind,
+
+0:03:21.190,0:03:27.160
+die das zweite Level produziert. Weil ich hier
+die Reihenfolge der Werte in der Liste immer
+
+0:03:27.160,0:03:32.727
+gleich ist, wenn wir die Koordinaten derselben
+Art und Weise durchgehen, können wir sagen:
+
+0:03:32.727,0:03:47.420
+values von f sind values von g. Dann sind die
+beiden Level gleich. Probieren wir das mal aus,
+
+0:03:47.420,0:04:07.940
+wir definieren uns am besten mal ein paar
+Level (Integer, Integer nach Integer). Das
+
+0:04:07.940,0:04:10.880
+wäre zum Beispiel ein Level, was immer überall 0,
+
+0:04:10.880,0:04:18.830
+ist vielleicht nicht ganz so praktisch,
+fügen wir mal ein paar Werte ein.
+
+0:04:18.830,0:04:34.760
+Hier zum Beispiel einfach mal auf mit 1
+und 0 Werten was machen und sagen: Okay,
+
+0:04:34.760,0:04:54.610
+unser Level 1 hat da eine 3 hier eine 2, da eine
+1 und hier zum Beispiel auch eine 0. Hier habe ich
+
+0:04:54.610,0:05:02.230
+das pattern falschrum aufgeschrieben. Jetzt
+können wir uns noch ein zweites Level überlegen.
+
+0:05:02.230,0:05:16.420
+Das hat vielleicht 2, 3, 0, 0, ist also an
+manchen Stellen anders, an manchen Stellen
+
+0:05:16.420,0:05:31.750
+gleich. Jetzt können wir die im ghci einmal
+vergleichen mit unserer Funktion. Jetzt können
+
+0:05:31.750,0:05:43.390
+wir Level 1 'isLessFilled' Level 2 gucken und
+das prüft jetzt natürlich erst mal nur auf
+
+0:05:43.390,0:05:50.710
+Gleichheit und wie wir erwarten würden, kommt hier
+'False' raus, aber wenn wir Level 1 mit Level 1
+
+0:05:50.710,0:05:58.060
+vergleichen, kommt auf jeden Fall 'True' raus, so
+wie wir das erwarten würde. Das heißt, wir haben
+
+0:05:58.060,0:06:10.900
+schon mal irgendeine Form von Reflexivität hier
+drin. Was müssen wir jetzt tun oder was wollen
+
+0:06:10.900,0:06:19.620
+wir haben für unsere eigentliche Funktion?
+Wenn wir jetzt einen Level wie Level 1 haben,
+
+0:06:19.620,0:06:31.410
+wo wir als erstes Element eine Perle haben,
+jetzt sagen die wird in Level 3 eingesammelt,
+
+0:06:31.410,0:06:44.190
+da wird die 3 also quasi zu einer 4, dann soll
+Level 3 weniger mit Perlen gefüllt sein als Level
+
+0:06:44.190,0:06:50.520
+1. Da kommt im Moment noch 'False' raus, weil
+die sich genau in diesem Punkt unterscheiden
+
+0:06:50.520,0:06:57.900
+und das müssen wir jetzt beheben, dass das
+entsprechend zusätzlich noch akzeptiert ist.
+
+0:06:57.900,0:07:05.670
+Wie machen wir das? Mein Vorschlag wäre:
+Wir formen das hier erst mal leicht um,
+
+0:07:05.670,0:07:14.970
+gucken uns an was es eigentlich heißt, dass diese
+zwei Listen, was das ja ist, gleich sind. Wir
+
+0:07:14.970,0:07:28.110
+können nämlich zum Beispiel auch sagen, wir nehmen
+diese beiden Listen, zippen die und prüfen dann
+
+0:07:37.720,0:07:43.090
+zum Beispiel mit List Comprehension, die Werte,
+die wir hier rauskommen sind a und b und was der
+
+0:07:43.090,0:07:48.940
+Gleichheitstest der Listen jetzt im Wesentlichen
+macht ist zu sagen a soll gleich b sein und jetzt
+
+0:07:48.940,0:07:56.320
+bekommen wir eine Liste von Booleans raus und
+dann sagen wir mit der 'and' Funktion, das soll
+
+0:07:56.320,0:08:12.100
+für alle Werte, die wir hier berechnen 'True'
+sein. Also wenn wir 'and (True, True)' berechnen,
+
+0:08:12.100,0:08:17.470
+dan kommt da 'True' und wenn irgendwo ein Wert
+zwischendurch 'False' ist, kommt 'False' raus und
+
+0:08:17.470,0:08:26.350
+das ist genau dasselbe, wir prüfen elementweise,
+ob die beiden Listen die gleichen Werte haben und
+
+0:08:26.350,0:08:30.940
+jetzt wollen wir halt noch entsprechend eine
+zusätzliche elementweise Überprüfung machen,
+
+0:08:30.940,0:08:35.890
+nämlich nicht nur, ob sie beide gleich sind, die
+Elemente, sondern sie dürfen auch der erste vier
+
+0:08:35.890,0:08:43.990
+sein, mit Luft, und der zweite 3, also eine noch
+vorhandene Perle. Das ist die eine Ausnahme, die
+
+0:08:43.990,0:08:52.360
+wir jetzt hinzufügen, weil es eins von beiden sein
+kann, nehmen wir natürlich oder und sagen jetzt:
+
+0:08:52.360,0:09:07.030
+a ist 4, also Luft, und b ist 3, also
+wir sagen im zweiten Level, in Level g,
+
+0:09:07.030,0:09:22.480
+ist da eine Perle, wo in Level 1 Luft ist oder
+das Feld ist identisch. Wenn wir das jetzt laden,
+
+0:09:22.480,0:09:30.940
+kann man das ausprobieren. Das war unser Fall, der
+wahr sein muss, Level 3 soll weniger gefüllt sein
+
+0:09:30.940,0:09:36.520
+als Level 1, es ist an allen Stellen gleich,
+außer das es hier einmal Luft statt der Perle
+
+0:09:36.520,0:09:47.610
+hat und tatsächlich kommt raus, dass es wahr ist,
+Reflexivität scheint auch gegeben zu sein. Jetzt
+
+0:09:48.750,0:09:54.210
+können wir gucken, was zum Beispiel passiert,
+wenn wir in Level 3 nur eine Perle einsammeln.
+
+0:09:54.210,0:09:59.160
+Das sollte auch keinen Unterschied machen, weil
+wir nicht wollen, dass alle Perlen eingesammelt
+
+0:09:59.160,0:10:09.150
+sein müssen, sondern nur manche. Wenn wir
+das jetzt laden, dann kommt auch 'True' raus
+
+0:10:09.150,0:10:17.460
+und wenn wir das mit Level 2 vergleichen, da gibt
+es andere Unterschiede, diese Nullen passen nicht
+
+0:10:17.460,0:10:26.280
+mit denen zusammen und deswegen fällt es nicht
+in unserer Relation, die wir definieren wollen.
+
+0:10:28.380,0:10:37.860
+Das ist im Prinzip die direkte Lösung, man
+kann noch andere Lösungen finden, man könnte
+
+0:10:37.860,0:10:50.370
+zum Beispiel auch diese Bedingungen als Guards
+hier definieren, dass man zum Beispiel sagt:
+
+0:10:53.850,0:11:07.530
+Wir prüfen das hier hinten, ob das gilt
+und schreiben zum Beispiel Einsen in
+
+0:11:07.530,0:11:21.720
+die Liste und prüfen dann irgendwie die
+Länge von dieser Liste, ob das mit der
+
+0:11:21.720,0:11:33.690
+Länge von 'values' von f zusammenhängt, was
+ja genau auch die Länge dieser Liste ist,
+
+0:11:33.690,0:11:48.960
+also entsprechend 21 * 21, also nicht von
+dieser Liste, sondern von dieser Liste,
+
+0:11:48.960,0:12:03.300
+die das in Kombination berechnet. Das heißt,
+wir könnten auch entsprechend 21 * 21 Einsen
+
+0:12:03.300,0:12:18.750
+hier erwarten, gleich hier, oder
+wir sagen einfach: Das ist 411,
+
+0:12:18.750,0:12:30.960
+könnten statt der Länge auch die Summe nehmen,
+um das zu bestimmen. Das sind alles Sachen,
+
+0:12:30.960,0:12:45.120
+die funktionieren. Alternativ kann man auch die
+Überprüfung hier hinten noch umdrehen und sagen:
+
+0:12:54.640,0:13:04.270
+Das gilt jeweils nicht, indem wir einfach sagen:
+Wir filtern dann alle raus, die das verletzt
+
+0:13:04.270,0:13:17.470
+und dann muss entsprechend, wenn das gilt, die
+Liste leer sein und was man noch machen kann,
+
+0:13:17.470,0:13:23.830
+also das können wir noch mal ausprobieren,
+damit bekommen wir hier auch 'False' raus,
+
+0:13:23.830,0:13:29.410
+wenn wir hier Level 1 einsetzen
+bekommen wir 'True' raus. Das heißt,
+
+0:13:29.410,0:13:34.600
+hier filtern wir alle Paare, alle
+Koordinaten raus, die unsere Bedingungen,
+
+0:13:34.600,0:13:41.980
+die wir implementieren wollen, nicht
+erfüllen und wenn das keine sind dann
+
+0:13:46.560,0:13:52.020
+wissen wir, dass unsere Bedingung gilt. Wir können
+natürlich hier prinzipiell auch statt Einsen, die
+
+0:13:55.710,0:14:01.440
+a, b Paare reinschreiben, aber was wir jeweils
+merken ist, dass es uns nicht interessiert,
+
+0:14:01.440,0:14:08.820
+was hier drin steht und wir können deswegen auch
+diesen interessanten Haskell-Wert Klammer auf,
+
+0:14:08.820,0:14:20.880
+Klammer zu reinschreiben, der genau diesen
+Typ auch hat, dass der Unit-Wert vom Typ Unit
+
+0:14:20.880,0:14:30.840
+und das besondere ist, dass das ein Typ ist, der
+genau diesen einen Wert nur enthält. Den kann man
+
+0:14:30.840,0:14:35.520
+halt an solchen stellen verwenden, wo man einen
+Wert braucht, aber der Wert eigentlich egal ist.
+
+0:14:41.220,0:14:47.100
+Aber wir können letztendlich auch
+jeden anderen Wert reinschreiben
+
+0:14:47.100,0:14:59.370
+und auf diese Art und Weise kann man
+halt noch andere Lösungen konstruieren.
+
+0:14:59.370,0:15:11.040
+Aber im Grunde genommen gehen wir paarweise
+durch und prüfen letztendlich in irgendeiner
+
+0:15:11.040,0:15:17.400
+Form so eine Bedingung und gucken dann auf eine
+oder andere Art und Weise, ob die für alle gilt,
+
+0:15:17.400,0:15:22.350
+oder ob wir kein Gegenbeispiel finden
+konnten, je nachdem ob wir die Bedingungen
+
+0:15:22.350,0:15:31.560
+hier positiv oder negativ formulieren.
+Das sollte allen Lösungen gemein sein.
