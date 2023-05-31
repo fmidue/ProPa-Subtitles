@@ -21,19 +21,19 @@ Auswertung in Haskell antreibt. Um also zu
 verstehen, wie Funktionen in Haskell ausgewertet werden,
 
 00:00:38,960 --> 00:00:45,680
-läuft es darauf hinaus, wie Pattern-Matching funktioniert
-selbst wenn es aus der Syntax des Programms nicht offensichtlich ist,
+läuft es darauf hinaus, wie Pattern-Matching funktioniert.
+Selbst wenn aus der Syntax des Programms nicht offensichtlich ist,
 
 00:00:45,680 --> 00:00:49,760
 dass Pattern-Matching involviert ist. Wir
 haben bisher zum Beispiel List-Comprehensions gesehen,
 
 00:00:49,760 --> 00:00:53,440
-aber sie werden auch der Zucker für etwas sein, das
+aber sie werden auch nur syntaktischer Zucker für etwas sein, das
 ebenfalls vollständig von Pattern-Matching gesteuert wird.
 
 00:00:53,440 --> 00:01:00,320
-Wir haben Guards gesehen, aber auch sie sind der
+Wir haben Guards gesehen, aber auch sie sind syntaktischer
 Zucker für etwas, das direktes Pattern-Matching verwendet.
 
 00:01:00,320 --> 00:01:06,640
@@ -41,15 +41,15 @@ Pattern-Matching erklärt, wie Funktionen
 ausgewertet werden. Ich werde ein Video machen, in dem ich das
 
 00:01:06,640 --> 00:01:14,080
-zu diesem Beispiel mit Listen. Also noch einmal, wir
+an diesem Beispiel mit Listen zeige, also auch noch einmal
 den Wechsel von der expliziten Listendarstellung
 
 00:01:14,080 --> 00:01:19,280
-Repräsentation und der Nil-Cons-Repräsentation
+zur Nil-Cons-Repräsentation
 für Listen. Wir werden dies in Aktion sehen.
 
 00:01:19,280 --> 00:01:23,600
-Und dieses einfache Beispiel wird erklären
+Und dieses einfache Beispiel wird erklären,
 warum, wenn wir diesen Ausdruck haben,
 
 00:01:24,240 --> 00:01:30,960
@@ -57,12 +57,12 @@ wo wir eine Funktion haben, die etwas
 ähnlich einer Map-Funktion ist, und dann machen wir head
 
 00:01:30,960 --> 00:01:37,040
-von tail, dann müssen wir nicht wirklich alle Berechnungen durchführen
-all die Berechnungen durchführen, die man anfangs vielleicht
+von tail, dann müssen wir nicht wirklich all
+die Berechnungen durchführen, die man anfangs vielleicht
 
 00:01:37,040 --> 00:01:44,960
-denken könnte, wenn man nur sieht, dass diese f
-Funktion g auf alle ihre Listeneingabeelemente anwendet.
+denken könnte, wenn man nur sieht, dass diese Funktion 'f'
+das 'g' auf alle ihre Listeneingabeelemente anwendet.
 
 00:01:45,680 --> 00:01:49,600
 In manchen Kontexten könnte es jedoch der Fall sein, dass
@@ -70,7 +70,7 @@ wir nicht alle Berechnungen durchführen müssen, die
 
 00:01:49,600 --> 00:01:55,440
 hier stehen. Und auch die Reihenfolge, in der
-Dinge berechnet werden, kann von Interesse sein und ist
+Dinge berechnet werden, kann von Interesse sein und
 
 00:01:56,000 --> 00:02:01,680
 erklärt, warum wir uns mit dem Pattern-Matching beschäftigen.
@@ -82,14 +82,14 @@ Prinzipien erklären auch, wie die Lazy-Auswertung
 
 00:02:07,760 --> 00:02:14,800
 bei unendlichen Listen funktioniert, und wie wir denken können, wenn
-wir über die Effizienz der Auswertung nachdenken müssen
+wir über die Effizienz der Auswertung nachdenken müssen.
 
 00:02:14,800 --> 00:02:20,400
-was in dieser Vorlesung nicht das Hauptthema war,
-offensichtlich. Aber wenn wir als fortgeschrittener Haskell-Programmierer verstehen wollen
+Was in dieser Vorlesung nicht das Hauptthema war,
+offensichtlich. Aber wenn wir als fortgeschrittene Haskell-Programmierer verstehen wollen,
 
 00:02:20,400 --> 00:02:24,560
-fortgeschrittenen Haskell-Programmierer verstehen wollen, wie die Auswertung funktioniert,
+wie die Auswertung funktioniert,
 dann müssen wir über Pattern-Matching nachdenken.
 
 151 # slide
