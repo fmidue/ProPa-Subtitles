@@ -43,6 +43,7 @@ sind Listen auch nur algebraische Datentypen und
 das ist die Verbindung, die wir
 in dieser Vorlesung endlich herstellen sollten.
 
+143 # slide
 00:01:17,680 --> 00:01:23,440
 Stellen wir uns also vor, Haskell hätte noch
 keinen vordefinierten Listen-Datentyp hat.
@@ -104,7 +105,7 @@ natürlich dem Baum-Datentyp, den wir letzte Woche
 gesehen haben, wo wir Leaf und dann Node mit einem linken
 
 00:02:42,000 --> 00:02:49,200
-Erfolg, einem Label und einem rechten Erfolg. Wir haben nicht
+Nachfolger, einem Label und einem rechten Nachfolger. Wir
 haben hier keine zwei rekursiven Vorkommen für die Liste
 
 00:02:49,200 --> 00:02:54,480
@@ -120,15 +121,15 @@ sehr spezieller Baum, der immer nur nach rechts
 wächst. Dann ist es letztlich wirklich nur eine Liste.
 
 00:03:04,960 --> 00:03:09,600
-Das ist etwas, was wir durchaus einführen könnten
-einführen. Und dann, zum Beispiel,
+Das ist etwas, was wir durchaus einführen könnten.
+Und dann, zum Beispiel,
 
 00:03:09,600 --> 00:03:15,120
 könnte der Wert so aussehen. Das wäre dann
 eine Zwei-Elemente-Liste, die die Zahlen eins
 
 00:03:15,120 --> 00:03:20,800
-und zwei, weil wir die nicht leere Liste haben und die
+und zwei beinhaltet, weil wir die nicht leere Liste haben und die
 Bezeichnung des Knotens ist eins, und es gibt eine Nachfolgeliste
 
 00:03:21,520 --> 00:03:27,040
@@ -140,7 +141,7 @@ dies zusammen wäre eine Liste von Ints. Und wie wird
 man darüber rechnen? Durch Pattern-Matching. Also,
 
 00:03:33,280 --> 00:03:39,600
-wenn wir die Länge einer solchen Liste berechnen wollen
+wenn wir die Länge einer solchen Liste
 aus diesem Datentyp berechnen wollen, dann machen wir eine Fallunterscheidung.
 
 00:03:40,320 --> 00:03:46,880
@@ -148,8 +149,8 @@ Wir erhalten eine Liste von etwas zu Int. Das ist
 polymorph im Elementtyp hier, weil
 
 00:03:46,880 --> 00:03:52,160
-die Berechnung der Länge einer Liste nicht davon abhängt
-davon ab, was in der Liste gespeichert ist. Wir führen gerade
+die Berechnung der Länge einer Liste nicht davon abhängt,
+was in der Liste gespeichert ist. Wir führen gerade
 
 00:03:52,160 --> 00:03:56,640
 Struktur ein. Und dann hatten wir einen Fall für
@@ -171,9 +172,10 @@ gesamten Liste? Sie ist eins plus die Länge der restlichen
 Liste. Das ist eine sehr einfache Definition, die
 uns zeigt, wie wir die Länge einer solchen Liste berechnen können.
 
+144 # slide
 00:04:23,920 --> 00:04:29,600
 Nun, der Punkt ist, dass das, was wir auf der
-vorherigen Folie gesehen haben, ist genau das, wie Listen tatsächlich
+vorherigen Folie gesehen haben, genau das ist, wie Listen tatsächlich
 
 00:04:29,600 --> 00:04:34,640
 in Haskell implementiert sind. Wir haben einfach nicht
@@ -224,7 +226,7 @@ Auftreten einer Liste von a, die nun natürlich auch mit
 dieser Listensyntax geschrieben wird. Aber anders
 
 00:05:39,440 --> 00:05:46,480
-als diese... anders als diese Namen der Operatoren
+als diese Namen der Operatoren
 im Daten- und Typkonstruktor, ist dies genau
 
 00:05:46,480 --> 00:05:51,840
@@ -323,13 +325,14 @@ diesem rechtsassoziativen Operator, wobei immer,
 nach links, wir schreiben infix, haben wir das
 aktuelles Element, und dann die restliche Liste.
 
+145 # slide
 00:08:06,400 --> 00:08:13,680
 Schauen wir uns also einige Definitionen von Funktionen
-auf Listen, die wir bisher schon verwendet haben,
+auf Listen an, die wir bisher schon verwendet haben,
 
 00:08:13,680 --> 00:08:17,120
 aber noch nicht die Definitionen
-von. Dies ist die Funktion length.
+davon. Dies ist die Funktion length.
 
 00:08:17,120 --> 00:08:23,920
 Und sie ist genauso definiert wie vor zwei Folien, wo
@@ -545,7 +548,7 @@ Operation in der Länge der ersten Liste. Und
 
 00:13:32,160 --> 00:13:40,320
 zum Beispiel auch die Funktion "last" oder die Indexierung der Liste
-Indizierung ist linear. Die Funktion "last" ist linear
+ist linear. Die Funktion "last" ist linear
 
 00:13:40,320 --> 00:13:46,320
 und die Länge der Eingabeliste, und die
@@ -563,17 +566,18 @@ des Listenindexes, den Sie betrachten.
 Wenn Sie eine Liste haben und einen Index an Position n,
 dann ist das O(n) in Bezug auf die Laufzeitkosten.
 
+146 # slide
 00:14:16,240 --> 00:14:22,720
 Basierend auf der Zip-Funktion auf der vorherigen Folie,
 habe ich bereits darauf hingewiesen, dass wir manchmal die Wahl haben
 
 00:14:22,720 --> 00:14:28,720
 wie wir unsere Definitionen strukturieren. Das gilt natürlich,
-gilt das für alle Funktionen auf beliebigen Datentypen,
+für alle Funktionen auf beliebigen Datentypen,
 
 00:14:28,720 --> 00:14:35,280
 aber hier können wir dies speziell bei
-Listen. Und das ist ein typischer Fall, wo man
+Listen sehen. Und das ist ein typischer Fall, wo man
 
 00:14:35,280 --> 00:14:39,360
 dies insbesondere dann in Betracht zieht, wenn man eine
@@ -695,6 +699,7 @@ Unterscheidung auf das Listenelement und das Funktionsargument
 wird einfach weitergegeben und dort
 verwendet, wie wir auf den nächsten Folien sehen werden.
 
+147 # slide
 00:17:40,720 --> 00:17:43,680
 Betrachten wir die map-Funktion.
 Als ich sie vor zwei
@@ -795,6 +800,7 @@ Knoten, während wir die Funktion angewendet haben, um die
 Label an diesem Knoten anwenden, und wir müssen zwei rekursive Aufrufe
 der gleichen Funktion mit der Mapping-Funktion.
 
+148 # slide
 00:20:13,360 --> 00:20:20,480
 Ein weiteres Beispiel. Vorhin erwähnten wir, als wir
 über Funktionen höherer Ordnung gesprochen haben, ist die Funktion foldl1
