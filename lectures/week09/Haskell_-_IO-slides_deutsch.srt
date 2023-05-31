@@ -138,17 +138,18 @@ Merkmale, die aus imperativen Sprachen bekannt sind, können
 in einer syntaktisch ähnlichen Weise integriert werden.
 Aber das ist nicht etwas, was ich hier tun werde.
 
+154 # slide
 00:03:31,360 --> 00:03:36,800
 Also, selbst in einer deklarativen Sprache, sei es
 Haskell, oder ab nächster Woche auch Prolog,
 
 00:03:36,800 --> 00:03:41,520
-sollte es einen Weg geben, imperative Befehle einzubetten
-Befehle. Weil wir vielleicht etwas tun wollen
+sollte es einen Weg geben, imperative Befehle einzubetten.
+Weil wir vielleicht etwas tun wollen
 
 00:03:41,520 --> 00:03:45,840
 wie etwas auf dem Bildschirm unseres
-unserem Computer ausgeben, oder wir wollen den Benutzer fragen
+Computers ausgeben, oder wir wollen den Benutzer fragen
 
 00:03:46,720 --> 00:03:51,600
 "Was soll ich tun?", also nach einer
@@ -302,6 +303,7 @@ imperativen Code zu denken, die es in einer
 vollständig imperativen Sprache. Das ist es, worauf Simon
 auf der vorigen Folie angesprochen hat.
 
+155 # slide
 00:07:24,560 --> 00:07:31,440
 Hier ist also das erste, sehr einfache Beispiel. Wir
 wollen das "Hallo Welt" der Haskell-Do-Notation.
@@ -324,7 +326,7 @@ in der Autotool-Aufgabe wird hier die
 
 00:07:56,720 --> 00:08:03,440
 Testsuite hier geschrieben. Jetzt haben wir stattdessen
-haben wir eine Eingabe. Diese Notation ist also für:
+eine Eingabe. Diese Notation ist also für:
 
 00:08:03,440 --> 00:08:11,440
 Lesen eines Wertes vom Benutzer und Binden des Ergebnisses
@@ -418,6 +420,7 @@ und sie werden in einer bestimmten Reihenfolge ausgeführt, die nicht
 lazy evaluation, sondern wirklich durch das
 syntaktische Erscheinung in diesem sequenziellen do-Block.
 
+156 # slide
 00:10:28,480 --> 00:10:32,880
 Das Prinzip hinter dieser Integration und auch
 wo die Garantien für das mathematische
@@ -538,6 +541,7 @@ wie es oft in C-Programmen gemacht wird, die einen
 Exit-Code an die Shell zurückgeben. Aber normalerweise verwenden wir in Haskell,
 benutzen wir normalerweise IO und dieses leere Tupel ().
 
+157 # slide
 00:13:22,480 --> 00:13:29,360
 Woher bekommen wir solche IO-Werte oder IO-Befehle
 her? Es muss einige vordefinierte Primitive geben
@@ -710,6 +714,7 @@ ist eigentlich eine Funktion. Wir geben ihr ein Argument von
 eines Typs, der "anzeigbar" ist (zum Beispiel Typ a,
 wenn wir "Show a" haben) und dann tut es etwas.
 
+158 # slide
 00:17:48,240 --> 00:17:54,080
 Wir brauchen eine Möglichkeit, diese kleinen IO
 Berechnungen zu kombinieren. Wir wollen komplexere
@@ -806,6 +811,7 @@ Int. Wenn der Befehl i von Typ IO Tree of something war,
 dann wird xi Tree of whatever sein und kann
 im Rest des do-Blocks verwendet werden.
 
+159 # slide
 00:20:30,400 --> 00:20:34,880
 Was ist mit dem do-Block als Ganzes?
 Er hat auch einen IO-Typ. Andernfalls,
@@ -944,7 +950,7 @@ sicherzustellen, dass reiner Code nicht irgendwie mit
 
 00:23:56,560 --> 00:24:04,560
 Effekten oder durch effektbehafteten Code zerstört wird.
-Code. Es ist nicht möglich, eine Funktion zu haben, die
+Es ist nicht möglich, eine Funktion zu haben, die
 
 00:24:04,560 --> 00:24:13,040
 von IO a nach a geht. Nie und nimmer. Das ist nicht
@@ -956,7 +962,7 @@ ist diese explizite Sequenzialisierung und diese
 
 00:24:19,840 --> 00:24:26,720
 Bindung über Variablen innerhalb von Do-Blöcken. Es
-gibt es keine andere Möglichkeit, den Wert aus einer
+gibt keine andere Möglichkeit, den Wert aus einer
 
 00:24:26,720 --> 00:24:32,240
 IO-Berechnung zu erhalten. Wenn wir dies tun könnten, dann wären
@@ -980,7 +986,7 @@ nicht zugreifen können, weil wir dem Compiler
 
 00:24:56,240 --> 00:25:00,800
 sagen müssen, dass wir diese unsicheren
-unsichere Funktionen erlauben wollen. Und dann gibt es einen Workaround.
+Funktionen erlauben wollen. Und dann gibt es einen Workaround.
 
 00:25:00,800 --> 00:25:06,160
 Wir können Dinge wie diese tun: auf etwas zugreifen
@@ -1022,6 +1028,7 @@ aus den Übungen des letzten Jahres anschaut, findet auch
 komplexere Beispiele als die Hauptfunktion Lesen, Drucken
 Produktfunktion, die ich hier bisher gezeigt habe.
 
+160 # slide
 00:26:20,160 --> 00:26:26,800
 Abschließend und zum Abschluss möchte ich noch einmal
 zu diesem Punkt über die Verwendung von Abstraktionskonzepten
@@ -1075,7 +1082,7 @@ Wir brauchen keine Unterstützung des Compilers für eine
 while-Schleife unterstützen, denn wir können sie bereits
 
 00:27:36,880 --> 00:27:44,080
-als eine Funktion höherer Ordnung implementieren können. So würde dies
+als eine Funktion höherer Ordnung implementieren. So würde dies
 aussehen. Lassen Sie mich das in einer Minute erläutern.
 
 00:27:44,080 --> 00:27:49,440
