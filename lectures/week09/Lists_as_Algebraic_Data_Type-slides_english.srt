@@ -1,0 +1,904 @@
+142 # slide
+00:00:01,840 --> 00:00:10,160
+So, welcome back. Last week we talked about
+algebraic datatypes, and specifically about
+
+00:00:10,720 --> 00:00:17,120
+computation by pattern matching which of course
+was just another way, an additional day to
+
+00:00:17,760 --> 00:00:23,520
+programming by case distinction. It is that this
+time, case distinction was not via if-then-else
+
+00:00:23,520 --> 00:00:31,360
+or guards, but via matching against the different
+cases that the value of the defined algebraic
+
+00:00:31,360 --> 00:00:40,400
+datatype can take. We will continue with this
+today for. Insofar as that, later, we will
+
+00:00:40,400 --> 00:00:45,920
+look a bit more briefly at how pattern
+matching drives computation in Haskell
+
+00:00:45,920 --> 00:00:52,560
+in general. Basically, also how lazy evaluation
+is ultimately driven by pattern-matching. But
+
+00:00:52,560 --> 00:00:58,320
+before doing that we will actually take a look
+at lists, which so far in the lecture have got
+
+00:00:58,320 --> 00:01:04,320
+some special treatment via specific syntax, via
+list comprehensions, which is not available at
+
+00:01:04,320 --> 00:01:09,680
+arbitrary other types. But ultimately,
+lists are also just algebraic datatypes and
+
+00:01:09,680 --> 00:01:13,920
+that's the connection that we
+should finally make in this lecture.
+
+00:01:17,680 --> 00:01:23,440
+So, let us imagine that Haskell didn't
+yet have a predefined list datatype.
+
+00:01:25,520 --> 00:01:28,160
+Then we would define one ourselves.
+We certainly could do that
+
+00:01:28,880 --> 00:01:33,520
+using the kind of the definition we saw
+last week. And since lists of polymorphic,
+
+00:01:33,520 --> 00:01:37,440
+this could look something like this. We
+define a list datatype. It's parameterized
+
+00:01:37,440 --> 00:01:42,160
+over a parameter because we want to have lists
+of numbers, list of characters, etc. And then
+
+00:01:42,160 --> 00:01:48,240
+there are two cases: There is the empty list, and
+for historical reasons, this is often called Nil.
+
+00:01:49,200 --> 00:01:55,920
+That would be one of the possible constructors for
+arbitrarily lists. And it doesn't carry parameter.
+
+00:01:56,640 --> 00:02:01,040
+And on the other hand, there would be a binary
+constructor for the case of non-empty lists. And
+
+00:02:01,040 --> 00:02:09,600
+what's should this be called? It's often called
+Cons, for constructor. In a way, if list is the
+
+00:02:09,600 --> 00:02:16,320
+first datatype that can imagine, then maybe simply
+using constructor as the name of the constructor
+
+00:02:16,320 --> 00:02:18,560
+does make sense. Nil and Cons: Nil is the empty
+list constructor for constructing an empty list.
+
+00:02:18,560 --> 00:02:24,800
+Cons is for constructing non-empty list. And
+then what are the arguments? An element of the
+
+00:02:24,800 --> 00:02:29,200
+carrier type, of the type (a) that we want
+to see elements of in the list and then the
+
+00:02:29,200 --> 00:02:35,440
+rest list. And then a recursive occurrence of
+what? Of a list of "a"s. This is very similar,
+
+00:02:35,440 --> 00:02:42,000
+of course, to the tree datatype we saw last
+week, where we had Leaf and then Node with a left
+
+00:02:42,000 --> 00:02:49,200
+success, a label, and a right success. We don't
+have two recursive occurrences here for the list
+
+00:02:49,200 --> 00:02:54,480
+because it is not a Tree, it is just a list. So,
+it has this slanting to the right. It always has
+
+00:02:54,480 --> 00:02:58,800
+just the right successor. Of course, we could
+also draw it as a tree, but this would be a
+
+00:02:58,800 --> 00:03:04,240
+very specific tree which always just grows to the
+right. Then it's really ultimately just a list.
+
+00:03:04,960 --> 00:03:09,600
+That is something we could certainly
+introduce. And then, for example,
+
+00:03:09,600 --> 00:03:15,120
+the value could look like this. This would be
+a two-element list containing the numbers one
+
+00:03:15,120 --> 00:03:20,800
+and two because we have the non-empty list and the
+label of the node is one, and there is a successor
+
+00:03:21,520 --> 00:03:27,040
+list which has the specific element two, and then
+as a successor list which is the empty list. And
+
+00:03:27,040 --> 00:03:33,280
+this together would be a list of Ints. And how
+to compute over this? By pattern-matching. So,
+
+00:03:33,280 --> 00:03:39,600
+if we want to compute the length of such a list
+from this datatype, then we do a case distinction.
+
+00:03:40,320 --> 00:03:46,880
+We get a list of something to Int. That is
+polymorphic in the element type here because
+
+00:03:46,880 --> 00:03:52,160
+computing the length of a list doesn't depend
+on what is stored inside the list. We are just
+
+00:03:52,160 --> 00:03:56,640
+introducing structure. And then we had a case for
+the empty list. And of course, the length of this
+
+00:03:56,640 --> 00:04:02,160
+is zero. And for the case of the non-empty list
+and the specific element which is in the first
+
+00:04:02,160 --> 00:04:06,720
+position in the list is irrelevant for this. So,
+we have this anonymous variable. But we have a
+
+00:04:06,720 --> 00:04:11,040
+rest list. And then what is the length of the
+whole list? It's one plus the length of the rest
+
+00:04:11,040 --> 00:04:18,960
+list. It is a very simple definition which would
+give us how to compute the length of such a list.
+
+00:04:23,920 --> 00:04:29,600
+And well, now the point is that what we saw on the
+previous slide is exactly how lists are actually
+
+00:04:29,600 --> 00:04:34,640
+implemented in Haskell. We simply haven't
+taken this perspective so far. But that's
+
+00:04:34,640 --> 00:04:41,680
+how it is. So, ultimately, somewhere deep
+in the standard definitions of Haskell, so,
+
+00:04:41,680 --> 00:04:46,960
+in code that we don't see as a user usually,
+we would find something like this. Of course,
+
+00:04:46,960 --> 00:04:52,480
+it looks a bit strange because it now doesn't have
+List and Nil and Cons, but rather some symbols.
+
+00:04:52,480 --> 00:04:58,320
+But these are the symbols that we are used to
+from list syntax in Haskell. So, essentially,
+
+00:05:02,000 --> 00:05:06,400
+lists are also just introduced as algebraic
+datatypes. So, there is the type of list (a)
+
+00:05:06,400 --> 00:05:11,360
+and it's written with these square brackets. There
+are two cases: one case is the Nil constructor,
+
+00:05:11,360 --> 00:05:16,560
+but it is not written as Nil, it is written
+as the empty list as we have seen it so far,
+
+00:05:16,560 --> 00:05:23,040
+and then there is the Cons constructor. And for
+this actually, the simple colon (:) is used. This
+
+00:05:23,040 --> 00:05:28,160
+is used as a prefix operator here. But it can also
+be written infix. And what are the arguments of
+
+00:05:28,160 --> 00:05:33,680
+this construct? There is, first, just an element
+of the type a and then there is a recursive
+
+00:05:33,680 --> 00:05:39,440
+occurrence of a list of a which now, of course, is
+also written with this list type syntax. But other
+
+00:05:39,440 --> 00:05:46,480
+than this… other than these names of the operators
+in the data and type constructor, this is exactly
+
+00:05:46,480 --> 00:05:51,840
+the same definition as on the previous slide.
+And this is how lists are defined in Haskell.
+
+00:05:52,480 --> 00:05:57,200
+It is just not something that's exposed to the
+programmer explicitly. You will never see this
+
+00:05:57,200 --> 00:06:00,960
+definition in this form because lists are
+already there. We don't have to define them
+
+00:06:00,960 --> 00:06:07,760
+ourselves. Then what does this mean? Lists as we
+have seen them so far. Usually, so far, we have
+
+00:06:07,760 --> 00:06:11,760
+used syntax like this. So, in square brackets,
+the elements are listed one after another with a
+
+00:06:11,760 --> 00:06:19,120
+comma. This is simply syntactic sugar for actually
+this expression, which says well it's a Cons,
+
+00:06:19,120 --> 00:06:25,280
+so it is not the empty list. It is a non-empty
+list. It has some current element which is the
+
+00:06:25,280 --> 00:06:30,160
+first argument of this colon, now written
+infix syntax. It is the first list element,
+
+00:06:30,160 --> 00:06:34,400
+so it should be the 1. Then there is the
+rest list which is, again, a non-empty list
+
+00:06:34,400 --> 00:06:38,720
+because it contains the 2. And well, how is
+it represented in this algebraic datatype
+
+00:06:38,720 --> 00:06:44,320
+syntax? It is a non-empty list. So, it has
+this Cons constructor. It has the current
+
+00:06:44,880 --> 00:06:51,040
+element 2. And it has the rest list. And this
+rest list is the empty list. So, of course, we
+
+00:06:51,040 --> 00:06:55,360
+might prefer to write it like this, and the
+compiler supports us writing it like this.
+
+00:06:55,360 --> 00:07:00,880
+But under the hood, actually, this list
+is represented like this. And then,
+
+00:07:01,840 --> 00:07:07,600
+since this operator is predefined to be right
+associative, we don't need those brackets here.
+
+00:07:07,600 --> 00:07:12,160
+Actually, we can also write this list [1,2] in
+this form. And this is completely equivalent. So,
+
+00:07:12,160 --> 00:07:18,640
+the compiler will silently convert between
+these two notations wherever needed.
+
+00:07:20,480 --> 00:07:26,160
+And this notation, of course, is the one that
+we use for pattern-matching because and then we
+
+00:07:26,160 --> 00:07:33,440
+want to decompose a list into its head and rest
+list in the pattern, then we can nicely do this
+
+00:07:33,440 --> 00:07:39,280
+with this just as, in the previous week, we did it
+for the nodes of a Tree, or on the previous slide,
+
+00:07:39,280 --> 00:07:47,680
+we could match against the Cons element
+and rest list. But for this, we need to
+
+00:07:47,680 --> 00:07:53,520
+know about this connection between the lists as
+we have seen them so far and this datatype view
+
+00:07:53,520 --> 00:07:58,240
+of lists and how this is realized, namely with
+this right associative operator, where always,
+
+00:07:58,240 --> 00:08:03,640
+to the left, we write infix, we have the
+current element, and then the rest list.
+
+00:08:06,400 --> 00:08:13,680
+So, let us look at some definitions of functions
+on lists that we have already used so far,
+
+00:08:13,680 --> 00:08:17,120
+but not seen the definitions
+of. This is the length function.
+
+00:08:17,120 --> 00:08:23,920
+And it is defined as just as two slides ago where
+I did with the Nil-Cons syntax for lists, but now
+
+00:08:23,920 --> 00:08:29,200
+it's actually using the symbolic syntax. So, we
+have the base case which matches simply against
+
+00:08:29,200 --> 00:08:34,240
+this nullary construct of the empty list. And of
+course, the length of an empty list is zero. This
+
+00:08:34,240 --> 00:08:40,960
+is a polymorphic list, and we don't care about the
+element type. And the empty list is mapped to 0.
+
+00:08:40,960 --> 00:08:47,200
+And what about the non-empty list? The non-empty
+list will definitely be decomposable into some
+
+00:08:47,200 --> 00:08:52,480
+head, which is ignored here because we don't
+care about the element. And then this symbolic
+
+00:08:52,480 --> 00:08:58,000
+Cons constructor and the rest list. And then, the
+right-hand side is 1 + length of the rest list.
+
+00:09:00,640 --> 00:09:04,880
+Many list functions, when we look at their
+definitions, will be defined like this with the
+
+00:09:05,440 --> 00:09:10,000
+empty list case and exactly will non-empty
+list case. We can also have additional cases.
+
+00:09:10,000 --> 00:09:16,960
+For example, we could have explicit patterns…
+explicit rules for singleton lists or lists
+
+00:09:16,960 --> 00:09:23,920
+consisting of exactly 2 elements. And then, maybe
+a recursive case for lists of length at least two
+
+00:09:23,920 --> 00:09:28,480
+or something. But often we will have exactly these
+two cases: an empty list and a non-empty list.
+
+00:09:31,120 --> 00:09:36,000
+Some other function: the “append” function,
+also the (++) operator, when written infix,
+
+00:09:36,000 --> 00:09:41,440
+actually. But here I define “append” as a prefix
+function that takes two lists over some type
+
+00:09:41,440 --> 00:09:46,080
+and returns a list of the same type. How is
+it defined? One possibility to define it is
+
+00:09:46,080 --> 00:09:50,960
+by case distinction on the first argument,
+so the first list can be empty, and then,
+
+00:09:51,680 --> 00:09:55,520
+if we append that with some other list,
+then we get simply get that other list.
+
+00:09:55,520 --> 00:10:00,400
+Or the first this could be non-empty, then
+it decomposes into first element and some
+
+00:10:00,400 --> 00:10:08,400
+rest list. And then appending this with a new
+or arbitrary other list is what? It is a list
+
+00:10:08,960 --> 00:10:17,520
+that starts with x and then has a recursive call
+for computing the appending of the rest list and
+
+00:10:17,520 --> 00:10:24,000
+the second list. What we see here is that we can
+use this data constructor, not just in the pattern
+
+00:10:24,560 --> 00:10:30,000
+for deconstructing, but also for constructing
+new lists, which is exactly how we used the
+
+00:10:30,000 --> 00:10:35,920
+constructors of the Tree type last week. We
+had Nodes and leaves (Leafs) on the left as
+
+00:10:35,920 --> 00:10:42,240
+pattern parts, where we decided which case we
+should apply. And when we constructed new Trees,
+
+00:10:42,800 --> 00:10:47,600
+for example, in the insertion example, then
+we also used Leaf and Node on the right-hand
+
+00:10:47,600 --> 00:10:51,680
+side for constructing new Trees. The same
+happens here with these symbolic constructors.
+
+00:10:53,520 --> 00:10:58,720
+Or for example, the head function which, so far
+for us, has been a given function that comes from
+
+00:10:58,720 --> 00:11:03,440
+somewhere. Where is it defined and how? It has
+a polymorphic type. We know this type already.
+
+00:11:03,440 --> 00:11:07,840
+How is it defined? It has only one case with
+the partial function. Actually, it will fail
+
+00:11:07,840 --> 00:11:11,840
+if we give it the empty list, which we
+might also have experienced already. And
+
+00:11:11,840 --> 00:11:19,120
+why is that? Because it has only one case of the
+expected two cases for list processing functions.
+
+00:11:19,120 --> 00:11:23,760
+The head function has only one case, namely the
+case for the non-empty list. What does it do?
+
+00:11:23,760 --> 00:11:29,920
+It matches against the non-empty list, ignores the
+rest, and simply returns what it found as the left
+
+00:11:29,920 --> 00:11:35,120
+argument of the Cons constructor. And if we call
+this on the empty list, we get a runtime error.
+
+00:11:37,840 --> 00:11:42,240
+The zip function was also, so far, a primitive
+that we simply provided and didn't look at the
+
+00:11:42,240 --> 00:11:47,280
+definition of. It could be defined like this.
+It takes two lists of possibly different types,
+
+00:11:47,280 --> 00:11:52,800
+returns a list of pairs. How does it do that?
+It does pattern-matching. And one possibility
+
+00:11:53,360 --> 00:11:59,040
+to go about this is to, first, match against the
+case where both lists all non-empty. The first one
+
+00:11:59,840 --> 00:12:03,680
+decomposes into a first element
+x and some rest, and the second
+
+00:12:03,680 --> 00:12:07,680
+decomposes into a list non-empty list
+with the first element y and some rest.
+
+00:12:07,680 --> 00:12:14,240
+And what to return then? The pair (x,y)
+and whatever zip returns for the two rest
+
+00:12:15,520 --> 00:12:22,080
+lists. And then in this case, the can have another
+default rule which applies in all situations where
+
+00:12:22,080 --> 00:12:27,120
+we don't have this first situation where both
+lists are at least one element long. And in that
+
+00:12:27,120 --> 00:12:32,240
+case, we want to return simply the empty list
+because then, if we don't match this pattern
+
+00:12:32,240 --> 00:12:39,440
+where both elements are of this form, then one
+of them will be the empty list. And then we can
+
+00:12:39,440 --> 00:12:45,280
+ignore whatever actually are the concrete lists
+that we get, and simply return the empty list.
+
+00:12:48,160 --> 00:12:57,840
+Something else that becomes apparent her now
+is that this recursion pattern or the way
+
+00:12:57,840 --> 00:13:03,360
+that lists are seen as special Trees which
+lean in one direction has consequences for
+
+00:13:03,920 --> 00:13:07,840
+how expensive certain computations will be.
+So, what we see here in the “append” function,
+
+00:13:07,840 --> 00:13:13,520
+for example, is that it takes as many steps to
+compute the append as: the first element has
+
+00:13:13,520 --> 00:13:19,200
+elements. We see the recursions on the first
+list. So, the second element is never really
+
+00:13:19,840 --> 00:13:26,480
+examined, but the append is as costly as the first
+list is long because that's how many steps we have
+
+00:13:26,480 --> 00:13:32,160
+to make. And that means that append is a linear
+operation in the length of the first list. And
+
+00:13:32,160 --> 00:13:40,320
+for example, also, the “last” function or the list
+indexing is linear. The “last” function is linear
+
+00:13:40,320 --> 00:13:46,320
+and the length of the input list, and the index
+function… so, the exclamation mark (!!) that I
+
+00:13:47,280 --> 00:13:56,160
+usually do not want you to use in the exercises…
+That operator takes as many steps as long…
+
+00:13:57,520 --> 00:14:04,080
+at least proportional to the number of
+the list index that you're looking at.
+
+00:14:04,640 --> 00:14:16,240
+If you have a list and an index at position n,
+then that will be O(n) in terms of runtime cost.
+
+00:14:16,240 --> 00:14:22,720
+Based on the zip function on the previous slide,
+I already commented that we have sometimes choice
+
+00:14:22,720 --> 00:14:28,720
+how to structure our definitions. Of course,
+that applies to all functions on any datatypes,
+
+00:14:28,720 --> 00:14:35,280
+but here we can specifically see this on
+lists. And that's a typical case where one
+
+00:14:35,280 --> 00:14:39,360
+considers this in particular if one has a
+function that operate on more than one list.
+
+00:14:39,360 --> 00:14:45,920
+So, for the zip function we could, maybe as the
+first attempt, have written it like this where we,
+
+00:14:45,920 --> 00:14:51,760
+first, make case distinction on the first argument
+of the list and ask if this list is empty,
+
+00:14:51,760 --> 00:14:56,240
+and we don't care about the second one, then
+we get the empty list. And if the first list
+
+00:14:56,240 --> 00:15:01,200
+is not empty and the second is empty, we also get
+the empty list. And only then, we have the fully
+
+00:15:01,200 --> 00:15:07,600
+recursive case where both lists are non-empty.
+That's one way to write this definition. We
+
+00:15:07,600 --> 00:15:12,160
+could also have used anonymous variables here
+and here, of course. But still, we would have
+
+00:15:12,160 --> 00:15:18,320
+had three cases. And the version from the previous
+slide is completely equivalent. By, first,
+
+00:15:19,280 --> 00:15:24,800
+checking against this case, making this our first
+choice. Remember, if we have several equations for
+
+00:15:24,800 --> 00:15:30,400
+a function, they are tried from top to bottom. So,
+if we move this to the first place, then we would,
+
+00:15:30,400 --> 00:15:37,520
+first, check against the case that both of the
+lists on non-empty. And if that is not the case,
+
+00:15:37,520 --> 00:15:42,400
+we would anyway run into one of these cases. We
+might as well say where all the other cases return
+
+00:15:42,400 --> 00:15:49,760
+the empty list, as was done on the previous slide.
+This is actually not, at all, somehow only working
+
+00:15:49,760 --> 00:15:55,920
+for finite lists. Both versions, the one from
+the previous slide, and also the one given here,
+
+00:15:56,800 --> 00:16:03,680
+work just fine with infinite lists. That is
+because they will only consume the lists as
+
+00:16:03,680 --> 00:16:11,280
+far as needed. For example, if we have one
+or two in the list, then often we will apply
+
+00:16:12,480 --> 00:16:17,040
+this case which, on the previous slide, was
+the first one, and here comes after we haven't
+
+00:16:17,040 --> 00:16:21,440
+found an empty list in the first or second
+position, and only if one of the lists
+
+00:16:21,440 --> 00:16:26,160
+is actually finite, then after some finite
+numbers of steps we would end up in one of
+
+00:16:26,160 --> 00:16:30,080
+these cases where we return the empty list. But
+if, for example, both of the lists are infinite,
+
+00:16:30,080 --> 00:16:36,640
+then we would always apply this function and
+return an infinite list. And if there is a context
+
+00:16:36,640 --> 00:16:41,920
+which takes only the first 200 values from the
+empty list, then also the zip function would only
+
+00:16:42,880 --> 00:16:48,960
+descend up to 200 elements deep into its two
+arguments because that's what this equation
+
+00:16:48,960 --> 00:16:56,160
+says. It takes one element at a time from both
+lists. That's also how lazy evaluation works.
+
+00:16:56,880 --> 00:17:08,080
+Later, we will look at another example where
+we talk about how evaluation works. There is
+
+00:17:08,080 --> 00:17:12,080
+nothing special about first order here. This is
+a polymorphic function which is of first order.
+
+00:17:12,080 --> 00:17:17,440
+We have two normal lists (first-order data),
+but also, if we have functions as arguments,
+
+00:17:17,440 --> 00:17:22,720
+then of course we can't pattern match on the
+functions. But if we have a function as a list
+
+00:17:22,720 --> 00:17:28,640
+argument, then function definition works by case
+distinction on the list element and the function
+
+00:17:29,200 --> 00:17:35,840
+argument is simply carried around used where
+appropriate as we will see on the next slides.
+
+00:17:40,720 --> 00:17:43,680
+Let's consider the map
+function. When I introduced it
+
+00:17:46,480 --> 00:17:53,280
+two weeks ago, I explained that it is
+essentially doing what a list comprehension
+
+00:17:54,080 --> 00:17:59,680
+does when it applies a function to each
+element from an input list used as a generator,
+
+00:17:59,680 --> 00:18:05,280
+but I also mentioned already that that
+is not to be the definition of map. Also,
+
+00:18:05,280 --> 00:18:09,040
+this is not exactly the definition of map because
+actually, map is probably defined with some
+
+00:18:10,160 --> 00:18:14,560
+other higher-order combinator in the prelude.
+That also depends on the compiler version or
+
+00:18:14,560 --> 00:18:19,680
+on the concrete compiler. I am pretty sure that,
+in ghc, it is not defined exactly like this,
+
+00:18:19,680 --> 00:18:24,320
+but this is a way to define the map function. It
+takes a function argument which is a function.
+
+00:18:24,320 --> 00:18:29,120
+It takes a list. What does it do? What it needs
+to distinguish, is the list the empty list? Then
+
+00:18:29,120 --> 00:18:34,080
+mapping whatever over it will still be the empty
+list. If it is not the empty list, then what
+
+00:18:34,080 --> 00:18:40,080
+happens if we map the function f over a non-empty
+list consisting of x and the rest list? The first
+
+00:18:40,080 --> 00:18:44,720
+element of the result list should be the result
+of applying f to x, which is what happens here,
+
+00:18:44,720 --> 00:18:50,000
+and then we have a recursive call which applies
+map with the same function to the rest list.
+
+00:18:51,520 --> 00:18:58,320
+And again, this is exactly how computation
+works, driven by pattern-matching ultimately.
+
+00:18:59,600 --> 00:19:03,760
+And of course, relatedly, we can do similar
+things for other data types. I already
+
+00:19:03,760 --> 00:19:08,480
+mentioned this in the context of whole-meal
+programming, that while we mainly looked at
+
+00:19:09,680 --> 00:19:16,320
+lists and list computations, also for
+other datatypes he can have, for example,
+
+00:19:16,320 --> 00:19:22,000
+higher-order functions which correspond to things
+that, on lists, corresponds to list comprehension.
+
+00:19:22,000 --> 00:19:28,160
+While we don't have Tree comprehensions like we
+list comprehensions, we do have Tree versions of
+
+00:19:28,160 --> 00:19:35,120
+typical functions that we apply to lists in order
+to get the wholemeal program. So, for example,
+
+00:19:35,120 --> 00:19:40,800
+there is a treeMap function that we can easily
+define which takes a function, takes a Tree
+
+00:19:40,800 --> 00:19:48,080
+polymorphic in some type, and it returns a Tree
+over the other type driven by what the function
+
+00:19:48,080 --> 00:19:55,120
+is mapping from and to. What happens if we map
+over an empty Tree? Then we get an empty Tree.
+
+00:19:55,120 --> 00:20:00,720
+And for the recursive case, we simply get a new
+Node while we have applied the function to do
+
+00:20:00,720 --> 00:20:07,920
+label at that Node, and we have two recursive calls
+of the same function with the mapping function.
+
+00:20:13,360 --> 00:20:20,480
+Yet another example. Earlier, we mentioned, when
+we talked about higher-order functions, is foldl1
+
+00:20:21,040 --> 00:20:26,320
+function which was used there, for example,
+for summing the elements of a list.
+
+00:20:26,320 --> 00:20:30,800
+Then I used the plus operator (+)
+for this binary operator, and some
+
+00:20:31,680 --> 00:20:39,120
+finite list. This was a list of numbers, and we
+used the plus operator here, then we got the sum
+
+00:20:39,120 --> 00:20:46,080
+of the list elements. Hopefully now, we can
+imagine how this would be defined using this list
+
+00:20:46,080 --> 00:20:52,080
+pattern-matching syntax. On this slide, let me not
+define, exactly, this operator / this function,
+
+00:20:52,080 --> 00:20:58,720
+but instead, a similar one, the foldr function
+because that's more prominent and more often used,
+
+00:20:59,680 --> 00:21:10,080
+but in concept, is a similar function. It uses the
+r-mnemonic here instead of “l” because it thinks
+
+00:21:10,080 --> 00:21:15,840
+about its operator as a right associative one,
+whereas here this was used left-associatively. And
+
+00:21:16,560 --> 00:21:22,400
+the one (1) stands here for “we should give this
+function a non-empty list”, so, a list of at least
+
+00:21:22,400 --> 00:21:27,600
+one element. The foldr function also works on the
+empty list, as we see here. So, returns something
+
+00:21:27,600 --> 00:21:33,360
+useful also for the empty list. And additionally,
+the foldl1 function has problems with infinite
+
+00:21:33,360 --> 00:21:41,200
+lists, while foldr works with infinite lists as we
+can see basically by the fact that even in if this
+
+00:21:41,200 --> 00:21:47,920
+would be an infinite list, so xs would not end at
+some point, we still can compute something because
+
+00:21:47,920 --> 00:21:53,920
+at least we can compute f of x and whatever, and
+maybe this whatever is not used depending on the
+
+00:21:53,920 --> 00:22:00,160
+f. And then we can produce some productive output
+even if we never reached the end of the recursion.
+
+00:22:00,160 --> 00:22:04,480
+This is actually something I will briefly discuss
+in a separate video on the whiteboard app.
+
+00:22:05,920 --> 00:22:11,280
+So, what's important in this? We have this
+foldr function. It is polymorphic. It takes
+
+00:22:11,280 --> 00:22:18,640
+two arguments and an operator which is considered
+right associative, and some kind of start value,
+
+00:22:19,200 --> 00:22:26,160
+and it takes a list of elements of this type
+which is the first input of this binary operator,
+
+00:22:26,160 --> 00:22:32,720
+and it returns something of the same type as the
+starter element. What is the idea? If we have the
+
+00:22:32,720 --> 00:22:38,240
+empty list, then we simply return this constant
+in a sense. So, this b is returned as the final
+
+00:22:38,240 --> 00:22:43,920
+value here. If we have a non-empty list, then
+we can do a recursive call on the rest list,
+
+00:22:43,920 --> 00:22:49,760
+and combine whatever comes out of this recursive
+call with the current element via the provided
+
+00:22:49,760 --> 00:22:55,360
+function f. As I said, if this function f, for
+example, doesn't need its second argument, then we
+
+00:22:55,360 --> 00:22:59,680
+can compute something from this even though this
+recursive call (maybe) wouldn't even terminate.
+
+00:23:01,040 --> 00:23:07,840
+I will talk through some examples in
+the whiteboard video based on this.

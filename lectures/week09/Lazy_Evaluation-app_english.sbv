@@ -1,0 +1,399 @@
+0:00:01.440,0:00:03.440
+Okay, so this is the promised video
+
+0:00:03.440,0:00:07.760
+about how pattern matching drives
+lazy evaluation in Haskell.
+
+0:00:08.560,0:00:15.200
+And you should probably watch this while
+having the slides at slide 150 open.
+
+0:00:15.200,0:00:20.080
+Because there I have the function
+definitions I'm going to use.
+
+0:00:20.640,0:00:24.160
+So, I will not repeat them here,
+but they are on that slide.
+
+0:00:25.040,0:00:29.840
+And what's also on the slide is this
+expression I think that I wanted to evaluate.
+
+0:00:30.960,0:00:33.600
+And well, let's go about this.
+
+0:00:33.600,0:00:35.040
+Okay, so you have a definition of f
+
+0:00:35.040,0:00:36.880
+and you know what head and tail are.
+
+0:00:36.880,0:00:38.640
+Now, how do we evaluate this?
+
+0:00:39.440,0:00:42.480
+Well, you could say, well, let's simply
+evaluate this 3+1 to 4.
+
+0:00:42.480,0:00:43.440
+But that would be wrong.
+
+0:00:43.440,0:00:47.120
+Because we only want to evaluate on demand.
+
+0:00:47.120,0:00:49.680
+You only want to evaluate
+things that are needed, actually.
+
+0:00:49.680,0:00:54.160
+And we can't tell this now upfront, that
+this will be eventually needed, this 4.
+
+0:00:54.160,0:00:56.560
+Because maybe this f discards that element.
+
+0:00:56.560,0:01:00.560
+And then we shouldn't compute 3+1
+is 4 if we are not going to use the thing.
+
+0:01:00.560,0:01:02.400
+So, how do we instead proceed?
+
+0:01:02.400,0:01:06.320
+Well, we have to see what we have to know in
+order to know what the outcome of this is.
+
+0:01:06.320,0:01:08.320
+Well, we have to know what head of something is.
+
+0:01:08.880,0:01:12.560
+And we can't do this without having
+computed this something at least as
+
+0:01:12.560,0:01:15.440
+far as being able to tell what the head is, okay.
+
+0:01:15.440,0:01:17.760
+So, that's why we need to go inside.
+
+0:01:17.760,0:01:22.160
+Well, we can only compute the
+tail of something if we at least
+
+0:01:22.160,0:01:24.240
+know whether that something
+is the empty list or not.
+
+0:01:24.240,0:01:27.840
+So, we will have to compute this f of that list.
+
+0:01:27.840,0:01:30.720
+Now if you look at the slide, the
+definition of f then it's defined by
+
+0:01:31.280,0:01:34.480
+case distinctions by pattern matching on
+the empty list or the non-empty list.
+
+0:01:35.120,0:01:35.360
+Right?
+
+0:01:35.360,0:01:40.160
+So, it doesn't have a case for two element lists,
+but it has this case with the empty list or with
+
+0:01:40.160,0:01:43.280
+the cons constructor (:) between
+some variables x and xs.
+
+0:01:44.320,0:01:47.200
+Okay, so how do we proceed then here?
+
+0:01:49.200,0:01:52.960
+Well, we should keep in mind what
+
+0:01:53.680,0:02:03.600
+this list is actually represented like,
+namely as something like this, right?
+
+0:02:07.200,0:02:09.680
+In this list view of data constructors.
+
+0:02:09.680,0:02:14.480
+And then if you look at the definition
+of f, then there's a case for x:xs.
+
+0:02:14.480,0:02:16.640
+So, this will be x and this will be xs.
+
+0:02:17.280,0:02:25.760
+So, inside this head and tail context, we use
+the right-hand side of the second f equation.
+
+0:02:26.560,0:02:32.960
+And what that then means is that we
+should apply g to x, so to this 3,
+
+0:02:34.480,0:02:38.400
+and have cons (:) and f applied to the rest of the list.
+
+0:02:39.440,0:02:41.840
+Right to this list.
+
+0:02:41.840,0:02:45.120
+And again, we don't evaluate the
+3+1 to 4 at this point.
+
+0:02:45.120,0:02:48.800
+Because we are not yet certain
+that this will actually be needed.
+
+0:02:48.800,0:02:51.280
+So, this is the next expression
+that you should look at.
+
+0:02:52.080,0:02:55.200
+Okay, then we again have to see
+what do we have to compute where
+
+0:02:55.200,0:02:58.720
+we want head of something, so we should
+know what the head of the thing is.
+
+0:02:58.720,0:03:02.160
+We should see the data constructor
+for the non-empty list.
+
+0:03:02.720,0:03:04.480
+So, we can't yet compute the head.
+
+0:03:05.360,0:03:08.720
+We have to compute the thing
+which appears nested inside.
+
+0:03:09.600,0:03:12.160
+Okay, should we maybe now compute g 3?
+
+0:03:12.720,0:03:13.760
+No, we shouldn't.
+
+0:03:13.760,0:03:17.280
+Because the tail will actually just cut this part.
+
+0:03:17.280,0:03:21.360
+So, tail of a non-empty list
+is the remainder of that list.
+
+0:03:21.920,0:03:30.320
+So, yes, similarly to the head definition
+the tail definition would look like this.
+
+0:03:30.320,0:03:31.680
+So, this x is not used.
+
+0:03:31.680,0:03:35.680
+So, we shouldn't compute the g 3,
+that would be a superfluous computation.
+
+0:03:36.720,0:03:38.720
+That wouldn't be lazy, but we want to be lazy.
+
+0:03:40.640,0:03:47.200
+Okay, so instead, tail of something
+rest list is the rest list.
+
+0:03:47.760,0:03:59.840
+So, at this point, we will simply
+project to this f of this singleton list.
+
+0:04:00.400,0:04:01.440
+So, this is the next step.
+
+0:04:03.040,0:04:04.080
+Not computing this.
+
+0:04:05.120,0:04:06.960
+Okay, so g 3 will never be computed.
+
+0:04:07.760,0:04:10.480
+Okay, so we have the head of something again,
+
+0:04:10.480,0:04:14.400
+we can't yet compute the head, we have to
+compute the thing inside these brackets.
+
+0:04:15.120,0:04:15.920
+Now, what is this?
+
+0:04:15.920,0:04:18.240
+This is an f call, it's not the empty list.
+
+0:04:19.440,0:04:20.960
+It's basically f on this.
+
+0:04:20.960,0:04:23.440
+So, again, the second equation of f will apply.
+
+0:04:23.440,0:04:24.480
+And what does it do?
+
+0:04:24.480,0:04:28.000
+Well, inside this context, of course,
+
+0:04:28.000,0:04:32.960
+we get a g call on the first argument
+on the first element of that list.
+
+0:04:35.120,0:04:37.600
+And again, we don't compute the
+3+1 at this point,
+
+0:04:37.600,0:04:39.680
+because it's not yet clear that we will need this.
+
+0:04:40.880,0:04:43.040
+And what is the remainder of this call?
+
+0:04:43.040,0:04:48.960
+Well, it is f applied to the rest list, and
+well, the rest list here is the second argument.
+
+0:04:48.960,0:04:49.920
+It's the empty list.
+
+0:04:53.680,0:04:57.440
+Okay, now we can actually compute
+the head because now inside the
+
+0:04:57.440,0:05:03.240
+argument position of the head, we really have
+something of the form head element rest list.
+
+0:05:04.640,0:05:10.640
+Okay, so this now reduces to g(3+1).
+
+0:05:10.640,0:05:13.280
+And again, we didn't compute
+the f of the empty list.
+
+0:05:13.280,0:05:14.480
+This will, of course, be the empty list.
+
+0:05:14.480,0:05:16.080
+But we don't compute this at this point.
+
+0:05:16.080,0:05:17.760
+Because this is discarded by the head function;
+
+0:05:17.760,0:05:21.040
+we don't compute some subexpressions
+that are not going to be needed.
+
+0:05:21.840,0:05:25.120
+And what's going to be needed
+comes out via pattern matching.
+
+0:05:26.160,0:05:27.120
+Okay, so we have this.
+
+0:05:27.760,0:05:31.120
+Now we have to compute the 3+1,
+because if you look at the definition of
+
+0:05:31.120,0:05:33.760
+g on the slide, then you'll see
+that it does a pattern matching.
+
+0:05:33.760,0:05:37.840
+So, we have to know: Is this first
+argument some certain constant that
+
+0:05:37.840,0:05:41.920
+appears in the first occasion of the g function?
+
+0:05:41.920,0:05:45.600
+Okay, in order to decide this, we have
+to actually now compute this value.
+
+0:05:46.240,0:05:50.080
+Okay, so now we compute g 4.
+
+0:05:50.080,0:05:51.600
+Well, we reduced this to 4.
+
+0:05:51.600,0:05:53.280
+So, now we have to compute g 4.
+
+0:05:54.320,0:05:57.520
+Okay, look, again, at the
+definition of g, it tests two cases.
+
+0:05:57.520,0:05:59.920
+The first case doesn't match
+here, because we have a different
+
+0:05:59.920,0:06:04.960
+constant number in the first case
+of the g call of the g definition.
+
+0:06:04.960,0:06:09.120
+So, we have to apply the second one and
+the second one is g n is n+1.
+
+0:06:09.760,0:06:11.040
+Okay, so now it is,
+
+0:06:11.040,0:06:13.840
+of course, the four,
+so this reduces to 4+1.
+
+0:06:14.800,0:06:16.240
+And then we get 5.
+
+0:06:17.040,0:06:21.920
+Okay, so of course, you would have got the same
+if you had simply put this into the interpreter.
+
+0:06:21.920,0:06:24.480
+But now you also see what essentially the kind of
+
+0:06:24.480,0:06:27.760
+steps the interpreter will do
+in evaluating this 5 here.
+
+0:06:27.760,0:06:32.480
+And most importantly, you will also
+see which parts are not computed.
+
+0:06:33.280,0:06:34.160
+Or when they are computed.
+
+0:06:34.160,0:06:38.880
+So, this is not computed upfront, it's only
+computed when we realize that we actually need it.
+
+0:06:38.880,0:06:40.160
+And some things are never computed.
+
+0:06:40.160,0:06:42.720
+g 3 is never computed.
+
+0:06:42.720,0:06:44.800
+And the empty list is also not completed.
+
+0:06:45.600,0:06:46.080
+Okay.
+
+0:06:46.080,0:06:52.880
+Plus, you also need this perspective in order
+to be able to match some arguments like this.
+
+0:06:53.680,0:07:00.240
+Okay, and the same kind of
+example and derivation/evaluation
+
+0:07:00.240,0:07:09.760
+applies to all Haskell evaluation,
+to all Haskell programs.

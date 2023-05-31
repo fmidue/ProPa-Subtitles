@@ -1,0 +1,435 @@
+0:00:01.600,0:00:06.560
+So, let us look at lists in
+this algebraic data type view.
+
+0:00:07.440,0:00:16.880
+So, for example, a list like '[1, 2, 3]',
+as we have discussed on slides is actually
+
+0:00:20.240,0:00:24.640
+written with a lot of brackets
+represented like this.
+
+0:00:25.840,0:00:28.320
+And we don't need those brackets.
+
+0:00:28.320,0:00:36.000
+Because we simply consider the colon, the 'cons'
+constructor, as a right-associative operator.
+
+0:00:36.000,0:00:41.360
+And of course, we can also depict
+this in some kind of tree form.
+
+0:00:43.600,0:00:46.240
+With such a right slanted tree.
+
+0:00:48.560,0:00:51.200
+And this is all equivalent.
+
+0:00:51.200,0:00:51.600
+Okay.
+
+0:00:51.600,0:00:53.840
+And, of course, you can always write it like this.
+
+0:00:53.840,0:00:57.920
+But if you want to do pattern matching,
+then we must take this perspective,
+
+0:00:57.920,0:01:01.600
+or it's useful to take this perspective,
+if you want to have patterns like
+
+0:01:03.040,0:01:07.520
+checking for a non-empty list
+with arbitrary long rest list.
+
+0:01:07.520,0:01:09.840
+Okay, so this was the outset.
+
+0:01:09.840,0:01:15.040
+Then we have this 'foldr' function,
+and let's apply it with some
+
+0:01:16.640,0:01:19.840
+arguments 'f' and 'c', that were these two arguments.
+
+0:01:19.840,0:01:24.800
+And let's say we apply this actually
+to such a tree element list.
+
+0:01:24.800,0:01:25.840
+What will happen?
+
+0:01:26.480,0:01:31.680
+Well, it's of course, then, 'foldr f c'
+applied to something of this structure.
+
+0:01:31.680,0:01:36.640
+And if you look at the definitions of
+the 'foldr' function, at the two cases,
+
+0:01:36.640,0:01:40.080
+then you will see it actually the
+empty list will be mapped to 'c'.
+
+0:01:40.080,0:01:48.240
+And basically, for all intermediate colon 'cons'
+constructors, the 'f' function will be inserted.
+
+0:01:48.240,0:01:55.520
+So, this call will ultimately
+evaluate to something of this form.
+
+0:01:55.520,0:02:02.880
+(5 sec.)
+
+0:02:02.880,0:02:11.040
+Yes, that's what the recursive rule and then
+the base case with the 'c' constant here tell
+
+0:02:11.040,0:02:18.480
+us. And then, of course, this gives you a good
+indication of what the 'foldr' might be useful for.
+
+0:02:18.480,0:02:23.600
+For example, if you want to 'sum' a list,
+
+0:02:24.800,0:02:32.400
+then that's a very simple call of the 'foldr'
+function, whereas the operator 'f', we use addition
+
+0:02:32.400,0:02:38.160
+as the base case, constant we use
+0, and apply this to our list.
+
+0:02:38.160,0:02:44.560
+Yes, this will exactly mean in the example above,
+that we would replace these three 'f's by +
+
+0:02:45.760,0:02:47.120
+and 'c' by 0.
+
+0:02:47.120,0:02:48.960
+And then it will, of course, compute
+
+0:02:49.680,0:02:53.440
+1 + 2 + 3 + 0, which
+would be 6 in this case.
+
+0:02:57.120,0:03:01.280
+Okay, and there are many other functions,
+of course, that can be defined with 'foldr'.
+
+0:03:02.080,0:03:04.880
+Very many of the interesting functions on lists.
+
+0:03:04.880,0:03:08.640
+So, for example, that might have occurred in the
+
+0:03:09.920,0:03:16.400
+exercises function, which basically
+lifts the conjunction to a list.
+
+0:03:16.400,0:03:23.040
+So, given a list of Bools, it computes the
+conjunction of all of them instead of simply
+
+0:03:23.760,0:03:26.880
+a binary conjunction with two Boolean arguments.
+
+0:03:26.880,0:03:29.920
+And well, how can we define the 'and' function?
+
+0:03:30.480,0:03:36.960
+Well, instead of writing a recursion, you would
+simply say, well, it's a replication of 'foldr'
+
+0:03:36.960,0:03:40.240
+with what as the binary operator?
+Well, the binary conjunction.
+
+0:03:40.960,0:03:47.120
+And what should be the base case of conjunction?
+Well, the neutral element for conjunction is True.
+
+0:03:48.240,0:03:52.800
+So, if you're given a list of Bools, if
+we evaluate this call, that really means
+
+0:03:53.440,0:03:58.800
+that we simply apply conjunction
+between all elements.
+
+0:03:58.800,0:04:03.920
+And as the base case in this position, we
+would use True, which ensures that if we build
+
+0:04:03.920,0:04:09.440
+conjunction over the empty list, then that is
+True, as makes mathematical and logical sense.
+
+0:04:11.200,0:04:15.600
+Okay, so these are some examples.
+
+0:04:15.600,0:04:18.480
+And I could really give
+very many further examples.
+
+0:04:18.480,0:04:22.720
+And you will realize that if you
+look at code in Haskell that often
+
+0:04:23.920,0:04:27.840
+works on lists, the predefined functions
+are actually defined by our 'foldr'.
+
+0:04:28.560,0:04:36.880
+Then what I think I mentioned already is that
+this picture should not tempt you to assume
+
+0:04:36.880,0:04:44.080
+that you will always have to or that in every
+invocation, the whole structure would be computed.
+
+0:04:44.080,0:04:45.440
+That depends on the 'f'.
+
+0:04:46.080,0:04:49.680
+If the 'f', for example, at some point
+doesn't need its right argument,
+
+0:04:49.680,0:04:52.000
+then, of course, only up to
+that point you would compute.
+
+0:04:52.000,0:04:56.800
+Because this 'f' could, for example, compute
+its output just from the 2, not needing the
+
+0:04:58.320,0:04:59.120
+right-hand side.
+
+0:04:59.120,0:05:01.840
+Then, of course, all these calls
+wouldn't even be computed.
+
+0:05:02.400,0:05:04.320
+But that depends on the operators, right?
+
+0:05:04.320,0:05:06.320
+For the summation, for the '+' operator,
+
+0:05:06.320,0:05:09.840
+of course, we have to evaluate the whole
+list because you need all elements.
+
+0:05:12.160,0:05:12.960
+Okay.
+
+0:05:12.960,0:05:18.960
+And then what's also nice exercise
+is to think about how you can
+
+0:05:18.960,0:05:21.920
+translate some function into this 'foldr' form.
+
+0:05:22.720,0:05:26.480
+And I will do this here for one
+of the predefined functions.
+
+0:05:26.480,0:05:29.600
+So, the 'filter' function that we have
+already discussed when we talked about
+
+0:05:30.240,0:05:38.240
+higher-order functions or in fact this
+type polymorphically taking a predicate,
+
+0:05:41.280,0:05:45.600
+and a list, and returning a list.
+
+0:05:45.600,0:05:47.920
+And the idea was to remove all,
+
+0:05:47.920,0:05:51.680
+to drop all elements from the list
+which don't satisfy this predicate.
+
+0:05:51.680,0:05:56.160
+Now, of course, you could start writing a
+recursive definition for the 'filter' function.
+
+0:05:56.160,0:05:58.320
+But actually, you shouldn't have to do this.
+
+0:05:58.320,0:06:02.800
+Because there's always a good guess
+that you can define it with 'foldr'.
+
+0:06:03.440,0:06:06.080
+Well, let's think about what
+we would have to do for this.
+
+0:06:06.080,0:06:10.480
+So, we need 'foldr' that
+needs some function argument.
+
+0:06:11.680,0:06:13.120
+So, we have to think about this.
+
+0:06:13.120,0:06:17.200
+But maybe we can already say what
+the concept argument should be.
+
+0:06:17.200,0:06:18.320
+What is 'filter'?
+
+0:06:18.320,0:06:22.000
+With some predicate and the
+empty list, the empty list.
+
+0:06:22.000,0:06:24.640
+So, that should go here.
+
+0:06:24.640,0:06:27.120
+And an interesting bit is what to put there?
+
+0:06:28.080,0:06:30.480
+Okay, how can we find out what to put there?
+
+0:06:30.480,0:06:35.040
+Well, one way is to look at what
+would a recursive definition of
+
+0:06:35.040,0:06:37.840
+'filter' look like for the case of a non-empty list?
+
+0:06:37.840,0:06:42.080
+So, what would you write if you
+were to write a case like this?
+
+0:06:42.080,0:06:44.240
+What does 'filter p' do on a non-empty list?
+
+0:06:45.280,0:06:49.680
+Well, thinking about it, of course, it
+depends on whether 'p' of 'x' is True or not.
+
+0:06:50.320,0:06:52.240
+So, this would be a case distinction.
+
+0:06:52.240,0:06:55.600
+If 'p' of 'x' is True,
+
+0:06:57.520,0:07:05.600
+then we should keep the 'x', and have a recursive
+call of 'filter' with 'p' on the rest list.
+
+0:07:06.720,0:07:15.840
+And otherwise, we would not keep the
+'x', and simply have this recursive call.
+
+0:07:16.560,0:07:19.520
+Okay, this is a very direct recursive definition.
+
+0:07:19.520,0:07:25.680
+And as such, it should really be equivalent to
+some 'foldr' definition because 'foldr' basically
+
+0:07:26.240,0:07:33.680
+encapsulates and captures recursive definitions
+on lists, which this 'filter' apparently is.
+
+0:07:36.000,0:07:39.840
+Okay, so what should this question mark here be?
+
+0:07:39.840,0:07:41.760
+This question mark place,
+what should be put there?
+
+0:07:42.720,0:07:47.280
+Well, as often we can use
+the lambda abstraction for this.
+
+0:07:47.280,0:07:49.600
+Well, what's the function
+that you want to put there?
+
+0:07:49.600,0:07:55.440
+It's a function that given
+some current 'x' and something.
+
+0:07:57.360,0:08:00.800
+Yes, and the something will be
+basically the recursive call.
+
+0:08:01.440,0:08:01.940
+Yes.
+
+0:08:02.400,0:08:04.400
+We call
+
+0:08:04.960,0:08:11.840
+that the second argument in this operator is
+always what the 'foldr' computes on the rest list.
+
+0:08:12.560,0:08:15.840
+So, let's call this 'ys'.
+
+0:08:16.720,0:08:21.920
+Because it's not the 'xs', it's some other
+list, namely the result of recursive call.
+
+0:08:22.480,0:08:24.160
+And what should we return?
+
+0:08:24.720,0:08:27.360
+Well, basically this right-hand side here,
+
+0:08:27.360,0:08:31.440
+but instead of having the recursive
+calls here, we use our 'ys'.
+
+0:08:32.080,0:08:34.320
+Because in the 'foldr' we already have
+
+0:08:34.320,0:08:38.800
+as the second argument of our operation
+the result of the recursive call.
+
+0:08:38.800,0:08:43.360
+So, basically, what we do we take
+what we see above but abstract
+
+0:08:44.000,0:08:47.840
+these two recursive calls
+into this new variable 'ys'.
+
+0:08:47.840,0:08:53.840
+So, what we would have here is
+the same if call with 'p' on 'x'.
+
+0:08:54.480,0:09:00.400
+And if that is True, then we
+keep the 'x' and use the 'ys' here.
+
+0:09:01.680,0:09:04.880
+And otherwise, we only use the 'ys'.
+
+0:09:04.880,0:09:11.600
+So, the point is that this variable
+here now abstracts these recursive calls.
+
+0:09:13.920,0:09:22.080
+And if we put this really into this
+place, then we have defined the 'filter'
+
+0:09:22.080,0:09:26.800
+function without explicit recursion
+by simply using the 'foldr' function.
+
+0:09:26.800,0:09:35.840
+And similar strategies apply to
+many recursive functions on this.
