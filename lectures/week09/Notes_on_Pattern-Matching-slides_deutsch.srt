@@ -1,6 +1,6 @@
 149 # slide
 00:00:01,680 --> 00:00:09,040
-Nach diesem Exkurs über foldr möchte ich
+Nach diesem Exkurs über 'foldr' möchte ich
 einige abschließende Anmerkungen zum Pattern-Matching machen
 
 00:00:10,000 --> 00:00:15,680
@@ -38,7 +38,7 @@ Zucker für etwas, das direktes Pattern-Matching verwendet.
 
 00:01:00,320 --> 00:01:06,640
 Pattern-Matching erklärt, wie Funktionen
-ausgewertet werden. Ich werde ein Video machen, in dem ich das
+ausgewertet werden. Ich werde ein anderes Video machen, in dem ich das
 
 00:01:06,640 --> 00:01:14,080
 an diesem Beispiel mit Listen zeige, also auch noch einmal
@@ -138,15 +138,15 @@ Pattern / Struktur, die wir haben könnten, ist, dass
 wir ein Maybe-Ding haben und zuerst prüfen wollen
 
 00:03:36,960 --> 00:03:44,320
-prüfen, ob es Nothing ist, und wenn ja, dann tun wir
-etwas, und wenn es nicht Nothing ist, und es ist Just
+prüfen, ob es 'Nothing' ist, und wenn ja, dann tun wir
+etwas, und wenn es nicht 'Nothing' ist, und es ist 'Just'
 
 00:03:44,320 --> 00:03:49,440
 etwas ist, dann wollen wir etwas mit
-dem Wert, der in diesem Just gekapselt wurde,
+dem Wert, der in diesem 'Just' gekapselt wurde,
 
 00:03:49,440 --> 00:03:54,160
-dann würden wir etwas tun wie fromJust von diesem
+dann würden wir etwas tun wie 'fromJust' von diesem
 maybeThing, und dann etwas mit diesem Wert machen.
 
 00:03:55,120 --> 00:04:01,920
@@ -171,14 +171,14 @@ etwas machen müssen, das eine boolesche Bedingung ist,
 
 00:04:20,000 --> 00:04:26,720
 könnten wir direkt einen Fall für das maybeThing haben.
-Was sind die Fälle? Es kann Nothing sein,
+Was sind die Fälle? Es kann 'Nothing' sein,
 
 00:04:26,720 --> 00:04:32,320
 und dann tun wir etwas, und ansonsten ist es
-Just, und dann können wir hier eine Variable binden,
+'Just', und dann können wir hier eine Variable binden,
 
 00:04:32,320 --> 00:04:40,960
-und tun, was immer wir im Fall von Just tun wollen
+und tun, was immer wir im Fall von 'Just' tun wollen
 Fall tun und das Ding direkt verwenden. Das ist
 
 00:04:40,960 --> 00:04:45,520
@@ -211,22 +211,22 @@ und der Compiler kann überprüfen, dass wir alle
 
 00:05:23,520 --> 00:05:32,720
 Fälle abgedeckt haben. Außerdem können wir hier nicht versehentlich versuchen
-auf das Ding von innerhalb des Just im
+auf das Ding von innerhalb des 'Just' im
 
 00:05:32,720 --> 00:05:38,960
 Nichts-Fall. Hier könnten wir also zum Beispiel auch
-fromJust maybeThing in den then-Zweig schreiben,
+'fromJust' maybeThing in den then-Zweig schreiben,
 
 00:05:38,960 --> 00:05:43,280
 aber das würde zu einem Laufzeitfehler führen, denn in
-diesem then-Zweig haben wir ein Nothing. Wir können also nicht
+diesem then-Zweig haben wir ein 'Nothing'. Wir können also nicht
 
 00:05:43,280 --> 00:05:48,880
-fromJust schreiben, aber der Compiler sieht das nicht,
+'fromJust' schreiben, aber der Compiler sieht das nicht,
 während wir hier nicht einmal etwas schreiben dürften
 
 00:05:48,880 --> 00:05:55,120
-etwas zu schreiben, das sich auf dieses Ding im Nothing
+etwas zu schreiben, das sich auf dieses Ding im 'Nothing'
 Teil zu schreiben, weil es dort nicht einmal gebunden ist. Also,
 
 00:05:55,120 --> 00:06:02,800
