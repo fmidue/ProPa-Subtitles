@@ -98,7 +98,7 @@ to see elements of in the list and then the
 
 00:02:29,200 --> 00:02:35,440
 rest list. And then a recursive occurrence of
-what? Of a list of "a"s. This is very similar,
+what? Of a list of 'a's. This is very similar,
 
 00:02:35,440 --> 00:02:42,000
 of course, to the tree datatype we saw last
@@ -383,11 +383,11 @@ or something. But often we will have exactly these
 two cases: an empty list and a non-empty list.
 
 00:09:31,120 --> 00:09:36,000
-Some other function: the “append” function,
+Some other function: the append function,
 also the (++) operator, when written infix,
 
 00:09:36,000 --> 00:09:41,440
-actually. But here I define “append” as a prefix
+actually. But here I define 'append' as a prefix
 function that takes two lists over some type
 
 00:09:41,440 --> 00:09:46,080
@@ -496,7 +496,7 @@ with the first element y and some rest.
 
 00:12:07,680 --> 00:12:14,240
 And what to return then? The pair (x,y)
-and whatever zip returns for the two rest
+and whatever 'zip' returns for the two rest
 
 00:12:15,520 --> 00:12:22,080
 lists. And then in this case, the can have another
@@ -528,27 +528,27 @@ lean in one direction has consequences for
 
 00:13:03,920 --> 00:13:07,840
 how expensive certain computations will be.
-So, what we see here in the “append” function,
+So, what we see here in the append function,
 
 00:13:07,840 --> 00:13:13,520
 for example, is that it takes as many steps to
-compute the append as: the first element has
+compute the 'append' as: the first element has
 
 00:13:13,520 --> 00:13:19,200
 elements. We see the recursions on the first
 list. So, the second element is never really
 
 00:13:19,840 --> 00:13:26,480
-examined, but the append is as costly as the first
+examined, but the 'append' is as costly as the first
 list is long because that's how many steps we have
 
 00:13:26,480 --> 00:13:32,160
-to make. And that means that append is a linear
+to make. And that means that 'append' is a linear
 operation in the length of the first list. And
 
 00:13:32,160 --> 00:13:40,320
-for example, also, the “last” function or the list
-indexing is linear. The “last” function is linear
+for example, also, the 'last' function or the list
+indexing is linear. The 'last' function is linear
 
 00:13:40,320 --> 00:13:46,320
 and the length of the input list, and the index
@@ -746,7 +746,7 @@ list consisting of x and the rest list? The first
 
 00:18:40,080 --> 00:18:44,720
 element of the result list should be the result
-of applying f to x, which is what happens here,
+of applying 'f' to x, which is what happens here,
 
 00:18:44,720 --> 00:18:50,000
 and then we have a recursive call which applies
@@ -831,7 +831,7 @@ because that's more prominent and more often used,
 
 00:20:59,680 --> 00:21:10,080
 but in concept, is a similar function. It uses the
-r-mnemonic here instead of “l” because it thinks
+r-mnemonic here instead of 'l' because it thinks
 
 00:21:10,080 --> 00:21:15,840
 about its operator as a right associative one,
@@ -858,11 +858,11 @@ would be an infinite list, so xs would not end at
 some point, we still can compute something because
 
 00:21:47,920 --> 00:21:53,920
-at least we can compute f of x and whatever, and
+at least we can compute 'f' of x and whatever, and
 maybe this whatever is not used depending on the
 
 00:21:53,920 --> 00:22:00,160
-f. And then we can produce some productive output
+'f'. And then we can produce some productive output
 even if we never reached the end of the recursion.
 
 00:22:00,160 --> 00:22:04,480
