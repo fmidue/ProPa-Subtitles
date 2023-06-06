@@ -1,0 +1,231 @@
+0:00:00.800,0:00:03.600
+Hello, in this task we're
+taking a look at the 'Either'
+
+0:00:04.720,0:00:08.560
+and 'Maybe' datatypes and their constructors,
+by defining some values using said constructors.
+
+0:00:09.840,0:00:15.280
+We should already be familiar with the 'Maybe'
+datatype from the lecture; The 'Maybe' datatype
+
+0:00:15.280,0:00:22.880
+represents an optional value, so a value of type
+'maybe a' could be either something of type 'a',
+
+0:00:22.880,0:00:29.920
+represented with the 'Just a' constructor or it
+could be empty, so no value at all, represented
+
+0:00:29.920,0:00:37.600
+with the 'Nothing' constructor. Whereas the
+'Either' datatype represents a value with two
+
+0:00:37.600,0:00:43.680
+possibilities, a value of type 'a b' could be
+either the value of type 'a', represented with
+
+0:00:43.680,0:00:50.240
+the 'Left a' constructor or something of type
+'b', represented by the 'Right b' constructor.
+
+0:00:53.120,0:00:57.360
+At this point we should note that these type
+variables 'a' and 'b' don't necessarily have to
+
+0:00:57.360,0:01:07.680
+be different types, so we could go and say 'Either
+String String' and then construct 'Left String'
+
+0:01:07.680,0:01:15.520
+and 'Right String' instances for example, and
+this would be valid. With that out of the way we
+
+0:01:15.520,0:01:20.960
+can actually start solving the task, which is just
+to take a look at these type signatures for these
+
+0:01:22.240,0:01:28.960
+values down here, and we should define valid
+values fitting these type signatures for all
+
+0:01:28.960,0:01:33.680
+of these, with the added caveat that they need
+to be discrete, so they need to be different
+
+0:01:34.320,0:01:40.640
+for each of these and we should use every data
+constructor of 'Maybe' and 'Either' at least
+
+0:01:40.640,0:01:47.360
+once somewhere down in here. Starting with
+the first value we have the type signature of
+
+0:01:47.360,0:01:54.000
+'Either Bool' for our 'a' so if we look at
+this as 'Either a b' our 'a' would be 'Bool'
+
+0:01:54.000,0:02:00.640
+and our 'b' would be a list with tuples
+and 'Integer' and 'Bool' inside the tuple;
+
+0:02:01.920,0:02:09.120
+So here we can use the constructors 'Left' and
+'Right' so if we just go 'Left' here we need to
+
+0:02:09.680,0:02:15.840
+use something of type 'Bool' for 'a' so go
+with 'True' or 'False', which are the only
+
+0:02:16.640,0:02:22.480
+values for 'Bool' of course, and for value 2 since
+these are the same type signatures we're gonna go
+
+0:02:22.480,0:02:29.680
+with the 'Right' constructor and build something
+with the lists with tuple 'Integer', 'Bool'
+
+0:02:31.280,0:02:34.160
+type over here, so of course an
+empty list would be acceptable,
+
+0:02:34.800,0:02:41.520
+or we can create a list with actual tuples
+inside. Let's say tuple 10 and True for example,
+
+0:02:43.440,0:02:49.840
+and of course this could be a list
+with multiple tuples, so 8 and False,
+
+0:02:51.280,0:02:59.040
+and these two would be valid values for value
+one and two. Now these were pretty simple and
+
+0:03:00.800,0:03:04.400
+moving on from here we need to start
+looking out for these parentheses here,
+
+0:03:04.400,0:03:10.240
+because sometimes they're going to signify that
+that it's a tuple and sometimes not; As you can
+
+0:03:10.240,0:03:16.640
+see in this case this is just parentheses around
+these... this type thing, which over here is
+
+0:03:17.360,0:03:21.520
+defining this 'Either' over here, there's not
+a comma over here, so this is not a tuple,
+
+0:03:23.280,0:03:29.040
+but there's a tuple inside of it, so we need to
+take care to not get our tuple parentheses and
+
+0:03:29.040,0:03:36.560
+just regular parentheses confused here. So we
+start with this, we have an outside tuple over
+
+0:03:36.560,0:03:45.360
+here consisting of 'Maybe' and this 'Either'
+structure over here, and 'Maybe Integer',
+
+0:03:45.360,0:03:50.560
+so if we just go with the lazy round starting out
+here 'Maybe' has the constructors 'Nothing' and
+
+0:03:50.560,0:03:57.760
+'Just a' so we can go 'Nothing' and 'Nothing'
+for example, because we have a tuple consisting
+
+0:03:57.760,0:04:04.720
+of two 'Maybe' so this is a valid value, or
+of course you can use the 'Just' constructor
+
+0:04:04.720,0:04:12.480
+and for example say for the first 'Maybe' in our
+tuple we're going to go with 'Just' and then we
+
+0:04:12.480,0:04:18.160
+need to look at this 'Either' construction over
+here, which is 'Either' tuple 'Maybe Integer'
+
+0:04:18.160,0:04:31.120
+or 'Bool' and we can say for example: 'Left' and
+then creating this tuple here 10 and 'Nothing'
+
+0:04:32.320,0:04:42.160
+for our 'Maybe' inside the tuple, or of course
+'Just 2' for example, just some integer value,
+
+0:04:42.160,0:04:49.200
+and for our second part of the tuple for the
+second 'Maybe Integer' over here you can go with
+
+0:04:50.960,0:04:57.360
+either 'Nothing' of course, or just any
+integer let's say 'Just 12' in this case.
+
+0:05:00.320,0:05:07.200
+For value five we have once again the same type
+signature, so let's start again with 'Just'
+
+0:05:07.200,0:05:14.960
+and we use 'Left' over here so we use 'Right'
+now and 'Right' was of type 'Bool' so we're
+
+0:05:14.960,0:05:26.720
+gonna go 'Right True' here and for the other
+side we're gonna go with 'Just' let's say 24,
+
+0:05:29.680,0:05:37.680
+because we could also go with 'Nothing' again over
+here but well you can decide that for yourself
+
+0:05:40.000,0:05:48.720
+which you want to use here, they just need to be
+different for our task. Moving on with values six
+
+0:05:48.720,0:05:58.320
+and seven, these are just one 'Either' of either
+'Maybe Integer' or 'Bool', this is a tuple again
+
+0:05:59.280,0:06:04.960
+here so careful about looking at this, and
+this is not a tuple this is just a 'Maybe'
+
+0:06:05.520,0:06:11.840
+which could be a tuple of 'Integer' 'Maybe
+Bool' or 'Nothing' of course, so since we have
+
+0:06:11.840,0:06:16.400
+two of these again let's go with the 'Left'
+and 'Right' constructors, let's go 'Left'
+
+0:06:17.920,0:06:29.600
+and create tuple of 'Maybe Integer Bool' so just
+1 for example, and 'True' or 'Nothing' of course.
+
+0:06:31.840,0:06:38.880
+And for our value seven we're gonna go with the
+'Right' constructor and build this 'Maybe' value,
+
+0:06:38.880,0:06:46.880
+but we can just go with 'Right Nothing'
+or 'Right Just' and then build the tuple
+
+0:06:47.840,0:06:56.800
+with 10 and 'Nothing' for 'Maybe Bool'
+or 'Just 2' or 'Just 4' of course.
+
+0:06:59.600,0:07:06.640
+And now if we save all of this, and reload
+the task in ghci and just run the test,
+
+0:07:07.520,0:07:12.720
+we can see that indeed all of these tests are
+checking if the conditions for the task are
+
+0:07:12.720,0:07:22.640
+met... try it out and we don't have any failures
+so this is a correct solution for this task.

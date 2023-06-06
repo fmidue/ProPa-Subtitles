@@ -1,0 +1,391 @@
+0:00:00.000,0:00:06.780
+Diese Aufgabe greift die 'divide and conquer'
+Funktion aus der letzten Woche wieder auf,
+
+0:00:06.780,0:00:13.980
+und zwar soll sie diesmal
+benutzt werden, und zwar,
+
+0:00:15.030,0:00:26.820
+um ein Prädikat zu prüfen für Zahlen,
+oder eine ganze Bandbreite von Zahlen,
+
+0:00:26.820,0:00:35.160
+nämlich Zahlen in einem bestimmten Bereich und
+wenn das Prädikat für einen dieser Zahlen gilt,
+
+0:00:35.160,0:00:46.800
+dann soll 'findSatisfying' 'True' liefern und
+'findSatisfying' ist halt dabei so definiert,
+
+0:00:46.800,0:00:56.370
+dass es 'divide and conquer' verwendet und
+jeweils die Parameter hier auszuführen sind,
+
+0:00:56.370,0:01:03.480
+die 'undefined' sind und es steht jeweils auch
+eine Beschreibung da, was dort entsprechend
+
+0:01:03.480,0:01:12.690
+passieren soll an den 'undefined' Stellen. Hier
+haben wir auch eine Testsuite zur Verfügung
+
+0:01:12.690,0:01:30.810
+gestellt in der 'main' Funktion und wir können
+diese auch aufrufen, wenn wir den ghci öffnen und
+
+0:01:30.810,0:01:45.810
+die Aufgabe laden, dann können wir das aufrufen
+und ja jetzt ist die Implementierung natürlich
+
+0:01:45.810,0:01:54.090
+noch mit 'undefined' hier vorhanden, deshalb
+werden entsprechende Fehlermeldung geworfen. Aber
+
+0:01:54.090,0:02:01.260
+Ziel ist es natürlich diese Lücken zu füllen und
+dann die Tests auch richtig durchlaufen zu lassen.
+
+0:02:02.830,0:02:12.790
+Man kann die hier einfach sequenziell
+durchgehen und die entsprechenden Lücken
+
+0:02:12.790,0:02:19.390
+füllen, wenn man sich jeweils überlegt,
+was dort passieren soll. Das erste ist,
+
+0:02:19.390,0:02:29.380
+es soll ein Prädikat gefunden werden, das
+entscheidet, ob die Eingabe schon einfach
+
+0:02:29.380,0:02:39.220
+genug ist und der soll halt ein Tupel nehmen
+und dann entsprechend einen Boolean liefern,
+
+0:02:39.220,0:02:45.640
+also ein Paar, um genau zu sein, also ein
+zweier Tupel, und dann einen Boolean liefern.
+
+0:02:45.640,0:02:54.850
+Das heißt, wir können hier eine Lambda-Funktion
+schreiben, also wir sollen 'Let' und 'Where' nicht
+
+0:02:54.850,0:03:03.100
+benutzen, um diese Funktion zu schreiben, deshalb
+müssen wir hier Lambda verwenden und haben hier
+
+0:03:03.100,0:03:10.300
+die beiden Werte, einen für den niedrigeren, einen
+für den höheren Wert, x und y, nicht die hier,
+
+0:03:10.300,0:03:20.380
+und wir könnten hier ja einen Wert zurückgeben,
+der vom Wert 'Bool' ist, also vielleicht mache
+
+0:03:20.380,0:03:25.990
+ich mal eine ganz naive Implementierung, in der
+ich hier jetzt die Werte noch gar nicht beachtet
+
+0:03:25.990,0:03:31.900
+und einfach immer 'True' zurückliefere.
+Erstmal erzeuge ich sozusagen nur Werte,
+
+0:03:31.900,0:03:35.770
+die vom Typ her stimmen, für die zweite
+Funktion kann ich genau dasselbe machen,
+
+0:03:35.770,0:03:48.730
+indem ich einfach immer 'True' zurückliefere und
+hier soll das 'splitting' passieren, da erhalten
+
+0:03:48.730,0:03:55.000
+wir wieder ein Tupel von x und y, also von einem
+niedrigeren und einem höheren Wert, und erzeugen
+
+0:03:55.000,0:04:11.620
+daraus einen neuen Tupel von Paaren, die dann die
+neuen, zu untersuchenden Werte darstellen. Jetzt
+
+0:04:11.620,0:04:20.620
+könnten wir hier, naiverweise, wenn wir einfach
+nur wollen, dass der Typ stimmt, dasselbe Paar
+
+0:04:20.620,0:04:30.940
+zurückgeben, dann haben wir auch wieder ein Paar
+von Paaren. Dann haben wir noch eine Funktion,
+
+0:04:30.940,0:04:39.340
+die zum Kombinieren des entsprechenden Ergebnisses
+vorhanden ist und da brauchen wir eine Funktion
+
+0:04:39.340,0:04:46.030
+von 'Bool', nach 'Bool', nach 'Bool'. Was
+könnte man dann nehmen, ohne zu gucken? Zum
+
+0:04:46.030,0:04:54.550
+Beispiel das boolesche Und, ohne jetzt weiter
+zu überlegen, könnte man sagen: So, jetzt
+
+0:04:54.550,0:05:04.870
+erstmal die 'undefineds' füllen und hätte schon
+einmal zumindest einen Fall, der richtig läuft,
+
+0:05:04.870,0:05:11.620
+nämlich ein paar positive Testfälle laufen jetzt
+schon durch. Natürlich ist die Implementierung
+
+0:05:11.620,0:05:23.680
+im Moment noch Unsinn, denn man sieht das auch
+hier, in der leeren Umgebung, ist das Ergebnis
+
+0:05:23.680,0:05:45.160
+nicht richtig und ja auch für die negativen Fälle
+schlägt das hier fehl und jetzt kann man hingehen
+
+0:05:45.160,0:05:52.660
+und überlegen, was die eigentlichen Werte sind
+und die eigentliche Implementierung, die man hier
+
+0:05:52.660,0:06:02.110
+möchte. Fangen wir vielleicht einfach mal mit dem
+'splitting' an. Es soll hier 'divide and conquer'
+
+0:06:02.110,0:06:13.680
+verwendet werden und dabei soll die Umgebung immer
+in Teilbereiche aufgeteilt werden. Für x und y,
+
+0:06:13.680,0:06:20.460
+wenn das unsere beiden Bereiche sind, dann
+hätten wir gern einen Bereich, der sozusagen
+
+0:06:21.810,0:06:35.880
+mit irgendeinem Wert von x bis ungefähr zur Hälfte
+zur y und aus einem Bereich von dem Wert danach
+
+0:06:35.880,0:06:47.970
+sozusagen gehen würde. Das können wir jetzt hier
+definieren und ich schreibe das hier erstmal hin.
+
+0:06:48.570,0:06:59.580
+Wir wollen einen Wert haben, der zwischen x und y
+liegt und der soll also genau den Abstand haben,
+
+0:06:59.580,0:07:16.020
+also y - x ist sozusagen der Abstand zwischen
+x und y und wir wollen die Hälfte davon haben.
+
+0:07:16.020,0:07:27.360
+Das heißt, wir können hier einfach 'div 2' sagen
+und dann haben wir einen Wert, der sozusagen auf
+
+0:07:27.360,0:07:38.760
+halbem Weg zu y liegt und den anderen Bereich
+können wir finden, indem wir dasselbe noch
+
+0:07:38.760,0:07:47.280
+einmal machen und hier aber einen Wert später
+nehmen. Also wir könnten das so aufschreiben:
+
+0:07:47.820,0:08:01.090
+Das ist sozusagen ein Wert später und dann
+haben wir die Bereiche aufgeteilt. Das ist jetzt
+
+0:08:01.090,0:08:07.960
+allerdings hier so, dass wir hier eine 'common
+subexpression' haben, die wir noch eliminieren
+
+0:08:07.960,0:08:16.480
+können. Die Aufgabenstellung sagt, wir sollen
+kein 'Let' und 'Where' verwenden, kein lokales,
+
+0:08:16.480,0:08:26.740
+aber das ist natürlich nicht für die Elimination
+von 'common subexpressions' gemeint, sondern das
+
+0:08:26.740,0:08:32.290
+ist gemeint damit hier eben Lambda-Funktionen
+verwendet werden. Das heißt, es ist vollkommen
+
+0:08:32.290,0:08:39.370
+legitim und auch gewünscht, dass man diesen
+Ausdruck hier ersetzt und den zum Beispiel
+
+0:08:39.370,0:08:58.720
+'middle' nennt und den können wir auch mittels
+eines Lambda Ausdrucks lokal definieren und dann
+
+0:08:58.720,0:09:16.900
+ist sozusagen dieser Ausdruck hier genau dieser
+Bereich. Jetzt teilen wir schon mal in Bereiche
+
+0:09:16.900,0:09:25.090
+auf, wir können unser Programm noch einmal laufen
+lassen und sehen, dass sich im wesentlichen
+
+0:09:25.090,0:09:51.400
+erstmal nichts weiter geändert hat. Jetzt legen
+wir fest, ob die Eingabe schon klein genug ist.
+
+0:09:57.850,0:10:08.290
+Ein naiver Ansatz dazu wäre, man könnte sagen der
+Bereich ist klein genug, wenn x und y identisch
+
+0:10:08.290,0:10:20.560
+sind. Dann ist der Bereich klein genug und dann
+können wir hier auch was machen, mit dem Ergebnis,
+
+0:10:20.560,0:10:30.760
+nämlich dann können wir nämlich auswerten, was
+denn hier in dem Erfolgsfall passieren soll.
+
+0:10:31.660,0:10:42.340
+Wenn x und y gleich sind, dann soll das Prädikat
+für einen der beiden Werte auch gelten. Das können
+
+0:10:42.340,0:10:49.720
+wir jetzt so erstmal ausführen und dann stellen
+wir fest, wir laufen in eine Endlosschleife,
+
+0:10:49.720,0:10:58.180
+wenn wir das Programm ausführen. Warum passiert
+das? Der Bereich wird immer weiter geteilt und
+
+0:10:58.180,0:11:05.680
+es passiert aber irgendwann, dass hier bei
+dem 'splitten', wenn x und y identisch sind,
+
+0:11:05.680,0:11:16.390
+zum Beispiel x ist 2 und y ist 2, dann berechnen
+wir einen neuen Mittelwert und der ist eben
+
+0:11:16.390,0:11:24.330
+auch 2 und dann wird hier der Bereich 3 bis 2
+gewählt. Der Bereich ist noch nicht klein genug,
+
+0:11:24.330,0:11:31.380
+also wird noch weiter geteilt und das müssen
+wir beheben, indem wir sagen, wir wollen nicht
+
+0:11:31.380,0:11:40.740
+den Bereich wo x gleich y ist, sondern wir wollen
+auch den Bereich haben, wenn x größer als y ist.
+
+0:11:45.930,0:11:57.150
+Dadurch sollte jetzt diese Endlosschleife
+behoben sein und jetzt läuft das Programm
+
+0:11:57.150,0:12:07.170
+erstmal durch. Jetzt ist noch immer nicht alles
+korrekt. Wir haben jetzt natürlich den Fall, in
+
+0:12:07.170,0:12:15.450
+dem das Prädikat durchgeführt werden soll oder in
+dem das Prädikat erfolgreich sein soll, der sollte
+
+0:12:15.450,0:12:22.140
+jetzt natürlich auch nur der sein, in dem x und y
+identisch sind. Vorher war der Bereich natürlich
+
+0:12:22.140,0:12:31.950
+durch den Bereich schon abgedeckt, dass wenn x
+gleich y ist und das sozusagen beim Feststellen
+
+0:12:31.950,0:12:40.920
+des 'simple enough' schon x gleich y war, dann war
+das abgedeckt, das ist jetzt nicht mehr der Fall,
+
+0:12:40.920,0:12:50.250
+deshalb muss das hier noch mit definiert werden,
+also wenn x und y identisch sind und das Prädikat
+
+0:12:50.250,0:13:10.440
+gilt, dann wissen wir, dass das Prädikat für
+eine dieser Zahlen gilt. Also wir haben hier
+
+0:13:10.440,0:13:17.130
+festgelegt, dass wir den Bereich eben so klein
+machen, dass die Zahlen entweder identisch sind,
+
+0:13:17.130,0:13:26.010
+oder x größer ist und wenn x größer ist, dann soll
+das entsprechend nicht gelten, deshalb fordern wir
+
+0:13:26.010,0:13:36.200
+hier, dass wenn x gleich y ist und das Prädikat
+gilt, dann wissen, dass das Prädikat für den
+
+0:13:36.200,0:13:42.290
+entsprechenden Bereich gilt. Wir können das ganze
+noch einmal laden und sehen auch, dass jetzt schon
+
+0:13:42.290,0:13:53.300
+noch mehr Testfälle durchlaufen. Was noch immer
+fehlschlägt ist, dass es positive Fälle gibt,
+
+0:13:53.300,0:14:06.560
+die nicht durchlaufen und hier steht, dass das
+zum Beispiel der Fall ist, wenn xs die Liste
+
+0:14:06.560,0:14:22.190
+mit 0 ist und ys die nähere Liste. Das heißt,
+wenn wir eine Liste haben, die mit 0 beginnt,
+
+0:14:22.190,0:14:31.970
+dann kommt die 13 und dann kommt nichts und wir
+übergeben diese Liste an 'findSatisfying' und
+
+0:14:31.970,0:14:39.260
+überprüfen, ob 13 in der Liste enthalten ist, dann
+geht es nicht und das ist ein Fehler. Also genauso
+
+0:14:39.260,0:14:52.280
+könnten wir auch testen, ob 'findSatisfying' für
+größer 3 gilt und wir haben den Bereich 0 bis 5.
+
+0:14:54.630,0:15:01.290
+Dann gibt unser Programm jetzt 'False' zurück und
+sagt: Also es gibt in diesem Bereich 0 bis 5 keine
+
+0:15:01.290,0:15:09.510
+Zahl, die größer als 3 ist und das sollte nicht
+der Fall sein. Das liegt jetzt natürlich an dem
+
+0:15:09.510,0:15:26.100
+Bereich, den wir noch nicht fixed haben, nämlich
+die Funktion soll die Ergebnisse der Teilausdrücke
+
+0:15:26.100,0:15:32.100
+kombinieren und das ist eine Funktion von
+'Boolean', nach 'Boolean', nach 'Boolean', die
+
+0:15:32.100,0:15:38.970
+zwei 'Booleans' nimmt und einen zurückliefert.
+Wir hatten hier definiert, dass das Und sein soll,
+
+0:15:38.970,0:15:50.610
+tatsächlich müssen diese Funktionen aber nicht das
+Und sein, also 'x && y', sondern Oder. Wir nehmen
+
+0:15:50.610,0:15:58.860
+hier die Ergebnisse, die wir zurückbekommen,
+von unseren Teilbereichen, und verknüpfen sie
+
+0:15:58.860,0:16:06.660
+mit Oder. In dem Beispiel gesprochen hier würden
+wir zum Beispiel für die Zahl vier eben das 'True'
+
+0:16:06.660,0:16:13.830
+erhalten und alle anderen Werte sind aber 'False'
+aber 'findSatisfying' muss 'True' zurückliefern.
+
+0:16:13.830,0:16:22.200
+Das macht eben genau auch das Oder. Das heißt,
+in dem Fall jetzt sollte 'findSatisfying' 'True'
+
+0:16:22.200,0:16:30.540
+liefern, das ist der Fall, und wenn wir jetzt die
+Testfälle ausführen, dann geht die komplette Suite
+
+0:16:30.540,0:16:47.930
+auch durch und alle Testfälle sind erfolgreich.
+Und damit haben wir die Aufgabe 25 gelöst.

@@ -1,0 +1,411 @@
+0:00:02.400,0:00:08.160
+For Task 24 we once again look
+at our game level rendering.
+
+0:00:09.760,0:00:14.720
+And this time we're going to use a
+datatype instead of an Integer encoding
+
+0:00:17.120,0:00:20.560
+to encode what tiles are placed at what position.
+
+0:00:20.560,0:00:28.640
+We have this datatype here, called Tile, and it
+has the constructors Block, Water, Pearl and Air.
+
+0:00:29.280,0:00:35.520
+And now I've copied the
+level from Task 13 in here.
+
+0:00:36.080,0:00:38.480
+Still with the integer encoding.
+
+0:00:39.040,0:00:44.240
+And now we're going to change
+it to use this datatype.
+
+0:00:44.240,0:00:51.520
+And because we don't have a value
+in this type for a position where
+
+0:00:51.520,0:01:00.080
+there's no tile we use Maybe Tile as
+the result type of the level function.
+
+0:01:00.720,0:01:03.920
+And we use Nothing as described above here
+
+0:01:05.440,0:01:10.640
+in the same way we used 0 before,
+for when there is actually no tile.
+
+0:01:10.640,0:01:17.360
+So when this function returns Nothing there
+actually is nothing there to be drawn.
+
+0:01:18.800,0:01:21.760
+Okay, so let's start with this.
+
+0:01:21.760,0:01:30.080
+So as I said 0 becomes Nothing in this
+case which is outside of the level.
+
+0:01:32.160,0:01:41.120
+Then 1 was the number for a
+block tile and we just say, okay,
+
+0:01:42.080,0:01:46.960
+this is Just the Block value; same here.
+
+0:01:49.600,0:01:56.640
+Water was 2, now um it's Just Water.
+
+0:01:56.640,0:02:02.320
+And you can see it's far more descriptive
+if we use a datatype instead of this
+
+0:02:02.880,0:02:08.880
+Integer encoding where we had to write
+next to it what it should represent.
+
+0:02:09.520,0:02:12.240
+And it's way easier to get it right this way.
+
+0:02:12.240,0:02:16.000
+So 3 is a Pearl;
+
+0:02:21.040,0:02:21.840
+same here.
+
+0:02:27.120,0:02:31.680
+And 4 is Just Air.
+
+0:02:33.040,0:02:40.080
+Okay, so now we also got rid of this red
+squiggly line telling us that it was a type error
+
+0:02:40.080,0:02:48.240
+because we were giving back Integer numbers
+but said it would be values of Maybe Tile.
+
+0:02:48.240,0:02:53.280
+Now it's values of Maybe Tile, everything is good.
+
+0:02:53.840,0:02:58.560
+Okay then, these values; how
+to actually draw these tiles
+
+0:02:59.680,0:03:04.960
+don't change because they are not depending on
+this datatype but our function that converts
+
+0:03:04.960,0:03:08.000
+a Tile into a Picture
+- one of these values -
+
+0:03:08.000,0:03:13.840
+obviously now is different than when
+we gave it integers as an input.
+
+0:03:14.480,0:03:22.000
+So, we're going to do pattern
+matching on these four constructors.
+
+0:03:23.120,0:03:31.840
+So we have a Block value
+then we use the block image.
+
+0:03:35.040,0:03:45.840
+If we have the Water value it's the water
+image and so on, pretty straightforward.
+
+0:03:48.880,0:03:54.400
+And the last one for Air
+is just the picture of air.
+
+0:03:59.360,0:04:07.440
+Okay, so notice that we don't have a value
+in this function for Nothing as we had with 0
+
+0:04:10.320,0:04:16.880
+in the integer encoding where we said
+everything that's not the above, or maybe we
+
+0:04:17.440,0:04:21.440
+actually matched explicitly on 0 too, is blank.
+
+0:04:22.480,0:04:25.040
+This is not the case here since this
+
+0:04:25.040,0:04:30.320
+datatype just describes all the possible tiles
+and not the possibility for there being nothing.
+
+0:04:30.320,0:04:36.720
+That is encoded in this Maybe and we'll
+have to handle it at another point
+
+0:04:38.000,0:04:39.680
+namely in this visualize function.
+
+0:04:40.400,0:04:42.160
+And we'll do so in a second.
+
+0:04:42.160,0:04:50.800
+Okay, so now this visualize function should
+do the same thing as in the previous task.
+
+0:04:50.800,0:05:01.280
+You should visualize the level in the range of
+-10 to 10, but this time around we should not
+
+0:05:01.280,0:05:06.960
+use recursion or list comprehensions,
+but we can still use these ranges.
+
+0:05:07.600,0:05:14.480
+Okay, so we know that list
+comprehensions can be expressed with
+
+0:05:15.120,0:05:19.360
+map, concat, and filter by
+combining them in the right way.
+
+0:05:21.280,0:05:33.520
+Map seems like a good place to start
+so let's map something over [-10..10]
+
+0:05:36.240,0:05:41.760
+because that's probably where we
+want our values to be drawn from.
+
+0:05:44.560,0:05:55.360
+Let's call them x and now we
+have x values from -10 to 10.
+
+0:05:55.920,0:05:59.920
+Let's do another map because that's how we
+
+0:06:01.040,0:06:05.840
+translate this list comprehensions
+to map and filter and concat.
+
+0:06:06.480,0:06:12.240
+We just nest these maps together
+and in the end we will concat
+
+0:06:12.240,0:06:16.160
+the list back to its original depths, so to speak.
+
+0:06:18.080,0:06:25.920
+So using this map here over the same range since
+the y values will also be drawn from this range
+
+0:06:29.840,0:06:32.560
+we built this inner function.
+
+0:06:32.560,0:06:37.200
+And now we can do something with
+x and y which are all coordinates.
+
+0:06:37.760,0:06:42.640
+And what we want to do is we want
+to draw the tile at this position.
+
+0:06:44.400,0:06:52.240
+Okay, let's leave this blank for the
+moment what this drawTile should be.
+
+0:06:55.120,0:07:01.760
+Let's just put undefined there and make sure
+we get the type right for this expression.
+
+0:07:01.760,0:07:11.760
+So we used map and nested inside it another map
+so this will result in a list of whatever we do
+
+0:07:11.760,0:07:25.600
+with drawTiles and this list that we produce
+here is one element of the outside list.
+
+0:07:25.600,0:07:28.960
+So we have a list of lists here.
+
+0:07:28.960,0:07:33.600
+And when we look at this it says that the
+actual type is list of lists of something
+
+0:07:34.240,0:07:41.120
+and it match this with the actual type
+
+0:07:41.840,0:07:52.960
+which is at this point of function type
+because we haven't given the level a name.
+
+0:07:57.280,0:08:03.040
+So now it says it can't match Picture
+with the type list of list of some values,
+
+0:08:04.160,0:08:04.960
+it doesn't know yet.
+
+0:08:05.520,0:08:12.160
+Okay, so we want to go to picture from probably
+a list of list of pictures if we think about it.
+
+0:08:12.160,0:08:16.800
+drawTile should probably give us a Picture.
+
+0:08:20.000,0:08:23.840
+Ssince list comprehensions are
+made out of this map and filter
+
+0:08:24.640,0:08:33.680
+and concat applications we could just
+use concat to concat the whole list down.
+
+0:08:36.160,0:08:40.000
+And now we have Picture can't be
+matched with a list of somethings
+
+0:08:40.000,0:08:42.080
+which probably will be pictures.
+
+0:08:42.640,0:08:51.600
+So let's just say we call pictures on this just
+like we did in the list comprehension version.
+
+0:08:53.840,0:08:58.320
+And now this infers that drawTile should
+do something that results in a Picture.
+
+0:09:01.200,0:09:08.800
+Okay, something we can do here is we
+can, instead of doing concat and map
+
+0:09:09.360,0:09:15.440
+separately, use a function called concatMap
+that saves us one set of parentheses.
+
+0:09:18.000,0:09:19.840
+Makes it more clear what we are doing here.
+
+0:09:22.080,0:09:28.000
+Okay, so for readability we've
+separated out this drawTile thing
+
+0:09:29.920,0:09:40.160
+and drawTile now; for some integer
+values x and y; what do we do for this?
+
+0:09:40.160,0:09:49.840
+Well, we had this translated by x and y
+
+0:09:52.560,0:10:00.640
+in the original solution because we have to move
+each tile to the place where it should be placed.
+
+0:10:00.640,0:10:03.600
+And then we use
+
+0:10:06.240,0:10:20.000
+would use the aTile function on the level, which
+we called alevel, at x and y returned us. Okay.
+
+0:10:27.200,0:10:33.520
+Now we get an error here regarding the Maybe.
+
+0:10:33.520,0:10:36.160
+We'll fix that in a second.
+
+0:10:39.840,0:10:45.760
+Since we have as always the problem that
+translated takes Double parameters and we are
+
+0:10:45.760,0:11:05.360
+only at Integer values we need to use fromIntegral
+here and now alevel returns a value of Maybe Tile.
+
+0:11:07.280,0:11:15.440
+But atile takes a value of type Tile.
+
+0:11:15.440,0:11:18.240
+Okay, so um how do we do this?
+
+0:11:18.240,0:11:24.880
+Well let's define another function drawMaybe
+
+0:11:28.400,0:11:36.240
+that takes a value that is maybe a
+Tile could be Nothing or Just the tile.
+
+0:11:36.240,0:11:47.800
+And let's check with the help of the functions
+we imported from Data.Maybe if it is Just ...
+
+0:11:50.560,0:12:06.560
+If this Maybe Tile value is Just then we can use
+fromJust and do aTile of fromJust on our value.
+
+0:12:06.560,0:12:09.840
+Which gives us our picture.
+
+0:12:11.840,0:12:23.040
+If this is not the case, meaning we have Nothing
+here then we just say that's the blank image.
+
+0:12:23.040,0:12:31.760
+And now instead of doing this
+here we can just say drawMaybe.
+
+0:12:35.680,0:12:38.960
+And this alevel now takes the coordinates and
+
+0:12:39.520,0:12:45.920
+turns them into a Maybe Tile value and
+this drawMaybe takes care of unpacking this
+
+0:12:46.640,0:12:56.000
+Maybe value and either drawing the tile or a
+blank image if there's no tile to be drawn.
+
+0:12:57.120,0:13:00.080
+There are a couple of other
+ways how we can do this.
+
+0:13:00.080,0:13:06.720
+There are some higher order ways to do this.
+
+0:13:07.920,0:13:09.680
+You could also use pattern matching, but
+
+0:13:11.840,0:13:15.680
+for now let's stick with this version
+which is quite straightforward and
+
+0:13:18.320,0:13:24.960
+easy to follow without too much
+additional syntactic elements.
+
+0:13:28.960,0:13:33.840
+Okay, let's see if it actually works.
+
+0:13:37.680,0:13:39.840
+This looks like our level.
+
+0:13:39.840,0:13:45.031
+Like we would imagine, good.
+
+0:13:45.031,0:13:48.720
+We could now change this level,
+maybe use something different
+
+0:13:50.240,0:13:55.040
+to visualize here, but this works fine.
+
+0:13:55.040,0:13:59.520
+And the principle is the same no matter
+what level you choose, obviously.
+
+0:14:01.120,0:14:09.840
+Okay that's that for Task 24.

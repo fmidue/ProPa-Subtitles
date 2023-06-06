@@ -1,0 +1,267 @@
+0:00:00.530,0:00:06.460
+Hallo, in dieser Aufgabe schauen wir uns die
+'Either' und 'Maybe' Datentypen und ihre Konstruktoren
+
+0:00:06.460,0:00:12.059
+an, indem wir ein paar Werte mit diesen Konstruktoren
+definieren. Den 'Maybe' Datentyp, den wir
+
+0:00:12.059,0:00:19.100
+schon aus der Vorlesung kennen sollten, präsentiert
+eine optionale Variable, also Variablen vom
+
+0:00:19.100,0:00:25.940
+Typ 'Maybe a' könnten entweder was vom Typ
+a sein, repräsentiert durch den 'Just a'
+
+0:00:25.940,0:00:31.520
+Konstruktor, oder könnten einfach ein leerer
+Wert sein, also gar nichts sein, repräsentiert
+
+0:00:31.520,0:00:39.739
+durch den 'Nothing' Konstruktor. Der 'Either'
+Datentyp repräsentiert eine Variable mit
+
+0:00:39.739,0:00:45.870
+zwei Möglichkeiten, also was vom Typ 'Either
+a b' könnte entweder was vom Typ a sein,
+
+0:00:45.870,0:00:50.590
+repräsentiert durch den 'Left a' Konstruktor,
+oder was vom Typ b, repräsentiert durch den
+
+0:00:50.590,0:00:57.559
+'Right b' Konstruktor. Hier angemerkt, dass
+es sich um Typvariablen handelt, also hier
+
+0:00:57.559,0:01:04.890
+kann jeder Typ eingesetzt werden und Typ a
+und diese a's und b's müssen nicht unbedingt
+
+0:01:04.890,0:01:12.700
+verschiedene Typen sein. Wir könnten auch
+was vom Typ 'Either String String' hier haben
+
+0:01:12.700,0:01:21.640
+und dann wäre 'Left String' und Right String'
+erlaubt. Damit können jetzt anfangen die
+
+0:01:21.640,0:01:28.049
+Aufgabe zu lösen und die Aufgabe war, dass
+wir für diese values, die wir hier unten
+
+0:01:28.049,0:01:32.490
+definiert haben, die Typsignaturen, die wir
+dafür schon haben, sollen wir einfach nur
+
+0:01:32.490,0:01:41.049
+korrekte Werte angeben, mit dem Anhängsel,
+dass wir jeden Konstruktor dieser Datentypen
+
+0:01:41.049,0:01:50.070
+mindestens einmal benutzen sollen und dass
+jedes value hier, was diese Typsignatur hat,
+
+0:01:50.070,0:01:52.920
+sollte verschieden sein, also wir können
+hier nicht einfach dieselben definieren.
+
+0:01:52.920,0:02:01.189
+Wenn wir jetzt hier mit 'value1' anfangen,
+sehen wir die Typsignatur 'Either Bool' und
+
+0:02:01.189,0:02:08.009
+List mit einem Tupel mit 'Integer' und 'Bool'
+drin. Dann können wir hier zum Beispiel sagen,
+
+0:02:08.009,0:02:19.260
+weil 'Either' die Konstruktoren 'Left' und
+'Right' hat, 'Left True' oder natürlich 'Left
+
+0:02:19.260,0:02:25.450
+False', weil das sind die einzigen beiden
+Möglichkeiten für 'Bool'. Für 'value2'
+
+0:02:25.450,0:02:30.180
+der die gleiche Typsignatur hat, können wir
+jetzt hingehen und den zweiten Konstruktor
+
+0:02:30.180,0:02:35.209
+benutzen, also sagen wir 'Right' und dann
+müssen wir irgendwas mit dem Typ Liste hier
+
+0:02:35.209,0:02:40.980
+bauen, mit Tupel 'Integer', 'Bool' drin, können
+wir natürlich die leere Liste nehmen oder
+
+0:02:40.980,0:02:48.090
+eine richtige Liste konstruieren, die diese
+Datentypen drin hat. Also Tupel mit 10 und
+
+0:02:48.090,0:02:52.930
+'False' zum Beispiel. Natürlich können wir,
+weil es eine Liste ist, mehrere Tupel rein
+
+0:02:52.930,0:02:59.090
+tun, also 2 und 'True' zum Beispiel, oder
+noch ein drittes mit 1 und 'False', oder wie
+
+0:02:59.090,0:03:05.380
+viele wir wollen. Wichtig ist, dass diese
+hier sich voneinander unterscheiden, also
+
+0:03:05.380,0:03:12.709
+1 und 2 müssen sich voneinander unterscheiden,
+3, 4 und 5 müssen sich voneinander unterscheiden
+
+0:03:12.709,0:03:15.640
+und 6 und 7 müssen sich voneinander unterscheiden.
+Und muss natürlich den Typsignaturen entsprechen.
+
+0:03:15.640,0:03:22.090
+Wenn wir dann weiter gehen zu 'value3' sehen
+wir, hier müssen wir anfangen aufzufassen
+
+0:03:22.090,0:03:26.130
+mit den Klammern, weil manche von diesen Klammern
+zeigen, dass es ein Tupel ist und manche sind
+
+0:03:26.130,0:03:32.659
+einfach nur Klammern, die die Typsignaturen
+voneinander halten. Hier sehen wir, außen
+
+0:03:32.659,0:03:41.390
+rum einen Tupel, also ein Tupel mit 'Maybe'
+und diesem ganzen Zeug und 'Maybe Integer'.
+
+0:03:41.390,0:03:46.450
+Wenn wir hier also einfach anfangen, außen
+rum einen Tupel drum und dann für das erste
+
+0:03:46.450,0:03:50.189
+'Maybe' könnten wir ganz kurz sagen, 'Maybe'
+mit den Konstruktoren 'Nothing' und 'Just'
+
+0:03:50.189,0:03:55.400
+können wir sagen, 'Nothing' und für das
+zweite 'Maybe', 'Maybe Integer' könnten wir
+
+0:03:55.400,0:04:00.860
+auch sagen, 'Nothing' und das wäre eine erlaubte
+Implementierung von der Typsignatur.
+
+0:04:00.860,0:04:10.969
+Für 'value4' haben wir nochmal dieselbe Typsignatur,
+also können wir jetzt hier reingehen und
+
+0:04:10.969,0:04:15.819
+sagen, für das erste 'Maybe' benutzen wir
+nicht 'Nothing', sondern 'Just' dieses Mal,
+
+0:04:15.819,0:04:26.420
+also müssen wir uns was von diesem Typ hier
+zusammenbauen. Dieser Typ ist 'Either (Integer,
+
+0:04:26.420,0:04:30.750
+Maybe Integer) Bool', also müssen wir jetzt
+hier entweder 'Left'
+
+0:04:30.750,0:04:37.900
+oder 'Right' erstmal benutzen. Wenn wir 'Left'
+benutzen, müssen wir irgend so ein Tupel
+
+0:04:37.900,0:04:46.169
+zusammenbauen mit 'Integer' und 'Maybe Integer',
+10 und 'Nothing' zum Beispiel, oder 10 und
+
+0:04:46.169,0:04:53.300
+'Just 2' zum Beispiel. Natürlich müssen
+wir nicht 'Left' benutzen, wir könnten auch
+
+0:04:53.300,0:05:07.780
+'Right' benutzen, womit wir dann 'Either Bool'
+haben, also 'Right True' zum Beispiel, oder
+
+0:05:07.780,0:05:12.510
+'Right False' und für den zweiten Teil unseres
+Tupels, für das 'Maybe Integer' benutzen
+
+0:05:12.510,0:05:19.530
+wir jetzt auch nicht 'Nothing', sondern nutzen
+'Just 2' zum Beispiel, oder jeden 'Integer',
+
+0:05:19.530,0:05:26.199
+den Ihr euch aussuchen wollt. 'value5' hat
+nochmal dieselbe Typsignatur, fangen wieder
+
+0:05:26.199,0:05:32.860
+genau so an mit 'Just', oben haben wir 'Right'
+benutzt, deswegen benutzen wir jetzt 'Left'
+
+0:05:32.860,0:05:41.430
+und bauen wir ein Tupel mit 10 'Nothing' zum
+Beispiel, oder 10 und 'Just 2', und für das
+
+0:05:41.430,0:05:51.919
+andere 'Maybe', in unserem Tupel, benutzen
+wir 'Just 10' zum Beispiel, oder 'Nothing'
+
+0:05:51.919,0:06:00.389
+ist natürlich auch erlaubt. 'value6' und
+'value7', die Typsignatur ist 'Either' und
+
+0:06:00.389,0:06:05.860
+dann haben wir hier entweder dieses Tupel,
+mit 'Maybe Integer' und 'Bool' oder das hier.
+
+0:06:05.860,0:06:12.520
+Aufpassen, das hier ist wieder kein Tupel,
+das ist ein 'Maybe', was ein Tupel sein kann
+
+0:06:12.520,0:06:18.690
+oder natürlich 'Nothing'. Also hier könnten
+wir zum Beispiel sagen, 'Right Nothing', dann
+
+0:06:18.690,0:06:25.449
+haben wir dieses 'Either' und das hier benutzt,
+für dieses 'Maybe', dann einfach 'Nothing'
+
+0:06:25.449,0:06:38.610
+oder natürlich 'Right' und dann wird ein
+Tupel gebaut mit 12 und 'Just False' zum Beispiel.
+
+0:06:38.610,0:06:44.259
+Für 'value7' nehmen wir dann wieder den linken
+Konstruktor, also 'Left', bauen ein Tupel
+
+0:06:44.259,0:06:49.550
+aus 'Maybe Integer' und 'Bool', also 'Just
+24' und 'False' zum Beispiel. Natürlich könnten
+
+0:06:49.550,0:06:59.840
+wir ja auch hier wieder 'Nothing' nehmen,
+aber lassen wir das jetzt mal so und wenn
+
+0:06:59.840,0:07:10.509
+wir das jetzt speichern und hier in ghci neu
+laden, sehen wir, dass ich einen kleinen Fehler
+
+0:07:10.509,0:07:15.669
+gemacht habe, genau hier in 'value6' habe
+ich mit der Klammerung nicht richtig aufgepasst,
+
+0:07:15.669,0:07:27.610
+denn wir haben hier natürlich noch das 'Maybe'
+gehabt. Wenn wir das dann speichern und ausprobieren,
+
+0:07:27.610,0:07:32.690
+sollte das jetzt funktionieren, ja erstmal
+hat es richtig geladen und wenn wir dann auch
+
+0:07:32.690,0:07:37.860
+die Tests ausführen, sehen wir, dass es jetzt
+funktioniert, also die Tests sagen auch, dass
+
+0:07:37.860,0:07:43.689
+diese untereinander verschieden sind, also
+haben wir die Aufgabe richtig gelöst.
