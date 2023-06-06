@@ -1,47 +1,59 @@
 0:00:01.749,0:00:08.150
 Dann kommen wir zur Aufgabe 24.
-Da haben wir jetzt wieder unser Level-Thema, was wir schon ein paar mal hatten...
+Da haben wir jetzt wieder unser Level-Thema, was wir schon ein paar mal
+hatten...
 
 0:00:08.300,0:00:13.118
-Und was man jetzt machen soll ist, man soll die vorherige Art wie wir ein Level dargestellt haben...
+Und was man jetzt machen soll ist, man soll die vorherige Art wie wir ein Level
+dargestellt haben...
 
 0:00:13.118,0:00:19.372
 nämlich indem zuerst eine Level-Funktion haben,
 die irgendwelche Koordinaten nimmt und uns dann ein Tile gibt...
 
 0:00:19.777,0:00:25.152
-und dieses Tile dann irgendwie gezeichnet wird und dann das Ganze aber dann vorher in einer list comprehension dargestellt...
+und dieses Tile dann irgendwie gezeichnet wird und dann das Ganze aber dann
+vorher in einer list comprehension dargestellt...
 
 0:00:25.152,0:00:33.308
-indem wir einfach gesagt haben, wir machen für jede einzelne Koordinaten-Kombination hier von -10 bis 10 von x und y jeweils ein Tile und bewegen das irgendwie.
+indem wir einfach gesagt haben, wir machen für jede einzelne
+Koordinaten-Kombination hier von -10 bis 10 von x und y jeweils ein Tile und
+bewegen das irgendwie.
 
 0:00:33.308,0:00:37.950
-Das sollen wir jetzt so ändern, dass wir jetzt nicht mehr so einen Zahlencode haben, wie wir das darstellen wollen.
+Das sollen wir jetzt so ändern, dass wir jetzt nicht mehr so einen Zahlencode
+haben, wie wir das darstellen wollen.
 
 0:00:37.950,0:00:45.723
-Wir haben ja vorher gesagt: Wir haben eine Funktion von Integer-Tupeln zu einer einzelnen Integer-Zahl, die dann einfach nur eine Codierung ist für ein Tile.
+Wir haben ja vorher gesagt: Wir haben eine Funktion von Integer-Tupeln zu einer
+einzelnen Integer-Zahl, die dann einfach nur eine Codierung ist für ein Tile.
 
 0:00:45.723,0:00:53.035
-Jetzt haben wir halt „Maybe Tile“, was da rauskommt. Das heißt da kann jetzt entweder „Just irgendein ein Tile“ rauskommen oder „Nothing“...
+Jetzt haben wir halt „Maybe Tile“, was da rauskommt. Das heißt da kann
+jetzt entweder „Just irgendein ein Tile“ rauskommen oder „Nothing“...
 
 0:00:53.035,0:00:56.719
 was sozusagen ein Fehlschlag ist. Das heißt, das ist nicht mehr im Level drin.
 
 0:00:56.996,0:01:05.383
-Und hier haben wir dann anstatt, dass wir diesen Zahlencode dann in ein Bild übersetzen, haben wir dann halt diesen custom datatype Tile...
+Und hier haben wir dann anstatt, dass wir diesen Zahlencode dann in ein Bild
+übersetzen, haben wir dann halt diesen custom datatype Tile...
 
 0:01:05.383,0:01:11.780
 den wir dann in ein Bild übersetzen und der wurde hier oben definiert.
 Der ist einfach nur Block, Wasser, Perle oder Luft.
 
 0:01:13.038,0:01:17.492
-Also wir haben jetzt sozusagen den Zahlencode rausgenommen und haben das jetzt durch so einen custom type ersetzt.
+Also wir haben jetzt sozusagen den Zahlencode rausgenommen und haben das jetzt
+durch so einen custom type ersetzt.
 
 0:01:17.492,0:01:21.870
-Es kann auch passieren, dass halt einfach nichts herauskommt, wenn es nicht im Level drin ist.
+Es kann auch passieren, dass halt einfach nichts herauskommt, wenn es nicht im
+Level drin ist.
 
 0:01:22.958,0:01:30.000
-Und wenn wir das dann alles gemacht haben, dann sollen wir das mit dieser neuen Funktionen visualize darstellen, und zwar ohne list comprehension.
+Und wenn wir das dann alles gemacht haben, dann sollen wir das mit dieser neuen
+Funktionen visualize darstellen, und zwar ohne list comprehension.
 
 0:01:30.683,0:01:36.618
 So, dann fangen wir oben an. Das sind die einfachen Sachen, die beiden hier.
@@ -62,13 +74,15 @@ dann ist das ja „outside of the level“.
 Das heißt, das ist also nichts, Nothing.
 
 0:01:53.459,0:01:57.376
-Bei allem anderen müssen wir jetzt einfach nur das jeweilige Tile mit einem Just davorsetzen.
+Bei allem anderen müssen wir jetzt einfach nur das jeweilige Tile mit einem
+Just davorsetzen.
 
 0:01:57.376,0:02:05.135
 Also hier sollte ein Block sein, Just Block... Hier genau das Gleiche…
 
 0:02:09.358,0:02:24.648
-Hier haben wir Just Water… Just Pearl… Nochmal und das Letzte noch: Just Air.
+Hier haben wir Just Water… Just Pearl… Nochmal und das Letzte noch: Just
+Air.
 
 0:02:27.506,0:02:32.399
 Und hier unten bei dem aTile hatten wir jetzt vorher diese Zahlen.
@@ -88,23 +102,29 @@ In diesem Fall können wir jetzt diesen catch all hier unten
 sparen.
 
 0:02:55.733,0:03:01.909
-Denn da kann jetzt eh nichts mehr passieren. Es gibt keine anderen Werte als die vier hier.Wir haben den Typ ja extra so definiert. Es gibt nur diese vier.
+Denn da kann jetzt eh nichts mehr passieren. Es gibt keine anderen Werte als
+die vier hier. Wir haben den Typ ja extra so definiert. Es gibt nur diese vier.
 
 0:03:01.909,0:03:03.938
 Das heißt, das hier ist überflüssig, hier unten.
 
 0:03:06.732,0:03:10.871
-So, jetzt haben wir schon alles gemacht. Jetzt müssen wir nur noch irgendwie das Ganze auf dem Bildschirm bekommen
+So, jetzt haben wir schon alles gemacht. Jetzt müssen wir nur noch irgendwie
+das Ganze auf dem Bildschirm bekommen
 
 0:03:12.620,0:03:19.980
-Ich habe jetzt mal die alte Funktion hier unten stehen. Das ist ja die Funktion aus der Aufgabe 14, glaube ich, wo das das letzte Mal vorkam.
+Ich habe jetzt mal die alte Funktion hier unten stehen. Das ist ja die Funktion
+aus der Aufgabe 14, glaube ich, wo das das letzte Mal vorkam.
 
 0:03:21.750,0:03:26.898
 Da hatten wir es so gemacht,
-das wir hier ist einfach nur jeweils x y versetzt haben, wo die Koordinaten waren...
+das wir hier ist einfach nur jeweils x y versetzt haben, wo die Koordinaten
+waren...
 
 0:03:26.898,0:03:36.160
-und dann mit einer list comprehension die Koordinaten herausgezogen haben und die dann jeweils… Die Level-Funktion dafür aufgerufen haben und dann die aTile-Funktion.
+und dann mit einer list comprehension die Koordinaten herausgezogen haben und
+die dann jeweils… Die Level-Funktion dafür aufgerufen haben und dann die
+aTile-Funktion.
 
 0:03:36.565,0:03:41.454
 Sodass wir dann halt jeweils ein Bild bekommen,
@@ -115,10 +135,12 @@ Jetzt sollen wir uns hier ein bisschen mehr anstrengen das zu machen,
 da wir ja keine list comprehension benutzen dürfen.
 
 0:03:48.307,0:03:57.419
-Was man da jetzt als Erstes machen kann, ist schon mal überlegen wie bekomme ich jetzt meine Tupel, weil wir können ja keine list comprehenesion benutzen.
+Was man da jetzt als Erstes machen kann, ist schon mal überlegen wie bekomme
+ich jetzt meine Tupel, weil wir können ja keine list comprehenesion benutzen.
 
 0:03:57.898,0:04:05.284
-Und was da geht ist... Ich schreibe erstmal den Ausdruck hin und erkläre dann was das soll, das ist ein bisschen schwer verständlich.
+Und was da geht ist... Ich schreibe erstmal den Ausdruck hin und erkläre dann
+was das soll, das ist ein bisschen schwer verständlich.
 
 0:04:05.284,0:04:14.866
 Wir haben jetzt… Wir mappen jetzt einmal und da drin mappen wir nochmal.
@@ -127,19 +149,25 @@ Wir haben jetzt… Wir mappen jetzt einmal und da drin mappen wir nochmal.
 Also wir mappen jetzt irgendwas und in diesem map mappen wir nochmal.
 
 0:04:31.111,0:04:35.725
-Dann benutzen wir unsere beiden ranges. Wir haben dann - 10 bis 10… sollte das ja sein. So,
+Dann benutzen wir unsere beiden ranges. Wir haben dann - 10 bis 10… sollte
+das ja sein. So,
 
 0:04:42.742,0:04:50.715
-wenn wir den Ausdruck jetzt angucken, dann sehen wir hier… In der Typ-Beschreibung da unten steht ja: actual type Liste von Liste von Integer-Tupeln.
+wenn wir den Ausdruck jetzt angucken, dann sehen wir hier… In der
+Typ-Beschreibung da unten steht ja: actual type Liste von Liste von
+Integer-Tupeln.
 
 0:04:50.715,0:04:55.765
-Also das sind jetzt die Tupel, die wir haben wollen, es sind nur mehr Listen als wir eigentlich möchten.
+Also das sind jetzt die Tupel, die wir haben wollen, es sind nur mehr Listen
+als wir eigentlich möchten.
 
 0:04:55.957,0:05:01.764
-Wer sich jetzt wundert, warum das überhaupt funktioniert und was das bedeuten soll, der kann sich das mal aufschreiben und ausprobieren.
+Wer sich jetzt wundert, warum das überhaupt funktioniert und was das bedeuten
+soll, der kann sich das mal aufschreiben und ausprobieren.
 
 0:05:02.702,0:05:07.039
-Das können wir jetzt mal aufschreiben. Das machen wir jetzt mit kleineren ranges.
+Das können wir jetzt mal aufschreiben. Das machen wir jetzt mit kleineren
+ranges.
 
 0:05:11.156,0:05:15.879
 Wenn wir jetzt einfach nur, sagen wir mal [1, 2] (nehmen),
@@ -147,25 +175,30 @@ dann haben wir nicht so viel.
 
 0:05:19.843,0:05:27.880
 Und wir wissen ja, dass die map-Funktion gerade die Funktion,
-die gemappt wird, also das erste Argument, wird einfach auf jedes einzelne Element des zweiten Arguments angewandt.
+die gemappt wird, also das erste Argument, wird einfach auf jedes einzelne
+Element des zweiten Arguments angewandt.
 
 0:05:27.880,0:05:35.657
-Also wenn wir eine Liste von Zahlen haben z. B. und unsere gemappte Funktion ist jetzt *5, dann wird jedes Element *5 genommen, zum Beispiel.
+Also wenn wir eine Liste von Zahlen haben z. B. und unsere gemappte Funktion
+ist jetzt *5, dann wird jedes Element *5 genommen, zum Beispiel.
 
 0:05:36.318,0:05:39.565
-Wenn man jetzt hier so geschachtelte maps hat, dann kann man das ja eigentlich einfach mal anwenden.
+Wenn man jetzt hier so geschachtelte maps hat, dann kann man das ja eigentlich
+einfach mal anwenden.
 
 0:05:39.565,0:05:47.581
 Wir sagen jetzt einfach wir mappen erst den ganzen Kram hier über diese Liste.
 
 0:05:48.775,0:06:00.563
-Also wir mappen das x einfach über jede einzelne Zahl hier: 1, 2. Das ist dann immer das x, also einmal ist x die 1, einmal die 2, in dieser Liste hier…
+Also wir mappen das x einfach über jede einzelne Zahl hier: 1, 2. Das ist dann
+immer das x, also einmal ist x die 1, einmal die 2, in dieser Liste hier…
 
 0:06:00.761,0:06:02.080
 Das kann ich auch so schreiben.
 
 0:06:04.619,0:06:08.608
-Einmal x ist gleich 1, einmal x ist gleich 2 und dann wird darauf noch mal gemappt.
+Einmal x ist gleich 1, einmal x ist gleich 2 und dann wird darauf noch mal
+gemappt.
 
 0:06:10.186,0:06:20.013
 Wenn man das jetzt einfach anwendet,
@@ -199,7 +232,8 @@ Da wo die 1 stand haben wir jetzt diesen Ausdruck hier stehen
 und da wo die 2 stand, vorher, haben wir diesen Ausdruck hier stehen.
 
 0:07:23.672,0:07:31.323
-Wenn man das jetzt hier einfach noch mal anwendet, dann mappt man halt über das hier… Wir sind hier drin... und wenden diese Funktion hier an.
+Wenn man das jetzt hier einfach noch mal anwendet, dann mappt man halt über
+das hier… Wir sind hier drin... und wenden diese Funktion hier an.
 
 0:07:32.006,0:07:34.593
 Und dann haben wir halt gerade diese Tupel-Listen.
@@ -211,7 +245,8 @@ Dann haben wir einmal eine Liste, da steht drin [(1,1), (1,2)]...
 und eine zweite Liste, da steht drin [(2,1), (2,2)].
 
 0:07:56.062,0:08:00.550
-Das heißt, wir haben jetzt eine Liste von Listen mit jeweils Integer-Tupeln drin.
+Das heißt, wir haben jetzt eine Liste von Listen mit jeweils Integer-Tupeln
+drin.
 
 0:08:02.534,0:08:04.326
 Das ist ja auch genau das, was hier steht.
@@ -224,17 +259,21 @@ dass wir nur eine Liste von Integer-Tupeln haben.
 Das heißt wir müssen die zwei Listen hier irgendwie kombinieren oder
 
 0:08:12.490,0:08:19.811
-in diesem Falle hier ist es doch um einiges mehr. Es gibt halt für jeden x-Wert welche, also 20 insgesamt, die wir zusammenfassen wollen.
+in diesem Falle hier ist es doch um einiges mehr. Es gibt halt für jeden
+x-Wert welche, also 20 insgesamt, die wir zusammenfassen wollen.
 
 0:08:20.245,0:08:25.257
-Da gibt es jetzt extra die Funktion concat für, die kann einfach nur eine beliebige Anzahl von Listen zusammenführen in eine einzige.
+Da gibt es jetzt extra die Funktion concat für, die kann einfach nur eine
+beliebige Anzahl von Listen zusammenführen in eine einzige.
 
 0:08:25.364,0:08:35.273
-Das könnte man jetzt davor schreiben, man könnte jetzt irgendwie concat schreiben...
+Das könnte man jetzt davor schreiben, man könnte jetzt irgendwie concat
+schreiben...
 und dann hätten wir jetzt hier nur noch eine Liste mit Integer-Tupeln.
 
 0:08:38.280,0:08:42.569
-Das kann man sich aber auch noch verkürzen, denn es gibt auch eine Funktion die concat und map vereinigt.
+Das kann man sich aber auch noch verkürzen, denn es gibt auch eine Funktion
+die concat und map vereinigt.
 
 0:08:42.569,0:08:46.026
 Also wir können auch einfach schreiben: concatMap, hier vorne.
@@ -243,7 +282,8 @@ Also wir können auch einfach schreiben: concatMap, hier vorne.
 Und jetzt haben direkt eine Liste mit Integer-Tupeln.
 
 0:08:51.622,0:08:56.698
-concatMap ist einfach nur, das zuerst map und dann concat ausgeführt wird. Das ist einfach nur convenience...
+concatMap ist einfach nur, das zuerst map und dann concat ausgeführt wird. Das
+ist einfach nur convenience...
 
 0:08:57.207,0:08:59.733
 Damit man nicht beides immer hinschreiben muss… Mit extra Klammern...
@@ -260,7 +300,8 @@ Nämlich, wir müssen erstmal gucken, wenn wir jetzt in das Level etwas reintun,
 also wir geben dieser Funktion level hier irgendwelche Koordinaten.
 
 0:09:21.016,0:09:26.033
-Dann bekommen wir ja ein Maybe Tile raus. Aber wir wollen ja für aTile, wo wir dann unser Bild bekommen…
+Dann bekommen wir ja ein Maybe Tile raus. Aber wir wollen ja für aTile, wo wir
+dann unser Bild bekommen…
 
 0:09:26.033,0:09:31.409
 Da brauchen wir ja Tile und nicht Maybe Tile.
@@ -271,14 +312,18 @@ Und wir müssen natürlich checken das überhaupt ein Just ist
 oder ob das ein Nothing ist, dann können wir ja gar nichts damit machen.
 
 0:09:37.893,0:09:45.469
-Wir brauchen also eine Funktion, die guckt, was ist das überhaupt für ein Wert:
-Ist das ein Just irgendwas oder ist das ein Nothing und dann müssen wir das da rausholen, wenn das ein Just irgendwas ist.
+Wir brauchen also eine Funktion, die guckt, was ist das überhaupt für ein
+Wert:
+Ist das ein Just irgendwas oder ist das ein Nothing und dann müssen wir das da
+rausholen, wenn das ein Just irgendwas ist.
 
 0:09:46.088,0:09:50.390
-Also wir können hier jetzt, z. B. schreiben getTile, so können wir das nennen...
+Also wir können hier jetzt, z. B. schreiben getTile, so können wir das
+nennen...
 
 0:09:51.222,0:09:55.570
-und dann haben wir irgendeine Variable (vom Typ) Maybe Tile, die nenne ich jetzt mal mt.
+und dann haben wir irgendeine Variable (vom Typ) Maybe Tile, die nenne ich
+jetzt mal mt.
 
 0:09:57.084,0:10:00.530
 Und da gucken wir als allererstes: Ist das überhaupt ein Just-Wert.
@@ -288,32 +333,41 @@ Da gibt es die Funktion isJust, die ist in dem Paket Data.Maybe drin,
 das habe ich hier oben importiert.
 
 0:10:08.463,0:10:15.021
-Das heißt, wir können dann einfach nur diese Funktion benutzen. Die guckt einfach: Ist das ein Just oder nicht. Das ist ein Boolean, das Ergebnis.
+Das heißt, wir können dann einfach nur diese Funktion benutzen. Die guckt
+einfach: Ist das ein Just oder nicht. Das ist ein Boolean, das Ergebnis.
 
 0:10:15.256,0:10:24.806
-Das tun wir jetzt also hier rein und wenn es eins ist, dann extrahieren wir das aus dem Just, nehmen wir also die Funktion fromJust, die ist auch in dem Paket drin…
+Das tun wir jetzt also hier rein und wenn es eins ist, dann extrahieren wir das
+aus dem Just, nehmen wir also die Funktion fromJust, die ist auch in dem Paket
+drin…
 
 0:10:26.043,0:10:30.842
-mt und davon wollen wir ja das Tile haben, also dann wenden wir darauf die Funktion aTile an.
+mt und davon wollen wir ja das Tile haben, also dann wenden wir darauf die
+Funktion aTile an.
 
 0:10:33.315,0:10:38.926
-Das funktioniert ja, weil wenn wir dann fromJust auf dieses mt machen und das ist ein Just-Wert, dann bekommen wir gerade ein Tile raus.
+Das funktioniert ja, weil wenn wir dann fromJust auf dieses mt machen und das
+ist ein Just-Wert, dann bekommen wir gerade ein Tile raus.
 
 0:10:39.822,0:10:44.334
-Das packen wir dann in die aTile-Funktion und bekommen unser Bild, was wir dann zeichnen wollen.
+Das packen wir dann in die aTile-Funktion und bekommen unser Bild, was wir dann
+zeichnen wollen.
 
 0:10:45.315,0:10:50.852
-Und wenn wir dann Nothing herausbekommen, dann zeichnen wir einfach ein leeres Bild.
+Und wenn wir dann Nothing herausbekommen, dann zeichnen wir einfach ein leeres
+Bild.
 
 0:10:56.580,0:11:01.537
-So, und was hier jetzt noch fehlt, ist dann nur, dass wir das Ganze auf dem Bildschirm zeichnen.
+So, und was hier jetzt noch fehlt, ist dann nur, dass wir das Ganze auf dem
+Bildschirm zeichnen.
 
 0:11:02.155,0:11:08.798
 Da können wir uns einfach alles benutzen, was wir schon haben,
 nämlich einmal die Tupel... die wir us hier definiert haben
 
 0:11:08.798,0:11:13.569
-und einmal die… Wie man tatsächlich ein Tile rausextrahiert und ein Bild bekommt.
+und einmal die… Wie man tatsächlich ein Tile rausextrahiert und ein Bild
+bekommt.
 
 0:11:14.593,0:11:17.139
 Das können wir jetzt drawTile
@@ -323,35 +377,45 @@ oder so nennen... Und dann
 Die Koordinaten…
 
 0:11:22.045,0:11:26.490
-Und dann kopieren wir das ist einfach aus der alten Funktion raus, wie das vorher gemacht wurde, in der list comprehension.
+Und dann kopieren wir das ist einfach aus der alten Funktion raus, wie das
+vorher gemacht wurde, in der list comprehension.
 
 0:11:26.490,0:11:31.692
-Da hatten wir ja, dass wir das translaten um x und y und dann unsere level-Funktion benutzt.
+Da hatten wir ja, dass wir das translaten um x und y und dann unsere
+level-Funktion benutzt.
 
 0:11:33.100,0:11:34.369
 Das können wir hier jetzt auch nehmen.
 
 0:11:35.670,0:11:47.709
-Und da können wir jetzt den hinteren Teil hier verändern. Nämlich, dass wir jetzt… Wir kriegen jetzt ein Maybe (Tile) hier raus und kein direktes Tile mehr, darum müssen jetzt das aTile ersetzten durch unsere getTile-Funktion.
+Und da können wir jetzt den hinteren Teil hier verändern. Nämlich, dass wir
+jetzt… Wir kriegen jetzt ein Maybe (Tile) hier raus und kein direktes Tile
+mehr, darum müssen jetzt das aTile ersetzten durch unsere getTile-Funktion.
 
 0:11:51.580,0:11:57.697
-Das heißt, jetzt zeichnen wir einfach nur… Wir nehmen uns irgendein Bild versetzen das um x und y...
+Das heißt, jetzt zeichnen wir einfach nur… Wir nehmen uns irgendein Bild
+versetzen das um x und y...
 
 0:11:57.931,0:12:03.550
-Und das Bild selber bekommen wir, indem die level-Funktion aufrufen und dann bekommen wir ein Maybe Tile raus, mit den Koordinaten...
+Und das Bild selber bekommen wir, indem die level-Funktion aufrufen und dann
+bekommen wir ein Maybe Tile raus, mit den Koordinaten...
 
 0:12:03.550,0:12:10.997
-und dann wenden wir darauf unsere getTile-Funktion an, die wir definiert hatten. Dann bekommen wir entweder, wenn es nichts ist, ein leeres Bild zurück...
+und dann wenden wir darauf unsere getTile-Funktion an, die wir definiert
+hatten. Dann bekommen wir entweder, wenn es nichts ist, ein leeres Bild
+zurück...
 
 0:12:10.997,0:12:15.166
 oder wir bekommen halt gerade das Tile zurück, was das dann bedeutet.
 
 0:12:16.564,0:12:20.151
-Das wird dann direkt in ein Picture umgewandelt und dann bekommen wir unser Bild, an der Stelle.
+Das wird dann direkt in ein Picture umgewandelt und dann bekommen wir unser
+Bild, an der Stelle.
 
 0:12:20.578,0:12:25.866
 Was jetzt noch fehlt, ist einfach nur,
-dass wir hier diese Tupel auch tatsächlich auch damit verbinden, mit dem Zeug hier.
+dass wir hier diese Tupel auch tatsächlich auch damit verbinden, mit dem Zeug
+hier.
 
 0:12:26.101,0:12:30.840
 Wir haben jetzt hier immer noch nur eine Liste von Integer-Tupeln
@@ -364,13 +428,15 @@ die wir hier definiert haben und die packen wir jetzt mit hier vorne herein,
 0:12:45.057,0:12:55.966
 denn wir können hier, wenn wir die Tupel daraus ziehen,
 aus den beiden Listen Wir haben ja hier das so definiert,
-dass wir die Tupel der beiden Listen rausbekommen, die Tupel der einzelnen Zahlen.
+dass wir die Tupel der beiden Listen rausbekommen, die Tupel der einzelnen
+Zahlen.
 
 0:12:56.819,0:13:00.816
 Dann können wir das war einfach hier vorschreiben, die Funktion hier…
 
 0:13:03.184,0:13:10.710
-Auch Tile direkt von diesen Tupeln und wir uns den Compiler-Hinweis hier angucken, dann steht da: actual type Picture-Liste.
+Auch Tile direkt von diesen Tupeln und wir uns den Compiler-Hinweis hier
+angucken, dann steht da: actual type Picture-Liste.
 
 0:13:11.286,0:13:15.869
 Also wir haben direkt die dann in die Funktion reingepackt,
@@ -381,7 +447,8 @@ Und da packen wir jetzt einfach nur die Funktion pictures davor,
 die ja gerade zwischen alle Bilder in der Liste ein & setzt.
 
 0:13:33.753,0:13:40.827
-Und dann haben wir die Funktion hier eigentlich schon, aber ich hatte am Anfang vergessen hier level hinzuschreiben, als Parameter, was wir da bekommen.
+Und dann haben wir die Funktion hier eigentlich schon, aber ich hatte am Anfang
+vergessen hier level hinzuschreiben, als Parameter, was wir da bekommen.
 
 0:13:42.235,0:13:48.715
 So und jetzt sollte das Ganze funktionieren. Schauen wir uns das mal an…
