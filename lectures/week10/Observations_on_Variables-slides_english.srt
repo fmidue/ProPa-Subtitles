@@ -1,0 +1,718 @@
+9 # slide
+00:00:02,480 --> 00:00:07,280
+Okay, let me make some observations
+on variables and their use in Prolog.
+
+00:00:07,920 --> 00:00:09,280
+Some things we have already seen.
+
+00:00:09,280 --> 00:00:14,480
+So, this is an example from
+the end of the previous video.
+
+00:00:14,480 --> 00:00:16,800
+And what we saw there.
+
+00:00:16,800 --> 00:00:22,880
+And I commented on this already is that, of
+course, there is no somehow contradiction or
+
+00:00:22,880 --> 00:00:32,960
+interference between a variable usage in
+the query here and in rule in a program.
+
+00:00:32,960 --> 00:00:33,520
+Right?
+
+00:00:33,520 --> 00:00:36,400
+That we have X here and X here is not a problem,
+
+00:00:36,400 --> 00:00:40,640
+just as in Haskell or other
+languages variables have a scope.
+
+00:00:40,640 --> 00:00:44,160
+And usually, the scope is for
+example, over a function definition.
+
+00:00:44,160 --> 00:00:46,160
+So, this X and Y are this X and Y.
+
+00:00:46,800 --> 00:00:49,040
+And well, this X is completely different.
+
+00:00:49,040 --> 00:00:52,000
+You could think of these X and Y to
+be some are renamed to X prime and
+
+00:00:52,000 --> 00:00:56,560
+Y prime if you need to make sure that
+you don't confuse that X with that X.
+
+00:00:56,560 --> 00:00:57,760
+But you don't have to do this,
+
+00:00:57,760 --> 00:01:01,040
+that's handled by the runtime system,
+just as in other languages as well.
+
+00:01:01,040 --> 00:01:03,680
+Okay, so that's something
+that's not new or surprising.
+
+00:01:04,720 --> 00:01:07,920
+Also, it should go without
+saying, or that's already been said,
+
+00:01:08,560 --> 00:01:15,120
+that within one rule, or within one query, the
+same variable represents the same object, right?
+
+00:01:15,680 --> 00:01:19,920
+So, this Z and this Z are the same thing
+because they are the same variable.
+
+00:01:21,760 --> 00:01:23,680
+Again, standard practice.
+
+00:01:24,560 --> 00:01:25,120
+Okay.
+
+00:01:25,120 --> 00:01:31,760
+Likewise, different variables may represent
+but don't have to represent different objects.
+
+00:01:31,760 --> 00:01:34,960
+Yeah, so that's why we had to add
+this explicit constraint here.
+
+00:01:34,960 --> 00:01:38,320
+Because if we didn't, then despite
+the fact that we have X and Y here,
+
+00:01:38,320 --> 00:01:42,800
+they could, of course, be the same
+entity in a concrete instantiation.
+
+00:01:44,400 --> 00:01:49,280
+Again, just like, if you have a functional
+procedure in other language, and you have
+
+00:01:49,280 --> 00:01:53,040
+two argument variables, even
+though it's a different variable,
+
+00:01:53,040 --> 00:01:55,760
+you could, of course, pass the
+same way, the same argument.
+
+00:01:56,320 --> 00:02:00,720
+Okay, so far, that's as expected,
+but there are some subtleties.
+
+00:02:00,720 --> 00:02:04,720
+Some things are different in
+Prolog than certainly in Haskell.
+
+00:02:04,720 --> 00:02:07,840
+And probably also in other languages
+that you have considered or seen.
+
+00:02:08,400 --> 00:02:10,000
+That's why these last two points on red.
+
+00:02:10,000 --> 00:02:14,960
+Because they are something to really be
+aware of, and to take care of, careful about.
+
+00:02:15,680 --> 00:02:19,360
+So, this one, it's possible to have several
+occurrences of the same variable in a rules' head.
+
+00:02:19,360 --> 00:02:21,280
+We didn't have this here, we used X and Y.
+
+00:02:21,280 --> 00:02:22,960
+But we could have used X and X here.
+
+00:02:24,640 --> 00:02:29,280
+Okay, so we could have a rule of the
+form "jealous(X,X)" under some conditions.
+
+00:02:30,080 --> 00:02:30,580
+Okay.
+
+00:02:30,880 --> 00:02:36,800
+And then, of course, they would, by this
+interpretation, by this observation, then they
+
+00:02:36,800 --> 00:02:44,880
+would really have to refer to the same object in
+all invocations for this rule or fact or whatever.
+
+00:02:46,000 --> 00:02:48,800
+Okay, and now, this is really
+different for example from Haskell.
+
+00:02:48,800 --> 00:02:51,200
+Actually, in the Haskell part, I had an explicit
+
+00:02:51,200 --> 00:02:55,520
+discussion of this in some of their early
+videos, that if you define a function like
+
+00:02:55,520 --> 00:03:01,360
+f of some arguments, then you can't have a rule
+of the form f of x and x equals something, right?
+
+00:03:01,360 --> 00:03:03,840
+You can express this with guards
+with expressing explicitly.
+
+00:03:04,480 --> 00:03:05,760
+So, using two different variables
+
+00:03:05,760 --> 00:03:09,360
+and then explicitly requesting the
+values to be the same, et cetera.
+
+00:03:09,360 --> 00:03:13,040
+But you can't write syntactically
+f of x and x equals something.
+
+00:03:13,040 --> 00:03:17,760
+And likewise, in other languages,
+be it Python, be it Java, whatever,
+
+00:03:17,760 --> 00:03:22,400
+if you define a procedure and
+you give the signature or give the arguments,
+
+00:03:22,400 --> 00:03:24,720
+then you are expected to use different variables.
+
+00:03:24,720 --> 00:03:32,720
+You don't write f, or another name, and then
+an x : Int and x : Bool or something like that.
+
+00:03:32,720 --> 00:03:34,480
+Yes, you have to use different variable names.
+
+00:03:34,480 --> 00:03:35,600
+In Prolog, not so,
+
+00:03:35,600 --> 00:03:40,560
+you can actually use the same variable name
+several times in the head of a rule, okay?
+
+00:03:40,560 --> 00:03:45,840
+And we will have to see what this implies for
+the evaluation, for example, for computing.
+
+00:03:47,040 --> 00:03:48,960
+Okay, but it's syntactically allowed.
+
+00:03:48,960 --> 00:03:50,000
+Okay, that's important.
+
+00:03:51,120 --> 00:03:54,640
+And maybe at least it's surprising,
+and at least it's important.
+
+00:03:55,840 --> 00:03:57,840
+On the right-hand side of a rule, like here,
+
+00:03:57,840 --> 00:04:00,160
+you can actually have variables
+that do not occur in the head.
+
+00:04:00,720 --> 00:04:08,800
+Again, that's something that's unusual in
+Haskell, if you define f of x and y is something
+
+00:04:09,440 --> 00:04:13,040
+equals something, then on the right-hand side, you
+should only use things that are already in scope.
+
+00:04:13,040 --> 00:04:17,440
+You can use x and y, of course, you can
+use global values, global constants.
+
+00:04:17,440 --> 00:04:21,440
+But you can't use a z that simply
+appears at this point for the first time.
+
+00:04:21,440 --> 00:04:22,880
+That would be very strange.
+
+00:04:22,880 --> 00:04:27,920
+And likewise, in other languages, if you define a
+procedure in Java, and it has arguments x and y,
+
+00:04:27,920 --> 00:04:32,480
+then you can't somehow access an unknown
+z from inside the body of that method.
+
+00:04:33,360 --> 00:04:36,560
+You can have a local variable, but then
+it has to be introduced at that point.
+
+00:04:36,560 --> 00:04:41,760
+It's not something that somehow refers to
+an unknown thing that's not even in scope.
+
+00:04:41,760 --> 00:04:42,000
+Okay?
+
+00:04:42,000 --> 00:04:46,400
+And here, this look like it
+simply appears out of nothing.
+
+00:04:46,400 --> 00:04:50,480
+So, we have to explain what this means.
+
+00:04:50,480 --> 00:04:55,840
+That's actually the topic of the next slide.
+
+00:04:58,800 --> 00:05:02,800
+So, variables like that some sense occur out of
+
+00:05:02,800 --> 00:05:06,080
+thin air are called free
+variables in Prolog, right?
+
+00:05:06,080 --> 00:05:11,480
+They are free in the sense that they are not
+bound by the head here, or by anything else.
+
+00:05:11,480 --> 00:05:15,520
+Just they simply appear in the right hand
+of the rule and are not bound anywhere.
+
+00:05:15,520 --> 00:05:16,400
+So, they are free.
+
+00:05:16,960 --> 00:05:18,400
+Now, how should they be interpreted?
+
+00:05:19,200 --> 00:05:21,040
+How should Z be interpreted in this case?
+
+00:05:21,040 --> 00:05:23,840
+Or how should the whole rule be interpreted?
+
+00:05:24,560 --> 00:05:29,200
+Okay, so, to think about this, we can
+think about the logical interpretation.
+
+00:05:29,200 --> 00:05:34,080
+So, this all, somehow these are
+predicates, and we have variables.
+
+00:05:34,080 --> 00:05:37,200
+So, in logic, you would think about
+the quantifier for this variable.
+
+00:05:37,200 --> 00:05:40,960
+So, somehow implicitly, at least there must be
+some quantifier, which says that for all X, Y,
+
+00:05:40,960 --> 00:05:46,160
+or "for all Z", or "exists Z" or whatever, so,
+maybe some reasonable ideas to think about.
+
+00:05:46,160 --> 00:05:48,800
+Well, how is this Z introduced in a logical sense?
+
+00:05:49,440 --> 00:05:51,840
+And there are different options.
+
+00:05:52,800 --> 00:05:55,520
+And we have to know which
+is the one that Prolog uses.
+
+00:05:55,520 --> 00:05:58,560
+That will explain what role
+do free variables play.
+
+00:05:58,560 --> 00:05:59,280
+And we have, of course,
+
+00:06:00,400 --> 00:06:04,640
+somehow from the previous example, or from
+this example, as discussed previously already,
+
+00:06:04,640 --> 00:06:11,120
+some idea what we want this to express to really
+mean jealousness and then we will see that Prolog indeed
+
+00:06:11,120 --> 00:06:13,520
+has exactly this interpretation.
+
+00:06:13,520 --> 00:06:16,640
+But then this can be transferred
+from this example to other cases.
+
+00:06:17,280 --> 00:06:20,160
+Okay, so one way to think about
+this way would be as following.
+
+00:06:20,160 --> 00:06:24,320
+So, let's say the X and Y right they
+are bound, when we call the "jealous"
+
+00:06:24,320 --> 00:06:28,080
+predicate, we can say of course, they
+are arbitrary or somehow quantified,
+
+00:06:28,080 --> 00:06:31,280
+but for one specific invocation then fixed, right?
+
+00:06:31,280 --> 00:06:35,600
+So, we call "jealous" maybe
+with Vincent, Marsellus then
+
+00:06:37,120 --> 00:06:43,520
+this rule applies for all X and Y, but for some
+invocation they are then fixed to two arguments.
+
+00:06:43,520 --> 00:06:45,360
+Okay, then, what about the Z?
+
+00:06:45,360 --> 00:06:49,120
+It should be introduced when we use this rule.
+
+00:06:50,560 --> 00:06:51,060
+Well.
+
+00:06:51,440 --> 00:06:58,320
+And one way to think about it would
+be to say, well, let's quantify the Z.
+
+00:06:58,320 --> 00:07:01,120
+Let's quantify it universally, so it's arbitrary.
+
+00:07:01,120 --> 00:07:01,680
+It's free.
+
+00:07:01,680 --> 00:07:05,600
+So, for every choice of Z something may hold.
+
+00:07:05,600 --> 00:07:09,760
+And then that may be used as the
+precondition for this rule, right?
+
+00:07:09,760 --> 00:07:12,960
+From which something else is deduced.
+
+00:07:12,960 --> 00:07:14,960
+Because one way to think about it would be to say,
+
+00:07:14,960 --> 00:07:18,800
+well, if for every choice of
+Z, because Z is free here.
+
+00:07:18,800 --> 00:07:21,680
+If for every choice of Z,
+the right-hand side holds.
+
+00:07:21,680 --> 00:07:26,800
+So, loves(X,Z) and loves(Y,Z) and X is different
+from Y, which is things that you could check.
+
+00:07:28,080 --> 00:07:30,480
+Then also the head should hold.
+
+00:07:30,480 --> 00:07:35,120
+Right, so we say if, for all
+choices of Z, we can establish this,
+
+00:07:35,120 --> 00:07:38,960
+then we have also established the thing
+we wanted to establish about X and Y.
+
+00:07:40,160 --> 00:07:44,320
+Okay, that's one possible interpretation.
+
+00:07:44,320 --> 00:07:46,640
+There's another one could again say, well,
+
+00:07:47,440 --> 00:07:51,840
+for arbitrary but fixed X
+and Y, we take this approach.
+
+00:07:51,840 --> 00:07:54,240
+So, something, again universally.
+
+00:07:54,240 --> 00:07:58,640
+So, for every choice of Z. Because it's
+free, we can choose everything we want.
+
+00:07:58,640 --> 00:08:00,800
+If it is the case, that the right-hand side holds.
+
+00:08:00,800 --> 00:08:04,560
+So, if it's the case, that X loves Z
+and Y loves Z and X is different from Y,
+
+00:08:05,120 --> 00:08:09,440
+then we also know that this head statement holds.
+
+00:08:11,600 --> 00:08:16,480
+Okay, now a different thing to convince
+yourself of, maybe you have to
+
+00:08:16,480 --> 00:08:21,200
+think back to the logic interpretation,
+or how quantifiers and implications
+
+00:08:21,200 --> 00:08:25,840
+et cetera work in formal logic, is
+this really saying something different?
+
+00:08:25,840 --> 00:08:26,800
+Are these two different things?
+
+00:08:26,800 --> 00:08:32,000
+Well, it's technically if it's written, there
+seems to be a slight difference in the sense that
+
+00:08:32,000 --> 00:08:35,440
+in the order of the implication,
+or the nesting of implication,
+
+00:08:35,440 --> 00:08:39,840
+and the for-all quantifier, for every choice,
+seems to be slightly different here and here.
+
+00:08:40,960 --> 00:08:44,560
+But does it also make a difference in
+terms of really what the statements mean?
+
+00:08:44,560 --> 00:08:47,760
+So, of course, there are some rules
+and logic where you can simply change
+
+00:08:47,760 --> 00:08:49,120
+the order of operations.
+
+00:08:49,120 --> 00:08:52,000
+And sometimes that doesn't even
+change what the statement says.
+
+00:08:52,000 --> 00:08:53,040
+And sometimes it does.
+
+00:08:53,040 --> 00:08:55,200
+So, is there a difference between
+these two interpretations?
+
+00:08:55,760 --> 00:08:58,080
+Yes, unfortunately, or maybe not unfortunately.
+
+00:08:58,080 --> 00:09:00,560
+But simply as a matter of
+fact, there is a difference.
+
+00:09:02,240 --> 00:09:06,400
+It's a difference to say, well, in order
+to establish that X is jealous of Y,
+
+00:09:06,400 --> 00:09:17,760
+we have to find out that for every choice of Z
+this triangle holds or whether it is the case that
+
+00:09:19,440 --> 00:09:25,680
+for every choice of Z if we establish this
+part, then we already know that jealousness holds.
+
+00:09:26,640 --> 00:09:31,840
+So, here we have to establish for Zs
+and then we can make our deduction.
+
+00:09:31,840 --> 00:09:35,680
+And here it says well for every choice
+of Z we can make that deduction.
+
+00:09:35,680 --> 00:09:42,640
+So, once we add a Z which establishes
+this, then we can deduce what we have here.
+
+00:09:44,320 --> 00:09:50,000
+So, which is the one that we use?
+
+00:09:50,000 --> 00:09:51,120
+This is the one that we use.
+
+00:09:51,120 --> 00:09:55,280
+The second one is how Prolog
+interprets this, right?
+
+00:09:55,280 --> 00:10:04,400
+So, the for-all quantifier is in a sense
+outside of the implication.
+
+00:10:04,400 --> 00:10:12,080
+So, for all Z this implication was from this
+follows that, that means once we have one Z
+
+00:10:12,880 --> 00:10:17,200
+for which we can establish this, then
+we can already deduce what we have here.
+
+00:10:17,200 --> 00:10:21,120
+It's not the case that the for-all quantifier
+somehow is implicitly on the right-hand side,
+
+00:10:21,120 --> 00:10:25,680
+so that we have to establish for all Z this
+holds, and only then we can establish this.
+
+00:10:25,680 --> 00:10:26,800
+That's the logical difference.
+
+00:10:26,800 --> 00:10:29,760
+So, if you need this spell out more in details,
+
+00:10:29,760 --> 00:10:34,880
+then you can write down actually the formulas
+that would correspond to these two states.
+
+00:10:34,880 --> 00:10:39,440
+Then you also see that whether you
+have the for-all inside or outside,
+
+00:10:39,440 --> 00:10:42,320
+does make a logical difference for implication.
+
+00:10:42,320 --> 00:10:45,840
+If you check it with the rules, for
+example, from the logic lecture.
+
+00:10:49,280 --> 00:10:52,160
+Okay, so that's the one
+interpretation that you want to use.
+
+00:10:56,080 --> 00:10:59,840
+And actually, it's logically
+equivalent to a slightly different
+
+00:11:01,680 --> 00:11:06,800
+formula or expression, which also
+explains how we have used this so far.
+
+00:11:06,800 --> 00:11:12,000
+So, if you again, indeed,
+look at the formula rules of
+
+00:11:12,000 --> 00:11:15,920
+predicate logic, for logic with variables, then
+you can see that if you have something like this,
+
+00:11:15,920 --> 00:11:20,880
+for every choice of Z it holds if
+then this is logically equivalent.
+
+00:11:20,880 --> 00:11:23,280
+Again, for arbitrary but fixed X, Y, to
+
+00:11:24,480 --> 00:11:27,760
+a situation where indeed the
+implication is, again, outside.
+
+00:11:27,760 --> 00:11:30,640
+But the every has been switched to an any, right?
+
+00:11:30,640 --> 00:11:33,360
+There's a logical equivalence between an
+all-quantifier and an implication versus an
+
+00:11:33,360 --> 00:11:41,840
+all-quantifier, an existential quantifier and an
+implication if the nesting has been changed.
+
+00:11:42,400 --> 00:11:47,040
+Okay, so this is logically equivalent
+to, if indeed, for any choice of Z,
+
+00:11:47,840 --> 00:11:52,240
+the right-hand side holds
+then also the head holds.
+
+00:11:52,240 --> 00:12:00,080
+So, you could see this either as an implicit
+for-all quantifier on the outside of the rule, or as an
+
+00:12:00,080 --> 00:12:06,560
+implicit existential quantifier at the inside,
+namely, on the right-hand side of the rule.
+
+00:12:06,560 --> 00:12:06,880
+Okay.
+
+00:12:06,880 --> 00:12:09,920
+And that then corresponds to
+our intuitive interpretation.
+
+00:12:09,920 --> 00:12:15,680
+The way I talked about this example before,
+namely, if there is somebody whom both X and
+
+00:12:15,680 --> 00:12:21,840
+Y love where X and Y are different, then they are
+jealous of each other, or at least X is jealous of Y.
+
+00:12:21,840 --> 00:12:24,800
+And due to the symmetry of these rules,
+
+00:12:24,800 --> 00:12:29,920
+actually, it will of these statements, of course,
+once X is jealous of Y also, Y would be jealous of X.
+
+00:12:29,920 --> 00:12:30,800
+But that's not the point here.
+
+00:12:30,800 --> 00:12:35,280
+The point is that, implicitly, we say
+if you have a free variable like this,
+
+00:12:35,280 --> 00:12:39,120
+the Z then the interpretation
+is if we could find a Z that
+
+00:12:39,120 --> 00:12:41,680
+such that the right-hand side holds,
+then the left-hand side holds.
+
+00:12:42,480 --> 00:12:46,400
+Okay, so, there's an implicit existential
+quantifier for the free variable
+
+00:12:46,400 --> 00:12:51,920
+on the inside of the rule,
+namely, on the precondition side.
+
+00:12:54,000 --> 00:12:56,640
+That's important for understanding this program.
+
+00:12:56,640 --> 00:12:57,760
+But of course, generally,
+
+00:12:58,320 --> 00:13:02,960
+transferring to all Programs that you will
+see where we use free variables like this.
+
+00:13:02,960 --> 00:13:07,440
+And this is a very frequent feature to use
+free variables of this style or in this style.
+
+00:13:07,440 --> 00:13:11,760
+So, it's really important that
+you get what is going on here.
+
+00:13:11,760 --> 00:13:16,800
+And maybe on the formal side, why these
+two things are equivalent, but mainly
+
+00:13:17,520 --> 00:13:19,840
+how a free variable is interpreted.

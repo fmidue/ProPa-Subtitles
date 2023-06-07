@@ -1,0 +1,1004 @@
+24 # slide
+00:00:01,760 --> 00:00:05,920
+Lassen Sie uns zum Abschluss dieser Woche
+einen kurzen Blick auf einige
+
+00:00:06,480 --> 00:00:11,760
+Syntaxeigenschaften oder Dinge werfen, die
+auch im Vergleich zu Haskell zu beachten sind.
+
+00:00:11,760 --> 00:00:16,880
+Die nächsten Folien werden also einige Unterschiede aufzeigen
+Unterschiede aufzeigen, die ich bereits
+
+00:00:16,880 --> 00:00:21,400
+angesprochen habe, zum Beispiel die Klein-
+und Großbuchstaben für Variablen,
+
+00:00:21,400 --> 00:00:24,960
+vs. Datenkonstruktoren
+zwischen Prolog und Haskell.
+
+00:00:24,960 --> 00:00:31,440
+Aber ich werde auch etwas Terminologie bereitstellen,
+die wir implizit bereits verwendet haben,
+
+00:00:31,440 --> 00:00:35,280
+wenn wir über Prädikate und Regeln
+und Klauseln vielleicht in den vorherigen Videos gesprochen haben.
+
+00:00:35,280 --> 00:00:40,960
+Dies sind also Begriffe, die
+übliche Terminologie für Prolog sind.
+
+00:00:40,960 --> 00:00:45,200
+Sie werden sie auch in den
+Büchern, wahrscheinlich, wenn Sie ein Buch benutzen.
+
+00:00:45,200 --> 00:00:49,120
+Und auch, wenn wir später die
+die operationale Semantik haben.
+
+00:00:49,120 --> 00:00:51,440
+Also, wie Prolog-Programme tatsächlich ausgeführt werden
+
+00:00:52,000 --> 00:00:55,040
+über die Intuition hinaus, die ich
+im vorigen Video gegeben habe.
+
+00:00:55,040 --> 00:00:57,840
+Wir werden auch diese Terminologie verwenden.
+
+00:01:00,000 --> 00:01:03,360
+Okay, dies ist also eines der
+Programme, die Sie bereits gesehen haben.
+
+00:01:03,920 --> 00:01:09,360
+Und auf dieser Grundlage kann ich diese Begriffe aufzeigen.
+
+00:01:09,360 --> 00:01:12,960
+Lassen Sie uns also einen nach dem anderen durchgehen.
+
+00:01:12,960 --> 00:01:16,800
+Das ist also schon etwas, das ich
+schon einige Male verwendet habe.
+
+00:01:16,800 --> 00:01:20,880
+Also, Prädikate sind die Eigenschaften
+die man ausdrücken will über
+
+00:01:21,840 --> 00:01:24,240
+Entitäten oder Paare von Entitäten ausdrücken will, und so weiter.
+
+00:01:24,240 --> 00:01:26,720
+Richtig?
+Manchmal werden sie auch Relationen genannt.
+
+00:01:27,440 --> 00:01:31,440
+Denn das ist natürlich mathematisch gesehen
+was so etwas ausdrückt.
+
+00:01:31,440 --> 00:01:38,080
+Ein binäres Prädikat wäre eine binäre Relation,
+aber der Programmierbegriff dafür ist "Prädikat".
+
+00:01:38,080 --> 00:01:38,880
+Dies ist also ein Prädikat,
+
+00:01:38,880 --> 00:01:42,720
+und Prädikate werden im Programm
+definiert und in den Abfragen verwendet.
+
+00:01:43,840 --> 00:01:48,240
+Okay, dann sind die Entitäten
+auf die sich die Prädikate beziehen können
+
+00:01:48,240 --> 00:01:53,280
+sind in diesem Beispiel bisher einfach
+Konstanten wie "kurt", "fritz" und so weiter.
+
+00:01:53,280 --> 00:01:57,600
+Sie werden gleich sehen, dass es auch andere Dinge gibt
+andere Dinge, die hier auftauchen können,
+
+00:01:57,600 --> 00:02:02,880
+nämlich strukturierte Objekte, aber in den meisten
+einfachsten Fällen sind das einfach die Konstanten.
+
+00:02:02,880 --> 00:02:05,840
+Und sie werden in
+kleingeschrieben, genau wie Prädikate.
+
+00:02:06,800 --> 00:02:07,760
+Okay, dann so etwas wie das hier.
+
+00:02:07,760 --> 00:02:09,440
+Das habe ich schon als Fakten bezeichnet.
+
+00:02:09,440 --> 00:02:12,640
+Also, das sind sehr einfache Regeln, die
+keine Vorbedingungen haben,
+
+00:02:12,640 --> 00:02:17,520
+einfach Aussagen, die im Programm gemacht werden,
+die man laden kann und dann wieder abfragen kann.
+
+00:02:17,520 --> 00:02:19,600
+Das sind also Fakten, weil
+sie keine Vorbedingungen haben.
+
+00:02:20,320 --> 00:02:23,440
+Wenn Sie dann etwas haben, wo wir
+Vorbedingungen haben, verwenden wir die Implikation.
+
+00:02:23,440 --> 00:02:30,240
+Und wir verwenden dieses Symbol, das man sich vorstellen kann
+als einen Implikationspfeil von rechts nach links.
+
+00:02:30,240 --> 00:02:33,760
+Nun, das sieht wahrscheinlich nicht
+wirklich wie ein Pfeil aus.
+
+00:02:33,760 --> 00:02:37,600
+Aber so ist es gemeint, als
+eine Implikation von rechts nach links.
+
+00:02:38,960 --> 00:02:41,120
+Wenn wir ein Komma auf der rechten Seite haben,
+
+00:02:41,120 --> 00:02:44,720
+oder eigentlich auch in Abfragen, dann
+steht das für Konjunktion.
+
+00:02:44,720 --> 00:02:49,040
+Ich habe auch schon erwähnt, dass Semikolon
+für eine Disjunktion steht, aber dass ich das
+
+00:02:49,040 --> 00:02:53,360
+sehr selten verwende, vielleicht gar nicht
+in den folgenden Beispielen.
+
+00:02:53,360 --> 00:02:56,400
+Aber das Komma für Konjunktion
+wird immer wieder vorkommen.
+
+00:02:57,680 --> 00:03:02,000
+Okay, dann sind das Regeln im Gegensatz zu
+Tatsachen, weil es Vorbedingungen gibt.
+
+00:03:02,000 --> 00:03:06,800
+Man könnte also Fakten als sehr einfache Regeln sehen,
+aber wir sagen wirklich "Fakten" und hier sagen wir "Regeln".
+
+00:03:06,800 --> 00:03:07,920
+Denn sie haben Vorbedingungen.
+
+00:03:09,240 --> 00:03:14,800
+Und hier kommen Variablen vor, und ich
+erwähnte bereits, dass Variablen in Prolog
+
+00:03:14,800 --> 00:03:16,960
+großgeschrieben werden oder zumindest
+mit Großbuchstaben beginnen müssen.
+
+00:03:16,960 --> 00:03:20,400
+Also, wir haben mehrbuchstabige
+Variablen, dann muss nur der erste
+
+00:03:21,280 --> 00:03:25,520
+Großbuchstabe sein, um zu
+erkennen, dass es sich um eine Variable handelt.
+
+00:03:26,080 --> 00:03:29,520
+Es gibt auch die anonymen
+Variablen, der Unterstrich, der
+
+00:03:29,520 --> 00:03:31,360
+auf dieser Folie nicht vorkommt.
+
+00:03:31,360 --> 00:03:33,200
+Aber Sie haben ihn schon in einem anderen Beispiel gesehen.
+
+00:03:34,400 --> 00:03:34,960
+Was noch?
+
+00:03:34,960 --> 00:03:35,840
+Nun, dies ist ein Literal.
+
+00:03:35,840 --> 00:03:40,160
+Also, ein Literal ist die Anwendung
+eines Prädikats auf einige Entitäten.
+
+00:03:40,160 --> 00:03:44,720
+Seien es Variablen, Konstanten oder Strukturen, richtig?
+
+00:03:44,720 --> 00:03:47,600
+Das Prädikat hier ist also eigentlich
+nur der Name des Prädikats.
+
+00:03:47,600 --> 00:03:50,080
+Also nicht die ganze Sache, die wir hier sehen.
+
+00:03:50,080 --> 00:03:54,880
+Die ganze Sache, die Anwendung des Prädikats
+auf einige Argumente, wird als "Literal" bezeichnet.
+
+00:03:54,880 --> 00:03:58,000
+Also, Literale kommen im
+Kopf, im Rumpf von Regeln.
+
+00:03:58,000 --> 00:04:01,280
+Und natürlich sind auch Abfragen Literale.
+
+00:04:04,560 --> 00:04:05,060
+Okay.
+
+00:04:06,400 --> 00:04:11,680
+Und alle Arten von Kombinationen von Literalen, seien es
+
+00:04:11,680 --> 00:04:17,840
+einfache Fakten oder Regeln im Programm
+oder Abfragen, werden zusammen Klauseln genannt.
+
+00:04:17,840 --> 00:04:20,720
+Wir sagen, eine Klausel kann sein
+jedes dieser drei Dinge sein.
+
+00:04:20,720 --> 00:04:25,440
+Das ist also ein Begriff, der hauptsächlich,
+der auftritt oder aus den
+
+00:04:26,080 --> 00:04:28,880
+Auflösungsprinzipien oder dem Ausführungsmechanismus.
+
+00:04:30,640 --> 00:04:32,480
+Es wird über Klauseln im Allgemeinen gesprochen.
+
+00:04:34,480 --> 00:04:37,840
+Okay, was wir hier nicht sehen
+in diesem Beispiel ist die Negation.
+
+00:04:38,400 --> 00:04:41,840
+Richtig?
+Wir hatten ein Beispiel mit diesem ungleichen Zeichen.
+
+00:04:42,800 --> 00:04:45,200
+Es gibt auch einen Operator für Negation
+
+00:04:45,200 --> 00:04:51,040
+in Prolog, also könnte das in Abfragen vorkommen
+oder auf der rechten Seite von Regeln.
+
+00:04:51,040 --> 00:04:56,080
+Was nicht nur in diesem Beispiel nicht
+Beispiel, sondern generell nicht erlaubt
+
+00:04:56,080 --> 00:05:00,960
+ist die Verwendung der Negation im Kopf
+einer Regel oder in einem angegebenen Fakt zu verwenden.
+
+00:05:00,960 --> 00:05:02,800
+Okay, in diesem Beispiel gibt es also überhaupt keine Verneinung.
+
+00:05:02,800 --> 00:05:04,480
+Wenn wir auf die Verneinung zurückkommen
+
+00:05:04,480 --> 00:05:09,840
+und es wird nur erlaubt sein, sie zu verwenden
+in Abfragen oder im Hauptteil von Regeln.
+
+00:05:13,840 --> 00:05:19,840
+Okay, also um Klauseln zu bilden, gibt es diese
+verschiedene Bestandteile, die ihre syntaktischen Regeln.
+
+00:05:19,840 --> 00:05:24,480
+Also, ich habe bereits Konstanten erwähnt und
+das können grundsätzlich entweder Zahlen sein,
+
+00:05:24,480 --> 00:05:28,240
+oder kleingeschriebene Bezeichner wie "kurt" und so weiter.
+
+00:05:28,240 --> 00:05:29,760
+Diese werden Atome genannt.
+
+00:05:29,760 --> 00:05:38,800
+Also, atomare Konstanten, die keine weitere interne Struktur oder
+Bedeutung haben, einfach benannte Bezeichner.
+
+00:05:39,600 --> 00:05:42,560
+Und sie müssen kleingeschrieben werden, um
+sie von Variablen zu unterscheiden.
+
+00:05:42,560 --> 00:05:43,760
+Okay, das werden Konstanten sein.
+
+00:05:44,640 --> 00:05:49,200
+Dann, natürlich, Variablen, wie ich bereits
+Großbuchstaben, zumindest am Anfang Großbuchstaben.
+
+00:05:49,200 --> 00:05:51,360
+Oder anonyme. Und dann gibt es noch spezielle
+
+00:05:51,360 --> 00:05:56,880
+Variablen, die mit einem Unterstrich beginnen
+aber dann ein kryptisches Namensschema haben.
+
+00:05:56,880 --> 00:06:01,360
+Das sind also Variablen, die
+vom Laufzeitsystem als Helfer eingeführt werden.
+
+00:06:01,360 --> 00:06:04,160
+Das sind also keine Variablen, die Sie
+normalerweise nicht in Ihr Programm einbauen.
+
+00:06:04,160 --> 00:06:09,040
+Aber es könnte in der Ausgabe einer Ausführung vorkommen
+ob Sie Beispiele wie dieses sehen werden.
+
+00:06:09,040 --> 00:06:14,000
+Und dies wird oft einfach eine Variable sein
+Name, der von Prolog eingeführt wurde.
+
+00:06:15,440 --> 00:06:20,080
+Okay, dann kann es Operator-Terme geben oder Dinge
+wie zum Beispiel arithmetische Ausdrücke in
+
+00:06:20,720 --> 00:06:21,760
+anderen Sprachen.
+
+00:06:21,760 --> 00:06:23,600
+Also, wir werden solche Dinge sehen.
+
+00:06:23,600 --> 00:06:28,000
+Aber wir müssen vorsichtig sein, dass
+sie wirklich so geschrieben werden
+
+00:06:29,440 --> 00:06:32,640
+die zum Beispiel in einer Regel vorkommen,
+sie sind wirklich nur strukturelle Begriffe.
+
+00:06:32,640 --> 00:06:35,760
+Es ist also nicht so, dass eins plus
+drei mal vier ist 13.
+
+00:06:35,760 --> 00:06:38,000
+Es ist wirklich nur der Begriff, den wir hier sehen.
+
+00:06:38,000 --> 00:06:42,320
+Es ist nicht viel anders als
+einer anderen Datenstruktur.
+
+00:06:43,120 --> 00:06:43,840
+Das ist gut.
+
+00:06:43,840 --> 00:06:50,080
+Dies sind also die Strukturen, die
+grob den Datentypen in Haskell entsprechen.
+
+00:06:50,080 --> 00:06:54,960
+Denken Sie also an die Aufzählung und dann
+auch mehr strukturierte Typen, die wir verwenden.
+
+00:06:54,960 --> 00:07:00,800
+Wir benutzen auch das Datum und die Zeit an einem Punkt
+für ein Beispiel oder wir verwenden diese Flugmodellierung.
+
+00:07:00,800 --> 00:07:02,960
+Man könnte auch Personen mit ihren Eigenschaften modellieren.
+
+00:07:02,960 --> 00:07:10,720
+Das sind also Datenstrukturen, und sie
+verwenden Atome als Datenkonstruktoren, richtig?
+
+00:07:10,720 --> 00:07:13,760
+Also, hier haben wir auch einen klein geschriebenen Bezeichner.
+
+00:07:13,760 --> 00:07:18,160
+Und in den Argumentpositionen könnten wir
+zum Beispiel Zahlen oder andere Atome haben.
+
+00:07:18,160 --> 00:07:21,760
+So erhalten wir rekursive
+Strukturen, die zusammengesetzt sind.
+
+00:07:22,400 --> 00:07:24,000
+Sie können rekursiv sein.
+
+00:07:24,000 --> 00:07:26,960
+Sie können also zum Beispiel
+Bäume oder tiefe Verschachtelungen darstellen.
+
+00:07:26,960 --> 00:07:33,520
+Man kann sie auch so betrachten, dass sie im Wesentlichen
+unendlich sein oder sie können
+
+00:07:33,520 --> 00:07:37,440
+auf unendliche Weise konstruiert werden, ähnlich wie
+unendlichen Listen in Haskell, zum Beispiel.
+
+00:07:37,440 --> 00:07:40,880
+Wir werden uns also wahrscheinlich nicht wirklich
+in Prolog nicht wirklich damit befassen müssen.
+
+00:07:40,880 --> 00:07:44,880
+Aber prinzipiell könnte man auch solche Konstruktionen sehen oder sich vorstellen
+
+00:07:44,880 --> 00:07:47,760
+Konstruktionen wie diese vorstellen, wo
+man eine unendliche Verschachtelung hat.
+
+00:07:47,760 --> 00:07:51,440
+Natürlich nicht für die Datenverarbeitung,
+aber für andere, vielleicht Baumstrukturen.
+
+00:07:52,800 --> 00:07:55,600
+Okay, ein wichtiger Punkt ist hier zu beachten,
+nämlich dass Prolog kein Typsystem hat.
+
+00:07:55,600 --> 00:07:59,200
+Also, auch wenn ich gerade gesagt habe, dass diese
+ähnlich wie Datentypen in Haskell sind,
+
+00:07:59,200 --> 00:08:00,640
+sind sie nicht wirklich Typen, richtig?
+
+00:08:00,640 --> 00:08:03,840
+Also, es gibt keine Disziplin
+die z.B. vorschreibt, dass
+
+00:08:04,560 --> 00:08:11,840
+man nach diesem Datum
+drei Zahlen oder etwas Ähnliches haben muss.
+
+00:08:11,840 --> 00:08:13,600
+Was ist also mit diesen Strukturen?
+
+00:08:13,600 --> 00:08:16,320
+Sagen wir einfach, sie repräsentieren Objekte
+
+00:08:16,320 --> 00:08:20,960
+die aus anderen Objekten bestehen, Listen,
+Bäume, Unterbäume und so weiter.
+
+00:08:20,960 --> 00:08:24,240
+Wir haben das bereits in einem
+
+00:08:24,240 --> 00:08:28,080
+Beispiel auf der vorigen Folie gesehen, also hier ist das
+wieder, oder vielleicht in einer etwas anderen Form.
+
+00:08:28,080 --> 00:08:31,200
+Hier sehen Sie auch diese Verschachtelung.
+
+00:08:31,200 --> 00:08:35,520
+Was Sie also sehen, ist nur der Datensatz, in dem eine
+Person zwei Argumente hat, die Konstanten sind.
+
+00:08:35,520 --> 00:08:40,480
+Aber zum Beispiel könnte das Geburtsdatum
+eine weitere verschachtelte Datenstruktur sein.
+
+00:08:40,480 --> 00:08:47,040
+Diese Dinge sind also die Datenkonstruktoren
+und dies sind die Atome, die verwendet werden
+
+00:08:47,600 --> 00:08:53,360
+oder die Konstanten, die in den Blättern verwendet werden, und
+dies ist eine Unterstruktur der gesamten Struktur.
+
+00:08:53,360 --> 00:08:57,840
+Aus historischen Gründen werden diese Datenkonstruktoren
+in Prolog nicht Datenkonstruktoren genannt.
+
+00:08:57,840 --> 00:09:01,360
+Sie werden also Funktoren genannt, was
+ein etwas unglücklicher Name ist
+
+00:09:01,360 --> 00:09:04,880
+weil Funktor in der funktionalen
+Programmierung etwas anderes bedeutet.
+
+00:09:04,880 --> 00:09:09,360
+Aber gut, in der Prolog-Literatur, oder in der
+Literatur zu Logischer Programmierung, werden diese Dinge
+
+00:09:09,360 --> 00:09:16,000
+Funktoren genannt, die man sich wie Funktionen
+so etwas wie Funktionen, aber eben nur symbolisch.
+
+00:09:16,000 --> 00:09:22,400
+Okay, das ist also das, was die Literatur dafür verwendet
+und ich werde sie wahrscheinlich nicht als Funktoren bezeichnen.
+
+00:09:22,400 --> 00:09:26,000
+Aber wenn Sie andere Quellen lesen,
+dann ist es das, was gemeint ist
+
+00:09:26,000 --> 00:09:27,760
+wenn Prolog-Leute über Funktoren sprechen.
+
+00:09:27,760 --> 00:09:30,480
+Sie meinen die Dinge, die man
+Datenkonstruktoren in Haskell genannt werden.
+
+00:09:32,080 --> 00:09:33,440
+Sie müssen Atome sein, richtig?
+
+00:09:33,440 --> 00:09:39,920
+Also, genau wie für den Namen, wird das gleiche Benennungs- oder
+syntaktische Schema auch für Konstanten verwendet.
+
+00:09:40,560 --> 00:09:43,680
+In der Tat könnte derselbe String, derselbe Bezeichner
+
+00:09:43,680 --> 00:09:49,840
+sowohl als Funktor als auch als
+Atom für eine Konstante an der Blattstelle verwendet werden.
+
+00:09:51,760 --> 00:09:56,880
+Okay, ich habe bereits erwähnt, dass es kein
+Typsystem für Prolog gibt, aber zumindest gibt es einige
+
+00:09:56,880 --> 00:10:00,800
+für Dokumentationszwecke,
+normalerweise wird zumindest die Stelligkeit von
+
+00:10:01,520 --> 00:10:04,240
+Funktoren oder Datenkonstruktoren notiert.
+
+00:10:04,240 --> 00:10:08,320
+Wenn Sie also etwas wie dies sehen:
+person/3, dann bedeutet dies,
+
+00:10:08,320 --> 00:10:12,960
+dass person ein Datenkonstruktor
+für eine solche Verwendung ist und drei Argumente hat.
+
+00:10:12,960 --> 00:10:18,960
+Es gibt keine Notation dafür, welche Typen
+diese Argumente sein sollten.
+
+00:10:18,960 --> 00:10:21,680
+Ob es eine Zahl sein soll,
+oder andere Strukturen, et cetera.
+
+00:10:21,680 --> 00:10:24,080
+Aber zumindest wird die Stelligkeit ausgedrückt.
+
+00:10:24,080 --> 00:10:28,080
+Und manchmal kann man in ein und demselben Programm
+denselben Konstruktor mit verschiedenen Stelligkeiten haben.
+
+00:10:28,080 --> 00:10:31,280
+Und dann macht es Sinn, diese
+tatsächlich diese verschiedenen...
+
+00:10:31,280 --> 00:10:35,440
+die explizit ausschreiben, was die Stelligkeit ist, und
+das wird auch für Prädikate gemacht.
+
+00:10:35,440 --> 00:10:38,400
+Also, nicht nur für die Datenkonstruktoren hier.
+
+00:10:38,400 --> 00:10:39,840
+Sondern auch, wenn Sie ein Prädikat sehen.
+
+00:10:39,840 --> 00:10:44,480
+Und oft wird die Dokumentation einer Prolog-Bibliothek,
+zum Beispiel wird diese Notation verwendet, um auszudrücken
+
+00:10:44,480 --> 00:10:48,320
+wie viele Argumente dieses Prädikat erwartet.
+
+00:10:48,320 --> 00:10:49,840
+Natürlich gibt es keine Typsignatur
+
+00:10:49,840 --> 00:10:52,960
+wie in Haskell, wo man auch
+die Anzahl der Argumente sehen würde.
+
+00:10:54,800 --> 00:10:58,080
+Okay, das gibt uns also so etwas wie
+algebraische Datentypen, natürlich,
+
+00:10:58,080 --> 00:10:59,840
+aber nicht wirklich im Sinne eines Typs.
+
+00:11:01,600 --> 00:11:03,760
+Also, so etwas wäre
+auch eine legale Struktur sein.
+
+00:11:04,880 --> 00:11:09,440
+Ohne eine bestimmte Bedeutung geben
+wir ein Zeichen oder etwas anderes
+
+00:11:09,440 --> 00:11:11,760
+anstelle des Geburtsdatums der Person, richtig?
+
+00:11:11,760 --> 00:11:13,680
+Das wird einfach nicht verhindert.
+
+00:11:13,680 --> 00:11:17,120
+Auch die Zahlen werden hier nicht verhindert
+auch wenn wir hier Namen erwarten würden,
+
+00:11:17,840 --> 00:11:20,160
+das Prolog-System würde dies nicht erzwingen.
+
+00:11:20,160 --> 00:11:22,560
+Es ist etwas, das vom Programmierer diszipliniert werden würde
+
+00:11:22,560 --> 00:11:27,840
+Programmierer diszipliniert werden, um sicherzustellen, dass die
+Konstruktoren in einer vernünftigen Weise verwendet werden.
+
+00:11:28,800 --> 00:11:32,240
+Okay, und das habe ich bereits erwähnt,
+dies kann beliebig tief verschachtelt werden
+
+00:11:32,240 --> 00:11:37,760
+im Prinzip unendlich, auch wenn es
+nicht so viel Unterstützung für die Programmierung innerhalb
+
+00:11:37,760 --> 00:11:41,840
+unendlichen Strukturen in Prolog gibt, wie es sie in
+Haskell, wie wir in einigen Beispielen gesehen haben.
+
+00:11:45,120 --> 00:11:48,240
+Okay, dann gibt es eine spezielle
+Syntax für bestimmte Strukturen,
+
+00:11:48,240 --> 00:11:53,520
+Ich habe bereits erwähnt, dass natürlich Listen, die
+in gewissem Sinne spezielle Bäume sind, auch als
+
+00:11:53,520 --> 00:11:57,200
+Datenstrukturen der Art
+aus der vorherigen Folie, richtig?
+
+00:11:57,200 --> 00:12:01,440
+Also, genau wie in Haskell, haben wir eingeführt
+oder diskutiert haben, dass Listen als
+
+00:12:01,440 --> 00:12:04,640
+algebraische Datenstrukturen mit einem nil-
+und cons-Konstruktor gesehen werden können, könnte man auch
+
+00:12:04,640 --> 00:12:08,000
+ähnlich vorgehen, sagen wir wie
+Kodieren in Prolog, wenn diese
+
+00:12:08,000 --> 00:12:11,440
+normale Datenstrukturen, dann benutze einen
+Konstruktor wie nil und einen anderen wie cons.
+
+00:12:12,080 --> 00:12:14,960
+Aber eigentlich, genau wie in Haskell,
+gibt es auch eine spezielle Syntax für
+
+00:12:15,520 --> 00:12:20,640
+Listen in Prolog, man muss also nicht
+Listen als spezifische Strukturen modellieren.
+
+00:12:20,640 --> 00:12:22,480
+Man kann eine spezielle Syntax für sie verwenden.
+
+00:12:22,480 --> 00:12:27,200
+In gewissem Sinne haben wir also einen vordefinierten Listentyp,
+außer dass es sich nicht um eine typisierte Sprache handelt.
+
+00:12:28,000 --> 00:12:34,400
+Es ist also eine rekursive Baumstruktur, die
+Syntax ist oberflächlich gesehen wie in Haskell, richtig?
+
+00:12:34,400 --> 00:12:36,960
+Man kann es mit diesen
+eckigen Klammern und Kommas schreiben.
+
+00:12:36,960 --> 00:12:40,640
+Und natürlich muss die Liste nicht
+homogen sein, also anders als in Haskell,
+
+00:12:40,640 --> 00:12:45,200
+kann man 1, 2, a schreiben, auch wenn dies
+verschiedene Typen sind: Buchstaben und Zahlen.
+
+00:12:45,760 --> 00:12:49,840
+Und dann gibt es noch bestimmte alternative Syntaxe.
+
+00:12:49,840 --> 00:12:53,040
+Und es gibt eine, bei der man
+expliziter die Baumstruktur angibt.
+
+00:12:53,040 --> 00:12:55,680
+Das entspricht also der
+Haskell-Notation mit dem
+
+00:12:55,680 --> 00:13:01,120
+Doppelpunkt als interner Knoten und dann links und
+rechten Nachfolger für den Kopf und das Ende.
+
+00:13:02,000 --> 00:13:08,080
+Also ähnlich wie dort, nur dass jetzt
+wird ein einzelner Punkt anstelle des Doppelpunkts verwendet.
+
+00:13:08,080 --> 00:13:10,160
+Und dann gibt es noch andere Syntaxe.
+
+00:13:10,160 --> 00:13:12,160
+Es gibt zum Beispiel,
+hier, mit diesem vertikalen Balken.
+
+00:13:12,160 --> 00:13:14,960
+Dies ist keine List Comprehension,
+das gibt es in Prolog nicht,
+
+00:13:14,960 --> 00:13:19,840
+Das bedeutet, dass wir eine Liste haben, von der
+dies der Kopf ist, und dies der Schwanz.
+
+00:13:20,560 --> 00:13:22,080
+Oder man kann auch so etwas wie das sagen.
+
+00:13:22,080 --> 00:13:26,880
+Das entspricht ein wenig dem Pattern-Matching
+in Haskell, wenn man mit einem Präfix
+
+00:13:26,880 --> 00:13:30,720
+einer Liste abgleicht, kann man so etwas sagen wie dies,
+oder dies ist die gleiche Liste wie diese Liste,
+
+00:13:30,720 --> 00:13:36,400
+aber so ausgedrückt, dass man als Präfix
+1 und 2, und dann gibt es noch eine Restliste.
+
+00:13:36,400 --> 00:13:40,240
+Das heißt also, wir haben 1 und 2, und dann
+haben wir ein Ende nach dem zweiten Element,
+
+00:13:40,240 --> 00:13:42,240
+und ein Ende ist die Liste, die genau das 'a' enthält.
+
+00:13:43,520 --> 00:13:47,440
+Okay, und dann kann man natürlich auch
+diese Notationen mischen, zum Beispiel könnte diese
+
+00:13:47,440 --> 00:13:54,160
+Liste von 'a' könnte in diesem Stil geschrieben werden als
+cons mit Kopf 'a' und Schwanz die leere Liste.
+
+00:13:54,160 --> 00:13:57,200
+Das ist also eine weitere Möglichkeit
+um dieselbe Liste auszudrücken.
+
+00:13:58,480 --> 00:14:05,920
+Okay, wir müssen uns über diese verschiedenen
+Syntaxe für Listen bewusst sein, wenn wir Prädikate definieren.
+
+00:14:05,920 --> 00:14:09,840
+Denn dann könnten wir Wege wie
+so oder so für das Pattern-Matching verwenden.
+
+00:14:12,160 --> 00:14:17,920
+Okay, Strings gibt es auch und sie sind wie
+in Haskell im Wesentlichen Listen von Zeichen
+
+00:14:17,920 --> 00:14:26,240
+außer dass in Prolog oder zumindest in den meisten Prolog-Systemen,
+werden die Strings direkter ausgedrückt,
+
+00:14:26,240 --> 00:14:30,800
+eigentlich nicht als Listen von Zeichen, sondern von
+Listen des ASCII-Codes der Zeichen.
+
+00:14:30,800 --> 00:14:36,480
+Also, wenn Sie ein Prädikat haben, das
+auf eine Art von String antwortet, ist die Ausgabe oft...
+
+00:14:36,480 --> 00:14:41,760
+Prolog wird Ihnen leider, anstatt eine
+schöne String-Repräsentation, sondern eine
+
+00:14:41,760 --> 00:14:45,840
+Liste wie diese, die Sie dann
+die ASCII-Codes kennen müssen, um
+
+00:14:46,400 --> 00:14:48,480
+sicher zu sein, was das eigentlich bedeutet, richtig?
+
+00:14:48,480 --> 00:14:53,360
+Das sind also die ASCII-Codes, die
+Zeichen P und Kleinbuchstaben r, et cetera.
+
+00:14:53,360 --> 00:14:57,120
+Also, für eine gute Antwort etwas wie dieses,
+wenn man eigentlich eine Zeichenkette sehen will.
+
+00:14:57,120 --> 00:15:02,240
+Aus diesem Grund werden auch die Beispiele, die wir in der
+Übung nicht wirklich mit Strings umgehen.
+
+00:15:02,240 --> 00:15:08,080
+Denn dann müssen Sie sich immer mit
+ASCII-Codes in Zeichen umzuwandeln.
+
+00:15:08,080 --> 00:15:10,960
+Stattdessen werden wir zum Beispiel mit
+
+00:15:10,960 --> 00:15:13,280
+Zahlen direkt arbeiten, sodass wir
+nicht auf dieses Problem stoßen.
+
+00:15:13,280 --> 00:15:14,240
+Aber Sie sollten sich dessen bewusst sein.
+
+00:15:14,240 --> 00:15:18,320
+Denn wenn Sie die String
+Verarbeitung ausprobieren wollen, dann könnten Sie zunächst
+
+00:15:18,320 --> 00:15:21,360
+überrascht sein, dass Sie diese Zahlen
+anstelle von tatsächlichen Zeichen sehen.
+
+00:15:22,640 --> 00:15:26,000
+Okay, und dann gibt es da noch etwas, das ich bereits
+die Operatoren erwähnt, die Sie
+
+00:15:26,000 --> 00:15:28,720
+die man zum Beispiel für arithmetische Ausdrücke verwenden würde.
+
+00:15:29,280 --> 00:15:35,360
+Sie sind also auch nur Strukturen aus
+den Atomen, die auch Symbole sein können.
+
+00:15:35,920 --> 00:15:44,240
+Und dann die Substrukturen und Blätter und bestimmte
+Funktoren, Atome, und zwar solche, die symbolisch sind.
+
+00:15:44,240 --> 00:15:45,840
+Kann man infix schreiben und dann bekommt man
+
+00:15:46,960 --> 00:15:50,240
+etwas, das der Syntax entspricht
+Bäume von arithmetischen Ausdrücken.
+
+00:15:51,440 --> 00:15:55,920
+Okay, also das würde eigentlich
+dieser Struktur entsprechen.
+
+00:15:56,560 --> 00:16:04,240
+Wobei explizit die + und *
+als Konstruktoren verwendet werden, so wie
+
+00:16:04,240 --> 00:16:07,840
+andere Datenkonstruktoren verwendet werden in
+den anderen Strukturen, die wir gesehen haben.
+
+00:16:07,840 --> 00:16:10,000
+Okay, eine wichtige Sache hier
+ist, wie ich bereits erwähnt habe,
+
+00:16:10,880 --> 00:16:14,800
+dass etwas wie dieses
+rein symbolisch betrachtet wird, richtig?
+
+00:16:14,800 --> 00:16:19,120
+Das heißt also, wenn Sie so etwas
+schreiben, wird nicht zu 13 ausgewertet.
+
+00:16:19,120 --> 00:16:24,720
+Es wird eigentlich nur als dieser
+Syntaxbaum, als diese rekursive Struktur,
+
+00:16:24,720 --> 00:16:28,640
+in der man eigentlich alle Operatoren sieht
+und nicht die Ergebnisse der Auswertung.
+
+00:16:28,640 --> 00:16:32,560
+Das ist ein wichtiger Unterschied, denn in
+Prolog findet keine Auswertung statt, richtig?
+
+00:16:32,560 --> 00:16:35,600
+Alles funktioniert durch das Lösen von Bedingungen.
+
+00:16:35,600 --> 00:16:39,040
+Es gibt bestimmte Konstrukte, die es Ihnen erlauben
+Mathematik zu machen, um Dinge wirklich zu berechnen,
+
+00:16:39,040 --> 00:16:41,200
+aber nicht, wenn man einfach
+eine Struktur wie diese aufschreibt.
+
+00:16:41,200 --> 00:16:46,720
+Ja, man braucht spezielle Operatoren, um
+mathematische Operationen durchzuführen.
+
+00:16:46,720 --> 00:16:50,960
+Und das werden Sie sehen, wenn
+wir es in einem Beispiel sehen.
+
+00:16:54,560 --> 00:17:01,360
+Okay, und die letzte Folie für diese Woche, ich
+denke, nur ein weiterer Begriff: Ausdrücke.
+
+00:17:01,360 --> 00:17:06,320
+Also, ich habe bereits Ausdrücke in Prolog benutzt,
+in Haskell, und manchmal habe ich auch "Terme" gesagt,
+
+00:17:06,320 --> 00:17:08,480
+In Prolog werden sie wirklich "Terme" genannt.
+
+00:17:08,480 --> 00:17:10,480
+Denn sie drücken keine Berechnungen aus.
+
+00:17:10,480 --> 00:17:12,400
+Es findet also keine Auswertung statt.
+
+00:17:12,400 --> 00:17:15,760
+Und im Grunde sind Terme all die
+Dinge, die wir bis jetzt gesehen haben, richtig?
+
+00:17:15,760 --> 00:17:21,760
+Konstanten, seien es Namenskonstanten oder Zahlen,
+Variablen sind Terme und Strukturen sind Terme.
+
+00:17:21,760 --> 00:17:27,520
+Sei es explizit niedergeschrieben
+Strukturen mit diesen Datenkonstruktoren,
+
+00:17:27,520 --> 00:17:30,720
+die Konstanten und Variablen und Funktoren mischen,
+
+00:17:30,720 --> 00:17:35,440
+Atome, oder auch diese speziellen Strukturen, die
+aus der Listendarstellung kommen, oder?
+
+00:17:35,440 --> 00:17:39,600
+Das sind auch Begriffe, weil die können
+auch in dieser Baumsyntax geschrieben werden können.
+
+00:17:39,600 --> 00:17:43,520
+Okay, das wären also Terme und dann
+gibt es einen weiteren Begriff
+
+00:17:43,520 --> 00:17:49,440
+namens "Grundterm", der in einigen der
+Überlegungen zur Semantik verwendet wird.
+
+00:17:50,000 --> 00:17:53,600
+Und ein Grundterm ist einfach ein
+Begriff, der keine Variablen enthält.
+
+00:17:53,600 --> 00:17:54,800
+Das ist wahrscheinlich auch etwas, das Sie
+
+00:17:54,800 --> 00:17:57,280
+bereits als Begriff in
+der Logik-Vorlesung begegnet.
+
+00:17:58,400 --> 00:18:01,520
+Grundmodell oder Grundterm.
+
+00:18:01,520 --> 00:18:01,760
+Okay.
+
+00:18:01,760 --> 00:18:05,760
+Also, alles in dieser Form, außer
+dass keine Variablen vorkommen dürfen.
+
+00:18:05,760 --> 00:18:07,520
+Das wäre dann natürlich kein Term.
+
+00:18:07,520 --> 00:18:10,480
+Und diese letzten wären auch keine
+Terme, weil sie Variablen enthalten,
+
+00:18:10,480 --> 00:18:12,400
+aber dies wäre ein Grundterm, richtig?
+
+00:18:12,400 --> 00:18:15,120
+Dies werden Terme sein, aber keine Grundbegriffe
+Terme, dies wird ein Grundterm sein,
+
+00:18:15,120 --> 00:18:22,720
+weil er ohne die Verwendung von Variablen gebildet wird.

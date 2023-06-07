@@ -1,0 +1,833 @@
+13 # slide
+00:00:02,000 --> 00:00:06,800
+Lassen Sie mich bereits an dieser Stelle
+etwas operationale Intuition für Prolog geben.
+
+00:00:06,800 --> 00:00:10,400
+Also, wie Sie sich die Ausführung vorstellen können.
+
+00:00:10,400 --> 00:00:12,960
+Dies wird hier nicht im Detail geschehen.
+
+00:00:12,960 --> 00:00:18,400
+Außerdem werden wir das Thema
+später in einer anderen Woche formeller behandeln.
+
+00:00:18,400 --> 00:00:26,480
+Aber am Anfang ist es nützlich, bereits eine Vorstellung davon
+zu haben, was prinzipiell vor sich geht, oder?
+
+00:00:26,480 --> 00:00:34,480
+Natürlich ist diese Idee, aus gegebenen Informationen neue Informationen abzuleiten
+aus gegebenen Informationen abzuleiten, ist bereits der Grundgedanke.
+
+00:00:34,480 --> 00:00:37,760
+Aber wie könnte das in einem konkreten Programm ablaufen?
+
+00:00:38,640 --> 00:00:44,160
+Okay, und das werde ich an diesem Programm machen,
+dessen Inhalt nicht so interessant ist.
+
+00:00:44,160 --> 00:00:45,200
+Es ist ein altes Beispiel.
+
+00:00:45,200 --> 00:00:46,720
+Das ist auch der Grund, warum es auf Deutsch ist
+
+00:00:47,280 --> 00:00:50,640
+obwohl der Rest der
+Folien auf Englisch sind.
+
+00:00:51,760 --> 00:00:57,840
+Also, eine Sache, die ich bereits erwähnt habe
+ist die Tatsache, dass wir keine
+
+00:00:58,720 --> 00:01:01,440
+Auswertung von Ausdrücken zu Werten wie in Haskell haben.
+
+00:01:02,480 --> 00:01:05,360
+Nehmen wir stattdessen ein solches Programm,
+das im Grunde einige
+
+00:01:07,040 --> 00:01:10,960
+Relationen oder Beziehungen definiert,
+arbeiten wir mit Abfragen.
+
+00:01:10,960 --> 00:01:14,240
+Und als Ergebnis erhalten wir wahr oder falsch.
+
+00:01:14,240 --> 00:01:17,680
+Oder wenn wir Variablen in der
+Abfrage haben, dann werden Variablen substituiert.
+
+00:01:17,680 --> 00:01:23,280
+Wir setzen hier also keinen Ausdruck ein, der einen Wert ergibt
+zu einem Wert wie einer Zahl oder einem Bild oder was auch immer,
+
+00:01:23,280 --> 00:01:27,360
+sondern wir geben etwas ein, das
+als Frage / als Abfrage interpretiert werden könnte,
+
+00:01:28,080 --> 00:01:32,880
+die eine Ja- oder Nein-Antwort hat, dann
+findet eine sogenannte Auflösung statt.
+
+00:01:32,880 --> 00:01:35,680
+Das ist genau der Begriff des logischen
+
+00:01:35,680 --> 00:01:40,320
+Begriffs, den wir verwenden werden, wenn wir die
+operationale Semantik formaler machen.
+
+00:01:41,040 --> 00:01:43,600
+Und am Ende haben wir entweder falsch oder wahr,
+
+00:01:43,600 --> 00:01:46,960
+oder in einem Fall wie diesem, wo wir
+Variablen haben, erhalten wir Variablenersetzungen.
+
+00:01:46,960 --> 00:01:51,360
+Wir haben bereits gesehen, wie das sein kann
+etwas oder etwas anderes sein kann, zum Beispiel.
+
+00:01:51,360 --> 00:01:54,240
+Das stimmt.
+Hier gibt es also zwei Lösungen für diese Aufgabe.
+
+00:01:54,240 --> 00:01:56,960
+Und deshalb bekommen wir zwei Variablensubstitutionen.
+
+00:01:59,840 --> 00:02:03,120
+Okay, wie würde das in etwas mehr Details ablaufen?
+
+00:02:03,120 --> 00:02:08,480
+Also, wie funktioniert diese Auflösung? Das machen wir
+später, mit expliziter Baumdarstellung.
+
+00:02:08,480 --> 00:02:13,280
+Aber hier werde ich es einfach in
+einige Schritte anhand dieses Beispiels erklären.
+
+00:02:13,280 --> 00:02:14,720
+Nehmen wir an, wir haben diese Fakten.
+
+00:02:14,720 --> 00:02:16,080
+Und dies sind zwei Regeln.
+
+00:02:16,640 --> 00:02:18,320
+Und wir haben eine Abfrage wie diese,
+
+00:02:18,880 --> 00:02:22,880
+dann, nun, treffen die Fakten nicht zu, weil
+es keinen Fakt über Grossvater gibt.
+
+00:02:22,880 --> 00:02:28,800
+Und dann, nun, was Prolog hat und tun wird
+ist, zu versuchen, einige dieser Regeln anzuwenden.
+
+00:02:28,800 --> 00:02:34,080
+Und der Weg, sie anzuwenden, ist zu sehen
+ob eine von ihnen oder beide zu dem passen
+
+00:02:34,080 --> 00:02:36,640
+mit der Sache übereinstimmt, die man im Kopf beweisen will.
+
+00:02:37,360 --> 00:02:41,920
+Und wenn das der Fall ist, dann können wir das Ganze auf den Versuch reduzieren
+Lösungen für die rechte Seite zu finden.
+
+00:02:41,920 --> 00:02:46,240
+Denn wenn wir die rechte Seite kennen, dann
+können wir die Sache, die man wissen will, implizieren.
+
+00:02:46,880 --> 00:02:50,960
+Okay, als Erstes müssen wir also diese
+nach der wir suchen, die Lösung, die wir
+
+00:02:50,960 --> 00:02:55,440
+haben wollen, mit dem Kopf unserer Regeln.
+
+00:02:55,440 --> 00:02:59,600
+Und das könnte man als eine Form von
+Musterabgleich oder Parameterübergabe gesehen werden.
+
+00:02:59,600 --> 00:03:00,960
+Denn im Grunde genommen sagen wir, na ja,
+
+00:03:00,960 --> 00:03:04,800
+die Regel ist im Allgemeinen über G und
+E und wir haben Kurt und ein X.
+
+00:03:04,800 --> 00:03:09,840
+Also, und das G wird "kurt" sein
+und X ist das, was auch immer E ist.
+
+00:03:09,840 --> 00:03:12,960
+Okay, also passen wir das an oder übergeben einige Parameter.
+
+00:03:14,160 --> 00:03:17,440
+Okay, das ist also für die
+erste Regel. Zuerst probieren wir das aus,
+
+00:03:17,440 --> 00:03:20,480
+wir wissen bereits, wenn wir zwei Regeln mit
+demselben Kopf haben, dann werden beide ausprobiert.
+
+00:03:20,480 --> 00:03:21,440
+Es gibt also Alternativen.
+
+00:03:21,440 --> 00:03:24,560
+Verwenden wir also die erste Alternative.
+
+00:03:24,560 --> 00:03:30,080
+Dann werden grundsätzlich diese Übereinstimmungswerte
+an die rechte Seite weitergegeben.
+
+00:03:30,080 --> 00:03:34,560
+Eigentlich ist es also diese rechte
+Seite-Bedingung bezüglich G
+
+00:03:34,560 --> 00:03:40,240
+und V wird nun übersetzt oder
+auf diese Bedingung reduziert
+
+00:03:40,240 --> 00:03:43,840
+wobei wenn G "kurt" ist, weil dies
+war eine Konstante, die hier übergeben wurde.
+
+00:03:44,880 --> 00:03:48,240
+Als dies ist V eine dieser freien
+Variablen, also bleibt es eine Variable.
+
+00:03:48,240 --> 00:03:52,640
+Es gibt in diesem Moment keinen Grund,
+sie zu etwas ganz Bestimmtem zu instanziieren.
+
+00:03:54,720 --> 00:03:56,320
+Okay, so weit sind wir also.
+
+00:03:56,880 --> 00:04:03,440
+Dann wissen wir, nun, um diese beiden
+wahrzumachen, denn dieses Komma ist ein "und".
+
+00:04:03,440 --> 00:04:04,800
+Sie müssen also beide wahr sein.
+
+00:04:04,800 --> 00:04:08,160
+Dies sollte also wahr sein für
+diese Wahl von G ist "kurt".
+
+00:04:08,160 --> 00:04:09,520
+Das stimmt. Wie kann das wahr sein?
+
+00:04:09,520 --> 00:04:13,760
+Nun, es gibt keine Regel, die hier passt, die
+relevant sein würde. Die Fakten sind relevant.
+
+00:04:13,760 --> 00:04:18,320
+Und wenn Sie hier sehen, nun, dann gibt es tatsächlich
+genau eine Aussage über "kurt" als
+
+00:04:19,280 --> 00:04:23,840
+vaterVon etwas/jemandem
+("fritz"). Also, das bedeutet
+
+00:04:23,840 --> 00:04:27,840
+dass durch den Abgleich mit
+der Tatsache nun, dass V "fritz" sein sollte.
+
+00:04:29,200 --> 00:04:32,640
+Okay, also das erste Prinzip
+ist hier die Reduktion auf Teilprobleme.
+
+00:04:32,640 --> 00:04:38,000
+Genau das passiert hier. Und dann gibt
+es neue Unterabfragen von links nach rechts.
+
+00:04:38,000 --> 00:04:41,040
+Nun, dies ist die erste Unterabfrage
+die wir hier gelöst haben.
+
+00:04:41,040 --> 00:04:46,880
+Und dann gibt es vielleicht noch mehr zu entdecken oder mehr
+in den Unterabfragen nach rechts herauszufinden.
+
+00:04:46,880 --> 00:04:52,160
+In der Tat, jetzt, wo wir wissen, dass V
+"fritz" sein sollte, wenn überhaupt, kann dies wahr gemacht werden.
+
+00:04:52,160 --> 00:04:55,520
+Das bedeutet natürlich auch, dass dieses
+Vorkommen von V "fritz" sein sollte.
+
+00:04:55,520 --> 00:04:59,760
+Denn Sie wissen, dass in der gleichen Regel die gleichen
+Variablen mit denselben Entitäten übereinstimmen.
+
+00:05:01,360 --> 00:05:08,320
+Also, eine zweite Reduktion, die wir brauchen, um herauszufinden
+ob dieses nun instanziierte für V gleich "fritz" ist,
+
+00:05:08,320 --> 00:05:10,160
+auch wahr ist oder wahr gemacht werden kann.
+
+00:05:10,880 --> 00:05:11,200
+So.
+
+00:05:11,200 --> 00:05:15,760
+Wiederum ist dies etwas, das
+mit unserer Datenbank von Fakten übereinstimmen könnte.
+
+00:05:15,760 --> 00:05:18,400
+Und in der Tat, das tut es sogar zweimal.
+
+00:05:18,400 --> 00:05:24,960
+Indem wir dies also von oben nach unten überprüfen, was genau
+das ist, was Prolog in seinem Suchprozess tun wird,
+
+00:05:26,080 --> 00:05:33,120
+und E wird sich als "paul" herausstellen, oder
+zumindest wird dies eine Möglichkeit sein.
+
+00:05:34,000 --> 00:05:34,640
+Nun gut.
+
+00:05:34,640 --> 00:05:37,840
+Und damit sind wir am Ende dieser ersten Zeile,
+
+00:05:38,720 --> 00:05:41,200
+der ersten Regel, also gibt es
+nichts mehr zu prüfen.
+
+00:05:41,200 --> 00:05:43,360
+Jetzt wissen wir, dass E "paul" ist.
+
+00:05:43,360 --> 00:05:47,280
+Und wir sollten noch irgendwie
+an die ursprüngliche
+
+00:05:47,280 --> 00:05:49,360
+Abfrage übertragen, weil wir dort die Variable X verwendet haben.
+
+00:05:49,360 --> 00:05:51,520
+Und nun, da wir die Instanziierung von E gefunden haben
+
+00:05:51,520 --> 00:05:55,520
+Instanziierung für E gefunden haben, wissen
+wir, dass dieses E "paul" ist.
+
+00:05:55,520 --> 00:05:57,520
+Und das ist auch das Rückgabeergebnis,
+
+00:05:58,160 --> 00:06:01,360
+das ist nicht als Wertrückgabe, sondern
+tatsächlich als Variablen-Ersatz.
+
+00:06:01,360 --> 00:06:03,840
+Ja, bei diesem Matching haben wir
+herausgefunden, dass X E sein sollte.
+
+00:06:03,840 --> 00:06:05,600
+Jetzt haben wir eine Lösung für E gefunden.
+
+00:06:05,600 --> 00:06:07,440
+Das ist also auch die Antwort für X.
+
+00:06:07,440 --> 00:06:11,760
+So ist auf der vorherigen Folie
+bei der X gleich E war.
+
+00:06:12,880 --> 00:06:14,640
+Ist das nun die einzige Lösung hier?
+
+00:06:14,640 --> 00:06:17,280
+Nein, wir wissen bereits aus dem Beispiel
+auf der vorherigen Folie, oder von dem, was ich
+
+00:06:17,280 --> 00:06:20,560
+dort gezeigt habe, dass es auch eine
+Lösung gibt, bei der X gleich "hans" ist.
+
+00:06:20,560 --> 00:06:21,760
+Wie kommt diese zustande?
+
+00:06:22,320 --> 00:06:31,200
+Nun, an dieser Stelle, wo wir dieses "fritz" hatten und
+E hatten, habe ich hier nachgeschaut und herausgefunden, dass E "paul" sein kann.
+
+00:06:31,200 --> 00:06:33,200
+Aber ich habe schon erwähnt, dass E auch "hans" sein kann.
+
+00:06:33,200 --> 00:06:36,960
+Wie wird das eigentlich von Prolog gefunden oder ausgewählt?
+
+00:06:37,520 --> 00:06:47,840
+Nun, wenn wir nach passenden Regeln suchen
+oder Fakten von oben nach unten suchen, haben wir zuerst E gefunden.
+
+00:06:48,560 --> 00:06:53,040
+Aber da eine Relation
+nicht eine eindeutige Abbildung ist, genau wie hier,
+
+00:06:53,040 --> 00:06:57,120
+also, gibt es nicht genau eine
+Person, von der "fritz" Vater ist.
+
+00:06:57,840 --> 00:07:03,440
+Und Prolog wird auch weitere
+Regelauswahlen über Backtracking tätigen.
+
+00:07:03,440 --> 00:07:07,760
+Wenn wir also nach diesem Schritt entscheiden, dass wir
+wiederholen wollen, wollen Sie eine andere Lösung finden,
+
+00:07:07,760 --> 00:07:14,720
+dann würde Prolog zu diesem Punkt zurückgehen und sehen:
+Nun, das betrifft diese Tatsache, die ich gerade benutzt habe,
+
+00:07:14,720 --> 00:07:17,040
+gibt es eine andere Möglichkeit
+um eine Lösung für E zu finden?
+
+00:07:17,680 --> 00:07:19,280
+Und natürlich gibt es eine, wie wir feststellen, richtig?
+
+00:07:19,280 --> 00:07:22,720
+Das war also die letzte Stelle
+wo etwas versucht wurde.
+
+00:07:22,720 --> 00:07:25,920
+Wenn wir nun zurückverfolgen/neu versuchen,
+dann geht die Suche dort weiter.
+
+00:07:25,920 --> 00:07:30,960
+Also, Prolog wird sehen: in den späteren Regeln, von
+oben nach unten, gibt es noch andere mögliche Auswahlen?
+
+00:07:30,960 --> 00:07:33,200
+Ja, "paul" ist jetzt nicht mehr aktiv.
+
+00:07:33,200 --> 00:07:35,600
+Und in der Tat, es wurde eine andere Lösung gefunden.
+
+00:07:35,600 --> 00:07:37,680
+Nämlich durch diese letzte Regel.
+
+00:07:37,680 --> 00:07:38,640
+E könnte auch "hans" sein.
+
+00:07:39,760 --> 00:07:43,840
+Und wie wird das dann verwendet
+in dem ganzen Suchprozess?
+
+00:07:44,800 --> 00:07:50,720
+Nun, im Grunde genommen, an dem Punkt, wo wir
+diesen Wiederholungsversuch machen, und der Rest wird wiedergegeben, richtig?
+
+00:07:50,720 --> 00:07:54,720
+Also, jetzt, statt bis zu
+hier, hatten wir herausgefunden, dass V "fritz" sein sollte.
+
+00:07:54,720 --> 00:07:56,320
+Dann haben wir herausgefunden, dass E "paul" ist.
+
+00:07:56,320 --> 00:08:01,600
+Wenn man es noch einmal versucht, dann wiederholen wir diesen
+Teil noch einmal, und finden, dass E "hans" ist.
+
+00:08:01,600 --> 00:08:07,520
+Und das wird dann natürlich auch
+als Endergebnis an die Ausgabe übertragen.
+
+00:08:09,120 --> 00:08:12,640
+So kommt also X gleich "hans" ins Spiel.
+
+00:08:14,080 --> 00:08:15,120
+Ist das nun alles?
+
+00:08:16,320 --> 00:08:21,600
+Nein, wir können noch andere Möglichkeiten haben, andere
+Stellen, wo wir eine andere Wahl treffen können.
+
+00:08:21,600 --> 00:08:22,960
+Hier haben wir keine andere Wahl, richtig?
+
+00:08:22,960 --> 00:08:23,840
+Also, wenn Sie diese
+
+00:08:25,920 --> 00:08:29,840
+Zeile hier, diese Tatsache hier, dann gibt es
+nichts anderes für istVaterVon zu versuchen.
+
+00:08:29,840 --> 00:08:33,360
+Denn dies ist bereits der letzte
+in den Versuchen von oben nach unten.
+
+00:08:34,000 --> 00:08:36,960
+Aber eigentlich, an einer früheren Stelle,
+hatten wir schon eine Auswahl, richtig?
+
+00:08:36,960 --> 00:08:39,840
+Hier hatten wir keine Wahl, weil
+hier hatten wir etwas mit "kurt" und
+
+00:08:40,640 --> 00:08:42,320
+jemand anderem, und es gab nur eine Regel.
+
+00:08:42,320 --> 00:08:43,680
+Es gibt also keine Wahl.
+
+00:08:43,680 --> 00:08:46,480
+Aber eigentlich hatte die erste Sache, die
+wir versucht haben, hatte auch eine Alternative.
+
+00:08:46,480 --> 00:08:47,680
+Ich habe das schon erwähnt, oder?
+
+00:08:47,680 --> 00:08:50,000
+Wir hätten diese erste Regel nicht anwenden müssen.
+
+00:08:50,000 --> 00:08:52,640
+Nun, das mussten wir aber, weil wir
+von oben nach unten gehen wollen.
+
+00:08:52,640 --> 00:08:55,840
+Aber nachdem wir das erforscht haben,
+könnten wir es uns noch einmal überlegen,
+
+00:08:55,840 --> 00:08:57,600
+vielleicht hätten wir eine zweite nehmen sollen.
+
+00:08:57,600 --> 00:08:58,800
+Wir haben das noch nicht geprüft.
+
+00:08:59,920 --> 00:09:02,080
+Aber das müssen wir.
+
+00:09:02,080 --> 00:09:05,920
+Das Backtracking betrifft also auch
+das Ausprobieren weiterer passender Regeln
+
+00:09:06,560 --> 00:09:13,600
+wie diese und nicht nur die Auswahl anderer
+Fakten zu wählen, sondern auch andere Regeln wie diese auszuprobieren.
+
+00:09:15,280 --> 00:09:16,480
+Wie wird sich das auswirken?
+
+00:09:18,400 --> 00:09:25,760
+Nun, dann müssen wir diese rechte Seite ausprobieren
+Seite, die sehr ähnlich aussieht.
+
+00:09:25,760 --> 00:09:28,240
+Außer für verschiedene
+Variablen, also wieder für dieses M,
+
+00:09:28,800 --> 00:09:36,480
+werden wir die Lösung "fritz" finden
+aus dieser ersten Tatsache hier.
+
+00:09:36,480 --> 00:09:41,440
+Dann reduziert sich das auf die richtige Nebenbedingung, richtig?
+
+00:09:41,440 --> 00:09:44,000
+Die zweite, die zweite
+Nebenbedingung in der Links-Rechts
+
+00:09:44,000 --> 00:09:49,840
+Suche dieser Regel. Wir
+müssen dies nun etablieren.
+
+00:09:50,400 --> 00:09:51,200
+Können wir das tun?
+
+00:09:51,200 --> 00:09:52,160
+Nein, nicht wirklich.
+
+00:09:52,160 --> 00:09:56,720
+Denn in diesem Fall gibt es ja nicht
+einmal ein Prädikat mit diesem Namen.
+
+00:09:57,440 --> 00:10:03,120
+Also scheitert dies, entweder wirklich durch eine
+Fehlermeldung, da Prolog nichts über dieses
+
+00:10:03,680 --> 00:10:07,200
+Prädikat weiß, oder es wird einfach keine Lösung gefunden.
+
+00:10:07,200 --> 00:10:09,280
+Ohne Fehlermethode, als stiller Fehlschlag.
+
+00:10:09,280 --> 00:10:11,840
+Aber in jedem Fall wird keine
+Teillösung für E gefunden.
+
+00:10:11,840 --> 00:10:16,320
+Es gibt also auch nichts, was irgendwie
+hierher zurück übertragen wird, um an X weitergegeben zu werden.
+
+00:10:16,320 --> 00:10:18,560
+Eigentlich sind die beiden Dinge, die wir
+bereits für X gefunden haben,
+
+00:10:18,560 --> 00:10:20,960
+nämlich "paul" und "hans", die einzigen Lösungen sein.
+
+00:10:22,480 --> 00:10:24,640
+Und dann ist die Suche abgeschlossen.
+
+00:10:24,640 --> 00:10:26,800
+Und wir hätten zwei Lösungen gegeben.
+
+00:10:26,800 --> 00:10:31,840
+Und dann gibt Prolog die Aufforderung
+für die nächste Variable.
+
+00:10:35,520 --> 00:10:38,080
+Okay, es gibt einen anderen Weg, dies zu betrachten.
+
+00:10:38,080 --> 00:10:40,720
+Die gleiche Idee, aber anders dargestellt.
+
+00:10:40,720 --> 00:10:41,600
+Und das ist interessant.
+
+00:10:41,600 --> 00:10:46,080
+Und so weit, wie Sie es haben können
+eine Simulation der
+
+00:10:47,200 --> 00:10:51,680
+Ausführung mit dem Befehl
+"trace" in den meisten Prolog Systemen.
+
+00:10:51,680 --> 00:10:56,080
+Und was ich hier zeige, was dem entspricht
+dem, was wir auf den vorherigen Folien gesehen haben,
+
+00:10:56,080 --> 00:11:00,080
+und kann besser verglichen werden und
+mit dem, was das Prolog-System tut, abgeglichen werden.
+
+00:11:00,080 --> 00:11:05,680
+Sie könnten also tatsächlich versuchen wollen
+dieses Programm in den Prolog-Interpreter zu laden.
+
+00:11:06,560 --> 00:11:13,440
+Geben Sie es mit diesem Trace-Befehl aus. Und danach,
+sehen Sie sich diese Abfrage an und vergleichen Sie dann, was
+
+00:11:13,440 --> 00:11:17,600
+Ihnen in diesem Debug-Modus angezeigt wird, mit dem, was
+auf den vorherigen Folien und dieser Folie zu sehen ist.
+
+00:11:18,640 --> 00:11:20,320
+Okay, was hier eigentlich passiert, ist:
+
+00:11:20,320 --> 00:11:30,880
+Wir haben mit dieser Abfrage begonnen, dann haben wir gesehen, dass diese
+über die erste Regel hier auf diese Unterabfrage reduziert
+
+00:11:30,880 --> 00:11:38,400
+oder reduzierte Abfrage. Sie ist nicht kleiner, aber sie ist reduziert
+in dem Sinne, dass wir diesen Kopf zum Rumpf reduzieren.
+
+00:11:38,400 --> 00:11:42,560
+Also gewissermaßen auf ein Unterproblem, denn
+jetzt müssen wir nur noch Lösungen für dieses Problem finden.
+
+00:11:42,560 --> 00:11:44,560
+Und dann hätten wir die
+Lösung für die ursprüngliche Anfrage.
+
+00:11:46,080 --> 00:11:47,920
+Wir haben gesehen, dass der "kurt" hier gesetzt ist.
+
+00:11:47,920 --> 00:11:52,800
+Weil er als Parameter übergeben wurde,
+während das V natürlich unbekannt ist.
+
+00:11:52,800 --> 00:11:54,080
+Es ist eine freie Variable.
+
+00:11:54,080 --> 00:11:57,120
+Und was auch immer hier herauskommt
+wird auch das Ergebnis für X sein.
+
+00:11:57,120 --> 00:12:00,000
+Also, auf den vorherigen Folien,
+hatte ich hier noch das E.
+
+00:12:00,000 --> 00:12:03,360
+Aber eigentlich wissen wir, dass letztendlich
+dieses E mit dem X abgeglichen wird.
+
+00:12:03,360 --> 00:12:06,800
+Also könnten wir das hier auch als X sehen.
+
+00:12:07,520 --> 00:12:13,360
+Okay, also übergeben Sie auch diese Variable.
+Übergeben Sie nicht nur die Konstante "kurt" an G,
+
+00:12:13,360 --> 00:12:16,560
+sondern übergebe auch die Variable X an die Variable E.
+
+00:12:17,200 --> 00:12:18,560
+Dann haben wir dieses Teilproblem.
+
+00:12:19,680 --> 00:12:24,000
+Dann haben wir gesehen, dass dieses
+gelöst werden kann, indem man V
+
+00:12:24,000 --> 00:12:27,680
+aufgrund der ersten Tatsache hier "fritz" ist.
+
+00:12:27,680 --> 00:12:31,760
+Das heißt also, dass dieses
+erfüllt ist, erfüllt ist.
+
+00:12:31,760 --> 00:12:37,840
+Wir müssen noch den zweiten Teil erfüllen, von
+links nach rechts erfüllen, wobei V jetzt natürlich schon "fritz" ist.
+
+00:12:38,800 --> 00:12:40,640
+Okay, dann haben wir dieses Teilproblem.
+
+00:12:40,640 --> 00:12:43,360
+Und das entspricht einem der
+den Fakten, nämlich diesem,
+
+00:12:44,320 --> 00:12:50,080
+der uns sagt, dass X "paul" sein könnte, was genau
+das erste Ergebnis, das Prolog liefern würde.
+
+00:12:50,080 --> 00:12:51,760
+Und dann gibt es nichts mehr zu prüfen, richtig?
+
+00:12:51,760 --> 00:12:54,640
+Also wäre auch das jetzt gelöst.
+
+00:12:54,640 --> 00:12:59,280
+Und dann hat Prolog nichts mehr zu beweisen,
+und kann tatsächlich die erste Lösung ausgeben.
+
+00:13:00,560 --> 00:13:02,320
+Das war dann der Punkt, wo der Benutzer sagen könnte,
+
+00:13:02,320 --> 00:13:05,840
+na ja, ich will eine andere
+Lösung haben, indem er ein Semikolon ausgibt.
+
+00:13:06,560 --> 00:13:08,160
+Das würde also im Grunde genommen ein Backtracking bedeuten.
+
+00:13:08,160 --> 00:13:13,200
+Also, vermeiden oder nehmen Sie diese letzte Wahl zurück,
+zu dem Punkt zurückgehen, an dem wir noch die Wahl
+
+00:13:13,200 --> 00:13:20,240
+hatten und sagen, na ja, dieses Mal will ich
+nicht diese Tatsache hier nehmen, die zu "paul" führte.
+
+00:13:20,240 --> 00:13:21,280
+Lassen Sie mich eine andere versuchen.
+
+00:13:21,280 --> 00:13:29,120
+Und gut, das nächste gilt auch schon,
+nämlich dann wieder diese Unterabfrage aufzulösen
+
+00:13:29,760 --> 00:13:31,320
+mit der Lösung: X ist "hans", richtig?
+
+00:13:31,320 --> 00:13:36,320
+So, das ist wieder fertig,
+aber jetzt mit diesem Ergebnis.
+
+00:13:37,600 --> 00:13:40,400
+Okay, dann können wir sagen: Gut, lass mich
+das auch wieder rückgängig machen und eigentlich
+
+00:13:40,400 --> 00:13:43,760
+sehen, ob es noch andere
+Dinge sind, die man weglassen könnte.
+
+00:13:43,760 --> 00:13:46,960
+Und gut, dann, eigentlich,
+wie auf den vorherigen Folien,
+
+00:13:46,960 --> 00:13:50,560
+stellt sich heraus, dass der andere Punkt
+den wir zur Auswahl hatten, dieser war,
+
+00:13:50,560 --> 00:13:53,280
+wo ich nicht die erste Regel wählen
+musste, ich hätte eine andere wählen können.
+
+00:13:53,280 --> 00:13:56,160
+Es gab keine andere Wahlmöglichkeit dazwischen
+die einige Alternativen haben könnte.
+
+00:13:56,160 --> 00:13:58,800
+Aber diese erste Wahl für diese
+Regel hatte einige Alternativen.
+
+00:13:58,800 --> 00:14:01,280
+Denn anstatt diese "istVaterVon,
+
+00:14:01,280 --> 00:14:04,720
+istVaterVon", hätten Sie auch
+die Regel "istVaterVon, istMutterVon".
+
+00:14:04,720 --> 00:14:06,400
+Okay, das wird jetzt passieren.
+
+00:14:06,400 --> 00:14:10,160
+Dies wird nun auf diese Unterabfrage reduziert.
+
+00:14:10,800 --> 00:14:16,240
+Jetzt, mit diesen beiden Möglichkeiten
+Natürlich ist wieder "kurt" für das G gesetzt.
+
+00:14:16,800 --> 00:14:22,080
+Es gibt die freie Variable M und was auch
+immer herauskommt, wird auch das Ergebnis für X sein.
+
+00:14:22,080 --> 00:14:23,440
+Das ist also das Teilproblem.
+
+00:14:24,480 --> 00:14:27,040
+Dann kann Prolog einige Fortschritte machen.
+
+00:14:27,040 --> 00:14:31,520
+Es kann hier die erste Regel wählen
+um zu entscheiden, dass M "fritz" sein soll.
+
+00:14:32,880 --> 00:14:39,920
+Das macht diese Prüfung überflüssig. Aber diese
+Anforderung bleibt aber immer noch bestehen, wenn M "fritz" ist.
+
+00:14:39,920 --> 00:14:42,400
+Und das ist dann der Punkt, an dem wir einen Fehler bekommen
+
+00:14:42,400 --> 00:14:44,640
+denn es ist nichts
+über dieses Prädikat bekannt ist.
+
+00:14:46,080 --> 00:14:49,520
+Okay, letztendlich wäre Prolog dann fertig.
+
+00:14:49,520 --> 00:14:52,800
+Und bis jetzt hat es diese zwei Lösungen
+gefunden und es gibt keine weiteren.
+
+00:14:52,800 --> 00:14:57,840
+Das wäre also das Ergebnis der Ausführung.
+
+00:15:01,360 --> 00:15:07,040
+Okay, und nun, Sie können sehen, wie das abläuft,
+
+00:15:07,040 --> 00:15:09,360
+wenn Sie diesen Trick im Trace-Modus abspielen.
+
+00:15:09,360 --> 00:15:19,840
+Sie werden nicht genau diese Zeilen hier sehen, aber
+etwas, das widerspiegelt, was hier vor sich geht.
