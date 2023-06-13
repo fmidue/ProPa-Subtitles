@@ -1,0 +1,331 @@
+0:00:01.550,0:00:07.500
+In Aufgabe 28 sollen wir jetzt wie letzte
+Woche auch schon Werte zu verschiedenen Typen
+
+0:00:07.500,0:00:08.500
+angeben.
+
+0:00:08.500,0:00:14.990
+Diesmal sind es nicht irgendwelche Either-
+oder Maybe-Werte oder Schachtelungen davon,
+
+0:00:14.990,0:00:22.660
+sondern diese t,u,v und w Typen, die hier
+oben gegeben sind.
+
+0:00:22.660,0:00:28.400
+Die haben keine besondere Bedeutung sondern
+sind einfach irgendwie so gewählt.
+
+0:00:28.400,0:00:35.219
+Aber trotzdem sollen wir dafür mal einfach
+um das zu üben Werte angeben.
+
+0:00:35.219,0:00:42.989
+Okay, wir sollen dabei jeweils verschiedene
+Werte angeben wie auch letzte Woche schon,
+
+0:00:42.989,0:00:48.500
+und nach Möglichkeit keine Teilausdrücke
+wiederverwenden.
+
+0:00:48.500,0:00:53.519
+Und alle Konstruktoren sollen wir auch einmal
+verwendet werden.
+
+0:00:53.519,0:00:57.579
+Gut, dann gucken wir uns das mal an für T.
+
+0:00:57.579,0:01:05.770
+T ist entweder ein A oder wird mit einem A
+konstruiert oder mit einem B also zwei Konstruktoren,
+
+0:01:05.770,0:01:12.360
+und brauch entsprechend unterschiedliche Parameter
+für die Konstruktoren.
+
+0:01:12.360,0:01:17.120
+Weil wir beide verwenden sollen und zwei Werte
+für T hier angehen müssen, können wir sagen,
+
+0:01:17.120,0:01:21.850
+wir verwenden hier das A und hier das B.
+
+0:01:21.850,0:01:27.910
+Das A braucht irgendeinen Wahrheitswert und
+da können mit True nehmen oder False.
+
+0:01:27.910,0:01:30.430
+Das sind unserer Möglichkeiten hier.
+
+0:01:30.430,0:01:34.470
+Und für B brauchen wir irgendeine Liste von
+Int.
+
+0:01:34.470,0:01:42.360
+Da können wir also - keine Ahnung - irgendeine
+Liste von Int nehmen.
+
+0:01:42.360,0:01:47.780
+Ok, so weit so einfach.
+
+0:01:47.780,0:01:52.720
+Jetzt kommen wir zu den bisschen interessanteren
+Fällen.
+
+0:01:52.720,0:02:03.410
+Bei U sind nämlich nicht nur primitive Typen
+drin in manchen Konstruktoren sondern auch
+
+0:02:03.410,0:02:05.730
+immer Werte vom Typ V.
+
+0:02:05.730,0:02:13.080
+Sowohl für C als auch D brauchen wir Werte
+vom Typ v, und das heißt, wir haben hier
+
+0:02:13.080,0:02:19.590
+dann geschlachtete Anwendung von den Konstruktoren.
+
+0:02:19.590,0:02:25.150
+Okay, fangen wir auch einfach erstmal an konstruieren
+irgendwas; einen Wert mit C.
+
+0:02:25.150,0:02:30.570
+Da müssen wir wieder einen Wahrheitswert
+angeben, nehmen wir mal False.
+
+0:02:30.570,0:02:39.920
+Und jetzt müssen wir noch ein V angeben und
+für ein V haben wir die Möglichkeit ein
+
+0:02:39.920,0:02:43.210
+E oder F anzugeben.
+
+0:02:43.210,0:02:51.590
+Wenn wir einfach mal der Reihe nach durchgehend,
+damit wir alles systematisch benutzen, nehmen
+
+0:02:51.590,0:02:52.590
+wir ein E.
+
+0:02:52.590,0:02:56.340
+Für ein E müssen wir noch zusätzlich ein
+Int angeben - keine Ahnung - 0.
+
+0:02:56.340,0:03:06.150
+Und dann haben wir jetzt für C ein Bool-Wert
+und hier einen V-Wert angegeben.
+
+0:03:06.150,0:03:18.770
+Wir können das auch zwischendurch mal in
+ghci laden, und die Tatsache dass es kompiliert
+
+0:03:18.770,0:03:24.930
+sagt uns schon dass wir Werte von den von
+den richtigen Typen angeben haben.
+
+0:03:24.930,0:03:34.320
+Wenn ich jetzt zum Beispiel, sagen ich würde
+hier 5 angeben statt Bool und das neu laden,
+
+0:03:34.320,0:03:41.920
+gibt es einen Kompilerfehler, der mir sagt
+hier an der Stelle müsste eigentlich irgendwie
+
+0:03:41.920,0:03:44.260
+Bool stehen, da steht aber 5.
+
+0:03:44.260,0:03:48.640
+Das sieht etwas komisch aus weil dann noch
+ein paar andere Mechanismen im Hintergrund
+
+0:03:48.640,0:03:55.010
+eine Rolle spielen, aber im Wesentlichen ist
+das der der Fehler.
+
+0:03:55.010,0:04:03.709
+In dem Moment in dem das Kompiliert können
+wir uns sicher sein, dass wir eine Wert von
+
+0:04:03.709,0:04:07.510
+dem richtigen Typ hingeschrieben haben.
+
+0:04:07.510,0:04:14.569
+Hier unten sind dann auch Tests mit dem wir
+nachher überprüfen können, dass wir tatsächlich
+
+0:04:14.569,0:04:18.510
+nicht aus versehen Sachen doppelt hingeschrieben
+haben.
+
+0:04:18.510,0:04:23.370
+Also Werte wiederverwendet haben oder Teilausdrücke.
+
+0:04:23.370,0:04:32.080
+Das können wir dann noch laufen lassen am
+ende wenn wir alle Werte eingetragen haben,
+
+0:04:32.080,0:04:36.229
+aber wenn wir das so systematisch machen sollte
+das eigentlich auch nicht passieren.
+
+0:04:36.229,0:04:44.510
+Dann haben wir jetzt den vierten Wert, hier
+sollen wir ein Paar - ein Tupel - angeben.
+
+0:04:44.510,0:04:48.409
+Die erste Komponente ist ein U und die zweite
+Komponente ist ein V.
+
+0:04:48.409,0:04:54.969
+Jetzt haben wir eben das U mit C konstruiert,
+dann können wir jetzt das U mit D konstruieren.
+
+0:04:54.969,0:05:05.960
+Und dass V können wir und wieder aussuchen;
+wir können ein F nehmen.
+
+0:05:05.960,0:05:14.219
+Und für das D brauchen wir noch einen V-Wert.
+
+0:05:14.219,0:05:26.610
+Nehmen wir einfach noch mal E mit einer anderen
+Zahl - keine Ahnung - 5 und das F braucht
+
+0:05:26.610,0:05:28.689
+ein (Int,Bool).
+
+0:05:28.689,0:05:37.699
+Nehmen wir einfach irgendeinen Int- und ein
+Bool-Wert.
+
+0:05:37.699,0:05:43.389
+Und hier sind jetzt ist die Schachtelung schon
+ein bisschen komplizierter.
+
+0:05:43.389,0:05:47.779
+Da kann man durchaus schon mal einen Fehler
+machen.
+
+0:05:47.779,0:05:53.960
+Deswegen laden wir das am Besten gleich mal
+neu, gucken, kompiliert noch, okay, dann haben
+
+0:05:53.960,0:05:58.669
+wir hier wohl auf jeden Fall auch keinen Fehler
+gemacht, wenn das hin geschrieben haben.
+
+0:05:58.669,0:06:03.160
+Jetzt sollen wir ein Tupel angeben für V
+und W.
+
+0:06:03.160,0:06:10.560
+Naja V haben wir jetzt schon zur Genüge definiert,
+da können wir uns einfach wieder irgendwas
+
+0:06:10.560,0:06:11.560
+nehmen.
+
+0:06:11.560,0:06:31.400
+Sagen wir, wir nehmen ein F mit 7 und False,
+und für das W haben wir jetzt drei Konstruktoren
+
+0:06:31.400,0:06:35.119
+G, H und I.
+
+0:06:35.119,0:06:39.330
+Und wir sehen auch, wir haben hier drei Werte
+für W, die wir noch definieren müssen.
+
+0:06:39.330,0:06:43.210
+Das heißt, wir müssen die auch der Reihe
+nach allle noch einmal durchgehen.
+
+0:06:43.210,0:06:47.819
+Das heißt, wir können als Erstes mal G benutzen.
+
+0:06:47.819,0:06:59.509
+B braucht wieder ein V, da können wir z.B.
+einfach wieder mit E was konstruieren.
+
+0:06:59.509,0:07:00.509
+Genau.
+
+0:07:00.509,0:07:04.059
+Dann laden wir das auch mal neu.
+
+0:07:04.059,0:07:05.759
+Haben wir auch keinen fehler gemacht.
+
+0:07:05.759,0:07:12.870
+Dann ein Paar mit W und einem U.
+
+0:07:12.870,0:07:16.289
+Für W haben wir H noch nicht verwendet.
+
+0:07:16.289,0:07:26.180
+Das hat keine Parameter und für U können
+wir einfach noch mal C oder D verwenden.
+
+0:07:26.180,0:07:39.599
+Machen wir mal C True und dann machen wir
+für das V ein F, geben wieder irgendwelche
+
+0:07:39.599,0:07:40.599
+Werte an.
+
+0:07:40.599,0:07:44.039
+Und jetzt müssen wir für das W das I noch
+einmal verwenden.
+
+0:07:44.039,0:07:47.740
+Da müssen wir wieder ein U angeben.
+
+0:07:47.740,0:07:58.529
+Nehmen wir zum Beispiel D, jetzt müssen wir
+ein V angeben, z.B. mit E.
+
+0:07:58.529,0:08:02.009
+Nehmen wir mal noch eine negative Zahl.
+
+0:08:02.009,0:08:06.349
+Das kompiliert alles, dass heißt, wir haben
+die Werte auf jeden Fall richtig angeben.
+
+0:08:06.349,0:08:13.550
+Jetzt können wir noch die Tests ausführen,
+da gibt es auch keine Fehler.
+
+0:08:13.550,0:08:19.599
+Das heißt, wir haben ungefähr grob unterschiedliche
+Werte verwendet.
+
+0:08:19.599,0:08:25.899
+Also insbesondere für value1 und value2 und
+die entsprechenden Komponenten aus den Tupeln,
+
+0:08:25.899,0:08:30.580
+die immer den gleichen Typ haben.
+
+0:08:30.580,0:08:36.759
+Also dass diese drei Ws hier unterschiedlich
+sind die drei Us und die beiden Vs hier.
+
+0:08:36.759,0:08:43.779
+Das prüft die Test-Suite im Moment, und das
+ist auf jeden Fall auch der Fall, weil wir
+
+0:08:43.779,0:08:46.790
+das systematisch gemacht haben.
+
+0:08:46.790,0:08:49.750
+Wir haben auch alle Werte verwendet.
+
+0:08:49.750,0:08:59.100
+Also A komt vor, B kommt vor, C, D, E, F,
+G, H und I.
+
+0:08:59.100,0:09:05.559
+Und damit ist im Prinzip die Aufgabe gelöst.
+

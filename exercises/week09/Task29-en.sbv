@@ -1,0 +1,686 @@
+0:00:01.920,0:00:08.080
+This task has a rather long task
+description which is split into two parts.
+
+0:00:09.280,0:00:21.680
+The first part is more general notes and
+the second part contains the actual task.
+
+0:00:23.760,0:00:31.280
+The remarks within the first part are that
+these lines here are required in Autotool, but
+
+0:00:32.160,0:00:35.200
+they should be removed if you test locally.
+
+0:00:36.480,0:00:42.160
+So you can delete these lines
+or you can comment them out.
+
+0:00:42.160,0:00:43.760
+So this is what I do.
+
+0:00:43.760,0:00:51.920
+I comment out these lines and of
+course if you have a task uploaded
+
+0:00:51.920,0:01:01.120
+to Autotool that task should contain exactly
+these lines or more or less exactly these lines.
+
+0:01:09.040,0:01:17.440
+We can use any function which is defined
+here within our task as well as 'return'.
+
+0:01:20.000,0:01:30.640
+This given set of functions and 'return' are
+the IO functions that we are allowed to use.
+
+0:01:34.880,0:01:37.600
+Otherwise Autotool could reject the task.
+
+0:01:38.400,0:01:45.840
+Then there are some more general notes for
+some system specifically for instance here:
+
+0:01:46.400,0:01:54.320
+If you somehow could not execute
+this task you can add an import which
+
+0:01:55.680,0:02:05.360
+will then allow you to use
+the functions mentioned above.
+
+0:02:05.360,0:02:11.040
+So if if that's an issue on your machine
+you might have to add simply this line.
+
+0:02:11.920,0:02:22.320
+And another remark is about
+hSetBuffering stdout NoBuffering.
+
+0:02:23.680,0:02:28.320
+This line here – so this is a line you could add
+
+0:02:28.320,0:02:34.800
+in your program if it's not
+running for you on your machine.
+
+0:02:36.400,0:02:38.480
+I add this as an additional line.
+
+0:02:39.600,0:02:45.760
+If you want to be sure not having
+troubling the issue then you can
+
+0:02:48.320,0:02:51.440
+add this line as the first line of your program.
+
+0:02:51.440,0:02:54.560
+And then afterwards start the actual program.
+
+0:02:55.840,0:03:00.800
+Now there are remarks on the
+program that's to be written.
+
+0:03:00.800,0:03:08.320
+So these are the remarks for the actual task.
+
+0:03:09.600,0:03:13.280
+We have to write a program
+that reads two integers,
+
+0:03:13.280,0:03:16.960
+even negative ones, and prints out their sum.
+
+0:03:18.080,0:03:25.040
+This behaviour is repeated until the
+first time the first number is a zero.
+
+0:03:27.200,0:03:33.520
+If that's the case then the program terminates
+and prints out the number of additions.
+
+0:03:37.680,0:03:40.160
+In this case it's also not
+reading a second number.
+
+0:03:47.440,0:03:51.440
+It's allowed to add additional
+information to the output.
+
+0:03:59.200,0:04:02.160
+So you can modify the output as well and have
+
+0:04:06.800,0:04:15.040
+more output for the final result or
+output for the results of the addition.
+
+0:04:15.040,0:04:20.080
+So you can have an output which
+indicates what's happening there.
+
+0:04:23.440,0:04:26.080
+And that's also what you should do!
+
+0:04:26.080,0:04:31.760
+So you should indicate what the user
+has to do next and so on and so forth.
+
+0:04:36.960,0:04:43.040
+The Autotool might give some error messages:
+
+0:04:43.040,0:04:50.240
+This part is just a description of what
+the Autotool may say if your program
+
+0:04:50.880,0:04:59.040
+is wrong or the Autotool
+thinks your task is wrong.
+
+0:05:00.720,0:05:02.320
+It's the last section here.
+
+0:05:02.320,0:05:07.280
+But I think we we simply ignore
+that one here in this case.
+
+0:05:09.440,0:05:17.040
+I just remove it to have the actual
+task description a bit closer by.
+
+0:05:18.960,0:05:21.840
+Now we have the main program
+
+0:05:22.880,0:05:35.600
+starting and we want to have actually a program
+which runs always until a given number is zero.
+
+0:05:35.600,0:05:42.640
+So what we want to have is a
+function which is recursing somehow.
+
+0:05:46.000,0:06:00.640
+Using our main program for this
+recursion is no good attempt, I think.
+
+0:06:00.640,0:06:07.040
+Because we want to count and
+when we use our main function
+
+0:06:07.040,0:06:11.600
+there is no possibility to give
+a parameter for the counting.
+
+0:06:12.160,0:06:19.920
+So we're required to have some other
+function and we can name it somehow.
+
+0:06:19.920,0:06:22.400
+I will just call it countedAdds.
+
+0:06:23.600,0:06:28.160
+So this is the function that's
+called again and again and again.
+
+0:06:33.600,0:06:36.480
+That asks us to use again and again.
+
+0:06:36.480,0:06:46.240
+It is using IO but it also has a parameter
+which is the number of current additions.
+
+0:06:47.600,0:06:49.360
+This (the latter) is an integer value.
+
+0:06:53.280,0:06:58.560
+This is the function countedAdds
+and it has this parameter.
+
+0:07:00.560,0:07:04.400
+It's an IO function. So I write do here.
+
+0:07:06.320,0:07:10.880
+Within the main function we will
+call this countedAdds function.
+
+0:07:17.440,0:07:21.920
+Now we are able to recurse
+within the counted ads function.
+
+0:07:27.520,0:07:34.000
+What we want to have is, we want
+to ask the user for a first number.
+
+0:07:35.840,0:07:39.120
+That's the first step we have to do.
+
+0:07:41.840,0:07:51.760
+The task says we have to indicate somehow
+to the user what's coming up next.
+
+0:07:51.760,0:07:56.560
+So we could simply just let
+the user input a number.
+
+0:07:57.440,0:08:13.920
+Let's say readLn which reads
+some input and this is a
+
+0:08:14.880,0:08:20.880
+somehow a value of some type
+here we having with this x.
+
+0:08:23.600,0:08:29.920
+Then we could say if x equals
+zero, then we are done.
+
+0:08:31.040,0:08:45.520
+Then 'do' – we could simply output a
+string for instance, saying 'done'.
+
+0:08:46.080,0:08:53.520
+And else we could recurse.
+
+0:08:53.520,0:09:07.840
+So if it's not a zero, then we go
+again to countedAdds and increase n.
+
+0:09:11.520,0:09:13.120
+It's simply increased by one.
+
+0:09:14.880,0:09:18.880
+I will call this program within ghci.
+
+0:09:28.560,0:09:33.280
+Here is the advice that
+hSetBuffering is not available,
+
+0:09:35.040,0:09:41.200
+therefore we could use the line we
+had before. So import System.IO.
+
+0:09:44.160,0:09:49.840
+When we use this one and reload
+then that's compiling fine.
+
+0:09:51.520,0:10:01.920
+hSetBuffering is within System.IO and if we
+have this available then our program will run.
+
+0:10:04.400,0:10:10.960
+If this is not an issue for you then you
+could leave out this line and this line here.
+
+0:10:10.960,0:10:18.480
+And if you have no issues with executing
+the program then you can skip these lines.
+
+0:10:20.080,0:10:23.840
+Now when I start this program
+and we just have this read
+
+0:10:23.840,0:10:26.880
+line here then we do not get any interaction.
+
+0:10:27.840,0:10:33.360
+It's rather just the program asking us for
+a number, but not giving an output for it.
+
+0:10:33.360,0:10:36.400
+So we would have to guess what's happening now.
+
+0:10:36.400,0:10:40.880
+And if we answer zero then the
+program is terminating, but if we
+
+0:10:40.880,0:10:45.120
+do not then the program runs until we enter zero.
+
+0:10:45.680,0:10:50.080
+Well it's not the complete
+program what we want to implement.
+
+0:10:50.640,0:11:04.240
+This is rather just an implementation
+just demonstrating what's happening here.
+
+0:11:04.880,0:11:09.120
+We want to have an output
+for what's happening here.
+
+0:11:09.120,0:11:16.400
+We want it to ask the user to do something.
+
+0:11:17.520,0:11:20.400
+So we can use putStr for this.
+
+0:11:25.600,0:11:37.680
+We can then type a message as a
+string – this will be printed out.
+
+0:11:41.760,0:11:46.560
+We can say "first number or 0 for exit".
+
+0:11:47.280,0:11:50.160
+This is what the user has to do.
+
+0:11:50.160,0:11:53.600
+So he now will have some
+information what's happening.
+
+0:11:55.520,0:12:03.200
+If we reload to program and then our
+user will see what's happening here.
+
+0:12:13.120,0:12:22.320
+This is the simple output we had here with putStr.
+
+0:12:25.680,0:12:29.440
+Some of you might have used print instead of
+
+0:12:30.400,0:12:38.880
+putStr but you should not use print
+because then your output is somehow weird.
+
+0:12:38.880,0:12:47.040
+Because then you have your string printed
+as a string which somehow looks very funny.
+
+0:12:48.880,0:12:58.000
+You should use putStr rather than
+print, this just as a side remark.
+
+0:13:01.760,0:13:08.640
+Now we already getting one number but
+actually we're required to have two numbers.
+
+0:13:12.000,0:13:16.080
+This is the else case in which
+we want to have a second number.
+
+0:13:16.080,0:13:18.880
+Let's program this part here.
+
+0:13:18.880,0:13:23.040
+Again we want to have the
+user to know what's happening.
+
+0:13:23.040,0:13:27.680
+We want to give him a message that
+he has to insert a second number.
+
+0:13:28.320,0:13:47.840
+So we ask him for a second number and again we
+can use readLn in order to get a second number.
+
+0:13:48.640,0:13:52.720
+We use the left arrow in order to give it a name.
+
+0:13:54.400,0:13:57.440
+This value will be within y.
+
+0:14:01.600,0:14:06.320
+Now we can give a message
+of what's happening next.
+
+0:14:06.880,0:14:15.520
+Next we shall print the
+number, that's the the sum.
+
+0:14:15.520,0:14:18.320
+We shall print out the sum of these two numbers.
+
+0:14:19.520,0:14:29.840
+We can say message like – also you put
+use putStr for this one – "The sum of".
+
+0:14:30.560,0:14:39.280
+Now we can add the actual
+Int values here – of x and y.
+
+0:14:39.280,0:14:41.600
+We can say the sum of x and y.
+
+0:14:45.680,0:14:50.240
+We have to use brackets here in
+order to combine it to one string.
+
+0:14:50.240,0:14:55.200
+I use plus plus in order to combine
+many things into one string.
+
+0:14:58.000,0:14:59.320
+(x ++)
+
+0:15:06.640,0:15:18.880
+We want to show x and y and then
+print the actual result of the sum.
+
+0:15:20.640,0:15:26.160
+In this case we have to use show
+rather than x and y specifically.
+
+0:15:26.160,0:15:32.880
+Because x and y shall be integers
+we have to use show here in order
+
+0:15:34.400,0:15:38.400
+to deliver them as strings to the user.
+
+0:15:39.920,0:15:42.480
+The sum – we can use print for this.
+
+0:15:42.480,0:15:51.520
+We could also put this into the putStr
+so with another ++ but I use print here.
+
+0:15:52.080,0:15:57.040
+So we can say x + y in order to sum them up.
+
+0:15:57.040,0:16:02.320
+Otherwise if I wouldn't have used
+print I would have to use show.
+
+0:16:03.280,0:16:10.000
+So ++ show and x + y so it's a bit longer
+- so this is the short version here.
+
+0:16:13.520,0:16:16.880
+After this we continue with our loop.
+
+0:16:18.560,0:16:26.400
+That's basically the major part of the program.
+
+0:16:27.360,0:16:30.720
+What's missing? –
+
+0:16:30.720,0:16:32.880
+Well let's execute this part.
+
+0:16:33.440,0:16:34.800
+So that we can see it.
+
+0:16:35.840,0:16:37.360
+Let's load it.
+
+0:16:38.000,0:16:39.520
+We give a first number.
+
+0:16:39.520,0:16:45.920
+Let's say -9 and the second
+number is 8. Their sum is -1.
+
+0:16:45.920,0:16:59.120
+If we add 2 and 3 that's 5, if we add 5 and 0
+that's 5, and if we take 0 then we are done.
+
+0:16:59.920,0:17:02.160
+So what's missing?
+
+0:17:02.160,0:17:09.680
+Well the program terminates – not reading a
+second number – that's what's happening already,
+
+0:17:11.440,0:17:14.560
+but printing the number of additions performed!
+
+0:17:14.560,0:17:20.880
+We haven't had the output of
+the additions that happened.
+
+0:17:22.320,0:17:24.080
+I already increased the counter.
+
+0:17:24.800,0:17:27.760
+We have a counter of zero here and we have
+
+0:17:27.760,0:17:32.480
+increased this counter with
+every run of countedAdds.
+
+0:17:33.120,0:17:39.360
+So the only thing that's missing
+is using the n in order to show
+
+0:17:41.520,0:17:52.320
+the output of the result of these adds.
+
+0:17:54.240,0:18:06.320
+What we can do is: we can inform the
+user that the program is terminating.
+
+0:18:11.920,0:18:13.760
+I use the this PutStrLn here.
+
+0:18:13.760,0:18:18.080
+When we are done and says
+"Done. Exiting the program".
+
+0:18:18.720,0:18:24.000
+Then I want to print the number
+of additions that happened.
+
+0:18:28.720,0:18:32.560
+Again I want to tell the user what's happening.
+
+0:18:32.560,0:18:43.120
+So: the number of additions
+performed was – and then the number.
+
+0:18:43.920,0:18:46.160
+Again I use print here in this case.
+
+0:18:46.160,0:18:52.320
+We can use print n in order to print
+the number of additions that happened.
+
+0:18:58.000,0:19:05.120
+If I reload to program and run
+it, then when we are done now.
+
+0:19:05.120,0:19:09.840
+Let's say 4, 5, 9, 7, and 0.
+
+0:19:10.480,0:19:18.640
+Then we see, we have two times first numbers and
+two times second numbers and the output is 2.
+
+0:19:29.360,0:19:34.960
+If we run the program again
+and we give as first input 9
+
+0:19:43.120,0:19:51.280
+and as second input 0 and then a 0 then we
+get just 1 as number of performed additions.
+
+0:19:51.280,0:19:55.120
+If we leave the program immediately, we get 0,
+
+0:19:55.120,0:20:02.080
+so this is the number of additions
+that happened during our program run.
+
+0:20:05.360,0:20:12.800
+There are other ways of expressing
+reading the number of integers.
+
+0:20:13.600,0:20:27.600
+We could also read strings and
+convert them into integers.
+
+0:20:27.600,0:20:29.040
+This would be another approach.
+
+0:20:29.920,0:20:41.520
+Instead of getting x as read
+we could use getLine here.
+
+0:20:41.520,0:20:45.040
+But in this case we can't use x
+
+0:20:48.480,0:20:52.960
+in order to compare it with 0,
+because then we get a type error.
+
+0:20:54.560,0:21:04.640
+Because x is the string and so there is
+nothing to compare for strings with numbers.
+
+0:21:05.600,0:21:12.000
+But we can fix this by saying x' is an Integer.
+
+0:21:12.880,0:21:21.600
+And this integer we get by reading x.
+
+0:21:22.640,0:21:28.160
+So instead of readLn we can use
+getLine and read afterwards.
+
+0:21:28.720,0:21:37.600
+Then we can use x' here which is the x we read.
+
+0:21:37.600,0:21:46.320
+Then we can run the program as well and just
+to show you – the program is still running.
+
+0:21:46.320,0:21:50.880
+Actually we see it because it's
+compiling but we can execute it as well.
+
+0:21:53.760,0:21:58.800
+And another point here is: if we have this
+
+0:21:59.600,0:22:04.800
+hSetBuffering here then we
+should have the do above here.
+
+0:22:05.360,0:22:15.520
+But if we do not have the hSetBuffering here we
+can omit the do and simply call countedAdds here.
+
+0:22:17.280,0:22:20.640
+This is just a simplification of the program which
+
+0:22:21.440,0:22:27.200
+you should do if there's just
+a single line after the do.
+
+0:22:32.560,0:22:36.160
+Now we are done also with
+the cosmetics of the program.
+
+0:22:40.560,0:22:43.120
+There are other ways of expressing stuff.
+
+0:22:43.120,0:22:49.920
+As I showed with getLine
+and read instead of readLn.
+
+0:22:53.760,0:23:01.760
+Also for printing the output
+there are different functions.
+
+0:23:03.680,0:23:09.120
+putStrLn prints the string
+and the new line afterwards.
+
+0:23:09.120,0:23:13.120
+putStr prints the string without a new line.
+
+0:23:13.760,0:23:23.760
+That's why we get this prompt here with
+asking for a number within the same line.
+
+0:23:24.640,0:23:33.040
+If we choose putStrLn, then we get a prompt where
+
+0:23:33.040,0:23:35.840
+– oh i forgot to reload –
+
+0:23:35.840,0:23:41.360
+If we do this, then we get a prompt
+where the cursor is on the next line.
+
+0:23:41.360,0:23:44.720
+And we enter the number on the next line.
+
+0:23:45.360,0:23:49.840
+So that's the difference there.
+
+0:23:50.960,0:23:57.040
+For strings we should use putStr or putStrLn.
+
+0:23:57.600,0:24:05.280
+And for other values we use print but we should
+not use print for Strings because otherwise
+
+0:24:07.840,0:24:13.520
+we get also delimitation
+characters for the string.
+
+0:24:13.520,0:24:23.120
+When we get them that's not such a nice output.
+
+0:24:25.040,0:24:29.520
+Okay and that's it for this task.

@@ -1,0 +1,532 @@
+0:00:00.800,0:00:03.280
+This task is about data types.
+
+0:00:04.160,0:00:09.520
+We have been given a set of types
+with constructors above here.
+
+0:00:14.480,0:00:25.760
+We want to use these constructors down below here
+in order to create our values of the given types.
+
+0:00:29.280,0:00:37.520
+We can use all these constructors here
+in order to create a value of a type.
+
+0:00:40.000,0:00:46.160
+For value1 and value2 we
+require a value of type T.
+
+0:00:47.680,0:00:54.560
+Values of type T can be constructed
+using constructors A and B.
+
+0:00:56.000,0:01:05.120
+So we could construct two values of
+type T by saying maybe one is A True.
+
+0:01:05.120,0:01:11.840
+And we could define the same
+value setting again A is True,
+
+0:01:13.120,0:01:18.240
+of course we are violating the
+task here in this case if we do so.
+
+0:01:18.800,0:01:32.080
+Because it says that we are not allowed to
+or we should use every data constructor.
+
+0:01:35.920,0:01:45.200
+So for a True and a True this
+task is not solved correctly.
+
+0:01:45.200,0:01:48.640
+There is a test suite within this task.
+
+0:01:50.480,0:01:54.960
+We load the program in ghci.
+
+0:01:56.240,0:01:58.400
+We have a test suite down below here.
+
+0:01:59.920,0:02:07.840
+If we execute the test suite then we get a
+failure in value1 and value2 are different.
+
+0:02:12.320,0:02:20.880
+It says that it expected True but got
+False so somehow the values are the same.
+
+0:02:20.880,0:02:23.840
+And that's not what we want.
+
+0:02:23.840,0:02:33.840
+We want to have different values and
+furthermore we have to use all the constructors.
+
+0:02:34.960,0:02:42.560
+And all the other tests fail because we
+have still undefineds in our program.
+
+0:02:43.120,0:02:46.560
+Okay. So let's switch back to the code here.
+
+0:02:48.320,0:02:57.280
+In order to fix this and both problems: having
+different values and using all the constructors
+
+0:02:59.040,0:03:08.080
+we have to choose the other constructor here.
+
+0:03:08.080,0:03:11.440
+Because T is not appearing anywhere else
+
+0:03:12.000,0:03:21.440
+in value3, value4, value5, value6 or
+value7 or any other types U, V and W!
+
+0:03:24.400,0:03:30.880
+We have to choose another
+constructor: and that's B here.
+
+0:03:30.880,0:03:44.320
+We can choose the most simple value for B -
+which is the empty list - as first argument.
+
+0:03:44.320,0:03:47.520
+But we could choose any list of integers here.
+
+0:03:51.360,0:03:59.840
+If we do this then the first test is fixed.
+
+0:04:01.440,0:04:06.800
+So the first runs through but we
+get errors in the later tests.
+
+0:04:07.760,0:04:14.640
+Let's focus on the creation of the values here.
+
+0:04:15.440,0:04:21.040
+Now we have to create a value of type U.
+
+0:04:22.320,0:04:26.320
+U has two constructors C and D.
+
+0:04:26.960,0:04:29.840
+So we can choose any of those.
+
+0:04:31.280,0:04:36.080
+I'm choosing the first one in this case.
+
+0:04:39.120,0:04:43.920
+So we choose C and then we
+have to choose a boolean.
+
+0:04:44.640,0:04:47.200
+This can be either True or False.
+
+0:04:47.840,0:04:51.360
+Let's take False this time here.
+
+0:04:51.360,0:04:58.960
+And then we need a value of type V and
+type for V we have two constructors.
+
+0:04:59.680,0:05:05.440
+In order to create a value of type V we
+have to choose one of those constructors.
+
+0:05:06.080,0:05:11.600
+We enclose the whole expression into brackets
+
+0:05:11.600,0:05:18.800
+because both constructors
+require one argument each.
+
+0:05:20.320,0:05:24.240
+I just choose E for the first constructor here.
+
+0:05:24.240,0:05:36.240
+So let's choose E as the constructor and
+just any Int value so we can say E 42.
+
+0:05:40.160,0:05:45.680
+Now we continue with the next value – value4.
+
+0:05:46.720,0:05:52.320
+This value is a pair of U and V.
+
+0:05:52.320,0:05:55.440
+So we need to write a pair.
+
+0:05:57.120,0:05:59.120
+The pair has two arguments.
+
+0:05:59.120,0:06:04.080
+The first one is a value of type U.
+
+0:06:04.960,0:06:12.560
+U again is either C or D and in order
+to fulfil the requirement here that we
+
+0:06:12.560,0:06:16.960
+shall choose every data constructor
+we will now choose the second one.
+
+0:06:16.960,0:06:18.800
+So let's choose D here.
+
+0:06:20.640,0:06:33.840
+And we require another value also for
+the V datatype in the first argument.
+
+0:06:36.800,0:06:42.800
+Let's choose the other constructor
+here so let's say we choose F.
+
+0:06:46.160,0:06:56.160
+F has one argument.
+
+0:06:56.960,0:07:02.800
+This argument is a a pair of Int and Bool.
+
+0:07:02.800,0:07:05.680
+So we can write the pair here again.
+
+0:07:05.680,0:07:10.560
+The first argument of the pair is the Int value.
+
+0:07:10.560,0:07:13.600
+We can just choose any Int value.
+
+0:07:14.400,0:07:19.040
+Let's take 5 and another Bool value.
+
+0:07:19.760,0:07:22.800
+Let's choose True here.
+
+0:07:25.360,0:07:33.440
+Now we have our first argument of F
+and we have our first argument of D
+
+0:07:34.080,0:07:37.200
+which is the only argument of D.
+
+0:07:37.200,0:07:45.280
+So we are finished with our first
+value of our pair - of the pair U V.
+
+0:07:45.840,0:07:48.560
+Now we require a V value.
+
+0:07:49.680,0:07:51.840
+Again we can choose any constructor here.
+
+0:07:51.840,0:07:53.520
+We can choose E or F.
+
+0:07:54.640,0:08:01.040
+I choose E here and let's say 12 as Int value.
+
+0:08:01.600,0:08:07.920
+Important here – which the task also says
+– we shall not reuse any sub expressions.
+
+0:08:07.920,0:08:11.360
+So in this case we should not write E 42.
+
+0:08:12.400,0:08:18.160
+Just keep E 12 and we're
+fine in fulfilling the task.
+
+0:08:22.480,0:08:29.440
+And now we continue with
+value5 which is again a pair.
+
+0:08:30.080,0:08:32.400
+And this time pair of V and W.
+
+0:08:35.440,0:08:36.880
+So we write a pair.
+
+0:08:37.520,0:08:41.200
+Now we require another value of V.
+
+0:08:42.960,0:08:50.160
+As we've used all the constructors for V already
+I can choose again any of the constructors.
+
+0:08:50.160,0:08:52.560
+I choose the more simpler one here.
+
+0:08:52.560,0:08:57.040
+So I choose E 5 this time.
+
+0:08:58.000,0:09:05.600
+For W we require to choose one
+of these constructors down here.
+
+0:09:05.600,0:09:12.560
+So we have we have G, H and I as constructors.
+
+0:09:14.480,0:09:16.080
+Let's choose the first one here.
+
+0:09:16.080,0:09:24.000
+So we have G and we require a value
+of V as the first argument of G.
+
+0:09:26.160,0:09:35.920
+Again I choose the more simpler
+constructor E here and let's say E 2.
+
+0:09:38.960,0:09:47.040
+Now we have value6 which is again a pair.
+
+0:09:47.040,0:09:50.320
+This time a pair of W and U.
+
+0:09:51.280,0:10:02.080
+So we have a pair and the first
+member of the pair is a W.
+
+0:10:03.360,0:10:06.960
+We've chosen the G already for W.
+
+0:10:06.960,0:10:10.000
+Now we just choose another constructor.
+
+0:10:10.560,0:10:14.240
+I choose this time I.
+
+0:10:16.400,0:10:24.480
+I has one argument which is a U.
+
+0:10:24.480,0:10:26.400
+U has two constructors.
+
+0:10:26.400,0:10:28.240
+We can choose either of them.
+
+0:10:28.240,0:10:35.040
+So I choose the more simpler
+one - the D constructor.
+
+0:10:36.560,0:10:41.120
+D again has one argument, which is a V.
+
+0:10:42.320,0:10:45.040
+Now, again, we choose a constructor of V.
+
+0:10:45.040,0:10:46.960
+We can choose E and F.
+
+0:10:46.960,0:10:54.720
+I, again, choose the more simpler E because all
+those constructors are covered as well already.
+
+0:10:54.720,0:10:59.840
+So we choose E and let's say 1.
+
+0:11:02.160,0:11:09.920
+We are done with I because we are done
+with E which just had one argument,
+
+0:11:09.920,0:11:18.800
+so we fulfil the argument of E and we have
+also finished the argument for I thus.
+
+0:11:20.480,0:11:27.840
+So we can continue with the second
+argument of the pair and this is a U.
+
+0:11:29.680,0:11:32.960
+The U, again, has two constructors.
+
+0:11:35.040,0:11:37.200
+We've chosen them already.
+
+0:11:37.200,0:11:38.480
+So I will
+
+0:11:41.120,0:12:00.000
+choose the second constructor here for the U
+which is the more simpler one - so I choose D.
+
+0:12:02.560,0:12:11.440
+And we shall choose a
+
+0:12:16.320,0:12:23.520
+value for the first argument which is a V again.
+
+0:12:24.480,0:12:27.440
+So we can choose between E and F here.
+
+0:12:42.080,0:12:47.680
+I will choose a E here and this time it's 5.
+
+0:12:53.440,0:12:59.520
+If we want to be even more sure that the program
+is not rejected within Autotool because we have
+
+0:13:00.080,0:13:05.120
+some common sub expression here,
+we could also change this one here.
+
+0:13:05.120,0:13:12.320
+Because it looks quite similar
+here – the D (E 1) and D (E 5).
+
+0:13:12.320,0:13:16.800
+So we could change the other
+constructor in one of the cases to a C.
+
+0:13:17.840,0:13:26.640
+The C has two arguments so I would change
+this one here just to show a different value.
+
+0:13:26.640,0:13:36.800
+So we could change it into C False (E 5)
+or even change the constructor for the V
+
+0:13:36.800,0:13:46.480
+as well by choosing the F constructor instead
+of E, so having a different value there as well.
+
+0:13:46.480,0:13:50.640
+And now we have to change the
+first argument into a pair.
+
+0:13:50.640,0:13:59.680
+So we could choose 5 and a boolean
+which could be either of False or True.
+
+0:14:01.040,0:14:03.200
+I just take True here.
+
+0:14:07.600,0:14:09.040
+Now we have a different value.
+
+0:14:10.720,0:14:17.840
+It's rather easy to exchange values
+and exchange constructors to construct
+
+0:14:18.720,0:14:21.600
+different values for these types.
+
+0:14:22.800,0:14:25.120
+The last missing is a W.
+
+0:14:26.480,0:14:30.560
+We could again choose any
+of the constructors for W
+
+0:14:30.560,0:14:38.800
+but as we have three W's here to choose
+we should now choose the one that is left.
+
+0:14:38.800,0:14:43.840
+We chose G already, we chose I, so
+we have to choose H in this case
+
+0:14:44.960,0:14:48.720
+in order to fulfil the requirement.
+
+0:14:49.600,0:14:51.840
+Now our tests run all through.
+
+0:14:51.840,0:14:56.480
+And we can also check again that
+we used all the constructors.
+
+0:14:59.360,0:15:03.600
+As the program is compiling, we
+know that the types of fitting.
+
+0:15:03.600,0:15:07.440
+So we constructed values for each of the types.
+
+0:15:07.440,0:15:11.840
+Otherwise our program would
+be rejected by the compiler.
+
+0:15:13.760,0:15:18.800
+We can check that we used all the
+constructors by simply looking into the code.
+
+0:15:19.760,0:15:30.080
+For the first type T we can check that we used
+A by just searching within our definition on the
+
+0:15:30.640,0:15:37.600
+right hand side of the values – i.e.
+what's written after the equal sign.
+
+0:15:39.040,0:15:41.760
+In this case we search for A.
+
+0:15:43.600,0:15:47.040
+We have A here and we have B here.
+
+0:15:47.040,0:15:48.720
+So those are covered.
+
+0:15:50.320,0:15:52.400
+The same we can do for U.
+
+0:15:52.400,0:15:56.160
+We require C and D as constructors.
+
+0:15:56.160,0:16:00.320
+We have C here and we have
+D here, so this is covered.
+
+0:16:01.200,0:16:05.200
+For our V we require E and F as constructors.
+
+0:16:05.760,0:16:12.720
+We have E here, and we have F
+here, and we have F here as well.
+
+0:16:12.720,0:16:16.400
+So we're covered basically.
+
+0:16:18.320,0:16:26.880
+And we require for our W: G,
+H, and I are constructors.
+
+0:16:26.880,0:16:31.680
+We have G here, we have I
+here, and we have H here.
+
+0:16:31.680,0:16:37.440
+So we have covered all the constructors
+and fulfilled the task as required.
+
+0:16:40.000,0:16:45.600
+Again just as a side note: it's easy
+to create more values of the given
+
+0:16:45.600,0:16:50.320
+types – even different values, because
+we can change any of the parameters.
+
+0:16:50.320,0:16:54.240
+For B for instance we could
+have a different list of Int.
+
+0:16:54.240,0:17:01.680
+So we could add any list of Int here and
+it would will still be a value of type T.
+
+0:17:01.680,0:17:08.000
+And we can change the Booleans from
+False True and so on and so forth.
+
+0:17:08.000,0:17:12.800
+So we can basically exchange all
+
+0:17:16.560,0:17:29.840
+the parameters, the arguments of the constructors
+in order to create different values for the types.

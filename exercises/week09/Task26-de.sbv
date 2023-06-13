@@ -1,0 +1,318 @@
+0:00:00.000,0:00:06.960
+In Aufgabe 26 sollen wir an einem Beispiel
+nachvollziehen dass man tatsächlich jede
+
+0:00:06.960,0:00:15.150
+strukturelle Rekursion auf Listen, wie in der
+Vorlesung behauptet mit foldr ausdrücken kann.
+
+0:00:15.150,0:00:21.570
+Und dazu sollen wir einmal dieses Beispiel
+hier, diese Funktion, die offensichtlich
+
+0:00:21.570,0:00:31.290
+strukturelle Rekursion auf Listen benutzt, sollen
+wir einmal in eine Variante mit foldr umschreiben.
+
+0:00:31.290,0:00:37.020
+Sodass am Ende für irgendeine beliebige
+Liste diese Quickcheck property hier gilt,
+
+0:00:37.020,0:00:40.650
+dass die originale Funktion auf
+der Liste genau dasselbe Ergebnis
+
+0:00:40.650,0:00:44.040
+liefert wie die alternative
+Formulierung auf der Liste.
+
+0:00:45.780,0:00:50.220
+Was die Funktion genau macht es unwichtig, es geht
+
+0:00:50.220,0:00:54.840
+um das Prinzip von einer Darstellung
+in die andere wechseln zu können.
+
+0:00:54.840,0:01:05.550
+Als Erstes, wenn wir uns ansehen, wir sollen
+diese beiden vorkommen von undefined ersetzen.
+
+0:01:05.550,0:01:11.820
+foldr hat natürlich drei Parameter, als letzten
+noch die Liste auf der gearbeitet werden soll,
+
+0:01:11.820,0:01:17.370
+also prinzipiell könnten wir
+auch das Ganze so schreiben.
+
+0:01:17.370,0:01:24.450
+Aber wie man hier schon sieht das
+schlägt HLint gleich eta-reduce
+
+0:01:24.450,0:01:26.250
+vor und deswegen schreiben wir das hier so.
+
+0:01:26.250,0:01:33.240
+Und Autotool nimmt hier auch
+keine anderen Einreichung an.
+
+0:01:35.760,0:01:37.950
+Aber dass das nur am Rand.
+
+0:01:37.950,0:01:43.590
+Okay, was haben wir jetzt hier für
+Parameter die wir ersetzen sollen?
+
+0:01:43.590,0:01:48.630
+Naja, wir haben einmal die Funktion, mit
+der wir die einzelnen schritte durchführen,
+
+0:01:48.630,0:01:51.780
+in unserem foldr und unseren Basiswert.
+
+0:01:51.780,0:02:03.170
+Wenn wir das mal durch diese Unterstreiche
+ersetzen gibt der Compiler uns entsprechend
+
+0:02:03.170,0:02:12.110
+Fehlermeldungen mit dem Typen den
+wir da entsprechend einfügen müssen.
+
+0:02:12.110,0:02:17.570
+Wenn wir das also kompilieren bekommen
+wir zwei Fehler, nämlich einmal für den
+
+0:02:17.570,0:02:24.530
+für den hinteren Unterstrich den wir eingefügt
+haben, da sollen wir einen Integer einfügen.
+
+0:02:24.530,0:02:26.930
+Das ist unser Standardwert bei dem wir anfangen.
+
+0:02:26.930,0:02:31.280
+Und zu dem zweiten Unterstrich oder für den Ersten
+
+0:02:31.280,0:02:34.670
+sollen wir eine Funktion Integer
+-> Integer -> Integer einfügen,
+
+0:02:34.670,0:02:39.560
+also nimmt zwei Integer Parametern und
+gibt einen Integer zurück, einfügen.
+
+0:02:39.560,0:02:41.810
+Und dann schlägt es hier noch ein paar Sachen vor,
+
+0:02:41.810,0:02:47.210
+was natürlich nicht sonderlich
+hilfreich ist im moment für uns.
+
+0:02:47.210,0:02:50.690
+Okay, gucken wir uns als Erstes
+mal an wo wir überhaupt starten.
+
+0:02:50.690,0:02:55.820
+Was ist das überhaupt was der Startparameter ist.
+
+0:02:55.820,0:03:01.400
+Naja, das ist nichts anderes als
+der Wert den wir in der explizit
+
+0:03:01.400,0:03:06.470
+rekursiven Variante für die leere
+Liste haben, das ist der Startwert.
+
+0:03:06.470,0:03:10.340
+Und warum das so ist können wir uns kurz angucken
+
+0:03:10.340,0:03:19.760
+wenn wir zum Beispiel mal foldr für irgend
+eine Funktion f und einen c, zum Beispiel,
+
+0:03:19.760,0:03:25.730
+auf einer einfachen Liste uns angucken,
+wozu das letztendlich wird ganz am Ende.
+
+0:03:25.730,0:03:30.020
+Dann wird das im Prinzip
+dazu, dass wir f immer wieder
+
+0:03:32.690,0:03:43.850
+anwenden und ganz am Ende den Basisfall einfügen.
+
+0:03:43.850,0:03:49.550
+Also wir sehen, dass die erste Sache,
+
+0:03:49.550,0:03:54.350
+die ausgefüllt ist da wird das letzte
+Listen-Element mit dem Basisfall
+
+0:03:54.350,0:04:04.370
+verknüpft bzw. sozusagen es wird einmal die
+Funktion auf der leeren Liste aufgerufen,
+
+0:04:04.370,0:04:10.610
+weil ja prinzipiell hier hinter noch sozusagen
+man sich die leere Liste vorstellen kann.
+
+0:04:10.610,0:04:15.470
+Und der erste Wert wird da angenommen.
+
+0:04:15.470,0:04:24.500
+Und dann wird immer wieder dass
+f angewendet auf das aktuelle
+
+0:04:24.500,0:04:28.460
+Element was wir uns angucken
+und den Wert der Restberechnung.
+
+0:04:28.460,0:04:33.680
+Was genau dann das ist, was wir hier
+mit dem rekursiven Schritt machen.
+
+0:04:33.680,0:04:42.320
+Dass wir den rekursiven Schritt genau berechnen
+auf der rest Liste und mit dem aktuellen Element
+
+0:04:42.320,0:04:48.290
+was wir uns angucken irgendwie verknüpfen,
+oder einfach nur das Restergebnis modifizieren.
+
+0:04:48.290,0:04:51.260
+Genau, das macht dieses f.
+
+0:04:54.890,0:04:59.720
+Dadurch sehen wir jetzt schon als Erstes, die
+7 ist genau der Basisfall für die leere Liste.
+
+0:04:59.720,0:05:05.489
+Und jetzt müssen wir uns noch angucken wie
+unsere Funktion die zwei Integer nimmt aussieht.
+
+0:05:05.489,0:05:13.040
+Wenn wir die einfach mal x und y nennen,
+dann müssen wir jetzt irgendwie einen
+
+0:05:13.040,0:05:20.090
+Integer konstruieren, der das nächste
+Ergebnis ist, wenn ich das x nehme,
+
+0:05:20.090,0:05:24.740
+das x ist hier quasi das Listenelement was
+wir uns gerade angucken, wie hier oben.
+
+0:05:24.740,0:05:32.210
+Und das y ist das Ergebnis des rekursiven
+Aufrufs, also was wir vorher gemacht haben.
+
+0:05:32.210,0:05:35.090
+Wenn wir uns jetzt also den letzten
+Schritt zum Beispiel angucken,
+
+0:05:35.090,0:05:45.110
+würden wir für x 1 einsetzen und den ganzen
+rekursiven Aufruf auf [2,3] bekommen wir in y.
+
+0:05:45.110,0:05:48.350
+Also schon als Integer fertig berechnet.
+
+0:05:48.350,0:05:51.770
+Wir müssen uns also um die Rekursion
+nicht mehr explizit kümmern,
+
+0:05:51.770,0:05:57.485
+das ist genau der Vorteil von
+foldr oder generell allen folds.
+
+0:05:57.485,0:06:00.980
+Genau, und da müssen wir
+einfach gucken was ist hier,
+
+0:06:00.980,0:06:04.340
+was haben wir hier, wie gehen
+wir mit dem rekursiven Aufruf um?
+
+0:06:04.340,0:06:10.880
+Naja, wir verknüpfen den jetzt irgendwie je
+nachdem ob x modulo 11 = 0 ist oder nicht.
+
+0:06:10.880,0:06:13.340
+Das heißt, das prüfen wir am Besten erstmal.
+
+0:06:23.510,0:06:29.970
+Dann machen wir irgendwas,
+sonst machen wir etwas anderes.
+
+0:06:29.970,0:06:33.630
+Was machen wir das der Fall ist?
+
+0:06:33.630,0:06:38.820
+Naja, wir nehmen genau das, wir rechnen 13
+plus und das ist unser rekursiver Aufruf,
+
+0:06:38.820,0:06:40.860
+der wie gesagt in dem y hier steckt.
+
+0:06:40.860,0:06:47.850
+Das heißt, wir machen einfach 13 + y.
+
+0:06:47.850,0:06:56.400
+Und hier haben wir jetzt x mal den
+rekursiven Aufruf, was genau wieder y ist.
+
+0:06:56.400,0:07:00.690
+Und dann sind wir im Prinzip auch schon fertig.
+
+0:07:00.690,0:07:07.050
+Wenn wir das laden und einmal die Tests
+durchlaufen lassen, dann sehen wir, dass das
+
+0:07:07.050,0:07:15.030
+dann entsprechend immer das richtige Ergebnis
+liefert für alle Inputs die wir ausprobieren.
+
+0:07:15.630,0:07:21.420
+Genau, so weit die Basislösung.
+
+0:07:21.420,0:07:26.760
+Man kann jetzt noch, wenn man genau
+hinguckt, sehen, dass wir das y hier,
+
+0:07:26.760,0:07:33.960
+wie es auch ge-highlighted wird hier vom
+Editor, immer in der hinteren Position haben.
+
+0:07:33.960,0:07:37.380
+Wenn man jetzt wollte, könnte man
+noch einen cleveren Eta-reduce machen,
+
+0:07:37.380,0:07:47.760
+indem man hier in den einzelnen Branches
+von dem if jeweils Sections benutzt.
+
+0:07:47.760,0:07:54.120
+Dann könnte man das ganze auch so schreiben
+und das y hier nicht mehr erwähnen.
+
+0:07:54.120,0:08:02.820
+Wenn man der Meinung ist, dass das so
+besser lesbar ist, kann man das machen.
+
+0:08:02.820,0:08:11.280
+Das ist auf jeden Fall eine Möglichkeit die auch,
+wenn wir das hier laden, eine korrekte Lösung ist.
+
+0:08:11.280,0:08:17.190
+Aber das muss man letztendlich entscheiden,
+ob man das lesbarer findet oder nicht.
+
+0:08:17.190,0:08:25.560
+In manchen Situationen kann das angebracht
+sein, funktional hat es keinen Unterschied.
+
+0:08:29.690,0:08:32.390
+Ich finde es so sauberer, aber natürlich kann man
+
+0:08:32.390,0:08:40.070
+hier zwei verschiedene Lösungen finden
+und die wählen die einem besser gefällt.
