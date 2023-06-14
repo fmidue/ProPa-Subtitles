@@ -1,0 +1,1994 @@
+39 # slide
+00:00:02,080 --> 00:00:08,720
+For the last video in this week, we will talk
+about the declarative semantics of Prolog.
+
+00:00:08,720 --> 00:00:10,560
+So, semantics, what does the program mean?
+
+00:00:11,520 --> 00:00:17,440
+And actually, we will be looking not this
+week, but overall, at two different semantics,
+
+00:00:17,440 --> 00:00:21,200
+namely this declarative semantics
+and then operational semantics.
+
+00:00:21,200 --> 00:00:25,440
+So, the declarative semantics is really
+more about the meaning of a program.
+
+00:00:25,440 --> 00:00:29,040
+So, could also be called the logical
+semantics or the mathematical semantics.
+
+00:00:29,680 --> 00:00:34,160
+And the operational semantics is
+more about how execution works.
+
+00:00:34,160 --> 00:00:37,440
+So, I have already given some intuition for this.
+
+00:00:37,440 --> 00:00:42,640
+But when we talk about operational semantics,
+this will be made more precise and more
+
+00:00:42,640 --> 00:00:48,240
+concrete how a Prolog system can find a
+solution for query given a certain program.
+
+00:00:49,680 --> 00:00:52,560
+Okay, and that's a typical
+distinction to have different
+
+00:00:52,560 --> 00:00:56,160
+kinds of semantics more mathematical
+leaning and more execution driven.
+
+00:00:56,160 --> 00:00:58,800
+And of course, the execution-driven
+semantics is what is used
+
+00:01:00,160 --> 00:01:02,320
+for implementing a programming language.
+
+00:01:02,320 --> 00:01:04,800
+And something like declarative
+semantics is used for
+
+00:01:05,440 --> 00:01:08,560
+reasoning about programs, for
+example, if one wants to prove stuff.
+
+00:01:09,360 --> 00:01:16,320
+So, for the Haskell part earlier in the course,
+we talked a bit about rational behaviour, right?
+
+00:01:16,320 --> 00:01:19,280
+So, when we talked about pattern
+matching, and how it drives evaluations.
+
+00:01:19,280 --> 00:01:21,760
+So, lazy evaluation, which occurred previously
+
+00:01:21,760 --> 00:01:26,080
+just as an idea, and then was
+considered for a concrete program.
+
+00:01:28,000 --> 00:01:30,800
+So, that is something like
+operational semantics for Haskell.
+
+00:01:31,440 --> 00:01:35,040
+We didn't even bother to give a
+declarative semantics for Haskell.
+
+00:01:35,040 --> 00:01:38,160
+So, that would be called
+denotational semantics usually.
+
+00:01:38,160 --> 00:01:40,000
+And why didn't we do this?
+
+00:01:40,000 --> 00:01:46,000
+Because for Haskell, really, there's such a close
+fit to mathematics to algebra, that writing down
+
+00:01:46,000 --> 00:01:50,480
+such a semantic would have simply meant to
+say that functions mean what functions mean.
+
+00:01:51,040 --> 00:01:57,840
+So, we use the Haskell functions in the
+same spirit, as set theory functions.
+
+00:01:57,840 --> 00:01:59,440
+So, writing down definitions, and then
+
+00:02:00,000 --> 00:02:04,000
+we have written down a mapping, and that
+is what the semantics is of that function.
+
+00:02:04,560 --> 00:02:07,760
+So, there is a way to make this more precise.
+
+00:02:07,760 --> 00:02:12,000
+But for the purposes of this course, we
+simply bridged the semantic gap, the
+
+00:02:12,000 --> 00:02:14,480
+difference between syntax and
+semantics in the Haskell case.
+
+00:02:14,480 --> 00:02:17,760
+So, we write down a function
+definition, and it means exactly
+
+00:02:17,760 --> 00:02:20,240
+what this function definition
+would mean mathematically.
+
+00:02:21,280 --> 00:02:27,600
+Okay, so evaluating values by
+using a definition as written down.
+
+00:02:27,600 --> 00:02:30,640
+So, that's why for Haskell,
+we didn't do this distinction.
+
+00:02:30,640 --> 00:02:38,800
+But for Prolog here, we will provide
+explanation of what the logical meaning is.
+
+00:02:40,320 --> 00:02:45,760
+Okay, so this semantics here will be used
+to answer questions about ground terms.
+
+00:02:45,760 --> 00:02:47,040
+For terms without variables.
+
+00:02:47,040 --> 00:02:51,600
+We will have rules of variables,
+as we have seen in programs so far.
+
+00:02:51,600 --> 00:02:56,160
+But the declarative semantics answers
+questions about: is this predicate
+
+00:02:56,160 --> 00:02:59,840
+true for the following terms which
+themselves do not contain variables.
+
+00:02:59,840 --> 00:03:04,400
+That's also distinct from operational semantics
+where we will also deal with queries which
+
+00:03:04,400 --> 00:03:05,760
+contain variables in that sense.
+
+00:03:05,760 --> 00:03:10,080
+Also, the declarative semantics is a
+bit simpler than the operational one.
+
+00:03:10,080 --> 00:03:17,840
+Because it doesn't have to cope
+with variables in the queries.
+
+00:03:18,480 --> 00:03:24,000
+Okay, so what is the mathematical logical
+meaning of semantics of a Prolog program?
+
+00:03:24,000 --> 00:03:31,840
+And let's see a simple example Prolog
+program that we have already considered.
+
+00:03:31,840 --> 00:03:36,400
+Well, the first and somewhat
+obvious step would be to really
+
+00:03:36,960 --> 00:03:42,160
+exchange the Prolog syntax for
+normal syntax of predicate logic.
+
+00:03:42,160 --> 00:03:46,000
+And actually, write down what the
+rules or the fact and the rule that
+
+00:03:46,000 --> 00:03:50,560
+we see here would mean or would be
+written like in predicate logic.
+
+00:03:50,560 --> 00:03:54,960
+And that's actually something that I've already
+shown earlier, when we discussed rules of
+
+00:03:54,960 --> 00:04:03,040
+variables and talked about free variables, then I
+use this transcription to normal logical syntax,
+
+00:04:03,040 --> 00:04:09,440
+in particular this explicit
+role of the quantifiers.
+
+00:04:09,440 --> 00:04:18,080
+And then the idea was, well, basically, this
+fact is turned into a statement about all x.
+
+00:04:19,120 --> 00:04:23,280
+Where X is now used as a variable, and it's
+all-quantified because this holds for all
+
+00:04:23,280 --> 00:04:28,400
+choices for x and, well, rule like
+this alternative implication.
+
+00:04:28,400 --> 00:04:29,840
+So, the right-hand side
+
+00:04:30,560 --> 00:04:35,040
+implies the left-hand side and then of
+course, you can also write it in that order.
+
+00:04:35,600 --> 00:04:38,880
+And again, all the variables that
+occur here are all quantified.
+
+00:04:38,880 --> 00:04:44,080
+And then of course, since you have several
+statements have a rule, they are conjuncted.
+
+00:04:44,080 --> 00:04:48,800
+So, they are combined with
+logical-and that is then
+
+00:04:48,800 --> 00:04:51,920
+what the logical formula would be that
+correspond to this Prolog program.
+
+00:04:52,880 --> 00:04:56,000
+Okay, of course, this is just a
+change of syntax, this doesn't,
+
+00:04:56,000 --> 00:04:58,800
+by itself, explain what the
+meaning of the program is.
+
+00:04:59,440 --> 00:05:04,720
+Okay, but now that we are in the world of
+formal logic we can use (and that's something
+
+00:05:04,720 --> 00:05:12,320
+I've indicated early on), we can use the
+methods and techniques from the study of logic.
+
+00:05:12,320 --> 00:05:19,920
+And I explained before that I will
+lean on background material provided
+
+00:05:19,920 --> 00:05:24,720
+in the previous lecture by Professor
+König and I pointed you to slides
+
+00:05:24,720 --> 00:05:28,080
+that explain these concepts
+or repeat these concepts,
+
+00:05:30,080 --> 00:05:35,680
+where you can check your
+understanding or refresh it.
+
+00:05:36,480 --> 00:05:37,040
+Okay.
+
+00:05:37,040 --> 00:05:44,560
+And then, how is meaning given to logic formulas
+or to such combinations also of formulas.
+
+00:05:44,560 --> 00:05:47,840
+Well, that's what logic start
+this in the form of models.
+
+00:05:48,800 --> 00:05:53,760
+And if you go through the first few slides,
+actually, from the excerpt that I uploaded
+
+00:05:53,760 --> 00:06:00,320
+to Moodle a while ago, from Professor König's
+lecture, there is this concept of "Struktur".
+
+00:06:02,000 --> 00:06:10,640
+So, that's our definition of given signature,
+given constant and predicate names, et cetera.
+
+00:06:10,640 --> 00:06:15,440
+What this Struktur is and that is basically
+the setup for describing the model.
+
+00:06:15,440 --> 00:06:17,840
+So, what is contained there?
+
+00:06:17,840 --> 00:06:20,960
+Well, there must be some
+set of mathematical objects.
+
+00:06:20,960 --> 00:06:25,760
+These are the things on which the variables
+are then later assumed to be quantified, right?
+
+00:06:25,760 --> 00:06:30,160
+If you say "for all x", then you need to know,
+well, what are the choices that we have for x.
+
+00:06:31,120 --> 00:06:34,960
+And in a very general Struktur in this logic study
+
+00:06:34,960 --> 00:06:39,760
+of models, and there could be just any set
+of mathematical objects that will later be
+
+00:06:39,760 --> 00:06:46,800
+constraint in Herbrand structures and models,
+which also occurs in the slides of Professor König.
+
+00:06:46,800 --> 00:06:50,640
+But from the outside, it would be
+just some set of mathematical objects.
+
+00:06:50,640 --> 00:06:51,120
+Okay.
+
+00:06:51,120 --> 00:06:52,720
+And then everything is built on top of that.
+
+00:06:53,760 --> 00:06:57,680
+So, in particular, the constants like in this
+case, zero, and there could, of course, be further
+
+00:06:57,680 --> 00:07:02,000
+constants occurring in the program, they need to
+be interpreted as elements of that set, right?
+
+00:07:02,000 --> 00:07:03,680
+So, this is just an arbitrary set.
+
+00:07:04,240 --> 00:07:07,600
+And then, for example, the
+zero must be in that set.
+
+00:07:07,600 --> 00:07:09,520
+Must be interpreted in that set.
+
+00:07:10,960 --> 00:07:20,480
+Okay, and likewise, functors or data constructors,
+and like this s in this case here occurring in
+
+00:07:20,480 --> 00:07:25,440
+the program that needs to be interpreted as
+a function on these mathematical objects.
+
+00:07:25,440 --> 00:07:26,880
+So, since this takes one argument,
+
+00:07:27,520 --> 00:07:32,080
+you can already see this from the domain
+over which the variables may quantify.
+
+00:07:32,080 --> 00:07:36,400
+So, this then should be
+interpreted as a function from
+
+00:07:36,400 --> 00:07:39,200
+this set of mathematical
+objects into that set again.
+
+00:07:39,200 --> 00:07:44,240
+So, then it would be a binary predicate, a binary
+symbol, then it would be a function from the
+
+00:07:44,240 --> 00:07:49,120
+Cartesian product of this set of mathematical
+objects of itself to that set again.
+
+00:07:49,760 --> 00:07:53,440
+Okay, so that's how then the
+data part is interpreted.
+
+00:07:53,440 --> 00:07:56,240
+The constants as elements
+of the set and the functors
+
+00:07:56,240 --> 00:08:00,400
+(so, the data constructors) as functions
+of appropriate arity over the set.
+
+00:08:02,320 --> 00:08:04,640
+Okay, and then you also have
+to deal with the predicates.
+
+00:08:04,640 --> 00:08:08,880
+So, the things about which the facts
+and rules make logical statements,
+
+00:08:10,080 --> 00:08:12,880
+and they are interpreted as relations, right?
+
+00:08:12,880 --> 00:08:15,600
+So, for example, the add is a ternary predicate,
+
+00:08:16,240 --> 00:08:19,840
+the things that occur in the argument
+positions can be interpreted.
+
+00:08:19,840 --> 00:08:26,240
+Thanks to the first two points as elements of
+this chosen set of which the structure is built.
+
+00:08:26,800 --> 00:08:33,120
+And then for each triple of element from that
+set, this predicate could be true or false.
+
+00:08:33,120 --> 00:08:36,480
+And that's exactly what a
+relation is used for in mathematics.
+
+00:08:37,200 --> 00:08:41,440
+It has to relate elements of sets and,
+well, in this case, always the same set.
+
+00:08:43,040 --> 00:08:46,640
+Okay, then we can interpret
+both the argument positions here
+
+00:08:46,640 --> 00:08:49,840
+and a statement like these literals.
+
+00:08:50,720 --> 00:08:59,520
+So, depending on what relation we have chosen for
+any particular choice of predicate symbol and arguments,
+
+00:09:00,160 --> 00:09:05,440
+we can say well, this is interpreted to
+be true or false depending on the relation
+
+00:09:05,440 --> 00:09:08,560
+that we have chosen the interpretation
+for this particular predicate.
+
+00:09:09,120 --> 00:09:09,440
+Okay.
+
+00:09:09,440 --> 00:09:15,760
+So, that would give us true values for the
+literals, for the things that occur here.
+
+00:09:15,760 --> 00:09:18,080
+Implications of predicates to arguments.
+
+00:09:19,360 --> 00:09:22,160
+Then, of course, there are also
+all these logical connectors.
+
+00:09:22,880 --> 00:09:27,680
+And then certain rules are used.
+
+00:09:27,680 --> 00:09:33,200
+Well, the rules of predicate logic to
+assign true values also to formulas, right?
+
+00:09:33,200 --> 00:09:39,280
+So, if we have two literals, then the
+conjunction of them is interpreted to
+
+00:09:39,280 --> 00:09:44,560
+be the logical conjunction of whether or
+not both individually are actually true.
+
+00:09:44,560 --> 00:09:44,880
+Okay.
+
+00:09:44,880 --> 00:09:47,040
+And implication is interpreted
+in the standard way.
+
+00:09:47,600 --> 00:09:51,200
+The quantifiers are interpreted in the
+standard way like if it says "for all x",
+
+00:09:52,000 --> 00:09:58,400
+this statement then actually as in logic
+for every element of that set that you
+
+00:09:58,400 --> 00:10:02,800
+have chosen as the base structure on
+which we have built our structure,
+
+00:10:02,800 --> 00:10:07,200
+it must be the case that this relation
+holds for zero and twice that element.
+
+00:10:08,240 --> 00:10:10,640
+Okay, so this is then how we
+
+00:10:11,680 --> 00:10:16,960
+can assign true values not just for two individual
+literals, like the first three items here.
+
+00:10:16,960 --> 00:10:22,800
+But actually, to a whole formula, including also,
+of course, the compound formula that would be
+
+00:10:22,800 --> 00:10:27,600
+obtained by translating all the facts and rules
+from the program into this logical syntax.
+
+00:10:29,200 --> 00:10:31,680
+Okay, and now we have these
+possible interpretations.
+
+00:10:31,680 --> 00:10:32,720
+Yes, we have many choices.
+
+00:10:32,720 --> 00:10:34,720
+We can choose different sets
+of mathematical objects.
+
+00:10:34,720 --> 00:10:37,120
+We can choose different
+interpretations of these constants.
+
+00:10:37,760 --> 00:10:39,360
+So, we have a choice.
+
+00:10:39,360 --> 00:10:44,640
+How we interpret this symbol zero in our overall
+set that could be even infinitely many choices.
+
+00:10:44,640 --> 00:10:46,720
+The same for these functions
+that we have to choose.
+
+00:10:47,680 --> 00:10:48,640
+All this is a choice.
+
+00:10:48,640 --> 00:10:52,320
+And each combination of choices
+here gives one interpretation.
+
+00:10:52,320 --> 00:10:56,080
+Then we can check whether this
+interpretation given these
+
+00:10:56,080 --> 00:11:02,000
+assignment rules, what true values we obtain
+for the formula that corresponds to the program.
+
+00:11:02,000 --> 00:11:05,920
+And we consider only those interpretations
+that make all the given formulas true.
+
+00:11:05,920 --> 00:11:11,440
+Well, given formula means translations of these
+facts and rules, or if you have actually combined
+
+00:11:11,440 --> 00:11:17,600
+them into a big conjunction, then there's
+only one overall formula, which must be true.
+
+00:11:17,600 --> 00:11:23,200
+Okay, all the interpretations, all these choices
+we can make here or every instance of choice
+
+00:11:23,200 --> 00:11:28,000
+that we have made here, for which actually the
+formula corresponding to the program is true.
+
+00:11:28,000 --> 00:11:29,200
+They are still true value or true.
+
+00:11:29,920 --> 00:11:31,360
+Such interpretation is called a model.
+
+00:11:32,160 --> 00:11:35,680
+Then we have a model of this logical formula.
+
+00:11:36,640 --> 00:11:38,880
+And the semantic of a program is
+
+00:11:41,040 --> 00:11:47,600
+said to be all those statements relationships
+that are true in all models of the program.
+
+00:11:47,600 --> 00:11:51,120
+We have a program that
+corresponds to a logical formula,
+
+00:11:51,680 --> 00:11:58,800
+we could, in principle, make very many different
+choices for interpreting the syntactic ingredients
+
+00:11:58,800 --> 00:12:04,880
+of the program, we only consider those for
+which the program as a formula is true.
+
+00:12:05,840 --> 00:12:07,520
+Then we know what the models are.
+
+00:12:07,520 --> 00:12:11,840
+Sort of the structures that make
+our predicate satisfy our program.
+
+00:12:11,840 --> 00:12:16,800
+And then it could be the case that in these
+specific models further things are true.
+
+00:12:17,440 --> 00:12:20,640
+Because we can deduce something
+from the given material.
+
+00:12:20,640 --> 00:12:26,320
+And then exactly those statements, those
+relationships that are true in all the models,
+
+00:12:26,320 --> 00:12:30,400
+that is in all the interpretations
+that make the program itself true.
+
+00:12:30,400 --> 00:12:34,480
+These are the things that are that
+make up the semantics of the program.
+
+00:12:34,480 --> 00:12:38,400
+And then that of course means for
+example, that if you could logically
+
+00:12:38,400 --> 00:12:42,800
+deduce something from the formula, then
+that will also be true in all the models.
+
+00:12:43,600 --> 00:12:46,560
+Exactly those things will be true in
+all the models that are also logical
+
+00:12:47,280 --> 00:12:52,240
+consequences of the given
+material background knowledge.
+
+00:12:52,240 --> 00:12:52,720
+Okay?
+
+00:12:52,720 --> 00:12:58,560
+And that's exactly what was the topic of a
+chapter in Professor König's lecture, right?
+
+00:12:58,560 --> 00:13:05,840
+So, how it is and how it makes sense,
+this kind of model theory.
+
+00:13:09,920 --> 00:13:13,280
+Now, this freedom one has on the
+previous slide in choosing this
+
+00:13:14,000 --> 00:13:17,200
+underlying set of mathematical
+objects, often called the universe
+
+00:13:17,200 --> 00:13:23,600
+is a problem when one wants to systematically
+study consequences of a logic formula.
+
+00:13:23,600 --> 00:13:27,360
+Yes, because there are too many models
+in the sense that one would have to look
+
+00:13:27,360 --> 00:13:34,320
+at if one really wants to establish validity of
+consequences by checking them for all the models.
+
+00:13:34,320 --> 00:13:35,040
+Okay?
+
+00:13:35,040 --> 00:13:38,000
+Luckily, there's always the
+kind of universal model one.
+
+00:13:38,720 --> 00:13:42,960
+So, one model that sometimes
+is enough to consider.
+
+00:13:42,960 --> 00:13:49,760
+We don't have to consider all the possible
+choices of the base set of mathematical objects.
+
+00:13:49,760 --> 00:13:50,720
+Okay, and what's the idea?
+
+00:13:50,720 --> 00:13:52,240
+Well, the idea for this is very simple.
+
+00:13:53,440 --> 00:13:58,960
+Namely, in some sense, we interpret this simple
+as possible, namely, purely syntactically.
+
+00:13:58,960 --> 00:14:03,600
+So, we don't actually consider an arbitrary set
+of mathematical objects, we simply consider terms.
+
+00:14:04,400 --> 00:14:05,840
+So, neither the functions nor the predicates really
+
+00:14:05,840 --> 00:14:09,120
+do anything in the sense that
+they to any actual computation.
+
+00:14:09,120 --> 00:14:13,200
+They are simply taken as what they are
+written like, namely as syntactic objects.
+
+00:14:13,840 --> 00:14:17,120
+Okay, so what does this have as consequences?
+
+00:14:17,120 --> 00:14:19,760
+Well, the set of objects will
+simply be the set of ground terms.
+
+00:14:20,720 --> 00:14:26,560
+Yeah, we have some implicitly given signature
+like zero and a successor symbol and
+
+00:14:28,480 --> 00:14:32,000
+also predicates that simply
+look at the constants and the
+
+00:14:32,560 --> 00:14:37,040
+data constructors, we would have
+zero and s in the previous example.
+
+00:14:37,040 --> 00:14:40,560
+And we consider all the terms that can be
+built over this, but only ground terms.
+
+00:14:40,560 --> 00:14:45,120
+So, let's remember that was introduced
+in a previous lecture, in a previous week.
+
+00:14:45,120 --> 00:14:49,200
+Probably last week, that we construct ground
+terms, that is, terms without variables.
+
+00:14:49,200 --> 00:14:53,360
+Okay, so we consider all these
+ground terms over implicit signature.
+
+00:14:53,360 --> 00:14:57,840
+In this case, it would be zero, s of zero, s
+of zero, s of s, s of, s of zero, et cetera.
+
+00:14:57,840 --> 00:15:00,720
+These would be the objects that we
+consider, syntactic application.
+
+00:15:01,680 --> 00:15:03,360
+Okay, so what's the functor, then?
+
+00:15:03,360 --> 00:15:04,080
+The data constructor?
+
+00:15:04,080 --> 00:15:05,200
+Well, it does exactly this.
+
+00:15:05,200 --> 00:15:07,600
+It simply applies syntax.
+
+00:15:08,160 --> 00:15:08,560
+Yes.
+
+00:15:08,560 --> 00:15:16,320
+So, if you apply the constructor s to the term s
+of zero, then we get a new term s of s of zero.
+
+00:15:16,320 --> 00:15:21,440
+So, simply consider interpretation as what we
+would write down if you write it down as terms.
+
+00:15:21,440 --> 00:15:25,840
+Okay, so no further interpretation
+in some mathematical sense.
+
+00:15:26,960 --> 00:15:31,920
+Okay, and the predicate, well, since
+there should be relations over this
+
+00:15:31,920 --> 00:15:38,720
+base set, we can now interpret this as
+simply writing down those implications
+
+00:15:38,720 --> 00:15:42,080
+of predicate symbols on ground terms,
+that should be considered to be true.
+
+00:15:42,080 --> 00:15:45,360
+Yes, that's one way to interpret or to represent a
+
+00:15:46,960 --> 00:15:52,880
+relation on such syntactic set by simply saying
+well, we make another set in which we collect
+
+00:15:52,880 --> 00:15:58,000
+all the applications of our predicate symbols,
+say the addition symbol on three ground terms.
+
+00:15:58,560 --> 00:16:04,000
+But of course, not all of these combinations,
+but only those which should be true in our
+
+00:16:04,000 --> 00:16:08,240
+interpretation, in our understanding
+of that predicates symbol or relation.
+
+00:16:09,920 --> 00:16:13,920
+Okay, and now this first thing here
+is called the Herbrand universe.
+
+00:16:13,920 --> 00:16:18,720
+And again, that's a notion that occurs
+in Professor König's course as well.
+
+00:16:18,720 --> 00:16:24,640
+So, Herbrand was the logician who considered
+these specific structures, these specific models
+
+00:16:24,640 --> 00:16:35,200
+then also to understand or to study better the
+model theory for the kind of logic in use here.
+
+00:16:35,200 --> 00:16:42,560
+Okay, so the Herbrand universe would now
+be this space that is used from now on.
+
+00:16:43,840 --> 00:16:49,440
+And well, what's written in the last line
+here, so this some chosen set of syntactic
+
+00:16:49,440 --> 00:16:53,280
+application of the predicates symbols on ground
+terms that would be a Herbrand interpretation.
+
+00:16:53,280 --> 00:16:58,400
+Because it tells us what is considered
+to be true in a certain model.
+
+00:16:58,400 --> 00:16:59,440
+Okay, in Herbrand model.
+
+00:17:00,240 --> 00:17:01,760
+Okay, so let's do this on an example.
+
+00:17:01,760 --> 00:17:02,880
+So, that was our example.
+
+00:17:03,440 --> 00:17:05,680
+From this, we can see what a signature is, right?
+
+00:17:06,560 --> 00:17:09,200
+There is this constant simply 0 of arity 0.
+
+00:17:09,200 --> 00:17:12,400
+And the function symbol s of arity one, right?
+
+00:17:12,400 --> 00:17:17,840
+Because it takes one argument
+as we see, for example, here.
+
+00:17:18,960 --> 00:17:21,280
+Then, from this, we can build a Herbrand universe.
+
+00:17:21,840 --> 00:17:27,680
+So, all ground terms over the signature, and we
+already indicated what this amounts to, namely,
+
+00:17:27,680 --> 00:17:30,400
+all these nested applications.
+
+00:17:30,400 --> 00:17:33,520
+And since there's only one data
+constructor, there is no more choice.
+
+00:17:33,520 --> 00:17:37,200
+So, it's always s of, s of, s of,
+and at some point, it will be zero.
+
+00:17:37,200 --> 00:17:41,280
+So, all these combinations, of course,
+in some sense represent natural numbers.
+
+00:17:41,280 --> 00:17:43,040
+But there is interpretation going on here, right?
+
+00:17:43,040 --> 00:17:45,280
+This is just taken syntactically.
+
+00:17:45,280 --> 00:17:50,400
+And importantly, in the Herbrand universe,
+we don't use the predicate symbol.
+
+00:17:50,400 --> 00:17:53,680
+So, really just look at the things
+that can occur in argument positions.
+
+00:17:53,680 --> 00:17:55,520
+The zero and the s of something.
+
+00:17:55,520 --> 00:17:59,840
+Okay, and we don't consider variables in
+here, because these should be ground terms.
+
+00:17:59,840 --> 00:18:01,360
+Okay, so that's the Herbrand universe.
+
+00:18:02,640 --> 00:18:08,720
+And then there is the simplest
+Herbrand interpretation, which would be
+
+00:18:08,720 --> 00:18:13,280
+the Herbrand base, which would be simply
+all applications of the predicate symbols.
+
+00:18:13,280 --> 00:18:15,680
+Well, we have only one predicate
+symbol here in the program
+
+00:18:15,680 --> 00:18:20,320
+to all the possible terms from
+the Herbrand universe, right?
+
+00:18:20,320 --> 00:18:21,840
+So, this is the Herbrand base.
+
+00:18:21,840 --> 00:18:26,240
+It's one specific Herbrand interpretation, but
+not necessarily the one we are looking for.
+
+00:18:26,240 --> 00:18:26,640
+Right?
+
+00:18:26,640 --> 00:18:30,640
+The Herbrand interpretation would be
+any subset of this very large set,
+
+00:18:30,640 --> 00:18:37,200
+which contains all the
+dot, dot, dot, here we actually would
+
+00:18:37,200 --> 00:18:44,480
+have all applications of "add" to any
+triple of elements from this set.
+
+00:18:44,480 --> 00:18:47,840
+Including things that we intuitively
+know to not be true, right?
+
+00:18:47,840 --> 00:18:51,280
+We know that zero plus zero is not one,
+but Herbrand base doesn't care about this.
+
+00:18:51,280 --> 00:18:55,840
+It contains all the applications of
+predicate symbols on terms found this,
+
+00:18:55,840 --> 00:18:59,840
+in this case, infinite set, and later we have
+actually the Herbrand interpretation, which is
+
+00:19:01,120 --> 00:19:02,800
+more true in some sense, right?
+
+00:19:02,800 --> 00:19:04,880
+So, more logically consistent.
+
+00:19:04,880 --> 00:19:07,120
+But Herbrand base is simply
+all the applications here.
+
+00:19:08,720 --> 00:19:09,840
+Okay.
+
+00:19:10,560 --> 00:19:15,280
+So, what you're actually looking for, so the Herbrand
+interpretation is a subset of Herbrand base and
+
+00:19:15,280 --> 00:19:21,440
+should be the Herbrand interpretation, which
+makes the program true and nothing more.
+
+00:19:22,320 --> 00:19:28,800
+Well, we should make exactly those things
+true which are enforced by the given program.
+
+00:19:28,800 --> 00:19:37,840
+Because then it's the perfect model from which we
+can deduce all the things that would be deducible.
+
+00:19:38,960 --> 00:19:41,840
+The next question then is whether
+we can actually compute, in
+
+00:19:42,720 --> 00:19:46,240
+somewhat constructive fashion, this perfect model.
+
+00:19:46,240 --> 00:19:48,400
+So, it would have to be the smallest
+
+00:19:48,400 --> 00:19:51,840
+Herbrand interpretation that is a model,
+smallest in the sense of "subset".
+
+00:19:53,200 --> 00:19:55,200
+Yes, because then we have exactly
+
+00:19:57,120 --> 00:20:01,440
+collected all the things,
+all the applications of predicates to ground
+
+00:20:01,440 --> 00:20:06,880
+terms that then must be true because they are
+consequent of the program, but nothing more.
+
+00:20:06,880 --> 00:20:10,320
+So, the smallest Herbrand
+interpretation that is a model.
+
+00:20:11,040 --> 00:20:11,540
+Okay.
+
+00:20:11,920 --> 00:20:15,440
+Well, a reasonable question would actually be: Is
+there such a smallest interpretation?
+
+00:20:15,440 --> 00:20:17,680
+Or maybe there are different
+ones that are incomparable?
+
+00:20:17,680 --> 00:20:18,880
+So, is there a smallest one?
+
+00:20:18,880 --> 00:20:20,400
+And if so, can we compute?
+
+00:20:20,400 --> 00:20:20,720
+Okay.
+
+00:20:20,720 --> 00:20:22,720
+And the answer to both questions is yes.
+
+00:20:23,440 --> 00:20:27,040
+And well, the method to do this is the so-called
+
+00:20:27,040 --> 00:20:31,040
+immediate consequence operator,
+which sounds maybe a bit complicated.
+
+00:20:31,040 --> 00:20:35,840
+And also has a definition that looks
+complicated maybe on first glimpse,
+
+00:20:35,840 --> 00:20:38,480
+but we will, in a moment, see
+this applied to an example.
+
+00:20:38,480 --> 00:20:42,080
+And we'll see that that's a very
+intuitive process going on here.
+
+00:20:43,280 --> 00:20:44,080
+Okay, so what is it?
+
+00:20:44,080 --> 00:20:45,200
+It is an operator
+
+00:20:46,000 --> 00:20:48,080
+that turns sets into new sets.
+
+00:20:48,080 --> 00:20:49,920
+So, basically, you give it
+a Herbrand interpretation,
+
+00:20:50,560 --> 00:20:52,560
+and it gives you a new Herbrand interpretation.
+
+00:20:52,560 --> 00:20:58,800
+So, it operates on the subsets of the thing of
+the Herbrand base appearing on the previous slide.
+
+00:20:59,600 --> 00:21:02,800
+Okay, it's called immediate
+consequence operator because it always
+
+00:21:02,800 --> 00:21:06,640
+computes new consequences and they are
+immediate consequences in the sense
+
+00:21:06,640 --> 00:21:10,400
+that they must be obtainable from what
+we already had in the previous set.
+
+00:21:10,400 --> 00:21:14,000
+So, before we apply the operator,
+they must be obtainable from this
+
+00:21:14,000 --> 00:21:18,880
+by just one reasoning step by applying one fact
+or one rule from our different program, right?
+
+00:21:18,880 --> 00:21:22,800
+So, the program p basically
+appears as a subscript.
+
+00:21:22,800 --> 00:21:26,480
+So, the immediate consequence
+operator is always relative to one program.
+
+00:21:27,680 --> 00:21:31,920
+Okay, and then it operates
+on these interpretations.
+
+00:21:31,920 --> 00:21:32,800
+Okay, and what does it do?
+
+00:21:32,800 --> 00:21:34,400
+Well, it takes one such set,
+
+00:21:34,400 --> 00:21:38,960
+one such subset of the Herbrand base,
+which is a Herbrand interpretation, then.
+
+00:21:38,960 --> 00:21:40,800
+And it produces all ground literals.
+
+00:21:40,800 --> 00:21:43,040
+So, these are things that can occur in a Herbrand
+
+00:21:43,040 --> 00:21:46,160
+interpretation, because they are exactly
+the elements of the Herbrand base, right?
+
+00:21:46,160 --> 00:21:48,560
+Predicate symbols applied to ground terms.
+
+00:21:48,560 --> 00:21:55,920
+So, it produces all ground literals and zero for
+which holds: there are L1, L2, L3, … , Ln
+
+00:21:56,480 --> 00:22:01,920
+for some natural number n, which are already
+in the current interpretation, right?
+
+00:22:01,920 --> 00:22:03,520
+From which we want to draw a consequence.
+
+00:22:03,520 --> 00:22:11,840
+So, we must have L1, L2 to Ln, already in the
+given I such that the zero would be obtained,
+
+00:22:12,400 --> 00:22:18,640
+if we take some fact or rule from the program
+that instantiate it in some consistent way, right?
+
+00:22:18,640 --> 00:22:21,520
+So, consistent in the sense that
+if you have a fact or rule which
+
+00:22:21,520 --> 00:22:26,400
+contains variable X, then we can replace
+the X by any ground term, but of course,
+
+00:22:26,400 --> 00:22:32,400
+we have to replace it the same in,
+for example, all the literals accordingly.
+
+00:22:34,240 --> 00:22:40,480
+Okay, so, we have an I, we have rules,
+we can instantiate them completely.
+
+00:22:40,480 --> 00:22:42,560
+So that there are no variables left.
+
+00:22:42,560 --> 00:22:49,520
+And then we do it in all possible ways, such
+that we find L1, to Ln already in the current I.
+
+00:22:49,520 --> 00:22:53,520
+And if so, then we put the L0 which of
+course also has its variables replaced
+
+00:22:53,520 --> 00:22:59,680
+by the things we have chosen for the
+variables and put that zero in the next set.
+
+00:22:59,680 --> 00:23:02,400
+So, in what Tp makes out of this I.
+
+00:23:04,320 --> 00:23:07,520
+Okay, it's important to notice
+that the n could be zero, right?
+
+00:23:07,520 --> 00:23:11,280
+And you would have a rule with an empty
+right-hand side, with an empty body,
+
+00:23:11,280 --> 00:23:12,640
+that would be a fact, right?
+
+00:23:12,640 --> 00:23:18,000
+So, the case of facts is also covered here,
+that will be the case where n is zero,
+
+00:23:18,640 --> 00:23:27,600
+then we simply put into the next set all
+instantiations of all ground instantiations of our
+
+00:23:28,480 --> 00:23:30,960
+fact if our head with the empty body.
+
+00:23:32,400 --> 00:23:35,920
+Okay, so that's an operation on sets
+that you will see in action in a moment.
+
+00:23:35,920 --> 00:23:37,200
+And what is it useful for?
+
+00:23:37,200 --> 00:23:39,680
+Well, we can apply it to what?
+
+00:23:39,680 --> 00:23:43,120
+Well, for example, to the empty set, we have to
+start somewhere as a result of the empty set.
+
+00:23:43,120 --> 00:23:47,200
+And then we can apply this operator to the
+empty set, then we get maybe new elements.
+
+00:23:47,200 --> 00:23:50,080
+So, the empty set grows into something non-empty,
+
+00:23:50,080 --> 00:23:53,120
+then we can apply this consequence
+operator again on that set.
+
+00:23:53,120 --> 00:23:54,560
+And again, and again.
+
+00:23:54,560 --> 00:23:59,200
+And it's not difficult to see that by doing
+this, the sets can only grow larger.
+
+00:23:59,200 --> 00:24:05,840
+So, they cannot become smaller and
+either at some point this becomes stable.
+
+00:24:05,840 --> 00:24:11,520
+And there's one fixed final set, or we have also
+infinite set that somehow become stable at some point.
+
+00:24:11,520 --> 00:24:14,720
+All this goes on and on and on and on forever.
+
+00:24:14,720 --> 00:24:16,560
+But even then, mathematically, there's a limit.
+
+00:24:16,560 --> 00:24:19,920
+So, there is at least upper
+bound for this infinite sequence.
+
+00:24:19,920 --> 00:24:24,880
+And whatever this is, whether it happens at the
+finite time, or it's just an infinite limit,
+
+00:24:24,880 --> 00:24:28,160
+that will be the smallest Herbrand
+model, the thing we're looking for.
+
+00:24:28,160 --> 00:24:31,600
+Okay, so we get a fixed point or limit of
+a sequence starting with the empty set,
+
+00:24:31,600 --> 00:24:35,120
+applying this operation that's
+defined here, on the empty set,
+
+00:24:35,120 --> 00:24:40,000
+getting a new set, applying Tp to that
+set, and then to that set, et cetera.
+
+00:24:40,000 --> 00:24:42,960
+And either it stops at some point,
+or it goes on and on forever.
+
+00:24:42,960 --> 00:24:44,480
+But it never becomes smaller.
+
+00:24:44,480 --> 00:24:50,800
+So, if we find some literal in some
+of the sets, then we know it will also
+
+00:24:50,800 --> 00:24:54,960
+appear in the smallest Herbrand
+model because the sets only grow.
+
+00:24:54,960 --> 00:24:57,760
+So, once something appears in one of the sets,
+
+00:24:57,760 --> 00:25:02,880
+we know it's something that's really
+deducible from the program logically.
+
+00:25:02,880 --> 00:25:04,800
+Because it appears in the smallest Herbrand model.
+
+00:25:05,840 --> 00:25:13,840
+And that's what we can use as
+the meaning of the program.
+
+00:25:15,840 --> 00:25:18,480
+Let us look at this on the example.
+
+00:25:18,480 --> 00:25:20,080
+So, that's again, the same program.
+
+00:25:20,800 --> 00:25:23,760
+And where we start from the empty set, we
+don't have to write down the empty set,
+
+00:25:23,760 --> 00:25:28,880
+but we should write down the first application
+of the Tp operator on the empty set.
+
+00:25:28,880 --> 00:25:29,920
+So, what will this be?
+
+00:25:29,920 --> 00:25:36,640
+Well, what do we have to do, we have to check
+what right-hand sides of the given program
+
+00:25:36,640 --> 00:25:42,400
+clauses we can already find in ground
+instantiated form in our given set?
+
+00:25:42,400 --> 00:25:45,920
+Where this given set at the beginning is the
+empty set, it's already clear that there's
+
+00:25:45,920 --> 00:25:50,560
+no point in even trying to use this second
+rule in the immediate consequence operator.
+
+00:25:50,560 --> 00:25:56,480
+Because there is no L1 on the right-hand
+side that we could also find in the given I.
+
+00:25:56,480 --> 00:26:00,080
+Okay, so in the first step, it only makes
+sense to look at the facts of the program.
+
+00:26:00,080 --> 00:26:01,200
+And then what do we have to do?
+
+00:26:01,200 --> 00:26:04,480
+Well, in the case of a fact, we don't
+have a right-hand side to consider.
+
+00:26:04,480 --> 00:26:09,200
+So, all we have to do is to check or to
+consider all the ground instantiation
+
+00:26:09,200 --> 00:26:13,760
+of this head and add them
+to the set to our next set.
+
+00:26:14,880 --> 00:26:17,520
+Okay, and what would our
+ground instantiations here be?
+
+00:26:18,160 --> 00:26:20,960
+Well, there is one variable occurring twice.
+
+00:26:20,960 --> 00:26:24,800
+So, we have to consider all ground terms
+and replace them for X but of course, for
+
+00:26:26,160 --> 00:26:27,120
+both occurrences of X.
+
+00:26:27,680 --> 00:26:34,160
+Okay, so what this means is that the first
+application of the Tp operator on the empty set,
+
+00:26:34,160 --> 00:26:38,320
+gives us this already infinite set
+with a clear repeating pattern, right?
+
+00:26:38,320 --> 00:26:38,640
+So, we get 0, 0, 0.
+
+00:26:38,640 --> 00:26:41,440
+Of course, we can replace both X with the zero,
+
+00:26:41,440 --> 00:26:45,360
+we can also replace both X by another
+element of the Herbrand universe.
+
+00:26:45,360 --> 00:26:46,240
+Maybe s of zero.
+
+00:26:46,240 --> 00:26:51,120
+Then we get this literal into our set can
+do the same for s of, s of zero, et cetera.
+
+00:26:51,120 --> 00:26:56,720
+So, here we plug in elements from the Herbrand
+universe that we have established earlier,
+
+00:26:56,720 --> 00:26:57,440
+two slides back.
+
+00:26:58,160 --> 00:27:00,800
+Okay, so that's what happens
+in the first iteration.
+
+00:27:01,760 --> 00:27:02,640
+Then we do this again.
+
+00:27:02,640 --> 00:27:06,000
+We apply Tp again now on this set.
+
+00:27:06,000 --> 00:27:07,040
+So, what will this mean?
+
+00:27:07,040 --> 00:27:11,840
+Well, of course, it would still or
+again, get all these elements, right?
+
+00:27:11,840 --> 00:27:14,800
+Because in the next step and we
+can still look at the first fact.
+
+00:27:14,800 --> 00:27:17,920
+It has no right-hand side, so we don't
+have to find anything in the previous set.
+
+00:27:17,920 --> 00:27:21,360
+We can simply add all ground
+instantiations of the thing.
+
+00:27:21,360 --> 00:27:24,160
+But that would only add things that
+we've already seen, that doesn't
+
+00:27:24,160 --> 00:27:26,400
+make sense or doesn't give
+anything interestingly new.
+
+00:27:26,960 --> 00:27:33,040
+So, it is more important in the next
+step to look at the actual rules.
+
+00:27:33,040 --> 00:27:37,680
+Because now we do have stuff
+already in our current set.
+
+00:27:37,680 --> 00:27:43,600
+So, we can actually look in this set for
+ground instantiations of this right-hand side.
+
+00:27:44,160 --> 00:27:50,400
+And for any choice of x, y, and z for
+which we find an element here, we can add
+
+00:27:50,400 --> 00:27:56,160
+on the next iteration, the corresponding
+instantiation of the head of this rule.
+
+00:27:58,000 --> 00:28:00,080
+Okay, so we get all we have already.
+
+00:28:00,080 --> 00:28:03,280
+And that will always be the case, I already
+mentioned that the sets can only grow.
+
+00:28:03,280 --> 00:28:06,880
+So, each consecutive set has
+the previous set as a subset,
+
+00:28:06,880 --> 00:28:12,080
+and then new stuff may be added or it
+becomes stationary and the sequence stops.
+
+00:28:12,640 --> 00:28:15,280
+Okay, so here we get what we already had, plus…
+
+00:28:15,280 --> 00:28:16,400
+Well, plus what?
+
+00:28:16,400 --> 00:28:22,080
+For example, since this can be taken as an
+instantiation for this right-hand side here,
+
+00:28:22,080 --> 00:28:27,680
+if you choose X, Y and Z to all three
+be zero, we have to add s of the X,
+
+00:28:27,680 --> 00:28:31,120
+s of zero, Y zero, s of Z, zero.
+
+00:28:31,120 --> 00:28:36,080
+So, from this literal, we get this new literal.
+
+00:28:36,080 --> 00:28:38,240
+And similarly, we get new literals
+
+00:28:38,240 --> 00:28:41,760
+actually, for each of the ones we have
+already in our current set, right?
+
+00:28:41,760 --> 00:28:48,320
+Because of this, because we can also choose
+X to be zero, Y and Z to both to be s of zero
+
+00:28:49,120 --> 00:28:52,640
+from this follows this new predicate.
+
+00:28:54,320 --> 00:28:57,760
+Mathematically new literal predicate
+application in the next iteration.
+
+00:28:57,760 --> 00:28:58,720
+And same here.
+
+00:28:58,720 --> 00:29:02,480
+And of course, from each of these
+instantiations for each of the
+
+00:29:02,480 --> 00:29:05,760
+literals occurring in this dot, dot,
+dot, you also get a new one here.
+
+00:29:06,880 --> 00:29:08,400
+Okay, let me do this again.
+
+00:29:09,280 --> 00:29:10,240
+And again, and again.
+
+00:29:10,240 --> 00:29:13,920
+Right and here we already… I
+don't have the arrows here.
+
+00:29:13,920 --> 00:29:19,440
+But again, from each new thing that
+occurred in the previous iteration,
+
+00:29:19,440 --> 00:29:22,080
+we get yet another new one
+for the next iteration, right?
+
+00:29:22,080 --> 00:29:23,600
+We get everything we already have.
+
+00:29:24,960 --> 00:29:28,880
+Plus, new stuff in this example, that need not
+always be the case, but here it is the case.
+
+00:29:29,440 --> 00:29:31,920
+Okay, so this would actually go on and on.
+
+00:29:31,920 --> 00:29:35,120
+And if we then take a very
+sharp look and consider well,
+
+00:29:35,120 --> 00:29:39,440
+what would actually be the limit of
+this if we did this infinite times?
+
+00:29:39,440 --> 00:29:42,800
+Well, actually the limit would be
+this set which can't be written down
+
+00:29:44,000 --> 00:29:45,360
+by finite enumeration, of course.
+
+00:29:45,360 --> 00:29:48,640
+Because it contains infinitely many
+elements, already the first set here
+
+00:29:48,640 --> 00:29:51,040
+does, and then certainly
+all the others do as well.
+
+00:29:51,040 --> 00:29:54,720
+What would actually appear here
+you can actually see this pattern already.
+
+00:29:54,720 --> 00:30:01,600
+If you look at the examples here, we always
+get for all choices eventually of i and j:
+
+00:30:03,120 --> 00:30:09,440
+s, i times applied to zero, s, j times applied
+to zero, s, i+j times applied to zero.
+
+00:30:09,440 --> 00:30:09,680
+Right?
+
+00:30:09,680 --> 00:30:13,920
+So, here you will never find anything, which
+isn't a logical consequence of these rules.
+
+00:30:13,920 --> 00:30:16,480
+You get two plus two is
+four, two plus one is three.
+
+00:30:17,120 --> 00:30:19,120
+So, you don't get stupid stuff here,
+
+00:30:19,120 --> 00:30:22,240
+you only get stuff that is actually
+a consequence of the given program.
+
+00:30:22,240 --> 00:30:24,160
+And actually, also everything that intuitively
+
+00:30:24,160 --> 00:30:27,440
+is a consequence of this definition
+of addition, will eventually appear.
+
+00:30:27,440 --> 00:30:29,760
+That's what this last line
+here is actually claiming
+
+00:30:29,760 --> 00:30:32,960
+or proved here, but it's the
+fact that this will happen.
+
+00:30:33,520 --> 00:30:37,520
+Okay, in that sense, this process captures exactly
+
+00:30:37,520 --> 00:30:40,480
+the meaning of this addition
+predicate of this definition.
+
+00:30:44,880 --> 00:30:47,440
+So, this was just one example.
+
+00:30:47,440 --> 00:30:51,480
+So, of course, the question is now: Does
+this always work, for all Prolog programs?
+
+00:30:51,480 --> 00:30:56,000
+Is it always possible to do this,
+to work with this Tp semantics?
+
+00:30:56,000 --> 00:31:00,640
+And well, the answer is not for
+all parts of the Prolog language.
+
+00:31:00,640 --> 00:31:02,160
+So, for example, arithmetic.
+
+00:31:02,160 --> 00:31:06,720
+So, the use of this "is"-construct is
+to actually evaluate things.
+
+00:31:06,720 --> 00:31:09,840
+And this is not covered by
+this declarative semantics,
+
+00:31:09,840 --> 00:31:14,560
+mainly because the semantic is
+so symbolically oriented, right?
+
+00:31:14,560 --> 00:31:18,720
+So, this arithmetic really computing two
+plus five is seven is exactly something
+
+00:31:18,720 --> 00:31:22,640
+which is not purely syntactically, so
+it doesn't really fit this approach.
+
+00:31:22,640 --> 00:31:25,760
+So, that is something that will
+not be covered by the semantics.
+
+00:31:25,760 --> 00:31:27,760
+And of course, you also don't have to
+
+00:31:27,760 --> 00:31:30,800
+apply it is to apply this delarative semantics
+or programs containing arithmetic.
+
+00:31:30,800 --> 00:31:35,200
+But there are also other things,
+other constraints that we are under.
+
+00:31:35,200 --> 00:31:40,720
+So, for example, negation is generally
+problematic with declarative semantics.
+
+00:31:41,280 --> 00:31:42,720
+So, we will not consider this.
+
+00:31:42,720 --> 00:31:52,560
+So, neither negation in the form of this unequal
+predicate, nor general negation
+
+00:31:52,560 --> 00:31:58,320
+of some literal will be considered in
+the context of declarative semantics.
+
+00:31:58,320 --> 00:32:00,240
+Because it doesn't really work.
+
+00:32:00,880 --> 00:32:01,120
+Right?
+
+00:32:01,120 --> 00:32:05,040
+The interpretation of the not is something
+that has to be understood operationally.
+
+00:32:06,800 --> 00:32:11,200
+At least, if one uses the simple declarative semantics
+that we have seen. There are more elaborate versions
+
+00:32:11,200 --> 00:32:14,800
+in the literature that can also deal with
+negation, but that's not for this course.
+
+00:32:14,800 --> 00:32:16,480
+So, in the course, let's simply say,
+
+00:32:16,480 --> 00:32:21,840
+you're not going to use negation in programs for
+which you want to use the declarative semantics.
+
+00:32:22,480 --> 00:32:25,040
+Also in exercises, et cetera, this will not appear.
+
+00:32:25,680 --> 00:32:29,040
+And moreover, there are
+also in the Prolog language
+
+00:32:29,040 --> 00:32:32,960
+despite it being a logical programming language,
+they're also features that are not really logical.
+
+00:32:33,600 --> 00:32:34,800
+They are not introduced in this lecture.
+
+00:32:34,800 --> 00:32:41,360
+So, here we anyway restrict the logical part of
+Prolog and well if the extra-logical features,
+
+00:32:41,360 --> 00:32:45,600
+we would also have to deal with the fact
+that they don't follow this semantic.
+
+00:32:45,600 --> 00:32:49,120
+So, they're not really compatible with the
+semantics because it is really driven by
+
+00:32:49,120 --> 00:32:50,320
+a model theory from logic.
+
+00:32:50,320 --> 00:32:53,120
+So, if we have something that isn't
+really logic, and then it doesn't
+
+00:32:53,120 --> 00:33:00,080
+fit with the semantics Okay, these are the
+constraints that the semantics works under.
+
+00:33:01,280 --> 00:33:07,680
+Okay, so for you, of course, we will
+make sure that this is always satisfied
+
+00:33:08,800 --> 00:33:13,280
+if you get a program for which you
+should check to declarative semantics.
+
+00:33:13,840 --> 00:33:14,480
+Okay.
+
+00:33:14,480 --> 00:33:17,600
+But this, of course, doesn't mean that there are
+no interesting programs for which you can do this.
+
+00:33:17,600 --> 00:33:20,800
+Of course, there are, and you will
+see some in the exercises, et cetera.
+
+00:33:20,800 --> 00:33:24,640
+And also here, I have another example,
+which is only slightly more complicated.
+
+00:33:24,640 --> 00:33:28,160
+But at least it already has two
+predicates, and definitions for them.
+
+00:33:28,960 --> 00:33:31,840
+And one calls the other that
+could even be mutual recursion,
+
+00:33:31,840 --> 00:33:33,840
+even though this doesn't occur in this example.
+
+00:33:33,840 --> 00:33:39,280
+But you could have many predicates that you
+can call each other mutually recursive if we
+
+00:33:39,280 --> 00:33:44,560
+have here also a program predicate with more
+than two rules, with two facts and one rule.
+
+00:33:44,560 --> 00:33:48,080
+We have a case here on the right-hand
+side, we have several literals, et cetera.
+
+00:33:48,080 --> 00:33:54,320
+So, you really, from this example, you can see
+the more elaborate version of this iteration.
+
+00:33:54,880 --> 00:33:58,240
+I will not talk through this
+in detail here in the slides.
+
+00:33:58,240 --> 00:33:59,280
+So, I do have the slides.
+
+00:33:59,280 --> 00:34:02,000
+And you can also see what happens
+in each of the iterations.
+
+00:34:02,000 --> 00:34:07,280
+But I will not explain each step
+because in the collection document
+
+00:34:07,280 --> 00:34:11,600
+in the Moodle course, where I have
+exercise tasks and their solutions.
+
+00:34:11,600 --> 00:34:14,880
+There's actually a very similar example
+where this was really spelled out
+
+00:34:14,880 --> 00:34:21,520
+in a lot of detail where really each step
+is explained and how and why certain new
+
+00:34:21,520 --> 00:34:27,280
+literals appear in the next iteration of
+the Tp operator is explained in detail.
+
+00:34:27,280 --> 00:34:33,120
+So, that corresponds then to the
+arrows I had on the previous slide.
+
+00:34:33,120 --> 00:34:40,000
+And here again, where basically I'm saying well,
+because these two literals were in this iteration,
+
+00:34:40,000 --> 00:34:42,560
+now, this new element occurs
+in this iteration, right?
+
+00:34:42,560 --> 00:34:47,040
+So, I am not explaining this here in detail, but
+well, if you read through the text explanation of
+
+00:34:47,040 --> 00:34:52,560
+that other example in the collection PDF, then
+you find exactly such explanations of steps.
+
+00:34:52,560 --> 00:34:57,200
+Why is something appearing exactly in
+the iteration where it is appearing.
+
+00:34:57,200 --> 00:34:57,360
+Right.
+
+00:34:57,360 --> 00:35:02,640
+So, what you can get from this example
+here, I'm not explaining each step
+
+00:35:02,640 --> 00:35:04,560
+is how this grows and grows and grows.
+
+00:35:04,560 --> 00:35:10,480
+And you will always get new knowledge about,
+in this case, the addition and the multiplication
+
+00:35:11,600 --> 00:35:12,240
+predicate.
+
+00:35:12,240 --> 00:35:14,960
+How new knowledge is established step by step
+
+00:35:15,520 --> 00:35:18,400
+when we apply this immediate
+consequence operator repeatedly.
+
+00:35:18,960 --> 00:35:22,000
+Okay, so here's something
+in the first iteration only
+
+00:35:22,000 --> 00:35:24,480
+knowledge from the facts was accumulated, right?
+
+00:35:24,480 --> 00:35:27,120
+Because as in previous example
+we don't use the rules with
+
+00:35:27,680 --> 00:35:30,000
+actual right-hand sides in the first iterations.
+
+00:35:30,000 --> 00:35:31,440
+On the first iteration we had only
+
+00:35:32,000 --> 00:35:36,480
+instantiations of these three facts and
+then in later iterations, new stuff appears.
+
+00:35:36,480 --> 00:35:43,840
+So, here for example, but also
+again here, we get new material.
+
+00:35:45,680 --> 00:35:52,560
+Okay, so, here are two cases where we have
+written down why a certain new literal appears.
+
+00:35:52,560 --> 00:35:56,400
+So, this appears because we
+had this in the set, right?
+
+00:35:56,400 --> 00:36:02,480
+It wasn't in the set because, of course,
+this set is the whole thing we see here.
+
+00:36:03,200 --> 00:36:09,600
+So, actually, there is an invocation
+of this last rule, where the fact
+
+00:36:09,600 --> 00:36:15,280
+that this was present before and
+this was present before now leads
+
+00:36:15,280 --> 00:36:19,680
+to this new literal and likewise
+for something that occurred here.
+
+00:36:19,680 --> 00:36:25,040
+And the concrete literal here,
+this leads to this, et cetera.
+
+00:36:25,040 --> 00:36:31,920
+Okay, ultimately you get this for
+example, after four steps of applying this
+
+00:36:33,040 --> 00:36:36,080
+immediate consequence operator method
+when we go on and on and on, we
+
+00:36:36,640 --> 00:36:46,880
+get all the valid statements about addition and
+multiplication on such symbolic natural numbers.
+
+00:36:48,560 --> 00:36:50,160
+Okay, that's it for now.
+
+00:36:50,960 --> 00:36:58,240
+And you have the material in the collection PDF,
+you will have an exercise task, of course, on this.
+
+00:36:58,240 --> 00:37:01,840
+And next week, we will turn
+to the operational semantics
+
+00:37:02,960 --> 00:37:07,840
+to a different perspective on
+the meaning of Prolog programs.

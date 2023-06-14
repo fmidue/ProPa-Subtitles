@@ -1,0 +1,638 @@
+36 # slide
+00:00:02,000 --> 00:00:06,640
+Let us briefly come back to the length example.
+
+00:00:06,640 --> 00:00:14,160
+It was one of the examples that I derived
+in a previous video from the Haskell version.
+
+00:00:14,160 --> 00:00:22,320
+So, I started and then I derived
+this symbolic version of the length predicate in
+
+00:00:22,320 --> 00:00:27,680
+Prolog, which returns, if we give it a list,
+the length of that list with this s(s(s((0)))
+
+00:00:29,120 --> 00:00:31,920
+constructors.
+
+00:00:32,480 --> 00:00:35,920
+Now, we might actually want to have a true number.
+
+00:00:36,480 --> 00:00:38,720
+So, I have to tell you about evaluation.
+
+00:00:38,720 --> 00:00:42,480
+Because I have had so far that almost
+everything in Prolog is treated symbolically.
+
+00:00:42,480 --> 00:00:46,960
+So, even if you write three plus five, then
+this is three plus five and not eight.
+
+00:00:46,960 --> 00:00:52,240
+So, if you really want to have actual numbers
+as result of "length" as we do in Haskell,
+
+00:00:52,240 --> 00:00:55,920
+we have to do something slightly different
+than what I did in the previous video.
+
+00:00:55,920 --> 00:00:58,960
+And indeed, this is how you
+could write this in Prolog.
+
+00:00:59,760 --> 00:01:05,040
+Yes, so in the previous video,
+I didn't have this part here.
+
+00:01:05,040 --> 00:01:13,040
+And instead, at this point, I simply had s(M),
+with this small s as the successor constructor.
+
+00:01:13,680 --> 00:01:16,000
+Okay, if I want to do actual computation,
+
+00:01:16,800 --> 00:01:20,560
+really computing the output number,
+then I have to write it like this.
+
+00:01:20,560 --> 00:01:23,120
+I can write M plus one.
+
+00:01:23,120 --> 00:01:27,920
+But in order to not have this just as symbolic
+M plus one, to really have the resulting number,
+
+00:01:27,920 --> 00:01:31,440
+I can say something like M is this thing.
+
+00:01:31,440 --> 00:01:32,960
+And then I can put the N here.
+
+00:01:32,960 --> 00:01:36,480
+And then this will really mean that this
+arithmetic expression is really computed
+
+00:01:37,120 --> 00:01:39,920
+down to a number and that is
+the number that then is the N.
+
+00:01:40,720 --> 00:01:43,760
+Okay, so reformulating the version from the
+
+00:01:43,760 --> 00:01:48,720
+slides in this way for explicit number
+computations, we get to this version.
+
+00:01:49,280 --> 00:01:53,120
+And then, indeed, we can ask questions
+like, what's the length of this list?
+
+00:01:53,120 --> 00:01:57,200
+Well, this is the mixed list because unlike
+in Haskell, we don't have homogeneous lists.
+
+00:01:57,200 --> 00:01:59,200
+So, this is a valid Prolog list
+
+00:01:59,200 --> 00:02:04,160
+that wouldn't be a valid list to give
+to Haskell, to the Haskell function.
+
+00:02:04,160 --> 00:02:05,360
+And I ask about the result.
+
+00:02:05,360 --> 00:02:06,720
+And then what do I get?
+
+00:02:06,720 --> 00:02:11,040
+Well, I get as a result really the
+number three and not s of s of s of zero.
+
+00:02:12,480 --> 00:02:12,980
+Okay.
+
+00:02:13,440 --> 00:02:22,240
+And, of course, I can also do now
+kind of backward queries, right?
+
+00:02:22,240 --> 00:02:25,840
+Remember that once we have rewritten the
+Haskell function to a Prolog predicate,
+
+00:02:25,840 --> 00:02:30,240
+we are not doomed to only use
+it in exactly one direction.
+
+00:02:30,240 --> 00:02:33,040
+So, for example, I could also say, well, what if I
+
+00:02:33,840 --> 00:02:40,800
+give a number here and asked for
+lists of that number as its length?
+
+00:02:40,800 --> 00:02:43,440
+Okay, so this is of course
+not possible in Haskell.
+
+00:02:43,440 --> 00:02:45,600
+In Prolog, you could ask a question like this.
+
+00:02:45,600 --> 00:02:46,560
+What is a list?
+
+00:02:46,560 --> 00:02:50,320
+(so, using a variable here) that has length three?
+
+00:02:50,320 --> 00:02:51,520
+Okay, now, what could we expect?
+
+00:02:51,520 --> 00:02:53,120
+Of course, you could say well
+maybe this is the answer,
+
+00:02:53,120 --> 00:02:55,520
+because Prolog has simply seen this already.
+
+00:02:55,520 --> 00:02:58,960
+But that would be very specific
+to answer with the list [1,2,a].
+
+00:02:59,520 --> 00:03:04,880
+Instead, what Prolog really should do
+is to give all the possible answers.
+
+00:03:05,440 --> 00:03:08,880
+Now, what are all lists of length three?
+
+00:03:08,880 --> 00:03:12,000
+Well, there are far too many to
+really write them down one by one.
+
+00:03:12,560 --> 00:03:16,320
+But it's possible to write them
+down in a very general way.
+
+00:03:16,320 --> 00:03:20,640
+Namely, by saying well, all the
+lists of length three are these ones.
+
+00:03:21,200 --> 00:03:21,440
+Okay.
+
+00:03:21,440 --> 00:03:23,040
+And here, you see something
+that I already mentioned,
+
+00:03:23,040 --> 00:03:25,680
+when I talked about the
+syntax of variables in Prolog.
+
+00:03:25,680 --> 00:03:28,480
+Where I said that sometimes
+Prolog uses the underscore,
+
+00:03:28,480 --> 00:03:34,080
+and then some cryptic combination of letters and
+numbers when it has to introduce a new variable.
+
+00:03:34,080 --> 00:03:36,480
+So, what this is basically saying is, well,
+
+00:03:37,200 --> 00:03:41,760
+if you want to have a list of length three,
+then, well, it should be of this form.
+
+00:03:41,760 --> 00:03:45,440
+And these three things are anything, right?
+
+00:03:45,440 --> 00:03:48,320
+Something we don't care or
+we don't know anything about.
+
+00:03:48,320 --> 00:03:49,840
+So, these are three variables.
+
+00:03:51,360 --> 00:03:54,880
+Three different variables because
+the list could have different
+
+00:03:54,880 --> 00:03:57,600
+entries here and still be a list of length three.
+
+00:03:59,280 --> 00:04:04,000
+Okay, so this is saying that a list with three
+arbitrary elements, and arbitrary, of course,
+
+00:04:04,000 --> 00:04:09,200
+in the sense that we're just having a variable
+there means that it could be filled with anything.
+
+00:04:13,040 --> 00:04:16,240
+Okay, then there is one reason for caution.
+
+00:04:16,240 --> 00:04:21,360
+So, actually related to this arithmetic
+versus symbolic interpretation
+
+00:04:23,600 --> 00:04:29,600
+of addition or of this operation.
+
+00:04:30,160 --> 00:04:37,840
+So, we could have attempted to actually write
+something like this without this "is" keyword
+
+00:04:37,840 --> 00:04:40,960
+for triggering an actual computation.
+
+00:04:40,960 --> 00:04:43,840
+Yes, just saying well, the
+length of the empty list is zero,
+
+00:04:43,840 --> 00:04:48,080
+the length of a non-empty list is M plus
+one where M is the length of Xs, right?
+
+00:04:48,080 --> 00:04:53,280
+So, that would be a shorter way to write
+this, but it wouldn't have the same outcome.
+
+00:04:53,280 --> 00:04:56,000
+Because now this would again be treated
+
+00:04:56,000 --> 00:05:00,160
+fully symbolically just as if I
+had used the s(M) syntax here.
+
+00:05:00,160 --> 00:05:04,160
+So, this plus one doesn't mean that
+one takes a number and adds one to it,
+
+00:05:04,160 --> 00:05:10,800
+it simply means that one builds the syntax
+expression, a syntax tree with plus at the root
+
+00:05:10,800 --> 00:05:14,560
+to the left, whatever N is, and
+to the right, this constant one.
+
+00:05:15,200 --> 00:05:19,280
+So, while this is something one
+could write in Prolog, so it is
+
+00:05:19,920 --> 00:05:23,840
+not the point that we can't use
+this, but it has a different result.
+
+00:05:24,400 --> 00:05:28,400
+So, for example, if we now compute the
+length of this list [1,2,a] again,
+
+00:05:28,400 --> 00:05:30,960
+we don't get three, we get zero
+plus one plus one plus one.
+
+00:05:30,960 --> 00:05:33,440
+So, this is kept as a symbolic expression.
+
+00:05:33,440 --> 00:05:37,840
+It's not computed down to the actual value three.
+
+00:05:38,720 --> 00:05:40,560
+Okay, and then you would say, well,
+
+00:05:41,200 --> 00:05:43,760
+what's the problem that this is
+zero plus one plus one plus one?
+
+00:05:43,760 --> 00:05:45,120
+And then I compute this down to three.
+
+00:05:45,120 --> 00:05:49,920
+Well, there are other side effects or side issues.
+
+00:05:49,920 --> 00:05:52,320
+So, for example, where previously I could say,
+
+00:05:52,960 --> 00:05:58,320
+give me all the lists of length three, and then
+I got this useful thing with the three variables.
+
+00:05:58,320 --> 00:06:02,080
+If I do this now for this predicate
+and I ask what are the lists of
+
+00:06:02,080 --> 00:06:03,760
+length three, then the answer is false.
+
+00:06:03,760 --> 00:06:08,720
+Which means no, there are no lists of
+that length, which is very surprising.
+
+00:06:08,720 --> 00:06:13,200
+But it has to do with the fact that Prolog
+will not treat this three the same as
+
+00:06:13,200 --> 00:06:16,560
+zero plus one plus one plus one, because
+this is kept as a symbolic expression.
+
+00:06:16,560 --> 00:06:20,880
+So, indeed, we could, for example,
+still ask Prolog, what are
+
+00:06:21,440 --> 00:06:23,760
+lists of length zero plus one plus one plus one?
+
+00:06:23,760 --> 00:06:25,440
+And it would give this result.
+
+00:06:25,440 --> 00:06:28,960
+But if you ask it for lists of length
+three, it wouldn't be able to answer this.
+
+00:06:28,960 --> 00:06:34,880
+Because with this version of the predicate
+numbers are treated fully symbolically,
+
+00:06:34,880 --> 00:06:40,800
+so Prolog will not somehow make a match between
+this zero plus one plus one plus one and this three.
+
+00:06:40,800 --> 00:06:42,640
+It's simply not happening here.
+
+00:06:42,640 --> 00:06:44,800
+Because we are not doing function evaluation,
+
+00:06:45,360 --> 00:06:48,480
+unless we use special things
+like for numbers.
+
+00:06:48,480 --> 00:06:50,560
+Yes, this is what makes a difference.
+
+00:06:50,560 --> 00:06:53,440
+Which brings us from this down to three.
+
+00:06:56,880 --> 00:06:58,880
+Okay, that's something I
+want to show on this example.
+
+00:06:59,440 --> 00:07:01,840
+And then I have another example.
+
+00:07:04,400 --> 00:07:08,560
+And I don't think I will talk
+through this example in details.
+
+00:07:08,560 --> 00:07:11,840
+So, it is on the slides, you
+can follow the development here.
+
+00:07:11,840 --> 00:07:17,600
+So, the idea here is that
+again, take a Haskell function.
+
+00:07:17,600 --> 00:07:22,960
+So, this is not exactly the Quicksort version
+we saw earlier in the Haskell course part.
+
+00:07:22,960 --> 00:07:24,720
+But well, it's related to that, certainly.
+
+00:07:24,720 --> 00:07:29,040
+So, let's say we have a partition function,
+which can be used to partition a list
+
+00:07:30,240 --> 00:07:38,000
+according to some pivot element into smaller and
+greater list elements or in the earlier Haskell
+
+00:07:38,000 --> 00:07:41,600
+version of this program in this slide I
+used list comprehensions for doing this.
+
+00:07:41,600 --> 00:07:45,040
+But let's say this is simply a function,
+however, it is implemented in detail.
+
+00:07:46,000 --> 00:07:47,680
+And then a Quicksort of the empty list is
+
+00:07:47,680 --> 00:07:54,400
+the empty list. A Quicksort of something else
+is partitioning according to this head element.
+
+00:07:54,400 --> 00:07:59,760
+And then properly combining the results with
+recursive calls and append, etc.
+
+00:07:59,760 --> 00:08:02,800
+So, this is an example where
+we have several nested calls.
+
+00:08:02,800 --> 00:08:06,080
+And the message of this slide
+is mainly how to treat this.
+
+00:08:06,080 --> 00:08:10,640
+And the answer is well, treat it in the way
+we have done for the simpler examples as well.
+
+00:08:10,640 --> 00:08:18,800
+So, avoid these nested function calls by
+introducing names for the sub-expression,
+
+00:08:20,000 --> 00:08:22,320
+or subexpressions if there are several ones.
+
+00:08:22,320 --> 00:08:26,240
+And add local definitions,
+and later interpret these as
+
+00:08:27,200 --> 00:08:30,320
+additional preconditions when writing down a rule.
+
+00:08:31,680 --> 00:08:40,080
+Yes, so one first step could be to introduce a
+name "ls" for lowers for this first recursive call.
+
+00:08:40,960 --> 00:08:48,160
+And something similar, the greater list
+elements (lg) for the second sub-expression here.
+
+00:08:50,000 --> 00:08:54,960
+Okay, then you also have this append, which
+essentially is also a nested function call, right?
+
+00:08:54,960 --> 00:08:58,000
+It calls a function on this
+and this sub-expression.
+
+00:08:58,000 --> 00:09:02,640
+So, we need to also deal with this.
+
+00:09:03,840 --> 00:09:12,960
+Nice to not have this full nested function
+calls on the right-hand side and instead have
+
+00:09:12,960 --> 00:09:18,000
+a variable here so that you can easily
+rewrite this rule in predicate form.
+
+00:09:18,000 --> 00:09:20,240
+So, let's also introduce a name for this.
+
+00:09:20,240 --> 00:09:24,160
+So, that should be the result,
+this list. This is this expression.
+
+00:09:24,160 --> 00:09:26,640
+And then, for example, these two lines are already
+
+00:09:26,640 --> 00:09:30,320
+in the form where we can directly
+translate them to predicate form.
+
+00:09:31,120 --> 00:09:36,160
+And likewise, here because you always have
+variables on the inputs and output sides,
+
+00:09:36,160 --> 00:09:38,400
+we don't have any nested calls anymore.
+
+00:09:41,520 --> 00:09:47,280
+Okay, so that's how this could then be written.
+
+00:09:49,360 --> 00:09:51,680
+Yes, so quicksort of the empty list is the empty list.
+
+00:09:51,680 --> 00:09:54,000
+That's a translation of the first equation here.
+
+00:09:54,000 --> 00:09:56,000
+And then this is now systematic
+
+00:09:57,120 --> 00:10:01,520
+unlike here, where we wouldn't probably
+see direct matching to the Prolog side.
+
+00:10:01,520 --> 00:10:04,880
+So, quicksort of head and tail is some list.
+
+00:10:04,880 --> 00:10:09,760
+Alright, that's a translation of this line if ..., and
+then we list all the preconditions, which are the
+
+00:10:10,480 --> 00:10:12,960
+dependencies introduced in these local definitions.
+
+00:10:12,960 --> 00:10:14,240
+For example, that partition.
+
+00:10:14,240 --> 00:10:18,800
+So, let's say, partition here was a
+function with two arguments, two outputs.
+
+00:10:18,800 --> 00:10:22,960
+Now on the Prolog side, this would simply turn
+into predicates with four argument positions.
+
+00:10:22,960 --> 00:10:25,200
+Two for the inputs, and two for the outputs.
+
+00:10:25,200 --> 00:10:28,560
+So, with this call partition
+of h and t is the outcome.
+
+00:10:28,560 --> 00:10:30,960
+l1 and l2 would turn into a literal
+
+00:10:30,960 --> 00:10:34,000
+with this partition predicate
+with four argument positions.
+
+00:10:34,000 --> 00:10:37,520
+They have the tail as the inputs
+and l1, l2 as the outputs.
+
+00:10:38,240 --> 00:10:40,320
+So, the input-output is just by convention,
+
+00:10:40,320 --> 00:10:42,640
+because here, the first list is the
+inputs and then the outputs.
+
+00:10:42,640 --> 00:10:48,400
+That's not something that the predicate partition
+itself expresses in its type or something.
+
+00:10:49,120 --> 00:10:50,080
+Because there's no type.
+
+00:10:50,640 --> 00:10:54,320
+Okay, and then you have these
+recursive calls of the function here,
+
+00:10:54,320 --> 00:10:59,040
+they now turn into preconditions
+referring to the same predicate,
+
+00:10:59,040 --> 00:11:07,440
+quicksort of l1 is ls, quicksort of l1 is ls, quicksort
+of l2 is lg, quicksort of l2 is lg.
+
+00:11:07,440 --> 00:11:12,960
+And then this append-operator from the
+Haskell side can now be replaced by the
+
+00:11:12,960 --> 00:11:19,440
+append predicate that was actually introduced
+in the previous video, as an example.
+
+00:11:19,440 --> 00:11:27,280
+So, what you have here is ls appended with
+H, the list [H|LG] should be the result list.
+
+00:11:28,080 --> 00:11:30,640
+Let's turn this into a call
+of the predicate append.
+
+00:11:31,360 --> 00:11:39,440
+The one list, the other list in this Prolog
+syntax for lists and the one variable,
+
+00:11:39,440 --> 00:11:46,000
+which is, at the same time, also the output
+variable of the current quicksort case.
+
+00:11:46,800 --> 00:11:52,560
+Okay, and now, if you run this, together with an
+implementation for partition and the implementation
+
+00:11:52,560 --> 00:11:57,520
+for append that was developed in the previous
+video, then you have a Quicksort in Prolog.
+
+00:11:59,120 --> 00:12:04,640
+And then the main message is to get rid of
+these nested function calls via this chaining
+
+00:12:04,640 --> 00:12:08,960
+of predicates with the downside that for this,
+we have to introduce new variable names, right?
+
+00:12:08,960 --> 00:12:14,240
+So, these ls, lg these are things we didn't
+need indeed to express the original Haskell version.
+
+00:12:15,200 --> 00:12:21,680
+Okay, but we gain that now we at least can hope
+that we can also call this quicksort predicate
+
+00:12:22,240 --> 00:12:30,640
+in different ways than just giving it
+an input and asking for the output.
