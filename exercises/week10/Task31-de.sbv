@@ -1,5 +1,6 @@
 0:00:01.179,0:00:05.924
-Bei der Aufgabe 31 müssen wir jetzt diese while-Schleife, die wir auch schon in der Vorlesung gesehen haben...
+Bei der Aufgabe 31 müssen wir jetzt diese while-Schleife, die wir auch schon in der
+Vorlesung gesehen haben...
 
 0:00:06.402,0:00:09.538
 anwenden, um dieses Lücken-Programm hier unten zu vervollständigen.
@@ -13,7 +14,9 @@ und dann genau n-mal Faktoren annimmt
 und dann daraus ein Produkt berechnet und das ausgibt.
 
 0:00:23.561,0:00:32.135
-Was wir noch beachten müssen, ist, dass wir immer für jeden Faktor so einen String ausgeben sollen, welchen Faktor der User gerade eingeben soll, wenn wir dabei sind, in der Schleife.
+Was wir noch beachten müssen, ist, dass wir immer für jeden Faktor so einen String
+ausgeben sollen, welchen Faktor der User gerade eingeben soll, wenn wir dabei sind, in
+der Schleife.
 
 0:00:33.031,0:00:35.897
 Da sollte man sich am besten erst mal angucken, wie die
@@ -23,17 +26,20 @@ Schleife genau funktioniert.
 Wir haben hier einmal als erstes Argument für die Schleife einen Wert vom Typ a.
 
 0:00:42.812,0:00:47.921
-Das ist dann sozusagen der Startwert, wenn wir anfangen, der Startwert mit dem verglichen wird.
+Das ist dann sozusagen der Startwert, wenn wir anfangen, der Startwert mit dem verglichen
+wird.
 
 0:00:48.278,0:00:56.997
 Dann haben wir ein Prädikat was von a nach Boolean geht.
 Das heißt also, das ist die Kondition die überprüft wird.
 
 0:00:58.342,0:01:05.933
-Dann haben wir den Schleifen-Körper, das ist das hier. Wir haben wieder das a, was wir am Anfang hatten, also immer noch diesen Wert vom Typ a ...
+Dann haben wir den Schleifen-Körper, das ist das hier. Wir haben wieder das a, was wir
+am Anfang hatten, also immer noch diesen Wert vom Typ a ...
 
 0:01:07.885,0:01:13.300
-und anhand von dem wird dann irgendwie der Schleifen-Körper ausgeführt. Das ist dann (vom Typ) IO-gekapseltes
+und anhand von dem wird dann irgendwie der Schleifen-Körper ausgeführt. Das ist dann
+(vom Typ) IO-gekapseltes
 a ...
 
 0:01:14.626,0:01:17.996
@@ -47,19 +53,23 @@ Dann wird ein Loop ausgeführt, der auch wieder von a abhängt,
 wobei hier jetzt a das erste Argument ist.
 
 0:01:30.881,0:01:38.169
-Der Loop funktioniert jetzt so, dass er das Prädikat auf das erste Argument anwendet und wenn das stimmt dann wird der Körper einmal ausgeführt.
+Der Loop funktioniert jetzt so, dass er das Prädikat auf das erste Argument anwendet und
+wenn das stimmt dann wird der Körper einmal ausgeführt.
 
 0:01:38.611,0:01:44.001
-Da der Körper hier so einen gekapselten Wert hat, müssen wir um den Wert tatsächlich rauszukriegen diesen Pfeil benutzen.
+Da der Körper hier so einen gekapselten Wert hat, müssen wir um den Wert tatsächlich
+rauszukriegen diesen Pfeil benutzen.
 
 0:01:44.479,0:01:53.968
-Dann bekommen wir gerade Dieses hier raus, a und dann wird der Loop einfach mit diesem neuen Wert ausgeführt.
+Dann bekommen wir gerade Dieses hier raus, a und dann wird der Loop einfach mit diesem
+neuen Wert ausgeführt.
 
 0:01:53.968,0:01:56.830
 Das macht man einfach nur, weil man in Haskell keine Werte überschreiben kann.
 
 0:01:57.475,0:02:06.183
-Bei normalen Schleifen in einer imperativen Sprache würde man ja einfach irgendwie die Variable erhöhen oder verändern, in der Schleife.
+Bei normalen Schleifen in einer imperativen Sprache würde man ja einfach irgendwie die
+Variable erhöhen oder verändern, in der Schleife.
 
 0:02:06.183,0:02:09.335
 Das geht hier nicht. Wenn wir einmal was zugewiesen haben, dann bleibt das auch so.
@@ -68,10 +78,12 @@ Das geht hier nicht. Wenn wir einmal was zugewiesen haben, dann bleibt das auch 
 Deswegen müssen einfach einen neuen Wert zuweisen und den dann in den Loop packen.
 
 0:02:14.426,0:02:19.130
-Dann wird das immer weiter ausgeführt, solange bis dieses neue x dann irgendwann nicht mehr das Prädikat befriedigt.
+Dann wird das immer weiter ausgeführt, solange bis dieses neue x dann irgendwann nicht
+mehr das Prädikat befriedigt.
 
 0:02:20.604,0:02:26.972
-Wenn das passiert, dann geben wir das x einfach aus. Das hier ist einfach nur eine Anweisung, die das Dahinterstehende in IO einbettet, ...
+Wenn das passiert, dann geben wir das x einfach aus. Das hier ist einfach nur eine
+Anweisung, die das Dahinterstehende in IO einbettet, ...
 
 0:02:27.285,0:02:31.745
 weil hier soll ja auch wieder ein IO-Wert rauskommen,
@@ -81,10 +93,12 @@ deswegen müssen wir das davorschreiben.
 Also so funktioniert die Schleife schonmal.
 
 0:02:36.433,0:02:42.017
-Das heißt, wir müssen dann, wenn wir diese Schleifen benutzen, auch wieder diese Pfeil-Methode benutzen, weil ja hier auch wieder ein gekapselter Wert herauskommt.
+Das heißt, wir müssen dann, wenn wir diese Schleifen benutzen, auch wieder diese
+Pfeil-Methode benutzen, weil ja hier auch wieder ein gekapselter Wert herauskommt.
 
 0:02:42.312,0:02:48.982
-Das heißt, wenn wir den Wert haben wollen, dann müssen wir dieselbe Schreibweise hier haben und dann müsste hier halt „while irgendwas“ stehen, dahinter.
+Das heißt, wenn wir den Wert haben wollen, dann müssen wir dieselbe Schreibweise hier
+haben und dann müsste hier halt „while irgendwas“ stehen, dahinter.
 
 0:02:49.148,0:02:50.388
 Das ist hier ja auch schon so, hier unten.
@@ -93,16 +107,19 @@ Das ist hier ja auch schon so, hier unten.
 So, jetzt müssen wir uns überlegen, was wir hier tatsächlich reinschreiben.
 
 0:02:58.569,0:03:08.040
-Also wir bekommen eine Zahl, dieses n und da sollen wir jetzt so oft die Schleife durchführen und so viele Faktoren annehmen.
+Also wir bekommen eine Zahl, dieses n und da sollen wir jetzt so oft die Schleife
+durchführen und so viele Faktoren annehmen.
 
 0:03:08.151,0:03:11.525
 Das heißt, wir müssen uns ja … Wenn wir immer wieder Strings ausgeben wollen, die...
 
 0:03:13.146,0:03:19.679
-dem User angeben sollen welchen Faktor der eingeben soll, also ob der Erste, Zweite, usw. Dann müssen wir irgendwie uns speichern, welchen Schritt wir gerade haben, ...
+dem User angeben sollen welchen Faktor der eingeben soll, also ob der Erste, Zweite, usw.
+Dann müssen wir irgendwie uns speichern, welchen Schritt wir gerade haben, ...
 
 0:03:19.679,0:03:24.487
-vom ersten Schritt bis zum Ende und wir müssen das Produkt auch noch speichern das sollen wir ja am Ende ausgeben.
+vom ersten Schritt bis zum Ende und wir müssen das Produkt auch noch speichern das
+sollen wir ja am Ende ausgeben.
 
 0:03:25.150,0:03:27.531
 Das heißt, was sich hier anbietet, ist ein Tupel zu benutzen.
@@ -111,7 +128,8 @@ Das heißt, was sich hier anbietet, ist ein Tupel zu benutzen.
 Dieses a, was wir hier drin haben ist dann ein Tupel.
 
 0:03:33.408,0:03:41.961
-Das ist dann ein Integer-Tupel: Einmal die Schritte und einmal das Produkt, das wir schon haben.
+Das ist dann ein Integer-Tupel: Einmal die Schritte und einmal das Produkt, das wir schon
+haben.
 
 0:03:42.698,0:03:46.077
 So, das heißt dann also: Wir wissen schon mal, dass das jetzt
@@ -121,50 +139,63 @@ hier herauskommt.
 Jetzt wissen wir auch, dass das hier ein Tupel ist.
 
 0:03:48.332,0:03:53.044
-Dann müssen wir uns überlegen, was wir am Anfang reintun … Das erste Argument, also das Tupel, was wir am Anfang in die while-Schleife (packen).
+Dann müssen wir uns überlegen, was wir am Anfang reintun … Das erste Argument, also
+das Tupel, was wir am Anfang in die while-Schleife (packen).
 
 0:03:56.010,0:04:02.570
-Da können wir jetzt überlegen: Wenn wir die Schleife das erste Mal ausführen … Also, das hier soll der erste Schritt sein und nicht der nullte oder so.
+Da können wir jetzt überlegen: Wenn wir die Schleife das erste Mal ausführen … Also,
+das hier soll der erste Schritt sein und nicht der nullte oder so.
 
 0:04:02.938,0:04:10.681
-Das heißt wir können hier schon mal die 1 vorne eintragen, das sind die Schritte, das erste Element des Tupels und das zweite ist das Produkt.
+Das heißt wir können hier schon mal die 1 vorne eintragen, das sind die Schritte, das
+erste Element des Tupels und das zweite ist das Produkt.
 
 0:04:11.286,0:04:20.014
 Da wir jetzt hier schon gesagt haben: Das muss eine
 positive Zahl sein … Wo stand das? Hier! Also n ist ein positiver Integer.
 
 0:04:20.864,0:04:28.463
-Das heißt wir haben keine 0 und keine negativen Zahlen. Wir können hier einfach als Produkt am Anfang die 1 eintragen, weil alles mal 1 ist halt das, was das Andere war.
+Das heißt wir haben keine 0 und keine negativen Zahlen. Wir können hier einfach als
+Produkt am Anfang die 1 eintragen, weil alles mal 1 ist halt das, was das Andere war.
 
 0:04:29.071,0:04:36.726
-Das heißt, egal was dann kommt, dann passt das. Das würde nur nicht passen, wenn das jetzt 0 wäre, aber die 0 dürfen wir ja ausschließen, das ist dann egal.
+Das heißt, egal was dann kommt, dann passt das. Das würde nur nicht passen, wenn das
+jetzt 0 wäre, aber die 0 dürfen wir ja ausschließen, das ist dann egal.
 
 0:04:37.057,0:04:42.867
-Also wenn bei 0 und bei negativen Zahlen Quatsch rausbekommen, müssen wir uns darum nicht kümmern, weil wir das in der Aufgabe auch ausgeschlossen haben.
+Also wenn bei 0 und bei negativen Zahlen Quatsch rausbekommen, müssen wir uns darum
+nicht kümmern, weil wir das in der Aufgabe auch ausgeschlossen haben.
 
 0:04:44.488,0:04:51.628
-So, wir brauchen unser Prädikat, also wir müssen wissen, wann die Schleife weiter geht und wenn es nicht mehr erfüllt ist, das Prädikat, dann muss man aufhören.
+So, wir brauchen unser Prädikat, also wir müssen wissen, wann die Schleife weiter geht
+und wenn es nicht mehr erfüllt ist, das Prädikat, dann muss man aufhören.
 
 0:04:52.549,0:04:58.534
-Das heißt, wenn wir einfach unsere Schritte hochzählen mit jedem Schritt, dann müssen wir einfach gucken, dass das immer kleiner gleich n ist.
+Das heißt, wenn wir einfach unsere Schritte hochzählen mit jedem Schritt, dann müssen
+wir einfach gucken, dass das immer kleiner gleich n ist.
 
 0:04:58.774,0:05:03.663
 Sobald das größer ist, ist dann Schluss. Dann haben wir gerade die n Schritte erreicht.
 
 0:05:05.000,0:05:13.266
-Das heißt, wir machen jetzt eine Lambda- Funktion und wir können jetzt das zweite Element von dem Tupel einfach ignorieren, weil wir das ja nicht brauchen. Das Produkt hat ja keinen Einfluss darauf, wann wir jetzt aufhören.
+Das heißt, wir machen jetzt eine Lambda- Funktion und wir können jetzt das zweite
+Element von dem Tupel einfach ignorieren, weil wir das ja nicht brauchen. Das Produkt hat
+ja keinen Einfluss darauf, wann wir jetzt aufhören.
 
 0:05:13.892,0:05:20.624
-Das heißt, wir können hier ist einfach schreiben x und dann (eine) Wildcard, für das Zweite, es ist egal was da steht, das hat eh keinen Effekt oder ist nicht wichtig.
+Das heißt, wir können hier ist einfach schreiben x und dann (eine) Wildcard, für das
+Zweite, es ist egal was da steht, das hat eh keinen Effekt oder ist nicht wichtig.
 
 0:05:22.135,0:05:24.390
 Und dann gucken wir einfach: Ist x kleiner gleich n.
 
 0:05:28.074,0:05:34.838
-Dann brauchen wir jetzt noch den Körper. Das schreibe ich jetzt mal hier drunter, das ist nämlich sonst ein bisschen sehr lang in einer Zeile.
+Dann brauchen wir jetzt noch den Körper. Das schreibe ich jetzt mal hier drunter, das
+ist nämlich sonst ein bisschen sehr lang in einer Zeile.
 
 0:05:37.306,0:05:46.033
-Da haben wir jetzt eine Funktion, die auch von diesem Typen a, also Integer-Tupel nach IO a, also IO-Integer geht.
+Da haben wir jetzt eine Funktion, die auch von diesem Typen a, also Integer-Tupel nach IO
+a, also IO-Integer geht.
 
 0:05:46.751,0:05:49.543
 Das heißt, wir geben hier erstmal unser Argument ein …
@@ -174,7 +205,8 @@ Nennen wir das mal s für step und p für product...
 Also unser Tupel kommt rein und jetzt müssen wir damit was machen.
 
 0:06:01.571,0:06:06.086
-Das soll ja ein IO-Tupel sein, also muss hier ein do drin stehen und dann überlegen wir, was wir da reinschreiben.
+Das soll ja ein IO-Tupel sein, also muss hier ein do drin stehen und dann überlegen wir,
+was wir da reinschreiben.
 
 0:06:06.491,0:06:10.000
 Als Erstes sollte der User hier gepromptet werden, was der jetzt eingeben soll.
@@ -183,20 +215,24 @@ Als Erstes sollte der User hier gepromptet werden, was der jetzt eingeben soll.
 Da machen wir putString … "enter factor" .
 
 0:06:20.101,0:06:34.405
-Dann geben wir hier unseren step counter aus … show s. Dann müssen wir das hier klammern … und fügen wir noch einen Doppelpunkt dahinter hinzu.
+Dann geben wir hier unseren step counter aus … show s. Dann müssen wir das hier
+klammern … und fügen wir noch einen Doppelpunkt dahinter hinzu.
 
 0:06:38.331,0:06:45.129
-Also jetzt sagt er: Geben Sie den … Und dann wird der Schritt angezeigt, an dem wir gerade sind. Hier z. B. ist das Tupel (1,1), also Schritt 1.
+Also jetzt sagt er: Geben Sie den … Und dann wird der Schritt angezeigt, an dem wir
+gerade sind. Hier z. B. ist das Tupel (1,1), also Schritt 1.
 
 0:06:45.573,0:06:51.886
-Dann wird also "geben Sie den ersten Faktor ein" blabla und so weiter angezeigt. Das wird dann mit jedem Schritt erhöht und dann steht immer der richtige Schritt da.
+Dann wird also "geben Sie den ersten Faktor ein" blabla und so weiter angezeigt. Das wird
+dann mit jedem Schritt erhöht und dann steht immer der richtige Schritt da.
 
 0:06:56.675,0:07:01.223
 Als Zweites lesen wir den Faktor.
 Also nehmen wir z. B. newFactor oder so (als Namen) …
 
 0:07:05.404,0:07:13.465
-getLine... Holen uns den vom User und dann müssen wir jetzt etwas zurückgeben, wenn die ganze Sache vorbei ist.
+getLine... Holen uns den vom User und dann müssen wir jetzt etwas zurückgeben, wenn die
+ganze Sache vorbei ist.
 
 0:07:14.423,0:07:18.690
 Da müssen wir jetzt ein IO Integer-Tupel rausbekommen.
@@ -206,20 +242,25 @@ Das heißt, wir müssen jetzt hier wieder ein return benutzen:
 Wir kapseln irgendein Tupel ein und dann haben wir einen IO-Wert.
 
 0:07:28.031,0:07:34.739
-Dann müssen wir einfach mal gucken, was wir jetzt mit jedem Schritt verändern wollen, an dem Argument, was mit dem Prädikat geprüft wird.
+Dann müssen wir einfach mal gucken, was wir jetzt mit jedem Schritt verändern wollen,
+an dem Argument, was mit dem Prädikat geprüft wird.
 
 0:07:35.328,0:07:45.440
-Wir erhöhen den step counter um 1, weil jetzt der nächste Schritt kommt und das Produkt multiplizieren das jetzt einfach mit dem neuen Faktor.
+Wir erhöhen den step counter um 1, weil jetzt der nächste Schritt kommt und das Produkt
+multiplizieren das jetzt einfach mit dem neuen Faktor.
 
 0:07:51.481,0:08:03.266
-Dann geht das immer weiter durch, bis irgendwann der step counter oder das s halt, das erste Element des Tupels, wenn das größer ist als n,
+Dann geht das immer weiter durch, bis irgendwann der step counter oder das s halt, das
+erste Element des Tupels, wenn das größer ist als n,
 dann hören wir auf und dann geben wir unser Produkt aus.
 
 0:08:03.616,0:08:12.420
-Also wir geben jetzt nicht nur das Produkt aus, sondern wir geben beides aus, weil das hier, der step counter ist ja auch im Tupel, in dem Integer-Tupel.
+Also wir geben jetzt nicht nur das Produkt aus, sondern wir geben beides aus, weil das
+hier, der step counter ist ja auch im Tupel, in dem Integer-Tupel.
 
 0:08:12.973,0:08:20.789
-Aber wir brauchen den ersten Teil davon überhaupt nicht am Ende, das heißt wir können den dann ignorieren und nehmen nur das Produkt raus.
+Aber wir brauchen den ersten Teil davon überhaupt nicht am Ende, das heißt wir können
+den dann ignorieren und nehmen nur das Produkt raus.
 
 0:08:52.235,0:08:54.319
 Dann zeigen wir jetzt einfach das Produkt...
@@ -228,10 +269,12 @@ Dann zeigen wir jetzt einfach das Produkt...
 Da das ein Tupel ist, das Ergebnis müssen wir jetzt noch die zweite Stelle rausholen.
 
 0:08:59.036,0:09:10.195
-Wir machen show snd und dann return, weil das hier ist ja ein Tupel, wie hier, das Produkt ist die zweite Stelle.
+Wir machen show snd und dann return, weil das hier ist ja ein Tupel, wie hier, das
+Produkt ist die zweite Stelle.
 
 0:09:10.453,0:09:14.245
-Das heißt wir müssen erstmal snd aufrufen, dann bekommen wir das Zweite raus und dann zeigen wir das.
+Das heißt wir müssen erstmal snd aufrufen, dann bekommen wir das Zweite raus und dann
+zeigen wir das.
 
 0:09:17.544,0:09:18.703
 Dann machen wir noch einen Test …
@@ -250,13 +293,16 @@ Wir geben unsere Anzahl der Faktoren an 3 … 9, 3, 2 …
 54 kriegen wir raus, stimmt das? Ja, stimmt!
 
 0:09:58.897,0:10:06.294
-Und wenn wir jetzt anderes angibt, dann geht es natürlich nicht mehr. Wenn ich jetzt hier mit einer 0 anfange, dann kommt 1 raus, stimmt nicht, aber ist egal …
+Und wenn wir jetzt anderes angibt, dann geht es natürlich nicht mehr. Wenn ich jetzt
+hier mit einer 0 anfange, dann kommt 1 raus, stimmt nicht, aber ist egal …
 
 0:10:06.386,0:10:11.570
-Und wenn wir irgendwas Negatives angeben, dann ist das auch falsch, dann läuft nämlich die Schleife auch direkt gar nicht durch, ...
+Und wenn wir irgendwas Negatives angeben, dann ist das auch falsch, dann läuft nämlich
+die Schleife auch direkt gar nicht durch, ...
 
 0:10:11.865,0:10:21.601
-weil das ja sofort kleiner als x, dann kriegen wir auch eine 1, stimmt nicht, aber (das) macht ja eh keinen Sinn. Was ist denn Anzahl der Faktoren -5, das heißt ja nichts.
+weil das ja sofort kleiner als x, dann kriegen wir auch eine 1, stimmt nicht, aber (das)
+macht ja eh keinen Sinn. Was ist denn Anzahl der Faktoren -5, das heißt ja nichts.
 
 0:10:22.890,0:10:25.467
 Das könnte man jetzt noch abfangen, aber das ist kein Teil der Aufgabe.

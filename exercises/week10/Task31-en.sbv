@@ -29,7 +29,8 @@ So, you could imagine this function is
 some kind of a “checker”. It checks whether something is fulfilled or not.
 
 0:00:40.240,0:00:45.840
-And then we have a function that takes something of type “a” and returns something of type “IO a”.
+And then we have a function that takes something of type “a” and returns something of
+type “IO a”.
 
 0:00:46.720,0:00:47.520
 For me,
@@ -39,17 +40,20 @@ if this were my first time reading this task,
 I'd say this means this the function here is
 
 0:00:55.440,0:01:02.080
-going to be the body of the loop because we know what a while-loop is from other courses…
+going to be the body of the loop because we know what a while-loop is from other
+courses…
 
 0:01:02.080,0:01:13.040
-from programming in general. And this IO here, it should indicate that this function has a do-block.
+from programming in general. And this IO here, it should indicate that this function has
+a do-block.
 
 0:01:13.760,0:01:18.080
 And at the end of the do-block, we're going
 to have “return” something of type “a”.
 
 0:01:19.920,0:01:26.800
-And then finally, we're going to have “IO a”. So, “while” takes these three parameters.
+And then finally, we're going to have “IO a”. So, “while” takes these three
+parameters.
 
 0:01:27.440,0:01:30.960
 The “a” is going to be just something of type “a” (anything).
@@ -91,10 +95,12 @@ Now “loop x” is a function that takes
 just one argument x and then it checks whether x fulfills the predicate p.
 
 0:02:29.520,0:02:38.800
-And if it does, then we go to this do-block. In this new block, we do two things: first we apply
+And if it does, then we go to this do-block. In this new block, we do two things: first
+we apply
 
 0:02:38.800,0:02:44.640
-the function “body” which should be given as an argument by whoever uses this function “while”,
+the function “body” which should be given as an argument by whoever uses this
+function “while”,
 
 0:02:45.600,0:02:47.600
 and we just apply it to an x,
@@ -104,7 +110,8 @@ and we store the result in a new x, and
 then we do “loop” again on this new x.
 
 0:02:55.920,0:03:02.560
-But if the x doesn't fulfill the predicate, then we just return x itself. So, what we're saying is:
+But if the x doesn't fulfill the predicate, then we just return x itself. So, what we're
+saying is:
 
 0:03:03.280,0:03:09.600
 take this x and see if it fulfills p, and then if it does,
@@ -113,7 +120,8 @@ take this x and see if it fulfills p, and then if it does,
 then change something in it using the function “body”,
 
 0:03:13.920,0:03:22.320
-and then store the new value here, and apply “loop” again to this new value. Otherwise,
+and then store the new value here, and apply “loop” again to this new value.
+Otherwise,
 
 0:03:22.320,0:03:32.320
 if it doesn't fulfill the condition, then just
@@ -220,7 +228,8 @@ Here we have a “return”. But we have a problem here which is that we want to
 two values to be used later in the next run of the loop,
 
 0:07:03.760,0:07:11.600
-which are “x” and “i”. “i” is the counter and “x” is the value of the factor that the user entered.
+which are “x” and “i”. “i” is the counter and “x” is the value of the
+factor that the user entered.
 
 0:07:12.720,0:07:19.280
 The solution to this problem is to use something which counts as one parameter,
@@ -232,7 +241,8 @@ but it actually contains information of two things. And for this, we can use a t
 So, I'm going to put the index first and I'm going to put the value of x second.
 
 0:07:38.560,0:07:44.240
-And this means we also have to change the initial value which is this “a” we talked about.
+And this means we also have to change the initial value which is this “a” we talked
+about.
 
 0:07:46.800,0:07:50.960
 So, it's going to be a tuple. It's still going to have zero as an index.
@@ -257,16 +267,19 @@ So, if we were doing addition instead of multiplication, we would
 have “0” here because zero is the neutral element in addition.
 
 0:08:22.000,0:08:29.120
-And now we also have to change this one here. So, this one doesn't take just an Integer… an index.
+And now we also have to change this one here. So, this one doesn't take just an
+Integer… an index.
 
 0:08:30.640,0:08:37.120
 Now it takes a tuple which has the index first and then it has whatever as a second.
 
 0:08:37.120,0:08:44.160
-We don't care and we still check whether this “i” (this index) is still smaller than n.
+We don't care and we still check whether this “i” (this index) is still smaller than
+n.
 
 0:08:45.680,0:08:55.040
-Now if you look here, what we just did is sending the index as it is to the next run of the loop,
+Now if you look here, what we just did is sending the index as it is to the next run of
+the loop,
 
 0:08:55.040,0:08:59.680
 and we send the x as it is to the next run of the loop, which is totally useless.
@@ -294,7 +307,8 @@ And here, this function “body” is still
 taking just one parameter which is “i” (the index). This is not good.
 
 0:09:38.960,0:09:47.200
-So, we need to do i and the old value of x which is the factor that the user entered the last time…
+So, we need to do i and the old value of x which is the factor that the user entered the
+last time…
 
 0:09:48.240,0:09:50.160
 the last one of this loop.
@@ -325,16 +339,19 @@ And then we do concatenation again.
 And then we do “show” again. And now we want the result.
 
 0:11:01.600,0:11:10.400
-How do we get the result? Well… the result is stored in this here… this “returned”.
+How do we get the result? Well… the result is stored in this here… this
+“returned”.
 
 0:11:10.400,0:11:14.480
 So, if you look here, this whole thing
 
 0:11:15.360,0:11:24.880
-is just applying “while” to these three parameters and then storing the result in this variable.
+is just applying “while” to these three parameters and then storing the result in
+this variable.
 
 0:11:27.040,0:11:36.560
-But if you look at this line here, we have return a tuple, which contains the index and the result.
+But if you look at this line here, we have return a tuple, which contains the index and
+the result.
 
 0:11:37.520,0:11:40.880
 So, this is going to be the final result because every time it's
@@ -361,10 +378,12 @@ second of returned.
 Now let's do a final check. So, the type signature of while is “a”.
 
 0:12:32.160,0:12:36.480
-And then something that takes “a” and returns boolean (Bool). Something that takes “a”.
+And then something that takes “a” and returns boolean (Bool). Something that takes
+“a”.
 
 0:12:36.480,0:12:46.080
-It returns “IO” of “a”. And finally, we get “IO a”. Let's see. So, here we have something “a”.
+It returns “IO” of “a”. And finally, we get “IO a”. Let's see. So, here we
+have something “a”.
 
 0:12:46.080,0:12:51.680
 And just like I said, “a” doesn't specify anything. So, “a” could be a tuple.
@@ -373,7 +392,8 @@ And just like I said, “a” doesn't specify anything. So, “a” could be a t
 There's no problem with that.
 
 0:12:55.200,0:13:01.040
-And then we have the predicate. This is a function that takes something of the same type here.
+And then we have the predicate. This is a function that takes something of the same type
+here.
 
 0:13:01.040,0:13:09.360
 it's a tuple and it returns True or False. And finally, we have “body”
@@ -382,7 +402,8 @@ it's a tuple and it returns True or False. And finally, we have “body”
 which should take something of type “a” and return something of type “IO a”.
 
 0:13:14.960,0:13:23.040
-This is type “a”, and this here is “IO a” because this is “a”. And we have “return” here.
+This is type “a”, and this here is “IO a” because this is “a”. And we have
+“return” here.
 
 0:13:23.040,0:13:26.960
 So, everything looks fine. Okay now let's test it.
@@ -394,10 +415,12 @@ So, let's do “main”. Let's say I want to multiply four numbers.
 2, 2, 3, 5.
 
 0:13:42.000,0:13:49.520
-As you can see, it is working. I still need to move this a little bit away from the word factor.
+As you can see, it is working. I still need to move this a little bit away from the word
+factor.
 
 0:13:50.240,0:14:02.800
-Okay let's do it. Okay, space here and space here. And let's reload “main”. Let's say five numbers.
+Okay let's do it. Okay, space here and space here. And let's reload “main”. Let's say
+five numbers.
 
 0:14:05.760,0:14:10.000
 2, 2, 3, 3, 5.
