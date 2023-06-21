@@ -31,7 +31,7 @@ The beginnings of individual slides in the respective subtitle files can be anno
 | GitHub username | Lines |
 | :-- | --: |
 | Gotai | 785 |
-| Nick46000 | 751 |
+| Nick46000 | 785 |
 | TMUniversal | 53 |
 | michalitv21 | 19 |
 | MagnolieH | 14 |
