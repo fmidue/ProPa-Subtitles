@@ -1,0 +1,432 @@
+0:00:01.600,0:00:06.960
+Betrachten wir ein Beispiel für
+Resolution, und zwar
+
+0:00:06.960,0:00:15.920
+indem wir dieses Beispiel unter der Annahme betrachten,
+dass wir die folgende Abfrage haben.
+
+0:00:18.160,0:00:25.520
+Ja, diese Abfrage, die aus zwei Literalen besteht
+mit Variablen und insbesondere auch mit einer
+
+0:00:25.520,0:00:31.120
+Variable, die in mehr als einem Literal vorkommt.
+Denn das ist der Fall, mit dem wir es zu tun haben.
+
+0:00:31.760,0:00:36.560
+Und nehmen wir auch an, wir haben ein
+Programm und es hat vielleicht viele Regeln.
+
+0:00:36.560,0:00:40.320
+Und eine davon ist diese, und das ist
+die wir in einem Moment verwenden werden.
+
+0:00:40.320,0:00:46.880
+Aber wie Sie wissen, könnten wir im Prinzip
+jede beliebige Regel in einem Programm nehmen, wenn wir
+
+0:00:46.880,0:00:51.200
+tatsächlich einen Resolutionsschritt mit
+einem der Literale in der Abfrage.
+
+0:00:52.720,0:01:02.640
+Okay, lassen Sie mich auch weitere Entscheidungen darüber treffen,
+wie die Abfrage zu zerlegen ist, auf der Folie 74,
+
+0:01:02.640,0:01:07.360
+gab es diese Aufteilung in P oder die
+Literale, die vor dem Literal auftreten
+
+0:01:07.360,0:01:11.440
+Ich interessiere mich für das Literale
+L und dann alle danach auftretenden.
+
+0:01:11.440,0:01:17.120
+Für diesen speziellen Fall könnte man dies also so sehen
+betrachten, dass dies unser interessantes
+
+0:01:18.160,0:01:24.240
+Literal L, ja, das, auf das wir uns konzentrieren wollen.
+
+0:01:24.240,0:01:27.920
+Es gibt kein P im Voraus, also
+gibt es hier eine leere Sequenz.
+
+0:01:27.920,0:01:32.960
+P wäre leer, und dann gibt es
+diese andere Folge von Abfragen, Q.
+
+0:01:33.520,0:01:36.320
+In diesem Fall besteht Q genau
+aus einer Abfrage, aber es könnte natürlich
+
+0:01:36.880,0:01:42.480
+könnte es weitere Abfragen geben und der
+Rest der Erklärung würde immer noch gelten.
+
+0:01:43.280,0:01:48.400
+Okay, das ist also die Wahl von L
+und Q im Sinne der Folie 74.
+
+0:01:49.440,0:01:56.080
+Und dann habe ich bereits erwähnt, dass wir davon ausgehen
+wir diese Klausel gewählt haben, um sie zu lösen.
+
+0:01:56.080,0:01:58.000
+Und dann, nun, was bedeutet das?
+
+0:01:58.000,0:02:03.520
+Nun, der Kopf wurde auf der Folie als L0 bezeichnet,
+
+0:02:04.880,0:02:09.280
+und das ist es, was wir mit L unifizieren wollen,
+um die Resolution anzuwenden.
+
+0:02:09.280,0:02:12.320
+Und dann die Literale auf
+der rechten Seite der
+
+0:02:12.320,0:02:16.480
+Klausel, die wir verwenden werden,
+werden L1 bis Ln genannt.
+
+0:02:16.480,0:02:22.560
+Und natürlich wäre in diesem einfachen Fall n
+eins sein, und wir haben genau nur die L1.
+
+0:02:24.400,0:02:27.520
+Okay, so sieht also der Aufbau hier aus.
+
+0:02:27.520,0:02:36.080
+Und dann sagt die Folie, dass wir den
+Resolutionsschritt anwenden können, wenn L und L0 unifizierbar sind.
+
+0:02:36.080,0:02:45.280
+Okay, das ist also die Frage, die wir zuerst stellen müssen
+Sind dieses L und dieses L0 tatsächlich unifizierbar?
+
+0:02:47.120,0:02:49.840
+Das ist also etwas, das wir immer tun müssen
+wenn man eine Resolution anwenden will.
+
+0:02:51.760,0:03:00.160
+Nun, man könnte jetzt einen Algorithmus anwenden, um
+oder herausfinden, ob dies der Fall ist.
+
+0:03:00.800,0:03:05.600
+Aber natürlich habe ich schon erwähnt, dass man
+nicht immer einen Algorithmus anwenden muss.
+
+0:03:05.600,0:03:10.960
+Wir können uns einfach unsere Begriffe ansehen
+und sehen, was die Lösung...
+
+0:03:10.960,0:03:14.000
+Nun, denken Sie an die Möglichkeiten, die Sie haben.
+
+0:03:14.000,0:03:17.600
+Und dann sehen wir zum Beispiel hier,
+dass X wohl Julia sein muss,
+
+0:03:17.600,0:03:23.680
+und Z muss Mary sein, und dann ist
+das okay, das passt.
+
+0:03:23.680,0:03:25.680
+Und natürlich müssen wir diese beiden Entscheidungen treffen.
+
+0:03:25.680,0:03:26.960
+Also, es gibt keine Wahl, wirklich.
+
+0:03:26.960,0:03:28.080
+Es gibt nichts Allgemeineres.
+
+0:03:28.080,0:03:33.520
+Man kann nicht eine Variable hier lassen, um
+dieses L und jenes zu unifizieren, da man wirklich
+
+0:03:34.400,0:03:37.040
+genau diese beiden Entscheidungen treffen muss.
+
+0:03:37.040,0:03:44.360
+Die Antwort ist also ja und der allgemeinste
+Unifikator ist der folgende.
+
+0:03:44.360,0:03:53.120
+Der allgemeinste Unifikator, das ist wirklich
+die Substitution, die X durch
+
+0:03:54.960,0:03:59.840
+Juliet und Z durch Mary ersetzt.
+
+0:04:03.520,0:04:10.400
+Okay, beachten Sie, dass hier bereits die
+Variablen in der Regel unterschiedlich sind
+
+0:04:10.400,0:04:15.120
+und in der Abfrage, mit der wir
+begonnen haben, sonst wäre das nicht der Fall,
+
+0:04:15.120,0:04:18.960
+hätten Sie vielleicht zuerst die Variablen
+im Programm umbenannt, richtig?
+
+0:04:18.960,0:04:22.320
+Also, nehmen wir an, dass dies
+wäre hier Y und Y gewesen.
+
+0:04:22.320,0:04:27.280
+Dann könnten wir noch L und L0 unifizieren.
+L0 unifizieren, aber das würde auch das Y berühren.
+
+0:04:27.280,0:04:30.800
+Und das könnte gefährlich sein, weil
+Sie haben auch ein Y in der Abfrage.
+
+0:04:30.800,0:04:34.160
+Das wollen wir vermeiden, also wenn wir Y
+
+0:04:34.160,0:04:40.160
+im Programm haben, würden Sie vielleicht ersetzen
+Y1 oder Y2 oder etwas Ähnliches.
+
+0:04:40.160,0:04:47.200
+Oder eigentlich durch Z, denn das
+nicht in der Abfrage vorkommt, okay?
+
+0:04:47.200,0:04:52.000
+Wir mussten diesen Schritt der Umbenennung nicht machen
+umzubenennen, denn es gibt bereits unterschiedliche
+
+0:04:52.000,0:04:57.840
+Sätze von Variablen in der Abfrage, an der wir interessiert sind
+und der Programmregel, die Sie anwenden möchten.
+
+0:04:58.880,0:05:01.680
+Okay, so sieht es also aus.
+
+0:05:01.680,0:05:06.960
+Wir haben einen Algorithmus angewandt, um
+den allgemeinsten Unifikator zu identifizieren, oder
+
+0:05:07.600,0:05:15.360
+haben ihn gefunden, indem wir einen
+genauen Blick auf die beiden Terme L und L0 geworfen.
+
+0:05:15.360,0:05:17.280
+So, das haben wir jetzt.
+
+0:05:17.280,0:05:20.320
+Und was sagt die Folie
+über die Anwendung der Resolution?
+
+0:05:20.320,0:05:24.160
+Nun, ein Resolutionsschritt, richtig?
+
+0:05:24.160,0:05:30.400
+Wir machen einen Schritt nach dem anderen, und dann suchen wir
+nach der nächsten Abfrage und sehen, ob wir einen
+
+0:05:30.400,0:05:43.680
+weiteren Resolutionsschritt anwenden können, oder wir machen einen
+Schritt und das ergibt unsere neue Abfrage,
+
+0:05:48.880,0:05:49.520
+das Folgende.
+
+0:05:51.680,0:06:00.800
+Okay, wir erhalten, wie auf der Folie zu sehen ist, den
+Unifikator U auf alle Literale von P angewendet.
+
+0:06:00.800,0:06:03.760
+Nun sind die P die Dinge, die vor der Resolution
+
+0:06:03.760,0:06:07.840
+hier oben in der Abfrage vor dem
+Literal L, das wir auflösen wollen.
+
+0:06:08.480,0:06:10.800
+Da dort die Literale vorn stehen,
+
+0:06:10.800,0:06:13.920
+bringt natürlich auch die Anwendung von U auf
+sie nichts Neues ergeben.
+
+0:06:14.960,0:06:22.640
+Okay, dann kommt nicht L, sondern eigentlich L1, ja.
+
+0:06:22.640,0:06:28.320
+Also, nachdem man U auf die Literale angewandt hat,
+die vorher in der Abfrage aufgetreten wären,
+
+0:06:29.120,0:06:36.240
+wenden wir dann U auf alle Literale auf der
+rechten Seite der Regel, die wir benutzt haben.
+
+0:06:37.120,0:06:44.560
+Ja, hier müssen wir also etwas schreiben wie
+U(L1) und U(Q), wie auf der Folie gezeigt.
+
+0:06:45.120,0:06:48.720
+Und U(P) ist nicht vorhanden
+weil es gar nicht existiert.
+
+0:06:48.720,0:06:49.680
+P existiert nicht.
+
+0:06:50.320,0:06:52.160
+Okay, was ist also U(L1)?
+
+0:06:54.000,0:06:55.760
+Nun, hier haben wir L1.
+
+0:06:55.760,0:06:58.000
+U ist dieser Unifikator, die Substitution.
+
+0:06:58.000,0:06:58.800
+Und was macht er?
+
+0:06:58.800,0:07:02.640
+Es ersetzt das durch Mary und das ist
+die einzige Variable, die in L1 vorkommt.
+
+0:07:03.520,0:07:13.200
+Wir erhalten hier also das
+neue Literal mit Mary für diese.
+
+0:07:13.200,0:07:17.200
+Und natürlich bleibt Paul unverändert, weil
+es keine Variable ist und keine
+
+0:07:17.200,0:07:19.440
+eine Variable enthält, okay?
+
+0:07:19.440,0:07:23.280
+Das ist also der Unifikator, der auf L1 angewendet wird
+der rechten Seite der Regel, die wir angewendet haben
+
+0:07:23.840,0:07:28.000
+nachdem wir L und L0 unifiziert haben, okay?
+
+0:07:28.000,0:07:34.320
+Und dann sagt die Folie, dass wir in
+Außerdem dürfen wir das Q nicht vergessen.
+
+0:07:34.320,0:07:38.400
+Wir müssen auch das Q behalten, den Kontext
+des von uns aufgelösten Worts behalten.
+
+0:07:38.400,0:07:44.400
+Aber natürlich behalten wir nicht Q selbst, wir behalten
+die Anwendung des Unifikators auf dieses Q.
+
+0:07:44.400,0:07:45.440
+Was bedeutet das also?
+
+0:07:45.440,0:07:52.080
+Das enthaltene Q ist nur dieses eine Literal
+das Y und X enthält, Y wird hier nicht einmal erwähnt.
+
+0:07:52.080,0:07:57.520
+Es wird also unverändert gelassen, aber X wird
+im Unifikator durch Juliet ersetzt.
+
+0:07:57.520,0:08:06.240
+Wir erhalten also das zweite Literal hier
+wobei das erste Argument immer noch die Variable Y ist
+
+0:08:06.240,0:08:12.160
+aber das zweite Argument ist jetzt
+die Variable X, die durch Juliet ersetzt wird.
+
+0:08:12.160,0:08:15.760
+Und mehr gibt es nicht, denn
+Q besteht genau aus diesem einen Literal.
+
+0:08:15.760,0:08:19.280
+Gäbe es weitere Literale
+in Q, dann würden diese auch
+
+0:08:20.000,0:08:22.080
+hier mit dem Unifikator repliziert.
+
+0:08:23.760,0:08:27.200
+Okay, und das ist jetzt unsere neue
+Abfrage, und vielleicht können wir jetzt nach
+
+0:08:27.840,0:08:34.640
+einige Regeln suchen, die uns sagen, wann dies der Fall ist,
+oder wir könnten das Gleiche für das zweite Literal tun.
+
+0:08:34.640,0:08:40.480
+Wir haben hier also mehrere Möglichkeiten, je
+nachdem, welche Regeln wir auch im Programm haben.
+
+0:08:40.480,0:08:42.640
+Aber das ist nur ein Schritt, den wir hier sehen.
+
+0:08:42.640,0:08:43.600
+Und was sagt uns das?
+
+0:08:43.600,0:08:50.320
+Nun, es sagt uns, wenn man das beweisen will,
+dann ist es jetzt gut genug, dies zu beweisen.
+
+0:08:51.200,0:08:58.800
+Intuitiv haben Sie also nach der Schwester von Maria gesucht.
+Schwester von Maria, die die Tochter von Y ist.
+
+0:08:59.680,0:09:07.680
+Und da wir wissen, dass Julia die Schwester von jemandem ist,
+die die Mutter von Paul ist, wissen wir jetzt, na ja,
+
+0:09:07.680,0:09:18.160
+wenn Maria die Mutter von Paul ist, dann ist es
+genug, um den Vater von Julia zu suchen.
+
+0:09:18.160,0:09:25.280
+Denn wenn Maria die Mutter von Paul ist, dann ist
+Julia die Schwester von Maria, und wir wissen, dass
+
+0:09:25.280,0:09:31.600
+wir nach jemandem suchen, der eine Schwester von
+Maria ist, aber auch von Y gezeugt wurde.
+
+0:09:33.360,0:09:40.960
+Und das wäre jetzt festgestellt, wenn Sie
+diese Personen hier unten in dieser Abfrage finden.
+
+0:09:40.960,0:09:44.960
+Das ist nicht die einzige Möglichkeit, denn
+es könnte noch weitere Regeln im Programm geben.
+
+0:09:44.960,0:09:48.080
+Etwa die Feststellung, dass
+jemand die Schwester von jemand anderem ist.
+
+0:09:48.080,0:09:50.960
+Und das wären dann andere Beweisansätze.
+
+0:09:52.000,0:09:55.040
+Und vielleicht führt einer von ihnen zu einer
+Lösung, der andere nicht, aber
+
+0:09:55.600,0:09:58.800
+dann müssen wir weitere
+Resolutionsschritte durchführen, um das herauszufinden.
+
+0:09:58.800,0:10:02.320
+Hier haben wir genau einen Schritt gemacht und
+das ist der Grundbaustein hier,
+
+0:10:02.320,0:10:07.360
+die dann im Suchprozess verwendet werden wird
+wenn wir uns nächste Woche mit Ableitungsbäumen beschäftigen.
+
+0:10:12.400,0:10:19.440
+Okay, Sie werden auch mindestens ein
+weiteres Beispiel für einen solchen Resolutionsschritt
+
+0:10:20.080,0:10:28.880
+in der collection.pdf im Moodle-Kurs.

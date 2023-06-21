@@ -1,0 +1,717 @@
+72 # slide
+00:00:01,760 --> 00:00:08,800
+The next ingredient for our consideration of the
+operational semantics of Prolog is resolution.
+
+00:00:09,840 --> 00:00:17,280
+And again, this is a concept from the study of
+predicate logic, so, a general formal concept.
+
+00:00:18,320 --> 00:00:25,520
+And again, here, we will not consider it
+exactly in the form as you have seen it
+
+00:00:25,520 --> 00:00:30,960
+in the lecture by Professor König, instead
+it will be tailored to the use in Prolog.
+
+00:00:30,960 --> 00:00:35,920
+So, the notation will be slightly
+different, more specialized actually
+
+00:00:35,920 --> 00:00:41,280
+for the syntax that we have in Prolog
+and the way the queries are organized.
+
+00:00:41,280 --> 00:00:49,040
+But the general concept behind it is exactly
+what resolution is also in predicate logic.
+
+00:00:53,120 --> 00:00:58,800
+We will again first consider a simple case,
+namely without variables and then consider
+
+00:00:58,800 --> 00:01:05,360
+the actually important and slightly the more
+complicated case of general queries and rules.
+
+00:01:06,160 --> 00:01:10,400
+Okay, so let's start with the simple
+case that we don't have variables.
+
+00:01:10,960 --> 00:01:16,960
+So, our query that we want to deal
+with would be something like this.
+
+00:01:17,760 --> 00:01:22,000
+So, basically, a list of variable-free literals.
+
+00:01:22,000 --> 00:01:24,480
+So, these would be simplifications of atoms,
+
+00:01:24,480 --> 00:01:32,160
+predicate names to constants or nestings of data
+constructors and constants, but no variables.
+
+00:01:32,160 --> 00:01:32,480
+Okay?
+
+00:01:32,480 --> 00:01:39,360
+And the notation here is meant to mean that P and
+Q could be sequences of such literals.
+
+00:01:39,360 --> 00:01:41,120
+And L is one specific literal.
+
+00:01:41,120 --> 00:01:45,920
+Of course, P and or Q could also be empty,
+then the query would be just one literal.
+
+00:01:45,920 --> 00:01:50,240
+But in general, maybe we have three literals
+here, then we have one literal L that we
+
+00:01:50,240 --> 00:01:54,160
+are currently interested in or that you
+will deal with in this resolution step.
+
+00:01:54,160 --> 00:01:57,680
+And then we may have, I don't know,
+two further literals in Q.
+
+00:01:58,320 --> 00:02:01,760
+Okay, and then the resolution
+proof principle that allows us to
+
+00:02:01,760 --> 00:02:04,560
+prove such query, such a statement.
+
+00:02:04,560 --> 00:02:08,800
+Yes, we want to know whether P or
+the queries or the literals in P
+
+00:02:08,800 --> 00:02:11,600
+and L and all literals in Q are true, right?
+
+00:02:11,600 --> 00:02:16,080
+The comma corresponds to "and", as we know.
+
+00:02:16,080 --> 00:02:21,040
+And we want to prove this, or at least you want
+to make one step in such a proof. So, that would not
+
+00:02:21,040 --> 00:02:26,880
+be a proof of the whole statement at once, but
+we want to make progress improving this part L.
+
+00:02:28,240 --> 00:02:30,720
+Okay, what do we need to have for this?
+
+00:02:30,720 --> 00:02:33,680
+We need to have a rule, which somehow implies L.
+
+00:02:34,240 --> 00:02:40,560
+Yeah, that would be a rule, a program rule where
+either L is simply a fact or L is implied by
+
+00:02:43,040 --> 00:02:45,360
+some other literals.
+
+00:02:47,120 --> 00:02:47,520
+Okay?
+
+00:02:47,520 --> 00:02:52,640
+A program clause which has L as its
+head, or which is simply L as a fact.
+
+00:02:53,280 --> 00:02:57,840
+And for the moment also, these would all
+be considered to be without variables.
+
+00:02:57,840 --> 00:03:00,960
+So, also L occurring in the head of a clause
+
+00:03:00,960 --> 00:03:05,120
+would be without variables, which is of
+course not a very generally the case.
+
+00:03:06,560 --> 00:03:08,560
+Okay, so how can we make progress?
+
+00:03:08,560 --> 00:03:16,080
+Well, what if you have a rule which
+said that L is implied by a L1, … , Ln.
+
+00:03:16,080 --> 00:03:22,080
+Yes, so n could be even zero, then this would
+be a fact because there wouldn't be a right-hand
+
+00:03:22,080 --> 00:03:29,440
+side, or if n is one or two or three, then L is
+implied by the conjunction of some other literals.
+
+00:03:29,440 --> 00:03:33,040
+Or L is implied by just L1 if n = 1.
+
+00:03:34,000 --> 00:03:36,480
+Okay, so we want to prove P and L and Q.
+
+00:03:36,480 --> 00:03:40,160
+We know that L is implied by L1 to Ln,
+
+00:03:40,160 --> 00:03:46,080
+so of course we could also say, well, let's
+prove P and L1 and L2 et cetera, and Q.
+
+00:03:46,880 --> 00:03:50,240
+It will be clear and very intuitive
+that if we want to prove P and L and Q,
+
+00:03:50,240 --> 00:03:53,840
+and we know that L is implied by
+the conjunction of these things,
+
+00:03:53,840 --> 00:03:59,840
+then it's also okay and useful
+to prove this conjunction.
+
+00:04:00,800 --> 00:04:01,120
+Okay?
+
+00:04:01,120 --> 00:04:03,840
+Of course, this looks now like we
+haven't really made progress in
+
+00:04:03,840 --> 00:04:06,480
+the proof because this is now bigger in general.
+
+00:04:06,480 --> 00:04:11,920
+But that both depends on n and also on
+what the L1 to Ln actually are, right?
+
+00:04:11,920 --> 00:04:14,960
+So, maybe these are simpler
+statements than the L statements.
+
+00:04:14,960 --> 00:04:16,960
+Then it's a good idea to reduce this.
+
+00:04:16,960 --> 00:04:20,800
+Or if n equals zero, then actually
+this will have become smaller because
+
+00:04:20,800 --> 00:04:22,720
+then the sequence is actually the empty sequence.
+
+00:04:22,720 --> 00:04:29,280
+Then really L has been eliminated since
+we had a fact. That holds if n equals zero.
+
+00:04:30,160 --> 00:04:33,440
+Okay, but this is a very intuitive proof step.
+
+00:04:33,440 --> 00:04:37,280
+We just want to prove this conjunction. We
+know that L is implied by this right-hand side,
+
+00:04:37,280 --> 00:04:40,240
+then we might as well prove this new query.
+
+00:04:40,240 --> 00:04:42,960
+And if we succeeded in doing that,
+then we have also proved this.
+
+00:04:42,960 --> 00:04:46,800
+So, that's a reduction from this
+proof goal to this proof goal.
+
+00:04:48,080 --> 00:04:48,480
+Okay?
+
+00:04:48,480 --> 00:04:51,760
+So, some observations on this.
+
+00:04:52,480 --> 00:04:55,520
+The one is that, of course,
+the L was chosen arbitrarily.
+
+00:04:55,520 --> 00:05:00,960
+Well, it was chosen because I wanted to
+resolve with this specific program clause.
+
+00:05:01,600 --> 00:05:07,520
+But of course, given a sequence with more than
+one literal, I could have chosen any of them.
+
+00:05:07,520 --> 00:05:13,440
+So, I could have… if indeed I have three literals
+in P and L and Q, then I didn’t have to choose the
+
+00:05:13,440 --> 00:05:18,160
+fourth literal from this list of literals, I
+could also have taken the first one, for example.
+
+00:05:18,960 --> 00:05:26,080
+And even after I have committed to one L, so let's
+say the fourth of six literals in a query here,
+
+00:05:27,200 --> 00:05:32,800
+then I could still have a choice
+between several program clauses.
+
+00:05:32,800 --> 00:05:37,280
+So, maybe there is in the program
+another rule also with L as the head
+
+00:05:37,280 --> 00:05:44,240
+and some other L1’, L2’,
+et cetera, up to some Ln’.
+
+00:05:44,960 --> 00:05:46,800
+Then I could have chosen either of these rules.
+
+00:05:46,800 --> 00:05:53,040
+I would have arrived at different
+next queries to process.
+
+00:05:53,040 --> 00:05:55,600
+So, there is a search involved
+here, there is a choice to make,
+
+00:05:56,240 --> 00:05:59,200
+but actually this step here as
+written here, simply assumes well,
+
+00:05:59,200 --> 00:06:04,640
+I have chosen one L, I have chosen one
+clause then what is the resolved query?
+
+00:06:05,360 --> 00:06:09,440
+This control is actually making a choice
+for the literal and making a choice
+
+00:06:09,440 --> 00:06:13,920
+between possibly different program
+clauses, that's a separate process.
+
+00:06:13,920 --> 00:06:20,160
+One resolution step is just one such
+step with the choice already made.
+
+00:06:20,160 --> 00:06:20,560
+Okay?
+
+00:06:20,560 --> 00:06:24,560
+This is one thing to keep in mind when
+we consider derivation trees later.
+
+00:06:24,560 --> 00:06:26,480
+And the other thing is something
+I’ve already mentioned.
+
+00:06:27,200 --> 00:06:34,720
+Well, this need not always become bigger as the
+slides suggest at the moment. Actually, since
+
+00:06:35,600 --> 00:06:36,720
+n could be zero.
+
+00:06:37,520 --> 00:06:41,280
+It can also be the case that this really
+becomes smaller because then the vanishes.
+
+00:06:42,160 --> 00:06:46,880
+That's how we ultimately make progress
+and can finish a proof that a
+
+00:06:47,520 --> 00:06:53,200
+few times we apply rules, we apply facts, which
+don't have a right-hand side, and stuff vanishes.
+
+00:06:53,760 --> 00:06:57,040
+But it might be that first we
+have to introduce more
+
+00:06:58,400 --> 00:07:04,720
+subliterals and only at some point later on
+things vanish and we arrive at a fact, right?
+
+00:07:04,720 --> 00:07:08,800
+Because if you have removed every
+literal by a sequence of such
+
+00:07:08,800 --> 00:07:15,840
+steps, then you have an empty
+conjunction which is simply true.
+
+00:07:17,920 --> 00:07:20,400
+Okay, that was a discussion
+of the very simple case.
+
+00:07:20,400 --> 00:07:24,640
+If you don't have variables. And
+of course, it's very restricted.
+
+00:07:24,640 --> 00:07:30,080
+Yes, we couldn't have
+variables in the query, okay?
+
+00:07:30,080 --> 00:07:31,920
+That's something we are used to from Haskell that
+
+00:07:31,920 --> 00:07:34,640
+we have to have concrete values
+in the thing you want to compute.
+
+00:07:35,760 --> 00:07:38,880
+But you also couldn't have
+any variables in the program.
+
+00:07:39,440 --> 00:07:43,200
+Yes, actually the program rules would have
+
+00:07:43,200 --> 00:07:49,120
+had to have heads exactly like the L from
+the query in order to make any progress.
+
+00:07:49,120 --> 00:07:50,800
+So, they must be very specific.
+
+00:07:50,800 --> 00:07:56,000
+No pattern matching, where the program
+rules could contain variables and then,
+
+00:07:56,000 --> 00:07:58,640
+they are matched against concrete terms.
+
+00:07:58,640 --> 00:07:59,600
+So, anything like that.
+
+00:07:59,600 --> 00:08:00,720
+Okay, that's very restricted.
+
+00:08:00,720 --> 00:08:02,240
+So, let's look at the general case.
+
+00:08:02,800 --> 00:08:08,080
+So, now with variables, yes.
+
+00:08:08,080 --> 00:08:10,880
+So, we still take a decomposition like this.
+
+00:08:10,880 --> 00:08:17,280
+So, we assume we have a sequence of literals and
+we focus on one of them, let's call it L and
+
+00:08:17,280 --> 00:08:26,080
+maybe there are sequences before and after it, it
+could also be empty, then we would have only the L.
+
+00:08:26,080 --> 00:08:26,560
+Okay.
+
+00:08:26,560 --> 00:08:27,440
+And what do we want to do?
+
+00:08:27,440 --> 00:08:31,200
+Well, we want to, again, reduce
+this to some other query.
+
+00:08:31,200 --> 00:08:35,440
+And preferably, we want to use a rule,
+which tells us something about L.
+
+00:08:35,440 --> 00:08:42,400
+But we don't want to look in the program
+for a rule which has exactly L as its head.
+
+00:08:42,400 --> 00:08:45,680
+Because that would be too
+restricted, then we couldn't prove
+
+00:08:45,680 --> 00:08:47,840
+general things with general programs.
+
+00:08:49,200 --> 00:08:52,400
+Okay, that's why we get something slightly
+different than on the slide before.
+
+00:08:52,400 --> 00:08:59,200
+So, we won't have P and L1 to Ln where L
+is implied by L1 to Ln and then also Q.
+
+00:08:59,200 --> 00:09:04,960
+But there is a substitution applied.
+A unifier has to be applied.
+
+00:09:07,360 --> 00:09:12,880
+Okay, now where does this unifier come
+from and how is now the rule selected?
+
+00:09:12,880 --> 00:09:17,280
+Because we won't,
+take a rule which has exactly L as is head.
+
+00:09:17,840 --> 00:09:21,520
+Instead, we look for something
+which is similar to L. And similar
+
+00:09:21,520 --> 00:09:27,040
+of course means in the sense of pattern
+matching or more general unification.
+
+00:09:28,880 --> 00:09:32,960
+Okay, so we don't look for a program
+clause which has exactly L as its head.
+
+00:09:32,960 --> 00:09:37,680
+You look for a program clause
+which has some L0 in its head,
+
+00:09:38,240 --> 00:09:40,640
+which is similar to L, which is unifiable.
+
+00:09:41,280 --> 00:09:41,600
+Okay?
+
+00:09:41,600 --> 00:09:46,320
+So, the program clause will be something
+like: L0 implied by L1 to Ln.
+
+00:09:46,320 --> 00:09:50,640
+And L1 to Ln are the things to which
+we reduced here.
+
+00:09:50,640 --> 00:09:53,360
+Again, we replace L by the conjunction
+
+00:09:53,360 --> 00:09:59,120
+L1 to Ln because the rule,
+which from L1 to Ln for n >= 0,
+
+00:09:59,120 --> 00:10:02,160
+it could also be a fact for n = 0,
+
+00:10:02,160 --> 00:10:05,360
+for n > 0 it's a real rule,
+
+00:10:06,240 --> 00:10:12,720
+and these L1 to Ln do imply L0,
+which should be unifiable with L, okay?
+
+00:10:12,720 --> 00:10:20,320
+And since you have variables now, both
+in the program clauses and in the query,
+
+00:10:20,320 --> 00:10:25,360
+this one, but also then the resolved query
+of course, we have to be a bit careful.
+
+00:10:25,360 --> 00:10:31,440
+And as a rule of thumb, you could simply
+always rename the variables in the program.
+
+00:10:31,440 --> 00:10:34,720
+Yes, if you have a program
+where P (X) is implied by Q (X),
+
+00:10:34,720 --> 00:10:37,520
+you might as well write P (Y) is implied by Q (Y).
+
+00:10:37,520 --> 00:10:40,240
+If you consistently rename variables by renaming
+
+00:10:40,800 --> 00:10:46,000
+the variable names or indexing them with
+numbers, then we can't make any mistake.
+
+00:10:46,000 --> 00:10:51,680
+And the aim is basically to make sure that
+there is no dangerous overlap between variables
+
+00:10:53,760 --> 00:10:57,760
+in the program clause that we are
+going to use and in the query.
+
+00:10:57,760 --> 00:11:03,760
+So, no overlap, not just between L and this
+program clause, but also the neighbouring
+
+00:11:04,800 --> 00:11:06,640
+literals in the query.
+
+00:11:06,640 --> 00:11:11,680
+Yes, to the left or to the right, all
+of them should have no variable names
+
+00:11:11,680 --> 00:11:13,840
+in common with the program
+clause we are going to use.
+
+00:11:14,400 --> 00:11:19,680
+Yes, it might not always be a problem to
+have overlap, but it can lead to problems.
+
+00:11:19,680 --> 00:11:21,920
+So, we might as well avoid it.
+
+00:11:23,520 --> 00:11:24,720
+Okay, and now what's the connection?
+
+00:11:24,720 --> 00:11:27,760
+Well, the connection is there must
+be a unifier between L and L0.
+
+00:11:28,400 --> 00:11:32,240
+And of course, as mentioned earlier, we are
+always looking for the most general unifier.
+
+00:11:32,240 --> 00:11:37,600
+If you don't just want to have any way
+to make L and L0 match or equal,
+
+00:11:37,600 --> 00:11:41,120
+we want to have to do this
+in the most general way.
+
+00:11:41,120 --> 00:11:47,280
+So, not committing to too specific
+instantiations for the variables in L or in L0.
+
+00:11:48,160 --> 00:11:54,160
+Okay, and the idea here is if you want to
+prove P and L and Q, and we have a rule
+
+00:11:54,960 --> 00:11:58,080
+saying that L0 is implied by
+a conjunction of some other things,
+
+00:11:58,080 --> 00:12:03,040
+and L and L0 are similar enough that they can
+be unified, then you might as well say, well,
+
+00:12:03,040 --> 00:12:05,760
+let's consider this unifier
+which makes them equal.
+
+00:12:06,640 --> 00:12:14,240
+Then U(L0), (U applied to L0) would
+be implied by U(L1) and U(L2) etc.
+
+00:12:16,080 --> 00:12:19,360
+Okay?
+But U(L0) is of course not L, but U(L)
+
+00:12:19,360 --> 00:12:24,800
+is U(L0), if it's a most general
+unifier, or even just a unifier.
+
+00:12:25,680 --> 00:12:31,440
+Okay, so you could replace
+U(L) by U(L1) to U(Ln).
+
+00:12:31,440 --> 00:12:33,920
+Yes, because then we would
+have simply applied a unifier to
+
+00:12:34,560 --> 00:12:40,480
+this rule as a whole, simply renaming
+or instantiating variables consistently.
+
+00:12:41,200 --> 00:12:41,600
+Okay.
+
+00:12:41,600 --> 00:12:45,520
+Then we can replace U(L) by U(L1) to U(Ln).
+
+00:12:46,240 --> 00:12:49,840
+But of course, we can't simply do this
+without considering the context, because
+
+00:12:49,840 --> 00:12:55,840
+when we apply the unifier to this literal
+L, we might instantiate some variables.
+
+00:12:55,840 --> 00:12:59,680
+But, of course, these variables
+might as well appear in P and Q.
+
+00:12:59,680 --> 00:13:01,120
+That's something that's allowed in
+
+00:13:01,120 --> 00:13:04,320
+these kinds of queries that the
+variables occur in several literals.
+
+00:13:04,320 --> 00:13:08,640
+So, if X in L, we can't simply say
+the unifier replaces X by zero
+
+00:13:10,000 --> 00:13:15,120
+in L, but we leave the X
+occurrences of P and Q unchanged.
+
+00:13:15,120 --> 00:13:20,080
+That wouldn't be a valid way
+to delete this query.
+
+00:13:20,080 --> 00:13:20,320
+Okay?
+
+00:13:20,320 --> 00:13:23,760
+So, if you decide well, in
+order to make L and L0 unified
+
+00:13:24,560 --> 00:13:28,800
+to make them equal, we
+replace X by zero, say in L.
+
+00:13:29,520 --> 00:13:31,600
+Then we can only do this if we also do so in P and Q.
+
+00:13:32,160 --> 00:13:34,400
+If we make a choice to instantiate X to zero, then
+
+00:13:35,840 --> 00:13:40,640
+we have applied U to P and L and Q, and
+that's not the query we're dealing with.
+
+00:13:40,640 --> 00:13:46,560
+And then we know U(L) is the same
+as U(L0) because of this unifier.
+
+00:13:46,560 --> 00:13:49,680
+Then we know that U(L0) is implied by U(L1) to
+
+00:13:51,360 --> 00:13:59,600
+U(Ln), and then you might as well replace U(L)
+by this sequence of substituted literals.
+
+00:14:00,640 --> 00:14:01,200
+Okay?
+
+00:14:01,200 --> 00:14:03,520
+And of course, to the left and
+to the right, we still have
+
+00:14:04,560 --> 00:14:09,520
+the unifier U applied to all literals
+in P and all the literates in Q.
+
+00:14:09,520 --> 00:14:12,160
+And then this is our new subquery.
+
+00:14:14,160 --> 00:14:15,600
+Our new subquery for the proof.
+
+00:14:15,600 --> 00:14:19,120
+And then we again, proceed doing
+this again and again, and then
+
+00:14:19,120 --> 00:14:23,360
+hopefully we have replaced the whole
+conjunction by the empty conjunction
+
+00:14:23,360 --> 00:14:29,840
+and we are done because then we
+have “true“ as our current goal.

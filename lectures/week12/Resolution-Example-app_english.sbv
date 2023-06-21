@@ -1,0 +1,432 @@
+0:00:01.600,0:00:06.960
+Let us consider an example for
+resolution, and let us do this
+
+0:00:06.960,0:00:15.920
+by looking at this example assuming
+that we have the following query.
+
+0:00:18.160,0:00:25.520
+Yes, this query, consisting of two literals
+involving variables and, in particular, also a
+
+0:00:25.520,0:00:31.120
+variable that occurs in more than one literal
+cause that's the case we have to deal with.
+
+0:00:31.760,0:00:36.560
+And let's also assume we have a
+program and it has maybe many rules.
+
+0:00:36.560,0:00:40.320
+And one of them is this one, and this is
+the one we are going to use in a moment.
+
+0:00:40.320,0:00:46.880
+But as you know, we could have, in principle,
+taken any rule in a program if we can
+
+0:00:46.880,0:00:51.200
+actually apply a resolution step with
+one of the literals in the query.
+
+0:00:52.720,0:01:02.640
+Okay, let me also further make decisions about
+how to decompose the query, on the slide 74,
+
+0:01:02.640,0:01:07.360
+there was this division into P or the
+literals occurring before the literal
+
+0:01:07.360,0:01:11.440
+I am interested in then the literal
+L and then all the ones after that.
+
+0:01:11.440,0:01:17.120
+So, for this specific case, the way to look
+at this would be that this is our interesting
+
+0:01:18.160,0:01:24.240
+literal L, yes, the one we want to focus on.
+
+0:01:24.240,0:01:27.920
+There's no P in advance so
+there's an empty sequence here.
+
+0:01:27.920,0:01:32.960
+P would be empty, and then there is
+this other sequence of queries, Q.
+
+0:01:33.520,0:01:36.320
+In this case, Q consist exactly
+of one query, but of course,
+
+0:01:36.880,0:01:42.480
+there could be further ones and then the
+remainder of the explanation would still apply.
+
+0:01:43.280,0:01:48.400
+Okay, so that's the choice of L
+and Q in the spirit of slide 74.
+
+0:01:49.440,0:01:56.080
+And then I already mentioned that we assume
+we have chosen this clause to resolve with.
+
+0:01:56.080,0:01:58.000
+And then, well, what does this mean?
+
+0:01:58.000,0:02:03.520
+Well, the head was called L0 in the slide,
+
+0:02:04.880,0:02:09.280
+and that's what we want to unify with L
+of course, in order to apply resolution.
+
+0:02:09.280,0:02:12.320
+And then the literals on
+the right-hand side of the
+
+0:02:12.320,0:02:16.480
+clause that we’re going to
+use are called L1 to Ln.
+
+0:02:16.480,0:02:22.560
+And of course, in this simple case n would
+be one, and we have exactly only the L1.
+
+0:02:24.400,0:02:27.520
+Okay, so that's how the setup is here.
+
+0:02:27.520,0:02:36.080
+And then the slide says that we can apply
+resolution step if L and L0 are unifiable.
+
+0:02:36.080,0:02:45.280
+Okay, so that's the question we first have to
+ask are this L and this L0 actually unifiable?
+
+0:02:47.120,0:02:49.840
+So, that's something we always have to
+do when you want to apply resolution.
+
+0:02:51.760,0:03:00.160
+Well, you could now go and apply an algorithm for
+making this, or finding out if this is the case.
+
+0:03:00.800,0:03:05.600
+But of course, I already mentioned that you
+don't always have to apply an algorithm.
+
+0:03:05.600,0:03:10.960
+We can simply look at our terms
+and see what the solution...
+
+0:03:10.960,0:03:14.000
+Well, think about the choice that you have.
+
+0:03:14.000,0:03:17.600
+And then for example, here we see
+that well, the X must be Juliet,
+
+0:03:17.600,0:03:23.680
+and Z must be Mary and then this
+will be okay, this will fit.
+
+0:03:23.680,0:03:25.680
+And, of course, we have to make these two decisions.
+
+0:03:25.680,0:03:26.960
+So, there's no choice, really.
+
+0:03:26.960,0:03:28.080
+There's nothing more general.
+
+0:03:28.080,0:03:33.520
+You can't leave a variable here in order
+to unify this L and this, as you will really
+
+0:03:34.400,0:03:37.040
+have to make exactly these two choices.
+
+0:03:37.040,0:03:44.360
+So, the answer is yes and the most
+general unifier is as follows.
+
+0:03:44.360,0:03:53.120
+The most general unifier, it’s really
+the substitution which replaces X by
+
+0:03:54.960,0:03:59.840
+Juliet and Z by Mary.
+
+0:04:03.520,0:04:10.400
+Okay, note that here already, the
+variables are distinct in the rule
+
+0:04:10.400,0:04:15.120
+and in the query that we started
+with, if that wouldn't be the case,
+
+0:04:15.120,0:04:18.960
+you might have first renamed the
+variables in the program, right?
+
+0:04:18.960,0:04:22.320
+So, let's assume that this
+would have been Y and Y here.
+
+0:04:22.320,0:04:27.280
+Then we could still unify L and
+L0, but that will also touch the Y.
+
+0:04:27.280,0:04:30.800
+And that could be dangerous because
+you also have a Y in the query.
+
+0:04:30.800,0:04:34.160
+We want to avoid this, so if we would have Y
+
+0:04:34.160,0:04:40.160
+in the program, you would maybe replace
+Y1 or Y2 or something like this.
+
+0:04:40.160,0:04:47.200
+Or well actually by Z, since that
+doesn't appear in the query, okay?
+
+0:04:47.200,0:04:52.000
+We didn't have to make this step of renaming
+variables because already there are distinct
+
+0:04:52.000,0:04:57.840
+sets of variables in the query we are interested
+in and the program rule that you want to apply.
+
+0:04:58.880,0:05:01.680
+Okay, so that's what we have.
+
+0:05:01.680,0:05:06.960
+We applied some algorithm for
+identifying the most general unifier, or
+
+0:05:07.600,0:05:15.360
+got to it by having a
+deep look at the two terms, L and L0.
+
+0:05:15.360,0:05:17.280
+So, now this is what we have.
+
+0:05:17.280,0:05:20.320
+And then what does the slide
+say about applying resolution?
+
+0:05:20.320,0:05:24.160
+Well, one resolution step, right?
+
+0:05:24.160,0:05:30.400
+We do one step by another, and then we look
+for the next query and see whether we can apply
+
+0:05:30.400,0:05:43.680
+another resolution step, or we do one resolution
+step now and this gives as our new query,
+
+0:05:48.880,0:05:49.520
+the following.
+
+0:05:51.680,0:06:00.800
+Okay, we get, according to the slide, we get the
+unifier U applied to all the literals from P.
+
+0:06:00.800,0:06:03.760
+Now the P are the things that would have occurred
+
+0:06:03.760,0:06:07.840
+up here in the query before the
+literal L that we chose to resolve.
+
+0:06:08.480,0:06:10.800
+Since there are the literals in front there,
+
+0:06:10.800,0:06:13.920
+of course, also applying U to
+them doesn't give anything new.
+
+0:06:14.960,0:06:22.640
+Okay, then comes not L, but actually L1, yes.
+
+0:06:22.640,0:06:28.320
+So, after you have applied U to the literals
+which would have occurred before in the query,
+
+0:06:29.120,0:06:36.240
+we then apply U to all the literals on the
+right-hand side of the rule that we used.
+
+0:06:37.120,0:06:44.560
+Yes, so here we have to write something like
+U(L1) and U(Q) according to the slide.
+
+0:06:45.120,0:06:48.720
+And U(P) is not present
+because it doesn't even exist.
+
+0:06:48.720,0:06:49.680
+P does not exist.
+
+0:06:50.320,0:06:52.160
+Okay, so what is U(L1)?
+
+0:06:54.000,0:06:55.760
+Well, here we have L1.
+
+0:06:55.760,0:06:58.000
+U is this unifier, the substitution.
+
+0:06:58.000,0:06:58.800
+So, what does it do?
+
+0:06:58.800,0:07:02.640
+It replaces that by Mary and that is
+the only variable that occurs in L1.
+
+0:07:03.520,0:07:13.200
+So, what we get here is the
+new literal with Mary for that.
+
+0:07:13.200,0:07:17.200
+And of course, Paul is unchanged because
+it isn't a variable and it doesn't
+
+0:07:17.200,0:07:19.440
+contain a variable, okay?
+
+0:07:19.440,0:07:23.280
+So, that is the unifier applied to L1 to
+the right-hand side of the rule we applied
+
+0:07:23.840,0:07:28.000
+after we unified L and L0, okay?
+
+0:07:28.000,0:07:34.320
+And then the slide says that in
+addition, we can't forget about the Q.
+
+0:07:34.320,0:07:38.400
+We also have to keep the Q, the context
+of this literal that we resolved.
+
+0:07:38.400,0:07:44.400
+But of course, we don't keep Q itself we keep
+the application of the unifier to this Q.
+
+0:07:44.400,0:07:45.440
+So, what does this mean?
+
+0:07:45.440,0:07:52.080
+The Q contained is just this one literal
+containing Y and X, Y isn't even mentioned here.
+
+0:07:52.080,0:07:57.520
+So, it's left unchanged, but X is
+replaced by Juliet in the unifier.
+
+0:07:57.520,0:08:06.240
+So, what we get is the second literal here
+where first argument is still the variable Y
+
+0:08:06.240,0:08:12.160
+but the second argument is now
+the variable X replaced by Juliet.
+
+0:08:12.160,0:08:15.760
+And there is no further stuff because
+Q consists exactly of this one literal.
+
+0:08:15.760,0:08:19.280
+If there would be more literals
+in Q, then these would also be
+
+0:08:20.000,0:08:22.080
+replicated here with the unifier applied.
+
+0:08:23.760,0:08:27.200
+Okay, and now this is our new
+query, and maybe we can now look for
+
+0:08:27.840,0:08:34.640
+some rules which tell us when this is the case,
+or we could do the same for the second literal.
+
+0:08:34.640,0:08:40.480
+So, we have more choices here, depending
+on what rules we have also in the program.
+
+0:08:40.480,0:08:42.640
+But this is one step that we are seeing here.
+
+0:08:42.640,0:08:43.600
+And what does it tell us?
+
+0:08:43.600,0:08:50.320
+Well, it tells us if you wanted to prove
+this, then it's now good enough to prove this.
+
+0:08:51.200,0:08:58.800
+So, intuitively, you've wanted to look for the
+sister of Mary, which is the daughter of Y.
+
+0:08:59.680,0:09:07.680
+And knowing that Juliet is the sister of anybody
+who is the mother of Paul, we now know, well,
+
+0:09:07.680,0:09:18.160
+if Mary is mother of Paul, then it's
+enough to look for the father of Juliet.
+
+0:09:18.160,0:09:25.280
+Because if Mary is the mother of Paul, then
+Juliet is the sister of Mary, and we know that
+
+0:09:25.280,0:09:31.600
+well, we’re looking for someone who is a
+sister of Mary, but also fathered by Y.
+
+0:09:33.360,0:09:40.960
+And now that would be established, if you
+find these persons down here in this query.
+
+0:09:40.960,0:09:44.960
+It's not the only choice because there
+could have been further rules in the program.
+
+0:09:44.960,0:09:48.080
+For example, establishing that
+someone is sister of someone else.
+
+0:09:48.080,0:09:50.960
+And then that would be other proof approaches.
+
+0:09:52.000,0:09:55.040
+And maybe one of them leads to a
+solution, the other doesn't but
+
+0:09:55.600,0:09:58.800
+then we need to perform further
+resolution steps to find out.
+
+0:09:58.800,0:10:02.320
+Here, we did exactly one step and
+that's the base ingredient here,
+
+0:10:02.320,0:10:07.360
+which will be used then in the search process
+when we look at derivation trees next week.
+
+0:10:12.400,0:10:19.440
+Okay, you will also find at least one
+further example of such a resolution step
+
+0:10:20.080,0:10:28.880
+in the collection.pdf in the Moodle course.

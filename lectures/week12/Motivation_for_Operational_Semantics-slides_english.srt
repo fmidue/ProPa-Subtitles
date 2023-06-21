@@ -1,0 +1,1262 @@
+46 # slide
+00:00:02,240 --> 00:00:08,240
+In the previous lecture last week, we talked
+about the declarative semantics of Prolog.
+
+00:00:08,800 --> 00:00:12,000
+That was the semantics built on Herbrand models.
+
+00:00:12,000 --> 00:00:18,240
+That is syntactic models where we have
+syntactic terms as the ingredients and
+
+00:00:18,240 --> 00:00:24,480
+we work with the immediate consequence
+operator to enrich from the empty set
+
+00:00:24,480 --> 00:00:31,440
+such sets of symbolic terms until either
+we reach a stable state or ad infinitum,
+
+00:00:31,440 --> 00:00:35,760
+we construct the limit of an
+infinite sequence of sets.
+
+00:00:37,120 --> 00:00:41,200
+So, this was the mathematical
+semantics for Prolog programs.
+
+00:00:42,080 --> 00:00:45,360
+Today, we will look at the so-called
+operational semantics for Prolog.
+
+00:00:45,920 --> 00:00:48,480
+And before doing this, just a few words.
+
+00:00:48,480 --> 00:00:55,520
+In some sense or repetition or recognition of
+things that apply to declarative semantics,
+
+00:00:55,520 --> 00:00:59,920
+which also to some extent explain why the
+operational semantics is also considered.
+
+00:01:01,120 --> 00:01:03,520
+Because they are not exactly equivalent.
+
+00:01:03,520 --> 00:01:08,400
+They are different to the situation of Haskell
+where notational semantics, the
+
+00:01:09,040 --> 00:01:13,440
+mathematical thinking and meaning,
+set theoretical interpretation of function
+
+00:01:13,440 --> 00:01:20,000
+definitions is in very good correspondence
+to the operational evaluation semantics.
+
+00:01:20,560 --> 00:01:22,800
+Okay, so what was the declarative semantics?
+
+00:01:22,800 --> 00:01:25,840
+Whatever it was, is contained
+in the previous video.
+
+00:01:26,480 --> 00:01:28,720
+And it was applicable and it was discussed
+
+00:01:28,720 --> 00:01:32,800
+towards the end of that video to
+certain purely logical programs.
+
+00:01:32,800 --> 00:01:36,720
+So, for example, arithmetics,
+evaluation of additions,
+
+00:01:36,720 --> 00:01:41,200
+multiplications, et cetera, was something that's
+not explained by the declarative semantics.
+
+00:01:41,200 --> 00:01:42,640
+Because it's not purely syntactic.
+
+00:01:43,680 --> 00:01:46,800
+There was also a problem with negation
+that was mentioned that this is not
+
+00:01:46,800 --> 00:01:53,600
+at least not in general in reach of
+this declarative semantics approach.
+
+00:01:53,600 --> 00:01:56,240
+And also features we will not cover at all.
+
+00:01:56,240 --> 00:02:00,080
+So, non-logical features that Prolog
+has that we will not consider in the
+
+00:02:00,080 --> 00:02:06,000
+course are also outside the domain, outside the
+reach of this Herbrand model semantics.
+
+00:02:06,720 --> 00:02:10,000
+Okay, so this is one downside of that semantics.
+
+00:02:10,000 --> 00:02:14,320
+Whereas the operational semantics does cover
+these features well because the operational
+
+00:02:14,320 --> 00:02:18,720
+semantics is really what the implementation
+of a Prolog interpreter is based upon.
+
+00:02:18,720 --> 00:02:23,920
+And this interpreter, of course, has to
+handle all the features of the language.
+
+00:02:24,480 --> 00:02:27,520
+Okay, so this is already some constraint.
+
+00:02:28,960 --> 00:02:31,360
+Also, that was already mentioned last week,
+
+00:02:31,360 --> 00:02:35,840
+the declarative semantics does not really
+talk about queries containing variables.
+
+00:02:36,480 --> 00:02:41,760
+So, what you construct in the Herbrand
+semantics are sets of ground terms.
+
+00:02:41,760 --> 00:02:48,000
+So, this explains exactly which queries would
+be successful given that we instantiate all the
+
+00:02:48,000 --> 00:02:54,080
+argument positions of predicates, but for queries
+with variables, this is not directly applicable.
+
+00:02:54,880 --> 00:02:56,560
+Again, we didn't claim that it is.
+
+00:02:58,880 --> 00:02:59,680
+Something you can't
+
+00:03:00,480 --> 00:03:05,440
+see at the moment, but probably will agree to
+want to once we have introduced the operational
+
+00:03:05,440 --> 00:03:10,560
+semantics is that the Herbrand models
+semantics is mathematically very basic.
+
+00:03:10,560 --> 00:03:15,280
+I mean, it might not be easy for you because
+you first have to learn how this works,
+
+00:03:15,280 --> 00:03:18,320
+but from the mathematical side,
+this is very straightforward.
+
+00:03:18,320 --> 00:03:20,320
+It has a very simple definition.
+
+00:03:20,320 --> 00:03:24,480
+Basically, the immediate consequence
+operator was one slide of a definition.
+
+00:03:24,480 --> 00:03:25,680
+That was all that it is.
+
+00:03:25,680 --> 00:03:28,080
+For declarative semantics,
+there are more ingredients
+
+00:03:28,080 --> 00:03:33,200
+that have to come together and work
+together to establish the semantics.
+
+00:03:33,200 --> 00:03:36,800
+So, in that sense, declarative semantics
+is still the mathematically simpler one,
+
+00:03:36,800 --> 00:03:39,600
+that's why it is also nicer for
+proving properties, for example.
+
+00:03:40,880 --> 00:03:43,360
+Nevertheless, these semantics are related.
+
+00:03:43,360 --> 00:03:44,240
+So, they are not the equivalent.
+
+00:03:44,240 --> 00:03:49,120
+I just mentioned this already, but
+they are related in a suitable way.
+
+00:03:49,120 --> 00:03:52,880
+So, in particular for those programs
+where both semantics are applicable.
+
+00:03:52,880 --> 00:03:56,480
+So, if you do not use the non-logical
+features, then
+
+00:03:57,040 --> 00:04:05,920
+one could state as a theorem how
+these two semantics relate.
+
+00:04:06,480 --> 00:04:10,160
+And well, this relation is
+some kind of equivalence.
+
+00:04:10,160 --> 00:04:13,840
+So, they are not separate and telling
+different things about the same program.
+
+00:04:15,600 --> 00:04:15,920
+Okay.
+
+00:04:15,920 --> 00:04:23,920
+And one important aspect that wasn't relevant
+so far, is that the declarative semantics simply
+
+00:04:23,920 --> 00:04:27,760
+as an observation because it's purely set
+based and it never considers for example,
+
+00:04:27,760 --> 00:04:33,760
+the order of literals appearing in the
+right-hand side of a rule or of a query.
+
+00:04:35,600 --> 00:04:40,880
+Simply by the definition, this semantics that
+we are seeing is completely insensitive against
+
+00:04:40,880 --> 00:04:45,920
+changes of the order of text and words
+or of order of literals within rules.
+
+00:04:46,480 --> 00:04:50,320
+Yes, so that simply didn't appear, it
+didn't play any role in the semantics.
+
+00:04:50,320 --> 00:04:57,360
+So, of course, if you change the order of rules or
+the order of stuff in the right-hand side of a rule,
+
+00:04:57,360 --> 00:05:01,040
+this can't possibly make any change
+for the declarative semantics.
+
+00:05:01,040 --> 00:05:03,600
+As you will see for the operational
+semantics, it does make a difference.
+
+00:05:03,600 --> 00:05:05,440
+And that can be an important point
+
+00:05:05,440 --> 00:05:09,280
+because operational semantics explains
+what the Prolog interpreter is doing.
+
+00:05:09,280 --> 00:05:12,400
+And we have already encountered
+earlier in the slides,
+
+00:05:12,400 --> 00:05:16,480
+strange situation where I said, for
+example, that indication of a literal,
+
+00:05:16,480 --> 00:05:21,280
+if it should occur in rule should
+occur towards the end of that rule.
+
+00:05:21,840 --> 00:05:26,960
+So, it must be something in the context
+of negation where the order is important.
+
+00:05:26,960 --> 00:05:31,680
+So, the declarative semantics can't explain this
+because it doesn't take care of the order at all.
+
+00:05:31,680 --> 00:05:34,560
+So, that's something that we
+definitely need operational semantics.
+
+00:05:34,560 --> 00:05:39,040
+And indeed, the first motivating example
+for why we want operational semantics, will
+
+00:05:39,040 --> 00:05:45,680
+really depend on, and will be related
+to, this observation in the last item here.
+
+00:05:50,160 --> 00:05:56,000
+So, operational semantics as already
+mentioned, this corresponds somewhat to
+
+00:05:57,200 --> 00:06:02,320
+the execution of Haskell programs by
+lazy evaluation by pattern matching.
+
+00:06:02,320 --> 00:06:07,200
+So, also when I talked earlier
+in the Prolog part about the
+
+00:06:07,200 --> 00:06:13,280
+operational intuition of how a program is executed,
+I already made a connection to pattern matching.
+
+00:06:13,280 --> 00:06:18,240
+However, we will see that there are more
+complicated ingredients for the operational.
+
+00:06:18,240 --> 00:06:23,280
+Semantics of Prolog because we do not just
+need pattern matching but actually a more
+
+00:06:23,280 --> 00:06:25,280
+general concept called unification.
+
+00:06:26,240 --> 00:06:30,720
+And as also already mentioned,
+various of these ingredients
+
+00:06:30,720 --> 00:06:35,200
+that we need for the operational semantics
+namely unification and resolution
+
+00:06:35,200 --> 00:06:42,000
+are already present in the Logik lecture
+that is given by Professor König.
+
+00:06:42,000 --> 00:06:49,360
+And those are also contained in the slide
+excerpt that I linked to in the Moodle course.
+
+00:06:50,160 --> 00:06:56,080
+Okay, but before we get to this, let
+us look at some cases where it seems
+
+00:06:56,080 --> 00:07:00,640
+a good idea to have operational semantics and
+not just rely on the declarative semantics.
+
+00:07:00,640 --> 00:07:04,480
+So, we will go through a few examples
+of maybe a bit surprising behaviour of
+
+00:07:04,480 --> 00:07:09,360
+certain Prolog programs that we will later be
+able to explain with the operation semantics.
+
+00:07:13,840 --> 00:07:16,480
+So, let us look at this program.
+
+00:07:17,600 --> 00:07:26,480
+Yes, a small database of connections supposedly
+of direct flights in the first four lines.
+
+00:07:26,480 --> 00:07:34,480
+So, for some city constant, we say that there
+are direct connections, direct flights.
+
+00:07:34,480 --> 00:07:37,520
+And then we have a predicate that defines
+what a connection is, which could be
+
+00:07:38,320 --> 00:07:40,320
+a multistep flight.
+
+00:07:40,320 --> 00:07:43,840
+So, direct flight is also a connection,
+
+00:07:44,400 --> 00:07:48,720
+but you can also have a situation where
+we have a direct flight from x to z and
+
+00:07:48,720 --> 00:07:53,600
+then onwards connecting from z to y which
+maybe arises from another direct flight.
+
+00:07:53,600 --> 00:07:57,920
+But anyway, a connection
+from z to y then altogether,
+
+00:07:57,920 --> 00:08:01,920
+you also have a connection from x
+to y which might be indirect, okay?
+
+00:08:02,480 --> 00:08:04,560
+So, that's a useful definition.
+
+00:08:05,200 --> 00:08:08,480
+And we can use it with some queries.
+
+00:08:08,480 --> 00:08:11,600
+So, we can ask whether there a
+connection from Frankfurt to Maui.
+
+00:08:11,600 --> 00:08:17,680
+And then by combining this would be basically
+computing the transitive closure of the direct
+
+00:08:17,680 --> 00:08:22,880
+relationship we or the Prolog finds
+that yes, there is such a connection.
+
+00:08:23,600 --> 00:08:29,200
+You could also have a variable X and ask whether that is
+anything that you can reach from San Francisco.
+
+00:08:29,200 --> 00:08:33,360
+And actually, what is reachable from San
+Francisco by using a variable in the query here?
+
+00:08:33,360 --> 00:08:36,720
+And the answers will be that, well,
+there is a connection to Honolulu,
+
+00:08:36,720 --> 00:08:39,520
+there's a connection to Maui, but no further ones.
+
+00:08:39,520 --> 00:08:45,200
+And again, this could be worked out
+from the rules here also intuitively.
+
+00:08:46,320 --> 00:08:49,600
+Okay, and we can ask questions like, is
+there connection from Maui to somewhere?
+
+00:08:49,600 --> 00:08:52,960
+And the answer is no, because there's
+no direct connection as we can see.
+
+00:08:52,960 --> 00:08:55,440
+And then that can also be no indirect collection.
+
+00:08:56,400 --> 00:09:03,120
+Okay, so what we see here can be explained
+still by the declarative semantics.
+
+00:09:03,120 --> 00:09:05,360
+The first one immediately, because this would be
+
+00:09:06,240 --> 00:09:15,760
+seen in the Herbrand model that there is this
+connection with Frankfurt, Maui, literal.
+
+00:09:15,760 --> 00:09:22,560
+And in these ones, the other two values
+could be explained from the Herbrand
+
+00:09:22,560 --> 00:09:27,120
+semantics or in the collection PDF document.
+
+00:09:27,120 --> 00:09:31,760
+Actually, for this program, there is the
+computation of the smallest Herbrand model.
+
+00:09:31,760 --> 00:09:37,360
+And for example, by looking at the set, the
+final set that is obtained there, and checking
+
+00:09:38,080 --> 00:09:43,280
+which connection literals occur where the
+first position is set to San Francisco,
+
+00:09:43,280 --> 00:09:45,360
+then we will actually also find these two.
+
+00:09:45,360 --> 00:09:49,280
+Because there's a connection between San
+Francisco and Honolulu, as a literal.
+
+00:09:49,280 --> 00:09:51,520
+There is a connection between
+San Francisco and Maui, as a literal.
+
+00:09:51,520 --> 00:09:57,200
+And there are no other literals with San
+Francisco as the first connection point, okay?
+
+00:09:57,200 --> 00:10:00,640
+That also explains this query and likewise,
+
+00:10:00,640 --> 00:10:03,680
+we will not find any connection
+to Maui in first position.
+
+00:10:03,680 --> 00:10:09,760
+So, also this operational result of the
+interpreter is explained by declarative semantics.
+
+00:10:09,760 --> 00:10:12,160
+Okay, that looks like everything is fine.
+
+00:10:12,160 --> 00:10:15,120
+Yes, the declarative semantics
+explains what the program is doing.
+
+00:10:16,000 --> 00:10:18,240
+However, let's see the next slide.
+
+00:10:21,920 --> 00:10:28,720
+So, we have made a very innocent
+change actually to the program.
+
+00:10:28,720 --> 00:10:32,960
+Namely, we have simply switched
+the order of fact and rule.
+
+00:10:32,960 --> 00:10:37,040
+So, this was previously the first line of the
+connection definition, now it's the second line.
+
+00:10:37,600 --> 00:10:44,800
+And in the non-basic case,
+we have simply switched the
+
+00:10:44,800 --> 00:10:47,520
+positions of
+direct and connection, right?
+
+00:10:47,520 --> 00:10:51,840
+Previously it was said that there must be a
+direct from x to z and a connection from z to y.
+
+00:10:51,840 --> 00:10:56,640
+Now I'm saying that there must be a
+connection from x to z and direct from z to y.
+
+00:10:56,640 --> 00:11:00,720
+Logically in terms of the meaning of this
+program, that should make a difference, right?
+
+00:11:00,720 --> 00:11:04,800
+It's still expressing the same concept
+of direct and multistep connections.
+
+00:11:04,800 --> 00:11:09,120
+However, running this program now in
+Prolog and asking a similar question
+
+00:11:09,120 --> 00:11:13,920
+as on the previous slide, suddenly
+gets an error, a runtime error, okay?
+
+00:11:13,920 --> 00:11:15,920
+So, something has gone wrong.
+
+00:11:15,920 --> 00:11:22,000
+I made an innocent change, but the
+behaviour program is now very bad, okay?
+
+00:11:22,800 --> 00:11:29,840
+This also means that these logical operations,
+which basically underlie this program or the
+
+00:11:29,840 --> 00:11:34,720
+interpretation of Prolog facts and rules,
+et cetera, it's not commutative, right?
+
+00:11:34,720 --> 00:11:36,960
+I said I changed the order of these two
+
+00:11:38,400 --> 00:11:44,720
+clauses and that would correspond to an
+error because previously we said that several
+
+00:11:45,520 --> 00:11:51,840
+clauses correspond towards junction of
+statements, or by simply switching the order here.
+
+00:11:52,480 --> 00:11:57,920
+Logically, this would mean from A or B, I made B
+or A, that shouldn't really make a difference.
+
+00:11:57,920 --> 00:12:01,440
+And similarly, also when the rules of connection
+
+00:12:01,440 --> 00:12:07,200
+and direct are changed here that could be
+seen as something like an “and”.
+
+00:12:07,200 --> 00:12:14,960
+Or it's not exactly just switching the two
+parts here, but anyway it's strange that
+
+00:12:14,960 --> 00:12:22,240
+this would have such a big impact where "and" is a
+logical operation and it should be commutative.
+
+00:12:23,120 --> 00:12:23,520
+Okay?
+
+00:12:23,520 --> 00:12:26,080
+So, that's somehow strange.
+
+00:12:26,080 --> 00:12:29,920
+And, of course, it also means that
+this program execution somehow
+
+00:12:30,640 --> 00:12:34,480
+has more aspects to it than
+just a purely logical reading.
+
+00:12:34,480 --> 00:12:38,080
+Because with the logical side,
+there shouldn’t be a difference.
+
+00:12:38,080 --> 00:12:38,480
+Yes.
+
+00:12:38,480 --> 00:12:46,160
+So, this program here has the exact same
+
+00:12:46,160 --> 00:12:51,760
+smallest Herbrand model as the previous
+program, but the behaviour is completely different.
+
+00:12:51,760 --> 00:12:53,840
+So, something is going on.
+
+00:12:56,920 --> 00:13:04,480
+Another slightly more subtle example: we have
+also already seen the additional predicate
+
+00:13:04,480 --> 00:13:12,080
+earlier in the lecture and also seen how
+we can use it to define subtraction, right?
+
+00:13:12,080 --> 00:13:20,320
+This was a recursive definition for addition
+and we said x – y = z if z + y = x.
+
+00:13:20,960 --> 00:13:24,240
+Okay, and we have seen some
+cases how this nicely works.
+
+00:13:24,800 --> 00:13:28,960
+Okay, let me say I would have made some
+slightly different implementation decisions.
+
+00:13:28,960 --> 00:13:34,640
+So, for example, for the addition, I would
+have decided that I actually want to make my
+
+00:13:34,640 --> 00:13:36,880
+case extensions on the second argument.
+
+00:13:36,880 --> 00:13:40,400
+So, basically, I have changed
+the roles of the first two
+
+00:13:41,760 --> 00:13:45,120
+arguments here, but other than that,
+this is really the same strategy.
+
+00:13:45,760 --> 00:13:48,560
+Yeah, so there is no big difference.
+
+00:13:49,120 --> 00:13:53,200
+This is also a reasonable
+definition of addition.
+
+00:13:53,200 --> 00:14:00,880
+Yes, x + 0 = x and x plus successor of something
+is to successor or something else if x and the
+
+00:14:01,680 --> 00:14:06,960
+other thing of which I took a successor of here is
+the thing from which this is the successor.
+
+00:14:06,960 --> 00:14:09,520
+Okay, so this makes mathematically perfect sense.
+
+00:14:09,520 --> 00:14:15,840
+There's no reason we need to prefer this version
+over this one in terms of what addition means.
+
+00:14:16,400 --> 00:14:17,120
+Okay?
+
+00:14:17,120 --> 00:14:20,960
+And then I could also hope, well, if
+this is a useful definition for addition,
+
+00:14:20,960 --> 00:14:24,160
+then this would also be a useful
+definition for the subtraction still.
+
+00:14:24,160 --> 00:14:27,600
+Because it has the same
+declarative nature as before;
+
+00:14:27,600 --> 00:14:29,840
+Defining subtraction in terms of addition.
+
+00:14:30,880 --> 00:14:32,480
+Okay, so all is fine.
+
+00:14:33,040 --> 00:14:37,520
+Logically, these both are equally useful programs.
+
+00:14:39,200 --> 00:14:45,760
+However, that might change when we look
+at instantiations on queries, right?
+
+00:14:45,760 --> 00:14:53,280
+So, for example, here we can run 2 - 1,
+and we get a useful result: 1.
+
+00:14:53,280 --> 00:14:54,080
+Okay, that's good.
+
+00:14:55,280 --> 00:14:59,600
+What happens if you ask questions
+like, N - M should be 1.
+
+00:14:59,600 --> 00:15:04,400
+Yes, that's something we also did for
+this example earlier in the lecture.
+
+00:15:04,400 --> 00:15:10,160
+Let's do this for this definition, which
+mathematically is just as fine as this one.
+
+00:15:10,160 --> 00:15:12,000
+Okay, so what will happen?
+
+00:15:12,000 --> 00:15:12,960
+Nothing very useful.
+
+00:15:13,920 --> 00:15:20,320
+Above here, we had this result repeated from an
+earlier slide, but what's happens down here?
+
+00:15:20,960 --> 00:15:26,400
+Where instead of getting a nice solution
+like here, where we get n = s (m).
+
+00:15:27,040 --> 00:15:28,320
+That was the thing that I said;
+
+00:15:29,200 --> 00:15:34,800
+an infinite number of answers to this
+query is expressed in a very compact form.
+
+00:15:35,440 --> 00:15:41,280
+Instead, in this definition, suddenly we
+don't get such a closed-form solution,
+
+00:15:41,280 --> 00:15:46,080
+instead we get an enumeration of results
+like, well, n could be one, m could be zero,
+
+00:15:46,080 --> 00:15:49,120
+or n could be two and m could be one, and so on.
+
+00:15:49,120 --> 00:15:54,400
+So, here we can get suddenly get
+an infinite sequence of results.
+
+00:15:54,400 --> 00:15:57,360
+Whereas here we got a very nice closed form.
+
+00:15:58,240 --> 00:16:00,720
+Okay, so the choice and treatment of the
+
+00:16:01,680 --> 00:16:07,680
+arguments here suddenly affect at least the
+quality of the results in a sense that is a
+
+00:16:07,680 --> 00:16:13,920
+nicer result because it gives one solution rather
+than an enumeration of infinitely many ones.
+
+00:16:14,720 --> 00:16:16,640
+Okay, and this happened just by
+
+00:16:16,640 --> 00:16:21,840
+some small seemingly innocent change
+to the definition of the addition.
+
+00:16:24,880 --> 00:16:28,080
+And these changes can really
+have undesirable consequences.
+
+00:16:28,080 --> 00:16:30,240
+So, let's look at just another example
+
+00:16:31,520 --> 00:16:35,440
+instead of addition and subtraction,
+let's look at addition and multiplication.
+
+00:16:35,440 --> 00:16:44,260
+Yes, once we have an addition, definitely we can
+also define multiplication; 0 * something is 0.
+
+00:16:44,260 --> 00:16:53,600
+And s(x) * y is z if we can easily work out by
+multiplying X and Y to U, and then adding
+
+00:16:54,320 --> 00:16:58,720
+Y again, you actually get
+the outcome of X + 1 * Y.
+
+00:16:58,720 --> 00:17:05,200
+So, this is a nice descriptive solution for
+computing multiplication on top of addition.
+
+00:17:06,320 --> 00:17:11,680
+Let's run it where this works quite
+nicely for various kinds of queries.
+
+00:17:11,680 --> 00:17:14,800
+So, we can, for example, multiply
+two and three to get six.
+
+00:17:16,560 --> 00:17:19,600
+Or we can basically divide.
+
+00:17:19,600 --> 00:17:23,840
+We can ask what N satisfies 2 * N is 4.
+
+00:17:23,840 --> 00:17:27,840
+So, this is really saying,
+how do we divide four by two?
+
+00:17:27,840 --> 00:17:28,880
+And the answer is two.
+
+00:17:28,880 --> 00:17:29,680
+So, this is nice.
+
+00:17:29,680 --> 00:17:34,320
+And it has this flexible flavor where we
+
+00:17:34,320 --> 00:17:38,880
+don't have to commit whether we want
+to go forward or backwards, right?
+
+00:17:38,880 --> 00:17:43,600
+Just as we did for addition earlier,
+however, there is also a very strange situation.
+
+00:17:43,600 --> 00:17:48,160
+So, with this very same definition,
+we might also ask ourselves, or Prolog,
+
+00:17:48,880 --> 00:17:52,320
+what two things do we have to
+multiply to get the answer four?
+
+00:17:53,040 --> 00:17:57,600
+Yes, that would be a factorization of a number.
+
+00:17:58,880 --> 00:17:59,920
+Okay, what will happen?
+
+00:17:59,920 --> 00:18:06,000
+Well, Prolog will happily say, well, one and
+four is the solution and indeed 1 * 4 = 4.
+
+00:18:06,000 --> 00:18:07,920
+We can also say well, 2 * 2 is a solution.
+
+00:18:08,480 --> 00:18:12,000
+Yes, two and two could be used for N
+and M because two times two is four.
+
+00:18:12,000 --> 00:18:16,880
+So, now we would also hope that ultimately,
+we also get the answer 4 * 1 is 4.
+
+00:18:17,440 --> 00:18:22,720
+However, suddenly, the Prolog program
+runs seemingly into an infinite loop.
+
+00:18:22,720 --> 00:18:26,800
+So, indeed, if you didn't abort the program here,
+
+00:18:26,800 --> 00:18:33,120
+then either it would run forever or it would
+maybe finish by some resource exhaustion.
+
+00:18:33,760 --> 00:18:35,760
+Yes, no space left or whatever.
+
+00:18:35,760 --> 00:18:43,040
+But it wouldn't give the final answer 4 * 1,
+which is very disappointing because for addition,
+
+00:18:43,040 --> 00:18:47,360
+this worked very nicely to work with the
+same predicate forwards and backwards.
+
+00:18:48,720 --> 00:18:49,220
+Yes.
+
+00:18:49,680 --> 00:18:54,880
+One way to put it here is to say that
+multiplication supports the so-called call mode;
+
+00:18:55,840 --> 00:19:06,080
++X, +Y, ?Z and +X, ?Y, +Z. So, this is a way
+in Prolog libraries document so that,
+
+00:19:06,080 --> 00:19:09,280
+for example, multiplication can
+be used by providing input.
+
+00:19:09,280 --> 00:19:13,840
+That's what the plus means, providing
+concrete inputs for the first two positions
+
+00:19:14,800 --> 00:19:16,720
+and asking for a third position, right?
+
+00:19:16,720 --> 00:19:18,160
+So, this will work nicely.
+
+00:19:18,160 --> 00:19:22,320
+It will also work nicely to provide
+inputs for the first and last position
+
+00:19:22,320 --> 00:19:26,000
+and asking about the middle
+position. This also works nicely.
+
+00:19:26,000 --> 00:19:30,320
+That is a different call mode, but
+there also one that won’t work,
+
+00:19:30,320 --> 00:19:32,000
+at least not nicely, right?
+
+00:19:32,000 --> 00:19:35,040
+So, for example, here we see that we can’t
+in general
+
+00:19:35,920 --> 00:19:45,040
+use this predicate by providing the third argument
+position and asking for the other two, right?
+
+00:19:45,040 --> 00:19:46,960
+It works to some extent, but not fully.
+
+00:19:49,600 --> 00:19:52,640
+And this is really in contrast to
+things we have seen earlier, right?
+
+00:19:52,640 --> 00:20:01,600
+If we just look at addition, so that's what we
+did previously in this context, then the very same
+
+00:20:01,600 --> 00:20:07,120
+call mode where we provide the last argument
+and ask for the other two works quite well.
+
+00:20:07,120 --> 00:20:13,440
+As we can ask which N and M in
+addition, give the value of 3?
+
+00:20:14,000 --> 00:20:20,240
+And well then, Prolog will happily
+produce exactly all the correct solutions.
+
+00:20:20,800 --> 00:20:24,320
+And for multiplications suddenly this
+didn't work on the previous slide.
+
+00:20:25,040 --> 00:20:33,360
+Yes, so indeed addition supports all call modes,
+even calling it a three variable or not providing
+
+00:20:33,360 --> 00:20:39,040
+any concrete input like this concrete value
+here, addition will still do something useful,
+
+00:20:39,040 --> 00:20:42,960
+which certainly the multiplication from the
+previous slide didn't because already, if some
+
+00:20:45,600 --> 00:20:47,520
+place is filled with concrete values,
+
+00:20:47,520 --> 00:20:52,160
+it's already failed to produce useful
+outputs for the other position, okay?
+
+00:20:52,160 --> 00:20:53,760
+Whereas for addition this works.
+
+00:20:53,760 --> 00:20:55,680
+So, the question is, why is this so different?
+
+00:20:55,680 --> 00:20:57,440
+Why does it work for addition?
+
+00:20:57,440 --> 00:20:59,040
+For this definition of addition?
+
+00:20:59,040 --> 00:21:01,680
+Why doesn't it work for the
+multiplication definition?
+
+00:21:01,680 --> 00:21:04,400
+And the declarative semantics can't explain this.
+
+00:21:05,920 --> 00:21:09,600
+Moreover, not just why it's different
+and why does the multiplication not work,
+
+00:21:09,600 --> 00:21:12,320
+we can also ask whether we can
+do something to the definition,
+
+00:21:12,320 --> 00:21:17,200
+so that the multiplication function
+will also work in this flexible way.
+
+00:21:18,000 --> 00:21:23,120
+And again, the declarative semantics can't explain
+this or can't help us. We really need
+
+00:21:23,120 --> 00:21:27,600
+to have an insight into the operation
+semantics to know how to change the
+
+00:21:27,600 --> 00:21:33,280
+program from the previous slide to also
+make my multiplication work more flexibly.
+
+00:21:33,280 --> 00:21:37,600
+And indeed, this will be a running
+example later in the slides where
+
+00:21:37,600 --> 00:21:43,040
+the concrete execution is explained, we
+will actually do this and explore various
+
+00:21:43,040 --> 00:21:48,160
+cases by looking at the addition and
+multiplication combination and trying to make
+
+00:21:49,760 --> 00:21:57,840
+the program more flexible by
+understanding how it will be executed.
+
+00:21:58,720 --> 00:22:05,200
+And as a final example here for what is strange or
+
+00:22:06,080 --> 00:22:10,880
+highly declarative semantics, it's not enough
+to explain the behaviour of all Prolog programs.
+
+00:22:10,880 --> 00:22:12,560
+Let's look at this example again.
+
+00:22:12,560 --> 00:22:15,600
+So, it was from the first
+lecture in the Prolog part.
+
+00:22:15,600 --> 00:22:18,720
+We have defined these basic concepts
+
+00:22:19,360 --> 00:22:24,960
+and this relation up there with their first
+three facts and then this jealousness concept.
+
+00:22:25,520 --> 00:22:31,440
+And at that point, I simply said that if
+you have a negation occurring in a query,
+
+00:22:31,440 --> 00:22:34,560
+or you should always put it at the end.
+
+00:22:34,560 --> 00:22:38,720
+And I said, well, it's just like that you
+simply should accept this at that point.
+
+00:22:38,720 --> 00:22:40,880
+Well, what would have happened
+if we hadn't done this?
+
+00:22:40,880 --> 00:22:45,920
+So, let's say we changed this in a
+very minor way by moving this negated
+
+00:22:47,280 --> 00:22:53,600
+constraint first, to the front of this
+right side of this loves-rule, okay?
+
+00:22:53,600 --> 00:22:55,360
+Again, logically that shouldn't make a difference.
+
+00:22:55,360 --> 00:23:01,840
+If the comma is really a logical “and”. And
+“and” as we know, is a commutative operation,
+
+00:23:01,840 --> 00:23:06,160
+then it shouldn’t make a difference whether
+this is put here or here or actually at the front.
+
+00:23:06,960 --> 00:23:10,560
+However, this logical reading apparently is not
+
+00:23:10,560 --> 00:23:15,520
+fully sufficient to understand what's going
+on because if you actually run the second
+
+00:23:15,520 --> 00:23:19,360
+program here after that small change,
+then we get very strange results, right?
+
+00:23:19,360 --> 00:23:23,440
+So, basically, nobody is jealous of anybody.
+
+00:23:23,440 --> 00:23:28,800
+Yes, “Marsellus is not jealous of anybody” says
+the answer to this first query, even though we
+
+00:23:28,800 --> 00:23:33,920
+previously established that actually there
+is jealousness with Marsellus and someone.
+
+00:23:34,640 --> 00:23:38,400
+And the same happens for basically
+all the queries we have here, right?
+
+00:23:38,400 --> 00:23:41,200
+Even if you ask with two variables,
+we don't get any results.
+
+00:23:41,200 --> 00:23:42,640
+Nobody is jealous, right?
+
+00:23:42,640 --> 00:23:48,080
+That's not what we understood this
+conceptualization to mean.
+
+00:23:48,080 --> 00:23:50,960
+Indeed, before this change,
+we've got meaningful results.
+
+00:23:50,960 --> 00:23:55,920
+You can go back to the first slides of Prolog,
+then you get much more reasonable results here.
+
+00:23:56,480 --> 00:24:01,600
+But somehow this small change
+made a big difference here.
+
+00:24:02,800 --> 00:24:08,080
+Okay, the declarative semantics can't
+explain this because it doesn't even
+
+00:24:08,080 --> 00:24:11,440
+capture any cases of negation, okay?
+
+00:24:11,440 --> 00:24:13,120
+So, we would really need operational semantics.
+
+00:24:13,680 --> 00:24:15,360
+I don't know whether we will actually get
+
+00:24:16,240 --> 00:24:21,280
+to the point, where we in operational
+semantics define how negation is treated.
+
+00:24:21,280 --> 00:24:25,360
+So, this is possible for the operational
+semantics in contrast with declarative semantics.
+
+00:24:25,360 --> 00:24:27,280
+We might not actually get to that point in the
+
+00:24:27,280 --> 00:24:30,960
+course because there’s only one
+and a half lecture left basically.
+
+00:24:31,520 --> 00:24:36,640
+But well, we would use the operational
+semantics and not the declarative semantics
+
+00:24:36,640 --> 00:24:38,960
+for undertaking this problem.
+
+00:24:38,960 --> 00:24:41,600
+And that's the point here
+because I want to motivate why,
+
+00:24:41,600 --> 00:24:45,840
+at all, to look at operational semantics.
+
+00:24:46,400 --> 00:24:49,920
+Okay, so we should look at the
+operational semantics to understand
+
+00:24:49,920 --> 00:24:54,000
+these phenomena that I just
+showed on the previous slides.
+
+00:24:54,960 --> 00:25:00,160
+So, we have to know how Prolog
+concretely executes programs.
+
+00:25:00,160 --> 00:25:02,640
+That's what operational semantics explains.
+
+00:25:02,640 --> 00:25:08,400
+And to establish this and to build
+for this, we need several ingredients.
+
+00:25:08,960 --> 00:25:09,520
+Yes.
+
+00:25:09,520 --> 00:25:10,720
+As I already mentioned, this is
+
+00:25:11,680 --> 00:25:17,600
+a more complicated set-up than just the
+construction for the declarative semantics.
+
+00:25:17,600 --> 00:25:20,320
+Okay, there are basically three
+things we need; Unification,
+
+00:25:20,320 --> 00:25:24,800
+Resolution and the concept:
+visualization of derivation trees.
+
+00:25:25,360 --> 00:25:29,040
+The first two of these are
+already in the Logik course.
+
+00:25:30,880 --> 00:25:33,760
+There's also some notion
+of tree shaped resolution,
+
+00:25:33,760 --> 00:25:37,120
+but it's not exactly the version
+that is applied in Prolog.
+
+00:25:37,120 --> 00:25:43,120
+The third item here is something that
+is not covered by the previous material.
+
+00:25:43,760 --> 00:25:50,880
+The slides in the Moodle course from
+Professor König's lecture. But the first two
+
+00:25:50,880 --> 00:25:56,800
+actually are there, just the concepts, also
+occurring in the last Logik lecture.
+
+00:25:56,800 --> 00:26:08,080
+I will provide some repetition on this, but I will
+not provide full formulation of these concepts.

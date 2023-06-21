@@ -1,0 +1,1487 @@
+55 # slide
+00:00:01,879 --> 00:00:06,020
+Sprechen wir also zunächst über die Unifikation.
+
+00:00:06,020 --> 00:00:12,320
+Und in gewissem Sinne, wie bereits erwähnt, kann dies
+als die Prolog-Version von Haskells
+
+00:00:12,320 --> 00:00:18,010
+Pattern-Matching gesehen werden, aber eigentlich eine erweiterte
+Version des Pattern-Matchings, wie wir sehen werden.
+
+00:00:18,010 --> 00:00:24,820
+Denn es muss mit Zwei-Wege-Abgleich umgehen.
+
+00:00:24,820 --> 00:00:27,599
+Betrachten wir also dieses Beispiel.
+
+00:00:27,599 --> 00:00:32,149
+Hier oben sehen Sie also ein Prolog-Programm,
+das natürlich einem Haskell-Programm entspricht,
+
+00:00:32,149 --> 00:00:33,470
+aber das ist hier nicht wirklich der Punkt.
+
+00:00:33,470 --> 00:00:38,440
+Wir haben diese zwei Klauseln, eine ist der Fakt,
+und eine ist eine Regel.
+
+00:00:38,440 --> 00:00:45,800
+Und wir sehen hier als Beispiel eine Abfrage, in
+der wir drei spezifische Terme als
+
+00:00:45,800 --> 00:00:46,800
+Argumente haben.
+
+00:00:46,800 --> 00:00:49,240
+Und die Frage ist, ob diese Abfrage
+wahr oder falsch ist.
+
+00:00:49,240 --> 00:00:50,240
+Also, ob sie erfüllt ist.
+
+00:00:50,240 --> 00:00:52,030
+Hier gibt es keine Variablen.
+
+00:00:52,030 --> 00:00:53,210
+Das ist der Sinn dieses ersten Beispiels.
+
+00:00:53,210 --> 00:00:58,890
+Wir haben hier also konkrete Werte, konkrete
+Daten und Regeln und Fakten mit Variablen.
+
+00:00:58,890 --> 00:01:07,220
+Okay, wie wir bereits diskutiert haben, als wir
+die intuitive Definition oder Art und Weise
+
+00:01:07,220 --> 00:01:14,969
+der operationalen Semantik, des operationalen Verhaltens
+in Prolog diskutiert haben, haben wir erwähnt, dass wir zuerst
+
+00:01:14,969 --> 00:01:18,299
+herausfinden müssen, welcher Fakt oder welche Regel anwendbar ist.
+
+00:01:18,299 --> 00:01:22,130
+Und wir können hier schon sehen, dass zum Beispiel,
+der erste Fakt nicht auf diese Abfrage zutrifft
+
+00:01:22,130 --> 00:01:27,899
+einfach weil wir hier eine Null haben und hier,
+haben wir s(s(0)). Ja, genau wie bei der Funktionsdefinition
+
+00:01:27,899 --> 00:01:32,560
+in Haskell würde man sagen, die erste
+Regel, die erste Gleichung gilt nicht, weil
+
+00:01:32,560 --> 00:01:34,340
+sie eine Fehlanpassung des Musters hat, okay?
+
+00:01:34,340 --> 00:01:37,420
+Aber was ist mit der zweiten Regel?
+
+00:01:37,420 --> 00:01:41,210
+Nun, der Kopf der zweiten Regel stimmt tatsächlich
+mit der Abfrage überein?
+
+00:01:41,210 --> 00:01:51,659
+Denn wir können das XS (S
+(0)), das YS (S(0)) und das Z (S(S(S(0))))
+
+00:01:51,659 --> 00:01:52,659
+richtig?
+
+00:01:52,659 --> 00:01:53,659
+Weil diese übereinstimmen.
+
+00:01:53,659 --> 00:01:57,219
+Wir haben das S hier, das Y ist eine Variable, also
+es ist nicht wirklich wichtig, was das zweite
+
+00:01:57,219 --> 00:02:00,359
+Argument hier und das dritte
+Argument von S von etwas, und dies ist auch
+
+00:02:00,359 --> 00:02:07,509
+S von etwas, so definiert eine Zuweisung, wenn
+Sie für die X, Y und Z wünschen.
+
+00:02:07,509 --> 00:02:08,509
+Okay?
+
+00:02:08,509 --> 00:02:13,510
+Und dann war die Idee, na ja, diese Regel
+anwendbar ist und wir können diese Abfrage reduzieren
+
+00:02:13,510 --> 00:02:18,350
+auf die rechte Seite, auf den Rumpf der
+gewählten Regel.
+
+00:02:18,350 --> 00:02:22,890
+Und das bedeutet natürlich, dass das Wissen
+darüber, was X, Y und Z sind, aus dieser Übereinstimmung
+
+00:02:22,890 --> 00:02:25,510
+nun auf der rechten Seite verwendet wird.
+
+00:02:25,510 --> 00:02:31,880
+Wir ersetzen also dieses Literal aus der
+Abfrage, durch die rechte Seite, einen Teil der Instanziierung
+
+00:02:31,880 --> 00:02:34,260
+für XYZ, wie gerade identifiziert.
+
+00:02:34,260 --> 00:02:40,010
+Ja, in diesem Sinne nehmen wir also jeweils ein S
+vom ersten und letzten Argument weg, weil
+
+00:02:40,010 --> 00:02:41,430
+wir haben hier X, Y, Z.
+
+00:02:41,430 --> 00:02:46,050
+Okay, deshalb verschwindet dieses S und dieses
+S verschwindet.
+
+00:02:46,050 --> 00:02:49,280
+Okay, und dann geht das noch ein paar Mal weiter
+Mal weitergehen, richtig?
+
+00:02:49,280 --> 00:02:53,570
+Also, noch einmal, eigentlich würde diese Abfrage
+mit dieser letzten Regel übereinstimmen, weil das
+
+00:02:53,570 --> 00:02:58,150
+S von etwas, das nicht mit der ersten Regel
+übereinstimmt, also würden Sie wieder die gleiche Art
+
+00:02:58,150 --> 00:03:02,680
+Reise machen und an diesen Ort, zu dieser Abfrage gelangen.
+
+00:03:02,680 --> 00:03:07,570
+Jetzt würde die letzte Regel nicht mehr
+gelten, weil wir jetzt S von null, S von
+
+00:03:07,570 --> 00:03:11,300
+etwas in dem Muster hier, aber Null in der
+Argumentposition.
+
+00:03:11,300 --> 00:03:18,300
+Aber jetzt gilt natürlich, zum Glück, die erste Klausel
+gilt nämlich diese Tatsache, indem sie feststellt, dass
+
+00:03:18,300 --> 00:03:24,900
+es in Ordnung ist, diese Abfrage mit diesem
+Fakt abzugleichen, weil diese beiden Argumentpositionen
+
+00:03:24,900 --> 00:03:25,900
+die gleichen sind, richtig?
+
+00:03:25,900 --> 00:03:29,600
+Das ist etwas, das jetzt geprüft werden muss
+was in Haskell nicht notwendig war, weil
+
+00:03:29,600 --> 00:03:34,651
+in Haskell würde man nicht einmal in der Funktionsdefinition
+Definition etwas haben, was wir hier haben.
+
+00:03:34,651 --> 00:03:36,480
+Wir haben die gleiche Variable zweimal, okay?
+
+00:03:36,480 --> 00:03:38,090
+Aber hier ist das der Fall X und S.
+
+00:03:38,090 --> 00:03:44,210
+Es gilt also genau diese Tatsache, weil
+diese beiden gleich sind und null gleich null ist.
+
+00:03:44,210 --> 00:03:48,880
+Okay, und dann wird dies durch die rechte Seite
+ersetzt, aber es gibt keine rechte Seite.
+
+00:03:48,880 --> 00:03:52,850
+Dies ist also einfach die leere Abfrage, die
+nichts anderes als wahr ist.
+
+00:03:52,850 --> 00:03:57,320
+Denn denken Sie daran, eine Abfrage ist eine Konjunktion
+von mehreren Dingen, getrennt durch Kommas, wenn
+
+00:03:57,320 --> 00:04:00,420
+es mehr als eine gibt und eine leere Konjunktion
+ist einfach wahr.
+
+00:04:00,420 --> 00:04:06,470
+Das ist der Grund, warum und wie dies gelöst werden würde,
+okay?
+
+00:04:06,470 --> 00:04:10,380
+Indem man im Grunde ein Pattern-Matching durchführt mit
+diesen Regeln und dem zusätzlichen Wissen
+
+00:04:10,380 --> 00:04:14,790
+dass X und S gleich sein müssen, bis man hier
+endet, okay?
+
+00:04:14,790 --> 00:04:18,160
+Und das ist hier der Fall.
+
+00:04:18,160 --> 00:04:27,160
+Okay, aber was ist dann mit einem Fall, in dem im Gegensatz zu
+in Haskell, eine Variable in der Abfrage
+
+00:04:27,160 --> 00:04:28,350
+haben, richtig?
+
+00:04:28,350 --> 00:04:33,170
+Das ist etwas, wo reines Pattern-Matching
+nicht mehr funktioniert.
+
+00:04:33,170 --> 00:04:39,190
+Ja, Sie können natürlich immer noch sehen, dass die erste
+Klausel nicht anwendbar ist, wegen der Null
+
+00:04:39,190 --> 00:04:40,820
+und dem S von etwas.
+
+00:04:40,820 --> 00:04:45,310
+Aber wenn Sie prüfen wollen, ob die zweite
+Klausel anwendbar ist oder ob der Kopf
+
+00:04:45,310 --> 00:04:51,910
+dieser Regel zur Auflösung der Abfrage verwendet
+werden kann, dann haben wir plötzlich diese
+
+00:04:51,910 --> 00:04:56,660
+Situation, dass wir in der Abfrage nicht etwas
+in der Abfrage nicht spezifischer ist als im Programm.
+
+00:04:56,660 --> 00:04:58,240
+Ja, es ist also nicht wirklich Pattern-Matching.
+
+00:04:58,240 --> 00:04:59,770
+Es ist nicht wie S von S von irgendwas.
+
+00:04:59,770 --> 00:05:03,540
+Und dann sieht man, wo S von Z passt, weil
+Z könnte das Etwas sein.
+
+00:05:03,540 --> 00:05:09,230
+Nein, jetzt haben wir plötzlich etwas weniger Bestimmtes
+in der Abfrage, etwa die Variable.
+
+00:05:09,230 --> 00:05:14,820
+Dann ist es nicht klar, wie man es reduzieren kann, man
+kann nicht sagen, wenn wir ein S wegnehmen von diesem
+
+00:05:14,820 --> 00:05:16,410
+N, wie auf der vorherigen Folie.
+
+00:05:16,410 --> 00:05:18,120
+Denn das N ist nur eine Variable.
+
+00:05:18,120 --> 00:05:24,660
+Okay, also müssen wir in gewisser Weise etwas mehr tun
+Sinn, wir brauchen eine Form von bidirektionalem
+
+00:05:24,660 --> 00:05:26,250
+Pattern-Matching.
+
+00:05:26,250 --> 00:05:31,610
+Zuvor haben wir etwas Konkreteres
+mit etwas Abstraktem, Variablen
+
+00:05:31,610 --> 00:05:32,700
+im Programm.
+
+00:05:32,700 --> 00:05:35,889
+Jetzt können wir auch die reale Situation haben.
+
+00:05:35,889 --> 00:05:38,560
+Wo die Sache in der Abfrage ist mehr abstrakt.
+
+00:05:38,560 --> 00:05:44,510
+Ja, weniger Wissen im Voraus über das Ende,
+dann über die dritte Position in dieser zweiten
+
+00:05:44,510 --> 00:05:45,560
+Regel hier, okay?
+
+00:05:45,560 --> 00:05:52,030
+Also, wir müssen das bidirektional machen, wir
+müssen auch Bindungen herausfinden und propagieren.
+
+00:05:52,030 --> 00:05:56,530
+Denn wenn Sie jetzt zum Beispiel entscheiden, ob
+das N etwas von der Form S sein soll von
+
+00:05:56,530 --> 00:06:02,669
+sein soll, dann kann etwa dieses
+N auch in einem anderen Literal aufgetaucht sein
+
+00:06:02,669 --> 00:06:08,040
+in der gleichen Abfrage auftauchen, dann müssen wir
+diese Information von einer Stelle zur anderen weitergeben.
+
+00:06:08,040 --> 00:06:13,960
+Es handelt sich also um einen sehr viel komplexeren
+Prozess als das einfache Pattern-Matching eines
+
+00:06:13,960 --> 00:06:18,580
+Terms, eines Ausdrucks gegen eine Funktionsdefinition,
+die darin enthalten ist.
+
+00:06:18,580 --> 00:06:26,080
+Nun, worauf es eigentlich hinausläuft, ist die Bestimmung
+und die Weitergabe von Informationen darüber, wann zwei
+
+00:06:26,080 --> 00:06:30,930
+Terme, die möglicherweise beide Variablen enthalten, gleich
+sind oder gleich gemacht werden können.
+
+00:06:30,930 --> 00:06:32,580
+Denn hier sind sie nicht gleich, richtig?
+
+00:06:32,580 --> 00:06:36,740
+Aber wir können sie gleich machen, indem wir entscheiden, dass
+N sollte zum Beispiel S von M sein.
+
+00:06:36,740 --> 00:06:37,740
+Das ist gut.
+
+00:06:37,740 --> 00:06:41,370
+Darum geht es also bei der Unifikation.
+
+00:06:41,370 --> 00:06:49,830
+Zu diesem Zweck sollten wir zunächst diskutieren, was dieser Term
+von gleich sein könnte.
+
+00:06:49,830 --> 00:06:53,620
+Wenn wir keine Variablen haben, ist es eigentlich
+ziemlich einfach.
+
+00:06:53,620 --> 00:06:57,100
+Dann vergleichen wir einfach die Terme so, wie
+sie sind, richtig?
+
+00:06:57,100 --> 00:07:01,520
+Eine Konstante ist also mit sich selbst gleich, aber nicht
+mit einer anderen Konstante.
+
+00:07:01,520 --> 00:07:06,290
+Und wenn man strukturierte Daten hast, dann müssen sie
+nicht gleich sein.
+
+00:07:06,290 --> 00:07:11,850
+Zwei Terme müssen wirklich gleich strukturiert sein
+oder die gleichen Atome an den gleichen Positionen haben.
+
+00:07:11,850 --> 00:07:15,340
+Außerdem müssen wir wirklich die Reihenfolge beachten.
+
+00:07:15,340 --> 00:07:19,190
+Wir haben also keine Sätze von Argumenten, wir haben
+Listen von Argumenten.
+
+00:07:19,190 --> 00:07:23,800
+Es reicht also nicht aus, dass die drei gleichen Atome
+in einem Term vorkommen, sie müssen wirklich
+
+00:07:23,800 --> 00:07:25,240
+an denselben Stellen stehen.
+
+00:07:25,240 --> 00:07:30,740
+Deshalb sind die ersten beiden Dinge tatsächlich Fälle
+von gleichen Termen, Grundterme sind die Variablen,
+
+00:07:30,740 --> 00:07:32,190
+der letzte Fall hingegen nicht.
+
+00:07:32,190 --> 00:07:34,810
+Es handelt sich also um Strukturgleichheit.
+
+00:07:34,810 --> 00:07:40,460
+Und das bedeutet auch in Bezug auf die Arithmetik,
+dass wir an dieser Stelle keine Berechnungen durchführen
+
+00:07:40,460 --> 00:07:41,460
+Punkt.
+
+00:07:41,460 --> 00:07:46,330
+Wie gesagt, es wurde bereits erwähnt, dass
+Terme, auch arithmetische Terme, immer
+
+00:07:46,330 --> 00:07:55,020
+in Prolog vollständig strukturell behandelt werden, es sei denn
+wir führen tatsächlich explizite Berechnungen mit diesem
+
+00:07:55,020 --> 00:07:56,020
+is-Prädikat.
+
+00:07:56,020 --> 00:07:57,020
+Ist das klar?
+
+00:07:57,020 --> 00:08:00,520
+Aber wenn man fragt, ob zwei Terme gleich sind,
+nun, natürlich sind die Zahlen fünf und zwei
+
+00:08:00,520 --> 00:08:01,540
+nicht gleich, offensichtlich.
+
+00:08:01,540 --> 00:08:04,130
+Aber auch die Terme fünf und zwei plus drei
+sind nicht gleich.
+
+00:08:04,130 --> 00:08:08,530
+Das ist der Punkt der syntaktischen Behandlung
+aller Terme, richtig?
+
+00:08:08,530 --> 00:08:10,560
+Es findet keine Berechnung statt.
+
+00:08:10,560 --> 00:08:14,500
+In der Tat ist zwei plus drei auch nur ein struktureller
+Term wie dieser, richtig?
+
+00:08:14,500 --> 00:08:15,981
+Ein binärer Operator, der so geschrieben werden
+könnte.
+
+00:08:15,981 --> 00:08:22,160
+Das sind zwei Argumente, kein echter semantischer
+Ausdruck, der zu fünf ausgewertet wird.
+
+00:08:22,160 --> 00:08:23,160
+Okay?
+
+00:08:23,160 --> 00:08:28,090
+Der Punkt über Grundbegriffe auf der Basis
+ist, dass wir strukturelle Gleichheit haben und keine
+
+00:08:28,090 --> 00:08:29,949
+Bewertung stattfindet.
+
+00:08:29,949 --> 00:08:34,720
+Der Vergleich ist wirklich ein Vergleich der Terme,
+die Struktur und die Positionen und Namen der
+
+00:08:34,720 --> 00:08:40,230
+Atome im Term.
+
+00:08:40,230 --> 00:08:47,520
+Wenn Sie Variablen haben, dann ist die Idee
+einfach nach Lösungen zu suchen, bei denen wir
+
+00:08:47,520 --> 00:08:54,320
+diese Variablen durch einige Terme ersetzen, sodass danach
+die Terme wirklich wieder strukturell gleich sind.
+
+00:08:54,320 --> 00:08:59,760
+Also, wenn man so etwas hat wie dieses Beispiel hier,
+dann sind diese Terme natürlich nicht per se
+
+00:08:59,760 --> 00:09:04,330
+gleich, denn wir haben Unterschiede in dieser
+Position und in dieser Position.
+
+00:09:04,330 --> 00:09:08,040
+Aber da die blauen Dinge Variablen sind, können
+sie durch etwas ersetzt werden.
+
+00:09:08,040 --> 00:09:11,390
+Und wenn man sie konsequent ersetzen kann,
+sodass die Terme danach wirklich
+
+00:09:11,390 --> 00:09:18,940
+wieder wirklich strukturell gleich sind, dann ist das
+gut genug, um auch eine Lösung zu haben oder um
+
+00:09:18,940 --> 00:09:24,029
+Lösung zu haben oder dies als einen Weg zu interpretieren, diese beiden
+Terme gleichzumachen.
+
+00:09:24,029 --> 00:09:25,029
+Okay?
+
+00:09:25,029 --> 00:09:28,110
+Also, man könnte zum Beispiel sagen, in diesem Fall
+das ist eigentlich die einzige Lösung.
+
+00:09:28,110 --> 00:09:34,470
+Man könnte sagen, wir ersetzen dieses Atom
+für diese Variable und dieses 11 Atom für diese
+
+00:09:34,470 --> 00:09:35,470
+Variable.
+
+00:09:35,470 --> 00:09:37,430
+Und danach sind sie gleich, richtig?
+
+00:09:37,430 --> 00:09:42,010
+Nach der Substitution sind die Terme offensichtlich
+gleich.
+
+00:09:42,010 --> 00:09:46,910
+Wonach wir also suchen, ist diese Information,
+und das ist in diesem Fall sehr einfach, aber natürlich
+
+00:09:46,910 --> 00:09:52,620
+kann es natürlich komplizierter sein, sie herauszufinden
+in interessanteren oder tief verschachtelten Fällen,
+
+00:09:52,620 --> 00:09:53,620
+zum Beispiel.
+
+00:09:53,620 --> 00:09:58,000
+Oder wenn Sie mehrere Vorkommen dieser Variablen haben
+Variablen.
+
+00:09:58,000 --> 00:10:06,550
+Also, hier sind ein paar eher einfache Fälle
+noch in jeder dieser Zeilen sollte es
+
+00:10:06,550 --> 00:10:10,940
+nicht schwer sein, aufzuschreiben, was die Variablen
+ersetzt werden müssen, richtig?
+
+00:10:10,940 --> 00:10:15,610
+Zum Beispiel, wenn wir genau eine Variable haben
+nur in einer der beiden Seiten vorkommt, dann
+
+00:10:15,610 --> 00:10:17,120
+ist dies immer noch unidirektional.
+
+00:10:17,120 --> 00:10:20,560
+Aber im Allgemeinen, wie hier, werden wir Variablen
+auf beiden Seiten.
+
+00:10:20,560 --> 00:10:26,510
+Und dann müssen wir auch Werte für alle
+Variablen hier auf beiden Seiten finden.
+
+00:10:26,510 --> 00:10:27,801
+Und, selbst in diesem Fall
+
+00:10:27,801 --> 00:10:30,570
+wäre es nicht kompliziert, so wie hier.
+
+00:10:30,570 --> 00:10:35,420
+Und im letzten Fall, das Wichtige
+hier ist, dass wir, um das gleichzumachen,
+
+00:10:35,420 --> 00:10:41,130
+müssen wir X durch einen Strukturterm ersetzen
+der Form, etwas plus eins; wie Y plus
+
+00:10:41,130 --> 00:10:42,130
+eins.
+
+00:10:42,130 --> 00:10:47,250
+Es geht also nicht um die Ersetzung
+mit fünf und vier zu ersetzen, denn fünf ist vier
+
+00:10:47,250 --> 00:10:48,250
+plus eins.
+
+00:10:48,250 --> 00:10:55,459
+Nein, wir müssen eine strukturelle Lösung finden,
+und die wäre: X muss genau Y plus eins sein
+
+00:10:55,459 --> 00:10:58,170
+und nicht irgendeine bestimmte Zahl.
+
+00:10:58,170 --> 00:10:59,290
+Ist das klar?
+
+00:10:59,290 --> 00:11:06,740
+Das ist also ein kleines Detail, das man beachten muss, um
+nicht in die Falle zu tappen, mit konkreten Zahlen
+
+00:11:06,740 --> 00:11:08,750
+und Additionen zu arbeiten, usw.
+
+00:11:08,750 --> 00:11:09,750
+Okay?
+
+00:11:09,750 --> 00:11:13,230
+Und dann gibt es noch etwas, das auch
+etwas kniffliger ist als die einfachen Beispiele
+
+00:11:13,230 --> 00:11:14,230
+hier oben.
+
+00:11:14,230 --> 00:11:16,550
+Nämlich, wenn wir Listenstrukturen haben, richtig?
+
+00:11:16,550 --> 00:11:23,680
+Also, wir können auch Situationen wie diese haben
+wo wir jetzt wissen wollen, ist es möglich
+
+00:11:23,680 --> 00:11:25,450
+diese beiden Listen gleichzumachen?
+
+00:11:25,450 --> 00:11:29,750
+Und wenn ja, was wären dann die Werte für X,
+Y, und Z.
+
+00:11:29,750 --> 00:11:37,589
+Nun, es ist wahrscheinlich, nicht allzu kompliziert
+zu sehen, dass X wahrscheinlich 'der' sein könnte und Y
+
+00:11:37,589 --> 00:11:44,820
+'Hund' sein könnte, denn dann finden wir eine Übereinstimmung
+zwischen diesen beiden Teillisten, aber dann müssen wir
+
+00:11:44,820 --> 00:11:48,779
+etwas vorsichtiger sein, was das Z
+sein sollte, denn das kann nicht einfach diese
+
+00:11:48,779 --> 00:11:52,400
+Liste sein, denn dann wäre es nicht das Ende
+der ersten Liste sein, richtig?
+
+00:11:52,400 --> 00:11:58,170
+Wenn man sich das hier also ansieht, und wenn man
+in Form von Typen denken, dann sollte das eine Liste sein
+
+00:11:58,170 --> 00:11:59,170
+von Listen von etwas sein.
+
+00:11:59,170 --> 00:12:06,899
+Ja, wir sehen hier nur einen weiteren Eintrag in der
+äußeren Liste.
+
+00:12:06,899 --> 00:12:07,899
+Okay?
+
+00:12:07,899 --> 00:12:15,380
+Der Punkt hier ist, dass wenn wir entscheiden müssen
+Gleichheiten entscheiden müssen, dann ist es wichtig
+
+00:12:15,380 --> 00:12:19,490
+zu wissen, wie die Listensyntax in Prolog
+funktioniert, richtig?
+
+00:12:19,490 --> 00:12:27,330
+Also, eine Strategie könnte sein, immer zu übersetzen
+all solche Listen, Ausdrücke, Listenausdrücke in
+
+00:12:27,330 --> 00:12:34,089
+zum Beispiel, diese sehr systematische Rotation,
+das ist die letzte Sache hier.
+
+00:12:34,089 --> 00:12:40,060
+Die Baumdarstellung und dann haben wir einfache
+Terme wie hier oben, die wir vergleichen können.
+
+00:12:40,060 --> 00:12:48,089
+Aber mit etwas Übung ist es auch möglich
+die Antwort für X, Y, Z hier zu sehen,
+
+00:12:48,089 --> 00:12:51,920
+nur anhand der Syntax, die hier angegeben ist.
+
+00:12:51,920 --> 00:12:56,980
+Ohne dass man sie vorher im Kopf in
+Terme dieser Form zu übersetzen.
+
+00:12:56,980 --> 00:12:58,209
+Okay?
+
+00:12:58,209 --> 00:13:02,959
+Dann gibt es ein weiteres mögliches Problem.
+
+00:13:02,959 --> 00:13:09,600
+Da etwa Variablen sowohl auf der linken als auch auf der rechten Seite stehen können,
+könnten wir im Prinzip
+
+00:13:09,600 --> 00:13:12,030
+auch Fragen wie diese stellen.
+
+00:13:12,030 --> 00:13:17,180
+Also, ist es möglich, dass P (X) = p (q(x)) ist?
+
+00:13:17,180 --> 00:13:20,240
+Nun, darauf gibt es mindestens zwei mögliche Antworten.
+
+00:13:20,240 --> 00:13:25,890
+Die eine Antwort wäre: Nein, das macht keinen
+Sinn, denn egal wie X ist, Q von X wäre
+
+00:13:25,890 --> 00:13:30,580
+größer oder sie können nicht gleich sein als Argumente
+von P oder natürlich könnte man auch die
+
+00:13:30,580 --> 00:13:35,560
+Interpretation haben, wo dann X eine unendliche
+Verschachtelung von Q sein muss, dann funktioniert es plötzlich wieder.
+
+00:13:35,560 --> 00:13:41,380
+Und das sind zwei verschiedene Interpretationen
+und ein Algorithmus zum Entscheiden solcher Gleichheiten
+
+00:13:41,380 --> 00:13:44,200
+muss hier eine Wahl treffen.
+
+00:13:44,200 --> 00:13:47,339
+Und diese Wahl wird "occurs check" genannt.
+
+00:13:47,339 --> 00:13:49,589
+Für Prolog ist das ein Implementierungsdetail.
+
+00:13:49,589 --> 00:13:55,709
+Tatsächlich verhindert Prolog aus Gründen der Effizienz
+aus Effizienzgründen solche Fälle nicht verhindern.
+
+00:13:55,709 --> 00:14:01,080
+Also, Prolog würde tatsächlich akzeptieren
+dass dies eine Gleichheit ist, die als
+
+00:14:01,080 --> 00:14:03,310
+wahr angesehen wird.
+
+00:14:03,310 --> 00:14:08,660
+Das ist vom Standpunkt der Semantik aus gesehen ganz nett,
+wenn man über Programme schlussfolgern will und tatsächlich,
+
+00:14:08,660 --> 00:14:10,980
+in Prolog kann man normalerweise in einer
+
+00:14:10,980 --> 00:14:15,660
+Implementierung auch einen Schalter für den
+Interpreter verwenden, um zu erzwingen, dass etwas
+
+00:14:15,660 --> 00:14:20,079
+dass so etwas verhindert wird, sodass wir nicht haben können, dass
+ein X in etwas vorkommt, durch das es
+
+00:14:20,079 --> 00:14:21,079
+ersetzt werden soll.
+
+00:14:21,079 --> 00:14:24,240
+Ja, das wäre die Situation hier.
+
+00:14:24,240 --> 00:14:28,880
+Bei allen Übungsaufgaben und so weiter verfolgen wir auch
+diesen sauberen Ansatz.
+
+00:14:28,880 --> 00:14:37,519
+Das heißt, wenn wir Sie bitten, Fragen zu
+beantworten, müssen Sie nicht das tun, was Prolog
+
+00:14:37,519 --> 00:14:38,560
+in diesem Fall tut.
+
+00:14:38,560 --> 00:14:45,700
+Ja, das wird nicht sein -, Sie werden nicht
+in diese Situation kommen.
+
+00:14:45,700 --> 00:14:46,700
+Nun gut.
+
+00:14:46,700 --> 00:14:52,940
+Schauen wir uns nun einige andere Fälle an, die keine
+Lösung haben, aber nicht aus den Gründen, die auf
+
+00:14:52,940 --> 00:14:54,050
+der vorherigen Folie.
+
+00:14:54,050 --> 00:14:58,440
+So könnten Sie zum Beispiel Terme haben wie
+und hier ist der Punkt, dass die gleiche
+
+00:14:58,440 --> 00:15:00,060
+Variable zweimal vorkommt.
+
+00:15:00,060 --> 00:15:02,730
+Sie muss also konsequent ersetzt werden.
+
+00:15:02,730 --> 00:15:07,089
+Es wäre natürlich möglich zu sagen,
+Nun, X hat eine Lösung, denn wir können
+
+00:15:07,089 --> 00:15:09,870
+X durch Mia ersetzen, denn dann haben wir diese Übereinstimmung
+hier.
+
+00:15:09,870 --> 00:15:13,480
+Und ebenso könnte man sagen, na ja, X würde
+durch Vincent ersetzt werden, denn dann haben wir
+
+00:15:13,480 --> 00:15:14,610
+Übereinstimmung hier.
+
+00:15:14,610 --> 00:15:18,519
+Aber das wäre nur möglich, wenn beides gleichzeitig
+möglich, wenn das nicht das gleiche X wäre,
+
+00:15:18,519 --> 00:15:21,610
+es wäre X1, X2, oder X und Y, dann könnten wir
+dies tun.
+
+00:15:21,610 --> 00:15:26,260
+Aber da es dasselbe X ist, müssten wir
+X durch ein einziges Ding ersetzen.
+
+00:15:26,260 --> 00:15:31,290
+Und so können wir es weder durch Mia noch durch
+Vincent ersetzen, weil wir in beiden Fällen eine Fehlanpassung
+
+00:15:31,290 --> 00:15:32,839
+in einer der beiden Positionen.
+
+00:15:32,839 --> 00:15:38,149
+Deshalb ist dies nicht unifizierbar, wie man
+sagen würde.
+
+00:15:38,149 --> 00:15:39,149
+Ist das klar?
+
+00:15:39,149 --> 00:15:43,570
+Und natürlich kann das auch passieren, wenn Variablen
+nur auf einer Seite vorkommen.
+
+00:15:43,570 --> 00:15:48,089
+Ja, das passiert nicht nur, weil wir
+die gleiche Variable auf der linken und rechten Seite haben.
+
+00:15:48,089 --> 00:15:54,360
+Es könnte auch der Fall sein, dass X nur
+auf einer Seite unserer Frage vorkommt, aber dann
+
+00:15:54,360 --> 00:15:57,610
+so auftritt, dass wir trotzdem einen Widerspruch erhalten.
+
+00:15:57,610 --> 00:16:03,570
+Denn wenn man jetzt wollte, dass X Marsellus
+sein müsste, um diese Übereinstimmung herzustellen, dann müssten wir auch
+
+00:16:03,570 --> 00:16:06,910
+dieses X durch Marsellus ersetzen, weil es
+die gleiche Variable ist.
+
+00:16:06,910 --> 00:16:08,650
+Aber dann stimmen Marsellus und Mia nicht überein.
+
+00:16:08,650 --> 00:16:11,660
+Es wäre also auch eine Nein-Antwort.
+
+00:16:11,660 --> 00:16:17,390
+Und ähnlich, sodass man sich ausrechnen kann, dass
+dies ein Problem wäre.
+
+00:16:17,390 --> 00:16:22,300
+Es ist also ein ähnliches Beispiel wie auf der vorherigen
+Folie, aber an einem bestimmten Punkt gibt es eine Unstimmigkeit
+
+00:16:22,300 --> 00:16:27,080
+und ich denke, es hat mit diesen Atomen zu tun
+hier.
+
+00:16:27,080 --> 00:16:29,470
+Ja, die Variablen wären also in Ordnung.
+
+00:16:29,470 --> 00:16:35,130
+Sie könnten in jeder Position auf sinnvolle Weise abgeglichen werden.
+einer sinnvollen Weise angepasst werden, aber eigentlich müssen wir auch
+
+00:16:35,130 --> 00:16:40,990
+sicherstellen, dass die Struktur an
+allen Stellen des Baums die gleiche
+
+00:16:40,990 --> 00:16:41,990
+ist.
+
+00:16:41,990 --> 00:16:44,170
+Aufgrund dieser beiden Punkte ergibt sich hier ein Widerspruch
+zwei Punkte.
+
+00:16:44,170 --> 00:16:46,329
+Okay, was noch?
+
+00:16:46,329 --> 00:16:48,220
+Es ist auch ein Fall, in dem es keine Antwort gibt.
+
+00:16:48,220 --> 00:16:49,650
+Warum ist das so?
+
+00:16:49,650 --> 00:16:51,050
+Weil wir die Stelligkeit respektieren müssen.
+
+00:16:51,050 --> 00:16:53,820
+Wie bereits erwähnt, hat Prolog kein
+ein Typsystem.
+
+00:16:53,820 --> 00:16:58,820
+Es erlaubt sogar, dass derselbe Prädikatsname
+mit einer unterschiedlichen Anzahl von Argumenten verwendet werden,
+
+00:16:58,820 --> 00:17:01,019
+aber dann können wir die Dinge nicht wirklich unifizieren,
+oder?
+
+00:17:01,019 --> 00:17:04,319
+Man kann also nicht sagen, dass X b, b oder so ist.
+
+00:17:04,319 --> 00:17:07,600
+Das X muss durch einen Term ersetzt werden.
+
+00:17:07,600 --> 00:17:11,790
+Und welchen Term man auch immer ersetzt, man setzt
+an die Stelle von X.
+
+00:17:11,790 --> 00:17:15,410
+Auf der rechten Seite steht normalerweise P als
+eine unäre Anwendung auf einen Term.
+
+00:17:15,410 --> 00:17:19,722
+Auf der linken Seite haben wir P als binäre
+Anwendung auf zwei Terme.
+
+00:17:19,722 --> 00:17:21,610
+Das ist unvereinbar.
+
+00:17:21,610 --> 00:17:22,610
+Ja.
+
+00:17:22,610 --> 00:17:28,780
+Das heißt also: Die Antwort muss auch hier
+Nein sein.
+
+00:17:28,780 --> 00:17:37,110
+Abgesehen von den Beispielen, lassen Sie uns auch kurz
+über die zugrunde liegenden formalen Konzepte sprechen.
+
+00:17:37,110 --> 00:17:38,900
+Die Terme, die hier verwendet werden.
+
+00:17:38,900 --> 00:17:42,210
+Also, es gibt natürlich den Term der Substitution
+den ich bereits erwähnt habe.
+
+00:17:42,210 --> 00:17:47,220
+Also die Idee, Variablen entweder durch andere
+Variablen oder andere Arten von Termen.
+
+00:17:47,220 --> 00:17:54,220
+Also die Art von Termen, die in Prolog-Programmen vorkommen können
+Programmen vorkommen können, konstante Strukturen, auch Zahlen
+
+00:17:54,220 --> 00:17:58,580
+aber viele arbeiten hier mit Strukturen und Listen.
+
+00:17:58,580 --> 00:18:03,120
+Das ist zunächst einmal nur die Abbildung für Variablen.
+
+00:18:03,120 --> 00:18:06,580
+Aber dann wird es natürlich auch auf Terme angewendet
+die Variablen enthalten.
+
+00:18:06,580 --> 00:18:12,750
+Wenn man die Substitution, die ja nur eine
+Abbildung von Variablen auf Terme in eine Funktion,
+
+00:18:12,750 --> 00:18:15,190
+die Terme auf Terme abbildet.
+
+00:18:15,190 --> 00:18:19,980
+Wenn also ein Term gegeben ist, der Variablen enthalten kann und im Allgemeinen auch wird
+Variablen enthält.
+
+00:18:19,980 --> 00:18:25,330
+erhält man einen neuen Term, der die gleiche Struktur hat
+Struktur zu all den Punkten hat, an denen die
+
+00:18:25,330 --> 00:18:31,179
+Variablen vorkommen, und dann, wo diese Variablen
+durch das ersetzt werden, was die Substitution
+
+00:18:31,179 --> 00:18:32,179
+sagt.
+
+00:18:32,179 --> 00:18:34,010
+Und das ergibt einen neuen Term aus dem alten Term.
+
+00:18:34,010 --> 00:18:40,510
+Ja, und das wird benutzt, um Terme gleichzumachen
+denn dann können wir die gleiche Substitution
+
+00:18:40,510 --> 00:18:43,059
+auf zwei Terme anwenden, um sie gleichzumachen.
+
+00:18:43,059 --> 00:18:44,059
+Okay?
+
+00:18:44,059 --> 00:18:47,030
+Die Notation für die Substitution wird also so aussehen
+so.
+
+00:18:47,030 --> 00:18:49,850
+Wir schreiben sie in Mengenklammern.
+
+00:18:49,850 --> 00:18:53,480
+Also, U ist eine Substitution.
+
+00:18:53,480 --> 00:18:58,330
+Und so geschrieben bedeutet das, dass es
+die Substitution, die die Variable
+
+00:18:58,330 --> 00:19:03,480
+Nachname durch den Term ersetzt, der eine Konstante ergibt,
+kann aber auch ein beliebiger Term sein, Mueller.
+
+00:19:03,480 --> 00:19:07,080
+Und um dies zu ersetzen, die Variable MM durch diesen
+Term.
+
+00:19:07,080 --> 00:19:13,770
+Okay, natürlich kann keine Variable in einer solchen Liste
+mehrfach in einer solchen Liste in einer solchen Schreibweise aufgeführt werden,
+
+00:19:13,770 --> 00:19:16,809
+denn dann wäre es nicht klar, was die
+Variable abgebildet werden soll.
+
+00:19:16,809 --> 00:19:18,980
+Aber wir können hier unvollständige Aufzählungen haben.
+
+00:19:18,980 --> 00:19:23,820
+Wir könnten also so viele weitere Variablen
+in unseren Termen vorkommen, aber wir entscheiden uns dafür, nur
+
+00:19:23,820 --> 00:19:25,090
+Nachname und MM zu ersetzen.
+
+00:19:25,090 --> 00:19:30,120
+Und dann listen wir auch nur diese beiden hier auf
+und nicht alle Variablen, die es gibt.
+
+00:19:30,120 --> 00:19:38,520
+Okay, das ist also genau das, was diese Ersetzung
+wenn sie auf einen Term angewendet wird, würde sie
+
+00:19:38,520 --> 00:19:41,990
+genau die Variablen LastName und MM ändern.
+MM.
+
+00:19:41,990 --> 00:19:43,390
+So erhält man einen neuen Term.
+
+00:19:43,390 --> 00:19:45,540
+Alles andere würde unverändert bleiben.
+
+00:19:45,540 --> 00:19:51,940
+Konkret, wenn Sie dies auf diesen Term anwenden
+aus einer der vorherigen Folien anwenden, dann wird diese
+
+00:19:51,940 --> 00:19:57,809
+letzte Namensposition durch das ersetzt, was die
+Substitution sagt, sonst passiert nichts.
+
+00:19:57,809 --> 00:20:03,390
+Zum Beispiel wird dies nicht einmal verwendet, weil
+die Variable MM in diesem Term nicht vorkommt.
+
+00:20:03,390 --> 00:20:07,919
+Und wenn andere Variablen in diesem Term
+vorkommen, würden sie auch nicht durch
+
+00:20:07,919 --> 00:20:13,960
+die Substitution verändert.
+
+00:20:13,960 --> 00:20:20,470
+Und dann die Idee einer Substitution
+um zwei Terme gleichzumachen, das ist das Konzept
+
+00:20:20,470 --> 00:20:21,470
+eines Unifikators.
+
+00:20:21,470 --> 00:20:26,650
+Das ist auch der Grund, warum die Substitution auf der vorherigen
+Folie U genannt wurde, weil sie für bestimmte
+
+00:20:26,650 --> 00:20:29,390
+Termpaare sein kann.
+
+00:20:29,390 --> 00:20:37,169
+Okay, also ist die Substitution, die
+wir gerade gesehen haben, ist ein Unifikator für die beiden Terme, die wir
+
+00:20:37,169 --> 00:20:38,549
+vorher gesehen haben.
+
+00:20:38,549 --> 00:20:44,830
+Ja, wenn Sie diese Substitution auf diesen Term anwenden
+Term anwendet, was bedeutet, dass man rekursiv an allen
+
+00:20:44,830 --> 00:20:51,970
+Positionen rekursiv abzubilden, die Variablen in diesem Fall, genau
+diese Variable durch diese rechts innen.
+
+00:20:51,970 --> 00:20:57,320
+Und wenn Sie das Gleiche mit der gleichen Substitution
+auf diesen anderen Term, dann findet man eine andere
+
+00:20:57,320 --> 00:20:58,860
+Variable, vielleicht diese hier.
+
+00:20:58,860 --> 00:21:03,950
+Und wenn Sie diese auch durch 11 ersetzen, dann haben
+wir zwei Terme, die strukturell identisch
+
+00:21:03,950 --> 00:21:04,950
+sind, richtig?
+
+00:21:04,950 --> 00:21:06,539
+Sie werden tatsächlich Grundterme sein.
+
+00:21:06,539 --> 00:21:13,990
+Wir können sie einfach Stück für Stück vergleichen
+und sie werden wirklich gleich sein in dem Sinne
+
+00:21:13,990 --> 00:21:17,960
+dass wir keine weiteren Änderungen an ihnen vornehmen müssen.
+
+00:21:17,960 --> 00:21:21,080
+Denn der Unifikator, die Substitution, hat
+sich darum gekümmert.
+
+00:21:21,080 --> 00:21:22,919
+Das ist dann der Unifikator für diese beiden Terme.
+
+00:21:22,919 --> 00:21:23,919
+Nun gut.
+
+00:21:23,919 --> 00:21:27,210
+Nun kann es sehr viele Unifikatoren für ein
+gegebenes Paar von Termen geben.
+
+00:21:27,210 --> 00:21:31,130
+So hätte man etwa die Substitution U'.
+
+00:21:31,130 --> 00:21:34,900
+Wobei wir auch sagen, dass die Variable Z abgebildet wird
+auf was auch immer abgebildet wird.
+
+00:21:34,900 --> 00:21:36,809
+Das wäre auch ein Unifikator.
+
+00:21:36,809 --> 00:21:42,440
+Das Z kommt in diesen beiden Termen gar nicht vor,
+aber es wäre ein Unifikator, denn nach Anwendung
+
+00:21:42,440 --> 00:21:46,760
+dieser U-Primzahl auf diese beiden Terme hätte man
+auch offensichtlich gleiche Dinge haben.
+
+00:21:46,760 --> 00:21:54,630
+Okay, um nicht diese seltsamen und interessanten
+Unifikatoren zu vermeiden, gibt es das Konzept des allgemeinsten
+
+00:21:54,630 --> 00:21:55,630
+Unifikator.
+
+00:21:55,630 --> 00:21:59,880
+Und das sollte Ihnen bekannt vorkommen, wenn Sie aus
+der Vorlesung von Professor König.
+
+00:21:59,880 --> 00:22:01,970
+Was ist also der allgemeinste Unifikator?
+
+00:22:01,970 --> 00:22:07,340
+Es ist ein Unifikator, der die geringste Menge
+Auswahl notwendig macht.
+
+00:22:07,340 --> 00:22:10,550
+Das heißt, er lässt so viele Variablen wie möglich
+unverändert.
+
+00:22:10,550 --> 00:22:15,190
+Und er führt keine spezifischen Terme ein, wo
+Variablen ausreichen.
+
+00:22:15,190 --> 00:22:20,270
+Wenn es also ausreicht, eine Variable durch eine andere zu ersetzen
+durch eine andere Variable zu ersetzen, dann wird dies getan
+
+00:22:20,270 --> 00:22:24,150
+anstatt beide Variablen durch eine beliebige
+willkürliche Konstante, wie Null, zu ersetzen.
+
+00:22:24,150 --> 00:22:28,420
+Das wäre spezifischer, als es eigentlich
+benötigt wird.
+
+00:22:28,420 --> 00:22:29,420
+Ist das in Ordnung?
+
+00:22:29,420 --> 00:22:33,679
+Also, ein Beispiel dafür, sagen wir, dies sind
+die beiden Terme, die uns interessieren.
+
+00:22:33,679 --> 00:22:38,370
+Und hier sind zwei Substitutionen, um
+diese beiden Terme zu unifizieren, richtig?
+
+00:22:38,370 --> 00:22:46,190
+Wenn wir das, was die erste Substitution besagt
+auf diese beiden Terme anwendet, erhält man zwei Terme
+
+00:22:46,190 --> 00:22:50,080
+Datum 27, 11, 2007.
+
+00:22:50,080 --> 00:22:55,110
+Und hier auch Datum 27, 11, 2007.
+
+00:22:55,110 --> 00:22:58,190
+Dies ist also ein Unifikator für diese beiden Terme.
+
+00:22:58,190 --> 00:23:00,070
+Es gibt aber noch einen anderen.
+
+00:23:00,070 --> 00:23:04,290
+Dieses U2 ist auch ein Unifikator für diese beiden
+Terme.
+
+00:23:04,290 --> 00:23:11,760
+Denn wenn wir das ersetzen, erhalten wir nach der
+Substitution, erhalten wir hier D, hier 11,
+
+00:23:11,760 --> 00:23:17,240
+2007 hier und hier erhalten wir keine Veränderung von D, weil
+D wird nicht als Variable auf der
+
+00:23:17,240 --> 00:23:21,310
+linken Seite eines dieser Paare im zweiten
+Unifikator.
+
+00:23:21,310 --> 00:23:25,270
+Wir erhalten 11, was in Ordnung ist, weil wir auch
+11 erhalten haben, und hier erhalten wir 2007, was
+
+00:23:25,270 --> 00:23:26,270
+auch in Ordnung ist.
+
+00:23:26,270 --> 00:23:30,630
+Wendet man also den zweiten Unifikator auf diese beiden
+Terme führt also auch zu gleichen Termen zu einem anderen
+
+00:23:30,630 --> 00:23:33,060
+Term dann hier, aber zwei gleiche Terme.
+
+00:23:33,060 --> 00:23:34,060
+Okay?
+
+00:23:34,060 --> 00:23:37,710
+Und jetzt haben wir zwei Kandidaten für Unifikatoren, und
+eigentlich ist der zweite allgemeiner.
+
+00:23:37,710 --> 00:23:42,600
+Das sehen wir daran, dass er nicht eine
+willkürliche Wahl von 27 trifft.
+
+00:23:42,600 --> 00:23:47,680
+Es gibt keine gute Motivation, irgendetwas
+etwas durch 27 zu ersetzen.
+
+00:23:47,680 --> 00:23:50,630
+Wie man sieht, zeigen sie alle nur zwei
+Terme, denn diese wurden nicht einmal
+
+00:23:50,630 --> 00:23:51,630
+erwähnt.
+
+00:23:51,630 --> 00:23:54,130
+U1 ist also ein Unifikator, aber er ist unnötig
+spezifisch.
+
+00:23:54,130 --> 00:23:56,070
+Es ist kein sehr allgemeiner Unifikator.
+
+00:23:56,070 --> 00:23:58,590
+Der zweite Unifikator hingegen ist der allgemeinste.
+
+00:23:58,590 --> 00:24:05,429
+Es gibt keine Möglichkeit, diese Terme gleichzumachen, indem
+man weniger Auswahlmöglichkeiten trifft oder mehr Dinge
+
+00:24:05,429 --> 00:24:06,860
+als Variablen belassen.
+
+00:24:06,860 --> 00:24:11,289
+Man muss dies wirklich durch den spezifischen
+Wert 11 ersetzen, weil wir sonst keine Übereinstimmung
+
+00:24:11,289 --> 00:24:12,289
+hier.
+
+00:24:12,289 --> 00:24:16,490
+Und wir müssen wirklich Y durch einen bestimmten
+Wert 2007 ersetzen, weil man sonst keine
+
+00:24:16,490 --> 00:24:17,490
+übereinstimmen.
+
+00:24:17,490 --> 00:24:22,630
+Es gibt keine Möglichkeit, einen allgemeineren Unifikator zu erstellen
+als dieses U2.
+
+00:24:22,630 --> 00:24:24,049
+Also gut.
+
+00:24:24,049 --> 00:24:28,950
+Das wäre dann eine U3, die D durch DD ersetzt
+anstatt so herum, das würde auch
+
+00:24:28,950 --> 00:24:29,950
+ein sehr allgemeiner Unifikator sein.
+
+00:24:29,950 --> 00:24:33,309
+Das wird auch allgemeiner sein als U1.
+
+00:24:33,309 --> 00:24:37,740
+Und eigentlich wären diese beiden U2 und diese
+U3 wären ebenso allgemein.
+
+00:24:37,740 --> 00:24:49,660
+Ja, es gibt also nicht den einen allgemeinsten Unifikator,
+aber ein Unifikator kann der allgemeinste sein.
+
+00:24:49,660 --> 00:24:53,570
+Also, wie findet Prolog einen allgemeinsten Unifikator?
+
+00:24:53,570 --> 00:24:56,870
+Ja, denn Prolog sucht immer nach einem allgemeinsten
+Unifikator.
+
+00:24:56,870 --> 00:24:59,790
+Es braucht also einen Algorithmus dafür.
+
+00:24:59,790 --> 00:25:05,400
+Okay, auf den Folien gibt es eine Beschreibung
+von einem konkreten Algorithmus.
+
+00:25:05,400 --> 00:25:08,799
+Aber ich werde diese Folien jetzt nicht
+durchgehen.
+
+00:25:08,799 --> 00:25:11,260
+Ja, ich überspringe diese Folien.
+
+00:25:11,260 --> 00:25:16,140
+Sie können sie natürlich herunterladen, aber ich werde
+sie in diesem Video nicht durchgehen.
+
+00:25:16,140 --> 00:25:22,559
+Und ein Grund dafür ist, dass Sie
+zumindest einen ähnlichen Algorithmus bereits in
+
+00:25:22,559 --> 00:25:24,760
+der Logik-Vorlesung vorgeschlagen.
+
+00:25:24,760 --> 00:25:28,960
+Und er wurde in diesem Kurs als Übung geübt
+Übung und wahrscheinlich war er auch Teil der
+
+00:25:28,960 --> 00:25:32,070
+Prüfung, sodass Sie in der Lage sein sollten, dies aufzufrischen
+dies.
+
+00:25:32,070 --> 00:25:38,230
+Und darüber hinaus werden wir für unseren Umgang mit
+der Semantik von Prolog, brauchen wir keinen
+
+00:25:38,230 --> 00:25:39,350
+einen bestimmten Algorithmus lernen.
+
+00:25:39,350 --> 00:25:46,060
+Es geht also nicht darum, dass Sie diesen Algorithmus auswendig lernen müssen
+diesen Algorithmus auswendig lernen und zeigen, wie man den
+
+00:25:46,060 --> 00:25:47,060
+Algorithmus anwendet.
+
+00:25:47,060 --> 00:25:51,150
+Es ist nur notwendig zu wissen, was der allgemeinste
+Unifikator von zwei Termen ist.
+
+00:25:51,150 --> 00:25:56,919
+Das kann man natürlich herausfinden, indem man den Algorithmus wirklich
+Anwendung des Algorithmus und es gibt Beispiele
+
+00:25:56,919 --> 00:25:59,039
+auf den Folien, die ich jetzt überfliege.
+
+00:25:59,039 --> 00:26:01,820
+Und natürlich auch in den Folien von Professor König
+Folien.
+
+00:26:01,820 --> 00:26:06,900
+Und Sie werden sehen, dass es Beispiele gibt, in denen wir
+hier ist der Unifikator und dies ist
+
+00:26:06,900 --> 00:26:08,940
+das Ergebnis.
+
+00:26:08,940 --> 00:26:10,309
+Aber das ist alles, was Sie brauchen werden.
+
+00:26:10,309 --> 00:26:15,090
+Sie müssen korrekt sagen, was der allgemeinste
+Unifikator für ein Termpaar ist.
+
+00:26:15,090 --> 00:26:20,480
+Sie müssen nicht zeigen, dass Sie
+dass man diesen Unifikator mit einem konkreten Algorithmus berechnen kann.
+
+00:26:20,480 --> 00:26:22,950
+Das ist also einfach etwas, das nicht Teil
+dieser Vorlesung.
+
+00:26:22,950 --> 00:26:24,950
+Das ist nichts, was wir hier tun wollen.
+
+00:26:24,950 --> 00:26:29,900
+Aber wir müssen in der Lage sein, einen sehr
+allgemeinen Unifikator zu finden, okay?
+
+00:26:29,900 --> 00:26:34,400
+Deshalb werde ich diesen Algorithmus hier nicht behandeln
+hier behandeln.
+
+00:26:34,400 --> 00:26:39,370
+Nebenbei bemerkt, ich glaube, ich habe es bereits kurz
+erwähnt.
+
+00:26:39,370 --> 00:26:44,600
+Diese Prüfung, die ich kurz erwähnt habe
+auf der vorherigen Folie erwähnt habe, als wir über
+
+00:26:44,600 --> 00:26:49,660
+diese unendliche Übereinstimmung; P von (X, Y) gegen
+P von (Q(X)).
+
+00:26:49,660 --> 00:26:52,470
+Und die auch in den Folien vorkommt.
+
+00:26:52,470 --> 00:26:59,919
+Der "occurs check" ist also ein algorithmisches Detail,
+das verwendet werden kann oder nicht.
+
+00:26:59,919 --> 00:27:05,309
+Es wird für Sie in der Übung oder Prüfung nicht relevant sein.
+oder der Prüfung.
+
+00:27:05,309 --> 00:27:06,309
+Okay?
+
+00:27:06,309 --> 00:27:10,169
+Prolog berücksichtigt dies also, aber Sie werden
+müssen sich dessen nicht bewusst sein.
+
+00:27:10,169 --> 00:27:16,270
+Sie können immer die intuitive Vorstellung von
+Unifikation verwenden, indem man sich Terme ansieht und überlegt
+
+00:27:16,270 --> 00:27:21,710
+was muss ich tun, um diese beiden Terme gleichzumachen
+Terme gleichzumachen, ohne dass das Problem der Prüfung auftritt.
