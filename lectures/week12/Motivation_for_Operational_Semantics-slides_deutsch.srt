@@ -28,7 +28,7 @@ Semantik für Prolog-Programme.
 
 00:00:42,080 --> 00:00:45,360
 Heute werden wir uns die sogenannte
-Operationssemantik für Prolog.
+Operationssemantik für Prolog anschauen.
 
 00:00:45,920 --> 00:00:48,480
 Und bevor wir das tun, noch ein paar Worte.
@@ -105,7 +105,7 @@ Okay, das ist also ein Nachteil dieser Semantik.
 
 00:02:10,000 --> 00:02:14,320
 Während die operationale Semantik
-diese Eigenschaften gut ab, weil die operative
+diese Eigenschaften gut abdeckt, weil die operative
 
 00:02:14,320 --> 00:02:18,720
 Semantik ist wirklich das, was die Implementierung
@@ -130,7 +130,7 @@ Was man also in der Herbrand-Semantik konstruiert
 Semantik sind Mengen von Grundbegriffen.
 
 00:02:41,760 --> 00:02:48,000
-Dies erklärt also genau, welche Abfragen erfolgreich wären
+Dies erklärt also genau, welche Abfragen
 erfolgreich sind, wenn man alle Argumente der Prädikate instanziiert
 
 00:02:48,000 --> 00:02:54,080
@@ -174,8 +174,8 @@ Für deklarative Semantik,
 gibt es mehr Bestandteile
 
 00:03:28,080 --> 00:03:33,200
-die zusammenkommen und zusammenwirken müssen
-zusammenwirken, um die Semantik zu etablieren.
+die zusammenkommen und zusammenwirken müssen,
+um die Semantik zu etablieren.
 
 00:03:33,200 --> 00:03:36,800
 In diesem Sinne ist die deklarative Semantik
@@ -267,7 +267,7 @@ früher auf den Folien,
 
 00:05:12,400 --> 00:05:16,480
 seltsame Situation, wo ich sagte, zum
-Beispiel, dass die Angabe eines Literals,
+Beispiel, dass die Negation eines Literals,
 
 00:05:16,480 --> 00:05:21,280
 wenn es in einer Regel vorkommen soll
@@ -293,6 +293,7 @@ warum wir eine operationale Semantik brauchen,
 hängt wirklich von dieser Beobachtung ab und
 mit dieser Beobachtung im letzten Punkt hier.
 
+47 # slide
 00:05:50,160 --> 00:05:56,000
 Wie bereits erwähnt, entspricht die operationale Semantik
 wie bereits erwähnt, entspricht dies in etwa der
@@ -352,6 +353,7 @@ von vielleicht etwas überraschendem Verhalten von
 bestimmter Prolog-Programme, die sich später
 in der Lage sein werden, mit der Operationssemantik zu erklären.
 
+48 # slide
 00:07:13,840 --> 00:07:16,480
 Schauen wir uns also dieses Programm an.
 
@@ -503,6 +505,7 @@ erklärt, was das Problem verursacht.
 00:10:16,000 --> 00:10:18,240
 Aber sehen wir uns die nächste Folie an.
 
+49 # slide
 00:10:21,920 --> 00:10:28,720
 Wir haben also eine sehr unschuldige
 Änderung an dem Programm vorgenommen.
@@ -566,8 +569,8 @@ et cetera, nicht kommutativ sind, richtig?
 Ich habe gesagt, ich habe die Reihenfolge dieser beiden
 
 00:11:38,400 --> 00:11:44,720
-Klauseln geändert und das würde einem Fehler entsprechen
-Fehler, weil wir vorher gesagt haben, dass mehrere
+Klauseln geändert und das würde einem Oder entsprechen,
+weil wir vorher gesagt haben, dass mehrere
 
 00:11:45,520 --> 00:11:51,840
 Klauseln einer Verknüpfung von
@@ -582,7 +585,7 @@ Und ähnlich ist es auch, wenn die Rollen von Verbindung
 
 00:12:01,440 --> 00:12:07,200
 direkt getauscht werden, könnte man das
-als so etwas wie ein Ende gesehen werden, oder?
+als so etwas wie ein Und gesehen werden, oder?
 
 00:12:07,200 --> 00:12:14,960
 Oder es ist nicht wirklich nur ein Tausch der beiden
@@ -624,9 +627,10 @@ Programm, aber das Verhalten ist völlig anders.
 00:12:51,760 --> 00:12:53,840
 Es geht also etwas vor sich.
 
+50 # slide
 00:12:56,920 --> 00:13:04,480
 In einem anderen, etwas subtileren Beispiel, haben wir
-auch schon das zusätzliche Prädikat
+auch schon das Addition Prädikat
 
 00:13:04,480 --> 00:13:12,080
 früher in der Vorlesung kennengelernt und auch gesehen, wie
@@ -785,6 +789,7 @@ Okay, und das geschah nur durch
 eine kleine, scheinbar unschuldige Änderung
 an der Definition der Addition.
 
+51 # slide
 00:16:24,880 --> 00:16:28,080
 Und diese Änderungen können wirklich
 unerwünschte Folgen haben.
@@ -948,6 +953,7 @@ angeben und nach den beiden anderen fragen, richtig?
 00:19:45,040 --> 00:19:46,960
 Das funktioniert bis zu einem gewissen Grad, aber nicht vollständig.
 
+52 # slide
 00:19:49,600 --> 00:19:52,640
 Und das steht wirklich im Gegensatz zu
 Dingen, die wir zuvor gesehen haben, richtig?
@@ -1027,8 +1033,8 @@ Und wieder kann die deklarative Semantik nicht erklären
 oder kann uns nicht helfen, wie wir wirklich brauchen
 
 00:21:23,120 --> 00:21:27,600
-einen Einblick in die Operationssemantik haben
-Semantik haben, um zu wissen, wie man das Programm
+einen Einblick in die Operationssemantik haben,
+um zu wissen, wie man das Programm
 
 00:21:27,600 --> 00:21:33,280
 von der vorherigen Folie zu ändern hat, um auch
@@ -1050,6 +1056,7 @@ Multiplikation betrachten und versuchen, das
 Programm flexibler zu machen, indem
 wir verstehen, wie es ausgeführt werden soll.
 
+53 # slide
 00:21:58,720 --> 00:22:05,200
 Und als letztes Beispiel dafür, was seltsam ist oder
 
@@ -1196,6 +1203,7 @@ weil ich motivieren möchte, warum
 00:24:41,600 --> 00:24:45,840
 wir uns überhaupt mit der operationalen Semantik beschäftigen sollten.
 
+54 # slide
 00:24:46,400 --> 00:24:49,920
 Okay, wir sollten uns also die
 operationale Semantik ansehen, um zu verstehen
