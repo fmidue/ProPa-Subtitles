@@ -1,0 +1,173 @@
+0:00:00.880,0:00:02.640
+Task number 36.
+
+0:00:02.640,0:00:07.120
+To solve this task, it is useful to
+read the pages in the lecture slides
+
+0:00:08.080,0:00:13.360
+from page 30 to about page 38
+
+0:00:14.000,0:00:18.000
+because here in the lecture, it
+is showing you Haskell functions
+
+0:00:18.800,0:00:21.280
+and how to express them in Prolog.
+
+0:00:22.480,0:00:26.560
+So, here we have this Haskell
+function. And it takes two arguments:
+
+0:00:28.640,0:00:31.280
+one of these arguments... the
+first one is always a list.
+
+0:00:31.920,0:00:35.440
+So, here you know it is a
+list because it's obvious,
+
+0:00:35.440,0:00:43.840
+and here you know because we have this operator.
+And how do you know that ys is also a list?
+
+0:00:44.400,0:00:48.160
+Well... you look here and you see that inside this
+
+0:00:49.120,0:00:54.080
+line here, in the function, you
+have f that takes ys and then xs.
+
+0:00:54.640,0:00:58.800
+And if you look again at the definition,
+the first argument is always a list.
+
+0:00:58.800,0:01:02.400
+So, this means ys is also a list.
+
+0:01:03.920,0:01:08.960
+Please pay attention because the
+task is telling us not to guess.
+
+0:01:09.760,0:01:14.480
+The task wants us to convert these functions...
+
+0:01:14.480,0:01:20.160
+this function from Haskell to Prolog depending
+on the lecture slides that I just showed you.
+
+0:01:22.880,0:01:25.920
+So, I'm going to use this file as a draft.
+
+0:01:25.920,0:01:32.080
+And first, I'm going to write the steps
+of how to convert from Haskell to Prolog,
+
+0:01:32.800,0:01:39.200
+and then I'm going to leave only the
+end result and turn everything else
+
+0:01:39.200,0:01:42.560
+into comments just like these here are comments.
+
+0:01:44.160,0:01:47.840
+So, let's start with the first line. Here, we
+
+0:01:47.840,0:01:53.840
+give f an empty list and some other list,
+and we get the second list as it is.
+
+0:01:55.600,0:02:04.320
+So, this becomes this. And then finally,
+we write it like this. And now it's Prolog.
+
+0:02:04.320,0:02:09.040
+So, this step here in between is just
+for us to understand what we're doing.
+
+0:02:09.040,0:02:14.320
+This here is not Prolog, is not Haskell. It's
+nothing it's hybrid (something in between).
+
+0:02:16.080,0:02:17.280
+Now, let's do this line.
+
+0:02:18.480,0:02:24.560
+So, here we have two lists and the first element
+of the first list is x. And this is what we get.
+
+0:02:24.560,0:02:26.960
+We get a list which has the first element x
+
+0:02:27.600,0:02:33.920
+and the tail of the list is the result
+of application of f on these two lists.
+
+0:02:34.480,0:02:37.360
+As you can see, they have been swapped.
+
+0:02:37.920,0:02:45.760
+So, ys is now the first list and xs, which
+used to be the tail of the first list,
+
+0:02:45.760,0:02:47.920
+is now the second list.
+
+0:02:49.200,0:02:55.840
+Now, let's refine it a little bit. So,
+we say this line here becomes like this.
+
+0:02:57.520,0:03:04.880
+So, we have the first list as it is, the
+second list as it is, and this is the third
+
+0:03:05.600,0:03:06.960
+parameter of f.
+
+0:03:06.960,0:03:19.040
+So, now f is looking more like Prolog code. And I
+put commas in between. Okay now, let's continue.
+
+0:03:20.320,0:03:26.640
+So, this line becomes like this.
+So, what I did is to capitalize
+
+0:03:27.360,0:03:31.840
+the first letter of each variable's name
+because this is how you do it in Prolog.
+
+0:03:32.800,0:03:40.160
+We have capital letters here. And instead
+of having the third parameter like this,
+
+0:03:40.800,0:03:48.320
+I substituted it with a list that starts
+with x and ends with zs (zees) or zs (zeds).
+
+0:03:49.680,0:03:59.120
+And then I said zs is the result of application
+of f on ys and xs. And of course, as you can see,
+
+0:03:59.120,0:04:04.320
+there's no such thing in Haskell
+nor in Prolog. So, this is
+
+0:04:05.040,0:04:08.960
+in between. This is hybrid
+just like this line here.
+
+0:04:10.400,0:04:15.680
+And now let's go full Prolog.
+So, this line becomes this line.
+
+0:04:18.320,0:04:27.840
+Now, this means the final result is
+going to be this line and this line.
+
+
+0:04:28.880,0:04:41.840
+Now, let's turn everything into a
+comment and keep the end result.
+
+0:04:43.040,0:04:55.840
+And that should be it. Now, let's test it.

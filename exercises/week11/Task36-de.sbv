@@ -1,0 +1,397 @@
+0:00:00.000,0:00:09.120
+In dieser Aufgabe geht es darum ein Programm
+von Haskell nach Prolog zu transformieren.
+
+0:00:09.120,0:00:16.830
+Und zwar genau so wie das in der Vorlesung
+auch gemacht wurde. Gegeben es dazu diese
+
+0:00:16.830,0:00:24.840
+Haskell-Funktion hier. Dazu ist natürlich
+erstmal ein Schritt nötig, nämlich das Ganze,
+
+0:00:24.840,0:00:33.690
+sozusagen den Haskell-Code zu transformieren
+und zwar so, dass es keine verschachtelten
+
+0:00:33.690,0:00:45.660
+Funktionsaufrufen mehr gibt. Ich lade dazu das
+Ganze mal in einem Haskell-Programm also ich
+
+0:00:45.660,0:00:53.040
+schreibe sozusagen erstmal den Haskell-Code
+bevor ich das dann entsprechend in Prolog
+
+0:00:53.040,0:01:02.400
+transformiere. Also erstelle ich ein Modul, in
+dem ich jetzt nur den Code hineinlade aus der
+
+0:01:02.400,0:01:08.550
+Aufgabenstellung. Vielleicht blende ich auch
+die Aufgabenstellungen auch nochmal mit ein.
+
+0:01:11.640,0:01:23.370
+Dann sehen wir jetzt die Aufgabenstellung
+unten und oben zunächst erstmal nur die
+
+0:01:23.370,0:01:29.790
+Haskell-Funktion. Jetzt kann man sich
+natürlich anschauen, was das Programm macht,
+
+0:01:29.790,0:01:39.000
+indem man sich das Beispiel anschaut oder indem
+man sich den Code anschaut. Also wenn die erste
+
+0:01:39.000,0:01:46.020
+übergebene Liste leer ist, dann wird die zweite
+Liste übergeben und ansonsten wird halt das erste
+
+0:01:46.020,0:01:57.360
+Element der ersten Liste sozusagen gewählt und
+dann wird ys als die erste Liste gewählt und
+
+0:01:57.360,0:02:02.220
+xs als die zweite. Das heißt, es wird immer
+abwechselnd ein Element aus der ersten und
+
+0:02:02.220,0:02:11.220
+zweiten gewählt. Jetzt ist natürlich die Frage,
+wenn wir das transformieren wollen nach Prolog:
+
+0:02:11.220,0:02:20.670
+Gibt es hier denn überhaupt einen verzweigten
+Funktionsaufruf? Und die Antwort lautet:
+
+0:02:20.670,0:02:33.360
+Ja. Und zwar sitzt der genau hier. Dieses Aufrufen
+von f, das ist ein solcher Aufruf und das können
+
+0:02:33.360,0:02:41.250
+wir jetzt eliminieren, indem wir ein 'where'
+einführen und diesen Term hier ersetzen. Man
+
+0:02:41.250,0:02:56.700
+kann dem sozusagen einen neuen Namen geben,
+nennen wir das ganze einfach mal zs. Genau zs
+
+0:02:56.700,0:03:07.980
+und dann können wir zs definieren, mit dem
+Ausdruck, den wir eben hatten, dass zs genau
+
+0:03:07.980,0:03:22.110
+dieses 'f ys xs' sein soll. In dem Fall wäre
+jetzt schon alles getan, weil alle lokalen
+
+0:03:22.110,0:03:31.440
+Ausdrücke ersetzt worden wären und wir könnten das
+direkt übersetzen nach Prolog. Dafür wechsle ich
+
+0:03:31.440,0:03:38.370
+hier wieder in das Prolog-Programm, indem jetzt
+natürlich noch nichts drinsteht und zunächst
+
+0:03:38.370,0:03:58.710
+einmal könnte ich jetzt deb ersten Teil aus dem
+Haskell-Programm hier transformieren. Dafür können
+
+0:03:58.710,0:04:12.150
+wir einfach definieren, dass dafür unser Prädikat
+f gelten soll, dass es immer gilt, wenn der zweite
+
+0:04:12.150,0:04:22.050
+Parameter, der dritte Parameter ist. Das würde
+genau dem hier oben auch entsprechen. Also das
+
+0:04:22.050,0:04:28.050
+erste Argument ist die leere Liste, das ist auch
+bei dem Prädikat dann der entsprechende Fall,
+
+0:04:28.050,0:04:35.400
+das zweite Argumente der Funktion ist ys, das
+ist hier das zweite Argument des Prädikats,
+
+0:04:35.400,0:04:40.980
+also in der Funktion im Prädikat und der
+Rückgabewert, das wäre das dritte Argument
+
+0:04:40.980,0:04:55.080
+des Prädikats und in Haskell der Rückgabewert
+ist ys. Für den anderen Fall, ja dann können
+
+0:04:55.080,0:05:00.360
+wir auch wieder Transformation überführen, wir
+müssen halt die Listenschreibweise in Prolog
+
+0:05:01.510,0:05:07.330
+beachten, aber hier nehmen wir auch wieder dieses
+dreistellige Prädikat, um die zweistellige, also
+
+0:05:07.330,0:05:19.480
+um die Funktion mit zwei Parametern umzusetzen.
+Dann haben wir wieder drei Stellen für dieses
+
+0:05:19.480,0:05:27.700
+Prädikat. Die erste Stelle entspricht auch
+dem ersten Argument, hier jetzt 'x:xs',
+
+0:05:27.700,0:05:34.900
+wobei wir das jetzt entsprechend umschreiben
+müssen in die Prolog-Syntax. Das heißt,
+
+0:05:34.900,0:05:47.050
+zum Beispiel können wir das so aufschreiben.
+Name der Variablen sind in Prolog groß, Das gilt
+
+0:05:47.050,0:05:57.310
+natürlich auch schon für das erste Prädikat, also
+deshalb hier auch das große Ys. Hier jetzt 'X|Xs',
+
+0:05:57.310,0:06:07.600
+dann der zweite Parameter des Prädikats. Dafür
+auch wieder der zweite Parameter der Funktion
+
+0:06:07.600,0:06:19.240
+hier, das ist Ys und jetzt der Rückgabewert in dem
+Haskell-Programm ist jetzt hier die rechte Seite
+
+0:06:19.240,0:06:34.750
+und durch das Umschreiben mit den lokalen, mit
+den verschachtelten Funktionen als 'where', kann
+
+0:06:34.750,0:06:39.730
+dieser Ausdruck hier direkt eingesetzt
+werden für die dritte Stelle des Prädikats,
+
+0:06:39.730,0:06:50.650
+denn was genau dann Zs ist, das wird danach
+dann definiert. Das heißt, hier ist auch bei
+
+0:06:51.640,0:07:03.280
+der Schreibweise wieder die Listenschreibweise
+von Prolog zu beachten. Jetzt hier 'X|Zs'. Dann
+
+0:07:03.280,0:07:15.930
+kommt hier die Implikation noch mit hin, in
+der wir genau jetzt definieren müssen, dass
+
+0:07:16.470,0:07:34.200
+sozusagen das Ganze Zs ja auch gilt. Das heißt,
+wir rufen im Prinzip hier wieder das Prädikat auf,
+
+0:07:34.200,0:07:43.140
+unser Prädikat f und wir haben hier auch drei
+Stellen für dieses Prädikat, wir haben die
+
+0:07:43.140,0:07:57.150
+erste Stelle ys, die zweite xs und als die dritte
+eben das Resultat, in dem Fall zs. Das heißt, Ys
+
+0:07:57.150,0:08:07.320
+ist das erste Argument des Prädikats, Xs ist das
+zweite, wie hier oben schon gesagt, und das dritte
+
+0:08:07.320,0:08:16.290
+ist dann Zs. So das wäre die Transformation, wie
+die in der Vorlesung war, ganz wesentlich auch der
+
+0:08:16.290,0:08:25.620
+Punkt am Ende, um das Programm abzuschließen.
+Damit wäre das Prolog-Programm fertig,
+
+0:08:25.620,0:08:30.900
+jetzt kann man das Ganze natürlich noch
+ausprobieren mit einem Beispielausdruck,
+
+0:08:30.900,0:08:46.890
+ich verwende hier swi-Prolog und lade jetzt hier
+Task36.prolog hinein und wenn ich jetzt hier den
+
+0:08:46.890,0:09:04.500
+Ausdruck angebe, dann liefert Prolog, dass das
+Prädikat wie angegeben gilt. Wenn die Liste [1,
+
+0:09:04.500,0:09:18.650
+2, 3] und und die Liste [4, 5, 6], die ergeben die
+Liste [1, 4, 2, 5, 3, 6] in dieser Transformation
+
+0:09:18.650,0:09:23.240
+jetzt, also von der Funktion zum Prädikat. Wie
+gesagt, hier hatten wir die Funktion, die das
+
+0:09:23.240,0:09:31.220
+Ganze in Haskell umsetzt und hier haben wir das
+Prädikat in Prolog, dass das jetzt ausdrückt,
+
+0:09:31.220,0:09:36.920
+wenn ich hier etwas fehlerhaftes mache,
+also sozusagen einen ungültigen Ausdruck
+
+0:09:36.920,0:09:46.070
+für das Prädikat hinschreibe, dann liefert das
+Prädikat 'false'. Man hätte das Prolog-Programm
+
+0:09:46.070,0:09:52.430
+vielleicht auch anders schreiben können und
+kann sich überlegen, was würde denn passieren,
+
+0:09:52.430,0:09:59.870
+wenn man jetzt hier, also wenn man das nicht
+exakt so wie in der Vorlesung transformiert
+
+0:09:59.870,0:10:09.860
+beziehungsweise noch den Ausdruck, einen
+Teilusdruck hier extrahiert und auf die
+
+0:10:09.860,0:10:15.470
+rechte Seite übernimmt, per und-Verknüpfung. Und
+zwar denke ich hier an den Teilausdruck 'X|Zs'
+
+0:10:15.470,0:10:22.850
+ich will das mal kurz durchführen, dass wir das
+auch sehen. Schreibe das mal in eine neue Datei.
+
+0:10:33.980,0:10:36.380
+Task36b.prolog nenne ich das mal.
+
+0:10:42.860,0:10:46.430
+Jetzt möchte ich diesen Teil hier extrahieren und
+
+0:10:46.430,0:10:54.620
+nenne den mal Us zum Beispiel
+und sage Us sei gleich dem,
+
+0:11:17.310,0:11:25.350
+so ich hole das andere Programm
+nochmal wieder hierher.
+
+0:11:25.350,0:11:35.580
+Und den Dateinamen hier etwas falsch gewählt,
+jetzt heißt es Task36b.prolog und die alte
+
+0:11:35.580,0:11:41.910
+Variante ist hier noch zu sehen und wir sehen,
+es ist nur der dritte Parameter des Prädikats
+
+0:11:41.910,0:11:58.560
+ausgetauscht hier, 'X|Zs', also in die Liste aus
+X und Zs und hier Us und Us ist hier aber gesagt,
+
+0:11:58.560,0:12:08.520
+dass das gleich 'X|Zs' sei. Jetzt lade ich das
+Ganze einfach auch noch einmal hier in swi-Prolog.
+
+0:12:08.520,0:12:31.770
+Das war Task36b, wenn ich das lade und denselben
+Ausdruck wie hier oben ausführe, dann liefert das
+
+0:12:31.770,0:12:37.440
+Prädikat auch 'true' und wenn ich den falschen
+Ausdruck verwende, liefert es auch 'false' und
+
+0:12:37.440,0:12:45.690
+jetzt kann man sich natürlich fragen: Ist denn
+das dasselbe? Man kann Prolog hier auch verwenden,
+
+0:12:45.690,0:12:53.310
+um sozusagen Berechnungen durchzuführen, mit Hilfe
+der Prädikate, wenn man Variablen einsetzt. So
+
+0:12:53.310,0:12:59.820
+können wir für das Prädikat uns ausgeben lassen,
+was zum Beispiel für Möglichkeiten bestehen,
+
+0:12:59.820,0:13:10.260
+wenn wir X und Y in unserer Liste haben wollen
+und sozusagen irgendwelche Lsten Xs und Ys als
+
+0:13:10.260,0:13:19.920
+Parameter hätten, was gäbe es denn dann für
+Möglichkeiten diese Liste zu besetzen? Das führe
+
+0:13:19.920,0:13:26.370
+ich jetzt mal in der ersten Variante hier aus.
+Dann schlägt Prolog vor die erste liste Xs mit
+
+0:13:26.370,0:13:34.760
+der leeren Liste zu belegen und die zweite Liste
+mit X und Y und wenn ich mir ein weiteres Beispiel
+
+0:13:34.760,0:13:40.460
+anzeigen lassen, dann schlägt Prolog vor, die
+erste Liste mit X und Y zu belegen und die zweite
+
+0:13:41.780,0:13:51.020
+mit der leeren Liste. Dann kann ich mir noch ein
+Beispiel angeben lassen und das ist X und Y, also
+
+0:13:51.020,0:13:58.820
+X in der Xs Liste und Y in der Ys Liste. Ja und
+eigentlich erwarten wir auch nicht mehr Fälle
+
+0:13:58.820,0:14:07.250
+und wenn wir noch tatsächlich noch weiter danach
+fragen, dann sagt Prolog: Wenn es keins dieser
+
+0:14:07.250,0:14:14.750
+Ergebnisse sein soll, dann findet es keine weitere
+Lösung, also 'false', dann ist der Ausdruck nicht
+
+0:14:14.750,0:14:23.420
+erfüllbaren, wenn es nicht eine dieser Varianten
+sein soll. Und dasselbe können wir jetzt natürlich
+
+0:14:23.420,0:14:32.420
+auch hier in dem anderen Fall eingeben, nämlich in
+dem Beispiel, in dem wir Us noch definiert haben.
+
+0:14:34.130,0:14:42.380
+Wenn wir das machen, dann kriegen wir zunächst
+erstmal auch dasselbe Beispiel wieder. Das heißt,
+
+0:14:42.380,0:14:51.200
+Xs wird mit der leeren Liste und X und Y für
+Ys belegt von Prolog. Die zweite Variante zeigt
+
+0:14:51.200,0:15:08.570
+Prolog auch an, also hier sei X und Y in der
+Xs Liste und Ys sei die leere Liste und dann
+
+0:15:08.570,0:15:15.020
+zeigt es uns auch an, X und Y, sozusagen Xs mit
+der Liste von X und Ys mit der Liste von Y. Das
+
+0:15:15.020,0:15:26.750
+wäre jetzt sozusagen auch eine Belegung hier,
+die möglich wäre, genauso wie oben. Wenn ich
+
+0:15:26.750,0:15:33.530
+jetzt aber weiterlaufen lasse, dann liefert Prolog
+nicht mehr, dass es keine weitere Lösung kennt,
+
+0:15:33.530,0:15:39.290
+sondern Prolog versucht weitere Lösungen zu
+finden und endet hier in einer Endlosschleife und
+
+0:15:39.290,0:15:54.890
+da bleibt nichts anderes übrig, als das Programm
+abzubrechen. Das soll auch nochmal verdeutlichen,
+
+0:15:54.890,0:16:03.740
+dass sozusagen dieser Teil hier auch einen
+Unterschied macht. Das heißt, wenn wir direkt
+
+0:16:03.740,0:16:14.270
+hier angeben, dass die Ergebnisliste als erstes
+Element das X enthält, ist das vom Suchaufwand
+
+0:16:14.270,0:16:20.510
+ein erheblicher Unterschied, als Prolog zu
+sagen, es ist eine Liste und später zu sagen,
+
+0:16:20.510,0:16:28.100
+dass diese Liste eben das X anstehen
+haben soll, weil Prolog von links nach
+
+0:16:28.100,0:16:47.510
+rechts die entsprechenden booleschen Ausdrücke
+arbeitet. Das wäre es so weit zu dieser Aufgabe.

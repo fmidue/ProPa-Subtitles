@@ -1,0 +1,471 @@
+0:00:00.000,0:00:04.140
+Hallo, in dieser Aufgabe schreiben
+wir das Prädikat 'penultimate',
+
+0:00:04.140,0:00:08.580
+was ein binäres Prädikat sein sollte,
+was wir hier in diesem /2 dahinter sehen,
+
+0:00:08.580,0:00:15.515
+also ein Prädikat mit zwei Parametern. Dieses
+Prädikat sollte so funktionieren, dass wir
+
+0:00:15.515,0:00:22.440
+eine Liste Xs und ein Element X geben und es wahr
+zurückgibt, wenn X als vorletztes in Xs vorkommt.
+
+0:00:22.440,0:00:28.200
+Dafür haben wir hier zwei Beispiele.
+Einmal gegeben die Liste a, b, c, d und c,
+
+0:00:28.200,0:00:34.310
+sollte wahr zurückgeben, weil c das vorletzte
+Element ist. Aber bei der gegebenen Liste a, b,
+
+0:00:34.310,0:00:37.980
+c und dem Element c sollte es nicht wahr
+zurückgeben, weil c nicht das vorletzte
+
+0:00:37.980,0:00:44.790
+Element ist, das ist nämlich b. Da wir hier von
+einer Liste mit ungewisser Länge reden, würden wir
+
+0:00:44.790,0:00:51.420
+normalerweise anfangen und uns alle Listenfälle
+angucken. Der erst davon wäre natürlich die leere
+
+0:00:51.420,0:00:57.600
+Liste. Die würden wir so definieren. Aber damit
+sagen wir Prolog, wir geben bei einer leeren
+
+0:00:57.600,0:01:03.270
+Liste und X wahr zurück. Das ist natürlich
+nicht das, was wir wollen, denn eine leere
+
+0:01:03.270,0:01:07.650
+Liste hat kein vorletztes Element, also wollen
+wir hier auch keinen Wahrheitswert zurück haben
+
+0:01:07.650,0:01:14.490
+bzw. wir wollen hier nicht 'true' zurück haben.
+Anders als in Haskell sind undefinierte Fälle in
+
+0:01:14.490,0:01:20.340
+Prolog keine Fehler, sondern einfach nur falsch.
+Das heißt, das können wir hier benutzen und den
+
+0:01:20.340,0:01:25.890
+Fall einfach undefiniert lassen. Ich lösche
+das hier nicht, denn wir können hier raus die
+
+0:01:25.890,0:01:31.380
+nächsten Fälle reinschreiben. Der nächste Fall
+wäre logischerweise die Liste mit einem Element.
+
+0:01:31.380,0:01:36.930
+Aber auch eine Liste mit einem Element hat kein
+vorletztes Element. Das heißt, das wollen wir
+
+0:01:36.930,0:01:41.580
+auch undefiniert lassen. Gehen wir weiter zum
+nächsten Fall. Der erste Fall, der wirklich
+
+0:01:41.580,0:01:48.060
+wahr zurückgeben könnte, wäre eine Liste mit zwei
+Elementen. Das erste Element davon ist dann auch
+
+0:01:48.060,0:01:53.910
+das vorletzte Element und das nennen wir hier
+X, genau wie unseren Parameter, denn die beiden
+
+0:01:53.910,0:01:59.370
+müssen dieselben sein und das zweite Element
+können wir hier einfach mit dem Unterstrich
+
+0:01:59.370,0:02:04.260
+benennen. Das muss zwar hier drin sein, aber
+wir werden es nicht benutzen, also können wir
+
+0:02:04.260,0:02:09.420
+Unterstrich benutzen. Mit dieser Regel sagen wir
+einfach Prolog, gegeben mit einer Liste mit zwei
+
+0:02:09.420,0:02:15.840
+Elementen von dem das erste Element gleich unserem
+zweiten Parameter ist, gib 'true' zurück. Das
+
+0:02:15.840,0:02:21.600
+ist genau das, was wir wollen. Der nächste
+logische Schritt wäre dann natürlich eine
+
+0:02:21.600,0:02:28.200
+Liste mit drei Elementen, was natürlich auch
+wahr wäre, so wie wir es definiert hätten,
+
+0:02:28.200,0:02:33.330
+das wäre korrekt, aber wenn wir so weiter machen
+würden, müssten wir als Nächstes den Fall mit vier
+
+0:02:33.330,0:02:37.830
+Elementen, fünf Elementen definieren usw. und
+das ist natürlich unpraktisch, denn wir wollen
+
+0:02:37.830,0:02:42.150
+mit Listen von beliebigen Mengen an Elementen
+arbeiten. Also was wir stattdessen machen ist,
+
+0:02:42.150,0:02:49.770
+da wir hier schon den Fall haben, der checken
+kann, ob dieser Fall eintritt, dass das vorletzte
+
+0:02:49.770,0:02:54.240
+Element gleich dem zweiten Parameter ist. Warum
+reduzieren wir nicht einfach alle längeren Listen
+
+0:02:54.240,0:02:59.850
+runter zum Fall mit zwei Elementen, damit wir
+in diesen Fall fallen, der dann überprüfen kann,
+
+0:02:59.850,0:03:05.220
+ob das vorletzte Element dem zweiten Parameter
+entspricht oder nicht. Das machen wir hier, indem
+
+0:03:05.220,0:03:09.210
+wir immer noch das erste Element nehmen, was uns
+nicht wirklich interessiert, was nur da sein muss,
+
+0:03:09.210,0:03:15.540
+also nehmen wir den Unterstrich und dann den pipe
+character und dann den Rest der Liste. Dieser pipe
+
+0:03:15.540,0:03:18.810
+character ist so ein bisschen wie der Doppelpunkt
+in Haskell. Das sagt uns einfach nur hier,
+
+0:03:18.810,0:03:27.240
+eine Liste mit einem Element und dann und dann
+noch irgendeine folgende Liste drangehangen. Wir
+
+0:03:27.240,0:03:34.050
+definieren das als nur wahr, wenn ein weiterer
+Aufruf von 'penultimate' mit diesem Tail von
+
+0:03:34.050,0:03:40.830
+der Liste und natürlich dem Parameter, nach
+dem wir suchen, wahr ist. Und das ist quasi
+
+0:03:40.830,0:03:45.720
+unser rekursiver Schritt hier. Das heißt, jede
+Liste, die mindestens drei Elemente hat, fallen
+
+0:03:45.720,0:03:51.420
+wir hier rein, nehmen das erste Element weg, das
+interessiert uns nicht, und mit dem Tail der Liste
+
+0:03:51.420,0:03:56.520
+rufen wir dann nochmal 'penultimate' auf und
+fallen dann praktisch so in die Rekursion rein,
+
+0:03:56.520,0:04:04.050
+die eventuell irgendwann in diesem Fall
+landet, mit der Liste mit zwei Elementen,
+
+0:04:04.050,0:04:11.970
+wo er dann prüfen kann, ist das erste Element
+der Liste, also das vorletzte Element, gleich dem
+
+0:04:11.970,0:04:19.050
+zweiten Parameter und gibt dann dementsprechend
+wahr oder falsch zurück. Das ist auch genau das,
+
+0:04:19.050,0:04:25.750
+was wir wollen und damit ist die Aufgabe auch
+eigentlich schon erledigt. Das heißt, wir können
+
+0:04:25.750,0:04:31.780
+das hier direkt speichern und dann in Prolog
+laden. Wenn wir das jetzt machen, können wir auch
+
+0:04:31.780,0:04:38.290
+dann das neue Prädikat direkt ausprobieren, wenn
+ich das richtig schreiben kann, mit den Fällen aus
+
+0:04:38.290,0:04:43.240
+der Aufgabenstellung, also die Liste a, b, c,
+d und dem Element c kriegen wir 'true' zurück,
+
+0:04:43.240,0:04:49.198
+so wie es sein sollte, für die Liste a, b, c
+und c sollten wir 'false' zurückkriegen und das
+
+0:04:49.198,0:04:53.350
+kriegen wir auch. Das ist eigentlich ein bisschen
+langweilig, weil wir das eigentlich nur validieren
+
+0:04:53.350,0:04:57.400
+von Sachen, die wir eigentlich schon wissen.
+Wir wissen schon beide Parameter. Wir können
+
+0:04:57.400,0:05:01.390
+hier einen Schritt weiter gehen und den zweiten
+Parameter einfach gegen eine Variable austauschen,
+
+0:05:01.390,0:05:08.440
+groß X, und damit stellen wir das ein bisschen um
+und sagen einfach: Ich weiß den ersten Parameter,
+
+0:05:08.440,0:05:13.090
+der ist die Liste a, b, c, ich weiß den
+zweiten Parameter nicht. Finde mir eine
+
+0:05:13.090,0:05:20.200
+passende Substitution für X in der 'penultimate'
+dann 'true' zurückgibt. Wenn wir das machen,
+
+0:05:20.200,0:05:23.560
+dann sehen wir auch hier: Es gibt uns zurück,
+dass X gleich b ist, also unsere Substitution
+
+0:05:23.560,0:05:31.180
+für X und b ist auch das vorletzte Element, also
+hat es uns das vorletzte Element gefunden. Für den
+
+0:05:31.180,0:05:34.600
+nächsten Schritt, was wir noch machen können,
+machen wir 'trace' rein, damit wir sehen, was
+
+0:05:34.600,0:05:42.370
+hier passiert und wenn wir das abändern, also
+umdrehen und sagen: Ich kenne die Liste nicht,
+
+0:05:42.370,0:05:47.560
+aber ich weiß, dass das vorletzte Element
+a sein soll zum Beispiel und das ist dann
+
+0:05:47.560,0:05:54.430
+auch die Query hier. Dann sehe ich: Im ersten
+Schritt, dieser Unterstrich und diese Zahlen,
+
+0:05:54.430,0:05:59.110
+das ist einfach nur ein interner Platzhalter für
+Prolog, in dem Fall ist das hier unsere Variable
+
+0:05:59.110,0:06:06.490
+Xs. Im nächsten Schritt: Es hat uns eine Liste
+gefunden, wo a das vorletzte Element ist und
+
+0:06:06.490,0:06:11.051
+irgendein anderes Element. Das ist hier nur
+ein Platzhalter und könnte jedes Element sein,
+
+0:06:11.051,0:06:15.970
+natürlich noch unser a und gibt uns das dann
+zurück. Also es hat uns eine Liste gefunden,
+
+0:06:15.970,0:06:27.606
+wo a das vorletzte Element ist. Mit Semikolon
+können wir in den nächsten Schritt hineinkommen
+
+0:06:27.606,0:06:28.574
+und das nochmal durchlaufen lassen. Ok, jetzt
+gibt es uns eine Liste mit drei Elementen zurück,
+
+0:06:28.574,0:06:31.060
+wo a immer noch das vorletzte Element ist.
+Wenn wir das weiter machen, dann gibt es uns
+
+0:06:31.060,0:06:38.690
+immer längere Listen zurück, wo jedes Mal a das
+vorletzte Elemente ist und die anderen Elemente
+
+0:06:38.690,0:06:43.940
+könnten irgendwas anderes sein. Wenn wir uns
+hier genau die einzelnen Schritte anschauen,
+
+0:06:43.940,0:06:49.970
+sehen wir: Beim ersten Schritt hat es immer noch
+den Platzhalter für die Variable und unser a,
+
+0:06:49.970,0:06:55.580
+aber direkt im nächsten Schritt hat es
+schon eine Liste gefunden. Das funktioniert,
+
+0:06:55.580,0:07:01.130
+denn Prolog iteriert hier von oben nach
+unten durch die Regeln durch. In der ersten
+
+0:07:01.130,0:07:06.050
+Regel sieht es direkt: Hier ist das X, was ich
+schon kenne und hier ist eine Liste definiert,
+
+0:07:06.050,0:07:10.340
+wo das Element X schon drinnen ist, also baue
+ich doch einfach so eine Liste. Das heißt,
+
+0:07:10.340,0:07:14.600
+genau das ist im ersten Fall passiert und im
+zweiten Fall geht Prolog nur einen Schritt weiter,
+
+0:07:14.600,0:07:17.810
+das kennt es schon, also diese erste Lösung
+kennt es schon, das heißt, im nächsten Schritt
+
+0:07:17.810,0:07:22.010
+gehen wir in die nächste Regel rein und es
+macht praktisch den Rekursionsschritt hier,
+
+0:07:22.010,0:07:26.330
+fällt dann wieder hier rein und dann sieht es
+wieder: Hier ist das X, was ich schon kenne,
+
+0:07:26.330,0:07:33.110
+und hier ist das wo es in der Liste sein sollte,
+also baue ich mir diese Liste, geht dann praktisch
+
+0:07:33.110,0:07:37.430
+wieder den Rekursionsschritt zurück, hängt das
+S Element wieder dran und gibt jetzt dann diese
+
+0:07:37.430,0:07:42.110
+Liste wieder zurück und das läuft dann so weiter
+und baut uns so dann immer längere Listen für uns.
+
+0:07:42.110,0:07:48.650
+Das können wir natürlich hier weiter machen,
+brechen das aber jetzt ab und was wir uns noch
+
+0:07:48.650,0:07:56.120
+anschauen sollten ist, ich mache jetzt mal
+'trace' wieder aus, was passiert, wenn wir
+
+0:07:56.120,0:08:01.760
+unsere Regeln hier umdrehen? Sagen wir, dass wir
+das Problem ein wenig anders angegangen sind und
+
+0:08:01.760,0:08:05.630
+sind direkt drauf gekommen, dass wir Rekursion
+brauchen und haben den Rekursionsschritt zuerst
+
+0:08:05.630,0:08:12.710
+geschrieben und den auflösenden Fall direkt
+dahinter. Also einfach nur die Reihenfolge
+
+0:08:12.710,0:08:19.280
+umgedreht. Wenn wir das jetzt nochmal laden, dafür
+habe ich 'trace' ausgemacht, weil das Laden von
+
+0:08:19.280,0:08:25.580
+Dateien etwas fies mit 'trace' an ist. Dann
+machen wir 'trace' wieder an und lassen das
+
+0:08:25.580,0:08:29.960
+dann nochmal durchlaufen. Wir durchlaufen nochmal
+alle Sachen, um zu sehen, ob das einen Unterschied
+
+0:08:29.960,0:08:35.720
+gemacht hat. Im ersten, erstmal sehen wir mit
+'trace', wie Prolog die Sachen ausarbeitet.
+
+0:08:35.720,0:08:41.570
+Arbeitet ein bisschen und gibt uns dann 'true'
+zurück, so wie es sein sollte. Also das war der
+
+0:08:41.570,0:08:46.220
+erste Fall aus der Aufgabenstellung. Jetzt der
+zweite Fall aus der Aufgabenstellung, Liste a,
+
+0:08:46.220,0:08:51.660
+b, c, sollte 'false' zurückgeben und gibt
+uns 'false' zurück, so wie es sein sollte.
+
+0:08:51.660,0:09:00.690
+Dann noch für den Fall, dass wir das vorletzte
+Element nicht kennen und Prolog danach fragen.
+
+0:09:00.690,0:09:07.740
+Hier, hier und hier arbeitet sich das heraus
+und gibt uns die richtige Lösung zurück. Also
+
+0:09:07.740,0:09:13.830
+das funktioniert alles noch. Aber wenn wir
+jetzt den Fall haben, wo wir die Liste selber
+
+0:09:13.830,0:09:18.180
+suchen und wir wissen, das vorletzte Element
+soll a sein und das dann durchlaufen lassen,
+
+0:09:18.180,0:09:25.530
+dann sehen wir: Ok, hier findet Prolog erstmal
+keine Lösung. Da wir hier 'trace' an haben, sind
+
+0:09:25.530,0:09:31.320
+das hier einfach nur viele Schritte eventuell.
+Früher oder später würden wir hier einen
+
+0:09:31.320,0:09:37.710
+stack error kriegen, weil wir kein stack space
+mehr haben, denn das geht einfach immer so weiter.
+
+0:09:37.710,0:09:42.690
+Wir sehen, dass die Variable, die hier drin ist,
+dieser Platzhalter ändert sich die ganze Zeit,
+
+0:09:42.690,0:09:52.350
+denn Prolog läuft praktisch in der ersten Regel
+hier Kreise hin und her. Es kennt das X, es kennt
+
+0:09:52.350,0:09:57.780
+die Liste hier nicht, es nimmt diesen Platzhalter,
+macht diesen Rekursionsschritt, reduziert die
+
+0:09:57.780,0:10:03.240
+Liste, deshalb ändert sich der Platzhalter die
+ganze Zeit und springt dann von oben in die erste
+
+0:10:03.240,0:10:07.080
+Liste hinein und macht wieder genau dasselbe.
+Das heißt, wir erreichen nie diese zweite Regel,
+
+0:10:07.080,0:10:13.020
+wo Prolog sehen würde, dass hier das X ist und
+hier ist das, wo es in der Liste sein sollte und
+
+0:10:13.020,0:10:18.960
+könnte dann wieder in die Rekursion zurückgehen,
+um die Liste dann wieder komplett aufzubauen. So
+
+0:10:18.960,0:10:23.340
+wie wir das am Anfang gesehen haben. Hier
+laufen wir einfach immer nur im oberen hin
+
+0:10:23.340,0:10:29.670
+und her bis irgendwann ein Stackfehler
+auftritt. Das hier müssen wir abbrechen.
+
+0:10:29.670,0:10:34.793
+Wenn wir mal kurz 'trace' ausmachen und das
+nochmal durchlaufen lassen, dann sehen wir auch
+
+0:10:34.793,0:10:37.800
+die Fehlermeldung eigentlich. Trödelt hier ein
+bisschen und dann bekommen wir irgendwann den
+
+0:10:37.800,0:10:43.560
+Fehler: Out of local stack. Und das geht dann
+immer so weiter, denn es findet für keine Variante
+
+0:10:43.560,0:10:50.520
+irgendeine Lösung, die zu finden ist bevor der
+Stack überläuft. Das müssen wir auch abbrechen
+
+0:10:50.520,0:11:00.810
+und das war nur eine kleine Nebensache hier. Also
+in den meisten Fällen ist die Reihenfolge wichtig
+
+0:11:00.810,0:11:04.590
+hier, darauf muss man achten bei solchen
+Sachen, auch in dem Fall ist es wichtig,
+
+0:11:04.590,0:11:10.920
+also drehen wir das wieder um, speichern
+das und haben damit unsere Aufgabe gelöst.
