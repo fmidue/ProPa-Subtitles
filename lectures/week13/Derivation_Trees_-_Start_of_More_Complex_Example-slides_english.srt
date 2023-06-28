@@ -1,0 +1,1465 @@
+79 # slide
+00:00:01,520 --> 00:00:04,720
+So, let us look at a more complicated example now.
+
+00:00:04,720 --> 00:00:08,400
+The program from earlier involving multiplication.
+
+00:00:08,400 --> 00:00:10,640
+And it will be an example where we
+
+00:00:10,640 --> 00:00:15,760
+will immediately, after a few steps,
+see some infinite search going on.
+
+00:00:15,760 --> 00:00:21,600
+And that happens even for simpler queries
+than the ones on the previous slides,
+
+00:00:21,600 --> 00:00:28,400
+a few slides back where we had multiplication
+of n and m and then a larger term here.
+
+00:00:28,960 --> 00:00:34,240
+It turns out that even if we just
+asked for multiplication of two
+
+00:00:35,680 --> 00:00:40,720
+values, which should result in
+1, we do get an infinite search.
+
+00:00:41,680 --> 00:00:46,320
+Even though there is one obvious solution, Prolog will not find this,
+
+00:00:47,120 --> 00:00:48,400
+will not discover this.
+
+00:00:48,400 --> 00:00:50,320
+And we will use this for
+
+00:00:52,000 --> 00:00:56,720
+visualizing, illustrating the derivation
+trees again, in a more complex setting.
+
+00:00:56,720 --> 00:01:00,560
+And we will find why this
+infinite search happens.
+
+00:01:00,560 --> 00:01:01,060
+Okay.
+
+00:01:01,920 --> 00:01:04,080
+So, let's see, how do we start?
+
+00:01:04,080 --> 00:01:09,360
+With the intuitive explanation of derivation trees.
+
+00:01:09,360 --> 00:01:10,000
+What should we do?
+
+00:01:10,000 --> 00:01:16,000
+Well, we should see whether this query that we
+have, and actually, the first literal in the
+
+00:01:16,000 --> 00:01:20,720
+query, which is the only literal whether it
+unifies with the head of any program clause.
+
+00:01:20,720 --> 00:01:23,600
+Of course, the additional
+clauses are not relevant here.
+
+00:01:23,600 --> 00:01:26,160
+We only have to look at
+the multiplication clauses.
+
+00:01:26,160 --> 00:01:27,840
+And actually, the first one does not
+
+00:01:27,840 --> 00:01:31,200
+unify because at the last position we
+have 0 here and s(0) here.
+
+00:01:31,200 --> 00:01:34,000
+There is no positive match,
+no unification going on.
+
+00:01:34,000 --> 00:01:40,960
+So, actually, the only choice is to unify
+the second program clause for multiplication.
+
+00:01:40,960 --> 00:01:42,480
+So, the last clause from the program.
+
+00:01:43,680 --> 00:01:44,080
+Okay?
+
+00:01:44,080 --> 00:01:45,280
+It this unifiable?
+
+00:01:45,280 --> 00:01:47,200
+Yes, indeed it is.
+
+00:01:47,200 --> 00:01:54,640
+Well, you can see, you could replace n by s(x),
+M by Y or Y by M, and Z by s(0).
+
+00:01:55,440 --> 00:01:56,800
+And then we have a unifier.
+
+00:01:56,800 --> 00:01:58,640
+Okay, that's exactly what we do.
+
+00:01:58,640 --> 00:02:03,840
+And actually, in the first step I avoid
+adding a number to all the variables.
+
+00:02:03,840 --> 00:02:05,600
+I will do this in the later steps.
+
+00:02:05,600 --> 00:02:12,000
+So, for now, since N and M and X, Y,
+Z are (different), there's no danger of confusion.
+
+00:02:12,000 --> 00:02:14,640
+Also, the u here doesn't occur in the query.
+
+00:02:14,640 --> 00:02:18,640
+There is no need in the
+first step to name anything.
+
+00:02:18,640 --> 00:02:19,760
+Later on, I will do it.
+
+00:02:19,760 --> 00:02:24,800
+Okay, so simple unification,
+then what is the next query?
+
+00:02:24,800 --> 00:02:27,840
+Well, it's the right-hand side of this clause.
+
+00:02:27,840 --> 00:02:36,240
+Because this literal will be replaced by
+the right-hand side from the program clause.
+
+00:02:36,240 --> 00:02:39,360
+But of course, with this substitution applied.
+
+00:02:39,360 --> 00:02:41,920
+And if you take a sharp look, we see that, well,
+
+00:02:41,920 --> 00:02:44,560
+n and m don't even occur on
+the right-hand side here.
+
+00:02:44,560 --> 00:02:48,400
+So, the only thing that needs to
+be replaced is Z which occurs here.
+
+00:02:48,400 --> 00:02:50,000
+Must be replaced by s(0).
+
+00:02:50,720 --> 00:02:52,560
+Okay, so the next query is this one.
+
+00:02:53,760 --> 00:02:57,920
+The right-hand side of this clause
+with z replaced by s(0).
+
+00:02:58,480 --> 00:03:01,760
+Okay, next goal is to look at this.
+
+00:03:01,760 --> 00:03:05,920
+Now we have, for the first time, in an example,
+two literals in our query.
+
+00:03:06,720 --> 00:03:09,920
+And in the verbal description,
+I said that we always
+
+00:03:10,560 --> 00:03:15,280
+select the left most literal and
+look for resolution opportunities.
+
+00:03:15,280 --> 00:03:17,360
+So, we will have to take a look at this.
+
+00:03:17,360 --> 00:03:20,640
+We don't look at the addition, we
+look at this multiplication literal.
+
+00:03:20,640 --> 00:03:25,200
+And try to unify it with the
+head of some program clause.
+
+00:03:25,200 --> 00:03:27,600
+Of course, the addition
+clause are, again, irrelevant.
+
+00:03:28,640 --> 00:03:35,120
+And from these two clauses now, actually, we
+can't exclude one because both could be unified.
+
+00:03:36,800 --> 00:03:40,240
+The situation was different in the first step
+because we had this s(0) here, which
+
+00:03:40,240 --> 00:03:42,160
+clearly didn't unify with the 0.
+
+00:03:42,160 --> 00:03:47,120
+But now since we have mult(X, Y, U) so
+three variables there's a good chance that
+
+00:03:47,120 --> 00:03:52,480
+we can actually unify with both heads with the
+fact and with the head of this second clause.
+
+00:03:52,480 --> 00:03:54,080
+Indeed, that is the case.
+
+00:03:54,080 --> 00:03:55,520
+Okay, in which order we do this?
+
+00:03:55,520 --> 00:03:57,200
+Well, top to bottom.
+
+00:03:57,200 --> 00:04:01,040
+So, we look at the first clause from the program.
+
+00:04:01,040 --> 00:04:04,800
+That's the first successor
+that we build for this query.
+
+00:04:06,080 --> 00:04:07,760
+Okay, so what is the unifier there?
+
+00:04:08,720 --> 00:04:15,840
+Well, this X becomes 0, this Y becomes
+the underscore, the anonymous variable.
+
+00:04:15,840 --> 00:04:20,160
+And actually, to be on the safe side, we
+also introduced numbers for these variables.
+
+00:04:20,160 --> 00:04:21,680
+Because they might be relevant.
+
+00:04:21,680 --> 00:04:26,000
+I mean, they are not relevant in the sense of
+being shown to the user as an outcome in the end.
+
+00:04:26,000 --> 00:04:29,200
+But they will occur in the substitution.
+
+00:04:29,200 --> 00:04:34,240
+So, we should be able to distinguish them in
+case there are several underscore variables.
+
+00:04:34,240 --> 00:04:36,480
+Okay, so they get a number of these are also
+
+00:04:36,480 --> 00:04:41,840
+similar to the artificial variable name that you
+sometimes get when Prolog gives you an answer.
+
+00:04:42,960 --> 00:04:49,360
+Okay, that's why we have the _1 here
+and the U from the query is replaced by 0.
+
+00:04:49,360 --> 00:04:54,080
+Yes, that's the most general unifier between this
+
+00:04:54,080 --> 00:04:58,960
+literal and the first clause here,
+the head of the first clause.
+
+00:04:58,960 --> 00:05:01,280
+Okay, and there will be another successor,
+
+00:05:01,280 --> 00:05:06,640
+because actually this also unifies with the
+head of the second multiplication clause.
+
+00:05:06,640 --> 00:05:09,840
+But we will look at this after
+we have finished this branch.
+
+00:05:10,720 --> 00:05:13,120
+Okay, so what is the next query here?
+
+00:05:14,800 --> 00:05:18,960
+Well, we have to replace literals
+that we used for resolution
+
+00:05:19,680 --> 00:05:23,760
+by the right-hand side of the relevant clause.
+
+00:05:23,760 --> 00:05:25,840
+This is the empty right-hand side.
+
+00:05:25,840 --> 00:05:28,240
+So, we will replace this by empty.
+
+00:05:28,240 --> 00:05:33,440
+But unlike in the previous example, this doesn't
+mean that the query is now already finished.
+
+00:05:33,440 --> 00:05:35,120
+Because there was some context, right?
+
+00:05:35,120 --> 00:05:39,600
+So, previously, when we used a fact, we
+were done, we could draw the box because
+
+00:05:40,240 --> 00:05:41,920
+we had arrived at the empty query.
+
+00:05:41,920 --> 00:05:45,200
+But that was only because previously
+always had only one literal in the query.
+
+00:05:45,200 --> 00:05:48,720
+Now, when we replace this by empty,
+we are still not at the empty query.
+
+00:05:48,720 --> 00:05:52,160
+Because there is this other
+literal still around in the query.
+
+00:05:53,040 --> 00:05:56,880
+And we cannot simply use this
+literal as the next query,
+
+00:05:56,880 --> 00:06:01,040
+because we also have to apply
+the unifier to all the context.
+
+00:06:01,040 --> 00:06:06,720
+So, actually, the next literal will
+be this literal but with X, Y and U
+
+00:06:07,760 --> 00:06:09,840
+replaced according to the substitution.
+
+00:06:10,720 --> 00:06:12,080
+So, that's where we end up.
+
+00:06:14,640 --> 00:06:17,680
+X well, is not occurring, but
+U should be replaced by 0.
+
+00:06:17,680 --> 00:06:19,680
+So, you have 0 here.
+
+00:06:19,680 --> 00:06:23,120
+The Y is replaced by this
+specific anonymous variable.
+
+00:06:23,840 --> 00:06:25,840
+And well, the s(0) is still what it was.
+
+00:06:25,840 --> 00:06:26,340
+Yeah.
+
+00:06:27,360 --> 00:06:29,360
+Okay, so this is the next
+thing you want to work on.
+
+00:06:29,360 --> 00:06:36,720
+Because among all the unfinished queries, also the
+one which would appear here, after this step with
+
+00:06:36,720 --> 00:06:42,720
+the second multiplication clause, we always use
+the leftmost one as the next thing to consider.
+
+00:06:42,720 --> 00:06:45,840
+So, that's where we have to make progress.
+
+00:06:46,640 --> 00:06:52,160
+So, we have to try unifying this with
+all the clauses from the program.
+
+00:06:52,160 --> 00:06:54,960
+Of course, it can only unify
+with the addition clauses.
+
+00:06:54,960 --> 00:06:58,800
+And actually, it doesn't unify
+with the second addition clause.
+
+00:06:58,800 --> 00:07:02,000
+Because of the s(something) versus 0 here.
+
+00:07:02,000 --> 00:07:07,680
+So, actually, there will be only one successor
+here, namely, the one which arises from resolution
+
+00:07:08,240 --> 00:07:13,760
+of this literal with the fact
+from the addition clauses here.
+
+00:07:14,320 --> 00:07:22,720
+Okay, so 0 and 0 unifies X and X should
+be replaced by some variable.
+
+00:07:22,720 --> 00:07:24,880
+Maybe X2 or X3 or something like that.
+
+00:07:24,880 --> 00:07:30,160
+But then they are unified with what we see here.
+
+00:07:30,160 --> 00:07:39,520
+So, actually, I replace this by X1, X1
+and then I can unify X1 becomes a 0.
+
+00:07:39,520 --> 00:07:44,320
+This _1 then also must be
+s(0), and 0 and 0 already matches.
+
+00:07:44,320 --> 00:07:45,600
+So, that's the next unifier.
+
+00:07:45,600 --> 00:07:50,960
+So, I use X1, X1 here because I
+didn't rename the earlier occurrences.
+
+00:07:53,040 --> 00:07:57,440
+Okay, then this is replaced by the
+right-hand side, which is empty.
+
+00:07:57,440 --> 00:08:01,040
+So, actually, we arrive at the empty query now.
+
+00:08:01,040 --> 00:08:02,400
+And what are the solutions?
+
+00:08:02,400 --> 00:08:07,120
+Well, let's see N becomes s(X), X becomes 0.
+
+00:08:07,760 --> 00:08:14,400
+So, ultimately, N will be s(0), and
+M becomes Y, Y becomes _1,
+
+00:08:14,400 --> 00:08:16,480
+and _1 becomes s(0).
+
+00:08:16,480 --> 00:08:22,560
+So, ultimately, we have this result one
+times one is one, which makes perfect sense.
+
+00:08:23,440 --> 00:08:24,960
+We have found a solution.
+
+00:08:25,680 --> 00:08:26,880
+Okay, but we are not done yet.
+
+00:08:26,880 --> 00:08:30,480
+Because Prolog will be instructed
+now to look for further solutions.
+
+00:08:30,480 --> 00:08:35,040
+And there is one place here, where we
+didn't yet consider what happens, right?
+
+00:08:35,040 --> 00:08:40,960
+So, this multiplication literal, also unifies
+with the second program clause for multiplication.
+
+00:08:42,320 --> 00:08:42,960
+In which way?
+
+00:08:42,960 --> 00:08:47,440
+Well, let's now replace this X, Y,
+Z, et cetera, by X2, Y1, et cetera.
+
+00:08:47,440 --> 00:08:53,680
+And then unify with this multiplication literal
+from the query, then, what do we have to do?
+
+00:08:53,680 --> 00:09:01,600
+Well, this X should be s(X2), this Y2 and
+this Y will simply be unified, and well, there
+
+00:09:01,600 --> 00:09:08,400
+we have Z2 and U and again, it doesn't really
+matter whether we replace Z2 by U or U by Z2.
+
+00:09:09,360 --> 00:09:12,880
+In each case, you will get a most general unifier.
+
+00:09:12,880 --> 00:09:14,320
+So, let's choose this one.
+
+00:09:15,280 --> 00:09:23,200
+The most important thing is that the X from the
+literal and the query is replaced by s(X2),
+
+00:09:23,200 --> 00:09:28,480
+because that's what this place looks like
+after a consistent renaming of variable names.
+
+00:09:30,160 --> 00:09:32,000
+Okay, what's the next query?
+
+00:09:32,000 --> 00:09:37,360
+Well, the rule is we have to replace
+this literal by the right-hand side
+
+00:09:37,360 --> 00:09:41,040
+of the clause that we used for resolution.
+
+00:09:41,040 --> 00:09:45,360
+So, we will replace this one
+literal by these two literals.
+
+00:09:45,360 --> 00:09:49,760
+But, of course, with the substitution applied.
+
+00:09:49,760 --> 00:09:54,960
+Which in particular will
+replace this U and this U by Z2.
+
+00:09:58,400 --> 00:10:03,840
+Okay.
+
+00:10:04,560 --> 00:10:06,080
+Well, not exactly, actually.
+
+00:10:07,120 --> 00:10:09,920
+I already got confused a bit myself.
+
+00:10:09,920 --> 00:10:11,400
+So, let me take back this last thing.
+
+00:10:11,400 --> 00:10:14,320
+So, we replace this by the right-hand side.
+
+00:10:14,320 --> 00:10:20,480
+But of course, this U and this U are not that
+U because I renamed the variables in the query.
+
+00:10:20,480 --> 00:10:28,880
+So, I will get mult(X2,Y2,U2),
+add(U2,Y2,Z2).
+
+00:10:28,880 --> 00:10:32,640
+And in addition, I get what
+remained from the previous query.
+
+00:10:33,440 --> 00:10:40,240
+This part, which wasn't replaced by the
+resolution step, and due to these two
+
+00:10:42,160 --> 00:10:47,840
+substitution pieces, I have
+to change to Z2 and Y2.
+
+00:10:47,840 --> 00:10:50,480
+So, overall, I get this as the next query,
+
+00:10:51,200 --> 00:10:54,640
+which already looks problematic
+because it's larger than this one.
+
+00:10:54,640 --> 00:10:59,840
+And it's not clear whether at any time
+you will be able to reduce this to an empty query.
+
+00:11:00,400 --> 00:11:05,600
+Okay, but at the moment, that's simply
+what results of this resolution step.
+
+00:11:06,800 --> 00:11:07,600
+Okay, let's go on.
+
+00:11:08,880 --> 00:11:12,560
+Strategy is we look at the left-most
+literal, which is this one,
+
+00:11:12,560 --> 00:11:18,720
+and we check whether it is unified with
+any heads of clauses from the program.
+
+00:11:18,720 --> 00:11:20,960
+Okay, now, again, since these are just variables,
+
+00:11:20,960 --> 00:11:24,640
+there's a good chance that it is
+unifiable with both of these heads.
+
+00:11:24,640 --> 00:11:26,160
+And that is the case.
+
+00:11:26,160 --> 00:11:26,660
+Yes.
+
+00:11:27,040 --> 00:11:32,960
+So, for example, we have 0, something, 0.
+We can clearly unify this.
+
+00:11:32,960 --> 00:11:38,800
+And now for this underscore, I use _2
+to make sure that I don't get any confusion.
+
+00:11:39,920 --> 00:11:45,520
+Then I unify this and, well, that
+is a unifier that unifies those.
+
+00:11:45,520 --> 00:11:47,680
+But there's also another successor because
+
+00:11:47,680 --> 00:11:51,120
+this actually also unifies with
+the head of the second class.
+
+00:11:51,840 --> 00:11:53,680
+But let's focus on this here first.
+
+00:11:53,680 --> 00:11:58,480
+What will happen, well, we replace this by the
+right-hand side of this fact, which is empty.
+
+00:11:58,480 --> 00:11:59,680
+So, this will disappear.
+
+00:12:00,320 --> 00:12:07,280
+And for the remaining literals, we have to
+apply the substitution that we discovered here.
+
+00:12:07,920 --> 00:12:11,520
+Okay, doing this will result in this next query.
+
+00:12:12,800 --> 00:12:14,800
+Okay, and actually, I will not continue this
+
+00:12:16,240 --> 00:12:21,440
+search here so there will be
+further steps happening down here.
+
+00:12:21,440 --> 00:12:24,640
+Okay, but actually, if you look
+at this query very sharply,
+
+00:12:24,640 --> 00:12:30,080
+you will already see that certainly there won't
+be a solution arising from this subtree here.
+
+00:12:30,080 --> 00:12:36,560
+Because what that solution would amount to
+would be some choices for these two variables
+
+00:12:36,560 --> 00:12:39,120
+such that 0 plus this thing is this thing.
+
+00:12:39,120 --> 00:12:43,440
+Of course, this can only mathematically
+be true if these two values are the same.
+
+00:12:43,440 --> 00:12:49,280
+But then there's also another literal which claims
+that this summation of these two should be one.
+
+00:12:49,840 --> 00:12:51,520
+That can't be true, right?
+
+00:12:51,520 --> 00:12:55,280
+There can't be any substitution
+for these two variables such that
+
+00:12:56,080 --> 00:12:59,440
+both holds that 0 plus this is
+this, but also this plus this is 1.
+
+00:13:00,080 --> 00:13:02,240
+Because this will be the same value.
+
+00:13:02,240 --> 00:13:03,600
+They can't add up to one.
+
+00:13:03,600 --> 00:13:05,760
+Okay, so there will not be
+any solution found here.
+
+00:13:05,760 --> 00:13:10,160
+So, actually, the query will ultimately
+have to look at this branch as well.
+
+00:13:10,800 --> 00:13:12,000
+Now, what is this branch?
+
+00:13:12,000 --> 00:13:20,880
+Well, it arises from unifying this literal with
+the head of the second multiplication clause.
+
+00:13:20,880 --> 00:13:23,200
+And we will, again, rename variables here.
+
+00:13:23,200 --> 00:13:26,080
+So, this becomes X3, Y3, Z3, et cetera.
+
+00:13:26,080 --> 00:13:29,840
+And if we do this, we can actually find a unifier.
+
+00:13:29,840 --> 00:13:31,760
+And we get a new query.
+
+00:13:31,760 --> 00:13:37,840
+And this will again have further
+possibilities to apply steps.
+
+00:13:37,840 --> 00:13:43,760
+And at this point, I think it becomes clear that
+this is not a good process that's happening here.
+
+00:13:43,760 --> 00:13:46,320
+Because this will grow ever
+larger and larger, right?
+
+00:13:46,320 --> 00:13:49,920
+So, here we have one multiplication
+literal and one addition literal.
+
+00:13:49,920 --> 00:13:56,240
+Then we use this rule to resolve but that led
+to one multiplication and two addition literals.
+
+00:13:56,240 --> 00:14:00,640
+And actually, in this place, we already have
+one multiplication and three addition literals.
+
+00:14:00,640 --> 00:14:02,400
+Because we always have variables here.
+
+00:14:02,400 --> 00:14:05,600
+So, we can always apply the
+second multiplication rule.
+
+00:14:05,600 --> 00:14:11,600
+So, this will only get longer and longer and
+it will never actually finish the whole tree.
+
+00:14:11,600 --> 00:14:14,480
+So, that's why we have an infinite search here.
+
+00:14:14,480 --> 00:14:16,000
+We find one solution.
+
+00:14:16,000 --> 00:14:19,040
+But afterwards, Prolog looks for further solutions.
+
+00:14:19,040 --> 00:14:22,960
+It will never find one, but will also never
+finish its process of looking for them.
+
+00:14:27,120 --> 00:14:30,160
+Okay, so we have to do something
+to make this program work better.
+
+00:14:35,520 --> 00:14:43,840
+One thing we could try to do is to change the
+order of literals in the last program clause here.
+
+00:14:44,960 --> 00:14:49,520
+Yes, if the problem is that we have
+this infinite descent where we always
+
+00:14:51,200 --> 00:14:54,640
+replicate a multiplication literal
+and add an addition literal.
+
+00:14:54,640 --> 00:14:58,080
+But we never get to actually check
+these because the multiplication
+
+00:14:58,080 --> 00:15:02,240
+is always the first thing to select in
+all these steps on the previous slide.
+
+00:15:02,240 --> 00:15:05,920
+Then maybe it's better to simply
+switch the order of these literals.
+
+00:15:05,920 --> 00:15:09,120
+So, logically from the logical reading
+and also from the declarative semantics of
+
+00:15:09,120 --> 00:15:11,360
+the program, that doesn't make any change, right?
+
+00:15:11,360 --> 00:15:14,560
+So, it's still the same statement.
+
+00:15:16,000 --> 00:15:19,360
+Because conjunction is commutative.
+
+00:15:20,080 --> 00:15:22,400
+But the search process might be changed by this.
+
+00:15:22,400 --> 00:15:28,080
+Because by moving this addition to the front, this
+will be first explored during the search process.
+
+00:15:28,080 --> 00:15:32,560
+And that could mean that some of these
+infinite branches are actually cut off.
+
+00:15:32,560 --> 00:15:36,480
+Because we fail finding a
+solution for this addition.
+
+00:15:36,480 --> 00:15:42,240
+And then we can say that whole part of this
+search tree does not need to be explored.
+
+00:15:42,240 --> 00:15:47,680
+Unlike the case where we have this multiplication
+here as the first successor literal.
+
+00:15:47,680 --> 00:15:49,680
+And we never get to actually
+check these additions.
+
+00:15:50,800 --> 00:15:51,840
+Okay, so let's try this.
+
+00:15:51,840 --> 00:15:55,440
+And let's simply see what happens
+if we do this for the same query.
+
+00:15:56,720 --> 00:16:01,120
+Okay, so of course, in the beginning,
+what happens is very similar, right?
+
+00:16:01,120 --> 00:16:07,600
+So, in the first step, again,
+we cannot apply this fact.
+
+00:16:07,600 --> 00:16:10,720
+So, we have only one successor
+which will be this one.
+
+00:16:10,720 --> 00:16:13,520
+So, the unifier is as before.
+
+00:16:13,520 --> 00:16:17,680
+But of course, now the order of literals
+in the next query is different, right?
+
+00:16:17,680 --> 00:16:19,760
+So, that's like the previous example.
+
+00:16:19,760 --> 00:16:23,440
+But now, of course, the order of these
+two is exactly the opposite way around.
+
+00:16:24,800 --> 00:16:25,520
+Okay.
+
+00:16:25,520 --> 00:16:28,400
+Now, since you always select the
+first literal from the query,
+
+00:16:28,400 --> 00:16:31,600
+we will look at this instead
+of the multiplication.
+
+00:16:31,600 --> 00:16:32,560
+So, let's look at this.
+
+00:16:33,360 --> 00:16:39,760
+Well, this is actually unifiable with both
+of the heads of the addition classes.
+
+00:16:39,760 --> 00:16:41,440
+So, we get two successors.
+
+00:16:41,440 --> 00:16:44,480
+The first one is by resolution with the fact.
+
+00:16:44,480 --> 00:16:47,040
+So, this will make the query actually smaller.
+
+00:16:47,040 --> 00:16:50,800
+Because with this unification,
+
+00:16:50,800 --> 00:16:54,480
+with this substitution, we can
+unify this literal and this fact.
+
+00:16:55,040 --> 00:16:58,240
+And the successor will be this
+because this literal disappears.
+
+00:16:58,240 --> 00:17:00,240
+Because there is no right-hand side to this clause.
+
+00:17:01,120 --> 00:17:05,120
+And we are left with whatever
+remains in the query.
+
+00:17:05,120 --> 00:17:08,640
+But of course, we have to apply
+the substitution unifier to it.
+
+00:17:08,640 --> 00:17:12,640
+So, that's why we get this as our new sub-call.
+
+00:17:17,040 --> 00:17:19,360
+So, let's proceed from there.
+
+00:17:21,840 --> 00:17:28,480
+Of course, this is now the next place where
+we need to look for resolution opportunities.
+
+00:17:29,120 --> 00:17:35,360
+And indeed, this is both unifiable
+with this head and with this head.
+
+00:17:35,360 --> 00:17:38,240
+So, we again get two successor nodes.
+
+00:17:39,120 --> 00:17:43,040
+The left one is actually
+leading to an empty node because
+
+00:17:43,840 --> 00:17:49,360
+if we unify this with mult(0,_,0),
+which can be done with this substitution.
+
+00:17:49,360 --> 00:17:52,000
+Then we replace this by the empty right-hand side.
+
+00:17:52,000 --> 00:17:55,120
+So, we get an empty query.
+
+00:17:55,120 --> 00:17:58,400
+And as before, we can see what
+this solution actually is.
+
+00:17:58,400 --> 00:18:02,000
+N is s(X), X is not changed here.
+
+00:18:02,000 --> 00:18:03,600
+But X is changed to 0 here.
+
+00:18:03,600 --> 00:18:09,680
+So, N will be s(0), and M
+becomes Y, Y becomes s(0).
+
+00:18:09,680 --> 00:18:14,080
+So, the answer is N = s(0), M = s(0).
+
+00:18:14,080 --> 00:18:16,080
+Okay, first solution.
+
+00:18:16,800 --> 00:18:19,040
+How to look for further solutions?
+
+00:18:19,040 --> 00:18:22,800
+Well, we now have actually two places
+where we could continue the search.
+
+00:18:23,360 --> 00:18:27,360
+But the verbal description said that
+from these, you always take the leftmost.
+
+00:18:27,360 --> 00:18:35,040
+So, we don't explore this path further
+where we would arrive if we resolve this
+
+00:18:35,040 --> 00:18:39,840
+with the second additional clause,
+instead, we first look at this node.
+
+00:18:39,840 --> 00:18:42,320
+Okay, this would have arisen by
+
+00:18:42,320 --> 00:18:47,120
+unifying this literal with the second
+program clause for multiplication.
+
+00:18:47,120 --> 00:18:50,640
+After, of course, replacing the X,
+Y, Z et cetera by renamed variants.
+
+00:18:50,640 --> 00:18:55,280
+So, since we already used X1 here,
+let's say X2, Y2, Z2, et cetera.
+
+00:18:55,280 --> 00:18:58,880
+And then unify this with what
+we have in the literal here,
+
+00:18:58,880 --> 00:19:02,240
+then we'll find that this is the unifier to use.
+
+00:19:02,880 --> 00:19:14,960
+Yes, X becomes s(X2), this Z2 becomes
+0, and this Y2 become s(0).
+
+00:19:15,840 --> 00:19:18,080
+Okay, so that's why we have this unifier here.
+
+00:19:18,080 --> 00:19:19,840
+And what will be the new query?
+
+00:19:19,840 --> 00:19:24,800
+Well, we replace this by the right-hand
+side of the clause that we use, but
+
+00:19:24,800 --> 00:19:29,040
+also applying a substitution
+to this right-hand side.
+
+00:19:29,040 --> 00:19:32,640
+So, in particular, this Y2 which we
+would have here now after the renaming
+
+00:19:32,640 --> 00:19:36,080
+becomes s(0), and the Z2 becomes 0.
+
+00:19:37,600 --> 00:19:41,200
+So, this is the next program
+clause, the next query.
+
+00:19:43,280 --> 00:19:45,040
+Okay, how to make progress?
+
+00:19:45,040 --> 00:19:47,360
+Well, let's look at the leftmost literal.
+
+00:19:48,720 --> 00:19:53,920
+And let's try to unify it with any
+of the program clauses for addition.
+
+00:19:54,640 --> 00:19:59,440
+Okay, let's see add(0, X, X)
+is not unifiable with this.
+
+00:19:59,440 --> 00:20:00,800
+Because these two are not the same.
+
+00:20:01,840 --> 00:20:02,480
+Okay?
+
+00:20:02,480 --> 00:20:04,400
+So, there could be only one successor.
+
+00:20:04,400 --> 00:20:09,920
+add(s(X), Y, s(Z)) is also not
+unifiable with this literal.
+
+00:20:09,920 --> 00:20:13,120
+Because of the 0 here
+and the s(something) here.
+
+00:20:13,120 --> 00:20:17,200
+So, actually, there is no
+successor for this query.
+
+00:20:18,240 --> 00:20:21,520
+Yes, because you have to use the leftmost literal.
+
+00:20:21,520 --> 00:20:26,400
+But we can't resolve it with either of
+the addition clauses from the program.
+
+00:20:26,400 --> 00:20:29,680
+So, actually, this is a finished
+node, which isn't a successor node.
+
+00:20:29,680 --> 00:20:31,120
+And you need some symbol for this.
+
+00:20:31,120 --> 00:20:36,000
+So, let's use this lightning bolt here to
+say, well, we can't make any progress here.
+
+00:20:36,000 --> 00:20:39,680
+It's a finished node, but it's not a successful
+node, because it's not the empty node.
+
+00:20:40,320 --> 00:20:44,320
+Hence, we also don't write any solution for it,
+because there is no solution here.
+
+00:20:44,320 --> 00:20:52,480
+That's a failed node, which is somewhat successful
+in the sense of cutting short the search, right?
+
+00:20:52,480 --> 00:20:56,160
+Because if we had the opposite order
+of multiplication and addition here,
+
+00:20:56,160 --> 00:21:00,560
+it would have made further steps
+trying to resolve this multiplication
+
+00:21:00,560 --> 00:21:02,800
+and never realizing that there is no solution.
+
+00:21:02,800 --> 00:21:08,480
+But by switching the order here, having the
+addition first, we can actually cut off the whole
+
+00:21:08,480 --> 00:21:10,960
+any further search in this part of the tree.
+
+00:21:11,600 --> 00:21:15,440
+That doesn't yet mean that we are finished because
+there is another node which is unfinished, right.
+
+00:21:15,440 --> 00:21:20,000
+So, here we already mentioned that
+there would be another successor node.
+
+00:21:20,000 --> 00:21:24,560
+Because we could also unify this
+with the second clause for addition.
+
+00:21:24,560 --> 00:21:25,440
+So, let's do this.
+
+00:21:26,080 --> 00:21:30,000
+Because this is now the
+leftmost not yet finished node.
+
+00:21:30,000 --> 00:21:30,240
+Okay.
+
+00:21:30,240 --> 00:21:33,520
+So, this would have arisen by
+the following substitution.
+
+00:21:33,520 --> 00:21:36,320
+Yes, repeating this X3, Y3, Z3 et cetera.
+
+00:21:36,320 --> 00:21:40,960
+And then unifying, for example, the Z3
+has to be 0 because of this position.
+
+00:21:41,520 --> 00:21:50,080
+And the U here becomes s(X3) from here
+and the Y and Y3 are simply renamed,
+
+00:21:51,520 --> 00:21:52,640
+one is renamed to the other.
+
+00:21:53,280 --> 00:21:56,480
+Okay, what's then the right-hand
+side at the new query here?
+
+00:21:56,480 --> 00:22:03,680
+Well, we have to replace this by the right-hand
+side by this while applying the unifier.
+
+00:22:03,680 --> 00:22:06,080
+So, the Z in particular will become 0.
+
+00:22:06,080 --> 00:22:07,760
+But you also have to keep the context.
+
+00:22:07,760 --> 00:22:10,320
+So, we have to keep this multiplication literal.
+
+00:22:10,320 --> 00:22:14,880
+And to it, we also apply the unifier.
+
+00:22:14,880 --> 00:22:16,640
+This leads to this new query.
+
+00:22:16,640 --> 00:22:18,320
+At least it hasn't got longer.
+
+00:22:19,120 --> 00:22:26,240
+Yeah, it's still two literals long, so we
+have to make further searches, further steps.
+
+00:22:26,960 --> 00:22:27,840
+Okay, what do we do?
+
+00:22:27,840 --> 00:22:30,000
+We look at the left-most
+literal, which is this one.
+
+00:22:30,000 --> 00:22:34,400
+We try to unify it with the clauses for addition.
+
+00:22:34,400 --> 00:22:36,880
+We can see that it doesn't
+unify with the second clause.
+
+00:22:36,880 --> 00:22:38,960
+Because s(something) versus 0.
+
+00:22:38,960 --> 00:22:42,880
+So, the only thing that could happen
+here is that we unify this with the first
+
+00:22:42,880 --> 00:22:44,080
+clause, which is a fact.
+
+00:22:44,800 --> 00:22:45,840
+Is this unifiable?
+
+00:22:45,840 --> 00:22:47,440
+Yes, if you set everything to 0.
+
+00:22:48,240 --> 00:22:52,320
+Yes, with this unifier, they are
+
+00:22:52,880 --> 00:22:54,960
+With this substitution, these two are unifiable.
+
+00:22:54,960 --> 00:22:58,400
+And here we also see a case
+where I have renamed the X to X4.
+
+00:22:58,400 --> 00:23:01,680
+So, that I don't confuse it with X3, et cetera.
+
+00:23:01,680 --> 00:23:04,160
+Okay, so this is possible.
+
+00:23:04,160 --> 00:23:06,160
+Then we get a new query.
+
+00:23:06,160 --> 00:23:08,960
+This disappears because the
+right-hand side is empty.
+
+00:23:08,960 --> 00:23:14,880
+But we are left with the rest of the query
+to which we also have to apply the unifier.
+
+00:23:14,880 --> 00:23:17,280
+So, this is the next proof goal.
+
+00:23:18,080 --> 00:23:19,280
+Yes, this is the X.
+
+00:23:19,280 --> 00:23:22,720
+This Y3 becomes 0, and
+this X3 also becomes 0.
+
+00:23:24,080 --> 00:23:26,320
+Okay, so let's see, can we make progress?
+
+00:23:26,320 --> 00:23:30,720
+Well, is this unifiable with any of
+the program clause for multiplication?
+
+00:23:30,720 --> 00:23:34,240
+It's not unifiable with the first
+one because of 0 versus s(0).
+
+00:23:34,240 --> 00:23:36,160
+So, there can only be one successor.
+
+00:23:36,160 --> 00:23:40,240
+But this successor really exists because
+this is indeed unifiable with the
+
+00:23:41,120 --> 00:23:43,040
+head of the second multiplication clause.
+
+00:23:44,000 --> 00:23:47,440
+Yes, replacing these by X5, Y5, et cetera.
+
+00:23:47,440 --> 00:23:50,480
+And then performing unification
+leads to this substitution.
+
+00:23:51,680 --> 00:23:56,160
+Okay, so then we have to replace
+this by the right-hand side.
+
+00:23:56,160 --> 00:23:57,840
+So, it becomes longer again.
+
+00:23:57,840 --> 00:24:05,360
+So, we have to replace it by these two literals
+with this substitution applied, which means this.
+
+00:24:06,880 --> 00:24:10,560
+Okay, not yet finished, we have
+to continue on the next slide.
+
+00:24:14,480 --> 00:24:17,280
+So, that's what we have so far.
+
+00:24:17,280 --> 00:24:21,360
+So, let's look at this right
+part of the tree and this was
+
+00:24:21,360 --> 00:24:24,800
+the query we ended up with on the previous slide.
+
+00:24:24,800 --> 00:24:32,400
+So, let's focus on the left-most literal and try
+to unify it with the program clauses for addition.
+
+00:24:33,120 --> 00:24:36,880
+We don't have to consider the first
+one because these are not the same.
+
+00:24:37,760 --> 00:24:38,000
+Okay.
+
+00:24:38,000 --> 00:24:43,040
+So, we only have to unify with the
+second program clause for addition.
+
+00:24:43,040 --> 00:24:44,560
+And it is unifiable.
+
+00:24:45,200 --> 00:24:48,640
+As you can see that from here, we can get a 0.
+
+00:24:48,640 --> 00:24:50,400
+We can also set this to 0.
+
+00:24:50,400 --> 00:24:55,600
+And U5 will be s(X6).
+
+00:24:56,960 --> 00:24:58,880
+Yes, because you already used X5 here.
+
+00:24:58,880 --> 00:25:02,560
+So, we are now replacing these
+by X6, Y6, Z6, et cetera.
+
+00:25:02,560 --> 00:25:09,680
+And then we can unify. Well, the result is
+this becomes replaced by the right-hand
+
+00:25:09,680 --> 00:25:15,440
+side of this query applying,
+this clause, applying the unifier.
+
+00:25:15,440 --> 00:25:21,680
+But we also keep the remainder of the query
+and also apply the unifier to this part.
+
+00:25:22,320 --> 00:25:24,240
+Which leads to the following query.
+
+00:25:25,920 --> 00:25:38,480
+Okay, X6 because of this 0, 0 because all the Y
+and Z from the clause became replaced by 0.
+
+00:25:39,120 --> 00:25:44,240
+And in the remainder in the context here
+we have to replace the U5 by s(X6)?
+
+00:25:45,040 --> 00:25:46,560
+Okay, new query.
+
+00:25:46,560 --> 00:25:47,680
+How to make progress?
+
+00:25:47,680 --> 00:25:49,920
+Well, let's look at the left-most literal.
+
+00:25:49,920 --> 00:25:52,960
+Try to unify it if the addition clauses.
+
+00:25:52,960 --> 00:25:57,200
+It won't unify with the second clause
+because of the s(something) versus 0.
+
+00:25:57,200 --> 00:26:00,480
+But it does, of course, unify with the fact here.
+
+00:26:01,280 --> 00:26:06,160
+Namely, if you replace everything by
+0 then (0,0,0) matches (0,0,0).
+
+00:26:06,960 --> 00:26:08,720
+Okay, so this can be done.
+
+00:26:08,720 --> 00:26:09,840
+What is the next query?
+
+00:26:10,720 --> 00:26:14,160
+Well, this becomes replaced by empty.
+
+00:26:14,160 --> 00:26:16,720
+Because there's no right-hand
+side for this clause.
+
+00:26:16,720 --> 00:26:19,520
+So, actually, the query now becomes smaller again.
+
+00:26:19,520 --> 00:26:27,440
+We are left with this remainder of the query,
+where we have to apply the substitution.
+
+00:26:27,440 --> 00:26:29,520
+So, we get this as the new query.
+
+00:26:30,720 --> 00:26:31,220
+Okay.
+
+00:26:32,560 --> 00:26:35,520
+Now, is this a fruitful process?
+
+00:26:35,520 --> 00:26:36,720
+Not very much.
+
+00:26:36,720 --> 00:26:38,960
+Because if you do this, again, a few steps,
+
+00:26:38,960 --> 00:26:42,560
+you will realize that this
+is still an infinite branch.
+
+00:26:42,560 --> 00:26:43,520
+Why is this?
+
+00:26:43,520 --> 00:26:47,280
+Well, we can see it actually, if you
+look at this place and this place.
+
+00:26:47,280 --> 00:26:49,120
+They look very similar.
+
+00:26:49,120 --> 00:26:51,760
+So, well, just the variable
+name is different here.
+
+00:26:51,760 --> 00:26:54,880
+But all the steps we made to get from here to here
+
+00:26:54,880 --> 00:26:58,240
+could be made again here and
+have to be made again here.
+
+00:26:58,240 --> 00:27:02,880
+So, after three more resolution steps,
+we will again be in a very similar place.
+
+00:27:02,880 --> 00:27:07,360
+So, this is, of course, not such a big
+tree as the previous infinite tree.
+
+00:27:07,360 --> 00:27:09,520
+Where all the queries got longer and longer.
+
+00:27:09,520 --> 00:27:13,280
+But nevertheless, this is an infinite search path.
+
+00:27:14,000 --> 00:27:17,840
+So, again, the program that we have now
+is a bit nicer than the previous one,
+
+00:27:17,840 --> 00:27:19,200
+but it still has an infinite search.
+
+00:27:19,200 --> 00:27:21,760
+So, we might have to make some further changes.
+
+00:27:22,480 --> 00:27:29,600
+So, let's come back to this in the next video.
