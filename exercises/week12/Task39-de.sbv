@@ -1,0 +1,640 @@
+0:00:01.500,0:00:08.990
+So, bei der Aufgabe 39 haben jetzt eine Prolog-Aufgabe,
+wo wir ein dreistelliges Prädikat schreiben
+
+0:00:08.990,0:00:16.180
+sollen, wo wir als Erstes irgendein Element
+haben, als erstes Argument des Prädikats,
+
+0:00:16.180,0:00:22.060
+an zweiten Stelle haben eine Liste und an
+der dritten Stelle soll dann, was rauskommt,
+
+0:00:22.060,0:00:25.591
+wo wir die Liste haben, die an der zweiten
+Stelle stand und zwischen jedes einzelne Element
+
+0:00:25.591,0:00:29.660
+dieser Liste soll das erste Argument eingefügt
+werden.
+
+0:00:29.660,0:00:33.180
+Das muss jetzt nicht unbedingt wie in diesem
+Beispiel hier alles der gleiche Typ sein,
+
+0:00:33.180,0:00:36.290
+weil es gibt ja in Prolog sowieso keine expliziten
+Typen.
+
+0:00:36.290,0:00:39.050
+Das heißt, man könnte ja irgendwelche Zahlen
+zwischen Buchstaben einfügen oder sowas.
+
+0:00:39.050,0:00:42.971
+Das ist eigentlich egal, aber es sollte einfach
+so sein, dass zwischen jedes einzelne Element
+
+0:00:42.971,0:00:48.450
+der Liste hier das angegebene Element hier
+eingefügt werden soll.
+
+0:00:48.450,0:00:52.220
+Um das jetzt zu lösen und um auch mal die
+Probleme hier zu zeigen, die man da haben
+
+0:00:52.220,0:00:54.910
+könnte, würde ich sagen, man versucht das
+erstmal in Haskell.
+
+0:00:54.910,0:00:58.120
+Da sind wir ja einigermaßen sicher und sollten
+das schnell hinkriegen.
+
+0:00:58.120,0:01:01.090
+Also wenn wir jetzt mal beispielhaft das ganze
+in Haskell programmieren würden, hätten
+
+0:01:01.090,0:01:09.160
+wir zum Beispiel Funktion g nimmt irgendeinen
+Typen und in Haskell müsste es halt dann
+
+0:01:09.160,0:01:12.670
+auch eine Liste des gleichen Typs sein, weil
+man da ja nicht irgendwelche Zahlen in den
+
+0:01:12.670,0:01:14.760
+String einpacken kann oder so, das geht ja
+nicht.
+
+0:01:14.760,0:01:18.340
+Also bei Haskell müssten wir feste Typen
+benutzen, sodass das auch eine Liste vom gleichen
+
+0:01:18.340,0:01:24.730
+Typ ist und dann soll auch wieder eine Liste
+vom gleichen Typen rauskommen und da würde
+
+0:01:24.730,0:01:29.259
+man jetzt zum Beispiel machen, fangen wir
+mit einem Basisfall an, wir haben irgendwas
+
+0:01:29.259,0:01:34.030
+und leere Liste, dann sollte einfach nichts
+passieren, wir bekommen wieder die leere Liste
+
+0:01:34.030,0:01:42.680
+zurück, dann haben wir den Fall, dass wir
+irgendwas haben und wir haben nur eine einelementige
+
+0:01:42.680,0:01:49.759
+Liste, dann würde jetzt einfach nur wieder
+diese einelementige Liste zurückkommen.
+
+0:01:49.759,0:01:56.490
+Der dritte Fall wäre, wir haben einfach eine
+Liste, die länger ist.
+
+0:01:56.490,0:02:06.030
+In nenne das jetzt einfach mal a, oder lieber
+nicht, lieber y oder sowas.
+
+0:02:06.030,0:02:11.200
+Dann würden wir jetzt einfach nur ein pattern
+match machen hier im ersten Element von der
+
+0:02:11.200,0:02:20.440
+liste und dann würde man ja das erste Element
+nehmen, das kommt nach ganz vorne, dann kommt
+
+0:02:20.440,0:02:27.700
+unser Füllelement y und dann kommt die Funktion
+g wieder, angewandt auf den Rest der Liste,
+
+0:02:27.700,0:02:29.590
+also g, y und xs.
+
+0:02:29.590,0:02:33.709
+Das wäre jetzt eine Möglichkeit, wie wir
+das in Haskell programmieren könnten.
+
+0:02:33.709,0:02:38.180
+Jetzt könnten wir versuchen das in Prolog
+zu übertragen, ist ja nicht zu kompliziert.
+
+0:02:38.180,0:02:43.280
+Also wenn wir das jetzt einfach übersetzen
+würden, machen wir mal.
+
+0:02:43.280,0:02:47.060
+Wir nehmen jetzt einfach alle drei Fälle
+und wandeln die um in Regeln.
+
+0:02:47.060,0:02:52.940
+Der erste Fall, das können wir genauso übernehmen,
+wir haben irgendwas, das Füllelement und
+
+0:02:52.940,0:02:56.790
+wir haben eine leere Liste und dann bekommen
+wir auch wieder eine leere Liste.
+
+0:02:56.790,0:03:00.760
+Der zweite Fall ist auch so simpel.
+
+0:03:00.760,0:03:07.019
+Wir haben irgendein Füllelement, wir haben
+eine Liste, wo nur ein Element drin ist und
+
+0:03:07.019,0:03:09.730
+dann bekommen wir das auch wieder, als Ergebnis.
+
+0:03:09.730,0:03:16.739
+Im letzten Fall hätten wir jetzt, wenn wir
+das so übersetzen wollten, hier vorne unser
+
+0:03:16.739,0:03:28.480
+Y, dann haben wir eine Liste, da ist vorne
+das X.
+
+0:03:28.480,0:03:41.970
+In unserem Ergebnis hätten wir jetzt eine
+Liste, da steht X, dann Y und dann der Rest
+
+0:03:41.970,0:03:46.970
+der Liste, nenne ich mal Zs hier.
+
+0:03:46.970,0:03:52.670
+Ich habe jetzt hier zu viele Klammern gemacht.
+
+0:03:52.670,0:03:59.450
+Da würde dann jetzt rauskommen, dass das
+dann stimmt, wenn auch dieses Prädikat g
+
+0:03:59.450,0:04:05.110
+hier stimmt, und zwar wieder mit Y, dann mit
+Xs und Zs.
+
+0:04:05.110,0:04:12.299
+Also das wäre jetzt, was man so übersetzen
+könnte aus dieser Haskell Implementation,
+
+0:04:12.299,0:04:15.569
+allerdings wird man jetzt merken, wenn man
+das ausprobiert, dass das nicht wirklich funktioniert
+
+0:04:15.569,0:04:16.810
+und nicht richtig funktioniert.
+
+0:04:16.810,0:04:19.370
+Können wir direkt mal machen.
+
+0:04:19.370,0:04:22.900
+Ich habe immer noch einen Syntax error, gucken
+wir mal.
+
+0:04:22.900,0:04:35.669
+Ach ja, ich habe ja die Funktion hier stehen,
+kommentiere ich einfach mal aus.
+
+0:04:35.669,0:04:41.140
+Wenn wir das jetzt ausprobieren würden, dann
+findet man schnell ein Fall, wo das nicht
+
+0:04:41.140,0:04:42.570
+so funktioniert, wie man eigentlich möchte.
+
+0:04:42.570,0:04:50.840
+Und zwar, wenn man hier eingibt, machen wir
+zum Beispiel eine 1, und unsere Liste ist
+
+0:04:50.840,0:04:56.880
+jetzt irgendwie zwei Elemente lang, ne ein
+Element lang, also wir machen eine Liste,
+
+0:04:56.880,0:05:03.490
+da steht zum Beispiel nur b drin und jetzt
+möchten wir wissen, was könnte denn da eine
+
+0:05:03.490,0:05:06.250
+sinnvolle dritte Eingabe sein, damit das ganze
+wahr ist.
+
+0:05:06.250,0:05:13.520
+Da bekommen wir jetzt zwar b, was stimmt,
+das ist ja gerade dieser Fall hier, den wir
+
+0:05:13.520,0:05:19.400
+haben wollen, einelementig mit irgendwas ist
+immer wieder genau das einelementige, aber
+
+0:05:19.400,0:05:23.240
+wenn wir jetzt hier gucken, gibt er uns auch
+[b, 1] zurück.
+
+0:05:23.240,0:05:30.479
+Das wollten wir eigentlich nicht haben und
+der Grund, warum der das macht, ist dass das
+
+0:05:30.479,0:05:35.229
+nicht wie in Haskell von oben nach unten durchgegangen
+wird und der erste matchende Fall genommen
+
+0:05:35.229,0:05:41.300
+wird und dann ist Schluss, sondern in Prolog
+ist es ja nicht wirklich Ergebnisbasiert,
+
+0:05:41.300,0:05:44.940
+also nicht, dass wir hier irgendwas berechnen
+würden, außer dass es wahr oder falsch ist
+
+0:05:44.940,0:05:54.180
+und das heißt, wenn wir jetzt das hier benutzen,
+dieses g, 1, b und wir fragen nach einem n,
+
+0:05:54.180,0:05:57.240
+dann sucht er alles raus, was da ein Ergebnis
+sein könnte.
+
+0:05:57.240,0:06:02.300
+Das Problem ist dann, dass er nicht hier stoppt,
+sondern er macht einfach alles, probiert alles
+
+0:06:02.300,0:06:03.300
+aus.
+
+0:06:03.300,0:06:08.419
+Dann findet er hier raus: Da ist das wahr,
+wenn wir hierfür einfach die Liste b einsetzen,
+
+0:06:08.419,0:06:15.600
+aber er findet auch raus, dass das hier wahr
+ist, weil man kann ja hier das auch so interpretieren,
+
+0:06:15.600,0:06:19.740
+dass hier X ist b und Xs ist die leere Liste.
+
+0:06:19.740,0:06:23.979
+Die List, wo nur b drin ist, ist eigentlich
+b angehängt an die leere Liste.
+
+0:06:23.979,0:06:28.289
+Das heißt, das würde hier auch matchen und
+dann wäre halt, wenn wir das so matchen,
+
+0:06:28.289,0:06:33.551
+also ist das hier das b, leere Liste dahinter,
+hier ist unsere 1, dann kann man das hier
+
+0:06:33.551,0:06:40.860
+auch machen, dann ist eine richtige Lösung
+folglich hier b, dann 1, dann die leere Liste,
+
+0:06:40.860,0:06:48.580
+wenn das hier auch wahr ist, dass halt die
+leere Liste, genau das hier 1, leere Liste,
+
+0:06:48.580,0:06:53.069
+leere Liste wahr ist und das stimmt ja gerade,
+ist nämlich diese Regel.
+
+0:06:53.069,0:06:57.490
+Das ist unser Problem, dass er halt jetzt
+zwei Fälle matched und dann zwei Lösungen
+
+0:06:57.490,0:06:58.490
+hat.
+
+0:06:58.490,0:07:01.023
+Und das ist ja eben keine richtige Lösung
+hier, dass dieses [b, 1] da drin ist.
+
+0:07:01.023,0:07:02.023
+Das sollte nicht so sein.
+
+0:07:02.023,0:07:04.819
+Also wir müssen das irgendwie verhindern,
+dass das passiert.
+
+0:07:04.819,0:07:11.680
+Und wie man das jetzt macht: Wir müssen einfach
+gucken, dass diese Regel hier, diese letzte,
+
+0:07:11.680,0:07:18.380
+dass die nur funktioniert, wenn wir zweielementige
+Sachen haben, oder mehr, und dass das nicht
+
+0:07:18.380,0:07:21.170
+bei einelementigen Listen funktioniert.
+
+0:07:21.170,0:07:25.800
+Wenn die erste Liste, die wir eingeben, wenn
+das einelementig ist, dann sollte das hier
+
+0:07:25.800,0:07:26.800
+nicht greifen.
+
+0:07:26.800,0:07:30.740
+Das machen wir jetzt einfach, indem wir jetzt
+hier noch etwas hinzufügen, nämlich wir
+
+0:07:30.740,0:07:34.699
+machen jetzt einfach nur, dass die zweite
+Liste mindestens zwei Elemente hat, also X
+
+0:07:34.699,0:07:36.520
+und, wie nenne ich das jetzt mal?
+
+0:07:36.520,0:07:39.810
+Keine Ahnung, W zum Beispiel.
+
+0:07:39.810,0:07:45.289
+Dann ist ja immer noch nichts dran geändert,
+dass vorne eine X dran steht und bei der zweiten
+
+0:07:45.289,0:07:50.569
+Liste halt dann X, dann Y und der Rest der
+Liste kommt.
+
+0:07:50.569,0:07:54.330
+Aber stellen damit sicher, dass nicht gematched
+werden kann, sodass hier keine einelementige
+
+0:07:54.330,0:07:55.960
+Liste reinkommt an der Stelle.
+
+0:07:55.960,0:08:00.990
+Dann müssen wir hier einfach, bei dem rekursiven
+Aufruf von g wieder, müssen wir hier das
+
+0:08:00.990,0:08:02.501
+W wieder vorne dranhängen, dann das Xs.
+
+0:08:02.501,0:08:08.389
+Das hat jetzt eigentlich keinen größeren
+Sinn, dass wir das da jetzt gemacht haben,
+
+0:08:08.389,0:08:15.470
+mit dem W außer, dass halt verhindert wird,
+dass das gematched wird bei einer einelementigen
+
+0:08:15.470,0:08:16.470
+Liste.
+
+0:08:16.470,0:08:23.770
+Wenn wir das jetzt laufen lassen, dann haben
+wir jetzt den richtigen Fall.
+
+0:08:23.770,0:08:27.250
+Wenn wir das jetzt nochmal machen, dann gibt
+er uns nur noch Liste b und ansonsten haben
+
+0:08:27.250,0:08:28.740
+wir keine richtige Lösung mehr.
+
+0:08:28.740,0:08:31.410
+Das wäre jetzt schon eine richtige Lösung.
+
+0:08:31.410,0:08:32.830
+Man kann das auch anders machen.
+
+0:08:32.830,0:08:37.820
+Es geht auch, indem man, ist jetzt nicht eine
+ganz so elegante Lösung, weil der ungleich
+
+0:08:37.820,0:08:42.990
+Operator sich nicht immer so verhält, wie
+man möchte, aber grundsätzlich richtig könnte
+
+0:08:42.990,0:08:51.400
+man es auch so machen, dass man das folgendermaßen
+machen würde: Man lässt es so wie es vorher
+
+0:08:51.400,0:08:59.250
+war und dann macht hier hinter einfach noch
+weitere Regeln.
+
+0:08:59.250,0:09:07.310
+Und zwar, dass Xs nicht die leere Liste sein
+darf.
+
+0:09:07.310,0:09:10.370
+Das würde auch funktionieren, aber wie gesagt,
+das ist ein bisschen ungeschickt, vor allem
+
+0:09:10.370,0:09:13.430
+weil sich der ungleich Operator sehr komisch
+verhält manchmal, zum Beispiel, wenn man
+
+0:09:13.430,0:09:15.060
+die Reihenfolge verändern würde.
+
+0:09:15.060,0:09:18.950
+Also man schreibt das zuerst.
+
+0:09:18.950,0:09:22.390
+Da kann es schonmal passieren, dass das Programm
+falsche Antworten oder sich irgendwie aufhängt
+
+0:09:22.390,0:09:23.390
+oder sowas.
+
+0:09:23.390,0:09:27.780
+Also würde ich davon abraten, wenn es nicht
+anders geht, aber man kann es grundsätzlich
+
+0:09:27.780,0:09:28.780
+auch so machen.
+
+0:09:28.780,0:09:31.610
+Nur um zu zeigen, dass das halt nicht unbedingt
+so sein muss.
+
+0:09:31.610,0:09:34.580
+Aber ich würde auf jeden Fall raten das so
+zu machen.
+
+0:09:34.580,0:09:40.190
+Dann kann man sich wenigstens sicher sein,
+dass es funktioniert.
+
+0:09:40.190,0:09:46.459
+Um darauf nochmal zu sprechen zu kommen, darum
+darf man ja auch nur bestenfalls drei Klauseln
+
+0:09:46.459,0:09:54.880
+benutzen, weil, wenn wir das jetzt nochmal
+matchen würde, das wäre genau das gleiche
+
+0:09:54.880,0:09:57.149
+Problem, was wir jetzt schon hatten, sagen
+wir mal, wir haben hier noch irgendeinen match,
+
+0:09:57.149,0:10:00.279
+der irgendwie nur für zweielementige Listen
+funktioniert.
+
+0:10:00.279,0:10:08.570
+Also wenn ich jetzt sagen würde,
+
+0:10:08.570,0:10:20.570
+das ist eigentlich fast das gleiche, was darunter
+steht,
+
+0:10:20.570,0:10:28.790
+eigentlich ist das gar nicht sinnlos, wie
+ich das schon gesagt habe.
+
+0:10:28.790,0:10:30.490
+Vergessen wir mal wieder.
+
+0:10:30.490,0:10:38.290
+Was wichtig ist, ist einfach nur, dass ihr
+aufpassen müsst, dass keine doppelten matches
+
+0:10:38.290,0:10:42.070
+irgendwo sind, weil es muss nicht unbedingt
+falsch sein, also wenn ich jetzt hier zweimal
+
+0:10:42.070,0:10:45.941
+die gleiche Regel hier schreiben würde, dann
+würde es zwar doppelte Ergebnisse geben,
+
+0:10:45.941,0:10:48.410
+also würde mir alles doppelt geben, was für
+zwei Elemente zum Beispiel stimmen würde,
+
+0:10:48.410,0:10:52.600
+wenn ich die gleichen Regeln nochmal fast
+genauso darunter schreiben würde, aber ist
+
+0:10:52.600,0:10:53.600
+ja grundsätzlich nicht falsch.
+
+0:10:53.600,0:10:56.430
+Nur wenn er das richtige eben zweimal gibt,
+ist es nicht unbedingt falsch, aber es ist
+
+0:10:56.430,0:11:01.320
+halt erstens nicht wirklich optimal und auch
+nicht so effizient.
+
+0:11:01.320,0:11:02.860
+Das ist das Problem.
+
+0:11:02.860,0:11:07.730
+Es kommt auf die ansichtsweise an, ob das
+dann falsch ist, wenn wir dann Fälle doppelt
+
+0:11:07.730,0:11:08.730
+haben.
+
+0:11:08.730,0:11:10.490
+Es halt nur nicht sein, dass wir zusätzlich
+solche falschen Fälle hier drin haben, so
+
+0:11:10.490,0:11:12.050
+wie das hier.
+
+0:11:12.050,0:11:17.450
+Das ist das wichtige.
+
+0:11:17.450,0:11:19.820
+Noch ein kleiner Zusatz zu dem eben gesagte.
+
+0:11:19.820,0:11:21.839
+Mir ist gerade eingefallen, was ich hier noch
+schreiben wollte.
+
+0:11:21.839,0:11:27.290
+Und zwar wollte ich nur nochmal zeigen, warum
+das keine gute Idee ist hier jetzt noch eine
+
+0:11:27.290,0:11:29.560
+explizite Regel zu schreiben, was auch verboten
+war in der Aufgabe.
+
+0:11:29.560,0:11:33.269
+Da stand ja: Nur drei Regeln.
+
+0:11:33.269,0:11:40.890
+Wenn man jetzt noch zum Beispiel zweielementige
+direkt matchen würde, das wollte ich eben
+
+0:11:40.890,0:11:48.990
+aufschreiben, also wenn ich jetzt hier genau
+schreiben würde, zwei Elemente nur
+
+0:11:48.990,0:11:58.339
+Wenn ich das jetzt hier als explizite Regel
+schreiben würde, dann hätte ich jetzt das
+
+0:11:58.339,0:12:03.100
+Problem, dass ich ständig Resultate doppelt
+bekommen würde.
+
+0:12:03.100,0:12:15.529
+Also wenn ich jetzt hier zum Beispiel danach
+suchen würde, sagen wir mal sowas, also ich
+
+0:12:15.529,0:12:20.279
+habe die Liste [a, b] und ich möchte die
+1 dazwischen legen, dann bekomme ich jetzt
+
+0:12:20.279,0:12:25.589
+auch wieder mehrere Möglichkeiten, ich bekomme
+einfach die gleichen Ergebnisse mehrfach,
+
+0:12:25.589,0:12:32.170
+zweimal immer, weil das jetzt hier da gematched
+wird direkt, aber auch hier, da ich ja einfach
+
+0:12:32.170,0:12:35.600
+hier das jeweils durch leere Listen ersetzen
+kann, die beiden, und da habe ich genau das
+
+0:12:35.600,0:12:36.600
+Gleiche.
+
+0:12:36.600,0:12:37.820
+Das ist das Problem.
+
+0:12:37.820,0:12:44.200
+Also deswegen durfte man hier auch nur drei
+Regeln verwenden und deswegen ist es generell
+
+0:12:44.200,0:12:46.610
+eine schlechte Idee irgendwelche überlappenden
+Fälle zu haben.
+
+0:12:46.610,0:12:49.750
+In Haskell kann sich das erlauben, weil das
+ja nur von oben nach unten durchgegangen wird,
+
+0:12:49.750,0:12:51.779
+aber im Prolog geht das nicht so gut.
+
+0:12:51.779,0:12:53.500
+Deswegen sollte man das vermeiden.
+
+0:12:53.500,0:12:57.450
+Es ist nicht grundsätzlich falsch, das ist
+ja trotzdem richtig jeweils, aber es ist halt
+
+0:12:57.450,0:12:58.510
+alles doppelt.
+
+0:12:58.510,0:13:02.150
+Das ist erstens nervig, wenn man das versucht
+zu kontrollieren und zweitens ist das auch
+
+0:13:02.150,0:13:03.150
+nicht wirklich optimal.
+
+0:13:03.150,0:13:07.230
+Also man will es ja lieber so haben, dass
+man jedes Ergebnis nur einmal bekommt, wenn
+
+0:13:07.230,0:13:08.459
+es irgendwie geht.
+
+0:13:08.459,0:13:09.570
+Also das ist der Grund dafür.

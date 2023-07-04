@@ -1,0 +1,323 @@
+0:00:00.000,0:00:09.420
+In dieser Prolog-Aufgabe soll ein Prädikat
+geschrieben werden welches überprüft, dass der
+
+0:00:09.420,0:00:23.160
+erste Parameter eine Liste von Listen ist und der
+zweite Parameter das Ergebnis der Liste ist, wenn
+
+0:00:23.160,0:00:33.750
+man die einzelnen Teillisten, der ersten Liste
+umkehrt, also 'reverse' drauf anwendet. Dafür
+
+0:00:33.750,0:00:42.990
+soll das zweistellige Prädikat h implementiert
+werden und dabei gibt es noch den Hinweis,
+
+0:00:42.990,0:00:51.330
+dass die vordefinierten Prädikate 'append' mit
+drei Parametern und 'reverse' mit zwei Parametern
+
+0:00:51.330,0:01:03.000
+verwendet werden können. Wenn dieses Prädikat im
+Prolog implementiert wird, dann kann man hierbei
+
+0:01:03.000,0:01:12.780
+wieder eine Fallunterscheidung machen, weil der
+Eingabeparameter eine Liste ist und dann kann
+
+0:01:12.780,0:01:24.090
+man den leeren Listen Fall definieren, dass das
+Prädikat für eine leere Liste gilt und dann können
+
+0:01:24.090,0:01:30.030
+natürlich entsprechende Regeln erstellt werden
+für, oder kann eine Regel erstellt werden, für
+
+0:01:30.030,0:01:41.556
+den anderen Fall, nämlich für den Fall, dass die
+übergebene Liste aus mehreren Elementen besteht.
+
+0:01:42.270,0:01:56.700
+In dem Fall soll dann auch wieder eine Liste
+zurückgegeben werden, ich nenne die jetzt einfach
+
+0:01:56.700,0:02:09.270
+mal Zs und jetzt können die Prädikate 'append'
+und 'reverse' verwendet werden, um zu definieren,
+
+0:02:09.270,0:02:21.775
+wie Zs aussehen soll. Die Listen sollen umgekehrt
+sein, dass wenn wir hier eine Teilliste '[a,
+
+0:02:21.775,0:02:26.860
+b]' haben, soll die entsprechend umgekehrt
+werden. Die erste Teilliste, die wir haben,
+
+0:02:26.860,0:02:41.950
+ist dieses Xs, deshalb können wir sagen, dass uns
+'reverse' von X eine Liste Y gibt und außerdem,
+
+0:02:41.950,0:02:51.370
+wenn dieses 'reverse' erfolgt ist, dann
+soll mit Xs, das ist der Rest der Liste,
+
+0:02:51.370,0:03:01.840
+dasselbe passieren wie mit dem vorhergehenden
+Teil, in Haskell wäre das der Rekursionsfall,
+
+0:03:01.840,0:03:14.560
+also hier können wir auch sagen, wir nehmen Xs
+dafür und liefern uns eine Liste Ys, also das
+
+0:03:14.560,0:03:27.160
+Resultat von der Anwendung von h mit Xs und Ys.
+Die Liste kann dann verkettet werden mit 'append'
+
+0:03:27.160,0:03:40.030
+und nun werden verkettet Y und Ys und
+dementsprechend erhält man eine neue Liste
+
+0:03:40.030,0:03:54.610
+und diese Liste ist letztendlich das Zs. Das
+heißt, das ist die Definition des Prädikates,
+
+0:03:54.610,0:04:07.150
+was wir haben wollten und ich kann das jetzt auch
+noch mal im Prolog laden. Ich habe hier swi-Prolog
+
+0:04:07.150,0:04:24.450
+und kann hier Task40.prolog laden. Jetzt kann
+ich hier ein Prädikat angeben, zum Beispiel
+
+0:04:24.450,0:04:38.490
+das Beispielprädikat und dann den Beispielaufruf
+mit dem Prädikat h und den Listen '[a, b]', '[c,
+
+0:04:38.490,0:04:46.290
+d, e]' und der Rückgabeliste '[b, a, e, d, c]'
+und wenn ich das in Prolog ausführe, liefert es
+
+0:04:46.290,0:04:59.340
+'true', das heißt, das ganze gilt. Wir können
+auch Listen übergeben, Listen von Listen, zum
+
+0:04:59.340,0:05:14.970
+Beispiel könnten wir die Liste '[1, 2, 3]' und die
+Liste '[4, 5, 6]' übergeben und können dann Prolog
+
+0:05:14.970,0:05:23.850
+das Ergebnis suchen lassen und, hier ist noch ein
+Syntaxfehler, hier fehlt die schließende Klammer,
+
+0:05:23.850,0:05:35.610
+und wenn Prolog das Ergebnis zurückliefert, dann
+liefert es uns die Liste '[3, 2, 1, 6, 5, 4]' wie
+
+0:05:35.610,0:05:48.900
+erwartet. Man könnte hier naiv auf die Idee kommen
+einen pattern match für die einelementige Liste
+
+0:05:48.900,0:06:03.840
+hinzuzufügen, also wenn in der Liste von Listen
+nur eine Liste enthalten ist, dann könnte man den
+
+0:06:03.840,0:06:13.320
+Fall recht einfach definieren, als dass in diesem
+Fall 'reverse' von der Liste durchgeführt werden
+
+0:06:13.320,0:06:25.650
+soll. Das heißt, dass das 'reverse' von X soll
+gleich die Ergebnisliste Y sein. Prinzipiell ist
+
+0:06:25.650,0:06:35.550
+das erst mal nicht falsch, allerdings hat das
+eine Auswirkung in Prolog und wenn ich diesen
+
+0:06:35.550,0:06:43.560
+Aufruf hier durchführen, dann werden wir das
+gleich sehen, nämlich dass wir nicht ein Ergebnis
+
+0:06:43.560,0:06:52.710
+bekommen, sondern mehrere und diese Ergebnisse
+sind identisch. Das ist die Multimengensemantik
+
+0:06:52.710,0:07:04.800
+in Prolog, die hier zum Tragen kommt. Es gibt
+zwei Pattern, die hier matchen für die Liste,
+
+0:07:08.040,0:07:18.780
+also von der Liste '[1, 2, 3]' und der Liste '[4,
+5, 6]', nämlich diesen Fall hier und diesen Fall
+
+0:07:18.780,0:07:24.930
+hier, also nein, das ist nicht korrekt, also in
+dem Fall jetzt konkret nicht, also man könnte
+
+0:07:24.930,0:07:33.600
+das jetzt noch besser herunterspielen auf ein
+einfaches Beispiel, zeigen wir die Liste '[1,
+
+0:07:33.600,0:07:49.290
+2, 3]'. Das wäre jetzt sozusagen genau eine
+Liste und wenn, also hier würde das Pattern
+
+0:07:49.290,0:08:03.630
+sozusagen zweimal greifen und einmal halt für die
+zweite Definition und auch für die dritte von h,
+
+0:08:03.630,0:08:10.770
+also die beiden Pattern würden matchen und in dem
+anderen Beispiel kommt das natürlich zu tragen,
+
+0:08:10.770,0:08:20.070
+weil hier auch h benötigt wird und dann irgendwann
+kommt der Fall nämlich auch, in dem nur eine Liste
+
+0:08:20.070,0:08:26.200
+vorhanden ist, in dem Fall ist es dann natürlich
+im nächsten Aufruf, also wenn die erste Liste
+
+0:08:26.200,0:08:33.700
+abgenommen wurde, dann ist das Xs, dann ist es
+in dem Fall die Liste '[4, 5, 6]' für die hier
+
+0:08:33.700,0:08:39.880
+dasselbe passiert und weil sozusagen beide
+ausgeführt werden, gibt es entsprechend auch
+
+0:08:39.880,0:08:50.920
+zwei Ergebnisse, die letztendlich identisch sind.
+Deshalb sollte diese Zeile nicht vorhanden sein
+
+0:08:50.920,0:09:00.040
+und dann haben wir das Verhalten, das nur ein
+Ergebnis immer ausgegeben wird. Prinzipiell
+
+0:09:00.040,0:09:04.390
+kann man die Aufgabe auch so angehen, dass
+man zunächst die Implementation in Haskell
+
+0:09:04.390,0:09:19.630
+macht. Vielleicht können wir auch das mal kurz
+durchführen. Das heißt, man kann sozusagen die
+
+0:09:19.630,0:09:31.480
+Aufgabe genauso gut in Haskell durchführen. Ich
+zeige vielleicht das Prolog-Programm nochmal hier
+
+0:09:31.480,0:09:40.870
+dazu, beziehungsweise die Aufgabe.
+Also soll ein Prädikat geschrieben werden,
+
+0:09:40.870,0:09:45.430
+in Haskell wäre das dann dementsprechend eine
+Funktion, wenn das eine Haskell Aufgabe wäre,
+
+0:09:45.430,0:09:52.536
+und diese Funktion soll einen Parameter haben,
+also das Prädikat hat zwei, dementsprechend hat
+
+0:09:52.536,0:10:01.420
+die Funktion in Haskell dann einen Parameter und
+die soll aus einer Liste von Listen, das können
+
+0:10:01.420,0:10:16.120
+wir hier als Typ auch ausdrücken, nur einfach eine
+Liste machen. Das Verhalten soll halt so sein,
+
+0:10:16.120,0:10:24.070
+dass die dementsprechend innerhalb reversed sein
+sollen. Das kann man sich jetzt in Haskell genauso
+
+0:10:24.070,0:10:31.540
+gut überlegen, hier benutze ich mal keinen 'fold',
+sondern benutzte denselben Ansatz, wie auch in
+
+0:10:31.540,0:10:36.700
+Prolog. Das heißt, wir machen einen pattern match,
+in dem Fall geht der pattern match über die leere
+
+0:10:36.700,0:10:44.890
+List und in dem Fall sollte die leere Liste
+zurückgegeben werden und für den anderen Fall,
+
+0:10:44.890,0:11:04.240
+nämlich dass wir eine Liste von Listen haben,
+dann soll die erste Liste reversed werden und
+
+0:11:04.240,0:11:16.870
+dann soll, an die Liste angehängt, das Ergebnis
+von der Rekursion herankommen. Also in Haskell
+
+0:11:16.870,0:11:32.590
+würde das jetzt so aussehen, wir können das auch
+in ghci noch einmal laden und wenn wir jetzt hier
+
+0:11:32.590,0:11:51.520
+dieselbe Aufgabe stellen, nämlich mit der Liste
+'[1, 2, 3]', die vor der Liste '[4, 5, 6]' hängt,
+
+0:11:51.520,0:12:09.250
+dann liefert uns Haskell dasselbe Ergebnis, wie
+auch Prolog. Um das Programm zu transformieren,
+
+0:12:09.250,0:12:19.930
+sozusagen von Haskell nach Prolog könnte man
+daher gehen und die einzelnen Schritte ausführen,
+
+0:12:19.930,0:12:32.620
+die aus der Vorlesung bekannt sind. Das heißt, man
+müsste die einzelnen Funktionsaufrufe separieren.
+
+0:12:32.620,0:12:48.280
+Das heißt, man könnte hier sagen, dass zs
+das Endergebnis ergeben soll, dann können die
+
+0:12:48.280,0:12:54.340
+Teilergebnisse berechnet werden, also 'reverse
+x' wäre ein Funktionsaufruf, der erzeugt y,
+
+0:12:54.340,0:13:13.420
+das soll in einem 'where' stehen. Dann ist
+hier noch das 'h xs', das soll uns ys liefern,
+
+0:13:13.420,0:13:23.890
+also natürlich ist die Wahl der Namen hier frei
+und zs ist dann eben die Verknüpfung von y mit
+
+0:13:23.890,0:13:37.180
+ys und das wäre sozusagen das transformierte
+Programm. Vielleicht nur noch mal zur Übersicht,
+
+0:13:37.180,0:13:43.750
+dass das das alte Programm hier auch noch zu sehen
+ist, schreibe ich das auch noch mal kurz dazu,
+
+0:13:43.750,0:13:55.940
+also wir hatten vorher ja 'reverse x ++ h
+xs' und das ist jetzt dasselbe Programm,
+
+0:13:55.940,0:14:07.340
+nur mit lokalen Definitionen hier über 'where'
+und das kann ich auch in ghci hier erneut laden
+
+0:14:07.340,0:14:17.660
+und dementsprechend aufrufen und das ist dasselbe
+Ergebnis und das könnte man jetzt sozusagen auch
+
+0:14:17.660,0:14:27.200
+wieder nach Prolog transferieren, indem man hier
+das 'reverse' als erste Komponente hinzugefügt,
+
+0:14:27.200,0:14:38.570
+mit x als ersten Parameter und y als zweiten,
+dann das h mit xs als ersten Parameter und ys
+
+0:14:38.570,0:14:53.240
+zweiten und das 'append' mit y als ersten
+Parameter, ys als zweiten Parameter und zs
+
+0:14:53.240,0:14:59.600
+als dritten Parameter und so kann man
+die Aufgabe letztendlich dann auch lösen.

@@ -1,0 +1,528 @@
+0:00:00.400,0:00:04.400
+Hello, in this task we are going
+to practice unification of terms,
+
+0:00:04.400,0:00:08.880
+and for this we have six pairs of terms here,
+and for each of these pairs we need to check
+
+0:00:08.880,0:00:13.520
+if the terms inside are identifiable,
+and if so get the most general unifier.
+
+0:00:14.640,0:00:21.200
+A unifier is a set of substitutions, which when
+applied to all the terms that we want to unify,
+
+0:00:21.200,0:00:26.080
+results in these terms being equal; if the
+terms we're looking at are not unifiable,
+
+0:00:26.080,0:00:31.440
+so it's not possible to find such a unifier, then
+we need to briefly explain why that's the case,
+
+0:00:32.160,0:00:37.040
+simply saying we can't find a unifier
+therefore it's not unifiable is not enough,
+
+0:00:37.040,0:00:40.240
+but we'll see what the proper
+explanation would be in a moment.
+
+0:00:42.640,0:00:50.640
+So, beginning with the first pair we have two
+terms 'g' one being g(s(s(A)), s(B), B) and the
+
+0:00:50.640,0:00:57.920
+other is g(C,C,s(D)), usually we want to start
+going left to right, so looking at the first
+
+0:00:57.920,0:01:03.600
+parameter in each term first, and then moving on
+to the second and so on, because that's how prolog
+
+0:01:03.600,0:01:12.560
+does it and we kind of want to emulate this. So
+first parameters are s(s(A)) and C, so to find a
+
+0:01:12.560,0:01:20.320
+suitable substitution here you might say "okay why
+don't we just change all of our s(s(A)) to C?",
+
+0:01:26.800,0:01:30.880
+however this is not allowed
+because the only substitution
+
+0:01:30.880,0:01:36.560
+we are allowed to make are for variables, so this
+structure s(s(A)) can't be changed, the only thing
+
+0:01:36.560,0:01:42.480
+we might change is the A variable inside,
+but at this point that's not really helpful,
+
+0:01:42.480,0:01:46.560
+however this is not all lost because we only
+have a single variable on the other side,
+
+0:01:46.560,0:01:59.840
+so we can just switch this around and say we're
+going to substitute all our C for s(s(A)). Now
+
+0:02:01.040,0:02:06.160
+if you apply substitution you should always check
+where all the variables are that you need to
+
+0:02:07.120,0:02:14.800
+substitute, because they might be on both terms,
+so on all the terms you're trying to unify, and
+
+0:02:14.800,0:02:19.680
+you need to make sure that you are substituting
+all of them, not just on one side of your
+
+0:02:20.960,0:02:27.360
+unification. So for this we get
+these two terms and now the first
+
+0:02:27.360,0:02:36.160
+terms first parameters on both sides are equal,
+and we can move on to the second parameter.
+
+0:02:36.160,0:02:43.360
+On one side this is s(B), on the other side this
+is now s(s(A)), once again we can't change this
+
+0:02:43.360,0:02:49.920
+s(s(A)) structure, we could only change variable
+A, so the only thing we can do here and the only
+
+0:02:49.920,0:03:02.880
+thing that's sensible, is substituting
+all of our B for s(A). Now the first two
+
+0:03:02.880,0:03:08.400
+parameters on both sides are equal and we're
+left with the third parameters s(A) and s(D),
+
+0:03:08.960,0:03:15.200
+and at this point we can make a choice, we can do
+two equally valid substitutions, either changing
+
+0:03:15.200,0:03:31.840
+our A to D or chang D to A, let's go with changing
+our A to D... and then we have two equal terms,
+
+0:03:32.960,0:03:37.440
+or rather two identical terms,
+and this is a valid unifier,
+
+0:03:38.320,0:03:42.960
+but at this point, and this is something you
+should always do once you find a unifier, you
+
+0:03:42.960,0:03:48.400
+should check all the substitutions that you have
+and see if you can't apply any of these to the
+
+0:03:48.400,0:03:55.200
+other substitutions, because in this case we're
+using the A variable, but in the last substitution
+
+0:03:55.200,0:04:02.720
+we are substituting A to D so we should just
+apply this and change these A to D as well,
+
+0:04:03.360,0:04:09.280
+in which case we are saving this step at the
+end where we need to change all the variables
+
+0:04:09.280,0:04:16.400
+A over to D because we're doing that immediately,
+and this is a better way of doing it basically.
+
+0:04:18.480,0:04:25.760
+So we have a unifier now, but is it a most
+general unifier? A most general unifier is
+
+0:04:25.760,0:04:32.320
+just the unifier, but preserving as many
+variables as possible, and we've done this
+
+0:04:32.320,0:04:39.440
+to the best of our abilities in this case, because
+we've preserved the D variable and this is fine,
+
+0:04:39.440,0:04:46.320
+we're not doing any unnecessary substitutions
+like substituting D to constants, that would be
+
+0:04:46.320,0:04:51.360
+an unnecessary substitution in this case and
+would not result in a most general unifier,
+
+0:04:52.320,0:04:54.240
+but this is a most general unifier.
+
+0:05:04.000,0:05:14.480
+Moving on to the second pair, we have two terms,
+f(X, s(X), a) and F(s(0), s(s(Y)), Y), so for
+
+0:05:14.480,0:05:22.160
+our first two parameters we have variable X and
+s(0), and since we can only make substitutions for
+
+0:05:22.160,0:05:27.920
+variables, the only substitution we're allowed to
+make here is substituting all our X to be s(0)...
+
+0:05:37.760,0:05:42.000
+now the first parameters on both terms are
+identical and we can move on to the second one,
+
+0:05:42.720,0:05:49.840
+which is now s(s(0)) on one side and s(s(Y)) on
+the other, again the only variable is over here,
+
+0:05:49.840,0:06:02.080
+so the only substitution we are allowed
+to make is substituting 0 for Y,
+
+0:06:05.440,0:06:11.600
+and if we do this you can see we have a little
+problem here, because now while the first two
+
+0:06:11.600,0:06:17.760
+parameters on both sides are identical the
+third parameters are not, because there's an a
+
+0:06:17.760,0:06:21.920
+over here that can't be changed and there's
+a 0 over here that can't be changed either,
+
+0:06:21.920,0:06:30.640
+and we are out of substitutions to make at this
+point so this is for one an incomplete unifier
+
+0:06:30.640,0:06:37.760
+and these two terms are not unifiable, because
+we have a conflict remaining here. Now we might
+
+0:06:37.760,0:06:42.400
+take a step back and say "okay we've gone left
+to right, what if we went the other way around?",
+
+0:06:42.400,0:06:47.600
+in that case we would see there's an a over here
+and there's a Y over here so the substitution we
+
+0:06:47.600,0:06:55.600
+need to make is substituting an a constant for
+all our Y's, in that case we would arrive at
+
+0:06:55.600,0:07:01.840
+these two terms and the third parameters are now
+identical. However now we have the same conflict
+
+0:07:01.840,0:07:06.560
+we had before in the second parameter where
+there's a 0 over here and there's a over here,
+
+0:07:06.560,0:07:16.000
+so obviously these two substitutions Y to 0,
+and Y to a are kind of in conflict and this
+
+0:07:16.000,0:07:19.920
+is exactly the explanation that we need
+at this point, because as the task says,
+
+0:07:19.920,0:07:29.120
+we need to briefly explain why they're not
+unifiable and we can do that by leaving our
+
+0:07:29.120,0:07:35.280
+incomplete unifier or just deleting it entirely
+and explaining shortly what we did, you can say:
+
+0:08:30.880,0:08:34.000
+"not unifiable because X would have to be replaced
+by s(0)", that's the first substitution we did,
+
+0:08:34.000,0:08:41.840
+"however there are two competing
+substitutions for Y, Y to 0 and Y to a, and...
+
+0:08:41.840,0:08:45.760
+since these can't both be
+applied we have a conflict."
+
+0:08:46.800,0:08:55.920
+This would be a valid explanation and
+this would be enough for this subtask b.
+
+0:08:57.760,0:09:04.560
+Moving on to the third pair we have two terms
+c, and at this point we need to be careful
+
+0:09:04.560,0:09:13.200
+to read these parentheses correctly,
+these terms only have two parameters.
+
+0:09:14.400,0:09:18.080
+The first parameter on one side is this
+whole structure of c(b(A,B), s(B)), on
+
+0:09:18.080,0:09:24.640
+the other side that's c(D,a), and once again
+we read left to right, this is going to be
+
+0:09:24.640,0:09:30.000
+a little more complicated at this point, but
+it's going to be simple enough to do I think.
+
+0:09:30.560,0:09:36.480
+So we have this structure c on both sides so we
+can step inside of that, and we see we have D,a
+
+0:09:37.120,0:09:44.000
+over here we have this b(A,B) over there and s(B)
+here, so the first substitution we definitely need
+
+0:09:44.000,0:09:52.160
+to make, because we can't change this structure
+only the variables inside, is D to b(A,B).
+
+0:09:55.920,0:10:02.160
+On the second one we have a structure s(B) over
+here and a constant here, you can't change the
+
+0:10:02.160,0:10:07.280
+constant, you can't change the structure,
+so immediately we have a conflict here,
+
+0:10:07.280,0:10:13.120
+where these two can't be unified, because there's
+no substitution that would make these identical.
+
+0:10:14.000,0:10:19.680
+So we can remove our incomplete unifier
+and immediately say "not unifiable,
+
+0:10:21.280,0:10:29.360
+because a is not unifiable with s(B)"
+or the other way around if you want, so
+
+0:10:30.640,0:10:33.600
+"because s(B) is not unifiable with a"
+
+0:10:34.320,0:10:40.080
+and this would be a valid explanation at this
+point and that would take care of this pair.
+
+0:10:43.280,0:10:52.960
+For subtask d we have once again two terms c
+and these once again have only two parameters,
+
+0:10:52.960,0:10:57.840
+so we need to be careful with our parentheses,
+this is the second parameter here and this is
+
+0:10:57.840,0:11:03.200
+the second parameter on the other one, however
+for the first parameters we have the variable A
+
+0:11:03.760,0:11:07.760
+and the constant a, so this is
+an easy substitution to make.
+
+0:11:16.640,0:11:24.560
+Now the first term is completely made up of
+non-variables so nothing can be changed over here,
+
+0:11:24.560,0:11:39.920
+so we need to only look over here and since these
+structures are now the same on both sides we only
+
+0:11:39.920,0:11:47.360
+have constants and variables left, so we can
+simply swap them all out in one step because...
+
+0:11:48.320,0:11:55.840
+well it's just simple substitutions like the one
+we did before, so substituting B for constant a,
+
+0:11:56.960,0:12:05.920
+substituting variable C for constant b and
+substituting variable D for constant c.
+
+0:12:08.240,0:12:14.720
+And if we apply these we
+arrive at our unified terms
+
+0:12:15.520,0:12:21.520
+and our unifier. At this point you might ask
+"okay is this still the most general unifier,
+
+0:12:21.520,0:12:27.200
+because there's no variables left?", however there
+were no other substitutions we could have done in
+
+0:12:27.200,0:12:33.040
+this case, so this, while not preserving any
+variables, is still the most general unifier.
+
+0:12:36.000,0:12:54.640
+And moving on to e, e has two terms p, p(s(A),
+h(B,C), C) and the other being p(D, h(D,E), 2),
+
+0:12:56.960,0:13:03.600
+so beginning with the first
+parameters again, s(A) and D, this
+
+0:13:03.600,0:13:09.520
+s() can't be changed so the only substitution
+we can do is changing all the D to s(A).
+
+0:13:13.040,0:13:20.960
+Which gets us these two terms, first
+parameters are identical and we can
+
+0:13:20.960,0:13:28.960
+move on to the second one. Again we
+have h(B,C) here and h(D,E) here so
+
+0:13:30.000,0:13:34.800
+stepping inside of this, because the h structure
+is identical on both sides, we can look at the
+
+0:13:34.800,0:13:43.360
+first part of that, the first parameter of
+this h term here is B and s(A) over there
+
+0:13:43.360,0:13:49.360
+so once again this s() can't be changed, so the
+next substitution you need to make is B to s(A).
+
+0:13:56.400,0:14:02.720
+Now the second parameter is partially identical,
+we are left with the second part of that, so this
+
+0:14:02.720,0:14:08.160
+is a variable C here and a variable E here, and
+at this point once again we have a choice, we can
+
+0:14:08.160,0:14:15.600
+either go for changing all the C to E or changing
+all the E to C, let's go with changing all the E
+
+0:14:15.600,0:14:22.880
+to C, that's one less step, because we have two
+C and only one E so i'm changing the E to C.
+
+0:14:24.400,0:14:29.840
+Now the first and second parameters on
+both sides are fully unified and we have
+
+0:14:29.840,0:14:37.680
+the third one which is C and 2, this
+is once again a simple substitution,
+
+0:14:38.720,0:14:45.520
+and if we apply that we need to apply that to
+all of these C. Now at this point we need to
+
+0:14:45.520,0:14:50.640
+be careful because for the first time in this
+task we have the same variable on both sides,
+
+0:14:53.760,0:15:01.200
+so making sure we substitute all of them we
+arrive at these two terms which are now identical,
+
+0:15:01.200,0:15:12.480
+so this is a unifier for it. However as we've seen
+in the first pair for subtask a we need to check
+
+0:15:12.480,0:15:19.920
+if we can't apply our substitutions on any of our
+other substitutions, in this case we're using C
+
+0:15:19.920,0:15:26.480
+over here and we are substituting 2
+for C, so we can immediately apply this
+
+0:15:26.480,0:15:32.320
+and change E to 2 as well and now this is the
+most general unifier that we actually want.
+
+0:15:42.560,0:15:52.960
+Finally we have two terms r, one r(A,A)
+and the other r(s(B,C), s(s(D,1),1)),
+
+0:15:55.280,0:15:58.880
+once again going left to right the only
+substitution we can make since we can't
+
+0:15:58.880,0:16:02.640
+change this structure s() here is A to s(B,C).
+
+0:16:17.040,0:16:20.880
+Now the first parameters are identical
+and we can move on to the second,
+
+0:16:20.880,0:16:28.000
+which is now s(B,C) over here and this
+s(s(D,1),1) over there so the first
+
+0:16:28.880,0:16:32.320
+s() here is identical so we can step
+inside of that, and the first part,
+
+0:16:33.120,0:16:41.200
+which is B here and s(D,1) here, so the only
+substitution we can make is s(D,1) for B.
+
+0:16:43.120,0:16:49.840
+At this point we need to be careful again,
+because we have the same variable on both sides
+
+0:16:51.040,0:16:56.800
+and changing all of them gets us these two terms.
+The first parameters are still identical as they
+
+0:16:56.800,0:17:01.680
+should be, and the second parameters
+are now s(s(D,1), C) and s(s(D,1),1),
+
+0:17:04.400,0:17:10.080
+so we're only left with the variable
+C here and constant 1 over there,
+
+0:17:10.080,0:17:20.000
+so C to 1 is the only substitution you can make,
+and that applied to all of our C would result in
+
+0:17:20.000,0:17:26.000
+these two terms, which are now identical so
+this is a unifier and these two are unifiable.
+
+0:17:27.680,0:17:32.160
+However at this point once again, like
+in e) and a), we need to check if we
+
+0:17:32.160,0:17:41.200
+can apply our substitutions on any of our other
+substitutions, and here we're using C over here,
+
+0:17:41.200,0:17:49.440
+we're substituting 1 for C so we need to change
+that and one step further we're using B here
+
+0:17:49.440,0:17:55.760
+and we're making a substitution for B so we can
+also apply that immediately, resulting in this,
+
+0:17:56.480,0:18:06.480
+now most general, unifier that we want. And
+that finishes the last pair and the entire task.

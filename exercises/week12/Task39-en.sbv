@@ -1,0 +1,617 @@
+0:00:01.040,0:00:06.080
+Task number 39.
+This task is a Prolog task,
+
+0:00:06.080,0:00:11.360
+but I'm going to solve it first in Haskell
+because it is easier to understand.
+
+0:00:13.280,0:00:17.840
+We're going to write predicate g
+which when interpreted as a function,
+
+0:00:17.840,0:00:22.800
+it inserts some specific element between
+each two adjacent elements of the given list.
+
+0:00:23.360,0:00:25.280
+So, for example, this should hold.
+
+0:00:26.080,0:00:34.080
+As you can see, at the beginning we had this list
+[b,a,d], and then after insertion of “a” between
+
+0:00:35.440,0:00:42.160
+each two elements… ,so you could say like: each of
+these commas is replaced by: comma a comma.
+
+0:00:42.160,0:00:43.840
+You can imagine it like this.
+
+0:00:46.400,0:00:50.480
+And this should hold. So,
+this should give us true.
+
+0:00:52.080,0:00:56.640
+Now I'm going to show you some examples. So,
+
+0:00:56.640,0:01:01.920
+what would happen if we do this as a function
+in Haskell instead of a predicate in Prolog?
+
+0:01:02.880,0:01:13.520
+This function, after we write it somehow,
+then we go and use it. We do g and we give it
+
+0:01:13.520,0:01:20.800
+one parameter ‘x’ as a character and
+another parameter “abcd” as a String,
+
+0:01:21.840,0:01:23.680
+and it should give us this String.
+
+0:01:23.680,0:01:27.120
+As you can see, it inserted x
+in between each two elements.
+
+0:01:30.640,0:01:35.680
+But as you can see here, we have
+two parameters while here we have
+
+0:01:36.560,0:01:42.960
+three (what do you call them?)
+three clauses for g in Prolog,
+
+0:01:44.400,0:01:51.600
+because as we agreed before, if you have this
+g and you want to write it as a Haskell function,
+
+0:01:51.600,0:01:54.800
+it's going to correspond to
+
+0:01:54.800,0:02:01.360
+a function g that takes this and this as
+parameters and then it results in this.
+
+0:02:01.360,0:02:03.280
+But as a predicate, it's just going to
+
+0:02:04.880,0:02:10.320
+take these three clauses and give you
+either true or false. (Just a reminder)
+
+0:02:12.080,0:02:17.600
+Now, a second example. Now, instead of
+having one character and then a list
+
+0:02:17.600,0:02:23.440
+of characters which is a String, now we
+have one Integer and a list of Integers.
+
+0:02:23.440,0:02:26.640
+And as you can see, this is the
+
+0:02:26.640,0:02:33.600
+result that we want to have. This is what
+our function should give us when we write this.
+
+0:02:35.520,0:02:38.560
+And now what about basic cases?
+
+0:02:38.560,0:02:42.880
+So, for example, if we have an
+empty list, then of course we
+
+0:02:42.880,0:02:49.840
+should get an empty list no matter what
+the element is, because as we said here,
+
+0:02:50.400,0:02:53.680
+the task wants us to have the function…
+
+0:02:53.680,0:02:57.280
+I mean the predicate or if I
+write it as a function Haskell…
+
+0:02:57.280,0:03:03.840
+So, the task wants us to have it to
+insert this element in between each
+
+0:03:03.840,0:03:07.600
+two elements of the list, and here we
+don't even have any elements at all.
+
+0:03:09.600,0:03:14.960
+And now, the same goes for this list… for
+any list that contains only one element
+
+0:03:14.960,0:03:21.120
+because how are you going to insert
+an element between just one element?
+
+0:03:21.120,0:03:27.680
+It doesn't make any sense at all. So, these
+two here, they look like they are base cases.
+
+0:03:30.160,0:03:36.880
+So, if you're going to write this function
+and use recursion, these two cases are going
+
+0:03:36.880,0:03:42.800
+to be the base cases, so, the empty list
+and the list that contains one element.
+
+0:03:44.000,0:03:46.560
+Why? It's just because of the nature of
+
+0:03:47.280,0:03:53.920
+the task. This task is talking about
+inserting things between two elements
+
+0:03:53.920,0:03:59.360
+and not just doing something to one
+element at least or something like that.
+
+0:03:59.360,0:04:04.160
+So, the nature of the task requires
+us to deal with two elements at least.
+
+0:04:04.720,0:04:11.600
+This means these two things here
+are two separate base cases.
+
+0:04:13.120,0:04:18.480
+Now, let's go back to Prolog. I'm going to
+show you the same four examples from here.
+
+0:04:22.080,0:04:32.480
+And there is really not much difference except for
+that g here is a predicate and it just tells us
+
+0:04:32.480,0:04:39.360
+True or False, and this g here is a function and
+it results in some values. It gives us a list.
+
+0:04:41.040,0:04:48.400
+Now, I'm going to show you how to write g
+in Haskell. And I'm going to do it the simple way.
+
+0:04:49.920,0:04:57.120
+Of course, I could make it as a function
+that takes three parameters and returns a Boolean.
+
+0:04:58.160,0:05:00.800
+So now, we have a predicate
+
+0:05:00.800,0:05:05.040
+which is similar to this predicate. But no.
+This is just too complicated. It will look
+
+0:05:05.680,0:05:09.520
+much more complicated than this
+and it's not very useful for us.
+
+0:05:09.520,0:05:14.240
+So, I'm just going to make it the exact
+same way that we learned in the lecture.
+
+0:05:16.400,0:05:18.000
+Now, instead of having a predicate
+
+0:05:18.560,0:05:23.840
+that has three clauses, we have a
+function that has only two parameters.
+
+0:05:25.440,0:05:30.400
+And because Haskell has a type system,
+here is the type signature of the function g.
+
+0:05:32.080,0:05:38.320
+And notice here that we didn't
+specify. We just said: some type (a).
+
+0:05:38.320,0:05:43.120
+The element that we're going to insert
+is just some element of any type.
+
+0:05:43.840,0:05:47.840
+And we have the parameter.
+This list is going to be
+
+0:05:48.480,0:05:51.840
+a list of (a), and then we're going
+to also get a list of (a).
+
+0:05:53.360,0:05:56.640
+Now, let's look at the
+function and try to understand it.
+
+0:05:58.160,0:06:02.880
+As I said, here, these two are base cases.
+
+0:06:06.400,0:06:12.080
+If we have whatever element and we want to insert
+it in an empty list, it just doesn't work.
+
+0:06:12.080,0:06:18.000
+We just get the empty list as it is. And the
+same is for a list that contains only one element.
+
+0:06:18.000,0:06:26.560
+We just get the same list as it is because as
+I said before, the task wants us to
+
+0:06:27.760,0:06:31.760
+insert this element in between each
+two elements of the list,
+
+0:06:31.760,0:06:35.840
+and here we don't have two elements.
+We just have one. Here we have zero.
+
+0:06:36.960,0:06:38.320
+And now what happens if we have
+
+0:06:39.280,0:06:47.840
+the element x and we have the list that
+starts with y and z and ends with z's?
+
+0:06:48.480,0:06:53.440
+This here is also a list and
+these here are elements.
+
+0:06:56.320,0:07:03.360
+And what we get is a list that starts with
+y and then it has x which is the element
+
+0:07:03.360,0:07:11.440
+that we want to insert, and then it has z which
+is this element that used to be second element.
+
+0:07:11.440,0:07:15.840
+Now it's third because we inserted x in between.
+
+0:07:16.400,0:07:22.560
+And now we have two cases… actually
+three cases depending on this list z's.
+
+0:07:23.120,0:07:32.400
+So, if this list is empty, this means that
+this part here is trying to insert x into
+
+0:07:32.400,0:07:39.840
+an empty list… actually into a list that
+starts with z and ends with the empty list,
+
+0:07:39.840,0:07:46.080
+which means, in total, this is a list
+that contains only the element z.
+
+0:07:46.800,0:07:53.440
+So, what happens if you try to insert one element
+into a list that contains one element?
+
+0:07:53.440,0:08:05.600
+Then we get this case. So, this here is going to
+be just the list that contains z as it is.
+
+0:08:08.000,0:08:10.240
+And this would be a correct solution.
+
+0:08:10.240,0:08:16.160
+As you can see, this means, originally, we
+had a list that has only y and z because
+
+0:08:16.160,0:08:19.520
+this is empty, and we just inserted x in between.
+
+0:08:19.520,0:08:20.560
+That's it. We are done.
+
+0:08:21.760,0:08:27.360
+And now what happens if this
+list had just one element?
+
+0:08:28.160,0:08:36.560
+So, let's say this list has I don't know…
+whatever. Let's say the Integer 1 or let's say 4.
+
+0:08:38.000,0:08:49.760
+So, this means, here, we are trying to insert
+x into a list that contains one... two elements.
+
+0:08:49.760,0:08:54.560
+So, this here would be the list that
+contains 4. And then, with this operator,
+
+0:08:55.200,0:08:58.560
+we get here, in total,
+a list that contains z and 4.
+
+0:08:58.560,0:09:02.320
+So, z could be any other Integer. I don't know.
+
+0:09:03.600,0:09:09.200
+And what happens if you insert an element x
+into a list that contains two elements?
+
+0:09:09.920,0:09:15.600
+Nothing special. It just gets inserted just
+like the first case that I discussed a minute ago.
+
+0:09:16.880,0:09:21.840
+And if this still doesn't look clear
+to you, I'm going to do an example.
+
+0:09:28.240,0:09:31.600
+Let's copy this and go somewhere here,
+
+0:09:35.520,0:09:38.160
+and let's do some manual evaluation.
+
+0:09:42.240,0:09:49.840
+I'm going to get these same examples.
+
+0:10:07.440,0:10:08.400
+Let's do it.
+
+0:10:12.800,0:10:18.240
+What is g of x and this String “abcd”?
+
+0:10:18.240,0:10:24.720
+Is this list empty? No. Does it have one
+element? No. So, this means we are in this case.
+
+0:10:26.960,0:10:34.880
+So, now x would be the character x, y would be the
+character a, and z would be the character b,
+
+0:10:35.680,0:10:38.800
+and z's would be the list that contains c and d.
+
+0:10:40.880,0:10:47.120
+And according to this, this should
+give us the element y which is a.
+
+0:10:49.360,0:10:54.560
+This is how I should write it because it's
+a character. So, it should give us a, and then
+
+0:10:56.240,0:11:08.960
+x, and then the list that has g ‘x’.
+
+0:11:09.600,0:11:14.640
+And x in our case is
+the character x. And here we have
+
+0:11:17.520,0:11:33.520
+the element z which is b. So, here we have b
+and then we have the list z's which is in our case
+
+0:11:40.080,0:11:41.840
+“cd”.
+
+0:11:43.200,0:11:45.600
+Now let's continue with this.
+
+0:11:50.720,0:11:55.840
+So, here we have g of ‘x’ and this list.
+
+0:11:58.320,0:12:02.400
+This list is basically just this list.
+
+0:12:08.320,0:12:11.600
+And what happens if you
+try to insert x in this list,
+
+0:12:13.040,0:12:25.280
+but now this time, y is b, and z is c, and z's is
+the list that contains one element which is d?
+
+0:12:27.120,0:12:53.760
+So, let me copy it. So, we get: first the
+element y which is b. And then we get x and then
+
+0:12:58.880,0:13:12.480
+g x, and the third element… actually the
+second element was c. So, we get c.
+
+0:13:14.160,0:13:20.480
+oops! So, we get c and
+the list that contains just d.
+
+0:13:26.720,0:13:29.040
+But d is String.
+
+0:13:39.440,0:13:49.200
+So, this here should be one
+String “cd”, like this.
+
+0:13:56.880,0:14:03.680
+Here, this would be y, and this is
+z, and the empty list is z’s.
+
+0:14:05.680,0:14:43.840
+So, this means what we get here
+is c followed by x then g ‘x’...
+
+0:15:04.240,0:15:08.720
+And now finally, we are going
+to use the second case.
+
+0:15:08.720,0:15:15.280
+So here, g is inserting the element x
+into a list that contains one element.
+
+0:15:15.920,0:15:25.840
+And this means we only get the list as it is.
+
+0:15:41.520,0:15:53.840
+c, x and d.
+
+0:16:19.200,0:16:22.880
+As you can see, this is the
+solution. It's correct.
+
+0:16:23.920,0:16:35.840
+Now let's look at the Prolog solution
+and see how it's written in Prolog.
+
+0:16:37.200,0:16:42.640
+It is very similar, except for
+this here. This here is a variable Us.
+
+0:16:43.200,0:16:51.200
+And we are saying that Us is the result
+of inserting X into this list
+
+0:16:52.400,0:16:55.360
+which is exactly the same as
+what we are doing here.
+
+0:16:58.960,0:17:02.960
+What we are saying here is that
+the result should start with Y
+
+0:17:02.960,0:17:09.840
+and then X, and then the rest of this list is
+going to be the result of inserting X into this
+
+0:17:12.080,0:17:15.040
+list which starts with Z and ends with Zs.
+
+0:17:16.160,0:17:26.240
+This here is exactly the same. So, we're
+saying that the result should start with Y then X,
+
+0:17:26.240,0:17:34.400
+and then it ends with a list Us which
+itself results from… (see? it's the
+
+0:17:34.400,0:17:41.520
+same.) it's results from inserting X into
+the list that starts with Z and ends with Zs.
+
+0:17:43.920,0:17:47.120
+And if you if you think about
+this task intuitively,
+
+0:17:48.480,0:17:50.640
+maybe you would write something like this.
+
+0:17:51.760,0:17:56.720
+This would be your solution maybe.
+So, what does this solution mean? It says:
+
+0:17:56.720,0:17:59.280
+the empty list stays as it is.
+
+0:17:59.280,0:18:03.840
+We don't insert anything a list that
+contains one element, also the same.
+
+0:18:05.040,0:18:10.960
+But a list that contains two elements, we
+just insert the element by putting it in between.
+
+0:18:12.480,0:18:19.520
+Otherwise, a list that
+contains more than two elements,
+
+0:18:21.840,0:18:26.960
+then we do exactly the same as
+here for the first two elements.
+
+0:18:26.960,0:18:33.600
+So, we had first element X, second element
+Y, then we inserted A in between and then we said:
+
+0:18:34.160,0:18:43.200
+the rest of the list results from inserting
+the element in the list that used to be the rest,
+
+0:18:45.360,0:18:47.280
+but in addition to this element.
+
+0:18:47.280,0:18:55.840
+So, inserting the element into this list
+that starts with Y and ends with Xs.
+
+0:18:56.960,0:19:05.200
+So, this solution is correct but as you can see,
+we're doing the exact same thing here and here.
+
+0:19:07.120,0:19:14.720
+So, this means there is redundancy, and
+this is why it is better to write it this way.
+
+0:19:16.800,0:19:22.720
+And now there is actually another solution I
+would like to show you, which is this.
+
+0:19:24.000,0:19:31.120
+What we're doing here is the exactly the same
+for the base cases, but the difference is
+
+0:19:32.160,0:19:32.880
+that here,
+
+0:19:34.000,0:19:40.320
+instead of having a list that starts with Y, Z
+and then the rest is Zs, now we just have a list
+
+0:19:40.320,0:19:43.840
+with the head Y and the tail Ys,
+
+0:19:46.160,0:19:56.160
+and we are saying that Us, this time,
+results from inserting X into the list Ys,
+
+0:19:56.160,0:20:02.800
+which used to be the tail of the original
+list. And here we have to add this condition.
+
+0:20:02.800,0:20:08.960
+We have to say that Ys cannot be
+empty. And if you solve it this way,
+
+0:20:09.680,0:20:17.840
+then you should be careful because
+this here cannot be placed before this one.
+
+0:20:17.840,0:20:21.440
+So, you cannot do like this.
+
+0:20:27.840,0:20:28.720
+This wouldn't work.
+
+0:20:32.320,0:20:35.600
+Now let me test the Haskell solution.
+
+0:20:37.200,0:20:47.840
+Let's reload.
+
+0:21:01.120,0:21:04.640
+And there is not really much
+of a difference except for
+
+0:21:05.200,0:21:06.800
+that these here are predicates.
+
+0:21:08.160,0:21:11.760
+So, they have three things inside… three clauses.
+
+0:21:13.920,0:21:15.840
+And that's basically
+
+0:21:37.040,0:21:43.840
+it.
+
+0:21:55.120,0:21:57.840
+Great! It is working.
+
+0:22:13.440,0:22:19.920
+What happens if I change… ? Let me change here.
+
+0:22:41.040,0:22:42.640
+So, it is working.

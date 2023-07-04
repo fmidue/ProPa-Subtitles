@@ -1,0 +1,309 @@
+0:00:01.240,0:00:12.040
+For Task 40 we have to design a binary predicate h
+that when we interpret it as a function it takes a
+
+0:00:12.040,0:00:22.920
+list of lists, reverses each inner list, and then
+concatenates the results into one single list.
+
+0:00:22.920,0:00:29.240
+So, if you, for example, have this
+invocation here where we have a list
+
+0:00:29.240,0:00:38.200
+that has this list [a, b] and this list
+[c, d, e] and then the result should be
+
+0:00:39.720,0:00:47.480
+b, a which is the reverse first list and
+e,d,c which is the reversed second list.
+
+0:00:48.120,0:00:54.280
+And to do so we shall not use
+more than two program clauses.
+
+0:00:55.320,0:01:06.920
+And we should make use of these two functions
+or two predicates append and reverse.
+
+0:01:07.880,0:01:16.520
+If we take a look at what these
+do, they do the obvious thing.
+
+0:01:17.960,0:01:24.600
+append is a predicate with three
+arguments so if we have list [1,2,3]
+
+0:01:27.000,0:01:45.240
+and list [4,5] then we can ask for the third
+thing and we get [1,2,3,4,5] as we would expect.
+
+0:01:48.120,0:01:52.440
+You can also ask for the
+second parameter, obviously.
+
+0:01:52.440,0:02:02.760
+If we say, okay, [1,2,3] and then [4,5] and so on.
+
+0:02:06.120,0:02:25.160
+reverse works basically the same way, we have
+a binary predicate and it reverses the list.
+
+0:02:25.160,0:02:31.320
+So you can also "unreverse" the list
+by inverting where we put the variable.
+
+0:02:35.960,0:02:40.520
+We can use these two predicates
+to help us implement h.
+
+0:02:41.080,0:02:49.640
+Okay, so you should have two clauses, so first
+of all we probably need some sort of base case.
+
+0:02:53.640,0:02:58.040
+Some clause that is always true for h.
+
+0:02:58.680,0:03:09.800
+So the obvious one is if we have an empty list
+then the result should also be the empty list.
+
+0:03:10.840,0:03:15.800
+Right? Because there are no inner lists
+that we need to reverse and concatenate.
+
+0:03:18.280,0:03:23.160
+And so there aren't any elements
+in the resulting list either.
+
+0:03:23.160,0:03:37.160
+Okay, so probably the second clause is something
+like we have a list with at least one element
+
+0:03:38.440,0:03:48.440
+and then we have some result,
+let's call it Ys for now.
+
+0:03:51.800,0:03:53.560
+And then there are some conditions.
+
+0:03:57.400,0:04:02.840
+So first off we should probably
+use reverse at some point, right?
+
+0:04:03.360,0:04:09.000
+We should reverse X and make it Y.
+
+0:04:11.160,0:04:18.600
+Okay, this does not do anything
+useful right now because Y is
+
+0:04:19.560,0:04:22.680
+not determined or could be anything now.
+
+0:04:25.720,0:04:29.560
+We need to say what Ys is.
+
+0:04:30.120,0:04:43.000
+Okay, so we say we append our new Y to something.
+
+0:04:43.560,0:04:47.320
+Let's put a blank in there at the moment.
+
+0:04:47.320,0:04:53.800
+And then this is our Ys.
+
+0:04:54.840,0:05:03.320
+Okay, so now what do we need to append Y to
+in order to implement the desired behavior?
+
+0:05:04.840,0:05:13.480
+Well, we want to basically do the recursion on Xs.
+
+0:05:13.480,0:05:28.040
+So you can say, put Xs into h
+and this results in some list Zs.
+
+0:05:29.640,0:05:37.160
+And then onto this list we append Y.
+
+0:05:39.000,0:05:43.480
+And that gives us our final result.
+
+0:05:44.200,0:05:50.520
+Ys the result of appending
+Y to Zs and that comes from
+
+0:05:53.320,0:06:03.240
+our recursive call and Y
+is obtained by reversing X.
+
+0:06:03.800,0:06:07.800
+Okay, so um let's load this up.
+
+0:06:15.480,0:06:23.240
+So, let's first check the example
+which should hold and we get true.
+
+0:06:23.240,0:06:27.320
+Okay, that's nice.
+
+0:06:27.320,0:06:30.680
+Now let's take a look at another example.
+
+0:06:30.680,0:06:38.200
+We have a list of [1,2,3] and [4,5]
+
+0:06:44.440,0:06:47.320
+and we want to know what is the result of this.
+
+0:06:49.960,0:07:00.360
+Okay, it's exactly that first list
+reversed and then the second list reversed.
+
+0:07:01.000,0:07:04.680
+We can also look at what the Haskell definition
+
+0:07:06.040,0:07:13.160
+of this function would look like and then
+compare that to the prolog version we just wrote.
+
+0:07:17.720,0:07:22.840
+Okay, so here's how you could implement this
+in Haskell in the most straightforward way.
+
+0:07:25.240,0:07:29.160
+h is a function from a [[a]] to a [a].
+
+0:07:30.200,0:07:36.840
+And for [] this is [] and if we
+have a first list and a list of
+
+0:07:37.800,0:07:50.840
+more lists we reverse the first list
+and prepend it to the recursive call.
+
+0:07:51.400,0:08:01.160
+Okay, and if we restructure this, such that
+we don't have nested calls, we can basically
+
+0:08:02.680,0:08:12.240
+say we have some zs which is reverse xs ...
+
+0:08:16.520,0:08:25.880
+No, let's call it ys and
+
+0:08:30.360,0:08:36.360
+we have some yss which is the recursive call.
+
+0:08:37.960,0:08:46.840
+And then we have some zs which is just this.
+
+0:08:47.800,0:08:51.640
+And then the result is just zs.
+
+0:08:52.760,0:08:59.960
+Right? It's a really simple refactoring
+to eliminate any nested function calls.
+
+0:08:59.960,0:09:04.520
+If we now compare this to
+what we have written here.
+
+0:09:05.560,0:09:18.120
+We've used slightly different variables, but if
+we change this, flip around the variables a bit
+
+0:09:23.720,0:09:45.080
+like this, use the double s's here too like this.
+
+0:09:48.280,0:09:54.080
+Then we can see that this is actually
+a straightforward translation.
+
+0:09:54.080,0:09:55.800
+There is a one-to-one correspondence.
+
+0:09:56.680,0:10:05.560
+We have this h call which is right here
+we call h of xss and the result is yss.
+
+0:10:07.720,0:10:18.280
+We call reverse of xs and the result
+is ys and we call append on ys and yss.
+
+0:10:18.280,0:10:22.280
+And append is an infix operator in Haskell
+so this looks a little bit different.
+
+0:10:22.280,0:10:29.880
+And the result then is zs which is the
+overall result of our function here.
+
+0:10:29.880,0:10:46.760
+And in the same way we can shift these
+definitions around we can, in principle,
+
+0:10:49.320,0:10:56.440
+use a different ordering of these conditions here.
+
+0:11:01.320,0:11:08.200
+But even though in the declarative
+semantics this will not
+
+0:11:09.880,0:11:15.880
+change the meaning, in the operational semantics
+of Prolog this changes the meaning, because
+
+0:11:17.160,0:11:28.920
+if we for example move append to
+the front we will have a problem.
+
+0:11:31.560,0:11:40.440
+Let's see our example is still true.
+
+0:11:47.160,0:11:55.480
+But if we then actually want to know what
+X is and not just know in advance then
+
+0:12:01.400,0:12:08.440
+we get an error because there's non-termination
+because Prolog first tries to figure out
+
+0:12:10.360,0:12:19.400
+what kind of possible splits
+for these variables we have.
+
+0:12:19.400,0:12:32.440
+Because this at this point when we have this
+query we instantiate Xs with [a, b] and Xss with
+
+0:12:34.280,0:12:41.640
+the list containing this
+second list and Zs is unknown.
+
+0:12:44.200,0:12:54.440
+But this means that Ys, Yss, and Zs are
+all unknown in this call to append since
+
+0:12:54.440,0:13:03.640
+Yss is only defined here and Ys only here,
+or can be resolved more easily we should say.
+
+0:13:05.240,0:13:14.840
+So we then just do append basically of X Y and Z.
+
+0:13:15.400,0:13:17.480
+This obviously is a call that
+
+0:13:21.400,0:13:35.320
+can give you some results but really no
+useful ones since it will just say here are
+
+0:13:36.040,0:13:40.840
+a bunch of more variables you need to instantiate
+and even more variables on top of that.
+
+0:13:42.760,0:13:45.780
+And it's easy to see why this
+results in non termination.
