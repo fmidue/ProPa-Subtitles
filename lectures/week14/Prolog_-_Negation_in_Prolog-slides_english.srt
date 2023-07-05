@@ -1,0 +1,2194 @@
+96 # slide
+00:00:01,120 --> 00:00:05,120
+Okay, let's talk about negation in Prolog today.
+
+00:00:06,160 --> 00:00:11,680
+And well, actually, negation did
+already occur in some example programs.
+
+00:00:11,680 --> 00:00:14,320
+But it was always a bit mysterious.
+
+00:00:14,320 --> 00:00:19,600
+So, I was making comments like, if you use
+negation, you should make sure that it appears
+
+00:00:19,600 --> 00:00:25,360
+at the end of your program clauses without
+really explaining why that is important.
+
+00:00:26,160 --> 00:00:31,440
+That's what this short part
+or video here is about.
+
+00:00:32,000 --> 00:00:33,360
+I couldn't explain this before.
+
+00:00:33,360 --> 00:00:37,120
+Because actually, it depends
+on the operational reading
+
+00:00:37,120 --> 00:00:40,320
+of Prolog programs that we
+have recently introduced.
+
+00:00:40,320 --> 00:00:43,840
+So, now it's time to talk about this.
+
+00:00:47,840 --> 00:00:52,320
+So, the first thing to be aware
+of is that logic programming
+
+00:00:52,320 --> 00:00:56,400
+is, foremost, based on a positive logic.
+
+00:00:56,400 --> 00:01:02,160
+And a positive reading of the rules
+that we have written into the program.
+
+00:01:02,160 --> 00:01:06,080
+Yes, so we're trying to prove
+some literal, some queries given.
+
+00:01:06,080 --> 00:01:11,920
+And you want to prove or establish
+a solution for this query.
+
+00:01:11,920 --> 00:01:20,080
+Then we try to derive it from known facts
+or looking at it backwards, we try to derive
+
+00:01:20,080 --> 00:01:25,760
+or to reduce this literal to the validity
+of known facts by using resolution steps.
+
+00:01:25,760 --> 00:01:28,640
+That's what resolution and the
+derivation trees are about.
+
+00:01:30,240 --> 00:01:36,080
+Okay, so they use the clauses, the program
+rules like if this and this and this and then
+
+00:01:36,080 --> 00:01:42,080
+the following holds in a positive sense to
+derive interesting stuff from known facts.
+
+00:01:43,280 --> 00:01:47,920
+Okay, so the rules are establishing positive
+knowledge from given positive knowledge.
+
+00:01:49,440 --> 00:01:58,000
+So, apparently, something special then
+has to happen if we want to have negation.
+
+00:01:58,560 --> 00:02:02,080
+Okay, so Prolog has negation
+as a syntactic construct.
+
+00:02:03,200 --> 00:02:06,960
+However, this negation is not fully
+compatible with the expected logical
+
+00:02:06,960 --> 00:02:12,000
+meaning that we'll see in a moment
+or why this is not fully compatible.
+
+00:02:12,560 --> 00:02:21,200
+Syntactically, negation can be introduced either
+by this operator, which is meant to be the not
+
+00:02:21,200 --> 00:02:27,680
+symbol, or actually an operator directly, which is
+called not and then in brackets you have the Goal.
+
+00:02:28,480 --> 00:02:29,760
+Okay, and what is the reading here?
+
+00:02:29,760 --> 00:02:32,480
+The reading is something like this,
+
+00:02:32,480 --> 00:02:35,840
+or this, which is really just two
+syntactic ways to write the same thing.
+
+00:02:35,840 --> 00:02:40,880
+It is provable if and only if
+the Goal itself is not provable.
+
+00:02:41,920 --> 00:02:45,680
+Okay, this might, at first
+glance look like a reasonable,
+
+00:02:46,240 --> 00:02:48,560
+and maybe also expected logical meaning.
+
+00:02:48,560 --> 00:02:54,240
+But that's not actually how we think
+about negation when we reason logically.
+
+00:02:59,200 --> 00:03:04,480
+We say the negation of something
+is true if that something is false.
+
+00:03:05,200 --> 00:03:07,440
+Yes, if you want to know that
+
+00:03:09,120 --> 00:03:15,760
+the negation of Goal holds, then we should
+actually establish and prove that Goal is false.
+
+00:03:16,320 --> 00:03:17,680
+But that's not what's happening here.
+
+00:03:17,680 --> 00:03:26,240
+What's happening here is, if I cannot prove that
+Goal is true, then I accept that not Goal is true.
+
+00:03:27,440 --> 00:03:35,120
+Yes, so it's not necessary to prove the negation
+of something to know that, indeed, it is false.
+
+00:03:35,120 --> 00:03:41,440
+But instead, what's said here or what Prolog says
+is, if I cannot prove that something is true,
+
+00:03:41,440 --> 00:03:44,640
+then I might as well assume
+that the negation of it is true.
+
+00:03:44,640 --> 00:03:49,920
+And that's not how we in common sense and
+everyday reasoning think about negation.
+
+00:03:49,920 --> 00:03:53,360
+Just because I cannot prove that something holds,
+
+00:03:53,360 --> 00:03:56,400
+I may not simply assume that
+the negation of it holds.
+
+00:03:56,400 --> 00:04:03,440
+Yes, that would somehow shift the burden of
+proving something or the negation of it to
+
+00:04:04,240 --> 00:04:09,280
+somebody who shouldn't be responsible for it.
+
+00:04:09,280 --> 00:04:14,160
+So, if I want to claim that something is
+false, then I should prove that it is false.
+
+00:04:14,160 --> 00:04:16,720
+I shouldn't simply say, well,
+I tried to prove it is true.
+
+00:04:16,720 --> 00:04:17,520
+I failed.
+
+00:04:17,520 --> 00:04:19,360
+So, from now on, I claim that it is false.
+
+00:04:19,360 --> 00:04:25,120
+Yes, it's somehow abandoning my
+obligation of proving what I'm claiming.
+
+00:04:25,120 --> 00:04:29,120
+But Prolog uses exactly this approach.
+
+00:04:31,040 --> 00:04:35,680
+Okay, in some ways, in some cases it works okay.
+
+00:04:35,680 --> 00:04:36,080
+Yes.
+
+00:04:36,080 --> 00:04:40,240
+So, let's say we have a predicate, and that's
+actually a predefined predicate in Prolog
+
+00:04:40,800 --> 00:04:48,400
+for checking whether an element, well, any
+term is in a list.
+
+00:04:49,520 --> 00:04:51,920
+Then we can ask a negated question.
+
+00:04:51,920 --> 00:04:54,880
+We can ask, is it true that not 4
+
+00:04:55,440 --> 00:04:58,960
+is a member of the list [2,3], and indeed it is provable.
+
+00:04:58,960 --> 00:04:59,600
+Why?
+
+00:04:59,600 --> 00:05:04,080
+Well, Prolog will try to prove that
+4 is a member of the list [2,3].
+
+00:05:04,640 --> 00:05:06,400
+Prolog will fail with this.
+
+00:05:06,400 --> 00:05:09,200
+And actually, it will fail in a finite way.
+
+00:05:09,200 --> 00:05:13,520
+We'll have to think in a moment about why it's
+important that this is a finite failure tree,
+
+00:05:13,520 --> 00:05:17,600
+so, that's the kind of derivation tree
+that we have seen in the previous video.
+
+00:05:19,360 --> 00:05:25,120
+But here, we want to have a failure tree that is a
+tree, which doesn't have any successful leaf node.
+
+00:05:26,000 --> 00:05:29,600
+Okay, and if this is the case, and
+it will be a case for the query,
+
+00:05:29,600 --> 00:05:30,960
+whether 4 is a member of [2,3].
+
+00:05:30,960 --> 00:05:32,320
+So, this is not true.
+
+00:05:32,320 --> 00:05:38,800
+Well, because there is a finite failure tree, a
+finite tree where every leaf node is a failure.
+
+00:05:38,800 --> 00:05:40,400
+And then Prolog will say, well,
+
+00:05:40,400 --> 00:05:47,200
+since the query whether 4 is a member
+of the list [2,3] is not provable.
+
+00:05:47,200 --> 00:05:52,480
+I may as well say that, indeed,
+4 is not a member of [2,3].
+
+00:05:52,480 --> 00:05:55,600
+And in this case, that's well, probably
+
+00:05:55,600 --> 00:06:00,320
+good enough as a strategy for
+proving this negative query.
+
+00:06:01,120 --> 00:06:03,360
+Okay, however, in all situations, you have to be
+
+00:06:03,920 --> 00:06:08,080
+more careful, or the
+interpretation might be surprising.
+
+00:06:08,080 --> 00:06:10,800
+In particular, when variables are involved.
+
+00:06:10,800 --> 00:06:17,280
+So, let's look at a slightly
+similar but a bit different query.
+
+00:06:17,280 --> 00:06:19,360
+Namely, where we have a variable here.
+
+00:06:19,360 --> 00:06:21,520
+And let's actually ask Prolog,
+
+00:06:21,520 --> 00:06:24,880
+whether there is something which is
+an element of the list [2,3]?
+
+00:06:24,880 --> 00:06:29,040
+Then, well, Prolog will say yes
+2 is a solution for this query,
+
+00:06:29,040 --> 00:06:31,040
+and 3 is a solution for this query.
+
+00:06:32,000 --> 00:06:33,520
+Okay, that's good enough.
+
+00:06:33,520 --> 00:06:34,240
+That's also true.
+
+00:06:35,040 --> 00:06:40,640
+We may ask now, is it not the case
+that X is an element of [2,3]?
+
+00:06:41,200 --> 00:06:44,400
+And then we might have expected
+to get the answer 4 here.
+
+00:06:45,040 --> 00:06:45,360
+Right?
+
+00:06:45,360 --> 00:06:49,840
+So, asking, you could read this as asking for
+an X, which is not a member of [2,3].
+
+00:06:49,840 --> 00:06:53,200
+And we know that, for example, 4
+is not a member of [2,3].
+
+00:06:53,200 --> 00:06:56,800
+However, Prolog will not
+answer with X = 4 here.
+
+00:06:56,800 --> 00:06:58,480
+Instead, Prolog will say false.
+
+00:06:59,040 --> 00:07:05,920
+Yes, so Prolog will basically say, I cannot
+prove that X is not an element of [2,3].
+
+00:07:07,440 --> 00:07:11,760
+Or, I cannot prove that there is
+no element of the list [2,3].
+
+00:07:13,200 --> 00:07:17,120
+Yes, so this is in slight conflict to this here.
+
+00:07:17,120 --> 00:07:18,880
+So, 4 is not a member of [2,3].
+
+00:07:18,880 --> 00:07:21,840
+But if I asked with a variable,
+I don't get X = 4.
+
+00:07:21,840 --> 00:07:22,480
+I get false.
+
+00:07:23,440 --> 00:07:30,000
+Also, if I negate this again, then I
+don't get back to the original behaviour.
+
+00:07:30,000 --> 00:07:30,400
+Yes.
+
+00:07:30,400 --> 00:07:35,200
+So, in normal logical reasoning, you would
+say not, not of something is that something.
+
+00:07:35,200 --> 00:07:37,600
+But well, you can actually negate this again.
+
+00:07:38,560 --> 00:07:43,520
+So, if I ask not not member X of list [2,3],
+
+00:07:43,520 --> 00:07:47,680
+then you might expect that it's the same
+as asking X member of list [2,3].
+
+00:07:47,680 --> 00:07:51,600
+So, you would expect to get the
+X = 2 or X = 3.
+
+00:07:51,600 --> 00:07:55,280
+But instead, Prolog will simply say, yes, true.
+
+00:07:55,280 --> 00:07:57,840
+But won't give you any results.
+
+00:07:57,840 --> 00:08:01,040
+Yes, because basically, this will
+be the negation of this line,
+
+00:08:01,040 --> 00:08:07,760
+but information about which particular X answers
+who are members of the list [2,3], will be lost.
+
+00:08:07,760 --> 00:08:12,720
+Or in other words, negation does
+not yield variable bindings.
+
+00:08:12,720 --> 00:08:17,520
+Yes, with negation you get false or
+true, but you don't get concrete results
+
+00:08:17,520 --> 00:08:21,200
+for any variables that occur in the negated calls.
+
+00:08:22,240 --> 00:08:28,800
+And that's already strange that this
+is not behaving the same as this line.
+
+00:08:28,800 --> 00:08:40,320
+So, double negation apparently doesn't cancel out
+as you would expect from normal logical reasoning.
+
+00:08:40,320 --> 00:08:44,080
+So, what is the role of finite failure trees here?
+
+00:08:44,080 --> 00:08:49,520
+Well, it's these two points here coming together.
+
+00:08:49,520 --> 00:08:51,520
+For on the one hand, we cannot
+
+00:08:51,520 --> 00:08:55,840
+show that from the clauses of a program,
+certain negative statements follow.
+
+00:08:56,560 --> 00:08:59,520
+Exactly, because the rules are all positive.
+
+00:08:59,520 --> 00:09:03,920
+So, we never have a negated
+literal in the head of a rule.
+
+00:09:04,640 --> 00:09:06,880
+If this and this and this,
+then the following holds.
+
+00:09:06,880 --> 00:09:09,520
+And even though we might use negation
+
+00:09:09,520 --> 00:09:15,120
+on the right-hand side of a rule, we
+never use negation in the head of rules.
+
+00:09:15,120 --> 00:09:20,560
+We have never something like a rule that
+establishes that something is wrong.
+
+00:09:20,560 --> 00:09:22,400
+We only derive positive stuff.
+
+00:09:24,800 --> 00:09:31,520
+Okay, so, the only choice we have,
+as I said on the previous slide, is exactly what
+
+00:09:31,520 --> 00:09:38,640
+Prolog is doing, it basically is saying,
+well, I tried to prove a positive thing.
+
+00:09:39,360 --> 00:09:42,240
+I couldn't deduce this other thing.
+
+00:09:42,240 --> 00:09:46,240
+So, then I will assume that it is wrong.
+
+00:09:46,240 --> 00:09:47,760
+So, negation-as-failure.
+
+00:09:47,760 --> 00:09:53,040
+Failure to establish something positive is
+taken as negation of that positive thing.
+
+00:09:54,160 --> 00:09:59,360
+Okay, so that means we have to have a notion
+
+00:09:59,360 --> 00:10:03,840
+of not being able to produce something,
+not being able to deduce something.
+
+00:10:07,120 --> 00:10:08,960
+Okay, now what does this mean?
+
+00:10:08,960 --> 00:10:11,680
+We show that it cannot be deduced.
+
+00:10:11,680 --> 00:10:14,960
+Well, it basically means we try hard and fail.
+
+00:10:16,000 --> 00:10:19,200
+Yeah, we attempt to prove a
+positive statement, but we fail.
+
+00:10:19,760 --> 00:10:22,240
+Now, of course, then the question
+is, well, have you tried hard enough?
+
+00:10:22,880 --> 00:10:27,760
+Well, actually, in order to accept this
+negation-as-failure principle, we should at least say,
+
+00:10:27,760 --> 00:10:34,800
+well, if I said, I tried to prove positive thing
+and I have really tried everything there is.
+
+00:10:35,440 --> 00:10:40,080
+Yes, I didn't just overlook some
+part or was lazy in proving.
+
+00:10:40,080 --> 00:10:43,600
+No, I should have exhaustively tried
+to prove the positive statement.
+
+00:10:43,600 --> 00:10:46,320
+And how can I try something exhaustively?
+
+00:10:46,320 --> 00:10:47,520
+Well, only if it's finite?
+
+00:10:49,040 --> 00:10:49,680
+Yes.
+
+00:10:49,680 --> 00:10:56,480
+So, in order to be sure that any attempt at
+proving the positive thing will definitely fail.
+
+00:10:57,600 --> 00:11:02,080
+Well, this can only be said with certainty,
+if really the search space was finite.
+
+00:11:02,080 --> 00:11:07,520
+If there was a finite space in which I
+could try to prove the positive thing,
+
+00:11:07,520 --> 00:11:11,840
+and exhausted all of that finite space;
+
+00:11:11,840 --> 00:11:16,800
+and then failed to prove the positive thing; only
+then will I accept: well, then the negation holds.
+
+00:11:16,800 --> 00:11:20,400
+Then I claim from now on that the negation holds.
+
+00:11:20,400 --> 00:11:25,680
+So, that's the bare minimum in order to
+accept this negation-as-failure principle.
+
+00:11:26,320 --> 00:11:29,360
+Okay, that's exactly how negation works in Prolog.
+
+00:11:30,640 --> 00:11:36,160
+What's underlying all this, of course, is a very
+narrow-minded view of the world, if you like.
+
+00:11:36,160 --> 00:11:39,120
+Well, it's also called the
+closed world assumption.
+
+00:11:39,120 --> 00:11:41,840
+Because it really says: Well,
+
+00:11:42,480 --> 00:11:47,200
+I take the Prolog program that somebody
+has written as all the knowledge there is.
+
+00:11:48,000 --> 00:11:48,480
+Yes.
+
+00:11:48,480 --> 00:11:51,680
+So, everything that can be
+deduced from the rules is true.
+
+00:11:51,680 --> 00:11:53,840
+But everything else will be false.
+
+00:11:54,480 --> 00:12:01,440
+Yes, I only accept things as true that
+are explicitly derivable from the program.
+
+00:12:01,440 --> 00:12:03,680
+Everything else is automatically false.
+
+00:12:03,680 --> 00:12:08,000
+So, the program is taken
+to describe a closed world.
+
+00:12:08,000 --> 00:12:09,840
+And everything which can't
+be followed from the program
+
+00:12:10,960 --> 00:12:15,280
+is simply claimed to be wrong, to be false.
+
+00:12:15,280 --> 00:12:19,200
+Okay, that's not how our world actually works.
+
+00:12:19,200 --> 00:12:24,880
+But that's how Prolog makes sense of the
+world with this close world assumption.
+
+00:12:24,880 --> 00:12:31,680
+(5 sec.)
+
+00:12:31,680 --> 00:12:38,160
+Let's look at some short examples, artificial
+examples that are only here in order to
+
+00:12:38,160 --> 00:12:44,640
+explore this finite search aspect. Also, these are
+still examples without variables, even though I
+
+00:12:45,840 --> 00:12:51,840
+just said two slides ago, that there's
+interesting behaviour when variables are involved.
+
+00:12:51,840 --> 00:12:53,920
+But this will happen on another slide.
+
+00:12:53,920 --> 00:12:57,280
+So, let's first look at some
+artificial examples without variables.
+
+00:12:57,280 --> 00:13:01,360
+And indeed, let's look at this
+very simple, very stupid program,
+
+00:13:01,360 --> 00:13:03,680
+where we simply say p follows from p.
+
+00:13:04,240 --> 00:13:07,040
+Yes, it's not very useful,
+because there is no base fact.
+
+00:13:07,040 --> 00:13:09,920
+But, of course, it's a valid Prolog program.
+
+00:13:09,920 --> 00:13:14,000
+Then I could, for example,
+ask whether or not p holds.
+
+00:13:14,000 --> 00:13:15,360
+Yes, I ask question not-p.
+
+00:13:16,240 --> 00:13:18,320
+And I only have the knowledge
+that p follows from p.
+
+00:13:19,360 --> 00:13:20,960
+Okay, what will happen?
+
+00:13:20,960 --> 00:13:26,000
+Well, if I run this then I will
+run into an infinite behaviour.
+
+00:13:26,000 --> 00:13:28,160
+So, I will have to abort this.
+
+00:13:28,160 --> 00:13:30,880
+So, by pressing Ctrl C, or something like that.
+
+00:13:30,880 --> 00:13:36,240
+Otherwise, or maybe there is a built-in timeout
+in the interpreter, then this will also abort.
+
+00:13:36,240 --> 00:13:38,320
+Because otherwise, there would be infinite search.
+
+00:13:38,320 --> 00:13:39,440
+Why is that?
+
+00:13:39,440 --> 00:13:42,160
+Well, how does this behave?
+
+00:13:42,160 --> 00:13:43,280
+How is it executed?
+
+00:13:43,280 --> 00:13:50,320
+Well, let's look at this in
+derivation tree style.
+
+00:13:50,960 --> 00:13:53,520
+So, let's say it is our root query \+ p.
+
+00:13:53,520 --> 00:13:58,240
+Then what will Prolog do under the closed
+world assumption is negation-of-failure.
+
+00:13:58,240 --> 00:14:03,680
+It will say, well, if I'm asked whether or
+not p holds, I will actually try to prove p.
+
+00:14:03,680 --> 00:14:08,960
+And if I fail to do this and I have
+exhausted all possibilities and still fail,
+
+00:14:08,960 --> 00:14:11,520
+then I will say, well, then \+ p is true.
+
+00:14:11,520 --> 00:14:11,760
+Okay.
+
+00:14:11,760 --> 00:14:17,120
+So, what will happen here is that there will be
+a kind of side branch where Prolog tries to prove
+
+00:14:17,840 --> 00:14:19,600
+the p, which is negated here.
+
+00:14:20,880 --> 00:14:23,280
+Okay, and well, will this entail?
+
+00:14:23,280 --> 00:14:27,120
+Well, this mean that we try to apply this rule.
+
+00:14:27,120 --> 00:14:30,240
+Because it's the only rule with p in the program.
+
+00:14:30,240 --> 00:14:31,200
+So, what does it do?
+
+00:14:31,200 --> 00:14:33,200
+Well, it is replaced by a resolution step.
+
+00:14:33,200 --> 00:14:40,320
+It replaces this p by the right-hand side of
+this rule, which is again p and again and again.
+
+00:14:40,320 --> 00:14:43,840
+Yes, so there is no success here.
+
+00:14:43,840 --> 00:14:46,800
+But it's not a finite failure tree.
+
+00:14:46,800 --> 00:14:53,600
+Because I can infinitely often try to find a
+next step here by blindly applying this rule.
+
+00:14:53,600 --> 00:14:56,080
+So, while there is no success here,
+
+00:14:56,080 --> 00:15:00,000
+it's also not a finite failure tree.
+
+00:15:00,000 --> 00:15:05,840
+So, I basically never come back to
+draw a conclusion about the \+ p.
+
+00:15:05,840 --> 00:15:08,720
+Even though there is no success here.
+
+00:15:08,720 --> 00:15:13,840
+I will still not be able to say that the
+negation of p, whether it's true or false.
+
+00:15:13,840 --> 00:15:15,680
+Because there's an infinite search going on here.
+
+00:15:16,480 --> 00:15:19,360
+Okay, a stupid program, but
+that's exactly what will happen.
+
+00:15:20,960 --> 00:15:25,360
+Okay, now a slightly bigger program.
+
+00:15:25,360 --> 00:15:29,760
+But not much more practically relevant.
+
+00:15:29,760 --> 00:15:36,000
+But for the sake of the example here,
+let's say we have a program, which
+
+00:15:36,000 --> 00:15:40,320
+has a somewhat similar idea, but for
+q, we have a base fact for q.
+
+00:15:40,320 --> 00:15:43,440
+And we have q follows from q, and we have
+
+00:15:43,440 --> 00:15:49,360
+another predicate p, of which we know
+that it holds if q does not hold.
+
+00:15:49,360 --> 00:15:52,400
+And our actual query is the negation of p.
+
+00:15:52,400 --> 00:15:54,800
+So, there is, again, some kind of double negation.
+
+00:15:54,800 --> 00:15:59,440
+The query is \+ p and p is \+ q
+and for q, we have some rules.
+
+00:16:00,240 --> 00:16:02,560
+Okay, how will this now turn out?
+
+00:16:02,560 --> 00:16:04,240
+So, let's say we ask this.
+
+00:16:05,840 --> 00:16:08,800
+So, this will give us true and in a finite manner.
+
+00:16:08,800 --> 00:16:11,760
+So, it will really give an answer
+and will actually say that \+ p is true.
+
+00:16:11,760 --> 00:16:13,120
+So, why is that?
+
+00:16:13,120 --> 00:16:13,680
+Well, let's see.
+
+00:16:14,240 --> 00:16:19,920
+Let's say this is our query, then again, in a kind
+of side branch Prolog will try to establish p.
+
+00:16:21,120 --> 00:16:22,240
+What will it do for this?
+
+00:16:22,240 --> 00:16:24,160
+Well, p has only one rule.
+
+00:16:24,880 --> 00:16:29,760
+So, resolution will mean to
+reduce to the query \+ q.
+
+00:16:30,800 --> 00:16:32,240
+Okay, so then we are here.
+
+00:16:32,240 --> 00:16:32,960
+What will happen?
+
+00:16:32,960 --> 00:16:35,840
+Well, Prolog will again,
+say, well, if I'm asked to
+
+00:16:36,560 --> 00:16:41,120
+investigate, \+ q, I will actually try
+to prove q and depending on whether this
+
+00:16:41,120 --> 00:16:46,240
+is successful or not, I will make
+a decision about the negation of q.
+
+00:16:46,240 --> 00:16:51,200
+So, again, in a side branch,
+Prolog will investigate q.
+
+00:16:51,200 --> 00:16:52,400
+Well, what holds for q?
+
+00:16:52,960 --> 00:16:56,240
+Well, q is actually, there is a fact for q.
+
+00:16:56,240 --> 00:16:58,960
+So, there is a very direct success node.
+
+00:16:58,960 --> 00:17:03,440
+But of course, there are also similar,
+infinite branches like here, right?
+
+00:17:03,440 --> 00:17:08,480
+So, because q can also be reduced to q, and
+this q could, then again, be successful.
+
+00:17:08,480 --> 00:17:09,760
+But there's also this infinite branch.
+
+00:17:09,760 --> 00:17:12,560
+There's also an infinite search tree behind here.
+
+00:17:12,560 --> 00:17:16,240
+But actually, Prolog will not
+run into this infinite search.
+
+00:17:16,960 --> 00:17:25,200
+Because to say that \+ q is false, it's
+enough to establish that q has a solution.
+
+00:17:25,200 --> 00:17:26,800
+So, actually, in the case here,
+
+00:17:28,240 --> 00:17:36,320
+after this first success for q, Prolog will
+not even try to establish anything more.
+
+00:17:36,320 --> 00:17:41,680
+Because one successful branch for
+q suffices to let \+ q fail.
+
+00:17:43,440 --> 00:17:45,840
+Yes, we said negation-as-failure.
+
+00:17:47,120 --> 00:17:50,450
+If we fail to reduce q and fail
+in a finite way, this was infinite.
+
+00:17:50,450 --> 00:17:56,000
+But if you fail in the finite way,
+then we might say that not q is true.
+
+00:17:56,000 --> 00:18:01,920
+If we have success in establishing q, then
+of course, immediately \+ q is false.
+
+00:18:01,920 --> 00:18:09,040
+So, this means that because we have one
+success here, the negation of q fails, is false.
+
+00:18:09,600 --> 00:18:13,840
+And this now means that this whole
+thing here is a finite failure tree.
+
+00:18:13,840 --> 00:18:19,360
+Because with this part here, there is
+no other thing to find as alternative.
+
+00:18:19,360 --> 00:18:20,560
+So, this has failed now.
+
+00:18:20,560 --> 00:18:23,600
+Because of this side branch
+succeeding, this has failed.
+
+00:18:23,600 --> 00:18:28,160
+So, this overall is a finite failure free for p.
+
+00:18:28,160 --> 00:18:32,640
+And this in turn means that
+\+ p is to be taken as true.
+
+00:18:33,600 --> 00:18:36,960
+That's why we have this true answer here.
+
+00:18:38,080 --> 00:18:44,240
+So, maybe takes a bit of thinking about these two
+cases, but they are really consistent with this
+
+00:18:44,240 --> 00:18:51,120
+negation-as-failure and close world assumption and
+the necessity to have a finite failure in order
+
+00:18:51,120 --> 00:18:55,840
+to establish that the negation of
+something is to be taken as true.
+
+00:18:56,720 --> 00:19:01,120
+To establish that the negation of
+something is to be taken as false.
+
+00:19:01,120 --> 00:19:05,120
+It's enough to have one success
+for the thing that was negated.
+
+00:19:05,120 --> 00:19:09,840
+That's what happened here.
+
+00:19:15,520 --> 00:19:18,480
+Now, examples with variables.
+
+00:19:18,480 --> 00:19:22,480
+And actually, I'm coming back
+to the Pulp Fiction example.
+
+00:19:22,480 --> 00:19:29,280
+So, we had something very similar to this in the
+very first week of the Prolog part, I think.
+
+00:19:29,840 --> 00:19:30,800
+Not exactly these rules.
+
+00:19:30,800 --> 00:19:34,320
+So, these are in some cases a
+bit simplified, but also made so
+
+00:19:35,200 --> 00:19:40,400
+as to stress the role of negation
+and where to put negated facts.
+
+00:19:40,400 --> 00:19:45,360
+So, exactly this will be an example where we
+will see why it's important to have negated
+
+00:19:46,560 --> 00:19:48,080
+literals at the end of queries.
+
+00:19:48,080 --> 00:19:49,760
+So, let's look, what do we have?
+
+00:19:49,760 --> 00:19:54,640
+We have our three persons that were also
+persons set in the previous example.
+
+00:19:54,640 --> 00:19:56,080
+And then we have now.
+
+00:19:56,080 --> 00:19:59,200
+So, they are not only in love
+now, they are actually married,
+
+00:19:59,200 --> 00:20:03,120
+particularly these two people
+are married in both ways.
+
+00:20:03,120 --> 00:20:04,640
+So, that's symmetric.
+
+00:20:04,640 --> 00:20:09,680
+And we have a predicate defining that somebody
+is single, namely well, it's a person.
+
+00:20:10,240 --> 00:20:13,120
+And it's not married to somebody.
+
+00:20:14,480 --> 00:20:19,840
+Okay, so, that's probably a reasonable
+way to think about this concept.
+
+00:20:20,400 --> 00:20:23,920
+Okay, then we can ask questions involving this.
+
+00:20:24,800 --> 00:20:28,560
+We will prefer negated
+occurrence of this predicate.
+
+00:20:28,560 --> 00:20:32,480
+So, we can, for example, ask
+whether somebody is single and well,
+
+00:20:32,480 --> 00:20:35,680
+Marsellus is single because
+Marsellus is not married, right?
+
+00:20:35,680 --> 00:20:37,280
+Yes, Vincent and Mia are married.
+
+00:20:37,280 --> 00:20:38,320
+But Marsellus is not.
+
+00:20:38,320 --> 00:20:39,840
+So, Marsellus is single.
+
+00:20:40,560 --> 00:20:43,680
+Then we can also ask whether Marsellus is single.
+
+00:20:43,680 --> 00:20:44,800
+And the answer will be true.
+
+00:20:45,440 --> 00:20:48,640
+Very consistent with the query who is single?
+
+00:20:48,640 --> 00:20:49,680
+The answer is Marsellus.
+
+00:20:49,680 --> 00:20:51,200
+If I ask, is Marsellus single?
+
+00:20:51,200 --> 00:20:52,160
+The answer is also true.
+
+00:20:52,160 --> 00:20:53,360
+So, very consistent.
+
+00:20:53,360 --> 00:20:56,960
+And if I asked the same about Vincent
+or Mia, the answer will be false.
+
+00:20:57,600 --> 00:20:59,280
+Okay, very reasonable.
+
+00:21:00,480 --> 00:21:08,560
+Now, sometimes maybe unreasonable behaviour happens
+when we indeed change the order of these two
+
+00:21:10,080 --> 00:21:11,280
+literals here.
+
+00:21:11,280 --> 00:21:14,400
+Yes, so this is almost the same
+program, it has the very same facts,
+
+00:21:14,400 --> 00:21:16,640
+it has almost the same rule here.
+
+00:21:16,640 --> 00:21:21,360
+I only switched the order of
+these two program literals.
+
+00:21:22,000 --> 00:21:24,640
+And from a purely logical
+perspective, one might say,
+
+00:21:24,640 --> 00:21:26,080
+well, this shouldn't make a difference, right?
+
+00:21:26,080 --> 00:21:28,240
+Because this comma basically is conjunction.
+
+00:21:28,240 --> 00:21:33,360
+And the conjunction and is
+usually taken to be commutative,
+
+00:21:34,480 --> 00:21:37,840
+which shouldn't matter whether I
+asked question this way or this way.
+
+00:21:37,840 --> 00:21:41,280
+However, if you actually run it
+then we might be in for a surprise.
+
+00:21:41,280 --> 00:21:42,240
+Because what will happen?
+
+00:21:42,960 --> 00:21:48,560
+Well, surprisingly, if I now asked whether
+somebody is single, the answer would be false.
+
+00:21:48,560 --> 00:21:50,480
+Whereas here the answer was Marsellus.
+
+00:21:51,520 --> 00:21:53,600
+Okay, that's strange already.
+
+00:21:53,600 --> 00:21:54,880
+Then what's also strange
+
+00:21:55,680 --> 00:21:59,360
+is that, well, if I asked whether Marsellus
+is single, the answer is still true.
+
+00:21:59,360 --> 00:22:00,080
+Well, this is okay.
+
+00:22:00,080 --> 00:22:01,840
+Because here we had true as well.
+
+00:22:01,840 --> 00:22:04,560
+But of course, this is in contradiction.
+
+00:22:05,120 --> 00:22:05,440
+Yes.
+
+00:22:05,440 --> 00:22:07,440
+If I ask, is there somebody who is single.
+
+00:22:07,440 --> 00:22:08,720
+The answer is false.
+
+00:22:08,720 --> 00:22:09,200
+No.
+
+00:22:09,200 --> 00:22:10,560
+If I asked is Marsellus is single?
+
+00:22:10,560 --> 00:22:11,360
+The answer is true.
+
+00:22:11,360 --> 00:22:16,400
+Then, of course, I would have expected also
+here the answer X = marsellus.
+
+00:22:16,400 --> 00:22:20,160
+So, this is a contradiction
+between these two answers.
+
+00:22:20,160 --> 00:22:23,520
+Even if I ignore whatever this
+program up here was doing.
+
+00:22:23,520 --> 00:22:24,880
+This is already very strange.
+
+00:22:25,440 --> 00:22:26,160
+Okay.
+
+00:22:26,160 --> 00:22:27,840
+And if I ask about Vincent.
+
+00:22:27,840 --> 00:22:30,160
+And the answer is still as before.
+
+00:22:30,160 --> 00:22:31,280
+Okay, so, this is okay.
+
+00:22:31,280 --> 00:22:33,360
+But here something strange is going on.
+
+00:22:33,360 --> 00:22:35,200
+And the question, of course, why is that?
+
+00:22:35,200 --> 00:22:36,320
+And how can you answer this?
+
+00:22:36,320 --> 00:22:38,880
+Well, we should look at the derivation trees.
+
+00:22:38,880 --> 00:22:42,240
+And we see what happens in
+terms of finite failure.
+
+00:22:49,120 --> 00:22:52,320
+So, let's add to the program
+which was well-behaving.
+
+00:22:52,320 --> 00:22:59,280
+The program where we put the negated
+literal at the end of our program clause,
+
+00:22:59,280 --> 00:23:03,440
+which is what I advise to always do.
+
+00:23:03,440 --> 00:23:05,840
+So, this is a program that follows my advice.
+
+00:23:06,880 --> 00:23:10,640
+What happens if I asked
+about people who are single?
+
+00:23:10,640 --> 00:23:13,280
+Well, let's simply build a derivation tree.
+
+00:23:13,280 --> 00:23:17,680
+So, single of x can only be
+resolved with this program clause
+
+00:23:17,680 --> 00:23:20,480
+by basically replacing this by the body.
+
+00:23:21,280 --> 00:23:27,280
+Let me actually follow my other
+advice to always rename the variables.
+
+00:23:27,280 --> 00:23:30,480
+So, that we don't get any mix-ups.
+
+00:23:30,480 --> 00:23:37,920
+So, let's say I rename X and Y to
+X1 and Y1 in this program rule.
+
+00:23:37,920 --> 00:23:40,640
+And uniification and resolution step.
+
+00:23:40,640 --> 00:23:41,360
+What will happen?
+
+00:23:42,080 --> 00:23:47,360
+Well, then this will unify and I will get
+this right-hand side where I have replaced the
+
+00:23:48,160 --> 00:23:50,720
+X and Y by X1 and Y1.
+
+00:23:50,720 --> 00:23:56,080
+And I remember that this X from the original
+query is from now on to be taken as the X1.
+
+00:23:56,080 --> 00:23:59,040
+Okay, so there is this simply
+straightforward resolution.
+
+00:24:00,560 --> 00:24:01,840
+Okay, what happens then?
+
+00:24:01,840 --> 00:24:07,200
+Well, we have this human of X1
+as the next literal to deal with.
+
+00:24:07,200 --> 00:24:12,080
+And there are several candidate
+facts to resolve this with.
+
+00:24:13,440 --> 00:24:18,160
+So, one is, of course, this
+where X1 becomes Marsellus.
+
+00:24:18,160 --> 00:24:24,240
+And that's also the first thing to try because
+human Marsellus is the first fact in the program.
+
+00:24:25,200 --> 00:24:28,080
+And then this means that this will disappear.
+
+00:24:28,080 --> 00:24:30,640
+We remember X1 is now Marsellus.
+
+00:24:30,640 --> 00:24:37,360
+And we are left with the rest of the query where
+of course, X1 is also replaced by Marsellus.
+
+00:24:37,360 --> 00:24:39,680
+So, we have this as the new query.
+
+00:24:40,880 --> 00:24:45,840
+There are also two other branches for these two.
+
+00:24:46,720 --> 00:24:50,560
+And these two facts as well, but let's
+not focus on them for the moment.
+
+00:24:50,560 --> 00:24:53,280
+Because we always do this
+step first, left to right.
+
+00:24:53,280 --> 00:24:57,680
+So, we will first definitely investigate this.
+
+00:24:58,720 --> 00:25:01,760
+Okay, what will this entail?
+
+00:25:01,760 --> 00:25:04,080
+Well, there is now a negated query.
+
+00:25:04,080 --> 00:25:08,400
+So, we should solve this in a side branch.
+
+00:25:08,400 --> 00:25:14,880
+So, we try to establish this to then make a
+conclusion about whether or not the negated
+
+00:25:15,600 --> 00:25:18,400
+version should be taken to be true or false.
+
+00:25:18,400 --> 00:25:26,560
+Okay, so, we ask is there a Y1 such that
+Marsellus is married to this person.
+
+00:25:26,560 --> 00:25:32,800
+And well, we can directly see that there's
+nothing here, which would unify with this literal.
+
+00:25:32,800 --> 00:25:33,840
+So, this fails.
+
+00:25:34,480 --> 00:25:36,880
+And fails immediately in a finite way.
+
+00:25:36,880 --> 00:25:40,240
+Because there's no step to take.
+
+00:25:40,240 --> 00:25:43,200
+And then, well, that's a classic
+case of negation-as-failure.
+
+00:25:43,200 --> 00:25:45,600
+We tried to establish this.
+
+00:25:45,600 --> 00:25:47,840
+We failed in finite time.
+
+00:25:47,840 --> 00:25:50,240
+So, we have exhaustively tried but failed.
+
+00:25:50,240 --> 00:25:54,400
+Then we can say, well, then the negation is true.
+
+00:25:55,120 --> 00:25:56,880
+Okay, then we have success node.
+
+00:25:56,880 --> 00:26:00,080
+And well, what about our X from the original query?
+
+00:26:00,080 --> 00:26:01,440
+Well, we have a solution for this.
+
+00:26:01,440 --> 00:26:03,360
+X is X1, X1 is Marsellus.
+
+00:26:03,360 --> 00:26:04,800
+So, this is the answer.
+
+00:26:04,800 --> 00:26:07,920
+Yes, I mentioned that there's no
+variable bindings inside negation.
+
+00:26:07,920 --> 00:26:11,840
+But this only means that the
+Y1 doesn't get an answer here.
+
+00:26:11,840 --> 00:26:14,080
+But it doesn't hurt us here.
+
+00:26:14,080 --> 00:26:19,200
+Because we were asked about the X and for
+the X, we have via X1 the solution Marsellus.
+
+00:26:19,200 --> 00:26:20,880
+So, this is our answer.
+
+00:26:22,000 --> 00:26:26,240
+Okay, and if you were to
+investigate these two further
+
+00:26:26,240 --> 00:26:28,400
+branches, we would not find any further solution.
+
+00:26:28,400 --> 00:26:38,240
+Because they actually both X1 =  Vincent and X1 = Mia
+would actually not give that the negation is true.
+
+00:26:38,240 --> 00:26:43,040
+Because indeed for both of them, there
+is a Y1 to which they are married.
+
+00:26:47,200 --> 00:26:52,960
+Okay, what about the other program where we
+have not followed the advice of putting negated
+
+00:26:54,400 --> 00:26:58,400
+literals last, so when we have
+actually first negated literal
+
+00:26:58,400 --> 00:26:59,440
+and then the other one.
+
+00:27:00,240 --> 00:27:00,960
+What happens then?
+
+00:27:00,960 --> 00:27:01,920
+Well, we saw what happens.
+
+00:27:01,920 --> 00:27:03,680
+But let's investigate why it happens.
+
+00:27:03,680 --> 00:27:09,040
+So, the point was that for this program,
+we asked whether there are singles.
+
+00:27:09,040 --> 00:27:10,560
+The answer was no.
+
+00:27:10,560 --> 00:27:12,560
+Yes, so Marsellus wasn't found as single.
+
+00:27:12,560 --> 00:27:13,600
+Why is that?
+
+00:27:13,600 --> 00:27:16,400
+Well, let's do the derivation tree for single(X).
+
+00:27:16,400 --> 00:27:20,400
+Well, of course, this again will
+be resolved with this last rule.
+
+00:27:21,040 --> 00:27:24,560
+So, the first step is just as
+before, except that, of course,
+
+00:27:24,560 --> 00:27:28,480
+also here now the order of these two
+literals is the other way around.
+
+00:27:29,920 --> 00:27:33,920
+But we still remember X is X1
+and here we have the same two
+
+00:27:33,920 --> 00:27:35,840
+literals as before, just in the other order.
+
+00:27:36,880 --> 00:27:41,040
+Okay, this new order, of course, now means
+that if we do this from left to right here,
+
+00:27:41,040 --> 00:27:44,640
+we will now focus on this
+literal as before on the previous slide.
+
+00:27:44,640 --> 00:27:47,520
+But we'll directly work with this.
+
+00:27:47,520 --> 00:27:51,280
+And working with this since it's
+a negated literal means that we
+
+00:27:51,280 --> 00:27:55,200
+have a side branch in which we try
+to establish the positive thing.
+
+00:27:55,200 --> 00:27:56,880
+married(X1,Y1).
+
+00:27:57,920 --> 00:27:58,240
+Okay.
+
+00:27:58,240 --> 00:28:00,160
+So, the side branch now is this.
+
+00:28:01,040 --> 00:28:01,840
+Okay.
+
+00:28:03,680 --> 00:28:06,560
+Differently than from the previous
+example, from the previous slide,
+
+00:28:06,560 --> 00:28:12,720
+where we simply first dealt with this and found
+an instantiation for X1, namely, marsellus.
+
+00:28:12,720 --> 00:28:13,840
+We had marsellus here.
+
+00:28:13,840 --> 00:28:15,680
+Now we have (X1,Y1).
+
+00:28:15,680 --> 00:28:16,800
+Okay, what does this mean?
+
+00:28:16,800 --> 00:28:20,800
+Well, we try to work with this.
+
+00:28:21,600 --> 00:28:27,040
+Actually, we want to fail in order
+to make the negation positive or if we
+
+00:28:27,040 --> 00:28:33,200
+succeed with this tree, then the negation
+will be taken to be false, to be failed.
+
+00:28:33,200 --> 00:28:33,360
+Yes.
+
+00:28:33,360 --> 00:28:37,920
+And again, not the thing that was negated
+failed, but the negation itself failed.
+
+00:28:37,920 --> 00:28:42,160
+Okay, so there is a side branch
+married(X1,Y1), normal resolution.
+
+00:28:42,160 --> 00:28:46,560
+Well, there are two rules or
+facts to work with here.
+
+00:28:47,920 --> 00:28:48,800
+This one and this one.
+
+00:28:48,800 --> 00:28:52,080
+Yes, these are two instantiations
+where we get a success node.
+
+00:28:52,080 --> 00:28:55,440
+But as I mentioned before, if
+we are in such a side branch,
+
+00:28:55,440 --> 00:28:58,000
+then one success kills all the others.
+
+00:28:58,000 --> 00:29:05,840
+So, as soon that there is one success, we
+will say that the negated thing is false.
+
+00:29:06,400 --> 00:29:08,400
+Yes.
+Because the thing that you want to negate
+
+00:29:09,040 --> 00:29:13,280
+has a success, and then we don't
+need to explore alternatives.
+
+00:29:13,280 --> 00:29:14,880
+You need to explore the alternatives if
+
+00:29:14,880 --> 00:29:18,560
+you're looking for when we want to
+arrive at a finite failure tree.
+
+00:29:18,560 --> 00:29:22,240
+But this is a finite success
+tree, where there is one success.
+
+00:29:22,240 --> 00:29:26,960
+That's enough to say, well,
+\+ married(X1,Y1) is false.
+
+00:29:26,960 --> 00:29:30,160
+And if this is false, the
+whole query will be false.
+
+00:29:30,160 --> 00:29:32,400
+That's why there was no answer for X.
+
+00:29:32,400 --> 00:29:33,920
+So, this actually fails.
+
+00:29:34,560 --> 00:29:40,240
+Because the thing that you want to
+negate has at least one solution.
+
+00:29:40,240 --> 00:29:41,760
+Different than on the previous slide.
+
+00:29:42,640 --> 00:29:45,200
+And also, different than on the next slide,
+
+00:29:45,200 --> 00:29:53,840
+where we will look at the case where I run for
+this program, the query where X is marsellus.
+
+00:29:56,480 --> 00:30:02,560
+So, let's again take this program where
+we have to negate that subquery first.
+
+00:30:02,560 --> 00:30:04,880
+But now we are asking without variables.
+
+00:30:04,880 --> 00:30:07,840
+So, now our query is really
+asking well is Marsellus single?
+
+00:30:08,960 --> 00:30:10,240
+Okay, what will happen?
+
+00:30:10,240 --> 00:30:16,080
+Well, for the first step, of course,
+is resolution with this clause.
+
+00:30:16,800 --> 00:30:22,080
+So, now, X1 will directly become
+marsellus via unification.
+
+00:30:22,080 --> 00:30:26,480
+And of course, in our query, we
+also have marsellus here and here.
+
+00:30:28,080 --> 00:30:28,580
+Okay.
+
+00:30:29,520 --> 00:30:31,840
+Next, we will look at this.
+
+00:30:31,840 --> 00:30:35,840
+Because it's the first
+literal in our current query.
+
+00:30:35,840 --> 00:30:42,320
+And since it's a negation, that means to
+investigate the negated thing in a side branch.
+
+00:30:42,320 --> 00:30:43,680
+So, married(marsellus,Y1).
+
+00:30:43,680 --> 00:30:46,240
+We have seen something similar to this before.
+
+00:30:47,520 --> 00:30:52,960
+Namely, this will fail because there's no
+way to unify it with either this or this.
+
+00:30:53,840 --> 00:30:54,640
+So, this fails.
+
+00:30:55,280 --> 00:30:57,360
+That's a finite failure tree.
+
+00:30:57,360 --> 00:31:00,240
+So, the negated thing is taken to be true.
+
+00:31:01,200 --> 00:31:05,920
+Yes, we tried to establish the
+thing that was negated, this failed.
+
+00:31:07,120 --> 00:31:10,720
+And why a negation-as-failure, this
+means the negation is taken to be true.
+
+00:31:11,680 --> 00:31:14,800
+Okay, so this actually is resolved.
+
+00:31:14,800 --> 00:31:19,200
+So, we are left with the rest of
+the query, which is human(marsellus).
+
+00:31:19,200 --> 00:31:23,600
+And well, this is something that
+we know as a fact from the program.
+
+00:31:23,600 --> 00:31:28,560
+So, actually, this will also be
+resolved and we will get a success node.
+
+00:31:28,560 --> 00:31:30,800
+So, indeed, if we asked Prolog
+
+00:31:30,800 --> 00:31:34,800
+if Marsellus is single, with this
+program, the answer will be true.
+
+00:31:34,800 --> 00:31:38,320
+Even though on the previous slide
+asking for the same program,
+
+00:31:38,320 --> 00:31:41,280
+whether there is some single, the answer was no.
+
+00:31:42,160 --> 00:31:48,240
+Okay, so it's really valuable to compare in
+detail this slide with the previous slide.
+
+00:31:48,240 --> 00:31:56,240
+And then also both of the slides even before that,
+where we looked at the opposite order of these two
+
+00:31:57,840 --> 00:31:59,040
+literals here.
+
+00:31:59,040 --> 00:32:02,880
+So, by looking at these three cases, and
+really understanding what's going on,
+
+00:32:03,520 --> 00:32:10,400
+you should get a very good idea and
+understanding for how Prolog negation works.
+
+00:32:10,400 --> 00:32:18,640
+And why and where the advice came
+from, that I gave that in the program
+
+00:32:18,640 --> 00:32:27,840
+you should, if you have to use negation,
+put them at the end of your clauses.
+
+00:32:29,680 --> 00:32:35,280
+We can also try to understand from more
+of a logic perspective, by trying to
+
+00:32:35,280 --> 00:32:40,560
+translate our relevant program
+clauses into logical formulas.
+
+00:32:41,440 --> 00:32:44,080
+We haven't done this
+systematically, but at least we have
+
+00:32:45,600 --> 00:32:50,640
+at some point talked about how this
+reading could work without negation.
+
+00:32:50,640 --> 00:32:53,360
+So, let's look at this now
+in the context of negation.
+
+00:32:53,360 --> 00:32:58,560
+And only for this example, actually by its
+principle transferable to our case as well.
+
+00:32:58,560 --> 00:33:02,720
+And let's do this on another assumption
+that where we ask our query with x unbound.
+
+00:33:03,600 --> 00:33:08,240
+That was really where something strange
+happened also on the previous slides.
+
+00:33:08,240 --> 00:33:12,640
+And also, that if we
+have a query or a literal,
+
+00:33:12,640 --> 00:33:14,560
+human(X) then this will instantiate the X.
+
+00:33:14,560 --> 00:33:17,600
+That was exactly what's
+happened in the examples, right?
+
+00:33:17,600 --> 00:33:20,000
+Because we had this base X for human.
+
+00:33:20,000 --> 00:33:22,160
+Okay, so let's say X is unbound.
+
+00:33:22,160 --> 00:33:26,240
+But if you have human (X) then this
+will give concrete values for X.
+
+00:33:26,960 --> 00:33:32,880
+Then this version of the program
+clause can be read as follows.
+
+00:33:33,760 --> 00:33:36,880
+So, it's saying for all X,
+because X is originally unbound.
+
+00:33:36,880 --> 00:33:40,560
+For all x, something holds, namely, the
+right-hand side implies the left-hand side.
+
+00:33:40,560 --> 00:33:41,360
+And what's the right-hand side?
+
+00:33:41,360 --> 00:33:43,760
+Well, it is a conjunction of two things.
+
+00:33:43,760 --> 00:33:47,600
+And the first thing is to have
+human(X), yes for all X holds.
+
+00:33:48,720 --> 00:33:52,800
+If human(X) and something
+else holds, then X is single.
+
+00:33:52,800 --> 00:33:54,720
+And what's this something else that should hold?
+
+00:33:54,720 --> 00:33:56,640
+Well, it's a negation.
+
+00:33:56,640 --> 00:33:59,680
+And inside the negation, there
+is a free variable, the Y.
+
+00:33:59,680 --> 00:34:00,960
+The X is not free here.
+
+00:34:00,960 --> 00:34:03,600
+Because human(X) will actually
+bind the X to something.
+
+00:34:03,600 --> 00:34:05,600
+to Marsellus, Mia, or Vincent.
+
+00:34:05,600 --> 00:34:08,560
+All right, so if we have the
+negation here, we are asking
+
+00:34:08,560 --> 00:34:12,320
+not married of some concrete X and an unknown Y.
+
+00:34:12,320 --> 00:34:14,560
+And this unknown Y is a free variable.
+
+00:34:14,560 --> 00:34:18,320
+That's the standard interpretation
+of free variables in Prolog.
+
+00:34:18,320 --> 00:34:20,560
+That's basically an existential quantification.
+
+00:34:21,120 --> 00:34:27,840
+So, it's asking well, for all X, if X is human,
+and there is no Y such that X is married to Y.
+
+00:34:28,800 --> 00:34:30,880
+Then X is single.
+
+00:34:30,880 --> 00:34:36,800
+And that's exactly how we think about
+these concepts, their connection, okay.
+
+00:34:36,800 --> 00:34:40,880
+And that's why this program
+clause behaves as expected.
+
+00:34:41,760 --> 00:34:46,800
+In contrast, if we have the
+other order, yes, in this way.
+
+00:34:46,800 --> 00:34:47,840
+Then what will happen?
+
+00:34:48,400 --> 00:34:56,480
+Well, the point now is that when we look at
+this part, the first part of the conjunction,
+
+00:34:56,480 --> 00:34:59,280
+now both X and Y are free variables.
+
+00:34:59,280 --> 00:35:01,440
+Because the X hasn't yet been bound.
+
+00:35:01,440 --> 00:35:06,880
+If we call this with an unbound variable
+X, then X is also a free variable.
+
+00:35:06,880 --> 00:35:13,120
+So, when we have something like this, then the
+negation of married(X, Y) is actually asking,
+
+00:35:13,120 --> 00:35:16,800
+there aren't X and Y such
+that X and Y are married.
+
+00:35:17,920 --> 00:35:22,960
+Okay, and only afterwards, the X that
+occurred in the query is instantiated by
+
+00:35:22,960 --> 00:35:25,840
+asking or by saying that this human.
+
+00:35:26,880 --> 00:35:30,320
+Okay, so the point is, this
+x here is a free variable.
+
+00:35:30,320 --> 00:35:32,800
+So, it's existentially quantified,
+
+00:35:32,800 --> 00:35:36,080
+it's not yet bound to some specific
+human, to some specific person.
+
+00:35:36,640 --> 00:35:40,000
+That's why this will in the logical
+
+00:35:40,000 --> 00:35:45,040
+reading conflate to not exists
+X, Y such as they are married.
+
+00:35:45,040 --> 00:35:48,640
+Okay, this must be true, and it
+must be true that X is human,
+
+00:35:48,640 --> 00:35:51,200
+then we will be able to deduce that X is single.
+
+00:35:51,760 --> 00:35:57,840
+And well, this is not a useful
+concept of being single.
+
+00:35:57,840 --> 00:36:06,720
+Because this is, well, misinterpreted
+by this X still being a free variable.
+
+00:36:06,720 --> 00:36:12,160
+Because by the rules of formal logic, this
+X, which is existentially quantified here,
+
+00:36:12,160 --> 00:36:16,720
+and then negated doesn't need to have anything
+to do with this outer axiom, or with this axiom.
+
+00:36:17,280 --> 00:36:22,960
+This is simply not what we meant
+when we described being single.
+
+00:36:22,960 --> 00:36:25,040
+That's what we meant.
+
+00:36:25,040 --> 00:36:31,440
+And that's what we get if we put our negated
+literal late in the query, late in the
+
+00:36:32,240 --> 00:36:35,440
+right-hand side of our clause to give
+
+00:36:36,160 --> 00:36:41,680
+the X a chance to first being instantiated
+by some other literals occurring in the code.
+
+00:36:42,720 --> 00:36:45,120
+That's then giving the desired reading.
+
+00:36:46,240 --> 00:36:47,520
+And this one isn't.
+
+00:36:47,520 --> 00:36:53,360
+Okay, so that's what also explains what
+happened on the previous slide, but not
+
+00:36:53,360 --> 00:37:07,840
+with this operational reading, but by finding
+reasonably similar formal logic expressions.
+
+00:37:10,480 --> 00:37:13,440
+Okay, as summary on this part about negation,
+
+00:37:14,400 --> 00:37:19,280
+let's conclude well, it's
+not real logical negation.
+
+00:37:19,280 --> 00:37:22,480
+Yes, it has this negation-as-failure flavour.
+
+00:37:22,480 --> 00:37:25,920
+And that's not what usually negation in logic is,
+
+00:37:25,920 --> 00:37:32,560
+we simply have to accept this that Prolog doesn't
+establish or provide a real logical negation.
+
+00:37:32,560 --> 00:37:34,320
+Instead, there is the negation-as-failure concept,
+
+00:37:34,320 --> 00:37:39,600
+which is often good enough, which is useful in
+many programs, but it's not real logic negation.
+
+00:37:39,600 --> 00:37:42,400
+We have seen in what sense it is not.
+
+00:37:42,400 --> 00:37:44,080
+Because, for example, it doesn't satisfy
+
+00:37:44,640 --> 00:37:48,960
+properties like double negation being
+the same as the original literal.
+
+00:37:48,960 --> 00:37:53,680
+Okay, and all these strange behaviours
+with or without variables.
+
+00:37:55,680 --> 00:37:57,120
+Okay, how is it realized?
+
+00:37:57,120 --> 00:38:00,080
+Well, by proof search in this side branch.
+
+00:38:00,720 --> 00:38:07,200
+Yes, we ask about the negated literal,
+then we actually try in a side branch to
+
+00:38:08,240 --> 00:38:12,720
+find the proof for the thing that is negated.
+
+00:38:12,720 --> 00:38:16,160
+And depending on what happens in
+the side branch, we will decide
+
+00:38:16,160 --> 00:38:19,040
+what is true about the negated literal.
+
+00:38:19,920 --> 00:38:23,920
+Okay, and the side branch is not really a side
+branch in that it doesn't influence,
+
+00:38:23,920 --> 00:38:29,040
+it only tells us whether to consider
+the negated literal, true or false.
+
+00:38:29,040 --> 00:38:32,640
+It doesn't otherwise influence
+the main derivation tree.
+
+00:38:32,640 --> 00:38:35,160
+In particular, by not binding
+variables to the outside world.
+
+00:38:35,160 --> 00:38:36,720
+Whatever happens in this side branch
+
+00:38:36,720 --> 00:38:40,720
+the answer is just whether it's
+successful or a finite failure tree.
+
+00:38:40,720 --> 00:38:44,400
+There's no communication or variable
+bindings or solutions found in that
+
+00:38:44,960 --> 00:38:48,240
+side branch into the main proof tree.
+
+00:38:48,240 --> 00:38:50,800
+As we have seen in the examples that we looked at.
+
+00:38:52,000 --> 00:38:55,440
+Okay, it can only be truly understood
+procedurally, operationally.
+
+00:38:55,440 --> 00:39:00,160
+So, we have to think about that,
+the important analysis in detail.
+
+00:39:00,160 --> 00:39:02,240
+We have to think about the derivation trees.
+
+00:39:02,240 --> 00:39:05,920
+Just as was the case for some other
+properties of Prolog programs,
+
+00:39:06,640 --> 00:39:10,560
+like determination questions, but
+we also had to think operationally.
+
+00:39:10,560 --> 00:39:13,600
+Plus, the declarative
+reading of the Herbrand model
+
+00:39:13,600 --> 00:39:17,760
+wasn't enough for understanding
+determination issues.
+
+00:39:17,760 --> 00:39:20,960
+And it's also not enough
+for understanding negation.
+
+00:39:21,680 --> 00:39:24,800
+If we were to try this, then
+we would have several problems.
+
+00:39:25,440 --> 00:39:30,640
+So, trying to have a declarative perspective
+with Herbrand model perspective well,
+
+00:39:30,640 --> 00:39:36,960
+would immediately fail because of the "negation
+failures" on the compositionality concept.
+
+00:39:36,960 --> 00:39:41,320
+We have seen this with the thing
+asking for single(marsellus).
+
+00:39:41,320 --> 00:39:43,840
+It was giving an answer, a positive answer, yes.
+
+00:39:43,840 --> 00:39:48,400
+But asking for single(X) didn't give an answer.
+
+00:39:48,400 --> 00:39:51,760
+That defies compositionality of queries.
+
+00:39:53,120 --> 00:39:53,520
+Okay.
+
+00:39:53,520 --> 00:39:58,720
+We also saw that in the
+presence of negation-as-failure.
+
+00:39:58,720 --> 00:40:01,840
+The answers are sensitive
+against changing the order.
+
+00:40:02,880 --> 00:40:10,320
+Well, we saw that it's sensitive to
+changes of the order inside rules.
+
+00:40:10,320 --> 00:40:12,160
+Yes, exchanging body literals.
+
+00:40:12,160 --> 00:40:15,840
+But also, we could find
+examples where the order
+
+00:40:17,040 --> 00:40:20,880
+of the facts and rules in the
+program affects the outcome.
+
+00:40:20,880 --> 00:40:26,000
+And in the Herbrand semantics, this didn't happen.
+
+00:40:26,000 --> 00:40:32,240
+As the order was not important for
+getting results with this Tp operator.
+
+00:40:33,440 --> 00:40:39,120
+Okay, and mathematically, if we look at it,
+we would find that this Tp operator that we
+
+00:40:39,120 --> 00:40:46,480
+used in the declarative semantics would not be
+monotone in the presence of negation or failure.
+
+00:40:46,480 --> 00:40:54,560
+In the sense that, well, giving it a bigger set
+should always also get a bigger result set.
+
+00:40:54,560 --> 00:40:57,520
+That was important for this fixed-point property.
+
+00:40:57,520 --> 00:41:00,720
+So, iterating the key operator
+beginning with the empty set,
+
+00:41:00,720 --> 00:41:03,360
+and always getting bigger, bigger, bigger sets.
+
+00:41:03,360 --> 00:41:08,720
+So, that ultimately, we could say, the
+fixed point or the limit, the ultimate
+
+00:41:09,760 --> 00:41:15,200
+biggest set reached by this process is the
+one which is the true meaning of the program.
+
+00:41:15,200 --> 00:41:18,400
+This wouldn't work here because
+of this negation concept.
+
+00:41:18,400 --> 00:41:23,120
+This operator wouldn't be monotone in that
+sense that we always get an increasing sequence.
+
+00:41:23,120 --> 00:41:28,320
+So, that wouldn't be a useful concept
+of this fixed point being reached, okay.
+
+00:41:28,320 --> 00:41:29,120
+It would simply fail.
+
+00:41:30,960 --> 00:41:42,320
+Okay, that's why we have to understand
+negation in this operational fashion.

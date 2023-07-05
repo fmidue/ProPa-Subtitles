@@ -1,0 +1,2194 @@
+96 # slide
+00:00:01,120 --> 00:00:05,120
+Okay, lassen Sie uns heute über die Negation in Prolog sprechen.
+
+00:00:06,160 --> 00:00:11,680
+Und nun, eigentlich kam die Negation
+bereits in einigen Beispielprogrammen vorkommen.
+
+00:00:11,680 --> 00:00:14,320
+Aber es war immer etwas mysteriös.
+
+00:00:14,320 --> 00:00:19,600
+Ich habe also Bemerkungen gemacht wie, wenn Sie die
+Negation verwenden, sollten Sie darauf achten, dass sie
+
+00:00:19,600 --> 00:00:25,360
+am Ende Ihrer Programmklauseln steht, ohne
+wirklich zu erklären, warum das wichtig ist.
+
+00:00:26,160 --> 00:00:31,440
+Darum geht es in diesem kurzen Teil
+oder Video, hier geht es darum.
+
+00:00:32,000 --> 00:00:33,360
+Ich konnte das vorher nicht erklären.
+
+00:00:33,360 --> 00:00:37,120
+Denn eigentlich hängt es
+von der operativen Lesart
+
+00:00:37,120 --> 00:00:40,320
+von Prolog-Programmen ab, die wir
+kürzlich eingeführt haben.
+
+00:00:40,320 --> 00:00:43,840
+Jetzt ist es also an der Zeit, darüber zu sprechen.
+
+00:00:47,840 --> 00:00:52,320
+Das Erste, was Sie wissen sollten,
+ist, dass die logische Programmierung
+
+00:00:52,320 --> 00:00:56,400
+in erster Linie auf einer positiven Logik basiert.
+
+00:00:56,400 --> 00:01:02,160
+Und eine positive Lesart der Regeln
+die wir in das Programm geschrieben haben.
+
+00:01:02,160 --> 00:01:06,080
+Ja, wir versuchen also zu beweisen
+einige vorgegebene Abfragen.
+
+00:01:06,080 --> 00:01:11,920
+Und Sie wollen beweisen oder eine
+Lösung für diese Frage.
+
+00:01:11,920 --> 00:01:20,080
+Dann versuchen wir, sie aus bekannten Fakten abzuleiten
+oder wenn wir es rückwärts betrachten, versuchen wir abzuleiten
+
+00:01:20,080 --> 00:01:25,760
+oder diese Abfrage auf die Gültigkeit
+bekannter Fakten zu reduzieren, indem wir Resolutionsschritte verwenden.
+
+00:01:25,760 --> 00:01:28,640
+Das ist es, worum es bei der Resolution und den
+Ableitungsbäumen ging.
+
+00:01:30,240 --> 00:01:36,080
+Okay, sie verwenden also die Klauseln, die Programmregeln
+wie: wenn dies und dies und dies, dann gilt
+
+00:01:36,080 --> 00:01:42,080
+das Folgende im positiven Sinne; um
+interessante Dinge aus bekannten Fakten abzuleiten.
+
+00:01:43,280 --> 00:01:47,920
+Okay, die Regeln leiten also positives Wissen
+aus gegebenem positivem Wissen her.
+
+00:01:49,440 --> 00:01:58,000
+Offenbar muss also etwas Besonderes geschehen
+passieren, wenn wir eine Negation haben wollen.
+
+00:01:58,560 --> 00:02:02,080
+Okay, Prolog hat also die Negation
+als syntaktisches Konstrukt.
+
+00:02:03,200 --> 00:02:06,960
+Allerdings ist diese Negation nicht vollständig
+kompatibel mit der erwarteten logischen
+
+00:02:06,960 --> 00:02:12,000
+Bedeutung, die wir in einem Moment sehen werden
+oder warum dies nicht vollständig kompatibel ist.
+
+00:02:12,560 --> 00:02:21,200
+Syntaktisch kann die Negation entweder eingeführt werden
+durch diesen Operator, bei dem es sich um das not-Symbol
+
+00:02:21,200 --> 00:02:27,680
+handeln soll, oder aber direkt durch einen Operator, der
+genannt wird und dann in Klammern das Goal steht.
+
+00:02:28,480 --> 00:02:29,760
+Okay, und wie lautet die Lesart hier?
+
+00:02:29,760 --> 00:02:32,480
+Die Lesart ist in etwa so,
+
+00:02:32,480 --> 00:02:35,840
+oder so, was eigentlich nur zwei
+syntaktische Möglichkeiten, das Gleiche zu schreiben.
+
+00:02:35,840 --> 00:02:40,880
+Es ist beweisbar, wenn und nur wenn
+das Goal selbst nicht beweisbar ist.
+
+00:02:41,920 --> 00:02:45,680
+Okay, das mag auf den
+ersten Blick wie eine vernünftige,
+
+00:02:46,240 --> 00:02:48,560
+und vielleicht auch erwartete logische Bedeutung.
+
+00:02:48,560 --> 00:02:54,240
+Aber so denken wir eigentlich nicht
+über die Negation, wenn wir logisch denken.
+
+00:02:59,200 --> 00:03:04,480
+Wir sagen, die Verneinung von etwas
+ist wahr, wenn dieses Etwas falsch ist.
+
+00:03:05,200 --> 00:03:07,440
+Ja, wenn Sie wissen wollen, dass
+
+00:03:09,120 --> 00:03:15,760
+die Negation von Goal gilt, dann sollten wir
+tatsächlich feststellen und beweisen, dass Goal falsch ist.
+
+00:03:16,320 --> 00:03:17,680
+Aber das ist nicht das, was hier passiert.
+
+00:03:17,680 --> 00:03:26,240
+Was hier passiert, ist, dass ich, wenn ich nicht beweisen kann, dass
+Goal wahr ist, dann akzeptiere ich, dass Goal nicht wahr ist.
+
+00:03:27,440 --> 00:03:35,120
+Ja, es ist also nicht notwendig, die Negation von etwas
+zu beweisen, um zu wissen, dass es in der Tat falsch ist.
+
+00:03:35,120 --> 00:03:41,440
+Stattdessen heißt es hier, oder was Prolog sagt
+ist: Wenn ich nicht beweisen kann, dass etwas wahr ist,
+
+00:03:41,440 --> 00:03:44,640
+dann kann ich genauso gut annehmen
+dass die Negation davon wahr ist.
+
+00:03:44,640 --> 00:03:49,920
+Und das ist nicht die Art und Weise, wie wir mit gesundem Menschenverstand und
+alltäglichen Denken über die Negation nachdenken.
+
+00:03:49,920 --> 00:03:53,360
+Nur weil ich nicht beweisen kann, dass etwas stimmt,
+
+00:03:53,360 --> 00:03:56,400
+darf ich nicht einfach annehmen, dass
+die Verneinung von etwas gilt.
+
+00:03:56,400 --> 00:04:03,440
+Ja, das würde die Last des Beweises irgendwie verlagern
+etwas zu beweisen oder zu verneinen, auf jemanden
+
+00:04:04,240 --> 00:04:09,280
+jemandem, der dafür nicht verantwortlich sein sollte.
+
+00:04:09,280 --> 00:04:14,160
+Wenn ich also behaupten will, dass etwas falsch
+ist, dann sollte ich beweisen, dass es falsch ist.
+
+00:04:14,160 --> 00:04:16,720
+Ich sollte nicht einfach sagen: "Nun ja,
+ich habe versucht zu beweisen, dass es wahr ist.
+
+00:04:16,720 --> 00:04:17,520
+Ich bin gescheitert.
+
+00:04:17,520 --> 00:04:19,360
+Also behaupte ich von nun an, dass es falsch ist.
+
+00:04:19,360 --> 00:04:25,120
+Ja, das ist irgendwie ein Verzicht auf meine
+Verpflichtung, zu beweisen, was ich behaupte.
+
+00:04:25,120 --> 00:04:29,120
+Aber Prolog verwendet genau diesen Ansatz.
+
+00:04:31,040 --> 00:04:35,680
+Okay, in mancher Hinsicht, in manchen Fällen funktioniert es ganz gut.
+
+00:04:35,680 --> 00:04:36,080
+Ja.
+
+00:04:36,080 --> 00:04:40,240
+Nehmen wir also an, wir haben ein Prädikat, und das ist
+eigentlich ein vordefiniertes Prädikat in Prolog
+
+00:04:40,800 --> 00:04:48,400
+um zu prüfen, ob ein Element, nun ja, ein beliebiger
+Begriff in einer Liste ist.
+
+00:04:49,520 --> 00:04:51,920
+Dann können wir eine verneinte Frage stellen.
+
+00:04:51,920 --> 00:04:54,880
+Wir können fragen, ob es wahr ist, dass nicht 4
+
+00:04:55,440 --> 00:04:58,960
+ein Mitglied der Liste [2,3] ist, und in der Tat ist es beweisbar.
+
+00:04:58,960 --> 00:04:59,600
+Aber warum?
+
+00:04:59,600 --> 00:05:04,080
+Nun, Prolog wird versuchen, zu beweisen, dass
+4 ein Mitglied der Liste [2,3] ist.
+
+00:05:04,640 --> 00:05:06,400
+Prolog wird damit scheitern.
+
+00:05:06,400 --> 00:05:09,200
+Und zwar auf eine endliche Weise.
+
+00:05:09,200 --> 00:05:13,520
+Wir werden gleich noch darüber nachdenken, warum es
+wichtig ist, dass dies ein endlicher Fehlerbaum ist,
+
+00:05:13,520 --> 00:05:17,600
+Das ist also die Art von Ableitungsbaum
+die wir im vorherigen Video gesehen haben.
+
+00:05:19,360 --> 00:05:25,120
+Aber hier wollen wir einen Fehlerbaum haben, der ein Baum ist.
+Baum, der keinen erfolgreichen Blattknoten hat.
+
+00:05:26,000 --> 00:05:29,600
+Okay, und wenn das der Fall ist, und
+wird es ein Fall für die Abfrage sein,
+
+00:05:29,600 --> 00:05:30,960
+ob 4 ein Mitglied von [2,3] ist.
+
+00:05:30,960 --> 00:05:32,320
+Das ist also nicht wahr.
+
+00:05:32,320 --> 00:05:38,800
+Nun, weil es einen endlichen Fehlerbaum gibt, einen
+endlichen Baum, bei dem jeder Blattknoten ein Fehler ist.
+
+00:05:38,800 --> 00:05:40,400
+Und dann wird Prolog sagen, na ja,
+
+00:05:40,400 --> 00:05:47,200
+da die Abfrage, ob 4 ein Mitglied ist
+der Liste [2,3] nicht beweisbar ist.
+
+00:05:47,200 --> 00:05:52,480
+Ich kann genauso gut sagen, dass in der Tat
+4 kein Mitglied von [2,3] ist.
+
+00:05:52,480 --> 00:05:55,600
+Und in diesem Fall ist das gut, wahrscheinlich
+
+00:05:55,600 --> 00:06:00,320
+gut genug als Strategie für
+diese negative Frage zu beweisen.
+
+00:06:01,120 --> 00:06:03,360
+Okay, aber in allen Situationen müssen Sie vorsichtiger sein.
+
+00:06:03,920 --> 00:06:08,080
+vorsichtig sein, sonst könnte die
+Interpretation könnte überraschend sein.
+
+00:06:08,080 --> 00:06:10,800
+Insbesondere dann, wenn Variablen im Spiel sind.
+
+00:06:10,800 --> 00:06:17,280
+Schauen wir uns also eine etwas
+ähnliche, aber etwas andere Abfrage an.
+
+00:06:17,280 --> 00:06:19,360
+Und zwar haben wir hier eine Variable.
+
+00:06:19,360 --> 00:06:21,520
+Und lassen Sie uns Prolog fragen,
+
+00:06:21,520 --> 00:06:24,880
+ob es etwas gibt, das
+ein Element der Liste [2,3] ist?
+
+00:06:24,880 --> 00:06:29,040
+Dann wird Prolog sagen: Ja.
+2 ist eine Lösung für diese Abfrage,
+
+00:06:29,040 --> 00:06:31,040
+und 3 ist eine Lösung für diese Abfrage.
+
+00:06:32,000 --> 00:06:33,520
+Okay, das ist gut genug.
+
+00:06:33,520 --> 00:06:34,240
+Das ist auch wahr.
+
+00:06:35,040 --> 00:06:40,640
+Wir können nun fragen, ob es nicht der Fall ist
+dass X ein Element von [2,3] ist?
+
+00:06:41,200 --> 00:06:44,400
+Und dann hätten wir vielleicht erwartet
+hier die Antwort 4 zu erhalten.
+
+00:06:45,040 --> 00:06:45,360
+Oder?
+
+00:06:45,360 --> 00:06:49,840
+Die Frage könnte also so verstanden werden, dass wir nach einem
+ein X, das nicht zu [2,3] gehört.
+
+00:06:49,840 --> 00:06:53,200
+Und wir wissen, dass zum Beispiel 4
+kein Bestandteil von [2,3] ist.
+
+00:06:53,200 --> 00:06:56,800
+Prolog wird jedoch nicht
+hier mit X = 4 antworten.
+
+00:06:56,800 --> 00:06:58,480
+Stattdessen wird Prolog falsch sagen.
+
+00:06:59,040 --> 00:07:05,920
+Ja, also wird Prolog im Grunde sagen, ich kann nicht
+beweisen, dass X kein Element von [2,3] ist.
+
+00:07:07,440 --> 00:07:11,760
+Oder, ich kann nicht beweisen, dass es
+kein Element der Liste [2,3] gibt.
+
+00:07:13,200 --> 00:07:17,120
+Ja, das steht also in leichtem Widerspruch zu dem hier.
+
+00:07:17,120 --> 00:07:18,880
+Also, 4 ist kein Element von [2,3].
+
+00:07:18,880 --> 00:07:21,840
+Aber wenn ich mit einer Variablen frage,
+erhalte ich nicht X = 4.
+
+00:07:21,840 --> 00:07:22,480
+Ich erhalte false.
+
+00:07:23,440 --> 00:07:30,000
+Und wenn ich dies wieder negiere, komme ich
+nicht zum ursprünglichen Verhalten zurück.
+
+00:07:30,000 --> 00:07:30,400
+Ja.
+
+00:07:30,400 --> 00:07:35,200
+Bei einer normalen logischen Schlussfolgerung würden Sie also sagen
+nicht sagen, nicht von etwas ist dieses etwas.
+
+00:07:35,200 --> 00:07:37,600
+Aber nun ja, Sie können das auch wieder verneinen.
+
+00:07:38,560 --> 00:07:43,520
+Wenn ich also not not member X der Liste [2,3] frage,
+
+00:07:43,520 --> 00:07:47,680
+dann könnten Sie erwarten, dass dies dasselbe ist
+wie die Frage X Mitglied der Liste [2,3].
+
+00:07:47,680 --> 00:07:51,600
+Sie würden also erwarten, dass Sie die Antwort
+X = 2 oder X = 3.
+
+00:07:51,600 --> 00:07:55,280
+Aber stattdessen wird Prolog einfach sagen: Ja, wahr.
+
+00:07:55,280 --> 00:07:57,840
+Aber es wird Ihnen keine Ergebnisse liefern.
+
+00:07:57,840 --> 00:08:01,040
+Ja, denn im Grunde genommen wird dies
+die Negation dieser Zeile sein,
+
+00:08:01,040 --> 00:08:07,760
+aber Informationen darüber, welche bestimmten X-Antworten
+die Mitglieder der Liste [2,3] sind, gehen verloren.
+
+00:08:07,760 --> 00:08:12,720
+Oder anders ausgedrückt, die Negation
+nicht zu variablen Bindungen.
+
+00:08:12,720 --> 00:08:17,520
+Ja, mit Negation erhalten Sie false oder
+wahr, aber Sie erhalten keine konkreten Ergebnisse
+
+00:08:17,520 --> 00:08:21,200
+für alle Variablen, die in den negierten Aufrufen vorkommen.
+
+00:08:22,240 --> 00:08:28,800
+Und das ist schon seltsam, dass dieses
+sich nicht genauso verhält wie diese Zeile.
+
+00:08:28,800 --> 00:08:40,320
+Die doppelte Negation hebt sich also offensichtlich nicht auf
+wie Sie es bei normaler logischer Argumentation erwarten würden.
+
+00:08:40,320 --> 00:08:44,080
+Welche Rolle spielen also endliche Fehlerbäume hier?
+
+00:08:44,080 --> 00:08:49,520
+Nun, es sind diese beiden Punkte, die hier zusammenkommen.
+
+00:08:49,520 --> 00:08:51,520
+Denn zum einen können wir nicht
+
+00:08:51,520 --> 00:08:55,840
+zeigen, dass aus den Klauseln eines Programms,
+bestimmte negative Aussagen folgen.
+
+00:08:56,560 --> 00:08:59,520
+Ganz genau, denn die Regeln sind alle positiv.
+
+00:08:59,520 --> 00:09:03,920
+Wir haben also niemals ein negiertes
+Literal im Kopf einer Regel.
+
+00:09:04,640 --> 00:09:06,880
+Wenn dies und dies und dies,
+dann gilt das Folgende.
+
+00:09:06,880 --> 00:09:09,520
+Und auch wenn wir die Negation
+
+00:09:09,520 --> 00:09:15,120
+auf der rechten Seite einer Regel verwenden, verwenden
+wir niemals die Negation im Kopf einer Regel.
+
+00:09:15,120 --> 00:09:20,560
+Wir haben nie so etwas wie eine Regel, die
+festlegt, dass etwas falsch ist.
+
+00:09:20,560 --> 00:09:22,400
+Wir leiten nur positive Dinge ab.
+
+00:09:24,800 --> 00:09:31,520
+Okay, die einzige Möglichkeit, die wir haben,
+wie ich auf der vorherigen Folie sagte, ist genau das, was
+
+00:09:31,520 --> 00:09:38,640
+Prolog tut, es sagt, im Grunde genommen:
+Nun, ich habe versucht, eine positive Sache zu beweisen.
+
+00:09:39,360 --> 00:09:42,240
+Ich konnte diese andere Sache nicht herleiten.
+
+00:09:42,240 --> 00:09:46,240
+Also nehme ich an, dass es falsch ist.
+
+00:09:46,240 --> 00:09:47,760
+Also Negation-als-Fehlschlag.
+
+00:09:47,760 --> 00:09:53,040
+Das Scheitern, etwas Positives zu beweisen, wird
+als Verneinung dieser positiven Sache betrachtet.
+
+00:09:54,160 --> 00:09:59,360
+Okay, das bedeutet also, dass wir eine Vorstellung davon haben müssen
+
+00:09:59,360 --> 00:10:03,840
+nicht in der Lage zu sein, etwas zu produzieren,
+nicht in der Lage zu sein, etwas abzuleiten.
+
+00:10:07,120 --> 00:10:08,960
+Okay, was bedeutet das nun?
+
+00:10:08,960 --> 00:10:11,680
+Wir zeigen, dass es nicht abgeleitet werden kann.
+
+00:10:11,680 --> 00:10:14,960
+Nun, es bedeutet im Grunde, dass wir uns Mühe geben und scheitern.
+
+00:10:16,000 --> 00:10:19,200
+Ja, wir versuchen zu beweisen, dass eine
+positive Aussage zu beweisen, aber wir scheitern.
+
+00:10:19,760 --> 00:10:22,240
+Jetzt ist natürlich die Frage:
+Nun, haben Sie sich genug Mühe gegeben?
+
+00:10:22,880 --> 00:10:27,760
+Nun, um das
+Negation-als-Fehlschlag-Prinzip zu akzeptieren, sollten wir zumindest sagen,
+
+00:10:27,760 --> 00:10:34,800
+Nun, wenn ich sage, ich habe versucht, etwas Positives zu beweisen
+und ich habe wirklich alles versucht, was es gibt.
+
+00:10:35,440 --> 00:10:40,080
+Ja, ich habe nicht einfach etwas übersehen
+Teil übersehen oder war zu faul zum Beweisen.
+
+00:10:40,080 --> 00:10:43,600
+Nein, ich hätte erschöpfend versuchen müssen
+die positive Aussage zu beweisen.
+
+00:10:43,600 --> 00:10:46,320
+Und wie kann ich etwas erschöpfend versuchen?
+
+00:10:46,320 --> 00:10:47,520
+Nun, nur wenn es endlich ist?
+
+00:10:49,040 --> 00:10:49,680
+Ja.
+
+00:10:49,680 --> 00:10:56,480
+Um also sicher zu sein, dass jeder Versuch, die
+positive Sache zu beweisen, definitiv scheitern wird.
+
+00:10:57,600 --> 00:11:02,080
+Nun, das kann man nur mit Gewissheit sagen,
+wenn der Suchraum wirklich endlich wäre.
+
+00:11:02,080 --> 00:11:07,520
+Wenn es einen endlichen Raum gäbe, in dem ich
+versuchen könnte, die positive Sache zu beweisen,
+
+00:11:07,520 --> 00:11:11,840
+und diesen endlichen Raum vollständig ausschöpfen würde;
+
+00:11:11,840 --> 00:11:16,800
+und es dann nicht geschafft habe, das Positive zu beweisen, nur
+dann werde ich akzeptieren: Nun, dann gilt die Negation.
+
+00:11:16,800 --> 00:11:20,400
+Dann behaupte ich von nun an, dass die Verneinung zutrifft.
+
+00:11:20,400 --> 00:11:25,680
+Das ist also das absolute Minimum, um
+dieses Prinzip der Negation-als-Fehlschlag zu akzeptieren.
+
+00:11:26,320 --> 00:11:29,360
+Okay, genau so funktioniert die Negation in Prolog.
+
+00:11:30,640 --> 00:11:36,160
+Hinter all dem steckt natürlich eine sehr
+engstirnige Sicht auf die Welt, wenn Sie so wollen.
+
+00:11:36,160 --> 00:11:39,120
+Nun, man nennt das auch die
+geschlossene Welt-Annahme.
+
+00:11:39,120 --> 00:11:41,840
+Denn sie besagt eigentlich: Nun,
+
+00:11:42,480 --> 00:11:47,200
+ich nehme das Prolog-Programm, das jemand
+geschrieben hat, als alles Wissen, das es gibt.
+
+00:11:48,000 --> 00:11:48,480
+Ja.
+
+00:11:48,480 --> 00:11:51,680
+Also ist alles, was sich
+aus den Regeln ableiten lässt, ist wahr.
+
+00:11:51,680 --> 00:11:53,840
+Aber alles andere wird falsch sein.
+
+00:11:54,480 --> 00:12:01,440
+Ja, ich akzeptiere nur Dinge als wahr, die
+explizit aus dem Programm ableitbar sind.
+
+00:12:01,440 --> 00:12:03,680
+Alles andere ist automatisch falsch.
+
+00:12:03,680 --> 00:12:08,000
+Das Programm wird also angenommen
+um eine geschlossene Welt zu beschreiben.
+
+00:12:08,000 --> 00:12:09,840
+Und alles, was sich nicht
+aus dem Programm ableiten lässt,
+
+00:12:10,960 --> 00:12:15,280
+wird einfach als falsch, als falsch behauptet.
+
+00:12:15,280 --> 00:12:19,200
+Okay, so funktioniert unsere Welt nicht wirklich.
+
+00:12:19,200 --> 00:12:24,880
+Aber das ist die Art und Weise, wie Prolog den Sinn der
+Welt mit dieser nahen Weltannahme.
+
+00:12:24,880 --> 00:12:31,680
+(5 Sek.)
+
+00:12:31,680 --> 00:12:38,160
+Schauen wir uns einige kurze Beispiele an, künstliche
+Beispiele, die nur dazu da sind, um
+
+00:12:38,160 --> 00:12:44,640
+diesen Aspekt der endlichen Suche zu erkunden. Außerdem sind dies
+immer noch Beispiele ohne Variablen, auch wenn ich
+
+00:12:45,840 --> 00:12:51,840
+gerade vor zwei Folien gesagt habe, dass es ein
+interessantes Verhalten gibt, wenn Variablen im Spiel sind.
+
+00:12:51,840 --> 00:12:53,920
+Aber das wird auf einer anderen Folie geschehen.
+
+00:12:53,920 --> 00:12:57,280
+Schauen wir uns also zunächst einige
+künstliche Beispiele ohne Variablen.
+
+00:12:57,280 --> 00:13:01,360
+Und tatsächlich, schauen wir uns dieses
+sehr einfaches, sehr dummes Programm,
+
+00:13:01,360 --> 00:13:03,680
+in dem wir einfach sagen, dass p aus p folgt.
+
+00:13:04,240 --> 00:13:07,040
+Ja, das ist nicht sehr nützlich,
+denn es gibt kein Basisfaktum.
+
+00:13:07,040 --> 00:13:09,920
+Aber natürlich ist es ein gültiges Prolog-Programm.
+
+00:13:09,920 --> 00:13:14,000
+Dann könnte ich zum Beispiel,
+fragen, ob p gilt oder nicht.
+
+00:13:14,000 --> 00:13:15,360
+Ja, ich stelle die Frage not-p.
+
+00:13:16,240 --> 00:13:18,320
+Und ich habe nur das Wissen
+dass p aus p folgt.
+
+00:13:19,360 --> 00:13:20,960
+Okay, was wird passieren?
+
+00:13:20,960 --> 00:13:26,000
+Nun, wenn ich das tue, werde ich
+auf ein unendliches Verhalten stoßen.
+
+00:13:26,000 --> 00:13:28,160
+Also muss ich das Ganze abbrechen.
+
+00:13:28,160 --> 00:13:30,880
+Drücken Sie also Strg-C oder etwas Ähnliches.
+
+00:13:30,880 --> 00:13:36,240
+Andernfalls, oder vielleicht gibt es eine eingebaute Zeitüberschreitung
+im Interpreter, dann wird auch dieser Vorgang abgebrochen.
+
+00:13:36,240 --> 00:13:38,320
+Denn sonst würde die Suche unendlich sein.
+
+00:13:38,320 --> 00:13:39,440
+Warum ist das so?
+
+00:13:39,440 --> 00:13:42,160
+Nun, wie verhält sich dies?
+
+00:13:42,160 --> 00:13:43,280
+Wie wird es ausgeführt?
+
+00:13:43,280 --> 00:13:50,320
+Nun, lassen Sie uns das in
+Ableitungsbaum-Stil.
+
+00:13:50,960 --> 00:13:53,520
+Nehmen wir also an, es handelt sich um unsere Stammabfrage \+ p.
+
+00:13:53,520 --> 00:13:58,240
+Was wird Prolog dann unter der Annahme einer geschlossenen
+Welt die Negation des Fehlschlags.
+
+00:13:58,240 --> 00:14:03,680
+Es wird sagen, wenn ich gefragt werde, ob
+p gilt oder nicht, werde ich versuchen, p zu beweisen.
+
+00:14:03,680 --> 00:14:08,960
+Und wenn mir das nicht gelingt und ich
+alle Möglichkeiten ausgeschöpft habe und immer noch scheitere,
+
+00:14:08,960 --> 00:14:11,520
+dann werde ich sagen: "Nun, dann ist p wahr.
+
+00:14:11,520 --> 00:14:11,760
+Nun gut.
+
+00:14:11,760 --> 00:14:17,120
+Was hier also passieren wird, ist, dass es eine
+Art Nebenzweig, in dem Prolog versucht, das
+
+00:14:17,840 --> 00:14:19,600
+p zu beweisen, das hier negiert wird.
+
+00:14:20,880 --> 00:14:23,280
+Okay, und was folgt daraus?
+
+00:14:23,280 --> 00:14:27,120
+Nun, das bedeutet, dass wir versuchen, diese Regel anzuwenden.
+
+00:14:27,120 --> 00:14:30,240
+Denn es ist die einzige Regel mit p in dem Programm.
+
+00:14:30,240 --> 00:14:31,200
+Was macht sie also?
+
+00:14:31,200 --> 00:14:33,200
+Nun, sie wird durch einen Resolutionsschritt ersetzt.
+
+00:14:33,200 --> 00:14:40,320
+Er ersetzt dieses p durch die rechte Seite der
+dieser Regel, die wieder p ist und wieder und wieder.
+
+00:14:40,320 --> 00:14:43,840
+Ja, also gibt es hier keinen Erfolg.
+
+00:14:43,840 --> 00:14:46,800
+Aber es handelt sich nicht um einen endlichen Fehlerbaum.
+
+00:14:46,800 --> 00:14:53,600
+Denn ich kann unendlich oft versuchen, einen
+nächsten Schritt zu finden, indem ich diese Regel blind anwende.
+
+00:14:53,600 --> 00:14:56,080
+Obwohl es hier also keinen Erfolg gibt,
+
+00:14:56,080 --> 00:15:00,000
+ist es auch kein endlicher Fehlerbaum.
+
+00:15:00,000 --> 00:15:05,840
+Ich komme also im Grunde nie zurück, um
+eine Schlussfolgerung über p zu ziehen.
+
+00:15:05,840 --> 00:15:08,720
+Auch wenn es hier keinen Erfolg gibt.
+
+00:15:08,720 --> 00:15:13,840
+Ich werde immer noch nicht sagen können, dass die
+Negation von p, ob sie wahr oder falsch ist.
+
+00:15:13,840 --> 00:15:15,680
+Weil hier eine unendliche Suche im Gange ist.
+
+00:15:16,480 --> 00:15:19,360
+Okay, ein dummes Programm, aber
+das ist genau das, was passieren wird.
+
+00:15:20,960 --> 00:15:25,360
+Okay, jetzt ein etwas größeres Programm.
+
+00:15:25,360 --> 00:15:29,760
+Aber nicht viel mehr praktisch relevant.
+
+00:15:29,760 --> 00:15:36,000
+Aber um des Beispiels willen,
+nehmen wir an, wir haben ein Programm, das
+
+00:15:36,000 --> 00:15:40,320
+eine etwas ähnliche Idee hat, aber für
+q haben wir einen Basisfakt.
+
+00:15:40,320 --> 00:15:43,440
+Und wir haben, q folgt aus q, und wir haben
+
+00:15:43,440 --> 00:15:49,360
+ein weiteres Prädikat p, von dem wir wissen,
+dass es gilt, wenn q nicht gilt.
+
+00:15:49,360 --> 00:15:52,400
+Und unsere eigentliche Abfrage ist die Negation von p.
+
+00:15:52,400 --> 00:15:54,800
+Es gibt also wieder eine Art von doppelter Negation.
+
+00:15:54,800 --> 00:15:59,440
+Die Abfrage lautet \+ p und p ist \+ q
+und für q haben wir einige Regeln.
+
+00:16:00,240 --> 00:16:02,560
+Okay, wie wird sich das jetzt entwickeln?
+
+00:16:02,560 --> 00:16:04,240
+Sagen wir also, wir fragen dies.
+
+00:16:05,840 --> 00:16:08,800
+Wir erhalten also wahr und auf endliche Weise.
+
+00:16:08,800 --> 00:16:11,760
+Es wird also wirklich eine Antwort geben
+und wird tatsächlich sagen, dass \+ p wahr ist.
+
+00:16:11,760 --> 00:16:13,120
+Und warum ist das so?
+
+00:16:13,120 --> 00:16:13,680
+Nun, sehen wir mal nach.
+
+00:16:14,240 --> 00:16:19,920
+Nehmen wir an, dies ist unsere Abfrage, dann wird Prolog in einer Art
+Nebenzweig wird Prolog versuchen, p zu ermitteln.
+
+00:16:21,120 --> 00:16:22,240
+Was wird er dafür tun?
+
+00:16:22,240 --> 00:16:24,160
+Nun, p hat nur eine Regel.
+
+00:16:24,880 --> 00:16:29,760
+Die Resolution bedeutet also
+auf die Abfrage \+ q zu reduzieren.
+
+00:16:30,800 --> 00:16:32,240
+Okay, dann sind wir also hier.
+
+00:16:32,240 --> 00:16:32,960
+Was wird passieren?
+
+00:16:32,960 --> 00:16:35,840
+Nun, Prolog wird wieder,
+sagen, nun, wenn ich gebeten werde
+
+00:16:36,560 --> 00:16:41,120
+zu untersuchen, \+ q, werde ich tatsächlich versuchen
+q zu beweisen und je nachdem, ob dies
+
+00:16:41,120 --> 00:16:46,240
+erfolgreich ist oder nicht, werde ich eine
+Entscheidung über die Negation von q treffen.
+
+00:16:46,240 --> 00:16:51,200
+Also, wieder in einem Nebenzweig,
+Prolog wird q untersuchen.
+
+00:16:51,200 --> 00:16:52,400
+Nun, was gilt für q?
+
+00:16:52,960 --> 00:16:56,240
+Nun, q ist tatsächlich ein Fakt für q.
+
+00:16:56,240 --> 00:16:58,960
+Es gibt also einen sehr direkten Erfolgsknoten.
+
+00:16:58,960 --> 00:17:03,440
+Aber natürlich gibt es auch ähnliche,
+unendliche Verzweigungen wie hier, richtig?
+
+00:17:03,440 --> 00:17:08,480
+Da q also auch auf q reduziert werden kann, und
+dieses q könnte dann wiederum erfolgreich sein.
+
+00:17:08,480 --> 00:17:09,760
+Aber es gibt auch diesen unendlichen Zweig.
+
+00:17:09,760 --> 00:17:12,560
+Es gibt auch einen unendlichen Suchbaum dahinter.
+
+00:17:12,560 --> 00:17:16,240
+Aber eigentlich wird Prolog nicht
+in diese unendliche Suche laufen.
+
+00:17:16,960 --> 00:17:25,200
+Denn um zu sagen, dass \+ q falsch ist, reicht es aus
+reicht es, festzustellen, dass q eine Lösung hat.
+
+00:17:25,200 --> 00:17:26,800
+In dem Fall hier ist es also so, dass
+
+00:17:28,240 --> 00:17:36,320
+nach diesem ersten Erfolg für q, wird Prolog
+nicht einmal mehr versuchen, etwas anderes zu ermitteln.
+
+00:17:36,320 --> 00:17:41,680
+Denn ein erfolgreicher Zweig für
+q reicht aus, um \+ q scheitern zu lassen.
+
+00:17:43,440 --> 00:17:45,840
+Ja, wir sagten Negation-als-Fehlschlag.
+
+00:17:47,120 --> 00:17:50,450
+Wenn es uns nicht gelingt, q zu reduzieren und scheitert
+auf eine endliche Weise scheitern, war dies unendlich.
+
+00:17:50,450 --> 00:17:56,000
+Aber wenn Sie auf endliche Weise scheitern,
+dann können wir sagen, dass nicht q wahr ist.
+
+00:17:56,000 --> 00:18:01,920
+Wenn wir Erfolg bei der Feststellung von q haben, dann
+ist natürlich sofort \+ q falsch.
+
+00:18:01,920 --> 00:18:09,040
+Das bedeutet also, dass, weil wir einen
+Erfolg haben, die Negation von q scheitert, ist falsch.
+
+00:18:09,600 --> 00:18:13,840
+Und das bedeutet nun, dass diese ganze
+Sache hier ein endlicher Fehlerbaum ist.
+
+00:18:13,840 --> 00:18:19,360
+Denn bei diesem Teil hier gibt es
+keine andere Alternative zu finden.
+
+00:18:19,360 --> 00:18:20,560
+Das Ganze ist jetzt also gescheitert.
+
+00:18:20,560 --> 00:18:23,600
+Weil dieser Seitenzweig
+erfolgreich war, ist dies gescheitert.
+
+00:18:23,600 --> 00:18:28,160
+Insgesamt ist dies also ein endlicher Fehlschlag für p.
+
+00:18:28,160 --> 00:18:32,640
+Und das wiederum bedeutet, dass
+\+ p als wahr anzusehen ist.
+
+00:18:33,600 --> 00:18:36,960
+Deshalb haben wir hier diese wahre Antwort.
+
+00:18:38,080 --> 00:18:44,240
+Man muss also vielleicht etwas über diese beiden Fälle
+nachdenken, aber sie sind wirklich konsistent mit dieser
+
+00:18:44,240 --> 00:18:51,120
+Negation-als-Fehlschlag und der Annahme einer nahen Welt und
+der Notwendigkeit eines endlichen Fehlschlags, um
+
+00:18:51,120 --> 00:18:55,840
+festzustellen, dass die Verneinung von
+etwas als wahr zu betrachten ist.
+
+00:18:56,720 --> 00:19:01,120
+Um festzustellen, dass die Verneinung von etwas
+als falsch anzusehen ist.
+
+00:19:01,120 --> 00:19:05,120
+Es reicht ein Erfolg aus
+für die Sache, die negiert wurde.
+
+00:19:05,120 --> 00:19:09,840
+Genau das ist hier geschehen.
+
+00:19:15,520 --> 00:19:18,480
+Nun zu den Beispielen mit Variablen.
+
+00:19:18,480 --> 00:19:22,480
+Und tatsächlich, ich komme zurück
+auf das Pulp Fiction-Beispiel zurück.
+
+00:19:22,480 --> 00:19:29,280
+Wir hatten etwas sehr Ähnliches in der
+allerersten Woche des Prolog-Teils, glaube ich.
+
+00:19:29,840 --> 00:19:30,800
+Nicht genau diese Regeln.
+
+00:19:30,800 --> 00:19:34,320
+Diese sind also in einigen Fällen ein wenig
+etwas vereinfacht, aber auch so gemacht
+
+00:19:35,200 --> 00:19:40,400
+um die Rolle der Negation zu betonen
+und wo man negierte Fakten einfügt.
+
+00:19:40,400 --> 00:19:45,360
+Genau das wird also ein Beispiel sein, an dem wir
+sehen werden, warum es wichtig ist, negierte
+
+00:19:46,560 --> 00:19:48,080
+Literale am Ende von Abfragen zu verwenden.
+
+00:19:48,080 --> 00:19:49,760
+Schauen wir uns also an, was haben wir?
+
+00:19:49,760 --> 00:19:54,640
+Wir haben unsere drei Personen, die auch
+Personen im vorherigen Beispiel gesetzt.
+
+00:19:54,640 --> 00:19:56,080
+Und dann haben wir jetzt.
+
+00:19:56,080 --> 00:19:59,200
+Sie sind also nicht nur verliebt
+sondern sie sind sogar verheiratet,
+
+00:19:59,200 --> 00:20:03,120
+insbesondere diese beiden Personen
+sind auf beide Arten verheiratet.
+
+00:20:03,120 --> 00:20:04,640
+Das ist also symmetrisch.
+
+00:20:04,640 --> 00:20:09,680
+Und wir haben ein Prädikat, das definiert, dass jemand
+ledig ist, also eine Person ist.
+
+00:20:10,240 --> 00:20:13,120
+Und sie ist nicht mit jemandem verheiratet.
+
+00:20:14,480 --> 00:20:19,840
+Okay, das ist wahrscheinlich eine vernünftige
+Weg, um über dieses Konzept nachzudenken.
+
+00:20:20,400 --> 00:20:23,920
+Okay, dann können wir Fragen stellen, die dies betreffen.
+
+00:20:24,800 --> 00:20:28,560
+Wir werden die Verneinung bevorzugen
+Vorkommen dieses Prädikats.
+
+00:20:28,560 --> 00:20:32,480
+Wir können also zum Beispiel fragen
+ob jemand ledig und gesund ist,
+
+00:20:32,480 --> 00:20:35,680
+Marsellus ist ledig, weil
+Marsellus ist nicht verheiratet, richtig?
+
+00:20:35,680 --> 00:20:37,280
+Ja, Vincent und Mia sind verheiratet.
+
+00:20:37,280 --> 00:20:38,320
+Aber Marsellus ist es nicht.
+
+00:20:38,320 --> 00:20:39,840
+Marsellus ist also ledig.
+
+00:20:40,560 --> 00:20:43,680
+Dann können wir auch fragen, ob Marsellus ledig ist.
+
+00:20:43,680 --> 00:20:44,800
+Und die Antwort wird wahr sein.
+
+00:20:45,440 --> 00:20:48,640
+Ganz im Einklang mit der Frage: Wer ist ledig?
+
+00:20:48,640 --> 00:20:49,680
+Die Antwort ist Marsellus.
+
+00:20:49,680 --> 00:20:51,200
+Wenn ich frage, ob Marsellus ledig ist?
+
+00:20:51,200 --> 00:20:52,160
+Die Antwort ist ebenfalls wahr.
+
+00:20:52,160 --> 00:20:53,360
+Also, sehr konsistent.
+
+00:20:53,360 --> 00:20:56,960
+Und wenn ich die gleiche Frage nach Vincent
+oder Mia frage, wird die Antwort falsch sein.
+
+00:20:57,600 --> 00:20:59,280
+Okay, sehr vernünftig.
+
+00:21:00,480 --> 00:21:08,560
+Nun, manchmal passiert vielleicht unvernünftiges Verhalten
+wenn wir tatsächlich die Reihenfolge dieser beiden
+
+00:21:10,080 --> 00:21:11,280
+Literalen hier ändern.
+
+00:21:11,280 --> 00:21:14,400
+Ja, das ist also fast dasselbe
+Programm, es hat genau die gleichen Fakten,
+
+00:21:14,400 --> 00:21:16,640
+es hat fast die gleiche Regel hier.
+
+00:21:16,640 --> 00:21:21,360
+Ich habe nur die Reihenfolge der
+dieser beiden Programmliterale vertauscht.
+
+00:21:22,000 --> 00:21:24,640
+Und aus einer rein logischen Perspektive
+könnte man sagen,
+
+00:21:24,640 --> 00:21:26,080
+nun, das sollte keinen Unterschied machen, oder?
+
+00:21:26,080 --> 00:21:28,240
+Denn dieses Komma ist im Grunde eine Konjunktion.
+
+00:21:28,240 --> 00:21:33,360
+Und die Konjunktion und wird
+normalerweise als kommutativ angesehen,
+
+00:21:34,480 --> 00:21:37,840
+was keinen Unterschied machen sollte, ob
+ich die Frage auf diese oder auf jene Weise gestellt habe.
+
+00:21:37,840 --> 00:21:41,280
+Wenn Sie sie jedoch tatsächlich ausführen,
+könnten wir eine Überraschung erleben.
+
+00:21:41,280 --> 00:21:42,240
+Denn was wird passieren?
+
+00:21:42,960 --> 00:21:48,560
+Nun, überraschenderweise, wenn ich jetzt frage, ob
+jemand Single ist, wäre die Antwort falsch.
+
+00:21:48,560 --> 00:21:50,480
+Hier hingegen war die Antwort Marsellus.
+
+00:21:51,520 --> 00:21:53,600
+Okay, das ist schon seltsam.
+
+00:21:53,600 --> 00:21:54,880
+Und was auch seltsam ist,
+
+00:21:55,680 --> 00:21:59,360
+ist, dass, wenn ich frage, ob Marsellus
+ledig ist, ist die Antwort immer noch wahr.
+
+00:21:59,360 --> 00:22:00,080
+Nun, das ist in Ordnung.
+
+00:22:00,080 --> 00:22:01,840
+Denn auch hier hatten wir wahr.
+
+00:22:01,840 --> 00:22:04,560
+Aber das ist natürlich ein Widerspruch.
+
+00:22:05,120 --> 00:22:05,440
+Ja.
+
+00:22:05,440 --> 00:22:07,440
+Wenn ich frage, ob es jemanden gibt, der alleinstehend ist.
+
+00:22:07,440 --> 00:22:08,720
+Die Antwort ist falsch.
+
+00:22:08,720 --> 00:22:09,200
+Nein.
+
+00:22:09,200 --> 00:22:10,560
+Wenn ich frage, ob Marsellus alleinstehend ist?
+
+00:22:10,560 --> 00:22:11,360
+Die Antwort ist wahr.
+
+00:22:11,360 --> 00:22:16,400
+Dann hätte ich natürlich auch erwartet
+hier die Antwort X = marsellus.
+
+00:22:16,400 --> 00:22:20,160
+Dies ist also ein Widerspruch
+zwischen diesen beiden Antworten.
+
+00:22:20,160 --> 00:22:23,520
+Selbst wenn ich ignoriere, was auch immer dieses
+Programm hier oben gemacht hat.
+
+00:22:23,520 --> 00:22:24,880
+Das ist schon sehr seltsam.
+
+00:22:25,440 --> 00:22:26,160
+Okay.
+
+00:22:26,160 --> 00:22:27,840
+Und wenn ich nach Vincent frage.
+
+00:22:27,840 --> 00:22:30,160
+Und die Antwort ist immer noch die gleiche wie vorher.
+
+00:22:30,160 --> 00:22:31,280
+Okay, das ist also in Ordnung.
+
+00:22:31,280 --> 00:22:33,360
+Aber hier geht etwas Seltsames vor sich.
+
+00:22:33,360 --> 00:22:35,200
+Und die Frage ist natürlich, warum das so ist.
+
+00:22:35,200 --> 00:22:36,320
+Und wie können Sie diese Frage beantworten?
+
+00:22:36,320 --> 00:22:38,880
+Nun, wir sollten uns die Ableitungsbäume ansehen.
+
+00:22:38,880 --> 00:22:42,240
+Und wir sehen, was passiert in
+Bezug auf das endliche Scheitern.
+
+00:22:49,120 --> 00:22:52,320
+Fügen wir also zu dem Programm
+das sich gut verhalten hat.
+
+00:22:52,320 --> 00:22:59,280
+Das Programm, bei dem wir das negierte
+Literal an das Ende unserer Programmklausel setzen,
+
+00:22:59,280 --> 00:23:03,440
+was ich Ihnen immer empfehle.
+
+00:23:03,440 --> 00:23:05,840
+Dies ist also ein Programm, das meinen Rat befolgt.
+
+00:23:06,880 --> 00:23:10,640
+Was passiert, wenn ich frage
+nach Menschen, die alleinstehend sind?
+
+00:23:10,640 --> 00:23:13,280
+Nun, lassen Sie uns einfach einen Ableitungsbaum erstellen.
+
+00:23:13,280 --> 00:23:17,680
+Single von x kann also nur
+mit dieser Programmklausel resolviert werden,
+
+00:23:17,680 --> 00:23:20,480
+indem Sie diese durch den Rumpf ersetzen.
+
+00:23:21,280 --> 00:23:27,280
+Lassen Sie mich eigentlich meinen anderen
+Ratschlag, die Variablen immer umzubenennen.
+
+00:23:27,280 --> 00:23:30,480
+Damit es nicht zu Verwechslungen kommt.
+
+00:23:30,480 --> 00:23:37,920
+Sagen wir also, ich benenne X und Y um in
+X1 und Y1 in dieser Programmregel.
+
+00:23:37,920 --> 00:23:40,640
+Und den Schritt Unifikation und Resolution.
+
+00:23:40,640 --> 00:23:41,360
+Was passiert dann?
+
+00:23:42,080 --> 00:23:47,360
+Nun, dann wird dies unifiziert und ich erhalte
+diese rechte Seite, auf der ich die
+
+00:23:48,160 --> 00:23:50,720
+X und Y durch X1 und Y1 ersetzt.
+
+00:23:50,720 --> 00:23:56,080
+Und ich erinnere mich, dass dieses X aus der ursprünglichen
+Abfrage von nun an als X1 zu betrachten ist.
+
+00:23:56,080 --> 00:23:59,040
+Okay, das ist also die einfache
+unkomplizierte Resolution.
+
+00:24:00,560 --> 00:24:01,840
+Okay, was passiert dann?
+
+00:24:01,840 --> 00:24:07,200
+Nun, wir haben diesen Menschen von X1
+als nächstes Literal, mit dem wir uns beschäftigen müssen.
+
+00:24:07,200 --> 00:24:12,080
+Und es gibt mehrere Kandidaten
+Fakten, mit denen wir dies resolvieren können.
+
+00:24:13,440 --> 00:24:18,160
+Einer ist natürlich dieser
+wo X1 zu Marsellus wird.
+
+00:24:18,160 --> 00:24:24,240
+Und das ist auch der erste Versuch, denn
+der Mensch Marsellus ist der erste Fakt im Programm.
+
+00:24:25,200 --> 00:24:28,080
+Und dann bedeutet dies, dass dies verschwindet.
+
+00:24:28,080 --> 00:24:30,640
+Wir erinnern uns: X1 ist jetzt Marsellus.
+
+00:24:30,640 --> 00:24:37,360
+Und es bleibt der Rest der Abfrage übrig, in der
+natürlich auch X1 durch Marsellus ersetzt wird.
+
+00:24:37,360 --> 00:24:39,680
+Dies ist also die neue Abfrage.
+
+00:24:40,880 --> 00:24:45,840
+Es gibt noch zwei weitere Zweige für diese beiden.
+
+00:24:46,720 --> 00:24:50,560
+Und auch diese beiden Fakten, aber lassen Sie uns
+konzentrieren wir uns im Moment nicht auf sie.
+
+00:24:50,560 --> 00:24:53,280
+Denn wir machen diesen Schritt
+immer zuerst, von links nach rechts.
+
+00:24:53,280 --> 00:24:57,680
+Wir werden also zunächst definitiv diese Frage untersuchen.
+
+00:24:58,720 --> 00:25:01,760
+Okay, was hat das zur Folge?
+
+00:25:01,760 --> 00:25:04,080
+Nun, es gibt jetzt eine verneinte Abfrage.
+
+00:25:04,080 --> 00:25:08,400
+Wir sollten dies also in einem Nebenzweig lösen.
+
+00:25:08,400 --> 00:25:14,880
+Wir versuchen also, dies zu ermitteln, um dann eine
+Schlussfolgerung zu ziehen, ob die verneinte
+
+00:25:15,600 --> 00:25:18,400
+Version als wahr oder falsch angesehen werden sollte.
+
+00:25:18,400 --> 00:25:26,560
+Okay, wir fragen also: Gibt es ein Y1, das so aussieht, dass
+Marsellus mit dieser Person verheiratet ist.
+
+00:25:26,560 --> 00:25:32,800
+Und nun, wir können direkt sehen, dass
+es hier nichts gibt, was sich mit dieser literalen Aussage unifizieren ließe.
+
+00:25:32,800 --> 00:25:33,840
+Also scheitert dies.
+
+00:25:34,480 --> 00:25:36,880
+Und es scheitert sofort auf eine endliche Weise.
+
+00:25:36,880 --> 00:25:40,240
+Denn es gibt keinen Schritt zu tun.
+
+00:25:40,240 --> 00:25:43,200
+Und dann, nun, das ist ein klassischer Fall
+von Negation-als-Fehlschlag.
+
+00:25:43,200 --> 00:25:45,600
+Wir haben versucht, dies zu beweisen.
+
+00:25:45,600 --> 00:25:47,840
+Wir sind in endlicher Zeit gescheitert.
+
+00:25:47,840 --> 00:25:50,240
+Wir haben es also ausgiebig versucht und sind gescheitert.
+
+00:25:50,240 --> 00:25:54,400
+Dann können wir sagen: "Nun, dann ist die Negation wahr.
+
+00:25:55,120 --> 00:25:56,880
+Okay, dann haben wir einen Erfolgsknoten.
+
+00:25:56,880 --> 00:26:00,080
+Und was ist nun mit unserem X aus der ursprünglichen Abfrage?
+
+00:26:00,080 --> 00:26:01,440
+Nun, dafür haben wir eine Lösung.
+
+00:26:01,440 --> 00:26:03,360
+X ist X1, X1 ist Marsellus.
+
+00:26:03,360 --> 00:26:04,800
+Das ist also die Antwort.
+
+00:26:04,800 --> 00:26:07,920
+Ja, ich habe erwähnt, dass es keine
+Variablenbindungen innerhalb der Negation gibt.
+
+00:26:07,920 --> 00:26:11,840
+Aber das bedeutet nur, dass die
+Y1 hier keine Antwort erhält.
+
+00:26:11,840 --> 00:26:14,080
+Aber das schadet uns hier nicht.
+
+00:26:14,080 --> 00:26:19,200
+Denn wir wurden nach dem X gefragt und für
+das X, haben wir über X1 die Lösung Marsellus.
+
+00:26:19,200 --> 00:26:20,880
+Das ist also unsere Antwort.
+
+00:26:22,000 --> 00:26:26,240
+Okay, und wenn Sie
+diese beiden weiteren Zweige
+
+00:26:26,240 --> 00:26:28,400
+untersuchen, würden wir keine weitere Lösung finden.
+
+00:26:28,400 --> 00:26:38,240
+Denn eigentlich würden sowohl X1 = Vincent als auch X1 = Mia
+würden tatsächlich nicht ergeben, dass die Negation wahr ist.
+
+00:26:38,240 --> 00:26:43,040
+Denn tatsächlich gibt es für beide
+ein Y1 gibt, mit dem sie verheiratet sind.
+
+00:26:47,200 --> 00:26:52,960
+Okay, was ist mit dem anderen Programm, bei dem wir
+nicht den Rat befolgt haben, negierte
+
+00:26:54,400 --> 00:26:58,400
+Literale zuletzt zu setzen, sodass wir, wenn wir
+tatsächlich zuerst das negierte Literal
+
+00:26:58,400 --> 00:26:59,440
+und dann das andere.
+
+00:27:00,240 --> 00:27:00,960
+Was passiert dann?
+
+00:27:00,960 --> 00:27:01,920
+Nun, wir haben gesehen, was passiert.
+
+00:27:01,920 --> 00:27:03,680
+Aber lassen Sie uns untersuchen, warum das passiert.
+
+00:27:03,680 --> 00:27:09,040
+Der Punkt war also, dass wir bei diesem Programm,
+haben wir gefragt, ob es Singles gibt.
+
+00:27:09,040 --> 00:27:10,560
+Die Antwort war nein.
+
+00:27:10,560 --> 00:27:12,560
+Ja, also wurde Marsellus nicht als Single gefunden.
+
+00:27:12,560 --> 00:27:13,600
+Warum ist das so?
+
+00:27:13,600 --> 00:27:16,400
+Nun, lassen Sie uns den Ableitungsbaum für single(X) erstellen.
+
+00:27:16,400 --> 00:27:20,400
+Nun, natürlich wird dies wiederum
+mit dieser letzten Regel resolviert werden.
+
+00:27:21,040 --> 00:27:24,560
+Der erste Schritt ist also genau wie
+zuvor, außer natürlich, dass
+
+00:27:24,560 --> 00:27:28,480
+auch hier nun die Reihenfolge dieser beiden
+Literalen umgekehrt ist.
+
+00:27:29,920 --> 00:27:33,920
+Aber wir wissen immer noch, dass X X1 ist
+und hier haben wir die gleichen zwei
+
+00:27:33,920 --> 00:27:35,840
+Literale wie zuvor, nur in der anderen Reihenfolge.
+
+00:27:36,880 --> 00:27:41,040
+Okay, diese neue Reihenfolge bedeutet natürlich, dass
+wir, wenn wir hier von links nach rechts vorgehen,
+
+00:27:41,040 --> 00:27:44,640
+konzentrieren wir uns jetzt auf dieses
+Literale konzentrieren, wie auf der vorherigen Folie.
+
+00:27:44,640 --> 00:27:47,520
+Aber wir werden direkt mit diesem arbeiten.
+
+00:27:47,520 --> 00:27:51,280
+Und da es sich hierbei um ein
+negiertes Literal handelt, bedeutet das, dass wir
+
+00:27:51,280 --> 00:27:55,200
+einen Nebenzweig haben, in dem wir versuchen
+die positive Sache zu etablieren.
+
+00:27:55,200 --> 00:27:56,880
+verheiratet(X1,Y1).
+
+00:27:57,920 --> 00:27:58,240
+(X1) Okay.
+
+00:27:58,240 --> 00:28:00,160
+Der Nebenzweig ist jetzt also dieser.
+
+00:28:01,040 --> 00:28:01,840
+Okay.
+
+00:28:03,680 --> 00:28:06,560
+Anders als bei dem vorherigen
+Beispiel, von der vorherigen Folie,
+
+00:28:06,560 --> 00:28:12,720
+wo wir uns einfach zuerst damit befasst und eine
+Instanziierung für X1, nämlich marsellus.
+
+00:28:12,720 --> 00:28:13,840
+Wir hatten marsellus hier.
+
+00:28:13,840 --> 00:28:15,680
+Jetzt haben wir (X1,Y1).
+
+00:28:15,680 --> 00:28:16,800
+Okay, was bedeutet das?
+
+00:28:16,800 --> 00:28:20,800
+Nun, wir versuchen, damit zu arbeiten.
+
+00:28:21,600 --> 00:28:27,040
+Eigentlich wollen wir scheitern, um
+die Negation positiv zu machen, oder wenn wir
+
+00:28:27,040 --> 00:28:33,200
+mit diesem Baum erfolgreich sind, wird die Negation
+als falsch, als gescheitert angesehen.
+
+00:28:33,200 --> 00:28:33,360
+Ja.
+
+00:28:33,360 --> 00:28:37,920
+Und noch einmal, nicht die Sache, die negiert wurde
+gescheitert, sondern die Verneinung selbst ist gescheitert.
+
+00:28:37,920 --> 00:28:42,160
+Okay, es gibt also einen Nebenzweig
+verheiratet(X1,Y1), normale Resolution.
+
+00:28:42,160 --> 00:28:46,560
+Nun, es gibt zwei Regeln oder
+Fakten, mit denen wir hier arbeiten müssen.
+
+00:28:47,920 --> 00:28:48,800
+Diese und diese.
+
+00:28:48,800 --> 00:28:52,080
+Ja, das sind zwei Instanziierungen
+bei denen wir einen Erfolgsknoten erhalten.
+
+00:28:52,080 --> 00:28:55,440
+Aber wie ich bereits erwähnt habe, wenn
+wir uns in einem solchen Nebenzweig befinden,
+
+00:28:55,440 --> 00:28:58,000
+dann tötet ein Erfolg alle anderen.
+
+00:28:58,000 --> 00:29:05,840
+Sobald es also einen Erfolg gibt, sagen wir
+werden wir sagen, dass die verneinte Sache falsch ist.
+
+00:29:06,400 --> 00:29:08,400
+Ja.
+Denn die Sache, die Sie negieren wollen
+
+00:29:09,040 --> 00:29:13,280
+hat einen Erfolg, und dann brauchen wir
+keine Alternativen zu untersuchen.
+
+00:29:13,280 --> 00:29:14,880
+Sie müssen die Alternativen erforschen, wenn
+
+00:29:14,880 --> 00:29:18,560
+Sie suchen, wenn wir zu
+einem endlichen Fehlerbaum kommen.
+
+00:29:18,560 --> 00:29:22,240
+Aber dies ist ein endlicher
+Baum, bei dem es einen Erfolg gibt.
+
+00:29:22,240 --> 00:29:26,960
+Das reicht aus, um zu sagen, na ja,
+\+ verheiratet(X1,Y1) ist falsch.
+
+00:29:26,960 --> 00:29:30,160
+Und wenn dies falsch ist, ist die
+gesamte Abfrage falsch sein.
+
+00:29:30,160 --> 00:29:32,400
+Deshalb gab es auch keine Antwort für X.
+
+00:29:32,400 --> 00:29:33,920
+Das schlägt also tatsächlich fehl.
+
+00:29:34,560 --> 00:29:40,240
+Denn die Sache, die Sie verneinen wollen
+negieren wollen, hat mindestens eine Lösung.
+
+00:29:40,240 --> 00:29:41,760
+Anders als auf der vorherigen Folie.
+
+00:29:42,640 --> 00:29:45,200
+Und auch anders als auf der nächsten Folie,
+
+00:29:45,200 --> 00:29:53,840
+wo wir den Fall betrachten werden, dass ich für dieses
+Programm die Abfrage ausführe, bei der X marsellus ist.
+
+00:29:56,480 --> 00:30:02,560
+Nehmen wir also wieder dieses Programm, bei dem
+wir diese Unterabfrage zuerst negieren müssen.
+
+00:30:02,560 --> 00:30:04,880
+Aber jetzt fragen wir ohne Variablen ab.
+
+00:30:04,880 --> 00:30:07,840
+Unsere Abfrage lautet jetzt also wirklich
+Ist Marsellus ledig?
+
+00:30:08,960 --> 00:30:10,240
+Okay, was wird passieren?
+
+00:30:10,240 --> 00:30:16,080
+Nun, der erste Schritt ist natürlich,
+ist die Resolution mit dieser Klausel.
+
+00:30:16,800 --> 00:30:22,080
+Jetzt wird also X1 direkt zu
+marsellus durch Unifikation.
+
+00:30:22,080 --> 00:30:26,480
+Und natürlich haben wir in unserer Abfrage
+haben wir auch marsellus hier und hier.
+
+00:30:28,080 --> 00:30:28,580
+Okay.
+
+00:30:29,520 --> 00:30:31,840
+Als Nächstes sehen wir uns dies an.
+
+00:30:31,840 --> 00:30:35,840
+Denn es ist das erste
+Literal in unserer aktuellen Abfrage.
+
+00:30:35,840 --> 00:30:42,320
+Und da es eine Verneinung ist, bedeutet das, dass wir
+die verneinte Sache in einem Nebenzweig zu untersuchen.
+
+00:30:42,320 --> 00:30:43,680
+Also, verheiratet(marsellus,Y1).
+
+00:30:43,680 --> 00:30:46,240
+Etwas Ähnliches haben wir schon einmal gesehen.
+
+00:30:47,520 --> 00:30:52,960
+Dies wird nämlich scheitern, weil es keine Möglichkeit
+gibt, es entweder mit dies oder mit dies zu unifizieren.
+
+00:30:53,840 --> 00:30:54,640
+Also scheitert dies.
+
+00:30:55,280 --> 00:30:57,360
+Das ist ein endlicher Fehlerbaum.
+
+00:30:57,360 --> 00:31:00,240
+Die verneinte Sache wird also als wahr angenommen.
+
+00:31:01,200 --> 00:31:05,920
+Ja, wir haben versucht, die
+was negiert wurde, ist gescheitert.
+
+00:31:07,120 --> 00:31:10,720
+Und warum eine Negation als Fehlschlag, das bedeutet,
+dass die Verneinung als wahr angenommen wird.
+
+00:31:11,680 --> 00:31:14,800
+Okay, das ist also tatsächlich resolviert.
+
+00:31:14,800 --> 00:31:19,200
+Es bleibt also der Rest der
+Abfrage, nämlich human(marsellus).
+
+00:31:19,200 --> 00:31:23,600
+Und nun, das ist etwas, das
+wir als Tatsache aus dem Programm kennen.
+
+00:31:23,600 --> 00:31:28,560
+Also wird auch dies resolviert,
+und wir erhalten einen Erfolgsknoten.
+
+00:31:28,560 --> 00:31:30,800
+Wenn wir also Prolog fragen
+
+00:31:30,800 --> 00:31:34,800
+ob Marsellus ledig ist, mit diesem
+Programm wird die Antwort wahr sein.
+
+00:31:34,800 --> 00:31:38,320
+Auch wenn wir auf der vorherigen Folie
+nach demselben Programm gefragt haben,
+
+00:31:38,320 --> 00:31:41,280
+ob es einen Single gibt, war die Antwort nein.
+
+00:31:42,160 --> 00:31:48,240
+Okay, es ist also wirklich wertvoll, diese Folie im
+diese Folie mit der vorherigen Folie zu vergleichen.
+
+00:31:48,240 --> 00:31:56,240
+Und dann auch noch die beiden Folien davor,
+wo wir uns die umgekehrte Reihenfolge dieser beiden
+
+00:31:57,840 --> 00:31:59,040
+Literale betrachtet haben.
+
+00:31:59,040 --> 00:32:02,880
+Wenn Sie sich also diese drei Fälle ansehen und
+wirklich verstehen, was hier vor sich geht,
+
+00:32:03,520 --> 00:32:10,400
+sollten Sie eine sehr gute Vorstellung davon bekommen und
+Verständnis dafür bekommen, wie die Prolog-Negation funktioniert.
+
+00:32:10,400 --> 00:32:18,640
+Und warum und woher der Ratschlag kommt
+den ich in dem Programm gegeben habe
+
+00:32:18,640 --> 00:32:27,840
+Sie sollten, wenn Sie eine Negation verwenden müssen,
+sie an das Ende Ihrer Klauseln setzen.
+
+00:32:29,680 --> 00:32:35,280
+Wir können auch versuchen, das Ganze aus
+der Logik zu verstehen, indem wir versuchen
+
+00:32:35,280 --> 00:32:40,560
+unser relevantes Programm zu übersetzen
+Klauseln in logische Formeln zu übersetzen.
+
+00:32:41,440 --> 00:32:44,080
+Wir haben das nicht getan
+nicht systematisch getan, aber zumindest haben wir
+
+00:32:45,600 --> 00:32:50,640
+irgendwann einmal darüber gesprochen, wie diese
+Lesung ohne Negation funktionieren könnte.
+
+00:32:50,640 --> 00:32:53,360
+Schauen wir uns das also jetzt an
+im Kontext der Verneinung.
+
+00:32:53,360 --> 00:32:58,560
+Und nur für dieses Beispiel, eigentlich vom
+Prinzip auch auf unseren Fall übertragbar.
+
+00:32:58,560 --> 00:33:02,720
+Und lassen Sie uns dies unter einer anderen Annahme tun
+nämlich dann, wenn wir unsere Abfrage mit ungebundenem x stellen.
+
+00:33:03,600 --> 00:33:08,240
+Das war wirklich der Punkt, an dem etwas Seltsames
+auch auf den vorherigen Folien passiert ist.
+
+00:33:08,240 --> 00:33:12,640
+Und auch, dass wir, wenn wir
+eine Abfrage oder ein Literal haben,
+
+00:33:12,640 --> 00:33:14,560
+human(X) dann wird das X instanziiert.
+
+00:33:14,560 --> 00:33:17,600
+Das war genau das, was
+in den Beispielen passiert, nicht wahr?
+
+00:33:17,600 --> 00:33:20,000
+Denn wir hatten dieses Basis-X für Mensch.
+
+00:33:20,000 --> 00:33:22,160
+Okay, sagen wir also, X ist ungebunden.
+
+00:33:22,160 --> 00:33:26,240
+Aber wenn Sie human (X) haben, dann wird dies
+konkrete Werte für X liefern.
+
+00:33:26,960 --> 00:33:32,880
+Dann kann diese Version der Programmklausel
+wie folgt gelesen werden.
+
+00:33:33,760 --> 00:33:36,880
+Es heißt also für alle X,
+denn X ist ursprünglich ungebunden.
+
+00:33:36,880 --> 00:33:40,560
+Für alle X gilt etwas, nämlich, dass die
+rechte Seite impliziert die linke Seite.
+
+00:33:40,560 --> 00:33:41,360
+Und was ist die rechte Seite?
+
+00:33:41,360 --> 00:33:43,760
+Nun, sie ist eine Konjunktion von zwei Dingen.
+
+00:33:43,760 --> 00:33:47,600
+Und die erste Sache ist
+menschlich(X), ja für alle X gilt.
+
+00:33:48,720 --> 00:33:52,800
+Wenn human(X) und etwas
+anderes gilt, dann ist X alleinstehend.
+
+00:33:52,800 --> 00:33:54,720
+Und was ist dieses "etwas anderes", das gelten soll?
+
+00:33:54,720 --> 00:33:56,640
+Nun, es ist eine Negation.
+
+00:33:56,640 --> 00:33:59,680
+Und innerhalb der Verneinung gibt
+es eine freie Variable, das Y.
+
+00:33:59,680 --> 00:34:00,960
+Das X ist hier nicht frei.
+
+00:34:00,960 --> 00:34:03,600
+Denn human(X) wird tatsächlich
+das X an etwas binden.
+
+00:34:03,600 --> 00:34:05,600
+an Marsellus, Mia oder Vincent.
+
+00:34:05,600 --> 00:34:08,560
+In Ordnung, wenn wir also die
+Negation hier haben, fragen wir
+
+00:34:08,560 --> 00:34:12,320
+nicht verheiratet von einem konkreten X und einem unbekannten Y.
+
+00:34:12,320 --> 00:34:14,560
+Und dieses unbekannte Y ist eine freie Variable.
+
+00:34:14,560 --> 00:34:18,320
+Das ist die Standardinterpretation
+von freien Variablen in Prolog.
+
+00:34:18,320 --> 00:34:20,560
+Das ist im Grunde eine existenzielle Quantifizierung.
+
+00:34:21,120 --> 00:34:27,840
+Es geht also um die Frage, ob X für alle X ein Mensch ist,
+und es kein Y gibt, so dass X mit Y verheiratet ist.
+
+00:34:28,800 --> 00:34:30,880
+Dann ist X ledig.
+
+00:34:30,880 --> 00:34:36,800
+Und das ist genau die Art und Weise, wie wir über
+diese Konzepte, ihre Verbindung, okay.
+
+00:34:36,800 --> 00:34:40,880
+Und deshalb verhält sich diese Programmklausel
+wie erwartet.
+
+00:34:41,760 --> 00:34:46,800
+Im Gegensatz dazu, wenn wir die
+andere Reihenfolge, ja, auf diese Weise.
+
+00:34:46,800 --> 00:34:47,840
+Was wird dann passieren?
+
+00:34:48,400 --> 00:34:56,480
+Nun, der Punkt ist, dass wir bei der Betrachtung
+diesen Teil, den ersten Teil der Konjunktion,
+
+00:34:56,480 --> 00:34:59,280
+nun sowohl X als auch Y freie Variablen sind.
+
+00:34:59,280 --> 00:35:01,440
+Denn das X ist noch nicht beschränkt worden.
+
+00:35:01,440 --> 00:35:06,880
+Wenn wir dies mit einer ungebundenen Variablen aufrufen
+X, dann ist X auch eine freie Variable.
+
+00:35:06,880 --> 00:35:13,120
+Wenn wir also etwas wie dies haben, dann ist die
+Negation von verheiratet(X, Y) eigentlich die Frage,
+
+00:35:13,120 --> 00:35:16,800
+es gibt nicht X und Y so
+dass X und Y verheiratet sind.
+
+00:35:17,920 --> 00:35:22,960
+Okay, und erst danach wird das X, das
+in der Abfrage vorkam, instanziiert, indem wir
+
+00:35:22,960 --> 00:35:25,840
+fragen oder sagen, dass dies ein "human" ist.
+
+00:35:26,880 --> 00:35:30,320
+Okay, der Punkt ist also, dass dieses
+x hier ist eine freie Variable.
+
+00:35:30,320 --> 00:35:32,800
+Es ist also existenziell quantifiziert,
+
+00:35:32,800 --> 00:35:36,080
+es ist noch nicht an einen bestimmten
+Menschen, an eine bestimmte Person.
+
+00:35:36,640 --> 00:35:40,000
+Deshalb wird dies in der logischen
+
+00:35:40,000 --> 00:35:45,040
+Lesart zu nicht existent konfligieren
+X, Y, wie sie verheiratet sind.
+
+00:35:45,040 --> 00:35:48,640
+Okay, das muss wahr sein, und es
+muss wahr sein, dass X ein Mensch ist,
+
+00:35:48,640 --> 00:35:51,200
+dann können wir ableiten, dass X ledig ist.
+
+00:35:51,760 --> 00:35:57,840
+Und nun ja, das ist kein nützliches
+Konzept des Single-Seins.
+
+00:35:57,840 --> 00:36:06,720
+Denn das ist, nun ja, falsch interpretiert,
+weil X immer noch eine freie Variable ist.
+
+00:36:06,720 --> 00:36:12,160
+Denn nach den Regeln der formalen Logik ist dieses
+X, das hier existenziell quantifiziert ist,
+
+00:36:12,160 --> 00:36:16,720
+und dann negiert wird, nichts zu tun haben muss
+mit diesem äußeren Axiom oder mit diesem Axiom zu tun haben.
+
+00:36:17,280 --> 00:36:22,960
+Das ist einfach nicht das, was wir gemeint haben
+als wir das Singledasein beschrieben haben.
+
+00:36:22,960 --> 00:36:25,040
+Das ist es, was wir gemeint haben.
+
+00:36:25,040 --> 00:36:31,440
+Und genau das erhalten wir, wenn wir unser negiertes
+Literal spät in die Abfrage einfügen, spät auf der
+
+00:36:32,240 --> 00:36:35,440
+rechten Seite unserer Klausel einfügen, um dem
+
+00:36:36,160 --> 00:36:41,680
+X eine Chance zu geben, zuerst instanziiert zu werden,
+durch andere Literale im Code.
+
+00:36:42,720 --> 00:36:45,120
+Das ergibt dann die gewünschte Lesart.
+
+00:36:46,240 --> 00:36:47,520
+Und das hier ist es nicht.
+
+00:36:47,520 --> 00:36:53,360
+Okay, das erklärt also auch, was
+auf der vorherigen Folie passiert ist, aber nicht
+
+00:36:53,360 --> 00:37:07,840
+mit dieser operativen Lesart, sondern durch das Finden
+einigermaßen ähnliche formale logische Ausdrücke.
+
+00:37:10,480 --> 00:37:13,440
+Okay, als Zusammenfassung zu diesem Teil über die Negation,
+
+00:37:14,400 --> 00:37:19,280
+lassen Sie uns abschließend feststellen, dass es sich um
+keine echte logische Negation.
+
+00:37:19,280 --> 00:37:22,480
+Ja, sie hat den Beigeschmack der Negation-als-Fehlschlag.
+
+00:37:22,480 --> 00:37:25,920
+Und das ist nicht das, was die Verneinung in der Logik normalerweise ist,
+
+00:37:25,920 --> 00:37:32,560
+wir müssen einfach akzeptieren, dass Prolog keine
+echte logische Negation einführt oder anbietet.
+
+00:37:32,560 --> 00:37:34,320
+Stattdessen gibt es das Konzept der Negation-als-Fehlschlag,
+
+00:37:34,320 --> 00:37:39,600
+das oft gut genug ist, das in vielen Programmen
+nützlich ist, aber es ist keine echte logische Verneinung.
+
+00:37:39,600 --> 00:37:42,400
+Wir haben gesehen, in welchem Sinne sie das nicht ist.
+
+00:37:42,400 --> 00:37:44,080
+Denn sie erfüllt zum Beispiel nicht die
+
+00:37:44,640 --> 00:37:48,960
+Eigenschaften wie die doppelte Negation als
+das Gleiche ist wie das ursprüngliche Literal.
+
+00:37:48,960 --> 00:37:53,680
+Okay, und all diese seltsamen Verhaltensweisen
+mit oder ohne Variablen.
+
+00:37:55,680 --> 00:37:57,120
+Okay, wie wird das realisiert?
+
+00:37:57,120 --> 00:38:00,080
+Nun, durch eine Beweissuche in diesem Nebenzweig.
+
+00:38:00,720 --> 00:38:07,200
+Ja, wir fragen nach dem negierten Literal,
+dann versuchen wir in einem Nebenzweig
+
+00:38:08,240 --> 00:38:12,720
+den Beweis für die verneinte Sache zu finden.
+
+00:38:12,720 --> 00:38:16,160
+Und je nachdem, was in der
+dem Nebenzweig passiert, entscheiden wir
+
+00:38:16,160 --> 00:38:19,040
+was an der verneinten Worthülse wahr ist.
+
+00:38:19,920 --> 00:38:23,920
+Okay, und der Nebenzweig ist nicht wirklich ein Nebenzweig
+Zweig, da er keinen Einfluss hat,
+
+00:38:23,920 --> 00:38:29,040
+er sagt uns nur, ob wir das
+negierte Literal als wahr oder als falsch betrachten.
+
+00:38:29,040 --> 00:38:32,640
+Ansonsten hat er keinen Einfluss auf
+den Hauptableitungsbaum.
+
+00:38:32,640 --> 00:38:35,160
+Insbesondere, indem er keine
+Variablen an die Außenwelt.
+
+00:38:35,160 --> 00:38:36,720
+Was auch immer in diesem Nebenzweig geschieht
+
+00:38:36,720 --> 00:38:40,720
+die Antwort ist nur, ob er
+erfolgreich oder ein endlicher Fehlerbaum ist.
+
+00:38:40,720 --> 00:38:44,400
+Es gibt keine Kommunikation oder Variablen
+Bindungen oder Lösungen, die in diesem
+
+00:38:44,960 --> 00:38:48,240
+Seitenzweig in den Haupt-Beweisbaum.
+
+00:38:48,240 --> 00:38:50,800
+Wie wir in den Beispielen gesehen haben, die wir uns angeschaut haben.
+
+00:38:52,000 --> 00:38:55,440
+Okay, es kann nur wirklich verstanden werden
+prozedural, operativ.
+
+00:38:55,440 --> 00:39:00,160
+Wir müssen also darüber nachdenken,
+die wichtige Analyse im Detail.
+
+00:39:00,160 --> 00:39:02,240
+Wir müssen über die Ableitungsbäume nachdenken.
+
+00:39:02,240 --> 00:39:05,920
+Genau wie bei einigen anderen
+Eigenschaften von Prolog-Programmen,
+
+00:39:06,640 --> 00:39:10,560
+wie Bestimmungsfragen, aber
+mussten wir auch operativ denken.
+
+00:39:10,560 --> 00:39:13,600
+Außerdem ist die deklarative
+Lesart des Herbrand-Modells
+
+00:39:13,600 --> 00:39:17,760
+nicht genug für das Verständnis von
+Bestimmungsfragen.
+
+00:39:17,760 --> 00:39:20,960
+Und es ist auch nicht genug
+für das Verständnis der Negation.
+
+00:39:21,680 --> 00:39:24,800
+Wenn wir das versuchen würden, dann
+würden wir mehrere Probleme haben.
+
+00:39:25,440 --> 00:39:30,640
+Wenn wir also versuchen, eine deklarative Perspektive
+mit dem Herbrand-Modell Perspektive gut zu verstehen,
+
+00:39:30,640 --> 00:39:36,960
+würde sofort an der "Negation" scheitern
+Versagens" des Kompositionalitätskonzepts.
+
+00:39:36,960 --> 00:39:41,320
+Wir haben dies bei dem Ding gesehen
+das nach single(marsellus) fragt.
+
+00:39:41,320 --> 00:39:43,840
+Es hat eine Antwort gegeben, eine positive Antwort, ja.
+
+00:39:43,840 --> 00:39:48,400
+Aber die Frage nach single(X) hat keine Antwort gegeben.
+
+00:39:48,400 --> 00:39:51,760
+Das widerspricht der Kompositionalität von Abfragen.
+
+00:39:53,120 --> 00:39:53,520
+Nun gut.
+
+00:39:53,520 --> 00:39:58,720
+Wir haben auch gesehen, dass in der
+Vorhandensein von Negation-als-Fehlschlag.
+
+00:39:58,720 --> 00:40:01,840
+Die Antworten sind empfindlich
+auf eine Änderung der Reihenfolge.
+
+00:40:02,880 --> 00:40:10,320
+Nun, wir haben gesehen, dass es empfindlich ist gegenüber
+Änderungen der Reihenfolge innerhalb von Regeln.
+
+00:40:10,320 --> 00:40:12,160
+Ja, das Austauschen von Rumpfliteralen.
+
+00:40:12,160 --> 00:40:15,840
+Aber wir konnten auch Beispiele finden
+Beispiele, bei denen die Reihenfolge
+
+00:40:17,040 --> 00:40:20,880
+der Fakten und Regeln im
+Programm das Ergebnis beeinflusst.
+
+00:40:20,880 --> 00:40:26,000
+Und in der Herbrand-Semantik ist das nicht der Fall.
+
+00:40:26,000 --> 00:40:32,240
+Denn die Reihenfolge war nicht wichtig für
+Ergebnisse mit diesem Tp-Operator zu erhalten.
+
+00:40:33,440 --> 00:40:39,120
+Okay, und mathematisch gesehen, wenn wir uns das ansehen,
+würden wir feststellen, dass dieser Tp-Operator, den wir
+
+00:40:39,120 --> 00:40:46,480
+in der deklarativen Semantik verwendet haben, nicht monoton
+ist, wenn es eine Negation oder einen Fehler gibt.
+
+00:40:46,480 --> 00:40:54,560
+In dem Sinne, dass, wenn man ihm eine größere Menge gibt
+immer auch eine größere Ergebnismenge erhalten sollte.
+
+00:40:54,560 --> 00:40:57,520
+Das war wichtig für diese Fixpunkt-Eigenschaft.
+
+00:40:57,520 --> 00:41:00,720
+Wenn Sie also den Schlüsseloperator
+beginnend mit der leeren Menge,
+
+00:41:00,720 --> 00:41:03,360
+und immer größere, größere, größere Mengen zu erhalten.
+
+00:41:03,360 --> 00:41:08,720
+So dass wir letztendlich sagen können, dass der
+Fixpunkt oder die Grenze, die ultimative
+
+00:41:09,760 --> 00:41:15,200
+größte Menge, die durch diesen Prozess erreicht wird, ist die,
+die die wahre Bedeutung des Programms darstellt.
+
+00:41:15,200 --> 00:41:18,400
+Das würde hier nicht funktionieren wegen
+dieses Negationskonzepts.
+
+00:41:18,400 --> 00:41:23,120
+Dieser Operator wäre nicht monoton in dem
+Sinne, dass wir immer eine aufsteigende Folge erhalten.
+
+00:41:23,120 --> 00:41:28,320
+Das wäre also kein nützliches Konzept
+des Erreichens des Fixpunkts, okay.
+
+00:41:28,320 --> 00:41:29,120
+Es würde einfach scheitern.
+
+00:41:30,960 --> 00:41:42,320
+Okay, deshalb müssen wir die
+Negation auf diese operative Weise verstehen.
