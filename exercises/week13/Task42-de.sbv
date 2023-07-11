@@ -1,0 +1,248 @@
+0:00:00.000,0:00:08.625
+Für Aufgabe 42 sollen wir jetzt
+Prolog Resolution durchführen.
+
+0:00:08.625,0:00:14.880
+Einmal an Einzelschritten, jeweils für
+dieses Programm was wir gegeben haben,
+
+0:00:14.880,0:00:17.910
+mit einem add und einem mult Prädikat.
+
+0:00:17.910,0:00:24.060
+Und wir haben irgendwie ein Basis-Query und
+wir sollen jeweils einen Schritt für zwei
+
+0:00:24.060,0:00:29.400
+unterschiedliche Teile aus diesem Query machen.
+
+0:00:29.400,0:00:38.400
+Wenn wir anfangen und uns den ersten Query, den
+wir machen sollten, angucken, dann haben wir:
+
+0:00:40.050,0:00:46.290
+Das erste add in unserem Query soll unser L
+sein, sagt die Aufgabenstellung und wir sollen
+
+0:00:46.290,0:00:50.850
+die Resolution oder den Resolutionsschritt
+mit der zweiten Programmklausel durchführen.
+
+0:00:50.850,0:01:00.630
+Also mit der Markierten hier und die linke
+Seite ist dan das L0 und die rechte Seite L1
+
+0:01:00.630,0:01:05.880
+für Referenz auf die Vorlesungsfolien,
+wie die Resolution da erklärt ist.
+
+0:01:05.880,0:01:09.210
+Das Erste was wir jetzt machen ist,
+
+0:01:09.210,0:01:15.480
+wir nehmen unserer L und versuchen uns mit
+der linken Seite der Klausel zu unifizieren.
+
+0:01:15.480,0:01:21.630
+Dafür führen wir für die linke
+Seite erst mal neue Variablen ein.
+
+0:01:21.630,0:01:27.750
+Frische Variablen damit sich einfach nicht
+überlappt, weil das sind ja prinzipiell
+
+0:01:27.750,0:01:35.400
+andere Variablenentitäten sozusagen, als
+die die schon in unserem Query vorkommen.
+
+0:01:35.400,0:01:37.740
+Das heißt, wir müssen immer
+hier Frische einführen.
+
+0:01:37.740,0:01:40.230
+Das sollte man auf jeden Fall nicht vergessen.
+
+0:01:42.030,0:01:46.470
+Und dann gucken wir, wie
+wir das unifizieren können.
+
+0:01:48.080,0:01:55.430
+Wir sehen beim Ersten müssen wir irgendwie
+Z2 wahrscheinlich durch s(X1) ersetzen.
+
+0:01:55.430,0:02:00.170
+Dann, bei Y2 und Y1 können uns überlegen,
+
+0:02:00.170,0:02:02.840
+was wir behalten wollen und was
+durch das Andere ersetzen wollen.
+
+0:02:02.840,0:02:08.360
+Und auch beim dritten Teil ist es recht einfach,
+da müssen wir einfach Z1 durch 0 ersetzen.
+
+0:02:10.070,0:02:14.720
+Das heißt, wir haben dann zwei Möglichkeiten
+die unser Unifikator aussehen kann.
+
+0:02:14.720,0:02:22.220
+Also im Prinzip abhängig davon ob wir
+das Y2 durch Y1 ersetzen im ersten Fall,
+
+0:02:22.220,0:02:25.430
+oder im zweiten Fall das Y1 durch Y2.
+
+0:02:27.770,0:02:30.710
+Dann muss man sich halt, wenn man
+das konkret macht, einen aussuchen.
+
+0:02:30.710,0:02:33.410
+Wir behalten jetzt mal Beide
+und gucken was Beiden rauskommt.
+
+0:02:33.410,0:02:42.560
+Und dann nehmen wir die die rechte Seite von
+unserer Klausel, die wir verwendet haben.
+
+0:02:42.560,0:02:44.840
+Also das was hier jetzt L1 ist.
+
+0:02:44.840,0:02:53.240
+Nehmen das zusammen mit dem Rest-Query, weil das L
+haben wir ja jetzt durch die rechte Seite ersetzt.
+
+0:02:53.240,0:03:01.220
+Beziehungsweise kriegen jetzt neue Dinge die
+wir prüfen müssen, durch die rechte Seite.
+
+0:03:01.220,0:03:03.500
+Weil das ja die Bedingungen sind,
+dafür dass die linke Seite gilt.
+
+0:03:03.500,0:03:07.460
+Dann führen wir wieder unsere
+frischen Variablen mit,
+
+0:03:07.460,0:03:10.610
+wie wir sie verwendet haben für die linke Seite.
+
+0:03:13.250,0:03:19.490
+Und dann kombinieren wir diesen neuen
+Teil also die rechte Seite des Queries
+
+0:03:19.490,0:03:23.060
+mit dem was gleich geblieben ist, was wir
+nicht angefasst haben, also hier das Q.
+
+0:03:23.060,0:03:32.840
+Und dann wenden wir auf Alles entsprechend den
+oder die Unifikatoren die wir gefunden haben an.
+
+0:03:33.680,0:03:37.250
+Hier haben wir jetzt zwei
+Möglichkeiten deswegen haben
+
+0:03:37.250,0:03:46.430
+wir jetzt quasi zwei Resultat-Queries
+und das sind dann unsere Ergebnisse.
+
+0:03:46.430,0:03:49.220
+Und hier unterscheiden sich im Wesentlichen darin,
+
+0:03:49.220,0:03:54.740
+ob Y1 oder Y2 drin vorkommt
+an der jeweiligen Stelle.
+
+0:03:54.740,0:04:02.600
+Und weil das natürlich prinzipiell keinen
+Unterschied macht, wie die Variablen heißen,
+
+0:04:02.600,0:04:08.330
+von der Semantik her, also was das bedeutet,
+sind die Beiden auf jeden Fall auch gleichwertig.
+
+0:04:08.330,0:04:13.700
+Das heißt, wir kriegen keine anderen Ergebnisse
+sondern nur andere Benennung der Variablen.
+
+0:04:17.210,0:04:24.050
+Dann gucken wir uns den zweiten
+Schritt an den wir machen sollen.
+
+0:04:24.050,0:04:29.000
+Da sollen wir jetzt das
+mult Prädikat uns angucken.
+
+0:04:29.000,0:04:34.550
+Und unser L soll jetzt genau dieses mult
+Prädikat ganz am Ende des Queries sein.
+
+0:04:34.550,0:04:41.240
+Und wir sollen es mit der dritten
+Programmklausel der Resolutionsschritt machen.
+
+0:04:42.680,0:04:48.410
+Dann fangen wieder an wie eben auch:
+Als allererstes gucken wir nach den
+
+0:04:48.410,0:04:56.210
+Unifikatoren, bzw. noch davor führen wir
+frische Variablen ein für das Y hier.
+
+0:04:56.210,0:05:01.790
+Und dann gucken wir uns die Unifikatoren an.
+
+0:05:01.790,0:05:05.480
+Und hier haben wir auch wieder genau
+dieselbe Situation mit dem Y2 und dem Y1,
+
+0:05:05.480,0:05:12.350
+das heißt kriegen zwei verschiedene
+most-general-unifiers, die wir verwenden können.
+
+0:05:12.350,0:05:15.800
+Und der Rest ist es auch direkt offensichtlich.
+
+0:05:15.800,0:05:18.770
+X2 wird einfach durch 0 ersetzt und U2 auch.
+
+0:05:18.770,0:05:22.370
+Dann machen wir das wieder,
+
+0:05:22.370,0:05:30.560
+dann nehmen wir die rechte Seite von der
+dritten Programmklausel, die ja leer ist.
+
+0:05:30.560,0:05:35.810
+Also kombinieren die mit dem
+mit unserem vorherigen also
+
+0:05:35.810,0:05:38.150
+mit dem unveränderten Teil des Queries, dem P.
+
+0:05:38.150,0:05:47.060
+Das heißt, wir haben jetzt nur noch das
+P, weil das L sozusagen wird abgearbeitet
+
+0:05:47.060,0:05:52.930
+und weil die rechte Seite leer ist,
+heißt das, das fällt komplett weg.
+
+0:05:52.930,0:06:06.430
+Und dann wenden wir jetzt die die Unifikatoren
+auf die auf den restlichen Query an.
+
+0:06:06.430,0:06:10.360
+Kriegen dadurch die Informationen die
+wir aus der Unifikation gelernt haben,
+
+0:06:10.360,0:06:14.560
+aus diesem Resolutionsschritt, jetzt auch in
+den anderen Stellen des Queries übertragen.
+
+0:06:14.560,0:06:26.650
+Und haben dann unsere fertigen Queries danach.
+
+0:06:26.650,0:06:33.370
+Und das im Prinzip alles was wir für
+die Aufgabe auch schon machen müssen.

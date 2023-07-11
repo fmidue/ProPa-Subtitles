@@ -1,0 +1,457 @@
+0:00:01.040,0:00:04.160
+This video is about task 43.
+
+0:00:06.800,0:00:11.440
+This task is about drawing derivation trees.
+
+0:00:12.960,0:00:23.040
+We have been given a program here of two lines
+–a Prolog program – and also a set of queries.
+
+0:00:23.840,0:00:30.960
+For each query we shall draw a derivation
+tree and afterwards load the program in Prolog
+
+0:00:32.560,0:00:42.000
+using the trace command first and then step
+through the computation using enter and semicolon.
+
+0:00:42.000,0:00:58.240
+And then reduce the output lines by just using
+"Call" and "Redo" and each first "Fail" line.
+
+0:00:58.240,0:01:03.680
+Then we shall compare the output of
+the protocol with our derivation tree.
+
+0:01:09.040,0:01:18.480
+Let's get started with the first
+query and drawing the derivation tree.
+
+0:01:20.240,0:01:22.960
+This is the part of our first query.
+
+0:01:25.840,0:01:29.840
+Below we have the program for further reference.
+
+0:01:32.160,0:01:41.920
+In order to start the duration tree we
+have to use each clause of the program.
+
+0:01:47.280,0:01:55.600
+We use unification steps on the clause
+and each part of the program line.
+
+0:02:00.480,0:02:10.080
+In the first case we use the expression above
+here and match it to mem(X, cons(X,Xs)).
+
+0:02:12.960,0:02:20.720
+We create the most general unifier for
+it – matching mem, and x, and cons,
+
+0:02:21.280,0:02:27.840
+and then we have to match 2 to X
+and to Xs we match cons(3, nil).
+
+0:02:28.720,0:02:36.240
+But first of all we rename the variables
+in our expression here just to get
+
+0:02:36.800,0:02:43.760
+no duplications of variables – so to be
+sure we rename all the variables here.
+
+0:02:44.320,0:02:56.880
+Now we do what i said right before – so we search
+the most general unifier here for these variables.
+
+0:02:58.800,0:03:02.160
+Then we finally get that we replace
+
+0:03:03.520,0:03:12.320
+X and X_1 by 2 because X_1 has to match to 2 and
+X_1 has to match to X so we replace both by 2.
+
+0:03:13.840,0:03:26.000
+Our Xs_1 has to be matched to con(3,nil),
+that's also part of our most general unifier.
+
+0:03:26.000,0:03:35.440
+Now we take the most general
+unifier and add it to our edge here.
+
+0:03:36.000,0:03:40.640
+We found an X here in in in this case which is 2.
+
+0:03:40.640,0:03:44.880
+This is a result we have
+already because this is a fact.
+
+0:03:45.680,0:03:55.120
+So we are done in this case and we know that
+we have found a variable X here and this is 2.
+
+0:03:56.560,0:04:04.240
+Now we continue with the second clause of our
+program because we have just considered the
+
+0:04:04.240,0:04:12.640
+first clause here in this part of the tree
+but we can also consider this part here.
+
+0:04:13.760,0:04:20.960
+We start again by doing unification of
+
+0:04:20.960,0:04:26.880
+this part and what's in our root
+of the derivation tree – here.
+
+0:04:30.000,0:04:32.160
+Again we rename the variables.
+
+0:04:33.520,0:04:40.560
+So we rename by adding ones
+here to have unique variables.
+
+0:04:43.760,0:04:49.760
+Now we do a unification of
+those two expressions here.
+
+0:04:50.400,0:04:53.280
+We get a most general unifier for this again.
+
+0:04:53.920,0:05:05.920
+This time Y_1 is matched to 2 and X is matched
+to X_1 and Xs_1 is matched to cons(3, nil).
+
+0:05:06.640,0:05:14.640
+We use this most general
+unifier and add it to our edge.
+
+0:05:16.240,0:05:24.800
+At the next part of our branch – or on on
+the leaf in this case at the moment – we
+
+0:05:25.360,0:05:29.760
+add the right hand side of our
+expression that we just used.
+
+0:05:32.560,0:05:40.560
+Now we have mem(X,Xs) and we do the same
+renaming as we did in the unification step.
+
+0:05:40.560,0:05:47.040
+So we replace the variables
+here within mem to X_1 and Xs_1.
+
+0:05:47.920,0:05:53.760
+Now we apply the remaining part
+of the most general unifier to
+
+0:05:54.320,0:05:59.840
+our expression here –
+resulting in this expression.
+
+0:06:01.120,0:06:10.000
+This is the next part where we
+start searching for the next edges.
+
+0:06:10.640,0:06:16.000
+And so we go through the program
+again – using this expression.
+
+0:06:18.400,0:06:23.360
+This time we try to find the most
+general unifier of those two.
+
+0:06:24.000,0:06:35.360
+So we search the most general unifier of
+what's our leave now and the expression here.
+
+0:06:38.880,0:06:43.840
+This time we rename our variables again.
+
+0:06:43.840,0:06:51.200
+But we choose 2 as number – to not get in
+conflict we just use the depth of our tree
+
+0:06:51.200,0:06:58.080
+as the number here, so we can be sure
+that there is no overlapping of variables.
+
+0:07:01.280,0:07:05.120
+Now we find the most general
+unifier for our expression.
+
+0:07:05.840,0:07:14.240
+Which will be X_2 replaced by 3, and X_2 has to
+replace by X_1 as well so X_1 has to be 3 as well,
+
+0:07:15.520,0:07:17.200
+and Xs_2 is nil.
+
+0:07:20.240,0:07:28.320
+We add this most general
+unifier again to our edge.
+
+0:07:30.640,0:07:33.440
+As this is a fact we have found a result.
+
+0:07:35.440,0:07:37.520
+This result is X=3.
+
+0:07:40.080,0:07:44.160
+We have done something else here because here
+
+0:07:44.160,0:07:54.880
+it's X_1 is tree, but when we write down the
+result we also apply all the renamings backwards.
+
+0:07:56.640,0:08:02.320
+We have X_1 was X, that's why we say X=3 –
+
+0:08:03.360,0:08:10.960
+because X was renamed to X_1
+and X_1 was then unified to 3.
+
+0:08:11.520,0:08:19.280
+And we know that X is the variable in the
+original query – so that's why the result is X=3.
+
+0:08:21.680,0:08:24.400
+Now we go back to this part here.
+
+0:08:24.400,0:08:32.800
+We have to consider the other part
+of our program – so the second line.
+
+0:08:34.400,0:08:45.520
+Again we have to do unification of the left-hand
+side of the program line and our current query.
+
+0:08:46.480,0:08:50.560
+When we do this then we have to rename again.
+
+0:08:51.200,0:08:57.520
+Again we introduce variable
+names here X_2, Y_2, and Xs_2.
+
+0:08:57.520,0:09:06.000
+We match the variables here in
+order to get a most general unifier.
+
+0:09:06.560,0:09:14.800
+In this case X_1 is renamed to X_2,
+Y_2 is matched to 3 and Xs_2 to nil.
+
+0:09:14.800,0:09:17.840
+We add this one again to an edge.
+
+0:09:18.880,0:09:22.880
+We have to consider the right
+hand side of our query as well.
+
+0:09:22.880,0:09:25.040
+That's the next leaf here.
+
+0:09:25.040,0:09:29.600
+Again we do the renaming the same as
+we did in our unification step here.
+
+0:09:29.600,0:09:33.760
+So we rename X and Xs to X_2 and Xs_2.
+
+0:09:35.120,0:09:42.400
+Then we apply the most general
+unifier, which leads to mem(X_2, nil).
+
+0:09:42.400,0:09:46.000
+Now we try the same thing again.
+
+0:09:46.800,0:09:55.120
+We use this expression here and try to
+match it to the first program clause.
+
+0:09:56.080,0:09:58.560
+This is the unification step of those two.
+
+0:10:01.200,0:10:06.560
+We do the renaming again so X_3, X_3, and Xs_3.
+
+0:10:07.120,0:10:11.920
+But we see that nil and cons are in conflict.
+
+0:10:11.920,0:10:18.320
+We cannot match those um those two expressions.
+
+0:10:18.320,0:10:21.840
+There is no most general unifier available.
+
+0:10:22.960,0:10:29.440
+Thus we cannot do anything
+but try the next clause.
+
+0:10:29.440,0:10:38.560
+We do the same thing here try X to
+unify with this left hand side here.
+
+0:10:39.840,0:10:46.160
+We do a renaming again so X_3, Y_3, and the Xs3.
+
+0:10:46.160,0:10:48.000
+Then we try to match this again.
+
+0:10:48.000,0:10:52.880
+We see it doesn't match as well as it did in the
+
+0:10:52.880,0:10:57.520
+other case – also because nil does
+not match with cons(y_3, Xs_3).
+
+0:11:00.400,0:11:05.600
+There's no program line
+left in our Prolog program.
+
+0:11:05.600,0:11:11.200
+Thus we know we have failed here
+– so there's no further result.
+
+0:11:14.720,0:11:20.960
+Now we want to execute this stuff in Prolog.
+
+0:11:21.920,0:11:27.520
+This is the task again just in another format.
+
+0:11:27.520,0:11:31.520
+Here we have the queries written down.
+
+0:11:31.520,0:11:36.480
+This is the query that we
+shall execute in our program in
+
+0:11:37.440,0:11:42.400
+Prolog and we use trace
+before we execute the query.
+
+0:11:43.280,0:11:50.240
+Then we use enter and semicolon in
+order to step through the whole process.
+
+0:11:50.880,0:11:58.160
+Let's load the program.
+
+0:11:58.880,0:12:04.640
+This is the program of Task43
+– it's exactly this program.
+
+0:12:06.240,0:12:15.840
+We load it, use the trace command, and
+I insert the query that we've seen here.
+
+0:12:15.840,0:12:17.040
+It's this query.
+
+0:12:19.760,0:12:22.160
+Now we can step through the whole process.
+
+0:12:23.520,0:12:29.600
+We can press enter in order to continue and
+when we get a result we press semicolon.
+
+0:12:29.600,0:12:40.880
+And then again enter, enter, enter, enter,
+semicolon, enter, enter, enter, enter, enter,
+
+0:12:41.600,0:12:42.560
+and then we are done.
+
+0:12:44.960,0:12:45.600
+Now we can
+
+0:12:49.520,0:12:57.920
+copy this whole path here and
+place this into an editor.
+
+0:12:59.760,0:13:09.760
+We remove all the exit lines as it was
+written in the task, and we also remove
+
+0:13:09.760,0:13:13.520
+all the failed lines except for the first one.
+
+0:13:14.720,0:13:27.920
+Now when we compare this to our tree
+then we see – the first step some
+
+0:13:27.920,0:13:31.360
+sub call here with cons(2, cons(3, nil)).
+
+0:13:34.000,0:13:36.080
+That's the call of the program here.
+
+0:13:36.080,0:13:39.360
+So we try to match this one here.
+
+0:13:39.360,0:13:45.200
+And the result of this this is X=2
+which is the case here as well.
+
+0:13:45.840,0:13:59.440
+Then there's a redo – so we step back
+from here the starting point of the tree.
+
+0:14:02.560,0:14:05.760
+At the root again we have this second call here.
+
+0:14:08.720,0:14:11.600
+Then we get a result X=3.
+
+0:14:14.240,0:14:23.320
+This is the call here with 3
+and nil three – so cons(3,nil).
+
+0:14:23.320,0:14:29.840
+There is now two left in this clause
+here where the call is. Right?
+
+0:14:34.800,0:14:37.840
+Then we get X=3.
+
+0:14:40.320,0:14:48.320
+We step back and try to
+match nil here in this case.
+
+0:14:50.720,0:14:57.840
+We have cons(3, nil) – that's that's this part
+here – and then we step to the mismatch with nil.
+
+0:15:20.960,0:15:41.600
+Finally there is only left to do
+the same steps for the other tasks.
+
+0:15:42.400,0:15:52.080
+So for um for mem(4, cons(2, cons(3,
+nil))) and this other expression here.
+
+0:15:52.080,0:16:01.920
+These are more or less the same steps that we
+have to execute so always try to um apply the
+
+0:16:04.480,0:16:09.920
+unifications until they fail.
+
+0:16:13.760,0:16:21.840
+When there's nothing left and so at each branch
+every clause was tested then the tree is done.
+
+0:16:23.200,0:16:36.160
+And you can do so by just doing it yourself
+it will help you practice this task and
+
+0:16:37.120,0:16:44.080
+the solutions are also available in the
+collection so feel free to have a look there
+
+0:16:44.960,0:16:49.840
+but try to solve the tasks yourselves first.

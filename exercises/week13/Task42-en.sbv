@@ -1,0 +1,365 @@
+0:00:01.440,0:00:04.080
+This video is about task 42.
+
+0:00:05.760,0:00:14.480
+This task is about a Prolog program
+where we shall apply a resolution step.
+
+0:00:14.480,0:00:17.520
+We have been given a Prolog
+program which is above here.
+
+0:00:17.520,0:00:20.400
+It is just four lines of Prolog code.
+
+0:00:21.840,0:00:30.080
+We have been given a query and we
+shall apply one resolution step.
+
+0:00:30.080,0:00:39.680
+Therefore we have two specific tasks: first
+of all we shall use add(Z2, Y2, s(0)) as L
+
+0:00:40.560,0:00:48.240
+and in the second part we shall
+use mult(X2, Y2, U2) as L.
+
+0:00:49.280,0:00:56.640
+In the first task we also use the second
+program clause only – so this one.
+
+0:00:56.640,0:01:01.280
+And then in the other part we use
+the third program clause only.
+
+0:01:03.680,0:01:13.360
+Okay, let's start with the first part of the
+task which is using add(Z2, Y2, s(0)) as L.
+
+0:01:15.680,0:01:25.840
+This is our L and it is the first part of the
+query and we call the remainder of the query Q
+
+0:01:27.920,0:01:32.080
+– these are all the the other expressions.
+
+0:01:33.840,0:01:42.720
+And we have chosen the second program clause.
+
+0:01:45.520,0:01:48.640
+That's that's this one here.
+
+0:01:49.360,0:01:58.640
+L_0 is the left-hand side of the clause and
+L_1 is the right hand side in this case.
+
+0:01:58.640,0:02:03.760
+If there would be other expressions like
+being separated with comma – like below
+
+0:02:03.760,0:02:10.880
+here – we would have an L_2 and if there would
+be more than even L_3 and so on and so far.
+
+0:02:13.600,0:02:26.160
+Now our first step for the resolution step is
+finding the most general unifier for L and L_0.
+
+0:02:27.760,0:02:33.840
+This is the unification of those two expressions.
+
+0:02:36.800,0:02:40.000
+In fact we have to rename X, Y, and Z
+
+0:02:40.560,0:02:48.160
+– this is just to be sure that we have fresh
+variables when applying the program clause.
+
+0:02:48.160,0:02:55.360
+So we choose new variables here for X,
+Y, and Z – we just add a 1 in this case.
+
+0:02:56.160,0:02:59.200
+Then we have fresh variables.
+
+0:03:00.240,0:03:04.960
+Now we can unify the expression by
+matching every part of the expression.
+
+0:03:04.960,0:03:11.840
+add has to be matched to add and it
+has three parameters in both cases.
+
+0:03:12.640,0:03:22.560
+We have to match Z2 to s(X_1)
+and Z2 to Y_1 and s(0) to s(Z_1).
+
+0:03:24.640,0:03:31.040
+We get a replacement for the variables
+which is our most general unifier.
+
+0:03:32.800,0:03:35.120
+When we do this, we have two options.
+
+0:03:36.080,0:03:42.640
+In the first case we have
+to replace Z2 by s(X_1) – so
+
+0:03:43.920,0:03:50.080
+that's what we have to do and
+also Z_1 has to be replaced by 0.
+
+0:03:51.440,0:04:01.360
+But we can choose to replace Y2 by Y_1 or Y_1
+by Y2 – so that's why we have two options.
+
+0:04:02.480,0:04:04.640
+Now we have our most general unifiers.
+
+0:04:07.280,0:04:14.560
+And we can continue with the resolution step.
+
+0:04:15.520,0:04:24.960
+We take all the Ls beside zero –
+so all L with numbers besides zero.
+
+0:04:24.960,0:04:27.520
+So in this case it's only L_1.
+
+0:04:27.520,0:04:30.400
+We could have L_2 and L_3 and so on and so far
+
+0:04:31.600,0:04:37.440
+but it's only L_1 so we take this
+one and our most general unifiers.
+
+0:04:38.240,0:04:43.040
+So we have our most general unifiers of
+
+0:04:46.720,0:04:52.800
+the first option of most general unifier
+our second option and we have the L_1.
+
+0:04:53.360,0:05:01.680
+But it's not correct in that sense at the
+moment because when we searched for a most
+
+0:05:01.680,0:05:09.840
+general unifier we renamed all the variables here
+so we have to apply this renaming here as well.
+
+0:05:09.840,0:05:19.360
+So we replace X by X_1, Y by Y_1, and Z
+by Z_1 – that's what we have to do here.
+
+0:05:22.880,0:05:28.640
+This is an ingredient for our
+resolution step but we also require Q.
+
+0:05:28.640,0:05:34.640
+Q does not change but we have to add
+it to our query so we add Q here.
+
+0:05:37.120,0:05:43.760
+We take it as it is together
+with our L_1 with the renamings.
+
+0:05:44.640,0:05:49.760
+And now we apply our most general unifiers.
+
+0:05:50.560,0:06:01.120
+In the first case we replace Z2 by
+s(X_1), Y2 by Y_1, and Z_1 with 0.
+
+0:06:02.240,0:06:07.840
+So it happens in all these
+expressions and in the second case
+
+0:06:08.880,0:06:13.360
+we do the same but we replace Y_1 with Y2.
+
+0:06:14.480,0:06:22.480
+And when we do this then we get two
+possible queries that we can have.
+
+0:06:23.200,0:06:30.000
+And we see that these expressions
+are the same besides renaming.
+
+0:06:31.120,0:06:38.240
+If we choose Y_1 for our variable
+then it's the first expression –
+
+0:06:38.880,0:06:44.880
+or we can have for the same variable
+Y2 – and that's the second expression.
+
+0:06:45.920,0:06:49.440
+We see this also in our most general unifier.
+
+0:06:49.440,0:06:51.760
+That's was the choice we had.
+
+0:06:53.520,0:06:59.200
+But besides Y_1 and Y2 these queries are the same.
+
+0:07:00.800,0:07:06.800
+These are our final queries
+for the first part of our task.
+
+0:07:07.760,0:07:10.160
+Now we come to our second part.
+
+0:07:10.160,0:07:12.000
+This time we choose another L.
+
+0:07:13.440,0:07:20.880
+We have also another line of
+our Prolog code that we choose.
+
+0:07:20.880,0:07:22.800
+In this case it's the third line.
+
+0:07:22.800,0:07:27.600
+We choose L as mult(X2, Y2, U2).
+
+0:07:27.600,0:07:32.880
+That's what was given in the task.
+
+0:07:34.400,0:07:43.200
+When we choose those, then it results that
+our P is in this case this expression.
+
+0:07:43.200,0:07:45.600
+So P is everything before L.
+
+0:07:47.680,0:07:51.600
+It's a sequence of such expressions.
+
+0:07:54.240,0:07:58.320
+We have in this case it's these two expressions.
+
+0:07:58.960,0:08:05.280
+Now our first step for the
+resolution step in this case is again
+
+0:08:10.000,0:08:14.000
+finding the most general unifier of L and L_0.
+
+0:08:14.000,0:08:16.080
+We use a unification step.
+
+0:08:25.040,0:08:27.520
+We rename the variable again.
+
+0:08:29.760,0:08:33.120
+I add a one here in this case again to Y.
+
+0:08:37.280,0:08:44.720
+This renaming is just in case if there is a
+variable with the same name within the expression.
+
+0:08:48.320,0:08:51.280
+I just always choose a fresh name.
+
+0:08:51.280,0:08:54.080
+So we have got a fresh name
+now for all the variables.
+
+0:08:54.080,0:08:56.240
+In this case it's just this single Y.
+
+0:08:57.200,0:09:00.000
+Now we do a unification again.
+
+0:09:00.000,0:09:05.280
+We have to match this mult with mult
+and then all the three parameters.
+
+0:09:06.080,0:09:11.600
+We get again two possible most general unifiers.
+
+0:09:11.600,0:09:19.600
+In both cases X2 is replaced by
+zero and U2 is replaced by zero.
+
+0:09:19.600,0:09:28.320
+And in one case Y2 is replaced by Y_1 and
+in the other case Y_1 is replaced by Y2.
+
+0:09:30.960,0:09:34.400
+Now we take those most general unifiers.
+
+0:09:36.160,0:09:39.120
+In this case we do not have L_1.
+
+0:09:41.600,0:09:47.120
+This is a fact and thus we do
+not have L_1 one available.
+
+0:09:47.680,0:09:50.240
+But still we have P available.
+
+0:09:50.240,0:09:52.560
+So we have to to choose P here.
+
+0:09:56.160,0:09:59.200
+We can simplify the clauses – we do not have the
+
+0:10:00.560,0:10:05.120
+right hand side within our
+program here, because of the fact.
+
+0:10:05.120,0:10:10.400
+So our query is reduced to that.
+
+0:10:11.360,0:10:14.560
+Now we apply our most general unifiers.
+
+0:10:15.680,0:10:20.200
+In the first case we replace X2 by 0.
+
+0:10:20.200,0:10:25.280
+– Or well – we do it in both
+cases, but there is no X2!
+
+0:10:26.000,0:10:29.120
+Nevertheless it's part of
+our most general unifier.
+
+0:10:29.120,0:10:36.320
+So nothing changes for that, but we
+replace Y2 with Y_1 in the first case
+
+0:10:37.760,0:10:43.760
+and in the other case we replace Y_1 with
+Y2 which does not change anything here.
+
+0:10:47.680,0:10:51.200
+Lastly we replace U2 with zero in both cases.
+
+0:10:53.600,0:10:55.680
+Now we get a new query.
+
+0:10:57.840,0:11:02.480
+If we have chosen the first most
+general unifier we get this query.
+
+0:11:02.480,0:11:10.000
+If we have chosen the second most general
+unifier then we get this query here as result.
+
+0:11:10.000,0:11:15.360
+We are done with our resolution step
+and we are done with the complete task.
+
+0:11:15.360,0:11:20.320
+So we have made a resolution step
+
+0:11:21.920,0:11:28.960
+for the second program clause and
+choosing L as add(Z2, Y2, s(0)).
+
+0:11:29.840,0:11:41.840
+And we've done a resolution step for the third
+program clause and choosing L as mult(X2, Y2, U2)
