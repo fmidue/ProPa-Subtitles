@@ -1,0 +1,691 @@
+0:00:02.639,0:00:09.850
+So, for this video, I want
+to demonstrate CodeWorld.
+
+0:00:09.850,0:00:17.880
+And at the same time try out my setup for
+videotaping some live programming.
+
+0:00:17.880,0:00:23.099
+And then this is meant here as a first glimpse
+of functional programming in CodeWorld.
+
+0:00:23.099,0:00:24.650
+Okay, so what is CodeWorld?
+
+0:00:24.650,0:00:27.769
+CodeWorld is the website that you see here.
+
+0:00:27.769,0:00:29.980
+And it is powered by Haskell.
+
+0:00:29.980,0:00:36.530
+So basically, in this area here, we can write
+small Haskell programs that use a certain
+
+0:00:36.530,0:00:39.430
+library of graphics primitives.
+
+0:00:39.430,0:00:46.109
+And what we then get if we run this program
+is the described picture or animation.
+
+0:00:46.109,0:00:50.610
+And the Haskell examples in the first few
+weeks will mainly be based on CodeWorld.
+
+0:00:50.610,0:00:57.219
+So in theory, you could do the first exercises
+on this website without a local Haskell implementation,
+
+0:00:57.219,0:01:04.519
+but sooner or later, you should also
+install a compiler, of course locally.
+
+0:01:04.519,0:01:10.689
+Okay, so what's important is that you really
+use the link for CodeWorld Haskell that is
+
+0:01:10.689,0:01:12.240
+provided in the Moodle course.
+
+0:01:12.240,0:01:17.520
+There's also another version of CodeWorld,
+which is meant for kids programming, so it
+
+0:01:17.520,0:01:20.939
+doesn't feature the actual Haskell language.
+
+0:01:20.939,0:01:26.540
+Okay, now, the first example, it's actually
+not so much about functional programming,
+
+0:01:26.540,0:01:30.020
+but mainly about expression- and value-based programming.
+
+0:01:30.020,0:01:31.820
+Okay, so let's take a look.
+
+0:01:31.820,0:01:38.649
+What do we have here is a small program text
+describing a scene, which consists apparently
+
+0:01:38.649,0:01:41.570
+of a circle, of a certain radius.
+
+0:01:41.570,0:01:45.840
+And then we have a more complex expression,
+which is built from several parts.
+
+0:01:45.840,0:01:53.659
+So, there seems to be a polygon, which has
+three pairs of numbers, or probably that's three points.
+
+0:01:53.659,0:01:59.590
+So, this would be a triangle, and it gets
+a colour "red" and the "translation" here is not meant
+
+0:01:59.590,0:02:04.930
+in the sense of translating a language,
+but actually in a sense of movement.
+
+0:02:04.930,0:02:09.041
+Okay, so that's a small Haskell program. It
+was really a small complete Haskell program
+
+0:02:09.041,0:02:10.041
+using that library.
+
+0:02:10.041,0:02:13.470
+And what we can do here is we can click Run,
+and what will we get?
+
+0:02:13.470,0:02:19.970
+Well, we get a picture of a circle, and a
+red triangle that is somewhat moved outside
+
+0:02:19.970,0:02:25.040
+the centre. So, the circle somehow has
+a midpoint here, the origin of the coordinate
+
+0:02:25.040,0:02:32.620
+system, and the triangle apparently was translated
+or moved three units to the right.
+
+0:02:32.620,0:02:33.620
+Okay.
+
+0:02:33.620,0:02:35.060
+That's why we have this picture here.
+
+0:02:35.060,0:02:40.180
+One immediate question that sometimes comes
+to such an example and when I showed this
+
+0:02:40.180,0:02:46.450
+first is: Why is the triangle right here and
+not somehow first at the origin of the coordinate
+
+0:02:46.450,0:02:51.650
+system and then moved? Because after all, we
+say something like: this is a red triangle, and
+
+0:02:51.650,0:02:54.550
+then it is translated to somewhere else.
+
+0:02:54.550,0:03:00.080
+So, one might expect naively that first we
+have a triangle here, and then it's moved to the right.
+
+0:03:00.080,0:03:01.700
+But that's not actually what happens.
+
+0:03:01.700,0:03:07.050
+And the reason is that this is not a sequence
+of computation steps that is described here,
+
+0:03:07.050,0:03:08.519
+it's really just an expression.
+
+0:03:08.519,0:03:12.269
+So, a value that should be computed.
+
+0:03:12.269,0:03:16.900
+And in this case, the value that would be
+computed is this picture of a circle, and
+
+0:03:16.900,0:03:19.000
+moved to the right, red triangles.
+
+0:03:19.000,0:03:26.269
+Okay, and we can even use this button here
+to inspect this in more detail. What we get
+
+0:03:26.269,0:03:30.040
+then here? That's also useful for your own
+examples later on, probably.
+
+0:03:30.040,0:03:37.790
+And basically, we get a tree view of the expression
+that we have built. So, we can open this here.
+
+0:03:37.790,0:03:43.489
+And then as you see, when I hover with
+the mouse over parts of the tree, then on
+
+0:03:43.489,0:03:45.560
+the left, I see the expression.
+
+0:03:45.560,0:03:49.920
+So, for example, if I am here, then I see just the circle.
+
+0:03:49.920,0:03:55.140
+Or if I go here, then I see the coloured red
+triangle.
+
+0:03:55.140,0:03:59.470
+And actually, I can also make this visible
+in the actual picture.
+
+0:03:59.470,0:04:03.780
+So, if I click on the circle, then I see just
+the circle.
+
+0:04:03.780,0:04:11.269
+If I click on the polygon, then I would indeed
+see the polygon in black at the origin of the coordinate system.
+
+0:04:11.269,0:04:17.940
+If I click on the subtree, which is the coloured
+triangle, then I see the same triangle but
+
+0:04:17.940,0:04:24.570
+in red, and then if I click on the subexpression,
+which has this "translated" call, then I get
+
+0:04:24.570,0:04:32.840
+the to-the-right-moved red triangle, corresponding
+exactly to what is highlighted here in the program code.
+
+0:04:32.840,0:04:42.270
+So, that's how subexpressions correspond to
+individual pictures that on the top level,
+
+0:04:42.270,0:04:46.130
+are combined to the overall scene.
+
+0:04:46.130,0:04:55.000
+Okay, and, of course, you learn more possibilities
+to combine expressions.
+
+0:04:55.000,0:05:01.540
+Okay, so that's a first glimpse of this program
+and this website.
+
+0:05:01.540,0:05:05.940
+So, what I want to do now is to make this
+a bit more complicated, step by step.
+
+0:05:05.940,0:05:10.571
+And the idea, of course, it's not that you
+should understand the program in full that
+
+0:05:10.571,0:05:15.880
+I am writing here, the idea is really just
+to get an impression of what I'm doing and
+
+0:05:15.880,0:05:19.730
+how a Haskell program could look like, okay,
+and all
+
+0:05:19.730,0:05:25.620
+the syntactic details that I am now simply
+using will, of course, later be explained
+
+0:05:25.620,0:05:27.470
+and introduced in more detail.
+
+0:05:27.470,0:05:34.700
+Okay, so what could we do? I will cheat a
+bit, I will actually copy material from another
+
+0:05:34.700,0:05:38.240
+buffer, where I have already played around
+before.
+
+0:05:38.240,0:05:43.850
+So, for example, one thing we could do is
+actually to introduce a few more forms.
+
+0:05:43.850,0:05:50.920
+So, let me for example, say, I also want to
+see a solid rectangle with certain dimensions.
+
+0:05:50.920,0:05:55.710
+So, it will be a square because it has these
+two equal values here.
+
+0:05:55.710,0:06:01.130
+And I colour it green, and I introduce it in
+the sequence as just another picture that
+
+0:06:01.130,0:06:02.240
+I want to combine.
+
+0:06:02.240,0:06:07.220
+Okay, what happens when I run this?
+
+0:06:07.220,0:06:08.730
+I get this picture.
+
+0:06:08.730,0:06:14.850
+So, we see, for example, if things overlap,
+which is the case here, right, we have the
+
+0:06:14.850,0:06:20.970
+circle at the origin, and also this solid
+rectangle, then the thing that I mentioned
+
+0:06:20.970,0:06:22.790
+first will actually take precedence.
+
+0:06:22.790,0:06:32.730
+So if I, for example, would move this around
+here, then the circle should disappear behind the rectangle.
+
+0:06:32.730,0:06:44.060
+Okay, maybe I want it the other way around and
+maybe I also want to change the sizes a bit,
+
+0:06:44.060,0:06:48.420
+so that I don't get such overlaps.
+
+0:06:48.420,0:06:52.250
+So, let's say I make the circle much bigger.
+
+0:06:52.250,0:06:58.620
+And let me also move the triangle to the perimeter
+of the new circle.
+
+0:06:58.620,0:07:01.340
+What do I get?
+
+0:07:01.340,0:07:04.140
+Well, a picture that looks like that.
+
+0:07:04.140,0:07:11.190
+Okay, so now we have different forms, we have
+colours, we have translation, for moving something around.
+
+0:07:11.190,0:07:12.360
+And what else could we do?
+
+0:07:12.360,0:07:17.660
+We could, for example, say another transformation
+that makes sense on shapes is rotation.
+
+0:07:17.660,0:07:27.360
+So, let's say we want to have this triangle,
+rotated up here, then there's also a
+
+0:07:27.360,0:07:29.970
+library function for that.
+
+0:07:29.970,0:07:32.280
+It's called "rotated".
+
+0:07:32.280,0:07:34.910
+I can say I want to rotate, what do I want
+to rotate?
+
+0:07:34.910,0:07:37.230
+Well, I have to add some brackets here.
+
+0:07:37.230,0:07:41.620
+That's why this red mark has appeared.
+
+0:07:41.620,0:07:46.910
+So, I have to put the thing that I want to
+rotate in brackets.
+
+0:07:46.910,0:07:50.670
+Then there is still an error here.
+
+0:07:50.670,0:07:58.950
+Okay, I think I have fixed that by my additional
+bracket.
+
+0:07:58.950,0:08:01.820
+Maybe I didn't.
+
+0:08:01.820,0:08:04.040
+Now I have, but there seems to be another
+problem.
+
+0:08:04.040,0:08:05.530
+Why is that?
+
+0:08:05.530,0:08:13.840
+Well, that now is a type error, which is maybe
+not immediately obvious to you.
+
+0:08:13.840,0:08:16.210
+But I know what the problem is.
+
+0:08:16.210,0:08:22.990
+Namely, I should also say by what amount I
+want to rotate my triangle.
+
+0:08:22.990,0:08:30.020
+And whether it would be an angle, of course,
+and in CodeWorld as in Haskell, angles are given in radians.
+
+0:08:30.020,0:08:36.240
+So, I have to say, half pi, for example, if
+I want to have a degree 90.
+
+0:08:36.240,0:08:39.430
+Let's do this.
+
+0:08:39.430,0:08:40.800
+And the error has disappeared.
+
+0:08:40.800,0:08:45.860
+Okay, so there's hope that if I now compile
+this, I will get something useful.
+
+0:08:45.860,0:08:52.640
+Okay, so now I have my triangle up here because
+it has been rotated.
+
+0:08:52.640,0:08:53.640
+Yeah.
+
+0:08:53.640,0:08:55.110
+Now, this is all very static.
+
+0:08:55.110,0:09:00.060
+So, I mentioned earlier that we might also
+want to do animations.
+
+0:09:00.060,0:09:03.240
+So, what does it mean to be animation?
+
+0:09:03.240,0:09:05.470
+Well, an animation depends on time.
+
+0:09:05.470,0:09:07.990
+What could this mean here?
+
+0:09:07.990,0:09:11.590
+And we don't simply have a drawing, we need
+to have an animation.
+
+0:09:11.590,0:09:16.580
+Okay, that's something that I know by heart
+that I need this other function.
+
+0:09:16.580,0:09:18.380
+Then there is, again, a type error.
+
+0:09:18.380,0:09:19.380
+Why is that?
+
+0:09:19.380,0:09:21.070
+Well, what does it say here?
+
+0:09:21.070,0:09:22.860
+I have something of type Picture.
+
+0:09:22.860,0:09:28.430
+But to be an animation, I would actually have
+to have something of type Double to Picture.
+
+0:09:28.430,0:09:29.430
+Why is that?
+
+0:09:29.430,0:09:33.310
+Because "animation", essentially, is a function
+from "time" to Picture.
+
+0:09:33.310,0:09:38.710
+Okay, and I can make this happen by introducing
+a parameter of this scene here.
+
+0:09:38.710,0:09:43.100
+I can say, well, there's some time parameter,
+t.
+
+0:09:43.100,0:09:48.130
+Then I can run this again.
+
+0:09:48.130,0:09:51.400
+It will work but do nothing else than it did
+before.
+
+0:09:51.400,0:09:52.820
+Why is that?
+
+0:09:52.820,0:09:57.070
+Basically because I haven't used the time parameter,
+t.
+
+0:09:57.070,0:09:58.070
+How could I use it?
+
+0:09:58.070,0:10:04.890
+Well, if I want that this triangle moves around,
+and maybe I should make the angle by which
+
+0:10:04.890,0:10:07.200
+I rotate the triangle dependent on the time.
+
+0:10:07.200,0:10:14.050
+So, instead of having pi/2, I could say
+something like t, which is measured in seconds,
+
+0:10:14.050,0:10:16.340
+by half of pi.
+
+0:10:16.340,0:10:23.500
+It would mean that after one second I would
+be where I am right now here in this previous example.
+
+0:10:23.500,0:10:26.570
+And as t increases, this will change.
+
+0:10:26.570,0:10:29.580
+Okay, let me run this again.
+
+0:10:29.580,0:10:33.680
+Okay, this is moving quite quickly.
+
+0:10:33.680,0:10:39.560
+So, if I want to change this, I could, of
+course, simply change some parameters here,
+
+0:10:39.560,0:10:45.640
+I could, for example, say, it should only
+rotate in one second by a quarter of pi,
+
+0:10:45.640,0:10:48.070
+so by 45 degrees.
+
+0:10:48.070,0:10:55.340
+And if I do this again, then I will get a
+slower animation.
+
+0:10:55.340,0:10:59.850
+Okay, so that's something I can do.
+
+0:10:59.850,0:11:08.170
+Now there's delay, probably because my video
+capturing interferes with the computation of the Pictures.
+
+0:11:08.170,0:11:10.620
+Okay, so that's still a bit boring.
+
+0:11:10.620,0:11:12.320
+What else could I do?
+
+0:11:12.320,0:11:19.180
+Let me again cheat a bit by copying something,
+
+0:11:19.180,0:11:28.150
+and then explain only very briefly what's
+happening.
+
+0:11:28.150,0:11:36.240
+Let me add this, and let me actually turn
+the triangle again into a static triangle,
+
+0:11:36.240,0:11:37.860
+so, not moving around, why?
+
+0:11:37.860,0:11:41.320
+Because I will, anyway, be using the t parameter
+down here.
+
+0:11:41.320,0:11:45.210
+So, I will still have something dynamic.
+
+0:11:45.210,0:11:56.190
+Okay, let me first maybe remove this "rotated"
+call, simply by out-commenting it.
+
+0:11:56.190,0:11:59.500
+And then I will first explain what this means.
+
+0:11:59.500,0:12:03.070
+And then we can think about the rotation.
+
+0:12:03.070,0:12:06.710
+Okay, what do we get if it was this?
+
+0:12:06.710,0:12:10.510
+Okay, so that's something interesting.
+
+0:12:10.510,0:12:11.510
+What happened here?
+
+0:12:11.510,0:12:17.860
+Well, apparently I have drawn now many squares
+or rectangles, right? I did something similar
+
+0:12:17.860,0:12:21.770
+to the solidRectangle up here, but I omitted
+the "solid".
+
+0:12:21.770,0:12:25.380
+So, I just draw a rectangle.
+
+0:12:25.380,0:12:32.040
+And then the parameters here, they are not
+simply 4 and 4, but something bigger, 4 + a.
+
+0:12:32.040,0:12:33.590
+Where does the "a" come from?
+
+0:12:33.590,0:12:39.420
+Well, I simply expressed that  "a" comes from
+a certain set or a certain list, namely the list
+
+0:12:39.420,0:12:47.840
+[0, 0.5, ... 9] up to nine. The meaning being that
+actually by this highlighted expression here,
+
+0:12:47.840,0:12:56.910
+"a" will be chosen from each of the 0, 0.5,
+1, 1.5, 2, etc., up to 8.5, and nine, so
+
+0:12:56.910,0:13:05.740
+something like 18, 19 or 20 values for "a",
+and for each value of such an "a", this rectangle will be drawn.
+
+0:13:05.740,0:13:12.790
+So, in some sense, that's similar to loop
+or a "for" expression (for-loop) in languages
+
+0:13:12.790,0:13:14.590
+like C or Python.
+
+0:13:14.590,0:13:20.790
+Okay, but it's not really a loop in the real
+sense, because it's not about doing one step
+
+0:13:20.790,0:13:29.170
+after the other, but actually saying I want
+to have that many rectangles, and they vary
+
+0:13:29.170,0:13:30.600
+according to this parameter.
+
+0:13:30.600,0:13:36.620
+So, it's actually more like a set expression
+that you use in mathematics: the set of all such
+
+0:13:36.620,0:13:39.980
+and such so that a certain condition holds.
+
+0:13:39.980,0:13:40.980
+Okay.
+
+0:13:40.980,0:13:46.779
+So, in that sense, in this way, I get this
+more complicated picture.
+
+0:13:46.779,0:13:52.060
+And then if I want to make this even more fancy,
+I can say well, let me also rotate these squares.
+
+0:13:52.060,0:14:05.600
+Yes, I could add something like "rotated" it,
+and again, something depending on t as before,
+
+0:14:05.600,0:14:14.750
+say let me rotate each picture by something
+like this, for example.
+
+0:14:14.750,0:14:20.480
+Then they would all rotate at the same speed
+around the origin.
+
+0:14:20.480,0:14:28.000
+Okay, and then actually, the expression that
+I had here before, was a bit fancier even,
+
+0:14:28.000,0:14:37.180
+because it combined or it computed the angle
+by which each individual square has to be
+
+0:14:37.180,0:14:40.200
+rotated with, computing that both from a and t.
+
+0:14:40.200,0:14:45.650
+So, actually not for all the squares, the
+same angle is used, but actually also the "a"
+
+0:14:45.650,0:14:53.770
+value is integrated, and maybe it's not easy
+to imagine how this will look like, but you
+
+0:14:53.770,0:15:00.300
+can simply try it out and see what happens.
+
+0:15:00.300,0:15:10.290
+Okay, that is maybe not the most useful program
+such an animation, but at least it gives you
+
+0:15:10.290,0:15:19.170
+a first impression of both this website and
+the way we will be using it for describing
+
+0:15:19.170,0:15:21.430
+Pictures and animations, etc.,
+
+0:15:21.430,0:15:26.640
+and by doing so, learning the constructs of
+Haskell.
+
+0:15:26.640,0:15:28.110
+Okay.
