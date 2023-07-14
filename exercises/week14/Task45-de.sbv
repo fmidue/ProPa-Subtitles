@@ -1,0 +1,186 @@
+0:00:00.110,0:00:02.770
+Schauen wir uns nun Aufgabe drei von Blatt
+sieben an.
+
+0:00:02.770,0:00:07.549
+Hier haben wir folgende Aufgabe gegeben: Wir
+haben ein Prädikat first, welches zweistellig
+
+0:00:07.549,0:00:08.549
+ist.
+
+0:00:08.549,0:00:11.790
+Das soll überprüfen, ob ein Wert an erster
+Stelle in einer Liste steht.
+
+0:00:11.790,0:00:14.580
+Hier haben wir die Definition dafür.
+
+0:00:14.580,0:00:20.401
+Anschließend sollen wir Prädikat fifth definieren,
+das sagt, ob ein Wert an fünfter Stelle einer
+
+0:00:20.401,0:00:21.401
+Liste steht.
+
+0:00:21.401,0:00:26.220
+Schauen wir uns zunächst das Prädikat first
+an um zu verstehen, wie das funktioniert.
+
+0:00:26.220,0:00:29.710
+Es handelt sich hier laut Aufgabenstellung
+um Listen, das sieht man bereits.
+
+0:00:29.710,0:00:33.180
+Wir müssen sagen, ob eine Zahl an erster
+Stelle der Liste steht.
+
+0:00:33.180,0:00:36.379
+Schauen wir uns das einmal an.
+
+0:00:36.379,0:00:45.239
+Die Regel first(X, Xs) gilt dann, wenn append
+die Liste mit der Menge X, Komma, freie Variable,
+
+0:00:45.239,0:00:46.570
+Komma, Xs.
+
+0:00:46.570,0:00:49.370
+Zunächst einmal: was macht dieses append?
+
+0:00:49.370,0:00:54.539
+Append nimmt zwei Listen und fügt sie zu
+einer dritten zusammen.
+
+0:00:54.539,0:00:58.370
+Dabei ist nicht wichtig, dass wir jede Stelle
+ausfüllen, sondern wir können hier beispielsweise
+
+0:00:58.370,0:01:06.240
+auch eine freie Variable nehmen und append
+würde jede mögliche Liste akzeptieren.
+
+0:01:06.240,0:01:12.630
+Wir haben hier also append und die Liste mit
+dem Element X welches wir an der Schreibweise
+
+0:01:12.630,0:01:13.890
+mit den eckigen Klammern erkennen.
+
+0:01:13.890,0:01:20.670
+Diese Liste mit dem Element X würde append
+mit der zweiten Liste zu einer dritten Liste
+
+0:01:20.670,0:01:21.670
+kombinieren.
+
+0:01:21.670,0:01:26.479
+Würde hier beispielsweise noch eine Liste
+mit dem Element Y stehen, würde Xs aus der
+
+0:01:26.479,0:01:29.030
+List X, Komma, Y bestehen.
+
+0:01:29.030,0:01:31.280
+Das wird einfach so zusammengefügt.
+
+0:01:31.280,0:01:34.110
+Xs ist also die zusammengefügte Liste.
+
+0:01:34.110,0:01:40.290
+Die ist so aufgebaut, dass sie am Anfang diesen
+Teil hat, der als erster Parameter übergeben
+
+0:01:40.290,0:01:41.290
+wird.
+
+0:01:41.290,0:01:43.530
+Danach folgt der zweite Parameter.
+
+0:01:43.530,0:01:51.940
+Damit X also an erster Stelle steht, muss
+X bei append in der Liste an der ersten Stelle
+
+0:01:51.940,0:01:52.940
+stehen.
+
+0:01:52.940,0:01:56.409
+Dann ist es egal, was für eine weitere Liste
+hinzugefügt wird.
+
+0:01:56.409,0:01:58.689
+X steht immer an erster Stelle, wenn es hier
+ist.
+
+0:01:58.689,0:02:04.410
+Weil es irrelevant ist was danach folgt, haben
+wir hier auch den Unterstrich.
+
+0:02:04.410,0:02:07.180
+Analog ist das so beim Prädikat fifth.
+
+0:02:07.180,0:02:14.819
+Ich mache direkt die Lösung auf, damit ich
+es daran besser visuell erklären kann.
+
+0:02:14.819,0:02:18.290
+Hier haben wir den gleichen Aufbau wie bei
+first.
+
+0:02:18.290,0:02:23.140
+Als ersten Parameter haben wir X, als zweiten
+Parameter Xs. Hieran ändert sich also schonmal
+
+0:02:23.140,0:02:26.000
+nichts, wir ändern nur etwas an dem append.
+
+0:02:26.000,0:02:31.330
+X soll nicht mehr an erster, sondern an fünfter
+Stelle stehen.
+
+0:02:31.330,0:02:35.430
+Wir brauchen vier Elemente, welche ist egal.
+
+0:02:35.430,0:02:39.980
+Die sind hier: eins, zwei, drei, vier.
+
+0:02:39.980,0:02:44.360
+Diese Elemente müssen vor X kommen, damit
+X an fünfter Stelle steht.
+
+0:02:44.360,0:02:50.511
+Darum schreiben wir: Eckige Klammer auf, Unterstrich,
+Komma, Unterstrich, Komma, Unterstrich, Komma,
+
+0:02:50.511,0:02:51.511
+Unterstrich, Komma, X.
+
+0:02:51.511,0:02:54.379
+Dadurch wird sichergestellt, dass X in dieser
+Liste an fünfter Stelle steht.
+
+0:02:54.379,0:02:59.520
+Dann kommt ein Komma und wieder Unterstrich,
+denn es könnte sein, dass nach der fünften
+
+0:02:59.520,0:03:03.000
+Stelle noch mehr kommt, das wissen wir ja
+nicht.
+
+0:03:03.000,0:03:07.299
+Dementsprechend ist es egal, was oder ob danach
+noch was kommt, daher schreiben wir auch hier
+
+0:03:07.299,0:03:08.980
+wieder einen Unterstrich und dann Komma.
+
+0:03:08.980,0:03:13.909
+Dann sollen diese beiden Elemente zur Liste
+Xs zusammengefügt werden, die auch hier wieder
+
+0:03:13.909,0:03:15.610
+steht.
+
+0:03:15.610,0:03:18.530
+So stellen wir sicher, dass X an fünfter
+Stelle steht.
