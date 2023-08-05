@@ -33,9 +33,9 @@ The beginnings of individual slides in the respective subtitle files can be anno
 | Nick46000 | 838 |
 | Gotai | 785 |
 | TMUniversal | 53 |
+| 11do | 33 |
 | Knallkopp465 | 24 |
 | michalitv21 | 19 |
-| 11do | 16 |
 | MagnolieH | 14 |
 | ejude44 | 6 |
 | Katashiii | 3 |
