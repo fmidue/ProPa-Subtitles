@@ -1,0 +1,244 @@
+0:00:02.560,0:00:12.320
+Within this task we have been given three
+animations, these shall be running after
+
+0:00:12.320,0:00:22.720
+each other, and there's also a preview of
+how this looks like again on this URL here.
+
+0:00:22.720,0:00:26.000
+I open this one and start running it.
+
+0:00:28.240,0:00:39.520
+There's first, second, third animation
+and then the animation stops.
+
+0:00:41.600,0:00:48.400
+The task is to reproduce this sequence of actions.
+
+0:00:51.440,0:00:57.840
+We have been given already a scene which
+is a definition for this animation.
+
+0:00:59.760,0:01:03.120
+When we run this one, everything happens together.
+
+0:01:03.680,0:01:16.080
+Our task is now to separate the parts and to
+have these animations run after each other.
+
+0:01:19.200,0:01:26.560
+In order to do this, we can of course
+use guards selecting the time points.
+
+0:01:27.280,0:01:34.800
+So first of all we have a first time
+point and we can figure out when to stop
+
+0:01:34.800,0:01:40.320
+by looking into the definitions of the
+animations by just reading here the code we see.
+
+0:01:40.320,0:01:46.400
+Here is already a guard given
+and it says if t is less than two
+
+0:01:47.120,0:01:51.840
+then something happens and
+otherwise there's a blank.
+
+0:01:52.560,0:02:03.600
+We can use animation1 by giving
+exactly this parameter here, that is,
+
+0:02:04.160,0:02:09.280
+saying t is less than two
+then animation t happens.
+
+0:02:11.760,0:02:15.000
+We proceed like this for all the parts
+
+0:02:15.000,0:02:17.200
+- of course, if I -
+
+0:02:17.200,0:02:23.200
+Well let me do it straight forward by
+just copying the parts in this case.
+
+0:02:23.200,0:02:30.640
+So if we say t is less than
+3 - then happens this -
+
+0:02:30.640,0:02:37.520
+And if t - then have a look again -
+is less than two - then happens this.
+
+0:02:38.400,0:02:43.280
+And then of course we need an
+otherwise case for the end.
+
+0:02:43.920,0:02:45.360
+Well if you have a look at this,
+
+0:02:45.360,0:02:51.120
+we see there - these parts are covered
+and this is probably not what we want.
+
+0:02:51.120,0:02:56.080
+And if we run it, we will see that
+our animation is not as expected.
+
+0:02:56.720,0:03:00.720
+Of course the first animation
+happens, but then suddenly jumps.
+
+0:03:03.360,0:03:05.680
+The third one - just part of it - and then
+
+0:03:07.120,0:03:12.800
+the ending happens and this is
+not what we want, obviously.
+
+0:03:13.760,0:03:16.560
+Instead we think about these times here.
+
+0:03:19.120,0:03:21.520
+This is the duration of the animation.
+
+0:03:23.120,0:03:28.320
+When we want to have the second
+animation have a duration of three,
+
+0:03:29.120,0:03:35.840
+but starting at two then the ending
+point of course is 2 plus 3 which is 5.
+
+0:03:37.040,0:03:43.680
+But we also have to consider that
+the animation starts at time point 0.
+
+0:03:43.680,0:03:50.960
+So if we have this as parameter for
+the animation - we have to subtract
+
+0:03:53.440,0:03:56.800
+two in order to get the animation right.
+
+0:03:58.320,0:04:04.960
+Okay. This is what happens now at the moment.
+
+0:04:04.960,0:04:10.480
+But then we have to consider also that
+
+0:04:10.480,0:04:13.680
+- well it's not perfect, because
+the other cases are missing and so -
+
+0:04:13.680,0:04:19.840
+but we also have to consider
+what's written in this task.
+
+0:04:19.840,0:04:27.760
+Here it says animation 2 has something -
+it has to be scaled by a size factor of
+
+0:04:27.760,0:04:33.600
+two and therefore we can look
+up in the API: search scaling.
+
+0:04:36.080,0:04:42.640
+There are actually two
+functions 'scaled' and 'dilated'.
+
+0:04:44.000,0:04:52.000
+Scaled is used for scaling different across x
+and y directions, but we can use the 'dilated'
+
+0:04:52.000,0:04:57.840
+function, because it scales uniformly in both
+directions and this is exactly what we want.
+
+0:04:58.480,0:05:05.360
+So we can just scale the
+animation by using dilated 2
+
+0:05:06.800,0:05:10.720
+and then giving the animation the parameter t,
+
+0:05:10.720,0:05:18.000
+so that the animation returns a picture - and we
+can scale pictures by using the 'dilated' function.
+
+0:05:22.800,0:05:31.200
+Now we can apply the same as I said before
+for the third animation, where we say
+
+0:05:31.200,0:05:51.840
+this one has a time factor of three, so there's
+a duration of three for this second animation.
+
+0:05:52.960,0:05:59.840
+Our animation shall begin at
+eight - our third animation
+
+0:06:02.960,0:06:07.520
+Again this one has a duration of two.
+
+0:06:08.800,0:06:15.360
+We have t less than two this one has
+a duration of three so this one has
+
+0:06:16.400,0:06:20.720
+the starting point two plus three, which is five.
+
+0:06:21.680,0:06:30.560
+This one has a duration - this one
+has a duration of two which is - oh,
+
+0:06:31.360,0:06:41.840
+five plus two is seven - so all right - but
+then animation three has also another condition.
+
+0:06:41.840,0:06:44.720
+And here it says it shall be played at half speed.
+
+0:06:46.480,0:06:49.280
+So how do we do half speed?
+
+0:06:51.600,0:06:58.560
+Half speed is multiplying by 0.5,
+that's something we have to do.
+
+0:07:00.160,0:07:09.760
+And we have to reduce t also by five - which
+is the value up there - as we did here, right?
+
+0:07:11.120,0:07:22.320
+t minus five, but now we have another
+issue, because - now the animation time
+
+0:07:23.600,0:07:32.080
+-because of reducing the animation
+speed - our animation time has doubled.
+
+0:07:32.080,0:07:37.920
+Because we are halving the animation time,
+we are - doubling - or we are halving the
+
+0:07:37.920,0:07:40.560
+animation speed with doubling the animation time.
+
+0:07:41.520,0:07:47.040
+So this has to be not seven, but nine.
+
+0:07:47.040,0:07:56.000
+Because we have not two added to five but
+two times two, which is in the end nine.
+
+0:07:57.120,0:08:10.240
+So and now if we apply this, then we see our
+animation running smoothly through as required.
+
+0:08:11.760,0:08:25.520
+This is exactly as in the given animation and
+so we fulfilled the task and that's the end.

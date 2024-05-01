@@ -1,415 +1,295 @@
-0:00:00.000,0:00:09.300
-Wir machen weiter mit der Aufgabe 7. Hier sollen
-wir eine 'loading screen' Animation erstellen,
-
-0:00:09.300,0:00:16.470
-die ungefähr so aussieht. Irgendwie Kreise in
-unterschiedlichen Farben, die sich drehen und
-
-0:00:16.470,0:00:25.620
-gegeneinander, in unterschiedliche Richtungen
-drehen, unterschiedliche Farben haben. Die
-
-0:00:25.620,0:00:32.670
-Parameter für diese kreise haben wir hier in
-einer Liste gegeben und auf der Liste rufen wir
-
-0:00:32.670,0:00:38.760
-eine Funktion auf. Die soll das alles kombinieren
-und wir sollen auch die Funktion um die Kreise
-
-0:00:38.760,0:00:46.920
-selbst, um jeden einzelnen Kreis darzustellen,
-auch noch implementieren. Fangen wir erstmal
-
-0:00:46.920,0:00:55.350
-mit der Kombinationsfunktion an. Das ist recht
-simpel. Wir haben zwei Parameter, einmal die
-
-0:00:55.350,0:01:05.940
-Kreisparameter und die Zeit der Animation. Und was
-machen wir jetzt? Wir wollen irgendwie eine Liste
-
-0:01:05.940,0:01:11.190
-von Bildern erzeugen und die dann kombinieren.
-Da können wir die 'pictures' Funktion verwenden
-
-0:01:11.190,0:01:19.230
-und die frage ist jetzt: Welche Liste nehmen
-wir? Wir wollen irgendwie die Liste von diesen
-
-0:01:19.230,0:01:32.340
-'partialCircles' haben und die müssen wir auf
-irgendwas aufrufen, nämlich den Argumenten,
-
-0:01:32.340,0:01:41.100
-also diesem Tupel mit den Parametern und der
-Zeit. Jetzt benutzen wir einfach eine List
-
-0:01:41.100,0:01:47.400
-Comprehension und holen uns aus der Liste von
-Parametern jeweils alle der Reihe nach raus,
-
-0:01:47.400,0:01:55.200
-legen so einen 'partialCircle' damit an, mit den
-Parametern hier und fügen am Ende alles zusammen.
-
-0:01:57.900,0:02:09.690
-Wie sieht jetzt unser 'partialCircles' aus? Hier
-gibt es mehrere Lösungen wie man das jetzt am
-
-0:02:09.690,0:02:17.100
-besten, oder wie man das generell umsetzt, an
-der Stelle wird hier eine Lösung präsentiert,
-
-0:02:17.100,0:02:24.030
-in dem englischsprachigen Video wird eine andere
-präsentiert, also da gerne auch nochmal reingucken
-
-0:02:24.030,0:02:30.660
-für eine zusätzliche Perspektive ist es sicherlich
-auch interessant, wie man diese Aufgabe auf
-
-0:02:30.660,0:02:38.880
-verschiedene Art und Weise umsetzen kann. Als
-erstes müssen wir irgendwie an die Parameter
-
-0:02:38.880,0:02:45.180
-kommen. Das heißt, wir haben dieses Tupel und
-der erste Parameter ist der Radius, der zweite
-
-0:02:45.180,0:02:54.960
-Parameter ist die Dicke der Linie, dann haben
-wir die Größe des Loches sozusagen in dem Kreis
-
-0:02:54.960,0:03:05.760
-und die Geschwindigkeit mit der sich der Kreis
-drehen soll und zuletzt noch die Farbe und die
-
-0:03:05.760,0:03:22.230
-Zeit ist auch wieder mit dabei. Als Ausgangspunkt
-ist am sinnvollsten die 'thickCircle' Funktion,
-
-0:03:22.230,0:03:31.620
-bei der wir die Dicke, den Radius von dem Kreis
-angeben können und entsprechend das Bild kriegen.
-
-0:03:31.620,0:03:37.140
-Das heißt, wenn wir das als unsere Basis nehmen,
-haben wir jetzt drei unterschiedlich dicke Kreise,
-
-0:03:37.140,0:03:43.800
-die hier oben in der Funktion kombiniert werden.
-Der Radius ist jeweils hier gegeben und die Dicke
-
-0:03:43.800,0:03:50.940
-ist der zweite Parameter. Dann können wir
-weitermachen. Was haben wir noch? Wir haben
-
-0:03:50.940,0:04:02.130
-Farbinformationen. Das heißt, wir können das
-ganze einmal einfärben. Soweit auch nichts
-
-0:04:02.130,0:04:09.390
-spektakuläres. Jetzt kommt der interessante
-Teil, wie kriegen wir die Lücke da rein und
-
-0:04:09.390,0:04:19.980
-wie kriegen wir die zum Bewegen? Hier kann man
-verschiedene Sachen machen. Wir werden hier einen
-
-0:04:19.980,0:04:28.830
-besonderen Trick sozusagen verwenden, den ich
-persönlich ganz nett finde. Wir definieren uns,
-
-0:04:28.830,0:04:44.520
-was unser 'gap' in dem Kreis sein soll. Wir sagen
-einfach, das ist ein 'solidRectangle' mit der x
-
-0:04:44.520,0:04:53.910
-Ausdehnung, wo wir einfach die Größe des 'gaps'
-nehmen und dann sagen wir, wir nehmen 2 mal den
-
-0:04:53.910,0:05:06.060
-Radius plus die Dicke der Linie. Was machen wir
-damit? Wir nehmen dieses Rechteck, was wir haben,
-
-0:05:06.060,0:05:18.510
-und legen das einfach über den Kreis. Was tut das,
-was ist der Sinn davon? Der Sinn davon ist, wir
-
-0:05:18.510,0:05:30.000
-haben jetzt, wenn wir uns einen von den Kreisen
-mal einzeln angucken. Wir haben einen Kreis und da
-
-0:05:30.000,0:05:37.050
-liegt an der Stelle ein Rechteck drüber. Das sieht
-jetzt irgendwie erstmal ein bisschen seltsam aus,
-
-0:05:37.050,0:05:41.280
-aber der Trick ist, dass wir jetzt, wenn wir die
-Hintergrundfarbe und die Farbe dieses Rechtecks
-
-0:05:41.280,0:05:47.430
-gleich wählen, das aussieht, als hätten wir
-ein Stück aus dem Kreis rausgenommen, was wir
-
-0:05:47.430,0:06:03.180
-natürlich nicht haben. Aber es sieht so aus. Das
-heißt, wenn wir den Spalt sozusagen weiß färben,
-
-0:06:03.180,0:06:18.480
-haben wir plötzlich diese partiellen Kreise. Wir
-sehen, dass jeder Kreis im Prinzip ein Rechteck in
-
-0:06:18.480,0:06:25.020
-der Mitte hat und, weil wir die geschickt von
-oben nach unten platziert haben, ganz oben in
-
-0:06:27.390,0:06:32.130
-dieser Komposition ist der kleinste, am weitesten
-innenliegende Kreis, der überdeckt automatisch
-
-0:06:32.130,0:06:41.550
-alles was darunter ist, und ganz oben ist der Text
-in dieser Ebene, dadurch überdecken die unteren,
-
-0:06:41.550,0:06:52.200
-großen Rechtecke nicht die oberen Kreise. Wenn
-wir das ganze jetzt so haben wollen wie hier,
-
-0:06:52.200,0:06:59.670
-dass sich das dreht, können wir natürlich erst
-mal sagen: Okay, dann drehen wir das ganze jetzt,
-
-0:06:59.670,0:07:06.420
-indem wir den ganzen Ausdruck nehmen. Aber wenn
-wir uns vielleicht angucken was wir noch damit
-
-0:07:06.420,0:07:13.650
-machen können, ist es praktischer, wenn wir
-sagen: Okay, eigentlich müssen wir nur das,
-
-0:07:13.650,0:07:22.790
-was wir überlagern, drehen. Das heißt, wir
-können das einfach drehen und damit er sich
-
-0:07:22.790,0:07:36.230
-in der Geschwindigkeit dreht die wir angeben,
-multiplizieren wir die Zeiten noch mit der mit der
-
-0:07:36.230,0:07:41.750
-Geschwindigkeit, die wir als Parameter bekommen
-haben. Dann haben wir im Prinzip auch schon
-
-0:07:41.750,0:07:51.560
-die Animation und was sich jetzt hier dreht, ist
-jeweils immer nur dieses Rechteck, was wir in der
-
-0:07:51.560,0:07:57.950
-Mitte haben, der eigentliche Kreis steht sozusagen
-still. Damit haben wir auf einer sehr einfachen
-
-0:07:57.950,0:08:10.760
-Art und Weise diese Animation realisiert. Das
-schöne ist, dass jetzt das ganze recht einfach
-
-0:08:10.760,0:08:16.850
-erweitern können, um diese komplexeren Animationen
-herzustellen, die auf den ersten Blick erstmal
-
-0:08:16.850,0:08:25.250
-sehr seltsam aussehen, man nicht genau weiß
-was passiert da eigentlich, insbesondere hier,
-
-0:08:25.250,0:08:33.260
-wenn wir den äußeren Ring angucken, ist nicht
-klar, was genau da eigentlich passieren soll,
-
-0:08:33.260,0:08:38.870
-aber wenn wir wissen, okay eigentlich sind es
-nur Rechtecke, die Teile von dem Kreis verdrehen,
-
-0:08:38.870,0:08:44.090
-dann sehen wir, dass wir immer zwei Rechtecke
-haben, die irgendwie, wenn man genau hinguckt,
-
-0:08:44.090,0:08:49.820
-sieht man, dass die in so einer Kreuzstellung
-immer gegeneinander rotieren. Es ist ein bisschen
-
-0:08:49.820,0:08:53.540
-schwieriger das auf dem äußeren Ring zu sehen,
-aber da kann man gleich ein bisschen rumprobieren,
-
-0:08:53.540,0:09:02.420
-wenn wir das einmal umgesetzt haben, wie
-man da mit den Parametern geschickte Effekte
-
-0:09:02.420,0:09:09.860
-erzeugt. Das heißt, der eigentliche Trick um diese
-fortgeschrittene Version von der Animation jetzt
-
-0:09:09.860,0:09:19.550
-herzustellen, also als optionale Aufgabe, ist im
-Prinzip einfach, wir müssen zusätzliche 'gaps'
-
-0:09:19.550,0:09:28.370
-einfügen. Wie wir das jetzt parametrisieren
-ist uns prinzipiell selbst überlassen,
-
-0:09:28.370,0:09:35.810
-deswegen nehme ich jetzt das den Parameter, der
-vorher die Geschwindigkeit angegeben hat und mache
-
-0:09:35.810,0:09:41.960
-daraus eine Liste von Geschwindigkeiten, also mit
-unterschiedlichen Rechtecken, die dann im Prinzip
-
-0:09:41.960,0:09:47.930
-den Kreis gleichzeitig verdecken sollen.
-Das heißt, wir fügen jetzt erstmal überall
-
-0:09:49.040,0:09:56.810
-Typänderung ein, packen die Parameter hier oben
-in eine ein-elementige Liste erst mal. Hier an
-
-0:09:56.810,0:10:01.400
-der Funktion verändert sich nichts, weil wir die
-Parameter einfach nur weitergeben und jetzt haben
-
-0:10:01.400,0:10:09.200
-wir hier die Geschwindigkeiten, machen wir mal ein
-s dran, das macht man häufiger so, um zu zeigen,
-
-0:10:09.200,0:10:15.050
-dass das mehrere sind. Jetzt haben wir nicht nur
-einen 'gap', sondern müssen irgendwie gucken,
-
-0:10:15.050,0:10:21.080
-was sind denn endlich unsere 'gaps' ? Da können
-wir wieder eine List Comprehension verwenden
-
-0:10:21.080,0:10:29.450
-und sagen, wir nehmen die Geschwindigkeiten
-aus unserer liste von Geschwindigkeiten und
-
-0:10:29.450,0:10:39.410
-bauen genau diese 'gaps' hier zusammen, da ist
-die Klammerung überflüssig, und rotieren die
-
-0:10:39.410,0:10:50.330
-jeweils um den Geschwindigkeitsparameter mit der
-Zeit multipliziert und dann benutze ich wieder
-
-0:10:50.330,0:11:01.850
-'pictures', um daraus ein Bild zu machen und jetzt
-können wir einfach hier die 'gaps' nehmen, das
-
-0:11:01.850,0:11:05.390
-verändert jetzt natürlich erstmal nichts, weil wir
-eigentlich nur alles in eine ein-elementige Liste
-
-0:11:05.390,0:11:14.870
-getan haben, aber wir sehen, es Funktioniert auf
-jeden Fall auch erstmal. Jetzt können wir lustige
-
-0:11:14.870,0:11:20.810
-Sachen ausprobieren, indem wir hier zusätzliche
-Parameter einfügen, zum Beispiel könnten wir hier
-
-0:11:21.530,0:11:32.390
--0,5 nehmen. Also wir haben ein zweites Paar
-von Löchern in diesem Kreis, die sich in die
-
-0:11:32.390,0:11:44.120
-entgegengesetzte Richtung drehen. Dann sieht man
-hier, wenn man diese Geschwindigkeiten so wählt,
-
-0:11:44.120,0:11:53.240
-ziemlich gut, wenn man weiß worauf man
-achten muss, wie sich der eine Spalt gegen
-
-0:11:53.240,0:11:57.920
-den anderen Spalt dreht. Man sieht diesen Effekt,
-der so aussieht, als ob es eigentlich vier Linien
-
-0:11:57.920,0:12:05.810
-sind, die wachsen und wieder zusammenfallen.
-Wenn man das ganze ein bisschen schneller macht,
-
-0:12:05.810,0:12:16.820
-dann ist zwar weniger durchsichtig, wie der Effekt
-entsteht, aber man hat halt diesen interessanten
-
-0:12:16.820,0:12:26.090
-Überlagerungseffekt. Dann sollten wir noch gucken
-wie wir jetzt diesen äußeren Kreis so hinkriegen.
-
-0:12:27.260,0:12:38.420
-Wenn man genau hinguckt, in dem Moment, in dem man
-sozusagen hier alle vier Linien sieht, sieht man,
-
-0:12:38.420,0:12:46.370
-dass hier wohl ein Rechteck sein muss und hier
-auch und wenn sich das weiter bewegt, sieht man,
-
-0:12:46.370,0:12:52.580
-dass das eine sich schneller bewegt, wenn man
-ganz genau hinguckt, als das andere, aber beide
-
-0:12:52.580,0:12:57.620
-bewegen sich in die gleiche Richtung. Jetzt
-kommt es hier gleich entsprechend wieder raus,
-
-0:12:58.780,0:13:10.030
-hat das andere überholt und führt deswegen
-zu diesem interessanten Effekt. Das heißt,
-
-0:13:10.030,0:13:20.530
-wenn wir hier einfach noch eine zusätzliche
-Lücke in der gleichen Drehrichtung hinzufügen,
-
-0:13:20.530,0:13:31.660
-bekommen wir genau diesen Effekt. Jetzt muss man
-nicht bei zwei aufhören. Das heißt, man könnte
-
-0:13:31.660,0:13:44.190
-im Prinzip auch noch einen dritten haben. Dann
-kriegt man noch chaotischere Effekte. Irgendwann
-
-0:13:44.190,0:13:48.330
-ist natürlich, wenn man zu viele wählt, nichts
-mehr von den Kreisen zu sehen, oder nur noch
-
-0:13:48.330,0:14:13.660
-sehr wenig. Wenn wir jetzt noch ein hinzufügen,
-0,5. Die Frage ist, wie viel da sinnvoll ist,
-
-0:14:13.660,0:14:17.650
-sodass es noch gut aussieht und nicht mehr
-zu viel ist. Aber man kann ein bisschen damit
-
-0:14:17.650,0:14:22.930
-herumspielen und interessante Effekte erzeugen.
-Hier haben wir jetzt noch, interessanterweise,
-
-0:14:22.930,0:14:30.460
-einen Symmetrie-Effekt, durch die Vielfachen,
-die wir haben, sodass man, immer abwechselnd,
-
-0:14:30.460,0:14:36.940
-sich in zwei Punkten trifft, die aber rotieren.
-Das sieht man hierdurch noch ein bisschen besser.
-
-0:14:37.960,0:14:43.780
-Ich würde empfehlen, da kann man mal gut mit
-rumspielen, mit diesem Prinzip. Das ist eigentlich
-
-0:14:43.780,0:14:51.880
-ein sehr simpler Trick, die Bewegung durch
-diese überlagernden Rechtecke zu realisieren,
-
-0:14:51.880,0:15:05.380
-und nicht den Kreis sozusagen selber zu drehen.
-Das wäre im Prinzip die Lösung für diese Aufgabe.
+0:00:00.000,0:00:07.040
+Willkommen zur dritten Übungsserie. Als
+erstes gucken wir uns Task 7 an.
+
+0:00:07.400,0:00:14.370
+Hier sollten wir so eine Animation realisieren,
+die einen Sonnen-Mond-Kreislauf, also einen
+
+0:00:14.370,0:00:20.040
+Tag-Nacht-Wechsel irgendwie realisiert. Das heißt,
+wir haben immer erst die Sonne und dann den Mond,
+
+0:00:20.040,0:00:24.540
+die sie, so wie in der letzten Woche
+in der Aufgabe mit der sonne einmal
+
+0:00:24.540,0:00:29.460
+über den Himmel wandern, aber hier halt jetzt
+immer abwechselnd und auch nicht nur einmal,
+
+0:00:29.460,0:00:39.330
+sondern kontinuierlich. Was wir dabei beachten
+sollen ist, dass wir nicht mit sowas raus kommen,
+
+0:00:39.330,0:00:45.780
+wo der Mond irgendwie mitdreht, weil wir
+einfach um diesen Ursprungspunkt immer
+
+0:00:45.780,0:00:53.400
+mitdrehen und dann der Mond komische Sachen
+macht, wie wir es in echt vielleicht nicht
+
+0:00:53.400,0:01:04.020
+erwarten würden. Gucken wir uns das doch mal
+an. Ich hab das mal ein bisschen vorbereitet,
+
+0:01:04.020,0:01:12.600
+vor allem das Koordinatensystem eingeblendet
+und ich habe auch noch mal einen Hintergrund
+
+0:01:12.600,0:01:24.210
+über dem Gras angebracht, einen Himmel. Und das
+erste was ich jetzt machen würde ist erstmal eine
+
+0:01:24.210,0:01:32.280
+Definition einfügen, die uns sagt, ist es denn
+gerade Tag oder Nacht, weil davon abhängig müssen
+
+0:01:32.280,0:01:38.100
+wir natürlich verschiedene Sachen darstellen.
+Das heißt, ich füge hier eine Definition
+
+0:01:38.100,0:01:46.290
+in diesem 'where'-Block ein, einmal 'daytime' und
+meine Idee es jetzt, ich mache daraus jetzt einen
+
+0:01:46.290,0:01:58.080
+Wahrheitswert, den ich dann prüfen kann und
+sagen wir es ist, wenn wir uns das angucken,
+
+0:01:58.080,0:02:17.310
+weil wir mit Kreisbewegungen arbeiten, Sinus von
+t ist größer gleich 0. Damit was passiert, sagen
+
+0:02:17.310,0:02:32.790
+wir einfach mal, wenn es Tag ist, dann ist der
+Himmel hellblau und ansonsten, also in der Nacht,
+
+0:02:32.790,0:02:42.150
+ist er dunkelblau. Wir benutzen hier wieder
+die Tatsache, dass wir 'if then else' wie ganz
+
+0:02:42.150,0:02:47.430
+normale Expression verwenden können. Das heißt,
+wir suchen uns im wesentlichen aus, dass wir hier
+
+0:02:47.430,0:02:59.010
+auf blau anwenden, entweder 'light' oder 'dark',
+und wenn wir das jetzt ausführen sehen wir,
+
+0:02:59.010,0:03:03.780
+dass es mit hellblau anfängt und nach einer
+gewissen Zeit wird es auf dunkelblau wechseln
+
+0:03:03.780,0:03:11.730
+und wieder zurück, je nachdem ob der Sinus von
+unserem Zeitparameter über oder unter null ist.
+
+0:03:14.490,0:03:18.570
+Jetzt wollen wir natürlich nicht nur, dass der
+Himmel die Farbe wechselt, das ist ja eher so
+
+0:03:18.570,0:03:24.750
+ein Bonus hier, damit überhaupt erstmal was
+passiert. Wir wollen natürlich jetzt die Sonne
+
+0:03:24.750,0:03:32.820
+und den Mond haben. Das heißt, wir können hier
+auch wieder gucken, ist es denn Tag oder Nacht.
+
+0:03:39.250,0:03:43.720
+Jetzt wollen wir natürlich hier nicht die
+Helligkeit des Hintergrunds auswählen,
+
+0:03:43.720,0:03:56.600
+sondern am Tag hätten wir gerne die sonne und in
+der Nacht den Mond. Jetzt ist es Tag. Das heißt,
+
+0:03:56.600,0:04:01.660
+wenn wir jetzt hier inspizieren, sehen wir
+dass hier die Sonne irgendwie unter dem Gras
+
+0:04:01.660,0:04:06.430
+in der Mitte am Koordinatenursprung liegt
+und wenn wir es jetzt weiter laufen lassen
+
+0:04:08.290,0:04:13.480
+ist es Nacht, dann ist da entsprechend der Mond.
+Ich habe den Mond auch ein bisschen modifiziert,
+
+0:04:14.050,0:04:21.610
+im Vergleich zur Aufgabenstellung einfach ein
+paar dickere Linien verwendet und ein paar mehr
+
+0:04:21.610,0:04:36.610
+dazwischen gemacht, also quasi die Lücken zwischen
+den beiden Kurven ausgefüllt. Aber auch das ist
+
+0:04:36.610,0:04:48.850
+natürlich optional. Jetzt müssen wir irgendwie
+die beiden Himmelskörper bewegen. Dafür gibt es
+
+0:04:48.850,0:04:56.470
+mehrere Lösungen. Wir nehmen hier eine wo wir
+jeweils die x- und y-Koordinaten berechnen und
+
+0:04:56.470,0:05:05.170
+dann entsprechend dahin verschieben. Das heißt,
+wir definieren uns mal x und y und schreiben
+
+0:05:05.170,0:05:09.880
+erstmal irgendwelche Werte rein, also hier die
+Startwerte, wo die Bewegung anfangen soll. -8
+
+0:05:10.570,0:05:30.130
+und 0, also hier. Dann können wir einfach mal
+um x und y verschieben. Dann sieht man natürlich
+
+0:05:30.130,0:05:45.850
+immer noch nichts, weil entsprechend die Sonne
+jetzt da unter dem Gras liegt. Aber die Objekte
+
+0:05:45.850,0:05:53.170
+sind jetzt hier und jetzt müssen wir wirklich
+gucken wie wir die Bewegung hinkriegen. Das heißt,
+
+0:05:53.170,0:05:56.980
+wir müssen jetzt irgendwie gucken, wie wir die
+Koordinaten auf dem Halbkreis bestimmen
+
+0:05:56.980,0:06:08.140
+können und das kann man mit dem Sinus und Kosinus
+machen, indem wir zum Beispiel für 'sin t' für y
+
+0:06:08.140,0:06:18.100
+nehmen. Dann sehen wir, dass die Sonne immer so
+ein bisschen hoch kommt, dann passiert irgendwie
+
+0:06:18.100,0:06:25.300
+nichts, dann kommt die Sonne wieder hoch. Wir
+wollen natürlich, dass die Sonne höher als nur bis
+
+0:06:25.300,0:06:33.490
+1 hochgeht, der Sinus wechselt hier von 1 bis -1,
+wenn wir bis 8 hoch wollen kann man das einfach
+
+0:06:33.490,0:06:45.130
+mit 8 multiplizieren. Dann sieht das gleich schon
+mehr wie eine Sonne aus, erst geht die Sonne hoch,
+
+0:06:45.130,0:06:52.810
+dann wieder runter. Dann kommt aber der Mond
+nicht, weil der Mond jetzt quasi, wenn wir uns das
+
+0:06:52.810,0:07:00.220
+angucken, der Mond verschwindet jetzt nach unten,
+weil sich das Vorzeichen ändert, wenn wir aber den
+
+0:07:02.560,0:07:25.900
+Betrag von dem ganzen nehmen, kommt der Mond
+entsprechend auch nach oben raus Jetzt müssen
+
+0:07:25.900,0:07:36.640
+wir quasi noch die y-Bewegung hinkriegen. Dafür
+wollten wir von -8 bis 8 und dann wieder vorne
+
+0:07:36.640,0:07:50.500
+anfangen. Also wir fangen bei - 8 an und jetzt
+bietet sich dafür der Kosinus an und dann kriegen
+
+0:07:50.500,0:07:55.030
+wir genau die Bewegung mit der Sonne hin, die
+wir haben wollen, allerdings sehen wir jetzt
+
+0:07:55.030,0:08:04.240
+gibt es so eine seltsame Ping-Pong-Bewegung,
+da wenn wir bei 8 angekommen sind hier drüben
+
+0:08:04.240,0:08:10.390
+sich das Vorzeichen von Kosinus umdreht und
+der Mond geht irgendwie rückwärts zurück,
+
+0:08:10.390,0:08:17.110
+weil jetzt das x von -8 bis 8 geht, aber halt
+auch wieder zurück. Wir wollen aber, dass es
+
+0:08:17.110,0:08:24.010
+wieder bei -8 anfängt. Da gibt es verschiedenste
+Möglichkeiten. Wir könnten hier noch irgendwie was
+
+0:08:24.010,0:08:37.300
+ändern oder wir ziehen einfach das 'translated'
+hier in das in 'if then else' mit rein und
+
+0:08:37.300,0:08:48.490
+invertieren das Vorzeichen hier, weil wir leider
+nicht so ohne weiteres einfach hier in dem [...].
+
+0:08:53.540,0:09:02.150
+Nein, das Vorzeichen müssen wir natürlich
+nicht bei y, sondern bei dem x invertieren.
+
+0:09:02.150,0:09:12.800
+Wir können in dem '-8 * cos t' nicht so einfach
+den Betrag einsetzen, man könnte sonst vermuten,
+
+0:09:12.800,0:09:24.740
+das mal ausprobieren, dass man eventuell hier
+den Betrag ändern kann. Das hat er bei einem
+
+0:09:24.740,0:09:29.750
+unschönen Nebeneffekt, nämlich dass die sonne
+am Mittag einfach sofort die Richtung ändert.
+
+0:09:29.750,0:09:46.050
+Natürlich können wir den Betrag auch nicht
+hier hinsetzen, weil dann wir das gleiche
+
+0:09:46.050,0:09:54.030
+Problem auf der anderen Seite bekommen. Aber
+wenn wir das oben in dem 'translated' machen
+
+0:09:54.030,0:10:00.690
+funktioniert das. Das können wir natürlich jetzt
+prinzipiell symmetrisch auch machen und unsere
+
+0:10:00.690,0:10:15.600
+Lösungen die wir hier haben abändern, sodass
+wir grundsätzlich hier das ganze so machen.
+
+0:10:21.900,0:10:27.870
+Das heißt, wir berechnen die Koordinaten
+im Prinzip auf diesem Kreis, aber für den
+
+0:10:27.870,0:10:37.410
+Mond nehmen wir entsprechend die andere
+Seite und invertieren die Vorzeichen.
+
+0:10:37.410,0:10:52.620
+Okay, das ist soweit die Aufgabe. Jetzt kann man
+natürlich noch die Bonusverschönerung machen,
+
+0:10:53.160,0:10:56.550
+zusätzlich zu dem, was wir jetzt schon mit dem
+Himmel hier haben, irgendwie noch Sterne oder
+
+0:10:56.550,0:11:04.260
+was auch immer in der Aufgabenstellung stand noch
+dazu zu machen. Das ist jetzt nicht sonderlich
+
+0:11:04.260,0:11:08.580
+kompliziert, da muss man sich einfach nur
+irgendeine Form von dem Stern definieren
+
+0:11:08.580,0:11:15.420
+und den irgendwo platzieren, oder mehrere und
+dann gucken wie man die Überdeckung haben will,
+
+0:11:15.420,0:11:23.400
+aber grundsätzlich, wenn wir jetzt
+das Koordinatensystem noch entfernen,
+
+0:11:23.400,0:11:30.810
+haben wir prinzipiell unsere Animation
+für unseren Tag-Nacht-Ablauf.

@@ -1,247 +1,418 @@
-0:00:03.620,0:00:12.830
-Wir machen weiter mit Task 8. Hier starten
-wir mit einer einfachen Animationen,
+0:00:00.000,0:00:06.500
+Wir machen weiter mit der Aufgabe 8.
 
-0:00:12.830,0:00:23.450
-bei der wir einen Kreis haben, der immer weiter
-wächst und größer und größer wird. Wir sollen die
+0:00:06.500,0:00:09.300
+Hier sollen
+wir eine 'loading screen' Animation erstellen,
 
-0:00:23.450,0:00:30.980
-Animation so abändern, dass es stattdessen so
-aussieht, dass es zwar am Anfang auch wächst,
+0:00:09.300,0:00:16.470
+die ungefähr so aussieht. Irgendwie Kreise in
+unterschiedlichen Farben, die sich drehen und
 
-0:00:30.980,0:00:38.720
-dann irgendwann zum Schrumpfen wechselt
-und dann aufhört und jede von den drei
+0:00:16.470,0:00:25.620
+gegeneinander, in unterschiedliche Richtungen
+drehen, unterschiedliche Farben haben. Die
 
-0:00:38.720,0:00:50.660
-Phasen hat eine eigenständige Farbe. Hier kann man
-natürlich als allererstes erst mal geneigt sein,
+0:00:25.620,0:00:32.670
+Parameter für diese kreise haben wir hier in
+einer Liste gegeben und auf der Liste rufen wir
 
-0:00:50.660,0:00:57.830
-jede Menge 'if then else' zu verwenden und zu
-schachteln. Das ist allerdings nicht unbedingt
+0:00:32.670,0:00:38.760
+eine Funktion auf. Die soll das alles kombinieren
+und wir sollen auch die Funktion um die Kreise
 
-0:00:57.830,0:01:05.660
-die sinnvollste bzw. Standard-Lösungen in
-Haskell, weil wir haben ja die Guards und
+0:00:38.760,0:00:46.920
+selbst, um jeden einzelnen Kreis darzustellen,
+auch noch implementieren. Fangen wir erstmal
 
-0:01:05.660,0:01:14.060
-die sind hier deutlich sinnvoller zu verwenden
-als 'if then else' , weil wir ja mehrere Pfade
+0:00:46.920,0:00:55.350
+mit der Kombinationsfunktion an. Das ist recht
+simpel. Wir haben zwei Parameter, einmal die
 
-0:01:14.060,0:01:19.910
-haben als nur zwei, also in diesem Fall drei
-verschiedene zwischen denen wir wählen sollen,
+0:00:55.350,0:01:05.940
+Kreisparameter und die Zeit der Animation. Und was
+machen wir jetzt? Wir wollen irgendwie eine Liste
 
-0:01:19.910,0:01:25.970
-abhängig vom Zeitparameter und daher sind die
-Guards auf jeden Fall die sauberere Lösung,
+0:01:05.940,0:01:11.190
+von Bildern erzeugen und die dann kombinieren.
+Da können wir die 'pictures' Funktion verwenden
 
-0:01:25.970,0:01:32.090
-auch wenn man funktional korrekte Lösungen
-natürlich mit in 'if then else' bekommt. Das
+0:01:11.190,0:01:19.230
+und die frage ist jetzt: Welche Liste nehmen
+wir? Wir wollen irgendwie die Liste von diesen
 
-0:01:32.090,0:01:44.240
-heißt, was machen wir als erstes? Wir haben Guards
-und da können wir jetzt irgendwelche Bedingungen
+0:01:19.230,0:01:32.340
+'partialCircles' haben und die müssen wir auf
+irgendwas aufrufen, nämlich den Argumenten,
 
-0:01:44.240,0:01:59.530
-reinschreiben und wir nehmen erstmal überall
-das Gleiche. Der letzte Fall ist 'otherwise',
+0:01:32.340,0:01:41.100
+also diesem Tupel mit den Parametern und der
+Zeit. Jetzt benutzen wir einfach eine List
 
-0:01:59.530,0:02:12.700
-unser 'default' Fall sozusagen und hier
-schreiben wir jetzt jeweils Bedingungen rein,
+0:01:41.100,0:01:47.400
+Comprehension und holen uns aus der Liste von
+Parametern jeweils alle der Reihe nach raus,
 
-0:02:12.700,0:02:17.230
-die vom Zeitparameter abhängen. Das heißt,
-wir wollen die erste Stufe der Animation 5
+0:01:47.400,0:01:55.200
+legen so einen 'partialCircle' damit an, mit den
+Parametern hier und fügen am Ende alles zusammen.
 
-0:02:17.230,0:02:23.980
-Sekunden machen, dann nochmal 5 Sekunden, also
-bis insgesamt 10 Sekunden. Zwischen 5 und 10
+0:01:57.900,0:02:09.690
+Wie sieht jetzt unser 'partialCircles' aus? Hier
+gibt es mehrere Lösungen wie man das jetzt am
 
-0:02:23.980,0:02:30.610
-Sekunden nehmen wir diese Animation und ganz am
-Ende bleiben wir hier. Das verändert natürlich
+0:02:09.690,0:02:17.100
+besten, oder wie man das generell umsetzt, an
+der Stelle wird hier eine Lösung präsentiert,
 
-0:02:30.610,0:02:37.510
-jetzt unser Animationsverhalten noch nicht,
-weil wir überall das Gleiche angegeben haben,
+0:02:17.100,0:02:24.030
+in dem englischsprachigen Video wird eine andere
+präsentiert, also da gerne auch nochmal reingucken
 
-0:02:37.510,0:02:48.010
-also nach 5 Sekunden sind immer noch beim
-Wachstum, weil das eben derselbe Ausdruck ist
+0:02:24.030,0:02:30.660
+für eine zusätzliche Perspektive ist es sicherlich
+auch interessant, wie man diese Aufgabe auf
 
-0:02:48.010,0:02:54.940
-wie hier oben. Das heißt, wir wollen jetzt nach 5
-Sekunden zum Schrumpfen übergehen. Das heißt, wir
+0:02:30.660,0:02:38.880
+verschiedene Art und Weise umsetzen kann. Als
+erstes müssen wir irgendwie an die Parameter
 
-0:02:54.940,0:03:04.030
-gucken wie groß ist der Kreis eigentlich. 0,5 mal
-5 Sekunden haben wir das laufen lassen, das heißt,
+0:02:38.880,0:02:45.180
+kommen. Das heißt, wir haben dieses Tupel und
+der erste Parameter ist der Radius, der zweite
 
-0:03:04.030,0:03:21.910
-wir sind hier bei 2,5 und jetzt soll es irgendwie
-schrumpfen mit Rate von 0,2 pro Zeiteinheit und
+0:02:45.180,0:02:54.960
+Parameter ist die Dicke der Linie, dann haben
+wir die Größe des Loches sozusagen in dem Kreis
 
-0:03:23.800,0:03:30.520
-dann könnte man jetzt erwarten, dass das genau so
-funktioniert. Natürlich funktioniert das nicht,
+0:02:54.960,0:03:05.760
+und die Geschwindigkeit mit der sich der Kreis
+drehen soll und zuletzt noch die Farbe und die
 
-0:03:30.520,0:03:38.200
-weil wir wieder was übersehen haben, nämlich dass
-der Zeitparameter weiter läuft und nicht wieder
+0:03:05.760,0:03:22.230
+Zeit ist auch wieder mit dabei. Als Ausgangspunkt
+ist am sinnvollsten die 'thickCircle' Funktion,
 
-0:03:38.200,0:03:49.420
-bei 0 anfängt, sondern wir fangen hier als erstes
-mit 5 an, bzw. 5,1 oder irgendwas und gehen bis
+0:03:22.230,0:03:31.620
+bei der wir die Dicke, den Radius von dem Kreis
+angeben können und entsprechend das Bild kriegen.
 
-0:03:49.420,0:03:54.520
-10 hoch, wir wollen aber eigentlich nochmal von
-0 bis 5 anfangen. Das heißt, wir ziehen hier,
+0:03:31.620,0:03:37.140
+Das heißt, wenn wir das als unsere Basis nehmen,
+haben wir jetzt drei unterschiedlich dicke Kreise,
 
-0:03:54.520,0:04:06.550
-damit der Zeitparameter hinkommt, so wie wir uns
-das überlegen die 5 wieder ab und dann sieht man
+0:03:37.140,0:03:43.800
+die hier oben in der Funktion kombiniert werden.
+Der Radius ist jeweils hier gegeben und die Dicke
 
-0:04:06.550,0:04:13.150
-das Ganze gleich schon viel runder aus. Jetzt
-haben wir die 5 Sekunden überschritten und bis
+0:03:43.800,0:03:50.940
+ist der zweite Parameter. Dann können wir
+weitermachen. Was haben wir noch? Wir haben
 
-0:04:13.150,0:04:19.570
-10 Sekunden runter und danach gehen wir wieder auf
-unsere initiale Animation. Das ist natürlich jetzt
+0:03:50.940,0:04:02.130
+Farbinformationen. Das heißt, wir können das
+ganze einmal einfärben. Soweit auch nichts
 
-0:04:19.570,0:04:27.880
-noch falsch. Wir wollen hier jetzt entsprechend
-nicht mehr die Größe ändern. Das heißt, wir müssen
+0:04:02.130,0:04:09.390
+spektakuläres. Jetzt kommt der interessante
+Teil, wie kriegen wir die Lücke da rein und
 
-0:04:27.880,0:04:36.130
-wieder ausrechnen, wo sind wir jetzt eigentlich?
-5 Sekunden mal 0,2 die Größe reduziert. Das heißt,
+0:04:09.390,0:04:19.980
+wie kriegen wir die zum Bewegen? Hier kann man
+verschiedene Sachen machen. Wir werden hier einen
 
-0:04:36.130,0:04:45.610
-wir haben insgesamt einen Radius von 1,5 an
-dieser Stelle und wenn wir uns das jetzt angucken,
+0:04:19.980,0:04:28.830
+besonderen Trick sozusagen verwenden, den ich
+persönlich ganz nett finde. Wir definieren uns,
 
-0:04:48.350,0:04:58.970
-wird es erst größer, dann kleiner und bei 10
-Sekunden hört das auf. Dann sollen wir das jetzt
+0:04:28.830,0:04:44.520
+was unser 'gap' in dem Kreis sein soll. Wir sagen
+einfach, das ist ein 'solidRectangle' mit der x
 
-0:04:58.970,0:05:04.400
-noch unterschiedlich einfärben. Das ist nicht
-sonderlich kompliziert, wir benutzen jeweils
+0:04:44.520,0:04:53.910
+Ausdehnung, wo wir einfach die Größe des 'gaps'
+nehmen und dann sagen wir, wir nehmen 2 mal den
 
-0:05:04.400,0:05:32.510
-wieder 'colored' und müssen uns jetzt drei
-Farben aussuchen. Wenn wir die Farben aus dem
+0:04:53.910,0:05:06.060
+Radius plus die Dicke der Linie. Was machen wir
+damit? Wir nehmen dieses Rechteck, was wir haben,
 
-0:05:32.510,0:05:50.150
-Beispiel nehmen, bekommen wir Warnungen, dass die
-Farben eventuell demnächst verschwinden könnten,
+0:05:06.060,0:05:18.510
+und legen das einfach über den Kreis. Was tut das,
+was ist der Sinn davon? Der Sinn davon ist, wir
 
-0:05:50.150,0:05:56.810
-weil die API umgestellt wird, aber da müssen
-wir uns im Moment erstmal nicht groß darum
+0:05:18.510,0:05:30.000
+haben jetzt, wenn wir uns einen von den Kreisen
+mal einzeln angucken. Wir haben einen Kreis und da
 
-0:05:56.810,0:06:02.960
-sorgen, nur für den Fall, dass zum späteren
-Zeitpunkt, eventuell im Laufe des Semesters,
+0:05:30.000,0:05:37.050
+liegt an der Stelle ein Rechteck drüber. Das sieht
+jetzt irgendwie erstmal ein bisschen seltsam aus,
 
-0:06:02.960,0:06:10.730
-dieser Code nicht mehr funktioniert, hier sind die
-entsprechenden Warnungen, die sagen, wir sollen
+0:05:37.050,0:05:41.280
+aber der Trick ist, dass wir jetzt, wenn wir die
+Hintergrundfarbe und die Farbe dieses Rechtecks
 
-0:06:10.730,0:06:23.060
-lieber die Parameter der Farbe direkt verwenden.
-Man kann sich dann, sollte das wegfallen,
+0:05:41.280,0:05:47.430
+gleich wählen, das aussieht, als hätten wir
+ein Stück aus dem Kreis rausgenommen, was wir
 
-0:06:23.060,0:06:31.880
-diese Konstante nochmal neu definieren, mit den
-angegebenen Werten. Das ist so die Basislösung,
+0:05:47.430,0:06:03.180
+natürlich nicht haben. Aber es sieht so aus. Das
+heißt, wenn wir den Spalt sozusagen weiß färben,
 
-0:06:31.880,0:06:42.570
-das sieht dann so aus wie hier auch. Hier
-ist die erste Farbe grün die zweite orange,
+0:06:03.180,0:06:18.480
+haben wir plötzlich diese partiellen Kreise. Wir
+sehen, dass jeder Kreis im Prinzip ein Rechteck in
 
-0:06:44.670,0:06:54.270
-wir haben es jetzt anders gemacht. Wir haben die
-Farben vertauscht, aber das macht letztendlich
+0:06:18.480,0:06:25.020
+der Mitte hat und, weil wir die geschickt von
+oben nach unten platziert haben, ganz oben in
 
-0:06:54.270,0:07:02.460
-auch nichts, funktional ist das natürlich
-dasselbe. Wir können jetzt unsere Lösung noch ein
+0:06:27.390,0:06:32.130
+dieser Komposition ist der kleinste, am weitesten
+innenliegende Kreis, der überdeckt automatisch
 
-0:07:02.460,0:07:08.700
-bisschen erweitern indem wir die Zeitparameter,
-wann die unterschiedlichen Phasen wechseln,
+0:06:32.130,0:06:41.550
+alles was darunter ist, und ganz oben ist der Text
+in dieser Ebene, dadurch überdecken die unteren,
 
-0:07:08.700,0:07:16.890
-noch abstrahieren . Das heißt, wir können hier
-einen Zeitparameter t1 und hier t2 einfügen und
+0:06:41.550,0:06:52.200
+großen Rechtecke nicht die oberen Kreise. Wenn
+wir das ganze jetzt so haben wollen wie hier,
 
-0:07:16.890,0:07:27.300
-dann entweder definieren wir es global oder
-in einem 'where' Block. t1 ist 5 und t2 ist
+0:06:52.200,0:06:59.670
+dass sich das dreht, können wir natürlich erst
+mal sagen: Okay, dann drehen wir das ganze jetzt,
 
-0:07:27.300,0:07:33.360
-10. Dann können wir das entsprechend anpassen.
-Jetzt müssen wir natürlich noch hier gucken.
+0:06:59.670,0:07:06.420
+indem wir den ganzen Ausdruck nehmen. Aber wenn
+wir uns vielleicht angucken was wir noch damit
 
-0:07:33.360,0:07:42.960
-Was heißt das hier genau? Diese 2,5, wenn wir
-das t1, ändern gilt natürlich nicht mehr. Das
+0:07:06.420,0:07:13.650
+machen können, ist es praktischer, wenn wir
+sagen: Okay, eigentlich müssen wir nur das,
 
-0:07:42.960,0:08:00.720
-sind natürlich dann 0,5 mal t1 und diese 5
-sind hier natürlich auch t1 und die 1,5 sind
+0:07:13.650,0:07:22.790
+was wir überlagern, drehen. Das heißt, wir
+können das einfach drehen und damit er sich
 
-0:08:00.720,0:08:20.290
-hier jetzt natürlich dieser Ausdruck. Wir müssen
-dann hier entsprechend die 2 minus t1 einsetzen,
+0:07:22.790,0:07:36.230
+in der Geschwindigkeit dreht die wir angeben,
+multiplizieren wir die Zeiten noch mit der mit der
 
-0:08:20.290,0:08:43.390
-das ist eine Klammer zu viel, diese Klammer
-brauchen wir jetzt auch nicht unbedingt und
+0:07:36.230,0:07:41.750
+Geschwindigkeit, die wir als Parameter bekommen
+haben. Dann haben wir im Prinzip auch schon
 
-0:08:43.390,0:08:50.710
-dann haben wir jetzt hoffentlich auch die
-gleiche Animation wie vorher, wenn wir alles
+0:07:41.750,0:07:51.560
+die Animation und was sich jetzt hier dreht, ist
+jeweils immer nur dieses Rechteck, was wir in der
 
-0:08:50.710,0:08:58.180
-richtig gemacht haben. Genau, es stoppt wieder.
-Wenn wir jetzt sagen wollen, die erste Phase soll
+0:07:51.560,0:07:57.950
+Mitte haben, der eigentliche Kreis steht sozusagen
+still. Damit haben wir auf einer sehr einfachen
 
-0:08:58.180,0:09:06.610
-kürzer sein, dann nehme ich mal 3 Sekunden,
-dann können wir einfach den Parameter ändern,
+0:07:57.950,0:08:10.760
+Art und Weise diese Animation realisiert. Das
+schöne ist, dass jetzt das ganze recht einfach
 
-0:09:06.610,0:09:11.860
-es geht nach 3 Sekunden die entgegengesetzte
-Richtung, wird jetzt natürlich deutlich kleiner,
+0:08:10.760,0:08:16.850
+erweitern können, um diese komplexeren Animationen
+herzustellen, die auf den ersten Blick erstmal
 
-0:09:11.860,0:09:21.190
-weil wir deutlich länger schrumpfen. Dann
-haben wir am Ende den kleinen Kreis. Was man
+0:08:16.850,0:08:25.250
+sehr seltsam aussehen, man nicht genau weiß
+was passiert da eigentlich, insbesondere hier,
 
-0:09:21.190,0:09:26.380
-noch beachten muss, bei dieser Lösung ist, dass
-der t2 Parameter natürlich immer größer als der
+0:08:25.250,0:08:33.260
+wenn wir den äußeren Ring angucken, ist nicht
+klar, was genau da eigentlich passieren soll,
 
-0:09:26.380,0:09:33.790
-t1 Parameter sein muss, sonst überspringt man
-die Phase. Wir können natürlich noch angeben,
+0:08:33.260,0:08:38.870
+aber wenn wir wissen, okay eigentlich sind es
+nur Rechtecke, die Teile von dem Kreis verdrehen,
 
-0:09:33.790,0:09:40.960
-dass das nur die Länge sein soll und dann müssten
-wir hier entsprechend Summe und so weiter... Aber
+0:08:38.870,0:08:44.090
+dann sehen wir, dass wir immer zwei Rechtecke
+haben, die irgendwie, wenn man genau hinguckt,
 
-0:09:40.960,0:09:48.610
-das kommt dann auf der Seite auch noch irgendwie
-zum Tragen, müssen wir jetzt hier aber nicht
+0:08:44.090,0:08:49.820
+sieht man, dass die in so einer Kreuzstellung
+immer gegeneinander rotieren. Es ist ein bisschen
 
-0:09:48.610,0:09:53.890
-machen, kann man natürlich auch noch, wenn man
-will, mal ausprobieren, wie sich das auswirkt.
+0:08:49.820,0:08:53.540
+schwieriger das auf dem äußeren Ring zu sehen,
+aber da kann man gleich ein bisschen rumprobieren,
+
+0:08:53.540,0:09:02.420
+wenn wir das einmal umgesetzt haben, wie
+man da mit den Parametern geschickte Effekte
+
+0:09:02.420,0:09:09.860
+erzeugt. Das heißt, der eigentliche Trick um diese
+fortgeschrittene Version von der Animation jetzt
+
+0:09:09.860,0:09:19.550
+herzustellen, also als optionale Aufgabe, ist im
+Prinzip einfach, wir müssen zusätzliche 'gaps'
+
+0:09:19.550,0:09:28.370
+einfügen. Wie wir das jetzt parametrisieren
+ist uns prinzipiell selbst überlassen,
+
+0:09:28.370,0:09:35.810
+deswegen nehme ich jetzt das den Parameter, der
+vorher die Geschwindigkeit angegeben hat und mache
+
+0:09:35.810,0:09:41.960
+daraus eine Liste von Geschwindigkeiten, also mit
+unterschiedlichen Rechtecken, die dann im Prinzip
+
+0:09:41.960,0:09:47.930
+den Kreis gleichzeitig verdecken sollen.
+Das heißt, wir fügen jetzt erstmal überall
+
+0:09:49.040,0:09:56.810
+Typänderung ein, packen die Parameter hier oben
+in eine ein-elementige Liste erst mal. Hier an
+
+0:09:56.810,0:10:01.400
+der Funktion verändert sich nichts, weil wir die
+Parameter einfach nur weitergeben und jetzt haben
+
+0:10:01.400,0:10:09.200
+wir hier die Geschwindigkeiten, machen wir mal ein
+s dran, das macht man häufiger so, um zu zeigen,
+
+0:10:09.200,0:10:15.050
+dass das mehrere sind. Jetzt haben wir nicht nur
+einen 'gap', sondern müssen irgendwie gucken,
+
+0:10:15.050,0:10:21.080
+was sind denn endlich unsere 'gaps' ? Da können
+wir wieder eine List Comprehension verwenden
+
+0:10:21.080,0:10:29.450
+und sagen, wir nehmen die Geschwindigkeiten
+aus unserer liste von Geschwindigkeiten und
+
+0:10:29.450,0:10:39.410
+bauen genau diese 'gaps' hier zusammen, da ist
+die Klammerung überflüssig, und rotieren die
+
+0:10:39.410,0:10:50.330
+jeweils um den Geschwindigkeitsparameter mit der
+Zeit multipliziert und dann benutze ich wieder
+
+0:10:50.330,0:11:01.850
+'pictures', um daraus ein Bild zu machen und jetzt
+können wir einfach hier die 'gaps' nehmen, das
+
+0:11:01.850,0:11:05.390
+verändert jetzt natürlich erstmal nichts, weil wir
+eigentlich nur alles in eine ein-elementige Liste
+
+0:11:05.390,0:11:14.870
+getan haben, aber wir sehen, es Funktioniert auf
+jeden Fall auch erstmal. Jetzt können wir lustige
+
+0:11:14.870,0:11:20.810
+Sachen ausprobieren, indem wir hier zusätzliche
+Parameter einfügen, zum Beispiel könnten wir hier
+
+0:11:21.530,0:11:32.390
+-0,5 nehmen. Also wir haben ein zweites Paar
+von Löchern in diesem Kreis, die sich in die
+
+0:11:32.390,0:11:44.120
+entgegengesetzte Richtung drehen. Dann sieht man
+hier, wenn man diese Geschwindigkeiten so wählt,
+
+0:11:44.120,0:11:53.240
+ziemlich gut, wenn man weiß worauf man
+achten muss, wie sich der eine Spalt gegen
+
+0:11:53.240,0:11:57.920
+den anderen Spalt dreht. Man sieht diesen Effekt,
+der so aussieht, als ob es eigentlich vier Linien
+
+0:11:57.920,0:12:05.810
+sind, die wachsen und wieder zusammenfallen.
+Wenn man das ganze ein bisschen schneller macht,
+
+0:12:05.810,0:12:16.820
+dann ist zwar weniger durchsichtig, wie der Effekt
+entsteht, aber man hat halt diesen interessanten
+
+0:12:16.820,0:12:26.090
+Überlagerungseffekt. Dann sollten wir noch gucken
+wie wir jetzt diesen äußeren Kreis so hinkriegen.
+
+0:12:27.260,0:12:38.420
+Wenn man genau hinguckt, in dem Moment, in dem man
+sozusagen hier alle vier Linien sieht, sieht man,
+
+0:12:38.420,0:12:46.370
+dass hier wohl ein Rechteck sein muss und hier
+auch und wenn sich das weiter bewegt, sieht man,
+
+0:12:46.370,0:12:52.580
+dass das eine sich schneller bewegt, wenn man
+ganz genau hinguckt, als das andere, aber beide
+
+0:12:52.580,0:12:57.620
+bewegen sich in die gleiche Richtung. Jetzt
+kommt es hier gleich entsprechend wieder raus,
+
+0:12:58.780,0:13:10.030
+hat das andere überholt und führt deswegen
+zu diesem interessanten Effekt. Das heißt,
+
+0:13:10.030,0:13:20.530
+wenn wir hier einfach noch eine zusätzliche
+Lücke in der gleichen Drehrichtung hinzufügen,
+
+0:13:20.530,0:13:31.660
+bekommen wir genau diesen Effekt. Jetzt muss man
+nicht bei zwei aufhören. Das heißt, man könnte
+
+0:13:31.660,0:13:44.190
+im Prinzip auch noch einen dritten haben. Dann
+kriegt man noch chaotischere Effekte. Irgendwann
+
+0:13:44.190,0:13:48.330
+ist natürlich, wenn man zu viele wählt, nichts
+mehr von den Kreisen zu sehen, oder nur noch
+
+0:13:48.330,0:14:13.660
+sehr wenig. Wenn wir jetzt noch ein hinzufügen,
+0,5. Die Frage ist, wie viel da sinnvoll ist,
+
+0:14:13.660,0:14:17.650
+sodass es noch gut aussieht und nicht mehr
+zu viel ist. Aber man kann ein bisschen damit
+
+0:14:17.650,0:14:22.930
+herumspielen und interessante Effekte erzeugen.
+Hier haben wir jetzt noch, interessanterweise,
+
+0:14:22.930,0:14:30.460
+einen Symmetrie-Effekt, durch die Vielfachen,
+die wir haben, sodass man, immer abwechselnd,
+
+0:14:30.460,0:14:36.940
+sich in zwei Punkten trifft, die aber rotieren.
+Das sieht man hierdurch noch ein bisschen besser.
+
+0:14:37.960,0:14:43.780
+Ich würde empfehlen, da kann man mal gut mit
+rumspielen, mit diesem Prinzip. Das ist eigentlich
+
+0:14:43.780,0:14:51.880
+ein sehr simpler Trick, die Bewegung durch
+diese überlagernden Rechtecke zu realisieren,
+
+0:14:51.880,0:15:05.380
+und nicht den Kreis sozusagen selber zu drehen.
+Das wäre im Prinzip die Lösung für diese Aufgabe.
