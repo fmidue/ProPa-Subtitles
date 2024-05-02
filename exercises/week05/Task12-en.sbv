@@ -1,302 +1,312 @@
-0:00:01.360,0:00:02.640
-Now for Task 12.
+0:00:02.000,0:00:03.600
+Welcome back to exercise 4
 
-0:00:02.640,0:00:10.080
-We should implement a function that checks if
-some Integer is not present in a list of Integers.
+0:00:04.480,0:00:06.500
+First off, we have Task12:
 
-0:00:10.080,0:00:16.320
-So if this Integer v is not
-an element of this list xs.
+0:00:06.500,0:00:08.320
+We should write a little
 
-0:00:17.520,0:00:26.160
-Okay, so again, we should only use one
-equation, maybe with guards, to do this.
+0:00:08.320,0:00:13.760
+function that checks if a string that is
+given as an input is a palindrome or not.
 
-0:00:26.160,0:00:32.000
-And we have some test cases
-given that we should fulfill.
+0:00:14.560,0:00:19.600
+So whether it's the same word
+read forwards or backwards.
 
-0:00:38.240,0:00:38.960
-How do we do this?
+0:00:24.640,0:00:31.360
+We start with naming the parameter
+xs, for example, and then
 
-0:00:40.240,0:00:47.680
-Let's start with adding some
-guards to distinguish some cases.
+0:00:33.280,0:00:39.280
+if we look at the lecture slides there was
+a function that did a very similar thing.
 
-0:00:49.200,0:01:04.320
-The first case checks if head
-xs is actually equivalent to v.
+0:00:39.840,0:00:47.600
+It also checked for palindrome: xs == reverse xs
 
-0:01:06.880,0:01:16.160
-If this is the case we found v in
-the list so we return False, right.
+0:00:48.240,0:00:49.440
+Nice and declarative.
 
-0:01:17.600,0:01:23.600
-This is the simplest thing we can think of.
+0:00:51.600,0:00:56.160
+And is this already a solution to our task?
 
-0:01:24.240,0:01:27.760
-Okay so what happens if this is not the case?
+0:00:56.160,0:01:05.600
+Well, we have this test suit here so we can
+just load it into ghci and test whether this
 
-0:01:31.280,0:01:40.320
-Well, if the head element is not the element
-we are looking for, or not looking for,
+0:01:05.600,0:01:08.560
+has the desired behavior.
+So let's do that.
 
-0:01:43.840,0:01:52.240
-then we should look in the rest of the
-list if this element is not present there.
+0:01:11.440,0:01:18.480
+Load the ghci for Task10.
+Okay, and now we run main which
 
-0:01:52.240,0:02:03.440
-So we do notElem on the tail of xs.
+0:01:18.480,0:01:23.520
+does some QuickCheck testing and tells
+us whether we have done the right thing.
 
-0:02:03.440,0:02:11.920
-And we should also give it the
-element we are not looking for.
+0:01:25.360,0:01:28.720
+Okay, so the first test passes.
 
-0:02:14.800,0:02:20.560
-Okay, so does this work?
+0:01:31.040,0:01:34.720
+A single character is a palindrome
+according to our function.
 
-0:02:20.560,0:02:24.720
-Well, probably not but let's try it anyway.
+0:01:35.920,0:01:41.920
+But the second test fails because what we do is we
 
-0:02:27.760,0:02:39.360
-So let's say we're looking
-for whether 1 is not in [1].
+0:01:43.120,0:01:50.160
+take a random character and a random
+string and put the character in uppercase
 
-0:02:43.680,0:02:47.520
-Well, we get the correct answer there.
+0:01:51.280,0:01:58.320
+in the front and unaltered in the back, and
+it tells us that for this character being a
 
-0:02:47.520,0:02:50.320
-Let's see if one is not in the list [2,5,1,6].
+0:01:58.320,0:02:06.160
+and string being the empty string our isPalindrome
+function does not do the same right thing.
 
-0:03:00.160,0:03:04.720
-notElem is also giving the right answer there.
+0:02:06.160,0:02:12.560
+So let's check that.
+isPalindrome of adding an upper
 
-0:03:04.720,0:03:09.040
-So our base case and our recursion seem to work.
+0:02:12.560,0:02:22.480
+case to the front of the empty string and then
+lowercase to the back; indeed does not yield True.
 
-0:03:09.040,0:03:11.200
-Okay let's try a negative example.
+0:02:24.000,0:02:31.040
+Okay, so in contrast to the palindrome function
+from the lecture we should here take care of
 
-0:03:11.200,0:03:14.320
-What if it's actually not in the list.
+0:02:31.600,0:02:35.920
+upper and lower case and make sure
+that the case does not matter.
 
-0:03:14.320,0:03:19.760
-Well, we're trying to get
-the head of an empty list.
+0:02:35.920,0:02:39.520
+So our 'isPalindrome' function
+should be case insensitive.
 
-0:03:20.960,0:03:28.080
-So, this is because we forgot to handle
-the case that the list could be empty.
+0:02:40.240,0:02:43.840
+Okay, so how do we do this?
 
-0:03:28.640,0:03:36.080
-So if the list is empty, what's our result?
+0:02:43.840,0:02:49.920
+We have this 'toUpper' and
+'toLower' function to work with.
 
-0:03:36.080,0:03:41.600
-Well, no element is present in
-the empty list so we return True
+0:02:49.920,0:02:54.560
+So what we have to do is transform the whole list
 
-0:03:43.920,0:03:47.520
-if we check that v is not in the empty list.
+0:02:55.200,0:03:03.840
+into, for example, the lower case variant of
+it before we check it against its reverse.
 
-0:03:48.080,0:03:59.840
-Okay, so this gives us a base case in the
-negative, or in this case positive, case.
+0:03:04.960,0:03:09.520
+We could obviously choose up uppercase
+making everything uppercase as well
 
-0:04:01.040,0:04:03.840
-So notElem 1 [2,5,6] now returns True.
+0:03:09.520,0:03:11.920
+But let's go for lower.
 
-0:04:04.480,0:04:10.800
-Okay let's check that it also fulfills
-this test suite we're given here.
+0:03:12.880,0:03:20.560
+So how can we do this; transform everything into
+lowercase? Well, we use a list comprehension.
 
-0:04:12.560,0:04:13.440
-Looks good.
+0:03:24.080,0:03:29.120
+Getting every element from the
+list and then applying toLower
 
-0:04:13.440,0:04:15.040
-So what do we actually test here?
+0:03:31.680,0:03:35.680
+to that element giving us this new list.
 
-0:04:15.760,0:04:16.480
-We test that
+0:03:35.680,0:03:47.120
+And then you just check this lowered list to
+against its reverse and see if it's the same.
 
-0:04:18.960,0:04:28.880
-if we call notElem x [] we should always get
-True no matter what element we choose (for x).
+0:03:47.120,0:03:58.960
+So if we reload this into ghci now
+for isPalindrome of "Aa" we get True.
 
-0:04:28.880,0:04:30.240
-This is why we added this case,
+0:03:58.960,0:04:10.960
+We can test it on some other palindromes like
+this play around with the capitalization.
 
-0:04:33.680,0:04:36.240
-because this should be the
-base case of the recursion.
+0:04:13.440,0:04:14.400
+Seems to work.
 
-0:04:40.720,0:04:45.680
-For a singleton list [x] we
-can always say that if we try
+0:04:14.400,0:04:19.120
+Let's try the QuickCheck tests
+again, and this time both succeed.
 
-0:04:45.680,0:04:51.280
-notElem x [x] list we should always get False.
+0:04:21.520,0:04:26.560
+So this is a valid solution.
+Is there another solution?
 
-0:04:51.280,0:04:58.480
-And therefore we use not here because we always
-state true facts in these QuickCheck tests.
+0:04:27.760,0:04:36.800
+There's always another solution, at least in most
+cases, so let's try to find another solution.
 
-0:04:59.520,0:05:07.920
-Okay, then [y] does not contain
-x, if x and y are different.
+0:04:39.040,0:04:47.120
+Let's define isPalindrome' :: String ->Bool
 
-0:05:08.840,0:05:11.360
-This is how we write this in QuickCheck.
+0:04:56.000,0:04:57.680
+Let's start with the basic skeleton.
 
-0:05:13.440,0:05:18.960
-This also seems like a logical
-thing to do or to test.
+0:04:58.400,0:05:06.160
+Let's again name the parameter.
+And now what can we do?
 
-0:05:19.520,0:05:25.120
-And then we test that a combined
-list does not contain an element v
+0:05:08.880,0:05:13.760
+Let's use the functions 'head' and 'last'.
 
-0:05:25.120,0:05:35.600
-exactly if it is not contained in one of the
-lists from which the combined list is made out of.
+0:05:14.960,0:05:17.440
+If we check out ghci what they do.
 
-0:05:35.600,0:05:41.280
-So, if we have a list xs and a list
-ys then (checking whether) v is not
+0:05:18.480,0:05:22.560
+We have head of some list
+- let's take the list [1..5],
 
-0:05:41.280,0:05:44.880
-an element of the combination of these two lists
+0:05:24.240,0:05:34.480
+for example -
+head to gives us 1 and tail gives us the rest.
 
-0:05:48.720,0:05:58.960
-is the same as checking whether it's not
-an element of xs and not an element of ys.
+0:05:36.000,0:05:38.240
+And we also have 'last'
 
-0:05:58.960,0:06:02.400
-Then it is also not an element of the combination.
+0:05:42.080,0:05:52.240
+and 'init' and with these functions we are
+going to try to implement isPalindrome now.
 
-0:06:03.200,0:06:07.040
-Okay, this is what these tests do.
+0:05:52.240,0:06:00.640
+Because we can compare the first element against
+the last and then cleverly use tail and init to
 
-0:06:07.040,0:06:17.840
-And we more or less do, at least for the first few
-tests, we can see that these are our cases here.
+0:06:01.760,0:06:06.160
+get the middle list and then
+recursively call isPalindrome.
 
-0:06:20.320,0:06:25.360
-Okay, so is there another way to to solve this?
+0:06:06.160,0:06:13.680
+So what we're doing is we're getting the head of
+the list and comparing it to the last element,
 
-0:06:27.200,0:06:33.120
-Sure, for example, we can realize that we
-are actually dealing with Booleans here.
+0:06:13.680,0:06:20.240
+exactly what the palindrome is, if the first and
+the last are equal then it can be a palindrome.
 
-0:06:33.120,0:06:37.920
-So on this side we have boolean
-values and here we have Boolean values
+0:06:21.840,0:06:33.040
+And then we say okay, if this is the
+case then also isPalindrome' of ...
 
-0:06:37.920,0:06:48.000
-so we can rewrite this using Boolean connectives.
+0:06:33.040,0:06:34.880
+And now we need the middle list
 
-0:06:48.000,0:07:00.400
-So, instead of these guards let's say in one
-Boolean expression what notElem really is.
+0:06:34.880,0:06:41.040
+and for the middle list to get this
+we cleverly combine init with tail.
 
-0:07:01.280,0:07:13.280
-So we have the first condition here that says it's
-true if xs is null, so you can just write null xs.
+0:06:41.040,0:06:43.120
+Because if we take first the tail
 
-0:07:15.440,0:07:17.600
-And then we add the second condition.
+0:06:45.600,0:06:56.080
+and then the initial part of the tail we end up
+with dropping the first and the last element.
 
-0:07:18.800,0:07:22.080
-And if we look carefully at these
-two conditions we see that this is
+0:06:56.080,0:07:05.920
+So we're doing this here init (tail xs).
 
-0:07:23.840,0:07:41.360
-(head xs /= v) && (notElem v (tail xs))
+0:07:07.360,0:07:11.600
+And now we need to take care of
+the upper and lower case as well.
 
-0:07:43.600,0:07:54.000
-This just says in one expression without
-any guards, that either the list is empty or
+0:07:15.440,0:07:21.440
+So toLower here and here.
 
-0:07:54.720,0:08:00.960
-the first element is different (to v) and the
-rest list also does not contain the element.
+0:07:26.480,0:07:30.840
+And now ...
 
-0:08:02.720,0:08:11.840
-And that's the definition of what it means
-for v to not be an element of this list.
+0:07:31.760,0:07:38.440
+isPalindrome' of our example ...
 
-0:08:13.120,0:08:22.080
-Okay, this is possible because we are
-dealing with a Boolean valued output.
+0:07:39.680,0:07:43.840
+Oh there's something wrong.
+We have forgotten something.
 
-0:08:24.320,0:08:29.520
-And we can use these (&&) and (||)
-connectives to write a thing like this.
+0:07:46.720,0:07:52.400
+Basically we're doing recursion
+here and we're taking init and tail
 
-0:08:29.520,0:08:36.000
-And sometimes you would prefer this version
-with guards over this expression and
+0:07:52.400,0:07:56.720
+but we're never checking for the empty list.
 
-0:08:36.000,0:08:43.680
-sometimes depending on the context this
-single expression might be favorable.
+0:07:56.720,0:08:05.120
+Because head does not work on the empty list,
+tail does not work on the empty list init
 
-0:08:45.120,0:08:52.640
-But there's another solution that is interesting.
-Maybe a bit more declarative.
+0:08:07.120,0:08:10.260
+some work some don't.
+(Actually, none of the used functions do!)
 
-0:08:56.160,0:08:59.400
-We use the observation that ...
+0:08:10.260,0:08:12.640
+If we take head [] gives an error,
 
-0:09:04.720,0:09:16.240
-If v is not an element of xs then there
-are no elements in xs that are equal to v.
+0:08:14.960,0:08:20.600
+tail [] is an error, init [],
 
-0:09:17.520,0:09:25.920
-This means that if we take all the
-elements of xs via a list comprehension;
+0:08:22.080,0:08:26.560
+and the last [] is also an error.
 
-0:09:25.920,0:09:30.800
-And only take those that are equal to v;
+0:08:26.560,0:08:29.280
+There are some functions like
+this that work on empty lists.
 
-0:09:32.000,0:09:38.160
-Then we get all the elements that
-are equal to v in that list and
+0:08:32.720,0:08:35.120
+None of these work on empty lists.
 
-0:09:38.160,0:09:43.200
-for an element to not be in the
-list this list now has to be empty.
+0:08:35.120,0:08:40.080
+So we need to make sure that we actually catch
 
-0:09:45.120,0:09:57.120
-This says if there is no element in xs
-such that x == v, then v is not in xs.
+0:08:41.440,0:08:49.120
+the case where the list is empty or small
+enough where we don't need to do recursion.
 
-0:09:58.240,0:10:04.000
-This is a nice declarative alternative to this
-Boolean expression with recursion, because
+0:08:49.680,0:08:50.880
+So we add some guards.
 
-0:10:05.440,0:10:07.280
-as you can see there's no recursion here.
+0:08:53.280,0:08:53.840
+Make this the
 
-0:10:07.840,0:10:16.800
-And this is also correct as we
-can see by running the tests.
+0:08:58.080,0:09:00.720
+otherwise case, and
 
-0:10:16.800,0:10:21.680
-(Maybe we should save it
-first and now run the tests)
+0:09:02.320,0:09:13.040
+check the length and we say the length has to be
+smaller than 2 then we know it's a palindrome.
 
-0:10:23.280,0:10:24.960
-It passes all the tests,
+0:09:15.120,0:09:20.960
+Because if it's empty, i.e,
+length xs == 0 it is a palindrome,
 
-0:10:27.200,0:10:36.560
-but it's way harder to see by looking at
-the code that it fulfills these properties.
+0:09:20.960,0:09:26.000
+and if it's just a single character
+it is also a palindrome, by default.
 
-0:10:37.360,0:10:41.440
-But we can run them and then verify
-that this actually works out.
+0:09:27.920,0:09:30.160
+Okay, now let's try this again.
 
-0:10:43.600,0:10:53.840
-This is a nice observation that we can make here
-to get this solution with list comprehensions.
+0:09:34.080,0:09:37.680
+Now we get the desired result.
+
+0:09:37.680,0:09:43.120
+We can again do this capitalization
+thing and now if we change
+
+0:09:45.600,0:09:54.400
+the function in these tests to
+refer to our alternative solution.
+
+0:09:55.600,0:10:03.840
+Load this up and run main it passes all the
+tests so this is a valid solution as well.

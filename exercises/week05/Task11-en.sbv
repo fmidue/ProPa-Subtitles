@@ -1,266 +1,294 @@
-0:00:03.200,0:00:05.600
-Next, we have Task 11.
+0:00:02.000,0:00:05.120
+For the last task this week
+we switch over to CodeWorld.
 
-0:00:05.600,0:00:11.600
-And here we should implement a
-function that sums a list of integers,
+0:00:05.760,0:00:15.920
+Here we have given a level description
+for some video game where we have Integer
 
-0:00:14.240,0:00:18.240
-and that uses some sort of
-divide and conquer approach.
+0:00:15.920,0:00:24.560
+coordinates that are mapped to an Integer value
+indicating what to draw at that specific location.
 
-0:00:18.800,0:00:20.160
-That is, we should
+0:00:26.960,0:00:34.800
+So we have four different types of
+tiles that we would like to draw and
 
-0:00:21.200,0:00:27.840
-use this splitting 'splitAt' function to
-split the list in two parts of equal size.
+0:00:38.320,0:00:40.560
+zero indicating blank space.
 
-0:00:28.720,0:00:36.080
-And then recursively compute the sum of
-these lists and in the end combine them.
+0:00:40.560,0:00:47.680
+And we have these four different tiles
+defined here, already given to us.
 
-0:00:37.440,0:00:40.400
-And we should only use one equation.
+0:00:47.680,0:00:49.520
+And we should now
 
-0:00:41.440,0:00:48.320
-We can use guards but we cannot introduce
-additional equations, for example,
+0:00:51.360,0:00:58.960
+define a function that does this mapping from
+these numbers to the actual images for the tile.
 
-0:00:48.320,0:00:54.720
-with a where clause, so we are encouraged
-to use let instead if we need a where.
+0:00:58.960,0:01:03.600
+And then we should build a scene
+that renders the whole level
 
-0:00:57.120,0:01:01.200
-Okay, so let's start by
-giving the parameter a name.
+0:01:06.400,0:01:11.840
+from values for x and y from -10 to 10.
 
-0:01:03.360,0:01:08.640
-And then let's think about the basic structure.
+0:01:12.640,0:01:19.280
+Okay, let's start with mapping the integer
+encoding of the tiles to the actual pictures.
 
-0:01:08.640,0:01:10.320
-So we start with
+0:01:22.560,0:01:28.400
+Once again, first we can name our input.
 
-0:01:14.560,0:01:21.360
-splitting the list to an a and b.
+0:01:28.960,0:01:31.680
+And now it's tempting to
 
-0:01:22.480,0:01:25.840
-And let's just use the
+0:01:32.720,0:01:48.400
+just use guards and say, okay input 0 then
+we're using blank if x == 1 and so on.
 
-0:01:27.920,0:01:34.560
-function call from right here.
-Our list is called xs in this example.
+0:01:50.080,0:01:53.840
+This works fine but it's
+not the best way to do it.
 
-0:01:34.560,0:01:46.640
-Okay and now we also need to
-give it the list parameter.
+0:01:55.360,0:02:00.960
+Instead of using guards here, you can
+write the integers directly here and
 
-0:01:48.000,0:01:53.840
-Now we have an a and a b and
-these are two lists of integers.
+0:02:02.800,0:02:15.680
+Haskell will match these and choose the correct
+right-hand side depending on what input we get.
 
-0:01:55.840,0:02:00.000
-Now you can also define the sum of a.
+0:02:15.680,0:02:24.080
+So we can just write it like this for 0
+and then write aTile 1 = ... and now 1
 
-0:02:03.920,0:02:07.840
-And the sum of b.
+0:02:25.440,0:02:31.120
+should correspond to blocks, so we
+just choose the picture for block here
 
-0:02:08.360,0:02:14.160
-- Just for clarity as extra bindings -
+0:02:31.840,0:02:36.800
+aTile 2 should be water.
 
-0:02:14.160,0:02:18.960
-And then we just say okay, sum a + sum b.
+0:02:39.280,0:02:45.680
+aTile 3 is a pearl.
 
-0:02:21.120,0:02:24.720
-Okay, so that's our basic
-divide and conquer approach:
+0:02:48.400,0:02:54.880
+And aTile 4 is air.
 
-0:02:24.720,0:02:28.160
-We split the list into two equal parts
+0:02:54.880,0:03:01.520
+And then instead of the otherwise
+we can use the wildcard (_).
 
-0:02:29.360,0:02:38.160
-in the middle, that's what this div 2 here
-does, and then we take the left part sum it up,
+0:03:01.520,0:03:14.560
+Just say this blank and now we could merge
+this zero case with the one down here.
 
-0:02:38.720,0:02:47.200
-take the right part sum it up, by a recursive
-calls, and then we combine the results.
+0:03:15.920,0:03:24.800
+So aTile 0 is then caught by
+this case and produces blank.
 
-0:02:47.200,0:02:49.840
-Okay, so is that all?
+0:03:27.360,0:03:39.120
+Okay, so let's quickly see if this works
+by using this function here in scene.
 
-0:02:49.840,0:02:56.800
-Well, if we look at this test down
-here we see that sum [] should equal 0.
+0:03:43.600,0:03:49.680
+For 1 we get the block, for
+2 we hopefully get water.
 
-0:02:57.840,0:03:04.000
-Well, that's not really encoded
-anywhere here in our function.
+0:03:51.200,0:03:54.000
+Yes, that's what water looks like here.
 
-0:03:04.000,0:03:08.320
-So, let's add some guards to
-make sure we catch this case.
+0:03:58.240,0:03:59.840
+Then we have the pearl.
 
-0:03:09.680,0:03:17.840
-Let's add the guard in case xs is the empty list.
+0:04:04.880,0:04:07.120
+And air.
 
-0:03:20.000,0:03:22.480
-So null xs would return True.
+0:04:10.480,0:04:18.480
+Okay, this works fine and if we now use 0 we
+get in the default case where it's just blank.
 
-0:03:23.440,0:03:38.320
-And the otherwise case has our divide and conquer
-scheme and if our list is empty we just return 0.
+0:04:19.280,0:04:22.880
+And the same thing happens if
+we, for example, choose something
 
-0:03:39.520,0:03:45.840
-Okay let's load this up.
+0:04:23.920,0:04:35.680
+way out of bounds like 11 so
+we have a blank picture there.
 
-0:03:54.880,0:03:56.320
-Let's try it out.
+0:04:35.680,0:04:42.320
+Okay, so now how do we actually
+draw all these coordinates?
 
-0:03:56.320,0:04:02.560
-So sum [] = 0. Okay so far so good.
+0:04:42.320,0:04:49.360
+So we should go from -10 to 10 on both
+dimensions and evaluate the level,
 
-0:04:02.560,0:04:09.280
-Let's check a list with one
-element, oh so nothing is happening.
+0:04:50.000,0:04:56.240
+check out what we have to
+draw there and then draw it.
 
-0:04:11.120,0:04:15.440
-Or maybe there's something
-happening but it's not finishing.
+0:04:56.240,0:05:00.480
+And the task requires us
+to not use recursion here.
 
-0:04:16.880,0:04:18.880
-Now we get a stack overflow.
+0:05:00.480,0:05:12.000
+So what we do is, we use a list comprehension
+because we want to evaluate the 'level' function
 
-0:04:22.320,0:04:24.240
-So what's the problem here?
+0:05:13.200,0:05:23.840
+at some x's and y's and these x's and y's
+are drawn from the range of -10 to 10.
 
-0:04:24.240,0:04:28.160
-Well, let's take a look at our splitting function:
+0:05:34.640,0:05:41.760
+Let's change the layout a little bit.
 
-0:04:29.520,0:04:35.040
-We have a list with one element
-so this list has length 1.
+0:05:41.760,0:05:44.320
+This will come in handy in a second.
 
-0:04:35.040,0:04:44.160
-And if we have 1 `div` 2 we get
-0. Because this takes the division
+0:05:46.400,0:05:50.880
+Okay, now we have all these
+red squiggly lines that
 
-0:04:44.720,0:04:52.800
-and ignores the rest of the division
-if it isn't a clear division.
+0:05:50.880,0:05:55.440
+tell us that this is actually
+a [Integer] and not a Picture.
 
-0:04:53.440,0:04:58.000
-Okay so what we actually do is we do
+0:06:00.320,0:06:03.680
+But it is a list of Integers
+so that's a good first step.
 
-0:04:58.000,0:05:12.480
-splitAt 0 [1] in this case.
-So this is what this (a, b) does.
+0:06:03.680,0:06:10.640
+Now we have this 'aTile' function which
+actually converts Integers into Pictures
 
-0:05:12.480,0:05:15.360
-So we end up with [] and [1].
+0:06:12.080,0:06:18.880
+so we call aTile on this Integer value
+that we just got from the 'level' function.
 
-0:05:19.520,0:05:25.680
-And then we recursively call
-sum [], this would return zero.
+0:06:19.680,0:06:26.720
+And now the compiler complains that we should have
+given a Picture but instead given a [Picture].
 
-0:05:26.880,0:05:36.320
-But now we call sum again on [1] which is what
-we just did so we have an infinite loop here.
+0:06:26.720,0:06:37.680
+Well, we use the 'pictures' function to combine
+these multiple pictures into one single Picture.
 
-0:05:36.880,0:05:46.640
-Because for lists of length one the
-splitting does not produce any progress.
+0:06:38.240,0:06:44.560
+And now we evaluated the level at
+each position and drawn the tile.
 
-0:05:47.760,0:05:55.800
-So we need to get an additional case .
+0:06:44.560,0:06:50.320
+But they are all on top of each other,
+that's not really what we wanted.
 
-0:05:56.720,0:06:06.480
-If the length of xs is one then we
-just have one element in our list.
+0:06:50.320,0:07:00.400
+We have this huge list of tiles and
+they are all in the coordinate origin.
 
-0:06:06.480,0:06:07.440
-What's the sum?
+0:07:01.600,0:07:03.360
+So we need to translate them.
 
-0:06:07.440,0:06:12.880
-Well, it's just that element, so this
-one element is the head of the list.
+0:07:10.400,0:07:19.840
+And the question is what values
+we use to translate them?
 
-0:06:16.240,0:06:17.200
-Let's check that:
+0:07:24.000,0:07:25.920
+Just x and y really.
 
-0:06:18.640,0:06:30.000
-So now sum [1] is actually that
-element (1) like we would expect.
+0:07:28.880,0:07:37.600
+For example, the (-10, -10) tile should go
+all the way here and down here somewhere.
 
-0:06:30.000,0:06:37.920
-Okay, so does it work for
-lists with multiple elements?
+0:07:37.600,0:07:40.080
+So we translate it by -10 and -10.
 
-0:06:40.080,0:06:41.680
-Let's check some examples...
+0:07:42.240,0:07:43.840
+Now we have a problem though.
 
-0:06:44.800,0:06:47.840
-Okay, looks good.
+0:07:44.960,0:07:49.760
+Because 'translated' requires Doubles
+and 'level' requires Integers,
 
-0:06:49.280,0:06:54.320
-You can check some bigger examples:
-Let's sum all the numbers from 1 to 100.
+0:07:51.440,0:07:54.560
+x cannot be both a Integer and a Double.
 
-0:06:57.760,0:07:01.200
-This also looks right.
+0:07:54.560,0:08:04.800
+So the error occurs here because this is
+inferred first to Double and then here
 
-0:07:06.560,0:07:07.760
-So this seems to work.
+0:08:04.800,0:08:11.840
+we try to use the x and y that are
+inferred as Double as Integers.
 
-0:07:10.000,0:07:15.520
-There exist some variations of this program.
+0:08:13.440,0:08:20.240
+Generally it's better to use non-floating
+point numbers for these ranges
 
-0:07:15.520,0:07:22.880
-For example, if we would like to calculate the
-length of the list just once we could try to
+0:08:20.240,0:08:25.840
+because they behave more nicely so
+we want to actually change these.
 
-0:07:25.440,0:07:29.840
-fit these two cases into one.
+0:08:27.360,0:08:31.760
+We want to treat x and y as Integers
+and convert them to Double here.
 
-0:07:30.720,0:07:36.720
-If we were allowed to use where we could
-do that and define something like...
+0:08:31.760,0:08:42.000
+And for that we use fromIntegral x.
 
-0:07:38.440,0:07:44.160
-... where n = length xs.
+0:08:47.600,0:08:49.280
+Same for y.
 
-0:07:44.160,0:07:47.680
-Then we can use n here and here.
+0:08:50.800,0:08:56.480
+And now the compiler is happy
+because this x is now an Integer.
 
-0:07:48.960,0:07:51.520
-But in this case we are not allowed to do this.
+0:08:56.480,0:09:02.080
+Here we use it as Integer to call 'level' and
+here we convert it from an Integer to a Double.
 
-0:07:53.760,0:08:06.560
-So if we want to do the same kind of
-refactoring we just do it in the otherwise case.
+0:09:03.600,0:09:07.840
+Okay, so let's see what happens.
 
-0:08:06.560,0:08:18.560
-So, we use let n = length xs.
+0:09:11.760,0:09:16.560
+This is our level as specified over here.
 
-0:08:20.160,0:08:27.360
-And then we can use if to check if n == 1.
+0:09:21.200,0:09:29.120
+And with this translation function from integers
+to pictures and this layout here we get our nice
 
-0:08:29.360,0:08:35.920
-If this is the case we return head xs.
+0:09:31.200,0:09:33.280
+grid-based level.
 
-0:08:36.480,0:08:39.840
-And else
+0:09:33.280,0:09:36.840
+And if we now change something here ...
 
-0:08:45.520,0:08:50.160
-we do the divide and conquer strategy.
+0:09:39.440,0:09:41.560
+Change what is drawn there ...
 
-0:08:53.440,0:09:01.680
-And now we have calculated length xs only once.
-Not necessarily for performance reasons
+0:09:41.560,0:09:46.400
+We can alter the level.
 
-0:09:01.680,0:09:08.400
-but for readability and maintainability
-of our solution this is a good idea.
+0:09:46.400,0:09:57.200
+And you can play around with this and design your
+own level if you want which is a fun exercise.
 
-0:09:13.360,0:09:21.360
-Okay, so that's that for Task 11.
+0:10:04.240,0:10:07.840
+Okay, so that's that for this task.
+
+0:10:09.280,0:10:13.040
+If you know that you should use a list
+comprehension for it, the solution
+
+0:10:13.920,0:10:15.040
+comes really naturally.
+
+0:10:16.160,0:10:21.120
+You follow the types a bit to make
+sure everything fits together.
+
+0:10:23.760,0:10:31.840
+Nothing too fancy but the result is quite nice.
