@@ -1,351 +1,513 @@
-0:00:00.000,0:00:07.680
-In dieser Aufgabe sind unendliche Listen in
-Haskell zu definieren und die Herausforderung
-
-0:00:07.680,0:00:15.420
-besteht dabei, die Listen so zu definieren,
-dass die Reihenfolge der Zahlen so ist,
-
-0:00:15.420,0:00:22.380
-dass möglichst kleine Zahlen am Anfang
-stehen und nicht die Zahlen, die sehr
-
-0:00:22.380,0:00:30.660
-groß sind und irgendwo sehr weit am Ende stehen,
-beziehungsweise gar nicht angezeigt werden können,
-
-0:00:30.660,0:00:39.150
-weil Haskell nie zu dem Ziel kommt. Was wäre
-denn ein solcher Fall? Ein solcher Fall wäre,
-
-0:00:39.150,0:00:52.020
-wenn man z.B. die unendlichen Listen
-so definieren würde. Das heißt,
-
-0:00:52.020,0:01:07.980
-man hat die unendlichen Zahlen definiert als
-die Zahlen von null bis unendlich und dann die,
-
-0:01:07.980,0:01:22.470
-hier müsste man wahrscheinlich -1 bis, was
-weiß ich, oder sagen wir das einfach so:
-
-0:01:22.470,0:01:35.250
-Ein x mit 1 bis unendlich und dann das ganze
-als 'negate'. Das heißt, die negativen werte so.
-
-0:01:35.250,0:01:40.950
-Das würde dazu führen, dass -1 nämlich hier
-erstmal gar nicht auftaucht in den Werten.
-
-0:01:49.140,0:01:57.180
-Wenn ich das Programm lade und jetzt hier die
-ersten 100 Werte anzeigen lassen von Ints,
-
-0:01:57.180,0:02:03.630
-dann stellen wir fest, dass hier nur positive
-Zahlen stehen, besser wäre das ganze alternierend
-
-0:02:03.630,0:02:13.110
-zu haben, denn dann könnte man nämlich die
--1 auch schon relativ zeitig sehen und müsste
-
-0:02:13.110,0:02:20.550
-nicht unendlich viele Werte abrufen. Das heißt,
-wenn man -1 finden möchte, in dieser Liste, dann
-
-0:02:20.550,0:02:25.710
-terminiert das Programm gar nicht, weil Haskell
-immer noch damit beschäftigt ist, alle positiven
-
-0:02:25.710,0:02:34.020
-Zahlen aufzuzählen. Das wollen wir eben nicht. Was
-können wir hier für einen Trick anwenden, um das
-
-0:02:34.020,0:02:44.520
-zu erreichen? Eine List Comprehension ist schon
-das, was wir haben wollen und wir könnten das so
-
-0:02:44.520,0:02:59.370
-machen, dass wir den Wert, den wir haben, durch
-zwei dividieren. Wenn wir das machen, dann
-
-0:02:59.370,0:03:09.570
-erhalten wir schon mal eine Liste, die null am
-Anfang enthält und dann immer zweimal jeden Wert.
-
-0:03:09.570,0:03:15.840
-Wie hilft uns das weiter? Jetzt müssen wir nur
-noch dafür sorgen, dass jeder zweite Wert davon
-
-0:03:15.840,0:03:23.040
-negiert wird und das können wir erreichen, indem
-wir mit -1 multiplizieren, aber nur dann, wenn wir
-
-0:03:23.040,0:03:34.770
-das brauchen. Ich definiere hier mal die Funktion
-'alternate', die von x abhängig genau entweder 1
-
-0:03:34.770,0:03:43.770
-oder -1 liefern soll. Also 'alternate' von x,
-also das wird hier in einem 'where' definiert,
-
-0:03:43.770,0:03:55.030
-weil wir das hier lokal brauchen. 'aternate'
-von x soll so definiert sein, dass 'x 'mod' 2',
-
-0:03:55.030,0:04:15.040
-wenn das 0 ist, dann multiplizieren wir mit -1
-und im anderen Fall, wenn das nicht der Fall ist,
-
-0:04:15.040,0:04:21.490
-dann multiplizieren wir mit 1, sodass sich
-die Zahl nicht verändert und wenn wir das
-
-0:04:21.490,0:04:25.780
-jetzt noch einmal ausführen und uns die ersten
-100 Werte anschauen, dann sehen wir jetzt hier
-
-0:04:25.780,0:04:32.800
-genau, dass dieses verhalten auftritt, dass 0 als
-erstes kommt und dann - 1 und 1 und so weiter. Es
-
-0:04:32.800,0:04:36.850
-ist kein Wert doppelt, aber es sind alle Werte
-vorhanden und wir könnten ja noch mehr Werte
-
-0:04:36.850,0:04:43.150
-anzeigen, also kann uns sie auf 1000 Werte geben
-lassen und sehen, dass sich das Schema fortsetzt.
-
-0:04:47.710,0:04:52.000
-Die nächste Aufgabe beschäftigt sich
-nicht mit den Integerzahlen, sondern mit
-
-0:04:52.000,0:04:58.570
-natürlichen Zahlen und hier sollen jetzt eben
-alle natürlichen Zahlen zurückgegeben werden,
-
-0:04:58.570,0:05:10.930
-alle Paare von zwei natürlichen Zahlen. Das ist
-ein Problem, was man mithilfe von Hilbert lösen
-
-0:05:10.930,0:05:18.220
-kann, wenn man das kennt, Hilberts Hotel, das
-so ziemlich den Ansatz hat, alle diese Paare
-
-0:05:18.220,0:05:24.580
-durchzunummerieren, beschäftigt sich mit der
-Frage, ob das überhaupt möglich ist, alle diese
-
-0:05:24.580,0:05:31.900
-Zahlenpaare mit natürlichen Zahlen auszudrücken,
-oder die sozusagen durchzunummerieren und das
-
-0:05:31.900,0:05:40.480
-ist möglich und das kann man eben hier auch in
-der Aufgabe ausnutzen. Und zwar wird hier auch
-
-0:05:40.480,0:05:52.840
-wieder eine List Comprehension genutzt, in der wir
-letztendlich x und y haben wollen und wir nutzen
-
-0:05:52.840,0:06:01.240
-halt diesen Ansatz, den auch Hilbert nimmt,
-und nehmen die natürlichen Zahlen sozusagen,
-
-0:06:01.240,0:06:11.250
-um abzuzählen, was wir haben wollen, aber das ist
-der gleiche Ansatz wie dort, aber wir zählen hier
-
-0:06:11.250,0:06:19.800
-die diagonalen, die wir haben wollen, wenn wir
-sozusagen tabellarisch x und y auflisten würden.
-
-0:06:19.800,0:06:29.820
-Also x in der Horizontalen und y der Vertikalen
-und dann eben die Paare dort in die Tabelle alle
-
-0:06:29.820,0:06:35.250
-eintragen würden, dann könnten wir sozusagen die
-diagonalen, oben links in der ecke beginnend,
-
-0:06:35.250,0:06:42.990
-weiter abgehen, nach rechts oder nach unten,
-was im Prinzip dasselbe ist, weil die Zahlen,
-
-0:06:42.990,0:06:47.760
-wenn man eins nach rechts geht, liegt genau auf
-der Diagonalen, wie wenn man eins nach unten geht
-
-0:06:47.760,0:06:53.790
-und so weiter. Das heißt eins nach rechts und
-eins nach unten liegt auf derselben Diagonalen,
-
-0:06:53.790,0:07:06.690
-wie zwei nach rechts und so weiter. Das heißt,
-wir können sagen x ist eben genau eine Zahl, die
-
-0:07:06.690,0:07:19.980
-auch wieder aus dem Bereich 0 bis und dann aber n
-in diesem Fall stammt. Und y ist genau die Zahl,
-
-0:07:19.980,0:07:29.820
-die 'n - x' ist. Das ist sozusagen dann die andere
-Zahl in der Diagonalen. In der zweiten Diagonale
-
-0:07:29.820,0:07:38.820
-entstehen zwei Werte, nämlich 1 0 und 0 1, also
-alle, die in der Summe 1 ergeben, alle Zahlenpaare
-
-0:07:39.990,0:07:51.330
-in der zweiten Diagonalen stehen alle Zahlen die
-in der Summe 2 ergeben und so weiter. Das können
-
-0:07:51.330,0:07:58.050
-wir hier als 'pairs' auch anschauen. Vielleicht
-lasse ich erstmal nur die ersten 100 ausgeben,
-
-0:07:58.050,0:08:09.570
-dann sehen wir hier alle mit der Summe 0,
-alle mit der Summe 1, alle mit der Summe 2,
-
-0:08:09.570,0:08:18.770
-alle mit der Summe 3 und es wird immer eine Zahl
-mehr, alle mit der Summe 4 und so weiter. Es kommt
-
-0:08:18.770,0:08:29.090
-immer eine Zahl pro Diagonale hinzu. Dann die
-dritte Aufgabe. Die sagt aus, dass wir nun die
-
-0:08:29.090,0:08:37.580
-Zahlen aller Triple von zwei natürlichen Zahlen
-und einer Integerzahl bestimmen sollen. Das heißt,
-
-0:08:37.580,0:08:44.390
-der dritte Wert kann auch negativ sein, die
-anderen Zahlen sind nicht negativ. Dafür ist
-
-0:08:44.390,0:08:52.100
-es gut, dass wir 'ints' und 'pairs' bereits schon
-definiert haben, denn die können wir jetzt in dem
-
-0:08:52.100,0:09:09.890
-Fall wieder verwenden. Wir wollen jetzt drei
-Zahlen haben x, y und z. Wir wollen genau alle
-
-0:09:09.890,0:09:15.710
-natürlichen Zahlen, also wir wollen alle Triple
-mit allen natürlichen Zahlenkombinationen und
-
-0:09:15.710,0:09:22.670
-den entsprechenden Integerzahlen. Dafür können
-wir 'pairs' verwenden, um uns erstmal die Paare
-
-0:09:22.670,0:09:28.340
-zu geben, mit denen wir dann in den unendlichen
-Listen nachschauen, was wir kombinieren wollen,
-
-0:09:28.340,0:09:34.220
-denn so können wir alle Kombinationen ausdrücken.
-Wir wissen, dass 'pairs' uns die Kombination aller
-
-0:09:34.220,0:09:40.490
-natürlichen Zahlen liefert und mit natürlichen
-Zahlen können wir in den Listen nachschlagen,
-
-0:09:40.490,0:09:51.260
-was wir brauchen. Also wir können uns Indizes
-geben lassen, mithilfe von 'pairs' und dann
-
-0:09:51.260,0:10:16.480
-erhalten wir x und y, wenn wir in 'pairs' an
-der Stelle i nachschlagen. x und y erhalten wir,
-
-0:10:16.480,0:10:25.990
-wenn wir in 'pairs' an der Stelle i nachschlagen,
-dann erhalten wir sozusagen genau einen Wert hier
-
-0:10:25.990,0:10:35.680
-raus, i läuft über alle natürlichen Zahlen, weil
-das die Liste an Kombination von natürlichen
-
-0:10:35.680,0:10:46.270
-Zahlen ist und mit j können wir den das z
-nachschlagen, was wir noch benötigen, denn
-
-0:10:46.270,0:10:53.530
-das ist nämlich eins aus diesen Integerzahlen. Und
-dafür können wir j verwenden, weil j nämlich auch
-
-0:10:53.530,0:10:58.420
-eine natürliche Zahl ist. Genaugenommen läuft es
-hier dann, durch per die Verwendung von 'pairs',
-
-0:10:58.420,0:11:03.460
-auch über alle natürlichen Zahlen, sodass wir
-dadurch alle Kombinationen auch bekommen. Ich
-
-0:11:03.460,0:11:19.510
-formatiere das hier mal leicht um, sodass das
-besser sichtbar bleibt. Also wir haben hier x
-
-0:11:19.510,0:11:34.060
-und y und kriegen hier noch z, indem wir in 'ints'
-nachschlagen, an der stelle j und dann erhalten
-
-0:11:34.060,0:11:41.920
-wir die entsprechenden Zahlen. Wenn wir das auch
-kompilieren, dann gibt es ein Fehler. Und zwar
-
-0:11:41.920,0:11:49.420
-sagt er hier, dass 'Int' nicht mit 'Integer'
-kombinierbar ist. Das liegt daran, dass unsere
-
-0:11:49.420,0:12:04.330
-Nachschlagefunktion '!!' halt eben den Typ Liste
-nach 'Int' nach a hat. Das heißt, wir brauchen
-
-0:12:04.330,0:12:10.990
-hier ein 'Int'. Das können wir korrigieren,
-indem wir hier 'fromIntegral' verwenden. Und
-
-0:12:10.990,0:12:17.530
-dasselbe machen wir bei j auch, denn auch das
-ist ein 'Integer', mit 'fromIntegral' können
-
-0:12:17.530,0:12:28.180
-das zu einem 'Int' konvertieren und können damit
-diese lookup-Funktion verwenden. Und jetzt können
-
-0:12:28.180,0:12:37.210
-wir auch von der 'triples' Funktion uns Werte
-ausgeben lassen und sehen, dass das hier auch
-
-0:12:37.210,0:12:51.640
-eine immer weiter steigende Werte sind. Wir sehen,
-das hier die Integerzahlen etwas steiler steigen,
-
-0:12:51.640,0:13:05.980
-aber im groben steigen schon alle Zahlen hier. Es
-sind die Paare jeweils am Anfang, also wir haben
-
-0:13:05.980,0:13:15.970
-ja 0 0 auch zweimal drin, gleich am Anfang,
-einmal mit 0, einmal mit -1 und dann taucht
-
-0:13:15.970,0:13:21.670
-es aber auch später wieder auf, also hier mit 0
-0 auch mit 1, hier taucht 0 0 mit -2 auf, hier
-
-0:13:21.670,0:13:33.190
-taucht 0 0 mit 2 auf und zwischendrin tauchen
-dann eben auch noch andere Zahlenpaare auf,
-
-0:13:34.270,0:13:45.370
-die sich dann auch später wieder in anderen
-Kombinationen wiederholen, mit anderen,
-
-0:13:45.370,0:13:56.950
-auch negativen Zahlen also 1 0 0 zum Beispiel
-hier, dann auch wieder mit 1 0 1 und so weiter.
+0:00:00.000,0:00:05.970
+In dieser CodeWorld Aufgabe geht es
+erneut um schon mal bekannte Aufgaben,
+
+0:00:05.970,0:00:17.820
+nämlich um die Aufgabe zu den Bäumen, die sich
+so im Wind neigen. Ich lade jetzt den Code,
+
+0:00:17.820,0:00:24.900
+der dazu bereits schon existierte jetzt einfach
+in dieses Programm hinein. Also wir haben hier
+
+0:00:24.900,0:00:34.620
+die sich bewegenden Bäume und hier war, dass die
+'tree' Funktion in dem Fall, die die verwendet
+
+0:00:34.620,0:00:42.690
+werden konnte um einen entsprechenden Baum
+zu malen. Ich zeige das Ganze mal kurz an.
+
+0:00:45.870,0:00:54.990
+Das ist einfach der Baum, den wir dort hatten.
+Jetzt gibt es noch extra Anforderungen,
+
+0:00:54.990,0:01:02.250
+die passieren sollen, nämlich dass der Baum oder
+dass es mehrere Bäume sein sollen und dass der
+
+0:01:02.250,0:01:16.320
+Baum sich dauerhaft bewegt. Dann kommt noch hinzu,
+dass wir Informationen zu den Jahreszeiten mit in
+
+0:01:16.320,0:01:22.650
+den Baum geben sollen. Wie machen wir, dass der
+Baum sich dauerhaft bewegt? Indem einfach diese
+
+0:01:22.650,0:01:37.920
+Abfrage hier weggelassen wird, denn wenn sozusagen
+die Ausführung nicht gestoppt wird nach der Zeit
+
+0:01:37.920,0:01:45.000
+von 2 pi, dann bewegt sich der Baum sozusagen
+weiter fort und die Animation endet niemals.
+
+0:01:45.840,0:01:55.410
+Das ist genau das, was wir eben für unseren Baum
+dann auch haben wollen. Dann als nächstes können
+
+0:01:55.410,0:02:02.670
+wir uns vielleicht darum kümmern mehrere Bäume
+zu zeichnen, dafür nutze ich jetzt ein einfach
+
+0:02:02.670,0:02:13.080
+den Ansatz mehrere Bäume zu zeichnen über die
+'pictures' Funktionen, das heißt, ich schreibe
+
+0:02:13.080,0:02:21.030
+eine List Comprehension, die mehrere Bäume erzeugt
+und die 'pictures' Funktion sorgt dann dafür,
+
+0:02:21.030,0:02:33.630
+dass das zu einem Bild von Bäumen wird. Also ich
+möchte diese 'tree' Funktion mehrfach anwenden,
+
+0:02:33.630,0:02:49.800
+und zwar möchte ich dafür noch Parameter übergeben
+zum einen, dass das ganze skaliert wird und zum
+
+0:02:49.800,0:03:03.300
+anderen, dass eine x Koordinate, die den baum
+verschiebt. Ich zeige vielleicht mal noch das
+
+0:03:03.300,0:03:13.530
+Beispiel, dass hier noch mit gezeigt wird. So soll
+das Ganze am Ende aussehen und ich möchte jetzt
+
+0:03:13.530,0:03:27.210
+entsprechend die Bäume skalieren, dass die kleiner
+im Hintergrund stehen. Dafür sage ich halt:
+
+0:03:27.210,0:03:34.350
+Hier möchte ich einen Skalierungsfaktor haben und
+dann außerdem noch eine Verschiebung. Ich möchte
+
+0:03:34.350,0:03:48.390
+den einen Baum im Vordergrund genauso groß haben,
+wie der Baum eben jetzt ist und der soll auch
+
+0:03:48.390,0:03:55.830
+nicht verschoben sein und dann möchte ich noch
+zusätzlich Bäume, die skaliert sind, ich nehme mir
+
+0:03:55.830,0:04:04.830
+mal den Faktor 0,75, und verschoben nach links und
+rechts. Nach links und rechts und denselben Wert,
+
+0:04:04.830,0:04:12.300
+ich nehme mir jetzt einfach mal für beide
+0,75 als Skalierungsfaktoren und dann die
+
+0:04:12.300,0:04:19.220
+Verschiebung um 3 jeweils in die Richtung.
+Wenn ich das jetzt mache, dann führt das dazu,
+
+0:04:19.220,0:04:26.780
+dass drei Bäume gemalt werden, aber übereinander
+und es wird noch nicht skaliert. Warum wird noch
+
+0:04:26.780,0:04:35.600
+nicht skaliert? Weil die Skalierungsfunktionen
+noch nicht angewandt wurde. Das ist 'dilated',
+
+0:04:35.600,0:04:43.310
+um uniform zu skalieren. Das heißt, wir wenden
+hier 'dilated' auf den Baum an und dann wird
+
+0:04:43.310,0:04:47.930
+der Baum skaliert und zusätzlich müssen wir
+den Baum jetzt noch verschieben. Also wir
+
+0:04:47.930,0:04:51.950
+sehen ja schon, hier sind jetzt irgendwie
+mehrere bäume hintereinander, so zumindest
+
+0:04:51.950,0:04:57.110
+zwei kann man irgendwie erkennen, wenn man hier
+genau hinguckt. Jetzt müssen wir die Bäume noch
+
+0:04:57.110,0:05:21.650
+entsprechend verschieben und dafür nutzen wir
+'translated' und zwar um x und 0 'translated'.
+
+0:05:23.300,0:05:31.940
+Jetzt formatiere ich den Code noch hier, dass
+man auch weiterhin die Koordinaten sehen kann und
+
+0:05:31.940,0:05:38.330
+jetzt werden hier die Bäume horizontal verschoben.
+Ich kann die Bäume jetzt auch noch die beliebig
+
+0:05:38.330,0:05:47.390
+heranrücken oder anders skalieren. Das tut ja im
+Prinzip nichts zur Sache. Man kann also die Bäume,
+
+0:05:47.390,0:05:58.400
+zum Beispiel jetzt so hier anordnen. Jetzt
+fehlt noch die Anzeige des Monats. Denn
+
+0:05:58.400,0:06:05.000
+wenn wir uns hier das Beispiel erinnern, da
+steht hier unten noch der Monat drunter. Wie
+
+0:06:05.000,0:06:10.340
+können wir das erreichen? Indem wir die 'month'
+Funktion verwenden, die hier schon vordefiniert
+
+0:06:11.000,0:06:19.490
+ist. Wir können also sagen, wir wollen das Bild
+darstellen und zusätzlich noch den 'month' und
+
+0:06:19.490,0:06:24.020
+wir müssen hier einen Int Wert übergeben,
+also wir können hier nicht t übergeben,
+
+0:06:24.020,0:06:35.680
+weil das dann sozusagen dazu führen würde, dass
+der Typ nicht stimmt. Also das können wir hier
+
+0:06:35.680,0:06:42.670
+sehen. Da sagt uns CodeWorld, dass es ein Int
+erwartet hat, aber der aktuelle Type ein Double
+
+0:06:42.670,0:06:51.970
+ist. Wie können wir das beheben? Es gibt hier die
+die 'floor' Funktion, die wir verwenden können,
+
+0:06:51.970,0:07:12.190
+oder die 'ceiling' Funktion. Das würde uns jetzt
+sozusagen ermöglichen den Monat hier zu sehen.
+
+0:07:16.000,0:07:24.880
+Und jetzt stellen wir fest, dass das mit
+Fragezeichen endet. Warum ist das der Fall?
+
+0:07:24.880,0:07:32.050
+ja irgendwann ist unser Wert eben größer als
+12. Zum Beispiel hier ist er jetzt schon 21 und
+
+0:07:32.050,0:07:38.890
+dann passt das ganze nicht mehr. Das können wir
+beheben, indem wir die 'mod' Funktionen anwenden
+
+0:07:38.890,0:07:52.000
+und genau eben 'mod 12' rechnen. Wenn wir das
+machen, dann erhalten wir hier die anzeige Januar,
+
+0:07:52.000,0:07:57.640
+Februar, März und so. Die anzeige ist jetzt noch
+nicht an der richtigen Position. Das muss auch
+
+0:07:57.640,0:08:01.570
+noch behoben werden, denn wir wollen die Schrift
+ja nicht hinter den Bäumen haben, sondern eher
+
+0:08:01.570,0:08:07.000
+darunter. Das heißt, wir müssen das ganze nach
+unten verschieben, benutzen 'translated' dafür
+
+0:08:07.000,0:08:15.070
+erneut die x Koordinate bleibt gleich und die y
+Koordinaten ist negativ, sodass das Ganze nach
+
+0:08:15.070,0:08:22.420
+unten verschoben wird. Ich nehme jetzt einfach
+mal -4 und wenn wir das anwenden, dann sehen wir,
+
+0:08:22.420,0:08:27.610
+dass jetzt der Monat auch hier angezeigt wird.
+Jetzt fehlt noch eine weitere Funktion, nämlich
+
+0:08:27.610,0:08:41.080
+es fehlten noch die farblichen Elemente für die
+saisonalen Elemente der Blätter. Wenn wir uns das
+
+0:08:41.080,0:08:47.500
+im Beispiel anschauen, dann haben wir hier zum
+Beispiel, die 'leaves' sind weiß, dann grün und
+
+0:08:47.500,0:08:59.830
+so weiter. Das können wir umsetzen, indem wir
+das in den in den 'leaves 'realisieren, denn
+
+0:08:59.830,0:09:08.290
+hier steht momentan 'green' drin und wir wollen
+das gerne zu einer Farbe haben, die sich eben,
+
+0:09:08.290,0:09:18.690
+je nach der Saison, ändert. Ich definiere dafür
+eine 'colour' Funktion, der ich einen Parameter
+
+0:09:18.690,0:09:33.600
+übergeben kann, ich sage jetzt einfach mal, das
+soll irgendein t sein und dieses 'colour' soll
+
+0:09:33.600,0:09:39.450
+eben für unterschiedliche Zeiten, unterschiedlich
+sein. Ich gehe jetzt davon aus, dass ich als
+
+0:09:39.450,0:09:51.420
+Parameter immer eine 'season' übergeben kann,
+also die die aktuelle Jahreszeit. Dafür sage ich
+
+0:09:51.420,0:10:00.330
+einfach, dass ich 'season' gerne als Integerwerte
+haben möchte und dann gibt es entsprechend vier
+
+0:10:00.330,0:10:15.000
+solcher Seasons und ich definiere, ab 0 beginnend
+sozusagen, bei 0 ist der Winter und deshalb weiß
+
+0:10:15.000,0:10:24.540
+und 2 ist der Herbst und der ist Orange und
+ansonsten, die anderen Jahreszeiten die haben
+
+0:10:24.540,0:10:30.510
+das Grün, das definiere ich hier als 'green'.
+Jetzt habe ich mir hier ein 'season' gewünscht,
+
+0:10:30.510,0:10:35.370
+das ist natürlich noch nicht vorhanden. Wo kann
+ich 'season' her bekommen? Ich könnte das hier
+
+0:10:35.370,0:10:46.290
+übergeben und 'leaves' hat jetzt hier noch gar
+keinen Parameter, das könnte natürlich t sein.
+
+0:10:48.480,0:10:57.990
+Jetzt ist t natürlich hier problematisch, hier
+stimmt der Typ auch nicht, den ich hier haben
+
+0:10:57.990,0:11:07.515
+will, ich hab gesagt, ich möchte, dass das ein
+Int Wert ist, ich nehme erstmal den Double Wert,
+
+0:11:07.515,0:11:21.210
+der ja sozusagen hier von den Blättern auch kommt.
+Jetzt ist dieses t hier problematisch, weil dieses
+
+0:11:21.210,0:11:29.730
+t in dem Fall in den 'movingParts' hier ein Winkel
+ist für die Bewegung. Das werden wir jetzt noch
+
+0:11:29.730,0:11:41.070
+nicht richtig sehen, aus dem folgenden Grund:
+Nämlich hier ist die Definition 0 ja nur ein
+
+0:11:41.070,0:11:47.880
+marginaler Zeitpunkt, wenn das ein Double Wert
+ist. Deshalb fix ich vielleicht das als erstes
+
+0:11:47.880,0:11:54.360
+mal. Also 'season' soll wieder auch über ein
+Modulo definiert werden. Das heißt, ich übergebe
+
+0:11:54.360,0:12:04.410
+and die Funktion einfach das t und transformiere
+das dann in einen Wert der ganzzahlig ist und ich
+
+0:12:04.410,0:12:21.990
+habe vier Jahreszeiten, deshalb 'mod 4'. Das t ist
+natürlich wieder jetzt vom, der falsche Zeitpunkt,
+
+0:12:21.990,0:12:32.850
+also hier könnte man jetzt 'ceiling' verwenden,
+um unter den Wert entsprechend zu runden. Jetzt
+
+0:12:32.850,0:12:40.740
+sehen wir hier eine Veränderung, die noch nicht
+zu den Jahreszeiten passt und in der Hilfestellung
+
+0:12:40.740,0:12:44.700
+stand noch, dass man weiß nicht verwenden soll.
+Da sehen wir auch gerade, was dann passiert,
+
+0:12:44.700,0:12:50.790
+nämlich hier schneidet der große Baum was von den
+restlichen Bäume ab aber dafür gibt es gezielt die
+
+0:12:50.790,0:12:58.020
+Farbe 'transparent'. Das füge ich gleich mal ein,
+dann sehen wir hier die Veränderung schonmal in
+
+0:12:58.020,0:13:04.590
+der Animation, die jetzt noch immer nicht korrekt
+ist, nämlich dass jetzt hier in den anderen Bäumen
+
+0:13:04.590,0:13:17.100
+die Äste nicht abgeschnitten werden im Bild. Was
+ist hier problematisch? Und zwar ist dieses t, was
+
+0:13:17.100,0:13:24.450
+wir hier benutzen für die 'leaves' eben genau der
+Winkel, den wir hier in 'movingParts' übergeben
+
+0:13:24.450,0:13:32.550
+und eigentlich wollen 'movingParts' nicht nur den
+Winkel, sondern auch noch t zusätzliche übergeben
+
+0:13:32.550,0:13:42.960
+und das mache ich jetzt hier indem ich das als
+zusätzlichen Parameter einführe und dann ändert
+
+0:13:42.960,0:13:50.340
+sich entsprechend der Typ hier von 'movingParts'
+und aufgepasst, dieses 'rotated' muss jetzt
+
+0:13:50.340,0:13:58.470
+natürlich auch der 'angle' sein, weil die Rotation
+ansonsten im Kreis weiter geht. Und wenn wir das
+
+0:13:58.470,0:14:05.850
+machen, dann übergeben wir jetzt einen saisonalen
+Parameter und es gibt immer noch ein Problem,
+
+0:14:05.850,0:14:14.340
+nämlich unsere Jahreszeit wechselt jetzt jeden
+Monat. Das liegt daran, dass es hier noch keine
+
+0:14:14.340,0:14:24.090
+Korrektur vorgenommen wurde. Nämlich müssten
+wir hier diesen Zeitraum korrigieren, das sind
+
+0:14:24.090,0:14:31.260
+ja immer drei Monate. Das können wir
+korrigieren, indem wir durch drei rechnen.
+
+0:14:31.260,0:14:35.640
+Und wenn wir das machen,
+
+0:14:41.770,0:14:45.760
+dann sehen wir, dass sich jetzt
+schon mal was geändert hat.
+
+0:14:52.930,0:15:09.260
+Es ist noch nicht korrekt, nämlich April,
+Mai, Juni sind irgendwie braun, Juli, August,
+
+0:15:09.260,0:15:16.070
+September und dann kommt Oktober, November und
+hier Fragezeichen, das müssen wir uns gleich
+
+0:15:16.070,0:15:31.460
+nochmal anschauen, was das für ein Problem ist.
+Dann läuft hier das irgendwie seltsam ab.
+
+0:15:32.150,0:15:38.600
+Erst mal gucke ich mal auf dieses Fragezeichen.
+
+0:15:39.950,0:15:51.950
+Wir haben hier dieses Fragezeichen und die
+tauchen irgendwie für unseren Monat auf.
+
+0:15:57.250,0:16:05.950
+August, September, Oktober, November und dann
+kommt Fragezeichen, Januar. Das kommt hier,
+
+0:16:05.950,0:16:22.390
+weil der Monate immer mit 1 bis 12 definiert ist
+und wir aber durch diese 'mod' Funktion sozusagen
+
+0:16:22.390,0:16:33.610
+immer auf 0 kommen, durch das Runden und das ist
+genau dieser Monat Dezember in dem Fall, der ja
+
+0:16:33.610,0:16:41.200
+sozusagen die 0 produziert. Das können wir
+beheben, indem wir, wir wollen weiterhin im
+
+0:16:41.200,0:16:52.570
+Januar anfangen, benutzen 'floor' stattdessen
+und shiften das ganze um 1. Also 1 plus floor t
+
+0:16:52.570,0:17:04.330
+modulo 12 und jetzt beginnen wir weiterhin im
+Januar, aber im Dezember gibt es jetzt nicht
+
+0:17:04.330,0:17:11.740
+mehr diesen kritischen punkt, sondern es wird
+jetzt hier auch Dezember angezeigt und nicht
+
+0:17:11.740,0:17:18.490
+mehr Fragezeichen. Jetzt wird hier noch saisonal
+irgendwie, stimmt hier was immer noch nicht,
+
+0:17:18.490,0:17:27.190
+Oktober, November, Dezember sind Winter
+und Januar, Februar, März sind grün, April,
+
+0:17:27.190,0:17:36.610
+Mai, Juni sind orange und dann geht es mit
+Juli, August, September grün weiter. Da ist
+
+0:17:36.610,0:17:44.200
+anscheinend auch hier wieder was verkehrt. Ich
+nehme hier mal die 'floor' Funktion auch wieder,
+
+0:17:44.200,0:17:50.890
+um wieder mit den Monaten von hier unten zu
+matchen. Das heißt, wir haben jetzt hier 'floor',
+
+0:17:50.890,0:18:00.220
+das verwende ich jetzt auch hier und verwende t
+durch 3. Dann haben wir jetzt sozusagen im Januar,
+
+0:18:00.220,0:18:09.930
+Februar, März, April, Mai, Juni, Juli, August,
+September, Oktober, Dezember und sehen,
+
+0:18:09.930,0:18:17.070
+dass das ganze noch um eins verschoben ist. Das
+hängt jetzt auch wieder mit dieser Verschiebung
+
+0:18:17.070,0:18:26.640
+hier um eins zusammen, denn wir wollen im
+Januar beginnen, aber unsere Saison beginnt
+
+0:18:26.640,0:18:32.760
+ja gar nicht im Januar, sondern sie beginnt
+im Dezember. Das heißt, wir verschieben hier
+
+0:18:32.760,0:18:41.250
+drin einfach den Wechsel der Monate noch um eins
+indem wir noch 1 aufaddieren und dann sehen wir,
+
+0:18:41.250,0:18:52.770
+dass im März die Saison wechselt auf den Frühling
+und auch hier stimmt aber noch was nicht mit den
+
+0:18:52.770,0:19:01.590
+Jahreszeiten. Im Juni, Juli und August ist
+irgendwie Herbst, im September, Oktober,
+
+0:19:01.590,0:19:14.380
+November ist dann Frühling. Das liegt daran, dass
+der Herbst die vierte Saison ist und deshalb muss
+
+0:19:14.380,0:19:24.880
+hier eine 3 stehen. Das habe ich jetzt auch noch
+korrigiert. Januar, Februar sind der Winter und
+
+0:19:24.880,0:19:31.270
+dann kommen die zwei Sommermonate, wenn der Wert
+1 und 2 ist und dann wenn er 3 ist September,
+
+0:19:31.270,0:19:41.140
+Oktober, November ist der Wert orange. Damit
+haben wir die Grundaufgabe erfüllt. Es ist
+
+0:19:41.140,0:19:46.090
+noch möglich noch mehr saisonal Elemente
+einzubauen, wenn man das machen möchte, muss
+
+0:19:46.090,0:19:53.980
+man wahrscheinlich diese lokale Definition von
+'season' hier noch weiter nach oben ziehen, zum
+
+0:19:53.980,0:20:01.870
+Beispiel 'movingParts' Funktion, oder noch weiter
+höher, je nachdem wo man die die Saison auch noch
+
+0:20:01.870,0:20:11.680
+braucht und dann werden entsprechend nur die Teile
+weitergereicht, die saisonalen Elemente enthalten.

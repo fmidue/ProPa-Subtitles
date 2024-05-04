@@ -1,419 +1,351 @@
-0:00:00.000,0:00:11.490
-In dieser Aufgabe betrachten wir eine Liste von
-Zahlen und sollen daraus eine neue Zahl berechnen.
-
-0:00:12.870,0:00:20.310
-Diese Berechnung, die wir da durchführen, die
-müssen wir uns hier etwas genauer anschauen. Und
-
-0:00:20.310,0:00:28.230
-zwar wird hier immer eine Zahl multipliziert
-mit einer Zahl aus der Liste und die Zahl,
-
-0:00:28.230,0:00:35.400
-mit der multipliziert wird, ist immer eine
-aufsteigende Zahl, also die erste Zahl wird mit
-
-0:00:35.400,0:00:49.110
-1 multipliziert, die zweite Zahl mit 2, die dritte
-Zahl mit 3, die fünfte Zahl mit 4, die achte Zahl
-
-0:00:49.110,0:01:00.180
-mit 5. Das bedeutet, wir suchen immer die Zahl aus
-der Liste aus, die an fibonacci-ster Stelle steht,
-
-0:01:00.180,0:01:11.250
-wobei wir das erste Element, sozusagen
-Fibonaccizahl 1, suchen das Element an der
-
-0:01:11.250,0:01:18.210
-Stelle Fibonaccizahl 2 und wir multiplizieren dann
-immer mit der entsprechenden Zahl, also dreimal
-
-0:01:18.210,0:01:31.650
-mit dem Element an der Fibonaccizahl 3 Stelle, 4
-mal dem Element an der Fibonaccizahl 4 Stelle, die
-
-0:01:31.650,0:01:43.770
-dann im x5 ist, also das fünfte Element, und 5 mal
-dem an Fibonaccizahl fünfter Stelle, was dann eben
-
-0:01:43.770,0:01:55.620
-Element 8 wäre. Das heißt, wir haben ja auch noch
-etwas gegeben, dass wir uns auch noch anschauen
-
-0:01:55.620,0:02:01.240
-können, hier ist 'fibList' gegeben und hier steht
-der Hinweis, dass wir uns auch angucken können,
-
-0:02:01.240,0:02:13.930
-dass das wirklich die Fibonaccizahlen berechnet.
-Dafür können wir den ghci laden, können uns diese
-
-0:02:13.930,0:02:33.220
-Funktion dort definieren und dann uns anzeigen
-lassen mit 'take 100' die ersten 100 Elemente der
-
-0:02:33.220,0:02:39.370
-Fibonaccizahlen und dann sehen wir, dass das genau
-eben diese Fibonaccizahlen sind. Diese Funktion
-
-0:02:39.370,0:02:48.160
-gibt uns die Fibonaccizahlen zurück. Das wissen
-wir jetzt und es sind hier noch weitere Funktionen
-
-0:02:48.160,0:03:04.120
-definiert, insbesondere interessiert uns diese
-'isFib'. Das sagt uns sozusagen, ob eine Zahl,
-
-0:03:04.120,0:03:11.860
-die wir angeben, auch eine Fibonaccizahl ist
-und das können wir verwenden, um zu überprüfen,
-
-0:03:11.860,0:03:23.170
-ob eine gewisse Zahl eine Fibonaccizahl. Die Frage
-ist natürlich, wie uns das ganze weiterhilft. Wir
-
-0:03:23.170,0:03:32.320
-sollen diese 'fibSum' Funktion definieren, die
-die Zahl berechnen soll, aus der gegebenen liste.
-
-0:03:32.320,0:03:42.040
-Jetzt gibt es natürlich die Herausforderung
-zunächst einmal die Zahlen zu finden, die relevant
-
-0:03:42.040,0:03:52.780
-sind und dann müssen wir die entsprechenden Zahlen
-natürlich auch noch multiplizieren. Zunächst
-
-0:03:52.780,0:04:08.670
-einmal, um die zahlen herauszufinden, können wir
-uns überlegen, wie wir die Zahlen filtern können,
-
-0:04:08.670,0:04:15.090
-aus der entsprechenden Liste. Und zwar können wir
-ja alle Elemente in der Liste durchnummerieren.
-
-0:04:15.090,0:04:25.200
-Also der wissen, dass in der liste Zahlen stehen
-und wir können ja zu jedem Element dazu schreiben,
-
-0:04:25.200,0:04:32.670
-welches Element das ist, indem wir die 'zip'
-Funktion verwenden und dann können wir das
-
-0:04:32.670,0:04:40.140
-ausnutzen, um daraus die Zahlen zu filtern,
-die einen Fibonacci-Index haben. Also wir
-
-0:04:40.140,0:04:50.970
-können mit 'zip' uns Indizes beschaffen, indem
-wir 'zip' und dann die unendliche Liste von 1
-
-0:04:50.970,0:05:02.640
-bis unendlich geben lassen und dann das ganze
-mit unserer gegebenen Liste zippen, dann haben
-
-0:05:02.640,0:05:18.720
-wir eine Liste in der Tupel von Integer stehen,
-also Paare von Integer, also zweier Tupel. Aus
-
-0:05:18.720,0:05:27.300
-dieser Liste können wir mit List Comprehension die
-Zahlen, die wir haben möchten, herausholen. Dafür
-
-0:05:27.300,0:05:37.170
-kann ich jetzt hier das Paar i und x sozusagen
-definieren, dass ich in der List Comprehension
-
-0:05:37.170,0:05:46.890
-hier extrahieren möchte und wir interessieren
-uns für den Index hier insofern nur, dass wir die
-
-0:05:46.890,0:05:58.140
-Zahlen haben möchten, die einen Fibonacci-Index
-haben. Das heißt, wir können 'isFib' als Filter
-
-0:05:58.140,0:06:08.610
-verwenden, mit dem Parameter i und können in
-der List Comprehension x zurückliefern, um
-
-0:06:08.610,0:06:17.160
-dann die entsprechenden Zahlen zu bekommen. Jetzt
-stimmt das ganze Programm natürlich noch nicht,
-
-0:06:17.160,0:06:25.350
-denn jetzt bekommen wir erst mal nur die Zahlen
-heraus und vom Typ her ist das sogar falsch,
-
-0:06:25.350,0:06:35.880
-weil wir sollen eine Funktion schreiben [Integer]
-nach Integer. Jetzt können wir hier die Summe über
-
-0:06:35.880,0:06:42.450
-diese Liste bilden und das ist natürlich noch
-nicht das, was wir haben wollen. Ich kann das ja
-
-0:06:42.450,0:06:54.300
-mal laden in ghci und wenn ich da 'main' Funktion
-aufrufe dann liefern die Testfälle schon mal
-
-0:06:54.300,0:07:00.750
-einen Fehlerfall, aber das ist auch ganz klar,
-dass es noch nicht das richtige Ergebnis ist,
-
-0:07:00.750,0:07:06.090
-denn hier fehlt noch die Multiplikation. Wir
-haben jetzt alle Zahlen, die wir haben wollen,
-
-0:07:06.090,0:07:16.350
-aber wir müssen diese Zahlen auch noch
-multiplizieren mit jeweils der Stelligkeit,
-
-0:07:16.350,0:07:28.800
-die diese in dieser Liste haben, denn hier ist zum
-Beispiel '1 * 1' und '2 * 2' und so weiter. Das,
-
-0:07:28.800,0:07:39.000
-was da durchgeführt werden soll, bisher haben wir
-nur die Summe aus 1, 2, 3, 5, 8 und so weiter.
-
-0:07:39.000,0:07:49.680
-Also es gilt diese Multiplikation noch. Und dafür
-können wir erneut wieder das 'zip' verwenden und
-
-0:07:49.680,0:07:57.720
-wir können sozusagen, nachdem wir diese Liste
-erstellt haben, können wir hier diese erstellte
-
-0:07:57.720,0:08:11.720
-Liste wieder zippen mit einer unendlich Liste,
-die die Indizes verteilt und wir nutzen da auch
-
-0:08:11.720,0:08:19.790
-schon aus, dass dieses 'zip' hat eben nur
-so viele Zahlen mit unserer Liste verknüpft,
-
-0:08:19.790,0:08:25.580
-wie es auch Elemente in der entsprechenden Liste
-gibt, also in der xs Liste und das nutzen wir hier
-
-0:08:25.580,0:08:33.800
-erneut aus. Wir zippen diese Liste und extrahieren
-dann die Elemente genau so, wie wir das vorher
-
-0:08:33.800,0:08:43.820
-gemacht hatten über List Comprehension. Also
-hier sind das jetzt die Elemente aus der Liste,
-
-0:08:43.820,0:08:50.900
-also die Fibonaccizahlen, wir können die
-vielleicht sogar f nennen, und davor ist noch
-
-0:08:50.900,0:09:00.590
-jeweils der Index der dazu gehört. Diese Elemente
-holen wir heraus und dann multiplizieren wir die
-
-0:09:00.590,0:09:12.500
-beiden und dann haben wir somit unsere
-Summe der Zahlen, die wir haben wollen,
-
-0:09:12.500,0:09:20.060
-das sehen wir jetzt hier in dem Fall daran schon
-mal, dass unser Test funktioniert und entsprechend
-
-0:09:20.060,0:09:26.390
-diese Summen hier gebildet werden. Und jetzt
-kann man natürlich noch den Code optimieren,
-
-0:09:26.390,0:09:33.260
-sodass er lesbarer wird. Also wir haben eine
-ziemlich lange Zeile hat an Code und das wird
-
-0:09:33.260,0:09:40.700
-relativ unübersichtlich, insbesondere auch durch
-die Schachtelung von diesen Klammern. Hier sollte
-
-0:09:40.700,0:09:46.040
-wenigstens dieser Teil, meines Erachtens,
-extrahiert werden und wir können das hier zum
-
-0:09:46.040,0:09:58.250
-Beispiel als die gefilterten Elemente bezeichnen,
-also ich nenne das jetzt hier 'filtered' und diese
-
-0:09:58.250,0:10:07.400
-gefilterten Elemente, das sind eben genau diese
-Elemente die an Fibonacci-ter Stelle stehen,
-
-0:10:07.400,0:10:16.770
-also an Fibonaccistelle 1, Fibonaccistelle
-2 und so weiter. Dann haben wir hier jetzt
-
-0:10:16.770,0:10:26.040
-den anderen Teil in der lokalen Definition für
-die Elemente um die Elemente durchzunummerieren
-
-0:10:26.040,0:10:38.250
-und die entsprechende Multiplikation dann noch
-durchzuführen, die ebenfalls gewünscht wurde.
-
-0:10:45.570,0:10:56.730
-Es gibt natürlich auch noch einen
-anderen Ansatz die Aufgabe zu lösen. Also
-
-0:10:56.730,0:11:11.850
-prinzipiell ist der Ansatz schon sehr ähnlich,
-allerdings könnte man den 'isFib' Teil, also das
-
-0:11:11.850,0:11:23.550
-untere, auch noch anders formulieren. Ich kopiere
-die Funktion jetzt einfach mal und erstelle jetzt
-
-0:11:23.550,0:11:38.250
-hier eine Kopie von der Funktion als die alte
-Definition. In der alternativen Variante könnte
-
-0:11:38.250,0:11:50.280
-man sich jetzt auch überlegen, dass man diese
-Elemente hier so extrahiert, dass man das
-
-0:11:50.280,0:12:05.010
-'isFib' als Resultat zurückliefert, in der Liste.
-Das heißt, wir verwenden jetzt keinen Filter,
-
-0:12:05.010,0:12:27.250
-sondern wir liefern hier als erste Komponente
-dieser Liste, ob die Zahl eine Fibonaccizahl
-
-0:12:27.250,0:12:41.140
-ist. Das heißt, hier erstellen wir eine neue List
-Comprehension und in der laufen wir auch über alle
-
-0:12:41.140,0:13:01.540
-Zahlen wieder, die dort von 1 bis ja so weit wir
-es halt benötigen und überprüfen dann, ob diese
-
-0:13:01.540,0:13:16.690
-Zahl eine Fibonaccizahl ist. Jetzt erhalten wir
-hier eine Liste von Booleans, also die erste Liste
-
-0:13:16.690,0:13:24.340
-sind boolesche Werte und in der zweiten Liste
-haben wir noch immer die Elemente aus unserer
-
-0:13:24.340,0:13:35.920
-Ursprungsliste. Also diese Ursprungsliste hier.
-Jetzt wollen wir nur die Elemente haben, für die
-
-0:13:35.920,0:13:45.430
-'isFib' auch gilt. Das heißt, wir können hier auf
-diese Weise filtern, indem wir sagen, wir wollen
-
-0:13:45.430,0:14:00.250
-hier nur die Elemente haben für die gilt, dass
-es Fibonaccizahlen sind und genau hier in dieser
-
-0:14:00.250,0:14:14.260
-Liste existieren sozusagen immer nur die Werte,
-die ausdrücken, ob die Zahl an der entsprechenden
-
-0:14:14.260,0:14:20.650
-Stelle eine Fibonaccizahl ist. Das will ich auch
-noch mal kurz im ghci zeigen, damit das auch etwas
-
-0:14:20.650,0:14:31.720
-klarer wird. Also ich kann hier mal die ersten 100
-Einträge davon geben, passend zum Beispiel, das
-
-0:14:31.720,0:14:38.050
-habe ich jetzt nicht mehr im Scope, weil ich hier
-das Programm schon geladen habe. Ich öffne einfach
-
-0:14:38.050,0:14:54.760
-einen neuen ghci, in dem ich das durchführe, das
-demonstriere. 100 von 'isFib' ist hier in dem Fall
-
-0:14:54.760,0:15:08.170
-nicht definiert. Das ist natürlich nicht ganz
-so gut, um das zu demonstrieren. Ich definiere
-
-0:15:08.170,0:15:21.760
-einfach die benötigten Teile noch einmal ganz
-kurz, um das demonstrieren zu können. Definieren
-
-0:15:21.760,0:15:37.990
-'fibList' und 'nextFib' und dann kann ich 'isFib'
-definieren und dann kann ich mir die ersten 100
-
-0:15:37.990,0:15:47.710
-Elemente geben lassen und sagen lassen, ob das
-Fibonaccizahlen sind. Wenn wir das jetzt sehen,
-
-0:15:47.710,0:15:52.900
-dann sehen wir hier, die ersten Zahlen sind
-Fibonaccizahlen und dann sind es keine mehr.
-
-0:15:52.900,0:16:01.720
-Wir könnten das ganze auch zum Beispiel zippen
-mit den Zahlen, dann sehen wir das ganze noch
-
-0:16:01.720,0:16:12.820
-deutlicher, wenn wir hier einfach die Zahlen
-dazu zippen, dann sehen wir hier, für die 1 gilt,
-
-0:16:12.820,0:16:19.390
-es ist eine Fibonaccizahl, für die 2 gilt es auch,
-für die 3 auch und für die 4 gilt das nicht, für
-
-0:16:19.390,0:16:25.540
-die die 5 gilt aber, dass es eine Fibonaccizahl
-ist, und so weiter. Und wir haben im Prinzip genau
-
-0:16:25.540,0:16:41.530
-diese Liste definiert durch, beziehungsweise wir
-haben diese Liste von 'True' Werten, aber jetzt
-
-0:16:41.530,0:16:47.380
-in dem Fall nicht verknüpft mit den tatsächlichen
-Zahlen, sondern immer mit den Elementen aus der
-
-0:16:47.380,0:17:00.310
-Liste, hier mit xs von den, die übergeben haben
-und damit bekommen wir heraus, ob das Element
-
-0:17:00.310,0:17:11.920
-in der Liste auch das Fibonacci-ste Element
-ist. Das Element an der ersten Fibonaccistelle,
-
-0:17:11.920,0:17:22.750
-das Element an der zweiten, usw., wenn wir
-hier die entsprechende Liste übergeben. Durch
-
-0:17:22.750,0:17:37.570
-dieses 'True' hier erzwingen wir, dass wir nur die
-Elemente bekommen, für die 'isFib' gilt. Wenn wir
-
-0:17:37.570,0:17:50.110
-das jetzt erneut laden, dann laufen die Tests auch
-noch immer durch. Hier auch nochmal mit Hinweis,
-
-0:17:50.110,0:17:57.610
-also hier ist auch wirklich 'sum' verwendet,
-denn das steht hier unten auch in dem Programm
-
-0:17:57.610,0:18:03.700
-drin und ich habe 'fibSum' angepasst und
-nicht 'fibSum''. Also wir verwenden jetzt
-
-0:18:03.700,0:18:12.190
-auch tatsächlich das andere 'fibSum' und ich
-kann da auch nochmal die Benennung ändern,
-
-0:18:12.190,0:18:20.200
-dann sind wir, dass das Andere auch immer noch
-funktioniert, also es funktionieren beide Fälle
-
-0:18:20.200,0:18:32.710
-für diese 'fibSum' Berechnung und ja man kann
-das sozusagen auf diese beiden Weisen lösen.
+0:00:00.000,0:00:07.680
+In dieser Aufgabe sind unendliche Listen in
+Haskell zu definieren und die Herausforderung
+
+0:00:07.680,0:00:15.420
+besteht dabei, die Listen so zu definieren,
+dass die Reihenfolge der Zahlen so ist,
+
+0:00:15.420,0:00:22.380
+dass möglichst kleine Zahlen am Anfang
+stehen und nicht die Zahlen, die sehr
+
+0:00:22.380,0:00:30.660
+groß sind und irgendwo sehr weit am Ende stehen,
+beziehungsweise gar nicht angezeigt werden können,
+
+0:00:30.660,0:00:39.150
+weil Haskell nie zu dem Ziel kommt. Was wäre
+denn ein solcher Fall? Ein solcher Fall wäre,
+
+0:00:39.150,0:00:52.020
+wenn man z.B. die unendlichen Listen
+so definieren würde. Das heißt,
+
+0:00:52.020,0:01:07.980
+man hat die unendlichen Zahlen definiert als
+die Zahlen von null bis unendlich und dann die,
+
+0:01:07.980,0:01:22.470
+hier müsste man wahrscheinlich -1 bis, was
+weiß ich, oder sagen wir das einfach so:
+
+0:01:22.470,0:01:35.250
+Ein x mit 1 bis unendlich und dann das ganze
+als 'negate'. Das heißt, die negativen werte so.
+
+0:01:35.250,0:01:40.950
+Das würde dazu führen, dass -1 nämlich hier
+erstmal gar nicht auftaucht in den Werten.
+
+0:01:49.140,0:01:57.180
+Wenn ich das Programm lade und jetzt hier die
+ersten 100 Werte anzeigen lassen von Ints,
+
+0:01:57.180,0:02:03.630
+dann stellen wir fest, dass hier nur positive
+Zahlen stehen, besser wäre das ganze alternierend
+
+0:02:03.630,0:02:13.110
+zu haben, denn dann könnte man nämlich die
+-1 auch schon relativ zeitig sehen und müsste
+
+0:02:13.110,0:02:20.550
+nicht unendlich viele Werte abrufen. Das heißt,
+wenn man -1 finden möchte, in dieser Liste, dann
+
+0:02:20.550,0:02:25.710
+terminiert das Programm gar nicht, weil Haskell
+immer noch damit beschäftigt ist, alle positiven
+
+0:02:25.710,0:02:34.020
+Zahlen aufzuzählen. Das wollen wir eben nicht. Was
+können wir hier für einen Trick anwenden, um das
+
+0:02:34.020,0:02:44.520
+zu erreichen? Eine List Comprehension ist schon
+das, was wir haben wollen und wir könnten das so
+
+0:02:44.520,0:02:59.370
+machen, dass wir den Wert, den wir haben, durch
+zwei dividieren. Wenn wir das machen, dann
+
+0:02:59.370,0:03:09.570
+erhalten wir schon mal eine Liste, die null am
+Anfang enthält und dann immer zweimal jeden Wert.
+
+0:03:09.570,0:03:15.840
+Wie hilft uns das weiter? Jetzt müssen wir nur
+noch dafür sorgen, dass jeder zweite Wert davon
+
+0:03:15.840,0:03:23.040
+negiert wird und das können wir erreichen, indem
+wir mit -1 multiplizieren, aber nur dann, wenn wir
+
+0:03:23.040,0:03:34.770
+das brauchen. Ich definiere hier mal die Funktion
+'alternate', die von x abhängig genau entweder 1
+
+0:03:34.770,0:03:43.770
+oder -1 liefern soll. Also 'alternate' von x,
+also das wird hier in einem 'where' definiert,
+
+0:03:43.770,0:03:55.030
+weil wir das hier lokal brauchen. 'aternate'
+von x soll so definiert sein, dass 'x 'mod' 2',
+
+0:03:55.030,0:04:15.040
+wenn das 0 ist, dann multiplizieren wir mit -1
+und im anderen Fall, wenn das nicht der Fall ist,
+
+0:04:15.040,0:04:21.490
+dann multiplizieren wir mit 1, sodass sich
+die Zahl nicht verändert und wenn wir das
+
+0:04:21.490,0:04:25.780
+jetzt noch einmal ausführen und uns die ersten
+100 Werte anschauen, dann sehen wir jetzt hier
+
+0:04:25.780,0:04:32.800
+genau, dass dieses verhalten auftritt, dass 0 als
+erstes kommt und dann - 1 und 1 und so weiter. Es
+
+0:04:32.800,0:04:36.850
+ist kein Wert doppelt, aber es sind alle Werte
+vorhanden und wir könnten ja noch mehr Werte
+
+0:04:36.850,0:04:43.150
+anzeigen, also kann uns sie auf 1000 Werte geben
+lassen und sehen, dass sich das Schema fortsetzt.
+
+0:04:47.710,0:04:52.000
+Die nächste Aufgabe beschäftigt sich
+nicht mit den Integerzahlen, sondern mit
+
+0:04:52.000,0:04:58.570
+natürlichen Zahlen und hier sollen jetzt eben
+alle natürlichen Zahlen zurückgegeben werden,
+
+0:04:58.570,0:05:10.930
+alle Paare von zwei natürlichen Zahlen. Das ist
+ein Problem, was man mithilfe von Hilbert lösen
+
+0:05:10.930,0:05:18.220
+kann, wenn man das kennt, Hilberts Hotel, das
+so ziemlich den Ansatz hat, alle diese Paare
+
+0:05:18.220,0:05:24.580
+durchzunummerieren, beschäftigt sich mit der
+Frage, ob das überhaupt möglich ist, alle diese
+
+0:05:24.580,0:05:31.900
+Zahlenpaare mit natürlichen Zahlen auszudrücken,
+oder die sozusagen durchzunummerieren und das
+
+0:05:31.900,0:05:40.480
+ist möglich und das kann man eben hier auch in
+der Aufgabe ausnutzen. Und zwar wird hier auch
+
+0:05:40.480,0:05:52.840
+wieder eine List Comprehension genutzt, in der wir
+letztendlich x und y haben wollen und wir nutzen
+
+0:05:52.840,0:06:01.240
+halt diesen Ansatz, den auch Hilbert nimmt,
+und nehmen die natürlichen Zahlen sozusagen,
+
+0:06:01.240,0:06:11.250
+um abzuzählen, was wir haben wollen, aber das ist
+der gleiche Ansatz wie dort, aber wir zählen hier
+
+0:06:11.250,0:06:19.800
+die diagonalen, die wir haben wollen, wenn wir
+sozusagen tabellarisch x und y auflisten würden.
+
+0:06:19.800,0:06:29.820
+Also x in der Horizontalen und y der Vertikalen
+und dann eben die Paare dort in die Tabelle alle
+
+0:06:29.820,0:06:35.250
+eintragen würden, dann könnten wir sozusagen die
+diagonalen, oben links in der ecke beginnend,
+
+0:06:35.250,0:06:42.990
+weiter abgehen, nach rechts oder nach unten,
+was im Prinzip dasselbe ist, weil die Zahlen,
+
+0:06:42.990,0:06:47.760
+wenn man eins nach rechts geht, liegt genau auf
+der Diagonalen, wie wenn man eins nach unten geht
+
+0:06:47.760,0:06:53.790
+und so weiter. Das heißt eins nach rechts und
+eins nach unten liegt auf derselben Diagonalen,
+
+0:06:53.790,0:07:06.690
+wie zwei nach rechts und so weiter. Das heißt,
+wir können sagen x ist eben genau eine Zahl, die
+
+0:07:06.690,0:07:19.980
+auch wieder aus dem Bereich 0 bis und dann aber n
+in diesem Fall stammt. Und y ist genau die Zahl,
+
+0:07:19.980,0:07:29.820
+die 'n - x' ist. Das ist sozusagen dann die andere
+Zahl in der Diagonalen. In der zweiten Diagonale
+
+0:07:29.820,0:07:38.820
+entstehen zwei Werte, nämlich 1 0 und 0 1, also
+alle, die in der Summe 1 ergeben, alle Zahlenpaare
+
+0:07:39.990,0:07:51.330
+in der zweiten Diagonalen stehen alle Zahlen die
+in der Summe 2 ergeben und so weiter. Das können
+
+0:07:51.330,0:07:58.050
+wir hier als 'pairs' auch anschauen. Vielleicht
+lasse ich erstmal nur die ersten 100 ausgeben,
+
+0:07:58.050,0:08:09.570
+dann sehen wir hier alle mit der Summe 0,
+alle mit der Summe 1, alle mit der Summe 2,
+
+0:08:09.570,0:08:18.770
+alle mit der Summe 3 und es wird immer eine Zahl
+mehr, alle mit der Summe 4 und so weiter. Es kommt
+
+0:08:18.770,0:08:29.090
+immer eine Zahl pro Diagonale hinzu. Dann die
+dritte Aufgabe. Die sagt aus, dass wir nun die
+
+0:08:29.090,0:08:37.580
+Zahlen aller Triple von zwei natürlichen Zahlen
+und einer Integerzahl bestimmen sollen. Das heißt,
+
+0:08:37.580,0:08:44.390
+der dritte Wert kann auch negativ sein, die
+anderen Zahlen sind nicht negativ. Dafür ist
+
+0:08:44.390,0:08:52.100
+es gut, dass wir 'ints' und 'pairs' bereits schon
+definiert haben, denn die können wir jetzt in dem
+
+0:08:52.100,0:09:09.890
+Fall wieder verwenden. Wir wollen jetzt drei
+Zahlen haben x, y und z. Wir wollen genau alle
+
+0:09:09.890,0:09:15.710
+natürlichen Zahlen, also wir wollen alle Triple
+mit allen natürlichen Zahlenkombinationen und
+
+0:09:15.710,0:09:22.670
+den entsprechenden Integerzahlen. Dafür können
+wir 'pairs' verwenden, um uns erstmal die Paare
+
+0:09:22.670,0:09:28.340
+zu geben, mit denen wir dann in den unendlichen
+Listen nachschauen, was wir kombinieren wollen,
+
+0:09:28.340,0:09:34.220
+denn so können wir alle Kombinationen ausdrücken.
+Wir wissen, dass 'pairs' uns die Kombination aller
+
+0:09:34.220,0:09:40.490
+natürlichen Zahlen liefert und mit natürlichen
+Zahlen können wir in den Listen nachschlagen,
+
+0:09:40.490,0:09:51.260
+was wir brauchen. Also wir können uns Indizes
+geben lassen, mithilfe von 'pairs' und dann
+
+0:09:51.260,0:10:16.480
+erhalten wir x und y, wenn wir in 'pairs' an
+der Stelle i nachschlagen. x und y erhalten wir,
+
+0:10:16.480,0:10:25.990
+wenn wir in 'pairs' an der Stelle i nachschlagen,
+dann erhalten wir sozusagen genau einen Wert hier
+
+0:10:25.990,0:10:35.680
+raus, i läuft über alle natürlichen Zahlen, weil
+das die Liste an Kombination von natürlichen
+
+0:10:35.680,0:10:46.270
+Zahlen ist und mit j können wir den das z
+nachschlagen, was wir noch benötigen, denn
+
+0:10:46.270,0:10:53.530
+das ist nämlich eins aus diesen Integerzahlen. Und
+dafür können wir j verwenden, weil j nämlich auch
+
+0:10:53.530,0:10:58.420
+eine natürliche Zahl ist. Genaugenommen läuft es
+hier dann, durch per die Verwendung von 'pairs',
+
+0:10:58.420,0:11:03.460
+auch über alle natürlichen Zahlen, sodass wir
+dadurch alle Kombinationen auch bekommen. Ich
+
+0:11:03.460,0:11:19.510
+formatiere das hier mal leicht um, sodass das
+besser sichtbar bleibt. Also wir haben hier x
+
+0:11:19.510,0:11:34.060
+und y und kriegen hier noch z, indem wir in 'ints'
+nachschlagen, an der stelle j und dann erhalten
+
+0:11:34.060,0:11:41.920
+wir die entsprechenden Zahlen. Wenn wir das auch
+kompilieren, dann gibt es ein Fehler. Und zwar
+
+0:11:41.920,0:11:49.420
+sagt er hier, dass 'Int' nicht mit 'Integer'
+kombinierbar ist. Das liegt daran, dass unsere
+
+0:11:49.420,0:12:04.330
+Nachschlagefunktion '!!' halt eben den Typ Liste
+nach 'Int' nach a hat. Das heißt, wir brauchen
+
+0:12:04.330,0:12:10.990
+hier ein 'Int'. Das können wir korrigieren,
+indem wir hier 'fromIntegral' verwenden. Und
+
+0:12:10.990,0:12:17.530
+dasselbe machen wir bei j auch, denn auch das
+ist ein 'Integer', mit 'fromIntegral' können
+
+0:12:17.530,0:12:28.180
+das zu einem 'Int' konvertieren und können damit
+diese lookup-Funktion verwenden. Und jetzt können
+
+0:12:28.180,0:12:37.210
+wir auch von der 'triples' Funktion uns Werte
+ausgeben lassen und sehen, dass das hier auch
+
+0:12:37.210,0:12:51.640
+eine immer weiter steigende Werte sind. Wir sehen,
+das hier die Integerzahlen etwas steiler steigen,
+
+0:12:51.640,0:13:05.980
+aber im groben steigen schon alle Zahlen hier. Es
+sind die Paare jeweils am Anfang, also wir haben
+
+0:13:05.980,0:13:15.970
+ja 0 0 auch zweimal drin, gleich am Anfang,
+einmal mit 0, einmal mit -1 und dann taucht
+
+0:13:15.970,0:13:21.670
+es aber auch später wieder auf, also hier mit 0
+0 auch mit 1, hier taucht 0 0 mit -2 auf, hier
+
+0:13:21.670,0:13:33.190
+taucht 0 0 mit 2 auf und zwischendrin tauchen
+dann eben auch noch andere Zahlenpaare auf,
+
+0:13:34.270,0:13:45.370
+die sich dann auch später wieder in anderen
+Kombinationen wiederholen, mit anderen,
+
+0:13:45.370,0:13:56.950
+auch negativen Zahlen also 1 0 0 zum Beispiel
+hier, dann auch wieder mit 1 0 1 und so weiter.
