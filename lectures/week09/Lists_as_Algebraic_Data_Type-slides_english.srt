@@ -1,14 +1,14 @@
 142 # slide
 00:00:01,840 --> 00:00:10,160
-So, welcome back. Last week we talked about
+Last week we talked about
 algebraic datatypes, and specifically about
 
 00:00:10,720 --> 00:00:17,120
 computation by pattern matching which of course
-was just another way, an additional day to
+was just another way, an additional way to
 
 00:00:17,760 --> 00:00:23,520
-programming by case distinction. It is that this
+programming by case distinction. Except that this
 time, case distinction was not via if-then-else
 
 00:00:23,520 --> 00:00:31,360
@@ -17,10 +17,10 @@ cases that the value of the defined algebraic
 
 00:00:31,360 --> 00:00:40,400
 datatype can take. We will continue with this
-today for. Insofar as that, later, we will
+today, insofar as that, later, we will
 
 00:00:40,400 --> 00:00:45,920
-look a bit more briefly at how pattern
+briefly look a bit more at how pattern
 matching drives computation in Haskell
 
 00:00:45,920 --> 00:00:52,560
@@ -28,7 +28,7 @@ in general. Basically, also how lazy evaluation
 is ultimately driven by pattern-matching. But
 
 00:00:52,560 --> 00:00:58,320
-before doing that we will actually take a look
+before doing that, we will actually take a look
 at lists, which so far in the lecture have got
 
 00:00:58,320 --> 00:01:04,320
@@ -54,7 +54,7 @@ We certainly could do that
 
 00:01:28,880 --> 00:01:33,520
 using the kind of the definition we saw
-last week. And since lists of polymorphic,
+last week. And since lists are polymorphic,
 
 00:01:33,520 --> 00:01:37,440
 this could look something like this. We
@@ -62,7 +62,7 @@ define a list datatype. It's parameterized
 
 00:01:37,440 --> 00:01:42,160
 over a parameter because we want to have lists
-of numbers, list of characters, etc. And then
+of numbers, lists of characters, etc. And then
 
 00:01:42,160 --> 00:01:48,240
 there are two cases: There is the empty list, and
@@ -70,26 +70,26 @@ for historical reasons, this is often called Nil.
 
 00:01:49,200 --> 00:01:55,920
 That would be one of the possible constructors for
-arbitrarily lists. And it doesn't carry parameter.
+arbitrary lists. And it doesn't carry a parameter.
 
 00:01:56,640 --> 00:02:01,040
 And on the other hand, there would be a binary
 constructor for the case of non-empty lists. And
 
 00:02:01,040 --> 00:02:09,600
-what's should this be called? It's often called
-Cons, for constructor. In a way, if list is the
+what should this be called? It's often called
+Cons, for "constructor". In a way, if list is the
 
 00:02:09,600 --> 00:02:16,320
-first datatype that can imagine, then maybe simply
-using constructor as the name of the constructor
+first datatype that you imagine, then maybe simply
+using "constructor" as the name of the constructor
 
 00:02:16,320 --> 00:02:18,560
 does make sense. Nil and Cons: Nil is the empty
 list constructor for constructing an empty list.
 
 00:02:18,560 --> 00:02:24,800
-Cons is for constructing non-empty list. And
+Cons is for constructing a non-empty list. And
 then what are the arguments? An element of the
 
 00:02:24,800 --> 00:02:29,200
@@ -105,7 +105,7 @@ of course, to the tree datatype we saw last
 week, where we had Leaf and then Node with a left
 
 00:02:42,000 --> 00:02:49,200
-success, a label, and a right success. We don't
+successor, a label, and a right successor. We don't
 have two recursive occurrences here for the list
 
 00:02:49,200 --> 00:02:54,480
