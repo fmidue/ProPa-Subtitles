@@ -1,455 +1,318 @@
-0:00:00.000,0:00:06.570
-Bei der Aufgabe 29 sollen wir uns jetzt mit
-I/O, Input/Output beschäftigen. Das heißt,
-
-0:00:06.570,0:00:09.990
-wir machen jetzt eine interaktive
-Applikation hier und dabei soll
-
-0:00:09.990,0:00:14.610
-einfach nur der User nach Zahlen gefragt
-werden und die werden dann addiert und
-
-0:00:14.610,0:00:19.500
-das Ergebnis ausgegeben in der Kommandozeile.
-Wenn der User als erste Zahl die Null eingibt,
-
-0:00:19.500,0:00:23.100
-dann soll das ganze gestoppt werden und wir
-bekommen als Ausgabe noch mal wie oft wir
+0:00:00.000,0:00:06.960
+In Aufgabe 29 sollen wir an einem Beispiel
+nachvollziehen dass man tatsächlich jede
 
-0:00:23.100,0:00:28.020
-jetzt tatsächlich Zahlen addiert haben.
-Dafür benutzen wir jetzt den I/O Typen,
+0:00:06.960,0:00:15.150
+strukturelle Rekursion auf Listen, wie in der
+Vorlesung behauptet mit foldr ausdrücken kann.
 
-0:00:28.020,0:00:33.900
-den unsere 'main' Methode in dem Programm ja auch
-schon hatte und das verwenden wir jetzt einfach
+0:00:15.150,0:00:21.570
+Und dazu sollen wir einmal dieses Beispiel
+hier, diese Funktion, die offensichtlich
 
-0:00:33.900,0:00:37.710
-nur und der I/O Typ ist extra dafür da, um so
-interaktive, sequenzielle Sachen zu realisieren.
+0:00:21.570,0:00:31.290
+strukturelle Rekursion auf Listen benutzt, sollen
+wir einmal in eine Variante mit foldr umschreiben.
 
-0:00:37.710,0:00:45.150
-Und da gibt es eine spezielle Notation extra
-für, diese do-notation. Das heißt, wenn wir
+0:00:31.290,0:00:37.020
+Sodass am Ende für irgendeine beliebige
+Liste diese Quickcheck property hier gilt,
 
-0:00:45.150,0:00:51.030
-jetzt irgendwas mit I/O haben, dann machen wir
-ein 'do', dann können wir danach sequenziell so
+0:00:37.020,0:00:40.650
+dass die originale Funktion auf
+der Liste genau dasselbe Ergebnis
 
-0:00:51.030,0:00:54.180
-Befehle auflisten es gibt drei Möglichkeite,
-was wir dorthin schreiben können und das
+0:00:40.650,0:00:44.040
+liefert wie die alternative
+Formulierung auf der Liste.
 
-0:00:54.180,0:00:58.770
-wird dann einfach in der Reihenfolge, in der das
-dasteht abgearbeitet in diesem Block. Das heißt,
+0:00:45.780,0:00:50.220
+Was die Funktion genau macht es unwichtig, es geht
 
-0:00:58.770,0:01:01.710
-wir haben einmal die Möglichkeit ein Kommando
-direkt zu schreiben was vom typen I/O ist.
+0:00:50.220,0:00:54.840
+um das Prinzip von einer Darstellung
+in die andere wechseln zu können.
 
-0:01:01.710,0:01:11.010
-Wir können diesen Begriff hier hinschreiben.
-Wir haben irgendeine x, das bekommen wir aus
+0:00:54.840,0:01:05.550
+Als Erstes, wenn wir uns ansehen, wir sollen
+diese beiden vorkommen von undefined ersetzen.
 
-0:01:11.010,0:01:18.420
-einem Kommando und dieses Kommando hat dann gerade
-den Typen von x aber I/O davor stehen. Also das
+0:01:05.550,0:01:11.820
+foldr hat natürlich drei Parameter, als letzten
+noch die Liste auf der gearbeitet werden soll,
 
-0:01:18.420,0:01:22.800
-hier ist zum Beispiel Integer und das Kommando
-wäre dann 'IO (Integer)' vom Typen. Das heißt,
+0:01:11.820,0:01:17.370
+also prinzipiell könnten wir
+auch das Ganze so schreiben.
 
-0:01:22.800,0:01:26.910
-wir extrahieren sozusagen aus dem 'IO (Integer)'
-einen Integer Typen raus. Das bedeutet das hier,
+0:01:17.370,0:01:24.450
+Aber wie man hier schon sieht das
+schlägt HLint gleich eta-reduce
 
-0:01:26.910,0:01:32.190
-so ungefähr. Während dieses Kommando hier
-einfach nur Integer ohne extra Typ dahinter ist,
+0:01:24.450,0:01:26.250
+vor und deswegen schreiben wir das hier so.
 
-0:01:32.190,0:01:35.100
-wie zum Beispiel der hier, das hier ist
-ja auch I/O, aber dahinter steht kein
+0:01:26.250,0:01:33.240
+Und Autotool nimmt hier auch
+keine anderen Einreichung an.
 
-0:01:35.100,0:01:40.260
-Typ. Das wäre dann so ein Kommando hier. Das ist
-eigentlich nur eine Kurzfassung, weil eigentlich
+0:01:35.760,0:01:37.950
+Aber dass das nur am Rand.
 
-0:01:40.260,0:01:44.460
-würde hier dann auch sowas stehen. Also wir
-haben einfach nichts, in Anführungszeichen.
+0:01:37.950,0:01:43.590
+Okay, was haben wir jetzt hier für
+Parameter die wir ersetzen sollen?
 
-0:01:44.460,0:01:53.850
-Das wird auch von einem Kommando gewonnen.
-Also das ist einfach nur kurz gefasster,
+0:01:43.590,0:01:48.630
+Naja, wir haben einmal die Funktion, mit
+der wir die einzelnen schritte durchführen,
 
-0:01:53.850,0:01:56.760
-schreibt man dann einfach nur das Kommando hin,
-weil das irgendwie sinnlos ist immer die leeren
+0:01:48.630,0:01:51.780
+in unserem foldr und unseren Basiswert.
 
-0:01:56.760,0:02:04.170
-Klammern dahin zu schreiben. Dann ist das hier
-also äquivalent dazu. Und die dritte Möglichkeit,
+0:01:51.780,0:02:03.170
+Wenn wir das mal durch diese Unterstreiche
+ersetzen gibt der Compiler uns entsprechend
 
-0:02:04.170,0:02:08.990
-die wir noch haben, ist einfach ein 'let'
-Statement zu schreiben. Also wir sagen
+0:02:03.170,0:02:12.110
+Fehlermeldungen mit dem Typen den
+wir da entsprechend einfügen müssen.
 
-0:02:08.990,0:02:15.800
-irgendwie 'let a = 1+2'. Wir schreiben da alles
-Mögliche rein. Das wird nacheinander abgearbeitet
+0:02:12.110,0:02:17.570
+Wenn wir das also kompilieren bekommen
+wir zwei Fehler, nämlich einmal für den
 
-0:02:15.800,0:02:24.170
-und der tatsächliche Typ dieses ganzen Blockes
-hier ist dann immer die letzten Anweisungen,
+0:02:17.570,0:02:24.530
+für den hinteren Unterstrich den wir eingefügt
+haben, da sollen wir einen Integer einfügen.
 
-0:02:24.170,0:02:27.650
-die wir geschrieben haben. Der Typ
-von dieser Anweisung ist dann der Typ
+0:02:24.530,0:02:26.930
+Das ist unser Standardwert bei dem wir anfangen.
 
-0:02:27.650,0:02:31.610
-des ganzen Blocks. Wenn wir jetzt hier ganz
-unten noch hinschreiben würden, zum Beispiel.
+0:02:26.930,0:02:31.280
+Und zu dem zweiten Unterstrich oder für den Ersten
 
-0:02:31.610,0:02:37.280
-'putStrLn' oder sowas
-
-0:02:37.280,0:02:48.530
-Das ist ja auch eine I/O Funktion, die einfach nur
-diesen String hier in die Konsole printed. Dann
-
-0:02:48.530,0:02:55.130
-wäre jetzt der ganze Typ davon, ich schreibe
-das mal hier drüber, wäre dann jetzt hier
-
-0:02:55.130,0:03:00.860
-auch I/O mit leere Klammern dahinter. Weil das
-hier macht ja was mit Input/Output, hat aber jetzt
-
-0:03:00.860,0:03:07.100
-keinen anderen Typen dahinter stehen, weil wir
-kriegen ja keinen eingekapselten Wert oder sowas,
-
-0:03:07.100,0:03:11.600
-sondern wir printen irgendwas auf die Konsole, das
-hat keinen großartigen Typen in unserem Kontext
-
-0:03:11.600,0:03:19.730
-hier jetzt. Und was jetzt noch wichtig ist,
-is einfach nur, dass man darauf achtet, dass
-
-0:03:19.730,0:03:23.180
-das ja alles gleich eingerückt ist, was hinter
-dem 'do' steht. Man muss das nicht unbedingt so
-
-0:03:23.180,0:03:27.740
-davor schreiben, man kann das auch so machen.
-So kann man das auch formatieren, aber es muss
-
-0:03:27.740,0:03:31.370
-halt immer alles gleich eingerückt sein, in diesem
-Block hier, ansonsten kriegt ihr Fehler und ihr
-
-0:03:31.370,0:03:35.750
-müsst auch aufpassen, dass da keine Tab-Charaktere
-drin stehen. Die kann das Programm nämlich auch
-
-0:03:35.750,0:03:41.630
-nicht richtig lesen, da gibt es auch noch Fehler,
-wenn man versucht das zu starten. Wenn wir das
-
-0:03:41.630,0:03:44.570
-jetzt hier testen wollen, müssen wir erst mal hier
-oben alles aus kommentieren, was mit AutoTool zu
-
-0:03:44.570,0:03:52.010
-tun hat, weil das sonst lokal nicht funktioniert.
-Also kommt das hier alles weg und man muss halt
-
-0:03:52.010,0:03:56.450
-noch so ein 'Import System.IO' hinzufügen, je
-nachdem welches Betriebssystem man hat. Das habe
-
-0:03:56.450,0:04:00.800
-ich hier schon vorher reingeschrieben, das stand
-dort noch nicht drin. Damit wir die typischen I/O
-
-0:04:00.800,0:04:05.390
-Funktionen benutzen können. Wenn wir das jetzt
-anwenden wollen, dann müssen wir jetzt mal kurz
-
-0:04:05.390,0:04:09.260
-gucken, wir sollen jetzt immer wieder genau das
-Gleiche machen, nämlich zwei Zahlen addieren und
-
-0:04:09.260,0:04:14.180
-das Ergebnis ausgeben. Das schreit ja schon fast
-nach einer art Loop, wie wir das sonst auch in
-
-0:04:14.180,0:04:20.120
-imperativen Programmiersprachen haben. Also zum
-Beispiel eine for-Schleife oder sowas. Und hier
-
-0:04:20.120,0:04:24.410
-wird es jetzt einfach sozusagen eine Schleife,
-die immer weiter läuft, 'while True' zum Beispiel,
-
-0:04:24.410,0:04:28.070
-und die dann irgendwann einfach abbricht,
-mit der Null, wenn wir die bekommen als erste
-
-0:04:28.070,0:04:32.180
-Zahl. Das heißt, es lohnt sich eigentlich
-schon eine Funktion 'loop' zu schreiben,
-
-0:04:32.180,0:04:37.250
-die wir dann in der 'main' benutzen. Wir haben
-eine 'loop' Funktion, da soll hinterher der
-
-0:04:37.250,0:04:44.540
-Typ I/O rauskommen, über der 'main' auch, sonst
-können wir das nicht richtig benutzen und was man
-
-0:04:44.540,0:04:47.090
-sich jetzt noch merken müssen, ist einfach
-nur wie oft wir diesen Loop gemacht haben,
-
-0:04:47.090,0:04:51.245
-denn wir sollen hinterher ausgeben, wie viele
-Additionen wir hatten. Das heißt, wir müssen jedes
-
-0:04:51.245,0:04:56.150
-Mal, wenn wir den Additionsloop machen, rechnen
-wir eins obendrauf bis zum Abbruch. Das heißt,
+0:02:31.280,0:02:34.670
+sollen wir eine Funktion Integer
+-> Integer -> Integer einfügen,
 
-0:04:56.150,0:05:01.700
-wir können hier einfach so ein Integer Parameter
-mitschleppen und das zählt einfach wie oft wir
+0:02:34.670,0:02:39.560
+also nimmt zwei Integer Parametern und
+gibt einen Integer zurück, einfügen.
 
-0:05:01.700,0:05:08.960
-den Loop insgesamt durchgemacht haben.
-Also wir haben 'loop', Parameter ist n,
+0:02:39.560,0:02:41.810
+Und dann schlägt es hier noch ein paar Sachen vor,
 
-0:05:08.960,0:05:17.000
-das ist die Anzahl der Durchläufe und das machen
-wir immer wieder. Also wir haben einen do-Block
+0:02:41.810,0:02:47.210
+was natürlich nicht sonderlich
+hilfreich ist im moment für uns.
 
-0:05:17.000,0:05:27.230
-und der beginnt damit, dass wir dem User sagen,
-was er machen soll. Wir machen 'putStrLn'. Das
+0:02:47.210,0:02:50.690
+Okay, gucken wir uns als Erstes
+mal an wo wir überhaupt starten.
 
-0:05:27.230,0:05:30.800
-setzt einfach einen String in die Kommandozeile
-ab und macht dann einen line break darunter,
+0:02:50.690,0:02:55.820
+Was ist das überhaupt was der Startparameter ist.
 
-0:05:30.800,0:05:36.740
-sodass wir eine neue Zeile anfangen danach und
-da setzen wir jetzt rein: Geben sie die erste
+0:02:55.820,0:03:01.400
+Naja, das ist nichts anderes als
+der Wert den wir in der explizit
 
-0:05:36.740,0:05:49.580
-Zahl ein, zum Beispiel. Dann lesen wir die Zahlen.
-Dafür benutzen wir diese extrahier-Methode,
+0:03:01.400,0:03:06.470
+rekursiven Variante für die leere
+Liste haben, das ist der Startwert.
 
-0:05:49.580,0:05:54.710
-die ich eben gezeigt hatte. Also wir machen
-jetzt irgendwie 'zahl1', bekommen wir aus
+0:03:06.470,0:03:10.340
+Und warum das so ist können wir uns kurz angucken
 
-0:05:54.710,0:06:01.220
-'readLn'. Und 'readLn' ist eine Funktion, die
-den ersten Input des Users aus der Kommandozeile
+0:03:10.340,0:03:19.760
+wenn wir zum Beispiel mal foldr für irgend
+eine Funktion f und einen c, zum Beispiel,
 
-0:06:01.220,0:06:12.770
-rausliest, die wir machen. Danach, so wir
-gucken, ist das jetzt eine Null oder nicht, die
+0:03:19.760,0:03:25.730
+auf einer einfachen Liste uns angucken,
+wozu das letztendlich wird ganz am Ende.
 
-0:06:12.770,0:06:16.580
-Zahl. Das heißt, wir müssen hier ein if-Statement
-machen, das können wir hier natürlich auch machen.
+0:03:25.730,0:03:30.020
+Dann wird das im Prinzip
+dazu, dass wir f immer wieder
 
-0:06:16.580,0:06:22.580
-Der ganz normale Haskell Syntax geht immer noch,
-man kann auch cases benutzen, zum Beispiel . Und
+0:03:32.690,0:03:43.850
+anwenden und ganz am Ende den Basisfall einfügen.
 
-0:06:22.580,0:06:31.010
-dann testen einfach, ist die Zahl jetzt gleich
-null. Wenn ja, dann müssen wir jetzt abbrechen.
+0:03:43.850,0:03:49.550
+Also wir sehen, dass die erste Sache,
 
-0:06:31.010,0:06:36.710
-Das heißt, wir setzen erst mal noch
-eine Erklärung ab, für den User,
+0:03:49.550,0:03:54.350
+die ausgefüllt ist da wird das letzte
+Listen-Element mit dem Basisfall
 
-0:06:36.710,0:06:55.790
-brechen das Programm ab und sagen die Anzahl
-der Addition ist und dann zeigen wir unser n,
+0:03:54.350,0:04:04.370
+verknüpft bzw. sozusagen es wird einmal die
+Funktion auf der leeren Liste aufgerufen,
 
-0:06:55.790,0:07:00.830
-also das ist ja die Anzahl der loops, die wir
-gemacht haben, also die Anzahl der Additionen.
+0:04:04.370,0:04:10.610
+weil ja prinzipiell hier hinter noch sozusagen
+man sich die leere Liste vorstellen kann.
 
-0:07:00.830,0:07:04.760
-Da müssen wir jetzt noch 'show n' machen
-anstatt nur n, denn n ist ja kein String,
+0:04:10.610,0:04:15.470
+Und der erste Wert wird da angenommen.
 
-0:07:04.760,0:07:09.560
-sondern eine Integerzahl. Das heißt, wir müssen
-'show' benutzen, was dann einfach nur das Argument
+0:04:15.470,0:04:24.500
+Und dann wird immer wieder dass
+f angewendet auf das aktuelle
 
-0:07:09.560,0:07:14.750
-in einen String umwandelt. So und noch einen
-Punkt dahinter. Hier müssen noch klammern drum.
+0:04:24.500,0:04:28.460
+Element was wir uns angucken
+und den Wert der Restberechnung.
 
-0:07:14.750,0:07:36.200
-Und was jetzt eine Besonderheit ist, man muss
-jetzt hier, wenn man solche 'if then else'
+0:04:28.460,0:04:33.680
+Was genau dann das ist, was wir hier
+mit dem rekursiven Schritt machen.
 
-0:07:36.200,0:07:40.400
-oder wenn man cases benutzt, muss man für jeden
-Case oder sowohl für das 'then' und das 'else',
+0:04:33.680,0:04:42.320
+Dass wir den rekursiven Schritt genau berechnen
+auf der rest Liste und mit dem aktuellen Element
 
-0:07:40.400,0:07:46.010
-muss man jeweils einen neuen do-Block schreiben.
-Also das muss man auf jeden Fall bedenken, dass
+0:04:42.320,0:04:48.290
+was wir uns angucken irgendwie verknüpfen,
+oder einfach nur das Restergebnis modifizieren.
 
-0:07:46.010,0:07:51.410
-man da immer einen neuen do-Block für jeden Fall
-machen muss. Dann wird einfach entschieden welcher
+0:04:48.290,0:04:51.260
+Genau, das macht dieses f.
 
-0:07:51.410,0:07:57.680
-do-Block abgearbeitet wird. Falls wir jetzt keine
-Null habe, wollen wir die zweite Zahl lesen.
+0:04:54.890,0:04:59.720
+Dadurch sehen wir jetzt schon als Erstes, die
+7 ist genau der Basisfall für die leere Liste.
 
-0:07:57.680,0:08:04.340
-Also geben sie die zweite Zahl ein.
+0:04:59.720,0:05:05.489
+Und jetzt müssen wir uns noch angucken wie
+unsere Funktion die zwei Integer nimmt aussieht.
 
-0:08:04.340,0:08:22.520
-Dann lesen wir die Zahl. 'zahl2'
-wird gelesen, wieder mit 'readLn'.
+0:05:05.489,0:05:13.040
+Wenn wir die einfach mal x und y nennen,
+dann müssen wir jetzt irgendwie einen
 
-0:08:28.420,0:08:31.600
-Entweder ich zeige jetzt einfach mal,
-dass man hier auch 'lets' benutzen kann,
+0:05:13.040,0:05:20.090
+Integer konstruieren, der das nächste
+Ergebnis ist, wenn ich das x nehme,
 
-0:08:31.600,0:08:33.970
-einfach nur der Vollständigkeit halber. Das
-ist jetzt nicht notwendig, das Kommando,
+0:05:20.090,0:05:24.740
+das x ist hier quasi das Listenelement was
+wir uns gerade angucken, wie hier oben.
 
-0:08:33.970,0:08:40.360
-ich mache es jetzt einfach. Sagen wir mal
-Ergebnis ist dann 'zahl1' plus 'zahl2',
+0:05:24.740,0:05:32.210
+Und das y ist das Ergebnis des rekursiven
+Aufrufs, also was wir vorher gemacht haben.
 
-0:08:40.360,0:08:48.455
-dann printen wir das,
+0:05:32.210,0:05:35.090
+Wenn wir uns jetzt also den letzten
+Schritt zum Beispiel angucken,
 
-0:08:48.455,0:08:48.470
-'show ergebnis'
+0:05:35.090,0:05:45.110
+würden wir für x 1 einsetzen und den ganzen
+rekursiven Aufruf auf [2,3] bekommen wir in y.
 
-0:08:48.470,0:09:25.840
-und dann Punkt. Das können wir eigentlich mal
-eben testen bevor wir jetzt das zu Ende machen,
+0:05:45.110,0:05:48.350
+Also schon als Integer fertig berechnet.
 
-0:09:25.840,0:09:33.085
-und zwar geben wir in der 'main' einfach
-loop und fangen da mit 0 Durchläufen an.
+0:05:48.350,0:05:51.770
+Wir müssen uns also um die Rekursion
+nicht mehr explizit kümmern,
 
-0:09:33.085,0:09:47.060
-Gucken wir mal was hier passiert. Also wir geben
-eine Zahl ein: Vier minus neun und das Ergebnis
+0:05:51.770,0:05:57.485
+das ist genau der Vorteil von
+foldr oder generell allen folds.
 
-0:09:47.060,0:09:52.340
-ist minus fünf, stimmt! Das hat er aber nur einmal
-gemacht, ich möchte jetzt natürlich noch die
+0:05:57.485,0:06:00.980
+Genau, und da müssen wir
+einfach gucken was ist hier,
 
-0:09:52.340,0:09:57.950
-Schleife irgendwie hereinkriegen. Das heißt, wir
-müssen hier, müssen wir jetzt noch die Schleife
+0:06:00.980,0:06:04.340
+was haben wir hier, wie gehen
+wir mit dem rekursiven Aufruf um?
 
-0:09:57.950,0:10:00.860
-einfach neu aufrufen. Das machen wir einfach indem
-wir hier die Funktion selbst wieder aufrufen,
+0:06:04.340,0:06:10.880
+Naja, wir verknüpfen den jetzt irgendwie je
+nachdem ob x modulo 11 = 0 ist oder nicht.
 
-0:10:00.860,0:10:08.120
-'loop' und 'n + 1'. n war ja die Anzahl, die wir
-am Anfang hatten und dann rechnen wir einfach eins
+0:06:10.880,0:06:13.340
+Das heißt, das prüfen wir am Besten erstmal.
 
-0:10:08.120,0:10:12.050
-drauf, führen das ganze neu aus und das
-ist auch noch in Ordnung vom Typen her,
+0:06:23.510,0:06:29.970
+Dann machen wir irgendwas,
+sonst machen wir etwas anderes.
 
-0:10:12.050,0:10:17.600
-weil das ist ja dann auch wieder vom Typen I/,
-leere Klammern, wie wir das hier auch hatten,
+0:06:29.970,0:06:33.630
+Was machen wir das der Fall ist?
 
-0:10:17.600,0:10:25.400
-passt also auch zusammen und dann können wir
-das in die 'main' packen. Jetzt können wir das
+0:06:33.630,0:06:38.820
+Naja, wir nehmen genau das, wir rechnen 13
+plus und das ist unser rekursiver Aufruf,
 
-0:10:25.400,0:10:36.620
-komplett testen und jetzt sollte eigentlich
-alles gehen. 3 und 2 sind 5, 8 und -9,
+0:06:38.820,0:06:40.860
+der wie gesagt in dem y hier steckt.
 
-0:10:40.690,0:10:49.300
-8 und 0 und dann machen wir die Null und die
-Anzahl der Addition bei 3 und das stimmt.
+0:06:40.860,0:06:47.850
+Das heißt, wir machen einfach 13 + y.
 
-0:10:49.300,0:10:55.630
-Passt alles. Die einzige Sache, die jetzt hier
-vollständiges halber vielleicht fehlen würde, aber
+0:06:47.850,0:06:56.400
+Und hier haben wir jetzt x mal den
+rekursiven Aufruf, was genau wieder y ist.
 
-0:10:55.630,0:11:00.400
-eine Aufgabe garnicht erwähnt war, dass man halt
-auch irgendwelchen Quatsch eingeben kann. Zeige
+0:06:56.400,0:07:00.690
+Und dann sind wir im Prinzip auch schon fertig.
 
-0:11:00.400,0:11:04.750
-ich mal. Ich kann jetzt hier natürlich einfach
-keine Zahl angeben. Daran hindert mich ja keiner.
+0:07:00.690,0:07:07.050
+Wenn wir das laden und einmal die Tests
+durchlaufen lassen, dann sehen wir, dass das
 
-0:11:04.750,0:11:10.690
-Ich könnte jetzt ein j eingeben oder so und dann
-würde das Programm einfach abstürzen mit einer
+0:07:07.050,0:07:15.030
+dann entsprechend immer das richtige Ergebnis
+liefert für alle Inputs die wir ausprobieren.
 
-0:11:10.690,0:11:16.300
-user error, weil das passt ja nicht zusammen. Wenn
-er da 'readLn' macht und dann ist das gar keine
+0:07:15.630,0:07:21.420
+Genau, so weit die Basislösung.
 
-0:11:16.300,0:11:21.040
-Zahl, aber ich checke hier ob die Zahl gleich Null
-ist, dann passt das nicht zusammen. Dann erwartet
+0:07:21.420,0:07:26.760
+Man kann jetzt noch, wenn man genau
+hinguckt, sehen, dass wir das y hier,
 
-0:11:21.040,0:11:26.050
-er anhand dieses Kommandos hier schon, dass das
-eine Zahl ist. Dann ist also automatisch dadurch,
+0:07:26.760,0:07:33.960
+wie es auch ge-highlighted wird hier vom
+Editor, immer in der hinteren Position haben.
 
-0:11:26.980,0:11:32.350
-dass er jetzt hier sehen kann, dass 'zahl1' eine
-Zahl ist (ein Integer), nimmt er auch an, dass
+0:07:33.960,0:07:37.380
+Wenn man jetzt wollte, könnte man
+noch einen cleveren Eta-reduce machen,
 
-0:11:32.350,0:11:36.730
-das hier den Typen 'IO (Integer)' hat, tut
-es aber dann nicht, wenn ich dort j eingebe
+0:07:37.380,0:07:47.760
+indem man hier in den einzelnen Branches
+von dem if jeweils Sections benutzt.
 
-0:11:36.730,0:11:40.240
-und dann crashed das Programm einfach. Also das
-haben jetzt gar nicht behandelt, war aber auch
+0:07:47.760,0:07:54.120
+Dann könnte man das ganze auch so schreiben
+und das y hier nicht mehr erwähnen.
 
-0:11:40.240,0:11:43.510
-nicht Sinn Aufgabe. Es war nur, um zu zeigen, dass
-das nicht unbedingt full proof ist, dass was man
+0:07:54.120,0:08:02.820
+Wenn man der Meinung ist, dass das so
+besser lesbar ist, kann man das machen.
 
-0:11:43.510,0:11:49.450
-hier macht. Da müsste man dann vielleicht mit
-'Maybe' oder 'Either' arbeiten, um das zu filtern,
+0:08:02.820,0:08:11.280
+Das ist auf jeden Fall eine Möglichkeit die auch,
+wenn wir das hier laden, eine korrekte Lösung ist.
 
-0:11:49.450,0:11:52.855
-dass man einfach irgendeine Nachricht sendet,
-wenn du dann einen String eingibt, wenn
+0:08:11.280,0:08:17.190
+Aber das muss man letztendlich entscheiden,
+ob man das lesbarer findet oder nicht.
 
-0:11:52.855,0:11:59.380
-man dann 'Either String' oder Zahl oder so was,
-String oder Integer. Aber das nur schon mal,
+0:08:17.190,0:08:25.560
+In manchen Situationen kann das angebracht
+sein, funktional hat es keinen Unterschied.
 
-0:11:59.380,0:12:02.830
-um vorauszuschauen, was man da noch alles machen
-kann, das ist jetzt noch nicht perfekt, das ganze.
+0:08:29.690,0:08:32.390
+Ich finde es so sauberer, aber natürlich kann man
+
+0:08:32.390,0:08:40.070
+hier zwei verschiedene Lösungen finden
+und die wählen die einem besser gefällt.
