@@ -1,0 +1,423 @@
+0:00:00.580,0:00:06.520
+Hallo, in dieser Aufgabe schreiben wir ein
+paar Prolog-Anfragen und Regeln. Also bevor
+
+0:00:06.520,0:00:11.051
+wir das machen, schauen wir uns erstmal die
+Faktenbasis an, mit der wir arbeiten. Wir
+
+0:00:11.051,0:00:16.960
+haben Prädikate für 'female', 'male' und
+'Child' mit verschiedenen Parametern hier
+
+0:00:16.960,0:00:22.170
+drin und diese sagen uns einfach nur für
+welche Parameter geben diese Prädikate 'True'
+
+0:00:22.170,0:00:30.099
+zurück. Also wenn wir 'anna' als Parameter
+in 'female' eingaben bekommen wir 'True' zurück
+
+0:00:30.099,0:00:35.670
+und so weiter für die anderen. 'child' ist
+ein binäres Prädikat, also mit zwei Parametern
+
+0:00:35.670,0:00:39.450
+drin und hier ist die Besonderheit, dass wir
+von der Aufgabenstellung gegeben haben, wie
+
+0:00:39.450,0:00:44.750
+das zu lesen ist. Normalerweise sagt man,
+das ist von links nach rechts zu lesen, also
+
+0:00:44.750,0:00:51.800
+in dem Fall sagt und die Aufgabenstellung
+auch hier: X ist das Kind von Y. Also 'lisa'
+
+0:00:51.800,0:00:59.170
+ist das Kind von 'Anna' und 'mary' das Kind
+von 'Juliet' etc. Von der Leserichtung hat
+
+0:00:59.170,0:01:04.570
+Prolog keine Ahnung, für Prolog sind das
+einfach nur irgendwelche Orte hier, ist nicht
+
+0:01:04.570,0:01:11.010
+wirklich ein Sinn dahinter. Für uns ist natürlich
+die Logik dahinter wichtig damit wir unsere
+
+0:01:11.010,0:01:14.771
+Queries hier unten definieren können. Wenn
+wir das andersrum lesen würden, dann würden
+
+0:01:14.771,0:01:23.920
+unsere Queries hier unten auch anders aussehen.
+Das kann man schon, so wie es ist, ins interaktive
+
+0:01:23.920,0:01:27.980
+Prolog Prompt laden. Also ich habe hier schon
+dieses Kommando reingeschrieben, um diese
+
+0:01:27.980,0:01:33.770
+Datei zu laden. Können das mal machen und
+direkt ein paar Queries ausprobieren, zum
+
+0:01:33.770,0:01:40.920
+Beispiel 'male(X)'. Damit suchen wir Substitutionen
+für X, für die das Prädikat 'male' wahr
+
+0:01:40.920,0:01:47.210
+zurückgibt. Dann einmal Enter drücken und
+dann bekommen wir das erst Ergebnis und mit
+
+0:01:47.210,0:01:53.870
+Semikolon können wir durch die verschiedenen
+Ergebnisse iterieren und hier habe ich aus
+
+0:01:53.870,0:01:57.350
+Versehen nochmal Enter gedrückt und dann
+das abbrechen und dann nochmal machen und
+
+0:01:57.350,0:02:01.930
+dann alle durchgehen. Einfach immer wieder
+Semikolon drücken, dann hört es irgendwann
+
+0:02:01.930,0:02:10.910
+auf, wenn die Liste komplett erschöpft ist,
+also alle Prädikate für die Prolog weiß,
+
+0:02:10.910,0:02:17.780
+dass das hier wahr ist, kriegen wir dann die
+hier ausgegeben, wie wir sehen. Dieser interaktive
+
+0:02:17.780,0:02:24.130
+prompt ist natürlich nicht nur hilfreich
+um unsere Aufgaben bzw. unsere Queries am
+
+0:02:24.130,0:02:30.870
+Ende zu prüfen, sondern auch um die Queries
+erstmal auch zu erstellen. Wir können jetzt
+
+0:02:30.870,0:02:35.590
+interaktiv hier hingehen und sagen: Die erste
+Aufgabe machen wir jetzt hier in dem interaktiven
+
+0:02:35.590,0:02:43.099
+prompt. Wenn wir jetzt hier in die Aufgabenstellung
+gehen: Wir sollen eine Anfrage erstellen für
+
+0:02:43.099,0:02:52.360
+'sons of Juliet', also Söhne von Juliet.
+Natürlich muss Sohn, nach unserer Definition
+
+0:02:52.360,0:03:02.690
+hier, 'male' sein. Also wir suchen nach 'male(X)'
+und X muss das 'child' vom 'parent' sein.
+
+0:03:02.690,0:03:08.590
+An dieser Stelle haben wir jetzt den bestimmten
+Fall, dass 'parent' Juliet sein muss. Dann
+
+0:03:08.590,0:03:18.290
+können wir hier auch direkt sagen Juliet.
+Wenn wir das dann ausprobieren, können wir
+
+0:03:18.290,0:03:26.629
+wieder mit dem Semikolon iterieren und wir
+sehen hier: Was wir gefragt haben ist, gibt
+
+0:03:26.629,0:03:32.690
+es eine Substitution für X, für die das
+Prädikat 'male' und das Prädikat 'child(X,
+
+0:03:32.690,0:03:36.239
+juliet)' 'true' zurückgibt. Wir haben die
+Substitutionen 'luke' und 'peter' gekriegt.
+
+0:03:36.239,0:03:43.910
+Wenn wir eben gucken, 'luke' und 'peter' sind
+beide 'male' und es gibt ein Fall mit 'luke,
+
+0:03:43.910,0:03:52.209
+juliet' und 'peter, juliet' in 'child'. Das
+ist schonmal richtig hier. Das müssen wir
+
+0:03:52.209,0:03:55.461
+natürlich noch in unsere Abgabe reinschreiben,
+weil nur im prompt hilft das nicht, der ist
+
+0:03:55.461,0:04:01.500
+weg, sobald wir zumachen. Die Aufgabenstellung
+sagt uns hier, dass wir das als Regel schreiben
+
+0:04:01.500,0:04:07.890
+sollen. Also definieren wir das hier auch
+so als Regel und schreiben einfach nur unsere
+
+0:04:07.890,0:04:23.490
+Query, die wir uns da definiert haben, auf.
+Jetzt weiter zum zweiten. 'brothers' also
+
+0:04:23.490,0:04:34.610
+Brüder, inklusive Halbbrüder jeder weiblichen
+Person. Hier gucken wir natürlich wieder
+
+0:04:34.610,0:04:49.020
+nach Brüdern, also 'male(X)' und dieses x
+muss ein Elternteil ('parent') Z haben und
+
+0:04:49.020,0:04:57.819
+es muss noch eine weibliche Person y geben,
+die dasselbe Elternteil hat. Also suchen wir
+
+0:04:57.819,0:05:05.339
+hier nach 'child(Y, Z)', also wieder dasselbe
+Elternteil. Wie auch hier wieder ist die eigentlich
+
+0:05:05.339,0:05:12.749
+Anfrage dann, gibt es Substitutionen für
+X, Y und Z für die die Prädikate 'male(X)',
+
+0:05:12.749,0:05:20.770
+'child(X,Z)', 'female(Y)' und 'child(Y, Z)'
+alle zusammen wahr ergeben. Und wenn wir das
+
+0:05:20.770,0:05:22.979
+ausprobieren, sehen wir auch hier, dass wir
+verschieden Namen zurückbekommen, hier habe
+
+0:05:22.979,0:05:29.990
+ich abgebrochen, weil die Liste länger werden
+würde, aber ich habe abgebrochen, weil wir
+
+0:05:29.990,0:05:35.249
+sehen, dass hier 'luke' zweimal vorkommt.
+Warum kommt hier 'luke' zweimal vor? Weil
+
+0:05:35.249,0:05:40.949
+beide 'parents' hier gelistet werden. Also
+hier gibt es einmal die Mutter und den Vater.
+
+0:05:40.949,0:05:46.150
+Aber das ist jetzt erstmal für uns egal.
+Hauptsache wir kriegen alle 'brothers'. Wir
+
+0:05:46.150,0:05:54.580
+müssen jetzt hier nicht unbedingt Duplikate
+ausschließen. Auch das können wir hier direkt
+
+0:05:54.580,0:06:12.870
+in unsere Regel übernehmen. Das wäre dann
+die zweite Anfrage, die wir schreiben sollten.
+
+0:06:12.870,0:06:21.819
+Die dritte Anfrage umfasst Personen mit einer
+Tochter und einem Sohn. Das machen wir jetzt
+
+0:06:21.819,0:06:28.779
+direkt hier im Editor und nicht im prompt.
+Wir können den prompt gleich nutzen, um das
+
+0:06:28.779,0:06:36.009
+zu überprüfen. In diesem Fall suchen wir
+nach dem Elternteil. Also landet unser X,
+
+0:06:36.009,0:06:44.319
+in unserer 'child' Anfrage, auf dem zweite
+Parameter. Diese Person muss sowohl eine Tochter
+
+0:06:44.319,0:06:51.280
+als auch einen Sohn haben, also suchen wir
+nach 'child(Y, X)', für die Y 'female' ist.
+
+0:06:51.280,0:07:03.449
+Und wir machen nochmal eine Anfrage für ein
+anders 'child' mit demselben 'parent' X, weil
+
+0:07:03.449,0:07:10.940
+das muss ja immer noch dieselbe Person sein
+für die dieses andere Kind Z 'male' ist.
+
+0:07:10.940,0:07:21.869
+Das ist dann unsere dritte Anfrage. Die vierte
+Anfrage ist eine Person mit einem Vater, der
+
+0:07:21.869,0:07:28.449
+nicht Harry ist. Hier suchen wir dieses Mal
+nicht nach 'parent'. Also machen wir unseren
+
+0:07:28.449,0:07:39.779
+X Parameter, nach dem wir Suchen, an erster
+Stelle. Also Kind X mit dem Vater Y. Vater
+
+0:07:39.779,0:07:45.479
+muss 'male' sein und hier kommt dann ein neuer
+Teil hinzu, den wir bisher nicht benutzt haben,
+
+0:07:45.479,0:07:53.819
+denn wir wollen spezifisch Harry ausschließen.
+Also geben wir den Fall an mit dem Y mit Harry
+
+0:07:53.819,0:08:02.479
+substituiert werden würde und schließen
+hiermit Harry aus. Damit hätten wir den ersten
+
+0:08:02.479,0:08:11.059
+Teil der Aufgabe fertig. Wenn wir das jetzt
+speichern und nochmal neu laden, dann können
+
+0:08:11.059,0:08:18.300
+wir hier unsere Anfrage d zum Beispiel einmal
+durchlaufen lassen und wir sehen hier, wir
+
+0:08:18.300,0:08:24.529
+kriegen die Kinder Lisa, Sandra und Paul zurück.
+Wenn wir hier oben gucken, in der 'child'
+
+0:08:24.529,0:08:33.161
+Liste, müsste jetzt eigentlich kein Fall
+sein bei dem Lisa und Harry steht. Wen wir
+
+0:08:33.161,0:08:38.540
+uns die Fälle für Harry anschauen: Es gibt
+keine Fälle mit Lisa, Sandra oder Paul. Aber
+
+0:08:38.540,0:08:45.100
+Lisa kommt hier oben mit Anna vor, Sandra
+kommt hier unten mit Peter vor und Paul kommt
+
+0:08:45.100,0:08:53.570
+hier unten auch mit Peter vor. Also ist diese
+Query so richtig. Wenn wir jetzt zum zweiten
+
+0:08:53.570,0:08:57.370
+Teil der Aufgabenstellung kommen: Dieses Mal
+sollen wir wirklich Regeln definieren, nicht
+
+0:08:57.370,0:09:02.410
+nur Queries, die wir zwar als Regeln aufschreiben,
+aber nicht Regeln sein sollten, sondern wirklich
+
+0:09:02.410,0:09:10.200
+Regeln. Als binären Prädikate sollen wir
+die folgenden Konzepte definieren: Konzepte
+
+0:09:10.200,0:09:19.010
+von 'mother', 'brother', 'uncle' und 'grandson',
+also Mutter, Bruder, Onkel und Enkelsohn.
+
+0:09:19.010,0:09:27.320
+Also müssen wir uns hier natürlich erstmal
+fragen: Was heißt es, logisch aus unserer
+
+0:09:27.320,0:09:38.020
+Sicht, 'mother', also 'mother' definiert als
+'mother' X ist Mutter von Y. Um Mutter zu
+
+0:09:38.020,0:09:48.340
+sein, muss unser X 'female' sein und natürlich
+muss dieses 'female(X)' auch ein Kind haben
+
+0:09:48.340,0:09:57.170
+und diese Kinder Y mit dem 'parent' X. Und
+damit hätten wir die Anfrage nach 'mother'
+
+0:09:57.170,0:10:06.560
+gestellt und halt in dieser Regel definiert.
+Als Nächstes definieren wir 'brother', also
+
+0:10:06.560,0:10:19.950
+Bruder. Wieder X ist der Bruder von Y. Hier
+müssen wir gucken: Ist X 'male' und hat X
+
+0:10:19.950,0:10:28.800
+ein 'parent' Z und gibt es noch ein anderes
+Kind Y von demselben 'parent' Z? Hier müssen
+
+0:10:28.800,0:10:38.470
+wir dann gucken: Es könnte sein, dass für
+X und Y dieselbe Person bzw. dieselben Parameter
+
+0:10:38.470,0:10:43.790
+substituiert werden. Das wollen wir vermeiden,
+weil man ist nicht sein eigener Bruder. Also
+
+0:10:43.790,0:10:49.890
+müssen wir hier dann ausschließen, dass
+X und Y dieselbe Variable ist und das können
+
+0:10:49.890,0:10:56.890
+wir mit derselben Negierung machen wir oben,
+nur dieses Mal sagen wir: X darf nicht gleich
+
+0:10:56.890,0:11:08.010
+Y sein. Und damit hätten wir 'brother' definiert.
+Als Nächstes definieren wir Onkel. X ist
+
+0:11:08.010,0:11:17.560
+der Onkel von Y und hier logischerweise: Was
+ist ein Onkel? Onkel ist der Bruder von einem
+
+0:11:17.560,0:11:28.360
+Elternteil bzw. der Onkel von einem Kind Y
+ist der Bruder von den Eltern von Y. Also
+
+0:11:28.360,0:11:33.590
+logischerweise haben wir hier auch wieder
+dieselbe Anfrage wie oben. Wir können das
+
+0:11:33.590,0:11:38.930
+alles hier wieder neu definieren, oder wir
+könnten einfach unsere Definition von 'brother',
+
+0:11:38.930,0:11:44.390
+den wir jetzt schon definiert hatten, benutzen,
+was das Ganze natürlich viel simpler macht,
+
+0:11:44.390,0:11:52.270
+denn dieses Mal fragen wir dann nur: Gibt
+es einen Fall wo X der Bruder von Z ist und
+
+0:11:52.270,0:12:06.570
+Z ein Kind Y hat. Dann haben wir, dass X der
+Onkel von Y ist. Damit hätten wir die Anfrage
+
+0:12:06.570,0:12:17.540
+für Onkel definiert. Als Nächstes haben
+wir Enkelsohn. X ist der Enkelsohn von Y wieder
+
+0:12:17.540,0:12:31.400
+und hier muss X 'male' sein, es muss ein Kind
+X von Z geben und da wir eine Generation überspringen,
+
+0:12:31.400,0:12:50.430
+fragen wir dann: Gibt es ein Kind Z von unserem
+Großelternteil X. Also Z, Y hier und haben
+
+0:12:50.430,0:13:01.590
+dann die komplette Anfrage: Gibt es eine Substitution
+für X, Y und Z für die die Prädikate 'male(X)',
+
+0:13:01.590,0:13:07.250
+'child(X, Z)' und 'child(Z, Y)' alle zusammen
+wahr ergeben. Also gibt es eine Person X,
+
+0:13:07.250,0:13:18.640
+die der Enkelsohn von Y ist. Und hier können
+wir auch wieder das Ganze speichern und die
+
+0:13:18.640,0:13:27.070
+Datei neu laden und unsere neuen Prädikate
+ausprobieren. Wir gucken: 'grandson(X, Y)'
+
+0:13:27.070,0:13:35.620
+und gucken, was es da gibt. Wir sehen hier
+zwei Rückgaben. Wir sehen einmal, dass Paul
+
+0:13:35.620,0:13:42.110
+der Enkelsohn von Juliet ist und Paul der
+Enkelsohn von Harry ist. Das könnten wir
+
+0:13:42.110,0:13:49.490
+hier oben nochmal nachprüfen, aber hiermit
+ist unsere Aufgabe erledigt.
