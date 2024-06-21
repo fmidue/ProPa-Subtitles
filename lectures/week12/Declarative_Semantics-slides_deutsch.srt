@@ -7,12 +7,12 @@ die deklarative Semantik von Prolog reden.
 Also, Semantik, was bedeutet das Programm?
 
 00:00:11,520 --> 00:00:17,440
-Und eigentlich werden wir uns nicht diese
-Woche, sondern insgesamt, zwei verschiedene Semantiken betrachten,
+Und eigentlich werden wir  insgesamt zwei
+verschiedene Semantiken betrachten (dieses Jahr optional),
 
 00:00:17,440 --> 00:00:21,200
 nämlich diese deklarative Semantik
-und dann die operative Semantik.
+und dann die operationelle Semantik.
 
 00:00:21,200 --> 00:00:25,440
 Bei der deklarativen Semantik geht es also wirklich
@@ -20,7 +20,7 @@ mehr um die Bedeutung eines Programms.
 
 00:00:25,440 --> 00:00:29,040
 Man könnte sie auch als die logische
-Semantik oder die mathematische Semantik genannt werden.
+Semantik oder die mathematische Semantik bezeichnen.
 
 00:00:29,680 --> 00:00:34,160
 Und bei der operativen Semantik geht es
@@ -30,19 +30,19 @@ mehr darum, wie die Ausführung funktioniert.
 Dazu habe ich bereits eine gewisse Intuition gegeben.
 
 00:00:37,440 --> 00:00:42,640
-Aber wenn wir über operationale Semantik sprechen,
+Aber wenn wir über operationelle Semantik sprechen,
 wird dies präziser und konkreter gemacht
 
 00:00:42,640 --> 00:00:48,240
 und konkreter, wie ein Prolog-System eine
-Lösung für eine Anfrage in einem bestimmten Programm finden kann.
+Lösung für eine Anfrage zu einem bestimmten Programm finden kann.
 
 00:00:49,680 --> 00:00:52,560
 Okay, und das ist eine typische
-Unterscheidung, um verschiedene
+Unterscheidung, verschiedene
 
 00:00:52,560 --> 00:00:56,160
-Arten von Semantik, mehr mathematisch
+Arten von Semantik zu haben, mehr mathematisch
 und mehr ausführungsorientiert.
 
 00:00:56,160 --> 00:00:58,800
@@ -62,14 +62,14 @@ Beispiel, wenn man etwas beweisen will.
 
 00:01:09,360 --> 00:01:16,320
 Also, für den Haskell-Teil früher im Kurs,
-haben wir etwas über operationales Verhalten gesprochen, richtig?
+haben wir etwas über operationelles Verhalten gesprochen, richtig?
 
 00:01:16,320 --> 00:01:19,280
-Als wir also über den Musterabgleich
-Matching gesprochen haben, und wie es die Auswertungen steuert.
+Als wir also über den Pattern-Matching
+gesprochen haben, und wie es die Auswertung steuert.
 
 00:01:19,280 --> 00:01:21,760
-Die faule Auswertung, die vorher nur als Idee auftauchte
+Die Lazy-Auswertung, die vorher nur als Idee auftauchte
 
 00:01:21,760 --> 00:01:26,080
 nur als eine Idee, und wurde dann
@@ -77,14 +77,14 @@ für konkrete Programme in Betracht gezogen.
 
 00:01:28,000 --> 00:01:30,800
 Also, das ist so etwas wie
-Operations-Semantik für Haskell.
+operationelle Semantik für Haskell.
 
 00:01:31,440 --> 00:01:35,040
 Wir haben uns nicht einmal die Mühe gemacht, eine
 deklarative Semantik für Haskell zu geben.
 
 00:01:35,040 --> 00:01:38,160
-Das würde man also als eine
+Das würde man als eine
 denotationelle Semantik bezeichnen.
 
 00:01:38,160 --> 00:01:40,000
@@ -99,7 +99,7 @@ einer solchen Semantik einfach bedeutet hätte, dass
 zu sagen, dass Funktionen bedeuten, was Funktionen bedeuten.
 
 00:01:51,040 --> 00:01:57,840
-Also verwenden wir die Haskell-Funktionen im
+Also wir verwenden die Haskell-Funktionen im
 gleichen Sinne wie die Funktionen der Mengenlehre.
 
 00:01:57,840 --> 00:01:59,440
@@ -110,11 +110,11 @@ haben wir eine Abbildung aufgeschrieben, und das
 ist die Semantik dieser Funktion.
 
 00:02:04,560 --> 00:02:07,760
-Es gibt also eine Möglichkeit, dies zu präzisieren.
+Es gibt eine Möglichkeit, dies zu präzisieren.
 
 00:02:07,760 --> 00:02:12,000
 Aber für die Zwecke dieses Kurses haben wir
-einfach die semantische Lücke überbrückt, den
+einfach die semantische Lücke verwischt, den
 
 00:02:12,000 --> 00:02:14,480
 Unterschied zwischen Syntax und
@@ -130,15 +130,15 @@ mathematisch bedeuten würde.
 
 00:02:21,280 --> 00:02:27,600
 Okay, also die Auswertung von Werten durch
-mit einer niedergeschriebenen Definition.
+Anwendung einer niedergeschriebenen Definition.
 
 00:02:27,600 --> 00:02:30,640
 Das ist der Grund, warum wir bei Haskell,
 diese Unterscheidung nicht gemacht.
 
 00:02:30,640 --> 00:02:38,800
-Aber für Prolog hier, werden wir eine
-erklären, was die logische Bedeutung ist.
+Aber für Prolog hier werden wir eine
+Erklärung geben, was die logische Bedeutung ist.
 
 00:02:40,320 --> 00:02:45,760
 Okay, also wird diese Semantik hier benutzt werden,
@@ -148,27 +148,27 @@ um Fragen über Grundterme zu beantworten.
 Für Terme ohne Variablen.
 
 00:02:47,040 --> 00:02:51,600
-Wir werden Regeln für Variablen haben,
+Wir werden Regeln mit Variablen haben,
 wie wir sie bisher in Programmen gesehen haben.
 
 00:02:51,600 --> 00:02:56,160
 Aber die deklarative Semantik beantwortet
-die Frage, ob dieses Prädikat
+Fragen darüber, ob ein Prädikat
 
 00:02:56,160 --> 00:02:59,840
-wahr für die folgenden Terme, die
+wahr für gewisse Terme ist, die
 selbst keine Variablen enthalten.
 
 00:02:59,840 --> 00:03:04,400
-Das unterscheidet sich auch von der Operations-Semantik
-dass wir uns auch mit Abfragen beschäftigen werden, die
+Das unterscheidet sich auch von der operationellen Semantik,
+wo wir uns auch mit Abfragen beschäftigen werden, die
 
 00:03:04,400 --> 00:03:05,760
 Variablen in diesem Sinne enthalten.
 
 00:03:05,760 --> 00:03:10,080
 Außerdem ist die deklarative Semantik ein
-etwas einfacher als die operative Semantik.
+etwas einfacher als die operationelle Semantik.
 
 00:03:10,080 --> 00:03:17,840
 Denn sie muss sich nicht mit
@@ -176,8 +176,8 @@ Variablen in den Abfragen umgehen muss.
 
 40 # slide
 00:03:18,480 --> 00:03:24,000
-Okay, was ist also die mathematisch logische
-Bedeutungssemantik eines Prolog-Programms?
+Okay, was ist also die mathematische, logische
+Bedeutung oder Semantik eines Prolog-Programms?
 
 00:03:24,000 --> 00:03:31,840
 Schauen wir auf ein einfaches Beispiel eines Prolog-Programms,
@@ -1086,10 +1086,10 @@ intuitiver Prozess abläuft.
 Okay, was ist das also?
 
 00:20:44,080 --> 00:20:45,200
-Ist das ein Operator?
+Das ist ein Operator,
 
 00:20:46,000 --> 00:20:48,080
-Und der verwandelt Mengen in neue Mengen.
+der Mengen in neue Mengen verwandelt.
 
 00:20:48,080 --> 00:20:49,920
 Also, im Grunde gibt man ihm
@@ -1255,7 +1255,7 @@ Also, die leere Menge wächst zu etwas nicht-Leerem,
 
 00:23:50,080 --> 00:23:53,120
 dann können wir diesen Folgeoperator
-Operator erneut auf diese Menge anwenden.
+erneut auf diese Menge anwenden.
 
 00:23:53,120 --> 00:23:54,560
 Und wieder, und wieder.
@@ -1733,8 +1733,8 @@ Denn das funktioniert nicht wirklich.
 Oder?
 
 00:32:01,120 --> 00:32:05,040
-Die Interpretation des Nicht ist etwas
-das operativ verstanden werden muss.
+Die Interpretation des "not" ist etwas,
+das operationell verstanden werden muss.
 
 00:32:06,800 --> 00:32:11,200
 Zumindest, wenn man das Negationssymbol verwendet,
@@ -1987,13 +1987,13 @@ Multiplikation auf solchen symbolischen natürlichen Zahlen.
 Okay, das war's für jetzt.
 
 00:36:50,960 --> 00:36:58,240
-Und Sie haben das Material in der Sammlung PDF,
+Und Sie haben das Material in der collection.pdf,
 Sie werden natürlich auch eine Übungsaufgabe dazu haben.
 
 00:36:58,240 --> 00:37:01,840
 Und nächste Woche werden wir uns
-zur operationalen Semantik
+der operationellen Semantik zuwenden,
 
 00:37:02,960 --> 00:37:07,840
-zu einer anderen Perspektive auf
+einer anderen Perspektive auf
 die Bedeutung von Prolog-Programmen.
