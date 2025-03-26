@@ -7,6 +7,8 @@ on:
   pull_request:
     branches: ['**']
 
+permissions: read-all
+
 jobs:
   build:
     name: Lint Code Base
@@ -29,3 +31,6 @@ jobs:
         env:
           VALIDATE_MARKDOWN: false
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_JSON_PRETTIER: false
+          VALIDATE_YAML_PRETTIER: false
+          VALIDATE_MARKDOWN_PRETTIER: false
