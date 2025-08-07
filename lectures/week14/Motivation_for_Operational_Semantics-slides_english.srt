@@ -34,7 +34,7 @@ operational semantics for Prolog.
 And before doing this, just a few words.
 
 00:00:48,480 --> 00:00:55,520
-In some sense or repetition or recognition of
+In some sense, a repetition or recognition of
 things that apply to declarative semantics,
 
 00:00:55,520 --> 00:00:59,920
@@ -45,12 +45,12 @@ operational semantics is also considered.
 Because they are not exactly equivalent.
 
 00:01:03,520 --> 00:01:08,400
-They are different to the situation of Haskell
+They are different from the situation of Haskell
 where notational semantics, the
 
 00:01:09,040 --> 00:01:13,440
 mathematical thinking and meaning,
-set theoretical interpretation of function
+set-theoretical interpretation of function
 
 00:01:13,440 --> 00:01:20,000
 definitions is in very good correspondence
@@ -71,7 +71,7 @@ towards the end of that video to
 certain purely logical programs.
 
 00:01:32,800 --> 00:01:36,720
-So, for example, arithmetics,
+So, for example, arithmetic,
 evaluation of additions,
 
 00:01:36,720 --> 00:01:41,200
@@ -189,7 +189,7 @@ proving properties, for example.
 Nevertheless, these semantics are related.
 
 00:03:43,360 --> 00:03:44,240
-So, they are not the equivalent.
+So, they are not equivalent.
 
 00:03:44,240 --> 00:03:49,120
 I just mentioned this already, but
@@ -220,11 +220,11 @@ Okay.
 
 00:04:15,920 --> 00:04:23,920
 And one important aspect that wasn't relevant
-so far, is that the declarative semantics simply
+so far is that the declarative semantics simply
 
 00:04:23,920 --> 00:04:27,760
-as an observation because it's purely set
-based and it never considers for example,
+as an observation, because it's purely set
+based and it never considers, for example,
 
 00:04:27,760 --> 00:04:33,760
 the order of literals appearing in the
@@ -266,11 +266,11 @@ And we have already encountered
 earlier in the slides,
 
 00:05:12,400 --> 00:05:16,480
-strange situation where I said, for
-example, that indication of a literal,
+a strange situation where I said, for
+example, that an indication of a literal,
 
 00:05:16,480 --> 00:05:21,280
-if it should occur in rule should
+if it should occur in a rule should
 occur towards the end of that rule.
 
 00:05:21,840 --> 00:05:26,960
@@ -287,7 +287,7 @@ definitely need operational semantics.
 
 00:05:34,560 --> 00:05:39,040
 And indeed, the first motivating example
-for why we want operational semantics, will
+for why we want operational semantics will
 
 00:05:39,040 --> 00:05:45,680
 really depend on, and will be related
@@ -300,7 +300,7 @@ mentioned, this corresponds somewhat to
 
 00:05:57,200 --> 00:06:02,320
 the execution of Haskell programs by
-lazy evaluation by pattern matching.
+lazy evaluation through pattern matching.
 
 00:06:02,320 --> 00:06:07,200
 So, also when I talked earlier
@@ -326,7 +326,7 @@ And as also already mentioned,
 various of these ingredients
 
 00:06:30,720 --> 00:06:35,200
-that we need for the operational semantics
+that we need for the operational semantics,
 namely unification and resolution
 
 00:06:35,200 --> 00:06:42,000
@@ -347,11 +347,11 @@ not just rely on the declarative semantics.
 
 00:07:00,640 --> 00:07:04,480
 So, we will go through a few examples
-of maybe a bit surprising behaviour of
+of maybe a bit surprising behavior of
 
 00:07:04,480 --> 00:07:09,360
 certain Prolog programs that we will later be
-able to explain with the operation semantics.
+able to explain with the operational semantics.
 
 48 # slide
 00:07:13,840 --> 00:07:16,480
@@ -380,7 +380,7 @@ but you can also have a situation where
 we have a direct flight from x to z and
 
 00:07:48,720 --> 00:07:53,600
-then onwards connecting from z to y which
+then onwards connecting from z to y, which
 maybe arises from another direct flight.
 
 00:07:53,600 --> 00:07:57,920
@@ -398,15 +398,15 @@ So, that's a useful definition.
 And we can use it with some queries.
 
 00:08:08,480 --> 00:08:11,600
-So, we can ask whether there a
-connection from Frankfurt to Maui.
+So, we can ask whether there is
+a connection from Frankfurt to Maui.
 
 00:08:11,600 --> 00:08:17,680
 And then by combining this would be basically
 computing the transitive closure of the direct
 
 00:08:17,680 --> 00:08:22,880
-relationship we or the Prolog finds
+relationship, we or the Prolog finds
 that yes, there is such a connection.
 
 00:08:23,600 --> 00:08:29,200
@@ -430,14 +430,14 @@ from the rules here also intuitively.
 
 00:08:46,320 --> 00:08:49,600
 Okay, and we can ask questions like, is
-there connection from Maui to somewhere?
+there a connection from Maui to somewhere?
 
 00:08:49,600 --> 00:08:52,960
 And the answer is no, because there's
-no direct connection as we can see.
+no direct connection, as we can see.
 
 00:08:52,960 --> 00:08:55,440
-And then that can also be no indirect collection.
+And then that can also be no indirect connection.
 
 00:08:56,400 --> 00:09:03,120
 Okay, so what we see here can be explained
@@ -527,15 +527,15 @@ positions of
 direct and connection, right?
 
 00:10:47,520 --> 00:10:51,840
-Previously it was said that there must be a
-direct from x to z and a connection from z to y.
+Previously, it was said that there must be a
+direct flight from x to z and a connection from z to y.
 
 00:10:51,840 --> 00:10:56,640
 Now I'm saying that there must be a
-connection from x to z and direct from z to y.
+connection from x to z and a direct flight from z to y.
 
 00:10:56,640 --> 00:11:00,720
-Logically in terms of the meaning of this
+Logically, in terms of the meaning of this
 program, that should make a difference, right?
 
 00:11:00,720 --> 00:11:04,800
@@ -555,7 +555,7 @@ So, something has gone wrong.
 
 00:11:15,920 --> 00:11:22,000
 I made an innocent change, but the
-behaviour program is now very bad, okay?
+behavior of the program is now very bad, okay?
 
 00:11:22,800 --> 00:11:29,840
 This also means that these logical operations,
@@ -573,7 +573,7 @@ clauses and that would correspond to an
 error because previously we said that several
 
 00:11:45,520 --> 00:11:51,840
-clauses correspond towards junction of
+clauses correspond to a conjunction of
 statements, or by simply switching the order here.
 
 00:11:52,480 --> 00:11:57,920
@@ -584,7 +584,7 @@ or A, that shouldn't really make a difference.
 And similarly, also when the rules of connection
 
 00:12:01,440 --> 00:12:07,200
-and direct are changed here that could be
+and direct are changed here, that could be
 seen as something like an “and”.
 
 00:12:07,200 --> 00:12:14,960
@@ -621,7 +621,7 @@ So, this program here has the exact same
 
 00:12:46,160 --> 00:12:51,760
 smallest Herbrand model as the previous
-program, but the behaviour is completely different.
+program, but the behavior is completely different.
 
 00:12:51,760 --> 00:12:53,840
 So, something is going on.
@@ -671,7 +671,7 @@ definition of addition.
 
 00:13:53,200 --> 00:14:00,880
 Yes, x + 0 = x and x plus successor of something
-is to successor or something else if x and the
+is the successor of something else if x and the
 
 00:14:01,680 --> 00:14:06,960
 other thing of which I took a successor of here is
@@ -845,7 +845,7 @@ And it has this flexible flavor where we
 
 00:17:34,320 --> 00:17:38,880
 don't have to commit whether we want
-to go forward or backwards, right?
+to go forward or backward, right?
 
 00:17:38,880 --> 00:17:43,600
 Just as we did for addition earlier,
@@ -929,7 +929,7 @@ So, this will work nicely.
 
 00:19:18,160 --> 00:19:22,320
 It will also work nicely to provide
-inputs for the first and last position
+inputs for the first and last positions
 
 00:19:22,320 --> 00:19:26,000
 and asking about the middle
@@ -937,7 +937,7 @@ position. This also works nicely.
 
 00:19:26,000 --> 00:19:30,320
 That is a different call mode, but
-there also one that won’t work,
+there's also one that won’t work,
 
 00:19:30,320 --> 00:19:32,000
 at least not nicely, right?
@@ -975,12 +975,12 @@ And well then, Prolog will happily
 produce exactly all the correct solutions.
 
 00:20:20,800 --> 00:20:24,320
-And for multiplications suddenly this
+And for multiplication, suddenly this
 didn't work on the previous slide.
 
 00:20:25,040 --> 00:20:33,360
 Yes, so indeed addition supports all call modes,
-even calling it a three variable or not providing
+even calling it a three-variable or not providing
 
 00:20:33,360 --> 00:20:39,040
 any concrete input like this concrete value
@@ -1033,7 +1033,7 @@ And again, the declarative semantics can't explain
 this or can't help us. We really need
 
 00:21:23,120 --> 00:21:27,600
-to have an insight into the operation
+to have an insight into the operational
 semantics to know how to change the
 
 00:21:27,600 --> 00:21:33,280
@@ -1062,7 +1062,7 @@ And as a final example here for what is strange or
 
 00:22:06,080 --> 00:22:10,880
 highly declarative semantics, it's not enough
-to explain the behaviour of all Prolog programs.
+to explain the behavior of all Prolog programs.
 
 00:22:10,880 --> 00:22:12,560
 Let's look at this example again.
@@ -1127,12 +1127,12 @@ then we get very strange results, right?
 So, basically, nobody is jealous of anybody.
 
 00:23:23,440 --> 00:23:28,800
-Yes, “Marsellus is not jealous of anybody” says
+Yes, “Marsellus is not jealous of anybody,” says
 the answer to this first query, even though we
 
 00:23:28,800 --> 00:23:33,920
 previously established that actually there
-is jealousness with Marsellus and someone.
+is jealousy with Marsellus and someone.
 
 00:23:34,640 --> 00:23:38,400
 And the same happens for basically
@@ -1151,7 +1151,7 @@ conceptualization to mean.
 
 00:23:48,080 --> 00:23:50,960
 Indeed, before this change,
-we've got meaningful results.
+we got meaningful results.
 
 00:23:50,960 --> 00:23:55,920
 You can go back to the first slides of Prolog,
@@ -1187,7 +1187,7 @@ We might not actually get to that point in the
 
 00:24:27,280 --> 00:24:30,960
 course because there’s only one
-and a half lecture left basically.
+and a half lectures left basically.
 
 00:24:31,520 --> 00:24:36,640
 But well, we would use the operational
@@ -1230,15 +1230,15 @@ Yes.
 As I already mentioned, this is
 
 00:25:11,680 --> 00:25:17,600
-a more complicated set-up than just the
+a more complicated setup than just the
 construction for the declarative semantics.
 
 00:25:17,600 --> 00:25:20,320
 Okay, there are basically three
-things we need; Unification,
+things we need: unification,
 
 00:25:20,320 --> 00:25:24,800
-Resolution and the concept:
+resolution and the concept:
 visualization of derivation trees.
 
 00:25:25,360 --> 00:25:29,040
@@ -1247,7 +1247,7 @@ already in the Logik course.
 
 00:25:30,880 --> 00:25:33,760
 There's also some notion
-of tree shaped resolution,
+of tree-shaped resolution,
 
 00:25:33,760 --> 00:25:37,120
 but it's not exactly the version
@@ -1267,4 +1267,4 @@ occurring in the last Logik lecture.
 
 00:25:56,800 --> 00:26:08,080
 I will provide some repetition on this, but I will
-not provide full formulation of these concepts.
+not provide a full formulation of these concepts.

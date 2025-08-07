@@ -374,17 +374,17 @@ wouldn't match. And the second position:
 
 00:07:25,040 --> 00:07:27,840
 M and X are both variables, so there
-is a lot of freedom what to do,
+is a lot of freedom in what to do,
 
 00:07:27,840 --> 00:07:30,640
 but actually the last position
-we see that X must be s (s(0)).
+we see that X must be s(s(0)).
 
 00:07:31,920 --> 00:07:35,920
 So, that really forces the value for X.
 
 00:07:35,920 --> 00:07:38,240
-And then since X is then s (s(0)).
+And then since X is then s(s(0)).
 
 00:07:38,800 --> 00:07:42,000
 So, which will also affect the
@@ -671,7 +671,7 @@ So, what I will be doing from now
 on is to replace the variables here.
 
 00:12:44,640 --> 00:12:48,560
-And I will do this by just adding subscript.
+And I will do this by just adding a subscript.
 
 00:12:48,560 --> 00:12:50,640
 It would be subscript, if I
@@ -961,7 +961,7 @@ And for the Y3 here, and the Y1 here, we could
 have a choice, actually, whether we want to
 
 00:18:13,920 --> 00:18:21,120
-replace Y1 by Y3 or Y3 by Y1, in both cases
+replace Y1 by Y3 or Y3 by Y1; in both cases
 you would have found a most general unifier.
 
 00:18:22,240 --> 00:18:23,680
@@ -983,7 +983,7 @@ right-hand side of the clause we have used.
 
 00:18:41,520 --> 00:18:47,440
 So, we will replace this by add(X3,Y3,Z3),
-but actually of course we will
+but actually, of course, we will
 
 00:18:48,000 --> 00:18:50,720
 apply this unifier to this term.
@@ -1008,7 +1008,7 @@ Well, it's not difficult to see that
 this is unifiable if you replace all
 
 00:19:24,880 --> 00:19:30,720
-variables or the X3, Y3 and the
+variables or the X3, Y3, and the
 X4 from the clause, all by 0.
 
 00:19:30,720 --> 00:19:35,200
@@ -1019,7 +1019,7 @@ of this 0 here and this 0 here.
 Okay?
 
 00:19:37,360 --> 00:19:44,960
-So, the unifier to use is this one,
+So, the unifier to use is this one;
 then we can apply the first clause.
 
 00:19:45,520 --> 00:19:48,240
@@ -1046,13 +1046,13 @@ N becomes s(X1), X1 becomes s(X3).
 So, we have s(s(X3)) and X3 becomes 0.
 
 00:20:04,000 --> 00:20:06,480
-So, N altogether becomes s(s(0).
+So, N altogether becomes s(s(0)).
 
 00:20:07,840 --> 00:20:08,960
 What about M?
 
 00:20:08,960 --> 00:20:15,680
-M becomes Y1, Y1 becomes Y3 and Y3 becomes 0.
+M becomes Y1, Y1 becomes Y3, and Y3 becomes 0.
 
 00:20:15,680 --> 00:20:19,840
 So, M altogether, if you trace
@@ -1063,7 +1063,7 @@ So, we have the answer, N is s(s(0)) and M is 0.
 
 00:20:25,600 --> 00:20:31,120
 Which is the third useful answer for
-asking addition of N + M should be 2.
+asking whether addition of N + M should be 2.
 
 00:20:32,320 --> 00:20:35,040
 Okay, now then I could again
@@ -1075,7 +1075,7 @@ literal that we had here could also have been
 
 00:20:39,440 --> 00:20:45,280
 unified with the second program clause, with the
-head of this clause and well, the answer is no.
+head of this clause, and well, the answer is no.
 
 00:20:45,920 --> 00:20:51,040
 We see this in the last position, so the
@@ -1104,7 +1104,7 @@ And that's why Prolog would give these three
 results in this order from left to right.
 
 00:21:15,920 --> 00:21:19,520
-And then say false, there are
+And then say false; there are
 no further solutions, I am done.
 
 00:21:20,640 --> 00:21:20,960
@@ -1148,11 +1148,11 @@ this tree, we always had to remember
 
 00:22:04,400 --> 00:22:07,520
 where we have already worked, where
-we are done and where we are not.
+we are done, and where we are not.
 
 00:22:07,520 --> 00:22:12,080
 And this proceeded basically in
-a left-most depth first fashion.
+a left-most depth-first fashion.
 
 00:22:12,080 --> 00:22:15,280
 Okay, as long as there are still nodes to be
@@ -1169,7 +1169,7 @@ And we always select the leftmost one.
 Okay?
 
 00:22:27,440 --> 00:22:30,560
-Of course, in the beginning there is
+Of course, in the beginning, there is
 just the one we have at the root.
 
 00:22:31,440 --> 00:22:38,480
@@ -1182,7 +1182,7 @@ all facts or rules, all program clauses
 
 00:22:44,320 --> 00:22:49,520
 whose head is unifiable with some literal, but
-actually the left most literal in that node.
+actually the leftmost literal in that node.
 
 00:22:49,520 --> 00:22:53,440
 And as you just saw, there was
@@ -1214,12 +1214,12 @@ was almost always two successors,
 two such clauses that could be used.
 
 00:23:25,360 --> 00:23:31,920
-Well, except in the right most node at the very
+Well, except in the rightmost node at the very
 end, there was exactly one clause that could be
 
 00:23:31,920 --> 00:23:35,840
 used for unification because the second one
-was ruled out, because there was a mismatch.
+was ruled out because there was a mismatch.
 
 00:23:37,520 --> 00:23:43,600
 Okay, so when we know what the
@@ -1231,7 +1231,7 @@ node by doing a resolution.
 
 00:23:48,960 --> 00:23:54,480
 Yes, after we have found out the unification
-between the left most literal in the current node
+between the leftmost literal in the current node
 
 00:23:54,480 --> 00:24:00,480
 and the problem clause, we can apply
@@ -1309,7 +1309,7 @@ cases how a node could be finished.
 Well, actually in the previous
 
 00:25:17,920 --> 00:25:23,280
-example, there was only one such case the other
+example, there was only one such case; the other
 one will appear in another example later on.
 
 00:25:23,280 --> 00:25:28,480
@@ -1341,7 +1341,7 @@ with the leftmost literal from the query.
 
 00:25:53,760 --> 00:25:58,560
 Then we also have finished that node, but it's
-not a success node, It's a failure node because
+not a success node, it's a failure node because
 
 00:25:58,560 --> 00:26:04,320
 there's some stuff still left to prove, but we
@@ -1391,7 +1391,7 @@ that occurred in the original query, right?
 So, in the tree, we had many
 
 00:26:58,800 --> 00:27:04,960
-variables, N, M, X, Y, X1, Y1, et cetera, but
+variables, N, M, X, Y, X1, Y1, etc., but
 we didn't give an answer for all of them.
 
 00:27:04,960 --> 00:27:09,840

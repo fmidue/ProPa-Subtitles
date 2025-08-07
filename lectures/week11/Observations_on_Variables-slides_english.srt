@@ -18,8 +18,8 @@ And I commented on this already is that, of
 course, there is no somehow contradiction or
 
 00:00:22,880 --> 00:00:32,960
-interference between a variable usage in
-the query here and in rule in a program.
+interference between a variable's usage in
+the query here and in a rule in a program.
 
 00:00:32,960 --> 00:00:33,520
 Right?
@@ -29,7 +29,7 @@ That we have X here and X here is not a problem,
 
 00:00:36,400 --> 00:00:40,640
 just as in Haskell or other
-languages variables have a scope.
+languages, variables have a scope.
 
 00:00:40,640 --> 00:00:44,160
 And usually, the scope is for
@@ -43,7 +43,7 @@ And well, this X is completely different.
 
 00:00:49,040 --> 00:00:52,000
 You could think of these X and Y to
-be some are renamed to X prime and
+be some renamed to X prime and
 
 00:00:52,000 --> 00:00:56,560
 Y prime if you need to make sure that
@@ -96,7 +96,7 @@ entity in a concrete instantiation.
 
 00:01:44,400 --> 00:01:49,280
 Again, just like, if you have a functional
-procedure in other language, and you have
+procedure in another language, and you have
 
 00:01:49,280 --> 00:01:53,040
 two argument variables, even
@@ -127,7 +127,7 @@ aware of, and to take care of, careful about.
 
 00:02:15,680 --> 00:02:19,360
 So, this one, it's possible to have several
-occurrences of the same variable in a rules' head.
+occurrences of the same variable in a rule's head.
 
 00:02:19,360 --> 00:02:21,280
 We didn't have this here, we used X and Y.
@@ -152,7 +152,7 @@ all invocations for this rule or fact or whatever.
 
 00:02:46,000 --> 00:02:48,800
 Okay, and now, this is really
-different for example from Haskell.
+different, for example, from Haskell.
 
 00:02:48,800 --> 00:02:51,200
 Actually, in the Haskell part, I had an explicit
@@ -265,7 +265,7 @@ an unknown thing that's not even in scope.
 Okay?
 
 00:04:42,000 --> 00:04:46,400
-And here, this look like it
+And here, this looks like it
 simply appears out of nothing.
 
 00:04:46,400 --> 00:04:50,480
@@ -345,7 +345,7 @@ this example, as discussed previously already,
 
 00:06:04,640 --> 00:06:11,120
 some idea what we want this to express to really
-mean jealousness and then we will see that Prolog indeed
+mean jealousy and then we will see that Prolog indeed
 
 00:06:11,120 --> 00:06:13,520
 has exactly this interpretation.
@@ -356,11 +356,11 @@ from this example to other cases.
 
 00:06:17,280 --> 00:06:20,160
 Okay, so one way to think about
-this way would be as following.
+this way would be as follows.
 
 00:06:20,160 --> 00:06:24,320
-So, let's say the X and Y right they
-are bound, when we call the "jealous"
+So, let's say the X and Y, right, they
+are bound when we call the "jealous"
 
 00:06:24,320 --> 00:06:28,080
 predicate, we can say of course, they
@@ -371,7 +371,7 @@ but for one specific invocation then fixed, right?
 
 00:06:31,280 --> 00:06:35,600
 So, we call "jealous" maybe
-with Vincent, Marsellus then
+with Vincent, Marsellus, then
 
 00:06:37,120 --> 00:06:43,520
 this rule applies for all X and Y, but for some
@@ -418,8 +418,8 @@ If for every choice of Z,
 the right-hand side holds.
 
 00:07:21,680 --> 00:07:26,800
-So, loves(X,Z) and loves(Y,Z) and X is different
-from Y, which is things that you could check.
+So, loves(X, Z) and loves(Y, Z) and X is different
+from Y, which are things that you could check.
 
 00:07:28,080 --> 00:07:30,480
 Then also the head should hold.
@@ -450,10 +450,10 @@ So, for every choice of Z. Because it's
 free, we can choose everything we want.
 
 00:07:58,640 --> 00:08:00,800
-If it is the case, that the right-hand side holds.
+If it is the case that the right-hand side holds.
 
 00:08:00,800 --> 00:08:04,560
-So, if it's the case, that X loves Z
+So, if it's the case that X loves Z
 and Y loves Z and X is different from Y,
 
 00:08:05,120 --> 00:08:09,440
@@ -492,7 +492,7 @@ terms of really what the statements mean?
 
 00:08:44,560 --> 00:08:47,760
 So, of course, there are some rules
-and logic where you can simply change
+in logic where you can simply change
 
 00:08:47,760 --> 00:08:49,120
 the order of operations.
@@ -525,14 +525,14 @@ this triangle holds or whether it is the case that
 
 00:09:19,440 --> 00:09:25,680
 for every choice of Z if we establish this
-part, then we already know that jealousness holds.
+part, then we already know that jealousy holds.
 
 00:09:26,640 --> 00:09:31,840
 So, here we have to establish for Zs
 and then we can make our deduction.
 
 00:09:31,840 --> 00:09:35,680
-And here it says well for every choice
+And here it says, well, for every choice
 of Z we can make that deduction.
 
 00:09:35,680 --> 00:09:42,640
@@ -574,7 +574,7 @@ holds, and only then we can establish this.
 That's the logical difference.
 
 00:10:26,800 --> 00:10:29,760
-So, if you need this spell out more in details,
+So, if you need this spelled out more in detail,
 
 00:10:29,760 --> 00:10:34,880
 then you can write down actually the formulas
@@ -631,7 +631,7 @@ There's a logical equivalence between an
 all-quantifier and an implication versus an
 
 00:11:33,360 --> 00:11:41,840
-all-quantifier, an existential quantifier and an
+all-quantifier, an existential quantifier, and an
 implication if the nesting has been changed.
 
 00:11:42,400 --> 00:11:47,040
@@ -647,7 +647,7 @@ So, you could see this either as an implicit
 for-all quantifier on the outside of the rule, or as an
 
 00:12:00,080 --> 00:12:06,560
-implicit existential quantifier at the inside,
+implicit existential quantifier on the inside,
 namely, on the right-hand side of the rule.
 
 00:12:06,560 --> 00:12:06,880
@@ -670,7 +670,7 @@ And due to the symmetry of these rules,
 
 00:12:24,800 --> 00:12:29,920
 actually, it will of these statements, of course,
-once X is jealous of Y also, Y would be jealous of X.
+once X is jealous of Y, also, Y would be jealous of X.
 
 00:12:29,920 --> 00:12:30,800
 But that's not the point here.
@@ -680,7 +680,7 @@ The point is that, implicitly, we say
 if you have a free variable like this,
 
 00:12:35,280 --> 00:12:39,120
-the Z then the interpretation
+the Z, then the interpretation
 is if we could find a Z that
 
 00:12:39,120 --> 00:12:41,680
@@ -702,7 +702,7 @@ That's important for understanding this program.
 But of course, generally,
 
 00:12:58,320 --> 00:13:02,960
-transferring to all Programs that you will
+transferring to all programs that you will
 see where we use free variables like this.
 
 00:13:02,960 --> 00:13:07,440

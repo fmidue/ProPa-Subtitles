@@ -18,10 +18,10 @@ before in some form.
 
 0:00:35.750,0:00:43.510
 So, in a top-down decomposition and taking
-into account the usual rules for precedents
+into account the usual rules for precedence
 
 0:00:43.510,0:00:51.859
-between arithmetic operations, so, that multiplications
+between arithmetic operations, so that multiplications
 have a tighter binding
 
 0:00:51.859,0:00:56.539
@@ -159,7 +159,7 @@ So, if we simply switch to a very small but
 different example.
 
 0:04:02.849,0:04:09.230
-So, let's look again, at something I did in
+So, let's look again at something I did in
 an earlier video, let's say we have, or let's
 
 0:04:09.230,0:04:17.229
@@ -186,7 +186,7 @@ Why is that?
 
 0:04:41.460,0:04:47.889
 Because it's not really true that I only need
-to know the values of these two read-calls.
+to know the values of these two read calls.
 
 0:04:47.889,0:04:52.539
 I, for example, also need to know the order
@@ -253,7 +253,7 @@ is important if we have effects.
 
 0:06:17.029,0:06:24.689
 And it's also the reason why we can't rename
-subexpressions, or simply replacing two common
+subexpressions, or simply replace two common
 
 0:06:24.689,0:06:29.330
 subexpressions, for example, by a common name
@@ -290,7 +290,7 @@ we will actually play with the example.
 
 0:07:10.860,0:07:18.689
 So, let me draw this syntax tree of the expression
-I will then use in slides.
+I will then use in the slides.
 
 0:07:18.689,0:07:27.110
 Frankly, I'm not very good at drawing this
@@ -308,7 +308,7 @@ Okay, and it's used on the top level here, because
 we want to combine two pictures.
 
 0:07:38.099,0:07:43.969
-And one of these pictures will be a circle
+And one of these pictures will be a circle.
 So, it is similar to an example I started from
 
 0:07:43.969,0:07:45.930
@@ -328,7 +328,7 @@ be moved.
 
 0:08:02.800,0:08:12.119
 And again, similarly to last week, I will
-have here a red coloured triangle or arbitrary
+have here a red colored triangle or arbitrary
 
 0:08:12.119,0:08:13.119
 polygon.
@@ -353,7 +353,7 @@ will type out in the editor.
 
 0:08:39.259,0:08:45.699
 And what I wanted to talk about here is types,
-because differently than in the number examples
+because different than in the number examples
 
 0:08:45.699,0:08:46.920
 from above,
@@ -367,11 +367,11 @@ So, what you probably already know or remember
 from the example last week is that overall,
 
 0:09:00.209,0:09:05.579
-there was something like “scene”, which is a picture.
+there was something like “scene,” which is a picture.
 So, somehow, ultimately up here we want to
 
 0:09:05.579,0:09:08.750
-Have the type Picture.
+have the type Picture.
 
 0:09:08.750,0:09:15.300
 And to make sure that this will be
@@ -387,7 +387,7 @@ if it's compositional.
 
 0:09:22.110,0:09:28.400
 So, what we have here, or what we will find is
-that this operator here, takes two pictures
+that this operator here takes two pictures
 
 0:09:28.400,0:09:30.149
 and combines them into one picture.
@@ -397,7 +397,7 @@ So, what we expect is that both on the left
 and on the right, we have pictures. So far
 
 0:09:36.060,0:09:38.190
-that's like with numbers, we combine numbers
+that's like with numbers; we combine numbers
 to numbers.
 
 0:09:38.190,0:09:43.560
@@ -405,15 +405,15 @@ So, here we combine pictures to pictures,
 but then further down in the tree, we can
 
 0:09:43.560,0:09:50.430
-have other things, for example, the 0.1 here
-is not of course a picture, it's a floating
+have other things; for example, the 0.1 here
+is not, of course, a picture; it's a floating
 
 0:09:50.430,0:09:57.180
 point number and actually, it will be a Double
 in this specific library.
 
 0:09:57.180,0:10:05.430
-And similarly all the other numbers that we
+And similarly, all the other numbers that we
 have here. Sorry about this. All the other
 
 0:10:05.430,0:10:11.150
@@ -423,7 +423,7 @@ numbers we have here are Doubles.
 And what do we move?
 
 0:10:16.390,0:10:18.579
-Well, let’s work out things out from below.
+Well, let’s work things out from below.
 
 0:10:18.579,0:10:20.230
 So, what is this here?
@@ -436,18 +436,18 @@ And actually, there is a specific type for
 points in CodeWorld.
 
 0:10:30.470,0:10:40.660
-So, what actually will be typewise, is a
+So, what actually will be typewise is a
 list of points. So, a list syntax. (The square
 
 0:10:40.660,0:10:42.270
 brackets of list syntax.)
 
 0:10:42.270,0:10:47.379
-And the thing which will be occurring in the
+And the thing that will be occurring in the
 list is this point type.
 
 0:10:47.379,0:10:53.730
-And then 'polygon' is a function which takes
+And then 'polygon' is a function that takes
 such a list of points and gives a picture
 
 0:10:53.730,0:10:58.920
@@ -457,12 +457,12 @@ So, the type at this node will be a Picture.
 And then what about “colored”?
 
 0:11:00.420,0:11:07.120
-Well, “colored” should take a colour and a
+Well, “colored” should take a color and a
 Picture and return a Picture.
 
 0:11:07.120,0:11:12.460
-So, what we need here is a colour. And “red”
-is indeed a colour constant, then the colour
+So, what we need here is a color. And “red”
+is indeed a color constant; then the color
 
 0:11:12.460,0:11:18.509
 and the Picture can be combined by the 'colored'
@@ -476,8 +476,8 @@ the “translated” call expects two Doubles and
 a Picture and returns a Picture.
 
 0:11:25.060,0:11:31.940
-So compositionally, at each node, the things
+So, compositionally, at each node, the things
 fit together and overall we get the desired
 
 0:11:31.940,0:11:35.569
-type, in a compositional manner.
+type in a compositional manner.

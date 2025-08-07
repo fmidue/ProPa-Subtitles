@@ -7,7 +7,7 @@ This week we will talk about types again,
 but not polymorphic types, not higher-order
 
 00:00:12,280 --> 00:00:16,410
-types, at least not in the focus.
+types, at least not in focus.
 
 00:00:16,410 --> 00:00:22,519
 Instead, we will talk about new type constructs
@@ -245,7 +245,7 @@ And we are not going to discuss the mathematics
 behind that.
 
 00:04:46,980 --> 00:04:54,530
-But I still hope that will become apparent
+But I still hope that it will become apparent
 what is algebraic about these, once we see
 
 00:04:54,530 --> 00:04:55,530
@@ -271,7 +271,7 @@ enumeration or union types (in very simple
 forms of algebraic data types).
 
 00:05:21,530 --> 00:05:29,070
-But actually modern languages like Swift have
+But actually, modern languages like Swift have
 features like *recursive* enum types, which
 
 00:05:29,070 --> 00:05:36,300
@@ -321,7 +321,7 @@ that won't shine through too much, I think.
 
 126 # slide
 00:06:28,830 --> 00:06:31,770
-So, let us start very simple indeed.
+So, let us start very simply indeed.
 
 00:06:31,770 --> 00:06:35,870
 Assume we want to be able to talk about days
@@ -395,7 +395,7 @@ is a day from Monday to Friday, so is a work
 day.
 
 00:07:49,199 --> 00:07:51,170
-That is of course possible.
+That is, of course, possible.
 
 00:07:51,170 --> 00:07:53,360
 We are somewhat lucky in that case.
@@ -439,7 +439,7 @@ in this course.
 
 00:08:33,210 --> 00:08:36,580
 Of course, in this semester, this is maybe
-not such useful question because we don't
+not such a useful question because we don't
 
 00:08:36,580 --> 00:08:38,540
 have the actual exercise sessions.
@@ -494,7 +494,7 @@ last year.
 
 00:09:28,990 --> 00:09:34,560
 And probably the same plan would have applied
-this year if we had an actual presence-course).
+this year if we had an actual presence course).
 
 00:09:34,560 --> 00:09:40,770
 So, something can be expressed here like:
@@ -512,7 +512,7 @@ So, we could say: on Wednesday, Saturday,
 and Sunday, we don't have exercises.
 
 00:09:49,880 --> 00:09:51,970
-And on all dates, we do have exercises.
+And on all other dates, we do have exercises.
 
 00:09:51,970 --> 00:09:56,750
 We have this catch-all case ('_') here.
@@ -547,7 +547,7 @@ what is happening here.
 
 00:10:27,510 --> 00:10:32,330
 But of course, if I have fixed encoding like:
-Monday starts on 1, etc…, then that's
+Monday starts on 1, etc., then that's
 
 00:10:32,330 --> 00:10:35,380
 a way to implement the property.
@@ -620,7 +620,7 @@ Whereas for this 'exerciseDay' function as written
 here, for the input 12, it would say: it is
 
 00:11:58,860 --> 00:12:00,610
-an exerciseDay, for whatever reason.
+an exercise day, for whatever reason.
 
 00:12:00,610 --> 00:12:04,820
 That reason is: it would run into this catch-all
@@ -639,12 +639,12 @@ days, instead of having a catch-all case,
 or do that for False, then suddenly, the 12th
 
 00:12:18,950 --> 00:12:21,149
-day of the week, would not be an exercise
+day of the week would not be an exercise
 day.
 
 00:12:21,149 --> 00:12:25,610
 So, it doesn't really make sense from the
-weekdays point of view.
+weekdays' point of view.
 
 00:12:25,610 --> 00:12:34,220
 So, days don't have this property that there
@@ -681,7 +681,7 @@ So, what we say here is: we introduce a datatype.
 It gets a name Day.
 
 00:13:08,310 --> 00:13:13,140
-So, not that's something like Picture, something
+So, not that it's something like Picture, something
 that we can use in other types as arguments
 
 00:13:13,140 --> 00:13:14,740
@@ -693,7 +693,7 @@ new type Day has.
 
 00:13:19,570 --> 00:13:26,600
 And it has the new values: Monday, Tuesday,
-Wednesday, etc. up to Sunday.
+Wednesday, etc., up to Sunday.
 
 00:13:26,600 --> 00:13:34,180
 And then we can use these new constants in
@@ -711,7 +711,7 @@ Even something like C has this.
 
 00:13:41,480 --> 00:13:48,910
 The difference is, for example, that enumeration
-types in C work by really introducing name
+types in C work by really introducing named
 
 00:13:48,910 --> 00:13:49,910
 constants.
@@ -726,14 +726,14 @@ as on the previous slides.
 
 00:13:58,450 --> 00:14:06,280
 Then, basically, Day would just be a different
-/ a disguise name for Integers or some other
+/a disguise name for Integers or some other
 
 00:14:06,280 --> 00:14:09,339
 base type, and Monday would be a constant
 (0 or 1).
 
 00:14:09,339 --> 00:14:14,380
-So, it would again depend on does C decide
+So, it would again depend on whether C decides
 to count the things.
 
 00:14:14,380 --> 00:14:19,100
@@ -745,7 +745,7 @@ named constants which are Integer constants.
 
 00:14:21,040 --> 00:14:25,640
 They would have these names, but under the
-hood, they would still be 1,2,3,4,5, or something
+hood, they would still be 1, 2, 3, 4, 5, or something
 
 00:14:25,640 --> 00:14:26,820
 like that.
@@ -803,7 +803,7 @@ So, what's on the left of this equal sign
 here is the type name.
 
 00:15:18,850 --> 00:15:21,100
-And on the right, we have the values names.
+And on the right, we have the values' names.
 
 00:15:21,100 --> 00:15:25,550
 So, Day can occur here as a type name, and
@@ -912,7 +912,7 @@ are ultimately just numbers, but these tricks
 are simply tricks.
 
 00:17:06,279 --> 00:17:09,749
-They are not well-maintainable way of programming.
+They are not a well-maintainable way of programming.
 
 00:17:09,749 --> 00:17:12,669
 So, I wouldn't even call this a benefit
@@ -946,18 +946,18 @@ much more efficient.
 
 00:17:42,789 --> 00:17:48,049
 Simple encoding these things as numbers, and
-then computing with numbers is of course certainly
+then computing with numbers is, of course, certainly
 
 00:17:48,049 --> 00:17:52,889
 much more efficient than this approach where
-we introduce these new Strings and then compare
+we introduce these new strings and then compare
 
 00:17:52,889 --> 00:17:53,889
 them.
 
 00:17:53,889 --> 00:17:57,759
 Does this mean that I have to compare two
-Strings of length 'a' or something like
+strings of length 'a' or something like
 
 00:17:57,759 --> 00:18:00,539
 that, instead of simply comparing something
@@ -975,10 +975,10 @@ This is not what happens in the implementation.
 
 00:18:05,070 --> 00:18:11,830
 You need not worry that somehow these will
-be stored as Strings, and then at runtime,
+be stored as strings, and then at runtime,
 
 00:18:11,830 --> 00:18:16,159
-some of these Strings will be compared against
+some of these strings will be compared against
 some of these or things like that.
 
 00:18:16,159 --> 00:18:18,919
@@ -986,7 +986,7 @@ Of course, the compiler makes a more efficient
 code from this.
 
 00:18:18,919 --> 00:18:23,289
-So, under the hood, it is not a String comparison.
+So, under the hood, it is not a string comparison.
 
 00:18:23,289 --> 00:18:29,609
 That also means that you don't even need
@@ -1028,7 +1028,7 @@ to abuse.
 
 00:19:02,629 --> 00:19:09,359
 That is something to bear in mind that these
-are not Strings and there is no String comparison
+are not strings and there is no string comparison
 
 00:19:09,359 --> 00:19:12,220
 going on.
@@ -1059,7 +1059,7 @@ constructors.
 
 00:19:44,690 --> 00:19:50,049
 They construct data, they construct values
-which have a type, in this case the type that
+which have a type, in this case, the type that
 
 00:19:50,049 --> 00:19:51,049
 is constructed here.
@@ -1087,7 +1087,7 @@ So, these identifiers must be uppercase.
 
 00:20:10,370 --> 00:20:14,830
 That distinguishes them from, for example,
-function name, which must be lowercase.
+function names, which must be lowercase.
 
 00:20:14,830 --> 00:20:21,989
 But in theory, you could use the same uppercase
@@ -1172,7 +1172,7 @@ pearl, etc.
 
 00:22:01,220 --> 00:22:09,789
 We have this 'aTile' function which maps these
-number codes to actual Pictures.
+number codes to actual pictures.
 
 00:22:09,789 --> 00:22:11,889
 Of course, this already has some danger.
@@ -1189,7 +1189,7 @@ not always have in mind what exactly stands
 for what.
 
 00:22:22,299 --> 00:22:27,330
-Sometimes they maybe write 3 instead of 2
+Sometimes they may write 3 instead of 2
 because 2 and 3 are just some numbers.
 
 00:22:27,330 --> 00:22:30,450
@@ -1205,7 +1205,7 @@ or whatever.
 
 00:22:33,539 --> 00:22:40,950
 So, in that sense already, this is a bit unfortunate,
-what we have done so far, it corresponds to
+what we have done so far; it corresponds to
 
 00:22:40,950 --> 00:22:43,859
 representing weekdays by 1,2,3,…
@@ -1250,7 +1250,7 @@ forget to add this extra case in the aTile
 
 00:23:28,260 --> 00:23:32,769
 function, or maybe someone on our team who
-is responsible for this, simply, forgets to
+is responsible for this simply forgets to
 
 00:23:32,769 --> 00:23:34,359
 add a new case here.
@@ -1280,7 +1280,7 @@ Because the 5 will run into this last case.
 
 00:23:55,409 --> 00:24:00,799
 So, actually, even though I add my 5 in my
-'level' function, the drawing code will, simply,
+'level' function, the drawing code will simply
 
 00:24:00,799 --> 00:24:06,419
 draw nothing for these positions because we
@@ -1294,7 +1294,7 @@ Because in our examples in the exercise, the
 only number codes we had were 0 up to 4, and
 
 00:24:14,030 --> 00:24:19,659
-0 was intended to stand for “nothing”,
+0 was intended to stand for “nothing,”
 so of course, 0 would run into this last case,
 
 00:24:19,659 --> 00:24:21,070
@@ -1328,7 +1328,7 @@ because 5 wouldn't match any of these cases.
 
 00:24:50,549 --> 00:24:54,879
 So, at least at runtime, you would get an
-error instead of this strange blank Picture.
+error instead of this strange blank picture.
 
 00:24:54,879 --> 00:25:01,169
 This is something you could achieve by simply
@@ -1347,7 +1347,7 @@ if you only say: the 'aTile' function goes from
 
 00:25:11,080 --> 00:25:15,789
 Integer to Picture, and then you only provide
-cases for 0,1,2,3,4, then we haven't written
+cases for 0, 1, 2, 3, 4, then we haven't written
 
 00:25:15,789 --> 00:25:17,880
 a function in the mathematical sense.
@@ -1390,17 +1390,17 @@ we want to have: Blank (nothing), Pearl, Water,
 Air.
 
 00:25:59,980 --> 00:26:01,649
-This has the clear documentation value.
+This has clear documentation value.
 
 00:26:01,649 --> 00:26:09,019
 Also, there cannot, from now on, be any confusion
-related to number codes, so, which is which?
+related to number codes, so which is which?
 
 00:26:09,019 --> 00:26:10,019
-It is 2 the pearl?
+Is it 2 the pearl?
 
 00:26:10,019 --> 00:26:11,019
-or 3 is the pearl?
+Or 3 is the pearl?
 
 00:26:11,019 --> 00:26:14,119
 So, there are no number codes anymore, we
@@ -1449,7 +1449,7 @@ a number.
 
 00:26:49,720 --> 00:26:55,330
 It is a Tile because that is what the level
-is: For positions, it gives us a description
+is: for positions, it gives us a description
 
 00:26:55,330 --> 00:26:58,190
 of what is at that position.
@@ -1642,7 +1642,7 @@ compare them.
 
 00:30:27,620 --> 00:30:31,960
 So, given some arbitrary two Pictures, there
-is no way to really, reasonably, compare them.
+is no way to really, reasonably compare them.
 
 00:30:31,960 --> 00:30:35,999
 So, you need data here… something which
@@ -1666,7 +1666,7 @@ comparing a block vs a pearl, etc…
 
 00:30:55,539 --> 00:30:57,440
 comparing in the sense of: is one a block
-and the other is a pearl?
+and the other a pearl?
 
 00:30:57,440 --> 00:31:03,980
 Or one is water and the other is a pearl,
@@ -1688,7 +1688,7 @@ But thanks to this enumeration type, such
 a function can be safely implemented in a
 
 00:31:20,190 --> 00:31:29,159
-non-redundant, but also, an exhaustive way,
+non-redundant, but also an exhaustive way,
 which is checked by the compiler.
 
 131 # slide
@@ -1699,8 +1699,8 @@ These were simple enumeration types.
 Now, let's go beyond that.
 
 00:31:35,479 --> 00:31:43,190
-We move into an area where it is not like
-just name constants that we could easily simulate
+We move into an area where it is not just
+named constants that we could easily simulate
 
 00:31:43,190 --> 00:31:45,799
 with numbers like in C or something like that.
@@ -1723,8 +1723,8 @@ Tuesday, etc., or a Tile can be Water, Pearl,
 Block, and Blank or whatever.
 
 00:32:07,470 --> 00:32:13,710
-These are the alternatives that we write this
-logical bar '|' (pipe). Now, each of these alternatives
+These are the alternatives that we write with
+this logical bar '|' (pipe). Now, each of these alternatives
 
 00:32:13,710 --> 00:32:23,669
 may take additional values in the sense of
@@ -1923,7 +1923,7 @@ be, in general.
 So, now let's look at an example.
 
 00:36:00,270 --> 00:36:04,160
-What would like to know a value of, for example,
+What would it like to know a value of, for example,
 the Connection type.
 
 00:36:04,160 --> 00:36:08,701
@@ -1973,7 +1973,7 @@ look like this.
 This follows this scheme.
 
 00:36:51,550 --> 00:36:57,120
-It is Train… and that I used Train, tells
+It is Train… and that I used Train tells
 me that I need three arguments here.
 
 00:36:57,120 --> 00:37:00,280
@@ -2019,7 +2019,7 @@ to arguments.
 132 # slide
 00:37:40,000 --> 00:37:45,480
 Then how do we compute on such values… values
-of these type that we have just seen?
+of this type that we have just seen?
 
 00:37:45,480 --> 00:37:47,490
 Via something called pattern-matching.
@@ -2043,7 +2043,7 @@ It matched against a constant pattern: Block
 or Pearl, etc. same as for weekdays, and also
 
 00:38:09,630 --> 00:38:11,000
-for numbers, before.
+for numbers before.
 
 00:38:11,000 --> 00:38:16,950
 Now, this pattern matching concept becomes
@@ -2301,8 +2301,8 @@ something of this form with three arguments
 and a result.
 
 00:42:51,130 --> 00:42:56,350
-So, they have all the rights that normal function
-has, even though we don't define them with
+So, they have all the rights that normal functions
+have, even though we don't define them with
 
 00:42:56,350 --> 00:42:57,350
 function definitions.

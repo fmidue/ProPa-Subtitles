@@ -4,11 +4,11 @@ data types, namely 'Animal' and 'Bit' with
 
 0:00:06.240,0:00:13.280
 their constructors 'Cat', 'Dog', 'Bird', and 'O'
-and 'I' for 'Bit'; For simplicity however I'm
+and 'I' for 'Bit'; for simplicity, however, I'm
 
 0:00:13.280,0:00:20.240
-going to refer to them as 0 and 1 here, because
-we're talking about bits and it's easier to say.
+going to refer to them as 0 and 1 here because
+we're talking about bits, and it's easier to say.
 
 0:00:21.120,0:00:27.360
 Our actual task here is to write an encode
@@ -20,18 +20,18 @@ type 'Bit', and the decode function should be the
 
 0:00:34.720,0:00:41.920
 reverse of this. So a list of type 'Bit' should
-result in 'Maybe' list of type 'Animal', 'Maybe'
+result in a 'Maybe' list of type 'Animal', 'Maybe'
 
 0:00:43.200,0:00:50.560
 because one of the requirements is that for every
 list of type 'Bit' for which no corresponding
 
 0:00:50.560,0:00:56.560
-original list of type 'Animal' exists the function
+original list of type 'Animal' exists, the function
 decode should return the value 'Nothing', so if we
 
 0:00:56.560,0:01:02.160
-somehow get a messed up list of bits here which
+somehow get a messed-up list of bits here which
 we can't decode into a proper list of animals,
 
 0:01:02.160,0:01:13.840
@@ -39,19 +39,19 @@ we should just return nothing and be done with
 it. And the other requirement is for every list
 
 0:01:13.840,0:01:20.160
-of type 'Bit' that can be produced by encode the
+of type 'Bit' that can be produced by encode, the
 function decode should return the value 'Just L';
 
 0:01:20.160,0:01:27.760
 So this is the other side of our Maybe where we
-have a valid list of animals and this L is exactly
+have a valid list of animals, and this L is exactly
 
 0:01:27.760,0:01:33.520
 the original as before applying encode, so that
 basically means these functions shouldn't just
 
 0:01:33.520,0:01:40.800
-run independently of each other, but need to
+run independently of each other but need to
 use the same encoding strategy in the background
 
 0:01:42.560,0:01:48.560
@@ -59,31 +59,31 @@ which is obviously something we need to come up
 with. We are not going to start with our encode
 
 0:01:48.560,0:01:52.880
-function immediately though, because this works
+function immediately though because this works
 on a list of animals, to make it a little easier
 
 0:01:52.880,0:02:00.560
-for us we're gonna make a helper function which
+for us we're gonna make a helper function that
 just encodes a single animal into a list of bits;
 
 0:02:02.000,0:02:07.840
 It's gonna be a list of bits because obviously
-we have only two bits but three animals so we
+we have only two bits but three animals, so we
 
 0:02:07.840,0:02:13.440
 can't just do a simple one-to-one encoding, so
 some of the animals are going to be encoded into
 
 0:02:13.440,0:02:19.600
-multiple bits and the easiest way to do that
-is just to create a list of bits for that; So
+multiple bits, and the easiest way to do that
+is just to create a list of bits for that; so
 
 0:02:20.880,0:02:24.240
 we're going to do this with simple pattern
-matching here, because we only have three
+matching here because we only have three
 
 0:02:24.240,0:02:36.080
-constructors for animals, so not going to be that
+constructors for animals, so it's not going to be that
 big of a deal, and if we just write these out we
 
 0:02:36.080,0:02:42.080
@@ -92,34 +92,34 @@ have our encode 'Animal' for 'Cat', 'Dog', and
 
 0:02:42.080,0:02:46.720
 encoding for each of these. Like I already
-said some of these are going to have to be
+said, some of these are going to have to be
 
 0:02:47.280,0:02:52.640
-multiple bits, let's just start with
+multiple bits; let's just start with
 the first one just walking through it...
 
 0:02:56.320,0:03:02.160
 and now we have our 'Cat' and 'Dog',
-and for the 'Bird' we now need to, as
+and for the 'Bird,' we now need to, as
 
 0:03:03.360,0:03:10.160
 our task already tells us down here, find
-some kind of space efficient encoding, so not
+some kind of space-efficient encoding, so not
 
 0:03:10.160,0:03:20.400
-using unnecessarily long list of bits so
+using an unnecessarily long list of bits, so
 two bits is the longest we should have here,
 
 0:03:20.400,0:03:28.560
 because obviously if we needed to go past
-two we need to have more than four animals,
+two, we need to have more than four animals,
 
 0:03:30.560,0:03:34.480
 but we only have three animals here, so we don't
 even need to use two bits for every single one of
 
 0:03:34.480,0:03:45.280
-these; For 'Bird' we can just pick one bit, let's
+these; for 'Bird' we can just pick one bit, let's
 just do O here, and then thinking about how we're
 
 0:03:45.280,0:03:50.560
@@ -132,15 +132,15 @@ because then we would need to be checking if
 
 0:03:57.040,0:04:01.600
 this is actually the end of this encoding or if
-something's following, this can get confusing
+something's following; this can get confusing
 
 0:04:02.240,0:04:05.600
 and actually might be impossible
 to implement like this.
 
 0:04:08.160,0:04:14.240
-Because for 'Cat' and 'Dog' we wouldn't know,
-if we're just looking at a 1 bit is this now a
+Because for 'Cat' and 'Dog' we wouldn't know
+if we're just looking at a 1 bit; is this now a
 
 0:04:14.240,0:04:20.800
 'Cat' or a 'Dog' or is this just a single
@@ -164,26 +164,26 @@ could be either 'Cat' or 'Dog', so if it's a 1 bit
 
 0:04:50.400,0:04:54.960
 we just need to look at the bit following
-afterwards, if it's another 1 it's a 'Cat',
+afterwards; if it's another 1 it's a 'Cat',
 
 0:04:54.960,0:05:03.520
-if it's a O it's a 'Dog' and if what we're looking
-at is just a O then it's definitely a 'Bird'.
+if it's an O it's a 'Dog', and if what we're looking
+at is just an O then it's definitely a 'Bird'.
 
 0:05:04.880,0:05:10.240
-That's our 'encodeAnimal' function and we obviously
+That's our 'encodeAnimal' function, and we obviously
 need to apply that to the entire list of animals.
 
 0:05:12.320,0:05:18.560
-Which is actually pretty easy, because if you look
+Which is actually pretty easy because if you look
 at our structure here we have a single 'Animal'
 
 0:05:19.120,0:05:25.920
-being encoded to a list and we want
+being encoded to a list, and we want
 to end up with a flat list, so if we
 
 0:05:25.920,0:05:34.400
-apply this with a map function, for example we
+apply this with a map function, for example, we
 can apply our 'encodeAnimal' like this with map,
 
 0:05:34.400,0:05:38.880
@@ -195,8 +195,8 @@ wait for another parameter which is the
 list that map applies 'encodeAnimal' to,
 
 0:05:46.320,0:05:51.200
-and in this case map would just apply encode
-animal to every animal and we would end up with
+and in this case, map would just apply encode
+animal to every animal, and we would end up with
 
 0:05:54.400,0:06:01.680
 a list of bit lists inside of it, so we need
@@ -207,7 +207,7 @@ and then that's our encode function. Obviously
 we can simplify this one step further,
 
 0:06:09.280,0:06:14.800
-because there's a ready made 'concatMap'
+because there's a ready-made 'concatMap'
 function in the Prelude, because this is a
 
 0:06:14.800,0:06:24.000
@@ -227,12 +227,12 @@ corresponding list of animals for it. So we just
 start with this most simple case, for an input
 
 0:06:47.440,0:06:55.360
-of type list obviously this is the empty list,
+of type list, obviously this is the empty list,
 and is an empty list a valid 'Animal' list? If
 
 0:06:55.360,0:07:00.480
-you think about it yeah because for a list of type
-'Animal' the empty list is always part of the set,
+you think about it, yeah, because for a list of type
+'Animal', the empty list is always part of the set,
 
 0:07:01.120,0:07:05.520
 so for this we can return just an empty list
@@ -244,22 +244,22 @@ case is going to be our first case where it's
 
 0:07:14.400,0:07:20.640
 an invalid list, as we can see in our encoding
-up here we have these two, we're not going to
+up here we have these two; we're not going to
 
 0:07:20.640,0:07:25.840
 be matching for these, but for the case where it's
-just a single element there's one case where it's
+just a single element, there's one case where it's
 
 0:07:25.840,0:07:34.960
 an invalid list, which is if it's a list with just
-one bit that doesn't decode into an 'Animal' and
+one bit that doesn't decode into an 'Animal', and
 
 0:07:35.680,0:07:40.880
 no 'Animal' is encoded into just a single
-'I' bit so this is going to be our case of
+'I' bit, so this is going to be our case of
 
 0:07:41.520,0:07:49.120
-an invalid input list of bits so we return
+an invalid input list of bits, so we return
 'Nothing'. And now we need to start actually
 
 0:07:49.120,0:07:59.360
@@ -272,34 +272,34 @@ obviously, so if we just start with the next
 
 0:08:09.840,0:08:16.640
 most simple case, it would be a list that starts
-with a O bit and then follows up with anything
+with a 0 bit and then follows up with anything
 
 0:08:17.920,0:08:26.320
-and for that for example we could do guards here
-and check first of all recursively basically
+and for that, for example, we could do guards here
+and check, first of all, recursively basically
 
 0:08:26.320,0:08:34.880
 if our remaining part after the zero is actually
-valid, because we know the zero can only be a
+valid because we know the zero can only be a
 
 0:08:34.880,0:08:41.360
-'Bird', so we need to look at the remaining part,
-can this be a valid list and so we can check
+'Bird', so we need to look at the remaining part;
+can this be a valid list? And so we can check
 
 0:08:43.520,0:08:51.360
-'isNothing', to catch this 'Nothing' case
-that might come up on our rest of the list,
+'isNothing' to catch this 'Nothing' case
+that might come up in our rest of the list,
 
 0:08:51.360,0:08:56.720
-which we need to decode recursively here
-and if this is the case if it's 'Nothing',
+which we need to decode recursively here,
+and if this is the case, if it's 'Nothing',
 
 0:08:57.360,0:09:03.360
-'isNothing' returns a boolean, if this value here
-is 'Nothing' then it's 'Nothing' which ends True,
+'isNothing' returns a boolean; if this value here
+is 'Nothing', then it's 'Nothing', which ends True.
 
 0:09:04.400,0:09:10.880
-so in that case we return 'Nothing' because we
+So, in that case, we return 'Nothing' because we
 found one invalid part somewhere in this step,
 
 0:09:10.880,0:09:19.120
@@ -307,115 +307,115 @@ which makes the entire list invalid, and then our
 otherwise case would be if the rest of the list
 
 0:09:19.120,0:09:26.320
-is fine there's no 'Nothing' found in there so
+is fine; there's no 'Nothing' found in there, so
 we can return 'Just Bird' and then recursively
 
 0:09:30.480,0:09:35.200
-get the other animals from the list, which
+get the other animals from the list, which,
 since the rest of this is also going to be
 
 0:09:35.840,0:09:37.440
-'Maybe's we need to
+'Maybe's, we need to
 
 0:09:39.840,0:09:46.320
 get our 'Just Animal' out of there, so we're
-going to do 'Just' and then decode the rest again
+going to do 'Just' and then decode the rest again.
 
 0:09:47.680,0:09:51.680
-and at this point you may have noticed that
-we are using 'decode xs' which is going to
+And at this point, you may have noticed that
+we are using 'decode xs', which is going to
 
 0:09:51.680,0:09:56.480
 be a pretty expensive operation, since this is
 recursively walking through the rest of the list.
 
 0:09:57.360,0:10:06.160
-We're doing this twice which we shouldn't do if
+We're doing this twice, which we shouldn't do if
 we can avoid it, so we're going to do a where
 
 0:10:06.160,0:10:12.320
-clause here, which contains our 'decode xs' which
-we're just going to name 'rest' and then we're
+clause here, which contains our 'decode xs', which
+we're just going to name 'rest', and then we're
 
 0:10:12.320,0:10:22.000
-going to insert that into these places and that's
+going to insert that into these places, and that's
 already much simplified, because we don't do two
 
 0:10:22.000,0:10:27.040
-unnecessary recursions in here we are only
+unnecessary recursions in here; we are only
 walking through the list recursively once.
 
 0:10:31.040,0:10:38.800
-And for our next case which would obviously
+And for our next case, which would obviously
 be the list starting with the I bit...
 
 0:10:42.720,0:10:49.280
-This time we need to look at the first bit,
-we're matching for our first bit, that's I,
+This time, we need to look at the first bit;
+we're matching for our first bit—that's I,
 
 0:10:49.280,0:10:54.880
 and we need to look at the second bit because our
 'Cat's and 'Dog's encoding are always two bits,
 
 0:10:55.840,0:10:59.520
-and the rest of the list of course,
-once again we're gonna do this with
+and the rest of the list, of course,
+once again, we're gonna do this with
 
 0:10:59.520,0:11:05.840
-guards, here we're checking for
+guards; here we're checking for
 'isNothing' on the rest of this again,
 
 0:11:07.840,0:11:14.240
 I'm gonna do the where clause for this
-in a moment, and otherwise case is
+in a moment, and the otherwise case is
 
 0:11:15.760,0:11:22.800
 'Just'... and now we need to do the separation
-between 'Cat' and 'Dog', if our second bit is
+between 'Cat' and 'Dog'; if our second bit is
 
 0:11:23.920,0:11:30.320
-is a I bit then it's a 'Cat' and the only
-other 'Bit' would be O bit so we don't need
+a 1 bit, then it's a 'Cat', and the only
+other 'Bit' would be a 0 bit, so we don't need
 
 0:11:30.320,0:11:37.760
-to specifically check for that, so it's just the
-else case and it's a 'Dog', and once again the
+to specifically check for that; so it's just the
+else case, and it's a 'Dog', and once again the
 
 0:11:37.760,0:11:49.520
-rest of our list which is 'fromJust rest' again,
-so we have our where clause with 'decode xs'
+rest of our list, which is 'fromJust rest' again,
+so we have our where clause with 'decode xs'.
 
 0:11:51.040,0:11:56.400
-and that's our decoding, but we can
+And that's our decoding, but we can
 improve on this a little further because...
 
 0:12:00.800,0:12:03.920
-We're using 'fromJust' here
+We're using 'fromJust' here,
 which is basically extracting
 
 0:12:06.160,0:12:15.680
-the value inside of 'Just something', we can avoid
-using this altogether and we can avoid using the
+the value inside of 'Just something'. We can avoid
+using this altogether, and we can avoid using the
 
 0:12:15.680,0:12:23.360
 where clause as well if we just change this over
 to a case expression, so we're going to keep
 
 0:12:23.360,0:12:30.720
-this pattern match on the list starting with the O
+this pattern match on the list starting with the 0
 bit, but we're going to change all of this over to
 
 0:12:30.720,0:12:41.280
 'case decode xs', so we're basically changing
-our where clause to be up here, 'decode xs of'...
+our where clause to be up here—'decode xs of'...
 
 0:12:42.880,0:12:48.240
-if our 'decode xs' returns 'Nothing' then it's
-an invalid list and we should keep returning
+If our 'decode xs' returns 'Nothing', then it's
+an invalid list, and we should keep returning
 
 0:12:48.240,0:12:57.920
 'Nothing', and if it's 'Just rest', so this is
-our case with 'Just' and that's the value in our
+our case with 'Just', and that's the value in our
 
 0:12:57.920,0:13:02.240
 'Just' we can immediately name this here, so
@@ -423,18 +423,18 @@ we don't need to extract it with 'fromJust'.
 
 0:13:03.680,0:13:10.560
 Then we are returning 'Just Bird',
-because this case for O bit to start
+because this case for 0 bit to start
 
 0:13:11.120,0:13:16.160
-and rest we don't need to use 'fromJust'
-again here, because we basically extracted
+and rest; we don't need to use 'fromJust'
+again here because we basically extracted
 
 0:13:16.160,0:13:25.200
 it with our case expression, and we do the
 same treatment for our other decode case.
 
 0:13:28.080,0:13:36.400
-'decode xs' again and once again if it's
+'decode xs' again, and once again if it's
 'Nothing', so some kind of invalid list,
 
 0:13:36.400,0:13:43.680
@@ -442,16 +442,16 @@ keep returning 'Nothing' and 'Just rest',
 extracting the rest of the list again,
 
 0:13:45.440,0:13:50.800
-then we return 'Just' and once again we'll
-check for the second bit to determine if
+then we return 'Just', and once again
+we'll check for the second bit to determine if
 
 0:13:50.800,0:14:05.200
-it's a 'Cat' or a 'Dog' and the rest and that's
-our decode function. Okay now if we save this...
+it's a 'Cat' or a 'Dog' and the rest, and that's
+our decode function. Okay, now if we save this...
 
 0:14:07.520,0:14:09.520
 load it into ghci...
 
 0:14:12.960,0:14:20.800
 and run the tests, you can see the
-tests pass and that's our test solved.
+tests pass, and that's our test solved.
