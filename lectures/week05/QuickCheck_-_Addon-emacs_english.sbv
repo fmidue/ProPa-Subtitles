@@ -2,7 +2,7 @@
 Welcome back for probably a very short video.
 
 0:00:05.040,0:00:10.880
-So, I want to try out something; on one hand,
+So, I want to try out something on the one hand,
 I had these problems (yesterday) with my setup, that
 
 0:00:10.880,0:00:15.920
@@ -37,7 +37,7 @@ expressing properties of this function.
 
 0:00:43.680,0:00:48.160
 And I talked about this paradigm shift not
-only in programming but also in testing.
+only in programming, but also in testing.
 
 0:00:48.160,0:00:53.120
 So, instead of writing unit tests,
@@ -48,16 +48,16 @@ encourages thinking about equations,
 because everything is an expression, so we can
 
 0:00:59.120,0:01:04.160
-express behavior or semantics of our
+express behaviour, or semantics of our
 program by talking about equations.
 
 0:01:04.160,0:01:08.240
-And so it's good practice to, instead of just
+And so it's good practice to instead of just
 writing unit tests, write down properties in the
 
 0:01:08.240,0:01:13.520
 form of equations, and then have, for example,
-QuickCheck or other tools try to populate the
+QuickCheck or other tools, try to populate the
 
 0:01:13.520,0:01:17.440
 input data with random choices, for example,
@@ -80,11 +80,11 @@ Right, I showed some examples of these properties.
 
 0:01:34.240,0:01:38.880
 And when they failed, we got the input
-list that made the property fail.
+list which made the property fail.
 
 0:01:38.880,0:01:43.840
 But I didn't show you what happens, or how it
-is to be seen if we have more than one input.
+is to be seen, if we have more than one input.
 
 0:01:43.840,0:01:45.280
 And that might be relevant,
@@ -101,7 +101,7 @@ a counter example with more than one input value.
 Okay, so that's one thing I want to show.
 
 0:01:56.160,0:02:00.000
-And first, I'm not doing this
+And first, and I'm not doing this
 by making a bug in the program,
 
 0:02:00.000,0:02:03.520
@@ -109,12 +109,12 @@ I'm actually going to do this by
 simply introducing a wrong property.
 
 0:02:03.520,0:02:08.640
-So, let's take this last property; I could run all
+So, let's take this last property, I could run all
 the properties now and the check would be okay.
 
 0:02:08.640,0:02:13.360
 But let me somehow destroy the last line
-to write something that is nonsense.
+to write something which is nonsense.
 
 0:02:14.160,0:02:22.080
 So, if I now run this, I should get
@@ -134,7 +134,7 @@ Then first, we have several things that are okay.
 
 0:02:37.200,0:02:42.720
 Right, you see this, the first four
-properties are okay; they all pass 100 tests.
+properties are okay, they all pass 100 tests.
 
 0:02:42.720,0:02:44.880
 And then we see a "Failed".
@@ -157,22 +157,22 @@ Here we get two lists.
 
 0:02:55.680,0:02:59.360
 And that corresponds to the fact that
-this property that is failing has
+this property which is failing has
 
 0:02:59.360,0:03:02.960
 two input values, xs and ys.
 
 0:03:02.960,0:03:06.240
 The way to interpret this here
-as a counter example, right, is
+is a counter example, right is
 
 0:03:06.240,0:03:10.320
 that the first thing that is printed is
 the first parameter from the property.
 
 0:03:10.320,0:03:13.600
-And the second thing is the second;
-probably different property.
+And the second thing is the second,
+probably different properties.
 
 0:03:13.600,0:03:15.120
 When you see something like this, it means
@@ -183,7 +183,7 @@ list, [1,0], violates this property.
 
 0:03:20.800,0:03:24.800
 And indeed, if you were to now run the
-left-hand side and the right-hand side of these two
+left-hand side, the right-hand side of these two
 
 0:03:26.320,0:03:30.160
 input data here, we would see
@@ -202,11 +202,11 @@ Then about the shrinking,
 how can we see what happens here?
 
 0:03:40.320,0:03:44.720
-I mentioned before that QuickCheck
+I mentioned, before, that QuickCheck
 always tries to find small counter examples.
 
 0:03:44.720,0:03:47.120
-So, even if the first example it finds
+So, even if the first example, it finds
 
 0:03:47.120,0:03:50.960
 is bigger, it tries smaller ones,
@@ -214,7 +214,7 @@ because first it starts with random data.
 
 0:03:52.160,0:03:58.800
 So, the hope is, for QuickCheck and also for the
-users that you get meaningful small counter examples,
+users that you get meaningful small count exams,
 
 0:03:58.800,0:04:00.720
 because they are usually better for debugging.
@@ -234,18 +234,18 @@ And attach more data for this.
 
 0:04:08.320,0:04:14.160
 And you can see this in action if you
-replace quickCheck again with verboseCheck,
+replace quickCheck again by verboseCheck,
 
 0:04:14.160,0:04:21.760
 because then we will see what exactly was tested.
 
 0:04:23.760,0:04:30.800
 Here, let me make this a bit bigger and where
-maybe in this case we didn't see much shrinking,
+maybe in this case, we didn't see much shrinking,
 
 0:04:31.360,0:04:35.760
 because actually, by happenstance, the first
-thing that was found as a counter example
+thing that was found as a counterexample
 
 0:04:36.320,0:04:38.000
 is already a very small case.
@@ -257,7 +257,7 @@ But that was random luck.
 So, let's try this again.
 
 0:04:44.240,0:04:46.640
-And then, for example, we see if we go back,
+And then for example, we see if we go back,
 
 0:04:47.440,0:04:53.920
 that the first right here, for example,
@@ -275,7 +275,7 @@ And then this is something that
 
 0:05:04.080,0:05:08.080
 QuickCheck could also have already shown:
-the property is wrong for these two inputs.
+The property is wrong for these two inputs.
 
 0:05:08.080,0:05:11.920
 Of course, this would maybe take a bit
@@ -290,8 +290,8 @@ So, for example, you see here in the next
 step apparently it simply tried, well,
 
 0:05:19.200,0:05:23.040
-what if I replaced the first list with the
-empty list; is it still a counter example?
+what if I replaced the first list by the
+empty list, is it still a counter example?
 
 0:05:23.040,0:05:24.160
 And this also failed.
@@ -311,7 +311,7 @@ list, it will still fail.
 So, next, try this.
 
 0:05:33.200,0:05:34.960
-But this, unfortunately, passed.
+But this unfortunately passed.
 
 0:05:34.960,0:05:36.960
 So, this is not a good counter example.
@@ -325,18 +325,18 @@ And well, then try some other things.
 
 0:05:44.720,0:05:51.200
 So, for example, it tries this list, but this also
-passes; then it tries this list, but—and this—,
+passes, then it tries this list, but-, and this-,
 
 0:05:51.200,0:05:57.120
 yeah right, shortens this but it then tries
 the second half of this list, but this passed,
 
 0:05:57.120,0:06:02.800
-So it tries the first half of the list; this
+so it tries the first half of the list, this
 failed, so it is the new best counter example.
 
 0:06:04.000,0:06:07.120
-And then it tries again to make this smaller,
+And then it tries again, to make this smaller,
 
 0:06:07.120,0:06:09.600
 so empty list, empty list
@@ -344,20 +344,20 @@ actually has been tested before.
 
 0:06:09.600,0:06:15.920
 So, of course, it passes again, then tries maybe
-if I make it, it takes the second part of this list,
+if I make-, it takes the second part of this list,
 
 0:06:15.920,0:06:20.720
 but it also passes, so it cannot be a small
 counter example, et cetera, et cetera.
 
 0:06:20.720,0:06:25.120
-So then the system tries-
+So, then the system tries-.
 
 0:06:25.120,0:06:27.680
 What other ways could I make this example simpler?
 
 0:06:27.680,0:06:32.080
-So apparently it tried to, instead
+So, apparently it tried to instead
 of minus one, what if I use just one.
 
 0:06:32.880,0:06:35.760
@@ -374,7 +374,7 @@ to get rid of the minus three.
 And at some point, it realized, well, [0,3] passes.
 
 0:06:44.880,0:06:46.240
-So this is not a counter example.
+So, this is not a counter example.
 
 0:06:47.680,0:06:52.160
 But minus two also fails, et cetera.
@@ -393,17 +393,17 @@ second one has only two elements.
 
 0:07:08.240,0:07:12.080
 And it also has tried to make the
-values small; it couldn't take zero
+values small, it couldn't take zero
 
 0:07:12.080,0:07:15.200
-and one because that would have passed,
+and one because that would have passed
 but it can take zero and minus one.
 
 0:07:15.200,0:07:16.960
 And that somehow is the conceptually
 
 0:07:16.960,0:07:22.880
-smallest counter example to the
+smallest counter example, to the
 property that we claimed but was wrong.
 
 0:07:23.600,0:07:25.680
@@ -415,14 +415,14 @@ quickCheck instead of verboseCheck.
 
 0:07:28.960,0:07:32.000
 But well, at least in these
-points, you can see how hard
+points that you can see how hard
 
 0:07:32.960,0:07:35.120
 QuickCheck has tried to find
 a small counter example.
 
 0:07:35.120,0:07:40.320
-So it didn't encounter this first pair of lists,
+So, it didn't encounter this first pair of lists,
 which each had four elements after five tests,
 
 0:07:40.320,0:07:42.320
@@ -434,7 +434,7 @@ as its best counter example.
 
 0:07:47.040,0:07:50.800
 And this will be shown then, for
-example, in order to if one of your
+example, in order to-, if one of your
 
 0:07:52.160,0:07:55.920
 functions violates a property
@@ -448,8 +448,8 @@ And of course, I wouldn't actually
 write this wrong property here.
 
 0:08:01.600,0:08:06.160
-So let me go back to the correct
-property, and then you can check it.
+So, let me go back to the correct
+property and then you can check it.
 
 0:08:07.440,0:08:12.480
 This one is, of course, correct.

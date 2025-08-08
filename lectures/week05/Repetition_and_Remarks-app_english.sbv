@@ -31,7 +31,7 @@ So, I want to do this now.
 
 0:00:35.399,0:00:43.489
 So, this refers to slide 68, at the end of
-last week, where I talked about the uniqueness
+last week, where I talked about uniqueness
 
 0:00:43.489,0:00:49.559
 of variable names, and that is enforced in
@@ -63,7 +63,7 @@ things that are not allowed in Haskell.
 Okay, let's start with an example.
 
 0:01:16.450,0:01:18.500
-So, first about the uniqueness of variable names.
+So, first about uniqueness of variable names.
 
 0:01:18.500,0:01:24.650
 So, we had that functions can be defined by
@@ -106,8 +106,8 @@ then the result is one.
 Okay, so this is okay.
 
 0:02:03.060,0:02:08.119
-And then we could also say, for example, in
-cases where the first argument is not zero,
+And then we could also say, for example, and
+in cases where the first argument is not zero,
 
 0:02:08.119,0:02:12.250
 but the two arguments are the same, then we
@@ -181,7 +181,7 @@ Yes, it is something that you can write and
 actually that you have to write if you want
 
 0:03:22.280,0:03:26.340
-to express the thing from this line, and in
+to express the thing from this line and in
 Haskell you have to write it like this, a
 
 0:03:26.340,0:03:27.890
@@ -196,12 +196,12 @@ allowed to have the same variable name in
 such a line where we decide which function
 
 0:03:44.520,0:03:47.820
-definition line to take on what the behavior
+definition line to take on what the behaviour
 will be.
 
 0:03:47.820,0:03:52.800
-Okay, this was the first remark about the uniqueness
-of variable names in defining cases.
+Okay, this was the first remark about uniqueness
+of variable names in defining case.
 
 0:03:52.800,0:03:57.709
 Of course, x could be used in a different
@@ -227,7 +227,7 @@ or solving computation.
 What do I mean by this?
 
 0:04:17.640,0:04:22.590
-Well, for example, in mathematics, something
+Well, for example, mathematics, something
 one could also do or could imagine being valid,
 
 0:04:22.590,0:04:23.590
@@ -252,7 +252,7 @@ So, if f is applied to the double of a number,
 then for some reason this would be f of n.
 
 0:04:44.440,0:04:48.590
-And I put this in brackets even though it wouldn't
+And I put this in bracket even though it wouldn't
 be needed, but let's be safe.
 
 0:04:48.590,0:04:52.410
@@ -282,7 +282,7 @@ in a reasonable way.
 
 0:05:15.250,0:05:20.440
 But again, this is not something that we can
-write in Haskell the compiler would accept,
+write in Haskell, the compiler would accept,
 
 0:05:20.440,0:05:25.250
 because it would mean that when you call f
@@ -387,7 +387,7 @@ also mathematically correct.
 
 0:07:37.270,0:07:40.080
 But I mentioned that it has slightly different
-behavior.
+behaviour.
 
 0:07:40.080,0:07:41.930
 And I didn't go into detail what that is.
@@ -405,7 +405,7 @@ as above claim that the output is True, because
 the b here could be False.
 
 0:07:57.880,0:08:01.539
-But what I can say is that b and True is
+But what I can say is that b and True, is
 definitely b.
 
 0:08:01.539,0:08:04.300
@@ -441,7 +441,7 @@ but it's-, well, it's all the same.
 Now, what's the difference between these definitions?
 
 0:08:43.300,0:08:46.850
-I mentioned last week that there's a difference
+I mentioned last week that there's difference
 in efficiency.
 
 0:08:46.850,0:08:53.570
@@ -501,7 +501,7 @@ that the outcome with the result of this is
 greater than zero.
 
 0:09:53.870,0:09:58.100
-That will be the case, but actually, since
+That will be the case but actually, since
 the compiler doesn't know what the Ackermann function
 
 0:09:58.100,0:10:03.850
@@ -539,7 +539,7 @@ definition.
 
 0:10:41.920,0:10:47.970
 Well, what have we learned about how computation
-works? We did with this factorial function.
+works, we did with this factorial function.
 
 0:10:47.970,0:10:52.740
 But of course, the same rules apply here,
@@ -582,7 +582,7 @@ we see False is not True.
 
 0:11:30.890,0:11:35.410
 So, whatever the Ackermann function is, or
-the result of the Ackermann function is, we don't
+the result Ackermann function is, we don't
 
 0:11:35.410,0:11:39.050
 even need to check whether its outcome is
@@ -662,7 +662,7 @@ Let's check the first line where we have to
 check whether False could be here, the variable
 
 0:13:30.690,0:13:35.269
-could, of course... the variable could be instantiated
+could of course... the variable could be instantiated
 to the value False, so there's no reason to
 
 0:13:35.269,0:13:38.490
@@ -671,18 +671,18 @@ argument position.
 
 0:13:38.490,0:13:42.769
 So, instead, what we have to do is you also
-have to look at the second position, we have
+have to look at the second positions, we have
 
 0:13:42.769,0:13:46.920
 to check whether the conditions here actually
-evaluate to True.
+evaluates to True.
 
 0:13:46.920,0:13:51.889
 Now, to do this, we have to compute the Ackermann
 function, we will get some
 
 0:13:51.889,0:13:59.300
-result, and ultimately, we will end up, of
+result, and ultimately, we will end up of
 course, computing False overall.
 
 0:13:59.300,0:14:06.670
@@ -695,7 +695,7 @@ it will switch to the second line of the conjunction
 
 0:14:12.800,0:14:16.130
 and we also return False in both cases,
-of course, you get False as a result.
+of course, you get False as result.
 
 0:14:16.130,0:14:21.980
 But now the second definition, this is much
@@ -730,14 +730,14 @@ the compiler.
 
 0:14:53.750,0:14:57.400
 Here, it's simply a consequence of how function
-definitions work, right?
+definitions works, right?
 
 0:14:57.400,0:15:04.130
 So, there's nothing magical about the 'and' function.
 All functions that you define have this feature
 
 0:15:04.130,0:15:09.050
-or this behavior, that they only compute the argument
+or this behaviour, that they only compute the argument
 if it's absolutely necessary.
 
 0:15:09.050,0:15:12.600
@@ -752,7 +752,7 @@ the conjunction, we have choices to define it
 in two different ways.
 
 0:15:18.089,0:15:25.700
-And we, as programmers, can basically decide
+And we as a programmer can basically decide
 for which cases, depending on which of the
 
 0:15:25.700,0:15:32.269
@@ -763,14 +763,14 @@ can avoid superfluous work.
 Yes, so we don't have to bake it into the compiler.
 
 0:15:34.840,0:15:37.490
-It depends on the way we define our functions.
+It depends on the way how we define our functions.
 
 0:15:37.490,0:15:43.820
 It's called lazy evaluation, and we'll return
-to this later, but I wanted to already point
+to this later but I wanted to already point
 
 0:15:43.820,0:15:47.209
-this out, at least in this example.
+this out, at least at this example.
 
 0:15:47.209,0:15:54.339
 Okay, and then, the other thing I want to

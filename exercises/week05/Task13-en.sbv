@@ -13,8 +13,8 @@ divide and conquer approach.
 That is, we should
 
 0:00:21.200,0:00:27.840
-use this 'splitAt' function to
-split the list into two parts of equal size.
+use this splitting 'splitAt' function to
+split the list in two parts of equal size.
 
 0:00:28.720,0:00:36.080
 And then recursively compute the sum of
@@ -42,7 +42,7 @@ And then let's think about the basic structure.
 So we start with
 
 0:01:14.560,0:01:21.360
-splitting the list into a and b.
+splitting the list to an a and b.
 
 0:01:22.480,0:01:25.840
 And let's just use the
@@ -52,7 +52,7 @@ function call from right here.
 Our list is called xs in this example.
 
 0:01:34.560,0:01:46.640
-Okay, and now we also need to
+Okay and now we also need to
 give it the list parameter.
 
 0:01:48.000,0:01:53.840
@@ -80,18 +80,18 @@ We split the list into two equal parts
 
 0:02:29.360,0:02:38.160
 in the middle, that's what this div 2 here
-does, and then we take the left part and sum it up,
+does, and then we take the left part sum it up,
 
 0:02:38.720,0:02:47.200
-take the right part and sum it up, by a recursive
-call, and then we combine the results.
+take the right part sum it up, by a recursive
+calls, and then we combine the results.
 
 0:02:47.200,0:02:49.840
 Okay, so is that all?
 
 0:02:49.840,0:02:56.800
 Well, if we look at this test down
-here, we see that sum [] should equal 0.
+here we see that sum [] should equal 0.
 
 0:02:57.840,0:03:04.000
 Well, that's not really encoded
@@ -112,17 +112,17 @@ And the otherwise case has our divide and conquer
 scheme and if our list is empty we just return 0.
 
 0:03:39.520,0:03:45.840
-Okay, let's load this up.
+Okay let's load this up.
 
 0:03:54.880,0:03:56.320
 Let's try it out.
 
 0:03:56.320,0:04:02.560
-So sum [] = 0. Okay, so far so good.
+So sum [] = 0. Okay so far so good.
 
 0:04:02.560,0:04:09.280
 Let's check a list with one
-element; oh, so nothing is happening.
+element, oh so nothing is happening.
 
 0:04:11.120,0:04:15.440
 Or maybe there's something
@@ -138,11 +138,11 @@ So what's the problem here?
 Well, let's take a look at our splitting function:
 
 0:04:29.520,0:04:35.040
-We have a list with one element,
+We have a list with one element
 so this list has length 1.
 
 0:04:35.040,0:04:44.160
-And if we have 1 `div` 2, we get
+And if we have 1 `div` 2 we get
 0. Because this takes the division
 
 0:04:44.720,0:04:52.800
@@ -150,7 +150,7 @@ and ignores the rest of the division
 if it isn't a clear division.
 
 0:04:53.440,0:04:58.000
-Okay, so what we actually do is we do
+Okay so what we actually do is we do
 
 0:04:58.000,0:05:12.480
 splitAt 0 [1] in this case.
@@ -164,18 +164,18 @@ And then we recursively call
 sum [], this would return zero.
 
 0:05:26.880,0:05:36.320
-But now we call sum again on [1], which is what
-we just did, so we have an infinite loop here.
+But now we call sum again on [1] which is what
+we just did so we have an infinite loop here.
 
 0:05:36.880,0:05:46.640
-Because for lists of length one, the
+Because for lists of length one the
 splitting does not produce any progress.
 
 0:05:47.760,0:05:55.800
-So we need to get an additional case.
+So we need to get an additional case .
 
 0:05:56.720,0:06:06.480
-If the length of xs is one, then we
+If the length of xs is one then we
 just have one element in our list.
 
 0:06:06.480,0:06:07.440
@@ -217,13 +217,13 @@ There exist some variations of this program.
 
 0:07:15.520,0:07:22.880
 For example, if we would like to calculate the
-length of the list just once, we could try to
+length of the list just once we could try to
 
 0:07:25.440,0:07:29.840
 fit these two cases into one.
 
 0:07:30.720,0:07:36.720
-If we were allowed to use where, we could
+If we were allowed to use where we could
 do that and define something like...
 
 0:07:38.440,0:07:44.160
@@ -233,11 +233,11 @@ do that and define something like...
 Then we can use n here and here.
 
 0:07:48.960,0:07:51.520
-But in this case, we are not allowed to do this.
+But in this case we are not allowed to do this.
 
 0:07:53.760,0:08:06.560
 So if we want to do the same kind of
-refactoring, we just do it in the otherwise case.
+refactoring we just do it in the otherwise case.
 
 0:08:06.560,0:08:18.560
 So, we use let n = length xs.
@@ -246,7 +246,7 @@ So, we use let n = length xs.
 And then we can use if to check if n == 1.
 
 0:08:29.360,0:08:35.920
-If this is the case, we return head xs.
+If this is the case we return head xs.
 
 0:08:36.480,0:08:39.840
 And else
@@ -260,7 +260,7 @@ Not necessarily for performance reasons
 
 0:09:01.680,0:09:08.400
 but for readability and maintainability
-of our solution, this is a good idea.
+of our solution this is a good idea.
 
 0:09:13.360,0:09:21.360
 Okay, so that's that for Task 11.

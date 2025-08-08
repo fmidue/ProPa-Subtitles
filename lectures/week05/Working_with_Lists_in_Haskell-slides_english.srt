@@ -10,13 +10,13 @@ done so in the previous video.
 71 # slide
 00:00:17,580 --> 00:00:26,180
 In particular, I talked there about the eta-reduction
-aspect that Autotool or HLint sometimes warns
+aspect that Autotool or HLint sometimes warn
 
 00:00:26,180 --> 00:00:27,180
 you about.
 
 00:00:27,180 --> 00:00:28,180
-Some of you have already seen this in your
+Some of you have already seen this in their
 own submissions.
 
 00:00:28,180 --> 00:00:34,540
@@ -32,7 +32,7 @@ that occurred probably last year.
 
 00:00:41,909 --> 00:00:49,249
 So, again, the same idea: having a function
-that takes an argument which it simply passes
+which takes an argument which it simply passes
 
 00:00:49,249 --> 00:00:52,839
 on to another function.
@@ -123,7 +123,7 @@ in this case, on the 'rectangle' function.
 
 00:02:28,040 --> 00:02:34,989
 And you have seen this in action, what this
-actually means for this case.
+actually means, for this case.
 
 00:02:34,989 --> 00:02:38,140
 And another remark maybe at this point is:
@@ -222,7 +222,7 @@ As a rule of thumb in Haskell, if you access
 a data structure by index, then usually that
 
 00:04:39,680 --> 00:04:41,210
-is not the best choice of expression.
+was not the best choice of expression.
 
 00:04:41,210 --> 00:04:44,419
 And sometimes, we will actually actively prevent
@@ -283,7 +283,7 @@ Of course, you could, and some people did do,
 instead write code like this.
 
 00:05:44,160 --> 00:05:46,090
-So, what is this saying?
+So, what this is this saying?
 
 00:05:46,090 --> 00:05:47,729
 It is saying:
@@ -298,11 +298,11 @@ starts with the index zero).
 
 00:05:58,460 --> 00:06:08,830
 So, compute the index to be each value from
-zero to the length of the list - 1, and then
+zero to the length of the list -1, and then
 
 00:06:08,830 --> 00:06:13,729
 access the list elements by this index, then
-compute something from this, and do whatever.
+compute something from this, and do whatever
 
 00:06:13,729 --> 00:06:14,729
 with it.
@@ -884,7 +884,7 @@ order.
 
 00:17:07,660 --> 00:17:14,020
 So, for a String, it simply creates the String
-as if you were reading it backward.
+as if you were reading it backwards.
 
 00:17:14,020 --> 00:17:16,060
 I think this is very natural.
@@ -940,6 +940,10 @@ are pairwise combined.
 So, in this case, zipping the String "abc"
 and the String "def" gives a list of pairs,
 
+00:18:03,310 --> 00:18:07,820
+where the first character from the first list
+and the first character from the second list
+
 00:18:07,820 --> 00:18:08,820
 are combined.
 
@@ -979,7 +983,7 @@ Then you can use the 'concat' function.
 
 00:18:44,630 --> 00:18:50,940
 It takes a list of lists (it could also be
-a list of strings), and it concatenates all
+a list of Strings), and it concatenates all
 
 00:18:50,940 --> 00:18:52,020
 the inner lists.
@@ -1011,28 +1015,28 @@ use the test for emptiness ("null"), accessing
 
 00:19:24,250 --> 00:19:31,810
 the head ("head"), and the tail of a list
-or a string ("tail"), to write code that recursively
+or a String ("tail"), to write code that recursively
 
 00:19:31,810 --> 00:19:32,810
 destructs a list.
 
 00:19:32,810 --> 00:19:35,460
 I know that some of you already know about
-pattern matching, because we have seen this
+pattern-matching, because we have seen this
 
 00:19:35,460 --> 00:19:37,070
 in the exercise submissions.
 
 00:19:37,070 --> 00:19:43,280
 But actually, until the point where we introduce
-pattern matching in the lecture, you can assume
+pattern-matching in the lecture, you can assume
 
 00:19:43,280 --> 00:19:47,740
 that all the exercise tasks that you write
-have a solution without pattern matching.
+have a solution without pattern-matching.
 
 00:19:47,740 --> 00:19:52,860
-So, if you use pattern matching, that is not
+So, if you use pattern-matching, that is not
 forbidden, unless it is actually prevented
 
 00:19:52,860 --> 00:19:53,860
@@ -1040,11 +1044,11 @@ by Autotool.
 
 00:19:53,860 --> 00:20:00,020
 But in any case, as long as we haven't handled
-pattern matching in the lecture, you can assume
+pattern-matching in the lecture, you can assume
 
 00:20:00,020 --> 00:20:07,530
 that the exercise tasks have solutions that
-are intended to be without pattern matching.
+are intended to be without pattern-matching.
 
 76 # slide
 00:20:07,530 --> 00:20:15,280
@@ -1068,7 +1072,7 @@ a previous exercise.
 
 00:20:30,850 --> 00:20:36,830
 There, the task was to decide whether a certain
-string was a palindrome.
+String was a palindrome.
 
 00:20:36,830 --> 00:20:40,150
 The predicate is-a-palindrome?
@@ -1078,30 +1082,30 @@ And one way to think about this is to first
 consider that a palindrome is certainly present
 
 00:20:48,300 --> 00:20:56,150
-if you have a very short string that just
+if you have a very short String that just
 contains zero or one element.
 
 00:20:56,150 --> 00:21:01,620
-So, checking the length of this string (which
-is possible because strings are lists), checking
+So, checking the length of this String (which
+is possible because Strings are lists), checking
 
 00:21:01,620 --> 00:21:03,460
 whether it is smaller than 2.
 
 00:21:03,460 --> 00:21:08,840
 And if so, then return True, because then
-the string is certainly a palindrome.
+the String is certainly a palindrome.
 
 00:21:08,840 --> 00:21:12,910
 And if it isn't that short, then either by
-pattern matching (which I just said, I won't
+pattern-matching (which I just said, I won't
 
 00:21:12,910 --> 00:21:17,770
 show yet) or by using the 'head' and 'last' functions,
 so checking whether the first element and
 
 00:21:17,770 --> 00:21:23,780
-the last element of this string are the same
+the last element of this String are the same
 character, and if so, then also check whether
 
 00:21:23,780 --> 00:21:29,300
@@ -1113,7 +1117,7 @@ then the remainder is also a palindrome.
 
 00:21:31,050 --> 00:21:35,740
 So, certainly, this is a valid definition
-for checking whether a string is a palindrome.
+for checking whether a String is a palindrome.
 
 00:21:35,740 --> 00:21:38,430
 It doesn't use indexing.
@@ -1141,22 +1145,22 @@ We can simply write something like this.
 
 00:22:01,790 --> 00:22:07,190
 We can say, which is much more declarative,
-that a string is a palindrome if it is the
+that a String is a palindrome if it is the
 
 00:22:07,190 --> 00:22:09,620
 case that reversing it doesn't change it.
 
 00:22:09,620 --> 00:22:13,300
-Well, actually reversing a string doesn't
+Well, actually reversing a String doesn't
 ever "change" it, it just returns another
 
 00:22:13,300 --> 00:22:15,870
-string which is the reverse of the original
-string.
+String which is the reverse of the original
+String.
 
 00:22:15,870 --> 00:22:19,850
 But then we can check whether the reverse
-of the string is equal to the string itself.
+of the String is equal to the String itself.
 
 00:22:19,850 --> 00:22:22,440
 That is a definition of "isPalindrome".
@@ -1170,7 +1174,7 @@ You might think that the first version is
 more efficient, because here you have to first
 
 00:22:30,530 --> 00:22:35,940
-reverse the string, which is certainly an
+reverse the String, which is certainly an
 expensive computation.
 
 00:22:35,940 --> 00:22:37,560
@@ -1372,7 +1376,7 @@ go.
 No, this works for almost all the list functions.
 
 00:26:15,600 --> 00:26:18,210
-You cannot reverse an infinite list; that
+You cannot reverse an infinite list, that
 doesn't make sense.
 
 00:26:18,210 --> 00:26:22,960
@@ -1399,7 +1403,7 @@ I want to zip the infinite list of all the
 
 00:26:42,020 --> 00:26:47,260
 natural numbers including zero ([0..]) and
-the finite string "ab".
+the finite String "ab".
 
 00:26:47,260 --> 00:26:48,260
 What would you get?
@@ -1590,7 +1594,7 @@ Put the other way around:
 
 00:30:03,500 --> 00:30:07,700
 This expression and any other expression that
-also computes the square numbers should be
+also computes the square numbers, should be
 
 00:30:07,700 --> 00:30:09,290
 interchangeable here.
@@ -1600,7 +1604,7 @@ And simply the fact that, from this specific
 expression, we can see that it is the square
 
 00:30:13,670 --> 00:30:18,450
-numbers does not mean that this is possible
+numbers, does not mean that this is possible
 for any or every other expression that happens
 
 00:30:18,450 --> 00:30:20,660
@@ -1611,7 +1615,7 @@ But the two programs shouldn't behave differently.
 
 00:30:23,130 --> 00:30:28,630
 So, the only way to make sure that is the
-case is that also in this case Haskell will
+case, is that also in this case Haskell will
 
 00:30:28,630 --> 00:30:32,610
 actually try out all the numbers that come
@@ -1626,21 +1630,21 @@ list here.
 
 00:30:39,860 --> 00:30:43,730
 So, this is completely different from the
-case where we had "take 3."
+case where we had "take 3".
 
 00:30:43,730 --> 00:30:50,390
 Because there, the 3 really allows Haskell,
 the runtime system, the evaluation of the
 
 00:30:50,390 --> 00:30:53,120
-program to know when it is done.
+program, to know when it is done.
 
 00:30:53,120 --> 00:30:56,960
 It does not depend on the elements in the
 list.
 
 00:30:56,960 --> 00:31:04,110
-So, this is a cautionary example that you
+So, this is a cautionary example, that you
 shouldn't expect some mathematical magic.
 
 00:31:04,110 --> 00:31:05,980

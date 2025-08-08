@@ -22,8 +22,8 @@ like "print" or an assignment in an imperative
 language.
 
 00:00:30,119 --> 00:00:36,350
-Often, expressions are also called "terms,"
-and commands are often called "statements."
+Often, expressions are also called "terms",
+and commands are often called "statements".
 
 00:00:36,350 --> 00:00:44,660
 And I think I will use, in both cases, either
@@ -80,7 +80,7 @@ Well, you know many expressions in all
 kinds of languages.
 
 00:01:29,469 --> 00:01:32,770
-For example, arithmetic expressions, as occurred
+For example, arithmetic expressions as occurred
 in the video.
 
 00:01:32,770 --> 00:01:39,340
@@ -160,7 +160,7 @@ my other expression examples.
 So, what's the point?
 
 00:03:05,569 --> 00:03:08,909
-What are the properties of expressions, or specifically,
+What are properties of expressions, or specifically,
 of pure expressions?
 
 00:03:08,909 --> 00:03:10,500
@@ -197,7 +197,7 @@ type.
 
 00:03:42,659 --> 00:03:48,560
 Depending on what x might be, it could be
-natural numbers or real numbers, whatever.
+natural numbers or a real numbers, whatever.
 
 00:03:48,560 --> 00:03:53,110
 But, the point is, we can assign types to
@@ -294,7 +294,7 @@ But of course, you could do that.
 
 00:05:27,080 --> 00:05:33,330
 And you have binary operations and a unary
-operation (the square operator), and then
+operation (the square-operator), and then
 
 00:05:33,330 --> 00:05:38,889
 if you want to know what the value of "two
@@ -302,7 +302,7 @@ plus three times something" is, then we go
 
 00:05:38,889 --> 00:05:43,289
 through these subexpressions and simply evaluate
-all the subexpressions, and then accumulate
+all the sub expressions, and then accumulate
 
 00:05:43,289 --> 00:05:44,500
 the results.
@@ -326,7 +326,7 @@ And, in particular, it applies to every Haskell
 program.
 
 00:06:01,819 --> 00:06:07,190
-So for Haskell programs, their semantics is
+So for Haskell programs their semantics is
 only given by evaluation.
 
 00:06:07,190 --> 00:06:11,740
@@ -352,8 +352,8 @@ Well, we can use all kinds of notations from
 mathematics.
 
 00:06:36,289 --> 00:06:44,510
-So, a simple thing, like if you have "2 + 3
-× (something)^2," we might as well write this
+So, a simple thing like if you have "2 + 3
+× (something)^2", we might as well write this
 
 00:06:44,510 --> 00:06:49,730
 as "2 + 3 × (y^2)" and give a name to that
@@ -361,7 +361,7 @@ subexpression.
 
 00:06:49,730 --> 00:06:56,169
 So, a trivial thing in this case, but for
-more complex programs, such naming of arbitrary
+more complex programs such naming of arbitrary
 
 00:06:56,169 --> 00:06:58,370
 subexpressions is a valuable thing.
@@ -465,7 +465,7 @@ So, this could be C or Java.
 
 00:09:03,210 --> 00:09:10,960
 It could also be Python with a little bit
-of manipulation or a few changes in syntax.
+of manipulation or few changes in syntax.
 
 00:09:10,960 --> 00:09:13,400
 Certainly, we also have expressions here,
@@ -489,8 +489,8 @@ which calculates something.
 So, what's different now?
 
 00:09:33,690 --> 00:09:39,320
-Well, the point is that, of course, there are
-expressions here as well, but they are not
+Well, the point is that of course there are
+expression here as well, but they are not
 
 00:09:39,320 --> 00:09:41,190
 the dominating syntactical construct.
@@ -506,7 +506,7 @@ For example, "while" is a keyword.
 The assignment here is a command.
 
 00:09:55,230 --> 00:10:01,730
-On the right side, we have an expression, but
+On the right side we have an expression, but
 as a whole, this line here is not an expression.
 
 00:10:01,730 --> 00:10:10,630
@@ -567,10 +567,10 @@ So, some expressions here have a value.
 
 00:11:19,170 --> 00:11:24,370
 This, for example, depending on what "b" is,
-will evaluate to "true" or "false."
+will evaluate to "true" or "false".
 
 00:11:24,370 --> 00:11:27,330
-But the loop, as a whole, doesn't have a value.
+But the loop as a whole doesn't have a value.
 
 00:11:27,330 --> 00:11:32,570
 There is no really meaningful way to say what
@@ -730,17 +730,17 @@ numbers and constants.
 
 00:14:33,970 --> 00:14:40,510
 So let's look at an expression like this,
-which is built from expressions: *subexpression1*
+which is built from expressions: "subexpression1
 
 00:14:40,510 --> 00:14:44,140
-+ *subexpression2* × (*expression3*)^2.
++ subexpression2 × (expression3)^2".
 
 00:14:44,140 --> 00:14:48,090
 We saw that before with constants and some
 "x + 1" here.
 
 00:14:48,090 --> 00:14:54,820
-Mathematically, we know that there are three
+Mathematically, we know that here are three
 equivalent ways of writing this piece of expressions.
 
 00:14:54,820 --> 00:15:04,050
@@ -752,7 +752,7 @@ simply square that variable.
 
 00:15:06,730 --> 00:15:10,840
 Or we could say, squaring that variable is
-the same as writing: *variable × variable*.
+the same as writing: "variable × variable".
 
 00:15:10,840 --> 00:15:17,590
 Or, indeed, we could avoid naming the subexpression,
@@ -762,7 +762,7 @@ and simply repeat that subexpression
 here.
 
 00:15:18,590 --> 00:15:22,630
-So, *exp1 + exp2 × exp3 × exp3*.
+So, "exp1 + exp2 × exp3 × exp3".
 
 00:15:22,630 --> 00:15:29,290
 That should also be mathematically equivalent
@@ -780,7 +780,7 @@ assignment statement, so the very same expression
 as we had here, and then, for example, this
 
 00:15:43,550 --> 00:15:47,550
-"naming a subexpression" could be expressed
+"naming a sub expression" could be expressed
 in theory as saying:
 
 00:15:47,550 --> 00:15:52,040
@@ -833,18 +833,18 @@ same.
 
 00:17:06,760 --> 00:17:13,791
 In the sense that in any larger program, I
-could replace a line like this with a line
+could replace the line like this by a line
 
 00:17:13,791 --> 00:17:20,379
 like this, or this, or this, and see whether
-I have the same program behavior.
+I have the same program behaviour.
 
 00:17:20,379 --> 00:17:26,860
 And if you try this out, you will find out
 that, actually, from those four, only the
 
 00:17:26,860 --> 00:17:31,100
-second and third lines will really behave the
+second and third line will really behave the
 same.
 
 00:17:31,100 --> 00:17:41,080
@@ -864,14 +864,14 @@ and you will be able to observe differences.
 
 00:18:00,340 --> 00:18:06,129
 The way of convincing yourself of that would
-be to replace *exp3* (the expression that
+be to replace the exp3 (the expression that
 
 00:18:06,129 --> 00:18:12,960
 we wanted to give a name to), and then reuse,
 for example, in these lines here:
 
 00:18:12,960 --> 00:18:19,879
-Imagine that *exp3* is the so-called expression
+Imagine that exp3 is the so-called expression
 "i++", which isn't really an expression.
 
 00:18:19,879 --> 00:18:20,960
@@ -879,7 +879,7 @@ It is really a statement.
 
 00:18:20,960 --> 00:18:30,520
 It is a command to increment the value of
-the variable *i*, which should be in the scope
+the variable i, which should be in the scope
 
 00:18:30,520 --> 00:18:31,520
 somehow.
@@ -929,7 +929,7 @@ Then again, taking this first line and the
 last line, you will be able to observe differences.
 
 00:19:27,070 --> 00:19:34,299
-Or *f* is a procedure that does input/output
+Or "f" is a procedure that does input/output
 as in the "print" or "read" examples that
 
 00:19:34,299 --> 00:19:36,480
@@ -1005,7 +1005,7 @@ You can call it 10 times, and you can get
 
 00:21:00,780 --> 00:21:09,139
 That clearly runs counter to any argument
-about the equivalence of syntactic expressions.
+about equivalence of syntactic expressions.
 
 00:21:09,139 --> 00:21:19,049
 A natural question now is: How bad is this?
@@ -1037,7 +1037,7 @@ expression, if it has the same value.
 
 00:21:52,860 --> 00:21:59,429
 So all these properties, also often called
-"referential transparency," do not apply in
+"referential transparency", do not apply in
 
 00:21:59,429 --> 00:22:02,809
 a typical impure language with side effects.
@@ -1086,7 +1086,7 @@ also logic programming will largely be about).
 
 00:22:55,760 --> 00:23:03,110
 At the moment, what I wanted to convey is
-this difference, not a notion of "better."
+this difference, not a notion of "better".
 
 00:23:03,110 --> 00:23:07,010
 That is really the motivation for this course.

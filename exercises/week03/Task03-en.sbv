@@ -11,12 +11,12 @@ First we recreate the picture from
 last week, some old definitions here,
 
 0:00:31.840,0:00:40.400
-so now since this is not a yellow
-circle anymore but the sun, it might be
+so now since this is now not a yellow
+circle anymore but the sun, might be
 
 0:00:40.400,0:00:48.720
-useful to actually call it that. Also, this is no
-longer a green rectangle; it should be grass now.
+useful to actually call it that, also this is no
+longer a green rectangle it should be grass now.
 
 0:00:51.840,0:01:00.080
 Okay, so then we just say
@@ -28,21 +28,21 @@ we get the image from last week. Now the
 
 0:01:10.960,0:01:16.960
 plus template gives us some counter here to see
-that we actually have the animation playing, but
+that we actually the animation is playing, but
 
 0:01:17.840,0:01:26.400
-as we would expect, there's nothing happening
-yet. So first off, let's make the sun move,
+as we would expect there's nothing happening
+yet. So first off let's make the sun move,
 
 0:01:27.120,0:01:37.040
-so it moves in a circle. So it's probably a
+so it moves in a circle, so it's probably a
 good idea to actually use the rotated primitive,
 
 0:01:39.440,0:01:40.640
 which rotates
 
 0:01:43.280,0:01:52.400
-a picture around the coordinate origin. And then
+a picture around the coordinate origin and then
 to see what this is, let's use the coordinate
 
 0:02:04.000,0:02:08.080
@@ -57,19 +57,19 @@ function will actually
 rotate it around this origin
 
 0:02:21.120,0:02:28.800
-point, which is exactly the trajectory we
+point which is exactly the trajectory we
 want the sun to take, so we use 'rotated'
 
 0:02:29.520,0:02:35.840
-and then some value. Let's just plug in
-t for a second and see what's happening.
+and then some value, let's just plug in
+t for a second and see what's happening,
 
 0:02:39.360,0:02:49.840
-Okay, now it rotates counterclockwise because of
+okay now it rotates counterclockwise, because of
 the way radians work, so if you want to mirror the
 
 0:02:51.040,0:02:59.760
-movement from the example, we just use
+movement from the example we just use
 "minus t" to get the desired effect.
 
 0:03:02.240,0:03:05.920
@@ -80,49 +80,49 @@ Okay, so now the problem is the sun is actually
 on a layer higher than the grass, so we want the
 
 0:03:16.960,0:03:25.680
-sun to sink below the grass. So we need to put the
-grass on a higher level, so to speak, than the sun.
+sun to sink below the grass, so we need to put the
+grass on a higher level, so to speak than the sun.
 
 0:03:30.240,0:03:40.000
 Okay, then it will now vanish behind the grass,
-but still, it continues to move around here,
+but still it continues to move around here,
 
 0:03:41.440,0:03:45.040
 on the bottom part of the image, which is
-also something we don't want to happen.
+also something we don't want to happen,
 
 0:03:45.920,0:03:52.000
-So let's restrict the movement. How
-do we do this? There are several ways.
+so let's restrict the movement. How
+do we do this? There are several ways,
 
 0:03:53.440,0:03:59.760
-First I will show you how to do it by
+first i will show you how to do it by
 introducing a modified time parameter,
 
 0:03:59.760,0:04:12.720
-so I add a where clause, find this t prime
-and I just say, check whether t is
+so i add a where clause find this t prime
+and I just say, this check whether t is
 
 0:04:15.360,0:04:16.560
-smaller than something.
+smaller than something,
 
 0:04:18.720,0:04:21.200
-Let's use pi for half a circle.
+let's use pi for half a circle
 
 0:04:23.280,0:04:32.960
-Then I use t, and if t is greater than
-pi, then I use pi, so I fix this t
+then i use t and if t is greater than
+pi then i use pi, so i fix this t
 
 0:04:35.200,0:04:42.480
 such that it no longer grows bigger than pi,
-making the movement stop at some point. And then I
+making the movement stop at some point and then i
 
 0:04:42.480,0:04:49.760
-use this "t prime" to rotate the sun over there.
-So there's something wrong with this, which is
+use this "t prime" to rotate the sun over there,
+so there's something wrong with this, which is
 
 0:04:50.320,0:04:57.680
-we're moving at the wrong half circle here. We're
+we're moving at the wrong half circle here, we're
 starting here on the top and moving all the way
 
 0:04:57.680,0:05:03.840
@@ -134,22 +134,22 @@ Obviously it's because we started the sun 6
 
 0:05:10.720,0:05:19.040
 units up here instead of this 6 over
-here. So we just change this translation.
+here so we just change this translation.
 
 0:05:22.080,0:05:32.720
 Like this, and now the sun starts behind the
-grass, goes half a circle, and then sets behind the
+grass, goes half a circle and then sets behind the
 
 0:05:32.720,0:05:44.880
-grass again. Okay, so this is our basic animation.
-Now, this is not the only way we can solve this.
+grass again. Okay, so this is our basic animation,
+now this is not the only way we can solve this.
 
 0:05:48.880,0:05:56.240
-We could, instead of modifying the
-time parameter, say, okay,
+We could instead of modifying the
+time parameter, could say okay,
 
 0:05:56.240,0:06:00.480
-we check the time and then either we have...
+we check on the time and then either we have...
 
 0:06:03.600,0:06:05.840
 We have the sun.
@@ -159,34 +159,34 @@ We determine which image we want to render
 here, so either we have the sun rotated
 
 0:06:15.520,0:06:21.760
-by "minus t," and let's no longer call this
-"t prime," but instead something like moving,
+by "minus t", and let's no longer call this
+"t prime", but instead something like moving,
 
 0:06:22.560,0:06:30.640
-and we add this moving up here. And if we
+and we add this moving up here, and if we
 are at the point where we would like to
 
 0:06:31.280,0:06:42.880
-stop the animation, we just use "blank," the
-empty image, so nothing is rendered anymore.
+stop the animation we just use "blank", the
+empty image, so nothing is rendered anymore,
 
 0:06:44.640,0:06:47.840
-And this will have the same effect.
+and this will have the same effect.
 
 0:06:50.240,0:06:58.080
-But now, if we inspect this, there's no
-sun anymore because there's this "blank"
+But now, if we inspect this there's no
+sun anymore, because there's this "blank"
 
 0:07:00.320,0:07:13.520
-image in the composition here after we've
-done that change. Okay, so then what we
+image in the composition here, after we've
+done that this change. Okay, so then what we
 
 0:07:13.520,0:07:21.520
 can also do is write this if expression inline,
-precisely because if expressions in Haskell are
+precisely because if expressions in haskell are
 
 0:07:23.760,0:07:30.160
-first-class expressions, so we don't
+first class expressions, so we don't
 need this where clause necessarily,
 
 0:07:30.160,0:07:35.280
@@ -197,12 +197,12 @@ can also just write it like this,
 and again this is the same
 
 0:07:41.920,0:07:52.000
-animation. Now there's a fourth version. Probably
+animation. Now there's a fourth version, probably
 even more, but let's look at one more. If you
 
 0:07:52.000,0:08:02.400
-realize that actually, since this if-then-else is
-kind of first class here in Haskell, we can even
+realize that actually, since this if then else is
+kind of first class here in haskell, we can even
 
 0:08:05.520,0:08:15.120
 think about a slightly different version
@@ -212,25 +212,25 @@ of this. This with the changed t parameter,
 because we could obviously
 
 0:08:19.120,0:08:28.880
-inline this here. So we would use something like
+inline this here, so we would use something like
 
 0:08:34.560,0:08:35.060
 if
 
 0:08:37.840,0:08:42.160
-t is smaller than pi, then we
+t is smaller than pi then we
 use minus t, as we use minus pi
 
 0:08:44.240,0:08:49.440
-to rotate the sun. And if we look at that,
+to rotate the sun, and if we look at that,
 
 0:08:52.400,0:09:01.120
-sure enough, it's the same animation.
+sure enough it's the same animation.
 So now, if you look very closely,
 
 0:09:04.480,0:09:10.960
 you can see that we can probably take
-this "minus" outside of this if. Also,
+this "minus" outside of this if, also
 
 0:09:13.680,0:09:16.320
 you can use the negate function here
@@ -239,19 +239,19 @@ you can use the negate function here
 to invert the sign of some expression. So,
 
 0:09:28.320,0:09:36.480
-this is kind of... this is exactly the same. And
-now if we look really carefully at this if-then
+this is kind of... this is exactly the same, and
+now if we look really carefully at this if then
 
 0:09:36.480,0:09:44.480
-else expression, then we might realize that this
-is basically: "If t is smaller than pi, it's t,
+else expression then we might realize that this
+is basically: "If t is smaller than pi it's t,
 
 0:09:46.000,0:09:52.800
-and otherwise, it's pi." So, what this
-essentially is, is the minimum of t and pi.
+and otherwise it's pi". So, what this
+essentially is is the minimum of t and pi.
 
 0:09:54.800,0:09:57.760
-And now I'm missing a parenthesis...
+And now i'm missing a parentheses...
 
 0:10:03.840,0:10:13.680
 And we have the same animation and it
@@ -259,14 +259,14 @@ stops there. Now, if you look at this, the
 
 0:10:16.080,0:10:23.040
 tree view of this picture, we see that the sun
-is blocked. It was hidden behind the grass there,
+is blocked, it was hidden behind the grass there,
 
 0:10:24.400,0:10:29.120
 because it's always rotated by pi,
 
 0:10:31.040,0:10:38.080
-once pi exceeds... Uh, once t exceeds
-pi. Yeah, this is a neat little
+once pi exceeds... uh once t exceeds
+pi. Yeah this is a neat little
 
 0:10:40.560,0:10:47.520
 optimization we can do to fit this all into
