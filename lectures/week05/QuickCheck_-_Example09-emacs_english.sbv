@@ -75,7 +75,7 @@ testing, though this is not very,
 somehow attractive to just have tests like that.
 
 0:02:03.920,0:02:06.320
-So, how do we instead test in Haskell.
+So, how do we instead test in Haskell?
 
 0:02:06.320,0:02:10.080
 And one reason for showing you
@@ -334,7 +334,7 @@ Okay, so let me again switch back to 'quickCheck',
 because I don't always want to see these,
 
 0:08:04.720,0:08:05.600
-all these values.
+all these values."
 
 0:08:07.520,0:08:10.640
 And then we have one property,
@@ -413,7 +413,7 @@ But actually, let's check
 what happens if I do this.
 
 0:09:48.960,0:09:50.720
-So, I should get a counter example now.
+So, I should get a counterexample now.
 
 0:09:52.800,0:09:57.360
 Indeed, there were two tests
@@ -421,13 +421,13 @@ which passed 100 cases.
 
 0:09:57.360,0:09:59.920
 These are the first two ones, and
-then there's a counter example.
+then there's a counterexample.
 
 0:10:01.040,0:10:02.240
 This looks somewhat strange.
 
 0:10:02.240,0:10:06.480
-Why is '[0, 0]' a counter example to this equation?
+Why is '[0, 0]' a counterexample to this equation?
 
 0:10:10.560,0:10:13.440
 Well, it's the wrong equation anyway.
@@ -445,7 +445,7 @@ Namely, if I had
 
 0:10:25.840,0:10:32.400
 written it like this, then we would also have
-failed but with a more meaningful counter example.
+failed but with a more meaningful counterexample.
 
 0:10:33.120,0:10:33.760
 Okay.
@@ -529,7 +529,7 @@ sorting function, then our test suite could
 contain this last property.
 
 0:12:14.160,0:12:15.760
-And see there is a counter example.
+And see there is a counterexample.
 
 0:12:16.400,0:12:27.280
 Namely, if I call the 'sort' function on '[3, 3]',
@@ -619,7 +619,7 @@ Yeah, what do you think?
 
 0:14:20.880,0:14:24.720
 What should happen if I append
-to lists and then sort them?
+two lists and then sort them?
 
 0:14:25.440,0:14:31.440
 Well, that, of course, depends very
@@ -639,7 +639,7 @@ I'm anyway going to sort the lists.
 
 0:14:49.040,0:14:54.320
 So, we could use this property to check
-some further behaviour of the sort function,
+some further behavior of the sort function,
 
 0:14:54.320,0:15:00.000
 and it will also pass the tests, I'm sure.
@@ -649,7 +649,7 @@ Okay, in the cases where the tests didn't pass,
 
 0:15:08.640,0:15:11.360
 it was interesting that
-we got small counter examples.
+we got small counterexamples.
 
 0:15:11.360,0:15:13.680
 So, when we tested and positively resolved,
@@ -662,16 +662,16 @@ of length 20, 25, whatever.
 But when I had a property, which wasn't true,
 
 0:15:20.080,0:15:24.640
-I got very small counter examples
+I got very small counterexamples
 '[3, 3]', or '[0, 0]', or '[0, -1]'.
 
 0:15:24.640,0:15:30.480
 That's because QuickCheck not only tries to find
-counter examples, but once it has found out
+counterexamples, but once it has found out
 
 0:15:30.480,0:15:36.560
 that some property is not true, it is also
-cleverly trying to find as small as possible
+cleverly trying to find as small as possible.
 
 0:15:36.560,0:15:41.920
 counter example, which would also be useful
@@ -739,7 +739,7 @@ tail, and then we twice use this name here.
 
 0:16:57.680,0:17:02.320
 Okay, let's check whether this
-changed anything about the behaviour.
+changed anything about the behavior.
 
 0:17:02.320,0:17:03.840
 No, it didn't, it still works.

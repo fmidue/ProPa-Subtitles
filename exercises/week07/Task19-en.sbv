@@ -3,7 +3,7 @@ Hello, for this task we are writing
 a function which can compute the sum
 
 0:00:03.920,0:00:09.760
-of any finite list of numbers. So for example if
+of any finite list of numbers. So for example, if
 you have an input list containing 2, 5, and 3,
 
 0:00:09.760,0:00:14.960
@@ -15,11 +15,11 @@ which is already implemented for us
 up here in this higher order function,
 
 0:00:18.640,0:00:25.280
-aptly name 'divideAnd Conquer' and all we need to
+aptly named 'divideAndConquer' and all we need to
 do really is call this 'divideAndConquer' function
 
 0:00:25.280,0:00:30.080
-with the correct functions as arguments, to
+with the correct functions as arguments to
 solve our tasks. And if we look down here
 
 0:00:30.080,0:00:33.440
@@ -60,7 +60,7 @@ fine because these single letters are generics,
 
 0:01:19.680,0:01:23.360
 which mean they can accept any
-type; As long as we end up replacing
+type; as long as we end up replacing
 
 0:01:24.080,0:01:31.120
 the same letter with the same type throughout
@@ -120,7 +120,7 @@ if check with simple enough as the predicates,
 
 0:02:55.520,0:03:00.320
 and if simple enough with the input is true,
-then simple cases is called on the input,
+then simple cases are called on the input,
 
 0:03:00.960,0:03:07.200
 and if it's not true then we go into this else
@@ -198,12 +198,12 @@ three other 'undefined's we don't need
 to define them outside of this and they
 
 0:04:57.120,0:05:01.280
-don't need to be named so let's just
+don't need to be named, so let's just
 use lambda functions for all of these.
 
 0:05:01.920,0:05:06.880
 So let's just start with a basic frame, let's
-call this 'list' the other ones are receiving
+call this 'list', the other ones are receiving
 
 0:05:06.880,0:05:19.220
 integer lists according to our type signatures
@@ -215,7 +215,7 @@ our first one is corresponding to 'simpleEnough'
 
 0:05:26.800,0:05:32.960
 and this needs to be some kind of predicate;
-So this needs to return a boolean. To know when
+so this needs to return a boolean. To know when
 
 0:05:32.960,0:05:38.000
 this should be true we need to first look at
@@ -238,7 +238,7 @@ other than what our comments tell us, so compute
 the output directly for simple cases. So what's
 
 0:06:04.960,0:06:06.960
-the output for a simple case, in this case?
+the output for a simple case in this case?
 
 0:06:08.800,0:06:16.000
 The simplest case we can have with a list is just
@@ -262,18 +262,18 @@ we have another simple case where you can
 
 0:06:49.600,0:06:57.200
 take the result directly which would be the list
-with an element of one so we can extend this to
+with an element of one, so we can extend this to
 
 0:06:57.200,0:07:03.840
-length of our list, so i missed, that length of
-list less than equals one, so that's a list of
+length of our list, so I missed that length of
+list less than or equal to one, so that's a list of
 
 0:07:03.840,0:07:12.160
 either empty list or a list with only one element,
 and then in our simple cases we could do something
 
 0:07:12.160,0:07:24.400
-like: if length of list equals 0, then we
+like: if the length of the list equals 0, then we
 return a 0, else we return the half of the list,
 
 0:07:26.000,0:07:34.640
@@ -285,11 +285,11 @@ to 'null list' which is just an internally defined
 function from the prelude which checks if a list
 
 0:07:45.200,0:07:50.720
-has no elements in it then we return true, so in
+has no elements in it, then we return true, so in
 this case 'null list' would return true if the
 
 0:07:50.720,0:07:57.600
-list is empty then return a 0, otherwise we take
+list is empty, then return a 0, otherwise we take
 the first element of the list. So that's basically
 
 0:07:57.600,0:08:02.160
@@ -313,8 +313,8 @@ So this is all we can do with 'simpleEnough' and
 'simpleCases', and now we just need to define our
 
 0:08:31.120,0:08:37.600
-'split' function. Like i mentioned earlier, in
-a divide and conquer approach you usually want
+'split' function. Like I mentioned earlier, in
+a divide and conquer approach, you usually want
 
 0:08:37.600,0:08:43.360
 to split into equal halves to reduce the amount
@@ -326,7 +326,7 @@ we can use 'splitAt' to just split
 
 0:08:51.600,0:08:58.400
 our list, and for the point where we want to
-split we can use the length of the list...
+split, we can use the length of the list...
 
 0:09:02.320,0:09:09.760
 divided by half, so this will end up giving
@@ -340,16 +340,16 @@ exact middle point if it's an uneven
 length list, but this is close enough.
 
 0:09:18.640,0:09:26.880
-Well it's as close as we can get to evenly
+Well, it's as close as we can get to evenly
 splitting an uneven list. So now we replaced
 
 0:09:26.880,0:09:33.280
-all four of our 'unfined' and just to make sure
+all four of our 'unfined', and just to make sure
 let's just go through the type signatures again;
 
 0:09:33.280,0:09:39.840
-The first one accepts the list of integer and
-returns boolean, so this is the operator call
+The first one accepts the list of integers and
+returns a boolean, so this is the operator call
 
 0:09:39.840,0:09:43.440
 that will later get us our output, and this
@@ -361,11 +361,11 @@ The second one also receives something of
 
 0:09:51.120,0:09:58.480
 a list type and returns an integer, here in this
-case it either returns a 0 or it turns a head of
+case it either returns a 0 or it returns the head of
 
 0:09:58.480,0:10:07.040
 the list, so this would also end up fitting the
-type signature. This also receives a list integer
+type signature. This also receives a list of integers
 
 0:10:07.040,0:10:15.600
 and 'splitAt' returns a tuple of the same type
@@ -388,11 +388,11 @@ out, let's just try the main test, which is just
 it's just this one test, is a little too simple,
 
 0:10:46.560,0:10:52.320
-so let's try it with something else um let's
+so let's try it with something else, um let's
 try the example from the comments up here,
 
 0:10:52.880,0:11:01.520
-so [2,5,3] should end up with 10. All right
+so [2,5,3] should end up with 10. All right,
 that works now if we wanted to we could
 
 0:11:01.520,0:11:09.840
@@ -416,8 +416,8 @@ manually, but that's just a little aside. Now you
 can already see my editor's telling me something
 
 0:11:31.200,0:11:39.520
-that i wanted to avoid showing you immediately,
-this says 'void lambda' so this is telling us
+that I wanted to avoid showing you immediately,
+this says 'void lambda', so this is telling us
 
 0:11:39.520,0:11:49.280
 this could be actually reduced down to just this
@@ -429,7 +429,7 @@ to then use with the addition operator, but the
 
 0:11:58.160,0:12:03.360
 addition operator is already an operator that
-expects two arguments so we're basically wrapping
+expects two arguments, so we're basically wrapping
 
 0:12:04.320,0:12:09.040
 something that needs two arguments into something
@@ -456,5 +456,5 @@ simple things like this, or it can give you hints
 which would end up being comments in your task
 
 0:12:46.160,0:12:53.600
-once you receive them back, but yeah
+once you receive them back, but yeah,
 this solves our task and we're done.

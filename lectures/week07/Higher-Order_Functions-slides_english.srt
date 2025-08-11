@@ -70,7 +70,7 @@ Here I will briefly remind you of these instances.
 
 00:01:26,020 --> 00:01:30,859
 And then we will look at a few, probably,
-somewhat bizarre looking examples first.
+somewhat bizarre-looking examples first.
 
 00:01:30,859 --> 00:01:36,591
 Also, there is certain new syntax that becomes
@@ -221,7 +221,7 @@ with it.
 
 00:04:08,600 --> 00:04:12,820
 It is a function to which you give another
-function (a predicate) as argument.
+function (a predicate) as an argument.
 
 00:04:12,820 --> 00:04:15,600
 And similarly for 'animationOf'
@@ -307,11 +307,11 @@ unlike 'drawingOf', where we would simply
 
 00:05:35,129 --> 00:05:41,099
 have "the argument as a Picture, and the outcome
-is: do something interactive, in this case,
+is: do something interactive, in this case,"
 
 00:05:41,099 --> 00:05:46,849
 drawing it to the browser window", now "animationOf"
-gets a function as argument.
+gets a function as an argument.
 
 00:05:46,849 --> 00:05:51,699
 So, what we are saying here is: the first
@@ -966,7 +966,7 @@ of 'h' and say:
 
 00:17:59,790 --> 00:18:04,180
 "Oh, you are a function from Int to Int. Let
-me look whether you do this by case distinction,
+me look at whether you do this by case distinction,
 
 00:18:04,180 --> 00:18:05,530
 or whether you are a constant function."
@@ -1024,7 +1024,7 @@ We have plenty of functions around.
 
 00:19:01,180 --> 00:19:05,970
 We simply have to choose some that we consider
-useful to be passed as argument to f.
+useful to be passed as an argument to f.
 
 00:19:05,970 --> 00:19:09,830
 So, of course, we could take any predefined
@@ -1035,7 +1035,7 @@ They have names, so they can be used as arguments.
 
 00:19:12,380 --> 00:19:16,150
 We can refer to them by their name and then
-pass them as argument to f.
+pass them as an argument to f.
 
 00:19:16,150 --> 00:19:21,360
 In the previous example, if we take some predefined
@@ -1197,7 +1197,7 @@ it wherever it needs to be.
 
 00:22:36,480 --> 00:22:40,130
 It needs to be the function to which we pass
-7 as argument.
+7 as an argument.
 
 00:22:40,130 --> 00:22:45,179
 So, then we have "h 7" is "(+) 5 of 7", (+)
@@ -1329,7 +1329,7 @@ And indeed, these brackets can be omitted.
 
 00:25:38,940 --> 00:25:43,160
 So, this is, again, where we would say: don't
-write these brackets, because it is clear
+write these brackets because it is clear
 
 00:25:43,160 --> 00:25:47,570
 enough that this is a function of two arguments
@@ -1397,7 +1397,7 @@ There is no difference in usage, whether we
 consider one or the other perspective.
 
 00:27:00,670 --> 00:27:05,630
-And this is thanks to Haskell' function application
+And this is thanks to Haskell's function application
 syntax, and also the reason why Haskell function
 
 00:27:05,630 --> 00:27:12,140
@@ -1432,7 +1432,7 @@ Namely, it can be seen as taking a number
 and giving back a function.
 
 00:27:38,840 --> 00:27:42,640
-So, it doesn't take a function as argument,
+So, it doesn't take a function as an argument,
 but it has a function as a result.
 
 00:27:42,640 --> 00:27:45,799
@@ -1456,7 +1456,7 @@ And this value can be a function, like in
 this case.
 
 00:28:10,740 --> 00:28:16,450
-And then, this other syntactic speciality that
+And then, this other syntactic specialty that
 I already briefly used on the previous slide,
 
 00:28:16,450 --> 00:28:17,550
@@ -1475,107 +1475,6 @@ write it as basically: "I am an operator application
 
 00:28:36,330 --> 00:28:38,890
 where there is still missing one argument".
-
-00:28:38,890 --> 00:28:43,960
-So, the first one is already there, but the
-second part of "+" is still missing.
-
-00:28:43,960 --> 00:28:54,500
-And I will, again, discuss this on the next
-slide with a few notes.
-
-00:28:54,500 --> 00:28:57,900
-So, let's briefly talk about operator syntax.
-
-00:28:57,900 --> 00:29:01,820
-Probably I have to do this first.
-
-00:29:01,820 --> 00:29:06,700
-Known from other languages is that there are
-prefix and infix operators.
-
-00:29:06,700 --> 00:29:12,600
-And in Haskell there is a special syntax for
-writing an infix operator as prefix, and the
-
-00:29:12,600 --> 00:29:14,910
-other way around.
-
-00:29:14,910 --> 00:29:20,630
-What I did on one of the previous slides was
-to write something like (+), and then I could
-
-00:29:20,630 --> 00:29:22,650
-apply it to arguments like 5 and 7.
-
-00:29:22,650 --> 00:29:25,140
-So, this is prefix, because it comes before
-the arguments.
-
-00:29:25,140 --> 00:29:29,490
-And of course, also the usual functions like
-the 'mod' function, or f, or "rectangle",
-
-00:29:29,490 --> 00:29:32,549
-or typical functions that you have already
-seen.
-
-00:29:32,549 --> 00:29:34,300
-So, they are usually written as prefix.
-
-00:29:34,300 --> 00:29:36,330
-It means that you have the function and then
-you have two arguments.
-
-00:29:36,330 --> 00:29:39,890
-Then there is infix syntax.
-
-00:29:39,890 --> 00:29:43,560
-And that's for operators, typically things
-like "1 + 2".
-
-00:29:43,560 --> 00:29:46,990
-So, here, the "+" is an infix operator.
-
-00:29:46,990 --> 00:29:53,030
-And you have also seen on the slides that
-binary functions that would usually be written
-
-00:29:53,030 --> 00:29:57,890
-prefix can also be written infix, if you put
-them in these back-ticks `...`.
-
-00:29:57,890 --> 00:30:00,510
-So, the "mod" is a binary function.
-
-00:30:00,510 --> 00:30:02,460
-It can be written infix.
-
-00:30:02,460 --> 00:30:04,670
-And now these sections.
-
-00:30:04,670 --> 00:30:13,731
-They apply to operators/functions that are
-prefix, but that we want to use in a kind
-
-00:30:13,731 --> 00:30:16,120
-of infix style with just one of two arguments
-given.
-
-00:30:16,120 --> 00:30:19,419
-This is the "5 +" that you saw on the previous
-slide.
-
-00:30:19,419 --> 00:30:20,780
-What was this?
-
-00:30:20,780 --> 00:30:27,429
-So, if we have a prefix function like the
-"(+)", we can apply it to one of its arguments,
-
-00:30:27,429 --> 00:30:34,380
-like 5, and then this also can be written
-as this section "(5 +)" which means:
 
 00:30:34,380 --> 00:30:42,330
 I am a function which is waiting for an argument,
@@ -1717,7 +1616,7 @@ So, what is this (5 -)?
 
 00:34:35,379 --> 00:35:06,680
 So, this written above is a function waiting
-for an argument x and then computing 5 – x.
+for an argument x and then computing 5 - x.
 
 00:35:06,680 --> 00:35:16,520
 And the same way for all the other section
@@ -1922,7 +1821,7 @@ This one, or the one where we have brackets
 around here from a few slides back.
 
 00:39:08,780 --> 00:39:11,849
-But they are equivalent, because these two
+But they are equivalent because these two
 function definitions are equivalent.
 
 00:39:11,849 --> 00:39:16,090
@@ -1934,7 +1833,7 @@ function which takes an argument and then
 gives back a function which takes another
 
 00:39:19,460 --> 00:39:24,510
-argument and return the sum of what has been
+argument and returns the sum of what has been
 provided here and here.
 
 00:39:24,510 --> 00:39:27,130
@@ -1989,7 +1888,7 @@ clear how to express these different perspectives.
 We couldn't simply move from one to the other.
 
 00:40:19,920 --> 00:40:25,010
-But in Haskell syntax, they are all equivalent,
+But in Haskell syntax, they are all equivalent
 because they capture the same mathematical
 
 00:40:25,010 --> 00:40:27,770

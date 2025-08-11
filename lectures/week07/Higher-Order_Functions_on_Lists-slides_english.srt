@@ -27,7 +27,7 @@ next exercises, probably) are available for
 other data types as well.
 
 00:00:37,809 --> 00:00:42,149
-So, lists are just a stand-in, here, for generally
+So, lists are just a stand-in here for generally
 structured data types.
 
 00:00:42,149 --> 00:00:46,690
@@ -35,7 +35,7 @@ And this approach of using higher-order functions,
 defining higher-order functions and working
 
 00:00:46,690 --> 00:00:52,460
-with them, is valid and useful for other data
+with them is valid and useful for other data
 types as well: for trees or other things that
 
 00:00:52,460 --> 00:00:57,339
@@ -196,7 +196,7 @@ Basically, taking a list and computing the
 sum of it means to put the "+" symbol between
 
 00:03:32,500 --> 00:03:34,010
-all neighbouring elements.
+all neighboring elements.
 
 00:03:34,010 --> 00:03:39,970
 So, we want to compute 1 + 2 + 3 + 4, which
@@ -233,7 +233,7 @@ So, computing the sum of a list, however long
 it might be, is simply described by putting
 
 00:04:15,620 --> 00:04:18,310
-a "+" between all neighbouring elements.
+a "+" between all neighboring elements.
 
 00:04:18,310 --> 00:04:24,380
 If you recall our earlier discussion in the
@@ -255,7 +255,7 @@ So, this is the 'sum' function.
 
 00:04:36,229 --> 00:04:39,770
 It takes some list and puts "+" between all
-neighbouring elements.
+neighboring elements.
 
 00:04:39,770 --> 00:04:43,569
 That's what summing the elements of a list
@@ -659,20 +659,20 @@ So, while "map even [1..10]" gives [False,
 True, False, True, ...], "filter even [1..10]"
 
 00:11:16,260 --> 00:11:17,260
-gives [2,4,6,8,10].
+gives [2, 4, 6, 8, 10].
 
 00:11:17,260 --> 00:11:21,150
 We get the list of numbers which satisfy the
 predicate.
 
 00:11:21,150 --> 00:11:24,560
-This was one example, with the 'even' predicate.
+This was one example, with the "even" predicate.
 
 00:11:24,560 --> 00:11:28,470
 We can think of other examples.
 
 00:11:28,470 --> 00:11:32,800
-Let's take the 'isPalindrome' function that
+Let's take the "isPalindrome" function that
 we used in the slides (and you also programmed
 
 00:11:32,800 --> 00:11:34,980
@@ -688,10 +688,10 @@ our dictionary are palindromes.
 
 00:11:44,270 --> 00:11:49,680
 We simply have to filter that complete dictionary
-by this isPalindrome-predicate.
+by this isPalindrome predicate.
 
 00:11:49,680 --> 00:11:57,700
-So, this would be a list of Strings, and 'isPalindrome'
+So, this would be a list of Strings, and "isPalindrome"
 is a function from String to Bool, so the
 
 00:11:57,700 --> 00:12:01,560
@@ -710,7 +710,7 @@ those which are greater than 50%.
 
 00:12:14,750 --> 00:12:20,910
 Then we could pass this section, this anonymous
-function, to the 'filter' function.
+function, to the "filter" function.
 
 00:12:20,910 --> 00:12:25,280
 So, the predicate would be from Double to Bool
@@ -753,7 +753,7 @@ We give back a new list which has fewer elements.
 
 120 # slide
 00:13:07,370 --> 00:13:11,070
-Now we could ask ourselves how 'map' and 'filter'
+Now we could ask ourselves how "map" and "filter"
 are defined.
 
 00:13:11,070 --> 00:13:18,470
@@ -761,7 +761,7 @@ Actually, you should be able to come up with
 this on your own.
 
 00:13:18,470 --> 00:13:22,620
-Namely, 'map' and 'filter', applying a function
+Namely, "map" and "filter", applying a function
 to each element of a list or selecting elements
 
 00:13:22,620 --> 00:13:29,040
@@ -773,13 +773,13 @@ comprehension for, so far.
 
 00:13:30,040 --> 00:13:36,460
 Indeed, you could think of what you see on
-this slide as the definitions of 'map' and
+this slide as the definitions of "map" and
 
 00:13:36,460 --> 00:13:37,460
-'filter'.
+"filter".
 
 00:13:37,460 --> 00:13:43,200
-The 'map' function takes a function, takes
+The "map" function takes a function, takes
 a list, and what does it do?
 
 00:13:43,200 --> 00:13:50,660
@@ -790,7 +790,7 @@ f to it, and accumulates the outcomes in a
 list.
 
 00:13:51,660 --> 00:13:55,990
-This is not actually how 'map' is defined
+This is not actually how "map" is defined
 in the standard library, because there are
 
 00:13:55,990 --> 00:14:00,690
@@ -802,11 +802,11 @@ as I mentioned).
 
 00:14:01,690 --> 00:14:06,330
 But for the specific case of lists, you could
-think of 'map' as being defined like this.
+think of "map" as being defined like this.
 
 00:14:06,330 --> 00:14:10,290
 So, whenever, so far, we wrote something like
-this, we could also have used the 'map' function.
+this, we could also have used the "map" function.
 
 00:14:10,290 --> 00:14:14,459
 You couldn't have used that sometimes, because
@@ -817,7 +817,7 @@ But from now on, where appropriate, you can
 use this.
 
 00:14:18,370 --> 00:14:21,630
-And similarly 'filter', about selecting things
+And similarly "filter", about selecting things
 from a list.
 
 00:14:21,630 --> 00:14:25,670
@@ -830,13 +830,13 @@ a list which satisfies a predicate (something
 
 00:14:32,490 --> 00:14:38,141
 like "even a", for example), and then the
-'a' is kept.
+"a" is kept.
 
 00:14:38,141 --> 00:14:41,350
-This is exactly as was described for the 'filter' function.
+This is exactly as was described for the "filter" function.
 
 00:14:41,350 --> 00:14:48,550
-So, 'map' and 'filter' are somehow replacements
+So, "map" and "filter" are somehow replacements
 for certain kinds of list comprehensions,
 
 00:14:48,550 --> 00:14:49,550
@@ -858,8 +858,8 @@ how complicated (maybe using several generators,
 more than one guard expression, etc.), can
 
 00:15:10,660 --> 00:15:13,230
-be implemented with 'map' and 'filter', and
-actually, we might use the 'concat' function
+be implemented with "map" and "filter", and
+actually, we might use the "concat" function
 
 00:15:13,230 --> 00:15:15,860
 in addition (which was introduced earlier).
@@ -873,13 +873,13 @@ flattens list levels.
 
 00:15:21,560 --> 00:15:25,680
 So, if we have a list of lists of 'a's, then
-'concat' gives us a list of 'a's by concatenating
+"concat" gives us a list of 'a's by concatenating
 
 00:15:25,680 --> 00:15:27,430
 all the inner lists.
 
 00:15:27,430 --> 00:15:31,780
-And if you have 'map', 'filter', and 'concat',
+And if you have "map", "filter", and "concat",
 then you don't need list comprehensions anymore.
 
 00:15:31,780 --> 00:15:35,500
@@ -887,8 +887,8 @@ Because whatever you could express with even
 complicated list comprehension expressions
 
 00:15:35,500 --> 00:15:38,590
-can also be expressed with 'map', 'filter',
-and 'concat'.
+can also be expressed with "map", "filter",
+and "concat".
 
 00:15:38,590 --> 00:15:41,871
 And indeed, that is what the compiler does.
@@ -899,7 +899,7 @@ then at some point during the compilation
 
 00:15:52,530 --> 00:15:58,310
 process, they essentially get replaced by
-expressions involving 'map', 'filter', and 'concat'.
+expressions involving "map", "filter", and "concat".
 
 121 # slide
 00:16:00,630 --> 00:16:06,920
@@ -907,8 +907,8 @@ Given this relationship to list comprehensions,
 a further question might be whether if we
 
 00:16:06,920 --> 00:16:12,050
-now switch from list comprehensions to 'map'
-and 'filter' (and maybe 'foldl1' and other
+now switch from list comprehensions to "map"
+and "filter" (and maybe "foldl1" and other
 
 00:16:12,050 --> 00:16:16,180
 similar functions), is this still wholemeal
@@ -925,7 +925,7 @@ were about using list comprehensions instead
 of explicit recursion or instead of list indexing.
 
 00:16:27,140 --> 00:16:31,940
-So, now, if I go to 'map' and 'filter' and
+So, now, if I go to "map" and "filter" and
 other higher-order functions, is this still
 
 00:16:31,940 --> 00:16:33,210
@@ -1053,7 +1053,7 @@ ways), and with 'map' and 'filter'.
 Let's look at this.
 
 00:18:43,970 --> 00:18:49,080
-Here are two lists comprehension expressions
+Here are two list comprehension expressions
 for the two cases.
 
 00:18:49,080 --> 00:18:52,799
@@ -1355,7 +1355,7 @@ Now we have 'map' and 'filter', do they also
 commute in some way?
 
 00:24:24,750 --> 00:24:30,039
-If I have a map-call and a filter-call, can
+If I have a map call and a filter call, can
 I also exchange the order of these?
 
 00:24:30,039 --> 00:24:31,239

@@ -69,7 +69,7 @@ side (as an expression), we can use if-then-else.
 There must be a condition and then two expressions.
 
 00:01:23,520 --> 00:01:26,840
-They must be of the same type, otherwise it
+They must be of the same type; otherwise it
 wouldn't make sense.
 
 00:01:26,840 --> 00:01:28,260
@@ -121,7 +121,7 @@ another case, ..., and then the "else" case.
 
 00:02:12,950 --> 00:02:17,819
 So, mathematicians don't nest these kinds of
-expressions, they simply give a longer list
+expressions; they simply give a longer list
 
 00:02:17,819 --> 00:02:25,299
 of conditions and expressions here.
@@ -161,12 +161,12 @@ And actually, if you just read this, you probably
 know what is meant here.
 
 00:03:01,430 --> 00:03:07,199
-So, under the condition that t is smaller-equal
-pi, we should do something.
+So, under the condition that t is smaller or equal
+to pi, we should do something.
 
 00:03:07,199 --> 00:03:13,389
 Under the condition that that is not the case,
-but t is actually greater than pi but less-equal
+but t is actually greater than pi but less or equal
 
 00:03:13,389 --> 00:03:16,629
 than the double of pi, then we should have
@@ -181,7 +181,7 @@ expression should be evaluated.
 
 00:03:26,599 --> 00:03:33,879
 So, this is also a way of expressing conditional
-behaviour, and it very directly corresponds
+behavior, and it very directly corresponds
 
 00:03:33,879 --> 00:03:37,109
 to what mathematicians like to write.
@@ -221,7 +221,7 @@ evaluates to a Boolean.
 
 00:04:17,440 --> 00:04:23,259
 It doesn't have to be arithmetic comparisons
-combined with "and" and "or" etc.
+combined with "and" and "or", etc.
 
 00:04:23,259 --> 00:04:30,419
 You can write anything here, any predicate,
@@ -307,7 +307,7 @@ would write:
 
 00:05:54,090 --> 00:06:00,080
 The factorial of an integer is 1 if the
-integer is zero (that is the starting of the
+integer is zero (that is the starting of the "
 
 00:06:00,080 --> 00:06:04,789
 factorial function), and if the argument is
@@ -420,7 +420,7 @@ call "factorial" on non-negative inputs now),
 
 00:08:06,419 --> 00:08:16,319
 then these two versions that we see here and
-here, behave the same.
+here behave the same.
 
 59 # slide
 00:08:16,319 --> 00:08:18,180
@@ -449,7 +449,7 @@ this one is problematic.
 
 00:08:43,409 --> 00:08:49,970
 Maybe you can already guess what would happen,
-or you can check on the side, what happens
+or you can check on the side what happens
 
 00:08:49,970 --> 00:08:58,050
 if you take this code and run it again maybe
@@ -475,7 +475,7 @@ And then 11 is again in this case.
 So, it is 11 * factorial 10.
 
 00:09:25,810 --> 00:09:28,650
-This goes down, down, down, ... until factorial
+This goes down, down, down,... until factorial
 0.
 
 00:09:28,650 --> 00:09:34,300
@@ -660,7 +660,7 @@ say "otherwise".
 
 00:12:58,230 --> 00:13:05,399
 Then, checking from top to bottom, for every
-input that is not zero this last line will
+input that is not zero, this last line will
 
 00:13:05,399 --> 00:13:06,399
 be taken.
@@ -720,7 +720,7 @@ values.
 
 00:14:06,700 --> 00:14:10,579
 Now this would be something which passes the
-compiler, because the compiler can tell that
+compiler because the compiler can tell that
 
 00:14:10,579 --> 00:14:12,820
 we have covered all cases.
@@ -831,7 +831,7 @@ Here is an example.
 
 00:16:20,550 --> 00:16:26,930
 It will warn you against trying to rely on
-certain properties, about relations from mathematics,
+certain properties about relations from mathematics,
 
 00:16:26,930 --> 00:16:27,930
 for example.
@@ -921,7 +921,7 @@ One might argue that this is not what one
 wants: that this factorial function returns
 
 00:18:26,040 --> 00:18:29,400
-one for all negative numbers, if you change
+one for all negative numbers if you change
 to "n≤0" here.
 
 00:18:29,400 --> 00:18:35,240
@@ -930,14 +930,6 @@ fix) would be to use the type system to even
 
 00:18:35,240 --> 00:18:37,500
 prevent that you get negative inputs here.
-
-00:18:37,500 --> 00:18:44,630
-So, the Integer type contains negative numbers,
-but one could use a more expressive type system
-
-00:18:44,630 --> 00:18:49,220
-which actually can guarantee that the factorial
-function will, in a given program, never be
 
 00:18:49,220 --> 00:18:50,910
 called on negative numbers.
@@ -1247,6 +1239,7 @@ on the other input.
 00:25:00,450 --> 00:25:01,960
 And here it is the other way around.
 
+```
 00:25:01,960 --> 00:25:07,610
 We have the condition by a constant match
 on the second argument, and some explicitly
@@ -1292,10 +1285,10 @@ not.
 
 00:25:52,510 --> 00:25:57,390
 You might want to take a look at the warnings
-and try to interpret them, to see how far
+and try to interpret them to see how far
 
 00:25:57,390 --> 00:26:03,370
-the compiler has managed to analyse this program
+the compiler has managed to analyze this program
 and the different cases that occur here.
 
 68 # slide
@@ -1490,12 +1483,12 @@ So, let's say we want to define the logic operations
 on the Boolean type.
 
 00:29:50,720 --> 00:29:53,410
-We could say "not True = False" and "not False
+We could say "not True" = False and "not False
 = True".
 
 00:29:53,410 --> 00:29:58,860
 But actually, in the second line we don't
-have to write "not False = True", because
+have to write "not False" = True, because
 
 00:29:58,860 --> 00:30:04,040
 the only thing that can be here would be "False",
@@ -1503,7 +1496,7 @@ because "True" is already handled.
 
 00:30:04,040 --> 00:30:10,220
 Then we could say: Well, let's write "not
-x = True", so using a variable named x here.
+x" = True, so using a variable named x here.
 
 00:30:10,220 --> 00:30:14,610
 But this also would not be so nice, because
@@ -1540,20 +1533,21 @@ So, let's say, for example, we want to implement
 the conjunction of Boolean values.
 
 00:30:46,790 --> 00:30:51,380
-Then we could say: "True and True is True",
+Then we could say: "True and True" is True,
 and we could write three cases like "True
 
 00:30:51,380 --> 00:30:55,150
-and False is False", "False and True is False",
-and "False and False is False".
+and False" is False, "False and True" is False,
+and "False and False" is False.
 
 00:30:55,150 --> 00:30:59,970
 But why should we do this, if we can also
-say: "whatever and whatever is False", given
+say: "whatever and whatever" is False, given
 
 00:30:59,970 --> 00:31:03,060
 that "True and True" has already been checked
 by the first line?
+```
 
 00:31:03,060 --> 00:31:09,070
 Then this very compactly defines how conjunction

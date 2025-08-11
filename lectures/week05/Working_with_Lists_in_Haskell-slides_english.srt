@@ -10,13 +10,13 @@ done so in the previous video.
 71 # slide
 00:00:17,580 --> 00:00:26,180
 In particular, I talked there about the eta-reduction
-aspect that Autotool or HLint sometimes warn
+aspect that Autotool or HLint sometimes warns
 
 00:00:26,180 --> 00:00:27,180
 you about.
 
 00:00:27,180 --> 00:00:28,180
-Some of you have already seen this in their
+Some of you have already seen this in your
 own submissions.
 
 00:00:28,180 --> 00:00:34,540
@@ -89,7 +89,7 @@ And I want to emphasize here that the 'flip' function
 that I used there in order to turn this into
 
 00:01:58,960 --> 00:02:02,400
-a rectangle that opens in the other direction,
+a rectangle that opens in the other direction
 was not a Picture-specific primitive.
 
 00:02:02,400 --> 00:02:05,020
@@ -283,7 +283,7 @@ Of course, you could, and some people did do,
 instead write code like this.
 
 00:05:44,160 --> 00:05:46,090
-So, what this is this saying?
+So, what is this saying?
 
 00:05:46,090 --> 00:05:47,729
 It is saying:
@@ -298,11 +298,11 @@ starts with the index zero).
 
 00:05:58,460 --> 00:06:08,830
 So, compute the index to be each value from
-zero to the length of the list -1, and then
+zero to the length of the list - 1, and then
 
 00:06:08,830 --> 00:06:13,729
 access the list elements by this index, then
-compute something from this, and do whatever
+compute something from this, and do whatever.
 
 00:06:13,729 --> 00:06:14,729
 with it.
@@ -815,7 +815,7 @@ or last and whatever comes before that, but
 at some arbitrary point.
 
 00:15:51,970 --> 00:15:56,270
-So, you could say, I have a String / list and
+So, you could say, I have a String/list and
 I want to split it at some point.
 
 00:15:56,270 --> 00:16:02,170
@@ -942,7 +942,7 @@ and the String "def" gives a list of pairs,
 
 00:18:03,310 --> 00:18:07,820
 where the first character from the first list
-and the first character from the second list
+and the first character from the second list.
 
 00:18:07,820 --> 00:18:08,820
 are combined.
@@ -1022,21 +1022,21 @@ destructs a list.
 
 00:19:32,810 --> 00:19:35,460
 I know that some of you already know about
-pattern-matching, because we have seen this
+pattern matching, because we have seen this
 
 00:19:35,460 --> 00:19:37,070
 in the exercise submissions.
 
 00:19:37,070 --> 00:19:43,280
 But actually, until the point where we introduce
-pattern-matching in the lecture, you can assume
+pattern matching in the lecture, you can assume
 
 00:19:43,280 --> 00:19:47,740
 that all the exercise tasks that you write
-have a solution without pattern-matching.
+have a solution without pattern matching.
 
 00:19:47,740 --> 00:19:52,860
-So, if you use pattern-matching, that is not
+So, if you use pattern matching, that is not
 forbidden, unless it is actually prevented
 
 00:19:52,860 --> 00:19:53,860
@@ -1044,11 +1044,11 @@ by Autotool.
 
 00:19:53,860 --> 00:20:00,020
 But in any case, as long as we haven't handled
-pattern-matching in the lecture, you can assume
+pattern matching in the lecture, you can assume
 
 00:20:00,020 --> 00:20:07,530
 that the exercise tasks have solutions that
-are intended to be without pattern-matching.
+are intended to be without pattern matching.
 
 76 # slide
 00:20:07,530 --> 00:20:15,280
@@ -1098,7 +1098,7 @@ the String is certainly a palindrome.
 
 00:21:08,840 --> 00:21:12,910
 And if it isn't that short, then either by
-pattern-matching (which I just said, I won't
+pattern matching (which I just said, I won't
 
 00:21:12,910 --> 00:21:17,770
 show yet) or by using the 'head' and 'last' functions,
@@ -1109,7 +1109,7 @@ the last element of this String are the same
 character, and if so, then also check whether
 
 00:21:23,780 --> 00:21:29,300
-if you remove this first and last elements
+if you remove these first and last elements
 (which you could do with "init" and "tail"),
 
 00:21:29,300 --> 00:21:31,050
@@ -1403,7 +1403,7 @@ I want to zip the infinite list of all the
 
 00:26:42,020 --> 00:26:47,260
 natural numbers including zero ([0..]) and
-the finite String "ab".
+the finite string "ab".
 
 00:26:47,260 --> 00:26:48,260
 What would you get?
@@ -1594,17 +1594,17 @@ Put the other way around:
 
 00:30:03,500 --> 00:30:07,700
 This expression and any other expression that
-also computes the square numbers, should be
+also computes the square numbers should be
 
 00:30:07,700 --> 00:30:09,290
 interchangeable here.
 
 00:30:09,290 --> 00:30:13,670
-And simply the fact that, from this specific
+And simply the fact that from this specific
 expression, we can see that it is the square
 
 00:30:13,670 --> 00:30:18,450
-numbers, does not mean that this is possible
+numbers does not mean that this is possible
 for any or every other expression that happens
 
 00:30:18,450 --> 00:30:20,660
@@ -1615,7 +1615,7 @@ But the two programs shouldn't behave differently.
 
 00:30:23,130 --> 00:30:28,630
 So, the only way to make sure that is the
-case, is that also in this case Haskell will
+case is that also in this case Haskell will
 
 00:30:28,630 --> 00:30:32,610
 actually try out all the numbers that come
@@ -1637,14 +1637,14 @@ Because there, the 3 really allows Haskell,
 the runtime system, the evaluation of the
 
 00:30:50,390 --> 00:30:53,120
-program, to know when it is done.
+program to know when it is done.
 
 00:30:53,120 --> 00:30:56,960
 It does not depend on the elements in the
 list.
 
 00:30:56,960 --> 00:31:04,110
-So, this is a cautionary example, that you
+So, this is a cautionary example that you
 shouldn't expect some mathematical magic.
 
 00:31:04,110 --> 00:31:05,980

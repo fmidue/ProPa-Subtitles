@@ -39,7 +39,7 @@ Haskell, and also that it's not possible in
 
 0:00:49.559,0:00:54.649
 Haskell, unlike in some more mathematical definitions
-to give functions, or function definitions,
+to give functions or function definitions,
 
 0:00:54.649,0:00:59.600
 where in an argument position one has an expression
@@ -115,7 +115,7 @@ want to return two for example, right, you
 
 0:02:12.250,0:02:19.970
 could say something like, if f gets two arguments,
-which are the same, so, we say something like
+which are the same, so we say something like
 
 0:02:19.970,0:02:23.450
 f of x and x, the same argument, then the
@@ -132,7 +132,7 @@ Yes, this would be mathematically something
 that you could interpret and take as well.
 
 0:02:34.420,0:02:37.561
-First argument is zero, the outcome is one,
+First argument is zero; the outcome is one;
 if the two arguments are the same, the outcome
 
 0:02:37.561,0:02:38.620
@@ -181,7 +181,7 @@ Yes, it is something that you can write and
 actually that you have to write if you want
 
 0:03:22.280,0:03:26.340
-to express the thing from this line and in
+to express the thing from this line, and in
 Haskell you have to write it like this, a
 
 0:03:26.340,0:03:27.890
@@ -196,23 +196,23 @@ allowed to have the same variable name in
 such a line where we decide which function
 
 0:03:44.520,0:03:47.820
-definition line to take on what the behaviour
+definition line to take on what the behavior
 will be.
 
 0:03:47.820,0:03:52.800
 Okay, this was the first remark about uniqueness
-of variable names in defining case.
+of variable names in defining cases.
 
 0:03:52.800,0:03:57.709
 Of course, x could be used in a different
-line, that would be no contradiction.
+line; that would be no contradiction.
 
 0:03:57.709,0:04:00.910
 But in the same line, we can't use the same
 variable name twice.
 
 0:04:00.910,0:04:06.709
-Okay, that was the first thing and there was
+Okay, that was the first thing, and there was
 this other remark about expressions in
 
 0:04:06.709,0:04:11.930
@@ -231,7 +231,7 @@ Well, for example, mathematics, something
 one could also do or could imagine being valid,
 
 0:04:22.590,0:04:23.590
-something like have a function.
+something like having a function.
 
 0:04:23.590,0:04:24.940
 Now it takes only one argument.
@@ -242,7 +242,7 @@ a 1.
 
 0:04:29.250,0:04:36.190
 If the argument is one, then I want to return
-two and maybe I have another case, like something
+two, and maybe I have another case, like something
 
 0:04:36.190,0:04:37.190
 two times n.
@@ -252,7 +252,7 @@ So, if f is applied to the double of a number,
 then for some reason this would be f of n.
 
 0:04:44.440,0:04:48.590
-And I put this in bracket even though it wouldn't
+And I put this in brackets even though it wouldn't
 be needed, but let's be safe.
 
 0:04:48.590,0:04:52.410
@@ -261,7 +261,7 @@ something is fishy here.
 
 0:04:52.410,0:04:58.180
 Let's say we call f recursively on the number
-n and want to add one, yes, it would be something
+n and want to add one; yes, it would be something
 
 0:04:58.180,0:05:02.190
 like a division function.
@@ -282,7 +282,7 @@ in a reasonable way.
 
 0:05:15.250,0:05:20.440
 But again, this is not something that we can
-write in Haskell, the compiler would accept,
+write in Haskell that the compiler would accept,
 
 0:05:20.440,0:05:25.250
 because it would mean that when you call f
@@ -304,8 +304,8 @@ and what the n actually is.
 And that's not something that happens in Haskell.
 
 0:05:45.360,0:05:54.889
-Yes, in Haskell cases are more simple,
-you must be able to, given the value decide
+Yes, in Haskell cases are more simple;
+you must be able to, given the value, decide
 
 0:05:54.889,0:06:00.720
 by looking at what appears in these positions,
@@ -323,7 +323,7 @@ different.
 And you will see this later.
 
 0:06:10.500,0:06:13.540
-But for Haskell, that's, so far, the rules.
+But for Haskell, that's so far the rules.
 
 0:06:13.540,0:06:15.430
 Okay.
@@ -368,7 +368,7 @@ oneself.
 
 0:07:03.630,0:07:08.960
 And then the two candidate definitions, the
-first one was well to say, well, True and
+first one was to say, well, True and
 
 0:07:08.960,0:07:18.570
 True is certainly True, and in all other cases
@@ -387,7 +387,7 @@ also mathematically correct.
 
 0:07:37.270,0:07:40.080
 But I mentioned that it has slightly different
-behaviour.
+behavior.
 
 0:07:40.080,0:07:41.930
 And I didn't go into detail what that is.
@@ -405,7 +405,7 @@ as above claim that the output is True, because
 the b here could be False.
 
 0:07:57.880,0:08:01.539
-But what I can say is that b and True, is
+But what I can say is that b and True is
 definitely b.
 
 0:08:01.539,0:08:04.300
@@ -413,7 +413,7 @@ Okay.
 
 0:08:04.300,0:08:17.139
 And I can also say that in all our cases,
-is again, basically, the outcome is False.
+again, basically, the outcome is False.
 
 0:08:17.139,0:08:22.150
 Yes, slightly different definition but defining
@@ -431,17 +431,17 @@ second argument is not True.
 And then, indeed, the outcomes would be False.
 
 0:08:33.839,0:08:36.010
-So, both definitions are all valid.
+So, both definitions are valid.
 
 0:08:36.010,0:08:40.270
 The second one's a bit more complicated looking,
-but it's-, well, it's all the same.
+but it's well, it's all the same.
 
 0:08:40.270,0:08:43.300
 Now, what's the difference between these definitions?
 
 0:08:43.300,0:08:46.850
-I mentioned last week that there's difference
+I mentioned last week that there's a difference
 in efficiency.
 
 0:08:46.850,0:08:53.570
@@ -531,7 +531,7 @@ Okay, let's check.
 
 0:10:28.760,0:10:38.810
 Well, let's just take the first definition.
-What will happen if we call- if we take
+What will happen if we call—if we take
 
 0:10:38.810,0:10:41.920
 this expression, this call, with the first
@@ -582,7 +582,7 @@ we see False is not True.
 
 0:11:30.890,0:11:35.410
 So, whatever the Ackermann function is, or
-the result Ackermann function is, we don't
+the result of the Ackermann function is, we don't
 
 0:11:35.410,0:11:39.050
 even need to check whether its outcome is
@@ -651,8 +651,8 @@ Well, let's see, when we want to find out
 whether or not this and what the outcome should
 
 0:13:12.630,0:13:21.440
-be, then we have to again, compare this expression
-here against the first, and the second line
+be, then we have to again compare this expression
+here against the first and the second line
 
 0:13:21.440,0:13:24.870
 of our new definition of conjunction.
@@ -671,11 +671,11 @@ argument position.
 
 0:13:38.490,0:13:42.769
 So, instead, what we have to do is you also
-have to look at the second positions, we have
+have to look at the second position, we have
 
 0:13:42.769,0:13:46.920
 to check whether the conditions here actually
-evaluates to True.
+evaluate to True.
 
 0:13:46.920,0:13:51.889
 Now, to do this, we have to compute the Ackermann
@@ -695,7 +695,7 @@ it will switch to the second line of the conjunction
 
 0:14:12.800,0:14:16.130
 and we also return False in both cases,
-of course, you get False as result.
+of course, you get False as the result.
 
 0:14:16.130,0:14:21.980
 But now the second definition, this is much
@@ -730,14 +730,14 @@ the compiler.
 
 0:14:53.750,0:14:57.400
 Here, it's simply a consequence of how function
-definitions works, right?
+definitions work, right?
 
 0:14:57.400,0:15:04.130
 So, there's nothing magical about the 'and' function.
 All functions that you define have this feature
 
 0:15:04.130,0:15:09.050
-or this behaviour, that they only compute the argument
+or this behavior, that they only compute the argument
 if it's absolutely necessary.
 
 0:15:09.050,0:15:12.600
@@ -752,7 +752,7 @@ the conjunction, we have choices to define it
 in two different ways.
 
 0:15:18.089,0:15:25.700
-And we as a programmer can basically decide
+And we as programmers can basically decide
 for which cases, depending on which of the
 
 0:15:25.700,0:15:32.269
@@ -770,7 +770,7 @@ It's called lazy evaluation, and we'll return
 to this later but I wanted to already point
 
 0:15:43.820,0:15:47.209
-this out, at least at this example.
+this out, at least in this example.
 
 0:15:47.209,0:15:54.339
 Okay, and then, the other thing I want to

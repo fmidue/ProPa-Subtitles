@@ -31,7 +31,7 @@ list of undetermined length, we would first take
 a look at the case with the empty list, you could
 
 0:00:47.680,0:00:56.800
-write this like so... however this tells prolog
+write this like so... however this tells Prolog
 that given an empty list and a variable X this
 
 0:00:56.800,0:01:01.280
@@ -39,11 +39,11 @@ should return true and this is not what we want,
 because an empty list doesn't have a penultimate,
 
 0:01:01.280,0:01:08.480
-so what do we do here? Unlike haskell which throws
+so what do we do here? Unlike Haskell which throws
 an error at us if we leave some case undefined
 
 0:01:09.120,0:01:13.360
-prolog doesn't do this, any undefined
+Prolog doesn't do this, any undefined
 case is simply false and we can
 
 0:01:13.360,0:01:19.680
@@ -52,7 +52,7 @@ this case, because we would want this to be false.
 
 0:01:21.840,0:01:27.200
 But I can still work with this, because we can
-extend this to the next case; Which would be a
+extend this to the next case; which would be a
 
 0:01:27.200,0:01:31.840
 list with just one element, but once again
@@ -123,7 +123,7 @@ now we're going to use the pipe character and
 
 0:03:03.600,0:03:08.640
 call the remaining list Xs; the pipe character
-kind of works like the double point in haskell,
+kind of works like the double point in Haskell,
 
 0:03:08.640,0:03:13.840
 so this tells it this is a list with a first
@@ -159,11 +159,11 @@ want. So this basically already solves our task.
 
 0:04:02.880,0:04:09.760
 Now we can save this and load it up into a
-prolog prompt, and now we can actually try out
+Prolog prompt, and now we can actually try out
 
 0:04:11.040,0:04:16.560
 our new predicate here with the examples from the
-task description. So i've taken this [a,b,c,d]
+task description. So I've taken this [a,b,c,d]
 
 0:04:17.200,0:04:24.240
 and element 'c', it should return true... and
@@ -194,7 +194,7 @@ find me a suitable substitution for X
 for which penultimate returns true",
 
 0:05:00.960,0:05:05.440
-so we're basically now asking prolog to
+so we're basically now asking Prolog to
 find the second to last element for us,
 
 0:05:05.440,0:05:10.400
@@ -223,11 +223,11 @@ then using the trace we can see the first call is
 
 0:05:43.280,0:05:49.840
 our parameter, this '(_3156)' is a placeholder
-value that prolog uses, whenever you see these
+value that Prolog uses, whenever you see these
 
 0:05:49.840,0:05:56.640
 underscore with some number value this is how
-prolog sees this Xs or whatever variable you've
+Prolog sees this Xs or whatever variable you've
 
 0:05:56.640,0:06:02.480
 used, and our 'a' that we're looking for and
@@ -267,7 +267,7 @@ already or what 'X' should be, and then it goes
 
 0:06:49.440,0:06:55.200
 through all the definitions it has in this rule
-set here and it sees "Okay, the first one tells me
+set here and it sees "Okay, the first one tells me"
 
 0:06:55.200,0:07:02.000
 here's X and here's a list with X in it as well,
@@ -286,7 +286,7 @@ that's the X that I already know and this
 is the X that needs to be in the list,
 
 0:07:18.640,0:07:23.360
-so i can build the list", and it takes a step back
+so I can build the list", and it takes a step back
 on the recursion, adds the elements it moved again
 
 0:07:24.000,0:07:31.040
@@ -314,7 +314,7 @@ do something else, because one of the interesting
 things to consider here is "What happens to all
 
 0:08:04.800,0:08:11.040
-of this, if we swap these rules around?". Let's
+of this, if we swap these rules around?" Let's
 say we thought of the recursion immediately and
 
 0:08:11.040,0:08:16.480
@@ -390,8 +390,8 @@ getting to the second case, which would be
 the only case where it actually sees "Okay,
 
 0:10:22.400,0:10:27.920
-this is the X i'm looking for and this is
-where it should be in the list". So basically
+this is the X I'm looking for and this is
+where it should be in the list." So basically
 
 0:10:28.560,0:10:33.920
 if we order it like this searching for list in

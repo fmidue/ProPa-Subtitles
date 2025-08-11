@@ -1,5 +1,5 @@
 0:00:01.120,0:00:04.560
-This task is based on previous CodeWord tasks.
+This task is based on previous CodeWorld tasks.
 
 0:00:05.360,0:00:11.920
 And these tasks were about some game with levels.
@@ -14,14 +14,14 @@ coordinate range from -10 to 10 for x and y.
 
 0:00:35.680,0:00:45.440
 We arrange it over this area in order to
-get to check if the levels are the same.
+check if the levels are the same.
 
 0:00:46.960,0:00:53.200
 A level is defined as a function from
 a pair of integers to an integer.
 
 0:00:55.200,0:01:05.840
-And this function shall be the isLessFilledThen
+And this function shall be the isLessFilledThan
 function that we have down below here.
 
 0:01:05.840,0:01:12.160
@@ -43,18 +43,17 @@ In fact functions of this type.
 So we have
 
 0:01:38.880,0:01:47.840
-a function from a pair of integer to integer
-and a function from pair of integer to integer.
+a function from a pair of integers to integer
+and a function from pair of integers to integer.
 
 0:01:49.360,0:01:51.360
 So let me write this.
 
 0:01:51.360,0:01:57.520
-Pair of integer and integer to integer.
+Pair of integers and integers to integer.
 
 0:01:57.520,0:02:02.960
-That's the function of the level –
-we have this as our first argument.
+That's the function of the level – we have this as our first argument.
 
 0:02:05.600,0:02:13.760
 And then we have the same
@@ -78,7 +77,7 @@ So we have level one and level two.
 Now we want to compare all those parts and
 
 0:02:57.440,0:03:01.360
-for this actually, i think, it's
+for this actually, I think, it's
 helpful to have a list comprehension.
 
 0:03:03.440,0:03:12.320
@@ -132,7 +131,7 @@ I think it's helpful to define a
 local function for this comparison.
 
 0:05:07.440,0:05:20.000
-I call it just has is lesser and it compares
+I call it just hasLesser and it compares
 the actual field that's the important thing.
 
 0:05:20.640,0:05:28.000
@@ -147,18 +146,18 @@ other cases we compare both values.
 And when they are equal we return true as well.
 
 0:05:43.600,0:05:53.600
-We can use is lesser here for
-our level 1 and our level two.
+We can use hasLesser here for
+our level one and our level two.
 
 0:05:55.920,0:05:58.800
 So we compare level one
 
 0:06:00.560,0:06:10.960
 with level two – well in fact at the moment
-the types do not match of level 1 and level 2.
+the types do not match of level one and level two.
 
 0:06:14.080,0:06:22.640
-For hasLesser, because level 1 and level 2 are
+For hasLesser, because level one and level two are
 functions but we have to give them pairs actually
 
 0:06:23.200,0:06:35.200
@@ -170,7 +169,7 @@ That's why I define the tuple or the
 point as the coordinate of x and y
 
 0:06:52.800,0:06:59.040
-and i give this point to both functions.
+and I give this point to both functions.
 
 0:07:00.240,0:07:09.040
 Okay, now the actual type of the function
@@ -189,10 +188,10 @@ How can we fix this?
 
 0:07:25.200,0:07:31.520
 We can say we don't want to have
-False as an element of our list.
+false as an element of our list.
 
 0:07:34.240,0:07:55.520
-If False is not element of our list then we
+If false is not an element of our list then we
 are happy with the result of this function.
 
 0:07:59.680,0:08:06.400
@@ -204,14 +203,14 @@ Therefore I define some very simple levels.
 
 0:08:12.720,0:08:22.000
 And these are levels which we
-can we can define very basically.
+can define very basically.
 
 0:08:22.000,0:08:25.840
 But because I just say they have just one field.
 
 0:08:27.600,0:08:35.520
 As I define them as levels they have
-type pair of integer to integer.
+type pair of integers to integer.
 
 0:08:37.200,0:08:42.800
 And the first one is a level which
@@ -223,13 +222,13 @@ equals zero and y equals zero.
 
 0:09:02.080,0:09:11.040
 And an air field has number
-4. So this is the air field.
+four. So this is the air field.
 
 0:09:11.040,0:09:14.960
-It's it's written here in the text as well.
+It's written here in the text as well.
 
 0:09:15.600,0:09:17.600
-Air field has integer code 4.
+Air field has integer code four.
 
 0:09:20.240,0:09:24.160
 Very importantly is that we
@@ -240,16 +239,16 @@ So if the value does not match zero, so we
 are not at point zero here, then we return
 
 0:09:36.720,0:09:40.240
-zero, which is blank, which outside of our field.
+zero, which is blank, which is outside of our field.
 
 0:09:41.600,0:09:43.840
 Then we define other fields.
 
 0:09:49.360,0:09:52.720
-Let's say –we have a pearl.
+Let's say – we have a pearl.
 
 0:10:00.240,0:10:03.840
-A pearl is 3.
+A pearl is three.
 
 0:10:04.640,0:10:13.120
 And then we have a field for block.
@@ -258,7 +257,7 @@ And then we have a field for block.
 To have another field that we can test.
 
 0:10:18.560,0:10:20.000
-Let's say this says one.
+Let's say this is one.
 
 0:10:22.080,0:10:30.000
 Now we can write a function test,
@@ -280,7 +279,7 @@ That always the x value is the same.
 
 0:11:12.960,0:11:27.840
 We can say this for air, we can say this
-for perl, and we can say this for block.
+for pearl, and we can say this for block.
 
 0:11:32.880,0:11:45.920
 – again: for block –
@@ -306,7 +305,7 @@ We can also test that the other parts are working.
 
 0:13:02.480,0:13:13.120
 It shall also be true that
-air is less filled than perl.
+air is less filled than pearl.
 
 0:13:14.400,0:13:17.680
 Because if we have the same at the same field ...
@@ -320,7 +319,7 @@ But it shall not be true if
 it's the other way around.
 
 0:13:46.400,0:13:48.960
-pearl is not less Filled than air.
+Pearl is not less filled than air.
 
 0:13:49.760,0:13:59.080
 Because if we have a field: If we have
@@ -342,7 +341,7 @@ working for other parts correctly as well.
 
 0:14:27.840,0:14:37.440
 It shall not be true that block is less
-filled than air and it shall also not be true
+filled than air and it shall also not be true.
 
 0:14:38.400,0:14:43.840
 that air is less filled than block.
@@ -384,8 +383,8 @@ the hasLesser function differently.
 You could have expressed this as
 
 0:15:51.120,0:16:06.240
-hasLesser x y is x equals 4
-and y equals 3 or x equals.
+hasLesser x y is x = 4
+and y = 3 or x =.
 
 0:16:08.800,0:16:18.640
 This is the same because we are just having
@@ -396,7 +395,7 @@ but by using a boolean expression
 fulfilling both parts here.
 
 0:16:26.320,0:16:31.520
-So this shall still fulfil the test here.
+So this shall still fulfill the test here.
 
 0:16:33.920,0:16:40.160
 Of course if you have a variant of this
@@ -418,7 +417,7 @@ levels and then comparing those.
 
 0:17:31.040,0:17:37.520
 I write an implementation in order
-to to show how this could look like.
+to show how this could look like.
 
 0:17:40.880,0:17:52.080
 The idea here is to basically also range over

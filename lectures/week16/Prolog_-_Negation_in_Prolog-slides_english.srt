@@ -363,7 +363,7 @@ I get false.
 
 00:07:23,440 --> 00:07:30,000
 Also, if I negate this again, then I
-don't get back to the original behaviour.
+don't get back to the original behavior.
 
 00:07:30,000 --> 00:07:30,400
 Yes.
@@ -508,7 +508,7 @@ Well, actually, in order to accept this
 negation-as-failure principle, we should at least say,
 
 00:10:27,760 --> 00:10:34,800
-well, if I said, I tried to prove positive thing
+well, if I said, I tried to prove a positive thing
 and I have really tried everything there is.
 
 00:10:35,440 --> 00:10:40,080
@@ -605,7 +605,7 @@ Okay, that's not how our world actually works.
 
 00:12:19,200 --> 00:12:24,880
 But that's how Prolog makes sense of the
-world with this close world assumption.
+world with this closed world assumption.
 
 00:12:24,880 --> 00:12:31,680
 (5 sec.)
@@ -621,7 +621,7 @@ still examples without variables, even though I
 
 00:12:45,840 --> 00:12:51,840
 just said two slides ago, that there's
-interesting behaviour when variables are involved.
+interesting behavior when variables are involved.
 
 00:12:51,840 --> 00:12:53,920
 But this will happen on another slide.
@@ -660,7 +660,7 @@ Okay, what will happen?
 
 00:13:20,960 --> 00:13:26,000
 Well, if I run this then I will
-run into an infinite behaviour.
+run into an infinite behavior.
 
 00:13:26,000 --> 00:13:28,160
 So, I will have to abort this.
@@ -692,7 +692,7 @@ derivation tree style.
 So, let's say it is our root query \+ p.
 
 00:13:53,520 --> 00:13:58,240
-Then what will Prolog do under the closed
+Then what Prolog will do under the closed
 world assumption is negation-of-failure.
 
 00:13:58,240 --> 00:14:03,680
@@ -720,7 +720,7 @@ the p, which is negated here.
 Okay, and well, will this entail?
 
 00:14:23,280 --> 00:14:27,120
-Well, this mean that we try to apply this rule.
+Well, this means that we try to apply this rule.
 
 00:14:27,120 --> 00:14:30,240
 Because it's the only rule with p in the program.
@@ -946,7 +946,7 @@ So, maybe takes a bit of thinking about these two
 cases, but they are really consistent with this
 
 00:18:44,240 --> 00:18:51,120
-negation-as-failure and close world assumption and
+negation-as-failure and closed world assumption and
 the necessity to have a finite failure in order
 
 00:18:51,120 --> 00:18:55,840
@@ -1079,7 +1079,7 @@ or Mia, the answer will be false.
 Okay, very reasonable.
 
 00:21:00,480 --> 00:21:08,560
-Now, sometimes maybe unreasonable behaviour happens
+Now, sometimes maybe unreasonable behavior happens
 when we indeed change the order of these two
 
 00:21:10,080 --> 00:21:11,280
@@ -1151,7 +1151,7 @@ But of course, this is in contradiction.
 Yes.
 
 00:22:05,440 --> 00:22:07,440
-If I ask, is there somebody who is single.
+If I ask, is there somebody who is single?
 
 00:22:07,440 --> 00:22:08,720
 The answer is false.
@@ -1160,14 +1160,14 @@ The answer is false.
 No.
 
 00:22:09,200 --> 00:22:10,560
-If I asked is Marsellus is single?
+If I asked is Marsellus single?
 
 00:22:10,560 --> 00:22:11,360
 The answer is true.
 
 00:22:11,360 --> 00:22:16,400
 Then, of course, I would have expected also
-here the answer X = marsellus.
+here the answer X = Marsellus.
 
 00:22:16,400 --> 00:22:20,160
 So, this is a contradiction
@@ -1245,8 +1245,8 @@ advice to always rename the variables.
 So, that we don't get any mix-ups.
 
 00:23:30,480 --> 00:23:37,920
-So, let's say I rename X and Y to
-X1 and Y1 in this program rule.
+So, let's say I rename x and y to
+x1 and y1 in this program rule.
 
 00:23:37,920 --> 00:23:40,640
 And unification and resolution step.
@@ -1259,11 +1259,11 @@ Well, then this will unify and I will get
 this right-hand side where I have replaced the
 
 00:23:48,160 --> 00:23:50,720
-X and Y by X1 and Y1.
+x and y by x1 and y1.
 
 00:23:50,720 --> 00:23:56,080
-And I remember that this X from the original
-query is from now on to be taken as the X1.
+And I remember that this x from the original
+query is from now on to be taken as the x1.
 
 00:23:56,080 --> 00:23:59,040
 Okay, so there is this simply
@@ -1273,7 +1273,7 @@ straightforward resolution.
 Okay, what happens then?
 
 00:24:01,840 --> 00:24:07,200
-Well, we have this human of X1
+Well, we have this human of x1
 as the next literal to deal with.
 
 00:24:07,200 --> 00:24:12,080
@@ -1282,21 +1282,21 @@ facts to resolve this with.
 
 00:24:13,440 --> 00:24:18,160
 So, one is, of course, this
-where X1 becomes Marsellus.
+where x1 becomes Marsellus.
 
 00:24:18,160 --> 00:24:24,240
 And that's also the first thing to try because
-human(marsellus) is the first fact in the program.
+human(Marsellus) is the first fact in the program.
 
 00:24:25,200 --> 00:24:28,080
 And then this means that this will disappear.
 
 00:24:28,080 --> 00:24:30,640
-We remember X1 is now marsellus.
+We remember x1 is now Marsellus.
 
 00:24:30,640 --> 00:24:37,360
 And we are left with the rest of the query where
-of course, X1 is also replaced by marsellus.
+of course, x1 is also replaced by Marsellus.
 
 00:24:37,360 --> 00:24:39,680
 So, we have this as the new query.
@@ -1332,7 +1332,7 @@ conclusion about whether or not the negated
 version should be taken to be true or false.
 
 00:25:18,400 --> 00:25:26,560
-Okay, so, we ask is there a Y1 such that
+Okay, so, we ask if there is a Y1 such that
 Marsellus is married to this person.
 
 00:25:26,560 --> 00:25:32,800
@@ -1365,7 +1365,7 @@ So, we have exhaustively tried but failed.
 Then we can say, well, then the negation is true.
 
 00:25:55,120 --> 00:25:56,880
-Okay, then we have success node.
+Okay, then we have a success node.
 
 00:25:56,880 --> 00:26:00,080
 And well, what about our X from the original query?
@@ -1374,7 +1374,7 @@ And well, what about our X from the original query?
 Well, we have a solution for this.
 
 00:26:01,440 --> 00:26:03,360
-X is X1, X1 is marsellus.
+X is X1, X1 is Marsellus.
 
 00:26:03,360 --> 00:26:04,800
 So, this is the answer.
@@ -1505,7 +1505,7 @@ example, from the previous slide,
 
 00:28:06,560 --> 00:28:12,720
 where we simply first dealt with this and found
-an instantiation for X1, namely, marsellus.
+an instantiation for X1, namely, Marsellus.
 
 00:28:12,720 --> 00:28:13,840
 We had Marsellus here.
@@ -1557,7 +1557,7 @@ we are in such a side branch,
 then one success kills all the others.
 
 00:28:58,000 --> 00:29:05,840
-So, as soon that there is one success, we
+So, as soon as there is one success, we
 will say that the negated thing is false.
 
 00:29:06,400 --> 00:29:08,400
@@ -1581,7 +1581,7 @@ tree, where there is one success.
 
 00:29:22,240 --> 00:29:26,960
 That's enough to say, well,
-\+ married(X1,Y1) is false.
+married(X1,Y1) is false.
 
 00:29:26,960 --> 00:29:30,160
 And if this is false, the
@@ -1598,14 +1598,14 @@ Because the thing that you want to
 negate has at least one solution.
 
 00:29:40,240 --> 00:29:41,760
-Different than on the previous slide.
+Different from the previous slide.
 
 00:29:42,640 --> 00:29:45,200
-And also, different than on the next slide,
+And also, different from the next slide,
 
 00:29:45,200 --> 00:29:53,840
 where we will look at the case where I run for
-this program, the query where X is marsellus.
+this program, the query where X is Marsellus.
 
 103 # slide
 00:29:56,480 --> 00:30:02,560
@@ -1628,11 +1628,11 @@ is resolution with this clause.
 
 00:30:16,800 --> 00:30:22,080
 So, now, X1 will directly become
-marsellus via unification.
+Marsellus via unification.
 
 00:30:22,080 --> 00:30:26,480
 And of course, in our query, we
-also have marsellus here and here.
+also have Marsellus here and here.
 
 00:30:28,080 --> 00:30:28,580
 Okay.
@@ -1649,7 +1649,7 @@ And since it's a negation, that means to
 investigate the negated thing in a side branch.
 
 00:30:42,320 --> 00:30:43,680
-So, married(marsellus,Y1).
+So, married(Marsellus,Y1).
 
 00:30:43,680 --> 00:30:46,240
 We have seen something similar to this before.
@@ -1669,10 +1669,10 @@ So, the negated thing is taken to be true.
 
 00:31:01,200 --> 00:31:05,920
 Yes, we tried to establish the
-thing that was negated, this failed.
+thing that was negated; this failed.
 
 00:31:07,120 --> 00:31:10,720
-And why a negation-as-failure, this
+And why a negation-as-failure; this
 means the negation is taken to be true.
 
 00:31:11,680 --> 00:31:14,800
@@ -1721,20 +1721,20 @@ really understanding what's going on,
 
 00:32:03,520 --> 00:32:10,400
 you should get a very good idea and
-understanding for how Prolog negation works.
+understanding of how Prolog negation works.
 
 00:32:10,400 --> 00:32:18,640
 And why and where the advice came
-from, that I gave that in the program
+from, that I gave, that in the program
 
 00:32:18,640 --> 00:32:27,840
 you should, if you have to use negation,
-put them at the end of your clauses.
+put it at the end of your clauses.
 
 104 # slide
 00:32:29,680 --> 00:32:35,280
 We can also try to understand from more
-of a logic perspective, by trying to
+of a logic perspective by trying to
 
 00:32:35,280 --> 00:32:40,560
 translate our relevant program
@@ -1773,7 +1773,7 @@ human(X) then this will instantiate the X.
 
 00:33:14,560 --> 00:33:17,600
 That was exactly what's
-happened in the examples, right?
+happening in the examples, right?
 
 00:33:17,600 --> 00:33:20,000
 Because we had this base X for human.
@@ -1782,7 +1782,7 @@ Because we had this base X for human.
 Okay, so let's say X is unbound.
 
 00:33:22,160 --> 00:33:26,240
-But if you have human (X) then this
+But if you have human(X), then this
 will give concrete values for X.
 
 00:33:26,960 --> 00:33:32,880
@@ -1794,7 +1794,7 @@ So, it's saying for all X,
 because X is originally unbound.
 
 00:33:36,880 --> 00:33:40,560
-For all x, something holds, namely, the
+For all x, something holds; namely, the
 right-hand side implies the left-hand side.
 
 00:33:40,560 --> 00:33:41,360
@@ -1849,7 +1849,7 @@ of free variables in Prolog.
 That's basically an existential quantification.
 
 00:34:21,120 --> 00:34:27,840
-So, it's asking well, for all X, if X is human,
+So, it's asking, well, for all X, if X is human,
 and there is no Y such that X is married to Y.
 
 00:34:28,800 --> 00:34:30,880
@@ -1904,7 +1904,7 @@ Okay, so the point is, this
 x here is a free variable.
 
 00:35:30,320 --> 00:35:32,800
-So, it's existentially quantified,
+So, it's existentially quantified;
 
 00:35:32,800 --> 00:35:36,080
 it's not yet bound to some specific
@@ -1915,7 +1915,7 @@ That's why this will in the logical
 
 00:35:40,000 --> 00:35:45,040
 reading conflate to not exists
-X, Y such as they are married.
+X, Y such that they are married.
 
 00:35:45,040 --> 00:35:48,640
 Okay, this must be true, and it
@@ -1955,7 +1955,7 @@ literal late in the query, late in the
 right-hand side of our clause to give
 
 00:36:36,160 --> 00:36:41,680
-the X a chance to first being instantiated
+the X a chance to first be instantiated
 by some other literals occurring in the code.
 
 00:36:42,720 --> 00:36:45,120
@@ -1974,20 +1974,20 @@ reasonably similar formal logic expressions.
 
 105 # slide
 00:37:10,480 --> 00:37:13,440
-Okay, as summary on this part about negation,
+Okay, as a summary on this part about negation,
 
 00:37:14,400 --> 00:37:19,280
-let's conclude well, it's
+let's conclude, well, it's
 not real logical negation.
 
 00:37:19,280 --> 00:37:22,480
-Yes, it has this negation-as-failure flavour.
+Yes, it has this negation-as-failure flavor.
 
 00:37:22,480 --> 00:37:25,920
-And that's not what usually negation in logic is,
+And that's not what usually negation in logic is.
 
 00:37:25,920 --> 00:37:32,560
-we simply have to accept this that Prolog doesn't
+we simply have to accept that Prolog doesn't
 establish or provide a real logical negation.
 
 00:37:32,560 --> 00:37:34,320
@@ -1995,7 +1995,7 @@ Instead, there is the negation-as-failure concept,
 
 00:37:34,320 --> 00:37:39,600
 which is often good enough, which is useful in
-many programs, but it's not real logic negation.
+many programs, but it's not real logical negation.
 
 00:37:39,600 --> 00:37:42,400
 We have seen in what sense it is not.
@@ -2008,7 +2008,7 @@ properties like double negation being
 the same as the original literal.
 
 00:37:48,960 --> 00:37:53,680
-Okay, and all these strange behaviours
+Okay, and all these strange behaviors
 with or without variables.
 
 00:37:55,680 --> 00:37:57,120
@@ -2037,7 +2037,7 @@ branch in that it doesn't influence,
 
 00:38:23,920 --> 00:38:29,040
 it only tells us whether to consider
-the negated literal, true or false.
+the negated literal true or false.
 
 00:38:29,040 --> 00:38:32,640
 It doesn't otherwise influence
@@ -2118,7 +2118,7 @@ It was giving an answer, a positive answer, yes.
 But asking for single(X) didn't give an answer.
 
 00:39:48,400 --> 00:39:51,760
-That defies compositionality of queries.
+That defies the compositionality of queries.
 
 00:39:53,120 --> 00:39:53,520
 Okay.

@@ -2,7 +2,7 @@
 Task number 22.
 
 0:00:03.200,0:00:07.440
-In this task the customer gives us
+In this task, the customer gives us
 two values: a number and a factor.
 
 0:00:08.000,0:00:13.200
@@ -10,8 +10,8 @@ This is the number of squares that they want.
 And this is the scaling factor.
 
 0:00:15.600,0:00:20.480
-And depending on the number on the
-factor we produce something like this.
+And depending on the number and the
+factor, we produce something like this.
 
 0:00:21.120,0:00:27.920
 So, this here is the output when we
@@ -23,15 +23,15 @@ translated by some value to the right.
 
 0:00:36.720,0:00:40.880
 The first square is translated by
-2 which is the first prime number.
+2, which is the first prime number.
 
 0:00:40.880,0:00:46.560
-The second square is translated by 3 which
+The second square is translated by 3, which
 is the second prime number, and so on.
 
 0:00:48.080,0:00:55.280
 And how do we get the prime numbers?
-Luckily for us we have this function here.
+Luckily for us, we have this function here.
 
 0:00:55.280,0:01:02.240
 This function gives us a list of all prime
@@ -45,7 +45,7 @@ So, we can get as many prime
 numbers from it as we need.
 
 0:01:13.520,0:01:17.440
-Also we have assortedColors which
+Also, we have assortedColors, which
 is an infinite list of colors.
 
 0:01:18.160,0:01:20.240
@@ -53,19 +53,19 @@ So, now we have two infinite lists.
 
 0:01:21.440,0:01:30.800
 And now let's say the customer wants 10
-squares which means we get 10 elements from
+squares, which means we get 10 elements from
 
 0:01:32.320,0:01:36.320
 each of these two lists.
 And this is how we do it.
 
 0:01:36.320,0:01:42.240
-We say take 10 for example
+We say take 10, for example,
 from the list assortedColors.
 
 0:01:43.920,0:01:49.680
 And we have to do the same for the
-other infinite list which is primes.
+other infinite list, which is primes.
 
 0:01:51.840,0:01:56.720
 Yes, it's called primes.
@@ -92,7 +92,7 @@ instead I'm going to do this:
 “zip” assortedColors and primes.
 
 0:02:40.320,0:02:49.840
-Now what we have here is infinite list. We take
+Now what we have here is an infinite list. We take
 exactly the number that the customer wants.
 
 0:02:54.320,0:02:58.560
@@ -108,7 +108,7 @@ And here in the task it says:
 
 0:03:18.240,0:03:22.160
 they have the size of five by five.
-Five by five squares okay.
+Five by five squares, okay.
 
 0:03:27.440,0:03:32.160
 And here we have a tuple.
@@ -119,21 +119,21 @@ whatever… a prime number. That's a p.
 
 0:03:44.160,0:03:59.600
 And each rectangle or each square is translated
-by p which is the prime number, and 0 because
+by p, which is the prime number, and 0 because
 
 0:03:59.600,0:04:04.800
 it's not going to… it's going to
 be translated only horizontally.
 
 0:04:09.440,0:04:13.840
-And of course we need to
+And of course, we need to
 color it with the color c.
 
 0:04:20.160,0:04:20.800
 Here we have it.
 
 0:04:24.320,0:04:33.120
-This here is number not numbers.
+This here is number, not numbers.
 Now this list contains Pictures
 
 0:04:33.920,0:04:41.920
@@ -142,11 +142,11 @@ this function. We still have a small problem here
 
 0:04:41.920,0:04:49.120
 which is p, because the function “translated”
-expects Double, it doesn't expect Integer,
+expects Double; it doesn't expect Integer,
 
 0:04:50.480,0:04:58.000
 while p here is an Integer, because it comes from
-this list primes which is a list of Integers.
+this list primes, which is a list of Integers.
 
 0:05:00.240,0:05:15.600
 To solve this problem, we do fromIntegral.
@@ -162,7 +162,7 @@ And this is okay.
 
 0:05:32.400,0:05:39.520
 But we still have two problems:
-first problem is the size of squares.
+the first problem is the size of squares.
 
 0:05:40.080,0:05:44.320
 It's too big.
@@ -174,11 +174,11 @@ order in which they appear.
 
 0:05:51.280,0:05:57.840
 So, we have the red square on top here.
-But with what we want is the blue one
+But what we want is the blue one
 
 0:05:57.840,0:06:05.840
-is on top of the red one, the yellow one
-is on top of the blue one, and so on.
+on top of the red one, the yellow one
+on top of the blue one, and so on.
 
 0:06:06.640,0:06:19.840
 So, first, I'm going to reverse the list
@@ -195,19 +195,19 @@ Since everything here is just one Picture
 in the end, because we have this function
 
 0:06:48.800,0:06:57.760
-“pictures”, so we can scale it all at
+“pictures”, we can scale it all at
 once by using the function dilated factor.
 
 0:07:00.560,0:07:12.640
-And we need brackets of course, so that this
+And we need brackets, of course, so that this
 whole thing here gets considered as one parameter.
 
 0:07:15.520,0:07:16.560
 And now let's test.
 
 0:07:23.200,0:07:29.840
-As you can see, it's working if we
-compare it to this one it's the same.
+As you can see, it's working. If we
+compare it to this one, it's the same.
 
 0:07:32.800,0:07:38.400
 And now we have this part of the task where
@@ -215,10 +215,10 @@ we should write our function this way,
 
 0:07:39.600,0:07:49.040
 where g takes care of the general list
-manipulations such as, “take”, “zip”, “reverse”,
+manipulations such as “take”, “zip”, “reverse”,
 
 0:07:50.240,0:07:53.520
-and f takes care of the rest which are
+and f takes care of the rest, which are
 
 0:07:53.520,0:08:00.400
 the things that have to do with Pictures
@@ -234,7 +234,7 @@ So, g takes two lists and then applies
 
 0:08:18.640,0:08:25.840
 specific number, and then it “reverse”s them.
-So, we have three parameters: one two and three.
+So, we have three parameters: one, two, and three.
 
 0:08:26.880,0:08:47.040
 Let's copy this here.
@@ -242,7 +242,7 @@ Numbers or number and x's and y's.
 
 0:08:51.280,0:08:58.240
 This one here would be y’s.
-This one here would be x's and number is the same.
+This one here would be x's, and number is the same.
 
 0:08:59.520,0:09:07.840
 And now let's make f.
@@ -257,22 +257,22 @@ a factor.
 So, we need two parameters here:
 
 0:09:40.480,0:09:42.080
-list and factor
+list and factor.
 
 0:09:47.360,0:09:49.840
 We'll put the list here.
 
 0:09:55.760,0:09:59.360
 And we put the factor here.
-Yeah we have it already.
+Yeah, we have it already.
 
 0:10:01.200,0:10:06.400
 This should be done.
-I believe that's it
+I believe that's it.
 
 0:10:09.520,0:10:15.040
 First, I'm going to swap these two
-parameters because to make it easier to read.
+parameters to make it easier to read.
 
 0:10:17.280,0:10:20.800
 And then let's rewrite our function using f and g.
@@ -282,7 +282,7 @@ I'm going to keep the original function
 here as a comment just in case.
 
 0:10:29.520,0:10:40.160
-So, first we have g which takes number and takes
+So, first we have g, which takes a number and takes
 two lists, which are in our case these two lists.
 
 0:10:40.160,0:10:44.000
@@ -313,14 +313,14 @@ As you can see, it's working.
 
 0:11:32.320,0:11:37.680
 This means now we don't need this anymore.
-But actually I'm just going to keep it here,
+But actually, I'm just going to keep it here,
 
 0:11:37.680,0:11:41.840
-so that we can look at it, and compare.
+so that we can look at it and compare.
 We can see the original function here.
 
 0:12:12.720,0:12:14.080
-Yes that was it.
+Yes, that was it.
 
 0:12:16.000,0:12:19.120
 No… actually, we are not done yet.
@@ -328,15 +328,15 @@ We should write the type
 
 0:12:19.120,0:12:26.240
 signatures for the functions.
-So, f takes a factor which is Double,
+So, f takes a factor, which is Double,
 
 0:12:28.880,0:12:38.240
 and it takes a list… this list.
 And since we know already that this list is going
 
 0:12:38.240,0:12:45.600
-to be a list of tuples of which the first element
-is always going to be a color and the second
+to be a list of tuples, of which the first element
+is always going to be a color, and the second.
 
 0:12:46.880,0:12:51.840
 element is going to be an
@@ -348,7 +348,7 @@ going to give us a Picture.
 
 0:13:06.640,0:13:10.880
 As you can see here, we have
-this function “pictures”.
+this function "pictures".
 
 0:13:11.680,0:13:15.120
 So, everything here inside these
@@ -356,7 +356,7 @@ brackets is going to be one Picture.
 
 0:13:15.120,0:13:17.440
 and then we're just going
-to apply “dilated” on it.
+to apply "dilated" on it.
 
 0:13:18.080,0:13:25.680
 So, it stays as a Picture.
@@ -368,7 +368,7 @@ Integer and it takes two lists.
 
 0:13:38.000,0:13:42.880
 And it applies these three functions
-on them: “zip”, “take”, and “reverse”.
+on them: "zip", "take", and "reverse".
 
 0:13:43.600,0:13:48.240
 And we know that these three functions

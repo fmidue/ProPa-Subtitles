@@ -11,12 +11,12 @@ First we recreate the picture from
 last week, some old definitions here,
 
 0:00:31.840,0:00:40.400
-so now since this is now not a yellow
-circle anymore but the sun, might be
+so now since this is not a yellow
+circle anymore but the sun, it might be
 
 0:00:40.400,0:00:48.720
 useful to actually call it that, also this is no
-longer a green rectangle it should be grass now.
+longer a green rectangle; it should be grass now.
 
 0:00:51.840,0:01:00.080
 Okay, so then we just say
@@ -81,7 +81,7 @@ on a layer higher than the grass, so we want the
 
 0:03:16.960,0:03:25.680
 sun to sink below the grass, so we need to put the
-grass on a higher level, so to speak than the sun.
+grass on a higher level, so to speak, than the sun.
 
 0:03:30.240,0:03:40.000
 Okay, then it will now vanish behind the grass,
@@ -96,12 +96,12 @@ so let's restrict the movement. How
 do we do this? There are several ways,
 
 0:03:53.440,0:03:59.760
-first i will show you how to do it by
+first I will show you how to do it by
 introducing a modified time parameter,
 
 0:03:59.760,0:04:12.720
-so i add a where clause find this t prime
-and I just say, this check whether t is
+so I add a where clause, find this t prime
+and I just say this checks whether t is
 
 0:04:15.360,0:04:16.560
 smaller than something,
@@ -110,12 +110,12 @@ smaller than something,
 let's use pi for half a circle
 
 0:04:23.280,0:04:32.960
-then i use t and if t is greater than
-pi then i use pi, so i fix this t
+then I use t and if t is greater than
+pi then I use pi, so I fix this t
 
 0:04:35.200,0:04:42.480
 such that it no longer grows bigger than pi,
-making the movement stop at some point and then i
+making the movement stop at some point and then I
 
 0:04:42.480,0:04:49.760
 use this "t prime" to rotate the sun over there,
@@ -138,7 +138,7 @@ here so we just change this translation.
 
 0:05:22.080,0:05:32.720
 Like this, and now the sun starts behind the
-grass, goes half a circle and then sets behind the
+grass, goes half a circle, and then sets behind the
 
 0:05:32.720,0:05:44.880
 grass again. Okay, so this is our basic animation,
@@ -146,7 +146,7 @@ now this is not the only way we can solve this.
 
 0:05:48.880,0:05:56.240
 We could instead of modifying the
-time parameter, could say okay,
+time parameter say okay,
 
 0:05:56.240,0:06:00.480
 we check on the time and then either we have...
@@ -179,14 +179,14 @@ sun anymore, because there's this "blank"
 
 0:07:00.320,0:07:13.520
 image in the composition here, after we've
-done that this change. Okay, so then what we
+done that change. Okay, so then what we
 
 0:07:13.520,0:07:21.520
 can also do is write this if expression inline,
-precisely because if expressions in haskell are
+precisely because if expressions in Haskell are
 
 0:07:23.760,0:07:30.160
-first class expressions, so we don't
+first-class expressions, so we don't
 need this where clause necessarily,
 
 0:07:30.160,0:07:35.280
@@ -202,7 +202,7 @@ even more, but let's look at one more. If you
 
 0:07:52.000,0:08:02.400
 realize that actually, since this if then else is
-kind of first class here in haskell, we can even
+kind of first-class here in Haskell, we can even
 
 0:08:05.520,0:08:15.120
 think about a slightly different version
@@ -251,7 +251,7 @@ and otherwise it's pi". So, what this
 essentially is is the minimum of t and pi.
 
 0:09:54.800,0:09:57.760
-And now i'm missing a parentheses...
+And now I'm missing a parenthesis...
 
 0:10:03.840,0:10:13.680
 And we have the same animation and it

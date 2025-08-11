@@ -6,7 +6,7 @@ Again we have been given a
 result as it shall look like,
 
 0:00:10.560,0:00:15.920
-which we can view in code world and I load it now.
+which we can view in CodeWorld and I load it now.
 
 0:00:16.640,0:00:22.000
 There we see, we shall draw a
@@ -95,7 +95,7 @@ until this time point is reached and then
 
 0:03:05.520,0:03:17.840
 we can stop the animation - which is not what
-we want to achieve in in this particular case.
+we want to achieve in this particular case.
 
 0:03:20.960,0:03:27.680
 Or let's just keep these values, so
@@ -117,7 +117,7 @@ would finally stop at this point and the
 balloon is not growing anymore.
 
 0:03:54.320,0:04:02.000
-We can we have a second stage however
+We can have a second stage however
 where the balloon shall shrink.
 
 0:04:03.120,0:04:08.960
@@ -137,7 +137,7 @@ shall be bigger than the first one.
 
 0:04:32.800,0:04:42.080
 And we do not check within the guard if - so
-we could check that t is greater equal time1,
+we could check that t is greater than or equal to time1,
 
 0:04:44.880,0:04:52.800
 but as we have learned in the lecture
@@ -173,7 +173,7 @@ move to this point and then it will stop properly.
 I want to define the size of the balloon as well.
 
 0:05:49.920,0:05:58.800
-So i want to have the sizes at the
+So I want to have the sizes at the
 stages when it ends - so the first one is
 
 0:05:58.800,0:06:08.320
@@ -189,7 +189,7 @@ it finishes a bit earlier and now when I want
 to reach size1 at a certain point of time.
 
 0:06:34.400,0:06:41.520
-And i want to reach size1 when time1 is reached.
+And I want to reach size1 when time1 is reached.
 
 0:06:43.840,0:06:49.760
 I could simply say size1 is reached exactly when I
@@ -208,7 +208,7 @@ stage with a balloon of size six
 
 0:07:21.280,0:07:28.040
 and now we have this jump which
-we have to get rid of of course .
+we have to get rid of of course.
 
 0:07:30.400,0:07:33.920
 Now we have to figure out what
@@ -222,8 +222,7 @@ First of all, when we start this stage
 the time point is time1 here t is
 
 0:07:51.840,0:07:57.440
-greater than or it's equal to
-time1 but it's less than time2.
+greater than or equal to time1 but it's less than time2.
 
 0:08:02.400,0:08:10.880
 We have the size1 which is the starting point
@@ -231,7 +230,7 @@ and now we subtract something - we subtract
 
 0:08:12.240,0:08:23.440
 the difference between the sizes at
-this particular time steps. Right?
+these particular time steps. Right?
 
 0:08:27.280,0:08:39.920
 We have size2 minus size1 - oh well -
@@ -292,7 +291,7 @@ achieve the size we have in the last stage.
 
 0:10:35.440,0:10:43.840
 The size of the last stage is just
-- the size of - it's just size 2.
+- the size of - it's just size2.
 
 0:10:43.840,0:10:46.320
 That's what we want to reach in the final stage.
@@ -302,14 +301,14 @@ If we apply this, then we see we get an
 increasing balloon and a shrinking one
 
 0:10:54.320,0:11:00.240
-and we end at the exact size of size 2. Okay?
+and we end at the exact size of size2. Okay?
 
 0:11:06.480,0:11:10.400
 I want to just stress one point,
 
 0:11:11.600,0:11:20.240
 your solution should not contain something like
-this here: t is greater or equal to time two
+this here: t is greater than or equal to time2
 
 0:11:23.440,0:11:30.640
 because this would lead to a non-exhaustiveness
@@ -324,28 +323,28 @@ that's why we use the otherwise here. Okay?
 
 0:11:38.560,0:11:46.080
 And now there is just a little detail
-missing and that's the colouring.
+missing and that's the coloring.
 
 0:11:47.600,0:11:51.840
 For all these circles there
-shall be colouring additionally
+shall be coloring additionally
 
 0:11:53.440,0:12:05.280
-and I want to have different colours here.
+and I want to have different colors here.
 
 0:12:05.280,0:12:07.520
-We we can choose any color.
+We can choose any color.
 
 0:12:07.520,0:12:11.520
-There is no colour given, we have to choose.
+There is no color given, we have to choose.
 
 0:12:11.520,0:12:18.480
-So we can just say coloured
+So we can just say colored
 green for the first one, and
 
 0:12:22.080,0:12:32.400
-coloured yellow for the second one,
-and coloured red for the third one.
+colored yellow for the second one,
+and colored red for the third one.
 
 0:12:33.760,0:12:40.240
 It's now like the traffic
@@ -359,36 +358,36 @@ In order to draw the circle.
 
 0:12:51.360,0:13:06.960
 We would like that so we can use - say
-coloured circle is with colour and size is
+colored circle is with color and size is
 
 0:13:09.280,0:13:18.080
-coloured spell it like this: colour
+colored spell it like this: color
 
 0:13:26.640,0:13:34.880
-coloured colour - and then
+colored color - and then
 solid circle with the given size
 
 0:13:35.520,0:13:42.240
 and then we can refactor the
-code by using the colouredCircle.
+code by using the coloredCircle.
 
 0:13:47.200,0:13:58.800
-Say here: colouredCircle green and then we can
+Say here: coloredCircle green and then we can
 reuse this part in all of our parts in order to
 
 0:14:00.240,0:14:03.760
 reduce the size of the code a bit.
 
 0:14:08.320,0:14:12.160
-colouredCircle and then
+coloredCircle and then
 
 0:14:21.040,0:14:30.880
 So size two, this is the same code
 - actually just a bit refactored
 
 0:14:30.880,0:14:39.200
-now we have all our circles coloured by
-giving a parameter for colour and the size.
+now we have all our circles colored by
+giving a parameter for color and the size.
 
 0:14:40.080,0:14:47.360
 Then we - maybe to decrease the line

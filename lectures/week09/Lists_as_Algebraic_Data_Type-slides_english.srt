@@ -8,7 +8,7 @@ computation by pattern matching which of course
 was just another way, an additional way to
 
 00:00:17,760 --> 00:00:23,520
-programming by case distinction. Except that this
+program by case distinction. Except that this
 time, case distinction was not via if-then-else
 
 00:00:23,520 --> 00:00:31,360
@@ -25,11 +25,11 @@ matching drives computation in Haskell
 
 00:00:45,920 --> 00:00:52,560
 in general. Basically, also how lazy evaluation
-is ultimately driven by pattern-matching. But
+is ultimately driven by pattern matching. But
 
 00:00:52,560 --> 00:00:58,320
 before doing that, we will actually take a look
-at lists, which so far in the lecture have got
+at lists, which so far in the lecture have gotten
 
 00:00:58,320 --> 00:01:04,320
 some special treatment via specific syntax, via
@@ -53,7 +53,7 @@ Then we would define one ourselves.
 We certainly could do that
 
 00:01:28,880 --> 00:01:33,520
-using the kind of the definition we saw
+using the kind of definition we saw
 last week. And since lists are polymorphic,
 
 00:01:33,520 --> 00:01:37,440
@@ -138,7 +138,7 @@ as a successor list which is the empty list. And
 
 00:03:27,040 --> 00:03:33,280
 this together would be a list of Ints. And how
-to compute over this? By pattern-matching. So,
+to compute over this? By pattern matching. So,
 
 00:03:33,280 --> 00:03:39,600
 if we want to compute the length of such a list
@@ -367,7 +367,7 @@ Many list functions, when we look at their
 definitions, will be defined like this with the
 
 00:09:05,440 --> 00:09:10,000
-empty list case and exactly will non-empty
+empty list case and exactly the non-empty
 list case. We can also have additional cases.
 
 00:09:10,000 --> 00:09:16,960
@@ -400,11 +400,11 @@ so the first list can be empty, and then,
 
 00:09:51,680 --> 00:09:55,520
 if we append that with some other list,
-then we get simply get that other list.
+then we simply get that other list.
 
 00:09:55,520 --> 00:10:00,400
-Or the first this could be non-empty, then
-it decomposes into first element and some
+Or the first could be non-empty, then
+it decomposes into the first element and some
 
 00:10:00,400 --> 00:10:08,400
 rest list. And then appending this with a new
@@ -484,14 +484,14 @@ It does pattern-matching. And one possibility
 
 00:11:53,360 --> 00:11:59,040
 to go about this is to, first, match against the
-case where both lists all non-empty. The first one
+case where both lists are non-empty. The first one
 
 00:11:59,840 --> 00:12:03,680
 decomposes into a first element
 x and some rest, and the second
 
 00:12:03,680 --> 00:12:07,680
-decomposes into a list non-empty list
+decomposes into a non-empty list
 with the first element y and some rest.
 
 00:12:07,680 --> 00:12:14,240
@@ -499,7 +499,7 @@ And what to return then? The pair (x,y)
 and whatever 'zip' returns for the two rest
 
 00:12:15,520 --> 00:12:22,080
-lists. And then in this case, the can have another
+lists. And then in this case, there can be another
 default rule which applies in all situations where
 
 00:12:22,080 --> 00:12:27,120
@@ -519,11 +519,11 @@ ignore whatever actually are the concrete lists
 that we get, and simply return the empty list.
 
 00:12:48,160 --> 00:12:57,840
-Something else that becomes apparent her now
+Something else that becomes apparent here now
 is that this recursion pattern or the way
 
 00:12:57,840 --> 00:13:03,360
-that lists are seen as special Trees which
+that lists are seen as special trees which
 lean in one direction has consequences for
 
 00:13:03,920 --> 00:13:07,840
@@ -532,7 +532,7 @@ So, what we see here in the append function,
 
 00:13:07,840 --> 00:13:13,520
 for example, is that it takes as many steps to
-compute the 'append' as: the first element has
+compute the 'append' as the first element has
 
 00:13:13,520 --> 00:13:19,200
 elements. We see the recursions on the first
@@ -551,7 +551,7 @@ for example, also, the 'last' function or the list
 indexing is linear. The 'last' function is linear
 
 00:13:40,320 --> 00:13:46,320
-and the length of the input list, and the index
+in the length of the input list, and the index
 function… so, the exclamation mark (!!) that I
 
 00:13:47,280 --> 00:13:56,160
@@ -581,7 +581,7 @@ lists. And that's a typical case where one
 
 00:14:35,280 --> 00:14:39,360
 considers this in particular if one has a
-function that operate on more than one list.
+function that operates on more than one list.
 
 00:14:39,360 --> 00:14:45,920
 So, for the zip function we could, maybe as the
@@ -597,7 +597,7 @@ we get the empty list. And if the first list
 
 00:14:56,240 --> 00:15:01,200
 is not empty and the second is empty, we also get
-the empty list. And only then, we have the fully
+the empty list. And only then do we have the fully
 
 00:15:01,200 --> 00:15:07,600
 recursive case where both lists are non-empty.
@@ -621,7 +621,7 @@ if we move this to the first place, then we would,
 
 00:15:30,400 --> 00:15:37,520
 first, check against the case that both of the
-lists on non-empty. And if that is not the case,
+lists are non-empty. And if that is not the case,
 
 00:15:37,520 --> 00:15:42,400
 we would anyway run into one of these cases. We
@@ -653,7 +653,7 @@ position, and only if one of the lists
 
 00:16:21,440 --> 00:16:26,160
 is actually finite, then after some finite
-numbers of steps we would end up in one of
+number of steps we would end up in one of
 
 00:16:26,160 --> 00:16:30,080
 these cases where we return the empty list. But
@@ -734,7 +734,7 @@ takes a function argument which is a function.
 
 00:18:24,320 --> 00:18:29,120
 It takes a list. What does it do? What it needs
-to distinguish, is the list the empty list? Then
+to distinguish is the list the empty list? Then
 
 00:18:29,120 --> 00:18:34,080
 mapping whatever over it will still be the empty
@@ -766,15 +766,15 @@ programming, that while we mainly looked at
 
 00:19:09,680 --> 00:19:16,320
 lists and list computations, also for
-other datatypes he can have, for example,
+other datatypes we can have, for example,
 
 00:19:16,320 --> 00:19:22,000
 higher-order functions which correspond to things
-that, on lists, corresponds to list comprehension.
+that, on lists, correspond to list comprehension.
 
 00:19:22,000 --> 00:19:28,160
-While we don't have Tree comprehensions like we
-list comprehensions, we do have Tree versions of
+While we don't have tree comprehensions like we
+do list comprehensions, we do have tree versions of
 
 00:19:28,160 --> 00:19:35,120
 typical functions that we apply to lists in order
@@ -794,7 +794,7 @@ over an empty Tree? Then we get an empty Tree.
 
 00:19:55,120 --> 00:20:00,720
 And for the recursive case, we simply get a new
-Node while we have applied the function to do
+Node while we have applied the function to the
 
 00:20:00,720 --> 00:20:07,920
 label at that Node, and we have two recursive calls
@@ -802,7 +802,7 @@ of the same function with the mapping function.
 
 144 # slide
 00:20:13,360 --> 00:20:20,480
-Yet another example. Earlier, we mentioned, when
+Yet another example. Earlier, we mentioned when
 we talked about higher-order functions, is foldl1
 
 00:20:21,040 --> 00:20:26,320
@@ -823,10 +823,10 @@ imagine how this would be defined using this list
 
 00:20:46,080 --> 00:20:52,080
 pattern-matching syntax. On this slide, let me not
-define, exactly, this operator / this function,
+define exactly this operator / this function,
 
 00:20:52,080 --> 00:20:58,720
-but instead, a similar one, the foldr function
+but instead a similar one, the foldr function
 because that's more prominent and more often used,
 
 00:20:59,680 --> 00:21:10,080
@@ -851,7 +851,7 @@ the foldl1 function has problems with infinite
 
 00:21:33,360 --> 00:21:41,200
 lists, while foldr works with infinite lists as we
-can see basically by the fact that even in if this
+can see basically by the fact that even if this
 
 00:21:41,200 --> 00:21:47,920
 would be an infinite list, so xs would not end at

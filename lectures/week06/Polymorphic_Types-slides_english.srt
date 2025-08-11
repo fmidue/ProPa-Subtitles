@@ -1,6 +1,6 @@
 92 # slide
 00:00:02,060 --> 00:00:11,400
-After this excurse on wholemeal programming,
+After this excursion on wholemeal programming,
 let us consider a language feature again.
 
 00:00:11,400 --> 00:00:15,340
@@ -698,7 +698,7 @@ That's why we have a list of "a"s, an integer
 (which must really be an integer, it can't
 
 00:11:44,670 --> 00:11:50,290
-be a Bool or something strange else), and
+be a Bool or something strange), and
 the result will be an "a".
 
 00:11:50,290 --> 00:11:51,600
@@ -722,7 +722,7 @@ whatever, it always works.
 
 00:12:07,480 --> 00:12:10,190
 But the first argument must be a number and
-not something strange else.
+not something strange.
 
 00:12:10,190 --> 00:12:19,230
 For example, the 'splitAt' function, which
@@ -858,7 +858,7 @@ So, apparently the type must be different
 than the type of ++ because for ++ we said:
 
 00:14:23,600 --> 00:14:30,550
-We give it two lists of same element type,
+We give it two lists of the same element type,
 and it gives back a list of the same kind.
 
 00:14:30,550 --> 00:14:35,380
@@ -911,10 +911,10 @@ but it must be the same list type in the first
 and the second argument.
 
 00:15:22,640 --> 00:15:23,779
-What we are saying here, is:
+What we are saying here is:
 
 00:15:23,779 --> 00:15:27,980
-We don't care what kind of lists we get, we
+We don't care what kind of lists we get; we
 don't even care whether the first and the
 
 00:15:27,980 --> 00:15:29,290
@@ -947,7 +947,7 @@ they don't *have* to be the same type.
 
 00:15:57,019 --> 00:16:02,010
 In that sense, we can more flexibly use this
-than for example the ++.
+than, for example, the ++.
 
 00:16:02,010 --> 00:16:06,600
 This is important: Different type variables
@@ -990,14 +990,14 @@ of numbers, then this "a" becomes Char because
 
 00:16:46,889 --> 00:16:51,940
 this is a list of characters, this "b" becomes
-Int, because this is a list of integers.
+Int because this is a list of integers.
 
 00:16:51,940 --> 00:16:53,350
 And what is the outcome list?
 
 00:16:53,350 --> 00:17:00,720
-It's a list of pairs of "a = Char" and "b
-= Int".
+It's a list of pairs of "a" = Char and "b"
+= Int.
 
 00:17:00,720 --> 00:17:05,870
 That's why this now makes sense, whereas still
@@ -1125,7 +1125,7 @@ also occurs in other languages.
 
 00:19:35,480 --> 00:19:39,890
 But it's also not the case that Haskell is
-somehow modelled along these examples, these
+somehow modeled along these examples, these
 
 00:19:39,890 --> 00:19:41,520
 languages.
@@ -1281,7 +1281,7 @@ That's why a different type variable is used
 here.
 
 00:22:21,940 --> 00:22:27,230
-And likewise, for the 'zip' function the compiler
+And likewise, for the 'zip' function, the compiler
 would also figure out automatically that the
 
 00:22:27,230 --> 00:22:31,260
@@ -1302,7 +1302,7 @@ the same.
 
 00:22:47,790 --> 00:22:53,060
 So, if we write a similar function, which
-somehow says "if pi>3 then x else y", then
+somehow says "if pi > 3 then x else y", then
 
 00:22:53,060 --> 00:22:58,180
 again, the compiler will figure out that x
@@ -1316,7 +1316,7 @@ Because if you look at this if-then-else,
 nothing is really done with the x and y, so
 
 00:23:05,250 --> 00:23:09,910
-there is no something that forces them to
+there is nothing that forces them to
 be numbers or so.
 
 00:23:09,910 --> 00:23:13,960
@@ -1350,7 +1350,7 @@ But in general, we could have any mathematical
 expression here, and then the typing of if-then-else
 
 00:23:41,010 --> 00:23:45,890
-is: here must be a condition, and the then-
+is: there must be a condition, and the then-
 and else-branches must have the same type.
 
 00:23:45,890 --> 00:23:50,640
@@ -1390,7 +1390,7 @@ That doesn't mean that you should, from now
 on, forget about writing type signatures.
 
 00:24:18,550 --> 00:24:25,250
-Often it is still useful to write your own
+Often, it is still useful to write your own
 type signatures, be they polymorphic or not.
 
 00:24:25,250 --> 00:24:30,180
@@ -1406,7 +1406,7 @@ And you can write down a more specific type.
 
 00:24:36,050 --> 00:24:41,500
 So, if you say: I want my f-function to be
-from pairs of integers and integers to integers,
+from pairs of integers to integers,
 
 00:24:41,500 --> 00:24:42,710
 then that's fine.
@@ -1437,7 +1437,7 @@ a language like Haskell is that this polymorphism
 has really interesting semantic consequences.
 
 00:25:09,400 --> 00:25:15,720
-We can see this, if we recall from earlier
+We can see this if we recall from earlier
 in the lecture the following law, where I
 
 00:25:15,720 --> 00:25:22,390
@@ -1489,7 +1489,7 @@ We could replace this by any function g which
 has the same type as this here, and the law
 
 00:26:06,490 --> 00:26:09,350
-would still hold, no matter how the g is defined.
+would still hold, no matter how g is defined.
 
 00:26:09,350 --> 00:26:12,330
 And that is, I would say, a bit surprising
@@ -1507,7 +1507,7 @@ The 'tail' function and the 'init' function,
 for example, have this type.
 
 00:26:23,530 --> 00:26:29,290
-But also other functions like taking the first
+But also other functions, like taking the first
 5 elements of a list, for example, also have
 
 00:26:29,290 --> 00:26:30,290
@@ -1553,15 +1553,15 @@ Let's briefly return to how this was formulated
 in the C-like imperative setting.
 
 00:27:21,230 --> 00:27:29,320
-Actually, the "reverse"-claim I just discussed,
+Actually, the "reverse" claim I just discussed,
 earlier occurred in the context of comparing
 
 00:27:29,320 --> 00:27:33,890
-these two for-loops, and comparing them to
+these two for-loops and comparing them to
 a Haskell version.
 
 00:27:33,890 --> 00:27:37,350
-And then this "reverse"-claim came about.
+And then this "reverse" claim came about.
 
 00:27:37,350 --> 00:27:42,170
 And at that point in the lecture, I already
@@ -1583,10 +1583,10 @@ we know more about the f and about what's
 happening, at least they are not as general.
 
 00:27:59,920 --> 00:28:01,590
-This "reverse"-claim is much more general.
+This "reverse" claim is much more general.
 
 00:28:01,590 --> 00:28:05,710
-Now that we also know that the 'reverse' function
+Now that we also know that the "reverse" function
 can be replaced by any function from lists
 
 00:28:05,710 --> 00:28:10,400
@@ -1599,14 +1599,14 @@ in certain situations that we can check with
 
 00:28:15,810 --> 00:28:20,800
 some work, but they do not generalize in the
-way that this "reverse"-claim generalizes
+way that this "reverse" claim generalizes
 
 00:28:20,800 --> 00:28:23,640
 to any function of the same type.
 
 00:28:23,640 --> 00:28:29,400
 For any specific function like "tail", you
-could also see, well, what does this means
+could also see, well, what does this mean
 
 00:28:29,400 --> 00:28:30,870
 in the context of for-loops?
@@ -1620,14 +1620,14 @@ Maybe we can work this out, but we don't get
 a general law like in the case earlier.
 
 00:28:41,570 --> 00:28:43,270
-Also Generics don't give you this.
+Also, generics don't give you this.
 
 00:28:43,270 --> 00:28:48,050
-So, even though Generics in Java, somehow,
+So, even though generics in Java, somehow,
 correspond to polymorphic types, they don't
 
 00:28:48,050 --> 00:28:50,360
-give you this kind of results.
+give you this kind of result.
 
 00:28:50,360 --> 00:28:55,230
 This is all nicer in a setting like Haskell.
