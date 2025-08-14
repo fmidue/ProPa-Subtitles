@@ -7,19 +7,19 @@ binary predicate because of the '\2' here, and
 this predicate needs to be such that given a
 
 0:00:10.320,0:00:17.040
-list 'Xs' and an element 'X' it returns true if
+list 'Xs' and an element 'X', it returns true if
 'X' occurs as the penultimate element in the list
 
 0:00:17.040,0:00:23.440
 'Xs', so the second to last element. We have two
-examples here, given the list '[a,b,c,d]' and the
+examples here; given the list '[a,b,c,d]' and the
 
 0:00:23.440,0:00:28.800
-element 'c' it should return true, because 'c'
+element 'c', it should return true because 'c'
 is indeed the second to last element, and given
 
 0:00:28.800,0:00:34.320
-the list '[a,b,c]' and 'c' should not return true,
+the list '[a,b,c]' and 'c' should not return true
 because now 'c' is not the second to last element,
 
 0:00:34.320,0:00:41.360
@@ -28,34 +28,34 @@ cover here? Usually, since we are working with a
 
 0:00:41.360,0:00:47.680
 list of undetermined length, we would first take
-a look at the case with the empty list, you could
+a look at the case with the empty list; you could
 
 0:00:47.680,0:00:56.800
-write this like so... however this tells prolog
-that given an empty list and a variable X this
+write this like so... however, this tells Prolog
+that given an empty list and a variable X, this
 
 0:00:56.800,0:01:01.280
-should return true and this is not what we want,
+should return true, and this is not what we want
 because an empty list doesn't have a penultimate,
 
 0:01:01.280,0:01:08.480
-so what do we do here? Unlike haskell which throws
-an error at us if we leave some case undefined
+so what do we do here? Unlike Haskell, which throws
+an error at us if we leave some case undefined,
 
 0:01:09.120,0:01:13.360
-prolog doesn't do this, any undefined
-case is simply false and we can
+Prolog doesn't do this; any undefined
+case is simply false, and we can
 
 0:01:13.360,0:01:19.680
 use this to our advantage by just not defining
-this case, because we would want this to be false.
+this case because we would want this to be false.
 
 0:01:21.840,0:01:27.200
-But I can still work with this, because we can
-extend this to the next case; Which would be a
+But I can still work with this because we can
+extend this to the next case, which would be a
 
 0:01:27.200,0:01:31.840
-list with just one element, but once again
+list with just one element, but once again,
 a list with just one element doesn't have a
 
 0:01:31.840,0:01:36.800
@@ -64,54 +64,54 @@ be true as well. So the next case is the first one
 
 0:01:36.800,0:01:43.440
 that actually could return true and that would
-be a list with two elements, two elements have
+be a list with two elements; two elements have
 
 0:01:43.440,0:01:48.160
 a penultimate element which also happens to be the
 first element, so we call the first element 'X',
 
 0:01:49.040,0:01:52.720
-same as our parameter that we're looking for,
+same as our parameter that we're looking for
 because these two need to be the same for this
 
 0:01:52.720,0:01:59.120
 to be true, and the second element in the list we
-can just use the underscore, because while we need
+can just use the underscore because while we need
 
 0:01:59.120,0:02:05.520
 this to be in here we're not going to be using
 it, so we can basically not assign it to anything.
 
 0:02:06.340,0:02:10.160
-This just tells it "okay, I have a list
+This just tells it, "Okay, I have a list
 with two elements, the first of which
 
 0:02:11.360,0:02:17.440
 should be the same as my parameter, and if
-that's the case return true", so this is our
+that's the case, return true", so this is our
 
 0:02:18.560,0:02:21.840
 first case that can return true. Now
 
 0:02:23.040,0:02:29.440
 for the next case, obviously, logically
-that would be a list with three elements but
+that would be a list with three elements, but
 
 0:02:30.000,0:02:36.400
 this doesn't really make that much sense, finding
-it like this, because while this can be true
+it like this, because while this can be true,
 
 0:02:37.120,0:02:42.480
 we would then need to define the case for a list
-of four elements and five elements and so on and
+of four elements, and five elements, and so on, and
 
 0:02:42.480,0:02:46.880
-that's not really practical, because we want
+that's not really practical because we want
 to work with lists of any length, so instead
 
 0:02:46.880,0:02:53.360
 what we're gonna do here is... we already have
-a true case, why don't we just use recursion to
+a true case; why don't we just use recursion to
 
 0:02:53.360,0:02:58.800
 reduce down any lists that are longer than that to
@@ -123,7 +123,7 @@ now we're going to use the pipe character and
 
 0:03:03.600,0:03:08.640
 call the remaining list Xs; the pipe character
-kind of works like the double point in haskell,
+kind of works like the double point in Haskell,
 
 0:03:08.640,0:03:13.840
 so this tells it this is a list with a first
@@ -134,7 +134,7 @@ and we define this as only being true when another
 call to penultimate, taking this now reduced list,
 
 0:03:23.040,0:03:33.920
-so the tail basically, and our parameter X, is
+so the tail, basically, and our parameter X is
 true. So we are basically taking the list here
 
 0:03:33.920,0:03:39.360
@@ -146,12 +146,12 @@ on the remaining list. So no matter how long the
 list, we are eventually gonna reduce it down to a
 
 0:03:45.440,0:03:50.240
-case where it's just two elements long and then
+case where it's just two elements long, and then
 we fall into this case and it can check, "Okay,
 
 0:03:50.240,0:03:55.280
-is the first element of my two element list the
-same as my parameter?", and if so, return true and
+is the first element of my two-element list the
+same as my parameter?" and if so, return true and
 
 0:03:55.280,0:04:00.560
 then we get our result, which is exactly what we
@@ -159,22 +159,22 @@ want. So this basically already solves our task.
 
 0:04:02.880,0:04:09.760
 Now we can save this and load it up into a
-prolog prompt, and now we can actually try out
+Prolog prompt, and now we can actually try out
 
 0:04:11.040,0:04:16.560
 our new predicate here with the examples from the
-task description. So i've taken this [a,b,c,d]
+task description. So I've taken this [a,b,c,d]
 
 0:04:17.200,0:04:24.240
-and element 'c', it should return true... and
+and element 'c'; it should return true... and
 it does. And given the list [a,b,c] and 'c'
 
 0:04:24.240,0:04:29.680
-should return false and it does as well,
+should return false and it does as well
 so this is working correctly. Obviously now
 
 0:04:30.320,0:04:34.080
-this is of course a little boring, this is just
+this is of course a little boring; this is just
 validation, we already know the full list and
 
 0:04:34.080,0:04:41.840
@@ -183,31 +183,31 @@ what else can we do here? We can actually just
 
 0:04:41.840,0:04:47.440
 change the second parameter to a variable, this
-big X here and then the query is changed to:
+big X here, and then the query is changed to:
 
 0:04:48.400,0:04:54.080
 "I know the first parameter is a list of
-[a,b,c], but I don't know the penultimate,
+[a,b,c], but I don't know the penultimate;
 
 0:04:55.360,0:05:00.960
 find me a suitable substitution for X
 for which penultimate returns true",
 
 0:05:00.960,0:05:05.440
-so we're basically now asking prolog to
+so we're basically now asking Prolog to
 find the second to last element for us,
 
 0:05:05.440,0:05:10.400
-and if we query this we can see it gets us
-X is 'b' which is exactly what we're looking
+and if we query this, we can see it gets us
+X is 'b', which is exactly what we're looking
 
 0:05:10.400,0:05:15.840
 for. This is the penultimate element and that's
 the substitution for the variable that we are
 
 0:05:15.840,0:05:23.040
-looking for here and with that it found the second
-to last element for us. Now something else that
+looking for here, and with that it found the second
+to last element for us. Now, something else that
 
 0:05:23.040,0:05:26.960
 we can do, and I'm going to turn trace on for
@@ -218,48 +218,48 @@ is switch this around... let's say we don't know
 the list but we know that the second to last
 
 0:05:35.360,0:05:41.840
-element should be 'a', now we can create this and
+element should be 'a'. Now, we can create this and
 then using the trace we can see the first call is
 
 0:05:43.280,0:05:49.840
-our parameter, this '(_3156)' is a placeholder
-value that prolog uses, whenever you see these
+our parameter; this '(_3156)' is a placeholder
+value that Prolog uses; whenever you see these
 
 0:05:49.840,0:05:56.640
-underscore with some number value this is how
-prolog sees this Xs or whatever variable you've
+underscores with some number value, this is how
+Prolog sees this Xs or whatever variable you've
 
 0:05:56.640,0:06:02.480
-used, and our 'a' that we're looking for and
-then the next step... oh it's found a list
+used and our 'a' that we're looking for, and
+then the next step... oh, it's found a list
 
 0:06:03.040,0:06:11.040
 containing 'a' as the first element and some
-other value, this could be anything, this is
+other value; this could be anything; this is
 
 0:06:11.040,0:06:15.840
 another placeholder, but this is basically just
 a list with the penultimate element of 'a'
 
 0:06:16.400,0:06:20.720
-and some other value, this could be anything,
-and of course this is our 'a' and then it returns
+and some other value; this could be anything,
+and of course this is our 'a', and then it returns
 
 0:06:20.720,0:06:24.560
 us this value here, and if we keep doing
-this by clicking semicolon you can see...
+this by clicking semicolon, you can see...
 
 0:06:27.440,0:06:30.880
-it builds us increasingly longer lists,
+it builds us increasingly longer lists;
 now this is a list of three elements,
 
 0:06:33.200,0:06:36.800
-now a list with four elements and so on,
+now a list with four elements and so on;
 we could keep going like this although it
 
 0:06:36.800,0:06:43.120
 gets a bit messy with the trace on. So what's
-basically going on here, is in the first step
+basically going on here is in the first step
 
 0:06:43.120,0:06:49.440
 it doesn't know the list but it knows our variable
@@ -267,14 +267,14 @@ already or what 'X' should be, and then it goes
 
 0:06:49.440,0:06:55.200
 through all the definitions it has in this rule
-set here and it sees "Okay, the first one tells me
+set here and it sees, "Okay, the first one tells me"
 
 0:06:55.200,0:07:02.000
 here's X and here's a list with X in it as well,
 so why don't I just make a list with any element,
 
 0:07:02.000,0:07:07.760
-and the 'X' I already know and give it back?"
+and the 'X' I already know and give it back?
 and then the next step goes one step further
 
 0:07:08.800,0:07:14.480
@@ -286,7 +286,7 @@ that's the X that I already know and this
 is the X that needs to be in the list,
 
 0:07:18.640,0:07:23.360
-so i can build the list", and it takes a step back
+so I can build the list", and it takes a step back
 on the recursion, adds the elements it moved again
 
 0:07:24.000,0:07:31.040
@@ -314,7 +314,7 @@ do something else, because one of the interesting
 things to consider here is "What happens to all
 
 0:08:04.800,0:08:11.040
-of this, if we swap these rules around?". Let's
+of this, if we swap these rules around?" Let's
 say we thought of the recursion immediately and
 
 0:08:11.040,0:08:16.480
@@ -327,7 +327,7 @@ this. Does this change anything? We save this and
 
 0:08:24.640,0:08:31.280
 load it up again, and then turn trace back on
-again... I turned trace off, because it gets kind
+again... I turned trace off because it gets kind
 
 0:08:31.280,0:08:39.360
 of ugly when it loads a file, but that's just an
@@ -370,7 +370,7 @@ we just keep going... you can see it never gets
 out of this step, if we had trace off we would
 
 0:09:49.920,0:09:56.000
-eventually get a stack error, because it runs out
+eventually get a stack error because it runs out
 of stack space, because it keeps going. As you can
 
 0:09:56.000,0:10:02.080
@@ -390,7 +390,7 @@ getting to the second case, which would be
 the only case where it actually sees "Okay,
 
 0:10:22.400,0:10:27.920
-this is the X i'm looking for and this is
+this is the X I'm looking for and this is
 where it should be in the list". So basically
 
 0:10:28.560,0:10:33.920

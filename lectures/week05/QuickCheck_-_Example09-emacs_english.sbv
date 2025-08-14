@@ -18,7 +18,7 @@ that I have introduced a bug into this program,
 
 0:00:26.400,0:00:30.240
 it's not actually a correct Quicksort and
-we will see whether you will find this
+we will see whether you can find this
 
 0:00:30.240,0:00:35.920
 bug; well, we will, because I will show you
@@ -65,7 +65,7 @@ which always runs the same test.
 
 0:01:51.040,0:01:56.800
 And then next time I load my file, I can
-simply run this and it will say "True".
+simply run this, and it will say "True".
 
 0:01:57.440,0:01:59.840
 Okay, now, this would be unit
@@ -75,7 +75,7 @@ testing, though this is not very,
 somehow attractive to just have tests like that.
 
 0:02:03.920,0:02:06.320
-So, how do we instead test in Haskell.
+So, how do we instead test in Haskell?
 
 0:02:06.320,0:02:10.080
 And one reason for showing you
@@ -144,7 +144,7 @@ some more general properties
 
 0:03:13.920,0:03:19.120
 of our functions, or of your
-submissions and then check those.
+submissions, and then check those.
 
 0:03:20.080,0:03:23.280
 Okay, and the way to do this, or one
@@ -184,7 +184,7 @@ So, maybe you want to write also
 your own test suites before actually
 
 0:04:11.600,0:04:14.800
-upload something to Autotool, then you
+uploading something to Autotool, then you
 don't have to rely just on our tests.
 
 0:04:15.440,0:04:20.640
@@ -193,7 +193,7 @@ Well, maybe I want to express the very basic
 
 0:04:20.640,0:04:25.680
 property, namely that sorting a list that
-is already sorted, doesn't do any harm.
+is already sorted doesn't do any harm.
 
 0:04:26.480,0:04:27.280
 How could I do this?
@@ -211,7 +211,7 @@ because I want to talk about any
 
 0:04:49.840,0:04:54.080
 sorted list, and what should be
-the outcome of such a swapped call?
+the outcome of such a sort call?
 
 0:04:54.080,0:04:55.840
 Well, it would be that list itself.
@@ -224,12 +224,12 @@ So, I couldn't have written it like this because
 where does the 'n' come from? The 'n' should be something,
 
 0:05:06.720,0:05:09.360
-not be fixed, which would
+not fixed, which would
 be somehow all-quantified.
 
 0:05:09.360,0:05:12.640
 Well, the way we do this, in
-'QuickCheck' is as follows.
+'QuickCheck', is as follows.
 
 0:05:12.640,0:05:17.280
 We can say, well, let me actually
@@ -263,7 +263,7 @@ suite and it says, okay, it has passed 100 tests.
 
 0:06:28.240,0:06:30.880
 Okay, now the question is
-what tests has it passed?
+what tests it has passed?
 
 0:06:30.880,0:06:37.280
 Or maybe this was just checked for n=1.
@@ -296,7 +296,7 @@ Okay, so 100 random choices for this 'n' here.
 
 0:07:14.880,0:07:17.760
 And for all of them, this property
-was checked, it was always okay.
+was checked; it was always okay.
 
 0:07:18.320,0:07:21.520
 Well, this is already something,
@@ -360,7 +360,7 @@ order, that it also gives the right result.
 
 0:08:29.040,0:08:31.680
 So, on property, we could
-try to check is this one.
+try to check this one.
 
 0:08:34.800,0:08:40.160
 Yes, given an 'n'.
@@ -380,7 +380,7 @@ And since we are already
 
 0:08:52.400,0:08:59.360
 in the process of writing more tests, maybe
-let's directly, we'll check this now.
+let's directly check this now.
 
 0:08:59.360,0:09:04.000
 We would also run through, you have to believe
@@ -395,7 +395,7 @@ that we want to sort lists of '1..n', maybe
 
 0:09:15.360,0:09:21.840
 let's be more general and say how, or what should
-happen, if you sort an arbitrary list.
+happen if you sort an arbitrary list.
 
 0:09:31.200,0:09:32.480
 Yes, so,
@@ -406,14 +406,14 @@ over an arbitrary list 'xs',
 
 0:09:37.760,0:09:45.200
 then, of course, it would be stupid to
-expect that sorting of 'xs' is equal to 'xs'.
+expect that sorting 'xs' is equal to 'xs'.
 
 0:09:45.200,0:09:48.960
 But actually, let's check
 what happens if I do this.
 
 0:09:48.960,0:09:50.720
-So, I should get a counter example now.
+So, I should get a counterexample now.
 
 0:09:52.800,0:09:57.360
 Indeed, there were two tests
@@ -421,13 +421,13 @@ which passed 100 cases.
 
 0:09:57.360,0:09:59.920
 These are the first two ones, and
-then there's a counter example.
+then there's a counterexample.
 
 0:10:01.040,0:10:02.240
 This looks somewhat strange.
 
 0:10:02.240,0:10:06.480
-Why is '[0, 0]' a counter example to this equation?
+Why is '[0, 0]' a counterexample to this equation?
 
 0:10:10.560,0:10:13.440
 Well, it's the wrong equation anyway.
@@ -445,7 +445,7 @@ Namely, if I had
 
 0:10:25.840,0:10:32.400
 written it like this, then we would also have
-failed but with a more meaningful counter example.
+failed but with a more meaningful counterexample.
 
 0:10:33.120,0:10:33.760
 Okay.
@@ -529,7 +529,7 @@ sorting function, then our test suite could
 contain this last property.
 
 0:12:14.160,0:12:15.760
-And see there is a counter example.
+And see there is a counterexample.
 
 0:12:16.400,0:12:27.280
 Namely, if I call the 'sort' function on '[3, 3]',
@@ -559,7 +559,7 @@ And then we can see that actually, the
 checker has chosen quite arbitrary input lists
 
 0:13:08.400,0:13:14.000
-of varying length, and has confirmed
+of varying lengths, and has confirmed
 that they all satisfy this property.
 
 0:13:15.440,0:13:19.600
@@ -575,7 +575,7 @@ So, we specify properties of the sorting function,
 and then we can use this for checking correctness.
 
 0:13:32.880,0:13:35.360
-Okay and they are further
+Okay and there are further
 things I could come up with.
 
 0:13:35.360,0:13:40.720
@@ -619,11 +619,11 @@ Yeah, what do you think?
 
 0:14:20.880,0:14:24.720
 What should happen if I append
-to lists and then sort them?
+two lists and then sort them?
 
 0:14:25.440,0:14:31.440
 Well, that, of course, depends very
-much on the contents of 'xs', and 'ys'.
+much on the contents of 'xs' and 'ys'.
 
 0:14:31.440,0:14:38.800
 But what probably can be said is that this would
@@ -639,7 +639,7 @@ I'm anyway going to sort the lists.
 
 0:14:49.040,0:14:54.320
 So, we could use this property to check
-some further behaviour of the sort function,
+some further behavior of the sort function,
 
 0:14:54.320,0:15:00.000
 and it will also pass the tests, I'm sure.
@@ -649,29 +649,29 @@ Okay, in the cases where the tests didn't pass,
 
 0:15:08.640,0:15:11.360
 it was interesting that
-we got small counter examples.
+we got small counterexamples.
 
 0:15:11.360,0:15:13.680
 So, when we tested and positively resolved,
 
 0:15:13.680,0:15:17.600
 they were both checked, our lists
-of length 20, 25, whatever.
+of lengths 20, 25, whatever.
 
 0:15:17.600,0:15:20.080
 But when I had a property, which wasn't true,
 
 0:15:20.080,0:15:24.640
-I got very small counter examples
+I got very small counterexamples
 '[3, 3]', or '[0, 0]', or '[0, -1]'.
 
 0:15:24.640,0:15:30.480
 That's because QuickCheck not only tries to find
-counter examples, but once it has found out
+counterexamples, but once it has found out
 
 0:15:30.480,0:15:36.560
 that some property is not true, it is also
-cleverly trying to find as small as possible
+cleverly trying to find as small as possible.
 
 0:15:36.560,0:15:41.920
 counter example, which would also be useful
@@ -720,7 +720,7 @@ would complain about here is that we
 have a common subexpression, or tail
 
 0:16:28.240,0:16:32.560
-of list is computed twice. This
+of the list is computed twice. This
 is not really a nice thing to do.
 
 0:16:33.120,0:16:35.440
@@ -739,7 +739,7 @@ tail, and then we twice use this name here.
 
 0:16:57.680,0:17:02.320
 Okay, let's check whether this
-changed anything about the behaviour.
+changed anything about the behavior.
 
 0:17:02.320,0:17:03.840
 No, it didn't, it still works.
@@ -836,7 +836,7 @@ are really testing something,
 
 0:18:52.320,0:18:58.320
 of course, I can try what would happen if
-I introduced another error into my program
+I introduced another error into my program.
 
 0:18:58.320,0:19:03.680
 let's say I accidentally do the greater

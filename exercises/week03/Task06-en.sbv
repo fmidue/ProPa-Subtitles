@@ -1,6 +1,6 @@
 0:00:01.760,0:00:06.720
 For the last part of this exercise
-series we move away from code world to
+series we move away from CodeWorld to
 
 0:00:06.720,0:00:08.320
 regular Haskell programming.
@@ -10,12 +10,12 @@ And the first question probably is how do we
 interactively check what our program does.
 
 0:00:18.480,0:00:23.040
-In this case we don't have a nice
-run button like with code world.
+In this case, we don't have a nice
+run button like with CodeWorld.
 
 0:00:23.040,0:00:30.080
-So if we have a task like this how do
-we actually how do we work with this?
+So if we have a task like this, how do
+we actually, how do we work with this?
 
 0:00:31.360,0:00:36.560
 And the answer is we use ghci to load this file.
@@ -36,14 +36,14 @@ It then loads your file.
 
 0:00:58.720,0:01:03.040
 And if I now type in a name
-from this file, for example "c".
+from this file, for example, "c".
 
 0:01:04.880,0:01:09.040
 I can see that is actually the
 constant that is defined here.
 
 0:01:09.040,0:01:12.640
-If I type in "list" I will get an error
+If I type in "list", I will get an error
 
 0:01:12.640,0:01:17.520
 because "list" is undefined and trying to
@@ -61,19 +61,19 @@ You can already see my editors
 also highlighting errors.
 
 0:01:35.600,0:01:46.240
-So if I type ":r" you can reload the file and
+So if I type ":r", you can reload the file and
 now ghci is telling me that there's an error.
 
 0:01:46.240,0:01:53.840
-In this case it's a parse error.
+In this case, it's a parse error.
 Could have been a type error or what have you.
 
 0:01:56.080,0:02:01.680
 Let's put the "undefined" back in and
-reload the file and everything works fine.
+reload the file, and everything works fine.
 
 0:02:07.040,0:02:14.720
-Now in ghci you can also evaluate
+Now in ghci, you can also evaluate
 expressions on their own.
 
 0:02:14.720,0:02:19.920
@@ -109,10 +109,10 @@ y, such that x and y are c-digit numbers.
 
 0:03:10.960,0:03:16.000
 c is defined here as this
-constant and y is at least
+constant, and y is at least
 
 0:03:16.000,0:03:21.680
-twice as big as x and the sum of
+twice as big as x, and the sum of
 x and y is also a c-digit number.
 
 0:03:21.680,0:03:29.680
@@ -131,14 +131,14 @@ Okay, so how do we start?
 
 0:03:49.200,0:04:01.920
 Well, list comprehensions have this left-hand
-side and this dash and a right-hand side.
+side, and this dash, and a right-hand side.
 
 0:04:02.880,0:04:08.560
 And I'm using these underscores here
 which are specially treated by Haskell.
 
 0:04:09.600,0:04:16.400
-They're called holes and you can use them to see
+They're called holes, and you can use them to see
 what type Haskell is expecting at some point.
 
 0:04:17.600,0:04:19.760
@@ -148,23 +148,23 @@ If I load them in ghci now...
 - I need to save the file, load them here -
 
 0:04:29.120,0:04:32.000
-It tells me that it found a hole and
+It tells me that it found a hole, and
 
 0:04:32.880,0:04:38.880
 the type of the hole is a pair of two
-Integers which is the first thing here.
+Integers, which is the first thing here.
 
 0:04:38.880,0:04:44.080
 Then it says it found a hole of
 type Bool, so some condition here.
 
 0:04:47.920,0:04:55.840
-So we should fill in pairs here let's call
-them "x" and "y" like in the task description.
+So we should fill in pairs here, let's call
+them "x" and "y", like in the task description.
 
 0:04:56.480,0:05:03.360
 Now, "x" and "y", as my editor
-complaints, are not in scope.
+complains, are not in scope.
 
 0:05:03.360,0:05:05.440
 So I need to define them somewhere.
@@ -223,7 +223,7 @@ Okay, now we have gotten rid of all the
 holes, so let's see what this list is.
 
 0:06:38.240,0:06:43.680
-It's a very long list and ghci does
+It's a very long list, and ghci does
 take some time to actually print it out.
 
 0:06:44.400,0:06:48.240
@@ -242,10 +242,10 @@ example, we have everything starting with 100
 
 0:07:08.960,0:07:18.960
 and then for y we take all from 100 onwards
-to 999 and so on and then for 101 and so on.
+to 999, and so on, and then for 101 and so on.
 
 0:07:18.960,0:07:27.600
-Okay, but this is not the only condition, we
+Okay, but this is not the only condition; we
 also have that y is at least twice as big as x.
 
 0:07:27.600,0:07:37.600
@@ -261,10 +261,10 @@ so now we have 2*x here.
 
 0:07:50.880,0:08:00.400
 If we reload the file and again take a look at the
-first 20 elements we will see that now instead of
+first 20 elements, we will see that now instead of
 
 0:08:00.400,0:08:09.040
-(100,100) the first element, for example,
+(100,100), the first element, for example,
 is (100,200), and then we have (100,201).
 
 0:08:10.640,0:08:17.040
@@ -276,7 +276,7 @@ And this is that the sum of x
 and y is also a c-digit number.
 
 0:08:27.680,0:08:31.040
-In our case we are just going
+In our case, we are just going
 with three for the moment.
 
 0:08:31.040,0:08:38.160
@@ -295,7 +295,7 @@ And we don't need to check the
 lower bound actually, because
 
 0:08:55.280,0:09:05.680
-just by adding it we can never drop out
+just by adding it, we can never drop out
 of this range to the left or towards zero.
 
 0:09:07.840,0:09:16.080
@@ -307,7 +307,7 @@ So the first 20 elements - well these are the
 same because this holds for all these elements.
 
 0:09:27.200,0:09:40.080
-But if make c smaller in a second, or
+But if we make c smaller in a second, or
 parameterize by c, we'll see that actually
 
 0:09:43.280,0:09:47.040
@@ -329,21 +329,21 @@ How do we do this?
 
 0:10:12.480,0:10:23.040
 We need to figure out how one of these 100,
-999 and 1000 actually correspond to the c.
+999, and 1000 actually correspond to the c.
 
 0:10:27.520,0:10:43.520
-Let's do this in small steps well
+Let's do this in small steps; well,
 100 = 10^2 and 999 = (10^3)-1
 
 0:10:54.960,0:10:56.960
 and 1000 = 10^3.
 
 0:11:00.960,0:11:08.560
-Remember, this is the case for c=3 so,
+Remember, this is the case for c = 3 so,
 everywhere there's a three we can put in the c.
 
 0:11:12.720,0:11:17.040
-And the 2 obviously is c-1.
+And the 2 obviously is c - 1.
 
 0:11:19.680,0:11:20.800
 And that's it.
@@ -360,7 +360,7 @@ change this to 2 - reload this -
 these are now different elements.
 
 0:11:40.800,0:11:52.480
-And let's choose c=1, now we can
+And let's choose c = 1, now we can
 probably take a look at the whole list.
 
 0:11:52.480,0:11:58.080
@@ -372,7 +372,7 @@ number, where the second number is
 at least twice as big as the first.
 
 0:12:07.680,0:12:12.400
-It goes all the way up to 3+6 which is 9 and then
+It goes all the way up to 3 + 6 which is 9 and then
 
 0:12:13.440,0:12:18.560
 any increase here would mean that
@@ -393,13 +393,13 @@ You could actually go ahead and say:
 
 0:12:48.320,0:13:07.600
 "I'm always including the full range for y and
-then add a filter here that says that y >= 2*x."
+then add a filter here that says that y >= 2 * x."
 
 0:13:11.120,0:13:12.160
 This would also work.
 
 0:13:15.040,0:13:22.880
-But it behaves slightly different
+But it behaves slightly differently
 because it will generate all these pairs
 
 0:13:22.880,0:13:29.360
@@ -407,9 +407,9 @@ with the full range and then filter out the
 ones that are not matching this criterion,
 
 0:13:30.000,0:13:40.400
-while when you write 2*x here it
-will only generate starting from 2*x.
+while when you write 2 * x here it
+will only generate starting from 2 * x.
 
 0:13:40.400,0:13:57.600
-So you will have less checks performed here
+So you will have fewer checks performed here
 but semantically there's no difference.

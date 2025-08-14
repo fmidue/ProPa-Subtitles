@@ -106,7 +106,7 @@ that pattern-matching is not restricted to the
 
 00:02:50,640 --> 00:02:54,960
 left-hand side of the function definition as
-what we have seen, where I define function,
+what we have seen, where I define the function,
 
 00:02:54,960 --> 00:03:01,680
 and I give several equations for it, and
@@ -118,7 +118,7 @@ we can also use pattern-matching more explicitly
 
 00:03:07,040 --> 00:03:11,360
 on the right-hand side of functions, and then we
-do this using the case-keyword, which is some kind
+do this using the case keyword, which is some kind
 
 00:03:11,360 --> 00:03:18,000
 of a more powerful if-then-else if you like, which
@@ -142,7 +142,7 @@ something, and if it's not Nothing, and it's Just
 
 00:03:44,320 --> 00:03:49,440
 something, then we want to do something with
-the value which was encapsulated in this Just,
+the value that was encapsulated in this Just,
 
 00:03:49,440 --> 00:03:54,160
 then we would do something like fromJust of this
@@ -150,11 +150,11 @@ maybeThing, and then do something with that.
 
 00:03:55,120 --> 00:04:01,920
 It is probably how we have indicated or
-suggested so far, that we work Maybe values
+suggested so far, that we work with Maybe values
 
 00:04:01,920 --> 00:04:07,040
 because we didn't have pattern-matching with the
-case-keyword. But if we have the case-keyword
+case keyword. But if we have the case keyword
 
 00:04:07,040 --> 00:04:10,800
 and we allow ourselves to do pattern-matching
@@ -181,7 +181,7 @@ and do whatever we want to do in the Just
 case and directly use the thing. This is
 
 00:04:40,960 --> 00:04:45,520
-like a switch-statement, but now for algebraic
+like a switch statement, but now for algebraic
 datatypes, not for constant values like in C.
 
 00:04:46,720 --> 00:04:53,920
@@ -193,7 +193,7 @@ via the variables here. At first glance, this
 might look very similar, but actually, there are
 
 00:05:01,520 --> 00:05:06,080
-important differences which make this the
+important differences that make this the
 preferred version, namely in particular
 
 00:05:06,080 --> 00:05:14,480
@@ -202,7 +202,7 @@ example, exhaustive and overlapping checks. Here,
 
 00:05:14,480 --> 00:05:19,280
 the compiler just sees an if-then-else. Here, the
-compiler sees that we made case-distinction on the
+compiler sees that we made a case distinction on the
 
 00:05:19,280 --> 00:05:23,520
 values of this maybeThing. This has a certain type
@@ -213,12 +213,12 @@ the cases. Also, here, we can't accidentally try
 to access the thing from inside the Just in the
 
 00:05:32,720 --> 00:05:38,960
-Nothing case. So, here for example, we could also
-write fromJust maybeThing in the then-branch,
+Nothing case. So, for example, we could also
+write fromJust maybeThing in the then branch,
 
 00:05:38,960 --> 00:05:43,280
-but this would lead to runtime error because in
-this then-branch we have a Nothing. So, we can't
+but this would lead to a runtime error because in
+this then branch we have a Nothing. So, we can't
 
 00:05:43,280 --> 00:05:48,880
 do fromJust, but the compiler doesn't see this,
@@ -269,7 +269,7 @@ accessors. Preferably, from now on, work with
 case expressions. Instead of head and tail,
 
 00:07:06,480 --> 00:07:11,520
-you could have something like: case, your list
+you could have something like: case your list
 thing of empty list, do whatever you want to do
 
 00:07:11,520 --> 00:07:17,440
@@ -334,7 +334,7 @@ CodeWorld Color type for which you probably
 
 00:08:48,800 --> 00:08:54,480
 know that there are some constant values
-like the actual color is red, green, etc.,
+like the actual colors red, green, etc.,
 
 00:08:54,480 --> 00:09:01,120
 then you might be tempted to try to write a
@@ -362,14 +362,14 @@ uppercase. This "red" here is a value constant,
 
 00:09:29,040 --> 00:09:34,400
 but it is not a data constructor. With something
-like this written, then actually this “red” could
+like this written, then actually this "red" could
 
 00:09:34,400 --> 00:09:40,880
 as well be x. It is treated as a variable. It's
 not this constant here. So, this is not doing what
 
 00:09:40,880 --> 00:09:47,600
-we expected, and for the compiler will complain
+we expected, and the compiler will complain
 about this depending on the warning levels that
 
 00:09:47,600 --> 00:09:52,480
@@ -377,7 +377,7 @@ are used. So, for example, it could complain about
 shadowing, saying that this variable name here
 
 00:09:52,480 --> 00:09:58,480
-shadows the existing value “red” important from
+shadows the existing value "red" imported from
 the CodeWorld library, or the compiler might also
 
 00:09:58,480 --> 00:10:03,120
@@ -394,10 +394,10 @@ rule up to the name of the x, y, or z.
 
 00:10:15,840 --> 00:10:21,440
 So, the compiler has many reasons to complain
-about a code like this, which was written in the
+about code like this, which was written in the
 
 00:10:21,440 --> 00:10:27,040
-wrong understanding of what pattern-matching does
+wrong understanding of what pattern matching does
 here. It doesn't match against these constants;
 
 00:10:27,040 --> 00:10:31,680
@@ -406,7 +406,7 @@ different from number constants because they are
 
 00:10:31,680 --> 00:10:39,840
 constructors. Or if you have some enumeration
-where have some constant… some nullary data
+where you have some constant… some nullary data
 
 00:10:39,840 --> 00:10:44,453
 constructors, then of course you can use them

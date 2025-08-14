@@ -37,7 +37,7 @@ case distinction).
 Actually, this will not be finished today.
 
 00:00:44,730 --> 00:00:52,230
-In particular, pattern-matching (which is
+In particular, pattern matching (which is
 also a way of programming by case distinction
 
 00:00:52,230 --> 00:00:53,560
@@ -116,12 +116,12 @@ In mathematics, in an expression like this,
 people tend to write more than two cases.
 
 00:02:09,679 --> 00:02:12,950
-So, we have the one case, another case, and
+So, we have one case, another case, and
 another case, ..., and then the "else" case.
 
 00:02:12,950 --> 00:02:17,819
 So, mathematicians don't nest these kinds of
-expressions, they simply give a longer list
+expressions; they simply give a longer list
 
 00:02:17,819 --> 00:02:25,299
 of conditions and expressions here.
@@ -161,15 +161,15 @@ And actually, if you just read this, you probably
 know what is meant here.
 
 00:03:01,430 --> 00:03:07,199
-So, under the condition that t is smaller-equal
-pi, we should do something.
+So, under the condition that t is smaller or equal
+to pi, we should do something.
 
 00:03:07,199 --> 00:03:13,389
 Under the condition that that is not the case,
-but t is actually greater than pi but less-equal
+but t is actually greater than pi but less or equal
 
 00:03:13,389 --> 00:03:16,629
-than the double of pi, then we should have
+to the double of pi, then we should have
 something else.
 
 00:03:16,629 --> 00:03:24,530
@@ -181,7 +181,7 @@ expression should be evaluated.
 
 00:03:26,599 --> 00:03:33,879
 So, this is also a way of expressing conditional
-behaviour, and it very directly corresponds
+behavior, and it very directly corresponds
 
 00:03:33,879 --> 00:03:37,109
 to what mathematicians like to write.
@@ -221,7 +221,7 @@ evaluates to a Boolean.
 
 00:04:17,440 --> 00:04:23,259
 It doesn't have to be arithmetic comparisons
-combined with "and" and "or" etc.
+combined with "and" and "or", etc.
 
 00:04:23,259 --> 00:04:30,419
 You can write anything here, any predicate,
@@ -263,7 +263,7 @@ And a guard is this kind of Boolean expression
 that can be written here.
 
 00:05:10,139 --> 00:05:14,580
-In if-then-else it's clear what happens: You
+In if-then-else, it's clear what happens: You
 have "if" and then you either do the left
 
 00:05:14,580 --> 00:05:16,110
@@ -314,7 +314,7 @@ factorial function), and if the argument is
 greater than zero, then you want to compute
 
 00:06:04,789 --> 00:06:09,990
-n times factorial of the predecessor.
+n times the factorial of the predecessor.
 
 00:06:09,990 --> 00:06:14,310
 That looks reasonable.
@@ -339,7 +339,7 @@ both zero and greater than zero.
 
 00:06:33,060 --> 00:06:39,999
 And since that is the case, the following
-variant, where I simply switched the two lines
+variant, where I simply switch the two lines
 
 00:06:39,999 --> 00:06:42,639
 here, is equivalent.
@@ -420,7 +420,7 @@ call "factorial" on non-negative inputs now),
 
 00:08:06,419 --> 00:08:16,319
 then these two versions that we see here and
-here, behave the same.
+here behave the same.
 
 59 # slide
 00:08:16,319 --> 00:08:18,180
@@ -449,7 +449,7 @@ this one is problematic.
 
 00:08:43,409 --> 00:08:49,970
 Maybe you can already guess what would happen,
-or you can check on the side, what happens
+or you can check on the side what happens
 
 00:08:49,970 --> 00:08:58,050
 if you take this code and run it again maybe
@@ -491,7 +491,7 @@ So, it will first check whether the first guard
 is satisfied.
 
 00:09:41,760 --> 00:09:47,380
-And for the input n = 0, actually this first
+And for the input n = 0, actually, this first
 guard is satisfied, because 0 is greater-equal
 
 00:09:47,380 --> 00:09:48,380
@@ -562,7 +562,7 @@ of checks.
 
 00:10:48,540 --> 00:10:57,340
 Sometimes, the compiler will be able to warn
-about cases like this, because essentially,
+about cases like this because, essentially,
 
 00:10:57,340 --> 00:11:01,160
 the runtime error that we get from this is
@@ -643,7 +643,7 @@ where it doesn't know, because it can't tell,
 that you have covered all cases.
 
 00:12:37,880 --> 00:12:43,079
-One way to make sure that you covered all
+One way to make sure that you cover all
 cases, and also to let the compiler be certain
 
 00:12:43,079 --> 00:12:47,160
@@ -719,7 +719,7 @@ value; not only for zero, but also for negative
 values.
 
 00:14:06,700 --> 00:14:10,579
-Now this would be something which passes the
+Now this would be something that passes the
 compiler, because the compiler can tell that
 
 00:14:10,579 --> 00:14:12,820
@@ -893,7 +893,7 @@ type.
 
 00:17:34,930 --> 00:17:40,440
 So, in that sense, it's better to, again,
-replace the second condition by "otherwise",
+replace the second condition with "otherwise",
 
 00:17:40,440 --> 00:17:53,590
 because then also the compiler can say that
@@ -978,7 +978,7 @@ We had the 'scene' function.
 And mathematically, I wrote it like this:
 
 00:19:29,890 --> 00:19:36,550
-I check whether t is smaller-equal to pi,
+I check whether t is less than or equal to pi,
 then I check the next period from pi to 2*pi,
 
 00:19:36,550 --> 00:19:40,260
@@ -1019,7 +1019,7 @@ the first condition wasn't true.
 
 00:20:24,090 --> 00:20:30,300
 And since these are floating-point numbers,
-we really know that if t is not smaller-equal
+we really know that if t is not less than or equal
 
 00:20:30,300 --> 00:20:32,590
 to pi, then t will be greater than pi.
@@ -1252,14 +1252,14 @@ We have the condition by a constant match
 on the second argument, and some explicitly
 
 00:25:07,610 --> 00:25:11,510
-formulated constraint on the first input.
+formulated constraints on the first input.
 
 00:25:11,510 --> 00:25:18,480
 And there is also a case where we have numeric
 checks on both inputs.
 
 00:25:18,480 --> 00:25:22,600
-Then in each case we have some expression
+Then in each case, we have some expression
 that needs to be computed.
 
 00:25:22,600 --> 00:25:26,200
@@ -1292,10 +1292,10 @@ not.
 
 00:25:52,510 --> 00:25:57,390
 You might want to take a look at the warnings
-and try to interpret them, to see how far
+and try to interpret them to see how far
 
 00:25:57,390 --> 00:26:03,370
-the compiler has managed to analyse this program
+the compiler has managed to analyze this program
 and the different cases that occur here.
 
 68 # slide
@@ -1427,7 +1427,7 @@ kind that people sometimes write in mathematics
 
 00:28:33,460 --> 00:28:39,140
 (because maybe they want to define a function
-for all even integers, so, they say: f(2*n)=
+for all even integers, so they say: f(2*n)=
 
 00:28:39,140 --> 00:28:41,400
 ...); but this is not something that Haskell
@@ -1451,7 +1451,7 @@ possible as one would want in a compiler.
 So, it is not possible.
 
 00:28:57,270 --> 00:29:03,000
-So, in these argument positions we can have
+So, in these argument positions, we can have
 simple things, like constants, variable names,
 
 00:29:03,000 --> 00:29:09,070
@@ -1494,7 +1494,7 @@ We could say "not True = False" and "not False
 = True".
 
 00:29:53,410 --> 00:29:58,860
-But actually, in the second line we don't
+But actually, in the second line, we don't
 have to write "not False = True", because
 
 00:29:58,860 --> 00:30:04,040
@@ -1514,7 +1514,7 @@ And with certain settings, the compiler would
 even complain that you introduce a variable
 
 00:30:18,800 --> 00:30:22,520
-x but then in the scope you don't even make
+x, but then in the scope you don't even make
 use of the x.
 
 00:30:22,520 --> 00:30:25,600
@@ -1548,7 +1548,7 @@ and False is False", "False and True is False",
 and "False and False is False".
 
 00:30:55,150 --> 00:30:59,970
-But why should we do this, if we can also
+But why should we do this if we can also
 say: "whatever and whatever is False", given
 
 00:30:59,970 --> 00:31:03,060

@@ -11,7 +11,7 @@ one student in the last few days about task 12 (actually, in a previous year),
 
 0:00:19.440,0:00:23.440
 there was this program for which a student
-didn't know why it's not working.
+didn't know why it wasn't working.
 
 0:00:23.440,0:00:27.200
 And well, the point is not to
@@ -27,11 +27,11 @@ would be nice to demonstrate this here also in a
 
 0:00:40.320,0:00:46.320
 short video so that you can also maybe get an
-idea how you could cope with similar problems.
+idea of how you could cope with similar problems.
 
 0:00:46.320,0:00:51.520
 I hope the student won't
-be annoyed that I use their example here.
+be annoyed that I used their example here.
 
 0:00:52.160,0:00:56.320
 Okay, anyway, so this was the program
@@ -39,7 +39,7 @@ that the student had at that point,
 
 0:00:56.320,0:01:01.440
 and the student already knew that something was
-wrong, because the test suite was not working.
+wrong because the test suite was not working.
 
 0:01:02.080,0:01:11.840
 So, let me actually reproduce
@@ -54,7 +54,7 @@ So, there was a long description
 here in the test suite.
 
 0:01:20.880,0:01:26.240
-What his second test means but
+What this second test means but
 apparently, it fails for some inputs.
 
 0:01:27.440,0:01:27.940
@@ -65,8 +65,8 @@ And so, what does this mean, how to interpret
 this... Well, to see what's happening here,
 
 0:01:32.560,0:01:37.280
-we can actually-, we can see what
-input is the function called on here,
+we can actually—we can see what
+input the function is called on here,
 
 0:01:37.280,0:01:42.000
 we can see that basically, the character
@@ -111,7 +111,7 @@ And then there was an idea here, about reversing
 the list and then comparing it piecewise using
 
 0:02:28.080,0:02:32.160
-the capitalization via toUpper and the students
+the capitalization via toUpper, and the students
 thought, well, this should work in their mind.
 
 0:02:32.720,0:02:36.560
@@ -131,7 +131,7 @@ programming background,
 
 0:02:44.000,0:02:49.520
 most of you probably think of debugging in
-terms of adding print statements to their code,
+terms of adding print statements to your code,
 
 0:02:49.520,0:02:52.640
 right, you have some code, a loop, maybe you
@@ -178,7 +178,7 @@ happening via expressions, the proper
 idea is to inspect expressions for somehow
 
 0:03:36.720,0:03:43.280
-knowing that for this three element string,
+knowing that for this three-element string,
 we will go into the second case here.
 
 0:03:43.280,0:03:45.840
@@ -247,7 +247,7 @@ Now in this visual way, in CodeWorld's surroundings, that's,
 of course, a very nice inspection facility
 
 0:04:49.520,0:04:50.720
-for all kind of debugging.
+for all kinds of debugging.
 
 0:04:50.720,0:04:54.240
 Of course, this doesn't work here because we
@@ -257,7 +257,7 @@ don't have a picture that we can click.
 So, instead, we have to work with the interpreter
 
 0:04:57.200,0:05:01.520
-and produce subexpression that are
+and produce subexpressions that are
 of interest and see what they evaluate to.
 
 0:05:01.520,0:05:02.480
@@ -283,7 +283,7 @@ What we actually want to have is: we want to
 
 0:05:17.840,0:05:25.120
 evaluate this expression, but in the context
-where s, the input, is our failing input "aba" and
+where s, the input, is our failing input "aba", and
 
 0:05:25.120,0:05:29.600
 s' is whatever was computed from it, right,
@@ -313,7 +313,7 @@ for the case that s is my original input, "aba",
 because that's what's happening with this case.
 
 0:05:55.760,0:05:59.840
-What we can say here is `let s = "aba"'.
+What we can say here is `let s = "aba"`.
 
 0:06:00.720,0:06:04.480
 Now, this is like a 'let ... in' in function equations.
@@ -381,12 +381,12 @@ Probably the student also
 didn't expect that there would be nine
 
 0:07:10.000,0:07:12.720
-values, of course, the student
+values; of course, the student
 eventually repaired their program.
 
 0:07:12.720,0:07:16.640
 So, maybe this is also the thought process
-that went into this, but doesn't really matter.
+that went into this, but it doesn't really matter.
 
 0:07:16.640,0:07:19.600
 The point is, at this point, one could
@@ -403,7 +403,7 @@ three-element String and compare element-wise.
 So, we should only have 3 Boolean values.
 
 0:07:29.040,0:07:30.800
-Something is wrong, what is wrong?
+Something is wrong; what is wrong?
 
 0:07:30.800,0:07:36.960
 Well, you could go deeper by finding
@@ -433,15 +433,15 @@ even though we have a palindrome.
 
 0:08:00.960,0:08:05.920
 Okay, so at this point, I think it becomes
-obvious what the-, maybe the errors I’m
+obvious what the—maybe the errors I’m
 
 0:08:05.920,0:08:10.800
-thinking about the problem was, where we
+thinking about the problem were, where we
 don't want to, in the list comprehension,
 
 0:08:10.800,0:08:17.120
 draw the x and y variables from s and s'
-independently, we want to draw them in lockstep.
+independently; we want to draw them in lockstep.
 
 0:08:17.120,0:08:21.200
 So, the first one from s, the first one
@@ -485,7 +485,7 @@ this now, then it would both
 work in the examples and also pass the test suite.
 
 0:09:12.000,0:09:18.400
-Okay, story finished, this would now be a
+Okay, story finished; this would now be a
 repair of the program found by this debugging
 
 0:09:19.200,0:09:22.480
@@ -518,14 +518,14 @@ It's failing for exactly
 the same reason as before.
 
 0:09:59.680,0:10:01.040
-Still the wrong on this input.
+Still wrong on this input.
 
 0:10:01.600,0:10:04.240
 And now what is this other way of debugging?
 
 0:10:04.800,0:10:11.040
 Well, one could attempt or could be tempted
-to do this printing-out of values of
+to do this printing out of values of
 
 0:10:12.400,0:10:18.000
 subexpressions on the run while the program is
@@ -539,7 +539,7 @@ And there are some facilities for doing this.
 
 0:10:22.560,0:10:29.200
 And in order to do this, you will need to import
-the debugging module and then in this module,
+the debugging module, and then in this module,
 
 0:10:29.200,0:10:34.320
 you could find the implementation of various
@@ -576,7 +576,7 @@ And then I go back and load
 the module and run this again.
 
 0:11:14.320,0:11:21.440
-Now I get two Falses and the first False
+Now I get two Falses, and the first False
 is actually when this subexpression was
 
 0:11:21.440,0:11:24.960
@@ -584,7 +584,7 @@ encountered and computed, and then of
 course, the final output is also False.
 
 0:11:24.960,0:11:26.545
-That's why we have two Falses and the first
+That's why we have two Falses; the first
 False is from printing the subexpression.
 
 0:11:26.545,0:11:32.240
@@ -592,7 +592,7 @@ And the second False is from printing
 the outcome of the function call,
 
 0:11:32.240,0:11:34.960
-which in this case is of course,
+which in this case is, of course,
 also the whole subexpression.
 
 0:11:34.960,0:11:36.480
@@ -606,15 +606,15 @@ and see, well, why is it False?
 What was actually the list that was used here?
 
 0:11:47.200,0:11:56.880
-Yes, so I move inside the expression, I reload
-my module, I call it- call the function again.
+Yes, so I move inside the expression; I reload
+my module, I call it—call the function again.
 
 0:11:56.880,0:12:03.040
 And now I see what the value was at that point.
 And it is again, the same wrong nine element list instead
 
 0:12:03.040,0:12:09.920
-of a three element list with some Trues and some
+of a three-element list with some Trues and some
 Falses, which ultimately led to the outcome False.
 
 0:12:09.920,0:12:13.600
@@ -639,7 +639,7 @@ Okay.
 Now, this is interesting.
 
 0:12:41.440,0:12:43.920
-We don't get nine values now, why not?
+We don't get nine values now; why not?
 
 0:12:44.480,0:12:47.360
 Well, because of lazy evaluation.
@@ -680,7 +680,7 @@ never computed, so these comparisons never happen.
 
 0:13:25.280,0:13:30.480
 But anyway, the final outcome is False,
-because even after seeing true and False,
+because even after seeing True and False,
 
 0:13:30.480,0:13:33.120
 the and function knows that
@@ -730,7 +730,7 @@ that shouldn't be compared.
 
 0:14:21.120,0:14:25.440
 And then maybe at this point, one could
-say-, could realize what the problem is,
+say, could realize what the problem is,
 
 0:14:25.440,0:14:27.200
 we know already what the problem was, right?
@@ -798,4 +798,4 @@ but actually work offline and use facilities
 
 0:15:58.160,0:16:08.480
 like the interpreter to really investigate what your
-program is doing and run some examples, et cetera.
+program is doing and run some examples, etcetera.
