@@ -137,42 +137,44 @@ there is also a line from Y to X.
 
 00:03:33,750 --> 00:03:40,260
 This would ensure that to this case line(a,b)
-would be implicitly added to line(b,a).
-From a logical point of view, it would be a very clever formulation
 
 00:03:40,260 --> 00:03:47,520
+would be implicitly added: line(b,a).
+From a logical point of view, it would be a very clever formulation
+
+00:03:47,520 --> 00:03:56,280
 to express this symmetry of this line relation
 and then simply work with these rules in the normal way,
 
-00:03:47,520 --> 00:03:56,280
+00:03:56,280 --> 00:04:03,930
 because then these line literals would refer to the
 predicate, where this symmetry would also be
 
-00:03:56,280 --> 00:04:03,930
+00:04:03,930 --> 00:04:14,640
 this symmetry is justified or used.
 However, if we are going to carry this out, it
 
-00:04:03,930 --> 00:04:14,640
+00:04:14,640 --> 00:04:20,280
 turns out to be dangerous. In a certain sense, this is
 too recursive. At first, this may be confusing or
 
-00:04:14,640 --> 00:04:20,280
-surprising why there is a problem here
-because if we go back to our rules of thumb,
-
 00:04:20,280 --> 00:04:25,500
-rules of recursion (which were these rules), then
-all of them are fulfilled in this example.
+surprising why there is a problem here
+because if we go back to our rules of thumb
 
 00:04:25,500 --> 00:04:32,040
+forrecursion (which were these rules), then
+all of them are fulfilled in this example.
+
+00:04:32,040 --> 00:04:37,410
 So, there must be at least one base case.
 If line is now our recursive predicate,
 
-00:04:32,040 --> 00:04:37,410
+00:04:37,410 --> 00:04:43,770
 then it has several base cases, namely, this line(a,b),
 line(b,c), all these facts. These are base cases.
 
-00:04:37,410 --> 00:04:48,300
+00:04:43,770 --> 00:04:48,300
 The base cases should be listed first.
 So in the program the base cases should come first and then
 
@@ -846,10 +848,12 @@ and a lot of experience with recursion. But it
 
 00:22:26,840 --> 00:22:32,990
 is worthwhile for you to think about this program
+
+00:22:32,990 --> 00:22:39,140
 and to compare it with our rules of thumb.
 I have kept to the fact that there must be a
 
-00:22:32,990 --> 00:22:45,530
+00:22:39,140 --> 00:22:45,530
 base case that must exist. I chose that one first.
 I have also made sure in the recursive rule
 

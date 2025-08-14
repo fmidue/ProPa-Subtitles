@@ -307,7 +307,7 @@ would write:
 
 00:05:54,090 --> 00:06:00,080
 The factorial of an integer is 1 if the
-integer is zero (that is the starting of the "
+integer is zero (that is the starting of the
 
 00:06:00,080 --> 00:06:04,789
 factorial function), and if the argument is
@@ -931,6 +931,14 @@ fix) would be to use the type system to even
 00:18:35,240 --> 00:18:37,500
 prevent that you get negative inputs here.
 
+00:18:37,500 --> 00:18:44,630
+So, the Integer type contains negative numbers,
+but one could use a more expressive type system
+
+00:18:44,630 --> 00:18:49,220
+which actually can guarantee that the factorial
+function will, in a given program, never be
+
 00:18:49,220 --> 00:18:50,910
 called on negative numbers.
 
@@ -1495,7 +1503,7 @@ because "True" is already handled.
 
 00:30:04,040 --> 00:30:10,220
 Then we could say: Well, let's write "not
-x = True," so using a variable named x here.
+x = True", so using a variable named x here.
 
 00:30:10,220 --> 00:30:14,610
 But this also would not be so nice, because
@@ -1536,7 +1544,7 @@ Then we could say: "True and True is True",
 and we could write three cases like "True
 
 00:30:51,380 --> 00:30:55,150
-and False is False," "False and True is False",
+and False is False", "False and True is False",
 and "False and False is False".
 
 00:30:55,150 --> 00:30:59,970
@@ -1556,7 +1564,7 @@ And similarly, we could use a different style.
 
 00:31:14,490 --> 00:31:20,040
 We could say: "b and True is b" and "whatever
-and whatever is false."
+and whatever is False".
 
 00:31:20,040 --> 00:31:23,040
 Then we would handle two cases in the first
