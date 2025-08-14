@@ -7,7 +7,7 @@ Here we have given a level description
 for some video game where we have Integer
 
 0:00:15.920,0:00:24.560
-coordinates that are mapped to an integer value
+coordinates that are mapped to an Integer value
 indicating what to draw at that specific location.
 
 0:00:26.960,0:00:34.800
@@ -155,18 +155,18 @@ red squiggly lines that
 
 0:05:50.880,0:05:55.440
 tell us that this is actually
-an [Integer] and not a Picture.
+a [Integer] and not a Picture.
 
 0:06:00.320,0:06:03.680
-But it is a list of integers
+But it is a list of Integers
 so that's a good first step.
 
 0:06:03.680,0:06:10.640
 Now we have this 'aTile' function which
-actually converts integers into Pictures
+actually converts Integers into Pictures
 
 0:06:12.080,0:06:18.880
-so we call aTile on this integer value
+so we call aTile on this Integer value
 that we just got from the 'level' function.
 
 0:06:19.680,0:06:26.720
@@ -211,7 +211,7 @@ Now we have a problem though.
 
 0:07:44.960,0:07:49.760
 Because 'translated' requires Doubles
-and 'level' requires integers,
+and 'level' requires Integers,
 
 0:07:51.440,0:07:54.560
 x cannot be both an Integer and a Double.
@@ -221,8 +221,8 @@ So the error occurs here because this is
 inferred first to Double and then here
 
 0:08:04.800,0:08:11.840
-we try to use the x and y that are
-inferred as Double as integers.
+we try to use the x and y, that are
+inferred as Double, as Integers.
 
 0:08:13.440,0:08:20.240
 Generally it's better to use non-floating
@@ -233,7 +233,7 @@ because they behave more nicely so
 we want to actually change these.
 
 0:08:27.360,0:08:31.760
-We want to treat x and y as integers
+We want to treat x and y as Integers
 and convert them to Double here.
 
 0:08:31.760,0:08:42.000

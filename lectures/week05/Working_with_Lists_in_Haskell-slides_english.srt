@@ -983,7 +983,7 @@ Then you can use the 'concat' function.
 
 00:18:44,630 --> 00:18:50,940
 It takes a list of lists (it could also be
-a list of strings), and it concatenates all
+a list of Strings), and it concatenates all
 
 00:18:50,940 --> 00:18:52,020
 the inner lists.
@@ -1015,28 +1015,28 @@ use the test for emptiness ("null"), accessing
 
 00:19:24,250 --> 00:19:31,810
 the head ("head"), and the tail of a list
-or a string ("tail"), to write code that recursively
+or a String ("tail"), to write code that recursively
 
 00:19:31,810 --> 00:19:32,810
 destructs a list.
 
 00:19:32,810 --> 00:19:35,460
 I know that some of you already know about
-pattern matching, because we have seen this
+pattern-matching, because we have seen this
 
 00:19:35,460 --> 00:19:37,070
 in the exercise submissions.
 
 00:19:37,070 --> 00:19:43,280
 But actually, until the point where we introduce
-pattern matching in the lecture, you can assume
+pattern-matching in the lecture, you can assume
 
 00:19:43,280 --> 00:19:47,740
 that all the exercise tasks that you write
-have a solution without pattern matching.
+have a solution without pattern-matching.
 
 00:19:47,740 --> 00:19:52,860
-So, if you use pattern matching, that is not
+So, if you use pattern-matching, that is not
 forbidden, unless it is actually prevented
 
 00:19:52,860 --> 00:19:53,860
@@ -1044,11 +1044,11 @@ by Autotool.
 
 00:19:53,860 --> 00:20:00,020
 But in any case, as long as we haven't handled
-pattern matching in the lecture, you can assume
+pattern-matching in the lecture, you can assume
 
 00:20:00,020 --> 00:20:07,530
 that the exercise tasks have solutions that
-are intended to be without pattern matching.
+are intended to be without pattern-matching.
 
 76 # slide
 00:20:07,530 --> 00:20:15,280
@@ -1072,7 +1072,7 @@ a previous exercise.
 
 00:20:30,850 --> 00:20:36,830
 There, the task was to decide whether a certain
-string was a palindrome.
+String was a palindrome.
 
 00:20:36,830 --> 00:20:40,150
 The predicate is-a-palindrome?
@@ -1082,30 +1082,30 @@ And one way to think about this is to first
 consider that a palindrome is certainly present
 
 00:20:48,300 --> 00:20:56,150
-if you have a very short string that just
+if you have a very short String that just
 contains zero or one element.
 
 00:20:56,150 --> 00:21:01,620
-So, checking the length of this string (which
-is possible because strings are lists), checking
+So, checking the length of this String (which
+is possible because Strings are lists), checking
 
 00:21:01,620 --> 00:21:03,460
 whether it is smaller than 2.
 
 00:21:03,460 --> 00:21:08,840
 And if so, then return True, because then
-the string is certainly a palindrome.
+the String is certainly a palindrome.
 
 00:21:08,840 --> 00:21:12,910
 And if it isn't that short, then either by
-pattern matching (which I just said, I won't
+pattern-matching (which I just said, I won't
 
 00:21:12,910 --> 00:21:17,770
 show yet) or by using the 'head' and 'last' functions,
 so checking whether the first element and
 
 00:21:17,770 --> 00:21:23,780
-the last element of this string are the same
+the last element of this String are the same
 character, and if so, then also check whether
 
 00:21:23,780 --> 00:21:29,300
@@ -1117,7 +1117,7 @@ then the remainder is also a palindrome.
 
 00:21:31,050 --> 00:21:35,740
 So, certainly, this is a valid definition
-for checking whether a string is a palindrome.
+for checking whether a String is a palindrome.
 
 00:21:35,740 --> 00:21:38,430
 It doesn't use indexing.
@@ -1145,22 +1145,22 @@ We can simply write something like this.
 
 00:22:01,790 --> 00:22:07,190
 We can say, which is much more declarative,
-that a string is a palindrome if it is the
+that a String is a palindrome if it is the
 
 00:22:07,190 --> 00:22:09,620
 case that reversing it doesn't change it.
 
 00:22:09,620 --> 00:22:13,300
-Well, actually reversing a string doesn't
+Well, actually reversing a String doesn't
 ever "change" it, it just returns another
 
 00:22:13,300 --> 00:22:15,870
-string which is the reverse of the original
-string.
+String which is the reverse of the original
+String.
 
 00:22:15,870 --> 00:22:19,850
 But then we can check whether the reverse
-of the string is equal to the string itself.
+of the String is equal to the String itself.
 
 00:22:19,850 --> 00:22:22,440
 That is a definition of "isPalindrome".
@@ -1174,7 +1174,7 @@ You might think that the first version is
 more efficient, because here you have to first
 
 00:22:30,530 --> 00:22:35,940
-reverse the string, which is certainly an
+reverse the String, which is certainly an
 expensive computation.
 
 00:22:35,940 --> 00:22:37,560
@@ -1403,7 +1403,7 @@ I want to zip the infinite list of all the
 
 00:26:42,020 --> 00:26:47,260
 natural numbers including zero ([0..]) and
-the finite string "ab".
+the finite String "ab".
 
 00:26:47,260 --> 00:26:48,260
 What would you get?
