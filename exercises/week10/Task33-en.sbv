@@ -26,11 +26,11 @@ the same “a” as here and returns True or False.
 So, you could imagine this function is
 
 0:00:35.360,0:00:38.800
-some kind of a “checker.” It checks whether something is fulfilled or not.
+some kind of a “checker”. It checks whether something is fulfilled or not.
 
 0:00:40.240,0:00:45.840
 And then we have a function that takes something of type “a” and returns something of
-type “IO a.”
+type “IO a”.
 
 0:00:46.720,0:00:47.520
 For me,
@@ -49,10 +49,10 @@ a do block.
 
 0:01:13.760,0:01:18.080
 And at the end of the do block, we're going
-to have “return” something of type “a.”
+to have “return” something of type “a”.
 
 0:01:19.920,0:01:26.800
-And then finally, we're going to have “IO a.” So, “while” takes these three
+And then finally, we're going to have “IO a”. So, “while” takes these three
 parameters.
 
 0:01:27.440,0:01:30.960
@@ -92,29 +92,29 @@ on which the function depends, and the while loop knows when to stop.
 Now “loop x” is a function that takes
 
 0:02:23.200,0:02:28.400
-just one argument “x” and then it checks whether “x” fulfills the predicate “p.”
+just one argument “x” and then it checks whether “x” fulfills the predicate “p”.
 
 0:02:29.520,0:02:38.800
 And if it does, then we go to this do block. In this new block, we do two things: first
 we apply
 
 0:02:38.800,0:02:44.640
-the function “body,” which should be given as an argument by whoever uses this
+the function “body”, which should be given as an argument by whoever uses this
 function “while”,
 
 0:02:45.600,0:02:47.600
-and we just apply it to “x,”
+and we just apply it to “x”,
 
 0:02:48.720,0:02:54.960
-and we store the result in a new “x,” and
-then we do “loop” again on this new “x.”
+and we store the result in a new “x”, and
+then we do “loop” again on this new “x”.
 
 0:02:55.920,0:03:02.560
 But if the “x” doesn't fulfill the predicate, then we just return “x” itself. So, what we're
 saying is:
 
 0:03:03.280,0:03:09.600
-take this “x” and see if it fulfills “p,” and then if it does,
+take this “x” and see if it fulfills “p”, and then if it does,
 
 0:03:09.600,0:03:13.040
 then change something in it using the function “body”,
@@ -147,13 +147,13 @@ which in turn specifies the type of “main” itself. What could this “undefi
 Well… if you look at the lecture slides, you can see that we have
 
 0:04:13.280,0:04:20.640
-some functions like “put string” (putStr) which has the type “IO” and also “print,”
+some functions like “put string” (putStr) which has the type “IO” and also “print”,
 
 0:04:22.480,0:04:25.520
 but for example not “read line” (readLn) because “readLn” is
 
 0:04:25.520,0:04:27.840
-going to give us something of type “IO a.”
+going to give us something of type “IO a”.
 
 0:04:29.120,0:04:32.160
 So, the first thing I'm going to give to this function “while”
@@ -162,7 +162,7 @@ So, the first thing I'm going to give to this function “while”
 is going to be this “a” which is the initial value.
 
 0:04:38.000,0:04:43.520
-And this “a” is going to be affected by the function “body,”
+And this “a” is going to be affected by the function “body”,
 
 0:04:44.720,0:04:48.560
 and then the value of this “a” is going to change every time.
@@ -189,10 +189,10 @@ be the predicate that checks whether we reached “n” or not.
 Okay now, let's write the function.
 
 0:05:29.440,0:05:31.920
-So, I'm going to do “i” for “index.”
+So, I'm going to do “i” for “index”.
 
 0:05:33.120,0:05:37.840
-And then we check whether “i” is still smaller than “n.”
+And then we check whether “i” is still smaller than “n”.
 
 0:05:43.200,0:05:45.280
 So, this is the “n” we're talking about.
@@ -207,7 +207,7 @@ Now, the parameter “body” is going to be a function. Let's look at the type 
 So, it's going to be a function that takes something of type “a”
 
 0:06:00.960,0:06:04.000
-and gives us something of type “IO a.”
+and gives us something of type “IO a”.
 
 0:06:05.600,0:06:19.840
 So, it basically changes the value of “a” and does some other stuff.
@@ -216,19 +216,19 @@ So, it basically changes the value of “a” and does some other stuff.
 But here we have a problem: this “i” is not a String.
 
 0:06:33.520,0:06:40.560
-So, we cannot do concatenation with another String. So, we need to do “show i.”
+So, we cannot do concatenation with another String. So, we need to do “show i”.
 
 0:06:43.600,0:06:52.720
 And now we read a number from the user. We say “x read line” (x <- readLn).
 
 0:06:52.720,0:06:58.720
-Here we have a “return.” But we have a problem here which is that we want to send
+Here we have a “return”. But we have a problem here which is that we want to send
 
 0:06:58.720,0:07:03.760
 two values to be used later in the next run of the loop,
 
 0:07:03.760,0:07:11.600
-which are “x” and “i.” “i” is the counter and “x” is the value of the
+which are “x” and “i”. “i” is the counter and “x” is the value of the
 factor that the user entered.
 
 0:07:12.720,0:07:19.280
