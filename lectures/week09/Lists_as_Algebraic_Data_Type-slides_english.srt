@@ -4,11 +4,11 @@ Last week we talked about
 algebraic datatypes, and specifically about
 
 00:00:10,720 --> 00:00:17,120
-computation by pattern matching which of course
+computation by pattern-matching which of course
 was just another way, an additional way to
 
 00:00:17,760 --> 00:00:23,520
-programming by case distinction. Except that this
+program by case distinction. Except that this
 time, case distinction was not via if-then-else
 
 00:00:23,520 --> 00:00:31,360
@@ -17,7 +17,7 @@ cases that the value of the defined algebraic
 
 00:00:31,360 --> 00:00:40,400
 datatype can take. We will continue with this
-today, insofar as that, later, we will
+today, insofar as that later, we will
 
 00:00:40,400 --> 00:00:45,920
 briefly look a bit more at how pattern
@@ -29,7 +29,7 @@ is ultimately driven by pattern matching. But
 
 00:00:52,560 --> 00:00:58,320
 before doing that, we will actually take a look
-at lists, which so far in the lecture have got
+at lists, which so far in the lecture have received
 
 00:00:58,320 --> 00:01:04,320
 some special treatment via specific syntax, via
@@ -53,7 +53,7 @@ Then we would define one ourselves.
 We certainly could do that
 
 00:01:28,880 --> 00:01:33,520
-using the kind of the definition we saw
+using the kind of definition we saw
 last week. And since lists are polymorphic,
 
 00:01:33,520 --> 00:01:37,440
@@ -78,7 +78,7 @@ constructor for the case of non-empty lists. And
 
 00:02:01,040 --> 00:02:09,600
 what should this be called? It's often called
-Cons, for "constructor". In a way, if list is the
+Cons, for "constructor". In a way, if a list is the
 
 00:02:09,600 --> 00:02:16,320
 first datatype that you imagine, then maybe simply
@@ -94,7 +94,7 @@ then what are the arguments? An element of the
 
 00:02:24,800 --> 00:02:29,200
 carrier type, of the type (a) that we want
-to see elements of in the list and then the
+to see elements of in the list, and then the
 
 00:02:29,200 --> 00:02:35,440
 rest list. And then a recursive occurrence of
@@ -403,7 +403,7 @@ if we append that with some other list,
 then we simply get that other list.
 
 00:09:55,520 --> 00:10:00,400
-Or the first list could be non-empty, then
+Or the first this could be non-empty, then
 it decomposes into the first element and some
 
 00:10:00,400 --> 00:10:08,400
@@ -424,7 +424,7 @@ new lists, which is exactly how we used the
 
 00:10:30,000 --> 00:10:35,920
 constructors of the Tree type last week. We
-had Nodes and leaves (Leafs) on the left as
+had nodes and leaves (Leaf) on the left as
 
 00:10:35,920 --> 00:10:42,240
 pattern parts, where we decided which case we
@@ -487,7 +487,7 @@ to go about this is to, first, match against the
 case where both lists are non-empty. The first one
 
 00:11:59,840 --> 00:12:03,680
-decomposes into a first element
+decomposes into the first element
 x and some rest, and the second
 
 00:12:03,680 --> 00:12:07,680
@@ -523,7 +523,7 @@ Something else that becomes apparent here now
 is that this recursion pattern or the way
 
 00:12:57,840 --> 00:13:03,360
-that lists are seen as special Trees which
+that lists are seen as special trees which
 lean in one direction has consequences for
 
 00:13:03,920 --> 00:13:07,840
@@ -532,7 +532,7 @@ So, what we see here in the append function,
 
 00:13:07,840 --> 00:13:13,520
 for example, is that it takes as many steps to
-compute the 'append' as: the first element has
+compute the 'append' as the first element has
 
 00:13:13,520 --> 00:13:19,200
 elements. We see the recursions on the first
@@ -688,7 +688,7 @@ We have two normal lists (first-order data),
 but also, if we have functions as arguments,
 
 00:17:17,440 --> 00:17:22,720
-then of course we can't pattern match on the
+then of course we can't pattern-match on the
 functions. But if we have a function as a list
 
 00:17:22,720 --> 00:17:28,640
@@ -734,7 +734,7 @@ takes a function argument which is a function.
 
 00:18:24,320 --> 00:18:29,120
 It takes a list. What does it do? What it needs
-to distinguish, is the list the empty list? Then
+to distinguish is the list the empty list? Then
 
 00:18:29,120 --> 00:18:34,080
 mapping whatever over it will still be the empty
@@ -758,7 +758,7 @@ works, driven by pattern-matching ultimately.
 
 00:18:59,600 --> 00:19:03,760
 And of course, relatedly, we can do similar
-things for other data types. I already
+things for other datatypes. I already
 
 00:19:03,760 --> 00:19:08,480
 mentioned this in the context of whole-meal
@@ -774,7 +774,7 @@ that, on lists, correspond to list comprehension.
 
 00:19:22,000 --> 00:19:28,160
 While we don't have Tree comprehensions like we
-do list comprehensions, we do have Tree versions of
+have list comprehensions, we do have tree versions of
 
 00:19:28,160 --> 00:19:35,120
 typical functions that we apply to lists in order
@@ -786,7 +786,7 @@ define which takes a function, takes a Tree
 
 00:19:40,800 --> 00:19:48,080
 polymorphic in some type, and it returns a Tree
-over the other type driven by what the function
+of the other type driven by what the function
 
 00:19:48,080 --> 00:19:55,120
 is mapping from and to. What happens if we map

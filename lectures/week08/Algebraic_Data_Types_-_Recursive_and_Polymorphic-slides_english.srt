@@ -89,14 +89,14 @@ argument is not yet recursive. This is the
 
 00:02:22,000 --> 00:02:26,400
 basic case of the recursion. And if the first
-argument is not Zero, then it must be successor of
+argument is not Zero, then it must be the successor of
 
 00:02:26,400 --> 00:02:31,120
 something because there is no other choice because
 Zero and Succ are the only two data constructors
 
 00:02:31,680 --> 00:02:39,920
-of the Nat type. So, it is successor of something.
+of the Nat type. So, it is the successor of something.
 And this something is a variable. It can be
 
 00:02:41,120 --> 00:02:46,160
@@ -177,7 +177,7 @@ examples where this Leaf is replaced by something
 of this form, maybe with a different number.
 
 00:04:37,600 --> 00:04:43,920
-This would be similar of course to the Connection
+This would be similar, of course, to the Connection
 example where we saw a Tree on the whiteboard
 
 00:04:43,920 --> 00:04:50,160
@@ -233,8 +233,8 @@ recursively the height of the left and right
 sub-Trees and take the maximum of that and add
 
 00:05:59,680 --> 00:06:05,840
-1. Then, we get an Integer which can usefully
-be interpreted as the height of that Tree.
+1. Then, we get an Integer which can be usefully
+interpreted as the height of that Tree.
 
 00:06:07,280 --> 00:06:10,480
 So, the same pattern as before: case distinction,
@@ -370,7 +370,7 @@ type. Actually, the computation of height is not
 
 00:09:37,840 --> 00:09:43,040
 affected by this. This 'height' is actually a polymorphic
-function on a polymorphic data type. So, it takes
+function on a polymorphic datatype. So, it takes
 
 00:09:43,040 --> 00:09:48,560
 trees of any content type and returns an Integer.
@@ -526,8 +526,8 @@ in particular, of this function here. So, if you
 extend the datatype, then we are sure that the
 
 00:13:23,760 --> 00:13:32,320
-compiler will tell us where we have to add cases, etc. We
-just redesigned to not have the Blank Tile as an
+compiler will know where we have to add cases, etc. We
+just redesigned it to not have the Blank Tile as an
 
 00:13:32,320 --> 00:13:38,720
 actual tile. So, we used this partiality marker
@@ -540,7 +540,7 @@ misunderstanding that I have to warn against,
 
 00:13:50,560 --> 00:13:59,680
 and that is the fact that the data that we get
-with datatypes Trees structures as we have seen,
+with datatypes, with tree structures as we have seen,
 
 00:13:59,680 --> 00:14:04,720
 in Haskell, they are not the same as pointer
@@ -612,7 +612,7 @@ then what I get is a very small Tree, but not
 
 00:15:33,360 --> 00:15:39,760
 empty anymore. So, it has a Node, the new value
-that we wanted to insert, and two leaves (Leafs).
+that we wanted to insert, and two leaves (Leaf).
 
 00:15:39,760 --> 00:15:47,040
 And the more interesting recursive case is: we get
@@ -639,7 +639,7 @@ the whole Tree along with variables for the things
 that I have matched deeper inside. And what is the
 
 00:16:24,000 --> 00:16:27,760
-behaviour here if the thing that I want
+behavior here if the thing that I want
 to insert is smaller than the current
 
 00:16:29,040 --> 00:16:34,240
@@ -652,10 +652,10 @@ the same right successor as the original Tree,
 
 00:16:40,880 --> 00:16:48,480
 it has the same internal Node again, and it has a
-new left sub-Tree, which is obtained with recursive
+new left sub-Tree, which is obtained with a recursive
 
 00:16:48,480 --> 00:16:54,240
-call with the inserting of this n into the left
+call with the insertion of this n into the left
 sub-Tree. Then there is a corresponding case for
 
 00:16:54,240 --> 00:17:01,760
@@ -676,7 +676,7 @@ not changing the original Tree. That's what
 
 00:17:18,736 --> 00:17:24,160
 is called persistency of data structures. And
-that's a property that some data types have in
+that's a property that some datatypes have in
 
 00:17:24,880 --> 00:17:29,200
 imperative languages. So, if you compute 3 + 5 in
@@ -687,12 +687,12 @@ You don't overwrite the 3 with 8 or something
 like that. You wouldn't even consider this as a
 
 00:17:33,600 --> 00:17:39,760
-reasonable behaviour of the '+' operation in any
+reasonable behavior of the '+' operation in any
 language, also in an object-oriented language. But
 
 00:17:39,760 --> 00:17:44,720
 for example, for data structures like arrays,
-lists, trees, often, the understanding in
+lists, and trees, often, the understanding in
 
 00:17:44,720 --> 00:17:50,400
 imperative languages is that if you, for example,

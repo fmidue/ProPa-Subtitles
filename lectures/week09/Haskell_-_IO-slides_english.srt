@@ -20,7 +20,7 @@ is something that we have largely ignored so
 
 00:00:33,520 --> 00:00:38,880
 far. In CodeWorld, we have produced some output:
-the Pictures and the animations. But we didn't
+the pictures and the animations. But we didn't
 
 00:00:39,920 --> 00:00:45,440
 program input facilities where the user is
@@ -43,7 +43,7 @@ And indeed here on this slide, I have a somewhat
 surprising quote which claims that Haskell is the
 
 00:01:09,040 --> 00:01:13,680
-world's finest imperative programming language
+world's finest imperative programming language,
 which is a bit counterintuitive probably because
 
 00:01:13,680 --> 00:01:19,360
@@ -51,7 +51,7 @@ so far in the course, I have always emphasized
 differences between Haskell and imperative
 
 00:01:19,360 --> 00:01:27,200
-programming languages, like absence of side
+programming languages, like the absence of side
 effects, no dealing with non-local information,
 
 00:01:27,200 --> 00:01:32,000
@@ -75,7 +75,7 @@ just a joke. How does he mean this? The point is
 that even though Haskell is a functional language,
 
 00:01:54,080 --> 00:01:59,120
-it is not imperative, by design, it does
+it is not imperative; by design, it does
 have facilities for dealing with all these
 
 00:01:59,120 --> 00:02:05,440
@@ -87,8 +87,8 @@ And the way that these features are included
 in Haskell is much more principled than a
 
 00:02:12,800 --> 00:02:18,640
-language which is just imperative from the start.
-Haskell is a mathematically oriented language.
+language that is just imperative from the start.
+Haskell is a mathematically-oriented language.
 
 00:02:18,640 --> 00:02:24,480
 It does have support for all kinds of imperative
@@ -205,7 +205,7 @@ of expressions wouldn't be valid anymore.
 
 00:04:56,480 --> 00:05:02,320
 They would change the semantics because maybe
-the order of evaluation infers which of two
+the order of evaluation influences which of two
 
 00:05:03,200 --> 00:05:12,240
 input commands is executed first, etc. Simply
@@ -241,7 +241,7 @@ where the test suites were integrated in many of
 
 00:05:55,200 --> 00:05:59,840
 Autotool tasks already used the do-notation. There
-was some printing to the screen and then execution
+was some printing to the screen and then the execution
 
 00:05:59,840 --> 00:06:05,840
 of test suites, etc. This was of course already
@@ -256,16 +256,16 @@ and from that do-notation, we can, of course, call
 normal functions. So, we will use do-notation where
 
 00:06:14,640 --> 00:06:20,960
-we do interactive behaviour with the user, maybe.
+we do interactive behavior with the user, maybe.
 And of course, we call so-called normal functions,
 
 00:06:20,960 --> 00:06:27,440
-so, the mathematical functions of Haskell to do
+so the mathematical functions of Haskell to do
 computation on the inputs that the user has given.
 
 00:06:28,880 --> 00:06:32,800
 That would be the very naïve way to just
-have the do-notation and then we call normal
+have the do-notation, and then we call normal
 
 00:06:32,800 --> 00:06:37,760
 functions. But actually, the integration is much
@@ -276,8 +276,8 @@ concepts like higher-orderness, polymorphism,
 …, so, all the things we have seen in Haskell,
 
 00:06:42,000 --> 00:06:48,240
-they remain available even in, and with do-code.
-So, it is not like there is a strict separation.
+they remain available even in and with do-code.
+So it is not like there is a strict separation.
 
 00:06:48,880 --> 00:06:52,560
 Of course, there is a separation, but this
@@ -288,7 +288,7 @@ But we don't give up our abstraction
 facilities like writing higher-order functions,
 
 00:06:58,880 --> 00:07:04,560
-writing polymorphic code, just because we also
+writing polymorphic code just because we also
 have to do do-code now because we want to have
 
 00:07:04,560 --> 00:07:09,680
@@ -305,8 +305,8 @@ was referring to on the previous slide as well.
 
 151 # slide
 00:07:24,560 --> 00:07:31,440
-So, here's the first example, very simple. We
-want the "hello world" of the Haskell do-notation.
+So here's the first example, very simple. We
+want the “hello world” of the Haskell do-notation.
 
 00:07:32,080 --> 00:07:36,160
 And the task is to get two numbers from the
@@ -325,8 +325,8 @@ saying. This is the "main" definition. Usually
 in the Autotool task, there would be the
 
 00:07:56,720 --> 00:08:03,440
-test suite written here. Now, instead, we
-have some input. So, this notation is for:
+test suite written here. Now instead, we
+have some input. So this notation is for:
 
 00:08:03,440 --> 00:08:11,440
 read a value from the user, and bind the result
@@ -337,8 +337,8 @@ and bind whatever the result has entered to m,
 and then compute something. And this "prod" is a
 
 00:08:18,800 --> 00:08:22,800
-pure function, so, defined in this case with
-pattern matching on lists. But it could be any
+pure function, so defined in this case with
+pattern-matching on lists. But it could be any
 
 00:08:23,760 --> 00:08:28,960
 function on Integer lists that you can define
@@ -377,8 +377,8 @@ printing this out. What you may notice
 is that we don't need to say here that
 
 00:09:17,280 --> 00:09:22,400
-n should be an Integer. There's no "scan
-f with some…" like in C, with some special
+n should be an Integer. There's no “scanf”
+like in C, with some special
 
 00:09:23,840 --> 00:09:29,360
 format string to express what
@@ -389,11 +389,11 @@ type inference. Since the n and m variables,
 which are not type annotated here, will be used as
 
 00:09:36,240 --> 00:09:40,960
-inputs to the prod function, which is integer
+inputs to the prod function, which is Integer
 type, automatically, the compiler will find out
 
 00:09:40,960 --> 00:09:45,520
-that we should read an Integer here. So, if
+that we should read an Integer here. So if
 the user inputs something here which doesn't
 
 00:09:45,520 --> 00:09:51,280
@@ -406,7 +406,7 @@ The main point is the separation of do-code and
 
 00:09:58,320 --> 00:10:04,640
 the computation code, and the fact that here
-the "do", we have this sequential behaviour
+the “do”, we have this sequential behavior
 
 00:10:04,640 --> 00:10:10,480
 which makes clear, and is corresponding to
@@ -426,11 +426,11 @@ The principle behind this integration and also
 where the guarantees about the mathematical
 
 00:10:32,880 --> 00:10:39,040
-well-behavedness, and nice integration with the
+well-behavedness and nice integration with the
 rest of the language come from this on the type
 
 00:10:39,040 --> 00:10:44,400
-level. So, as you have seen on the previous slide,
+level. So as you have seen on the previous slide,
 and also in the test suites, the type of the main
 
 00:10:44,400 --> 00:10:49,040
@@ -462,7 +462,7 @@ It is used like the other type constructors we
 have seen so far. Since we have basic types like
 
 00:11:22,800 --> 00:11:27,840
-Int, or user-defined types like Tree of something,
+Int or user-defined types like Tree of something,
 or compound types like lists of pairs, etc.,
 
 00:11:28,640 --> 00:11:34,320
@@ -478,7 +478,7 @@ IO whatever type. What is the interpretation of
 this? If we have something like IO of an abstract
 
 00:11:47,360 --> 00:11:54,560
-type (a), or a type Int, Bool, whatever, then
+type (a) or a type Int, Bool, whatever, then
 the idea is that the elements of that IO type
 
 00:11:54,560 --> 00:12:01,520
@@ -495,7 +495,7 @@ depending on those values that are read in,
 
 00:12:10,720 --> 00:12:16,240
 and ultimately a value of type (a) is created.
-So, IO Int could be a complete program that
+So IO Int could be a complete program that
 
 00:12:17,040 --> 00:12:20,240
 asks the user for inputs, does some
@@ -514,7 +514,7 @@ do-block and maybe even in nested do-blocks and
 calls to other functions would be something of
 
 00:12:36,800 --> 00:12:44,640
-type IO Int, for example because it does complex
+type IO Int, for example, because it does complex
 operations, and in the end, it returns an Int.
 
 00:12:47,200 --> 00:12:53,280
@@ -571,12 +571,12 @@ The most basic primitives for this would
 be the tool here: get a character. That's
 
 00:14:06,560 --> 00:14:10,400
-an IO behaviour. That's why its type is IO
+an IO behavior. That's why its type is IO
 something. And what is the something? That's
 
 00:14:10,400 --> 00:14:16,000
 a character because we do some input-output.
-At this case, we are getting only an input.
+In this case, we are getting only an input.
 
 00:14:16,000 --> 00:14:20,800
 And then, what is the result? It's a character
@@ -711,8 +711,8 @@ IO and print that value to the console. 'print'
 is really a function. We give it an argument of
 
 00:17:40,000 --> 00:17:45,840
-some type that is "showable" (for example type a,
-if we have "Show a") and then it does something.
+some type that is "showable" (for example, type a,
+if we have “Show a”) and then it does something.
 
 154 # slide
 00:17:48,240 --> 00:17:54,080
@@ -725,10 +725,10 @@ IO primitives. It is not just with the ones from
 
 00:17:58,400 --> 00:18:04,400
 the previous slide. There we had printing and
-reading from the console from the keyboard,
+reading from the console, from the keyboard,
 
 00:18:04,400 --> 00:18:08,320
-but of course there are many more
+but of course, there are many more
 primitives like writing to a file
 
 00:18:08,880 --> 00:18:14,080
@@ -910,7 +910,7 @@ that some value is produced and encapsulated at
 
 00:22:55,360 --> 00:23:01,200
 that point. It might be bound to a variable.
-return is not changing their control flow,
+Return is not changing the control flow,
 
 00:23:01,200 --> 00:23:08,720
 it's just a way to embed a pure value into this
@@ -1002,7 +1002,7 @@ we might have to use this because we want to
 
 00:25:18,480 --> 00:25:26,480
 manipulate stuff very directly. But for normal
-user code, what I say here, is the truth.
+user code, what I say here is the truth.
 
 00:25:27,760 --> 00:25:34,480
 That is for system programmers to circumvent these
@@ -1017,7 +1017,7 @@ More examples like on the previous slide will be…
 More examples where you see how these do-blocks
 
 00:25:55,840 --> 00:26:01,760
-work in practice, will be in the exercise tasks
+work in practice will be in the exercise tasks
 of course. But also if you look at the collection
 
 00:26:01,760 --> 00:26:07,680
@@ -1031,11 +1031,11 @@ product function that I have shown here so far.
 156 # slide
 00:26:20,160 --> 00:26:26,800
 Finally, and also to finish up, let me return
-to this point about using abstraction concepts
+to this point about using abstraction concepts.
 
 00:26:26,800 --> 00:26:32,080
 in the context of IO computations, like
-polymorphism, higher-orderedness, etc.
+polymorphism, higher-order-ness, etc.
 
 00:26:32,080 --> 00:26:37,120
 Let me discuss this on the question of what
@@ -1058,7 +1058,7 @@ it would be natural to ask: what about
 other control structures? or at least,
 
 00:27:01,200 --> 00:27:06,400
-control structures at all like the while loop?
+control structures at all like the while-loop?
 Once we have blocks of this form, we can't write
 
 00:27:06,400 --> 00:27:11,440
@@ -1079,7 +1079,7 @@ something like a while is user-defined in Haskell.
 
 00:27:30,560 --> 00:27:36,880
 We don't need to have the compiler support a
-while loop because we can already implement it
+while-loop because we can already implement it
 
 00:27:36,880 --> 00:27:44,080
 as a higher-order function. That's how this would
@@ -1103,7 +1103,7 @@ of the function arguments, we then created
 
 00:28:07,760 --> 00:28:12,880
 different divide-and-conquer computations. And the
-same idea applies here. Why does there not need to
+same idea applies here. Why doesn't there need to
 
 00:28:12,880 --> 00:28:17,600
 be a keyword which is supported by the compiler?
@@ -1111,11 +1111,11 @@ It can simply be a higher-order polymorphic
 
 00:28:17,600 --> 00:28:22,960
 function. It's like a skeleton, but not for divide
-and conquer, but for the concept of while looping.
+and conquer, but for the concept of while-looping.
 
 00:28:23,760 --> 00:28:29,760
 What are the conceptual ingredients
-of a while loop? Some start value
+of a while-loop? Some start value
 
 00:28:30,720 --> 00:28:38,800
 for the loop variable, then some predicate on
@@ -1167,11 +1167,11 @@ predicate of this type, and the actual body. And
 
 00:29:50,800 --> 00:29:58,560
 then how is it defined? It implements the idea
-that a while loop can always be expressed by a
+that a while-loop can always be expressed by a
 
 00:29:58,560 --> 00:30:06,640
 recursion. This interaction/analogy of recursion
-and drooping iteration and recursion is something
+and dropping iteration and recursion is something
 
 00:30:06,640 --> 00:30:11,120
 that you should know from some theory lectures,
@@ -1183,7 +1183,7 @@ recursive algorithms and iterative algorithms
 
 00:30:16,400 --> 00:30:23,920
 are equivalent, if you want a proof. We don't
-need iterative concepts like while looping as a
+need iterative concepts like while-looping as a
 
 00:30:23,920 --> 00:30:29,280
 language construct in Haskell because it is easily
@@ -1207,7 +1207,7 @@ to the current value of the loop variable.
 
 00:30:49,680 --> 00:30:54,000
 Then, this can be True or not. If it's not True,
-then that means we should stop the while loop.
+then that means we should stop the while-loop.
 
 00:30:54,000 --> 00:30:58,960
 In that case, we run into the else-branch
@@ -1230,7 +1230,7 @@ the "while" should be, an IO something.
 That's if we entered the end of the loop
 
 00:31:25,200 --> 00:31:31,920
-once the predicate does not anymore. And while the
+once the predicate does not hold anymore. And while the
 predicate is still holding, we do the first option
 
 00:31:31,920 --> 00:31:36,880
@@ -1263,11 +1263,11 @@ It will check the predicate on this x'. This could
 
 00:32:14,640 --> 00:32:20,240
 be True or not. If it is not True, then the x' is
-returned. Otherwise, the body is excluded again,
+returned. Otherwise, the body is executed again,
 
 00:32:20,240 --> 00:32:28,080
 but now, with the current x'. This implements
-this while construct without needing to edit
+this while-construct without needing to edit
 
 00:32:28,720 --> 00:32:33,520
 the language. It is not something the compiler has
@@ -1278,7 +1278,7 @@ user-defined. So, if you have other control
 structures in mind… other loop types or a slightly
 
 00:32:38,160 --> 00:32:43,040
-different behaviour for loops, then you are free
+different behavior for loops, then you are free
 to write your own functions for this. Of course,
 
 00:32:43,040 --> 00:32:48,960
@@ -1290,12 +1290,12 @@ interesting and useful. So, we don't
 always have to do it ourselves. But we are
 
 00:32:53,360 --> 00:33:00,560
-completely free because we have the control over
+completely free because we have control over
 abstraction using polymorphism and higher-order.
 
 00:33:02,320 --> 00:33:07,920
 How could this be used then? Let's assume this
-function is given, we have actually imported it
+function is given; we have actually imported it
 
 00:33:07,920 --> 00:33:14,320
 from some library of useful looping functions,
@@ -1314,7 +1314,7 @@ is still smaller than 10. So, that's like a
 while-loop where the loop breaking condition is,
 
 00:33:31,920 --> 00:33:38,160
-say we start a variable n, n is equal to zero,
+say we start a variable n; n is equal to zero,
 and then while n is smaller than 10, do whatever.
 
 00:33:39,040 --> 00:33:43,760
@@ -1331,7 +1331,7 @@ current value, and then to hand over to the next
 
 00:33:56,640 --> 00:34:03,040
 loop iteration with an increased value…
-incremented by one, for the loop variable.
+incremented by one for the loop variable.
 
 00:34:03,040 --> 00:34:10,720
 What would this do? It would print the numbers

@@ -12,7 +12,7 @@ here says, "potential problems with recursion".
 Not because recursion is problematic per se, but
 
 00:00:20,280 --> 00:00:24,810
-because it can sometimes be a bit tricky to use.
+because it can sometimes be a bit tricky to use,
 and you also have to think carefully when and
 
 00:00:24,810 --> 00:00:31,560
@@ -33,19 +33,19 @@ facts about points in the plane. So, not mother, father
 
 00:00:49,770 --> 00:00:59,220
 child, Klaus, Anja, Thorsten, but A, B, C etc. were
-points and we have information that there is a
+points, and we have information that there is a
 
 00:00:59,220 --> 00:01:05,640
 relationship, lines between them. We should
 write predicates to describe triangles and quadrilaterals.
 
 00:01:05,640 --> 00:01:12,540
-One more important clue is given.
-Namely, that a line from A to B is, of course, also
+One more important clue is given,
+namely, that a line from A to B is, of course, also
 
 00:01:12,540 --> 00:01:17,190
 a line from B to A. But in
-the facts this is not necessarily expressed.
+the facts, this is not necessarily expressed.
 
 00:01:17,190 --> 00:01:21,810
 Here it is written: Line from A to B.
@@ -65,10 +65,10 @@ would be as follows: It is described what a triangle is.
 
 00:01:41,700 --> 00:01:47,760
 For three points X, Y, Z we have a triangle if
-we have a connection from X to Y, from Y to Z and
+we have a connection from X to Y, from Y to Z, and
 
 00:01:47,760 --> 00:01:52,650
-from Z to X and also none of these two points can be equal,
+from Z to X, and also none of these two points can be equal
 because it was already assumed here that
 
 00:01:52,650 --> 00:02:00,780
@@ -77,15 +77,15 @@ And for quadrilaterals, of course, you need four parameters.
 
 00:02:00,780 --> 00:02:07,440
 And then you need a line from X to Y, Y to Z,
-Z to U and U to X. Here it must be additionally required
+Z to U, and U to X. Here it must be additionally required
 
 00:02:07,440 --> 00:02:12,060
 that X and Z are different and Y and U are different,
 because otherwise you could get some degenerate quadrilaterals,
 
 00:02:12,060 --> 00:02:18,570
-where several points coincide and that alone
-by the fact that there is no line from A to A,
+where several points coincide, and that alone
+by the fact that there is no line from A to A
 
 00:02:18,570 --> 00:02:23,820
 is not excluded. This would be a sensible program
@@ -93,10 +93,10 @@ which one could imagine here.
 
 00:02:23,820 --> 00:02:31,590
 It also follows approximately my rule of thumb that
-we always place negative information/ negative literals
+we always place negative information/negative literals
 
 00:02:31,590 --> 00:02:39,690
-as far as possible to the end of our rules,
+as far as possible to the end of our rules
 if such a thing occurs. This was kept here.
 
 00:02:39,690 --> 00:02:47,400
@@ -113,11 +113,10 @@ which would be there in the plane itself, if one draws in the
 
 00:02:59,370 --> 00:03:04,050
 points and draws the connections,
-would not be supplied by these predicates
+would not be supplied by these predicates.
 
 00:03:04,050 --> 00:03:10,410
-query would not be supplied. So, we would have to
-add here still line B to A explicitly to the fact base.
+So, we would have to add here still line B to A explicitly to the fact base.
 
 00:03:10,410 --> 00:03:14,700
 But we do not want to do that.
@@ -134,15 +133,14 @@ Now it would be tempting then to just say,
 
 00:03:26,460 --> 00:03:33,750
 that whenever there is a line from X to Y,
-or there is a line from Y to X,
+there is also a line from Y to X.
 
 00:03:33,750 --> 00:03:40,260
-whenever there is a line from Y to X.
 This would ensure that to this case line(a,b)
 
 00:03:40,260 --> 00:03:47,520
-would be implicitly added to line(b,a).
-From a logical point of view, it would be a very clever formulation,
+would be implicitly added: line(b,a).
+From a logical point of view, it would be a very clever formulation
 
 00:03:47,520 --> 00:03:56,280
 to express this symmetry of this line relation
@@ -165,7 +163,7 @@ surprising why there is a problem here,
 because if we go back to our rules of thumb
 
 00:04:25,500 --> 00:04:32,040
-rules of recursion (which were these rules), then
+forrecursion (which were these rules), then
 all of them are fulfilled in this example.
 
 00:04:32,040 --> 00:04:37,410
@@ -173,7 +171,7 @@ So, there must be at least one base case.
 If line is now our recursive predicate,
 
 00:04:37,410 --> 00:04:43,770
-then it has several base cases. Namely, this line(a,b),
+then it has several base cases, namely, this line(a,b),
 line(b,c), all these facts. These are base cases.
 
 00:04:43,770 --> 00:04:48,300
@@ -181,11 +179,11 @@ The base cases should be listed first.
 So in the program the base cases should come first and then
 
 00:04:48,300 --> 00:04:53,700
-any recursive rules. That would be given in this case,
-if we wrote this line(X,Y), line(Y,X), this rule at the very end.
+any recursive rules. That would be given in this case
+if we wrote this line(X,Y), line(Y,X), this rule at the very end
 
 00:04:53,700 --> 00:04:59,940
-of a program or at first below these
+of the program or at first below these
 whole line facts. And also this third rule,
 
 00:04:59,940 --> 00:05:05,280
@@ -201,15 +199,15 @@ this rule looked like this. So one could assume that
 everything is already in order. However, if we run this,
 
 00:05:19,680 --> 00:05:25,740
-because of depth-first search, we could also start to plot the derivation tree
+because of depth-first search, we could also start to plot the derivation tree,
 then we would find that this is too recursive in the sense
 
 00:05:25,740 --> 00:05:30,660
 that we would never find a
-solution. The reason is ultimately,
+solution. The reason is ultimately
 
 00:05:30,660 --> 00:05:37,590
-that from line(X,Y) and line(Y,X), that this relationship could be
+that from line(X,Y) and line(Y,X) this relationship could be
 could constantly jump back and forth. So, if one
 
 00:05:37,590 --> 00:05:42,750
@@ -217,7 +215,7 @@ knows line(a,b), then you also know line(b,a), then you also know line(a,b), ...
 So, this becomes such a circular argument here,
 
 00:05:42,750 --> 00:05:48,030
-where the calculation goes around in circles, instead of
+where the calculation goes around in circles instead of
 that we actually work with these
 
 00:05:48,030 --> 00:05:56,610
@@ -226,18 +224,18 @@ that with certain queries problems arise with
 
 00:05:56,610 --> 00:06:04,290
 such a rule because simply here
-not enough progress is made during the calculation,
+not enough progress is made during the calculation
 
 00:06:04,290 --> 00:06:12,150
 because we're always going in circles, so to speak, with this rule.
 If we have applied the other rule once, we could apply it directly
 
 00:06:12,150 --> 00:06:18,240
-again because there are only variables. also
-So, we couldn't do that here. That means that this
+again because there are only variables. Also,
+we couldn't do that here. That means that this
 
 00:06:18,240 --> 00:06:23,190
-would actually be an example, which argues against recursion.
+would actually be an example which argues against recursion.
 The warning here is that you should not
 
 00:06:23,850 --> 00:06:28,840
@@ -254,14 +252,14 @@ adding symmetry to the line predicate itself,
 
 00:06:39,910 --> 00:06:44,980
 but one introduces a new predicate.
-One further assumes: There is this line-predicate,
+One further assumes: There is this line predicate,
 
 00:06:44,980 --> 00:06:50,740
 for which the facts are given, which concrete points are
 connected and based on this
 
 00:06:50,740 --> 00:06:56,740
-line-predicate, one defines a
+line predicate, one defines a
 new predicate for symmetric connections.
 
 00:06:56,740 --> 00:07:01,930
@@ -269,7 +267,7 @@ So, where both directions are considered.
 And this cannot happen recursively. You don't have to
 
 00:07:01,930 --> 00:07:10,540
-connect line - line or derive them from each other, but one says:
+connect line to line or derive them from each other, but one says:
 If there is a connection from X to Y,
 
 00:07:10,540 --> 00:07:15,010
@@ -285,12 +283,12 @@ would guarantee, so to speak, the complement,
 that to each predicate/ each fact,
 
 00:07:29,170 --> 00:07:35,260
-which is given for the line-predicate, also the
+which is given for the line predicate, also the
 symmetric fact holds. Then one would simply
 
 00:07:35,260 --> 00:07:43,510
 the actual interesting queries for triangles,
-Quadrilaterals pass on this symmetric line-predicate.
+quadrilaterals pass on this symmetric line predicate.
 
 00:07:43,510 --> 00:07:51,820
 That would have been the solution to the exercise problem in that case.
@@ -390,12 +388,12 @@ because we can get from San Francisco by
 this recursive rule and double application
 
 00:10:19,940 --> 00:10:28,550
-of Direct, we can also get from San Francisco to Maui.
+of direct, we can also get from San Francisco to Maui.
 by this recursive rule. We can also ask, for example:
 
 00:10:28,550 --> 00:10:35,120
 "Are we going to get anywhere from Maui?" And the answer would be
-False, because (regardless of which of the two rules is used)
+false, because (regardless of which of the two rules is used)
 
 00:10:35,120 --> 00:10:40,610
 we cannot somehow achieve or show
@@ -414,7 +412,7 @@ Because we have stuck to the rules of thumb.
 There is at least one base case for the
 
 00:11:01,520 --> 00:11:08,210
-Connection predicate. The base case comes
+connection predicate. The base case comes
 first, before any recursive cases.
 
 00:11:08,210 --> 00:11:17,270
@@ -456,7 +454,7 @@ This is no different than
 
 00:12:06,530 --> 00:12:14,480
 the parent and ancestor example, except that we don't explicitly
-have not explicitly provoked such an error once.
+provoked such an error once.
 
 00:12:14,480 --> 00:12:20,180
 I had mentioned this only at the statement-logical
@@ -493,7 +491,7 @@ In any case, there are more. And I ask again, what connection
 
 00:13:10,990 --> 00:13:15,580
 is there? Or I define based on this
-the connections. And now I can start a query here
+the connections. And now I can start a query here.
 
 00:13:15,580 --> 00:13:19,540
 which will be problematic. Namely,
@@ -520,8 +518,8 @@ It is just the case that if I allow here arbitrary
 direct facts, it can be that there are also possible round
 
 00:13:54,040 --> 00:14:00,340
-trips are possible and they are not
-treated in any special way. This could of course
+direct facts, it can be that there are also possible round
+trips possible and they are not
 
 00:14:00,340 --> 00:14:05,710
 not occur with the ancestor relation, out of
@@ -532,7 +530,8 @@ no circular ancestor relations.
 Nobody is his own parent or is
 
 00:14:09,850 --> 00:14:17,560
-parent of the parent of himself or something.
+Nobody is his own parent or is
+the parent of the parent of himself or something.
 
 00:14:17,560 --> 00:14:26,290
 So, that's where that was, so we could work that way,
@@ -579,7 +578,7 @@ that the search stops when we arrive at a
 stopover, which is not an interesting stopover at all because
 
 00:15:30,310 --> 00:15:36,700
-stopover because we have already been there.
+we have already been there.
 Maybe even started there.
 
 00:15:36,700 --> 00:15:44,170
@@ -625,7 +624,7 @@ A list with one element X. And then there are
 
 00:16:36,490 --> 00:16:39,670
 certain predicates that operate on lists, which I will
-I'm going to discuss in a moment. So, what's the idea here?
+discuss in a moment. So, what's the idea here?
 
 00:16:42,600 --> 00:16:48,630
 Again, we'll assume we have our facts here. These could be the
@@ -637,7 +636,7 @@ Any direct connections should be available here
 
 00:16:55,230 --> 00:17:02,280
 and nevertheless our connection search should
-without falling into such endless searches.
+not fall into such endless searches.
 
 00:17:02,280 --> 00:17:09,390
 And a bit like the line and sline example,
@@ -649,11 +648,11 @@ There, we had done that by adding this
 
 00:17:14,610 --> 00:17:20,820
 symmetric line predicate based on the
-of the normal line predicate.
+normal line predicate.
 
 00:17:20,820 --> 00:17:26,010
-Here the solution is that we generalize our connection predicate
-generalize it, so to speak, specifying a variant of it,
+Here the solution is that we generalize our connection predicate,
+so to speak, specifying a variant of it,
 
 00:17:26,010 --> 00:17:34,860
 which carries such an intermediate list.
@@ -680,7 +679,7 @@ more general sense from X to Y, but note that in
 that you have already been to X because that is where you
 
 00:18:03,480 --> 00:18:10,020
-are flying out of there. So, you're not interested in visiting X again
+are flying out of. So, you're not interested in visiting X again
 as a stopover."
 
 00:18:10,020 --> 00:18:14,850
@@ -701,7 +700,7 @@ connection applies if direct applies. This is also true for connection1.
 
 00:18:34,050 --> 00:18:40,650
 So if there is a direct connection from X to Y, then there is a
-there is also a connection (in this more general sense) from X to Y.
+connection (in this more general sense) from X to Y.
 
 00:18:40,650 --> 00:18:47,070
 And we do not care what the
@@ -725,11 +724,11 @@ if one comes from X to some Z directly and then from Z
 
 00:19:12,800 --> 00:19:18,950
 in any number of steps further to Y.
-And there could arise such a cycle, if the Z
+And there could arise such a cycle if the Z
 
 00:19:18,950 --> 00:19:26,090
 has already been seen once and is now simply
-is approached. Now this intermediate list is used.
+approached. Now this intermediate list is used.
 
 00:19:26,090 --> 00:19:33,200
 That is, we know we want to go from X to Y
@@ -745,7 +744,7 @@ this list can be even bigger. The further we travel,
 
 00:19:44,390 --> 00:19:51,470
 the more stopovers we have to avoid in the future.
-avoid. So, we want to travel from Y to Y and avoid stopovers
+avoid. So, we want to travel from Y to Y and avoid stopovers.
 
 00:19:51,470 --> 00:19:57,920
 in L. How do we do that? Well, either directly, it says up here,
@@ -773,7 +772,7 @@ And only if it doesn't,
 
 00:20:30,710 --> 00:20:38,120
 we want to continue. That is, we require that the Z,
-which we are directly addressing, is not a member, i.e. element
+which we are directly addressing, is not a member, i.e., an element
 
 00:20:38,120 --> 00:20:46,295
 of the list L. Then we would be
@@ -793,7 +792,7 @@ to go to. That is also okay because Z does not yet occur in L.
 
 00:21:03,590 --> 00:21:08,690
 But now please let the next list of intermediate targets,
-that we continue to work with should also contain Z.
+that we continue to work with, should also contain Z.
 
 00:21:10,430 --> 00:21:14,480
 That is, we need to add Z there. One possibility
@@ -804,8 +803,8 @@ which I will also introduce on lists.
 We can say: "This new list L1, with which we continue working
 
 00:21:19,160 --> 00:21:25,940
-we continue to work with, is formed by the
-of a list with Z and the previous list
+we continue to work with, is formed by a
+list with Z and the previous list
 
 00:21:25,940 --> 00:21:31,100
 of intermediate targets." So, append stands for
@@ -840,15 +839,14 @@ We come from San Francisco to Honolulu, to
 Maui, to San Francisco, and that's fine. There will be
 
 00:22:11,000 --> 00:22:19,550
-endless search and then move around in circles, so to speak.
-and then moving in circles, so to speak. They didn't have to
+endless search and then moving around in circles, so to speak.
+They didn't have to come up with that now. I have
 
 00:22:19,550 --> 00:22:26,840
-they didn't have to come up with that now. I have
 explained it to them from the knowledge
+and a lot of experience with recursion. But it
 
 00:22:26,840 --> 00:22:32,990
-and a lot of experience with recursion. But it
 is worthwhile for you to think about this program
 
 00:22:32,990 --> 00:22:39,140
@@ -856,11 +854,11 @@ and to compare it with our rules of thumb.
 I have kept to the fact that there must be a
 
 00:22:39,140 --> 00:22:45,530
-base case must exist. I chose that one first.
+base case that must exist. I chose that one first.
 I have also made sure in the recursive rule
 
 00:22:45,530 --> 00:22:52,100
-made sure that the recursive call came at the very end.
+that the recursive call came at the very end.
 However, if you were very attentive, you
 
 00:22:52,100 --> 00:22:57,020
@@ -876,7 +874,7 @@ end of a rule. Here I have
 obviously violated. And these are also contradictory goals.
 
 00:23:09,770 --> 00:23:14,660
-So on the one hand negative information
+So on the one hand, negative information
 at the end of a rule. On the other hand,
 
 00:23:14,660 --> 00:23:20,940
@@ -884,7 +882,7 @@ recursive calls should be at the end of a rule.
 So, you can ask yourself why it is now
 
 00:23:20,940 --> 00:23:25,650
-is here and works like this.
+here and works like this.
 One answer would be it works or you could
 
 00:23:25,650 --> 00:23:30,300
@@ -901,11 +899,11 @@ happens before the recursive call.
 
 00:23:45,690 --> 00:23:51,690
 Because it is supposed to avoid that we
-the destination Z again.
+visit the destination Z again.
 
 00:23:51,690 --> 00:23:59,190
 So, after we have chosen Z, we only want to execute the recursive
-call/the further search only, if Z
+call/the further search only if Z
 
 00:23:59,190 --> 00:24:03,480
 has really not been visited yet.
@@ -917,10 +915,10 @@ we would actually fall into an infinity trap again, so to
 
 00:24:09,870 --> 00:24:15,150
 speak. So, here either by trial and error
-or by thinking a bit that it is important to
+or by thinking a bit, it is important to
 
 00:24:15,150 --> 00:24:22,800
-first to exclude that Z has already been seen, before we can
+first exclude that Z has already been seen, before we can
 follow it up by a recursive call, so to speak.
 
 00:24:22,800 --> 00:24:30,630
@@ -929,7 +927,7 @@ We could well write the not(member(Z,L))
 
 00:24:30,630 --> 00:24:36,840
 in this place as well. So these
-exchange these two literals. That would be okay.
+two literals could be exchanged. That would be okay.
 
 00:24:36,840 --> 00:24:44,640
 What would not be okay would be to write the not(member(Z,L))
@@ -941,7 +939,7 @@ early. This idea of moving negation to the
 
 00:24:51,750 --> 00:24:57,660
 backwards, we should at least keep to it in this example so that we can
-in this example, that we test this only
+test this only
 
 00:24:57,660 --> 00:25:05,910
 after Z is chosen here. That's the reason here,

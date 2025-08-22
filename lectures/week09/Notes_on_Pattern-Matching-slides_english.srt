@@ -106,7 +106,7 @@ that pattern-matching is not restricted to the
 
 00:02:50,640 --> 00:02:54,960
 left-hand side of the function definition as
-what we have seen, where I define function,
+what we have seen, where I define the function,
 
 00:02:54,960 --> 00:03:01,680
 and I give several equations for it, and
@@ -142,7 +142,7 @@ something, and if it's not Nothing, and it's Just
 
 00:03:44,320 --> 00:03:49,440
 something, then we want to do something with
-the value which was encapsulated in this Just,
+the value that was encapsulated in this Just,
 
 00:03:49,440 --> 00:03:54,160
 then we would do something like fromJust of this
@@ -150,7 +150,7 @@ maybeThing, and then do something with that.
 
 00:03:55,120 --> 00:04:01,920
 It is probably how we have indicated or
-suggested so far, that we work Maybe values
+suggested so far, that we work with Maybe values
 
 00:04:01,920 --> 00:04:07,040
 because we didn't have pattern-matching with the
@@ -193,7 +193,7 @@ via the variables here. At first glance, this
 might look very similar, but actually, there are
 
 00:05:01,520 --> 00:05:06,080
-important differences which make this the
+important differences that make this the
 preferred version, namely in particular
 
 00:05:06,080 --> 00:05:14,480
@@ -202,7 +202,7 @@ example, exhaustive and overlapping checks. Here,
 
 00:05:14,480 --> 00:05:19,280
 the compiler just sees an if-then-else. Here, the
-compiler sees that we made case distinction on the
+compiler sees that we made a case distinction on the
 
 00:05:19,280 --> 00:05:23,520
 values of this maybeThing. This has a certain type
@@ -213,7 +213,7 @@ the cases. Also, here, we can't accidentally try
 to access the thing from inside the Just in the
 
 00:05:32,720 --> 00:05:38,960
-Nothing case. So, here for example, we could also
+Nothing case. So, for example, we could also
 write fromJust maybeThing in the then-branch,
 
 00:05:38,960 --> 00:05:43,280
@@ -334,7 +334,7 @@ CodeWorld Color type for which you probably
 
 00:08:48,800 --> 00:08:54,480
 know that there are some constant values
-like the actual color is red, green, etc.,
+like the actual colors red, green, etc.,
 
 00:08:54,480 --> 00:09:01,120
 then you might be tempted to try to write a
@@ -362,14 +362,14 @@ uppercase. This "red" here is a value constant,
 
 00:09:29,040 --> 00:09:34,400
 but it is not a data constructor. With something
-like this written, then actually this “red” could
+like this written, then actually this "red" could
 
 00:09:34,400 --> 00:09:40,880
 as well be x. It is treated as a variable. It's
 not this constant here. So, this is not doing what
 
 00:09:40,880 --> 00:09:47,600
-we expected, and for the compiler will complain
+we expected, and the compiler will complain
 about this depending on the warning levels that
 
 00:09:47,600 --> 00:09:52,480
@@ -377,7 +377,7 @@ are used. So, for example, it could complain about
 shadowing, saying that this variable name here
 
 00:09:52,480 --> 00:09:58,480
-shadows the existing value “red” imported from
+shadows the existing value "red" imported from
 the CodeWorld library, or the compiler might also
 
 00:09:58,480 --> 00:10:03,120

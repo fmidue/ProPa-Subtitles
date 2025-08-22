@@ -6,7 +6,7 @@ We are looking again at IO.
 
 0:00:06.080,0:00:13.760
 This time we have a C program and a Python
-program or the same program written in both C
+program for the same program written in both C
 
 0:00:13.760,0:00:18.800
 and Python, and we should
@@ -43,8 +43,8 @@ The program first does something;
 defines some x and y variables.
 
 0:01:24.320,0:01:33.680
-Then it does some looping: this while
-loop, and then prints out the value of y.
+Then it does some looping; this while-loop,
+and then prints out the value of y.
 
 0:01:36.640,0:01:39.840
 This is the basic structure.
@@ -61,7 +61,7 @@ And then let y = 0, just for the moment.
 
 0:02:05.360,0:02:09.520
 Then there's something we don't
-know how to do with this while loop.
+know how to do this while-loop.
 
 0:02:10.240,0:02:25.200
 And finally, we print something, let's say,
@@ -72,7 +72,7 @@ And that's exactly the notion we need to
 adapt in order to implement this in Haskell.
 
 0:02:32.800,0:02:42.920
-This while loop: we have to treat it as a
+This while-loop; we have to treat it as a
 recursive function of type IO something.
 
 0:02:42.920,0:02:44.400
@@ -84,7 +84,7 @@ y and transforms them into new ones.
 
 0:02:51.680,0:02:56.240
 So we think of this imperative
-while loop as taking here,
+while-loop as taking here,
 
 0:02:57.120,0:03:04.240
 in the beginning, the current values of x
@@ -121,7 +121,7 @@ We immediately see that we really
 don't need this x since it's not
 
 0:04:32.480,0:04:36.720
-used in this program after the while loop.
+used in this program after the while-loop.
 
 0:04:36.720,0:04:47.520
 So we can just change the type here
@@ -199,7 +199,7 @@ divided by 3 without any floating-point
 stuff, just plain old whole number division.
 
 0:07:14.960,0:07:20.400
-So let's say we use a let statement
+So, let's say we use a let statement
 and say, okay, the new value of x
 
 0:07:20.400,0:07:29.840
@@ -352,7 +352,7 @@ ways you can write the same behavior.
 You don't have to use guards here.
 
 0:12:13.600,0:12:18.720
-You can use if-then-else and the if-then-else
+You can use if-then-else, and the if-then-else
 branching structure is more similar to this one.
 
 0:12:22.720,0:12:28.560
@@ -365,7 +365,7 @@ loop function which keeps track of the.
 
 0:12:38.960,0:12:44.880
 current values and in the end returns
-the final values will be present in all.
+the final values will be present in all,
 
 0:12:47.520,0:12:59.920
 solutions because we don't have these stateful

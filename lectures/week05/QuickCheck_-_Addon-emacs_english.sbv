@@ -37,7 +37,7 @@ expressing properties of this function.
 
 0:00:43.680,0:00:48.160
 And I talked about this paradigm shift not
-only in programming, but also in testing.
+only in programming but also in testing.
 
 0:00:48.160,0:00:53.120
 So, instead of writing unit tests,
@@ -48,7 +48,7 @@ encourages thinking about equations,
 because everything is an expression, so we can
 
 0:00:59.120,0:01:04.160
-express behaviour or semantics of our
+express behavior or semantics of our
 program by talking about equations.
 
 0:01:04.160,0:01:08.240
@@ -57,15 +57,15 @@ writing unit tests, write down properties in the
 
 0:01:08.240,0:01:13.520
 form of equations, and then have, for example,
-QuickCheck or other tools, try to populate the
+QuickCheck or other tools try to populate the
 
 0:01:13.520,0:01:17.440
 input data with random choices, for example,
 and then check that these properties hold.
 
 0:01:17.440,0:01:21.440
-And we also saw that we get counter
-examples if some property does not hold.
+And we also saw that we get counterexamples
+if some property does not hold.
 
 0:01:22.720,0:01:26.000
 One thing I didn't show
@@ -80,7 +80,7 @@ Right, I showed some examples of these properties.
 
 0:01:34.240,0:01:38.880
 And when they failed, we got the input
-list which made the property fail.
+list that made the property fail.
 
 0:01:38.880,0:01:43.840
 But I didn't show you what happens, or how it
@@ -95,13 +95,13 @@ to write functions of several parameters.
 
 0:01:49.120,0:01:54.000
 And then you also have to be able to interpret
-a counter example with more than one input value.
+a counterexample with more than one input value.
 
 0:01:54.000,0:01:55.600
 Okay, so that's one thing I want to show.
 
 0:01:56.160,0:02:00.000
-And first, and I'm not doing this
+And first, I'm not doing this
 by making a bug in the program,
 
 0:02:00.000,0:02:03.520
@@ -114,11 +114,11 @@ the properties now, and the check would be okay.
 
 0:02:08.640,0:02:13.360
 But let me somehow destroy the last line
-to write something which is nonsense.
+to write something that is nonsense.
 
 0:02:14.160,0:02:22.080
 So, if I now run this, I should get
-that there is a counter example.
+that there is a counterexample.
 
 0:02:22.080,0:02:23.120
 Okay, let's do this.
@@ -157,7 +157,7 @@ Here we get two lists.
 
 0:02:55.680,0:02:59.360
 And that corresponds to the fact that
-this property which is failing has
+this property that is failing has
 
 0:02:59.360,0:03:02.960
 two input values, xs and ys.
@@ -172,7 +172,7 @@ the first parameter from the property.
 
 0:03:10.320,0:03:13.600
 And the second thing is the second,
-probably different property.
+probably different argument.
 
 0:03:13.600,0:03:15.120
 When you see something like this, it means
@@ -241,7 +241,7 @@ because then we will see what exactly was tested.
 
 0:04:23.760,0:04:30.800
 Here, let me make this a bit bigger and where
-maybe in this case, we didn't see much shrinking,
+maybe in this case we didn't see much shrinking,
 
 0:04:31.360,0:04:35.760
 because actually, by happenstance, the first
@@ -257,7 +257,7 @@ But that was random luck.
 So, let's try this again.
 
 0:04:44.240,0:04:46.640
-And then for example, we see if we go back,
+And then, for example, we see if we go back,
 
 0:04:47.440,0:04:53.920
 that the first right here, for example,
@@ -275,7 +275,7 @@ And then this is something that
 
 0:05:04.080,0:05:08.080
 QuickCheck could also have already shown:
-The property is wrong for these two inputs.
+the property is wrong for these two inputs.
 
 0:05:08.080,0:05:11.920
 Of course, this would maybe take a bit
@@ -311,7 +311,7 @@ list, it will still fail.
 So, next, try this.
 
 0:05:33.200,0:05:34.960
-But this unfortunately passed.
+But this, unfortunately, passed.
 
 0:05:34.960,0:05:36.960
 So, this is not a good counterexample.
@@ -325,7 +325,7 @@ And well, then try some other things.
 
 0:05:44.720,0:05:51.200
 So, for example, it tries this list, but this also
-passes, then it tries this list, but-, and this-,
+passes; then it tries this list, but—and this—,
 
 0:05:51.200,0:05:57.120
 yeah right, shortens this but it then tries
@@ -336,7 +336,7 @@ so it tries the first half of the list, this
 failed, so it is the new best counterexample.
 
 0:06:04.000,0:06:07.120
-And then it tries again, to make this smaller,
+And then it tries again to make this smaller,
 
 0:06:07.120,0:06:09.600
 so empty list, empty list
@@ -344,20 +344,20 @@ actually has been tested before.
 
 0:06:09.600,0:06:15.920
 So, of course, it passes again, then tries maybe
-if I make-, it takes the second part of this list,
+if I make it, it takes the second part of this list,
 
 0:06:15.920,0:06:20.720
 but it also passes, so it cannot be a small
 counterexample, et cetera, et cetera.
 
 0:06:20.720,0:06:25.120
-So, then the system tries-.
+So then the system tries-
 
 0:06:25.120,0:06:27.680
 What other ways could I make this example simpler?
 
 0:06:27.680,0:06:32.080
-So, apparently it tried to instead
+So apparently it tried to, instead
 of minus one, what if I use just one.
 
 0:06:32.880,0:06:35.760
@@ -393,10 +393,10 @@ second one has only two elements.
 
 0:07:08.240,0:07:12.080
 And it also has tried to make the
-values small, it couldn't take zero
+values small; it couldn't take zero
 
 0:07:12.080,0:07:15.200
-and one because that would have passed
+and one because that would have passed,
 but it can take zero and minus one.
 
 0:07:15.200,0:07:16.960
@@ -415,14 +415,14 @@ QuickCheck instead of verboseCheck.
 
 0:07:28.960,0:07:32.000
 But well, at least in these
-points that you can see how hard
+points, you can see how hard
 
 0:07:32.960,0:07:35.120
 QuickCheck has tried to find
 a small counterexample.
 
 0:07:35.120,0:07:40.320
-So, it didn't encounter this first pair of lists,
+So it didn't encounter this first pair of lists,
 which each had four elements after five tests,
 
 0:07:40.320,0:07:42.320
@@ -434,7 +434,7 @@ as its best counterexample.
 
 0:07:47.040,0:07:50.800
 And this will be shown then, for
-example, in order to-, if one of your
+example, in order to if one of your
 
 0:07:52.160,0:07:55.920
 functions violates a property
@@ -448,8 +448,8 @@ And of course, I wouldn't actually
 write this wrong property here.
 
 0:08:01.600,0:08:06.160
-So, let me go back to the correct
-property and then you can check it.
+So let me go back to the correct
+property, and then you can check it.
 
 0:08:07.440,0:08:12.480
 This one is, of course, correct.

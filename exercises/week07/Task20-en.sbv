@@ -6,7 +6,7 @@ list comprehension expression into an
 expression using map, filter, and concat instead.
 
 0:00:13.760,0:00:21.760
-Therefore we've been given first of all
+Therefore, we've been given, first of all,
 an expression as a list comprehension.
 
 0:00:22.880,0:00:26.480
@@ -21,11 +21,11 @@ Marked as undefined - where
 we use map, filter, and concat.
 
 0:00:49.920,0:01:00.720
-For this task we basically can define all
+For this task, we basically can define all
 the parts by looking at what we require.
 
 0:01:00.720,0:01:07.600
-So there is the attempt of going
+So there is the attempt to go
 sequentially through the list comprehension,
 
 0:01:08.640,0:01:13.360
@@ -48,11 +48,11 @@ see that the closing bracket is at the end:
 so that's the argument for concat.
 
 0:01:48.960,0:01:55.920
-Then we have a map and this map
+Then we have a map, and this map
 has a first parameter which is
 
 0:01:58.880,0:02:03.360
-in these brackets and the second
+in these brackets, and the second
 parameter which is a list.
 
 0:02:04.320,0:02:10.160
@@ -64,11 +64,11 @@ We know that it is some number 50, so we can
 guess that we have to fill in any number here.
 
 0:02:19.840,0:02:26.160
-And in our original expression we have two
+And in our original expression, we have two
 of those things that we could insert; we can't
 
 0:02:26.160,0:02:29.920
-insert minus 50 and we could insert x.
+insert minus 50, and we could insert x.
 
 0:02:31.120,0:02:34.400
 Well, minus 50 is a concrete value which we could
@@ -78,14 +78,14 @@ insert in any place where we require
 numbers, so it could be at those two gaps.
 
 0:02:40.480,0:02:46.480
-Obviously it's not correct to place them
+Obviously, it's not correct to place them
 at both parts, because we know that we
 
 0:02:47.120,0:02:54.720
 have two different ranges of these lists.
 
 0:02:56.000,0:03:01.600
-But let's assume first of all, we can
+But let's assume, first of all, we can
 just fill in those parts like this.
 
 0:03:02.160,0:03:03.840
@@ -108,26 +108,26 @@ Our first attempt could be to just ignore
 
 0:03:30.320,0:03:38.560
 the second argument, or the argument of the
-filter basically, and just return True always.
+filter, basically, and just return True always.
 
 0:03:38.560,0:03:42.560
 const True would return always
-True and we would filter nothing.
+True, and we would filter nothing.
 
 0:03:45.360,0:03:52.480
-For map we have to define again
+For map, we have to define again
 something which returns what we require.
 
 0:03:52.480,0:04:04.800
-In this case we have again as the first
+In this case, we have again as the first
 argument something which turns
 
 0:04:08.880,0:04:11.360
 the argument into something else.
 
 0:04:11.360,0:04:20.080
-But this time it's not like we filter
-that, we have to return a Boolean - we
+But this time, it's not like we filter
+that; we have to return a Boolean—we
 
 0:04:20.080,0:04:31.440
 have to return something of type b so that
@@ -137,15 +137,15 @@ we get a list of type b when we apply map.
 We have to think about what this b is.
 
 0:04:39.680,0:04:55.360
-Therefore we have to go back and consider what
+Therefore, we have to go back and consider what
 we get by using these functions around it.
 
 0:04:55.360,0:05:03.600
 So we have this map inside this lambda
-expression here with x and when we have a look:
+expression here with x, and when we have a look:
 
 0:05:03.600,0:05:13.360
-this lambda - this lambda expression here
+this lambda—this lambda expression here
 
 0:05:16.080,0:05:17.040
 it ends here.
@@ -170,14 +170,14 @@ So we get a list here within the second
 argument of map, which is a list of integers.
 
 0:06:10.000,0:06:17.040
-concat returns a list - or turns
+concat returns a list—or turns
 a list of lists into a list.
 
 0:06:22.240,0:06:23.680
 What we return here
 
 0:06:24.800,0:06:33.040
-has to be in fact something which returns
+has to be, in fact, something which returns
 tuples, because we want to have a list of tuples.
 
 0:06:34.560,0:06:39.200
@@ -190,10 +190,10 @@ we ignore the argument and then return something.
 
 0:06:48.240,0:06:54.480
 Let's just say we try to return the number
-here and in this case the compiler will
+here, and in this case, the compiler will
 
 0:06:58.400,0:07:06.400
-return an error, because we want to
+return an error because we want to
 have a pair of integer and integer,
 
 0:07:06.400,0:07:10.560
@@ -203,20 +203,20 @@ which is not possible by just giving a 1 here.
 So we have to return a pair of integers.
 
 0:07:24.080,0:07:28.560
-And what could these be - these integers?
+And what could these be—these integers?
 
 0:07:28.560,0:07:30.880
 We have one which we get
 
 0:07:32.320,0:07:42.880
-from the filter here back and we have one
-that is defined before that is x here.
+from the filter here back, and we have one
+that is defined before; that is the x here.
 
 0:07:42.880,0:07:45.840
 So we could simply return those two.
 
 0:07:47.760,0:07:52.480
-Now let me load this program in the ghci.
+Now let me load this program in the GHCi.
 
 0:07:57.120,0:08:04.880
 And now we get a list which
@@ -230,47 +230,47 @@ and we can have a first attempt at using it.
 We get a lot of values back.
 
 0:08:16.640,0:08:23.200
-When we compare this to our original
+When we compare this to our original,
 then we see some differences because
 
 0:08:23.200,0:08:29.600
-there were - here are just positive
-values at the end in original and
+there were—here are just positive
+values at the end in the original, and
 
 0:08:29.600,0:08:36.080
 the alternative gives us some negative
 values as well in the last set here.
 
 0:08:36.080,0:08:40.560
-We can use main as well which
+We can use main as well, which
 gives us a test case for
 
 0:08:42.320,0:08:46.320
-comparing those two lists
+comparing those two lists,
 and this one here is this.
 
 0:08:48.000,0:08:57.120
-It uses take so we can use this argument in
+It uses take, so we can use this argument in
 order to see the error which is happening here.
 
 0:08:57.120,0:09:11.840
 So we say take 66 from original and take 66 from
-alternative then we see that at this point here
+alternative; then we see that at this point here
 
 0:09:12.400,0:09:24.320
-both lists differ so here's minus 49
-and -49 and here's 50 and (plus) 15.
+both lists differ, so here's minus 49
+and -49, and here's 50 and (plus) 15.
 
 0:09:26.800,0:09:37.680
 Okay. Now we can look at what we have done
 here within our definition of the alternative.
 
 0:09:40.320,0:09:43.520
-Of course we know one of these is wrong.
+Of course, we know one of these is wrong.
 
 0:09:43.520,0:09:49.840
-We have -50 here and we have -50
-here and one of these has to be x.
+We have -50 here, and we have -50
+here, and one of these has to be x.
 
 0:09:51.440,0:09:53.360
 And which one is it?
@@ -295,7 +295,7 @@ This is expressed by using the map.
 
 0:10:35.600,0:10:43.840
 Its second argument is exactly
-this list here – -50 to 50.
+this list here—from -50 to 50.
 
 0:10:48.560,0:10:57.760
 So we can use this range expression here in
@@ -321,12 +321,12 @@ The map has a first argument
 and it has a second argument.
 
 0:11:29.040,0:11:37.760
-In the second argument – well
+In the second argument—well,
 that's a bit richer expression here.
 
 0:11:37.760,0:11:53.120
 Because at the end we have what we want to
-range over which is the values from x to 50.
+range over, which are the values from x to 50.
 
 0:11:53.840,0:11:57.440
 That's because filter is applied to that list
@@ -335,7 +335,7 @@ That's because filter is applied to that list
 and filter does what this expression here does.
 
 0:12:01.920,0:12:09.840
-This is a filter expression, because we
+This is a filter expression because we
 have no left arrow there at this part and
 
 0:12:10.720,0:12:15.200
@@ -374,7 +374,7 @@ Then there's just one part missing
 
 0:13:21.280,0:13:30.080
 which is implemented already and
-that's this creating of the tuple.
+that's this creation of the tuple.
 
 0:13:31.840,0:13:44.000
 We can simply create the tuple by
@@ -424,7 +424,7 @@ function of y to triple x y by just
 applying x comma and closing bracket, i.e. (,x).
 
 0:15:29.200,0:15:38.160
-If this would look like this and you can write
+If this would look like this, you can write
 this in Autotool and it will accept the answer.
 
 0:15:39.360,0:15:51.040
@@ -432,7 +432,7 @@ If you write this locally in your
 ghci it will probably reject the
 
 0:15:56.800,0:16:05.200
-file loading saying there you use a
+file loading, saying there you use a
 tuple section which is not allowed.
 
 0:16:11.840,0:16:14.880

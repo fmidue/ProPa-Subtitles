@@ -181,7 +181,7 @@ then there is at least a chance that the list as a whole is
 sorted. If this is not fulfilled here,
 
 00:04:53,590 --> 00:05:01,390
-then the original list was not sorted. And we have "and."
+then the original list was not sorted. And we have "and".
 We decompose that, and it must hold that X =< Y.
 
 00:05:01,390 --> 00:05:07,840
@@ -262,7 +262,7 @@ And then we would claim that [6,9,1] is sorted.
 
 00:07:03,130 --> 00:07:09,370
 However, if we say as we do here:
-6 =< 9 must hold and then append 9 back to the
+6 <= 9 must hold and then append 9 back to the
 
 00:07:09,370 --> 00:07:10,983
 list, which then results in this list, and this list must be sorted
@@ -277,8 +277,8 @@ you can try it out) would be a reasonable description of the
 property that a list is sorted.
 
 00:07:29,650 --> 00:07:34,210
-That provides us with the "what?" so to speak. We want the
-result list is sorted. This does not tell us anything about
+That provides us with the "what?", so to speak. We want the
+result list to be sorted. This does not tell us anything about
 
 00:07:34,210 --> 00:07:43,810
 the "How?". We have a list, it is not sorted.
@@ -310,7 +310,7 @@ It is always sorted. Now you can proceed very naively and say:
 
 00:08:21,310 --> 00:08:26,890
 that is sorted." Which is sorted in ascending order.
-I have an origin list. It may not be sorted.
+I have an original list. It may not be sorted.
 
 00:08:26,890 --> 00:08:32,440
 I would like to have a permutation of that source list
@@ -339,7 +339,7 @@ But I had also said that there was also a
 
 00:09:09,330 --> 00:09:15,570
 predefined permutation predicate with the same
-same name in Prolog.
+name in Prolog.
 
 00:09:15,570 --> 00:09:20,460
 That means we don't have to add what's on the slide,
@@ -363,7 +363,7 @@ Like this: All enumerated. All permutations of that input list.
 
 00:09:43,620 --> 00:09:53,220
 And then from the results we want to pick out one
-out, which is doped. In the normal case,
+out, which is sorted. In the normal case,
 
 00:09:53,790 --> 00:10:04,930
 or always, this will even be unique.
@@ -375,7 +375,7 @@ This would also give results which are of course
 
 00:10:11,560 --> 00:10:15,580
 not correct. Just are any permutations.
-But then we still say, this Ys must be sorted."
+But then we still say, this Ys must be sorted.
 
 00:10:15,580 --> 00:10:22,150
 In the sense of this predicate, which we have also written in Prolog
@@ -439,11 +439,11 @@ if we have a valid solution to the problem.
 
 00:11:46,720 --> 00:11:55,420
 That was the task here in the end, to write a predicate
-which correctly expresses when Ys is an
+which correctly expresses when Ys is a
 
 00:11:55,420 --> 00:12:00,310
 sorted version of Xs. And we have
-this into two parts. Here the two parts are
+divided this into two parts. Here the two parts are
 
 00:12:00,310 --> 00:12:06,250
 very obvious, because on the right side of this
@@ -504,14 +504,14 @@ or more useful examples. More interesting
 120 # slide
 00:13:46,330 --> 00:13:56,710
 examples, bigger example.
-Let's imagine the following task or imagine
+Let's imagine the following task or imagine.
 
 00:13:56,710 --> 00:14:03,220
 is given to them as a task:
 Let it be determined all the ways in which one can score a total of 15 points by
 
 00:14:03,220 --> 00:14:10,390
-dice three times, you can get a total of 15 points.
+rolling a dice three times, you can get a total of 15 points.
 So, we have three dice or one die
 
 00:14:10,390 --> 00:14:14,410
@@ -523,7 +523,7 @@ At the end, we add them up and the question is: In which
 way could it be that exactly 15 points were scored at the end?
 
 00:14:19,960 --> 00:14:27,700
-What would generate mean here?
+What would generating mean here?
 Generating here would mean to generate all
 
 00:14:27,700 --> 00:14:34,000
@@ -552,10 +552,10 @@ which could be entered promptly in Prolog.
 
 00:15:02,110 --> 00:15:07,960
 Of course, you could also write a predicate "solution"
-with the arguments and then what I now have request,
+with the arguments and then what I now have requested,
 
 00:15:07,960 --> 00:15:12,790
-take as right side this predicate and
+take as the right side this predicate and
 calling the predicate would then return the solutions.
 
 00:15:12,790 --> 00:15:19,720
@@ -564,7 +564,7 @@ And then you can translate this almost verbatim,
 
 00:15:19,720 --> 00:15:25,420
 what I've just indicated. So, of course we have to
-what the possible numbers of dice are.
+consider what the possible numbers of dice are.
 
 00:15:25,420 --> 00:15:34,450
 It just says dice. I mean a W6. So, there are the results [1,2,3,4,5,6].
@@ -572,7 +572,7 @@ So, I can say that's sort of a component of my search space.
 
 00:15:34,450 --> 00:15:42,040
 That's not directly the search space. There are not only 6 candidates,
-but we have three literals.
+but we have three letters.
 
 00:15:42,040 --> 00:15:46,720
 So, there's kind of 6 × 6 × 6 candidates if we think combinatorially
@@ -608,11 +608,11 @@ of this six-element list. That means, with these
 
 00:16:32,590 --> 00:16:39,220
 three calls here I span the search space.
-I draw, so to speak, A, B and C each
+I draw, so to speak, A, B, and C each
 
 00:16:39,220 --> 00:16:46,290
 independently of each other from this list.
-And then I check whether the sum of A, B and C is 15.
+And then I check whether the sum of A, B, and C is 15.
 
 00:16:46,290 --> 00:16:54,330
 Now I have to explain briefly what this means here.
@@ -655,7 +655,7 @@ and then looks if the same number came out.
 Then I would have solved this problem here. You can
 
 00:17:51,790 --> 00:17:59,830
-execute simply on in Prolog. And then
+execute it simply in Prolog. And then
 you would get suitable answers, how
 
 00:17:59,830 --> 00:18:07,570
@@ -700,7 +700,7 @@ then 15 can still have come out. How can I implement this?
 I'll just have to think about either
 
 00:19:14,620 --> 00:19:28,060
-extend my generator or my tester.
+extending my generator or my tester.
 You could say, instead of just generating all
 
 00:19:28,060 --> 00:19:37,120
@@ -757,7 +757,7 @@ is used twice. So, one possibility
 
 00:21:12,570 --> 00:21:20,820
 would be to say, I consider permutations of [1,2,3,4,5,6].
-From the permutation I take
+From the permutation, I take
 
 00:21:20,820 --> 00:21:30,390
 the first three elements. I don't care about the other three.
@@ -772,7 +772,7 @@ The condition again is the same as above.
 So to speak, I have only simplified the generative part here
 
 00:21:44,070 --> 00:21:53,280
-or made it fancier. Semantically from the meaning
+or made it fancier. Semantically, from the meaning
 it is exactly the same. Note also these underscores here.
 
 00:21:53,280 --> 00:21:59,070
@@ -781,10 +781,10 @@ of [1,2,3,4,5,6]. That would give no solution at all.
 
 00:21:59,070 --> 00:22:05,340
 Because the permutation must contain six elements again.
-But I can say, from the permutations I am interested
+But I can say, from the permutations, I am interested
 
 00:22:05,340 --> 00:22:11,070
-only the first three elements. That means I
+only in the first three elements. That means I
 use anonymous variables here. This simply stands for:
 
 00:22:11,070 --> 00:22:16,670
@@ -834,7 +834,7 @@ That's always nice if we can use existing predicates after.
 122 # slide
 00:23:29,810 --> 00:23:39,680
 So, it's about this addition now: We should only consider
-constellation should be considered, where the different numbers of eyes
+constellations that should be considered, where the different numbers of eyes
 
 00:23:39,680 --> 00:23:45,110
 were in ascending order.
@@ -941,7 +941,7 @@ implementation. But at least
 conceptually, the search space can be very large.
 
 00:26:39,520 --> 00:26:47,560
-And in permuting this is usually the case, if the lists are not
+And in permuting, this is usually the case if the lists are not
 rather short. So, you have to do it with a sense of proportion.
 
 00:26:47,560 --> 00:26:52,960
@@ -993,8 +993,8 @@ is relatively low.
 Even if perhaps the execution then takes longer.
 
 00:28:08,130 --> 00:28:15,510
-So, then it can also be, because the problem is not
-obvious way to somehow find a systematic
+So, then it can also be that the problem is not
+an obvious way to somehow find a systematic
 
 00:28:15,510 --> 00:28:23,150
 solution, it can be worthwhile

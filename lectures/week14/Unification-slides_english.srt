@@ -7,8 +7,8 @@ And in some sense, as already mentioned, this
 can be seen as the Prolog version of Haskell's
 
 00:00:12,320 --> 00:00:18,010
-pattern matching, but actually an enhanced
-version of pattern matching, as we will see.
+pattern-matching, but actually an enhanced
+version of pattern-matching, as we will see.
 
 00:00:18,010 --> 00:00:24,820
 Because it has to deal with two-way matching.
@@ -57,7 +57,7 @@ Okay, so as we have already discussed, when
 we discussed the intuitive definition or way
 
 00:01:07,220 --> 00:01:14,969
-of operational semantics, operational behaviour
+of operational semantics, operational behavior
 in Prolog, we mentioned that we first have
 
 00:01:14,969 --> 00:01:18,299
@@ -69,7 +69,7 @@ the first fact does not apply to this query
 
 00:01:22,130 --> 00:01:27,899
 simply because here we have a zero and here,
-we have s (s (0)). Yes, just like in the function
+we have s(s(0)). Yes, just like in function
 
 00:01:27,899 --> 00:01:32,560
 definition in Haskell, you would say the first
@@ -309,7 +309,7 @@ than about the third position in this second
 rule here, okay?
 
 00:05:45,560 --> 00:05:52,030
-So, we have to do this bi-directionally, we
+So, we have to do this bi-directionally; we
 have to also figure out and propagate bindings.
 
 00:05:52,030 --> 00:05:56,530
@@ -382,25 +382,25 @@ or have the same atoms at the same positions.
 Also, we really have to respect the order.
 
 00:07:15,340 --> 00:07:19,190
-So, we don't have sets of arguments, we have
+So, we don't have sets of arguments; we have
 lists of arguments.
 
 00:07:19,190 --> 00:07:23,800
 So, it's not enough to have the three same atoms
-appearing in a term, they really have to be
+appearing in a term; they really have to be
 
 00:07:23,800 --> 00:07:25,240
 at the same places.
 
 00:07:25,240 --> 00:07:30,740
 That's why the first two things are indeed cases
-of equal terms, ground terms are the variables,
+of equal terms; ground terms are the variables,
 
 00:07:30,740 --> 00:07:32,190
 whereas the last thing is not.
 
 00:07:32,190 --> 00:07:34,810
-So, this is structure equality.
+So, this is structural equality.
 
 00:07:34,810 --> 00:07:40,460
 And that also means, in terms of arithmetic,
@@ -411,7 +411,7 @@ point.
 
 00:07:41,460 --> 00:07:46,330
 As I said, it’s already been mentioned before
-that terms, even arithmetic terms are always
+that terms, even arithmetic terms, are always
 
 00:07:46,330 --> 00:07:55,020
 treated completely structurally in Prolog unless
@@ -435,7 +435,7 @@ But also, the terms five and two plus three
 are not equal.
 
 00:08:04,130 --> 00:08:08,530
-This is the point about syntactic treatment
+This is the point about the syntactic treatment
 of all terms, right?
 
 00:08:08,530 --> 00:08:10,560
@@ -450,7 +450,7 @@ A binary operator which could be written like
 this.
 
 00:08:15,981 --> 00:08:22,160
-This is two arguments, not some real semantic
+This has two arguments, not some real semantic
 expression that evaluates to five.
 
 00:08:22,160 --> 00:08:23,160
@@ -542,7 +542,7 @@ variables.
 60 # slide
 00:09:58,000 --> 00:10:06,550
 So, here are a few more rather simple cases
-still in each of these lines, it shouldn't
+still in each of these lines; it shouldn't
 
 00:10:06,550 --> 00:10:10,940
 be difficult to write down what the variables
@@ -567,7 +567,7 @@ the variables here on both sides.
 And, even in this case
 
 00:10:27,801 --> 00:10:30,570
-it wouldn't be complicated, likewise here.
+it wouldn't be complicated; likewise here.
 
 00:10:30,570 --> 00:10:35,420
 And in the last case, the important thing
@@ -602,7 +602,7 @@ So, that's a small detail to keep in mind here
 to not get into the trap of working with concrete
 
 00:11:06,740 --> 00:11:08,750
-numbers and additions, et cetera.
+numbers and additions, etc.
 
 00:11:08,750 --> 00:11:09,750
 Okay?
@@ -697,7 +697,7 @@ Then there's another possible problem.
 
 00:13:02,959 --> 00:13:09,600
 For example, since variables can appear both
-on left- and right-hand sides, we could in principle
+on the left- and right-hand side, we could in principle
 
 00:13:09,600 --> 00:13:12,030
 also have questions like this.
@@ -848,14 +848,14 @@ occur only on one side.
 
 00:15:43,570 --> 00:15:48,089
 Yes, this is not just happening because we
-have the same variable on left and right.
+have the same variable on the left and right.
 
 00:15:48,089 --> 00:15:54,360
 It could also be the case that X occurs only
 on one side of our question, but then occurs
 
 00:15:54,360 --> 00:15:57,610
-in a way such that we get still a contradiction.
+in a way such that we still get a contradiction.
 
 00:15:57,610 --> 00:16:03,570
 Because now if you wanted X to be Marsellus
@@ -995,7 +995,7 @@ So, given a term, which might, and in general will
 contain variables.
 
 00:18:19,980 --> 00:18:25,330
-if you get a new term, which has the same
+If you get a new term, which has the same
 structure towards all those points where the
 
 00:18:25,330 --> 00:18:31,179
@@ -1183,7 +1183,7 @@ this U prime to these two terms you would
 also have obviously equal things.
 
 00:21:46,760 --> 00:21:54,630
-Okay, to not have this strange and interesting
+Okay, to not have these strange and interesting
 unifiers, there is a concept of the most general
 
 00:21:54,630 --> 00:21:55,630
@@ -1272,7 +1272,7 @@ also okay.
 
 00:23:26,270 --> 00:23:30,630
 So, applying the second unifier to these two
-terms also leads to equal terms to a different
+terms also leads to equal terms to a different.
 
 00:23:30,630 --> 00:23:33,060
 term than here, but two equal terms.
@@ -1348,7 +1348,7 @@ be a most general unifier.
 That will also be more general than U1.
 
 00:24:33,309 --> 00:24:37,740
-And actually these two would be U2 and this
+And actually, these two would be U2 and this
 U3 would be equally general.
 
 00:24:37,740 --> 00:24:49,660
@@ -1378,7 +1378,7 @@ now.
 Yes, I will skip over these slides.
 
 00:25:11,260 --> 00:25:16,140
-You can of course download them, but I will
+You can, of course, download them, but I will
 not talk through them in this video.
 
 00:25:16,140 --> 00:25:22,559
@@ -1389,7 +1389,7 @@ at least a similar algorithm already for this
 proposed in the Logik lecture.
 
 00:25:24,760 --> 00:25:28,960
-And it has been practised in that course as
+And it has been practiced in that course as
 exercise and probably it was also part of
 
 00:25:28,960 --> 00:25:32,070
@@ -1397,7 +1397,7 @@ the exam, so you should be able to refresh
 this.
 
 00:25:32,070 --> 00:25:38,230
-And moreover actually for our dealings with
+And moreover, actually for our dealings with
 the semantics of Prolog, we will not need to
 
 00:25:38,230 --> 00:25:39,350

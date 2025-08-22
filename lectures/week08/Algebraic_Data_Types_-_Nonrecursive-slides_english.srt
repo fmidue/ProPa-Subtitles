@@ -7,11 +7,11 @@ This week we will talk about types again,
 but not polymorphic types, not higher-order
 
 00:00:12,280 --> 00:00:16,410
-types, at least not in the focus.
+types, at least not in focus.
 
 00:00:16,410 --> 00:00:22,519
 Instead, we will talk about new type constructs
-called algebraic data types.
+called algebraic datatypes.
 
 00:00:22,519 --> 00:00:27,689
 Actually, they can also be combined with polymorphism
@@ -23,7 +23,7 @@ concentrate on very simple algebraic data
 
 00:00:33,780 --> 00:00:41,030
 types: first, simple enumeration types, and
-then non-recursive algebraic data types, and
+then non-recursive algebraic datatypes, and
 
 00:00:41,030 --> 00:00:44,730
 probably also not yet considering polymorphism.
@@ -117,7 +117,7 @@ but you should not always use a list, so there
 must be something else as well.
 
 00:02:37,440 --> 00:02:40,860
-Just as we have other data types in other
+Just as we have other datatypes in other
 languages.
 
 00:02:40,860 --> 00:02:45,070
@@ -195,7 +195,7 @@ Now, the Picture type itself is not something
 that we will define in the lecture.
 
 00:03:55,970 --> 00:03:59,710
-It could be defined with algebraic data types,
+It could be defined with algebraic datatypes,
 but that is not something we are going to
 
 00:03:59,710 --> 00:04:00,710
@@ -222,7 +222,7 @@ But if we wanted to do that, or do something
 similar for another domain than vector graphics,
 
 00:04:20,820 --> 00:04:24,400
-then we would use algebraic data types.
+then we would use algebraic datatypes.
 
 00:04:24,400 --> 00:04:35,550
 So, that's the way to go beyond these base
@@ -232,7 +232,7 @@ types and predetermined combinations of them.
 with constructs like lists and pairs.
 
 00:04:37,660 --> 00:04:40,070
-Now, what are these algebraic data types?
+Now, what are these algebraic datatypes?
 
 00:04:40,070 --> 00:04:42,740
 Also, in what sense are they algebraic?
@@ -245,7 +245,7 @@ And we are not going to discuss the mathematics
 behind that.
 
 00:04:46,980 --> 00:04:54,530
-But I still hope that will become apparent
+But I still hope that it will become apparent
 what is algebraic about these, once we see
 
 00:04:54,530 --> 00:04:55,530
@@ -253,7 +253,7 @@ some signatures.
 
 00:04:55,530 --> 00:05:00,150
 From a first approximation point of view,
-we could say that algebraic data types are
+we could say that algebraic datatypes are
 
 00:05:00,150 --> 00:05:03,510
 something which you might have seen in other
@@ -268,10 +268,10 @@ safe) versions of what is either known as
 enumeration or union types (in very simple
 
 00:05:19,400 --> 00:05:21,530
-forms of algebraic data types).
+forms of algebraic datatypes).
 
 00:05:21,530 --> 00:05:29,070
-But actually modern languages like Swift have
+But actually, modern languages like Swift have
 features like *recursive* enum types, which
 
 00:05:29,070 --> 00:05:36,300
@@ -280,11 +280,11 @@ types in C, for example.
 
 00:05:36,300 --> 00:05:41,770
 And these (recursive enum types) are already
-something similar to algebraic data types.
+something similar to algebraic datatypes.
 
 00:05:41,770 --> 00:05:48,840
 And again, the transfer here is not that algebraic
-data types are what Swift has and then made
+datatypes are what Swift has and then made
 
 00:05:48,840 --> 00:05:49,840
 more general.
@@ -293,7 +293,7 @@ more general.
 It is actually the other way around.
 
 00:05:51,090 --> 00:05:55,150
-Algebraic data types have been around for
+Algebraic datatypes have been around for
 a long time in functional languages.
 
 00:05:55,150 --> 00:06:02,450
@@ -302,7 +302,7 @@ languages have taken inspiration from that.
 
 00:06:02,450 --> 00:06:06,930
 And ultimately, I would say that algebraic
-data types are still the nicer version of
+datatypes are still the nicer version of
 
 00:06:06,930 --> 00:06:12,080
 this, whereas the recursive enum types in
@@ -313,7 +313,7 @@ compromises.
 
 00:06:13,080 --> 00:06:18,960
 So, they are not at the same, let's say, mathematical
-level as algebraic data types.
+level as algebraic datatypes.
 
 00:06:18,960 --> 00:06:28,830
 But for users, for you, when using these,
@@ -321,7 +321,7 @@ that won't shine through too much, I think.
 
 126 # slide
 00:06:28,830 --> 00:06:31,770
-So, let us start very simple indeed.
+So, let us start very simply indeed.
 
 00:06:31,770 --> 00:06:35,870
 Assume we want to be able to talk about days
@@ -395,7 +395,7 @@ is a day from Monday to Friday, so is a work
 day.
 
 00:07:49,199 --> 00:07:51,170
-That is of course possible.
+That is, of course, possible.
 
 00:07:51,170 --> 00:07:53,360
 We are somewhat lucky in that case.
@@ -512,7 +512,7 @@ So, we could say: on Wednesday, Saturday,
 and Sunday, we don't have exercises.
 
 00:09:49,880 --> 00:09:51,970
-And on all dates, we do have exercises.
+And on all other dates, we do have exercises.
 
 00:09:51,970 --> 00:09:56,750
 We have this catch-all case ('_') here.
@@ -620,7 +620,7 @@ Whereas for this 'exerciseDay' function as written
 here, for the input 12, it would say: it is
 
 00:11:58,860 --> 00:12:00,610
-an exerciseDay, for whatever reason.
+an exercise day, for whatever reason.
 
 00:12:00,610 --> 00:12:04,820
 That reason is: it would run into this catch-all
@@ -644,7 +644,7 @@ day.
 
 00:12:21,149 --> 00:12:25,610
 So, it doesn't really make sense from the
-weekdays point of view.
+weekdays' point of view.
 
 00:12:25,610 --> 00:12:34,220
 So, days don't have this property that there
@@ -681,7 +681,7 @@ So, what we say here is: we introduce a datatype.
 It gets a name Day.
 
 00:13:08,310 --> 00:13:13,140
-So, not that's something like Picture, something
+So, not that it's something like Picture, something
 that we can use in other types as arguments
 
 00:13:13,140 --> 00:13:14,740
@@ -693,7 +693,7 @@ new type Day has.
 
 00:13:19,570 --> 00:13:26,600
 And it has the new values: Monday, Tuesday,
-Wednesday, etc. up to Sunday.
+Wednesday, etc., up to Sunday.
 
 00:13:26,600 --> 00:13:34,180
 And then we can use these new constants in
@@ -725,8 +725,8 @@ then we are actually back at the same approach
 as on the previous slides.
 
 00:13:58,450 --> 00:14:06,280
-Then, basically, Day would just be a different
-/a disguised name for Integers or some other
+Then, basically, Day would just be a different /
+a disguise name for Integers or some other
 
 00:14:06,280 --> 00:14:09,339
 base type, and Monday would be a constant
@@ -745,7 +745,7 @@ named constants which are Integer constants.
 
 00:14:21,040 --> 00:14:25,640
 They would have these names, but under the
-hood, they would still be 1,2,3,4,5, or something
+hood, they would still be 1, 2, 3, 4, 5, or something
 
 00:14:25,640 --> 00:14:26,820
 like that.
@@ -1059,7 +1059,7 @@ constructors.
 
 00:19:44,690 --> 00:19:50,049
 They construct data, they construct values
-which have a type, in this case the type that
+which have a type, in this case, the type that
 
 00:19:50,049 --> 00:19:51,049
 is constructed here.
@@ -1189,7 +1189,7 @@ not always have in mind what exactly stands
 for what.
 
 00:22:22,299 --> 00:22:27,330
-Sometimes they maybe write 3 instead of 2
+Sometimes they may write 3 instead of 2
 because 2 and 3 are just some numbers.
 
 00:22:27,330 --> 00:22:30,450
@@ -1374,7 +1374,7 @@ It can't be a number type.
 
 00:25:32,879 --> 00:25:41,409
 It should be an enumeration or an algebraic
-data type.
+datatype.
 
 130 # slide
 00:25:41,409 --> 00:25:48,450
@@ -1390,7 +1390,7 @@ we want to have: Blank (nothing), Pearl, Water,
 Air.
 
 00:25:59,980 --> 00:26:01,649
-This has the clear documentation value.
+This has clear documentation value.
 
 00:26:01,649 --> 00:26:09,019
 Also, there cannot, from now on, be any confusion
@@ -1449,7 +1449,7 @@ a number.
 
 00:26:49,720 --> 00:26:55,330
 It is a Tile because that is what the level
-is: For positions, it gives us a description
+is: for positions, it gives us a description
 
 00:26:55,330 --> 00:26:58,190
 of what is at that position.
@@ -1642,7 +1642,7 @@ compare them.
 
 00:30:27,620 --> 00:30:31,960
 So, given some arbitrary two Pictures, there
-is no way to really, reasonably, compare them.
+is no way to really, reasonably compare them.
 
 00:30:31,960 --> 00:30:35,999
 So, you need data here… something which
@@ -1699,14 +1699,14 @@ These were simple enumeration types.
 Now, let's go beyond that.
 
 00:31:35,479 --> 00:31:43,190
-We move into an area where it is not like
-just named constants that we could easily simulate
+We move into an area where it is not just
+named constants that we could easily simulate
 
 00:31:43,190 --> 00:31:45,799
 with numbers like in C or something like that.
 
 00:31:45,799 --> 00:31:50,229
-Let's do more general algebraic data types.
+Let's do more general algebraic datatypes.
 
 00:31:50,229 --> 00:31:54,210
 In what sense will they be more general?
@@ -1723,8 +1723,8 @@ Tuesday, etc., or a Tile can be Water, Pearl,
 Block, and Blank or whatever.
 
 00:32:07,470 --> 00:32:13,710
-These are the alternatives that we write this
-logical bar '|' (pipe). Now, each of these alternatives
+These are the alternatives that we write with
+this logical bar '|' (pipe). Now, each of these alternatives
 
 00:32:13,710 --> 00:32:23,669
 may take additional values in the sense of
@@ -1923,7 +1923,7 @@ be, in general.
 So, now let's look at an example.
 
 00:36:00,270 --> 00:36:04,160
-What would I like to know a value of, for example,
+What would it like to know a value of, for example,
 the Connection type.
 
 00:36:04,160 --> 00:36:08,701
@@ -1973,7 +1973,7 @@ look like this.
 This follows this scheme.
 
 00:36:51,550 --> 00:36:57,120
-It is Train… and that I used Train, tells
+It is Train… and that I used Train tells
 me that I need three arguments here.
 
 00:36:57,120 --> 00:37:00,280
@@ -2043,10 +2043,10 @@ It matched against a constant pattern: Block
 or Pearl, etc. same as for weekdays, and also
 
 00:38:09,630 --> 00:38:11,000
-for numbers, before.
+for numbers before.
 
 00:38:11,000 --> 00:38:16,950
-Now, this pattern matching concept becomes
+Now, this pattern-matching concept becomes
 a possibly deeply nested concept.
 
 00:38:16,950 --> 00:38:22,261

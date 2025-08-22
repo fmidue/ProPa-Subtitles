@@ -2,7 +2,7 @@
 Okay, so this is the promised video
 
 0:00:03.440,0:00:07.760
-about how pattern matching drives
+about how pattern-matching drives
 lazy evaluation in Haskell.
 
 0:00:08.560,0:00:15.200
@@ -48,7 +48,7 @@ You only want to evaluate
 things that are needed, actually.
 
 0:00:49.680,0:00:54.160
-And we can't tell this now upfront, that
+And we can't tell this now upfront that
 this will be eventually needed, this 4.
 
 0:00:54.160,0:00:56.560
@@ -94,7 +94,7 @@ Now if you look at the slide, the
 definition of 'f' then it's defined by
 
 0:01:31.280,0:01:34.480
-case distinctions by pattern matching on
+case distinctions by pattern-matching on
 the empty list or the non-empty list.
 
 0:01:35.120,0:01:35.360
@@ -183,7 +183,7 @@ No, we shouldn't.
 Because the tail will actually just cut this part.
 
 0:03:17.280,0:03:21.360
-So, tail of a non-empty list
+So, the tail of a non-empty list
 is the remainder of that list.
 
 0:03:21.920,0:03:30.320
@@ -201,7 +201,7 @@ that would be a superfluous computation.
 That wouldn't be lazy, but we want to be lazy.
 
 0:03:40.640,0:03:47.200
-Okay, so instead, tail of something
+Okay, so instead, the tail of something
 rest list is the rest list.
 
 0:03:47.760,0:03:59.840
@@ -272,7 +272,7 @@ argument position of the head, we really have
 something of the form head element rest list.
 
 0:05:04.640,0:05:10.640
-Okay, so this now reduces to g(3+1).
+Okay, so this now reduces to g (3 + 1).
 
 0:05:10.640,0:05:13.280
 And again, we didn't compute
@@ -293,18 +293,18 @@ that are not going to be needed.
 
 0:05:21.840,0:05:25.120
 And what's going to be needed
-comes out via pattern matching.
+comes out via pattern-matching.
 
 0:05:26.160,0:05:27.120
 Okay, so we have this.
 
 0:05:27.760,0:05:31.120
-Now we have to compute the 3+1,
+Now we have to compute the 3 + 1,
 because if you look at the definition of
 
 0:05:31.120,0:05:33.760
 g on the slide, then you'll see
-that it does a pattern matching.
+that it does a pattern-matching.
 
 0:05:33.760,0:05:37.840
 So, we have to know: Is this first
@@ -340,14 +340,14 @@ of the 'g' call of the 'g' definition.
 
 0:06:04.960,0:06:09.120
 So, we have to apply the second one and
-the second one is g n is n+1.
+the second one is g n is n + 1.
 
 0:06:09.760,0:06:11.040
 Okay, so now it is,
 
 0:06:11.040,0:06:13.840
 of course, the four,
-so this reduces to 4+1.
+so this reduces to 4 + 1.
 
 0:06:14.800,0:06:16.240
 And then we get 5.
@@ -371,7 +371,7 @@ see which parts are not computed.
 Or when they are computed.
 
 0:06:34.160,0:06:38.880
-So, this is not computed upfront, it's only
+So, this is not computed upfront; it's only
 computed when we realize that we actually need it.
 
 0:06:38.880,0:06:40.160

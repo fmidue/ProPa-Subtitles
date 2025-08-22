@@ -5,18 +5,18 @@ operational semantics of Prolog is resolution.
 
 00:00:09,840 --> 00:00:17,280
 And again, this is a concept from the study of
-predicate logic, so, a general formal concept.
+predicate logic, so a general formal concept.
 
 00:00:18,320 --> 00:00:25,520
 And again, here, we will not consider it
 exactly in the form as you have seen it
 
 00:00:25,520 --> 00:00:30,960
-in the lecture by Professor König, instead
+in the lecture by Professor König; instead
 it will be tailored to the use in Prolog.
 
 00:00:30,960 --> 00:00:35,920
-So, the notation will be slightly
+So the notation will be slightly
 different, more specialized actually
 
 00:00:35,920 --> 00:00:41,280
@@ -30,7 +30,7 @@ what resolution is also in predicate logic.
 73 # slide
 00:00:53,120 --> 00:00:58,800
 We will again first consider a simple case,
-namely without variables and then consider
+namely without variables, and then consider
 
 00:00:58,800 --> 00:01:05,360
 the actually important and slightly more
@@ -41,14 +41,14 @@ Okay, so let's start with the simple
 case that we don't have variables.
 
 00:01:10,960 --> 00:01:16,960
-So, our query that we want to deal
+So our query that we want to deal
 with would be something like this.
 
 00:01:17,760 --> 00:01:22,000
-So, basically, a list of variable-free literals.
+So basically, a list of variable-free literals.
 
 00:01:22,000 --> 00:01:24,480
-So, these would be simplifications of atoms,
+So these would be simplifications of atoms,
 
 00:01:24,480 --> 00:01:32,160
 predicate names to constants or nestings of data
@@ -65,12 +65,12 @@ Q could be sequences of such literals.
 And L is one specific literal.
 
 00:01:41,120 --> 00:01:45,920
-Of course, P and/or Q could also be empty,
+Of course, P and/or Q could also be empty;
 then the query would be just one literal.
 
 00:01:45,920 --> 00:01:50,240
 But in general, maybe we have three literals
-here, then we have one literal L that we
+here; then we have one literal L that we
 
 00:01:50,240 --> 00:01:54,160
 are currently interested in or that you
@@ -85,7 +85,7 @@ Okay, and then the resolution
 proof principle that allows us to
 
 00:02:01,760 --> 00:02:04,560
-prove such query, such a statement.
+prove such a query, such a statement.
 
 00:02:04,560 --> 00:02:08,800
 Yes, we want to know whether P or
@@ -99,7 +99,7 @@ The comma corresponds to "and", as we know.
 
 00:02:16,080 --> 00:02:21,040
 And we want to prove this, or at least you want
-to make one step in such a proof. So, that would not
+to make one step in such a proof. So that would not
 
 00:02:21,040 --> 00:02:26,880
 be a proof of the whole statement at once, but
@@ -126,11 +126,11 @@ A program clause which has L as its
 head, or which is simply L as a fact.
 
 00:02:53,280 --> 00:02:57,840
-And for the moment also, these would all
+And for the moment, also, these would all
 be considered to be without variables.
 
 00:02:57,840 --> 00:03:00,960
-So, also L occurring in the head of a clause
+So also L occurring in the head of a clause
 
 00:03:00,960 --> 00:03:05,120
 would be without variables, which is of
@@ -141,10 +141,10 @@ Okay, so how can we make progress?
 
 00:03:08,560 --> 00:03:16,080
 Well, what if you have a rule which
-said that L is implied by a L1, … , Ln.
+said that L is implied by L1, …, Ln.
 
 00:03:16,080 --> 00:03:22,080
-Yes, so n could be even zero, then this would
+Yes, so n could be even zero; then this would
 be a fact because there wouldn't be a right-hand
 
 00:03:22,080 --> 00:03:29,440
@@ -191,7 +191,7 @@ But that both depends on n and also on
 what the L1 to Ln actually are, right?
 
 00:04:11,920 --> 00:04:14,960
-So, maybe these are simpler
+So maybe these are simpler
 statements than the L statements.
 
 00:04:14,960 --> 00:04:16,960
@@ -223,14 +223,14 @@ And if we succeeded in doing that,
 then we have also proved this.
 
 00:04:42,960 --> 00:04:46,800
-So, that's a reduction from this
+So that's a reduction from this
 proof goal to this proof goal.
 
 00:04:48,080 --> 00:04:48,480
 Okay?
 
 00:04:48,480 --> 00:04:51,760
-So, some observations on this.
+So some observations on this.
 
 00:04:52,480 --> 00:04:55,520
 The one is that, of course,
@@ -245,11 +245,11 @@ But of course, given a sequence with more than
 one literal, I could have chosen any of them.
 
 00:05:07,520 --> 00:05:13,440
-So, I could have… if indeed I have three literals
+So I could have… if indeed I have three literals
 in P and L and Q, then I didn’t have to choose the
 
 00:05:13,440 --> 00:05:18,160
-fourth literal from this list of literals, I
+fourth literal from this list of literals; I
 could also have taken the first one, for example.
 
 00:05:18,960 --> 00:05:26,080
@@ -261,7 +261,7 @@ then I could still have a choice
 between several program clauses.
 
 00:05:32,800 --> 00:05:37,280
-So, maybe there is in the program
+So maybe there is in the program
 another rule also with L as the head
 
 00:05:37,280 --> 00:05:44,240
@@ -276,16 +276,16 @@ I would have arrived at different
 next queries to process.
 
 00:05:53,040 --> 00:05:55,600
-So, there is a search involved
-here, there is a choice to make,
+So there is a search involved
+here; there is a choice to make,
 
 00:05:56,240 --> 00:05:59,200
 but actually this step here as
-written here, simply assumes well,
+written here simply assumes, well,
 
 00:05:59,200 --> 00:06:04,640
-I have chosen one L, I have chosen one
-clause then what is the resolved query?
+I have chosen one L; I have chosen one
+clause; then what is the resolved query?
 
 00:06:05,360 --> 00:06:09,440
 This control is actually making a choice
@@ -293,7 +293,7 @@ for the literal and making a choice
 
 00:06:09,440 --> 00:06:13,920
 between possibly different program
-clauses, that's a separate process.
+clauses; that's a separate process.
 
 00:06:13,920 --> 00:06:20,160
 One resolution step is just one such
@@ -319,7 +319,7 @@ n could be zero.
 
 00:06:37,520 --> 00:06:41,280
 It can also be the case that this really
-becomes smaller because then the vanishes.
+becomes smaller because then it vanishes.
 
 00:06:42,160 --> 00:06:46,880
 That's how we ultimately make progress
@@ -380,7 +380,7 @@ the query in order to make any progress.
 So, they must be very specific.
 
 00:07:50,800 --> 00:07:56,000
-No pattern matching, where the program
+No pattern-matching, where the program
 rules could contain variables and then,
 
 00:07:56,000 --> 00:07:58,640
@@ -631,7 +631,7 @@ But of course, we can't simply do this
 without considering the context, because
 
 00:12:49,840 --> 00:12:55,840
-when we apply the unifier to this literal
+When we apply the unifier to this literal
 L, we might instantiate some variables.
 
 00:12:55,840 --> 00:12:59,680
@@ -646,8 +646,8 @@ these kinds of queries that the
 variables occur in several literals.
 
 00:13:04,320 --> 00:13:08,640
-So, if X in L, we can't simply say
-the unifier replaces X by zero
+So, if X is in L, we can't simply say
+the unifier replaces X with zero
 
 00:13:10,000 --> 00:13:15,120
 in L, but we leave the X
@@ -661,12 +661,12 @@ to delete this query.
 Okay?
 
 00:13:20,320 --> 00:13:23,760
-So, if you decide well, in
+So, if you decide, well, in
 order to make L and L0 unified
 
 00:13:24,560 --> 00:13:28,800
 to make them equal, we
-replace X by zero, say in L.
+replace X with zero, say in L.
 
 00:13:29,520 --> 00:13:31,600
 Then we can only do this if we also do so in P and Q.
@@ -687,7 +687,7 @@ Then we know that U(L0) is implied by U(L1) to
 
 00:13:51,360 --> 00:13:59,600
 U(Ln), and then you might as well replace U(L)
-by this sequence of substituted literals.
+with this sequence of substituted literals.
 
 00:14:00,640 --> 00:14:01,200
 Okay?
@@ -707,12 +707,12 @@ And then this is our new subquery.
 Our new subquery for the proof.
 
 00:14:15,600 --> 00:14:19,120
-And then we again, proceed doing
+And then we again proceed doing
 this again and again, and then
 
 00:14:19,120 --> 00:14:23,360
 hopefully we have replaced the whole
-conjunction by the empty conjunction
+conjunction with the empty conjunction
 
 00:14:23,360 --> 00:14:29,840
 and we are done because then we

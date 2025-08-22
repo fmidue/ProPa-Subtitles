@@ -10,7 +10,7 @@ First, we have the type signature.
 We have something of type “a”.
 
 0:00:12.240,0:00:18.240
-So, this a doesn't specify anything. This “a”
+So, this “a” doesn't specify anything. This “a”
 could be a String. It could be an Integer.
 
 0:00:18.240,0:00:22.480
@@ -37,14 +37,14 @@ For me,
 
 0:00:47.520,0:00:55.440
 if this were my first time reading this task,
-I'd say this means this the function here is
+I'd say this means that the function here is
 
 0:00:55.440,0:01:02.080
 going to be the body of the loop because we know what a while-loop is from other
 courses…
 
 0:01:02.080,0:01:13.040
-from programming in general. And this IO here, it should indicate that this function has
+from programming in general. And this “IO” here should indicate that this function has
 a do-block.
 
 0:01:13.760,0:01:18.080
@@ -68,13 +68,13 @@ this function that takes something of type “a”
 and returns True or False. And “body” is going to be the body of the loop.
 
 0:01:42.480,0:01:48.000
-So, here we have the main operations the things that we want to do with this loop.
+So, here we have the main operations, the things that we want to do with this loop.
 
 0:01:49.680,0:01:55.440
 And here we have “loop a” because “a” is going to be the only variable
 
 0:01:55.440,0:01:59.360
-that's going to change in value with every time we go through the loop.
+that's going to change in value every time we go through the loop.
 
 0:02:00.400,0:02:03.760
 So, “body” is going to stay the same always because it's just
@@ -92,29 +92,29 @@ on which the function depends, and the while-loop knows when to stop.
 Now “loop x” is a function that takes
 
 0:02:23.200,0:02:28.400
-just one argument x and then it checks whether x fulfills the predicate p.
+just one argument “x” and then it checks whether “x” fulfills the predicate “p”.
 
 0:02:29.520,0:02:38.800
 And if it does, then we go to this do-block. In this new block, we do two things: first
 we apply
 
 0:02:38.800,0:02:44.640
-the function “body” which should be given as an argument by whoever uses this
+the function “body”, which should be given as an argument by whoever uses this
 function “while”,
 
 0:02:45.600,0:02:47.600
-and we just apply it to an x,
+and we just apply it to “x”,
 
 0:02:48.720,0:02:54.960
-and we store the result in a new x, and
-then we do “loop” again on this new x.
+and we store the result in a new “x”, and
+then we do “loop” again on this new “x”.
 
 0:02:55.920,0:03:02.560
-But if the x doesn't fulfill the predicate, then we just return x itself. So, what we're
+But if the “x” doesn't fulfill the predicate, then we just return “x” itself. So, what we're
 saying is:
 
 0:03:03.280,0:03:09.600
-take this x and see if it fulfills p, and then if it does,
+take this “x” and see if it fulfills “p”, and then if it does,
 
 0:03:09.600,0:03:13.040
 then change something in it using the function “body”,
@@ -128,7 +128,7 @@ if it doesn't fulfill the condition, then just
 return it as it is. Now we have “undefined”
 
 0:03:32.320,0:03:36.960
-four times and we need to replace them with something useful to make the function work.
+four times, and we need to replace them with something useful to make the function work.
 
 0:03:37.920,0:03:43.440
 And “while” takes, as you can see… it takes three arguments… three parameters.
@@ -147,10 +147,10 @@ which in turn specifies the type of “main” itself. What could this “undefi
 Well… if you look at the lecture slides, you can see that we have
 
 0:04:13.280,0:04:20.640
-some functions like put string (putStr) which has the type “IO” and also “print”,
+some functions like “put string” (putStr) which has the type “IO” and also “print”,
 
 0:04:22.480,0:04:25.520
-but for example not read line (readLn) because “readLn” is
+but for example not “read line” (readLn) because “readLn” is
 
 0:04:25.520,0:04:27.840
 going to give us something of type “IO a”.
@@ -177,13 +177,13 @@ I'm going to use this “a”… this
 parameter here as a counter to count how many numbers we have entered already.
 
 0:05:03.760,0:05:10.320
-So, this means we start with 0, and we're going to enter n numbers.
+So, this means we start with 0, and we're going to enter “n” numbers.
 
 0:05:10.320,0:05:16.560
 Let's see how we're going to express that. And this parameter is going to
 
 0:05:16.560,0:05:21.760
-be the predicate which checks whether we reached n or not.
+be the predicate that checks whether we reached “n” or not.
 
 0:05:23.280,0:05:25.280
 Okay now, let's write the function.
@@ -195,7 +195,7 @@ So, I'm going to do “i” for “index”.
 And then we check whether “i” is still smaller than “n”.
 
 0:05:43.200,0:05:45.280
-So, this is the n we're talking about.
+So, this is the “n” we're talking about.
 
 0:05:45.280,0:05:49.840
 And “i” is going to be whatever this predicate gets as a parameter.
@@ -219,7 +219,7 @@ But here we have a problem: this "i" is not a String.
 So, we cannot do concatenation with another String. So, we need to do "show i".
 
 0:06:43.600,0:06:52.720
-And now we read a number from the user. We say x <- readLn.
+And now we read a number from the user. We say “x read line” (x <- readLn).
 
 0:06:52.720,0:06:58.720
 Here we have a "return". But we have a problem here which is that we want to send
@@ -232,16 +232,16 @@ which are "x" and "i". "i" is the counter and "x" is the value of the
 factor that the user entered.
 
 0:07:12.720,0:07:19.280
-The solution to this problem is to use something which counts as one parameter,
+The solution to this problem is to use something that counts as one parameter,
 
 0:07:20.320,0:07:27.920
 but it actually contains information of two things. And for this, we can use a tuple.
 
 0:07:29.440,0:07:35.440
-So, I'm going to put the index first and I'm going to put the value of x second.
+So, I'm going to put the index first and I'm going to put the value of “x” second.
 
 0:07:38.560,0:07:44.240
-And this means we also have to change the initial value which is this "a" we talked
+And this means we also have to change the initial value, which is this “a” we talked
 about.
 
 0:07:46.800,0:07:50.960
@@ -271,14 +271,14 @@ And now we also have to change this one here. So, this one doesn't take just an
 Integer… an index.
 
 0:08:30.640,0:08:37.120
-Now it takes a tuple which has the index first and then it has whatever as a second.
+Now it takes a tuple that has the index first and then it has whatever as a second.
 
 0:08:37.120,0:08:44.160
 We don't care and we still check whether this "i" (this index) is still smaller than
 n.
 
 0:08:45.680,0:08:55.040
-Now if you look here, what we just did is sending the index as it is to the next run of
+Now if you look here, what we just did is send the index as it is to the next run of
 the loop,
 
 0:08:55.040,0:08:59.680
@@ -350,7 +350,7 @@ is just applying "while" to these three parameters and then storing the result i
 this variable.
 
 0:11:27.040,0:11:36.560
-But if you look at this line here, we have return a tuple, which contains the index and
+But if you look at this line here, we have returned a tuple, which contains the index and
 the result.
 
 0:11:37.520,0:11:40.880
@@ -366,13 +366,13 @@ This means here it's also going to be a tuple.
 And to deal with tuples, you can use 'fst' ("first") and 'snd' ("second").
 
 0:11:58.160,0:12:03.360
-So, first of this tuple, for example, gives you this. And second gives you this.
+So, the first of this tuple, for example, gives you this. And the second gives you this.
 
 0:12:07.120,0:12:13.440
 So, "return" has the index as first and the result as second. This means we write
 
 0:12:18.240,0:12:23.920
-second of returned.
+the second of returned.
 
 0:12:23.920,0:12:31.520
 Now let's do a final check. So, the type signature of while is "a".

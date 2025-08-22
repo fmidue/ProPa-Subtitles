@@ -29,7 +29,7 @@ And because we don't have a value
 in this type for a position where
 
 0:00:51.520,0:01:00.080
-there's no tile we use Maybe Tile as
+there's no tile, we use Maybe Tile as
 the result type of the level function.
 
 0:01:00.720,0:01:03.920
@@ -40,19 +40,19 @@ in the same way we used 0 before,
 for when there is actually no tile.
 
 0:01:10.640,0:01:17.360
-So when this function returns Nothing there
+So when this function returns Nothing, there
 actually is nothing there to be drawn.
 
 0:01:18.800,0:01:21.760
 Okay, so let's start with this.
 
 0:01:21.760,0:01:30.080
-So as I said 0 becomes Nothing in this
-case which is outside of the level.
+So as I said, 0 becomes Nothing in this
+case, which is outside of the level.
 
 0:01:32.160,0:01:41.120
 Then 1 was the number for a
-block tile and we just say, okay,
+block tile, and we just say, okay,
 
 0:01:42.080,0:01:46.960
 this is Just the Block value; same here.
@@ -89,7 +89,7 @@ because we were giving back Integer numbers
 but said it would be values of Maybe Tile.
 
 0:02:48.240,0:02:53.280
-Now it's values of Maybe Tile, everything is good.
+Now it's values of Maybe Tile; everything is good.
 
 0:02:53.840,0:02:58.560
 Okay then, these values; how
@@ -112,11 +112,11 @@ So, we're going to do pattern
 matching on these four constructors.
 
 0:03:23.120,0:03:31.840
-So we have a Block value
+So we have a Block value,
 then we use the block image.
 
 0:03:35.040,0:03:45.840
-If we have the Water value it's the water
+If we have the Water value, it's the water
 image and so on, pretty straightforward.
 
 0:03:48.880,0:03:54.400
@@ -142,7 +142,7 @@ datatype just describes all the possible tiles
 and not the possibility for there being nothing.
 
 0:04:30.320,0:04:36.720
-That is encoded in this Maybe and we'll
+That is encoded in this Maybe, and we'll
 have to handle it at another point
 
 0:04:38.000,0:04:39.680
@@ -191,11 +191,11 @@ translate this list comprehensions
 to map and filter and concat.
 
 0:06:06.480,0:06:12.240
-We just nest these maps together
-and in the end we will concat
+We just nest these maps together,
+and in the end, we will concat
 
 0:06:12.240,0:06:16.160
-the list back to its original depths, so to speak.
+the list back to its original depth, so to speak.
 
 0:06:18.080,0:06:25.920
 So using this map here over the same range since
@@ -214,7 +214,7 @@ to draw the tile at this position.
 
 0:06:44.400,0:06:52.240
 Okay, let's leave this blank for the
-moment what this drawTile should be.
+moment for what this drawTile should be.
 
 0:06:55.120,0:07:01.760
 Let's just put undefined there and make sure
@@ -232,19 +232,19 @@ here is one element of the outside list.
 So we have a list of lists here.
 
 0:07:28.960,0:07:33.600
-And when we look at this it says that the
-actual type is list of lists of something
+And when we look at this, it says that the
+actual type is a list of lists of something
 
 0:07:34.240,0:07:41.120
 and it matches this with the actual type
 
 0:07:41.840,0:07:52.960
-which is at this point of function type
+which is at this point a function type
 because we haven't given the level a name.
 
 0:07:57.280,0:08:03.040
 So now it says it can't match Picture
-with the type list of list of some values,
+with the type list of lists of some values,
 
 0:08:04.160,0:08:04.960
 it doesn't know yet.
@@ -261,7 +261,7 @@ Since list comprehensions are
 made out of this map and filter,
 
 0:08:24.640,0:08:33.680
-and concat applications we could just
+and concat applications, we could just
 use concat to concat the whole list down.
 
 0:08:36.160,0:08:40.000
@@ -306,10 +306,10 @@ in the original solution because we have to move
 each tile to the place where it should be placed.
 
 0:10:00.640,0:10:03.600
-And then we use
+And then we would use
 
 0:10:06.240,0:10:20.000
-would use the aTile function on the level, which
+the aTile function on the level, which
 we called aLevel, at x and y returned us. Okay.
 
 0:10:27.200,0:10:33.520
@@ -320,10 +320,10 @@ We'll fix that in a second.
 
 0:10:39.840,0:10:45.760
 Since we have as always the problem that
-translated takes Double parameters and we are
+"translated" takes Double parameters and we are
 
 0:10:45.760,0:11:05.360
-only at Integer values we need to use fromIntegral
+only at Integer values, we need to use fromIntegral
 here and now aLevel returns a value of Maybe Tile.
 
 0:11:07.280,0:11:15.440
@@ -333,7 +333,7 @@ But aTile takes a value of type Tile.
 Okay, so um how do we do this?
 
 0:11:18.240,0:11:24.880
-Well let's define another function drawMaybe
+Well, let's define another function drawMaybe
 
 0:11:28.400,0:11:36.240
 that takes a value that is maybe a
@@ -344,7 +344,7 @@ And let's check with the help of the functions
 we imported from Data.Maybe if it is Just...
 
 0:11:50.560,0:12:06.560
-If this Maybe Tile value is Just then we can use
+If this Maybe Tile value is Just, then we can use
 fromJust and do aTile of fromJust on our value.
 
 0:12:06.560,0:12:09.840
@@ -352,17 +352,17 @@ Which gives us our picture.
 
 0:12:11.840,0:12:23.040
 If this is not the case, meaning we have Nothing
-here then we just say that's the blank image.
+here, then we just say that's the blank image.
 
 0:12:23.040,0:12:31.760
 And now instead of doing this
-here we can just say drawMaybe.
+here, we can just say drawMaybe.
 
 0:12:35.680,0:12:38.960
 And this aLevel now takes the coordinates and
 
 0:12:39.520,0:12:45.920
-turns them into a Maybe Tile value and
+turns them into a Maybe Tile value, and
 this drawMaybe takes care of unpacking this
 
 0:12:46.640,0:12:56.000
@@ -374,13 +374,13 @@ There are a couple of other
 ways how we can do this.
 
 0:13:00.080,0:13:06.720
-There are some higher order ways to do this.
+There are some higher-order ways to do this.
 
 0:13:07.920,0:13:09.680
-You could also use pattern matching, but
+You could also use pattern-matching, but
 
 0:13:11.840,0:13:15.680
-for now let's stick with this version
+for now, let's stick with this version
 which is quite straightforward and
 
 0:13:18.320,0:13:24.960
@@ -408,4 +408,4 @@ And the principle is the same no matter
 what level you choose, obviously.
 
 0:14:01.120,0:14:09.840
-Okay that's that for this task.
+Okay, that's that for this task.
