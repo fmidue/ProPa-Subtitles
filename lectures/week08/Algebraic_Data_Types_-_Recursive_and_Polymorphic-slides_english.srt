@@ -89,14 +89,14 @@ argument is not yet recursive. This is the
 
 00:02:22,000 --> 00:02:26,400
 basic case of the recursion. And if the first
-argument is not Zero, then it must be successor of
+argument is not Zero, then it must be the successor of
 
 00:02:26,400 --> 00:02:31,120
 something because there is no other choice because
 Zero and Succ are the only two data constructors
 
 00:02:31,680 --> 00:02:39,920
-of the Nat type. So, it is successor of something.
+of the Nat type. So, it is the successor of something.
 And this something is a variable. It can be
 
 00:02:41,120 --> 00:02:46,160
@@ -113,7 +113,7 @@ on two natural numbers. This will give a natural
 
 00:02:56,240 --> 00:03:01,760
 number. And to this natural number, we can apply
-the successor constructor to give us, yet another
+the successor constructor to give us yet another
 
 00:03:01,760 --> 00:03:06,960
 natural number. So, this makes sense from a typing
@@ -162,11 +162,11 @@ of its arguments is an Integer (a number),
 
 00:04:12,480 --> 00:04:17,680
 but it also has two arguments which are recursive
-occurrences, basically left successful and a right
+occurrences, basically left successor and a right
 
 00:04:17,680 --> 00:04:24,160
 successor. So, of course, the values of this type
-we look like this. So, a Leaf is a value of that
+look like this. So, a Leaf is a value of that
 
 00:04:24,160 --> 00:04:29,280
 type, and a Node with a Leaf and the number 2
@@ -177,7 +177,7 @@ examples where this Leaf is replaced by something
 of this form, maybe with a different number.
 
 00:04:37,600 --> 00:04:43,920
-This would be similar of course to the Connection
+This would be similar, of course, to the Connection
 example where we saw a Tree on the whiteboard
 
 00:04:43,920 --> 00:04:50,160
@@ -194,10 +194,10 @@ Trees with labels on the internal Nodes
 
 00:05:02,960 --> 00:05:09,200
 of Integers. And how to compute on Trees
-like that? Again, by case-distinction,
+like that? Again, by case distinction,
 
 00:05:09,200 --> 00:05:14,720
-pattern-matching , and recursion, in general. So,
+pattern-matching, and recursion in general. So,
 for example, if we have such a Tree of arbitrary
 
 00:05:15,600 --> 00:05:19,760
@@ -217,7 +217,7 @@ a Leaf makes sense to be defined as 0, or maybe
 as 1. That's a decision we make at this point,
 
 00:05:35,680 --> 00:05:40,960
-how we want to interpret the height of a just a
+how we want to interpret the height of just a
 Leaf. And the more interesting case is, of course,
 
 00:05:40,960 --> 00:05:47,120
@@ -233,8 +233,8 @@ recursively the height of the left and right
 sub-Trees and take the maximum of that and add
 
 00:05:59,680 --> 00:06:05,840
-1. Then, we get an Integer which can usefully
-be interpreted as the height of that Tree.
+1. Then, we get an Integer which can be usefully
+interpreted as the height of that Tree.
 
 00:06:07,280 --> 00:06:10,480
 So, the same pattern as before: case distinction,
@@ -285,7 +285,7 @@ then we still want to have two sub-Trees, but
 in the middle, we don't want to have an Integer,
 
 00:07:22,800 --> 00:07:27,600
-bur rather something else. And since we don't want
+but rather something else. And since we don't want
 to commit to what this is, it is simply a type
 
 00:07:27,600 --> 00:07:32,960
@@ -342,7 +342,7 @@ into a Haskell file, load it into ghci,
 
 00:08:49,360 --> 00:08:57,760
 and check the types of these constructors
-to get insight to what is happening here
+to get insight into what is happening here
 
 00:08:58,960 --> 00:09:05,520
 on the type level. What about computation? How do
@@ -370,7 +370,7 @@ type. Actually, the computation of height is not
 
 00:09:37,840 --> 00:09:43,040
 affected by this. This 'height' is actually a polymorphic
-function on a polymorphic data type. So, it takes
+function on a polymorphic datatype. So, it takes
 
 00:09:43,040 --> 00:09:48,560
 trees of any content type and returns an Integer.
@@ -427,7 +427,7 @@ that for some cases we don't have a return value.
 
 00:11:03,600 --> 00:11:08,640
 We don't want to have a return value, then we
-could the output part of that function as Maybe
+could treat the output part of that function as Maybe
 
 00:11:09,200 --> 00:11:12,640
 “whatever type it previously was”
@@ -526,8 +526,8 @@ in particular, of this function here. So, if you
 extend the datatype, then we are sure that the
 
 00:13:23,760 --> 00:13:32,320
-compiler will where we have to add cases, etc. We
-just redesigned to not have the Blank Tile as an
+compiler will know where we have to add cases, etc. We
+just redesigned it to not have the Blank Tile as an
 
 00:13:32,320 --> 00:13:38,720
 actual tile. So, we used this partiality marker
@@ -540,7 +540,7 @@ misunderstanding that I have to warn against,
 
 00:13:50,560 --> 00:13:59,680
 and that is the fact that the data that we get
-with datatypes Trees structures as we have seen,
+with datatypes, with tree structures as we have seen,
 
 00:13:59,680 --> 00:14:04,720
 in Haskell, they are not the same as pointer
@@ -580,7 +580,7 @@ Trees? So, let's consider this function, which is
 
 00:14:47,760 --> 00:14:55,520
 inserting a value into a Tree. So, the assumption
-is that a Tree a sorted Tree, which is ordered.
+is that a Tree is a sorted Tree, which is ordered.
 
 00:14:55,520 --> 00:15:02,080
 So, you always have to the left smaller
@@ -607,12 +607,12 @@ is this happening? Let's look at the definition of
 this function. There is a base case if I want to
 
 00:15:27,760 --> 00:15:33,360
-insert something into , basically, an empty Tree,
+insert something into basically, an empty Tree,
 then what I get is a very small Tree, but not
 
 00:15:33,360 --> 00:15:39,760
 empty anymore. So, it has a Node, the new value
-that we wanted to insert, and two leaves (Leafs).
+that we wanted to insert, and two leaves (Leaf).
 
 00:15:39,760 --> 00:15:47,040
 And the more interesting recursive case is: we get
@@ -639,7 +639,7 @@ the whole Tree along with variables for the things
 that I have matched deeper inside. And what is the
 
 00:16:24,000 --> 00:16:27,760
-behaviour here if the thing that I want
+behavior here if the thing that I want
 to insert is smaller than the current
 
 00:16:29,040 --> 00:16:34,240
@@ -652,10 +652,10 @@ the same right successor as the original Tree,
 
 00:16:40,880 --> 00:16:48,480
 it has the same internal Node again, and it has a
-new left sub-Tree, which is obtained with recursive
+new left sub-Tree, which is obtained with a recursive
 
 00:16:48,480 --> 00:16:54,240
-call with the inserting of this n into the left
+call with the insertion of this n into the left
 sub-Tree. Then there is a corresponding case for
 
 00:16:54,240 --> 00:17:01,760
@@ -676,10 +676,10 @@ not changing the original Tree. That's what
 
 00:17:18,736 --> 00:17:24,160
 is called persistency of data structures. And
-that's a property that some data types have in
+that's a property that some datatypes have in
 
 00:17:24,880 --> 00:17:29,200
-imperative languages. So, if you compute 3+5 in
+imperative languages. So, if you compute 3 + 5 in
 an imperative language, you get a new value 8.
 
 00:17:29,200 --> 00:17:33,600
@@ -687,12 +687,12 @@ You don't overwrite the 3 with 8 or something
 like that. You wouldn't even consider this as a
 
 00:17:33,600 --> 00:17:39,760
-reasonable behaviour of the '+' operation in any
+reasonable behavior of the '+' operation in any
 language, also in an object-oriented language. But
 
 00:17:39,760 --> 00:17:44,720
 for example, for data structures like arrays,
-lists, trees, often, the understanding in
+lists, and trees, often, the understanding in
 
 00:17:44,720 --> 00:17:50,400
 imperative languages is that if you, for example,

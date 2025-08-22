@@ -10,7 +10,7 @@ infinite sets, how to enumerate them, and
 then find a way to define this in Haskell.
 
 0:00:25.120,0:00:27.760
-Okay so what's the task?
+Okay, so what's the task?
 
 0:00:28.320,0:00:34.160
 We should give definitions for these
@@ -53,11 +53,11 @@ and 0 and then all the negative numbers.
 
 0:01:41.600,0:01:48.400
 But of course, this does not work because
-there are infinitely many positive numbers so
+there are infinitely many positive numbers, so
 
 0:01:49.920,0:02:03.360
-this results basically in us saying okay we're
-starting with 0, then there's 1,2,3,4,5 etc.
+this results basically in us saying, okay, we're
+starting with 0, then there's 1, 2, 3, 4, 5, etc.
 
 0:02:03.360,0:02:11.760
 So there are all these infinitely many numbers
@@ -78,14 +78,14 @@ For integers, this is not too tricky
 if you think about it for a second.
 
 0:02:33.120,0:02:42.880
-You just start with 0 then you go to 1 and then
-to -1 then to -2 and 2 or the other way around.
+You just start with 0, then you go to 1, and then
+to -1, then to -2, and 2, or the other way around.
 
 0:02:43.440,0:02:46.560
 You could also do -1 here and then 1.
 
 0:02:48.560,0:02:55.360
-And then you go on and this way
+And then you go on, and this way
 each of these numbers is enumerated.
 
 0:02:55.360,0:03:03.840
@@ -101,8 +101,8 @@ So we want to have these values
 and then from where to where?
 
 0:03:23.520,0:03:28.880
-Hmm, okay so this is a bit
-tricky to write it seems.
+Hmm, okay, so this is a bit
+tricky to write, it seems.
 
 0:03:30.240,0:03:31.840
 There's a
@@ -119,10 +119,10 @@ concat of a list of lists flattens the list.
 
 0:03:58.720,0:04:06.960
 So if you, for example, have a list
-[1,2] and [3,4], something like that,
+[1, 2] and [3, 4], something like that,
 
 0:04:06.960,0:04:13.840
-then concat [[1,2],[3,4]] will give us
+then concat [[1, 2], [3, 4]] will give us
 the list without the nesting of lists.
 
 0:04:17.280,0:04:32.640
@@ -155,7 +155,7 @@ and we cannot print out all the elements.
 
 0:05:22.720,0:05:29.280
 So now we have this list where
-we have 1,-1,2,-2,3,-3 and so on.
+we have 1, -1, 2, -2, 3, -3, and so on.
 
 0:05:31.360,0:05:32.720
 Only the 0 is missing.
@@ -168,7 +168,7 @@ add it to the front of the list.
 We could also just start with 0 here.
 
 0:05:49.520,0:05:56.800
-If we do that then we have two 0's, obviously,
+If we do that, then we have two 0's, obviously,
 since we have 0 here and -0 is still 0.
 
 0:05:56.800,0:06:02.640
@@ -176,7 +176,7 @@ And the task requires that we
 don't have any duplicate elements.
 
 0:06:05.840,0:06:16.640
-You can just fix this by saying okay, just take
+You can just fix this by saying, okay, just take
 the tail; drop the first element of this list.
 
 0:06:16.640,0:06:20.160
@@ -193,12 +193,12 @@ Alright, so that's a list of all integers.
 Now the list of all pairs of natural numbers:
 
 0:06:43.280,0:06:49.520
-Again let's start with a list comprehension
+Again, let's start with a list comprehension
 and we want some pairs x and y.
 
 0:06:50.640,0:07:00.800
 And our first approach might be to say,
-natural numbers okay these are basically these.
+natural numbers, okay, these are basically these.
 
 0:07:01.760,0:07:04.000
 Let's just try it this way, right.
@@ -214,14 +214,14 @@ This is how list comprehensions work, right?
 This probably is what we want.
 
 0:07:23.520,0:07:24.960
-Well let's take a look.
+Well, let's take a look.
 
 0:07:28.240,0:07:33.760
 Okay, so now we're getting
-(0,0), (0,1), (0,2), (0,3).
+(0, 0), (0, 1), (0, 2), (0, 3).
 
 0:07:36.720,0:07:44.320
-So the first element always stays 0 and then we
+So the first element always stays 0, and then we
 enumerate all the other natural numbers.
 
 0:07:47.360,0:07:53.600
@@ -248,7 +248,7 @@ Okay, so what's the trick?
 
 0:08:25.680,0:08:34.080
 There's something called diagonalization where if
-you would plot these pairs you want to enumerate
+you would plot these pairs, you want to enumerate
 
 0:08:34.080,0:08:42.640
 in a two-dimensional table, you would make
@@ -259,7 +259,7 @@ It's not really that important to understand
 here, but the key observation is that on such a
 
 0:08:55.520,0:09:11.040
-diagonal in this traversal scheme the components
+diagonal in this traversal scheme, the components
 have a constant sum on each of these diagonals.
 
 0:09:11.040,0:09:18.000
@@ -270,18 +270,18 @@ all pairs with components that sum up to 0,
 then all pairs with components that sum up to 1,
 
 0:09:31.280,0:09:39.520
-which is (0,1) and (1,0),
+which is (0, 1) and (1, 0),
 and then for 2 and so on.
 
 0:09:39.520,0:09:54.000
-So we would have (0,2) then
-(1,1) and then (2,0) and so on.
+So we would have (0, 2) then
+(1, 1) and then (2, 0) and so on.
 
 0:09:54.560,0:09:56.080
 And for each of these
 
 0:09:58.400,0:10:06.720
-constant 0, 1, 2, and so on there's only a
+constant 0, 1, 2, and so on, there's only a
 finite number of these combinations, right.
 
 0:10:07.680,0:10:19.120
@@ -289,11 +289,11 @@ So each pair necessarily has a sum of its
 two components and if we enumerate all these
 
 0:10:21.760,0:10:32.000
-lists of pairs with a constant sum we will
+lists of pairs with a constant sum, we will
 eventually enumerate all components, right.
 
 0:10:32.000,0:10:41.920
-So the trick here is to say x+y
+So the trick here is to say x + y
 
 0:10:47.520,0:10:58.080
 has to be equal to some, let's call it c for
@@ -301,7 +301,7 @@ constant, and this constant moves from 0 upwards.
 
 0:11:03.040,0:11:10.000
 For the same reason, the other version didn't
-work this will also not work this way because
+work; this will also not work this way because
 
 0:11:12.960,0:11:16.960
 we're still taking all the
@@ -352,7 +352,7 @@ this constraint here into consideration;
 
 0:13:02.080,0:13:14.560
 we say that x goes from 0 to c and y goes from 0
-to c-x and we want to check that x and y equals c.
+to c-x and we want to check that x plus y equals c.
 
 0:13:15.520,0:13:30.080
 Well, if we carefully look at this we see that
@@ -364,7 +364,7 @@ this condition, we can directly compute y as c-x.
 
 0:13:44.960,0:13:53.760
 Okay, let's check this again - that we didn't
-break anything - so we still have the 0 the 1s,
+break anything - so we still have the 0s, the 1s,
 
 0:13:56.320,0:14:01.840
 the 2s, the 3s, and so on,
@@ -378,7 +378,7 @@ We really have to think about
 it quite a bit but once you get
 
 0:14:15.840,0:14:17.920
-the idea it's actually pretty straight forward.
+the idea it's actually pretty straightforward.
 
 0:14:19.680,0:14:20.800
 Let's try to figure it out.
@@ -400,10 +400,10 @@ would probably want to write something like this:
 
 0:14:55.280,0:15:09.520
 (x, y, z) and x and y are taken out
-of the 'pairs' list and z is taking
+of the 'pairs' list and z is taken
 
 0:15:10.160,0:15:16.720
-out of the integers ('ints') because we have
+out of the integers ('Ints') because we have
 enumerated all the integers and all the pairs.
 
 0:15:16.720,0:15:22.160
@@ -411,7 +411,7 @@ And what we would like to do is combine
 this in a way that this actually works.
 
 0:15:22.160,0:15:30.000
-In the finite case, if 'pairs' and 'ints' were
+In the finite case, if 'pairs' and 'Ints' were
 finite, this would actually do the right thing.
 
 0:15:30.640,0:15:38.000
@@ -455,7 +455,7 @@ every single combination there is.
 
 0:16:53.920,0:16:59.680
 And we have two lists 'pairs'
-and 'ints' and we want to have
+and 'Ints' and we want to have
 
 0:17:00.880,0:17:04.640
 all the combinations of
@@ -470,7 +470,7 @@ possibilities how to index two lists, if we
 look at it that way we can see that we have to
 
 0:17:25.360,0:17:33.760
-combine the 0th element of the of one list with
+combine the 0th element of one list with
 the 0th element of the second list and so on.
 
 0:17:33.760,0:17:39.280
@@ -478,11 +478,11 @@ Take element 0 from the first list
 and element 1 from the second list,
 
 0:17:39.920,0:17:46.240
-element 1 from the first list element 0
+element 1 from the first list and element 0
 from the second list, then element 0 from
 
 0:17:48.800,0:17:51.840
-the first list element 2 from
+the first list and element 2 from
 the second list and so on.
 
 0:17:52.400,0:17:55.680
@@ -514,7 +514,7 @@ So (x,y) is the 'pairs' list and index i and
 z is the integer list at index j.
 
 0:19:16.000,0:19:25.440
-Okay, so now there's a a type error here
+Okay, so now there's a type error here
 because the indexing function expects us to use
 
 0:19:27.360,0:19:46.160
@@ -538,7 +538,7 @@ then we have (0,0,1), (0,1,0), (0,0,-1).
 
 0:20:34.800,0:20:41.600
 You can already see that this is quite
-complicated to actually to figure out
+complicated to actually figure out
 
 0:20:45.440,0:20:49.600
 a nice pattern here like we
@@ -553,7 +553,7 @@ actually take every combination of possible
 indexing from this pair and then use
 
 0:21:05.600,0:21:17.600
-these indices to index 'pairs' and 'ints', then we
+these indices to index 'pairs' and 'Ints', then we
 will actually enumerate all of these triples.
 
 0:21:19.040,0:21:24.880
