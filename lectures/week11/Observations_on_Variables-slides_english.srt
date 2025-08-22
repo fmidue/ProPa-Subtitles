@@ -18,8 +18,8 @@ And I commented on this already is that, of
 course, there is no somehow contradiction or
 
 00:00:22,880 --> 00:00:32,960
-interference between a variable usage in
-the query here and in rule in a program.
+interference between a variable's usage in
+the query here and in a rule in a program.
 
 00:00:32,960 --> 00:00:33,520
 Right?
@@ -29,7 +29,7 @@ That we have X here and X here is not a problem,
 
 00:00:36,400 --> 00:00:40,640
 just as in Haskell or other
-languages variables have a scope.
+languages, variables have a scope.
 
 00:00:40,640 --> 00:00:44,160
 And usually, the scope is for
@@ -43,10 +43,10 @@ And well, this X is completely different.
 
 00:00:49,040 --> 00:00:52,000
 You could think of these X and Y to
-be some are renamed to X prime and
+be some renamed to X' and
 
 00:00:52,000 --> 00:00:56,560
-Y prime if you need to make sure that
+Y' if you need to make sure that
 you don't confuse that X with that X.
 
 00:00:56,560 --> 00:00:57,760
@@ -95,8 +95,8 @@ they could, of course, be the same
 entity in a concrete instantiation.
 
 00:01:44,400 --> 00:01:49,280
-Again, just like, if you have a functional
-procedure in other language, and you have
+Again, just like if you have a functional
+procedure in another language, and you have
 
 00:01:49,280 --> 00:01:53,040
 two argument variables, even
@@ -119,7 +119,7 @@ And probably also in other languages
 that you have considered or seen.
 
 00:02:08,400 --> 00:02:10,000
-That's why these last two points on red.
+That's why these last two points are red.
 
 00:02:10,000 --> 00:02:14,960
 Because they are something to really be
@@ -127,7 +127,7 @@ aware of, and to take care of, careful about.
 
 00:02:15,680 --> 00:02:19,360
 So, this one, it's possible to have several
-occurrences of the same variable in a rules' head.
+occurrences of the same variable in a rule's head.
 
 00:02:19,360 --> 00:02:21,280
 We didn't have this here, we used X and Y.
@@ -158,7 +158,7 @@ different for example from Haskell.
 Actually, in the Haskell part, I had an explicit
 
 00:02:51,200 --> 00:02:55,520
-discussion of this in some of their early
+discussion of this in some of the early
 videos, that if you define a function like
 
 00:02:55,520 --> 00:03:01,360
@@ -265,7 +265,7 @@ an unknown thing that's not even in scope.
 Okay?
 
 00:04:42,000 --> 00:04:46,400
-And here, this look like it
+And here, this looks like it
 simply appears out of nothing.
 
 00:04:46,400 --> 00:04:50,480
@@ -297,7 +297,7 @@ So, they are free.
 Now, how should they be interpreted?
 
 00:05:19,200 --> 00:05:21,040
-How should Z be interpreted in this case?
+How should z be interpreted in this case?
 
 00:05:21,040 --> 00:05:23,840
 Or how should the whole rule be interpreted?
@@ -316,14 +316,14 @@ the quantifier for this variable.
 
 00:05:37,200 --> 00:05:40,960
 So, somehow implicitly, at least there must be
-some quantifier, which says that for all X, Y,
+some quantifier, which says that for all x, y,
 
 00:05:40,960 --> 00:05:46,160
-or "for all Z", or "exists Z" or whatever, so,
+or "for all z", or "exists z" or whatever, so,
 maybe some reasonable ideas to think about.
 
 00:05:46,160 --> 00:05:48,800
-Well, how is this Z introduced in a logical sense?
+Well, how is this z introduced in a logical sense?
 
 00:05:49,440 --> 00:05:51,840
 And there are different options.
@@ -359,7 +359,7 @@ Okay, so one way to think about
 this way would be as following.
 
 00:06:20,160 --> 00:06:24,320
-So, let's say the X and Y right they
+So, let's say the x and y right they
 are bound, when we call the "jealous"
 
 00:06:24,320 --> 00:06:28,080
@@ -374,11 +374,11 @@ So, we call "jealous" maybe
 with Vincent, Marsellus then
 
 00:06:37,120 --> 00:06:43,520
-this rule applies for all X and Y, but for some
+this rule applies for all x and y, but for some
 invocation they are then fixed to two arguments.
 
 00:06:43,520 --> 00:06:45,360
-Okay, then, what about the Z?
+Okay, then, what about the z?
 
 00:06:45,360 --> 00:06:49,120
 It should be introduced when we use this rule.
@@ -388,7 +388,7 @@ Well.
 
 00:06:51,440 --> 00:06:58,320
 And one way to think about it would
-be to say, well, let's quantify the Z.
+be to say, well, let's quantify the z.
 
 00:06:58,320 --> 00:07:01,120
 Let's quantify it universally, so it's arbitrary.
@@ -397,7 +397,7 @@ Let's quantify it universally, so it's arbitrary.
 It's free.
 
 00:07:01,680 --> 00:07:05,600
-So, for every choice of Z something may hold.
+So, for every choice of z something may hold.
 
 00:07:05,600 --> 00:07:09,760
 And then that may be used as the
@@ -411,26 +411,26 @@ Because one way to think about it would be to say,
 
 00:07:14,960 --> 00:07:18,800
 well, if for every choice of
-Z, because Z is free here.
+z, because z is free here.
 
 00:07:18,800 --> 00:07:21,680
-If for every choice of Z,
+If for every choice of z,
 the right-hand side holds.
 
 00:07:21,680 --> 00:07:26,800
-So, loves(X,Z) and loves(Y,Z) and X is different
-from Y, which is things that you could check.
+So, loves(x,z) and loves(y,z) and x is different
+from y, which is things that you could check.
 
 00:07:28,080 --> 00:07:30,480
 Then also the head should hold.
 
 00:07:30,480 --> 00:07:35,120
 Right, so we say if, for all
-choices of Z, we can establish this,
+choices of z, we can establish this,
 
 00:07:35,120 --> 00:07:38,960
 then we have also established the thing
-we wanted to establish about X and Y.
+we wanted to establish about x and y.
 
 00:07:40,160 --> 00:07:44,320
 Okay, that's one possible interpretation.
@@ -439,22 +439,22 @@ Okay, that's one possible interpretation.
 There's another one could again say, well,
 
 00:07:47,440 --> 00:07:51,840
-for arbitrary but fixed X
-and Y, we take this approach.
+for arbitrary but fixed x
+and y, we take this approach.
 
 00:07:51,840 --> 00:07:54,240
 So, something, again universally.
 
 00:07:54,240 --> 00:07:58,640
-So, for every choice of Z. Because it's
+So, for every choice of z. Because it's
 free, we can choose everything we want.
 
 00:07:58,640 --> 00:08:00,800
 If it is the case, that the right-hand side holds.
 
 00:08:00,800 --> 00:08:04,560
-So, if it's the case, that X loves Z
-and Y loves Z and X is different from Y,
+So, if it's the case, that x loves z
+and y loves z and x is different from y,
 
 00:08:05,120 --> 00:08:09,440
 then we also know that this head statement holds.
@@ -574,7 +574,7 @@ holds, and only then we can establish this.
 That's the logical difference.
 
 00:10:26,800 --> 00:10:29,760
-So, if you need this spell out more in details,
+So, if you need this spelled out more in details,
 
 00:10:29,760 --> 00:10:34,880
 then you can write down actually the formulas

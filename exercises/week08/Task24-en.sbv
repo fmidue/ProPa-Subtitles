@@ -4,14 +4,14 @@ at our game level rendering.
 
 0:00:09.760,0:00:14.720
 And this time we're going to use a
-datatype instead of an Integer encoding
+datatype instead of an Integer encoding.
 
 0:00:17.120,0:00:20.560
 to encode what tiles are placed at what position.
 
 0:00:20.560,0:00:28.640
 We have this datatype here, called Tile, and it
-has the constructors Block, Water, Pearl and Air.
+has the constructors Block, Water, Pearl, and Air.
 
 0:00:29.280,0:00:35.520
 And now I've copied the
@@ -33,7 +33,7 @@ there's no tile we use Maybe Tile as
 the result type of the level function.
 
 0:01:00.720,0:01:03.920
-And we use Nothing as described above here
+And we use Nothing as described above here.
 
 0:01:05.440,0:01:10.640
 in the same way we used 0 before,
@@ -236,7 +236,7 @@ And when we look at this it says that the
 actual type is list of lists of something
 
 0:07:34.240,0:07:41.120
-and it match this with the actual type
+and it matches this with the actual type
 
 0:07:41.840,0:07:52.960
 which is at this point of function type
@@ -250,7 +250,7 @@ with the type list of list of some values,
 it doesn't know yet.
 
 0:08:05.520,0:08:12.160
-Okay, so we want to go to picture from probably
+Okay, so we want to go to Picture from probably
 a list of list of pictures if we think about it.
 
 0:08:12.160,0:08:16.800
@@ -258,7 +258,7 @@ drawTile should probably give us a Picture.
 
 0:08:20.000,0:08:23.840
 Since list comprehensions are
-made out of this map and filter
+made out of this map and filter,
 
 0:08:24.640,0:08:33.680
 and concat applications we could just
@@ -266,7 +266,7 @@ use concat to concat the whole list down.
 
 0:08:36.160,0:08:40.000
 And now we have Picture can't be
-matched with a list of somethings
+matched with a list of somethings.
 
 0:08:40.000,0:08:42.080
 which probably will be pictures.
@@ -292,14 +292,14 @@ Makes it more clear what we are doing here.
 
 0:09:22.080,0:09:28.000
 Okay, so for readability we've
-separated out this drawTile thing
+separated out this drawTile thing.
 
 0:09:29.920,0:09:40.160
 and drawTile now; for some integer
 values x and y; what do we do for this?
 
 0:09:40.160,0:09:49.840
-Well, we had this translated by x and y
+Well, we had this translated by x and y.
 
 0:09:52.560,0:10:00.640
 in the original solution because we have to move
@@ -341,7 +341,7 @@ Tile could be Nothing or Just the tile.
 
 0:11:36.240,0:11:47.800
 And let's check with the help of the functions
-we imported from Data.Maybe if it is Just ...
+we imported from Data.Maybe if it is Just...
 
 0:11:50.560,0:12:06.560
 If this Maybe Tile value is Just then we can use

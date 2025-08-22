@@ -14,7 +14,7 @@ That is, we should
 
 0:00:21.200,0:00:27.840
 use this splitting 'splitAt' function to
-split the list in two parts of equal size.
+split the list into two parts of equal size.
 
 0:00:28.720,0:00:36.080
 And then recursively compute the sum of
@@ -42,7 +42,7 @@ And then let's think about the basic structure.
 So we start with
 
 0:01:14.560,0:01:21.360
-splitting the list to an a and b.
+splitting the list into an a and b.
 
 0:01:22.480,0:01:25.840
 And let's just use the
@@ -80,11 +80,11 @@ We split the list into two equal parts
 
 0:02:29.360,0:02:38.160
 in the middle, that's what this div 2 here
-does, and then we take the left part sum it up,
+does, and then we take the left part, sum it up,
 
 0:02:38.720,0:02:47.200
-take the right part sum it up, by a recursive
-calls, and then we combine the results.
+take the right part, sum it up, by a recursive
+call, and then we combine the results.
 
 0:02:47.200,0:02:49.840
 Okay, so is that all?
@@ -112,7 +112,7 @@ And the otherwise case has our divide and conquer
 scheme and if our list is empty we just return 0.
 
 0:03:39.520,0:03:45.840
-Okay let's load this up.
+Okay, let's load this up.
 
 0:03:54.880,0:03:56.320
 Let's try it out.
@@ -143,14 +143,14 @@ so this list has length 1.
 
 0:04:35.040,0:04:44.160
 And if we have 1 `div` 2 we get
-0. Because this takes the division
+0, because this takes the division
 
 0:04:44.720,0:04:52.800
 and ignores the rest of the division
 if it isn't a clear division.
 
 0:04:53.440,0:04:58.000
-Okay so what we actually do is we do
+Okay, so what we actually do is we do
 
 0:04:58.000,0:05:12.480
 splitAt 0 [1] in this case.
@@ -165,14 +165,14 @@ sum [], this would return zero.
 
 0:05:26.880,0:05:36.320
 But now we call sum again on [1] which is what
-we just did so we have an infinite loop here.
+we just did, so we have an infinite loop here.
 
 0:05:36.880,0:05:46.640
 Because for lists of length one the
 splitting does not produce any progress.
 
 0:05:47.760,0:05:55.800
-So we need to get an additional case .
+So we need to get an additional case.
 
 0:05:56.720,0:06:06.480
 If the length of xs is one then we

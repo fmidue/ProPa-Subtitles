@@ -33,14 +33,13 @@ And there are a number of clues given in natural
 
 00:00:50,760 --> 00:00:56,500
 language, which we can of course
-somehow then to logic or in our case now
+somehow then convert to logic or in our case now
 
 00:00:56,500 --> 00:01:02,339
-Prolog would have to convert. Then through
-these clues, so to speak
+Prolog. Then through these clues, so to speak
 
 00:01:02,339 --> 00:01:07,000
-situation is described and at the end there is
+the situation is described and at the end there is
 the question from the riddle, who is the owner of the zebra
 
 00:01:07,000 --> 00:01:14,360
@@ -190,11 +189,11 @@ this corresponds very well to that idea:
 
 00:04:46,170 --> 00:04:51,110
 You simply have as a search space this table,
-which you have to fill somehow.
+which you have to fill somehow."
 
 00:04:51,110 --> 00:04:59,040
 And the test part then hopefully makes sure,
-that we or Prolog can/can solve the problem.
+that we or Prolog can solve the problem.
 
 00:04:59,040 --> 00:05:10,280
 How do we then go through for the test part?
@@ -202,7 +201,7 @@ We just look at the individual clues.
 
 00:05:10,280 --> 00:05:14,700
 We have this list of clues. These are of course
-expressed linguistically/ verbally.
+expressed linguistically/verbally.
 
 00:05:14,700 --> 00:05:20,280
 We look at each one of them and figure out,
@@ -210,7 +209,7 @@ how we can express that as a Prolog test.
 
 00:05:20,280 --> 00:05:27,641
 Of course, about this search space. So, related to such
-list of houses. For example, the first clue says:
+a list of houses. For example, the first clue says:
 
 00:05:27,641 --> 00:05:34,460
 "The Englishman lives in the red house."
@@ -235,7 +234,7 @@ That's what I'm going for now when I interpret these lists.
 
 00:06:05,520 --> 00:06:10,470
 Then the hint that the Englishman
-lives in the red house, would simply be the statement that
+lives in the red house would simply be the statement that
 
 00:06:10,470 --> 00:06:15,780
 there must be one among the houses which has the
@@ -270,7 +269,7 @@ constellations are conceivable where this occupancy does not exist in one of the
 this occupancy in one of the houses. No matter what the
 
 00:06:56,400 --> 00:07:03,740
-other three positions, i.e. to the drink
+other three positions, i.e. to the drink,
 to the pet and to the cigarette brand.
 
 00:07:03,740 --> 00:07:08,380
@@ -303,7 +302,7 @@ as with the manual solution, whether we first take the seventh or the
 
 00:07:45,760 --> 00:07:51,320
 tenth clue. We are not yet describing
-no search at all. We are only describing what we want.
+any search at all. We are only describing what we want.
 
 00:07:51,320 --> 00:07:57,480
 If you think back to the video before last: What? vs. How?
@@ -339,7 +338,7 @@ our task currently, to somehow express
 
 00:08:34,970 --> 00:08:43,840
 or to take it into account. We simply translate
-simply the individual clues. They limit
+the individual clues. They limit
 
 00:08:43,840 --> 00:08:53,770
 what Prolog has in terms of possible solutions.
@@ -380,7 +379,7 @@ and coffee is drunk there. The same applies
 
 00:09:41,320 --> 00:09:48,360
 for the fourth clue. So, you can simply translate them
-analogous to the first and second clues.
+analogously to the first and second clues.
 
 132 # slide
 00:09:48,360 --> 00:09:56,970
@@ -393,7 +392,7 @@ where you can't just take the member predicate directly.
 
 00:10:01,320 --> 00:10:07,630
 Because here it says: "The green house is
-directly to the right of the ivory house."
+directly to the right of the ivory house".
 
 00:10:07,630 --> 00:10:12,940
 This is not, after all, a property that refers only to
@@ -444,7 +443,7 @@ But we know how to define list predicates
 ourselves. It is simply a matter of
 
 00:11:15,700 --> 00:11:21,020
-express in a list (in this case a list of houses)
+expressing in a list (in this case a list of houses)
 that two certain elements
 
 00:11:21,020 --> 00:11:27,360
@@ -473,7 +472,7 @@ concrete elements means, there is a place
 
 00:11:57,130 --> 00:12:01,400
 in the overall list where exactly the two are in
-the order." There one could say, for example
+the order". There one could say, for example
 
 00:12:01,400 --> 00:12:07,550
 say: grab a prefix from the list,
@@ -581,7 +580,7 @@ An encroachment, so to speak, on the Generate part.
 We can simply say, instead of starting at the beginning
 
 00:14:36,290 --> 00:14:42,220
-start with, "Houses are.... and then it said
+start with, "Houses are... and then it said
 just never mind, never mind, never mind." Can we refine that
 
 00:14:42,220 --> 00:14:49,170
@@ -601,7 +600,7 @@ Or five underscores in a list. Now I say,
 in the second position may be the Norwegian.
 
 00:15:08,150 --> 00:15:13,560
-This is then the ninth clue, which just say:
+This is then the ninth clue, which just says:
 The leftmost house, that is the first house of this list is
 
 00:15:13,560 --> 00:15:18,810
@@ -687,14 +686,14 @@ because "nextTo" simply means: Either the one house is to the
 
 00:17:35,060 --> 00:17:41,620
 right of the other or vice versa. We can express this
-very simple. We have defined "rightOf".
+very simply. We have defined "rightOf".
 
 00:17:41,620 --> 00:17:46,040
 When is an element to the right of another element in a list?
 That two elements are simply next to each other is called:
 
 00:17:46,040 --> 00:17:56,920
-either X is to the right and Y or Y is to the right of X.
+either X is to the right of Y or Y is to the right of X.
 In both cases, and exactly in these two cases,
 
 00:17:56,920 --> 00:18:07,670
@@ -704,7 +703,7 @@ This allows us to express clue ten.
 135 # slide
 00:18:07,670 --> 00:18:13,470
 Then come four clues, all of which can now be
-can be expressed analogously to those already seen.
+expressed analogously to those already seen.
 
 00:18:13,470 --> 00:18:18,230
 So, either and use of "nextTo" or of "member".
@@ -747,7 +746,7 @@ How else can we express this, so to speak?
 We simply use variables for the zebra owner
 
 00:19:20,250 --> 00:19:27,300
-and the water drinker. And write demand/ clues/
+and the water drinker. And write demand/clues/
 Expressions there, which ultimately then tell us:
 
 00:19:27,300 --> 00:19:34,180
@@ -760,7 +759,7 @@ So, we just use variables
 
 00:19:40,710 --> 00:19:46,620
 for these two unknowns, according to which we want
-to solve for, and further member calls,
+to solve for, and further member calls,"
 
 00:19:46,620 --> 00:19:52,670
 which express that the zebra owner is exactly the person
@@ -773,7 +772,7 @@ Here are the auxiliary predicates "rightOf" and "nextTo".
 
 00:20:02,610 --> 00:20:08,030
 Here's the predicate that we're going to call.
-So, "solve," we want to solve.
+So, "solve", we want to solve.
 
 00:20:08,030 --> 00:20:12,950
 We want to find out the zebra owner and the water drinker.
@@ -788,7 +787,7 @@ Then each of the clues with member,
 rightOf or nextTo expressed. So, up to here is that,
 
 00:20:26,200 --> 00:20:31,160
-What we discussed in the previous slides.
+what we discussed in the previous slides.
 And then the two queries for the zebra owner
 
 00:20:31,160 --> 00:20:34,460
@@ -821,7 +820,7 @@ This is the solution we had also determined by hand.
 
 00:21:17,820 --> 00:21:30,380
 At the beginning of the discussion in the first
-or second lecture. Then we would have solved our problem/
+or second lecture. Then we would have solved our problem.
 
 00:21:30,380 --> 00:21:38,980
 solved our puzzle the Prolog way.
@@ -837,7 +836,7 @@ A solution that allows us to simply concentrate
 
 00:21:48,620 --> 00:21:52,400
 to concentrate on the "what? Namely, on the implementation
-these clues and not to somehow pursue special
+of these clues and not to somehow pursue special
 
 00:21:52,400 --> 00:21:58,860
 search strategies. We leave that to the
@@ -913,8 +912,8 @@ of the clues, then we just need to change the clue
 
 00:23:35,500 --> 00:23:41,250
 appropriately and then we can again
-Prolog to do all the work of finding the solution.
+ask Prolog to do all the work of finding the solution.
 
 00:23:41,250 --> 00:23:49,000
 And that will do that, of course, in this generate-and-test
-Principle, because that's the way we put it.
+principle, because that's the way we put it.

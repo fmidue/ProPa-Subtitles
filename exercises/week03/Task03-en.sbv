@@ -11,12 +11,12 @@ First we recreate the picture from
 last week, some old definitions here,
 
 0:00:31.840,0:00:40.400
-so now since this is now not a yellow
-circle anymore but the sun, might be
+so now since this is not a yellow
+circle anymore but the sun, it might be
 
 0:00:40.400,0:00:48.720
 useful to actually call it that, also this is no
-longer a green rectangle it should be grass now.
+longer a green rectangle; it should be grass now.
 
 0:00:51.840,0:01:00.080
 Okay, so then we just say
@@ -31,7 +31,7 @@ plus template gives us some counter here to see
 that we actually the animation is playing, but
 
 0:01:17.840,0:01:26.400
-as we would expect there's nothing happening
+as we would expect, there's nothing happening
 yet. So first off let's make the sun move,
 
 0:01:27.120,0:01:37.040
@@ -58,7 +58,7 @@ rotate it around this origin
 
 0:02:21.120,0:02:28.800
 point which is exactly the trajectory we
-want the sun to take, so we use 'rotated'
+want the sun to take, so we use `rotated`
 
 0:02:29.520,0:02:35.840
 and then some value, let's just plug in
@@ -81,7 +81,7 @@ on a layer higher than the grass, so we want the
 
 0:03:16.960,0:03:25.680
 sun to sink below the grass, so we need to put the
-grass on a higher level, so to speak than the sun.
+grass on a higher level, so to speak, than the sun.
 
 0:03:30.240,0:03:40.000
 Okay, then it will now vanish behind the grass,
@@ -96,29 +96,29 @@ so let's restrict the movement. How
 do we do this? There are several ways,
 
 0:03:53.440,0:03:59.760
-first i will show you how to do it by
+first I will show you how to do it by
 introducing a modified time parameter,
 
 0:03:59.760,0:04:12.720
-so i add a where clause find this t prime
+so I add a where clause find this t'
 and I just say, this check whether t is
 
 0:04:15.360,0:04:16.560
 smaller than something,
 
 0:04:18.720,0:04:21.200
-let's use pi for half a circle
+let's use pi for half a circle.
 
 0:04:23.280,0:04:32.960
-then i use t and if t is greater than
-pi then i use pi, so i fix this t
+Then I use t and if t is greater than
+pi then I use pi, so I fix this t
 
 0:04:35.200,0:04:42.480
 such that it no longer grows bigger than pi,
-making the movement stop at some point and then i
+making the movement stop at some point and then I
 
 0:04:42.480,0:04:49.760
-use this "t prime" to rotate the sun over there,
+use this "t'" to rotate the sun over there,
 so there's something wrong with this, which is
 
 0:04:50.320,0:04:57.680
@@ -134,7 +134,7 @@ Obviously it's because we started the sun 6
 
 0:05:10.720,0:05:19.040
 units up here instead of this 6 over
-here so we just change this translation.
+here, so we just change this translation.
 
 0:05:22.080,0:05:32.720
 Like this, and now the sun starts behind the
@@ -160,7 +160,7 @@ here, so either we have the sun rotated
 
 0:06:15.520,0:06:21.760
 by "minus t", and let's no longer call this
-"t prime", but instead something like moving,
+"t'", but instead something like moving,
 
 0:06:22.560,0:06:30.640
 and we add this moving up here, and if we
@@ -183,7 +183,7 @@ done that this change. Okay, so then what we
 
 0:07:13.520,0:07:21.520
 can also do is write this if expression inline,
-precisely because if expressions in haskell are
+precisely because if expressions in Haskell are
 
 0:07:23.760,0:07:30.160
 first class expressions, so we don't
@@ -202,7 +202,7 @@ even more, but let's look at one more. If you
 
 0:07:52.000,0:08:02.400
 realize that actually, since this if then else is
-kind of first class here in haskell, we can even
+kind of first class here in Haskell, we can even
 
 0:08:05.520,0:08:15.120
 think about a slightly different version
@@ -251,7 +251,7 @@ and otherwise it's pi". So, what this
 essentially is is the minimum of t and pi.
 
 0:09:54.800,0:09:57.760
-And now i'm missing a parentheses...
+And now I'm missing a parentheses...
 
 0:10:03.840,0:10:13.680
 And we have the same animation and it

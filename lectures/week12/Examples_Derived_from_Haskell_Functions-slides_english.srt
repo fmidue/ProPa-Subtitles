@@ -53,7 +53,7 @@ at programs over such structured data.
 
 00:01:09,520 --> 00:01:13,840
 And in particular, indeed, we will look
-at relationship to Haskell programs.
+at relationships to Haskell programs.
 
 00:01:13,840 --> 00:01:16,640
 So, you will see something that
@@ -67,7 +67,7 @@ a predicate and rules in Prolog.
 And even in some semi-automatic way, how to
 
 00:01:25,680 --> 00:01:28,960
-make corresponding Prolog
+make a corresponding Prolog
 program for a Haskell program.
 
 00:01:28,960 --> 00:01:30,960
@@ -75,7 +75,7 @@ Of course, there is no sort
 of one-to-one fit exactly.
 
 00:01:30,960 --> 00:01:36,160
-Because of difference like typing, et cetera,
+Because of differences like typing, et cetera,
 but to have in spirit such a relationship.
 
 00:01:37,920 --> 00:01:43,840
@@ -115,7 +115,7 @@ structures where we expressed things with a zero
 constructor and then a successor constructor.
 
 00:02:18,320 --> 00:02:20,960
-So, successor of successor of zero would be two.
+So, the successor of the successor of zero would be two.
 
 00:02:20,960 --> 00:02:23,360
 So, let's say, we want to do
@@ -173,7 +173,7 @@ Okay, so instead of having a binary function
 addition, we can only have a predicate.
 
 00:03:20,240 --> 00:03:27,040
-So, there is certain convention, that's not
+So, there is a certain convention, that's not
 enforced with the language, but I will use it.
 
 00:03:27,040 --> 00:03:29,520
@@ -181,7 +181,7 @@ And it's also often used actually in examples.
 
 00:03:29,520 --> 00:03:35,920
 So, if I have a binary function, then I can
-turn this in a predicate of three arguments.
+turn this into a predicate of three arguments.
 
 00:03:35,920 --> 00:03:39,840
 And the idea is if I write something
@@ -320,7 +320,7 @@ And by the way, if it is, tell me which it is.
 
 00:06:06,720 --> 00:06:13,120
 Okay, so we can ask is there an N such
-as the addition of one and one is N?
+that the addition of one and one is N?
 
 00:06:13,120 --> 00:06:15,600
 And now Prolog should not just answer true.
@@ -394,7 +394,7 @@ If we use this addition function in Haskell and
 give it successor of zero, the successor of zero,
 
 00:07:34,400 --> 00:07:36,640
-it will give successor of, successor of zero.
+it will give successor of successor of zero.
 
 00:07:40,160 --> 00:07:44,560
 Okay, so what's the
@@ -443,7 +443,7 @@ about things that can be true, or relations
 
 00:08:21,040 --> 00:08:27,680
 that are either true or not true for certain
-combination of some variables from certain sets.
+combinations of some variables from certain sets.
 
 00:08:29,920 --> 00:08:35,040
 Okay, so where in Haskell we write
@@ -521,7 +521,7 @@ constructors are lowercase or symbols.
 There is also the difference, of course, that in
 
 00:09:57,600 --> 00:10:03,360
-Haskell we don't use the parenthesis and
+Haskell we don't use the parentheses and
 commas for arguments, you have just space.
 
 00:10:03,360 --> 00:10:07,200
@@ -710,14 +710,14 @@ another function or inside a constructor
 
 00:13:24,480 --> 00:13:29,520
 call, then we could use local
-definitions reflect over to avoid this.
+definitions to reflect over to avoid this.
 
 00:13:29,520 --> 00:13:35,760
 So, this is, of course, equivalent, on the
 Haskell side, to an equation like this.
 
 00:13:36,480 --> 00:13:40,560
-The addition of successor of
+The addition of the successor of
 x and y is the successor of z,
 
 00:13:40,560 --> 00:13:42,720
@@ -765,7 +765,7 @@ Then, what does this give us?
 
 00:14:20,080 --> 00:14:25,040
 Well, you could read this, of course,
-as the addition of successor of x
+as the addition of the successor of x
 
 00:14:25,040 --> 00:14:29,280
 and y, is the successor of z if the
@@ -776,13 +776,13 @@ Because that's exactly what this is saying.
 
 00:14:30,800 --> 00:14:37,280
 If z or where z is the result of this function
-call that means the same as saying well,
+call, that means the same as saying well,
 
 00:14:37,280 --> 00:14:38,880
 z is the addition of x and y.
 
 00:14:38,880 --> 00:14:44,000
-And if so, if we choose z such
+And if so, if we choose z such that
 this holds, then also this holds.
 
 00:14:44,000 --> 00:14:47,520
@@ -791,7 +791,7 @@ have actually expressed our Haskell
 
 00:14:48,400 --> 00:14:55,680
 equation as something that makes sense in
-terms of implication, and predicate invocation.
+terms of implication and predicate invocation.
 
 00:14:56,240 --> 00:14:56,560
 Right?
@@ -803,7 +803,7 @@ This looks much more like Prolog than this does.
 Well, we only have to fix up the syntax again.
 
 00:15:02,720 --> 00:15:08,560
-Yes, if we have to replace the if by the actual
+Yes, if we have to replace the "if" by the actual
 Prolog syntax for implication, you have to
 
 00:15:11,360 --> 00:15:16,160
@@ -822,12 +822,12 @@ and for briefness, I simply use s here.
 Of course, I could also have written succ.
 
 00:15:32,560 --> 00:15:39,840
-Okay, then this will be the used for
+Okay, then this will be used for
 rendering of this statement here, which was
 
 00:15:41,040 --> 00:15:43,520
 basically a reformulation
-of this nest function call.
+of this nested function call.
 
 00:15:47,360 --> 00:15:51,040
 Okay, so I end up with a program
@@ -845,7 +845,7 @@ Okay, here it is again.
 Now, why would I do this?
 
 00:16:01,760 --> 00:16:06,720
-Why I go through the trouble to take my nice
+Why go through the trouble to take my nice
 small Haskell function translated into a Prolog
 
 00:16:07,680 --> 00:16:12,240
@@ -882,7 +882,7 @@ have the convention that I always
 
 00:16:45,840 --> 00:16:49,040
 input two things and get the third thing
-out, but actually that's nothing in the
+out, but actually, there's nothing in the
 
 00:16:49,040 --> 00:16:52,560
 syntax of Prolog that requires me
@@ -913,7 +913,7 @@ are some N and M such that the addition is two?
 
 00:17:20,240 --> 00:17:24,240
 Yes, we have written an addition function
-translates into a Prolog predicate.
+that translates into a Prolog predicate.
 
 00:17:25,120 --> 00:17:27,360
 And now we can ask questions about this predicate,
@@ -934,7 +934,7 @@ any difference between inputs and outputs,
 I can say, well, once I have this definition here,
 
 00:17:40,560 --> 00:17:45,840
-I can ask well, are there some N and
+I can ask, well, are there some N and
 M such that the addition would be two?
 
 00:17:46,400 --> 00:17:49,280
@@ -1166,7 +1166,7 @@ N and M such that N minus M is one.
 And what are these choices?
 
 00:21:37,120 --> 00:21:40,160
-Well, every choice where N is successor of M.
+Well, every choice where N is the successor of M.
 
 00:21:40,880 --> 00:21:46,640
 So, this expresses in a finite way, infinitely

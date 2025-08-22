@@ -45,7 +45,7 @@ as many values of this type, namely:
 
 00:01:13,920 --> 00:01:20,560
 many many successors of Zero (“example: Succ (Succ
-(Succ ( … Zero))…)”). So, here are some values
+(Succ (… Zero))…”). So, here are some values
 
 00:01:20,560 --> 00:01:27,760
 of this type. And it is clear what the systematic
@@ -113,7 +113,7 @@ on two natural numbers. This will give a natural
 
 00:02:56,240 --> 00:03:01,760
 number. And to this natural number, we can apply
-the successor constructor to give us, yet another
+the successor constructor to give us yet another
 
 00:03:01,760 --> 00:03:06,960
 natural number. So, this makes sense from a typing
@@ -162,11 +162,11 @@ of its arguments is an Integer (a number),
 
 00:04:12,480 --> 00:04:17,680
 but it also has two arguments which are recursive
-occurrences, basically left successful and a right
+occurrences, basically left successor and a right
 
 00:04:17,680 --> 00:04:24,160
 successor. So, of course, the values of this type
-we look like this. So, a Leaf is a value of that
+look like this. So, a Leaf is a value of that
 
 00:04:24,160 --> 00:04:29,280
 type, and a Node with a Leaf and the number 2
@@ -194,10 +194,10 @@ Trees with labels on the internal Nodes
 
 00:05:02,960 --> 00:05:09,200
 of Integers. And how to compute on Trees
-like that? Again, by case-distinction,
+like that? Again, by case distinction,
 
 00:05:09,200 --> 00:05:14,720
-pattern-matching , and recursion, in general. So,
+pattern-matching, and recursion, in general. So,
 for example, if we have such a Tree of arbitrary
 
 00:05:15,600 --> 00:05:19,760
@@ -217,7 +217,7 @@ a Leaf makes sense to be defined as 0, or maybe
 as 1. That's a decision we make at this point,
 
 00:05:35,680 --> 00:05:40,960
-how we want to interpret the height of a just a
+how we want to interpret the height of just a
 Leaf. And the more interesting case is, of course,
 
 00:05:40,960 --> 00:05:47,120
@@ -285,7 +285,7 @@ then we still want to have two sub-Trees, but
 in the middle, we don't want to have an Integer,
 
 00:07:22,800 --> 00:07:27,600
-bur rather something else. And since we don't want
+but rather something else. And since we don't want
 to commit to what this is, it is simply a type
 
 00:07:27,600 --> 00:07:32,960
@@ -342,7 +342,7 @@ into a Haskell file, load it into ghci,
 
 00:08:49,360 --> 00:08:57,760
 and check the types of these constructors
-to get insight to what is happening here
+to get insight into what is happening here
 
 00:08:58,960 --> 00:09:05,520
 on the type level. What about computation? How do
@@ -427,7 +427,7 @@ that for some cases we don't have a return value.
 
 00:11:03,600 --> 00:11:08,640
 We don't want to have a return value, then we
-could the output part of that function as Maybe
+could treat the output part of that function as Maybe
 
 00:11:09,200 --> 00:11:12,640
 “whatever type it previously was”
@@ -503,7 +503,7 @@ where we really draw something and dealing with
 
 00:12:51,520 --> 00:12:56,080
 the case that there is something blank, there
-is nothing, that is not something that the aTile
+is nothing, that is not something that the 'aTile'
 
 00:12:56,080 --> 00:13:00,240
 function has to do. That would be something
@@ -526,7 +526,7 @@ in particular, of this function here. So, if you
 extend the datatype, then we are sure that the
 
 00:13:23,760 --> 00:13:32,320
-compiler will where we have to add cases, etc. We
+compiler will tell us where we have to add cases, etc. We
 just redesigned to not have the Blank Tile as an
 
 00:13:32,320 --> 00:13:38,720
@@ -580,7 +580,7 @@ Trees? So, let's consider this function, which is
 
 00:14:47,760 --> 00:14:55,520
 inserting a value into a Tree. So, the assumption
-is that a Tree a sorted Tree, which is ordered.
+is that a Tree is a sorted Tree, which is ordered.
 
 00:14:55,520 --> 00:15:02,080
 So, you always have to the left smaller
@@ -607,7 +607,7 @@ is this happening? Let's look at the definition of
 this function. There is a base case if I want to
 
 00:15:27,760 --> 00:15:33,360
-insert something into , basically, an empty Tree,
+insert something into, basically, an empty Tree,
 then what I get is a very small Tree, but not
 
 00:15:33,360 --> 00:15:39,760
@@ -679,7 +679,7 @@ is called persistency of data structures. And
 that's a property that some data types have in
 
 00:17:24,880 --> 00:17:29,200
-imperative languages. So, if you compute 3+5 in
+imperative languages. So, if you compute 3 + 5 in
 an imperative language, you get a new value 8.
 
 00:17:29,200 --> 00:17:33,600

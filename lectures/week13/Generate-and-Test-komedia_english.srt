@@ -36,7 +36,7 @@ with an arbitrary list,
 which is more interesting, not sorted.
 
 00:01:02,040 --> 00:01:11,670
-So, its elements not sort of ascending through.
+So, its elements not sorted ascending through.
 And we would like to have, if we have the sortingTo predicate
 
 00:01:11,670 --> 00:01:17,580
@@ -53,7 +53,7 @@ This is a classical problem.
 
 00:01:32,370 --> 00:01:38,370
 Also, a very old, in computer science often
-treated, algorithmic problem. We have a
+treated algorithmic problem. We have a
 
 00:01:38,370 --> 00:01:48,990
 list and would like to sort it. This does
@@ -112,7 +112,7 @@ instead of the "how?". How should the list be sorted?
 First, we could think about the properties that the
 
 00:03:07,860 --> 00:03:14,430
-properties the result list should have.
+result list should have.
 This can be expressed conveniently in Prolog using a
 
 00:03:14,430 --> 00:03:19,440
@@ -129,7 +129,7 @@ for example, is not sorted. The result list here is
 
 00:03:30,240 --> 00:03:36,060
 sorted and should be. So, we talk
-what this property of a list is to
+about what this property of a list is to
 
 118 # slide
 00:03:36,060 --> 00:03:43,170
@@ -169,7 +169,7 @@ exactly two elements. So, the next larger
 case, there are no elements or one element.
 
 00:04:35,920 --> 00:04:41,050
-So, we decompose it like this. In this way, we grab so to speak
+So, we decompose it like this. In this way, we grab, so to speak,
 the first two list elements and then we can compare
 
 00:04:41,050 --> 00:04:48,730
@@ -185,7 +185,7 @@ then the original list was not sorted. And we have "and."
 We decompose that, and it must hold that X =< Y.
 
 00:05:01,390 --> 00:05:07,840
-So, if that doesn't hold, then the list Xs not sorted.
+So, if that doesn't hold, then the list Xs is not sorted.
 However, if X =< Y, then it still doesn't mean that the list is sorted.
 
 00:05:07,840 --> 00:05:13,000
@@ -214,7 +214,7 @@ So, use isSorted here, although at the same time we also define isSorted
 
 00:05:45,280 --> 00:05:50,560
 at the same time. But of course, we use that on a different
-Argument, on a different list. And if we look at,
+argument, on a different list. And if we look at,
 
 00:05:50,560 --> 00:05:57,820
 what these two append calls in particular
@@ -374,11 +374,11 @@ So, we say, to sort Xs to Ys, we permute Xs to Ys.
 This would also give results which are of course
 
 00:10:11,560 --> 00:10:15,580
-are not correct. Just are any permutations.
-But then we still say, this Ys must be sorted.
+not correct. Just are any permutations.
+But then we still say, this Ys must be sorted."
 
 00:10:15,580 --> 00:10:22,150
-In the sense as this predicate, which we have also written in Prolog
+In the sense of this predicate, which we have also written in Prolog
 expresses that.
 
 00:10:22,150 --> 00:10:27,280
@@ -431,11 +431,11 @@ that Ys and Xs are in a desired relationship.
 
 00:11:37,570 --> 00:11:42,040
 And of course, the point is that we have some
-problem (e.g. the sorting problem) and we are trying to
+problem (e.g., the sorting problem) and we are trying to
 
 00:11:42,040 --> 00:11:46,720
-we try to write down a rule which returns true exactly
-if we had a valid solution to the problem.
+write down a rule which returns true exactly
+if we have a valid solution to the problem.
 
 00:11:46,720 --> 00:11:55,420
 That was the task here in the end, to write a predicate
@@ -455,10 +455,10 @@ It somehow generates solution candidates.
 
 00:12:13,180 --> 00:12:20,830
 And very many in the case of the permutation.
-And then there is the "test-part", which filters out those candidates
+And then there is the "test part", which filters out those candidates
 
 00:12:20,830 --> 00:12:29,380
-those that are desired.
+that are desired.
 So, somehow there is a search space. All possible permutations
 
 00:12:29,380 --> 00:12:35,440
@@ -470,7 +470,7 @@ whether the solution condition is true. So, the condition,
 which must be fulfilled. In this case, we wanted to sort something.
 
 00:12:40,510 --> 00:12:51,160
-So, the problem here was the sorting problem and the condition for that was,
+So, the problem here was the sorting problem and the condition for that was
 that the list that comes out must be sorted.
 
 00:12:52,150 --> 00:12:58,480
@@ -486,7 +486,7 @@ several predicate calls or conditions.
 Let's go into this in more detail on a few more
 
 00:13:18,640 --> 00:13:25,630
-examples, or see it in action again.
+examples or see it in action again.
 These are first very simple, artificial
 
 00:13:25,630 --> 00:13:30,850
@@ -520,7 +520,7 @@ is a number between one and six.
 
 00:14:14,410 --> 00:14:19,960
 At the end, we add them up and the question is: In which
-In what way could it be that exactly 15 points were scored at the end?
+way could it be that exactly 15 points were scored at the end?
 
 00:14:19,960 --> 00:14:27,700
 What would generate mean here?
@@ -528,10 +528,10 @@ Generating here would mean to generate all
 
 00:14:27,700 --> 00:14:34,000
 candidates, what could have come out of these three dice rolls.
-could have come out. There's nothing there about permuting.
+There’s nothing there about permuting.
 
 00:14:34,000 --> 00:14:41,380
-There's nothing that's permuted in any way.
+There’s nothing that’s permuted in any way.
 We just need to have all the combinations that these
 
 00:14:41,380 --> 00:14:47,170
@@ -539,7 +539,7 @@ three dice could have as numbers.
 And then the testing is certainly the verification that there are
 
 00:14:47,170 --> 00:14:53,050
-15 points have come out. And if we follow exactly this strategy
+15 points that have come out. And if we follow exactly this strategy
 we can actually write that as a query.
 
 00:14:53,050 --> 00:14:58,150
@@ -572,11 +572,11 @@ So, I can say that's sort of a component of my search space.
 
 00:15:34,450 --> 00:15:42,040
 That's not directly the search space. There are not only 6 candidates,
-but we have three litters.
+but we have three literals.
 
 00:15:42,040 --> 00:15:46,720
 So, there's kind of 6 × 6 × 6 candidates if we think combinatorially
-think about it. And how can I
+about it. And how can I
 
 00:15:46,720 --> 00:15:53,200
 generate the search space? I can say: Let A be
@@ -587,12 +587,12 @@ a number from one to six. So, an element of this
 list. And the member predicate I had introduced last week
 
 00:15:58,480 --> 00:16:07,060
-And mentioned that that's where we check if A is in W.
+and mentioned that that's where we check if A is in W.
 Or if we call that not with concrete values,
 
 00:16:07,060 --> 00:16:13,900
 but with variables, then all
-possibilities are considered, how A can be from W
+possibilities are considered, how A can be from W.
 
 00:16:13,900 --> 00:16:19,540
 That is, if W is a six-element list, then alone
@@ -612,7 +612,7 @@ I draw, so to speak, A, B and C each
 
 00:16:39,220 --> 00:16:46,290
 independently of each other from this list.
-And then I check whether the sum of A B and C is 15.
+And then I check whether the sum of A, B and C is 15.
 
 00:16:46,290 --> 00:16:54,330
 Now I have to explain briefly what this means here.
@@ -664,7 +664,7 @@ and the sum is 15.
 
 00:18:07,570 --> 00:18:17,710
 To the identification again: The Generate part would be here
-The + that. That's where the search space is spanned.
+the + that. That's where the search space is spanned.
 
 00:18:17,710 --> 00:18:27,490
 The simple operation here is just: A + B + C should add up to 15.
@@ -704,7 +704,7 @@ extend my generator or my tester.
 You could say, instead of just generating all
 
 00:19:28,060 --> 00:19:37,120
-generate all three choices, so to speak A, B, C from the space 1 to 6
+three choices, so to speak A, B, C from the space 1 to 6
 and all combinations thereof, I would like to have
 
 00:19:37,120 --> 00:19:44,410
@@ -878,7 +878,7 @@ the permutation call and the isSorted call together,
 
 00:24:42,540 --> 00:24:49,410
 describe the search space, because our candidates
-exactly three different numbers of eyes
+are exactly three different numbers of eyes
 
 00:24:49,410 --> 00:24:56,310
 in ascending order.
@@ -906,7 +906,7 @@ the correctness of this solution.
 
 00:25:36,090 --> 00:25:41,580
 Generate and Test is a principle how to approach certain problems.
-approach. This still leaves us freedom to formulate
+This still leaves us freedom to formulate
 
 00:25:41,580 --> 00:25:52,750
 what our generator is and what our test is.
@@ -918,7 +918,7 @@ summary, a brief look at when we will use the
 
 00:25:58,900 --> 00:26:04,840
 are going to use. So, when is such a generate-and-test
-approach is useful? It can't solve every problem.
+approach useful? It can't solve every problem.
 
 00:26:04,840 --> 00:26:11,500
 It's easy to think about that. Even sorting
@@ -934,7 +934,7 @@ That doesn't mean that Prolog does it the same way.
 
 00:26:24,160 --> 00:26:31,900
 Prolog has an efficient implementation.
-So, it can actually shorten certain parts of the search by a clever
+So, it can actually shorten certain parts of the search by a clever.
 
 00:26:31,900 --> 00:26:39,520
 implementation. But at least
@@ -954,7 +954,7 @@ the set of potential solutions, the candidates,
 
 00:26:58,570 --> 00:27:05,740
 should at least be finite. So, there must not be an infinite
-many solutions. Then one does not come with the tests to the conclusion.
+many solutions. Then one does not come to the conclusion with the tests.
 
 00:27:05,740 --> 00:27:14,350
 It is even better if the search space is as small as possible.
@@ -985,7 +985,7 @@ or the problem is actually very difficult
 to grasp systematically.
 
 00:27:51,970 --> 00:28:00,720
-There it can be that one falls back on the Generate and Test
+There it can be that one falls back on Generate and Test
 because at least the effort of writing the program
 
 00:28:00,720 --> 00:28:06,900
@@ -1006,7 +1006,7 @@ algorithms lecture and no dedicated
 
 00:28:26,100 --> 00:28:33,840
 programming lecture, Generate and Test can simply be
-Generate and Test can easily be used at least in the practice mode
+used at least in the practice mode
 
 00:28:33,840 --> 00:28:40,560
 but also in other applications, may be a good
@@ -1017,7 +1017,7 @@ criterion is a bit of a cop-out. If I don't
 know anything else, then I just do Generate-and-Test.
 
 00:28:45,420 --> 00:28:52,410
-That's one way of looking at it, of course. However
+That's one way of looking at it, of course. However,
 Prolog is actually very well suited to write
 
 00:28:52,410 --> 00:29:00,000

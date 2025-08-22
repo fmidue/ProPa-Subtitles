@@ -3,14 +3,14 @@ This task is about transforming a
 list comprehension expression into an
 
 0:00:06.800,0:00:10.560
-expression using map filter and concat instead.
+expression using map, filter, and concat instead.
 
 0:00:13.760,0:00:21.760
 Therefore we've been given first of all
-an expression as list comprehension.
+an expression as a list comprehension.
 
 0:00:22.880,0:00:26.480
-This is this a list of
+This is a list of
 
 0:00:27.760,0:00:34.800
 pairs, and then we have the alternative
@@ -18,7 +18,7 @@ implementation, where we have to fill in the gaps.
 
 0:00:36.160,0:00:47.280
 Marked as undefined - where
-we use map filter, and concat.
+we use map, filter, and concat.
 
 0:00:49.920,0:01:00.720
 For this task we basically can define all
@@ -34,14 +34,14 @@ of just looking at the types first.
 
 0:01:14.560,0:01:22.080
 Because we have been given the
-functions concat: we know concat takes
+functions concat; we know concat takes
 
 0:01:22.800,0:01:34.240
-a list of anything - well, it's a list of list
+a list of anything - well, it's a list of lists
 of things - and turns it into a list of things.
 
 0:01:37.200,0:01:44.160
-Then when we look at this expression you
+Then when we look at this expression we
 see that the closing bracket is at the end:
 
 0:01:46.320,0:01:48.960
@@ -60,12 +60,12 @@ Our first attempt could be just to
 fill in arguments as the types fit.
 
 0:02:11.520,0:02:18.560
-We know that he is at some number 50, so we can
+We know that it is some number 50, so we can
 guess that we have to fill in any number here.
 
 0:02:19.840,0:02:26.160
 And in our original expression we have two
-of those things that we could insert we can't
+of those things that we could insert; we can't
 
 0:02:26.160,0:02:29.920
 insert minus 50 and we could insert x.
@@ -74,7 +74,7 @@ insert minus 50 and we could insert x.
 Well, minus 50 is a concrete value which we could
 
 0:02:34.400,0:02:40.480
-insert it any place where we require
+insert in any place where we require
 numbers, so it could be at those two gaps.
 
 0:02:40.480,0:02:46.480
@@ -92,7 +92,7 @@ just fill in those parts like this.
 Then we have filter.
 
 0:03:04.400,0:03:14.640
-Filter takes a function which based on
+Filter takes a function which is based on
 a value of type a and returns a Boolean.
 
 0:03:15.520,0:03:19.760
@@ -119,7 +119,7 @@ For map we have to define again
 something which returns what we require.
 
 0:03:52.480,0:04:04.800
-In this case we have again as first
+In this case we have again as the first
 argument something which turns
 
 0:04:08.880,0:04:11.360
@@ -127,7 +127,7 @@ the argument into something else.
 
 0:04:11.360,0:04:20.080
 But this time it's not like we filter
-that, we have to return a boolean - we
+that, we have to return a Boolean - we
 
 0:04:20.080,0:04:31.440
 have to return something of type b so that
@@ -159,7 +159,7 @@ With this list of -50 to 50.
 
 0:05:37.520,0:05:50.000
 Whatever we return here will be
-a transforming of the list here.
+a transformation of the list here.
 
 0:05:56.560,0:06:00.000
 We have to think about what filter
@@ -182,14 +182,14 @@ tuples, because we want to have a list of tuples.
 
 0:06:34.560,0:06:39.200
 Let me first of all define
-something here what is wrong.
+something here that is wrong.
 
 0:06:39.200,0:06:48.240
 So we can use again the const attempt and just say
 we ignore the argument and then return something.
 
 0:06:48.240,0:06:54.480
-Let's just say we we try to return the number
+Let's just say we try to return the number
 here and in this case the compiler will
 
 0:06:58.400,0:07:06.400
@@ -210,7 +210,7 @@ We have one which we get
 
 0:07:32.320,0:07:42.880
 from the filter here back and we have one
-that is defined before that is the x here.
+that is defined before that is x here.
 
 0:07:42.880,0:07:45.840
 So we could simply return those two.
@@ -223,7 +223,7 @@ And now we get a list which
 is not correct yet, but
 
 0:08:06.240,0:08:12.880
-actually the types fit, our program compiles
+actually the types fit; our program compiles
 and we can have a first attempt at using it.
 
 0:08:14.320,0:08:16.640
@@ -238,7 +238,7 @@ there were - here are just positive
 values at the end in original and
 
 0:08:29.600,0:08:36.080
-alternative gives us some negative
+the alternative gives us some negative
 values as well in the last set here.
 
 0:08:36.080,0:08:40.560
@@ -262,7 +262,7 @@ both lists differ so here's minus 49
 and -49 and here's 50 and (plus) 15.
 
 0:09:26.800,0:09:37.680
-Okay. Now we can look in what we have done
+Okay. Now we can look at what we have done
 here within our definition of the alternative.
 
 0:09:40.320,0:09:43.520
@@ -406,7 +406,7 @@ created in our list comprehension.
 
 0:14:29.440,0:14:41.120
 If we now take 66 from alternative and 66 from
-original we get the same values here these places.
+original we get the same values here at these places.
 
 0:14:41.840,0:14:54.640
 And when we apply the tests, then we get to the
@@ -417,7 +417,7 @@ Some of you may have seen within Autotool that it
 suggested using a tuple section in this case here.
 
 0:15:09.280,0:15:22.720
-So it it says you can replace the
+So it says you can replace the
 function of y to triple x y by just
 
 0:15:23.360,0:15:29.200

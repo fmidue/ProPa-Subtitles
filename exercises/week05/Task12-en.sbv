@@ -101,11 +101,11 @@ We have this 'toUpper' and
 So what we have to do is transform the whole list
 
 0:02:55.200,0:03:03.840
-into, for example, the lower case variant of
+into, for example, the lowercase variant of
 it before we check it against its reverse.
 
 0:03:04.960,0:03:09.520
-We could obviously choose up uppercase
+We could obviously choose uppercase
 making everything uppercase as well
 
 0:03:09.520,0:03:11.920
@@ -123,8 +123,7 @@ list and then applying toLower
 to that element giving us this new list.
 
 0:03:35.680,0:03:47.120
-And then you just check this lowered list to
-against its reverse and see if it's the same.
+And then you just check this lowered list against its reverse and see if it's the same.
 
 0:03:47.120,0:03:58.960
 So if we reload this into ghci now
@@ -150,7 +149,7 @@ There's always another solution, at least in most
 cases, so let's try to find another solution.
 
 0:04:39.040,0:04:47.120
-Let's define isPalindrome' :: String ->Bool
+Let's define isPalindrome' :: String -> Bool
 
 0:04:56.000,0:04:57.680
 Let's start with the basic skeleton.
@@ -171,7 +170,7 @@ We have head of some list
 
 0:05:24.240,0:05:34.480
 for example -
-head to gives us 1 and tail gives us the rest.
+head gives us 1 and tail gives us the rest.
 
 0:05:36.000,0:05:38.240
 And we also have 'last'
@@ -253,7 +252,7 @@ some work some don't.
 If we take head [] gives an error,
 
 0:08:14.960,0:08:20.600
-tail [] is an error, init [],
+tail [] is an error, init []
 
 0:08:22.080,0:08:26.560
 and the last [] is also an error.
@@ -283,11 +282,11 @@ otherwise case, and
 
 0:09:02.320,0:09:13.040
 check the length and we say the length has to be
-smaller than 2 then we know it's a palindrome.
+smaller than 2; then we know it's a palindrome.
 
 0:09:15.120,0:09:20.960
-Because if it's empty, i.e,
-length xs == 0 it is a palindrome,
+Because if it's empty, i.e.,
+length xs == 0, it is a palindrome,
 
 0:09:20.960,0:09:26.000
 and if it's just a single character
@@ -308,5 +307,5 @@ the function in these tests to
 refer to our alternative solution.
 
 0:09:55.600,0:10:03.840
-Load this up and run main it passes all the
+Load this up and run main; it passes all the
 tests so this is a valid solution as well.

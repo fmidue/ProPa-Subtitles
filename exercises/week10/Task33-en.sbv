@@ -14,7 +14,7 @@ So, this a doesn't specify anything. This “a”
 could be a String. It could be an Integer.
 
 0:00:18.240,0:00:22.480
-It could be a tuple which contains two things of two different types.
+It could be a tuple that contains two things of two different types.
 
 0:00:24.000,0:00:27.760
 And then we have a function that takes something of type “a”
@@ -210,25 +210,25 @@ So, it's going to be a function that takes something of type “a”
 and gives us something of type “IO a”.
 
 0:06:05.600,0:06:19.840
-So, it basically changes the value of “a” and does some other stuff.
+So, it basically changes the value of "a" and does some other stuff.
 
 0:06:29.360,0:06:33.520
-But here we have a problem: this “i” is not a String.
+But here we have a problem: this "i" is not a String.
 
 0:06:33.520,0:06:40.560
-So, we cannot do concatenation with another String. So, we need to do “show i”.
+So, we cannot do concatenation with another String. So, we need to do "show i".
 
 0:06:43.600,0:06:52.720
-And now we read a number from the user. We say x read line (x <- readLn).
+And now we read a number from the user. We say x <- readLn.
 
 0:06:52.720,0:06:58.720
-Here we have a “return”. But we have a problem here which is that we want to send
+Here we have a "return". But we have a problem here which is that we want to send
 
 0:06:58.720,0:07:03.760
 two values to be used later in the next run of the loop,
 
 0:07:03.760,0:07:11.600
-which are “x” and “i”. “i” is the counter and “x” is the value of the
+which are "x" and "i". "i" is the counter and "x" is the value of the
 factor that the user entered.
 
 0:07:12.720,0:07:19.280
@@ -241,7 +241,7 @@ but it actually contains information of two things. And for this, we can use a t
 So, I'm going to put the index first and I'm going to put the value of x second.
 
 0:07:38.560,0:07:44.240
-And this means we also have to change the initial value which is this “a” we talked
+And this means we also have to change the initial value which is this "a" we talked
 about.
 
 0:07:46.800,0:07:50.960
@@ -254,7 +254,7 @@ And it's going to have one because
 this here is going to be multiplied by the other factors that the user is going to enter,
 
 0:08:00.480,0:08:03.920
-and in multiplication, this “1” here is
+and in multiplication, this "1" here is
 
 0:08:03.920,0:08:07.920
 a neutral element, which means it doesn't
@@ -264,7 +264,7 @@ affect the result of multiplication.
 So, if we were doing addition instead of multiplication, we would
 
 0:08:14.880,0:08:19.280
-have “0” here because zero is the neutral element in addition.
+have "0" here because zero is the neutral element in addition.
 
 0:08:22.000,0:08:29.120
 And now we also have to change this one here. So, this one doesn't take just an
@@ -274,7 +274,7 @@ Integer… an index.
 Now it takes a tuple which has the index first and then it has whatever as a second.
 
 0:08:37.120,0:08:44.160
-We don't care and we still check whether this “i” (this index) is still smaller than
+We don't care and we still check whether this "i" (this index) is still smaller than
 n.
 
 0:08:45.680,0:08:55.040
@@ -285,7 +285,7 @@ the loop,
 and we send the x as it is to the next run of the loop, which is totally useless.
 
 0:08:59.680,0:09:03.120
-This means the loop is going to be stuck because “i” is not changing,
+This means the loop is going to be stuck because "i" is not changing,
 
 0:09:03.680,0:09:08.080
 and x that the user entered is just going to be sent as it is.
@@ -294,17 +294,17 @@ and x that the user entered is just going to be sent as it is.
 There's no multiplication happening. This means this here needs to be changed.
 
 0:09:13.440,0:09:22.480
-So, this is going to be “i+1” which means:
+So, this is going to be "i+1" which means:
 the next run, this index is going to be 1,
 
 0:09:23.440,0:09:27.680
 and the next one is going to be 2, and so on until we reach n.
 
 0:09:30.000,0:09:33.680
-And here, this function “body” is still
+And here, this function "body" is still
 
 0:09:33.680,0:09:38.080
-taking just one parameter which is “i” (the index). This is not good.
+taking just one parameter which is "i" (the index). This is not good.
 
 0:09:38.960,0:09:47.200
 So, we need to do i and the old value of x which is the factor that the user entered the
@@ -320,33 +320,33 @@ Let's call it y. So, this means here we want the new x which the user has just
 entered to be it with the old x which is y.
 
 0:10:07.680,0:10:12.800
-Now all we have to do is to change this last “undefined”. So, I’m going to write
+Now all we have to do is to change this last "undefined". So, I'm going to write
 
 0:10:13.440,0:10:15.360
-“putStrLn” here.
+"putStrLn" here.
 
 0:10:17.680,0:10:32.480
 And then, yes, it's going to be a String.
 So, we say: your result multiplication of,
 
 0:10:38.400,0:10:46.960
-and then “show n” which is this n here (the number of factors that the user wanted).
+and then "show n" which is this n here (the number of factors that the user wanted).
 
 0:10:48.000,0:10:49.920
 And then we do concatenation again.
 
 0:10:57.280,0:11:01.600
-And then we do “show” again. And now we want the result.
+And then we do "show" again. And now we want the result.
 
 0:11:01.600,0:11:10.400
 How do we get the result? Well… the result is stored in this here… this
-“returned”.
+"returned".
 
 0:11:10.400,0:11:14.480
 So, if you look here, this whole thing
 
 0:11:15.360,0:11:24.880
-is just applying “while” to these three parameters and then storing the result in
+is just applying "while" to these three parameters and then storing the result in
 this variable.
 
 0:11:27.040,0:11:36.560
@@ -369,24 +369,24 @@ And to deal with tuples, you can use 'fst' ("first") and 'snd' ("second").
 So, first of this tuple, for example, gives you this. And second gives you this.
 
 0:12:07.120,0:12:13.440
-So, “return” has the index as first and the result as second. This means we write
+So, "return" has the index as first and the result as second. This means we write
 
 0:12:18.240,0:12:23.920
 second of returned.
 
 0:12:23.920,0:12:31.520
-Now let's do a final check. So, the type signature of while is “a”.
+Now let's do a final check. So, the type signature of while is "a".
 
 0:12:32.160,0:12:36.480
-And then something that takes “a” and returns boolean (Bool). Something that takes
-“a”.
+And then something that takes "a" and returns boolean (Bool). Something that takes
+"a".
 
 0:12:36.480,0:12:46.080
-It returns “IO” of “a”. And finally, we get “IO a”. Let's see. So, here we
-have something “a”.
+It returns "IO" of "a". And finally, we get "IO a". Let's see. So, here we
+have something "a".
 
 0:12:46.080,0:12:51.680
-And just like I said, “a” doesn't specify anything. So, “a” could be a tuple.
+And just like I said, "a" doesn't specify anything. So, "a" could be a tuple.
 
 0:12:51.680,0:12:53.200
 There's no problem with that.
@@ -396,20 +396,20 @@ And then we have the predicate. This is a function that takes something of the s
 here.
 
 0:13:01.040,0:13:09.360
-it's a tuple and it returns True or False. And finally, we have “body”
+it's a tuple and it returns True or False. And finally, we have "body"
 
 0:13:10.560,0:13:14.160
-which should take something of type “a” and return something of type “IO a”.
+which should take something of type "a" and return something of type "IO a".
 
 0:13:14.960,0:13:23.040
-This is type “a”, and this here is “IO a” because this is “a”. And we have
-“return” here.
+This is type "a", and this here is "IO a" because this is "a". And we have
+"return" here.
 
 0:13:23.040,0:13:26.960
 So, everything looks fine. Okay now let's test it.
 
 0:13:29.120,0:13:34.560
-So, let's do “main”. Let's say I want to multiply four numbers.
+So, let's do "main". Let's say I want to multiply four numbers.
 
 0:13:37.200,0:13:39.680
 2, 2, 3, 5.
@@ -419,7 +419,7 @@ As you can see, it is working. I still need to move this a little bit away from 
 factor.
 
 0:13:50.240,0:14:02.800
-Okay let's do it. Okay, space here and space here. And let's reload “main”. Let's say
+Okay let's do it. Okay, space here and space here. And let's reload "main". Let's say
 five numbers.
 
 0:14:05.760,0:14:10.000
@@ -435,4 +435,4 @@ whenever we enter the first factor, it says 0, the second, it says 1.
 So, it's always one less than it's supposed to be. Let's fix it too.
 
 0:14:34.320,0:14:43.600
-Okay “main”. 4… 2, 2, 3, 5. Yes, it's working!
+Okay "main". 4… 2, 2, 3, 5. Yes, it's working!

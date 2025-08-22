@@ -50,10 +50,10 @@ if you have something like 'f (g x y) z'.
 
 0:01:21.600,0:01:25.040
 So, a nested function of,
-call of a function which as
+call of a function which has
 
 0:01:25.040,0:01:28.080
-an argument has another function call nested.
+an argument that has another function call nested.
 
 0:01:29.680,0:01:31.200
 And the idea is that
@@ -75,7 +75,7 @@ And now since we have things that are not
 
 0:02:00.720,0:02:06.320
 nested function calls, they can be very directly
-transliterated something on the Prolog side, okay?
+transliterated into something on the Prolog side, okay?
 
 0:02:06.320,0:02:09.920
 That's what happened on the previous
@@ -119,7 +119,7 @@ brackets and that is because of parsing rules,
 but this is really a nested function call.
 
 0:03:03.120,0:03:06.160
-Where the outer functions is the '+',
+Where the outer function is the '+',
 and the inner function is the 'length'.
 
 0:03:06.160,0:03:12.560
@@ -275,14 +275,14 @@ the length and ask about the list.
 
 0:06:48.320,0:06:52.720
 Which is not possible in Haskell of
-course because only works forwards with functions.
+course because it only works forwards with functions.
 
 0:06:54.080,0:06:58.000
 Okay, so this was the length function
 now turned into a Prolog predicate.
 
 0:06:58.000,0:07:00.080
-Let’s do some further example.
+Let’s do some further examples.
 
 0:07:01.760,0:07:12.160
 So, another typical list processing function in
@@ -374,7 +374,7 @@ can be written as a literal like we
 did for 'length' up here for example.
 
 0:09:12.080,0:09:14.320
-Okay, so what we have to
+Okay, so what do we have to
 do on the Prolog side then?
 
 0:09:16.240,0:09:21.600
@@ -390,10 +390,10 @@ can at least write down that it is a ternary predicate.
 
 0:09:32.800,0:09:37.680
 Syntax was also mentioned on slides that
-sometimes, for documentation purpose for
+sometimes, for documentation purposes for
 
 0:09:37.680,0:09:42.560
-example when at least write down the
+example we can at least write down the
 arity of a predicate in Prolog.
 
 0:09:42.560,0:09:45.280
@@ -470,7 +470,7 @@ this, which is just this pattern.
 
 0:11:11.840,0:11:15.520
 And of course, this holds only under
-certain precondition which introduce
+certain preconditions which introduce
 
 0:11:15.520,0:11:18.720
 this Zs basically because we
@@ -484,7 +484,7 @@ It is saying that the appending
 of Xs and Ys should be Zs.
 
 0:11:24.480,0:11:31.040
-So, here we would have as precondition for
+So, here we would have as a precondition for
 our ternary predicate that the appending of Xs
 
 0:11:31.760,0:11:34.160
@@ -499,14 +499,14 @@ And again, with this, we could do things
 
 0:11:43.840,0:11:47.600
 we can in Haskell, like providing two
-input list and ask for the output list.
+input lists and ask for the output list.
 
 0:11:47.600,0:11:49.360
 But we could do other queries.
 
 0:11:49.360,0:11:54.720
 For example, we could give the output
-list and ask for all pairs of lists
+list and ask for all pairs of lists.
 
 0:11:54.720,0:11:57.120
 which appended give that output list.
@@ -583,7 +583,7 @@ So, we use the anonymous variable pattern and
 well, the outcome would be simply X, okay?
 
 0:13:20.160,0:13:21.040
-That's on Haskell side.
+That's on the Haskell side.
 
 0:13:21.040,0:13:25.360
 There is no nested function call now, so we don't
@@ -627,7 +627,7 @@ precondition or recursive calls.
 So, what could that fact look like?
 
 0:14:03.600,0:14:08.400
-Well, on the left we have this the
+Well, on the left we have the
 Prolog version of this pattern.
 
 0:14:08.400,0:14:14.880
@@ -657,7 +657,7 @@ This could be a fact that
 represents the above line.
 
 0:14:43.280,0:14:47.600
-Or now in Prolog are actually more
+Or now in Prolog there are actually more
 different ways of writing this.
 
 0:14:47.600,0:14:50.320
@@ -691,14 +691,14 @@ for basically the cons-constructor from Haskell.
 
 0:15:34.560,0:15:38.800
 Then this would be written
-as this pattern for binary '.'
+as this pattern for binary '.'.
 
 0:15:40.000,0:15:42.400
 the first element of the empty list.
 
 0:15:42.400,0:15:46.720
 That is something we don't really care
-about and there is a rest list which is again
+about, and there is a rest list which is again
 
 0:15:46.720,0:15:52.240
 constructed with the data constructor, and the

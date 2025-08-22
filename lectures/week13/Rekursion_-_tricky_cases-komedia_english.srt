@@ -17,7 +17,7 @@ and you also have to think carefully when and
 
 00:00:24,810 --> 00:00:31,560
 how to use it. That's what I do here with an
-old example exercise first. Maybe you like to
+old example exercise first. Maybe you would like to
 
 00:00:31,560 --> 00:00:38,970
 pause the video for a moment and read through this at your leisure.
@@ -44,7 +44,7 @@ One more important clue is given.
 Namely, that a line from A to B is, of course, also
 
 00:01:12,540 --> 00:01:17,190
-is also a line from B to A. But in
+a line from B to A. But in
 the facts this is not necessarily expressed.
 
 00:01:17,190 --> 00:01:21,810
@@ -53,7 +53,7 @@ And this is to be treated, therefore, with the description
 
 00:01:21,810 --> 00:01:28,920
 of the three triangles and quadrilaterals, that of course one can also go
-can go from B to A with a connection.
+from B to A with a connection.
 
 00:01:28,920 --> 00:01:33,570
 But also without that being explicitly expressed in the facts.
@@ -64,7 +64,7 @@ description. A possible solution
 would be as follows: It is described what a triangle is.
 
 00:01:41,700 --> 00:01:47,760
-For three points X, Y, Z we have a triangle, if
+For three points X, Y, Z we have a triangle if
 we have a connection from X to Y, from Y to Z and
 
 00:01:47,760 --> 00:01:52,650
@@ -80,7 +80,7 @@ And then you need a line from X to Y, Y to Z,
 Z to U and U to X. Here it must be additionally required
 
 00:02:07,440 --> 00:02:12,060
-that X and Z are shifted and Y and U are different,
+that X and Z are different and Y and U are different,
 because otherwise you could get some degenerate quadrilaterals,
 
 00:02:12,060 --> 00:02:18,570
@@ -104,7 +104,7 @@ There we can say: all is well. Well, this is only an attempt.
 This is not yet the solution. Why not?
 
 00:02:47,400 --> 00:02:54,960
-Because this aspect was ignored, that here, for example.
+Because this aspect was ignored, that here, for example,
 does not mean that there is a line from B to A.
 
 00:02:54,960 --> 00:02:59,370
@@ -112,7 +112,7 @@ And therefore certain triangles and quadrilaterals,
 which would be there in the plane itself, if one draws in the
 
 00:02:59,370 --> 00:03:04,050
-points and draw the connections,
+points and draws the connections,
 would not be supplied by these predicates
 
 00:03:04,050 --> 00:03:10,410
@@ -134,7 +134,7 @@ Now it would be tempting then to just say,
 
 00:03:26,460 --> 00:03:33,750
 that whenever there is a line from X to Y,
-or there is a line from X to Y,
+or there is a line from Y to X,
 
 00:03:33,750 --> 00:03:40,260
 whenever there is a line from Y to X.
@@ -149,19 +149,19 @@ to express this symmetry of this line relation
 and then simply work with these rules in the normal way,
 
 00:03:56,280 --> 00:04:03,930
-because then these line-literals would refer to the
+because then these line literals would refer to the
 predicate, where this symmetry would also be
 
 00:04:03,930 --> 00:04:14,640
-this symmetry is justified or used.
+justified or used.
 However, if we are going to carry this out, it
 
 00:04:14,640 --> 00:04:20,280
-this turns out to be dangerous. In a certain sense, this is
+turns out to be dangerous. In a certain sense, this is
 too recursive. At first, this may be confusing or
 
 00:04:20,280 --> 00:04:25,500
-surprise why there is a problem here,
+surprising why there is a problem here,
 because if we go back to our rules of thumb
 
 00:04:25,500 --> 00:04:32,040
@@ -182,7 +182,7 @@ So in the program the base cases should come first and then
 
 00:04:48,300 --> 00:04:53,700
 any recursive rules. That would be given in this case,
-if we wrote this line(X,Y), line(Y,X), this rule at the very end
+if we wrote this line(X,Y), line(Y,X), this rule at the very end.
 
 00:04:53,700 --> 00:04:59,940
 of a program or at first below these
@@ -394,12 +394,12 @@ of Direct, we can also get from San Francisco to Maui.
 by this recursive rule. We can also ask, for example:
 
 00:10:28,550 --> 00:10:35,120
-"Are we going to get anywhere from Mau?" And the answer would be
+"Are we going to get anywhere from Maui?" And the answer would be
 False, because (regardless of which of the two rules is used)
 
 00:10:35,120 --> 00:10:40,610
 we cannot somehow achieve or show
-Can get anywhere from Maui.
+we can get anywhere from Maui.
 
 00:10:40,610 --> 00:10:45,470
 Simply because there is no direct connection from Maui to anywhere.
@@ -439,7 +439,7 @@ calls. So, I have played around with the order
 of and in rules. And that leads immediately
 
 00:11:39,830 --> 00:11:45,920
-(in the example at least)to one of these said errors.
+(in the example at least) to one of these said errors.
 In this case, also such a stack overflow error.
 
 00:11:45,920 --> 00:11:52,460
@@ -456,7 +456,7 @@ This is no different than
 
 00:12:06,530 --> 00:12:14,480
 the parent and ancestor example, except that we don't explicitly
-had not explicitly provoked such an error once.
+have not explicitly provoked such an error once.
 
 00:12:14,480 --> 00:12:20,180
 I had mentioned this only at the statement-logical
@@ -513,26 +513,25 @@ Why is that? Although I did follow the
 
 00:13:39,880 --> 00:13:47,560
 rules for the use of recursion here, the problem here is that
-the problem is here,
+there is now a circularity problem in the data.
 
 00:13:47,560 --> 00:13:54,040
-that there is now a circularity problem in the data.
 It is just the case that if I allow here arbitrary
+direct facts, it can be that there are also possible round
 
 00:13:54,040 --> 00:14:00,340
-direct facts, it can be that there are also possible round
 trips are possible and they are not
+treated in any special way. This could of course
 
 00:14:00,340 --> 00:14:05,710
-treated in any special way. This could of course
 not occur with the ancestor relation, out of
+the domain knowledge. We know that there are
 
 00:14:05,710 --> 00:14:09,850
-the domain knowledge. We know that there are
 no circular ancestor relations.
+Nobody is his own parent or is
 
 00:14:09,850 --> 00:14:17,560
-Nobody is his own parent or is
 parent of the parent of himself or something.
 
 00:14:17,560 --> 00:14:26,290
@@ -576,7 +575,7 @@ to which we also came directly from San Francisco.
 That means somehow we would have to make sure
 
 00:15:24,670 --> 00:15:30,310
-that the search stops when we arrive at an
+that the search stops when we arrive at a
 stopover, which is not an interesting stopover at all because
 
 00:15:30,310 --> 00:15:36,700
@@ -761,7 +760,7 @@ which we have already seen. That is, we require, for this Z,
 which we would achieve directly here, that it is not
 
 00:20:11,600 --> 00:20:18,320
-Part of the already seen list of intermediate stations.
+part of the already seen list of intermediate stations.
 It is not part of the list of already seen interstates.
 
 00:20:19,460 --> 00:20:25,070
@@ -958,4 +957,4 @@ order. What we used, of course, were lists.
 
 00:25:21,160 --> 00:25:26,350
 Which I had not told them that much about yet,
-so, that should be the subject of the next video.
+so that should be the subject of the next video.

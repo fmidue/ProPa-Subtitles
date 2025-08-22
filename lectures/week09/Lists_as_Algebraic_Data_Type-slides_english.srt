@@ -25,7 +25,7 @@ matching drives computation in Haskell
 
 00:00:45,920 --> 00:00:52,560
 in general. Basically, also how lazy evaluation
-is ultimately driven by pattern-matching. But
+is ultimately driven by pattern matching. But
 
 00:00:52,560 --> 00:00:58,320
 before doing that, we will actually take a look
@@ -138,7 +138,7 @@ as a successor list which is the empty list. And
 
 00:03:27,040 --> 00:03:33,280
 this together would be a list of Ints. And how
-to compute over this? By pattern-matching. So,
+to compute over this? By pattern matching. So,
 
 00:03:33,280 --> 00:03:39,600
 if we want to compute the length of such a list
@@ -400,11 +400,11 @@ so the first list can be empty, and then,
 
 00:09:51,680 --> 00:09:55,520
 if we append that with some other list,
-then we get simply get that other list.
+then we simply get that other list.
 
 00:09:55,520 --> 00:10:00,400
-Or the first this could be non-empty, then
-it decomposes into first element and some
+Or the first list could be non-empty, then
+it decomposes into the first element and some
 
 00:10:00,400 --> 00:10:08,400
 rest list. And then appending this with a new
@@ -484,14 +484,14 @@ It does pattern-matching. And one possibility
 
 00:11:53,360 --> 00:11:59,040
 to go about this is to, first, match against the
-case where both lists all non-empty. The first one
+case where both lists are non-empty. The first one
 
 00:11:59,840 --> 00:12:03,680
 decomposes into a first element
 x and some rest, and the second
 
 00:12:03,680 --> 00:12:07,680
-decomposes into a list non-empty list
+decomposes into a non-empty list
 with the first element y and some rest.
 
 00:12:07,680 --> 00:12:14,240
@@ -499,7 +499,7 @@ And what to return then? The pair (x,y)
 and whatever 'zip' returns for the two rest
 
 00:12:15,520 --> 00:12:22,080
-lists. And then in this case, the can have another
+lists. And then in this case, there can be another
 default rule which applies in all situations where
 
 00:12:22,080 --> 00:12:27,120
@@ -519,7 +519,7 @@ ignore whatever actually are the concrete lists
 that we get, and simply return the empty list.
 
 00:12:48,160 --> 00:12:57,840
-Something else that becomes apparent her now
+Something else that becomes apparent here now
 is that this recursion pattern or the way
 
 00:12:57,840 --> 00:13:03,360
@@ -551,7 +551,7 @@ for example, also, the 'last' function or the list
 indexing is linear. The 'last' function is linear
 
 00:13:40,320 --> 00:13:46,320
-and the length of the input list, and the index
+in the length of the input list, and the index
 function… so, the exclamation mark (!!) that I
 
 00:13:47,280 --> 00:13:56,160
@@ -581,7 +581,7 @@ lists. And that's a typical case where one
 
 00:14:35,280 --> 00:14:39,360
 considers this in particular if one has a
-function that operate on more than one list.
+function that operates on more than one list.
 
 00:14:39,360 --> 00:14:45,920
 So, for the zip function we could, maybe as the
@@ -621,7 +621,7 @@ if we move this to the first place, then we would,
 
 00:15:30,400 --> 00:15:37,520
 first, check against the case that both of the
-lists on non-empty. And if that is not the case,
+lists are non-empty. And if that is not the case,
 
 00:15:37,520 --> 00:15:42,400
 we would anyway run into one of these cases. We
@@ -653,7 +653,7 @@ position, and only if one of the lists
 
 00:16:21,440 --> 00:16:26,160
 is actually finite, then after some finite
-numbers of steps we would end up in one of
+number of steps we would end up in one of
 
 00:16:26,160 --> 00:16:30,080
 these cases where we return the empty list. But
@@ -726,7 +726,7 @@ That also depends on the compiler version or
 
 00:18:14,560 --> 00:18:19,680
 on the concrete compiler. I am pretty sure that,
-in ghc, it is not defined exactly like this,
+in GHC, it is not defined exactly like this,
 
 00:18:19,680 --> 00:18:24,320
 but this is a way to define the map function. It
@@ -766,15 +766,15 @@ programming, that while we mainly looked at
 
 00:19:09,680 --> 00:19:16,320
 lists and list computations, also for
-other datatypes he can have, for example,
+other datatypes we can have, for example,
 
 00:19:16,320 --> 00:19:22,000
 higher-order functions which correspond to things
-that, on lists, corresponds to list comprehension.
+that, on lists, correspond to list comprehension.
 
 00:19:22,000 --> 00:19:28,160
 While we don't have Tree comprehensions like we
-list comprehensions, we do have Tree versions of
+do list comprehensions, we do have Tree versions of
 
 00:19:28,160 --> 00:19:35,120
 typical functions that we apply to lists in order
@@ -823,14 +823,14 @@ imagine how this would be defined using this list
 
 00:20:46,080 --> 00:20:52,080
 pattern-matching syntax. On this slide, let me not
-define, exactly, this operator / this function,
+define exactly this operator / this function,
 
 00:20:52,080 --> 00:20:58,720
 but instead, a similar one, the foldr function
 because that's more prominent and more often used,
 
 00:20:59,680 --> 00:21:10,080
-but in concept, is a similar function. It uses the
+but in concept, it is a similar function. It uses the
 r-mnemonic here instead of 'l' because it thinks
 
 00:21:10,080 --> 00:21:15,840
@@ -838,12 +838,12 @@ about its operator as a right associative one,
 whereas here this was used left-associatively. And
 
 00:21:16,560 --> 00:21:22,400
-the one (1) stands here for “we should give this
-function a non-empty list”, so, a list of at least
+the one (1) stands here for "we should give this
+function a non-empty list", so, a list of at least
 
 00:21:22,400 --> 00:21:27,600
 one element. The foldr function also works on the
-empty list, as we see here. So, returns something
+empty list, as we see here. So, it returns something
 
 00:21:27,600 --> 00:21:33,360
 useful also for the empty list. And additionally,
@@ -851,7 +851,7 @@ the foldl1 function has problems with infinite
 
 00:21:33,360 --> 00:21:41,200
 lists, while foldr works with infinite lists as we
-can see basically by the fact that even in if this
+can see basically by the fact that even if this
 
 00:21:41,200 --> 00:21:47,920
 would be an infinite list, so xs would not end at

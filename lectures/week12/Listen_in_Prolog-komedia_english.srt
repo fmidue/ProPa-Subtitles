@@ -9,7 +9,7 @@ stored in this transitive hull example with
 
 00:00:16,680 --> 00:00:22,320
 possible cycles between the cities and
-their connections, i.e. cyclic connections.
+their connections, i.e., cyclic connections.
 
 00:00:22,320 --> 00:00:28,320
 I had mentioned lists before, only very briefly
@@ -88,10 +88,10 @@ occurs. So, this would have two arguments. The first argument would be
 
 00:02:16,120 --> 00:02:21,340
 thought of as an element. Something like Duisburg or Essen in
-the example here. So, for example a constant or
+the example here. So, for example, a constant or
 
 00:02:21,340 --> 00:02:26,320
-also another date/data structure.
+also another data structure.
 And the second argument would be a list. Member expresses,
 
 00:02:26,320 --> 00:02:31,900
@@ -193,7 +193,7 @@ for given arguments, whether there is such a membership
 
 00:05:06,870 --> 00:05:14,940
 is present. But there is also the possibility
-to replace single parts in this query, for example by
+to replace single parts in this query, for example, by "
 
 00:05:14,940 --> 00:05:20,340
 variables. So, we could for example
@@ -201,11 +201,11 @@ also ask: "What are all the members of a list [1,3,3]?"
 
 00:05:20,340 --> 00:05:27,030
 So, we could ask: "Is there an X such that
-is the member of [1,2,3]?" And if so, we would
+it is a member of [1,2,3]?" And if so, we would
 
 00:05:27,030 --> 00:05:33,210
 like to get all the answers. And then Prolog would tell us
-in that case, "Yes, X can be 1." And then, if we were to go through ;
+in that case, "Yes, X can be 1." And then, if we were to go through;
 
 00:05:33,870 --> 00:05:40,020
 to see if there are any other solutions, Prolog would actually
@@ -224,7 +224,7 @@ Or we could decide, for example
 to replace the list with variables
 
 00:06:02,040 --> 00:06:09,810
-or perhaps to have a list whose elements/ values are
+or perhaps to have a list whose elements/values are
 whose enumerated values are replaced by variables.
 
 00:06:09,810 --> 00:06:15,750
@@ -241,14 +241,14 @@ And there again, Prolog would answer with meaningful answers.
 
 00:06:28,020 --> 00:06:34,440
 Namely, Prolog would say, "Yes, X can be 3."
-Because then we would have 3 element of [3,Y,Z].
+Because then we would have 3 as an element of [3,Y,Z].
 
 00:06:34,440 --> 00:06:42,630
 And no matter what Y, Z are. Or Y can be 3.
 Or Z can be 3. Note that in
 
 00:06:42,630 --> 00:06:47,730
-these three cases always only exactly
+these three cases, there is always exactly
 one variable at a time. Here above there was only
 
 00:06:47,730 --> 00:06:53,880
@@ -265,11 +265,11 @@ It would then be true that 3 is an element of [X,3,Z].
 
 00:07:06,300 --> 00:07:14,550
 Here below, somehow there is no conjunction.
-It does not have to be X, Y and Z 3, but really in each case
+It does not have to be X, Y, and Z = 3, but really in each case
 
 00:07:14,550 --> 00:07:21,480
-one of the variables must be 3 and for the other two it is
-of the doesn't matter, so nothing more is said about it.
+one of the variables must be 3 and for the other two it does
+not matter, so nothing more is said about it.
 
 00:07:21,480 --> 00:07:25,740
 Even more generally, of course, one could ask the question:
@@ -330,7 +330,7 @@ and ask for the input lists.
 
 00:08:47,120 --> 00:08:54,740
 In other words, we could ask for the source lists, which, when put together
-the result list. So, a query could look like
+make the result list. So, a query could look like
 
 00:08:54,740 --> 00:09:00,050
 this: We would like to know under which circumstances for X, Y
@@ -338,7 +338,7 @@ this: We would like to know under which circumstances for X, Y
 
 00:09:00,050 --> 00:09:06,800
 under which circumstances X and Y combined
-the list [a,b]. a and b are written in lower case, so they
+make the list [a,b]. a and b are written in lower case, so they
 
 00:09:06,800 --> 00:09:13,400
 are fixed, constant values.
@@ -346,7 +346,7 @@ And what is the answer? Again, there are several answers.
 
 00:09:13,400 --> 00:09:19,790
 Because there are various possibilities to have two lists in such a way
-so that together they make a two-element list [a,b].
+that together they make a two-element list [a,b].
 
 00:09:19,790 --> 00:09:28,220
 For example, X could be empty and Y the entire list.
@@ -370,7 +370,7 @@ and a corresponding, so to speak, opposite
 
 00:09:53,450 --> 00:09:59,000
 shorter list, so that the two lists
-to give exactly the one given ten-element list.
+give exactly the one given ten-element list.
 
 00:09:59,000 --> 00:10:05,660
 So, ultimately, we use append backwards here,
@@ -382,10 +382,10 @@ suitable lists. Namely, so to speak, a cut at some
 
 00:10:12,800 --> 00:10:20,710
 place in the given list. Then you could
-questions to which Prolog might not have an
+ask questions to which Prolog might not have an
 
 00:10:20,710 --> 00:10:25,900
-answer, because there is no answer. We could for example
+answer, because there is no answer. We could, for example,
 ask, for example, under what circumstances is a list
 
 00:10:25,900 --> 00:10:34,030
@@ -397,7 +397,7 @@ where we use the same variable twice here.
 And there we know: Same variable means,
 
 00:10:39,160 --> 00:10:46,090
-it must have the same value and there is no way to have two
+it must have the same value, and there is no way to have two
 no possibility to have two equal lists,
 
 00:10:46,090 --> 00:10:53,920
@@ -414,18 +414,18 @@ X and X attached to each other are a two-element list [a,a].
 
 00:11:05,440 --> 00:11:10,660
 But if a and b are different here,
-then Prolog finds out, that there is no
+then Prolog finds out that there is no
 
 00:11:10,660 --> 00:11:17,950
 answer to it. So, there is no positive answer.
-And again a case, where Prolog has to try a little bit more
+And again a case where Prolog has to try a little bit more
 
 00:11:17,950 --> 00:11:22,900
 effort, but also finds a solution:
 We can ask, for example, under what
 
 00:11:22,900 --> 00:11:29,950
-circumstances is the case, that X and X added to each other
+circumstances is the case that X and X added to each other
 results in the two-element list, where the first element is a
 
 00:11:29,950 --> 00:11:36,610
@@ -454,7 +454,7 @@ equal lists and keep [a,b].
 
 00:12:05,920 --> 00:12:11,020
 If here the Y is a variable, then Prolog can
-decide, and Prolog will decide, that if you put a small
+decide, and Prolog will decide that if you put a small
 
 00:12:11,020 --> 00:12:17,080
 there is a solution after all.
@@ -482,7 +482,7 @@ for example, and ask for the length.
 There I can say, for this I take a variable here.
 
 00:12:59,620 --> 00:13:02,140
-And then Prolog would answer: "N = 3". Or if I had asked length([a,b,c],3)
+And then Prolog would answer: "N = 3". Or if I had asked length([a,b,c],3),
 then the answer would be true.
 
 00:13:02,140 --> 00:13:15,130
@@ -510,7 +510,7 @@ What actually happens? Prolog answers with a list
 of length 3, whose elements which are listed here
 
 00:13:47,050 --> 00:13:52,630
-look very strange: _ and something
+look very strange: _ and something.
 These are basically like
 
 00:13:52,630 --> 00:13:57,760
@@ -523,11 +523,11 @@ It doesn't matter what exactly is written here.
 
 00:14:02,020 --> 00:14:06,670
 They can be other numbers in the next execution of Prolog.
-other numbers. What is decisive is: Prolog has
+Other numbers. What is decisive is: Prolog has
 
 00:14:06,670 --> 00:14:12,760
 invented/introduced three variables here, so to speak,
-which did not appear in my query/ in my request
+which did not appear in my query/in my request
 
 00:14:12,760 --> 00:14:21,010
 and says the answer is a list of length 3,
@@ -538,7 +538,7 @@ That's why there are simply variables.
 And if here we had given 4,
 
 00:14:26,290 --> 00:14:31,360
-I would have got the structure of a four element list
+I would have got the structure of a four-element list
 and the elements would have been variables again,
 
 00:14:31,360 --> 00:14:37,240
@@ -550,8 +550,8 @@ from the query and the program/the defined predicates.
 Now I can combine this a bit
 
 00:14:44,710 --> 00:14:50,320
-combined with previous predicates. To the
-For example, with the append predicate.
+combined with previous predicates. For
+example, with the append predicate.
 
 00:14:50,320 --> 00:14:57,010
 For example, I could also say, "I would like to have all three-element
@@ -567,7 +567,7 @@ a list and the same list?"
 
 00:15:08,680 --> 00:15:15,610
 The answer is false. Why? Because if I
-append a list to the same list
+append a list to the same list,
 
 00:15:15,610 --> 00:15:22,930
 the result is always an even-length list, and this
@@ -598,7 +598,7 @@ However, this time there are variables in the first and
 third and second and fourth place the
 
 00:16:04,990 --> 00:16:11,290
-variables, because to fulfil this requirement here
+variables, because to fulfill this requirement here
 it must be the case that actually
 
 00:16:11,290 --> 00:16:18,730
@@ -607,7 +607,7 @@ And in fact, Prolog also gives for X
 
 00:16:18,730 --> 00:16:24,160
 this list and the same variables appear in it again.
-same variables appear in it. Thus, it is expressed,
+Same variables appear in it. Thus, it is expressed,
 
 00:16:24,160 --> 00:16:30,460
 that actually some assignment, where we have
@@ -683,7 +683,7 @@ And that is to say, first of all, that if you define
 your own predicates, of course, you're going to fall back
 
 00:18:35,530 --> 00:18:46,090
-To existing predicates. So, an example here:
+to existing predicates. So, an example here:
 I would like to express that between an element and
 
 00:18:46,090 --> 00:18:53,380
@@ -735,8 +735,8 @@ and V the elements that come after the X,
 when we form the result list R. So, by using
 
 00:20:09,610 --> 00:20:17,020
-of append(U,V,L), so to speak, we would be
-implicitly decompose L into U and V. And then I could say
+append(U,V,L), so to speak, we would be
+implicitly decomposing L into U and V. And then I could say
 
 00:20:17,020 --> 00:20:21,850
 now I just have to insert the X in the appropriate place.
@@ -772,7 +772,7 @@ this append predicate in a clever way,
 
 00:21:12,040 --> 00:21:21,190
 you get this "insert behaviour". This will often
-that we can simply combine existing predicates in a clever way.
+remind us that we can simply combine existing predicates in a clever way.
 
 00:21:21,190 --> 00:21:26,590
 combine them. Or we program
@@ -783,7 +783,7 @@ data structures, on the s(z) numbers, for example,
 we have already worked with recursion in the addition
 
 00:21:33,160 --> 00:21:39,790
-the previous lecture, we can also
+from the previous lecture, we can also
 work on lists. So, for example, we can say,
 
 00:21:39,790 --> 00:21:50,230
@@ -791,15 +791,15 @@ we would like to permute lists.
 For that, I could create the following definition:
 
 00:21:50,230 --> 00:21:57,370
-So, for example, if I have the list [1,2,3], I would like to have
-get the list [1,2,3], [1,3,2], [2,1,3], etc.
+So, for example, if I have the list [1,2,3], I would like to get
+the list [1,2,3], [1,3,2], [2,1,3], etc.
 
 00:21:57,370 --> 00:22:04,300
 So, all permutations of a given list. So, I can create a recursion
 to create a recursion. Here we remember: a recursion should have a base case.
 
 00:22:04,300 --> 00:22:09,850
-An obvious base case here would be to say,
+An obvious base case here would be to say
 that the permutation of the empty list is the empty list.
 
 00:22:09,850 --> 00:22:17,650
@@ -807,7 +807,7 @@ This is a very simple fact about lists and their permutations.
 And that could serve as a base case here at the same time.
 
 00:22:17,650 --> 00:22:22,390
-It comes first, as my rules of thumb say.
+It comes first, as my rule of thumb says.
 And then I would expect at least one
 
 00:22:22,390 --> 00:22:27,790
@@ -815,12 +815,12 @@ recursive case.
 In that case, a recursive case comes with it.
 
 00:22:27,790 --> 00:22:35,170
-One can ask: "What would be to do for non-empty
-lists to do?" So, up here, empty lists are
+One can ask: "What would it be to do for non-empty
+lists?" So, up here, empty lists are
 
 00:22:35,170 --> 00:22:42,565
-treated exhaustively, so to speak. And then one still asks oneself,
-what is on non-empty lists?
+treated exhaustively, so to speak. And then one still asks oneself
+what is to be done with non-empty lists?
 
 00:22:42,565 --> 00:22:46,030
 What distinguishes non-empty lists? Non-empty lists are characterized by the fact
@@ -835,11 +835,11 @@ I can also say, I would like to decompose L
 into its first element and the remainder.
 
 00:22:59,090 --> 00:23:06,800
-I can express this by saying, non-empty lists L
+I can express this by saying that non-empty lists L
 can be represented as the concatenation of some
 
 00:23:06,800 --> 00:23:14,930
-of a one-element list and another list.
+one-element list and another list.
 What I implicitly achieve with this call here is,
 
 00:23:14,930 --> 00:23:22,670
@@ -847,12 +847,12 @@ that X is set to the first element of the list L
 and Y to all remaining elements. Then I can say,
 
 00:23:22,670 --> 00:23:30,230
-one strategy to permute a list is: to take exactly the
+one strategy to permute a list is to take exactly the
 first element and permute the remaining elements
 
 00:23:30,230 --> 00:23:36,590
 to permute. Then I get lists again.
-Namely, lists which are permutations of the rest list.
+Namely, lists that are permutations of the rest list.
 
 00:23:36,590 --> 00:23:42,950
 And then the first element, which I originally took from the
@@ -867,8 +867,8 @@ which I had not defined recursively here above.
 So, from the list L, which is not empty, but decomposable into X and remainder,
 
 00:23:58,460 --> 00:24:05,450
-permute the remainder and then insert X into this remainder,
-to get the result/ the result permutation,
+permute the remainder and then insert X into this remainder
+to get the result / the result permutation,
 
 00:24:05,450 --> 00:24:12,890
 which is then also the result of this permutation call.
@@ -884,7 +884,7 @@ are permutations of [1,2,3]?".
 
 00:24:25,100 --> 00:24:30,560
 That actually comes up with a total of exactly six
-lists come out. We'll see the first two here,
+lists. We'll see the first two here,
 
 00:24:30,560 --> 00:24:41,180
 but also all other permutations of [1,2,3].
@@ -895,8 +895,8 @@ We see here that I have deviated from my rule of thumb
 and actually have the recursive call not at the very back,
 
 00:24:47,360 --> 00:24:53,120
-but a bit far back/ in the middle.
-You could also try this out/ find out,
+but a bit far back / in the middle.
+You could also try this out / find out,
 
 00:24:53,120 --> 00:24:59,930
 if that's important. A little bit of that is important,
@@ -915,7 +915,7 @@ But the predefined permutation predicate also works
 forwards and backwards. So, if you want to try
 
 00:25:21,200 --> 00:25:24,860
-it out, you should actually not call it permutation,
+it out, you should actually not call it "permutation",
 but call it something else, so that you don't get into conflict with the
 
 00:25:24,860 --> 00:25:33,080

@@ -1,3 +1,4 @@
+
 0:00:00.000,0:00:03.000
 Als Erstes gucken wir uns diese Woche
 Aufgabe 19 an.
@@ -43,14 +44,14 @@ einmal die Funktion, die aus seiner Eingabe prüft,
 
 0:01:11.190,0:01:16.980
 ob die Eingabe einfach genug ist, dass wir sie
-sofort lösen können, in dem Fall nutzen wir
+sofort lösen können; in dem Fall nutzen wir
 
 0:01:16.980,0:01:26.100
 diese Funktion von a nach b 'simpleCases', um das
 Problem sofort zu lösen, für diese Eingabe, oder
 
 0:01:26.100,0:01:33.750
-wir haben eine 'split' Funktion, die aus einem
+wir haben eine 'split'-Funktion, die aus einem
 a zwei a's macht und eine Kombinationsfunktion,
 
 0:01:33.750,0:01:45.870
@@ -63,22 +64,22 @@ Eingabe, ist sie simpel genug, dass wir sie sofort
 
 0:01:55.620,0:02:01.770
 lösen können, dann benutzen wir die Berechnung
-für den einfachen Fall und bekommen unser b,
+für den einfachen Fall und bekommen unser b.
 
 0:02:01.770,0:02:10.180
-wenn das nicht der Fall ist, splitten wir den
+Wenn das nicht der Fall ist, splitten wir den
 Input in einen linken und einen rechten Teil und
 
 0:02:10.180,0:02:16.300
 kombinieren die rekursiven Aufrufe auf diesen
-beiden Teilen der 'combine' Funktion. Diese
+beiden Teilen der 'combine'-Funktion. Diese
 
 0:02:16.300,0:02:21.610
 rekursiven Aufrufe geben uns dann natürlich
 hier wieder ein b und das setzen wir in diese
 
 0:02:21.610,0:02:30.400
-'combine' Funktion ein, um unser Gesamtergebnis
+'combine'-Funktion ein, um unser Gesamtergebnis
 zu erhalten. Das ist im Prinzip das, was wir auch
 
 0:02:30.400,0:02:38.860
@@ -86,7 +87,7 @@ in der vorherigen Aufgabe für die Summation
 schon gemacht haben, aber dieses Mal sollen
 
 0:02:38.860,0:02:45.100
-wir das halt jetzt mit diesem skeleton oder dieser
+wir das halt jetzt mit diesem Skeleton oder dieser
 higher order function lösen und wir sollen genau
 
 0:02:45.100,0:02:52.360
@@ -98,8 +99,8 @@ auch nochmal für uns die Typen dran. Wir haben
 als Erstes das Prädikat, das überprüft, ob der
 
 0:02:57.310,0:03:03.530
-Fall einfach genug ist, um ihn direkt zu lösen,
-das hat hier Typ Liste von Integer nach Bool,
+Fall einfach genug ist, um ihn direkt zu lösen.
+Das hat hier Typ Liste von Integer nach Bool,
 
 0:03:03.530,0:03:13.000
 weil a hier Liste von Integern ist und b Integer,
@@ -122,11 +123,11 @@ dafür brauchen wir eine Funktion, die zwei Integer
 zu einem Integer kombiniert. Hier unten haben
 
 0:03:43.870,0:03:49.960
-jetzt nochmal eine Lösung für die Aufgabe, wo wir
+wir jetzt nochmal eine Lösung für die Aufgabe, wo wir
 das ohne die higher order function gemacht haben,
 
 0:03:49.960,0:03:57.220
-wo wir uns jetzt mal dran orientieren können
+wo wir uns jetzt mal daran orientieren können
 und gucken, wie wir das in dieses Grundgerüst,
 
 0:03:57.220,0:04:02.800
@@ -139,10 +140,10 @@ hier mit dieser hier oben gemeinsam hat,
 
 0:04:08.950,0:04:17.050
 dann sehen wir schon, wir haben diese Kombination
-von 2 rekursiven Aufrufen und den split hier und
+von 2 rekursiven Aufrufen und den Split hier und
 
 0:04:17.050,0:04:24.580
-das haben wir ziemlich genau so hier auch, wir
+das haben wir ziemlich genau so hier auch. Wir
 splitten irgendwie, haben zwei rekursive Aufrufe
 
 0:04:24.580,0:04:31.420
@@ -182,7 +183,7 @@ Lambda. Wir haben den Parameter, das ist die
 Liste, die wir in zwei Teile splitten wollen und
 
 0:05:34.630,0:05:41.380
-wie wir hier splitten ist, wir splitten die Liste
+wie wir hier splitten, ist, wir splitten die Liste
 in der Mitte. Das n haben wir hier oben berechnet,
 
 0:05:41.380,0:05:49.210
@@ -190,20 +191,21 @@ als Länge der Liste und dann können wir auch
 hier einfach jetzt das 'splitAt' benutzen, für
 
 0:05:50.620,0:06:02.680
-die Länge der Liste, dividiert durch zwei und die
+die Länge der Liste dividiert durch zwei und die
 Liste selbst. Hier brauchen wir jetzt das Lambda,
 
 0:06:02.680,0:06:17.530
 wenn wir das natürlich zweimal hier verwenden,
-dann können wir nicht vereinfachten. Dann zunächst
+dann können wir nicht vereinfachen. Dann zunächst
 
 0:06:17.530,0:06:22.510
 gucken wir und vielleicht einfach mal an, was
 sind denn die einfachen Fälle. Hier in unserer
 
+
 0:06:22.510,0:06:27.190
 Definition haben wir gesehen, die einfachen
-Fälle sind, wenn die Liste leer ist, dann
+Fälle sind, wenn die Liste leer ist, dann.
 
 0:06:27.190,0:06:32.890
 kommt 0 raus und wenn die Liste nur ein Element
@@ -211,7 +213,7 @@ hat, dann ist die Summe einfach genau dieses eine
 
 0:06:32.890,0:06:49.540
 Element. Das heißt, wir müssen hier prüfen, ob
-die länge der Liste kleiner oder gleich eins ist.
+die Länge der Liste kleiner oder gleich eins ist.
 
 0:06:52.060,0:06:56.980
 Das ist, was wir als einen simplen Fall
@@ -222,7 +224,7 @@ wie behandeln wir den Fall einfach. Wenn die Liste
 leer ist, kommt 0 raus. Wenn sie genau ein Element hat,
 
 0:07:04.810,0:07:16.900
-kommt DIESES ELEMENT raus. Das heißt, wir nehmen die
+kommt dieses Element raus. Das heißt, wir nehmen die
 Liste und prüfen, wenn die Liste leer, 'null xs'
 
 0:07:17.680,0:07:27.700
@@ -246,7 +248,7 @@ wie die Funktion verwendet werden. Das heißt, wir
 müssen hier nicht noch mal irgendwie prüfen, ob
 
 0:07:56.410,0:08:01.300
-das jetzt tatsächlich auch einelementig ist, die
+das jetzt tatsächlich auch ein-elementig ist, die
 Liste, sondern wir können einfach davon ausgehen,
 
 0:08:01.300,0:08:05.890
@@ -258,7 +260,7 @@ hier ausführen. Funktioniert das jetzt? Probieren
 wir einfach mal aus. Laden wir das ganze ghci,
 
 0:08:16.060,0:08:23.410
-können erst mal hier die 'main' Methode ausführen,
+können erst mal hier die 'main'-Methode ausführen,
 die einen sehr einfachen Test hat, nämlich dass
 
 0:08:23.410,0:08:31.570
@@ -299,14 +301,14 @@ Wenn wir das also neu laden, sehen wir, dass
 
 0:09:42.995,0:09:51.200
 QuickCheck uns jetzt 100 Listen generiert hat und
-prüft das jeweils die Summe, die wir mit dieser
+prüft, dass jeweils die Summe, die wir mit dieser
 
 0:09:51.200,0:09:59.120
 Funktion hier berechnen, immer die gleiche Summe
 ist, die wir hier berechnen. Weil wir ja letztes
 
 0:09:59.120,0:10:04.940
-Mal schon überprüft haben, so zu sagen, dass
+Mal schon überprüft haben, sozusagen, dass
 das die richtige Lösung ist, oder eine richtige
 
 0:10:04.940,0:10:11.120
@@ -323,46 +325,46 @@ sicher sein, dass die beiden Funktionen das
 
 0:10:24.120,0:10:31.200
 Gleiche berechnen. Was ist jetzt der Vorteil von
-der einen gegenüber der anderen Art und Weise das
+der einen gegenüber der anderen Art und Weise, das
 
 0:10:31.200,0:10:39.960
 auszudrücken? Wenn wir es uns einfach angucken,
 das sieht zwar ein bisschen übersichtlicher aus,
 
 0:10:39.960,0:10:47.400
-vielleicht wenn man die Kommentare nicht dabei hat
+vielleicht wenn man die Kommentare nicht dabei hat,
 kürzer sogar, als die Lösung hier unten, man muss
 
 0:10:47.400,0:10:54.300
 natürlich dann im Kopf haben, was die divide and
-conquer Funktion eigentlich macht, aber man könnte
+conquer-Funktion eigentlich macht, aber man könnte
 
 0:10:54.300,0:11:02.370
-sagen okay, das ist jetzt vielleicht nicht ganz
+sagen, okay, das ist jetzt vielleicht nicht ganz
 so sinnvoll sofort, aber spätestens, wenn man über
 
 0:11:02.370,0:11:05.880
-divide and conquer man dann noch andere Sachen,
-noch andere Algorithmen implementieren will,
+divide and conquer noch andere Sachen, noch andere
+Algorithmen implementieren will,
 
 0:11:05.880,0:11:13.770
 mit dem gleichen Grundkonzept, wird es natürlich
 wichtig oder praktisch, dass man das Konzept über
 
 0:11:13.770,0:11:19.140
-diese higher order function wieder verwenden kann.
-Das werden wir auch in Zukunft noch sehen wie man
+diese higher-order function wieder verwenden kann.
+Das werden wir auch in Zukunft noch sehen, wie man
 
 0:11:19.140,0:11:28.050
 das dann für andere Sachen verwenden kann, diese
-divide and conquer Funktion. Da kann man jetzt im
+divide and conquer-Funktion. Da kann man jetzt im
 
 0:11:28.050,0:11:34.650
-Prinzip alle divide and conquer Algorithmen, die
+Prinzip alle divide and conquer-Algorithmen, die
 einen Input in genau zwei Teile teilen, die mit
 
 0:11:34.650,0:11:46.050
-zwei rekursiven Aufrufen arbeiten mit abdecken,
+zwei rekursiven Aufrufen arbeiten, abdecken,
 mit diesem Muster. Dann gilt wie immer, wenn wir
 
 0:11:46.050,0:11:54.810
@@ -375,7 +377,7 @@ die interessanten und die generischen Teile
 
 0:12:05.880,0:12:14.850
 vermischen und bei denen es nicht ganz klar ist, dass
-hier divide-and-conquer stattfindet. Das sieht man
+hier divide and conquer stattfindet. Das sieht man
 
 0:12:14.850,0:12:20.860
 ja nicht auf den ersten Blick so ohne weiteres,
