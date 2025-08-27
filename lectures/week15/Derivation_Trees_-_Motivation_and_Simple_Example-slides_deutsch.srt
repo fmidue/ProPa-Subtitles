@@ -1,14 +1,14 @@
 75 # slide
 00:00:02,160 --> 00:00:06,720
 Nachdem wir in der letzten Woche über Unifikation
-und Resolution in der letzten Woche,
+und Resolution gesprochen haben,
 
 00:00:08,320 --> 00:00:10,800
 werden wir uns diese Woche mit den Ableitungsbäumen
 
 00:00:11,760 --> 00:00:16,800
-die den Abschluss der Betrachtung der
-operationalen Semantik mit Prolog abschließt.
+beschäftigen, die den Abschluss der Betrachtung der
+operationalen Semantik mit Prolog abschließen.
 
 00:00:17,440 --> 00:00:24,800
 Und was wir sehen werden, ist im Grunde eine
@@ -20,7 +20,7 @@ zu einer
 
 00:00:30,800 --> 00:00:34,720
 einigermaßen erschöpfenden Suche
-nach Lösungen für eine Anfrage.
+nach Lösungen für eine Anfrage führen.
 
 00:00:35,760 --> 00:00:42,040
 Und da es so spezifisch für Prolog ist, wird dies nun
@@ -28,7 +28,7 @@ ein wenig anders aussehen als die Resolution.
 
 00:00:42,040 --> 00:00:46,640
 Der gesamte Resolutionsprozess wird
-in der Logik Vorlesung visualisiert.
+in der Logikvorlesung visualisiert.
 
 00:00:46,640 --> 00:00:51,200
 Also, Unifikation und einzelne
@@ -58,15 +58,15 @@ operationale Semantik haben und sehen wollen, was
 während der Ausführung vor sich geht, hatten wir vorhin dieses Beispiel
 
 00:01:22,320 --> 00:01:32,080
-und wir wissen, wie wir die deklarative Semantik nutzen können
-Semantik verwenden können, um zu wissen, was dieses Programm bedeutet, richtig?
+und wir wissen, wie wir die deklarative Semantik nutzen können,
+um zu wissen, was dieses Programm bedeutet, richtig?
 
 00:01:32,880 --> 00:01:37,840
 Indem wir einfach diese Regeln im
-Operator für unmittelbare Folgen, und
+Operator für unmittelbare Folgen anwenden und
 
 00:01:37,840 --> 00:01:42,560
-dann sehen, welche Fakten -, welche
+dann sehen, welche Fakten – welche
 Literale nacheinander produziert werden.
 
 00:01:42,560 --> 00:01:45,920
@@ -99,7 +99,7 @@ Wir können fragen, wie groß N ist, so dass
 zwei mal N vier ist.
 
 00:02:09,760 --> 00:02:13,360
-Im Grunde können wir also vier durch zwei teilen
+Im Grunde können wir also vier durch zwei teilen,
 zwei dividieren und erhalten das korrekte Ergebnis zwei.
 
 00:02:14,800 --> 00:02:19,600
@@ -115,18 +115,17 @@ und die beiden Argumente abgefragt wurden,
 dies bei der Multiplikation nicht funktionierte.
 
 00:02:27,040 --> 00:02:31,120
-Wenn wir also versuchten, dieses Multiplikationsprädikat zu verwenden
-Prädikat für Faktorisierungen oder
+Wenn wir also versuchten, dieses Multiplikationsprädikat zu verwenden,
+um nach den beiden Faktoren zu fragen, so dass ihr
 
 00:02:31,120 --> 00:02:35,440
-nach den beiden Faktoren zu fragen, so dass ihr
 Produkt vier ist, dann passiert etwas Seltsames.
 
 00:02:35,440 --> 00:02:38,560
 Wir erhielten die Ergebnisse eins mal vier, zwei mal zwei.
 
 00:02:38,560 --> 00:02:42,080
-Aber wir haben keine Antwort erhalten
+Aber wir haben keine Antwort erhalten,
 bei der N gleich vier und M gleich eins ist.
 
 00:02:42,960 --> 00:02:48,320
@@ -134,15 +133,15 @@ Also mussten wir die Aufgabe im Grunde abbrechen. Andernfalls
 hätten wir hier eine unendliche Suche gehabt.
 
 00:02:48,320 --> 00:02:52,880
-Was aus dem Programm nicht wirklich ersichtlich ist
-Programm nicht ersichtlich, warum das ein Problem sein sollte, oder?
+Was aus dem Programm nicht wirklich ersichtlich ist,
+ist, warum das ein Problem sein sollte, oder?
 
 00:02:52,880 --> 00:02:56,320
 Denn wenn Sie wirklich fragen, ob
 Multiplikation vier mal eins
 
 00:02:56,320 --> 00:03:01,440
-und vier gilt, dann wird Prolog Ja sagen, aber
+gilt, dann wird Prolog Ja sagen, aber
 wenn man nach N und M fragt, dann hat das nicht funktioniert.
 
 00:03:01,440 --> 00:03:04,000
@@ -150,7 +149,7 @@ Und die deklarative Semantik
 konnte dies nicht erklären.
 
 00:03:04,000 --> 00:03:06,720
-Und ich versprach, dass die operationelle
+Und ich versprach, dass die operationale
 Semantik dies erklären würde.
 
 00:03:07,760 --> 00:03:10,720
@@ -159,15 +158,15 @@ erklären, was hier vor sich geht.
 
 00:03:10,720 --> 00:03:15,360
 Wir werden auch an diesem speziellen
-Fallstudie dieses kleinen Programms, wie
+Fallbeispiel dieses kleinen Programms, wie
 
 00:03:16,000 --> 00:03:21,360
 mithilfe der operationalen Semantik und der Einsicht, die man
-wie Ableitungsbäume aussehen,
+durch Ableitungsbäume gewinnen kann,
 
 00:03:21,360 --> 00:03:26,560
-wie man dieses Programm tatsächlich reparieren kann, im
-in dem Sinne, dass es für weitere Aufrufmodi nützlich wird.
+sehen, wie man dieses Programm tatsächlich reparieren kann, im
+Sinne, dass es für weitere Aufrufmodi nützlich wird.
 
 00:03:26,560 --> 00:03:29,680
 Also, so dass wir auch Fragen stellen können wie diese
@@ -189,7 +188,7 @@ Dann werden wir über den allgemeinen
 Prozess ihrer Erzeugung sprechen.
 
 00:03:48,800 --> 00:03:52,480
-Und dann werden wir diesen Prozess veranschaulichen
+Und dann werden wir diesen Prozess veranschaulichen,
 indem wir uns dieses Programm als Ganzes ansehen,
 
 00:03:53,440 --> 00:03:58,880
@@ -198,14 +197,15 @@ für das Programm in seiner jetzigen Form problematisch sind,
 
 00:03:58,880 --> 00:04:03,120
 auch wenn es logisch gesehen vollkommen
-Regeln, die wir hier haben, völlig in Ordnung sind.
+in Ordnung ist, die Regeln, die wir hier haben, völlig in Ordnung sind.
+
 
 00:04:03,760 --> 00:04:08,080
 Und dann werden wir dieses Beispiel verwenden, indem wir
-kleine Änderungen an dem Programm vornehmen,
+kleine Änderungen an dem Programm vornehmen.
 
 00:04:08,080 --> 00:04:13,920
-und untersuchen, wie wir es so verändern
+Und untersuchen, wie wir es so verändern
 können, dass es nützlicher wird.
 
 00:04:13,920 --> 00:04:16,320
@@ -213,15 +213,15 @@ Und indem Sie das tun, werden
 Sie sich immer wieder mit
 
 00:04:16,320 --> 00:04:20,160
-Ableitungsbäume ansehen, denn
+Ableitungsbäumen beschäftigen, denn
 so finden wir heraus, was vor sich geht.
 
 00:04:20,160 --> 00:04:27,840
-Und in diesem Sinne wird dieses Beispiel auch dazu dienen
-zur Einführung in Ableitungsbäume und zum Betrachten
+Und in diesem Sinne wird dieses Beispiel auch dazu dienen,
+eine Einführung in Ableitungsbäume zu geben und zum Betrachten
 
 00:04:29,920 --> 00:04:34,320
-mehrere verschiedene Beispiele für Ableitungsbäume
+mehrerer verschiedener Beispiele für Ableitungsbäume
 von Ableitungsbäumen für dieses und leicht verwandte Programme.
 
 00:04:35,040 --> 00:04:39,440
@@ -245,11 +245,11 @@ Und schauen wir uns diese Abfrage an, die
 ähnlich wie die mult-Query
 
 00:05:05,760 --> 00:05:07,840
-von der vorherigen Folie, die nicht funktioniert hat
+von der vorherigen Folie, die nicht funktioniert hat,
 
 00:05:07,840 --> 00:05:16,080
 in dem Sinne, dass man ein Ergebnis der Addition angibt
-und nach den beiden beitragenden Argumenten fragen, okay?
+und nach den beiden beitragenden Argumenten fragt, okay?
 
 00:05:16,640 --> 00:05:22,080
 Nun, wir wissen, dass es mehrere Lösungen gibt,
@@ -268,19 +268,19 @@ in der Tat, es ist ein erschöpfender Suchprozess.
 
 00:05:32,640 --> 00:05:36,240
 Aber die Frage ist natürlich, wie
-die Suche genau abläuft?
+die Suche genau abläuft.
 
 00:05:36,800 --> 00:05:39,520
 Zum Beispiel auch, in welcher Reihenfolge
 werden eigentlich Lösungen gefunden?
 
 00:05:39,520 --> 00:05:43,200
-Und wie könnte es bei einer anderen Abfrage sein
+Und wie könnte es bei einer anderen Abfrage sein,
 dass diese Suche vielleicht unendlich ist?
 
 00:05:43,200 --> 00:05:45,600
-Das würde bei dieser Folie nicht passieren
-Folie, aber in späteren Beispielen.
+Das würde bei dieser Folie nicht passieren,
+aber in späteren Beispielen.
 
 00:05:47,120 --> 00:05:50,160
 Okay, was für eine Art von Suche findet hier also statt?
@@ -289,14 +289,14 @@ Okay, was für eine Art von Suche findet hier also statt?
 Nun, durch Resolutionsschritte haben wir eine Abfrage,
 
 00:05:54,320 --> 00:05:57,280
-Sie wollen eine Antwort darauf wissen
-darauf, und wir haben das Programm.
+Sie wollen eine Antwort darauf wissen,
+und wir haben das Programm.
 
 00:05:57,280 --> 00:06:04,080
 Und wie bereits erwähnt, gehen wir mit der Resolution vor.
 
 00:06:04,080 --> 00:06:07,920
-Wir versuchen also, die Abfrage aufzulösen
+Wir versuchen also, die Abfrage aufzulösen,
 die wir haben, mit den Fakten
 
 00:06:09,440 --> 00:06:12,720
@@ -329,18 +329,18 @@ Das bedeutet, dass wir herausfinden müssen, ob wir
 
 00:06:34,880 --> 00:06:38,080
 einen Resolutionsschritt durchführen können
-mit diesem Fakt und dieser Abfrage durchführen können.
+mit diesem Fakt und dieser Abfrage.
 
 00:06:38,640 --> 00:06:43,360
-Erinnern Sie sich an letzte Woche, das bedeutet
+Erinnern Sie sich an letzte Woche? Das bedeutet,
 dass wir zuerst nach einem Unifikator suchen müssen
 
 00:06:43,360 --> 00:06:45,200
-zwischen der Programmklausel suchen müssen.
+zwischen der Programmklausel.
 
 00:06:45,200 --> 00:06:47,840
-Also, dieser Fakt, der Kopf der Programmklausel
-Klausel, in diesem Fall nur diese Tatsache
+Also, dieser Fakt, der Kopf der Programmklausel,
+in diesem Fall nur diese Tatsache
 
 00:06:48,400 --> 00:06:51,440
 und der Abfrage, die wir ausgewählt haben,
@@ -388,11 +388,11 @@ Und da X dann s(s(0)) ist.
 
 00:07:38,800 --> 00:07:42,000
 Das wirkt sich also auch auf die
-zweite Position hier in diesem,
+zweite Position hier in diesem
 
 00:07:42,800 --> 00:07:48,160
-durch die Instanziierung dieses Kopfes, diese Tatsache,
-nun, dann muss M auch ersetzt werden
+durch die Instanziierung dieses Kopfes, dieser Tatsache.
+Nun, dann muss M auch ersetzt werden
 
 00:07:48,160 --> 00:07:51,760
 durch s(s(0)). Andernfalls würden Sie keine
@@ -411,7 +411,8 @@ werden beide durch s(s(0)) ersetzt.
 
 00:08:05,040 --> 00:08:10,560
 Okay, das bedeutet, wir können die
-Abfrage mit diesem Kopf, mit diesem Fakt resolvieren können.
+Abfrage mit diesem Kopf, mit diesem Fakt resolvieren.
+
 
 00:08:10,560 --> 00:08:12,960
 Okay, was ist dann das Ergebnis der Resolution?
@@ -420,31 +421,27 @@ Okay, was ist dann das Ergebnis der Resolution?
 Nun, denken Sie daran, dass wir in der allgemeinen
 
 00:08:16,960 --> 00:08:21,600
-Einstellung könnten wir einen Kontext P
-und Q dieses Literals und der Abfrage haben.
+Einstellung einen Kontext P und Q, dieses Literals und der Abfrage haben.
 
 00:08:22,320 --> 00:08:25,840
-Natürlich sind in diesem Fall P und Q
-beide leer, so dass nichts übrig bleibt
+Natürlich sind in diesem Fall P und Q beide leer, sodass nichts übrig bleibt
 
 00:08:26,400 --> 00:08:30,000
-von ihnen übrig, da sie nichts
-zum nächsten Schritt beitragen.
+von ihnen übrig, da sie nichts zum nächsten Schritt beitragen.
 
 00:08:30,720 --> 00:08:35,840
-Und dann der andere Teil der Anwendung
-einer Lösung war es, das L zu ersetzen.
+Und dann war der andere Teil der Anwendung
+einer Lösung, das L zu ersetzen.
 
 00:08:35,840 --> 00:08:38,160
-Die Abfrage, die Sie tatsächlich für eine Lösung verwendet haben
+Die Abfrage, die Sie tatsächlich für eine Lösung verwendet haben,
 
 00:08:38,160 --> 00:08:42,000
-durch die rechte Seite des Programms
-Klausel, die wir aufgelöst haben.
+durch die rechte Seite der Programm-Klausel, die wir aufgelöst haben.
 
 00:08:42,560 --> 00:08:45,120
 Okay, jetzt ist diese Programmklausel
-ist in diesem speziellen Fall ein Fakt.
+in diesem speziellen Fall ein Fakt.
 
 00:08:45,120 --> 00:08:47,840
 Es gibt also keinen Rumpf, die rechte Seite ist leer.
@@ -501,7 +498,7 @@ Das heißt also, wir haben eine Lösung gefunden.
 
 00:09:36,720 --> 00:09:40,320
 Also, der Prolog-Interpreter sagt jetzt
-wahr, oder gibt ein Ergebnis aus.
+wahr oder gibt ein Ergebnis aus.
 
 00:09:41,440 --> 00:09:44,000
 Eigentlich möchte man in diesem Fall
@@ -526,7 +523,7 @@ Nun, natürlich müssen sie
 von der Unifikation kommen, richtig?
 
 00:10:01,760 --> 00:10:06,240
-Hier haben wir herausgefunden
+Hier haben wir herausgefunden,
 was N und M sein müssen, um
 
 00:10:06,240 --> 00:10:08,720
@@ -538,7 +535,7 @@ wollen, was N und M in unserer Lösung sind,
 
 00:10:13,280 --> 00:10:15,600
 dann sind sie natürlich das, was
-hier geschrieben steht, 0 und s(s(0)).
+hier geschrieben steht: 0 und s(s(0)).
 
 00:10:16,560 --> 00:10:20,560
 Das wäre komplizierter, wenn Sie mehrere
@@ -560,7 +557,7 @@ Okay?
 Das ist es also, was Prolog jetzt ausgeben würde.
 
 00:10:34,720 --> 00:10:39,440
-Der Wert für N und der Wert für M
+Der Wert für N und der Wert für M,
 die uns zu diesem erfolgreichen Beweis geführt haben.
 
 00:10:41,200 --> 00:10:43,280
@@ -571,7 +568,7 @@ Nun könnte der Benutzer ein Semikolon eingeben, um
 zu fragen, ob es noch weitere Ergebnisse gibt?
 
 00:10:47,520 --> 00:10:50,560
-Und natürlich könnte es welche geben
+Und natürlich könnte es welche geben,
 denn wir haben noch eine weitere
 
 00:10:51,120 --> 00:10:53,200
@@ -594,7 +591,7 @@ Ja, Prolog hat nicht wie Haskell,
 die Strategie, nur eine einzige
 
 00:11:10,640 --> 00:11:13,840
-Gleichung, pro Funktionsdefinition.
+Gleichung pro Funktionsdefinition.
 
 00:11:14,400 --> 00:11:16,080
 Es probiert immer alle Gleichungen aus.
@@ -610,11 +607,11 @@ unifiziert werden kann.
 Okay, sehen wir uns das mal an.
 
 00:11:27,760 --> 00:11:30,880
-Okay, das ist jetzt etwas komplizierter
+Okay, das ist jetzt etwas komplizierter,
 natürlich etwas komplizierter, denn wir haben Variablen an
 
 00:11:31,680 --> 00:11:37,920
-verschiedenen Stellen haben, wo wir nicht einfach
+verschiedenen Stellen, wo wir nicht einfach
 all diese Variablen mit einem Grundbegriff ab, richtig?
 
 00:11:37,920 --> 00:11:39,440
@@ -625,11 +622,12 @@ Keiner von beiden ist ein Grundterm, okay?
 
 00:11:46,240 --> 00:11:50,400
 Wir müssen also unifizieren, wo es
-einige Dinge, die man leicht erkennen kann.
+einige Dinge gibt, die man leicht erkennen kann.
 
 00:11:50,400 --> 00:11:54,720
 Wenn wir uns etwa die dritte
-Position, sehen wir, dass Z s(0) sein muss.
+Position ansehen, sehen wir, dass Z s(0) sein muss.
+
 
 00:11:54,720 --> 00:11:58,560
 Das ist die einzige Möglichkeit, wie diese Position
@@ -643,11 +641,11 @@ wir könnten entweder M ist Y oder Y ist M haben.
 Okay, das könnte der Unifikator sein.
 
 00:12:09,760 --> 00:12:13,680
-Eines davon könnte der Unifikator sein
-den wir hier auf einen anderen Zweig setzen
+Eines davon könnte der Unifikator sein,
+den wir hier auf einen anderen Zweig setzen.
 
 00:12:14,320 --> 00:12:17,040
-denn wir haben die Wahl
+Denn wir haben die Wahl,
 hier die zweite Regel zu verwenden.
 
 00:12:18,320 --> 00:12:24,960
@@ -660,15 +658,15 @@ wenn Sie eine Regel mehrmals im
 
 00:12:30,080 --> 00:12:35,440
 Suchprozess, nach ein paar Resolutionsschritten
-verwirrt werden kann zwischen,
+verwirrt werden kann zwischen
 
 00:12:35,440 --> 00:12:40,800
 zum Beispiel dem X, das in dieser Regel vorkommt, in
 der ersten Regel und dann auch in der zweiten Regel.
 
 00:12:40,800 --> 00:12:44,640
-Also, was ich von jetzt an machen werde
-von nun an die Variablen hier ersetzen.
+Also, was ich von jetzt an machen werde,
+ist, die Variablen hier zu ersetzen.
 
 00:12:44,640 --> 00:12:48,560
 Und das werde ich tun, indem ich einfach tiefgestellt hinzufüge.
@@ -679,7 +677,7 @@ es mathematisch schreiben würde.
 
 00:12:50,640 --> 00:12:53,040
 Aber eigentlich füge ich einfach eine
-Zahl nach dem Variablennamen.
+Zahl nach dem Variablennamen hinzu.
 
 00:12:54,080 --> 00:13:00,080
 Anstatt also dieses Literal mit
@@ -710,7 +708,7 @@ sein, denn dann können wir diese beiden Positionen abgleichen.
 
 00:13:34,720 --> 00:13:37,760
 Okay, das ist also der Unifikator
-für die Resolution dieses Literals
+für die Resolution dieses Litera
 
 00:13:37,760 --> 00:13:42,080
 und dieser zweiten Klausel. Was ist das
@@ -724,7 +722,7 @@ P oder Q in dem Literal, in der Abfrage, also
 müssen wir uns eigentlich nur mit diesem Literal befassen.
 
 00:13:51,600 --> 00:13:55,280
-Nun, das bedeutet
+Nun, das bedeutet,
 Ersetzen durch die rechte Seite
 
 00:13:55,280 --> 00:13:57,360
@@ -766,18 +764,18 @@ gemäß dieser Substitution ersetzt.
 Okay, das ist jetzt also unsere neue Unterabfrage.
 
 00:14:40,560 --> 00:14:43,360
-Also, wir haben unsere Lösung nicht gefunden
-hier nicht gefunden, haben wir ein neues Problem.
+Also, wir haben unsere Lösung hier nicht gefunden,
+haben wir ein neues Problem.
 
 00:14:43,360 --> 00:14:45,040
 Okay, was machen wir jetzt?
 
 00:14:45,040 --> 00:14:51,840
-Nun, wenn dies unsere neue Abfrage ist, können wir Fortschritte machen
+Nun, wenn dies unsere neue Abfrage ist, können wir Fortschritte machen,
 indem wir sie mit Klauseln aus dem Programm resolvieren.
 
 00:14:51,840 --> 00:14:55,600
-Und wieder müssen wir uns beide ansehen
+Und wieder müssen wir uns beide ansehen,
 denn man muss sich immer alle ansehen.
 
 00:14:55,600 --> 00:14:56,960
@@ -791,7 +789,7 @@ Wir prüfen zuerst als erstes Kind dieses Baumes
 Knotens, ob dieser mit diesem Fakt unifizierbar ist.
 
 00:15:05,760 --> 00:15:09,440
-Und jetzt zahlt es sich schon aus
+Und jetzt zahlt es sich schon aus,
 dass wir X durch X1 ersetzt haben,
 
 00:15:09,440 --> 00:15:15,520
@@ -828,7 +826,7 @@ muss, wegen der dritten Position des Arguments.
 
 00:15:53,040 --> 00:15:59,120
 Und da es sich um das gleiche X1
-oder X2 ist, muss auch Y1 s(0) werden.
+oder X2 handelt, muss auch Y1 s(0) werden.
 
 00:15:59,120 --> 00:16:01,600
 Okay, also der Unifikator, den Sie
@@ -836,7 +834,7 @@ erhalten, ist dieser hier,
 
 00:16:02,400 --> 00:16:08,320
 X1/0, weil dies, und sowohl Y1
-und das implizite X2 hier müssen s(0) sein.
+als auch das implizite X2 hier müssen s(0) sein.
 
 00:16:10,080 --> 00:16:11,520
 Okay, dann haben wir das unifiziert.
@@ -845,8 +843,10 @@ Okay, dann haben wir das unifiziert.
 Dann bedeutet Resolution, dass man dieses
 Literal durch die rechte Seite dieser
 
+
+
 00:16:17,360 --> 00:16:21,680
-Klausel, die wir verwendet haben, d.h. die leere
+Die Klausel, die wir verwendet haben, d.h. die leere
 rechte Seite, weil dies ein Fakt war.
 
 00:16:21,680 --> 00:16:25,360
@@ -855,10 +855,10 @@ hier eine leere Abfrage erzeugen.
 
 00:16:25,360 --> 00:16:29,360
 Was bedeutet, dass dies ein weiterer Erfolgsknoten ist
-und eine weitere Lösung, die Prolog gefunden hat
+und eine weitere Lösung, die Prolog gefunden hat.
 
 00:16:29,360 --> 00:16:30,800
-für diese Abfrage und dieses Programm gefunden hat.
+Für diese Abfrage und dieses Programm gefunden hat.
 
 00:16:31,440 --> 00:16:33,680
 Nun, was sind die Antworten für N und M?
@@ -884,7 +884,7 @@ Und dann gehen wir durch die Substitutionen
 und sehen, was mit diesen Variablen passiert.
 
 00:16:49,280 --> 00:16:52,640
-So wird N zu s(X1), aber die Antwort kann nicht s(X1) sein
+So wird N zu s(X1), aber die Antwort kann nicht s(X1) sein,
 
 00:16:52,640 --> 00:16:56,640
 denn eigentlich wird X1 auch
@@ -916,7 +916,7 @@ Okay?
 Die zweite Antwort, die Prolog uns geben würde.
 
 00:17:19,840 --> 00:17:22,480
-Wenn man mehr Antworten sehen will
+Wenn man mehr Antworten sehen will,
 als wir sehen müssen, nun:
 
 00:17:22,480 --> 00:17:24,800
@@ -924,7 +924,7 @@ Gab es eine Stelle, wo wir eine
 andere Wahl hätten treffen können?
 
 00:17:24,800 --> 00:17:30,160
-Und die Antwort ist Ja, denn für diesen
+Und die Antwort ist ja, denn für diesen
 Knoten haben wir bisher nur die Resolution
 
 00:17:30,160 --> 00:17:33,920
@@ -979,10 +979,10 @@ Die Resolution ist also möglich.
 
 00:18:37,120 --> 00:18:41,520
 Wir können dieses Literal ersetzen durch die
-rechte Seite der Klausel ersetzen, die wir verwendet haben.
+rechte Seite der Klausel, die wir verwendet haben.
 
 00:18:41,520 --> 00:18:47,440
-Wir ersetzen es also durch add(X3,Y3,Z3),
+Wir ersetzen es also durch add(X3, Y3, Z3),
 aber eigentlich werden wir natürlich
 
 00:18:48,000 --> 00:18:50,720
@@ -1009,7 +1009,7 @@ dies unifizierbar ist, wenn man alle
 
 00:19:24,880 --> 00:19:30,720
 Variablen oder die X3, Y3 und die
-X4 aus der Klausel, alle durch 0.
+X4 aus der Klausel alle durch 0.
 
 00:19:30,720 --> 00:19:35,200
 Und wir sind gezwungen, dies zu tun wegen
@@ -1024,7 +1024,7 @@ dann können wir die erste Klausel anwenden.
 
 00:19:45,520 --> 00:19:48,240
 Das bedeutet, wir ersetzen dieses
-Literal durch seine rechte Seite zu ersetzen,
+Literal durch seine rechte Seite,
 
 00:19:48,240 --> 00:19:50,080
 durch die Klausel auf der rechten
@@ -1063,7 +1063,7 @@ Wir haben also die Antwort: N ist s(s(0)) und M ist 0.
 
 00:20:25,600 --> 00:20:31,120
 Das ist die dritte nützliche Antwort für
-Frage nach der Addition von N + M sollte 2 sein.
+die Frage nach der Addition von N + M, die 2 sein sollte.
 
 00:20:32,320 --> 00:20:35,040
 Okay, dann könnte ich jetzt wieder
@@ -1075,7 +1075,9 @@ Literal, das wir hier hatten, auch mit der
 
 00:20:39,440 --> 00:20:45,280
 zweiten Programmklausel unifiziert werden kann, mit dem
-Kopf dieser Klausel zu unifizieren und, na ja, die Antwort ist Nein.
+Kopf dieser Klausel zu unifizieren und, na ja, die Antwort ist nein.
+
+
 
 00:20:45,920 --> 00:20:51,040
 Wir sehen das an der letzten Stelle, also der
@@ -1088,15 +1090,15 @@ Und hier ist das letzte Argument 0.
 Dies ist also nicht unifizierbar.
 
 00:20:56,000 --> 00:21:01,280
-Okay, also gibt es hier keinen zweiten Zweig
+Okay, also gibt es hier keinen zweiten Zweig,
 der zu weiteren Lösungen führen würde.
 
 00:21:01,280 --> 00:21:04,880
 An diesem Punkt kann Prolog also wirklich sagen,
-nun, das sind die drei Lösungen
+nun, das sind die drei Lösungen.
 
 00:21:04,880 --> 00:21:08,800
-und es gibt keine weiteren, weil
+Und es gibt keine weiteren, weil
 es keine weitere Wahl gibt, die getroffen werden kann.
 
 00:21:09,760 --> 00:21:15,920
@@ -1104,7 +1106,7 @@ Und deshalb würde Prolog diese drei
 Ergebnisse in dieser Reihenfolge von links nach rechts.
 
 00:21:15,920 --> 00:21:19,520
-Und dann sagen, falsch, es gibt
+Und dann sagen: falsch, es gibt
 keine weiteren Lösungen, ich bin fertig.
 
 00:21:20,640 --> 00:21:20,960
@@ -1124,12 +1126,12 @@ die gleiche Prozedur auf das
 kompliziertere Beispiel anwenden.
 
 00:21:44,240 --> 00:21:46,560
-Okay, das war also der Prozess
+Okay, das war also der Prozess,
 den wir im Wesentlichen befolgt haben.
 
 00:21:46,560 --> 00:21:50,720
 Wir begannen mit der Erzeugung eines Wurzelknotens
-Knoten für unseren Ableitungsbaum,
+für unseren Ableitungsbaum,
 
 00:21:50,720 --> 00:21:55,600
 und dieser Wurzelknoten enthielt genau die
@@ -1144,7 +1146,7 @@ Knoten, an dem noch nicht gearbeitet wurde, und
 
 00:22:00,880 --> 00:22:04,400
 während des gesamten Prozesses der Generierung
-dieses Baums mussten wir uns immer daran erinnern
+dieses Baums mussten wir uns immer daran erinnern,
 
 00:22:04,400 --> 00:22:07,520
 wo wir bereits gearbeitet haben, wo
@@ -1155,8 +1157,8 @@ Und dies geschah im Wesentlichen in
 der Tiefe von links nach oben.
 
 00:22:12,080 --> 00:22:15,280
-Okay, solange es noch Knoten gibt, die bearbeitet werden müssen
-zu bearbeiten sind, und das ist am Anfang nur der
+Okay, solange es noch Knoten gibt, die bearbeitet werden müssen,
+und das ist am Anfang nur der
 
 00:22:16,400 --> 00:22:23,840
 Knoten, die Wurzelknotenabfrage, müssen wir einen solchen
@@ -1170,14 +1172,14 @@ Okay?
 
 00:22:27,440 --> 00:22:30,560
 Natürlich gibt es am Anfang
-nur der eine, den wir an der Wurzel haben.
+nur den einen, den wir an der Wurzel haben.
 
 00:22:31,440 --> 00:22:38,480
-Okay, wenn wir dann einen Knoten haben, der bearbeitet werden muss
-bearbeitet werden soll, müssen wir herausfinden, welches seine Nachfolger sind.
+Okay, wenn wir dann einen Knoten haben, der bearbeitet werden muss,
+müssen wir herausfinden, welches seine Nachfolger sind.
 
 00:22:38,480 --> 00:22:43,440
-Und eine Strategie dafür war, zu bestimmen
+Und eine Strategie dafür war, zu bestimmen,
 alle Fakten oder Regeln, alle Programmklauseln
 
 00:22:44,320 --> 00:22:49,520
@@ -1199,7 +1201,7 @@ Und wir verwenden immer das am weitesten links stehende.
 Okay?
 
 00:23:02,880 --> 00:23:09,680
-Also, für einen Knoten, den wir weiter bearbeiten wollen
+Also, für einen Knoten, den wir weiter bearbeiten wollen,
 weil er der äußerste linke, noch nicht bearbeitete Knoten war,
 
 00:23:10,320 --> 00:23:18,880
@@ -1226,11 +1228,11 @@ Okay, wenn wir also wissen, was die
 Unifikatoren sein sollten, können wir,
 
 00:23:43,600 --> 00:23:48,960
-für jeden von ihnen einen Nachfolgeknoten erstellen
-Knoten erstellen, indem wir eine Resolution durchführen.
+für jeden von ihnen einen Nachfolgeknoten erstellen,
+indem wir eine Resolution durchführen.
 
 00:23:48,960 --> 00:23:54,480
-Ja, nachdem wie wir den Unifikator herausgefunden haben
+Ja, nachdem wir den Unifikator herausgefunden haben
 zwischen dem am weitesten links stehenden Literal im aktuellen Knoten
 
 00:23:54,480 --> 00:24:00,480
@@ -1245,7 +1247,7 @@ ausgewählten und der Problemklausel.
 Ist das in Ordnung?
 
 00:24:07,600 --> 00:24:11,920
-Dadurch erhalten wir neue Knoten
+Dadurch erhalten wir neue Knoten,
 die noch bearbeitet werden müssen.
 
 00:24:12,880 --> 00:24:15,760
@@ -1257,7 +1259,7 @@ Klauseln im Programm.
 
 00:24:19,280 --> 00:24:25,920
 Sie erinnern sich, dass wir im vorherigen Beispiel zwei Klauseln hatten
-Beispiel zwei Klauseln und in Knoten, in denen wir zwei Nachfolger hatten,
+und in Knoten, in denen wir zwei Nachfolger hatten,
 
 00:24:25,920 --> 00:24:29,360
 haben wir immer den Nachfolger eingefügt, der
@@ -1289,13 +1291,15 @@ ist der erste Nachfolger, okay?
 Auf den Pfeilen, den Verbindungen von
 den Knoten zu den Nachfolgeknoten, notieren wir
 
+
+
 00:24:56,720 --> 00:24:59,600
-vermerken wir den Unifikator, weil
+Vermerken wir den Unifikator, weil
 wir ihn später noch brauchen, richtig?
 
 00:24:59,600 --> 00:25:03,360
 Das war auch etwas, was wir in allen
-Beispielen auf der vorherigen Folie in jedem Schritt gemacht.
+Beispielen auf der vorherigen Folie in jedem Schritt gemacht haben.
 
 00:25:03,360 --> 00:25:08,880
 Wir haben den Unifikator, den wir herausgefunden haben, U,
@@ -1309,7 +1313,7 @@ Fälle, wie ein Knoten beendet werden kann.
 Nun, eigentlich gab es im vorherigen
 
 00:25:17,920 --> 00:25:23,280
-Beispiel gab es nur einen solchen Fall, der andere
+Beispiel nur einen solchen Fall, der andere
 wird später in einem anderen Beispiel auftauchen.
 
 00:25:23,280 --> 00:25:28,480
@@ -1317,10 +1321,10 @@ Was wir bisher gesehen haben, ist also nur, dass
 ein Knoten beendet werden kann, weil er leer ist.
 
 00:25:28,480 --> 00:25:30,560
-Und das haben wir in der vorigen Folie schon mehrmals gesehen
+Und das haben wir in der vorigen Folie schon mehrmals gesehen.
 
 00:25:30,560 --> 00:25:35,040
-Folie gesehen, dass wir nach einem
+Wir haben gesehen, dass wir nach einem
 Resolutionsschritt bei der leeren Abfrage angekommen sind.
 
 00:25:35,040 --> 00:25:37,920
@@ -1329,7 +1333,7 @@ und es ist ein Lösungsknoten.
 
 00:25:37,920 --> 00:25:43,600
 Es gibt noch einen anderen Fall, der eintreten kann,
-und den werden Sie später noch sehen. Es kann auch der Fall sein
+und den werden Sie später noch sehen. Es kann auch der Fall sein,
 
 00:25:43,600 --> 00:25:49,200
 dass wir eine Abfrage haben, die noch nicht leer ist, aber
@@ -1380,11 +1384,11 @@ die Unifikatoren auf dem Weg
 vom Wurzelknoten bis zu diesem erfolgreichen Knoten,
 
 00:26:44,000 --> 00:26:49,920
-wir hatten in einigen Fällen mehrere Unifikator, also mussten wir
+wir hatten in einigen Fällen mehrere Unifikatoren, also mussten wir
 komponieren im Sinne einer Funktionskomposition.
 
 00:26:50,880 --> 00:26:55,680
-Und dann wenden wir dies auf alle Variablen an
+Und dann wenden wir dies auf alle Variablen an,
 die in der ursprünglichen Abfrage vorkamen, richtig?
 
 00:26:55,680 --> 00:26:58,240
@@ -1425,3 +1429,4 @@ Okay.
 00:27:29,680 --> 00:27:39,680
 Und wir werden sie jetzt auf ein komplizierteres Programm
 anwenden, natürlich im nächsten Video.
+
