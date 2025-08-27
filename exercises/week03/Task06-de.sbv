@@ -1,6 +1,7 @@
+
 0:00:00.000,0:00:11.490
-Diese Aufgabe ist keine CodeWorld Aufgabe,
-sondern eine andere Haskell-Aufgabe in der
+Diese Aufgabe ist keine CodeWorld-Aufgabe,
+sondern eine andere Haskell-Aufgabe, in der
 
 0:00:11.490,0:00:16.770
 wir jetzt den Editor lokal verwenden. Bei
@@ -15,12 +16,12 @@ um das zu implementieren, was
 hier beschrieben ist. Das heißt,
 
 0:00:38.070,0:00:48.960
-wir erzeugen die eine Liste von Integer-Paaren.
+wir erzeugen eine Liste von Integer-Paaren.
 Das ist unsere Aufgabe. List-Comprehension,
 
 0:00:48.960,0:00:58.680
 dafür verwenden wir diese eckigen Klammern
-und wir schreiben zunächst als erstes was wir
+und wir schreiben zunächst als Erstes, was wir
 
 0:00:58.680,0:01:08.940
 zurückgeben wollen, nämlich genau diese Tupel
@@ -32,11 +33,11 @@ Strich und mit x beginnen. Wir können in
 
 0:01:21.690,0:01:32.100
 Haskell Werte definieren als Listen mit einem
-Linkspfeil, ich schreibe jetzt hier '<-', und
+Linkspfeil. Ich schreibe jetzt hier '<-', und
 
 0:01:32.100,0:01:39.540
 dann können wir Listen angeben und x nimmt
-dann alle Werte dieser Listenelementen an.
+dann alle Werte dieser Listenelemente an.
 
 0:01:39.540,0:02:00.330
 Hier steht, dass x und y c-Nummern sein sollen
@@ -48,7 +49,7 @@ zweiziffrigen Zahlen wäre das z.B. 10 bis
 
 0:02:10.380,0:02:27.080
 99. Wie kriegen wir zwei- oder c-ziffrige Zahlen?
-Indem wir zehn hoch und dann c nehmen beziehungsweise c - 1
+Indem wir zehn hoch und dann c nehmen beziehungsweise c - 1,
 
 0:02:27.080,0:02:43.070
 also 10 hoch 1 wäre 10, was bei den zweiziffrigen
@@ -64,10 +65,10 @@ hoch c. Das ist sozusagen 100. Aber 100 brauchen
 
 0:03:02.750,0:03:10.550
 wir nicht mehr, also - 1. So, jetzt könnten
-wir uns diese zahlen anschauen wollen, dann
+wir uns diese Zahlen anschauen wollen, dann
 
 0:03:10.550,0:03:25.610
-öffne ich das ganze Mal in dem ghci, also dadurch
+öffne ich das Ganze mal in dem ghci, also dadurch
 kompiliere ich das Programm und jetzt sagt mir
 
 0:03:25.610,0:03:34.880
@@ -80,7 +81,7 @@ auch angezeigt, wo der Fehler ist, nämlich in
 
 0:03:45.080,0:03:55.160
 Zeile 24 und genau an dieser Stelle. Ähnliche
-Meldungen bekommen wir auch Autotool. Dort wird
+Meldungen bekommen wir auch vom Autotool. Dort wird
 
 0:03:55.160,0:04:04.640
 die Zeile und die Spalte angegeben. Jetzt können
@@ -92,7 +93,7 @@ hier unten dieselbe Fehlermeldung an. Also y ist
 
 0:04:13.130,0:04:19.130
 noch nicht definiert, das sagt dieser Fehler. Das
-heißt, bevor wir irgendwie eine Ausgabe erhalten
+heißt, bevor wir irgendwie eine Ausgabe erhalten,
 
 0:04:19.130,0:04:29.200
 müssen wir y definieren. Wir könnten jetzt
@@ -100,7 +101,7 @@ sagen, dass y ebenfalls eine Liste sein soll,
 
 0:04:29.200,0:04:36.520
 in dem Fall nehmen wir mal die leere Liste
-und wenn ich das mir jetzt noch mal neue lade,
+und wenn ich das mir jetzt noch mal neu lade,
 
 0:04:36.520,0:04:45.490
 dann gibt es keinen Fehler mehr und wenn ich
@@ -108,7 +109,7 @@ jetzt 'list' aufrufe, also den Wert 'list'
 
 0:04:45.490,0:04:52.180
 ausgeben lasse, erhalte ich die leere Liste.
-Warum ist das so? Ja die List-Comprehension macht
+Warum ist das so? Ja, die List-Comprehension macht
 
 0:04:52.180,0:04:58.900
 das Kreuzprodukt aus diesen beiden Teilen,
@@ -135,7 +136,7 @@ um die Spaltenbreite etwas geringer zu machen und
 die Lesbarkeit etwas zu erhöhen. Jetzt schauen wir
 
 0:05:51.690,0:05:58.110
-uns noch mal an was die einschränken hier sind
+uns noch mal an, was die Einschränkung hier ist
 für y. y ist auch wieder eine c-Digit-Number,
 
 0:05:58.110,0:06:08.220
@@ -143,7 +144,7 @@ und zwar soll sie allerdings mindestens zweimal
 so groß sein wie x. Jetzt könnten wir natürlich
 
 0:06:08.220,0:06:30.120
-erst mal alle c-Digit-Number nehmen, also wieder
+erstmal alle c-Digit-Number nehmen, also wieder
 10 hoch (c-1), allerdings lassen sich hier Zahlen
 
 0:06:30.120,0:06:37.530
@@ -152,11 +153,11 @@ müssen, deshalb ist hier die bessere Wahl, dass
 
 0:06:37.530,0:06:48.240
 wir hier direkt schon sagen, dass wir 2 * x wählen
-als den geringsten Wert den y annehmen kann, denn
+als den geringsten Wert, den y annehmen kann, denn
 
 0:06:48.240,0:06:59.520
 alle x-Werte sind ja bereits c-Digit-Nummern, also
-Zahlen mit genau c-Ziffern. Das heißt, wir können
+Zahlen mit genau c Ziffern. Das heißt, wir können
 
 0:06:59.520,0:07:07.350
 hier in dem Fall die Einschränkung etwas kleiner
@@ -168,14 +169,14 @@ Kreuzprodukt. Also an zu betrachtenden Zahlen
 
 0:07:24.220,0:07:31.780
 noch nicht alle Einschränkungen, denn hier steht
-noch die Summe von x und y soll ebenfalls eine
+noch, die Summe von x und y soll ebenfalls eine
 
 0:07:31.780,0:07:48.550
 c-Digit-Number sein. Das heißt, jetzt können wir
 eine weitere Einschränkung für x und y angeben,
 
 0:07:50.740,0:08:04.810
-indem wir einen Booleschen Ausdruck hinschreiben.
+indem wir einen booleschen Ausdruck hinschreiben.
 Und in dem Fall sollen x und y eine c-Digit-Number
 
 0:08:04.810,0:08:15.220
@@ -183,7 +184,7 @@ sein. Wann sind sie eine c-Digit-Number?
 Nämlich genau dann, wenn x und y größer als
 
 0:08:15.220,0:08:25.270
-10 hoch (c - 1) ist oder gleich groß. Da wir
+10 hoch (c - 1) sind oder gleich groß. Da wir
 aber schon wissen, dass x und y mindestens so
 
 0:08:25.270,0:08:30.970
@@ -191,12 +192,14 @@ groß sind, brauchen wir diesen Test nicht.
 Allerdings brauchen wir einen zweiten Test,
 
 0:08:30.970,0:08:39.880
-nämlich dass sie auch kleiner sind als 10 hoch (c
+nämlich, dass sie auch kleiner sind als 10 hoch (c
 - 1). Also schreiben wir diesen Test jetzt hier
 
 0:08:39.880,0:08:56.980
 hin, x und y sollen kleiner sein als 10 hoch c.
 Wenn wir das abspeichern, dann erhalten wir jetzt,
+
+
 
 0:08:56.980,0:09:05.260
 wenn wir die Liste ausgeben, die Liste aller
@@ -220,7 +223,7 @@ definieren, indem wir hier 'where' schreiben und
 
 0:09:39.000,0:09:55.290
 wir nehmen die erste c-Digit-Zahl und die letzte
-c-Digit-Zahl als Konstanten. Ich sage die untere
+c-Digit-Zahl als Konstanten. Ich sage, die untere
 
 0:09:57.810,0:10:19.230
 c-Digit-Zahl ist minC und das ist eben genau
@@ -231,7 +234,7 @@ die ist 10 hoch (c - 1) und diese füge ich
 jetzt auch in den entsprechenden Stellen ein.
 
 0:10:40.330,0:10:44.080
-Das ist maxC
+Das ist maxC.
 
 0:10:48.780,0:11:11.760
 und das ist auch maxC und hier das ist maxC
@@ -256,3 +259,4 @@ für maxC nur noch einmal erfolgen und nicht mehr
 0:11:56.250,0:12:03.900
 dreimal, also es wird da etwas Rechenzeit gespart
 durch die Common Subexpression Elimination.
+

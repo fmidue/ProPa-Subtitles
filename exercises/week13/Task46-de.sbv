@@ -1,14 +1,15 @@
+
 0:00:00.000,0:00:09.420
 In dieser Prolog-Aufgabe soll ein Prädikat
-geschrieben werden welches überprüft, dass der
+geschrieben werden, welches überprüft, dass der
 
 0:00:09.420,0:00:23.160
 erste Parameter eine Liste von Listen ist und der
 zweite Parameter das Ergebnis der Liste ist, wenn
 
 0:00:23.160,0:00:33.750
-man die einzelnen Teillisten, der ersten Liste
-umkehrt, also 'reverse' drauf anwendet. Dafür
+man die einzelnen Teillisten der ersten Liste
+umkehrt, also 'reverse' darauf anwendet. Dafür
 
 0:00:33.750,0:00:42.990
 soll das zweistellige Prädikat h implementiert
@@ -27,7 +28,7 @@ wieder eine Fallunterscheidung machen, weil der
 Eingabeparameter eine Liste ist und dann kann
 
 0:01:12.780,0:01:24.090
-man den leeren Listen Fall definieren, dass das
+man den leeren Listenfall definieren, dass das
 Prädikat für eine leere Liste gilt und dann können
 
 0:01:24.090,0:01:30.030
@@ -48,7 +49,7 @@ und 'reverse' verwendet werden, um zu definieren,
 
 0:02:09.270,0:02:21.775
 wie Zs aussehen soll. Die Listen sollen umgekehrt
-sein, dass wenn wir hier eine Teilliste '[a,
+sein, sodass, wenn wir hier eine Teilliste '[a,
 
 0:02:21.775,0:02:26.860
 b]' haben, soll die entsprechend umgekehrt
@@ -75,7 +76,7 @@ Resultat von der Anwendung von h mit Xs und Ys.
 Die Liste kann dann verkettet werden mit 'append'
 
 0:03:27.160,0:03:40.030
-und nun werden verkettet Y und Ys und
+und nun werden Y und Ys verkettet und
 dementsprechend erhält man eine neue Liste
 
 0:03:40.030,0:03:54.610
@@ -84,7 +85,7 @@ heißt, das ist die Definition des Prädikates,
 
 0:03:54.610,0:04:07.150
 was wir haben wollten und ich kann das jetzt auch
-noch mal im Prolog laden. Ich habe hier SWI-Prolog
+nochmal im Prolog laden. Ich habe hier SWI-Prolog
 
 0:04:07.150,0:04:24.450
 und kann hier Task40.prolog laden. Jetzt kann
@@ -99,7 +100,7 @@ d, e]' und der Rückgabeliste '[b, a, e, d, c]'
 und wenn ich das in Prolog ausführe, liefert es
 
 0:04:46.290,0:04:59.340
-'true', das heißt, das ganze gilt. Wir können
+'true', das heißt, das Ganze gilt. Wir können
 auch Listen übergeben, Listen von Listen, zum
 
 0:04:59.340,0:05:14.970
@@ -107,7 +108,7 @@ Beispiel könnten wir die Liste '[1, 2, 3]' und die
 Liste '[4, 5, 6]' übergeben und können dann Prolog
 
 0:05:14.970,0:05:23.850
-das Ergebnis suchen lassen und, hier ist noch ein
+das Ergebnis suchen lassen und hier ist noch ein
 Syntaxfehler, hier fehlt die schließende Klammer,
 
 0:05:23.850,0:05:35.610
@@ -115,8 +116,8 @@ und wenn Prolog das Ergebnis zurückliefert, dann
 liefert es uns die Liste '[3, 2, 1, 6, 5, 4]' wie
 
 0:05:35.610,0:05:48.900
-erwartet. Man könnte hier naiv auf die Idee kommen
-einen pattern match für die einelementige Liste
+erwartet. Man könnte hier naiv auf die Idee kommen,
+einen Pattern Match für die einelementige Liste
 
 0:05:48.900,0:06:03.840
 hinzuzufügen, also wenn in der Liste von Listen
@@ -127,15 +128,15 @@ Fall recht einfach definieren, als dass in diesem
 Fall 'reverse' von der Liste durchgeführt werden
 
 0:06:13.320,0:06:25.650
-soll. Das heißt, dass das 'reverse' von X soll
-gleich die Ergebnisliste Y sein. Prinzipiell ist
+soll. Das heißt, dass das 'reverse' von X gleich
+die Ergebnisliste Y sein soll. Prinzipiell ist
 
 0:06:25.650,0:06:35.550
 das erst mal nicht falsch, allerdings hat das
 eine Auswirkung in Prolog und wenn ich diesen
 
 0:06:35.550,0:06:43.560
-Aufruf hier durchführen, dann werden wir das
+Aufruf hier durchführe, dann werden wir das
 gleich sehen, nämlich dass wir nicht ein Ergebnis
 
 0:06:43.560,0:06:52.710
@@ -144,7 +145,7 @@ sind identisch. Das ist die Multimengensemantik
 
 0:06:52.710,0:07:04.800
 in Prolog, die hier zum Tragen kommt. Es gibt
-zwei Pattern, die hier matchen für die Liste,
+zwei Patterns, die hier matchen für die Liste,
 
 0:07:08.040,0:07:18.780
 also von der Liste '[1, 2, 3]' und der Liste '[4,
@@ -167,20 +168,20 @@ sozusagen zweimal greifen und einmal halt für die
 zweite Definition und auch für die dritte von h,
 
 0:08:03.630,0:08:10.770
-also die beiden Pattern würden matchen und in dem
-anderen Beispiel kommt das natürlich zu tragen,
+also die beiden Patterns würden matchen und in dem
+anderen Beispiel kommt das natürlich zur Tragen,
 
 0:08:10.770,0:08:20.070
 weil hier auch h benötigt wird und dann irgendwann
-kommt der Fall nämlich auch, in dem nur eine Liste
+kommt der Fall, nämlich auch, in dem nur eine Liste
 
 0:08:20.070,0:08:26.200
-vorhanden ist, in dem Fall ist es dann natürlich
+vorhanden ist. In dem Fall ist es dann natürlich
 im nächsten Aufruf, also wenn die erste Liste
 
 0:08:26.200,0:08:33.700
 abgenommen wurde, dann ist das Xs, dann ist es
-in dem Fall die Liste '[4, 5, 6]' für die hier
+in dem Fall die Liste '[4, 5, 6]', für die hier
 
 0:08:33.700,0:08:39.880
 dasselbe passiert und weil sozusagen beide
@@ -191,12 +192,14 @@ zwei Ergebnisse, die letztendlich identisch sind.
 Deshalb sollte diese Zeile nicht vorhanden sein
 
 0:08:50.920,0:09:00.040
-und dann haben wir das Verhalten, das nur ein
+und dann haben wir das Verhalten, dass nur ein
 Ergebnis immer ausgegeben wird. Prinzipiell
 
 0:09:00.040,0:09:04.390
 kann man die Aufgabe auch so angehen, dass
-man zunächst die Implementation in Haskell
+man zunächst die Implementierung in Haskell
+
+
 
 0:09:04.390,0:09:19.630
 macht. Vielleicht können wir auch das mal kurz
@@ -207,12 +210,12 @@ Aufgabe genauso gut in Haskell durchführen. Ich
 zeige vielleicht das Prolog-Programm nochmal hier
 
 0:09:31.480,0:09:40.870
-dazu, beziehungsweise die Aufgabe.
-Also soll ein Prädikat geschrieben werden,
+dazu, beziehungsweise die Aufgabe. Also soll
+ein Prädikat geschrieben werden,
 
 0:09:40.870,0:09:45.430
 in Haskell wäre das dann dementsprechend eine
-Funktion, wenn das eine Haskell Aufgabe wäre,
+Funktion, wenn das eine Haskell-Aufgabe wäre,
 
 0:09:45.430,0:09:52.536
 und diese Funktion soll einen Parameter haben,
@@ -232,14 +235,14 @@ sollen. Das kann man sich jetzt in Haskell genauso
 
 0:10:24.070,0:10:31.540
 gut überlegen, hier benutze ich mal keinen 'fold',
-sondern benutzte denselben Ansatz, wie auch in
+sondern benutze denselben Ansatz, wie auch in
 
 0:10:31.540,0:10:36.700
-Prolog. Das heißt, wir machen einen pattern match,
-in dem Fall geht der pattern match über die leere
+Prolog. Das heißt, wir machen einen pattern-match,
+in dem Fall geht der pattern-match über die leere
 
 0:10:36.700,0:10:44.890
-List und in dem Fall sollte die leere Liste
+Liste und in dem Fall sollte die leere Liste
 zurückgegeben werden und für den anderen Fall,
 
 0:10:44.890,0:11:04.240
@@ -251,7 +254,7 @@ dann soll, an die Liste angehängt, das Ergebnis
 von der Rekursion herankommen. Also in Haskell
 
 0:11:16.870,0:11:32.590
-würde das jetzt so aussehen, wir können das auch
+würde das jetzt so aussehen. Wir können das auch
 in ghci noch einmal laden und wenn wir jetzt hier
 
 0:11:32.590,0:11:51.520
@@ -263,7 +266,7 @@ dann liefert uns Haskell dasselbe Ergebnis, wie
 auch Prolog. Um das Programm zu transformieren,
 
 0:12:09.250,0:12:19.930
-sozusagen von Haskell nach Prolog könnte man
+sozusagen von Haskell nach Prolog, könnte man
 daher gehen und die einzelnen Schritte ausführen,
 
 0:12:19.930,0:12:32.620
@@ -276,7 +279,7 @@ das Endergebnis ergeben soll, dann können die
 
 0:12:48.280,0:12:54.340
 Teilergebnisse berechnet werden, also 'reverse
-x' wäre ein Funktionsaufruf, der erzeugt y,
+x' wäre ein Funktionsaufruf, der y erzeugt,
 
 0:12:54.340,0:13:13.420
 das soll in einem 'where' stehen. Dann ist
@@ -308,16 +311,17 @@ Ergebnis und das könnte man jetzt sozusagen auch
 
 0:14:17.660,0:14:27.200
 wieder nach Prolog transferieren, indem man hier
-das 'reverse' als erste Komponente hinzugefügt,
+das 'reverse' als erste Komponente hinzufügt,
 
 0:14:27.200,0:14:38.570
 mit x als ersten Parameter und y als zweiten,
 dann das h mit xs als ersten Parameter und ys
 
 0:14:38.570,0:14:53.240
-zweiten und das 'append' mit y als ersten
+als zweiten und das 'append' mit y als ersten
 Parameter, ys als zweiten Parameter und zs
 
 0:14:53.240,0:14:59.600
 als dritten Parameter und so kann man
 die Aufgabe letztendlich dann auch lösen.
+

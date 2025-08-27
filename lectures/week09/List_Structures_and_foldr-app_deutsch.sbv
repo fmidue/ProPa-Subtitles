@@ -1,3 +1,4 @@
+
 0:00:01.600,0:00:06.560
 Betrachten wir also die Listen in
 dieser algebraischen Datentyp-Perspektive.
@@ -7,7 +8,7 @@ So ist etwa eine Liste wie '[1, 2, 3]',
 wie wir auf den Folien besprochen haben, wird eigentlich
 
 0:00:20.240,0:00:24.640
-mit einer Menge von Klammern geschrieben
+mit einer Menge von Klammern geschrieben,
 wie hier dargestellt.
 
 0:00:25.840,0:00:28.320
@@ -15,11 +16,11 @@ Und wir brauchen diese Klammern nicht.
 
 0:00:28.320,0:00:36.000
 Denn wir betrachten einfach den Doppelpunkt, den 'cons'
-Konstruktor, als einen rechts-assoziativen Operator.
+Konstruktor, als einen rechtsassoziativen Operator.
 
 0:00:36.000,0:00:41.360
 Und natürlich können wir das auch
-das in einer Art Baumform darstellen.
+in einer Art Baumform darstellen.
 
 0:00:43.600,0:00:46.240
 Mit so einem rechtsschiefen Baum.
@@ -56,14 +57,14 @@ und wenden wir sie an, mit einigen
 Argumenten 'f' und 'c', das waren diese beiden Argumente.
 
 0:01:19.840,0:01:24.800
-Und sagen wir mal, wir wenden das tatsächlich an
-auf eine solche Baumelementliste.
+Und sagen wir mal, wir wenden das tatsächlich
+auf eine solche dreielementige Liste an.
 
 0:01:24.800,0:01:25.840
 Was wird dann passieren?
 
 0:01:26.480,0:01:31.680
-Nun, es ist dann natürlich, 'foldr f c'
+Nun, es ist dann natürlich 'foldr f c'
 auf etwas von dieser Struktur angewendet.
 
 0:01:31.680,0:01:36.640
@@ -75,8 +76,8 @@ dann werden Sie sehen, dass tatsächlich die
 leere Liste auf 'c' abgebildet wird.
 
 0:01:40.080,0:01:48.240
-Und im Grunde genommen, für alle Zwischen-Doppelpunkt 'cons'
-Konstruktoren wird die Funktion 'f' eingefügt.
+Und im Grunde genommen wird für alle Zwischen-Doppelpunkt 'cons'
+Konstruktoren die Funktion 'f' eingefügt.
 
 0:01:48.240,0:01:55.520
 Dieser Aufruf wird also letztendlich
@@ -97,8 +98,8 @@ guten Hinweis darauf, wofür der 'foldr' nützlich sein könnte.
 Wenn Sie etwa eine Liste summieren ('sum') wollen,
 
 0:02:24.800,0:02:32.400
-dann ist das ein sehr einfacher Aufruf der foldr-Funktion
-Funktion, wohingegen der Operator 'f', wir verwenden Addition
+dann ist das ein sehr einfacher Aufruf der foldr-Funktion,
+wohingegen der Operator 'f', wir verwenden Addition
 
 0:02:32.400,0:02:38.160
 als Basisfall, konstant verwenden wir
@@ -116,7 +117,7 @@ Und dann wird es natürlich berechnen
 
 0:02:49.680,0:02:53.440
 1 + 2 + 3 + 0, was
-wäre in diesem Fall 6.
+in diesem Fall 6 wäre.
 
 0:02:57.120,0:03:01.280
 Okay, und es gibt noch viele andere Funktionen,
@@ -129,46 +130,44 @@ Sehr viele der interessanten Funktionen auf Listen.
 Das könnte zum Beispiel in der Funktion
 
 0:03:09.920,0:03:16.400
-Übungsfunktion, die im Grunde
-die Konjunktion in eine Liste aufhebt.
+Übungsfunktion, die im Grunde die Konjunktion in eine Liste aufhebt.
 
 0:03:16.400,0:03:23.040
 Bei einer Liste von Bools berechnet sie also die
 Konjunktion von allen, anstatt einfach
 
 0:03:23.760,0:03:26.880
-eine binäre Konjunktion mit zwei Booleschen Argumenten.
+eine binäre Konjunktion mit zwei booleschen Argumenten.
 
 0:03:26.880,0:03:29.920
 Und wie können wir die Funktion 'and' definieren?
 
 0:03:30.480,0:03:36.960
 Nun, anstatt eine Rekursion zu schreiben, würde man
-einfach sagen: Nun, es ist eine Replikation von 'foldr'
+einfach sagen: Nun, es ist eine Replikation von 'foldr',
 
 0:03:36.960,0:03:40.240
-womit als binärem Operator?
-Nun, die binäre Konjunktion.
+womit als binärem Operator? Nun, die binäre Konjunktion.
 
 0:03:40.960,0:03:47.120
 Und was sollte der Basisfall der Konjunktion sein?
-Nun, das neutrale Element für Konjunktion ist Wahr.
+Nun, das neutrale Element für die Konjunktion ist wahr.
 
 0:03:48.240,0:03:52.800
 Wenn man also eine Liste von Bools erhält, bedeutet
-wir diesen Aufruf auswerten, bedeutet das eigentlich,
+dieser Aufruf auszuwerten, bedeutet das eigentlich,
 
 0:03:53.440,0:03:58.800
 dass wir einfach die Konjunktion
 zwischen allen Elementen anwenden.
 
 0:03:58.800,0:04:03.920
-Und als Basisfall an dieser Stelle, würden wir
+Und als Basisfall an dieser Stelle würden wir
 'True' verwenden, was sicherstellt, dass wenn wir die
 
 0:04:03.920,0:04:09.440
 Konjunktion über die leere Liste bilden, dann ist das
-Wahr, was mathematisch und logisch Sinn ergibt.
+wahr, was mathematisch und logisch Sinn ergibt.
 
 0:04:11.200,0:04:15.600
 Okay, das sind also einige Beispiele.
@@ -179,7 +178,7 @@ sehr viele weitere Beispiele nennen.
 
 0:04:18.480,0:04:22.720
 Und Sie werden feststellen, dass, wenn Sie
-Code in Haskell anschaut, der oft
+Code in Haskell anschauen, der oft
 
 0:04:23.920,0:04:27.840
 mit Listen arbeitet, die vordefinierten Funktionen
@@ -205,11 +204,11 @@ dann wird natürlich nur bis zu
 diesem Punkt gerechnet.
 
 0:04:52.000,0:04:56.800
-Denn dieses 'f' könnte z.B.
+Denn dieses 'f' könnte z. B.
 seine Ausgabe nur aus der 2 berechnen, ohne die
 
 0:04:58.320,0:04:59.120
-rechten Seite.
+rechte Seite.
 
 0:04:59.120,0:05:01.840
 Dann würden natürlich alle diese Aufrufe
@@ -229,18 +228,20 @@ auswerten, weil man alle Elemente braucht.
 Okay.
 
 0:05:12.960,0:05:18.960
-Und was auch eine schöne Übung ist
-es, darüber nachzudenken, wie man
+Und was auch eine schöne Übung ist,
+darüber nachzudenken, wie man
 
 0:05:18.960,0:05:21.920
 eine Funktion in diese 'foldr'-Form übersetzen kann.
+
+
 
 0:05:22.720,0:05:26.480
 Und ich werde das hier für eine der
 vordefinierten Funktionen.
 
 0:05:26.480,0:05:29.600
-Also, die 'filter' Funktion, die wir
+Also, die 'filter'-Funktion, die wir
 bereits besprochen haben, als wir über
 
 0:05:30.240,0:05:38.240
@@ -254,7 +255,7 @@ und eine Liste, und gibt eine Liste zurück.
 Und die Idee war, alles zu entfernen,
 
 0:05:47.920,0:05:51.680
-alle Elemente aus der Liste zu entfernen
+alle Elemente aus der Liste zu entfernen,
 die dieses Prädikat nicht erfüllen.
 
 0:05:51.680,0:05:56.160
@@ -265,7 +266,7 @@ rekursive Definition für die Funktion 'filter' schreiben.
 Aber eigentlich sollten Sie das nicht tun müssen.
 
 0:05:58.320,0:06:02.800
-Denn es gibt immer eine gute Vermutung
+Denn es gibt immer eine gute Vermutung,
 dass Sie sie mit 'foldr' definieren können.
 
 0:06:03.440,0:06:06.080
@@ -304,7 +305,7 @@ Nun, eine Möglichkeit ist, zu schauen, was
 würde eine rekursive Definition von
 
 0:06:35.040,0:06:37.840
-'filter' für den Fall einer nicht leeren Liste aussehen würde?
+'filter' für den Fall einer nicht leeren Liste aussehen?
 
 0:06:37.840,0:06:42.080
 Also, was würden Sie schreiben, wenn Sie
@@ -336,11 +337,10 @@ Okay, das ist eine sehr direkte rekursive Definition.
 
 0:07:19.520,0:07:25.680
 Und als solche sollte sie wirklich äquivalent sein zu
-einer 'foldr'-Definition entsprechen, weil 'foldr' im Grunde
+einer 'foldr'-Definition, weil 'foldr' im Grunde
 
 0:07:26.240,0:07:33.680
-kapselt und erfasst rekursive Definitionen
-auf Listen kapselt und erfasst, was dieses 'filter' offensichtlich ist.
+rekursive Definitionen auf Listen kapselt und erfasst, was dieses 'filter' offensichtlich ist.
 
 0:07:36.000,0:07:39.840
 Okay, was soll also dieses Fragezeichen hier sein?
@@ -354,7 +354,7 @@ Nun, wie so oft können wir die
 Lambda-Abstraktion dafür verwenden.
 
 0:07:47.280,0:07:49.600
-Nun, was ist die Funktion
+Nun, was ist die Funktion,
 die Sie dort einfügen wollen?
 
 0:07:49.600,0:07:55.440
@@ -424,12 +424,13 @@ hier nun diese rekursiven Aufrufe abstrahiert.
 
 0:09:13.920,0:09:22.080
 Und wenn wir das wirklich an diese Stelle setzen,
-dann haben wir die Funktion 'filter' definiert
+dann haben wir die Funktion 'filter' definiert,
 
 0:09:22.080,0:09:26.800
-Funktion ohne explizite Rekursion definiert
+Funktion ohne explizite Rekursion definiert,
 indem wir einfach die Funktion 'foldr' verwenden.
 
 0:09:26.800,0:09:35.840
 Und ähnliche Strategien gelten für
 viele rekursive Funktionen auf Listen.
+
