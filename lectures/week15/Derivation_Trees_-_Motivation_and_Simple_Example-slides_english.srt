@@ -230,7 +230,7 @@ learn a bit about how to manipulate
 
 00:04:39,440 --> 00:04:44,720
 a Prolog program to make it more useful,
-for example, for backwards execution.
+for example, for backward execution.
 
 00:04:44,720 --> 00:04:48,400
 So, this program will serve both these purposes.
@@ -257,13 +257,13 @@ to this by knowing what addition actually means.
 
 00:05:22,080 --> 00:05:25,200
 We know that there must be several
-solutions here because for example,
+solutions here because, for example,
 
 00:05:25,200 --> 00:05:27,600
 0 + 2 is 2, but also 1 + 1 is 2.
 
 00:05:28,240 --> 00:05:32,640
-So, there must be some search involved and
+So, there must be some search involved, and
 indeed, it’s an exhaustive search process.
 
 00:05:32,640 --> 00:05:36,240
@@ -369,22 +369,22 @@ M and X both by s(s(0)), right?
 So, this is forced.
 
 00:07:20,640 --> 00:07:25,040
-So, N must be 0 otherwise the first position
+So, N must be 0; otherwise the first position
 wouldn't match. And the second position:
 
 00:07:25,040 --> 00:07:27,840
 M and X are both variables, so there
-is a lot of freedom what to do,
+is a lot of freedom about what to do,
 
 00:07:27,840 --> 00:07:30,640
 but actually the last position
-we see that X must be s (s(0)).
+we see that X must be s(s(0)).
 
 00:07:31,920 --> 00:07:35,920
 So, that really forces the value for X.
 
 00:07:35,920 --> 00:07:38,240
-And then since X is then s (s(0)).
+And then since X is then s(s(0)).
 
 00:07:38,800 --> 00:07:42,000
 So, which will also affect the
@@ -425,7 +425,7 @@ and Q of this literal and the query.
 
 00:08:22,320 --> 00:08:25,840
 Of course, in this case, P and Q
-are both empty so nothing is left
+are both empty, so nothing is left
 
 00:08:26,400 --> 00:08:30,000
 from them as they don't contribute
@@ -447,7 +447,7 @@ Okay, now this program clause
 in this specific case is a fact.
 
 00:08:45,120 --> 00:08:47,840
-So, there is no body, the right side is empty.
+So, there is no body; the right side is empty.
 
 00:08:47,840 --> 00:08:53,440
 So, that was the case where we replaced the
@@ -468,7 +468,7 @@ The only literal still appearing in the query.
 
 00:09:02,880 --> 00:09:06,738
 Well, if this disappears because
-we replace by the empty right
+we replace it by the empty right
 
 00:09:06,738 --> 00:09:10,400
 hand side of this first program
@@ -486,7 +486,7 @@ visualizations of Prolog derivation
 trees is such an empty box.
 
 00:09:21,120 --> 00:09:25,280
-So, this box means well, no query literals left.
+So, this box means, well, no query literals left.
 
 00:09:26,240 --> 00:09:29,520
 Okay, which is exactly the case
@@ -522,7 +522,7 @@ we want to see the results for N and M.
 Now, where could they come from?
 
 00:09:57,600 --> 00:10:01,760
-Well, of course they have to come
+Well, of course, they have to come
 from the unification, right?
 
 00:10:01,760 --> 00:10:06,240
@@ -590,11 +590,11 @@ head of the second rule, the second clause.
 And Prolog will actually do both.
 
 00:11:05,840 --> 00:11:10,640
-Yes, Prolog doesn't have like Haskell,
+Yes, Prolog doesn't have, like Haskell,
 the strategy of applying only one
 
 00:11:10,640 --> 00:11:13,840
-equation, per function definition.
+equation per function definition.
 
 00:11:14,400 --> 00:11:16,080
 It always tries all of them.
@@ -637,7 +637,7 @@ and this position could be unified.
 
 00:11:59,160 --> 00:12:06,880
 Well here, we see N should be s(X) and
-we could either have M is Y or Y is M.
+we could either have M = Y or Y = M.
 
 00:12:07,920 --> 00:12:09,760
 Okay, that could be the unifier.
@@ -651,7 +651,7 @@ because we have a choice
 here to use the second rule.
 
 00:12:18,320 --> 00:12:24,960
-Okay, actually I will from now on,
+Okay, actually, I will from now on,
 usually rename the variables in the query.
 
 00:12:25,520 --> 00:12:30,080
@@ -671,10 +671,10 @@ So, what I will be doing from now
 on is to replace the variables here.
 
 00:12:44,640 --> 00:12:48,560
-And I will do this by just adding subscript.
+And I will do this by just adding a subscript.
 
 00:12:48,560 --> 00:12:50,640
-It would be subscript, if I
+It would be subscript if I
 would write it mathematically.
 
 00:12:50,640 --> 00:12:53,040
@@ -686,7 +686,7 @@ So, instead of actually unifying this
 literal with the rule as written here,
 
 00:13:00,080 --> 00:13:04,160
-I will in my head, and you will see now,
+I will, in my head, and you will see now,
 in the unification variable names accordingly,
 
 00:13:04,160 --> 00:13:10,320
@@ -710,7 +710,7 @@ because then we can match these two positions.
 
 00:13:34,720 --> 00:13:37,760
 Okay, so this is the unifier to
-use for resolution of this literal
+use for the resolution of this literal
 
 00:13:37,760 --> 00:13:42,080
 and this second clause. What's the
@@ -961,7 +961,7 @@ And for the Y3 here, and the Y1 here, we could
 have a choice, actually, whether we want to
 
 00:18:13,920 --> 00:18:21,120
-replace Y1 by Y3 or Y3 by Y1, in both cases
+replace Y1 by Y3 or Y3 by Y1; in both cases
 you would have found a most general unifier.
 
 00:18:22,240 --> 00:18:23,680
@@ -982,7 +982,7 @@ We can replace this literal by the
 right-hand side of the clause we have used.
 
 00:18:41,520 --> 00:18:47,440
-So, we will replace this by add(X3,Y3,Z3),
+So, we will replace this by add(X3, Y3, Z3),
 but actually of course we will
 
 00:18:48,000 --> 00:18:50,720
@@ -1008,7 +1008,7 @@ Well, it's not difficult to see that
 this is unifiable if you replace all
 
 00:19:24,880 --> 00:19:30,720
-variables or the X3, Y3 and the
+variables or the X3, Y3, and the
 X4 from the clause, all by 0.
 
 00:19:30,720 --> 00:19:35,200
@@ -1019,7 +1019,7 @@ of this 0 here and this 0 here.
 Okay?
 
 00:19:37,360 --> 00:19:44,960
-So, the unifier to use is this one,
+So, the unifier to use is this one;
 then we can apply the first clause.
 
 00:19:45,520 --> 00:19:48,240
@@ -1046,13 +1046,13 @@ N becomes s(X1), X1 becomes s(X3).
 So, we have s(s(X3)) and X3 becomes 0.
 
 00:20:04,000 --> 00:20:06,480
-So, N altogether becomes s(s(0).
+So, N altogether becomes s(s(0)).
 
 00:20:07,840 --> 00:20:08,960
 What about M?
 
 00:20:08,960 --> 00:20:15,680
-M becomes Y1, Y1 becomes Y3 and Y3 becomes 0.
+M becomes Y1, Y1 becomes Y3, and Y3 becomes 0.
 
 00:20:15,680 --> 00:20:19,840
 So, M altogether, if you trace
@@ -1063,7 +1063,7 @@ So, we have the answer, N is s(s(0)) and M is 0.
 
 00:20:25,600 --> 00:20:31,120
 Which is the third useful answer for
-asking addition of N + M should be 2.
+asking whether addition of N + M should be 2.
 
 00:20:32,320 --> 00:20:35,040
 Okay, now then I could again
@@ -1075,7 +1075,7 @@ literal that we had here could also have been
 
 00:20:39,440 --> 00:20:45,280
 unified with the second program clause, with the
-head of this clause and well, the answer is no.
+head of this clause, and well, the answer is no.
 
 00:20:45,920 --> 00:20:51,040
 We see this in the last position, so the
@@ -1104,7 +1104,7 @@ And that's why Prolog would give these three
 results in this order from left to right.
 
 00:21:15,920 --> 00:21:19,520
-And then say false, there are
+And then say false; there are
 no further solutions, I am done.
 
 00:21:20,640 --> 00:21:20,960
@@ -1148,11 +1148,11 @@ this tree, we always had to remember
 
 00:22:04,400 --> 00:22:07,520
 where we have already worked, where
-we are done and where we are not.
+we are done, and where we are not.
 
 00:22:07,520 --> 00:22:12,080
 And this proceeded basically in
-a left-most depth first fashion.
+a left-most depth-first fashion.
 
 00:22:12,080 --> 00:22:15,280
 Okay, as long as there are still nodes to be
@@ -1169,7 +1169,7 @@ And we always select the leftmost one.
 Okay?
 
 00:22:27,440 --> 00:22:30,560
-Of course, in the beginning there is
+Of course, in the beginning, there is
 just the one we have at the root.
 
 00:22:31,440 --> 00:22:38,480
@@ -1182,7 +1182,7 @@ all facts or rules, all program clauses
 
 00:22:44,320 --> 00:22:49,520
 whose head is unifiable with some literal, but
-actually the left most literal in that node.
+actually the leftmost literal in that node.
 
 00:22:49,520 --> 00:22:53,440
 And as you just saw, there was
@@ -1214,12 +1214,12 @@ was almost always two successors,
 two such clauses that could be used.
 
 00:23:25,360 --> 00:23:31,920
-Well, except in the right most node at the very
+Well, except in the rightmost node at the very
 end, there was exactly one clause that could be
 
 00:23:31,920 --> 00:23:35,840
 used for unification because the second one
-was ruled out, because there was a mismatch.
+was ruled out because there was a mismatch.
 
 00:23:37,520 --> 00:23:43,600
 Okay, so when we know what the
@@ -1231,7 +1231,7 @@ node by doing a resolution.
 
 00:23:48,960 --> 00:23:54,480
 Yes, after we have found out the unification
-between the left most literal in the current node
+between the leftmost literal in the current node
 
 00:23:54,480 --> 00:24:00,480
 and the problem clause, we can apply
@@ -1309,7 +1309,7 @@ cases how a node could be finished.
 Well, actually in the previous
 
 00:25:17,920 --> 00:25:23,280
-example, there was only one such case the other
+example, there was only one such case. The other
 one will appear in another example later on.
 
 00:25:23,280 --> 00:25:28,480
@@ -1341,7 +1341,7 @@ with the leftmost literal from the query.
 
 00:25:53,760 --> 00:25:58,560
 Then we also have finished that node, but it's
-not a success node, It's a failure node because
+not a success node, it's a failure node because
 
 00:25:58,560 --> 00:26:04,320
 there's some stuff still left to prove, but we
@@ -1391,7 +1391,7 @@ that occurred in the original query, right?
 So, in the tree, we had many
 
 00:26:58,800 --> 00:27:04,960
-variables, N, M, X, Y, X1, Y1, et cetera, but
+variables, N, M, X, Y, X1, Y1, etc., but
 we didn't give an answer for all of them.
 
 00:27:04,960 --> 00:27:09,840

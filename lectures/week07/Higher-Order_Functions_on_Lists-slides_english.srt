@@ -24,18 +24,18 @@ show you now (and you're going to use in the
 
 00:00:33,520 --> 00:00:37,809
 next exercises, probably) are available for
-other data types as well.
+other datatypes as well.
 
 00:00:37,809 --> 00:00:42,149
 So, lists are just a stand-in, here, for generally
-structured data types.
+structured datatypes.
 
 00:00:42,149 --> 00:00:46,690
 And this approach of using higher-order functions,
 defining higher-order functions and working
 
 00:00:46,690 --> 00:00:52,460
-with them, is valid and useful for other data
+with them is valid and useful for other data
 types as well: for trees or other things that
 
 00:00:52,460 --> 00:00:57,339
@@ -85,7 +85,7 @@ First, let's look at the type.
 It is a polymorphic type.
 
 00:01:43,380 --> 00:01:45,700
-And in that, we can, of course, see the higher-orderness
+And in that, we can, of course, see the higher-order-ness
 here.
 
 00:01:45,700 --> 00:01:49,660
@@ -129,7 +129,7 @@ Well, not necessarily one of the elements
 from that specific list, but something of
 
 00:02:31,360 --> 00:02:36,230
-the same type of the things that we have in
+the same type as the things that we have in
 the list (and the things that this function
 
 00:02:36,230 --> 00:02:37,500
@@ -196,7 +196,7 @@ Basically, taking a list and computing the
 sum of it means to put the "+" symbol between
 
 00:03:32,500 --> 00:03:34,010
-all neighbouring elements.
+all neighboring elements.
 
 00:03:34,010 --> 00:03:39,970
 So, we want to compute 1 + 2 + 3 + 4, which
@@ -233,7 +233,7 @@ So, computing the sum of a list, however long
 it might be, is simply described by putting
 
 00:04:15,620 --> 00:04:18,310
-a "+" between all neighbouring elements.
+a "+" between all neighboring elements.
 
 00:04:18,310 --> 00:04:24,380
 If you recall our earlier discussion in the
@@ -255,7 +255,7 @@ So, this is the 'sum' function.
 
 00:04:36,229 --> 00:04:39,770
 It takes some list and puts "+" between all
-neighbouring elements.
+neighboring elements.
 
 00:04:39,770 --> 00:04:43,569
 That's what summing the elements of a list
@@ -280,7 +280,7 @@ And then we can use the same polymorphic function,
 just with a different operator here.
 
 00:05:01,069 --> 00:05:09,150
-We have polymorphism, and we have higher-orderness,
+We have polymorphism, and we have higher-order-ness,
 and they combine to very nice uses here.
 
 00:05:09,150 --> 00:05:15,360
@@ -288,7 +288,7 @@ And we will see more functions of that kind,
 and applications of this principle, this combination
 
 00:05:15,360 --> 00:05:16,699
-of polymorphism and higher-orderness.
+of polymorphism and higher-order-ness.
 
 118 # slide
 00:05:16,699 --> 00:05:25,050
@@ -469,7 +469,7 @@ Pictures to Pictures.
 
 00:08:15,639 --> 00:08:20,800
 Namely, it takes a Picture and scales it by
-a factor 5 in both x and y directions.
+a factor of 5 in both x and y directions.
 
 00:08:20,800 --> 00:08:22,389
 So, this is a partial application.
@@ -648,7 +648,7 @@ So, we don't keep 1, 3, 5, etc.
 The other ones are kept.
 
 00:11:04,070 --> 00:11:07,580
-And we don't output True for them, because
+And we don't output True for them because
 we don't output Bool.
 
 00:11:07,580 --> 00:11:09,270
@@ -659,10 +659,10 @@ So, while "map even [1..10]" gives [False,
 True, False, True, ...], "filter even [1..10]"
 
 00:11:16,260 --> 00:11:17,260
-gives [2,4,6,8,10].
+gives [2, 4, 6, 8, 10].
 
 00:11:17,260 --> 00:11:21,150
-We get the list of numbers which satisfy the
+We get the list of numbers that satisfy the
 predicate.
 
 00:11:21,150 --> 00:11:24,560
@@ -679,7 +679,7 @@ we used in the slides (and you also programmed
 a version of it in the exercises).
 
 00:11:34,980 --> 00:11:38,240
-And let's say we have a "completeDictionary",
+And let's say we have a "completeDictionary"
 as a list of Strings.
 
 00:11:38,240 --> 00:11:44,270
@@ -688,7 +688,7 @@ our dictionary are palindromes.
 
 00:11:44,270 --> 00:11:49,680
 We simply have to filter that complete dictionary
-by this isPalindrome-predicate.
+by this isPalindrome predicate.
 
 00:11:49,680 --> 00:11:57,700
 So, this would be a list of Strings, and 'isPalindrome'
@@ -699,14 +699,14 @@ outcome would be again a list of Strings,
 namely, only those words from the dictionary
 
 00:12:01,560 --> 00:12:02,730
-which are palindromes.
+that are palindromes.
 
 00:12:02,730 --> 00:12:10,970
-Or let's say we have something like "bonusPercentageList",
+Or let's say we have something like "bonusPercentageList"
 as Double values, and we want to keep only
 
 00:12:10,970 --> 00:12:14,750
-those which are greater than 50%.
+those that are greater than 50%.
 
 00:12:14,750 --> 00:12:20,910
 Then we could pass this section, this anonymous
@@ -733,7 +733,7 @@ And again, when I say "It selects list elements",
 that doesn't mean it changes this list.
 
 00:12:49,360 --> 00:12:50,760
-This is a list which comes in.
+This is a list that comes in.
 
 00:12:50,760 --> 00:12:51,760
 It is the input.
@@ -749,7 +749,7 @@ will not be selected.
 So, we don't delete something from the list.
 
 00:13:00,000 --> 00:13:07,370
-We give back a new list which has fewer elements.
+We give back a new list that has fewer elements.
 
 120 # slide
 00:13:07,370 --> 00:13:11,070
@@ -769,7 +769,7 @@ from a list according to some predicate/property;
 that was exactly what we have been using list
 
 00:13:29,040 --> 00:13:30,040
-comprehension for, so far.
+comprehension for so far.
 
 00:13:30,040 --> 00:13:36,460
 Indeed, you could think of what you see on
@@ -791,7 +791,7 @@ list.
 
 00:13:51,660 --> 00:13:55,990
 This is not actually how 'map' is defined
-in the standard library, because there are
+in the standard library because there are
 
 00:13:55,990 --> 00:14:00,690
 different and more general ways to do this
@@ -809,7 +809,7 @@ So, whenever, so far, we wrote something like
 this, we could also have used the 'map' function.
 
 00:14:10,290 --> 00:14:14,459
-You couldn't have used that sometimes, because
+You couldn't have used that sometimes because
 that was excluded from the exercise tasks.
 
 00:14:14,459 --> 00:14:18,370
@@ -826,14 +826,14 @@ with list comprehensions with these guard
 
 00:14:25,670 --> 00:14:32,490
 expressions saying: I take each element from
-a list which satisfies a predicate (something
+a list that satisfies a predicate (something
 
 00:14:32,490 --> 00:14:38,141
 like "even a", for example), and then the
 'a' is kept.
 
 00:14:38,141 --> 00:14:41,350
-This is exactly as was described for the 'filter' function.
+This is exactly as described for the 'filter' function.
 
 00:14:41,350 --> 00:14:48,550
 So, 'map' and 'filter' are somehow replacements
@@ -844,7 +844,7 @@ at least.
 
 00:14:49,550 --> 00:14:54,090
 And that is a way to maybe remember, and better
-understand, these functions from your perspective
+understand these functions from your perspective
 
 00:14:54,090 --> 00:14:57,710
 now, because you already know list comprehensions.
@@ -868,7 +868,7 @@ in addition (which was introduced earlier).
 It is not a higher-order function.
 
 00:15:18,190 --> 00:15:21,560
-It is a polymorphic function which basically
+It is a polymorphic function that basically
 flattens list levels.
 
 00:15:21,560 --> 00:15:25,680
@@ -918,7 +918,7 @@ programming in the sense discussed in the
 last week?
 
 00:16:18,850 --> 00:16:23,590
-So far, my examples on wholemeal programming
+So far, my examples of wholemeal programming
 were about using list comprehensions instead
 
 00:16:23,590 --> 00:16:27,140
@@ -935,7 +935,7 @@ wholemeal programming?
 Yes, absolutely!
 
 00:16:35,190 --> 00:16:38,090
-In some sense even more so.
+In some sense, even more so.
 
 00:16:38,090 --> 00:16:41,760
 Since these higher-order functions provide
@@ -965,7 +965,7 @@ because they are about lists.
 
 00:17:04,710 --> 00:17:08,399
 But these 'map' and 'filter' and similar functions,
-they are available for other data types as
+they are available for other datatypes as
 
 00:17:08,399 --> 00:17:09,399
 well.
@@ -1053,7 +1053,7 @@ ways), and with 'map' and 'filter'.
 Let's look at this.
 
 00:18:43,970 --> 00:18:49,080
-Here are two lists comprehension expressions
+Here are two list comprehension expressions
 for the two cases.
 
 00:18:49,080 --> 00:18:52,799
@@ -1139,7 +1139,7 @@ Well, the first version is: I want to look
 at all the values from the original list which
 
 00:20:22,070 --> 00:20:24,179
-are divisible by 4, then I want to square
+are divisible by 4; then I want to square
 them.
 
 00:20:24,179 --> 00:20:25,750
@@ -1165,7 +1165,7 @@ That's what will happen here.
 
 00:20:44,169 --> 00:20:48,769
 And afterwards, I will square the elements
-in the list which I have at this point, after
+in the list which I have at this point after
 
 00:20:48,769 --> 00:20:49,769
 filtering.
@@ -1327,11 +1327,11 @@ Which wouldn't be clear how to express if
 we want to generalize from these list comprehensions
 
 00:24:03,309 --> 00:24:04,529
-to some other data type.
+to some other datatype.
 
 00:24:04,529 --> 00:24:06,980
 Because list comprehension syntax does not
-exist for other data types.
+exist for other datatypes.
 
 00:24:06,980 --> 00:24:10,320
 But 'map' and polymorphic functions do.

@@ -1,6 +1,6 @@
 0:00:01.600,0:00:06.560
 So, let us look at lists in
-this algebraic data type view.
+this algebraic datatype view.
 
 0:00:07.440,0:00:16.880
 So, for example, a list like '[1, 2, 3]',
@@ -22,7 +22,7 @@ And of course, we can also depict
 this in some kind of tree form.
 
 0:00:43.600,0:00:46.240
-With such a right slanted tree.
+With such a right-slanted tree.
 
 0:00:48.560,0:00:51.200
 And this is all equivalent.
@@ -34,7 +34,7 @@ Okay.
 And, of course, you can always write it like this.
 
 0:00:53.840,0:00:57.920
-But if you want to do pattern matching,
+But if you want to do pattern-matching,
 then we must take this perspective,
 
 0:00:57.920,0:01:01.600
@@ -43,7 +43,7 @@ if you want to have patterns like
 
 0:01:03.040,0:01:07.520
 checking for a non-empty list
-with arbitrary long rest list.
+with an arbitrary long rest list.
 
 0:01:07.520,0:01:09.840
 Okay, so this was the outset.
@@ -57,7 +57,7 @@ arguments 'f' and 'c', that were these two arguments.
 
 0:01:19.840,0:01:24.800
 And let's say we apply this actually
-to such a tree element list.
+to such a three-element list.
 
 0:01:24.800,0:01:25.840
 What will happen?
@@ -98,7 +98,7 @@ For example, if you want to 'sum' a list,
 
 0:02:24.800,0:02:32.400
 then that's a very simple call of the 'foldr'
-function, whereas the operator 'f', we use addition
+function, whereas the operator 'f' we use addition
 
 0:02:32.400,0:02:38.160
 as the base case, constant we use
@@ -168,7 +168,7 @@ would use True, which ensures that if we build
 
 0:04:03.920,0:04:09.440
 conjunction over the empty list, then that is
-True, as makes mathematical and logical sense.
+True, as it makes mathematical and logical sense.
 
 0:04:11.200,0:04:15.600
 Okay, so these are some examples.
@@ -229,7 +229,7 @@ list because you need all elements.
 Okay.
 
 0:05:12.960,0:05:18.960
-And then what's also nice exercise
+And then what's also a nice exercise
 is to think about how you can
 
 0:05:18.960,0:05:21.920
@@ -301,10 +301,10 @@ Okay, how can we find out what to put there?
 
 0:06:30.480,0:06:35.040
 Well, one way is to look at what
-would a recursive definition of
+a recursive definition of
 
 0:06:35.040,0:06:37.840
-'filter' look like for the case of a non-empty list?
+'filter' would look like for the case of a non-empty list?
 
 0:06:37.840,0:06:42.080
 So, what would you write if you
@@ -325,7 +325,7 @@ If 'p' of 'x' is True,
 
 0:06:57.520,0:07:05.600
 then we should keep the 'x', and have a recursive
-call of 'filter' with 'p' on the rest list.
+call of 'filter' with 'p' on the rest of the list.
 
 0:07:06.720,0:07:15.840
 And otherwise, we would not keep the
@@ -358,7 +358,7 @@ Well, what's the function
 that you want to put there?
 
 0:07:49.600,0:07:55.440
-It's a function that given
+It's a function that, given
 some current 'x' and something.
 
 0:07:57.360,0:08:00.800
@@ -373,14 +373,14 @@ We call
 
 0:08:04.960,0:08:11.840
 that the second argument in this operator is
-always what the 'foldr' computes on the rest list.
+always what the 'foldr' computes on the rest of the list.
 
 0:08:12.560,0:08:15.840
 So, let's call this 'ys'.
 
 0:08:16.720,0:08:21.920
-Because it's not the 'xs', it's some other
-list, namely the result of recursive call.
+Because it's not the 'xs'; it's some other
+list, namely the result of the recursive call.
 
 0:08:22.480,0:08:24.160
 And what should we return?
@@ -400,7 +400,7 @@ as the second argument of our operation
 the result of the recursive call.
 
 0:08:38.800,0:08:43.360
-So, basically, what we do we take
+So, basically, what we do is take
 what we see above but abstract
 
 0:08:44.000,0:08:47.840

@@ -6,7 +6,7 @@ I'm going to show
 you an example of the function "foldr".
 
 0:00:07.520,0:00:09.600
-As you can see we have a function f here.
+As you can see, we have a function f here.
 
 0:00:10.320,0:00:13.440
 And we're defining something called a.
@@ -27,7 +27,7 @@ So, what you're doing here is:
 f of two things... two parameters.
 
 0:00:35.920,0:00:37.760
-This is the x and this is the y.
+This is the x, and this is the y.
 
 0:00:39.280,0:00:44.080
 And the y itself is f of 2 and this.
@@ -54,7 +54,7 @@ function foldr, it's nice to do some evaluation
 
 0:01:10.160,0:01:16.320
 to practice using it, by doing some
-examples like this, and trying to calculate…
+examples like this and trying to calculate…
 
 0:01:16.320,0:01:18.640
 trying to guess what the result would be.
@@ -81,7 +81,7 @@ This is the original function.
 We need to write it with foldr.
 
 0:01:40.800,0:01:50.000
-Let's say for example we have this list and we want to evaluate “original” of this list.
+Let's say, for example, we have this list and we want to evaluate “original” of this list.
 
 0:01:50.000,0:01:55.200
 So, we want to evaluate the application of this function on this list.
@@ -93,8 +93,8 @@ The first number in this list is 11.
 And it fulfills this condition.
 
 0:02:04.400,0:02:09.680
-So, we get 13 + the “original”
-of the “tail” of the list.
+So, we get 13 + the "original"
+of the "tail" of the list.
 
 0:02:11.280,0:02:12.480
 Then we do the same.
@@ -103,8 +103,8 @@ Then we do the same.
 We have 22. And 22 also fulfills the condition.
 
 0:02:19.840,0:02:24.880
-So, we get another 13 + “original”
-of the “tail” of the list.
+So, we get another 13 + "original"
+of the "tail" of the list.
 
 0:02:26.320,0:02:30.240
 Now we have 1, so it doesn't
@@ -112,25 +112,25 @@ fulfill this condition.
 
 0:02:30.800,0:02:36.080
 So, we get x multiplied by
-“original” of the “tail” of the list.
+"original" of the "tail" of the list.
 
 0:02:37.680,0:02:43.440
 And our x, in this case, is 1. So, we get
-1 multiplied by “original” of this list.
+1 multiplied by "original" of this list.
 
 0:02:45.280,0:02:50.080
 We continue. We do the same. So, now we have 2.
 
 0:02:50.080,0:02:56.560
 It stays as it is, and we multiply by
-“original” of the list which contains only 33.
+"original" of the list which contains only 33.
 
 0:02:57.200,0:03:04.000
 But this time, 33 fulfills the condition, so we get
-13 + “original” of the “tail” of the list,
+13 + "original" of the "tail" of the list,
 
 0:03:04.000,0:03:10.480
-which is the empty list. And now we are at this case: the “origin” of the empty list is 7.
+which is the empty list. And now we are at this case: the "origin" of the empty list is 7.
 
 0:03:12.000,0:03:20.800
 Now we have just numbers. So, 13 + 7
@@ -141,12 +141,12 @@ until we reach the final result which
 is 66. Let's test this. Yes, it is 66.
 
 0:03:37.280,0:03:45.840
-Okay now let's make a function
+Okay, now let's make a function
 f. And it takes x and y.
 
 0:03:46.560,0:03:54.880
 x is going to be this x and y is going to be
-“original” applied to the “tail” of the list.
+"original" applied to the "tail" of the list.
 
 0:03:56.960,0:04:04.480
 So, we say: if x fulfills this
@@ -154,32 +154,32 @@ condition, then we just do 13,
 
 0:04:04.480,0:04:12.000
 and we add it to, as you can see, y, which
-is “original” of the “tail” of the list.
+is "original" of the "tail" of the list.
 
 0:04:12.000,0:04:18.000
-So, we have 13 + “original”
-of the “tail” of the list.
+So, we have 13 + "original"
+of the "tail" of the list.
 
 0:04:19.200,0:04:23.440
 If it doesn't fulfill the
 condition, then we have x as it is,
 
 0:04:24.320,0:04:26.560
-multiplied by “original”
-of the “tail” of the list,
+multiplied by "original"
+of the "tail" of the list,
 
 0:04:26.560,0:04:28.400
 which is this case here.
 
 0:04:29.600,0:04:34.800
-1 is x, and “original” of
-the “tail” of the list is y.
+1 is x, and "original" of
+the "tail" of the list is y.
 
 0:04:36.480,0:04:39.200
-Now let's write the function “alternative”.
+Now let's write the function "alternative".
 
 0:04:39.200,0:04:43.520
-So, “alternative” takes a list of
+So, "alternative" takes a list of
 integers and gives a single integer.
 
 0:04:46.640,0:04:50.560
@@ -190,7 +190,7 @@ and we give it a starting value which is 7.
 
 0:05:02.320,0:05:07.600
 And then we write the list. But as you
-can see, we have “list” here and here,
+can see, we have "list" here and here,
 
 0:05:07.600,0:05:10.720
 and it is the last argument on the right side.
@@ -212,20 +212,20 @@ And that's it. Now let me test the solution.
 Main. And as you can see, it is working.
 
 0:05:57.280,0:06:02.000
-Now just to make sure, I'm going to do evaluation.
+Now, just to make sure, I'm going to do evaluation.
 
 0:06:03.120,0:06:07.840
 And I copy the definition of the
-function “foldr” from the lecture slides.
+function "foldr" from the lecture slides.
 
 0:06:10.400,0:06:13.440
 I'm going to use the same list here.
 
 0:06:19.200,0:06:22.160
-But this time we're doing it with “alternative”.
+But this time, we're doing it with “alternative”.
 
 0:06:22.160,0:06:25.840
-So, we say: “alternative” of this list.
+So, we say: "alternative" of this list.
 
 0:06:29.440,0:06:32.320
 And we're going to follow
@@ -246,11 +246,11 @@ And then, in brackets, we have foldr
 f and the initial value which is c,
 
 0:07:00.560,0:07:08.960
-which is 7, and the “tail”
+which is 7, and the "tail"
 of the list [22, 1, 2, 33].
 
 0:07:14.480,0:07:18.400
-What is foldr f 7 and tail of the list?
+What is foldr f 7 and the tail of the list?
 
 0:07:19.360,0:07:23.440
 Again, the list is not
@@ -261,7 +261,7 @@ and we get f and the first element, which is 22.
 
 0:07:30.160,0:07:44.720
 And in brackets, we have foldr f
-7 the tail of the list [1,2,33].
+7 the tail of the list [1, 2, 33].
 
 0:07:47.120,0:07:59.840
 Again f 11... f 22 foldr. No... so, foldr of
@@ -302,13 +302,13 @@ And c, in our case, is 7.
 So, here we have 7.
 
 0:09:55.280,0:10:01.520
-Now what is f of 33 and 7?
+Now, what is f of 33 and 7?
 
 0:10:02.480,0:10:03.840
 So, let's look here.
 
 0:10:04.480,0:10:08.400
-Is 33 mod 11 equal to 0 ?
+Is 33 mod 11 equal to 0?
 
 0:10:08.400,0:10:13.520
 Yes. This means we get 13 + y,
@@ -316,7 +316,7 @@ which is the second argument,
 
 0:10:13.520,0:10:25.840
 which is, in our case, this 7. So, this
-means here we get 13+7, which is 20.
+means here we get 13 + 7, which is 20.
 
 0:10:31.360,0:10:34.800
 So, now what is f of 2 and 20?
@@ -331,7 +331,7 @@ No.
 So, we get x multiplied by y, which means 40.
 
 0:10:49.920,0:10:52.640
-Now again, what is f of 1 and 40?
+Now, again, what is f of 1 and 40?
 
 0:10:53.360,0:10:56.400
 1 mod 11 is not equal to 0.
@@ -349,13 +349,13 @@ f of 22 and 40 is 13 + 40.
 So, it is 53.
 
 0:11:26.880,0:11:37.280
-Now what is f of 11 and 53 ? So, 11 mod 11 is 0.
+Now, what is f of 11 and 53? So, 11 mod 11 is 0.
 
 0:11:37.280,0:11:42.800
 This means we get 13 + 53.
 
 0:11:48.160,0:11:53.200
-And now we have 66 which is the
+And now we have 66, which is the
 same result that we got here.
 
 0:11:54.800,0:11:55.840

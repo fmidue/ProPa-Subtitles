@@ -1,5 +1,5 @@
 0:00:01.760,0:00:05.120
-This codeword task is about a loading screen.
+This CodeWorld task is about a loading screen.
 
 0:00:07.920,0:00:17.760
 Here we have some definitions given where we
@@ -14,11 +14,11 @@ The 'circles' function is used by the
 
 0:00:33.920,0:00:39.520
 'loading' function and the 'partialCircle' function
-shall be used by these 'circles' function.
+shall be used by this 'circles' function.
 
 0:00:41.920,0:00:49.920
 There is again a preview of how the result
-should look like and we can view it here.
+should look, and we can view it here.
 
 0:00:51.200,0:01:01.280
 It's a loading screen with rotating part circles
@@ -28,7 +28,7 @@ and they have different rotation directions and
 gaps in between them.
 
 0:01:06.640,0:01:12.320
-These gaps are important so
+These gaps are important, so
 we shall create circles where
 
 0:01:12.320,0:01:18.160
@@ -40,23 +40,23 @@ We shall use the 'partialCircle' function
 in order to draw circles.
 
 0:01:40.640,0:01:50.320
-Especially it is given what the
+Especially, it is given what the
 parameters of a partial circle are
 
 0:01:51.200,0:02:02.720
-and here it says that it takes a five tuple of the
+and here it says that it takes a five-tuple of the
 animation and the animation time as parameters.
 
 0:02:03.280,0:02:11.280
-So first of all we have this five tuple and then
+So first of all, we have this five-tuple and then
 we have let's say t again for the animation time.
 
 0:02:12.240,0:02:18.400
-And the five tuple consists of radius, thickness,
+And the five-tuple consists of radius, thickness,
 
 0:02:20.240,0:02:30.240
 gap size, the speed of rotation,
-and the colour of the circle.
+and the color of the circle.
 
 0:02:30.960,0:02:35.240
 Let's name these parameters first. So we have
@@ -74,21 +74,20 @@ Let's name these parameters first. So we have
 - speed -
 
 0:02:46.160,0:02:49.840
-and the colour.
+and the color.
 
 0:03:00.160,0:03:07.680
 Now we shall define such a partial circle.
 
 0:03:09.440,0:03:14.000
-What is a partial circle partial
-circle? A partial circle is an arc.
+What is a partial circle? A partial circle is an arc.
 
 0:03:14.800,0:03:22.320
 And if we look into the
 documentation, we find args here.
 
 0:03:23.440,0:03:28.400
-There are other parts of circle type
+There are other parts of circle types
 or part circle types, like sector
 
 0:03:29.920,0:03:36.480
@@ -100,7 +99,7 @@ But here are thick arcs as well.
 
 0:03:39.680,0:03:48.000
 Thick arcs are arcs and those are the
-parameters which we need to remember.
+parameters that we need to remember.
 
 0:03:48.000,0:03:55.760
 So it's a line width, starting,
@@ -108,35 +107,35 @@ and ending angle, and the radius.
 
 0:03:58.800,0:04:04.800
 When we want to draw a partial
-circle we need these parameters.
+circle, we need these parameters.
 
 0:04:07.680,0:04:13.840
 I have said we take the 'thickArc'
 function because then we can define
 
 0:04:15.920,0:04:24.160
-the variety thickness of the of the arc.
+the variety thickness of the arc.
 
 0:04:24.800,0:04:32.280
 And the first parameter is indeed the
-thickness, then we have some begin, and end,
+thickness, then we have some begin and end,
 
 0:04:32.280,0:04:39.200
 - I just write it down here so that we are
 reminded that we have some begin and end. -
 
 0:04:39.200,0:04:41.840
-and we have a radius.
+And we have a radius.
 
 0:04:43.520,0:04:47.040
 We need to figure out what
 begin is and what end is.
 
 0:04:49.920,0:04:57.440
-Begin and end those are some parts of a circle.
+Begin and end, those are some parts of a circle.
 
 0:05:03.280,0:05:14.400
-In fact we we know that the gap is some space
+In fact, we know that the gap is some space
 between or defines that it's some space between
 
 0:05:17.520,0:05:22.720
@@ -147,18 +146,18 @@ Begin and end are angles! When we think
 about this we can say we want to have the
 
 0:05:34.080,0:05:43.760
-the size of the arc growing with
+size of the arc growing with
 different definitions for gap.
 
 0:05:43.760,0:05:47.280
 So begin and end shall somehow depend on gap.
 
 0:05:50.320,0:05:56.640
-When we look at the gap parameter which is
-probably also the one we - well it's the
+When we look at the gap parameter, which is
+probably also the one we - well, it's the
 
 0:05:56.640,0:06:04.720
-third parameter here. I would assume we just
+third parameter here, I would assume we just
 take the same parameter here within circles
 
 0:06:04.720,0:06:11.760
@@ -182,11 +181,11 @@ tenths of the circle or something
 like this in size of the gap.
 
 0:06:48.400,0:06:55.840
-Or maybe an eighth or something like this and this
+Or maybe an eighth or something like this, and this
 is the biggest gap we have - with four and a half.
 
 0:06:58.320,0:07:06.160
-Well the widest gap we could have
+Well, the widest gap we could have
 would be if we have no circle at all.
 
 0:07:06.960,0:07:16.080
@@ -206,7 +205,7 @@ I say end is the negate of begin so if
 begin is 90 degrees then end is minus 90.
 
 0:07:47.600,0:07:55.760
-And 90 degrees would be the half of
+And 90 degrees would be half of
 pi - so this is 90 degrees in radians,
 
 0:07:55.760,0:08:00.640
@@ -218,7 +217,7 @@ Then we have minus gap and now we have to
 consider again that this four and a half
 
 0:08:08.720,0:08:13.760
-this one shall not be greater than the half of pi.
+this one shall not be greater than half of pi.
 
 0:08:14.640,0:08:28.160
 So I just assume it's a tenth of this size maybe
@@ -236,19 +235,19 @@ The biggest gap is um half of pi which
 is 90 degrees and then we subtract...
 
 0:08:59.200,0:09:04.560
-No again! This was would be a full circle
+No again! This would be a full circle
 and this would mean a gap of zero if we
 
 0:09:04.560,0:09:12.800
 have the full circle and if we subtract for the
-whole gap this basically would end up at zero.
+whole gap, this basically would end up at zero.
 
 0:09:15.760,0:09:27.040
 And now we have this partial circle, but now we
 could not see anything if we run this program.
 
 0:09:27.040,0:09:31.600
-In fact i think it should
+In fact, I think it should
 crash - somehow - and it does,
 
 0:09:32.480,0:09:35.840
@@ -266,21 +265,21 @@ is the list of all the definitions here.
 
 0:09:58.400,0:10:12.640
 We can use this one here - this is the circles -
-well let's call it circs - so this is the circles.
+well, let's call it circs - so this is the circles.
 
 0:10:13.280,0:10:15.920
 And we have a time parameter
 
 0:10:16.640,0:10:25.680
-and then we can say - well we use our
-function 'pictures' which is the defined here.
+and then we can say - well, we use our
+function 'pictures' which is defined here.
 
 0:10:26.320,0:10:30.800
-Just as a reminder we have
+Just as a reminder, we have
 the 'pictures' function defined
 
 0:10:30.800,0:10:36.320
-within code world which takes a list
+within CodeWorld which takes a list
 of pictures and returns a picture.
 
 0:10:36.880,0:10:41.200
@@ -298,7 +297,7 @@ of the circle - its partial circle!
 What do we give to the partial circle?
 
 0:11:11.360,0:11:19.600
-We give a part and the time and the
+We give a part and the time, and the
 part we get from the list of circles.
 
 0:11:20.640,0:11:24.800
@@ -314,15 +313,15 @@ Yes! We see that we have some
 circle parts drawn here which are
 
 0:11:40.080,0:11:45.280
-not coloured yet - we shall colour
+not colored yet - we shall color
 them in order to get this picture.
 
 0:11:47.360,0:11:55.840
-Let's do this by using the 'coloured' function.
+Let's do this by using the 'colored' function.
 
 0:11:57.440,0:12:03.920
-We have the colour defined here, so we
-can use 'coloured' - and the colour and
+We have the color defined here, so we
+can use 'colored' - and the color and
 
 0:12:05.600,0:12:11.520
 because this is a parameter here -
@@ -330,7 +329,7 @@ we get whenever the 'partialCircle'
 
 0:12:11.520,0:12:17.040
 function is called - and this is defined
-here - so we apply the actual colour!
+here - so we apply the actual color!
 
 0:12:22.080,0:12:29.200
 We saw that when we draw this circle it draws
@@ -344,23 +343,23 @@ here, and we see there's something missing already
 but we need the other side as well!
 
 0:12:42.000,0:12:49.120
-And within the previous task I have defined a
+And within the previous task, I have defined a
 'mirrored' function - this would suit well here.
 
 0:12:52.000,0:12:58.960
 This 'mirrored' function was based on
-reflected and we have reflected defined here.
+reflected, and we have reflected defined here.
 
 0:13:01.200,0:13:09.920
 Here we can see - reflected is a picture reflected
 across a line through the origin at this angle.
 
 0:13:12.400,0:13:24.880
-So when we want to use reflected we can
+So when we want to use reflected, we can
 simply apply this here - so reflected.
 
 0:13:27.200,0:13:32.000
-It takes a an angle and the picture
+It takes an angle and the picture
 
 0:13:32.000,0:13:41.200
 which shall be reflected - in this case
@@ -368,7 +367,7 @@ we want to reflect it across the y-axis.
 
 0:13:41.760,0:13:50.480
 That's why we rotate the reflecting axis
-by 90 degrees using pi and the half.
+by 90 degrees using pi and a half.
 
 0:13:55.600,0:14:01.040
 I guess if we would just use reflected
@@ -378,26 +377,26 @@ with zero we would see nothing - I guess.
 Let's try it out first!
 
 0:14:04.080,0:14:10.800
-Reflected with zero - it's nothing changed
+Reflected with zero - nothing changed
 because we are reflecting this part of the
 
 0:14:10.800,0:14:15.520
 circle to that part and that part of the
-circle to the other part so nothing happens
+circle to the other part, so nothing happens.
 
 0:14:15.520,0:14:17.760
 But if we use
 
 0:14:19.600,0:14:27.200
-the half of pi then we reflect across the
+the half of pi, then we reflect across the
 y-axis and then we see it's on the other side.
 
 0:14:28.080,0:14:33.760
-But again I said we want use
+But again I said we want to use
 reflected in order to get
 
 0:14:33.760,0:14:40.800
-the other part as well and this we did
+the other part as well, and this we did
 the last time by defining mirrored.
 
 0:14:42.720,0:14:56.240
@@ -412,14 +411,14 @@ reflected part and the picture itself.
 If we define it like this and use
 
 0:15:08.480,0:15:17.120
-mirrored here instead of reflected then
+mirrored here instead of reflected, then
 we shall get both parts of these circles.
 
 0:15:17.760,0:15:19.440
 Which is in fact happening here.
 
 0:15:23.040,0:15:36.640
-Now we define the type for mirrored as well
+Now we define the type for mirrored as well.
 mirrored is of type double to picture to picture.
 
 0:15:36.640,0:15:44.080
@@ -430,14 +429,14 @@ functions because it's better code style:
 we actually see what the 'mirrored' function does.
 
 0:15:47.280,0:15:52.800
-Well we have these parameters here,
+Well, we have these parameters here,
 but it's better to define the types
 
 0:15:53.680,0:15:54.960
 this function is actually using.
 
 0:15:54.960,0:16:00.240
-And in fact we have the pictures second
+And in fact, we have the pictures second
 parameter and the angle as first.
 
 0:16:02.320,0:16:12.160
@@ -448,7 +447,7 @@ order to get both parts of the circle.
 And now we have to rotate our circle.
 
 0:16:20.880,0:16:28.000
-Important is here - for our circle's important
+Important here - for our circle, important
 is that, when we rotate the circle or part circle
 
 0:16:28.640,0:16:31.040
@@ -458,7 +457,7 @@ we have to rotate the whole thing.
 So we have to rotate the complete part.
 
 0:16:34.080,0:16:38.640
-Well we could actually rotate
+Well, we could actually rotate
 the mirrored part here,
 
 0:16:38.640,0:16:41.680
@@ -474,7 +473,7 @@ the other part circle, and keeps the gaps.
 
 0:17:00.000,0:17:05.040
 And if we just rotate the inner
-part we will get a weird result.
+part, we will get a weird result.
 
 0:17:07.360,0:17:14.240
 We rotate by rotated - by using rotated.
@@ -487,7 +486,7 @@ of course have to multiply with t in
 order to get a result of moving circles.
 
 0:17:32.000,0:17:42.160
-And if we apply this then we get something -
+And if we apply this, then we get something -
 which could actually - which looks actually
 
 0:17:42.160,0:17:47.520
@@ -495,11 +494,11 @@ like the picture we've got
 before or which we shall create.
 
 0:17:47.520,0:17:52.960
-And i just want to show you
+And I just want to show you
 that when we do this here.
 
 0:17:58.880,0:18:05.760
-So when rotated is within the mirrored part
+So when rotated is within the mirrored part,
 then I think we should get something weird.
 
 0:18:07.440,0:18:12.240
@@ -566,11 +565,11 @@ We do not have now to do - but
 we can modify the program here
 
 0:20:03.920,0:20:07.360
-within code world because there
+within CodeWorld because there
 is no checking of the template.
 
 0:20:07.920,0:20:16.640
-And in the first part I just tried to modify
+And in the first part, I just tried to modify
 the inner circle part - which is roughly
 
 0:20:16.640,0:20:23.200
@@ -593,22 +592,22 @@ So there is some minus we
 have to do for the rotation.
 
 0:20:53.280,0:21:00.800
-And also we want to have the value which is
+And also, we want to have the value which is
 
 0:21:02.720,0:21:09.360
 for the angle - which is the opposite
-of the this angle here - right?
+of this angle here - right?
 
 0:21:10.400,0:21:19.680
 So here's pi and a half minus
 gap divided by 10. And this is
 
 0:21:20.240,0:21:29.280
-the begin and we have to figure out
+the begin, and we have to figure out
 how to define the opposite of this so.
 
 0:21:29.280,0:21:35.480
-If we assume we had 1.5 written here how ...
+If we assume we had 1.5 written here, how ...
 
 0:21:39.200,0:21:46.800
 No! I want to have the
@@ -618,7 +617,7 @@ opposite of this angle here.
 When I apply
 
 0:21:54.560,0:22:06.800
-a 0 here I would - in the second
+a 0 here, I would - in the second
 one I would get - pi and a half.
 
 0:22:08.080,0:22:14.960
@@ -629,8 +628,8 @@ So we should have something which is
 five times pi. So five times pi then
 
 0:22:26.720,0:22:35.680
-would be the opposite - minus the gap
-- That's what we want to have here!
+would be the opposite - minus the gap -
+that's what we want to have here!
 
 0:22:35.680,0:22:39.840
 So maybe write this as a little helper.
@@ -733,7 +732,7 @@ should increase the size of the circle a little
 
 0:25:40.800,0:25:47.360
 bit more because that still sometimes
-some parts of the other circle visible.
+some parts of the other circle are visible.
 
 0:25:47.920,0:25:50.960
 So let's have a look at this one now.
@@ -746,7 +745,7 @@ for 4.5 because we want to just have
 the part drawn - we want to have a circle which is
 
 0:26:06.240,0:26:16.240
-as big as the gap that's why we take
+as big as the gap; that's why we take
 the opposite function here again.
 
 0:26:16.240,0:26:20.080
@@ -788,9 +787,9 @@ to solve this task or a different
 version on how to solve this task,
 
 0:27:38.960,0:27:45.760
-you can have a look at the german version of this
+you can have a look at the German version of this
 task because there you find a different way of
 
 0:27:47.680,0:27:58.160
 defining the gaps within these circles and
-there's a different approach of solving this task.
+there's a different approach to solving this task.

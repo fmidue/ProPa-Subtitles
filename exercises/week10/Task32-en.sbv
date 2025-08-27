@@ -6,15 +6,15 @@ We are looking again at IO.
 
 0:00:06.080,0:00:13.760
 This time we have a C program and a Python
-program or the same program written in both C
+program for the same program written in both C
 
 0:00:13.760,0:00:18.800
-and Python and we should
+and Python, and we should
 re-implement this in Haskell.
 
 0:00:22.480,0:00:30.080
-So as per usual for the IO Task
-i've commented out these first lines
+So, as per usual for the IO Task
+I've commented out these first lines
 
 0:00:30.880,0:00:35.760
 to test this locally once
@@ -31,8 +31,8 @@ a) closer to where we're working,
 and b) I find it a bit more readable.
 
 0:00:59.600,0:01:07.600
-But, as I said, they both the same
-behavior and we can choose the one to
+But, as I said, they both have the same
+behavior, and we can choose the one to
 
 0:01:08.160,0:01:13.280
 work with, or derive our Haskell solution from,
@@ -43,14 +43,14 @@ The program first does something;
 defines some x and y variables.
 
 0:01:24.320,0:01:33.680
-Then it does some looping; this while
-loop, and then prints out the value of y.
+Then it does some looping; this while-loop,
+and then prints out the value of y.
 
 0:01:36.640,0:01:39.840
 This is the basic structure.
 
 0:01:43.040,0:01:50.640
-In Haskell we can just start,
+In Haskell, we can just start,
 let's say, with reading the input.
 
 0:01:51.440,0:01:57.040
@@ -61,7 +61,7 @@ And then let y = 0, just for the moment.
 
 0:02:05.360,0:02:09.520
 Then there's something we don't
-know how do this while loop.
+know how to do this while-loop.
 
 0:02:10.240,0:02:25.200
 And finally, we print something, let's say,
@@ -72,7 +72,7 @@ And that's exactly the notion we need to
 adapt in order to implement this in Haskell.
 
 0:02:32.800,0:02:42.920
-This while loop; We have to treat it as a
+This while-loop; we have to treat it as a
 recursive function of type IO something.
 
 0:02:42.920,0:02:44.400
@@ -84,36 +84,36 @@ y and transforms them into new ones.
 
 0:02:51.680,0:02:56.240
 So we think of this imperative
-while loop as taking here,
+while-loop as taking here,
 
 0:02:57.120,0:03:04.240
 in the beginning, the current values of x
-and y modifying them, iterating over this
+and y, modifying them, iterating over this
 
 0:03:06.560,0:03:12.320
 thing until this condition
-is no longer true and then
+is no longer true, and then
 
 0:03:15.760,0:03:20.560
 it will return the new values of x and
 y for the following program to use.
 
 0:03:24.640,0:03:33.920
-So we're making this implicit state
+So, we're making this implicit state
 of this imperative program explicit.
 
 0:03:35.520,0:03:40.720
 Okay, let's define a function that does this.
 
 0:03:40.720,0:03:59.680
-So as I said takes two Integers
-and in principle it returns the
+So, as I said, it takes two Integers
+and in principle, it returns the
 
 0:04:10.000,0:04:12.240
 values of x and y after the loop.
 
 0:04:12.880,0:04:24.480
-So, we use this now, put in the x and y values,
+So we use this now, put in the x and y values,
 and then we get out the new x and y values.
 
 0:04:27.520,0:04:31.120
@@ -121,7 +121,7 @@ We immediately see that we really
 don't need this x since it's not
 
 0:04:32.480,0:04:36.720
-used in this program after the while loop.
+used in this program after the while-loop.
 
 0:04:36.720,0:04:47.520
 So we can just change the type here
@@ -132,7 +132,7 @@ Just say, okay, in the end, we
 just return the new value of
 
 0:04:50.880,0:04:56.480
-y and the x value is kept only
+y, and the x value is kept only
 for internal use in this loop.
 
 0:04:57.680,0:04:59.440
@@ -146,7 +146,7 @@ Well, it loops until this
 condition is no longer true.
 
 0:05:10.560,0:05:23.840
-That is if we use guards to do this we
+That is, if we use guards to do this we
 can say x <= 0, then we will return y
 
 0:05:25.840,0:05:27.280
@@ -154,29 +154,29 @@ because then our loop is finished.
 
 0:05:27.280,0:05:35.040
 And we return the current value for y that we
-kept as the state and we'll be passing around.
+kept as the state, and we'll be passing around.
 
 0:05:36.720,0:05:43.440
 Okay, so the next condition then is if this
-is actually true we go into the loop body.
+is actually true, we go into the loop body.
 
 0:05:43.440,0:05:53.840
-And then we check if this condition holds
-so x `mod` 2 == 0 then we do something.
+And then we check if this condition holds:
+so x `mod` 2 == 0, then we do something.
 
 0:05:54.480,0:05:59.280
-And we also need an otherwise case which is
+And we also need an otherwise case, which is
 
 0:06:00.640,0:06:09.120
 kind of the else branch here, but we have to keep
 in mind that this print is always executed after
 
 0:06:11.520,0:06:18.480
-one iteration of the loop no matter
+one iteration of the loop, no matter
 what the branching condition was.
 
 0:06:18.480,0:06:26.400
-So we can just say, there's a
+So we can just say there's a
 print in here somewhere at the end
 
 0:06:32.960,0:06:36.800
@@ -196,10 +196,10 @@ So the new value for x is just x
 divided by 3 without any floating-point
 
 0:07:10.160,0:07:14.240
-stuff just plain old whole number division.
+stuff, just plain old whole number division.
 
 0:07:14.960,0:07:20.400
-So let's say we use a let statement
+So, let's say we use a let statement
 and say, okay, the new value of x
 
 0:07:20.400,0:07:29.840
@@ -208,21 +208,21 @@ which is our input here, divided by 3.
 
 0:07:30.800,0:07:35.600
 And then before we continue with the next
-loop iteration we have to print the current
+loop iteration, we have to print the current
 
 0:07:35.600,0:07:41.920
-value of x which is now the new value,
+value of x, which is now the new value,
 obviously, because we updated it here.
 
 0:07:41.920,0:07:44.320
-It's not the input anymore so we print x'.
+It's not the input anymore, so we print x'.
 
 0:07:45.440,0:07:47.600
 And now we have to initiate the next
 
 0:07:48.640,0:07:57.840
-iteration of the loop with the new values
-which is the new x' and y didn't change.
+iteration of the loop with the new values,
+which are the new x' and y didn't change.
 
 0:07:59.840,0:08:03.760
 Okay, let's do the same thing
@@ -230,21 +230,21 @@ for the else branch here.
 
 0:08:03.760,0:08:11.840
 The first thing we do is we read
-in a new value for x so x' here is
+in a new value for x, so x' here is
 
 0:08:14.560,0:08:17.680
 this IO action reading in from the command line.
 
 0:08:17.680,0:08:20.880
-Then we say, the new y is
+Then we say the new y is
 
 0:08:22.320,0:08:30.080
-the old y plus 1 and again we print the current
-value of x which is the one we just read in.
+the old y plus 1, and again we print the current
+value of x, which is the one we just read in.
 
 0:08:31.760,0:08:41.120
 And then we do the next loop
-iteration; so x' and y'. Okay.
+iteration: so x' and y'. Okay.
 
 0:08:42.320,0:08:47.600
 And since we use this y' we defined
@@ -252,14 +252,14 @@ here just once, we can just simply
 
 0:08:51.920,0:08:59.280
 put it here without duplicating any
-sub-expressions and it gets a little
+sub-expressions, and it gets a little.
 
 0:09:00.800,0:09:01.520
 easier to read.
 
 0:09:07.280,0:09:12.800
 We can obviously do the
-same with our y = 0 up here
+same with our y = 0 up here.
 
 0:09:17.440,0:09:21.840
 which we just used in the beginning
@@ -271,7 +271,7 @@ in ghci and see what happens.
 
 0:09:31.200,0:09:40.880
 Okay, so simple input: if we choose
-0 we don't execute the loop at all
+0 we don't execute the loop at all.
 
 0:09:41.440,0:09:45.680
 so we immediately return the
@@ -283,14 +283,14 @@ thing, let's say we start with 2.
 
 0:09:55.120,0:10:02.160
 It's not that more complicated for the interaction
-because we're just going here in the first
+because we're just going here in the first.
 
 0:10:02.160,0:10:18.000
 branch dividing 2 by 3 which results in 0, so 2
-`div` 3 is 0, and then the loop terminates and
+`div` 3 is 0, and then the loop terminates and.
 
 0:10:21.120,0:10:22.160
-we have printed out
+we have printed out.
 
 0:10:26.960,0:10:33.200
 0 one time because that's
@@ -331,7 +331,7 @@ y has a value of 2 which is printed out here.
 
 0:11:36.160,0:11:46.320
 Okay, so this seems to work, and submitting
-this solution to Autotool will do more rigorous
+this solution to Autotool will do more rigorous.
 
 0:11:47.120,0:11:53.920
 checking but then it will also just tell you
@@ -352,7 +352,7 @@ ways you can write the same behavior.
 You don't have to use guards here.
 
 0:12:13.600,0:12:18.720
-You can use if-then-else and the if-then-else
+You can use if-then-else, and the if-then-else
 branching structure is more similar to this one.
 
 0:12:22.720,0:12:28.560
@@ -361,11 +361,11 @@ duplicate this print action.
 
 0:12:32.240,0:12:38.960
 But the basic concept that you have this
-loop function which keeps track of the
+loop function which keeps track of the.
 
 0:12:38.960,0:12:44.880
 current values and in the end returns
-the final values will be present in all
+the final values will be present in all,
 
 0:12:47.520,0:12:59.920
 solutions because we don't have these stateful
