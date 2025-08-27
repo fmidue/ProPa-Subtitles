@@ -39,20 +39,20 @@ should return true, and this is not what we want
 because an empty list doesn't have a penultimate,
 
 0:01:01.280,0:01:08.480
-so what do we do here? Unlike Haskell, which throws
-an error at us if we leave some case undefined,
+so what do we do here? Unlike Haskell which throws
+an error at us if we leave some case undefined
 
 0:01:09.120,0:01:13.360
-Prolog doesn't do this; any undefined
-case is simply false, and we can
+Prolog doesn't do this, any undefined
+case is simply false and we can
 
 0:01:13.360,0:01:19.680
 use this to our advantage by just not defining
 this case because we would want this to be false.
 
 0:01:21.840,0:01:27.200
-But I can still work with this because we can
-extend this to the next case, which would be a
+But I can still work with this, because we can
+extend this to the next case; which would be a
 
 0:01:27.200,0:01:31.840
 list with just one element, but once again,
@@ -122,7 +122,7 @@ do this by still taking the first element, and
 now we're going to use the pipe character and
 
 0:03:03.600,0:03:08.640
-call the remaining list Xs; the pipe character
+call the remaining list 'Xs'; the pipe character
 kind of works like the double point in Haskell,
 
 0:03:08.640,0:03:13.840
@@ -131,15 +131,15 @@ element and then some remaining list afterwards,
 
 0:03:15.360,0:03:23.040
 and we define this as only being true when another
-call to penultimate, taking this now reduced list,
+call to 'penultimate', taking this now reduced list,
 
 0:03:23.040,0:03:33.920
-so the tail, basically, and our parameter X is
+so the tail basically, and our parameter 'X', is
 true. So we are basically taking the list here
 
 0:03:33.920,0:03:39.360
 that is NON-EMPTY, throwing the
-first element away, and calling penultimate again
+first element away, and calling 'penultimate' again
 
 0:03:39.360,0:03:45.440
 on the remaining list. So no matter how long the
@@ -183,23 +183,23 @@ what else can we do here? We can actually just
 
 0:04:41.840,0:04:47.440
 change the second parameter to a variable, this
-big X here, and then the query is changed to:
+big 'X' here and then the query is changed to:
 
 0:04:48.400,0:04:54.080
 "I know the first parameter is a list of
 [a,b,c], but I don't know the penultimate;
 
 0:04:55.360,0:05:00.960
-find me a suitable substitution for X
-for which penultimate returns true",
+find me a suitable substitution for 'X'
+for which 'penultimate' returns true",
 
 0:05:00.960,0:05:05.440
 so we're basically now asking Prolog to
 find the second to last element for us,
 
 0:05:05.440,0:05:10.400
-and if we query this, we can see it gets us
-X is 'b', which is exactly what we're looking
+and if we query this we can see it gets us
+'X' is 'b' which is exactly what we're looking
 
 0:05:10.400,0:05:15.840
 for. This is the penultimate element and that's
@@ -399,7 +399,7 @@ this case doesn't work, because it just keeps
 
 0:10:34.800,0:10:42.960
 stepping through the first case... and to end
-this we actually need to abort this process,
+this we actually need to abort this process,"
 
 0:10:42.960,0:10:48.640
 because otherwise it just keeps going until the

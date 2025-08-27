@@ -80,7 +80,7 @@ And then you need a line from X to Y, Y to Z,
 Z to U, and U to X. Here it must be additionally required
 
 00:02:07,440 --> 00:02:12,060
-that X and Z are different and Y and U are different
+that X and Z are different and Y and U are different,
 because otherwise you could get some degenerate quadrilaterals,
 
 00:02:12,060 --> 00:02:18,570
@@ -151,7 +151,7 @@ because then these line literals would refer to the
 predicate, where this symmetry would also be
 
 00:04:03,930 --> 00:04:14,640
-this symmetry is justified or used.
+justified or used.
 However, if we are going to carry this out, it
 
 00:04:14,640 --> 00:04:20,280
@@ -159,7 +159,7 @@ turns out to be dangerous. In a certain sense, this is
 too recursive. At first, this may be confusing or
 
 00:04:20,280 --> 00:04:25,500
-surprising why there is a problem here
+surprising why there is a problem here,
 because if we go back to our rules of thumb
 
 00:04:25,500 --> 00:04:32,040
@@ -506,28 +506,28 @@ Honolulu, Maui, etc. So, this is where an endless search would happen.
 Prolog would keep giving the same three answers,
 
 00:13:32,470 --> 00:13:39,880
-but also never say, "That's enough."
+but also never say, "That's enough".
 Why is that? Although I did follow the
 
 00:13:39,880 --> 00:13:47,560
 rules for the use of recursion here, the problem here is that
-the problem is here,
+there is now a circularity problem in the data.
 
 00:13:47,560 --> 00:13:54,040
-that there is now a circularity problem in the data.
 It is just the case that if I allow here arbitrary
+direct facts, it can be that there are also possible round
 
 00:13:54,040 --> 00:14:00,340
 direct facts, it can be that there are also possible round
 trips possible and they are not
 
 00:14:00,340 --> 00:14:05,710
-treated in any special way. This could of course
 not occur with the ancestor relation, out of
+the domain knowledge. We know that there are
 
 00:14:05,710 --> 00:14:09,850
-the domain knowledge. We know that there are
 no circular ancestor relations.
+Nobody is his own parent or is
 
 00:14:09,850 --> 00:14:17,560
 Nobody is his own parent or is
@@ -559,7 +559,7 @@ flying in circles, so to speak. So for example
 
 00:15:03,610 --> 00:15:08,440
 notice here when we say: "We are coming from
-San Francisco to San Francisco." that this is not particularly
+San Francisco to San Francisco". that this is not particularly
 
 00:15:08,440 --> 00:15:15,040
 interesting or that we should at least say,
@@ -680,7 +680,7 @@ that you have already been to X because that is where you
 
 00:18:03,480 --> 00:18:10,020
 are flying out of. So, you're not interested in visiting X again
-as a stopover."
+as a stopover".
 
 00:18:10,020 --> 00:18:14,850
 If we have this intuition about what connection1 should do,
@@ -779,7 +779,7 @@ of the list L. Then we would be
 allowed to continue a new connection, from Z to Y.
 
 00:20:46,295 --> 00:20:54,440
-It would be tempting here to say, "Then connection1 from Z to Y."
+It would be tempting here to say, "Then connection1 from Z to Y".
 However, we also need to say what the
 
 00:20:54,440 --> 00:20:58,880
@@ -807,7 +807,7 @@ we continue to work with, is formed by a
 list with Z and the previous list
 
 00:21:25,940 --> 00:21:31,100
-of intermediate targets." So, append stands for
+of intermediate targets". So, append stands for
 Append. We can append two lists together.
 
 00:21:31,100 --> 00:21:36,530

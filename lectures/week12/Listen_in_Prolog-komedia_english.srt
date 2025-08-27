@@ -9,7 +9,7 @@ stored in this transitive hull example with
 
 00:00:16,680 --> 00:00:22,320
 possible cycles between the cities and
-their connections, i.e. cyclic connections.
+their connections, i.e., cyclic connections.
 
 00:00:22,320 --> 00:00:28,320
 I had mentioned lists before, only very briefly
@@ -88,7 +88,7 @@ So, this would have two arguments. The first argument would be
 
 00:02:16,120 --> 00:02:21,340
 thought of as an element. Something like Duisburg or Essen in
-the example here. So, for example a constant or
+the example here. So, for example, a constant or
 
 00:02:21,340 --> 00:02:26,320
 also another data structure.
@@ -193,7 +193,7 @@ for given arguments, whether there is such a membership
 
 00:05:06,870 --> 00:05:14,940
 is present. But there is also the possibility
-to replace single parts in this query, for example by
+to replace single parts in this query, for example, by "
 
 00:05:14,940 --> 00:05:20,340
 variables. So, we could for example
@@ -201,11 +201,11 @@ also ask: "What are all the members of a list [1,3,3]?"
 
 00:05:20,340 --> 00:05:27,030
 So, we could ask: "Is there an X such that
-is the member of [1,2,3]?" And if so, we would
+it is a member of [1,2,3]?" And if so, we would
 
 00:05:27,030 --> 00:05:33,210
 like to get all the answers. And then Prolog would tell us
-in that case, "Yes, X can be 1." And then, if we were to go through;
+in that case, "Yes, X can be 1". And then, if we were to go through;
 
 00:05:33,870 --> 00:05:40,020
 to see if there are any other solutions, Prolog would actually
@@ -240,7 +240,7 @@ we have previously said what X, Y, Z are? So, these are variables.
 And there again, Prolog would answer with meaningful answers.
 
 00:06:28,020 --> 00:06:34,440
-Namely, Prolog would say, "Yes, X can be 3."
+Namely, Prolog would say, "Yes, X can be 3".
 Because then we would have 3 as an element of [3,Y,Z].
 
 00:06:34,440 --> 00:06:42,630
@@ -248,7 +248,7 @@ And no matter what Y, Z are. Or Y can be 3.
 Or Z can be 3. Note that in
 
 00:06:42,630 --> 00:06:47,730
-these three cases there is always only exactly
+these three cases, there is always exactly
 one variable at a time. Here above there was only
 
 00:06:47,730 --> 00:06:53,880
@@ -265,11 +265,11 @@ It would then be true that 3 is an element of [X, 3, Z].
 
 00:07:06,300 --> 00:07:14,550
 Here below, somehow there is no conjunction.
-It does not have to be X, Y, and Z: 3, but really in each case
+It does not have to be X, Y, and Z = 3, but really in each case
 
 00:07:14,550 --> 00:07:21,480
-one of the variables must be 3 and for the other two it is
-of no consequence, so nothing more is said about them.
+one of the variables must be 3 and for the other two it does
+not matter, so nothing more is said about it.
 
 00:07:21,480 --> 00:07:25,740
 Even more generally, of course, one could ask the question:
@@ -385,7 +385,7 @@ place in the given list. Then you could
 ask questions to which Prolog might not have an
 
 00:10:20,710 --> 00:10:25,900
-answer, because there is no answer. We could for example
+answer, because there is no answer. We could, for example,
 ask, for example, under what circumstances is a list
 
 00:10:25,900 --> 00:10:34,030
@@ -397,7 +397,7 @@ where we use the same variable twice here.
 And there we know: Same variable means,
 
 00:10:39,160 --> 00:10:46,090
-it must have the same value and there is no way to have two
+it must have the same value, and there is no way to have two
 no possibility to have two equal lists,
 
 00:10:46,090 --> 00:10:53,920
@@ -426,7 +426,7 @@ We can ask, for example, under what
 
 00:11:22,900 --> 00:11:29,950
 circumstances is the case that X and X added to each other
-results in the two-element list where the first element is a
+results in the two-element list, where the first element is a
 
 00:11:29,950 --> 00:11:36,610
 and the second element is a variable Y?
@@ -446,7 +446,7 @@ This is possible because Prolog
 
 00:11:54,310 --> 00:12:00,430
 is also able to say: "Y is then also the
-small a." Which didn't work here.
+small a". Which didn't work here.
 
 00:12:00,430 --> 00:12:05,920
 Here there was a contradiction because I cannot hang two
@@ -510,7 +510,7 @@ What actually happens? Prolog answers with a list
 of length 3, whose elements are listed here.
 
 00:13:47,050 --> 00:13:52,630
-look very strange: _ and something
+look very strange: _ and something.
 These are basically like
 
 00:13:52,630 --> 00:13:57,760
@@ -555,7 +555,7 @@ append predicate.
 
 00:14:50,320 --> 00:14:57,010
 For example, I could also say, "I would like to have all three-element
-lists that satisfy one more property."
+lists that satisfy one more property".
 
 00:14:57,010 --> 00:15:02,290
 For example, I could say (going back a bit to an example from
@@ -567,7 +567,7 @@ a list and the same list?"
 
 00:15:08,680 --> 00:15:15,610
 The answer is false. Why? Because if I
-append a list to the same list
+append a list to the same list,
 
 00:15:15,610 --> 00:15:22,930
 the result is always an even-length list, and this
@@ -591,7 +591,7 @@ are indeed solutions. So, for L = 4 for
 
 00:15:53,440 --> 00:16:00,490
 example, Prolog would then say: "Yes, then L must be a
-four-element list. There are variables in it again."
+four-element list. There are variables in it again".
 
 00:16:00,490 --> 00:16:04,990
 However, this time there are variables in the first and
@@ -607,7 +607,7 @@ And in fact, Prolog also gives for X
 
 00:16:18,730 --> 00:16:24,160
 this list and the same variables appear in it again.
-The same variables appear in it. Thus, it is expressed,
+Same variables appear in it. Thus, it is expressed,
 
 00:16:24,160 --> 00:16:30,460
 that actually some assignment, where we have
@@ -635,7 +635,7 @@ For example, we can ask: "Are there lists of length 2,
 
 00:17:11,890 --> 00:17:15,610
 so that the element a occurs in it, the element b occurs in it,
-the element c occurs in it?" That's when Prolog says, "No."
+the element c occurs in it?" That's when Prolog says, "No".
 
 00:17:15,610 --> 00:17:25,330
 You can think about that indirectly, so to speak, that
@@ -744,7 +744,7 @@ There I could say: "I attach
 
 00:20:21,850 --> 00:20:28,030
 to each other the U (i.e., the chosen left part of L)
-and a one-element list with exactly X."
+and a one-element list with exactly X".
 
 00:20:28,030 --> 00:20:35,290
 Then I get some list Y. This contains
@@ -807,7 +807,7 @@ This is a very simple fact about lists and their permutations.
 And that could serve as a base case here at the same time.
 
 00:22:17,650 --> 00:22:22,390
-It comes first, as my rules of thumb say.
+It comes first, as my rule of thumb says.
 And then I would expect at least one
 
 00:22:22,390 --> 00:22:27,790
@@ -835,11 +835,11 @@ I can also say, I would like to decompose L
 into its first element and the remainder.
 
 00:22:59,090 --> 00:23:06,800
-I can express this by saying, non-empty lists L
+I can express this by saying that non-empty lists L
 can be represented as the concatenation of some
 
 00:23:06,800 --> 00:23:14,930
-of a one-element list and another list.
+one-element list and another list.
 What I implicitly achieve with this call here is,
 
 00:23:14,930 --> 00:23:22,670
@@ -847,12 +847,12 @@ that X is set to the first element of the list L
 and Y to all remaining elements. Then I can say,
 
 00:23:22,670 --> 00:23:30,230
-one strategy to permute a list is: to take exactly the
+one strategy to permute a list is to take exactly the
 first element and permute the remaining elements
 
 00:23:30,230 --> 00:23:36,590
 to permute. Then I get lists again.
-Namely, lists which are permutations of the rest list.
+Namely, lists that are permutations of the rest list.
 
 00:23:36,590 --> 00:23:42,950
 And then the first element, which I originally took from the
@@ -915,7 +915,7 @@ But the predefined permutation predicate also works
 forwards and backwards. So, if you want to try
 
 00:25:21,200 --> 00:25:24,860
-it out, you should actually not call it permutation,
+it out, you should actually not call it "permutation",
 but call it something else, so that you don't get into conflict with the
 
 00:25:24,860 --> 00:25:33,080
