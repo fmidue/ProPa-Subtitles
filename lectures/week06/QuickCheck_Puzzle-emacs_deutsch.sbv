@@ -1,17 +1,15 @@
+
 0:00:01.840,0:00:05.760
 Okay, nachdem ich den Polymorphismus im letzten Video so sehr
 
 0:00:05.760,0:00:11.440
-gelobt habe, möchte ich ein
-weiteres kurzes Video, um eine
+gelobt habe, möchte ich ein weiteres kurzes Video, um eine
 
 0:00:11.440,0:00:16.320
-Warnung über eine Wechselwirkung
-die Polymorphie mit dem Testen haben kann.
+Warnung über eine Wechselwirkung, die Polymorphie mit dem Testen haben kann, auszusprechen.
 
 0:00:16.880,0:00:22.960
-Also, es wird eine kurze
-Sitzung in einer Interpreter-Sitzung hier,
+Also, es wird eine kurze Sitzung in einer Interpreter-Sitzung hier,
 
 0:00:22.960,0:00:27.680
 in der ich auf etwas hinweisen möchte, das vielleicht,
@@ -21,8 +19,7 @@ zunächst ein wenig überraschend oder rätselhaft sein mag.
 Und dann werden wir sehen, was hier los ist.
 
 0:00:30.560,0:00:34.160
-Und es hat mit Polymorphismus zu tun
-als eine Warnung, okay.
+Und es hat mit Polymorphismus zu tun, als eine Warnung, okay.
 
 0:00:34.160,0:00:38.320
 Also, lassen Sie mich GHCi tatsächlich aufrufen.
@@ -79,7 +76,7 @@ und herausfinden: Nun, sie sind alle wahr.
 
 0:01:35.760,0:01:42.400
 Okay, dann könnte ich an einem bestimmten Punkt
-etwas zu ehrgeizig, oder vielleicht ein wenig verrückt werden,
+etwas zu ehrgeizig oder vielleicht ein wenig verrückt werden,
 
 0:01:42.400,0:01:47.520
 und behaupten, na ja, lassen Sie mich doch von der
@@ -104,8 +101,7 @@ Und das ist nicht zufällig durch
 irgendwie der Zufall generiert, der
 
 0:02:10.960,0:02:14.320
-zufällig 100
-Listen erstellt hat, auf denen dies tatsächlich der Fall ist.
+zufällig 100 Listen erstellt hat, auf denen dies tatsächlich der Fall ist.
 
 0:02:14.320,0:02:15.040
 Nein, es ist nicht wahr.
@@ -114,7 +110,7 @@ Nein, es ist nicht wahr.
 Das ist nicht der Fall.
 
 0:02:16.640,0:02:18.560
-Er ist immer erfolgreich.
+Es ist immer erfolgreich.
 
 0:02:18.560,0:02:24.960
 Wenn ich jedoch die Reverse-Funktion aufrufe,
@@ -130,14 +126,14 @@ Ja.
 Und in der Tat, wenn ich das für viele Beispiele mache,
 
 0:02:34.160,0:02:38.240
-zeigt es immer nicht das Verhalten, das ich mit
-erfolgreich mit QuickCheck getestet habe.
+zeigt es immer nicht das Verhalten, das ich erfolgreich mit
+QuickCheck getestet habe.
 
 0:02:39.520,0:02:40.560
 Was ist also passiert?
 
 0:02:42.160,0:02:46.640
-Nun, ich habe Ihnen gesagt, was Sie tun sollen
+Nun, ich habe Ihnen gesagt, was Sie tun sollen,
 um herauszufinden, was
 
 0:02:46.640,0:02:50.080
@@ -170,7 +166,7 @@ Was ist passiert?
 
 0:03:19.600,0:03:25.280
 Tatsächlich wurde die Eigenschaft 100 Mal getestet,
-aber auf sehr seltsamen Listen auf Listen,
+aber auf sehr seltsamen Listen von Listen,
 
 0:03:25.280,0:03:27.760
 die immer dieses triviale Element enthalten.
@@ -180,12 +176,12 @@ Und tatsächlich, wenn ich eine Liste wie diese nehme, wo
 alles das Gleiche ist, nämlich dieser seltsame
 
 0:03:33.280,0:03:39.040
-leeren Wert hier, dann ist natürlich, wenn ich die
+leere Wert hier, dann ist natürlich, wenn ich die
 dieser Liste das Gleiche wie die Liste selbst.
 
 0:03:39.040,0:03:45.120
-Denn wenn die Liste nur ein Element enthält
-mehrfach, aber alle Elemente sind gleich,
+Denn wenn die Liste nur ein Element enthält,
+und dieses mehrfach, aber alle Elemente sind gleich,
 
 0:03:45.120,0:03:47.360
 dann ändert natürlich die Umkehrung
@@ -196,18 +192,18 @@ Okay, was ist also die Lehre daraus?
 
 0:03:50.560,0:03:53.280
 Wenn Sie eine polymorphe
-Funktion prüft, wie die reverse-Funktion,
+Funktion prüfen, wie die reverse-Funktion,
 
 0:03:53.280,0:03:55.360
 ist es wirklich wichtig, worauf man sie prüft.
 
 0:03:56.080,0:04:00.800
 Einfach zu sagen, QuickCheck bitte, prüfe dies, dann
-QuickCheck könnte, und in diesem Fall tut es das, einen
+kann QuickCheck, und in diesem Fall tut es das, einen
 
 0:04:01.680,0:04:04.880
 Elementtyp für die Listen
-zu prüfen, zum Beispiel,
+prüfen, zum Beispiel,
 
 0:04:04.880,0:04:09.520
 das ist nicht stark genug, um tatsächlich
@@ -232,13 +228,15 @@ die Identität ist, wonach es aussieht.
 Okay, was können oder sollten wir also tun,
 wenn wir eine polymorphe Funktion testen?
 
+
+
 0:04:33.360,0:04:37.440
 Wir sollten sicherstellen, dass das, was wir testen oder welcher Typ
-es ist, das sollte man nicht QuickCheck überlassen,
+es ist, das sollte man nicht QuickCheck überlassen.
 
 0:04:37.440,0:04:40.480
-denn das kann zu diesen
-Artefakten oder falschen Ergebnissen führen kann.
+Denn das kann zu diesen
+Artefakten oder falschen Ergebnissen führen.
 
 0:04:41.040,0:04:41.840
 Wie können wir das sagen?
@@ -259,8 +257,7 @@ Dann verhindere ich, dass QuickCheck eine Entscheidung trifft
 und wählt dieses seltsame Element und den Typ hier.
 
 0:05:03.440,0:05:08.480
-Okay, und wenn ich das mache, dann eigentlich,
-findet QuickCheck heraus, dass die Eigenschaft
+Okay, und wenn ich das mache, dann findet QuickCheck heraus, dass die Eigenschaft
 
 0:05:08.480,0:05:12.960
 nicht hält. Genau hier, ganz schnell, findet es
@@ -282,7 +279,7 @@ Ich würde erwarten, dass QuickCheck
 ein Gegenbeispiel findet. Es sagt nein, für einen String "ab",
 
 0:05:29.680,0:05:34.080
-ist es nicht wahr, die Eigenschaft, oder ich könnte
+ist es nicht wahr, dass die Eigenschaft, oder ich könnte
 hier sogar Listen von Bools genommen haben,
 
 0:05:34.080,0:05:37.600
@@ -303,10 +300,10 @@ sehr bewusst sein, wenn wir Tests schreiben.
 
 0:05:52.640,0:05:56.640
 Und natürlich achten wir in unseren Tests für Ihre
-Autotool-Einreichungen kümmern wir uns darum.
+Autotool-Einreichungen darauf.
 
 0:05:56.640,0:06:00.720
-Aber wenn Sie auf eigene Faust testen wollen, und
+Aber wenn Sie auf eigene Faust testen wollen und
 Sie eine polymorphe Funktion haben, müssen Sie
 
 0:06:01.760,0:06:07.440
@@ -318,7 +315,7 @@ In diesem Fall sollten wir sie nicht auf diesen
 trivialen Typ prüfen. Okay, das ist kein Fehler per se,
 
 0:06:14.720,0:06:16.800
-in der Logik so, es ist
+in der Logik, so ist es
 
 0:06:16.800,0:06:22.000
 eine gewisse Vorsicht, die man walten lassen muss, um
@@ -330,3 +327,4 @@ man immer eine ausführliche Prüfung durchführen, und dann
 
 0:06:24.880,0:06:31.600
 sehen Sie, was hinter den Kulissen passiert ist.
+

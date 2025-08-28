@@ -1,3 +1,4 @@
+
 0:00:00.000,0:00:04.140
 Hallo, in dieser Aufgabe schreiben
 wir das Prädikat 'penultimate',
@@ -32,7 +33,7 @@ einer Liste mit ungewisser Länge reden, würden wir
 
 0:00:44.790,0:00:51.420
 normalerweise anfangen und uns alle Listenfälle
-angucken. Der erst davon wäre natürlich die leere
+angucken. Der erste davon wäre natürlich die leere
 
 0:00:51.420,0:00:57.600
 Liste. Die würden wir so definieren. Aber damit
@@ -44,10 +45,10 @@ nicht das, was wir wollen, denn eine leere
 
 0:01:03.270,0:01:07.650
 Liste hat kein vorletztes Element, also wollen
-wir hier auch keinen Wahrheitswert zurück haben
+wir hier auch keinen Wahrheitswert zurückhaben
 
 0:01:07.650,0:01:14.490
-beziehungsweise wir wollen hier nicht 'true' zurück haben.
+beziehungsweise wir wollen hier nicht 'true' zurückhaben.
 Anders als in Haskell sind undefinierte Fälle in
 
 0:01:14.490,0:01:20.340
@@ -87,11 +88,11 @@ benennen. Das muss zwar hier drin sein, aber
 wir werden es nicht benutzen, also können wir
 
 0:02:04.260,0:02:09.420
-Unterstrich benutzen. Mit dieser Regel sagen wir
-einfach Prolog, gegeben mit einer Liste mit zwei
+den Unterstrich benutzen. Mit dieser Regel sagen wir
+einfach Prolog, gegeben eine Liste mit zwei
 
 0:02:09.420,0:02:15.840
-Elementen von dem das erste Element gleich unserem
+Elementen, von denen das erste Element gleich unserem
 zweiten Parameter ist, gib 'true' zurück. Das
 
 0:02:15.840,0:02:21.600
@@ -103,7 +104,7 @@ Liste mit drei Elementen, was natürlich auch
 wahr wäre, so wie wir es definiert hätten,
 
 0:02:28.200,0:02:33.330
-das wäre korrekt, aber wenn wir so weiter machen
+das wäre korrekt, aber wenn wir so weitermachen
 würden, müssten wir als Nächstes den Fall mit vier
 
 0:02:33.330,0:02:37.830
@@ -112,7 +113,7 @@ das ist natürlich unpraktisch, denn wir wollen
 
 0:02:37.830,0:02:42.150
 mit Listen von beliebigen Mengen an Elementen
-arbeiten. Also was wir stattdessen machen ist,
+arbeiten. Also was wir stattdessen machen, ist,
 
 0:02:42.150,0:02:49.770
 da wir hier schon den Fall haben, der checken
@@ -135,11 +136,11 @@ wir immer noch das erste Element nehmen, was uns
 nicht wirklich interessiert, was nur da sein muss,
 
 0:03:09.210,0:03:15.540
-also nehmen wir den Unterstrich und dann den pipe
-character und dann den Rest der Liste. Dieser pipe
+also nehmen wir den Unterstrich, und dann den Pipe-Character
+und dann den Rest der Liste. Dieser Pipe-Character
 
 0:03:15.540,0:03:18.810
-character ist so ein bisschen wie der Doppelpunkt
+ist so ein bisschen wie der Doppelpunkt
 in Haskell. Das sagt uns einfach nur hier,
 
 0:03:18.810,0:03:27.240
@@ -171,7 +172,7 @@ die eventuell irgendwann in diesem Fall
 landet, mit der Liste mit zwei Elementen,
 
 0:04:04.050,0:04:11.970
-wo er dann prüfen kann, "Ist das erste Element
+wo er dann prüfen kann: "Ist das erste Element
 der Liste, also das vorletzte Element, gleich dem
 
 0:04:11.970,0:04:19.050
@@ -187,23 +188,25 @@ das hier direkt speichern und dann in Prolog
 laden. Wenn wir das jetzt machen, können wir auch
 
 0:04:31.780,0:04:38.290
-dann das neue Prädikat direkt ausprobieren, wenn
+das neue Prädikat direkt ausprobieren, wenn
 ich das richtig schreiben kann, mit den Fällen aus
 
 0:04:38.290,0:04:43.240
 der Aufgabenstellung, also die Liste a, b, c,
-d und dem Element c kriegen wir 'true' zurück,
+d und dem Element c, kriegen wir 'true' zurück,
 
 0:04:43.240,0:04:49.198
-so wie es sein sollte, für die Liste a, b, c
+so wie es sein sollte. Für die Liste a, b, c
 und c sollten wir 'false' zurückkriegen und das
 
+
+
 0:04:49.198,0:04:53.350
-kriegen wir auch. Das ist eigentlich ein bisschen
-langweilig, weil wir das eigentlich nur validieren
+Kriegen wir auch. Das ist eigentlich ein bisschen
+langweilig, weil wir das eigentlich nur validieren.
 
 0:04:53.350,0:04:57.400
-von Sachen, die wir eigentlich schon wissen.
+Von Sachen, die wir eigentlich schon wissen.
 Wir wissen schon beide Parameter. Wir können
 
 0:04:57.400,0:05:01.390
@@ -219,7 +222,7 @@ der ist die Liste a, b, c, ich weiß den
 zweiten Parameter nicht. Finde mir eine
 
 0:05:13.090,0:05:20.200
-passende Substitution für X in der 'penultimate'
+passende Substitution für X, die in 'penultimate'
 dann 'true' zurückgibt. Wenn wir das machen,
 
 0:05:20.200,0:05:23.560
@@ -272,11 +275,11 @@ gibt es uns eine Liste mit drei Elementen zurück,
 
 0:06:28.574,0:06:31.060
 wo a immer noch das vorletzte Element ist.
-Wenn wir das weiter machen, dann gibt es uns
+Wenn wir das weitermachen, dann gibt es uns
 
 0:06:31.060,0:06:38.690
 immer längere Listen zurück, wo jedes Mal a das
-vorletzte Elemente ist und die anderen Elemente
+vorletzte Element ist und die anderen Elemente
 
 0:06:38.690,0:06:43.940
 könnten irgendwas anderes sein. Wenn wir uns
@@ -319,11 +322,11 @@ fällt dann wieder hier rein und dann sieht es
 wieder: Hier ist das X, was ich schon kenne,
 
 0:07:26.330,0:07:33.110
-und hier ist das wo es in der Liste sein sollte,
-also baue ich mir diese Liste, geht dann praktisch
+und hier ist das, wo es in der Liste sein sollte,
+also baue ich mir diese Liste, gehe dann praktisch
 
 0:07:33.110,0:07:37.430
-wieder den Rekursionsschritt zurück, hängt das
+wieder den Rekursionsschritt zurück, hänge das
 S Element wieder dran und gibt jetzt dann diese
 
 0:07:37.430,0:07:42.110
@@ -331,11 +334,11 @@ Liste wieder zurück und das läuft dann so weiter
 und baut uns so dann immer längere Listen für uns.
 
 0:07:42.110,0:07:48.650
-Das können wir natürlich hier weiter machen,
+Das können wir natürlich hier weitermachen,
 brechen das aber jetzt ab und was wir uns noch
 
 0:07:48.650,0:07:56.120
-anschauen sollten ist, ich mache jetzt mal
+anschauen sollten, ist, ich mache jetzt mal
 'trace' wieder aus, was passiert, wenn wir
 
 0:07:56.120,0:08:01.760
@@ -391,8 +394,8 @@ das funktioniert alles noch. Aber wenn wir
 jetzt den Fall haben, wo wir die Liste selber
 
 0:09:13.830,0:09:18.180
-suchen und wir wissen, das vorletzte Element
-soll a sein und das dann durchlaufen lassen,
+suchen und wir wissen, dass das vorletzte Element
+a sein soll und das dann durchlaufen lassen,
 
 0:09:18.180,0:09:25.530
 dann sehen wir: Ok, hier findet Prolog erst mal
@@ -402,13 +405,15 @@ keine Lösung. Da wir hier 'trace' an haben, sind
 das hier einfach nur viele Schritte eventuell.
 Früher oder später würden wir hier einen
 
+
+
 0:09:31.320,0:09:37.710
-stack error kriegen, weil wir kein stack space
+Stack-Fehler kriegen, weil wir keinen Stack-Speicher
 mehr haben, denn das geht einfach immer so weiter.
 
 0:09:37.710,0:09:42.690
 Wir sehen, dass die Variable, die hier drin ist,
-dieser Platzhalter ändert sich die ganze Zeit,
+dieser Platzhalter sich die ganze Zeit ändert,
 
 0:09:42.690,0:09:52.350
 denn Prolog läuft praktisch in der ersten Regel
@@ -439,7 +444,7 @@ wie wir das am Anfang gesehen haben. Hier
 laufen wir einfach immer nur im oberen hin
 
 0:10:23.340,0:10:29.670
-und her bis irgendwann ein Stackfehler
+und her, bis irgendwann ein Stackfehler
 auftritt. Das hier müssen wir abbrechen.
 
 0:10:29.670,0:10:34.793
@@ -455,7 +460,7 @@ Fehler: Out of local stack. Und das geht dann
 immer so weiter, denn es findet für keine Variante
 
 0:10:43.560,0:10:50.520
-irgendeine Lösung, die zu finden ist bevor der
+irgendwie eine Lösung, die zu finden ist, bevor der
 Stack überläuft. Das müssen wir auch abbrechen
 
 0:10:50.520,0:11:00.810
@@ -469,3 +474,4 @@ Sachen, auch in dem Fall ist es wichtig,
 0:11:04.590,0:11:10.920
 also drehen wir das wieder um, speichern
 das und haben damit unsere Aufgabe gelöst.
+

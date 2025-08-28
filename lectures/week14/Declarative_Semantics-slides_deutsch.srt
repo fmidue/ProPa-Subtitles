@@ -1,3 +1,4 @@
+
 39 # slide
 00:00:02,080 --> 00:00:08,720
 Im letzten Video dieser Woche werden wir über
@@ -7,11 +8,11 @@ die deklarative Semantik von Prolog reden.
 Also, Semantik, was bedeutet das Programm?
 
 00:00:11,520 --> 00:00:17,440
-Und eigentlich werden wir  insgesamt zwei
-verschiedene Semantiken betrachten (dieses Jahr optional),
+Und eigentlich werden wir insgesamt zwei
+verschiedene Semantiken betrachten (dieses Jahr optional).
 
 00:00:17,440 --> 00:00:21,200
-nämlich diese deklarative Semantik
+Nämlich diese deklarative Semantik
 und dann die operationelle Semantik.
 
 00:00:21,200 --> 00:00:25,440
@@ -23,7 +24,7 @@ Man könnte sie auch als die logische
 Semantik oder die mathematische Semantik bezeichnen.
 
 00:00:29,680 --> 00:00:34,160
-Und bei der operativen Semantik geht es
+Und bei der operationellen Semantik geht es
 mehr darum, wie die Ausführung funktioniert.
 
 00:00:34,160 --> 00:00:37,440
@@ -31,10 +32,10 @@ Dazu habe ich bereits eine gewisse Intuition gegeben.
 
 00:00:37,440 --> 00:00:42,640
 Aber wenn wir über operationelle Semantik sprechen,
-wird dies präziser und konkreter gemacht
+wird dies präziser und konkreter gemacht.
 
 00:00:42,640 --> 00:00:48,240
-und konkreter, wie ein Prolog-System eine
+Und konkreter, wie ein Prolog-System eine
 Lösung für eine Anfrage zu einem bestimmten Programm finden kann.
 
 00:00:49,680 --> 00:00:52,560
@@ -47,10 +48,10 @@ und mehr ausführungsorientiert.
 
 00:00:56,160 --> 00:00:58,800
 Und natürlich ist die ausführungsorientierte
-Semantik ist das, was verwendet wird
+Semantik das, was verwendet wird.
 
 00:01:00,160 --> 00:01:02,320
-für die Implementierung einer Programmiersprache.
+Für die Implementierung einer Programmiersprache.
 
 00:01:02,320 --> 00:01:04,800
 Und so etwas wie deklarative
@@ -65,11 +66,11 @@ Also, für den Haskell-Teil früher im Kurs,
 haben wir etwas über operationelles Verhalten gesprochen, richtig?
 
 00:01:16,320 --> 00:01:19,280
-Als wir also über den Pattern-Matching
+Als wir also über das Pattern-Matching
 gesprochen haben, und wie es die Auswertung steuert.
 
 00:01:19,280 --> 00:01:21,760
-Die Lazy-Auswertung, die vorher nur als Idee auftauchte
+Die Lazy-Auswertung, die vorher nur als Idee auftauchte,
 
 00:01:21,760 --> 00:01:26,080
 nur als eine Idee, und wurde dann
@@ -95,11 +96,11 @@ Weil es für Haskell eine so große Nähe
 eine so enge Verbindung zur Mathematik und Algebra gibt, dass das Aufschreiben
 
 00:01:46,000 --> 00:01:50,480
-einer solchen Semantik einfach bedeutet hätte, dass
-zu sagen, dass Funktionen bedeuten, was Funktionen bedeuten.
+einer solchen Semantik einfach bedeutet hätte, zu
+sagen, dass Funktionen bedeuten, was Funktionen bedeuten.
 
 00:01:51,040 --> 00:01:57,840
-Also wir verwenden die Haskell-Funktionen im
+Also verwenden wir die Haskell-Funktionen im
 gleichen Sinne wie die Funktionen der Mengenlehre.
 
 00:01:57,840 --> 00:01:59,440
@@ -121,7 +122,7 @@ Unterschied zwischen Syntax und
 Semantik im Fall von Haskell.
 
 00:02:14,480 --> 00:02:17,760
-Wenn wir also die Funktion aufschreiben
+Wenn wir also die Funktion aufschreiben,
 Definition, sie bedeutet genau
 
 00:02:17,760 --> 00:02:20,240
@@ -133,8 +134,8 @@ Okay, also die Auswertung von Werten durch
 Anwendung einer niedergeschriebenen Definition.
 
 00:02:27,600 --> 00:02:30,640
-Das ist der Grund, warum wir bei Haskell,
-diese Unterscheidung nicht gemacht.
+Das ist der Grund, warum wir bei Haskell
+diese Unterscheidung nicht gemacht haben.
 
 00:02:30,640 --> 00:02:38,800
 Aber für Prolog hier werden wir eine
@@ -167,12 +168,12 @@ wo wir uns auch mit Abfragen beschäftigen werden, die
 Variablen in diesem Sinne enthalten.
 
 00:03:05,760 --> 00:03:10,080
-Außerdem ist die deklarative Semantik ein
-etwas einfacher als die operationelle Semantik.
+Außerdem ist die deklarative Semantik etwas
+einfacher als die operationelle Semantik.
 
 00:03:10,080 --> 00:03:17,840
 Denn sie muss sich nicht mit
-Variablen in den Abfragen umgehen muss.
+Variablen in den Abfragen auseinandersetzen.
 
 40 # slide
 00:03:18,480 --> 00:03:24,000
@@ -189,7 +190,7 @@ offensichtliche Schritt wäre es, wirklich
 
 00:03:36,960 --> 00:03:42,160
 die Prologsyntax durch die
-normale Syntax der Prädikatenlogik.
+normale Syntax der Prädikatenlogik zu ersetzen.
 
 00:03:42,160 --> 00:03:46,000
 Und tatsächlich, schreiben Sie auf, was die
@@ -204,16 +205,18 @@ Und das ist eigentlich etwas, das ich schon
 gezeigt habe, als wir über die Regeln von
 
 00:03:54,960 --> 00:04:03,040
-Variablen und über freie Variablen gesprochen haben, dann habe ich
-diese Transkription in die normale logische Syntax verwenden.
+Variablen und über freie Variablen gesprochen haben. Dann habe ich
+diese Transkription in die normale logische Syntax verwendet.
+
+
 
 00:04:03,040 --> 00:04:09,440
 Oder insbesondere diese explizite
 Regel der Quantoren.
 
 00:04:09,440 --> 00:04:18,080
-Und dann war die Idee, na ja, im Grunde genommen, wird diese
-Tatsache in eine Aussage über alle x umgewandelt wird.
+Und dann war die Idee, na ja, im Grunde genommen wird diese
+Tatsache in eine Aussage über alle x umgewandelt.
 
 00:04:19,120 --> 00:04:23,280
 Wobei x jetzt als Variable verwendet wird, und es ist
@@ -228,7 +231,7 @@ Also, die rechte Seite
 
 00:04:30,560 --> 00:04:35,040
 impliziert die linke Seite und dann
-Natürlich kann man es auch in dieser Reihenfolge schreiben.
+natürlich kann man es auch in dieser Reihenfolge schreiben.
 
 00:04:35,600 --> 00:04:38,880
 Und noch einmal, alle Variablen, die
@@ -248,7 +251,7 @@ diesem Prolog-Programm entspricht.
 
 00:04:52,880 --> 00:04:56,000
 Okay, natürlich ist das nur eine
-Änderung der Syntax, das tut es nicht,
+Änderung der Syntax, das tut es nicht
 
 00:04:56,000 --> 00:04:58,800
 selbst, was die Bedeutung
@@ -268,7 +271,7 @@ auf Hintergrundmaterial stützen werde, das
 
 00:05:19,920 --> 00:05:24,720
 in der vorherigen Vorlesung von Professor
-König zur Verfügung gestellt hat, und ich habe Sie auf Folien hingewiesen
+König zur Verfügung gestellt wurde, und ich habe Sie auf Folien hingewiesen
 
 00:05:24,720 --> 00:05:28,080
 die diese Konzepte erklären
@@ -283,7 +286,7 @@ Nun gut.
 
 00:05:37,040 --> 00:05:44,560
 Und dann, wie wird den logischen Formeln eine Bedeutung gegeben
-oder auch solchen Kombinationen von Formeln.
+oder auch solchen Kombinationen von Formeln?
 
 00:05:44,560 --> 00:05:47,840
 Nun, damit beginnt die Logik
@@ -299,10 +302,10 @@ gibt es diesen Begriff der "Struktur".
 
 00:06:02,000 --> 00:06:10,640
 Das ist also unsere Definition von gegebener Signatur,
-gegebene Konstanten- und Prädikatnamen, usw.
+gegebenen Konstanten- und Prädikatnamen, usw.
 
 00:06:10,640 --> 00:06:15,440
-Was diese Struktur ist und das ist im Grunde
+Was diese Struktur ist, und das ist im Grunde
 der Aufbau zur Beschreibung des Modells.
 
 00:06:15,440 --> 00:06:17,840
@@ -310,7 +313,7 @@ Also, was ist darin enthalten?
 
 00:06:17,840 --> 00:06:20,960
 Nun, es muss eine
-Menge von mathematischen Objekten.
+Menge von mathematischen Objekten geben.
 
 00:06:20,960 --> 00:06:25,760
 Das sind die Dinge, auf denen die Variablen
@@ -318,7 +321,7 @@ dann später als quantifiziert angenommen werden, richtig?
 
 00:06:25,760 --> 00:06:30,160
 Wenn Sie sagen "für alle x", dann müssen Sie wissen,
-Nun, was sind die Möglichkeiten, die wir für x haben.
+nun, was sind die Möglichkeiten, die wir für x haben.
 
 00:06:31,120 --> 00:06:34,960
 Und in einer sehr allgemeinen Struktur in dieser Logiktheorie
@@ -332,7 +335,7 @@ Zwang in Herbrand-Strukturen und Modellen,
 was auch in der Folie von Struktur vorkommt.
 
 00:06:46,800 --> 00:06:50,640
-Aber von außen betrachtet, wäre es
+Aber von außen betrachtet wäre es
 einfach eine Menge mathematischer Objekte.
 
 00:06:50,640 --> 00:06:51,120
@@ -365,7 +368,7 @@ und wie dieses s in diesem Fall hier im Programm
 
 00:07:20,480 --> 00:07:25,440
 vorkommt, muss als Funktion
-eine Funktion auf diese mathematischen Objekte interpretiert werden muss.
+eine Funktion auf diese mathematischen Objekte interpretiert werden.
 
 00:07:25,440 --> 00:07:26,880
 Also, da dies ein Argument benötigt,
@@ -392,7 +395,7 @@ Objekten von sich selbst zu dieser Menge zurück.
 
 00:07:49,760 --> 00:07:53,440
 Okay, so wird also der
-Datenpfad interpretiert wird.
+Datenpfad interpretiert.
 
 00:07:53,440 --> 00:07:56,240
 Die Konstanten als Elemente
@@ -417,16 +420,17 @@ und letztendlich Beziehungen, richtig?
 So ist etwa die Addition ein dreistelliges Prädikat,
 
 00:08:16,240 --> 00:08:19,840
-die Dinge, die in den Argumenten vorkommen
+die Dinge, die in den Argumenten vorkommen,
 Positionen interpretiert werden können.
 
 00:08:19,840 --> 00:08:26,240
-Dank der ersten beiden Punkte als Elemente der
-dieser Auswahlmenge, aus der die Struktur aufgebaut ist.
+Dank der ersten beiden Punkte als Elemente dieser Auswahlmenge, aus der die Struktur aufgebaut ist.
+
+
 
 00:08:26,800 --> 00:08:33,120
 Und dann kann für jedes Tripel von Elementen aus dieser
-Menge könnte dieses Prädikat wahr oder falsch sein.
+Menge dieses Prädikat wahr oder falsch sein.
 
 00:08:33,120 --> 00:08:36,480
 Und das ist genau das, wofür eine
@@ -441,7 +445,7 @@ Okay, dann können wir interpretieren
 sowohl die Argumentpositionen hier
 
 00:08:46,640 --> 00:08:49,840
-und eine Aussage wie diese Literale.
+als auch eine Aussage wie diese Literale.
 
 00:08:50,720 --> 00:08:59,520
 Je nachdem, welche Beziehung wir für
@@ -449,18 +453,17 @@ eine bestimmte Wahl von Prädikaten und Argumenten,
 
 00:09:00,160 --> 00:09:05,440
 können wir sagen, dass dies so interpretiert wird, dass es
-als wahr oder falsch interpretiert, je nachdem, welche Relation
+als wahr oder falsch interpretiert wird, je nachdem, welche Relation
 
 00:09:05,440 --> 00:09:08,560
-dass wir die Interpretation gewählt haben
-für dieses bestimmte Prädikat gewählt haben.
+wir für dieses bestimmte Prädikat gewählt haben.
 
 00:09:09,120 --> 00:09:09,440
 Okay.
 
 00:09:09,440 --> 00:09:15,760
 Das würde uns also wahre Werte für die
-Literale, für die Dinge, die hier vorkommen.
+Literale, für die Dinge, die hier vorkommen, geben.
 
 00:09:15,760 --> 00:09:18,080
 Implikationen von Prädikaten auf Argumente.
@@ -478,25 +481,25 @@ den Formeln wahre Werte zuzuweisen, richtig?
 
 00:09:33,200 --> 00:09:39,280
 Also, wenn wir zwei Literale haben, dann wird die
-Konjunktion von ihnen interpretiert als
+Konjunktion von ihnen als
 
 00:09:39,280 --> 00:09:44,560
-die logische Konjunktion, ob beide
+die logische Konjunktion interpretiert, ob beide
 nicht beide einzeln wahr sind.
 
 00:09:44,560 --> 00:09:44,880
 Okay.
 
 00:09:44,880 --> 00:09:47,040
-Und die Implikation wird interpretiert
-auf die übliche Weise interpretiert.
+Und die Implikation wird auf die übliche Weise
+interpretiert.
 
 00:09:47,600 --> 00:09:51,200
-Die Quantoren werden auf die übliche Weise interpretiert
-Standardweise interpretiert, z.B. wenn es heißt "für alle x",
+Die Quantoren werden auf die übliche Weise
+interpretiert, z.B. wenn es heißt "für alle x",
 
 00:09:52,000 --> 00:09:58,400
-dann bedeutet diese Aussage eigentlich wie in der Logik
+dann bedeutet diese Aussage eigentlich, wie in der Logik
 für jedes Element der Menge, die Sie
 
 00:09:58,400 --> 00:10:02,800
@@ -511,16 +514,15 @@ für Null und das Doppelte dieses Elements gilt.
 Okay, so können wir also
 
 00:10:11,680 --> 00:10:16,960
-nicht nur für zwei einzelne Literale wahre Werte zuweisen
-Literale, wie die ersten drei Elemente hier.
+nicht nur für zwei einzelne Literale wahre Werte zuweisen,
+sondern auch für eine ganze Formel, die auch,
 
 00:10:16,960 --> 00:10:22,800
-Sondern tatsächlich für eine ganze Formel, die auch,
 natürlich die zusammengesetzte Formel, die man
+durch die Übersetzung aller Fakten und Regeln
 
 00:10:22,800 --> 00:10:27,600
-durch die Übersetzung aller Fakten und Regeln
-aus dem Programm in diese logischen Einstellungen.
+aus dem Programm in diese logischen Einstellungen erhält.
 
 00:10:29,200 --> 00:10:31,680
 Okay, und jetzt haben wir diese
@@ -541,11 +543,11 @@ Interpretationen dieser Konstanten wählen.
 Wir haben also eine Wahl.
 
 00:10:39,360 --> 00:10:44,640
-Wie wir dieses Symbol Null in unserer Gesamtmenge interpretieren
+Wie wir dieses Symbol Null in unserer Gesamtmenge interpretieren,
 Menge, die sogar unendlich viele Möglichkeiten umfassen könnte.
 
 00:10:44,640 --> 00:10:46,720
-Dasselbe gilt für diese Funktionen
+Dasselbe gilt für die Funktionen,
 die wir zu wählen haben.
 
 00:10:47,680 --> 00:10:48,640
@@ -560,11 +562,11 @@ Dann können wir prüfen, ob diese
 Interpretation angesichts dieser
 
 00:10:56,080 --> 00:11:02,000
-Zuweisungsregeln, welche wahren Werte wir erhalten
+Zuweisungsregeln, welche wahren Werte wir erhalten,
 für die Formel, die dem Programm entspricht.
 
 00:11:02,000 --> 00:11:05,920
-Und wir betrachten nur die Interpretationen
+Und wir betrachten nur die Interpretationen,
 die alle gegebenen Formeln wahr machen.
 
 00:11:05,920 --> 00:11:11,440
@@ -572,15 +574,15 @@ Nun, gegebene Formeln bedeuten Übersetzungen dieser
 Fakten und Regeln, oder wenn man sie tatsächlich zu
 
 00:11:11,440 --> 00:11:17,600
-einer großen Konjunktion zusammengefasst, dann gibt es
+einer großen Konjunktion zusammenfasst, dann gibt es
 nur eine Gesamtformel, die wahr sein muss.
 
 00:11:17,600 --> 00:11:23,200
-Okay, all die Interpretationen, all diese Entscheidungen
+Okay, all die Interpretationen, all diese Entscheidungen,
 die wir hier treffen können, oder jede Wahl
 
 00:11:23,200 --> 00:11:28,000
-die wir hier getroffen haben, für die eigentlich die
+die wir hier getroffen haben, für die tatsächlich die
 Formel, die dem Programm entspricht, wahr ist.
 
 00:11:28,000 --> 00:11:29,200
@@ -596,8 +598,8 @@ Dann haben wir ein Modell für diese logische Formel.
 Und die Semantik eines Programms ist
 
 00:11:41,040 --> 00:11:47,600
-all jene Beziehungen zwischen den Aussagen genannt
-die in allen Modellen des Programms wahr sind.
+all jene Beziehungen zwischen den Aussagen, die
+in allen Modellen des Programms wahr sind.
 
 00:11:47,600 --> 00:11:51,120
 Wir haben ein Programm, das
@@ -608,7 +610,7 @@ könnten wir im Prinzip sehr viele verschiedene
 Auswahlmöglichkeiten für die Interpretation der syntaktischen Bestandteile
 
 00:11:58,800 --> 00:12:04,880
-des Programms treffen, wir betrachten nur diejenigen, für
+des Programms treffen; wir betrachten nur diejenigen, für
 die das Programm als Formel wahr ist.
 
 00:12:05,840 --> 00:12:07,520
@@ -631,16 +633,18 @@ Und dann sind genau diese Aussagen, diese
 Beziehungen, die in allen Modellen wahr sind,
 
 00:12:26,320 --> 00:12:30,400
-d.h. in allen Interpretationen
+d.h. in allen Interpretationen,
 die das Programm selbst wahr machen.
 
 00:12:30,400 --> 00:12:34,480
 Das sind die Dinge, die
 die Semantik des Programms ausmachen.
 
+
+
 00:12:34,480 --> 00:12:38,400
 Und das bedeutet dann natürlich zum
-Beispiel, dass, wenn man logisch
+Beispiel, dass, wenn man logisch.
 
 00:12:38,400 --> 00:12:42,800
 etwas aus der Formel ableiten kann, dann
@@ -648,11 +652,11 @@ wird das auch in allen Modellen wahr sein.
 
 00:12:43,600 --> 00:12:46,560
 Genau diese Dinge werden wahr sein in
-allen Modellen, die auch logische
+allen Modellen, die auch logische.
 
 00:12:47,280 --> 00:12:52,240
 Konsequenzen aus dem gegebenen
-materiellen Hintergrundwissens sind.
+materiellen Hintergrundwissen sind.
 
 00:12:52,240 --> 00:12:52,720
 Okay?
@@ -668,11 +672,11 @@ diese Art von Modelltheorie.
 41 # slide
 00:13:09,920 --> 00:13:13,280
 Also, diese Freiheit, die man auf der
-vorigen Folie bei der Wahl dieser
+vorigen Folie bei der Wahl dieser.
 
 00:13:14,000 --> 00:13:17,200
 zugrundeliegenden Menge von mathematischen
-Objekte, oft Universum genannt,
+Objekten, oft Universum genannt,
 
 00:13:17,200 --> 00:13:23,600
 ist ein Problem, wenn man systematisch
@@ -680,7 +684,7 @@ Konsequenzen einer logischen Formel untersuchen will.
 
 00:13:23,600 --> 00:13:27,360
 Ja, denn es gibt zu viele Modelle
-in dem Sinne, dass man sie betrachten
+in dem Sinne, dass man sie betrachten.
 
 00:13:27,360 --> 00:13:34,320
 müsste, wenn man wirklich die
@@ -691,7 +695,7 @@ Okay?
 
 00:13:35,040 --> 00:13:38,000
 Zum Glück gibt es immer das
-eine Art universelles Modell eins.
+eine universelles Modell.
 
 00:13:38,720 --> 00:13:42,960
 Also, ein Modell, das manchmal
@@ -716,14 +720,14 @@ Wir betrachten also nicht wirklich eine beliebige Menge
 von mathematischen Objekten, wir betrachten einfach Terme.
 
 00:14:04,400 --> 00:14:05,840
-Weder die Funktionen noch die Prädikate tun also wirklich
+Weder die Funktionen noch die Prädikate tun also wirklich.
 
 00:14:05,840 --> 00:14:09,120
-tun etwas in dem Sinne, dass
+Tun etwas in dem Sinne, dass
 sie zu irgendeiner tatsächlichen Berechnung.
 
 00:14:09,120 --> 00:14:13,200
-Sie werden einfach als das aufgefasst, was sie sind
+Sie werden einfach als das aufgefasst, was sie sind,
 wie sie geschrieben sind, nämlich als syntaktische Objekte.
 
 00:14:13,840 --> 00:14:17,120
@@ -731,15 +735,15 @@ Okay, was hat das nun für Konsequenzen?
 
 00:14:17,120 --> 00:14:19,760
 Nun, die Menge der Objekte wird
-ist einfach die Menge der Grundterme.
+einfach die Menge der Grundterme sein.
 
 00:14:20,720 --> 00:14:26,560
-Ja, wir haben eine implizit gegebene Signatur
-wie Null und ein Nachfolgesymbol und
+Ja, wir haben eine implizit gegebene Signatur,
+wie Null und ein Nachfolgesymbol und.
 
 00:14:28,480 --> 00:14:32,000
-auch Prädikate, die einfach
-auf die Konstanten und die
+Auch Prädikate, die einfach
+auf die Konstanten und die.
 
 00:14:32,560 --> 00:14:37,040
 Datenkonstruktoren betrachten, hätten wir
@@ -786,7 +790,7 @@ Ja.
 
 00:15:08,560 --> 00:15:16,320
 Wendet man also den Konstruktor s auf den Term s
-von Null anwenden, dann erhalten wir einen neuen Term s von s von Null.
+von Null an, dann erhalten wir einen neuen Term s von s von Null.
 
 00:15:16,320 --> 00:15:21,440
 Betrachten Sie also die Interpretation einfach als das, was wir
@@ -798,30 +802,30 @@ in einem mathematischen Sinn.
 
 00:15:26,960 --> 00:15:31,920
 Okay, und das Prädikat, nun, da
-es Beziehungen über diese
+es Beziehungen über diese.
 
 00:15:31,920 --> 00:15:38,720
-Basismenge geben sollte, können wir das jetzt so interpretieren
-einfach diese Implikationen aufschreiben
+Basismenge geben sollte, können wir das jetzt so interpretieren,
+einfach diese Implikationen aufschreiben.
 
 00:15:38,720 --> 00:15:42,080
-von Prädikatssymbolen auf Grundterme,
+Von Prädikatssymbolen auf Grundterme,
 die als wahr angesehen werden sollten.
 
 00:15:42,080 --> 00:15:45,360
-Ja, das ist eine Möglichkeit der Interpretation oder der Darstellung einer
+Ja, das ist eine Möglichkeit der Interpretation oder der Darstellung einer.
 
 00:15:46,960 --> 00:15:52,880
-Relation auf einer solchen syntaktischen Menge, indem man einfach sagt
-Nun, wir machen eine andere Menge, in der wir sammeln
+Relation auf einer solchen syntaktischen Menge, indem man einfach sagt:
+Nun, wir machen eine andere Menge, in der wir sammeln.
 
 00:15:52,880 --> 00:15:58,000
-alle Anwendungen unserer Prädikatssymbole,
+Alle Anwendungen unserer Prädikatssymbole,
 zum Beispiel das Additionssymbol auf drei Grundterme.
 
 00:15:58,560 --> 00:16:04,000
 Aber natürlich nicht alle diese Kombinationen,
-sondern nur diejenigen, die in unserer
+sondern nur diejenigen, die in unserer.
 
 00:16:04,000 --> 00:16:08,240
 Interpretation, in unserem Verständnis
@@ -837,19 +841,21 @@ in Professor Königs Kurs vorkommt.
 
 00:16:18,720 --> 00:16:24,640
 Also, Herbrand war der Magier, der
-diese spezifischen Strukturen, diese spezifischen Modelle
+diese spezifischen Strukturen, diese spezifischen Modelle.
 
 00:16:24,640 --> 00:16:35,200
-dann auch, um die Modelltheorie für die Art der Logik
+Dann auch, um die Modelltheorie für die Art der Logik,
 die hier verwendet wird, besser zu verstehen.
 
 00:16:35,200 --> 00:16:42,560
 Okay, also das Herbrand-Universum wäre jetzt
-dieser Raum sein, der von nun an verwendet wird.
+dieser Raum, der von nun an verwendet wird.
 
 00:16:43,840 --> 00:16:49,440
-Und nun, was in der letzten Zeile steht
-hier steht, ist also eine ausgewählte Menge von syntaktischen
+Und nun, was in der letzten Zeile steht,
+hier steht, ist also eine ausgewählte Menge von syntaktischen.
+
+
 
 00:16:49,440 --> 00:16:53,280
 Anwendung der Prädikatssymbole auf Grundterme,
@@ -878,7 +884,7 @@ Es gibt diese Konstante einfach in 0 der Stelligkeit 0.
 Und das Funktionssymbol s hat die Stelligkeit eins, richtig?
 
 00:17:12,400 --> 00:17:17,840
-Denn es nimmt ein Argument
+Denn es nimmt ein Argument,
 wie wir zum Beispiel hier sehen.
 
 00:17:18,960 --> 00:17:21,280
@@ -911,17 +917,17 @@ Das ist nur eine syntaktische Betrachtung.
 
 00:17:45,280 --> 00:17:50,400
 Und wichtig ist, dass wir im Herbrand-Universum
-verwenden wir das Prädikatsymbol nicht.
+das Prädikatsymbol nicht verwenden.
 
 00:17:50,400 --> 00:17:53,680
-Schauen Sie sich also wirklich nur die Dinge an
+Schauen Sie sich also wirklich nur die Dinge an,
 die in Argumentpositionen vorkommen können.
 
 00:17:53,680 --> 00:17:55,520
 Die Null und das s von etwas.
 
 00:17:55,520 --> 00:17:59,840
-Okay, und wir betrachten hier keine Variablen
+Okay, und wir betrachten hier keine Variablen,
 hier nicht, denn das sollten Grundterme sein.
 
 00:17:59,840 --> 00:18:01,360
@@ -970,7 +976,7 @@ Einschließlich Dinge, von denen wir intuitiv
 wissen, dass sie nicht wahr sind, richtig?
 
 00:18:47,840 --> 00:18:51,280
-Wir wissen, dass Null plus Null nicht Eins ist,
+Wir wissen, dass Null plus Null nicht eins ist,
 aber die Herbrand-Basis kümmert sich nicht darum.
 
 00:18:51,280 --> 00:18:55,840
@@ -988,7 +994,7 @@ in gewissem Sinne wahrer ist, oder?
 Also, logisch konsistenter des Prologs.
 
 00:19:04,880 --> 00:19:07,120
-Aber Herbrand Basis ist einfach
+Aber die Herbrand-Basis ist einfach
 alle Anwendungen hier.
 
 00:19:08,720 --> 00:19:09,840
@@ -1044,11 +1050,11 @@ Interpretation, die ein Modell ist.
 Okay.
 
 00:20:11,920 --> 00:20:15,440
-Nun, eine vernünftige Frage wäre eigentlich die: Ist
-gibt es eine solche kleinste Interpretation?
+Nun, eine vernünftige Frage wäre eigentlich die: Gibt es
+eine solche kleinste Interpretation?
 
 00:20:15,440 --> 00:20:17,680
-Oder gibt es vielleicht verschiedene
+Oder gibt es vielleicht verschiedene,
 die nicht vergleichbar sind?
 
 00:20:17,680 --> 00:20:18,880
@@ -1075,8 +1081,10 @@ Und hat auch eine Definition, die auf den ersten Blick
 vielleicht auf den ersten Blick kompliziert aussieht,
 
 00:20:35,840 --> 00:20:38,480
-aber wir werden gleich sehen
+aber wir werden gleich sehen,
 dies auf ein Beispiel anwenden.
+
+
 
 00:20:38,480 --> 00:20:42,080
 Und wir werden sehen, dass das ein sehr
@@ -1120,7 +1128,7 @@ müssen sie sich aus diesem
 
 00:21:14,000 --> 00:21:18,880
 mit nur einem Argumentationsschritt durch Anwendung einer Tatsache
-oder eine Regel aus unserem anderen Programm, richtig?
+oder einer Regel aus unserem anderen Programm, richtig?
 
 00:21:18,880 --> 00:21:22,800
 Also, das Programm p
@@ -1148,21 +1156,21 @@ was dann eine Herbrand-Interpretation ist.
 Und es erzeugt alle Grundliterale.
 
 00:21:40,800 --> 00:21:43,040
-Das sind also Dinge, die in einer Herbrand-Interpretation vorkommen können
+Das sind also Dinge, die in einer Herbrand-Interpretation vorkommen können.
 
 00:21:43,040 --> 00:21:46,160
 Interpretation vorkommen können, denn sie sind genau
-die Elemente der Herbrand-Basis sind, richtig?
+die Elemente der Herbrand-Basis, richtig?
 
 00:21:46,160 --> 00:21:48,560
 Prädikatssymbole, die auf Grundterme angewendet werden.
 
 00:21:48,560 --> 00:21:55,920
 Es erzeugt also alle Grundliterale plus Null für
-die es gibt L eins, zwei, Ln
+die es gibt L eins, zwei, Ln.
 
 00:21:56,480 --> 00:22:01,920
-für irgendeine natürliche Zahl N, die bereits
+Für irgendeine natürliche Zahl N, die bereits
 in der aktuellen Interpretation, richtig?
 
 00:22:01,920 --> 00:22:03,520
@@ -1173,7 +1181,7 @@ Wir müssen also L1, L2 bis Ln, bereits in der
 gegebenen I so, dass die Null erhalten würde,
 
 00:22:12,400 --> 00:22:18,640
-wenn wir irgendeine Tatsache oder Regel aus dem Programm nehmen
+wenn wir irgendeine Tatsache oder Regel aus dem Programm nehmen,
 die auf irgendeine konsistente Weise instanziiert wurde, richtig?
 
 00:22:18,640 --> 00:22:21,520
@@ -1201,7 +1209,7 @@ dass wir L1, Ln schon im aktuellen I finden.
 
 00:22:49,520 --> 00:22:53,520
 Und wenn ja, dann setzen wir die L0, die natürlich
-auch seine Variablen ersetzt hat
+auch seine Variablen ersetzt hat,
 
 00:22:53,520 --> 00:22:59,680
 durch die Dinge, die wir für die Variablen gewählt
@@ -1211,7 +1219,7 @@ haben, und setzen diese Null in die nächste Menge.
 Also, in das, was Tp aus diesem I macht.
 
 00:23:04,320 --> 00:23:07,520
-Okay, es ist wichtig zu beachten
+Okay, es ist wichtig zu beachten,
 dass das n auch Null sein kann, richtig?
 
 00:23:07,520 --> 00:23:11,280
@@ -1223,17 +1231,17 @@ das wäre dann ein Fakt, richtig?
 
 00:23:12,640 --> 00:23:18,000
 Der Fall der Fakten wird hier also auch behandelt,
-das ist der Fall, wenn n gleich Null ist,
+das ist der Fall, wenn n gleich Null ist.
 
 00:23:18,640 --> 00:23:27,600
-dann setzen wir einfach in die nächste Menge alle
-Instanziierungen, aller Grundinstantiierungen, unseres
+Dann setzen wir einfach in die nächste Menge alle
+Instanziierungen aller Grundinstantiierungen unseres
 
 00:23:28,480 --> 00:23:30,960
 Fakts in die nächste Menge, wenn unser Kopf den leeren Rumpf hat.
 
 00:23:32,400 --> 00:23:35,920
-Okay, das ist also eine Operation auf Mengen
+Okay, das ist also eine Operation auf Mengen,
 die Sie gleich in Aktion sehen werden.
 
 00:23:35,920 --> 00:23:37,200
@@ -1251,10 +1259,10 @@ Und dann können wir diesen Operator auf die
 leere Menge anwenden, dann bekommen wir vielleicht neue Elemente.
 
 00:23:47,200 --> 00:23:50,080
-Also, die leere Menge wächst zu etwas nicht-Leerem,
+Also, die leere Menge wächst zu etwas Nicht-Leerem.
 
 00:23:50,080 --> 00:23:53,120
-dann können wir diesen Folgeoperator
+Dann können wir diesen Folgeoperator
 erneut auf diese Menge anwenden.
 
 00:23:53,120 --> 00:23:54,560
@@ -1287,30 +1295,32 @@ Und was auch immer das ist, ob es in der
 endlichen Zeit, oder es ist einfach eine unendliche Grenze,
 
 00:24:24,880 --> 00:24:28,160
-das wird das kleinste Herbrand-Modell sein.
-Modell, nach dem wir suchen.
+das wird das kleinste Herbrand-Modell sein,
+nach dem wir suchen.
+
+
 
 00:24:28,160 --> 00:24:31,600
 Okay, wir haben also einen Fixpunkt oder ein Limit einer
-Folge, die mit der leeren Menge beginnt,
+Folge, die mit der leeren Menge beginnt.
 
 00:24:31,600 --> 00:24:35,120
-indem wir diese Operation, die hier
-definiert ist, auf die leere Menge,
+Indem wir diese Operation, die hier
+definiert ist, auf die leere Menge
 
 00:24:35,120 --> 00:24:40,000
-erhalten eine neue Menge, wenden Tp auf diese
+anwenden, erhalten wir eine neue Menge, wenden Tp auf diese
 Menge, und dann auf diese Menge, usw.
 
 00:24:40,000 --> 00:24:42,960
-Und entweder hört es an einem bestimmten Punkt auf,
+Und entweder hört es an einem bestimmten Punkt auf
 oder es geht ewig so weiter.
 
 00:24:42,960 --> 00:24:44,480
 Aber sie wird nie kleiner.
 
 00:24:44,480 --> 00:24:50,800
-Wenn wir also in einer der Mengen eine wörtliche Zahl finden
+Wenn wir also in einer der Mengen eine wörtliche Zahl finden,
 der Mengen finden, dann wissen wir, dass es auch
 
 00:24:50,800 --> 00:24:54,960
@@ -1329,7 +1339,7 @@ Denn es erscheint im kleinsten Herbrand-Modell.
 
 00:25:05,840 --> 00:25:13,840
 Und das ist es, was wir als
-die Bedeutung des Programms.
+die Bedeutung des Programms betrachten.
 
 43 # slide
 00:25:15,840 --> 00:25:18,480
@@ -1350,12 +1360,12 @@ des Tp-Operators auf die leere Menge aufschreiben.
 Was wird das also sein?
 
 00:25:29,920 --> 00:25:36,640
-Nun, was müssen wir tun, wir müssen prüfen
+Nun, was müssen wir tun? Wir müssen prüfen,
 welche rechten Seiten des gegebenen Programms
 
 00:25:36,640 --> 00:25:42,400
 Programmklauseln wir bereits in
-grundinstanziierter Form in unserer gegebenen Menge finden?
+grundinstanziierter Form in unserer gegebenen Menge finden.
 
 00:25:42,400 --> 00:25:45,920
 Wenn diese gegebene Menge am Anfang die
@@ -1367,11 +1377,11 @@ im Operator der unmittelbaren Folge zu verwenden.
 
 00:25:50,560 --> 00:25:56,480
 Denn es gibt kein l1 auf der rechten Seite,
-das wir auch im gegebenen I finden könnten.
+das wir auch in dem gegebenen I finden könnten.
 
 00:25:56,480 --> 00:26:00,080
-Okay, im ersten Schritt macht es also nur Sinn
-sinnvoll, sich die Fakten des Programms anzusehen.
+Okay, im ersten Schritt macht es also nur Sinn,
+sich die Fakten des Programms anzusehen.
 
 00:26:00,080 --> 00:26:01,200
 Und was müssen wir dann tun?
@@ -1381,11 +1391,11 @@ Nun, im Falle eines Fakts haben wir
 keine rechte Seite zu berücksichtigen.
 
 00:26:04,480 --> 00:26:09,200
-Alles, was wir tun müssen, ist also zu prüfen oder zu
+Alles, was wir tun müssen, ist also zu prüfen oder
 alle Grundinstantiierungen
 
 00:26:09,200 --> 00:26:13,760
-dieses Kopfes zu prüfen und zu versuchen
+dieses Kopfes zu prüfen und zu versuchen,
 die Menge auf unsere nächste Menge zu übertragen.
 
 00:26:14,880 --> 00:26:17,520
@@ -1404,7 +1414,7 @@ beide Vorkommen von x.
 
 00:26:27,680 --> 00:26:34,160
 Okay, das bedeutet also, dass die erste
-Anwendung des Tp-Operators auf die leere Menge,
+Anwendung des Tp-Operators auf die leere Menge
 
 00:26:34,160 --> 00:26:38,320
 uns diese bereits unendliche Menge
@@ -1424,19 +1434,18 @@ Element des Herbrand-Universums ersetzen.
 Vielleicht s von Null.
 
 00:26:46,240 --> 00:26:51,120
-Dann bekommen wir dieses Literal in unsere Menge kann
-dasselbe für s von, s von Null, usw. tun.
+Dann bekommen wir dieses Literal in unsere Menge, können
+das gleiche für s von, s von Null, usw. tun.
 
 00:26:51,120 --> 00:26:56,720
-Hier fügen wir also Elemente aus dem Herbrand
+Hier fügen wir also Elemente aus dem Herbrand-
 Universum ein, das wir zuvor festgelegt haben,
 
 00:26:56,720 --> 00:26:57,440
 zwei Folien zurück.
 
 00:26:58,160 --> 00:27:00,800
-Okay, das ist also, was passiert
-in der ersten Iteration.
+Okay, das ist also, was in der ersten Iteration passiert.
 
 00:27:01,760 --> 00:27:02,640
 Dann machen wir das noch einmal.
@@ -1453,14 +1462,14 @@ wieder alle diese Elemente erhalten, richtig?
 
 00:27:11,840 --> 00:27:14,800
 Denn im nächsten Schritt und wir
-können wir uns immer noch den ersten Fakt ansehen.
+können uns immer noch den ersten Fakt ansehen.
 
 00:27:14,800 --> 00:27:17,920
 Es hat eine rechte Seite, also müssen wir
 nichts in der vorherigen Menge finden.
 
 00:27:17,920 --> 00:27:21,360
-Wir können einfach alle Grundinstanziierungen
+Wir können einfach alle Grundinstantiierungen
 des Dings hinzufügen.
 
 00:27:21,360 --> 00:27:24,160
@@ -1468,7 +1477,7 @@ Aber das würde nur Dinge hinzufügen, die
 wir bereits gesehen haben, das macht keinen
 
 00:27:24,160 --> 00:27:26,400
-Sinn macht oder nichts
+Sinn oder nichts
 interessantes Neues.
 
 00:27:26,960 --> 00:27:33,040
@@ -1484,18 +1493,18 @@ Wir können also in dieser Menge tatsächlich nach
 Grundinstanzen dieser rechten Seite suchen.
 
 00:27:44,160 --> 00:27:50,400
-Und für jede Wahl von x, y und z, für die wir ein Element
-für die wir hier ein Element finden, können wir
+Und für jede Wahl von x, y und z, für die wir hier ein Element
+finden, können wir
 
 00:27:50,400 --> 00:27:56,160
-bei der nächsten Iteration, die entsprechende
+bei der nächsten Iteration die entsprechende
 Instanziierung des Kopfes dieser Regel hinzufügen.
 
 00:27:58,000 --> 00:28:00,080
 Okay, wir haben also schon alles, was wir haben.
 
 00:28:00,080 --> 00:28:03,280
-Und das wird immer der Fall sein, ich habe schon
+Und das wird immer der Fall sein, ich habe bereits
 erwähnt, dass die Mengen nur wachsen können.
 
 00:28:03,280 --> 00:28:06,880
@@ -1512,13 +1521,15 @@ Okay, hier bekommen wir also das, was wir schon hatten, plus.
 00:28:15,280 --> 00:28:16,400
 Nun, plus was?
 
+
+
 00:28:16,400 --> 00:28:22,080
 Zum Beispiel, da dies als eine
-Instanziierung für diese rechte Seite hier genommen werden kann,
+Instanziierung für diese rechte Seite hier genommen werden kann.
 
 00:28:22,080 --> 00:28:27,680
-wenn man x, y und z so wählt, dass alle drei
-Null sind, müssen wir s der x addieren,
+Wenn man x, y und z so wählt, dass alle drei
+null sind, müssen wir s der x addieren.
 
 00:28:27,680 --> 00:28:31,120
 s von null, y null, s von z null.
@@ -1534,11 +1545,11 @@ eigentlich für jedes derjenigen, die
 wir bereits in unserer aktuellen Menge haben, richtig?
 
 00:28:41,760 --> 00:28:48,320
-Aus diesem Grund, weil wir auch wählen können
-x zu Null, y und z zu den beiden s von Null,
+Aus diesem Grund, weil wir auch wählen können,
+x zu null, y und z zu den beiden s von null,
 
 00:28:49,120 --> 00:28:52,640
-Daraus folgt dieses neue Prädikat.
+daraus folgt dieses neue Prädikat.
 
 00:28:54,320 --> 00:28:57,760
 Mathematisch neues wörtliches Prädikat
@@ -1552,8 +1563,8 @@ Und natürlich, aus jeder dieser
 Instanziierungen für jedes der
 
 00:29:02,480 --> 00:29:05,760
-Literale, die in diesem Punkt, Punkt,
-Punkt vorkommt, erhält man auch hier ein neues.
+Literale, die an diesem Punkt, Punkt,
+Punkt vorkommen, erhält man auch hier ein neues.
 
 00:29:06,880 --> 00:29:08,400
 Okay, lassen Sie mich das noch einmal machen.
@@ -1584,11 +1595,10 @@ immer der Fall sein, aber hier ist es der Fall.
 Okay, das würde also eigentlich immer so weitergehen.
 
 00:29:31,920 --> 00:29:35,120
-Und wenn wir dann einen sehr
-genau hinschauen und überlegen, na ja,
+Und wenn wir dann sehr genau hinschauen und überlegen, na ja,
 
 00:29:35,120 --> 00:29:39,440
-was wäre eigentlich die Grenze von
+was wäre eigentlich die Grenze, von
 wenn wir das unendlich oft machen würden?
 
 00:29:39,440 --> 00:29:42,800
@@ -1600,13 +1610,13 @@ durch endliche Aufzählung, natürlich.
 
 00:29:45,360 --> 00:29:48,640
 Denn sie enthält unendlich viele
-Elemente schon die erste Menge hier
+Elemente, schon die erste Menge hier
 
 00:29:48,640 --> 00:29:51,040
 und dann sicherlich alle anderen auch.
 
 00:29:51,040 --> 00:29:54,720
-Obwohl, was hier eigentlich erscheinen würde
+Obwohl, was hier eigentlich erscheinen würde,
 kann man dieses Muster eigentlich schon sehen.
 
 00:29:54,720 --> 00:30:01,600
@@ -1614,8 +1624,8 @@ Wenn man sich die Beispiele hier anschaut, bekommen wir immer
 erhalten wir für alle Wahlmöglichkeiten schließlich von I und J
 
 00:30:03,120 --> 00:30:09,440
-s, I mal angewandt auf Null, s J mal angewandt
-auf Null, s I plus J mal auf Null angewandt.
+s, I mal angewandt auf null, s J mal angewandt
+auf null, s I plus J mal auf null angewandt.
 
 00:30:09,440 --> 00:30:09,680
 Richtig?
@@ -1629,11 +1639,11 @@ Sie erhalten zwei plus zwei ist
 vier, zwei plus eins ist drei.
 
 00:30:17,120 --> 00:30:19,120
-Also, hier gibt es kein dummes Zeug,
+Also, hier gibt es kein dummes Zeug.
 
 00:30:19,120 --> 00:30:22,240
-man bekommt nur Dinge, die tatsächlich
-eine Konsequenz des gegebenen Programms ist.
+Man bekommt nur Dinge, die tatsächlich
+eine Konsequenz des gegebenen Programms sind.
 
 00:30:22,240 --> 00:30:24,160
 Und eigentlich auch alles, was intuitiv
@@ -1644,7 +1654,7 @@ der Addition ist, wird irgendwann auftauchen.
 
 00:30:27,440 --> 00:30:29,760
 Das ist es, was diese letzte Zeile
-hier eigentlich behauptet
+hier eigentlich behauptet,
 
 00:30:29,760 --> 00:30:32,960
 oder bewiesen, aber es ist die
@@ -1666,7 +1676,7 @@ Die Frage ist jetzt natürlich: Funktioniert
 das immer, für alle Prolog-Programme?
 
 00:30:51,480 --> 00:30:56,000
-Ist es immer möglich, dies zu tun
+Ist es immer möglich, dies zu tun,
 mit dieser Tp-Semantik zu arbeiten?
 
 00:30:56,000 --> 00:31:00,640
@@ -1677,20 +1687,20 @@ alle Teile der Prolog-Sprache.
 So zum Beispiel für die Arithmetik.
 
 00:31:02,160 --> 00:31:06,720
-Die Verwendung dieses "is"-Konstrukts ist also
+Die Verwendung dieses "is"-Konstrukts ist also,
 um Dinge tatsächlich auszuwerten.
 
 00:31:06,720 --> 00:31:09,840
 Und das ist nicht abgedeckt durch
-diese deklarativen Semantik,
+diese deklarative Semantik,
 
 00:31:09,840 --> 00:31:14,560
-hauptsächlich weil die Semantik
+hauptsächlich, weil die Semantik
 so symbolisch orientiert ist, richtig?
 
 00:31:14,560 --> 00:31:18,720
 Also, diese Arithmetik, die wirklich die Berechnung von zwei
-plus fünf ist sieben ist genau etwas
+plus fünf als sieben ist, ist genau etwas,
 
 00:31:18,720 --> 00:31:22,640
 das nicht rein syntaktisch ist, also
@@ -1698,7 +1708,7 @@ passt es nicht wirklich zu diesem Ansatz.
 
 00:31:22,640 --> 00:31:25,760
 Das ist also etwas, das
-nicht durch die Semantik abgedeckt werden.
+nicht durch die Semantik abgedeckt wird.
 
 00:31:25,760 --> 00:31:27,760
 Und natürlich können wir
@@ -1723,7 +1733,7 @@ Weder die Negation in der Form dieses ungleich-Prädikats,
 noch Beziehungen, noch die allgemeine Negation
 
 00:31:52,560 --> 00:31:58,320
-eines Literals werden also berücksichtigt im
+eines Literals werden also im
 Kontext der deklarativen Semantik betrachtet.
 
 00:31:58,320 --> 00:32:00,240
@@ -1733,12 +1743,14 @@ Denn das funktioniert nicht wirklich.
 Oder?
 
 00:32:01,120 --> 00:32:05,040
-Die Interpretation des "not" ist etwas,
+Die Interpretation von "not" ist etwas,
 das operationell verstanden werden muss.
+
+
 
 00:32:06,800 --> 00:32:11,200
 Zumindest, wenn man das Negationssymbol verwendet,
-gibt es ausgefeiltere Versionen
+gibt es ausgefeiltere Versionen.
 
 00:32:11,200 --> 00:32:14,800
 in der Literatur, die sich auch mit der
@@ -1756,21 +1768,21 @@ Auch in Übungen usw. wird dies nicht vorkommen.
 
 00:32:25,680 --> 00:32:29,040
 Und darüber hinaus gibt es
-auch in der Sprache Prolog
+auch in der Sprache Prolog,
 
 00:32:29,040 --> 00:32:32,960
 obwohl es eine logische Programmiersprache ist,
-es gibt auch Funktionen, die nicht wirklich logisch sind.
+gibt es auch Funktionen, die nicht wirklich logisch sind.
 
 00:32:33,600 --> 00:32:34,800
 Sie werden in dieser Vorlesung nicht vorgestellt.
 
 00:32:34,800 --> 00:32:41,360
 Hier beschränken wir uns also auf den logischen Teil von
-Prologs und auch auf die extra-logischen Eigenschaften,
+Prolog und auch auf die extra-logischen Eigenschaften,
 
 00:32:41,360 --> 00:32:45,600
-müssten wir uns auch mit der Tatsache befassen
+müssten wir uns auch mit der Tatsache befassen,
 dass sie nicht dieser Semantik folgen.
 
 00:32:45,600 --> 00:32:49,120
@@ -1778,11 +1790,11 @@ Sie sind also nicht wirklich kompatibel mit der
 Semantik, weil sie wirklich von einer
 
 00:32:49,120 --> 00:32:50,320
-eine Modelltheorie aus der Logik.
+Modelltheorie aus der Logik.
 
 00:32:50,320 --> 00:32:53,120
 Wenn wir also etwas haben, das nicht
-Logik ist, dann stimmt es nicht
+logisch ist, dann stimmt es nicht
 
 00:32:53,120 --> 00:33:00,080
 mit der Semantik überein. Okay, das sind die
@@ -1790,7 +1802,7 @@ Beschränkungen, unter denen die Semantik arbeitet.
 
 00:33:01,280 --> 00:33:07,680
 Okay, also für dich werden wir natürlich
-sicherstellen, dass dies immer erfüllt ist
+sicherstellen, dass dies immer erfüllt ist,
 
 00:33:08,800 --> 00:33:13,280
 wenn Sie ein Programm bekommen, für das Sie
@@ -1835,7 +1847,7 @@ Wir haben hier einen Fall auf der rechten Seite,
 wir haben mehrere Literale, usw.
 
 00:33:48,080 --> 00:33:54,320
-Anhand dieses Beispiels können Sie also wirklich sehen
+Anhand dieses Beispiels können Sie also wirklich sehen,
 die aufwändigere Version dieser Iteration.
 
 00:33:54,880 --> 00:33:58,240
@@ -1846,11 +1858,11 @@ hier auf den Folien nicht im Detail durchgehen.
 Ich habe also die Folien.
 
 00:33:59,280 --> 00:34:02,000
-Und Sie können auch sehen, was passiert
+Und Sie können auch sehen, was passiert,
 was in jeder der Iterationen passiert.
 
 00:34:02,000 --> 00:34:07,280
-Aber ich werde nicht jeden Schritt erklären
+Aber ich werde nicht jeden Schritt erklären,
 denn in dem collection.pdf
 
 00:34:07,280 --> 00:34:11,600
@@ -1863,7 +1875,7 @@ wo das wirklich sehr detailliert beschrieben wurde,
 
 00:34:14,880 --> 00:34:21,520
 wo wirklich jeder Schritt
-erklärt wird, und wie und warum bestimmte neue
+erklärt wird und wie und warum bestimmte neue
 
 00:34:21,520 --> 00:34:27,280
 Literale in der nächsten Iteration des
@@ -1882,8 +1894,8 @@ kommt jetzt dieses neue Element
 in dieser Iteration auf, richtig?
 
 00:34:42,560 --> 00:34:47,040
-Ich erkläre dieses Jahr also nicht im Detail, aber
-Nun, wenn Sie sich die Texterklärung zu diesem anderen
+Ich erkläre dies Jahr also nicht im Detail, aber
+nun, wenn Sie sich die Texterklärung zu diesem anderen
 
 00:34:47,040 --> 00:34:52,560
 Beispiel in der collection.pdf durchlesen, dann
@@ -1891,14 +1903,14 @@ finden Sie genau solche Erklärungen von Schritten.
 
 00:34:52,560 --> 00:34:57,200
 Warum taucht etwas genau in
-dieser Iteration?
+dieser Iteration auf?
 
 00:34:57,200 --> 00:34:57,360
 Eben.
 
 00:34:57,360 --> 00:35:02,640
-Also, was Sie aus diesem Beispiel entnehmen können
-hier erkläre ich nicht jeden Schritt
+Also, was Sie aus diesem Beispiel entnehmen können,
+hier erkläre ich nicht jeden Schritt,
 
 00:35:02,640 --> 00:35:04,560
 ist, wie es wächst und wächst und wächst.
@@ -1908,21 +1920,21 @@ Und Sie werden immer neues Wissen darüber bekommen,
 in diesem Fall die Addition und die Multiplikation
 
 00:35:11,600 --> 00:35:12,240
-Prädikat.
+von Prädikaten.
 
 00:35:12,240 --> 00:35:14,960
-Wie neues Wissen Schritt für Schritt aufgebaut wird
+Wie neues Wissen Schritt für Schritt aufgebaut wird,
 
 00:35:15,520 --> 00:35:18,400
 wenn wir diesen unmittelbaren
 Folgeoperator wiederholt anwenden.
 
 00:35:18,960 --> 00:35:22,000
-Okay, hier ist also etwas
+Okay, hier ist also etwas.
 In der ersten Iteration wurde nur
 
 00:35:22,000 --> 00:35:24,480
-Wissen aus den Fakten akkumuliert wurde, richtig?
+Wissen aus den Fakten akkumuliert, richtig?
 
 00:35:24,480 --> 00:35:27,120
 Denn wie im vorherigen Beispiel
@@ -1951,8 +1963,10 @@ aufgeschrieben haben, warum ein bestimmtes neues Literal auftaucht.
 Dies erscheint also, weil wir
 dies in der Menge hatten, richtig?
 
+
+
 00:35:56,400 --> 00:36:02,480
-Es war natürlich nicht in der Menge, weil,
+Es war natürlich nicht in der Menge, weil
 diese Menge ist das, was wir hier sehen.
 
 00:36:03,200 --> 00:36:09,600
@@ -1976,7 +1990,7 @@ Okay, am Ende erhält man zum Beispiel dies
 Beispiel nach vier Schritten der Anwendung dieser
 
 00:36:33,040 --> 00:36:36,080
-unmittelbaren Konsequenz-Operator-Methode
+unmittelbaren Konsequenz-Operator-Methode.
 Wenn wir so weitermachen, erhalten
 
 00:36:36,640 --> 00:36:46,880
@@ -1987,7 +2001,7 @@ Multiplikation auf solchen symbolischen natürlichen Zahlen.
 Okay, das war's für jetzt.
 
 00:36:50,960 --> 00:36:58,240
-Und Sie haben das Material in der collection.pdf,
+Und Sie haben das Material in der collection.pdf.
 Sie werden natürlich auch eine Übungsaufgabe dazu haben.
 
 00:36:58,240 --> 00:37:01,840
@@ -1997,3 +2011,4 @@ der operationellen Semantik zuwenden,
 00:37:02,960 --> 00:37:07,840
 einer anderen Perspektive auf
 die Bedeutung von Prolog-Programmen.
+

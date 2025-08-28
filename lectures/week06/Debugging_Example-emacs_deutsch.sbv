@@ -1,28 +1,29 @@
+
 0:00:01.600,0:00:05.440
 Okay, bevor ich zu den Folien für diese Woche komme,
 
 0:00:05.440,0:00:10.880
 möchte ich ein kurzes Video über das Debuggen
-Fehlersuche in einem kleinen Haskell-Programm.
+der Fehlersuche in einem kleinen Haskell-Programm.
 
 0:00:11.440,0:00:19.440
 Der Grund dafür ist eine E-Mail, die ich von einem Studenten
-in den letzten Tagen zu Aufgabe 12 bekommen habe (aber in einem Vorjahr),
+in den letzten Tagen zu Aufgabe 12 bekommen habe (aber in einem Vorjahr).
 
 0:00:19.440,0:00:23.440
 Es ging um dieses Programm, bei dem ein Student
 nicht wusste, warum es nicht funktionierte.
 
 0:00:23.440,0:00:27.200
-Und nun, der Punkt ist nicht
+Und nun, der Punkt ist nicht,
 auf dieses falsche Programm hinzuweisen.
 
 0:00:27.200,0:00:33.760
 Aber eigentlich war das Gespräch, das wir dann per
-E-Mail hatten, sehr interessant, was die Vorschläge anging
+E-Mail hatten, sehr interessant, was die Vorschläge anging,
 
 0:00:33.760,0:00:40.320
-wie man solche Probleme angehen kann, dann dachte ich, es
+wie man solche Probleme angehen kann. Dann dachte ich, es
 wäre schön, das hier auch in einem
 
 0:00:40.320,0:00:46.320
@@ -34,16 +35,16 @@ Ich hoffe, es ist okay für den Studierenden,
 dass ich sein Beispiel hier verwende.
 
 0:00:52.160,0:00:56.320
-Okay, wie auch immer, das war also das Programm
+Okay, wie auch immer, das war also das Programm,
 das der Studierende zu diesem Zeitpunkt hatte,
 
 0:00:56.320,0:01:01.440
-und der Student wusste bereits, dass etwas falsch war
+und der Student wusste bereits, dass etwas falsch war,
 dass etwas nicht stimmte, weil die Testsuite nicht funktionierte.
 
 0:01:02.080,0:01:11.840
 Also, lassen Sie mich das reproduzieren,
-und dazu rufe die Test-Suite auf.
+und dazu rufe ich die Test-Suite auf.
 
 0:01:13.280,0:01:18.400
 Okay, das war also ein Fehler im zweiten
@@ -65,11 +66,11 @@ Und was bedeutet das, wie ist das zu interpretieren?
 Nun, um zu sehen, was hier passiert,
 
 0:01:32.560,0:01:37.280
-können wir sehen, welche
-Eingabe die Funktion hier aufgerufen wird,
+können wir sehen, mit welcher
+Eingabe die Funktion hier aufgerufen wird.
 
 0:01:37.280,0:01:42.000
-wir können sehen, dass im Grunde das Zeichen
+Wir können sehen, dass im Grunde das Zeichen
 an eine Zeichenkette angehängt wird, die auch
 
 0:01:42.000,0:01:46.800
@@ -82,15 +83,15 @@ für etwas in der Form fehlgeschlagen,
 
 0:01:51.040,0:01:57.920
 wir können das einfach "aba" nennen, weshalb es
-eine Zeichenkette "b" und ein 'a' wurde am Anfang und
+eine Zeichenkette "b" und ein 'a' am Anfang und
 
 0:01:57.920,0:02:02.800
-am Ende angehängt, und für
-dies, irgendwie, die Eigenschaft scheint zu scheitern.
+am Ende angehängt wurde. Und für
+dies, irgendwie, scheint diese Eigenschaft zu scheitern.
 
 0:02:02.800,0:02:08.480
-Und tatsächlich, wenn wir diese Funktion wie oben angegeben aufrufen
-aufruft, und sie sagt, dass "aba" kein Palindrom ist,
+Und tatsächlich, wenn wir diese Funktion wie oben angegeben
+aufrufen, und sie sagt, dass "aba" kein Palindrom ist,
 
 0:02:08.480,0:02:11.200
 obwohl wir wissen, dass es eins ist, also stimmt etwas nicht.
@@ -119,7 +120,7 @@ Sie haben sich ausgerechnet, dass das
 funktioniert, okay, aber anscheinend nicht.
 
 0:02:36.560,0:02:38.960
-Und die Frage wäre
+Und die Frage wäre,
 was in so einem Fall zu tun ist.
 
 0:02:39.600,0:02:41.280
@@ -131,15 +132,15 @@ Programmierhintergrund,
 
 0:02:44.000,0:02:49.520
 denken die meisten von Ihnen beim Debuggen wahrscheinlich an
-das Hinzufügen von Druckanweisungen zu ihrem Code,
+das Hinzufügen von Druckanweisungen zu ihrem Code.
 
 0:02:49.520,0:02:52.640
 Richtig, Sie haben etwas Code, eine Schleife, vielleicht wollen
 Sie wissen, was in der Schleife passiert.
 
 0:02:52.640,0:02:56.240
-Sie fügen also eine Druckanweisung ein, die Folgendes ausgibt
-einen Schleifenzähler oder einige andere Variablen ausgibt.
+Sie fügen also eine Druckanweisung ein, die Folgendes ausgibt:
+einen Schleifenzähler oder einige andere Variablen.
 
 0:02:56.880,0:03:00.240
 Nun, das ist nicht etwas, das wir
@@ -171,11 +172,10 @@ wir können ein anderes Debugging-Paradigma anwenden.
 Was würde Debugging hier bedeuten?
 
 0:03:27.680,0:03:32.640
-Da die Berechnungen immer
-über Ausdrücke erfolgt, ist die richtige
+Da die Berechnungen immer über Ausdrücke erfolgen, ist die richtige
 
 0:03:32.640,0:03:36.080
-Idee ist es, Ausdrücke zu untersuchen, um irgendwie
+Idee, Ausdrücke zu untersuchen, um irgendwie
 
 0:03:36.720,0:03:43.280
 zu wissen, dass für diese dreiteilige Zeichenkette,
@@ -185,7 +185,7 @@ gehen wir hier auf den zweiten Fall ein.
 Die Frage wäre dann: Welchen Wert hat dieser
 
 0:03:45.840,0:03:50.320
-Ausdruck hat, wenn wir
+Ausdruck, wenn wir ihn
 als diesen "aba" aufrufen?
 
 0:03:51.440,0:03:54.480
@@ -209,7 +209,9 @@ Ausdrücke sind kompositorisch.
 
 0:04:06.400,0:04:10.160
 Wenn also ein Ausdruck nicht den richtigen
-Wert ergibt, dann haben Sie entweder die falsche
+Wert ergibt, dann haben Sie entweder das falsche.
+
+
 
 0:04:10.160,0:04:13.920
 Funktion verwendet, vielleicht ist dieses 'and' falsch und
@@ -225,7 +227,7 @@ zwei Gründe, warum das Ergebnis falsch sein könnte.
 
 0:04:22.480,0:04:28.960
 Was wir also tun müssen, ist, in diese
-Ausdrücke eintauchen und sehen, wo etwas auftaucht,
+Ausdrücke einzutauchen und zu sehen, wo etwas auftaucht,
 
 0:04:28.960,0:04:30.320
 das nicht erwartet wird.
@@ -243,7 +245,7 @@ Man hatte also ein gezeichnetes Bild, und man konnte
 Unterausdrücke auswählen und sehen, welches Bild sie erzeugen.
 
 0:04:42.640,0:04:49.520
-Auf diese visuelle Art und Weise, in der Umgebung von CodeWorld, ist das,
+Auf diese visuelle Art und Weise, in der Umgebung von CodeWorld, ist das
 natürlich eine sehr schöne Inspektionsmöglichkeit
 
 0:04:49.520,0:04:50.720
@@ -268,7 +270,7 @@ Nun, dafür sollten Sie wirklich
 nicht nur im Autotool arbeiten,
 
 0:05:05.440,0:05:10.080
-Sie sollten einen Interpreter auf Ihrem
+Sie sollten einen Interpreter auf Ihrer
 Maschine haben, um dies tun zu können.
 
 0:05:10.080,0:05:13.360
@@ -282,7 +284,7 @@ warum er das tut, und zwar für diese bestimmten Eingaben.
 Was wir eigentlich wollen, ist: Wir wollen
 
 0:05:17.840,0:05:25.120
-diesen Ausdruck auswerten, aber in dem Kontext
+diesen Ausdruck auswerten, aber in dem Kontext,
 wobei s, die Eingabe, unsere fehlerhafte Eingabe "aba" ist und
 
 0:05:25.120,0:05:29.600
@@ -294,19 +296,19 @@ Wir können diesen Ausdruck also nicht einfach eintippen.
 
 0:05:32.080,0:05:34.640
 Wenn ich einfach diesen Ausdruck
-in die Eingabeaufforderung des Interpreters ein,
+in die Eingabeaufforderung des Interpreters eingebe,
 
 0:05:34.640,0:05:38.240
 erhalte ich einen Fehler, weil die
 s und s' unbekannt sind.
 
 0:05:38.240,0:05:41.440
-Okay, also, in der Interpreter
+Okay, also, in der Interpreter-
 Sitzung können Sie einfach
 
 0:05:42.240,0:05:48.080
 Werte bereitstellen, man kann den Bereich öffnen, man kann
-Man kann sagen: "Ich möchte diese Eigenschaft hier überprüfen,
+sagen: "Ich möchte diese Eigenschaft hier überprüfen,
 
 0:05:48.080,0:05:55.760
 für den Fall, dass s meine ursprüngliche Eingabe ist",
@@ -335,7 +337,7 @@ denn ich möchte auch, dass das s'
 
 0:06:18.640,0:06:24.000
 im Bereich genau der Art von Berechnungen
-die an dieser Stelle im Programm stattfindet.
+die an dieser Stelle im Programm stattfinden.
 
 0:06:24.880,0:06:28.240
 Okay, jetzt habe ich also s im Bereich
@@ -369,16 +371,16 @@ nehmen und zu prüfen, was dieser auswertet.
 Ja, das ist die kompositorische Fehlersuche hier.
 
 0:06:59.280,0:07:02.000
-Dies wird also ausgewertet zu einer
+Dies wird also zu einer
 Liste von einigen Trues und einigen
 
 0:07:02.000,0:07:05.200
-Falses, und das ist wahrscheinlich nicht
+Falses ausgewertet, und das ist wahrscheinlich nicht
 was der Studierende beabsichtigt hat.
 
 0:07:05.200,0:07:08.480
 Wahrscheinlich hat der Studierende auch
-nicht erwartet, dass es neun Werte geben würde
+nicht erwartet, dass es neun Werte geben würde.
 
 0:07:10.000,0:07:12.720
 Werte gibt, natürlich hat der Studierende
@@ -389,8 +391,8 @@ Vielleicht ist das auch der Gedankengang,
 der dahinter steckt, aber das ist eigentlich egal.
 
 0:07:16.640,0:07:19.600
-Der Punkt ist, dass man an diesem Punkt erkennen könnte
-erkennen, dass etwas schiefläuft,
+Der Punkt ist, dass man an diesem Punkt erkennen könnte,
+dass etwas schiefläuft,
 
 0:07:19.600,0:07:22.320
 denn wir haben diese neun Ergebnisse.
@@ -407,7 +409,7 @@ Irgendetwas ist falsch, was ist falsch?
 
 0:07:30.800,0:07:36.960
 Nun, man könnte tiefer gehen, indem man herausfindet,
-oder nicht genau das ausgibt, den
+was nicht genau das ausgibt, den
 
 0:07:38.400,0:07:43.120
 Check hier, sondern tatsächlich die Werte
@@ -434,6 +436,8 @@ auch wenn wir ein Palindrom haben.
 0:08:00.960,0:08:05.920
 Okay, ich denke, an diesem Punkt wird es klar,
 was die Fehler sind, über die ich nachdenke.
+
+
 
 0:08:05.920,0:08:10.800
 Ich denke, das Problem war, dass wir
@@ -478,8 +482,8 @@ für Paare, und der läuft über
 das Zippen (mit 'zip') von s und s'.
 
 0:09:03.280,0:09:06.960
-Okay, und wenn du das jetzt überprüfen würdest
-überprüfen würden, dann würde es sowohl
+Okay, und wenn du das jetzt überprüfen würdest,
+dann würde es sowohl
 
 0:09:06.960,0:09:10.320
 in den Beispielen funktionieren und auch die Testsuite bestehen.
@@ -503,7 +507,7 @@ der in etwa dem Einfügen von
 print-Anweisungen entspricht, aber es ist nicht genau das.
 
 0:09:36.160,0:09:42.240
-Und ich möchte dies zeigen, damit Sie es verwenden können
+Und ich möchte dies zeigen, damit Sie es verwenden können,
 wenn Sie bei Ihren Übungsaufgaben auf Probleme stoßen.
 
 0:09:42.240,0:09:48.080
@@ -524,12 +528,12 @@ Es ist immer noch falsch bei dieser Eingabe.
 Und was ist nun diese andere Art der Fehlersuche?
 
 0:10:04.800,0:10:11.040
-Nun, man könnte versuchen oder in Versuchung kommen
+Nun, man könnte versuchen oder in Versuchung kommen,
 dieses Ausdrucken der Werte von
 
 0:10:12.400,0:10:18.000
 Unterausdrücken während der Ausführung des Programms
-läuft und nicht in einem separaten Interpreterlauf.
+zu machen und nicht in einem separaten Interpreterlauf.
 
 0:10:18.000,0:10:20.240
 Das ist nicht in einer Sitzung, wie hier hinzugefügt.
@@ -547,7 +551,7 @@ Funktionen, die zum Debuggen verwendet werden können.
 
 0:10:34.880,0:10:39.360
 Und ich werde jetzt einfach die
-von der ich weiß, dass sie in diesem Fall funktionieren wird,
+Funktion verwenden, von der ich weiß, dass sie in diesem Fall funktionieren wird,
 
 0:10:40.080,0:10:46.240
 im Allgemeinen müssen Sie eine
@@ -585,10 +589,10 @@ ist natürlich auch die endgültige Ausgabe falsch.
 
 0:11:24.960,0:11:26.545
 Deshalb haben wir zwei Falses und das erste
-Falsch ist das Ergebnis des Ausdrucks des Unterausdrucks.
+False ist das Ergebnis des Ausdrucks des Unterausdrucks.
 
 0:11:26.545,0:11:32.240
-Und das zweite Falsch kommt vom Ausdruck
+Und das zweite False kommt vom Ausdruck
 dem Ergebnis des Funktionsaufrufs,
 
 0:11:32.240,0:11:34.960
@@ -607,7 +611,7 @@ Was war eigentlich die Liste, die hier verwendet wurde?
 
 0:11:47.200,0:11:56.880
 Ja, also bewege ich mich innerhalb des Ausdrucks, lade ich mein Modul neu
-mein Modul, rufe es auf - rufe die Funktion erneut auf.
+und rufe die Funktion erneut auf.
 
 0:11:56.880,0:12:03.040
 Und jetzt sehe ich, was der Wert zu diesem Zeitpunkt war.
@@ -625,7 +629,7 @@ und sagen, na ja, warum ist das so?
 Ja, wie kommen denn diese Werte zustande?
 
 0:12:19.840,0:12:29.280
-Vielleicht möchte ich sogar den Trace hier drinnen machen
+Vielleicht möchte ich sogar den Trace hier drinnen machen,
 um das Ergebnis des Vergleichs hier direkt zu sehen.
 
 0:12:34.560,0:12:37.840
@@ -648,12 +652,14 @@ Nun, wegen der trägen Auswertung.
 Ja.
 
 0:12:49.360,0:12:54.640
-Also, die Liste, die berechnet würde
-Unterausdruck berechnet wird, besteht aus
+Also, die Liste, die berechnet wird,
+besteht aus
 
 0:12:54.640,0:13:01.600
 all diesen neun Werten, und wenn ich tatsächlich
-den Kombinator 'and' verwende, um ein Boolesches "und"
+den Kombinator 'and' verwende, um ein Boolesches "und" zu erzeugen.
+
+
 
 0:13:01.600,0:13:06.720
 über eine Liste von Werten zu machen, dann kann das
@@ -671,8 +677,8 @@ während das Programm läuft, sehen Sie, dass
 tatsächlich von dieser neun Elemente umfassenden Liste hier
 
 0:13:17.040,0:13:20.480
-nur das erste True ausgegeben wird,
-dann wird das zweite False ausgegeben,
+nur das erste True ausgegeben wird.
+Dann wird das zweite False ausgegeben,
 
 0:13:20.480,0:13:25.280
 und alle übrigen Werte werden
@@ -688,7 +694,7 @@ die endgültige Ausgabe False ist.
 
 0:13:33.120,0:13:36.320
 Es handelt sich also immer noch um denselben Fehler
-wie zuvor, Sie sollten jetzt einfach besser
+wie zuvor; Sie sollten jetzt einfach besser
 
 0:13:36.320,0:13:40.160
 sehen, welche dieser Vergleiche
@@ -696,7 +702,7 @@ tatsächlich bei den ersten beiden durchgeführt werden.
 
 0:13:40.720,0:13:44.160
 Sie könnten dies noch deutlicher machen,
-indem man eine etwas andere
+indem Sie eine etwas andere
 
 0:13:46.160,0:13:49.680
 Trace-Funktion hier verwenden und statt
@@ -711,29 +717,29 @@ Wenn ich das jetzt verfolge,
 
 0:13:59.440,0:14:03.600
 dann sehe ich tatsächlich, dass zuerst 'a' und 'a' verglichen
-werden, was wahrscheinlich erwartet wurde
+werden, was wahrscheinlich erwartet wurde,
 
 0:14:04.160,0:14:09.120
 als dieses Programm geschrieben wurde, aber dann werden 'a' und 'b'
 verglichen, und das ist der Grund, warum dies nicht als
 
 0:14:09.120,0:14:15.360
-ein Palindrom, weil dieses 'a' und dieses 'b' verglichen
-werden, oder vielleicht dieses 'b' und dieses 'a', ich weiß es nicht.
+ein Palindrom gilt, weil dieses 'a' und dieses 'b' verglichen
+werden, oder vielleicht dieses 'b' und dieses 'a'; ich weiß es nicht.
 
 0:14:15.360,0:14:18.080
-Wie auch immer, irgendetwas stimmt nicht überein und
+Wie auch immer, irgendetwas stimmt nicht überein, und
 
 0:14:18.080,0:14:20.480
-der Vergleich vergleicht Dinge
+der Vergleich vergleicht Dinge,
 die nicht verglichen werden sollten.
 
 0:14:21.120,0:14:25.440
 Und dann könnte man vielleicht an diesem Punkt
-sagen -, könnte erkennen, was das Problem ist,
+sagen – könnte erkennen, was das Problem ist.
 
 0:14:25.440,0:14:27.200
-wir wissen bereits, was das Problem war, richtig?
+Wir wissen bereits, was das Problem war, richtig?
 
 0:14:27.200,0:14:32.000
 Das Problem war, dass wir x und y nicht unabhängig voneinander aus s und s' ziehen sollten,
@@ -751,13 +757,13 @@ sehe ich, dass ich tatsächlich genau drei
 
 0:14:53.920,0:15:00.000
 Vergleiche erhalte: 'a' verglichen mit 'a', 'b' mit 'b', 'a' mit 'a'.
-Wie erwartet, sind alle diese Vergleiche wahr.
+Wie erwartet sind alle diese Vergleiche wahr.
 
 0:15:00.000,0:15:02.560
 Deshalb ist auch die endgültige Ausgabe True.
 
 0:15:03.600,0:15:09.040
-Okay, und jetzt habe ich wahrscheinlich mein Problem gelöst,
+Okay, und jetzt habe ich wahrscheinlich mein Problem gelöst.
 Ich könnte natürlich die Testsuite laufen lassen.
 
 0:15:10.240,0:15:14.400
@@ -765,7 +771,7 @@ Dies wird viele Ergebnisse liefern, denn
 jetzt führe ich die Testsuite aus, während
 
 0:15:14.400,0:15:18.320
-auch alle diese Zeichen ausgeben,
+auch alle diese Zeichen ausgegeben werden,
 diese sehr seltsamen Zeichen,
 
 0:15:18.320,0:15:21.680
@@ -773,7 +779,7 @@ einige spezielle Zeichen, die
 einfach zufällig generiert werden.
 
 0:15:22.320,0:15:27.840
-Also, wahrscheinlich will ich das letztendlich nicht, ich
+Also, wahrscheinlich will ich das letztendlich nicht; ich
 möchte natürlich mein Tracing wieder loswerden.
 
 0:15:27.840,0:15:30.880
@@ -788,13 +794,14 @@ Aber jetzt haben wir hoffentlich ein Programm, das
 korrekt ist und die Testsuite tatsächlich besteht.
 
 0:15:45.840,0:15:52.880
-Okay, ich hoffe, das ist nützlich, wenn Sie auf
+Okay, ich hoffe, das ist nützlich. Wenn Sie auf
 Probleme bei einigen Aufgaben stoßen,
 
 0:15:52.880,0:15:58.160
 versuchen Sie nicht einfach, im Autotool herumzuhämmern,
-sondern arbeiten Sie tatsächlich offline und nutzen Sie Möglichkeiten
+sondern arbeiten Sie tatsächlich offline und nutzen Sie Möglichkeiten,
 
 0:15:58.160,0:16:08.480
 wie den Interpreter, um wirklich zu untersuchen, was
 Ihr Programm tut, und lassen Sie einige Beispiele laufen, usw.
+

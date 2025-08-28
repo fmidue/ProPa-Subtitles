@@ -1,3 +1,4 @@
+
 30 # slide
 00:00:02,080 --> 00:00:02,800
 Willkommen zurück.
@@ -22,19 +23,19 @@ Beziehungen zwischen diesen Entitäten,
 zwischen diesen Konstanten auszudrücken.
 
 00:00:31,280 --> 00:00:34,320
-Und dann wurden Fakten und Regeln verwendet, um zu beschreiben
+Und dann wurden Fakten und Regeln verwendet, um zu beschreiben,
 
 00:00:34,320 --> 00:00:38,480
 was die Natur dieser Beziehungen ist
 oder welche Beziehungen gelten.
 
 00:00:38,480 --> 00:00:41,600
-Und das war die Art von Prolog
+Und das war die Art von Prolog-
 Programm, das Sie bis jetzt gesehen haben.
 
 00:00:42,880 --> 00:00:49,840
-Okay, heute werden wir uns andere Prolog
-Programme sehen, die mit strukturierten Daten arbeiten.
+Okay, heute werden wir uns andere Prolog-
+Programme ansehen, die mit strukturierten Daten arbeiten.
 
 00:00:49,840 --> 00:00:52,880
 Sie haben also bereits die
@@ -49,7 +50,7 @@ Bäumen in Haskell entspricht.
 
 00:01:03,440 --> 00:01:09,520
 Wir werden heute mehr davon sehen, indem wir
-Programme über solchen strukturierten Daten betrachten.
+Programme über solche strukturierten Daten betrachten.
 
 00:01:09,520 --> 00:01:13,840
 Und insbesondere werden wir uns auch
@@ -64,15 +65,15 @@ wie dies in einem
 Prädikat und Regeln in Prolog ausgedrückt werden könnte.
 
 00:01:22,000 --> 00:01:24,800
-Und sogar auf eine halb automatische Weise, wie man
+Und sogar auf eine halbautomatische Weise, wie man
 
 00:01:25,680 --> 00:01:28,960
 ein entsprechendes Prolog-Programm
 für ein Haskell-Programm erstellen kann.
 
 00:01:28,960 --> 00:01:30,960
-Natürlich gibt es keine Art
-eine Eins-zu-Eins-Übereinstimmung.
+Natürlich gibt es keine Art,
+eine Eins-zu-eins-Übereinstimmung.
 
 00:01:30,960 --> 00:01:36,160
 Aufgrund von Unterschieden wie Typisierung etc.,
@@ -88,7 +89,7 @@ einem Haskell-Programm, wegen dieser
 
 00:01:47,760 --> 00:01:52,320
 logischen Geschmacks und Prädikat-Definitionen
-anstelle von Funktionsdefinitionen.
+anstatt von Funktionsdefinitionen.
 
 00:01:52,320 --> 00:01:56,960
 Okay, aber lasst uns, bevor ich mehr darüber
@@ -126,7 +127,7 @@ Und nun, wir würden eine Funktion ausdrücken wollen,
 etwas plus etwas ist etwas anderes.
 
 00:02:30,640 --> 00:02:32,320
-Also, zwei Eingänge, ein Ausgang.
+Also zwei Eingänge, ein Ausgang.
 
 00:02:32,320 --> 00:02:36,960
 Natürlich ist das nicht etwas, das
@@ -136,7 +137,7 @@ dem Muster von Prolog-Programmen entspricht.
 Denn wie ich schon mehrmals sagte,
 
 00:02:40,080 --> 00:02:43,520
-schreiben wir in Prolog keine Funktionen
+schreiben wir in Prolog keine Funktionen,
 die zu Ergebnissen ausgewertet werden können.
 
 00:02:43,520 --> 00:02:48,800
@@ -148,7 +149,7 @@ Schreiben Sie zuerst ein Programm, dann
 eine Abfrage gegen dieses Programm,
 
 00:02:51,520 --> 00:02:55,120
-in der wir versuchen, Dinge auszudrücken
+in der wir versuchen, Dinge auszudrücken,
 Dinge wie etwas Zufriedenes auszudrücken.
 
 00:02:55,120 --> 00:02:58,400
@@ -163,7 +164,7 @@ Und die Werte, die Instanziierungen für
 
 00:03:08,800 --> 00:03:12,560
 alle auftretenden Variablen, während
-die Abfrage erfüllt gemacht wird.
+die Abfrage erfüllt wird.
 
 00:03:12,560 --> 00:03:14,720
 Das wird als unsere Ausgabe betrachtet.
@@ -174,7 +175,7 @@ zu haben, können wir nur ein Prädikat haben.
 
 00:03:20,240 --> 00:03:27,040
 Es gibt also eine bestimmte Konvention, die nicht
-der Sprache erzwungen, aber ich werde sie verwenden.
+der Sprache aufgezwungen wird, aber ich werde sie verwenden.
 
 00:03:27,040 --> 00:03:29,520
 Und sie wird auch oft in Beispielen verwendet.
@@ -192,7 +193,7 @@ etwas, dann bedeutet das, dass dies plus
 dies, also die Addition dieser beiden Dinge,
 
 00:03:44,960 --> 00:03:47,280
-soll das Gefilterte sein
+das gefilterte sein
 Ding, das dritte Argument.
 
 00:03:47,280 --> 00:03:52,640
@@ -214,20 +215,22 @@ im Kopf einer Regel oder in einem Fakt verwenden können.
 00:04:06,800 --> 00:04:08,800
 Okay, ich habe schon erwähnt, dass
 
+
+
 00:04:08,800 --> 00:04:13,840
-es weniger Beschränkungen für die
-Form einer Programmzeile gibt als in Haskell.
+Es gibt weniger Beschränkungen für die
+Form einer Programmzeile als in Haskell.
 
 00:04:15,360 --> 00:04:19,840
-Okay, die Addition von Null und X ist also X
+Okay, die Addition von Null und X ist also X,
 für was auch immer X ist, das macht absolut Sinn.
 
 00:04:19,840 --> 00:04:21,600
-Okay, das würde uns natürlich nur erlauben
+Okay, das würde uns natürlich nur erlauben,
 
 00:04:22,160 --> 00:04:25,840
 sehr einfache Additionen zu haben, denn wir
-könnten wir nur Null und etwas addieren.
+könnten nur Null und etwas addieren.
 
 00:04:25,840 --> 00:04:27,840
 Also brauchen wir stattdessen eine weitere Regel.
@@ -253,7 +256,7 @@ s von etwas für dieses s von Null ist eins.
 s von s von Null ist zwei, und so weiter.
 
 00:04:50,080 --> 00:04:52,320
-Okay, und was ich damit sagen will
+Okay, und was ich damit sagen will,
 hier, in der zweiten Regel ist,
 
 00:04:54,160 --> 00:04:59,200
@@ -261,12 +264,11 @@ es ist wahr, dass der Nachfolger von X
 plus Y der Nachfolger von Z ist.
 
 00:04:59,840 --> 00:05:05,680
-Wenn es auch der Fall ist, wenn es schon der Fall
-ist, dass X plus Y Z ist, oder
+Wenn es auch der Fall ist, dass X plus Y Z ist, oder
 
 00:05:06,320 --> 00:05:09,360
 genau andersherum, wenn
-die Addition von X und Y ist Z,
+die Addition von X und Y Z ist,
 
 00:05:09,360 --> 00:05:12,320
 dann ist die Addition der Nachfolger
@@ -281,7 +283,7 @@ Dann können wir sie in Abfragen verwenden.
 
 00:05:19,600 --> 00:05:27,760
 So können wir etwa Prolog fragen, ob es zutrifft,
-der Fall ist, dass die Addition von eins und eins zwei ergibt.
+dass die Addition von eins und eins zwei ergibt.
 
 00:05:27,760 --> 00:05:33,440
 Ja, genau das bedeutet das jetzt, denn s
@@ -309,18 +311,18 @@ einfachste Möglichkeit wäre, den letzten
 
 00:05:53,520 --> 00:05:59,120
 Term durch eine Variable zu ersetzen, und dann fragen wir nicht
-die Frage, ob die Addition eins plus eins gleich zwei ist.
+die Frage, ob die Addition von eins plus eins gleich zwei ist.
 
 00:05:59,120 --> 00:06:02,720
 Sondern wir fragen, ob es eine Zahl gibt,
-die die Addition von eins plus eins ist?
+die die Addition von eins plus eins ist.
 
 00:06:02,720 --> 00:06:05,840
 Und wenn ja, sagen Sie mir bitte, welche das ist.
 
 00:06:06,720 --> 00:06:13,120
 Okay, wir können also fragen, ob es eine Zahl N gibt, die
-als die Addition von eins und eins ist N?
+als die Addition von eins und eins N ist.
 
 00:06:13,120 --> 00:06:15,600
 Und jetzt sollte Prolog nicht einfach wahr antworten.
@@ -364,15 +366,15 @@ Zahlen mit einem solchen Datentyp mit
 Null-Konstruktor und einem Nachfolger-Konstruktor.
 
 00:06:57,840 --> 00:07:02,800
-Also, hier in Prolog, da ich kein Typsystem habe
-System habe, kann ich frei sein, tatsächlich den
+Also, hier in Prolog, da ich kein Typsystem habe,
+kann ich frei sein, tatsächlich den
 
 00:07:02,800 --> 00:07:05,680
 Zahlenwert Null anstelle des Null-Konstruktors zu verwenden.
 
 00:07:05,680 --> 00:07:10,800
 In Haskell hingegen muss ich den Datentyp wählen
-Typ wählen und mich dann hier an die Namenswahl halten.
+und mich dann hier an die Namenswahl halten.
 
 00:07:11,520 --> 00:07:15,120
 Und dann sieht das Programm aus wie
@@ -380,7 +382,7 @@ die Addition von Null und X ist X, und die
 
 00:07:15,120 --> 00:07:20,320
 Addition des Nachfolgers von X und Y ist
-Nachfolger der Addition von X und Y.
+der Nachfolger der Addition von X und Y.
 
 00:07:20,320 --> 00:07:23,280
 Ja, das entspricht zumindest im Geiste diesen
@@ -391,10 +393,10 @@ können wir das Gleiche berechnen, oder?
 
 00:07:29,280 --> 00:07:34,400
 Wenn wir diese Additionsfunktion in Haskell verwenden und
-geben wir ihr Nachfolger von Null, den Nachfolger von Null,
+geben wir ihr den Nachfolger von Null, den Nachfolger von Null,
 
 00:07:34,400 --> 00:07:36,640
-ergibt sie Nachfolger von, Nachfolger von Null.
+ergibt sie den Nachfolger von, Nachfolger von Null.
 
 00:07:40,160 --> 00:07:44,560
 Okay, was ist also die
@@ -437,13 +439,15 @@ die ganze Zeit in Prolog betont habe,
 00:08:14,560 --> 00:08:16,560
 stattdessen haben wir Prädikate oder Relationen.
 
+
+plaintext
 00:08:16,560 --> 00:08:21,040
 Wir reden also nicht über Funktionen, wir reden
-über Dinge, die wahr sein können, oder Relationen
+über Dinge, die wahr sein können, oder Relationen.
 
 00:08:21,040 --> 00:08:27,680
 die entweder wahr oder nicht wahr sind für bestimmte
-Kombinationen einiger Variablen aus bestimmten Mengen wahr sind.
+Kombinationen einiger Variablen aus bestimmten Mengen.
 
 00:08:29,920 --> 00:08:35,040
 Okay, also wo wir in Haskell schreiben
@@ -484,7 +488,7 @@ Ausgabe haben, sind sie syntaktisch unterschieden.
 
 00:09:06,240 --> 00:09:10,800
 Okay, das verschwindet auf der Prolog-Seite,
-außer vielleicht, wenn wir eine Konvention haben
+außer vielleicht, wenn wir eine Konvention haben,
 
 00:09:10,800 --> 00:09:15,200
 die besagt, dass wir immer das
@@ -521,8 +525,8 @@ Konstruktoren kleingeschrieben oder Symbole sind.
 Es gibt natürlich auch den Unterschied, dass in
 
 00:09:57,600 --> 00:10:03,360
-Haskell die Klammern und Kommas für Argumente nicht verwenden
-Kommas für Argumente verwenden, man hat nur Leerzeichen.
+Haskell die Klammern und Kommas für Argumente nicht verwendet
+werden, man hat nur Leerzeichen.
 
 00:10:03,360 --> 00:10:07,200
 Ja, aber das ist die nicht-mathematische
@@ -544,11 +548,11 @@ Bringen wir das also in Ordnung.
 
 00:10:24,240 --> 00:10:27,200
 Dann würde dies entsprechen
-dem, was ich bereits erwähnt habe,
+dem, was ich bereits erwähnt habe.
 
 00:10:27,200 --> 00:10:32,240
-Ich kann den Null-Daten-Konstruktor ersetzen
-einfach durch den Wert, die Ziffer Null, ersetzen.
+Ich kann den Null-Daten-Konstruktor einfach durch den Wert,
+die Ziffer Null, ersetzen.
 
 00:10:32,240 --> 00:10:34,720
 Natürlich, wie auch immer, es gibt
@@ -559,8 +563,8 @@ mich daran hindert und von mir verlangt,
 einen extra Datentyp dafür einzuführen.
 
 00:10:38,800 --> 00:10:44,320
-Und ich ersetzte die Variablen durch
-Prolog-Syntax-Variablen in Großbuchstaben ersetzt.
+Und ich ersetze die Variablen durch
+Prolog-Syntax-Variablen in Großbuchstaben.
 
 00:10:44,320 --> 00:10:50,560
 Okay, dann habe ich im Wesentlichen meine erste
@@ -608,12 +612,12 @@ Nun, man könnte naiv denken: das
 bedeutet wahrscheinlich so etwas wie, na ja, Addition von
 
 00:11:31,280 --> 00:11:39,040
-erstes Argument Nachfolger von x, zweites Argument
+erster Argument Nachfolger von x, zweites Argument
 y, Ergebnis Nachfolger von diesem Ausdruck hier.
 
 00:11:39,040 --> 00:11:42,480
 Und dann korrigiere ich das x und y
-zu Großbuchstaben, et cetera?
+zu Großbuchstaben, etc.?
 
 00:11:42,480 --> 00:11:43,760
 Und dann bin ich vielleicht schon fertig.
@@ -644,7 +648,7 @@ hier, dann macht es keinen Sinn.
 
 00:12:07,520 --> 00:12:12,560
 Ja, hier habe ich Addition als ternäres Prädikat,
-und hier, plötzlich, ist es immer noch eine Funktion
+und hier, plötzlich, ist es immer noch eine Funktion,
 
 00:12:12,560 --> 00:12:16,240
 was in Prolog nicht sinnvoll ist, richtig?
@@ -657,6 +661,8 @@ keine verschachtelte Funktionsanwendung hat.
 Wenn ich alles als Prädikate über
 Argumente ausdrücke, dann, wenn ich etwas habe, das
 
+
+
 00:12:29,360 --> 00:12:32,640
 verschachtelt werden muss, dann muss ich
 das Prädikat irgendwie verketten.
@@ -667,10 +673,10 @@ hier ein, denn das wäre eine Funktion.
 
 00:12:37,200 --> 00:12:41,520
 Aber wenn ich nur Prädikate habe, dann könnte ich
-etwas wie Addition von x und y haben
+etwas wie Addition von x und y haben.
 
 00:12:41,520 --> 00:12:47,200
-ist etwas anderes, aber ich kann nicht einen Ausdruck schreiben
+Das ist etwas anderes, aber ich kann nicht einen Ausdruck schreiben,
 addiere x, y, und berechne bitte das z für mich?
 
 00:12:47,200 --> 00:12:48,880
@@ -688,12 +694,12 @@ Nun, wir müssen irgendwie systematisch
 diese verschachtelten Funktionsaufrufe vermeiden.
 
 00:13:00,880 --> 00:13:04,160
-Die erste Frage wäre also
-wäre, wie würden wir das in Haskell machen?
+Die erste Frage wäre also,
+wie würden wir das in Haskell machen?
 
 00:13:05,200 --> 00:13:10,080
-Wäre es uns in Haskell auch nicht erlaubt
-verschachtelte Funktionsaufrufe haben dürfen?
+Wäre es uns in Haskell auch nicht erlaubt,
+verschachtelte Funktionsaufrufe haben zu dürfen?
 
 00:13:11,200 --> 00:13:12,640
 Könnten wir etwas dagegen tun?
@@ -702,11 +708,11 @@ Könnten wir etwas dagegen tun?
 Nun, mit ein wenig Nachdenken, ja, das könnten wir.
 
 00:13:16,400 --> 00:13:19,200
-Wenn es in Haskell nicht erlaubt wäre, Folgendes zu schreiben
+Wenn es in Haskell nicht erlaubt wäre, Folgendes zu schreiben,
 
 00:13:19,200 --> 00:13:24,480
 einen Ausdruck wie diesen verschachtelt in
-einer anderen Funktion oder innerhalb eines Konstruktor
+einer anderen Funktion oder innerhalb eines Konstruktors
 
 00:13:24,480 --> 00:13:29,520
 Aufrufs zu schreiben, dann könnten wir mit lokalen
@@ -728,7 +734,7 @@ Okay, warum sollte ich das tun wollen?
 
 00:13:45,200 --> 00:13:48,400
 Nun, wenn ich das tue, dann
-ich diesen verschachtelten Funktionsaufruf vermeiden kann.
+kann ich diesen verschachtelten Funktionsaufruf vermeiden.
 
 00:13:48,400 --> 00:13:50,320
 Jetzt haben wir hier nur eine Variable,
@@ -742,7 +748,7 @@ Das ist etwas, das ich
 leicht in ein Formular wie dieses einfügen kann.
 
 00:13:58,080 --> 00:14:02,080
-Und das ist eigentlich auch etwas
+Und das ist eigentlich auch etwas,
 das ich in eine Form wie diese bringen kann,
 
 00:14:02,080 --> 00:14:05,680
@@ -757,8 +763,7 @@ was auf der Haskell-Seite Sinn macht,
 aber nicht auf der Prädikat-Prolog-Seite.
 
 00:14:14,320 --> 00:14:16,800
-Okay, sagen wir also, auf der Haskell
-Seite machen wir etwas wie das hier.
+Okay, sagen wir also, auf der Haskell-Seite machen wir etwas wie das hier.
 
 00:14:17,760 --> 00:14:20,080
 Was bringt uns das dann?
@@ -768,21 +773,21 @@ Nun, man könnte dies natürlich lesen,
 als die Addition der Nachfolger von x
 
 00:14:25,040 --> 00:14:29,280
-und y, ist der Nachfolger von z, wenn die
+und y ist der Nachfolger von z, wenn die
 Addition von x und y z ist, richtig?
 
 00:14:29,280 --> 00:14:30,800
 Denn das ist genau das, was hier gesagt wird.
 
 00:14:30,800 --> 00:14:37,280
-Wenn z oder wenn z das Ergebnis dieser Funktion ist
+Wenn z oder wenn z das Ergebnis dieser Funktion
 Aufrufs ist, bedeutet das dasselbe, wie wenn man sagt, na ja,
 
 00:14:37,280 --> 00:14:38,880
 z ist die Addition von x und y.
 
 00:14:38,880 --> 00:14:44,000
-Und wenn das so ist, wenn wir z so wählen
+Und wenn das so ist, wenn wir z so wählen,
 dies gilt, dann gilt auch dies.
 
 00:14:44,000 --> 00:14:47,520
@@ -807,7 +812,7 @@ Ja, wenn wir das if durch die eigentliche
 Prolog-Syntax für Implikation ersetzen, muss man
 
 00:15:11,360 --> 00:15:16,160
-die lexikalische Syntax in Ordnung bringen, nämlich
+die lexikalische Syntax in Ordnung bringen, nämlich,
 dass Variablen in Großbuchstaben geschrieben werden müssen.
 
 00:15:16,160 --> 00:15:21,520
@@ -815,7 +820,7 @@ Und um sicherzugehen, ändere ich auch die
 Datenkonstruktoren, die so geschrieben waren
 
 00:15:21,520 --> 00:15:30,000
-in Haskell so geschrieben wurden, in Konstruktoren mit Kleinbuchstaben
+in Haskell so geschrieben wurden, in Konstruktoren mit Kleinbuchstaben,
 und der Kürze halber verwende ich hier einfach s.
 
 00:15:30,000 --> 00:15:31,280
@@ -830,7 +835,7 @@ Grunde eine Umformulierung
 dieses Nest-Funktionsaufrufs war.
 
 00:15:47,360 --> 00:15:51,040
-Okay, also habe ich am Ende ein Programm
+Okay, also habe ich am Ende ein Programm.
 Ich habe es Ihnen schon einmal gezeigt.
 
 00:15:51,040 --> 00:15:54,800
@@ -850,7 +855,7 @@ kleine Haskell-Funktion in Prolog-Regeln
 
 00:16:07,680 --> 00:16:12,240
 zu übersetzen, sodass ich dann
-dasselbe tun kann, was ich vorher in Haskell tun konnte.
+dasselbe tun kann, was ich vorher in Haskell tun konnte?
 
 00:16:13,360 --> 00:16:16,480
 Nun, es gibt einen Vorteil, dies zu tun.
@@ -876,21 +881,23 @@ Funktion, die auf Eingabe und Ausgabe basiert.
 00:16:38,800 --> 00:16:41,120
 Ich habe sie in ein Prolog-Prädikat übersetzt.
 
+
+
 00:16:41,120 --> 00:16:44,720
 Dann kann ich auf der Prolog-Seite
-die Konvention haben, dass ich immer
+die Konvention haben, dass ich immer.
 
 00:16:45,840 --> 00:16:49,040
 zwei Dinge eingebe und das dritte Ding
 herausbekomme, aber eigentlich gibt es nichts in der
 
 00:16:49,040 --> 00:16:52,560
-Syntax von Prolog, die von mir verlangt
+Syntax von Prolog, die von mir verlangt,
 ein Programm auf diese Weise zu interpretieren.
 
 00:16:52,560 --> 00:16:59,200
 Nun, dieses Programm behauptet einfach eine
-Tatsache, oder Tatsachen, über drei Argumente.
+Tatsache oder Tatsachen über drei Argumente.
 
 00:16:59,200 --> 00:17:02,480
 Ob sie miteinander verbunden sind oder nicht, ob drei
@@ -908,7 +915,7 @@ Anstatt also einfach zu fragen, was ist
 die Addition einer festen Zahl und einer
 
 00:17:14,320 --> 00:17:19,440
-anderen festen Zahl ist, könnten wir auch fragen: "Was sind
+anderen festen Zahl, könnten wir auch fragen: "Was sind
 einige N und M, so dass die Addition zwei ist?"
 
 00:17:20,240 --> 00:17:24,240
@@ -920,7 +927,7 @@ Und jetzt können wir Fragen über dieses Prädikat stellen,
 
 00:17:27,360 --> 00:17:30,800
 die nicht einfach beantwortet werden können durch
-Haskell-Funktion beantwortet werden können, die wir zuvor gesehen haben.
+Haskell-Funktionen, die wir zuvor gesehen haben.
 
 00:17:30,800 --> 00:17:34,560
 In der Haskell-Funktion können wir nicht sagen,
@@ -938,8 +945,7 @@ kann ich fragen, nun, gibt es einige N und
 M, so dass die Addition zwei ergibt?
 
 00:17:46,400 --> 00:17:49,280
-Und nun, wir können einfach fragen
-Prolog fragen, was es damit tun wird.
+Und nun, wir können einfach Prolog fragen, was es damit tun wird.
 
 00:17:49,280 --> 00:17:51,520
 Und es wird tatsächlich fröhlich einige Antworten geben.
@@ -963,7 +969,7 @@ nun, eins plus eins ist auch zwei.
 
 00:18:04,800 --> 00:18:10,320
 Und in der Tat, wenn wir weiter fragen würden, dann würde es
-uns auch sagen, dass zwei plus null auch zwei ist.
+uns auch sagen, dass zwei plus Null auch zwei ist.
 
 00:18:11,360 --> 00:18:11,600
 Richtig?
@@ -1005,7 +1011,7 @@ Okay.
 Wohingegen wir hier eine weitere Auswahl haben, richtig?
 
 00:18:46,640 --> 00:18:50,640
-Man könnte auch sagen, wie lautet die Frage
+Man könnte auch sagen, wie lautet die Frage,
 ist das N so, dass N plus eins zwei ist?
 
 00:18:50,640 --> 00:18:52,080
@@ -1016,7 +1022,7 @@ Nun, dann wird Prolog sagen,
 nun, die Antwort ist dies.
 
 00:18:56,720 --> 00:19:00,960
-Also, hier haben wir in der Tat, das
+Also, hier haben wir in der Tat das
 Additionsprädikat im Grunde genommen in
 
 00:19:01,760 --> 00:19:06,080
@@ -1046,7 +1052,7 @@ Okay, also werden wir das jetzt nicht berücksichtigen.
 Wenn wir dies also tun würden, dann würden Sie sehen, dass
 
 00:19:34,320 --> 00:19:39,280
-manchmal nicht alle möglichen Arten
+manchmal nicht alle möglichen Arten,
 ein Prädikat zu verwenden, gleich nützlich sind.
 
 00:19:39,280 --> 00:19:42,400
@@ -1088,9 +1094,11 @@ in der Tat, wenn und nur wenn, Z plus Y gleich X ist, richtig?
 Dies drückt also eine Beziehung aus
 zwischen Addition und Subtraktion.
 
+
+
 00:20:29,600 --> 00:20:35,440
-Und indem ich das tue, erhalte ich, kostenlos,
-ein Subtraktionsprädikat erhalten, das
+Und indem ich das tue, erhalte ich kostenlos
+ein Subtraktionsprädikat, das
 
 00:20:36,240 --> 00:20:37,600
 Subtraktionen berechnet.
@@ -1099,7 +1107,7 @@ Subtraktionen berechnet.
 Das ist nichts, was man in Haskell machen kann.
 
 00:20:39,440 --> 00:20:43,600
-Man schreibt eine Additionsfunktion und sagt dann einfach,
+Man schreibt eine Additionsfunktion und sagt dann einfach:
 Nun, Subtraktion ist das Gegenteil oder die Umkehrung.
 
 00:20:43,600 --> 00:20:44,560
@@ -1109,19 +1117,19 @@ Das kann man nicht machen.
 Sie müssen eine separate Subtraktionsfunktion schreiben.
 
 00:20:46,640 --> 00:20:50,400
-Hier in Prolog, auf der logischen Ebene
+Hier in Prolog, auf der logischen Ebene,
 haben Sie die Addition logisch definiert.
 
 00:20:51,040 --> 00:20:56,160
 Und übrigens, X minus Y ist Z, wenn
-es der Fall ist, dass Z plus Y gleich X ist,
+es der Fall ist, dass Z plus Y gleich X ist.
 
 00:20:57,120 --> 00:20:58,720
-und dann können wir das zum Subtrahieren verwenden.
+Und dann können wir das zum Subtrahieren verwenden.
 
 00:20:59,760 --> 00:21:02,160
 Auch wenn wir nicht explizit
-eine Subtraktion beeinflusst.
+eine Subtraktion beeinflussen.
 
 00:21:02,160 --> 00:21:03,680
 Darf ich fragen, was zwei minus eins ist?
@@ -1131,7 +1139,7 @@ Und die Antwort wäre eins.
 
 00:21:05,760 --> 00:21:12,560
 Oder man könnte auch fragen, zum Beispiel, was
-sind N und M so, dass N minus M eins ist?
+sind N und M, so dass N minus M eins ist?
 
 00:21:13,360 --> 00:21:13,860
 Ja.
@@ -1143,11 +1151,11 @@ Hier gibt es sehr viele mögliche Lösungen.
 Oder?
 
 00:21:18,960 --> 00:21:20,880
-Zum Beispiel, zwei und eins.
+Zum Beispiel zwei und eins.
 
 00:21:20,880 --> 00:21:24,640
 Also, N ist zwei und M ist
-eins ist, wäre eine mögliche Antwort.
+eins, wäre eine mögliche Antwort.
 
 00:21:24,640 --> 00:21:26,960
 Denn dann haben wir zwei minus eins ist eins.
@@ -1156,10 +1164,10 @@ Denn dann haben wir zwei minus eins ist eins.
 Aber eigentlich ist Prolog hier noch cleverer.
 
 00:21:30,080 --> 00:21:31,920
-Prolog antwortet etwa so
+Prolog antwortet etwa so,
 
 00:21:31,920 --> 00:21:36,000
-um uns zu sagen, ja, es gibt Auswahlmöglichkeiten für
+um uns zu sagen: Ja, es gibt Auswahlmöglichkeiten für
 N und M, so dass N minus M eins ist.
 
 00:21:36,000 --> 00:21:37,120
@@ -1170,7 +1178,7 @@ Nun, jede Wahl, bei der N Nachfolger von M ist.
 
 00:21:40,880 --> 00:21:46,640
 Dies drückt also auf eine endliche Weise unendlich
-viele Paare, die dieses Prädikat erfüllen.
+viele Paare aus, die dieses Prädikat erfüllen.
 
 00:21:47,440 --> 00:21:50,640
 Wieder etwas, das in Haskell nicht funktionieren würde.
@@ -1181,3 +1189,4 @@ Denn dort bekommt man solche symbolischen Antworten nicht.
 00:21:53,840 --> 00:21:57,840
 Man kann nur konkrete
 Eingaben geben und eine konkrete Ausgabe erhalten.
+

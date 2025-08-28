@@ -1,4 +1,4 @@
-55 # slide
+"55 # slide
 00:00:01,430 --> 00:00:06,260
 Lassen Sie uns heute auch ein
 bisschen mehr über die Syntax sprechen.
@@ -220,7 +220,8 @@ was vom Booleschen Typ ist.
 
 00:04:07,569 --> 00:04:12,519
 Oft werden das natürlich Vergleiche wie
-hier sein, oder Kombinationen von Vergleichen.
+hier sein, oder Kombinationen von Vergleichen."
+
 
 00:04:12,519 --> 00:04:13,869
 Aber das muss nicht der Fall sein.
@@ -294,7 +295,7 @@ welchen Fällen sie ausgeführt werden
 
 00:05:26,790 --> 00:05:31,940
 Hier stellt sich nun natürlich zumindest die
-Frage, was passiert, wenn sich z.B. diese Guards
+Frage, was passiert, wenn sich z. B. diese Guards
 
 00:05:31,940 --> 00:05:33,069
 überschneiden.
@@ -327,7 +328,7 @@ die ganze Zahl Null ist (das ist der Anfang
 
 00:06:00,080 --> 00:06:04,789
 der Fakultät-Funktion), und wenn das Argument
-größer als null ist, dann wollen Sie
+größer als Null ist, dann wollen Sie
 
 00:06:04,789 --> 00:06:09,990
 n mal Fakultät
@@ -353,7 +354,7 @@ sich die beiden Bedingungen gegenseitig aus:
 
 00:06:26,789 --> 00:06:33,060
 Es ist keine Eingabe n möglich, die
-sowohl null als auch größer als null wäre.
+sowohl Null als auch größer als Null wäre.
 
 00:06:33,060 --> 00:06:39,999
 Und da das der Fall ist, ist die folgende
@@ -442,6 +443,8 @@ Sie uns "factorial" jetzt nur auf nicht-negative Eingaben
 anwenden), dann verhalten sich diese beiden Versionen,
 die wir hier und hier sehen, gleich.
 
+
+
 59 # slide
 00:08:16,319 --> 00:08:18,180
 Was ist, wenn
@@ -456,7 +459,7 @@ Zeilen genommen wird?
 
 00:08:28,159 --> 00:08:33,920
 Das könnte damit korrespondieren, dass man das größer
-(>) aus der vorherigen Folie in größer-gleich (>=)
+(>) aus der vorherigen Folie in größer-gleich (≥)
 
 00:08:33,920 --> 00:08:35,110
 ändert.
@@ -643,7 +646,7 @@ Und im Autotool werden wir diese
 Warnungen fortan aktivieren, sodass der Compiler
 
 00:12:05,230 --> 00:12:13,630
-sich beschwert, wenn Sie z.B. mit Guards
+sich beschwert, wenn Sie z. B. mit Guards
 programmieren und nicht darauf achten, dass es
 
 00:12:13,630 --> 00:12:15,380
@@ -679,16 +682,18 @@ haben, und auch, um den Compiler sicher sein zu lassen,
 dass Sie alle Fälle abgedeckt haben, ist,
 dass Sie so etwas wie eine "catch-all"-Klausel haben.
 
+
+
 00:12:47,160 --> 00:12:53,410
 In dem Beispiel von vorhin könnten Sie, anstatt
 zwei Bedingungen zu haben, von denen eine n==0 und
 
 00:12:53,410 --> 00:12:58,230
 die andere etwas wie n>0
-oder n>=0 ist, sagen "otherwise".
+oder n>=0 ist, sagen: "otherwise".
 
 00:12:58,230 --> 00:13:05,399
-Dann wird von oben nach unten geprüft, für
+Dann wird von oben nach unten geprüft. Für
 jede Eingabe, die nicht null ist, wird diese letzte
 
 00:13:05,399 --> 00:13:06,399
@@ -711,7 +716,7 @@ wenn Sie mit negativen Werten aufrufen, aber
 
 00:13:25,670 --> 00:13:31,190
 dann nicht wegen eines Laufzeitfehlers (eines
-fehlenden Falls), sondern tatsächlich wegen Nicht-Terminierung.
+fehlenden Falls), sondern tatsächlich wegen Nichttermination.
 
 00:13:31,190 --> 00:13:36,860
 Denn dann laufen Sie (beim Aufruf
@@ -776,7 +781,7 @@ die zu berücksichtigenden Fälle ausgehen, weil immer der
 
 00:14:28,070 --> 00:14:36,620
 Und es gibt auch kein Nicht-Abbruch-Problem,
-einfach weil wir irgendwann nach so
+einfach, weil wir irgendwann nach so
 
 00:14:36,620 --> 00:14:42,629
 vielen Reduzierungen oder gleich beim Aufruf
@@ -884,11 +889,11 @@ gleich sind, dann etwas anderes; Sie könnten annehmen,
 dass dies statisch sicher wäre.
 
 00:16:41,810 --> 00:16:45,490
-Nun, der Compiler wird nicht in der Lage sein
+Nun, der Compiler wird nicht in der Lage sein,
 zu sagen, dass dies sicher ist, etwa weil "im
 
 00:16:45,490 --> 00:16:50,480
-Grunde sind diese beiden Dinge Gegensätze voneinander, sodass
+Grunde diese beiden Dinge Gegensätze voneinander, sodass
 nur und genau eines von ihnen wahr sein wird".
 
 00:16:50,480 --> 00:16:54,360
@@ -902,6 +907,8 @@ Compiler im Allgemeinen nicht als sicher angesehen wird.
 00:17:00,110 --> 00:17:06,830
 Und der Grund ist, dass dies zwar für
 Basistypen wie Zahlen, Zeichen oder Zeichenketten gilt (dass bei
+
+
 
 00:17:06,830 --> 00:17:13,250
 diesen beiden Dingen immer eines davon wahr
@@ -958,7 +965,7 @@ ist, was man will: dass diese Fakultät für
 
 00:18:26,040 --> 00:18:29,400
 alle negativen Zahlen eins zurückgibt,
-wenn man hier auf "n≤0" wechselt.
+wenn man hier auf "n ≤ 0" wechselt.
 
 00:18:29,400 --> 00:18:35,240
 Die eigentliche Lösung (die konzeptionell ansprechendste Lösung) wäre
@@ -1017,10 +1024,10 @@ ich sie so geschrieben:
 
 00:19:29,890 --> 00:19:36,550
 Ich prüfe, ob t kleiner-gleich pi ist, dann
-prüfe ich die nächste Periode von pi bis 2*pi,
+prüfe ich die nächste Periode von pi bis 2 * pi,
 
 00:19:36,550 --> 00:19:40,260
-und dann über 2*pi (das könnte
+und dann über 2 * pi (das könnte
 etwas sein, was ich ausdrücken möchte).
 
 00:19:40,260 --> 00:19:46,180
@@ -1037,7 +1044,7 @@ wie das hier, was sowohl kürzer ist als auch einige zusätzliche
 
 00:19:58,990 --> 00:20:02,680
 Vorteile hat, wie
-z.B. bekanntes Erschöpfen.
+z. B. bekanntes Erschöpfen.
 
 00:20:02,680 --> 00:20:04,130
 Was ist hier der Unterschied?
@@ -1108,6 +1115,8 @@ Ihren nächsten Übungsaufgaben anzuwenden, wenn Sie komplexe
 
 00:21:31,520 --> 00:21:37,420
 Bedingungen wie oben haben.
+
+
 
 66 # slide
 00:21:37,420 --> 00:21:43,290
@@ -1296,7 +1305,7 @@ Und hier ist es andersherum.
 
 00:25:01,960 --> 00:25:07,610
 Wir haben die Bedingung durch eine Konstantenübereinstimmung
-auf dem zweiten Argument, und irgendeine explizit
+auf dem zweiten Argument und irgendeine explizit
 
 00:25:07,610 --> 00:25:11,510
 formulierte Bedingung auf
@@ -1330,7 +1339,9 @@ der erste Basisfall genommen.
 
 00:25:38,940 --> 00:25:44,720
 Wenn Sie dies mit GHC ausprobieren, erhalten
-Sie einige Warnungen, dass die Bedingungen nicht erfüllt
+Sie einige Warnungen, dass die Bedingungen nicht erfüllt sind.
+
+
 
 00:25:44,720 --> 00:25:51,510
 sind, da der Compiler auch hier versucht,
@@ -1511,7 +1522,7 @@ In diesen Argumentpositionen können wir also
 einfache Dinge haben, wie Konstanten, Variablennamen, später
 
 00:29:03,000 --> 00:29:09,070
-auch einige Pattern über Datentypen, aber
+auch einige Patterns über Datentypen, aber
 nicht so etwas wie einen arithmetischen
 
 00:29:09,070 --> 00:29:12,080
@@ -1548,12 +1559,14 @@ Sagen wir also, wir wollen die
 logischen Operationen auf dem Typ 'Boolean' definieren.
 
 00:29:50,720 --> 00:29:53,410
-Wir könnten sagen "not True =
+Wir könnten sagen: "not True =
 False" und "not False = True".
 
 00:29:53,410 --> 00:29:58,860
 Aber eigentlich brauchen wir in der zweiten
-Zeile nicht "not False = True" zu schreiben,
+Zeile nicht "not False = True" zu schreiben.
+
+
 
 00:29:58,860 --> 00:30:04,040
 denn das Einzige, was hier stehen kann,
@@ -1597,7 +1610,7 @@ bei anderen logischen Operationen vorgehen.
 
 00:30:41,200 --> 00:30:46,790
 Sagen wir zum Beispiel, wir wollen
-die Konjunktion von Booleschen Werten implementieren.
+die Konjunktion von booleschen Werten implementieren.
 
 00:30:46,790 --> 00:30:51,380
 Dann könnten wir sagen: "True and True ist
@@ -1624,7 +1637,7 @@ Und ähnlich könnten wir
 auch einen anderen Stil verwenden.
 
 00:31:14,490 --> 00:31:20,040
-Wir könnten sagen "b and True ist
+Wir könnten sagen: "b and True ist
 b" und "egal and egal ist False".
 
 00:31:20,040 --> 00:31:23,040
@@ -1652,7 +1665,7 @@ Argumentpositionen kombinieren.
 
 00:31:48,970 --> 00:31:57,620
 Aber das werden Fälle sein, die nicht in
-der Art und Weise auftreten, wie Sie z.B. Konjunktionen
+der Art und Weise auftreten, wie Sie z. B. Konjunktionen
 
 00:31:57,620 --> 00:31:59,760
 und Bedingungskombinationen
@@ -1661,3 +1674,4 @@ verwenden wollen.
 00:31:59,760 --> 00:32:03,710
 Ich werde also nicht
 weiter auf diesen Teil eingehen.
+

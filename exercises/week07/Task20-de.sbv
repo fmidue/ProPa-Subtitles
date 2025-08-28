@@ -1,18 +1,19 @@
+
 0:00:00.000,0:00:08.280
 In Aufgabe 20 sollen wir exemplarisch nachprüfen,
 dass die Behauptung aus der Vorlesung, dass man
 
 0:00:08.280,0:00:17.910
 jede List Comprehension mit 'concat', 'filter' und
-'map' ausdrücken kann auch tatsächlich gilt. Dafür
+'map' ausdrücken kann, auch tatsächlich gilt. Dafür
 
 0:00:17.910,0:00:30.990
 haben wir einmal diese List Comprehension hier
-gegeben und hier unten ein Skelett mit 'undefined'
+gegeben und hier unten ein Skelett mit 'undefined',
 
 0:00:30.990,0:00:40.380
-die wir ersetzen sollen und das ganze besteht nur
-aus 'concat', 'filter' und 'map' und wir sollen
+das wir ersetzen sollen und das Ganze besteht nur
+aus 'concat', 'filter' und 'map', und wir sollen
 
 0:00:42.180,0:00:50.970
 eine Füllung der Lücken finden, sodass die beiden
@@ -20,31 +21,31 @@ Listen hier identisch sind. Jetzt können wir
 
 0:00:50.970,0:01:04.170
 uns natürlich zuerst in ghci mal die Liste, die
-original ist, angucken. Zum Beispiel angucken wie
+original ist, angucken. Zum Beispiel angucken, wie
 
 0:01:04.170,0:01:21.060
-viele Elemente originalen Liste sind 2178 Elemente
-in der Liste, das ist natürlich eine ganze Menge,
+viele Elemente die originale Liste hat: 2178 Elemente
+in der Liste, das ist natürlich eine ganze Menge.
 
 0:01:21.060,0:01:30.160
-können exemplarisch mal die ersten zehn angucken,
-wir können auch prinzipielle die letzten zehn
+Wir können exemplarisch mal die ersten zehn angucken,
+wir können auch prinzipiell die letzten zehn
 
 0:01:30.160,0:01:48.400
-angucken, indem ersten 2168 Elemente droppen.
+angucken, indem wir die ersten 2168 Elemente droppen.
 Das sind natürlich jetzt alles ziemlich viele
 
 0:01:48.400,0:01:53.770
-Elemente und es lohnt sich nicht unbedingt die
+Elemente und es lohnt sich nicht unbedingt, die
 Liste als Ganzes anzugucken, aber auf jeden Fall
 
 0:01:53.770,0:01:59.410
-sind Elemente in der liste und wir sollen
+sind Elemente in der Liste und wir sollen
 jetzt die alternative Liste so definieren,
 
 0:01:59.410,0:02:05.650
 dass die gleichen Elemente drin sind. Dazu haben
-wir unten einen QuickCheck Test, der für ein
+wir unten einen QuickCheck-Test, der für ein
 
 0:02:05.650,0:02:11.770
 zufälliges n prüft, wenn wir die ersten n Elemente
@@ -55,12 +56,11 @@ von der alternativen Liste nehmen, dass die auch
 tatsächlich gleich sind. Dafür füllen wir jetzt
 
 0:02:24.610,0:02:32.920
-diese Lücken. Wir sehen schon irgendwie wie
-das ganze ungefähr korrespondieren muss. Wir
+diese Lücken. Wir sehen schon irgendwie, wie
+das Ganze ungefähr korrespondieren muss. Wir
 
 0:02:32.920,0:02:40.600
-haben hier zweimal 'undefined' in zwei 'range'
-Expressions. Das heißt, für das eine 'undefined'
+haben hier zweimal 'undefined' in zwei 'range'-Expressions. Das heißt, für das eine 'undefined'
 
 0:02:40.600,0:02:45.550
 müssen wir wahrscheinlich -50 einsetzen
@@ -68,27 +68,27 @@ und für das andere x. Die Frage ist nur:
 
 0:02:45.550,0:02:53.380
 Welche hier? Welches wohin gehört? Dann haben wir
-irgendetwas womit wir filtern müssen. Das wird
+irgendetwas, womit wir filtern müssen. Das wird
 
 0:02:53.380,0:03:00.580
 vermutlich irgendwie das hier sein, was hier in
-der List Comprehension filtert und dann müssen wir
+der List Comprehension filtert, und dann müssen wir
 
 0:03:00.580,0:03:14.950
 irgendwo noch das Erstellen von Tupeln einfügen.
-Wenn wir uns angucken, wie das ganze aussieht,
+Wenn wir uns angucken, wie das Ganze aussieht,
 
 0:03:14.950,0:03:21.310
 das ist erst mal ein bisschen unübersichtlich,
 vielleicht können wir das Layout einfach mal ein
 
 0:03:21.310,0:03:30.790
-bisschen ändern, dann wird es klarer was passiert.
+bisschen ändern, dann wird es klarer, was passiert.
 Wir haben also ganz außen irgendeinen 'concat',
 
 0:03:30.790,0:03:38.020
 weil wir zweimal 'map' benutzen und dadurch eine
-Liste von Listen erzeugen und das erste 'map', was
+Liste von Listen erzeugen. Das erste 'map', welches
 
 0:03:38.020,0:03:45.970
 wir benutzen, mapped diese Funktion, die irgendwas
@@ -96,10 +96,10 @@ mapped und vorher irgendwie diese Liste filtert,
 
 0:03:45.970,0:03:54.760
 mapped diese Funktion über diese Liste und wenn
-wir jetzt hingucken hier, ist der Parameter für
+wir jetzt hingucken, hier ist der Parameter für
 
 0:03:54.760,0:04:02.020
-uns schon benannt, der heißt x vermutlich
+uns schon benannt, der heißt x, vermutlich
 hat das also mit diesem x hier oben zu tun,
 
 0:04:02.020,0:04:11.050
@@ -112,14 +112,14 @@ die zweite 'range', die wir hier haben und
 
 0:04:24.940,0:04:32.970
 genau das ist im Prinzip das. Und wenn wir uns
-angucken, wie das funktionieren muss, wir nehmen
+angucken, wie das funktionieren muss, nehmen wir
 
 0:04:32.970,0:04:45.510
 hier ein x aus dieser Liste und danach nehmen
 wir sozusagen alle y aus dieser Liste, sodass
 
 0:04:45.510,0:04:52.980
-diese Bedingung gilt und danach bilden wir diese
+diese Bedingung gilt, und danach bilden wir diese
 Paare. Das ist prinzipiell das, was passiert. Wenn
 
 0:04:52.980,0:04:59.280
@@ -132,7 +132,7 @@ wenn wir das so aufziehen, wird die zweite
 
 0:05:07.260,0:05:15.090
 können wir x reinschreiben, was wir auf jeden Fall
-können, weil das x hier entsprechend im scope ist,
+können, weil das x hier entsprechend im Scope ist,
 
 0:05:15.090,0:05:20.160
 in dieser Funktion. Wir könnten zum Beispiel x
@@ -151,12 +151,12 @@ wollen wahrscheinlich irgendwie das hier filtern.
 Das heißt, alle Elemente aus dieser Liste, also
 
 0:05:54.630,0:06:04.170
-alle y für die y + x der Betrag von y + x größer
-als 35 ist. Wenn wir das jetzt versuchen in ghci
+alle y, für die der Betrag von y + x größer
+als 35 ist. Wenn wir das jetzt versuchen, in ghci
 
 0:06:04.170,0:06:13.050
-zu laden oder zu kompilieren wird uns gesagt, dass
-y nicht im scope ist, was ja durchaus korrekt ist,
+zu laden oder zu kompilieren, wird uns gesagt, dass
+y nicht im Scope ist, was ja durchaus korrekt ist,
 
 0:06:13.050,0:06:20.070
 deswegen fügen wir das jetzt hier für die
@@ -164,7 +164,7 @@ Filterfunktion ein. Das heißt, 'filter' geht
 
 0:06:20.070,0:06:26.760
 jetzt über alle Elemente dieser Liste, die wir y
-nennen und prüft diese Bedingungen. Das heißt, wir
+nennen, und prüft diese Bedingungen. Das heißt, wir
 
 0:06:26.760,0:06:32.460
 haben danach in der Liste alle Elemente, die diese
@@ -179,7 +179,7 @@ für jedes x diese Liste von y's bestimmt haben,
 bilden wir die entsprechenden Paare. Das heißt,
 
 0:06:45.090,0:06:52.350
-hier würden wir jetzt auch wieder sagen Lambda
+hier würden wir jetzt auch wieder sagen: Lambda
 y, weil das jetzt die gefilterte Liste immer
 
 0:06:52.350,0:06:56.280
@@ -187,19 +187,21 @@ noch die y's sind, aber halt nicht mehr alle aus
 der gesamten 'range', sondern nur noch die, die
 
 0:06:56.280,0:07:08.190
-das Prädikat, beziehungsweise die Bedingung erfüllen und dann
+das Prädikat, beziehungsweise die Bedingung erfüllen, und dann
 bilden wir entsprechend das Paar. Warum brauchen
 
 0:07:08.190,0:07:14.340
-wir jetzt das 'concat' außen drum? Wenn wir uns
+wir jetzt das 'concat' außenrum? Wenn wir uns
 überlegen, dass wir jetzt für das eine x diese
+
+
 
 0:07:14.340,0:07:25.470
 Liste erstellt haben und dann darüber mappen, dann
-haben wir jetzt für ein x all diese Paare und das
+haben wir jetzt für ein x all diese Paare und das.
 
 0:07:25.470,0:07:30.900
-ist eine Liste. Das heißt, wir machen aus dieser
+Ist eine Liste. Das heißt, wir machen aus dieser
 Liste, für jedes von den Elementen erstellen
 
 0:07:30.900,0:07:37.170
@@ -211,8 +213,8 @@ den inneren Teil von dem 'concat' einfach mal
 kopieren und in eine zweite Definition tun.
 
 0:07:59.690,0:08:05.720
-Wenn wir das ganze also in ghci laden und dann
-den Compiler fragen welchen Typ das Ganze hat,
+Wenn wir das Ganze also in ghci laden und dann
+den Compiler fragen, welchen Typ das Ganze hat,
 
 0:08:05.720,0:08:18.530
 dann sagt es uns: Das ist eine Liste von
@@ -220,10 +222,10 @@ Listen von Integern. Und wenn wir jetzt
 
 0:08:18.530,0:08:31.370
 hier zum Beispiel den 'head' von der Liste jetzt
-nehmen bekommen wir natürlich eine Liste und das
+nehmen, bekommen wir natürlich eine Liste und das
 
 0:08:31.370,0:08:40.700
-sind zum Beispiel die alle Elemente, die mit -50,
+sind zum Beispiel alle Elemente, die mit -50,
 also dem ersten Wert für x, beginnen. Und wenn
 
 0:08:40.700,0:08:49.190
@@ -232,7 +234,7 @@ Werte von der originalen Liste sind, dann sehen
 
 0:08:49.190,0:09:01.970
 wir genau die ersten zehn Elemente darin wieder.
-Wenn wir jetzt entsprechen 'concat' davon machen,
+Wenn wir jetzt entsprechend 'concat' davon machen,
 
 0:09:01.970,0:09:12.650
 dann wird es genau die Liste von Integerpaaren
@@ -243,7 +245,7 @@ werden entsprechend flach geklopft und wir haben
 unsere alternative Formulierung von der Liste.
 
 0:09:25.430,0:09:34.100
-Jetzt können wir unsere 'main' Test laufen lassen
+Jetzt können wir unsere 'main'-Test laufen lassen
 und er sagt: Für 100 zufällige Präfixe stimmt das
 
 0:09:34.100,0:09:47.920
@@ -272,4 +274,5 @@ erster sanity check sozusagen. Das ist im Prinzip
 
 0:10:40.900,0:10:49.900
 wie wir List Comprehensions in 'concat',
-'map' und 'filter' Anwendungen überführen.
+'map' und 'filter'-Anwendungen überführen.
+

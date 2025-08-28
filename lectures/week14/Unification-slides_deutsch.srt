@@ -68,7 +68,7 @@ Und wir können hier schon sehen, dass zum Beispiel,
 der erste Fakt nicht auf diese Abfrage zutrifft
 
 00:01:22,130 --> 00:01:27,899
-einfach weil wir hier eine Null haben und hier,
+einfach, weil wir hier eine Null haben und hier,
 haben wir s(s(0)). Ja, genau wie bei der Funktionsdefinition
 
 00:01:27,899 --> 00:01:32,560
@@ -86,8 +86,7 @@ Nun, der Kopf der zweiten Regel stimmt tatsächlich
 mit der Abfrage überein?
 
 00:01:41,210 --> 00:01:51,659
-Denn wir können das XS (S
-(0)), das YS (S(0)) und das Z (S(S(S(0))))
+Denn wir können das XS (S(0)), das YS (S(0)) und das Z (S(S(S(0))))
 
 00:01:51,659 --> 00:01:52,659
 richtig?
@@ -130,22 +129,22 @@ Wir ersetzen also dieses Literal aus der
 Abfrage, durch die rechte Seite, einen Teil der Instanziierung
 
 00:02:31,880 --> 00:02:34,260
-für XYZ, wie gerade identifiziert.
+für X, Y, Z, wie gerade identifiziert.
 
 00:02:34,260 --> 00:02:40,010
 Ja, in diesem Sinne nehmen wir also jeweils ein S
 vom ersten und letzten Argument weg, weil
 
 00:02:40,010 --> 00:02:41,430
-wir haben hier X, Y, Z.
+wir hier X, Y, Z haben.
 
 00:02:41,430 --> 00:02:46,050
 Okay, deshalb verschwindet dieses S und dieses
 S verschwindet.
 
 00:02:46,050 --> 00:02:49,280
-Okay, und dann geht das noch ein paar Mal weiter
-Mal weitergehen, richtig?
+Okay, und dann geht das noch ein paar Mal weiter,
+richtig?
 
 00:02:49,280 --> 00:02:53,570
 Also, noch einmal, eigentlich würde diese Abfrage
@@ -168,7 +167,7 @@ Argumentposition.
 
 00:03:11,300 --> 00:03:18,300
 Aber jetzt gilt natürlich, zum Glück, die erste Klausel
-gilt nämlich diese Tatsache, indem sie feststellt, dass
+gilt, nämlich diese Tatsache, indem sie feststellt, dass
 
 00:03:18,300 --> 00:03:24,900
 es in Ordnung ist, diese Abfrage mit diesem
@@ -178,18 +177,18 @@ Fakt abzugleichen, weil diese beiden Argumentpositionen
 die gleichen sind, richtig?
 
 00:03:25,900 --> 00:03:29,600
-Das ist etwas, das jetzt geprüft werden muss
+Das ist etwas, das jetzt geprüft werden muss,
 was in Haskell nicht notwendig war, weil
 
 00:03:29,600 --> 00:03:34,651
 in Haskell würde man nicht einmal in der Funktionsdefinition
-Definition etwas haben, was wir hier haben.
+etwas haben, was wir hier haben.
 
 00:03:34,651 --> 00:03:36,480
 Wir haben die gleiche Variable zweimal, okay?
 
 00:03:36,480 --> 00:03:38,090
-Aber hier ist das der Fall X und X.
+Aber hier ist das der Fall: X und X.
 
 00:03:38,090 --> 00:03:44,210
 Es gilt also genau diese Tatsache, weil
@@ -215,12 +214,13 @@ ist einfach wahr.
 Das ist der Grund, warum und wie dies gelöst werden würde,
 okay?
 
+
 00:04:06,470 --> 00:04:10,380
 Indem man im Grunde ein Pattern-Matching durchführt mit
-diesen Regeln und dem zusätzlichen Wissen
+diesen Regeln und dem zusätzlichen Wissen.
 
 00:04:10,380 --> 00:04:14,790
-dass X und X gleich sein müssen, bis man hier
+Dass X und X gleich sein müssen, bis man hier
 endet, okay?
 
 00:04:14,790 --> 00:04:18,160
@@ -229,7 +229,7 @@ Und das ist hier der Fall.
 57 # slide
 00:04:18,160 --> 00:04:27,160
 Okay, aber was ist dann mit einem Fall, in dem im Gegensatz zu
-in Haskell, eine Variable in der Abfrage
+Haskell eine Variable in der Abfrage
 
 00:04:27,160 --> 00:04:28,350
 haben, richtig?
@@ -299,7 +299,7 @@ im Programm.
 Jetzt können wir auch die reale Situation haben.
 
 00:05:35,889 --> 00:05:38,560
-Wo die Sache in der Abfrage ist mehr abstrakt.
+Wo die Sache in der Abfrage mehr abstrakt ist.
 
 00:05:38,560 --> 00:05:44,510
 Ja, weniger Wissen im Voraus über das Ende,
@@ -314,11 +314,10 @@ müssen auch Bindungen herausfinden und propagieren.
 
 00:05:52,030 --> 00:05:56,530
 Denn wenn Sie jetzt zum Beispiel entscheiden, ob
-das N etwas von der Form S sein soll von
+das N etwas von der Form S sein soll,
 
 00:05:56,530 --> 00:06:02,669
-sein soll, dann kann etwa dieses
-N auch in einem anderen Literal aufgetaucht sein
+dann kann etwa dieses N auch in einem anderen Literal aufgetaucht sein
 
 00:06:02,669 --> 00:06:08,040
 in der gleichen Abfrage auftauchen, dann müssen wir
@@ -371,7 +370,7 @@ Eine Konstante ist also mit sich selbst gleich, aber nicht
 mit einer anderen Konstante.
 
 00:07:01,520 --> 00:07:06,290
-Und wenn man strukturierte Daten hast, dann müssen sie
+Und wenn man strukturierte Daten hat, dann müssen sie
 nicht gleich sein.
 
 00:07:06,290 --> 00:07:11,850
@@ -404,7 +403,7 @@ Es handelt sich also um Strukturgleichheit.
 
 00:07:34,810 --> 00:07:40,460
 Und das bedeutet auch in Bezug auf die Arithmetik,
-dass wir an dieser Stelle keine Berechnungen durchführen
+dass wir an dieser Stelle keine Berechnungen durchführen.
 
 00:07:40,460 --> 00:07:41,460
 Punkt.
@@ -414,7 +413,7 @@ Wie gesagt, es wurde bereits erwähnt, dass
 Terme, auch arithmetische Terme, immer
 
 00:07:46,330 --> 00:07:55,020
-in Prolog vollständig strukturell behandelt werden, es sei denn
+in Prolog vollständig strukturell behandelt werden, es sei denn,
 wir führen tatsächlich explizite Berechnungen mit diesem
 
 00:07:55,020 --> 00:07:56,020
@@ -433,6 +432,8 @@ nicht gleich, offensichtlich.
 00:08:01,540 --> 00:08:04,130
 Aber auch die Terme fünf und zwei plus drei
 sind nicht gleich.
+
+
 
 00:08:04,130 --> 00:08:08,530
 Das ist der Punkt der syntaktischen Behandlung
@@ -465,7 +466,7 @@ Bewertung stattfindet.
 
 00:08:29,949 --> 00:08:34,720
 Der Vergleich ist wirklich ein Vergleich der Terme,
-die Struktur und die Positionen und Namen der
+die Struktur sowie die Positionen und Namen der
 
 00:08:34,720 --> 00:08:40,230
 Atome im Term.
@@ -473,7 +474,7 @@ Atome im Term.
 59 # slide
 00:08:40,230 --> 00:08:47,520
 Wenn Sie Variablen haben, dann ist die Idee
-einfach nach Lösungen zu suchen, bei denen wir
+einfach, nach Lösungen zu suchen, bei denen wir
 
 00:08:47,520 --> 00:08:54,320
 diese Variablen durch einige Terme ersetzen, sodass danach
@@ -500,7 +501,7 @@ wieder wirklich strukturell gleich sind, dann ist das
 gut genug, um auch eine Lösung zu haben oder um
 
 00:09:18,940 --> 00:09:24,029
-Lösung zu haben oder dies als einen Weg zu interpretieren, diese beiden
+eine Lösung zu haben oder dies als einen Weg zu interpretieren, diese beiden
 Terme gleichzumachen.
 
 00:09:24,029 --> 00:09:25,029
@@ -549,15 +550,15 @@ nicht schwer sein, aufzuschreiben, was die Variablen
 ersetzt werden müssen, richtig?
 
 00:10:10,940 --> 00:10:15,610
-Zum Beispiel, wenn wir genau eine Variable haben
-nur in einer der beiden Seiten vorkommt, dann
+Zum Beispiel, wenn wir genau eine Variable haben,
+die nur in einer der beiden Seiten vorkommt, dann
 
 00:10:15,610 --> 00:10:17,120
 ist dies immer noch unidirektional.
 
 00:10:17,120 --> 00:10:20,560
 Aber im Allgemeinen, wie hier, werden wir Variablen
-auf beiden Seiten.
+auf beiden Seiten haben.
 
 00:10:20,560 --> 00:10:26,510
 Und dann müssen wir auch Werte für alle
@@ -581,7 +582,7 @@ der Form, etwas plus eins; wie Y plus
 eins.
 
 00:10:42,130 --> 00:10:47,250
-Es geht also nicht um die Ersetzung
+Es geht also nicht um die Ersetzung,
 mit fünf und vier zu ersetzen, denn fünf ist vier
 
 00:10:47,250 --> 00:10:48,250
@@ -618,18 +619,18 @@ hier oben.
 Nämlich, wenn wir Listenstrukturen haben, richtig?
 
 00:11:16,550 --> 00:11:23,680
-Also, wir können auch Situationen wie diese haben
-wo wir jetzt wissen wollen, ist es möglich
+Also, wir können auch Situationen wie diese haben,
+wo wir jetzt wissen wollen, ist es möglich,
 
 00:11:23,680 --> 00:11:25,450
 diese beiden Listen gleichzumachen?
 
 00:11:25,450 --> 00:11:29,750
 Und wenn ja, was wären dann die Werte für X,
-Y, und Z.
+Y und Z.
 
 00:11:29,750 --> 00:11:37,589
-Nun, es ist wahrscheinlich, nicht allzu kompliziert
+Nun, es ist wahrscheinlich nicht allzu kompliziert
 zu sehen, dass X wahrscheinlich 'der' sein könnte und Y
 
 00:11:37,589 --> 00:11:44,820
@@ -642,11 +643,11 @@ sein sollte, denn das kann nicht einfach diese
 
 00:11:48,779 --> 00:11:52,400
 Liste sein, denn dann wäre es nicht das Ende
-der ersten Liste sein, richtig?
+der ersten Liste, richtig?
 
 00:11:52,400 --> 00:11:58,170
-Wenn man sich das hier also ansieht, und wenn man
-in Form von Typen denken, dann sollte das eine Liste sein
+Wenn man sich das hier also ansieht und wenn man
+in Form von Typen denkt, dann sollte das eine Liste sein
 
 00:11:58,170 --> 00:11:59,170
 von Listen von etwas sein.
@@ -659,8 +660,10 @@ Ja, wir sehen hier nur einen weiteren Eintrag in der
 Okay?
 
 00:12:07,899 --> 00:12:15,380
-Der Punkt hier ist, dass wenn wir entscheiden müssen
-Gleichheiten entscheiden müssen, dann ist es wichtig
+Der Punkt hier ist, dass, wenn wir entscheiden müssen
+Gleichheiten zu entscheiden haben, dann ist es wichtig.
+
+
 
 00:12:15,380 --> 00:12:19,490
 zu wissen, wie die Listensyntax in Prolog
@@ -671,15 +674,15 @@ Also, eine Strategie könnte sein, immer zu übersetzen
 all solche Listen, Ausdrücke, Listenausdrücke in
 
 00:12:27,330 --> 00:12:34,089
-zum Beispiel, diese sehr systematische Rotation,
-das ist die letzte Sache hier.
+zum Beispiel, diese sehr systematische Rotation.
+Das ist die letzte Sache hier.
 
 00:12:34,089 --> 00:12:40,060
 Die Baumdarstellung und dann haben wir einfache
 Terme wie hier oben, die wir vergleichen können.
 
 00:12:40,060 --> 00:12:48,089
-Aber mit etwas Übung ist es auch möglich
+Aber mit etwas Übung ist es auch möglich,
 die Antwort für X, Y, Z hier zu sehen,
 
 00:12:48,089 --> 00:12:51,920
@@ -687,7 +690,7 @@ nur anhand der Syntax, die hier angegeben ist.
 
 00:12:51,920 --> 00:12:56,980
 Ohne dass man sie vorher im Kopf in
-Terme dieser Form zu übersetzen.
+Terme dieser Form übersetzen muss.
 
 00:12:56,980 --> 00:12:58,209
 Okay?
@@ -703,7 +706,7 @@ könnten wir im Prinzip
 auch Fragen wie diese stellen.
 
 00:13:12,030 --> 00:13:17,180
-Also, ist es möglich, dass P (X) = p (q(x)) ist?
+Also, ist es möglich, dass P(X) = p(q(X)) ist?
 
 00:13:17,180 --> 00:13:20,240
 Nun, darauf gibt es mindestens zwei mögliche Antworten.
@@ -735,10 +738,10 @@ Für Prolog ist das ein Implementierungsdetail.
 
 00:13:49,589 --> 00:13:55,709
 Tatsächlich verhindert Prolog aus Gründen der Effizienz
-aus Effizienzgründen solche Fälle nicht verhindern.
+solche Fälle nicht.
 
 00:13:55,709 --> 00:14:01,080
-Also, Prolog würde tatsächlich akzeptieren
+Also, Prolog würde tatsächlich akzeptieren,
 dass dies eine Gleichheit ist, die als
 
 00:14:01,080 --> 00:14:03,310
@@ -756,7 +759,7 @@ Implementierung auch einen Schalter für den
 Interpreter verwenden, um zu erzwingen, dass etwas
 
 00:14:15,660 --> 00:14:20,079
-dass so etwas verhindert wird, sodass wir nicht haben können, dass
+so etwas verhindert wird, sodass wir nicht haben können, dass
 ein X in etwas vorkommt, durch das es
 
 00:14:20,079 --> 00:14:21,079
@@ -777,7 +780,7 @@ beantworten, müssen Sie nicht das tun, was Prolog
 in diesem Fall tut.
 
 00:14:38,560 --> 00:14:45,700
-Ja, das wird nicht sein -, Sie werden nicht
+Ja, das wird nicht sein – Sie werden nicht
 in diese Situation kommen.
 
 61 # slide
@@ -789,10 +792,10 @@ Schauen wir uns nun einige andere Fälle an, die keine
 Lösung haben, aber nicht aus den Gründen, die auf
 
 00:14:52,940 --> 00:14:54,050
-der vorherigen Folie.
+der vorherigen Folie genannt wurden.
 
 00:14:54,050 --> 00:14:58,440
-So könnten Sie zum Beispiel Terme haben wie
+So könnten Sie zum Beispiel Terme haben, wie
 und hier ist der Punkt, dass die gleiche
 
 00:14:58,440 --> 00:15:00,060
@@ -802,7 +805,7 @@ Variable zweimal vorkommt.
 Sie muss also konsequent ersetzt werden.
 
 00:15:02,730 --> 00:15:07,089
-Es wäre natürlich möglich zu sagen,
+Es wäre natürlich möglich zu sagen:
 Nun, X hat eine Lösung, denn wir können
 
 00:15:07,089 --> 00:15:09,870
@@ -814,14 +817,14 @@ Und ebenso könnte man sagen, na ja, X würde
 durch Vincent ersetzt werden, denn dann haben wir
 
 00:15:13,480 --> 00:15:14,610
-Übereinstimmung hier.
+die Übereinstimmung hier.
 
 00:15:14,610 --> 00:15:18,519
 Aber das wäre nur möglich, wenn beides gleichzeitig
-möglich, wenn das nicht das gleiche X wäre,
+möglich wäre, wenn das nicht das gleiche X wäre.
 
 00:15:18,519 --> 00:15:21,610
-es wäre X1, X2, oder X und Y, dann könnten wir
+Es wäre X1, X2 oder X und Y, dann könnten wir
 dies tun.
 
 00:15:21,610 --> 00:15:26,260
@@ -833,7 +836,7 @@ Und so können wir es weder durch Mia noch durch
 Vincent ersetzen, weil wir in beiden Fällen eine Fehlanpassung
 
 00:15:31,290 --> 00:15:32,839
-in einer der beiden Positionen.
+in einer der beiden Positionen haben.
 
 00:15:32,839 --> 00:15:38,149
 Deshalb ist dies nicht unifizierbar, wie man
@@ -877,18 +880,20 @@ dies ein Problem wäre.
 
 00:16:17,390 --> 00:16:22,300
 Es ist also ein ähnliches Beispiel wie auf der vorherigen
-Folie, aber an einem bestimmten Punkt gibt es eine Unstimmigkeit
+Folie, aber an einem bestimmten Punkt gibt es eine Unstimmigkeit.
+
+
 
 00:16:22,300 --> 00:16:27,080
-und ich denke, es hat mit diesen Atomen zu tun
-hier.
+Und ich denke, es hat mit diesen Atomen zu tun.
+Hier.
 
 00:16:27,080 --> 00:16:29,470
 Ja, die Variablen wären also in Ordnung.
 
 00:16:29,470 --> 00:16:35,130
 Sie könnten in jeder Position auf sinnvolle Weise abgeglichen werden.
-einer sinnvollen Weise angepasst werden, aber eigentlich müssen wir auch
+In einer sinnvollen Weise angepasst werden, aber eigentlich müssen wir auch
 
 00:16:35,130 --> 00:16:40,990
 sicherstellen, dass die Struktur an
@@ -919,7 +924,7 @@ ein Typsystem.
 
 00:16:53,820 --> 00:16:58,820
 Es erlaubt sogar, dass derselbe Prädikatsname
-mit einer unterschiedlichen Anzahl von Argumenten verwendet werden,
+mit einer unterschiedlichen Anzahl von Argumenten verwendet wird,
 
 00:16:58,820 --> 00:17:01,019
 aber dann können wir die Dinge nicht wirklich unifizieren,
@@ -962,25 +967,25 @@ Abgesehen von den Beispielen, lassen Sie uns auch kurz
 Die Terme, die hier verwendet werden.
 
 00:17:38,900 --> 00:17:42,210
-Also, es gibt natürlich den Term der Substitution
+Also, es gibt natürlich den Term der Substitution,
 den ich bereits erwähnt habe.
 
 00:17:42,210 --> 00:17:47,220
 Also die Idee, Variablen entweder durch andere
-Variablen oder andere Arten von Termen.
+Variablen oder andere Arten von Termen zu ersetzen.
 
 00:17:47,220 --> 00:17:54,220
-Also die Art von Termen, die in Prolog-Programmen vorkommen können
-Programmen vorkommen können, konstante Strukturen, auch Zahlen
+Also die Art von Termen, die in Prolog-Programmen vorkommen können,
+konstante Strukturen, auch Zahlen.
 
 00:17:54,220 --> 00:17:58,580
-aber viele arbeiten hier mit Strukturen und Listen.
+Aber viele arbeiten hier mit Strukturen und Listen.
 
 00:17:58,580 --> 00:18:03,120
 Das ist zunächst einmal nur die Abbildung für Variablen.
 
 00:18:03,120 --> 00:18:06,580
-Aber dann wird es natürlich auch auf Terme angewendet
+Aber dann wird es natürlich auch auf Terme angewendet,
 die Variablen enthalten.
 
 00:18:06,580 --> 00:18:12,750
@@ -991,12 +996,12 @@ Abbildung von Variablen auf Terme in eine Funktion,
 die Terme auf Terme abbildet.
 
 00:18:15,190 --> 00:18:19,980
-Wenn also ein Term gegeben ist, der Variablen enthalten kann und im Allgemeinen auch wird
-Variablen enthält.
+Wenn also ein Term gegeben ist, der Variablen enthalten kann und im Allgemeinen auch wird,
+Variablen enthält,
 
 00:18:19,980 --> 00:18:25,330
 erhält man einen neuen Term, der die gleiche Struktur hat
-Struktur zu all den Punkten hat, an denen die
+zu all den Punkten hat, an denen die
 
 00:18:25,330 --> 00:18:31,179
 Variablen vorkommen, und dann, wo diese Variablen
@@ -1009,7 +1014,7 @@ sagt.
 Und das ergibt einen neuen Term aus dem alten Term.
 
 00:18:34,010 --> 00:18:40,510
-Ja, und das wird benutzt, um Terme gleichzumachen
+Ja, und das wird benutzt, um Terme gleichzumachen,
 denn dann können wir die gleiche Substitution
 
 00:18:40,510 --> 00:18:43,059
@@ -1034,7 +1039,7 @@ die Substitution, die die Variable
 
 00:18:58,330 --> 00:19:03,480
 Nachname durch den Term ersetzt, der eine Konstante ergibt,
-kann aber auch ein beliebiger Term sein, Mueller.
+kann aber auch ein beliebiger Term sein: Mueller.
 
 00:19:03,480 --> 00:19:07,080
 Und um dies zu ersetzen, die Variable MM durch diesen
@@ -1063,7 +1068,7 @@ Und dann listen wir auch nur diese beiden hier auf
 und nicht alle Variablen, die es gibt.
 
 00:19:30,120 --> 00:19:38,520
-Okay, das ist also genau das, was diese Ersetzung
+Okay, das ist also genau das, was diese Ersetzung,
 wenn sie auf einen Term angewendet wird, würde sie
 
 00:19:38,520 --> 00:19:41,990
@@ -1076,7 +1081,7 @@ So erhält man einen neuen Term.
 Alles andere würde unverändert bleiben.
 
 00:19:45,540 --> 00:19:51,940
-Konkret, wenn Sie dies auf diesen Term anwenden
+Konkret, wenn Sie dies auf diesen Term anwenden,
 aus einer der vorherigen Folien anwenden, dann wird diese
 
 00:19:51,940 --> 00:19:57,809
@@ -1096,11 +1101,13 @@ die Substitution verändert.
 
 63 # slide
 00:20:13,960 --> 00:20:20,470
-Und dann die Idee einer Substitution
+Und dann die Idee einer Substitution,
 um zwei Terme gleichzumachen, das ist das Konzept
 
 00:20:20,470 --> 00:20:21,470
 eines Unifikators.
+
+
 
 00:20:21,470 --> 00:20:26,650
 Das ist auch der Grund, warum die Substitution auf der vorherigen
@@ -1111,14 +1118,14 @@ Termpaare sein kann.
 
 00:20:29,390 --> 00:20:37,169
 Okay, also ist die Substitution, die
-wir gerade gesehen haben, ist ein Unifikator für die beiden Terme, die wir
+wir gerade gesehen haben, ein Unifikator für die beiden Terme, die wir
 
 00:20:37,169 --> 00:20:38,549
 vorher gesehen haben.
 
 00:20:38,549 --> 00:20:44,830
-Ja, wenn Sie diese Substitution auf diesen Term anwenden
-Term anwendet, was bedeutet, dass man rekursiv an allen
+Ja, wenn Sie diese Substitution auf diesen Term anwenden,
+was bedeutet, dass man rekursiv an allen
 
 00:20:44,830 --> 00:20:51,970
 Positionen rekursiv abzubilden, die Variablen in diesem Fall, genau
@@ -1126,7 +1133,7 @@ diese Variable durch diese rechts innen.
 
 00:20:51,970 --> 00:20:57,320
 Und wenn Sie das Gleiche mit der gleichen Substitution
-auf diesen anderen Term, dann findet man eine andere
+auf diesen anderen Term anwenden, dann findet man eine andere
 
 00:20:57,320 --> 00:20:58,860
 Variable, vielleicht diese hier.
@@ -1143,7 +1150,7 @@ Sie werden tatsächlich Grundterme sein.
 
 00:21:06,539 --> 00:21:13,990
 Wir können sie einfach Stück für Stück vergleichen
-und sie werden wirklich gleich sein in dem Sinne
+und sie werden wirklich gleich sein in dem Sinne,
 
 00:21:13,990 --> 00:21:17,960
 dass wir keine weiteren Änderungen an ihnen vornehmen müssen.
@@ -1177,15 +1184,15 @@ Das Z kommt in diesen beiden Termen gar nicht vor,
 aber es wäre ein Unifikator, denn nach Anwendung
 
 00:21:42,440 --> 00:21:46,760
-dieser U-Primzahl auf diese beiden Terme hätte man
-auch offensichtlich gleiche Dinge haben.
+dieser U' auf diese beiden Terme hätte man
+auch offensichtlich gleiche Dinge.
 
 00:21:46,760 --> 00:21:54,630
 Okay, um nicht diese seltsamen und interessanten
 Unifikatoren zu vermeiden, gibt es das Konzept des allgemeinsten
 
 00:21:54,630 --> 00:21:55,630
-Unifikator.
+Unifikators.
 
 00:21:55,630 --> 00:21:59,880
 Und das sollte Ihnen bekannt vorkommen, wenn Sie aus
@@ -1207,8 +1214,8 @@ Und er führt keine spezifischen Terme ein, wo
 Variablen ausreichen.
 
 00:22:15,190 --> 00:22:20,270
-Wenn es also ausreicht, eine Variable durch eine andere zu ersetzen
-durch eine andere Variable zu ersetzen, dann wird dies getan
+Wenn es also ausreicht, eine Variable durch eine andere
+Variable zu ersetzen, dann wird dies getan,
 
 00:22:20,270 --> 00:22:24,150
 anstatt beide Variablen durch eine beliebige
@@ -1230,8 +1237,8 @@ Und hier sind zwei Substitutionen, um
 diese beiden Terme zu unifizieren, richtig?
 
 00:22:38,370 --> 00:22:46,190
-Wenn wir das, was die erste Substitution besagt
-auf diese beiden Terme anwendet, erhält man zwei Terme
+Wenn wir das, was die erste Substitution besagt,
+auf diese beiden Terme anwenden, erhält man zwei Terme
 
 00:22:46,190 --> 00:22:50,080
 Datum 27, 11, 2007.
@@ -1251,15 +1258,15 @@ Terme.
 
 00:23:04,290 --> 00:23:11,760
 Denn wenn wir das ersetzen, erhalten wir nach der
-Substitution, erhalten wir hier D, hier 11,
+Substitution hier D, hier 11,
 
 00:23:11,760 --> 00:23:17,240
 2007 hier und hier erhalten wir keine Veränderung von D, weil
-D wird nicht als Variable auf der
+D nicht als Variable auf der
 
 00:23:17,240 --> 00:23:21,310
 linken Seite eines dieser Paare im zweiten
-Unifikator.
+Unifikator steht.
 
 00:23:21,310 --> 00:23:25,270
 Wir erhalten 11, was in Ordnung ist, weil wir auch
@@ -1270,7 +1277,7 @@ auch in Ordnung ist.
 
 00:23:26,270 --> 00:23:30,630
 Wendet man also den zweiten Unifikator auf diese beiden
-Terme führt also auch zu gleichen Termen zu einem anderen
+Terme an, führt das also auch zu gleichen Termen zu einem anderen
 
 00:23:30,630 --> 00:23:33,060
 Term dann hier, aber zwei gleiche Terme.
@@ -1288,7 +1295,7 @@ willkürliche Wahl von 27 trifft.
 
 00:23:42,600 --> 00:23:47,680
 Es gibt keine gute Motivation, irgendetwas
-etwas durch 27 zu ersetzen.
+durch 27 zu ersetzen.
 
 00:23:47,680 --> 00:23:50,630
 Wie man sieht, zeigen sie alle nur zwei
@@ -1312,7 +1319,7 @@ Es gibt keine Möglichkeit, diese Terme gleichzumachen, indem
 man weniger Auswahlmöglichkeiten trifft oder mehr Dinge
 
 00:24:05,429 --> 00:24:06,860
-als Variablen belassen.
+als Variablen belässt.
 
 00:24:06,860 --> 00:24:11,289
 Man muss dies wirklich durch den spezifischen
@@ -1321,9 +1328,7 @@ Wert 11 ersetzen, weil wir sonst keine Übereinstimmung
 00:24:11,289 --> 00:24:12,289
 hier.
 
-00:24:12,289 --> 00:24:16,490
-Und wir müssen wirklich Y durch einen bestimmten
-Wert 2007 ersetzen, weil man sonst keine
+
 
 00:24:16,490 --> 00:24:17,490
 übereinstimmen.
@@ -1336,7 +1341,7 @@ als dieses U2.
 Also gut.
 
 00:24:24,049 --> 00:24:28,950
-Das wäre dann eine U3, die D durch DD ersetzt
+Das wäre dann eine U3, die D durch DD ersetzt,
 anstatt so herum, das würde auch
 
 00:24:28,950 --> 00:24:29,950
@@ -1347,7 +1352,7 @@ Das wird auch allgemeiner sein als U1.
 
 00:24:33,309 --> 00:24:37,740
 Und eigentlich wären diese beiden U2 und diese
-U3 wären ebenso allgemein.
+U3 ebenso allgemein.
 
 00:24:37,740 --> 00:24:49,660
 Ja, es gibt also nicht den einen allgemeinsten Unifikator,
@@ -1388,22 +1393,21 @@ der Logik-Vorlesung vorgeschlagen.
 
 00:25:24,760 --> 00:25:28,960
 Und er wurde in diesem Kurs als Übung geübt
-Übung und wahrscheinlich war er auch Teil der
+und wahrscheinlich war er auch Teil der
 
 00:25:28,960 --> 00:25:32,070
-Prüfung, sodass Sie in der Lage sein sollten, dies aufzufrischen
-dies.
+Prüfung, sodass Sie in der Lage sein sollten, dies aufzufrischen.
 
 00:25:32,070 --> 00:25:38,230
 Und darüber hinaus werden wir für unseren Umgang mit
-der Semantik von Prolog, brauchen wir keinen
+der Semantik von Prolog keinen
 
 00:25:38,230 --> 00:25:39,350
-einen bestimmten Algorithmus lernen.
+bestimmten Algorithmus lernen.
 
 00:25:39,350 --> 00:25:46,060
 Es geht also nicht darum, dass Sie diesen Algorithmus auswendig lernen müssen
-diesen Algorithmus auswendig lernen und zeigen, wie man den
+und zeigen, wie man den
 
 00:25:46,060 --> 00:25:47,060
 Algorithmus anwendet.
@@ -1414,14 +1418,13 @@ Unifikator von zwei Termen ist.
 
 00:25:51,150 --> 00:25:56,919
 Das kann man natürlich herausfinden, indem man den Algorithmus wirklich
-Anwendung des Algorithmus und es gibt Beispiele
+anwendet, und es gibt Beispiele
 
 00:25:56,919 --> 00:25:59,039
 auf den Folien, die ich jetzt überfliege.
 
 00:25:59,039 --> 00:26:01,820
-Und natürlich auch in den Folien von Professor König
-Folien.
+Und natürlich auch in den Folien von Professor König.
 
 00:26:01,820 --> 00:26:06,900
 Und Sie werden sehen, dass es Beispiele gibt, in denen wir
@@ -1438,12 +1441,11 @@ Sie müssen korrekt sagen, was der allgemeinste
 Unifikator für ein Termpaar ist.
 
 00:26:15,090 --> 00:26:20,480
-Sie müssen nicht zeigen, dass Sie
-dass man diesen Unifikator mit einem konkreten Algorithmus berechnen kann.
+Sie müssen nicht zeigen, dass man diesen Unifikator mit einem konkreten Algorithmus berechnen kann.
 
 00:26:20,480 --> 00:26:22,950
 Das ist also einfach etwas, das nicht Teil
-dieser Vorlesung.
+dieser Vorlesung ist.
 
 00:26:22,950 --> 00:26:24,950
 Das ist nichts, was wir hier tun wollen.
@@ -1453,8 +1455,7 @@ Aber wir müssen in der Lage sein, einen sehr
 allgemeinen Unifikator zu finden, okay?
 
 00:26:29,900 --> 00:26:34,400
-Deshalb werde ich diesen Algorithmus hier nicht behandeln
-hier behandeln.
+Deshalb werde ich diesen Algorithmus hier nicht behandeln.
 
 00:26:34,400 --> 00:26:39,370
 Nebenbei bemerkt, ich glaube, ich habe es bereits kurz
@@ -1462,11 +1463,11 @@ erwähnt.
 
 00:26:39,370 --> 00:26:44,600
 Diese Prüfung, die ich kurz erwähnt habe
-auf der vorherigen Folie erwähnt habe, als wir über
+auf der vorherigen Folie, als wir über
 
 00:26:44,600 --> 00:26:49,660
 diese unendliche Übereinstimmung; P von (X, Y) gegen
-P von (Q(X)).
+P von (Q(X)) gesprochen haben.
 
 00:26:49,660 --> 00:26:52,470
 Und die auch in den Folien vorkommt.
@@ -1477,7 +1478,6 @@ das verwendet werden kann oder nicht.
 
 00:26:59,919 --> 00:27:05,309
 Es wird für Sie in der Übung oder Prüfung nicht relevant sein.
-oder der Prüfung.
 
 00:27:05,309 --> 00:27:06,309
 Okay?
@@ -1488,8 +1488,9 @@ müssen sich dessen nicht bewusst sein.
 
 00:27:10,169 --> 00:27:16,270
 Sie können immer die intuitive Vorstellung von
-Unifikation verwenden, indem man sich Terme ansieht und überlegt
+Unifikation verwenden, indem Sie sich Terme ansehen und überlegen,
 
 00:27:16,270 --> 00:27:21,710
-was muss ich tun, um diese beiden Terme gleichzumachen
-Terme gleichzumachen, ohne dass das Problem der Prüfung auftritt.
+was muss ich tun, um diese beiden Terme gleichzumachen,
+ohne dass das Problem der Prüfung auftritt.
+

@@ -1,6 +1,7 @@
+
 0:00:00.000,0:00:07.680
 In dieser Aufgabe sind unendliche Listen in
-Haskell zu definieren und die Herausforderung
+Haskell zu definieren und die Herausforderung.
 
 0:00:07.680,0:00:15.420
 besteht dabei, die Listen so zu definieren,
@@ -12,14 +13,14 @@ stehen und nicht die Zahlen, die sehr
 
 0:00:22.380,0:00:30.660
 groß sind und irgendwo sehr weit am Ende stehen,
-beziehungsweise gar nicht angezeigt werden können,
+beziehungsweise gar nicht angezeigt werden können.
 
 0:00:30.660,0:00:39.150
-weil Haskell nie zu dem Ziel kommt. Was wäre
+Weil Haskell nie zu dem Ziel kommt. Was wäre
 denn ein solcher Fall? Ein solcher Fall wäre,
 
 0:00:39.150,0:00:52.020
-wenn man z.B. die unendlichen Listen
+wenn man z. B. die unendlichen Listen
 so definieren würde. Das heißt,
 
 0:00:52.020,0:01:07.980
@@ -31,8 +32,8 @@ hier müsste man wahrscheinlich -1 bis, was
 weiß ich, oder sagen wir das einfach so:
 
 0:01:22.470,0:01:35.250
-Ein x mit 1 bis unendlich und dann das ganze
-als 'negate'. Das heißt, die negativen werte so.
+Ein x mit 1 bis unendlich und dann das Ganze
+als 'negate'. Das heißt, die negativen Werte so.
 
 0:01:35.250,0:01:40.950
 Das würde dazu führen, dass -1 nämlich hier
@@ -40,11 +41,11 @@ erst mal gar nicht auftaucht in den Werten.
 
 0:01:49.140,0:01:57.180
 Wenn ich das Programm lade und jetzt hier die
-ersten 100 Werte anzeigen lassen von Ints,
+ersten 100 Werte anzeigen lasse von Ints,
 
 0:01:57.180,0:02:03.630
 dann stellen wir fest, dass hier nur positive
-Zahlen stehen, besser wäre das ganze alternierend
+Zahlen stehen, besser wäre das Ganze alternierend
 
 0:02:03.630,0:02:13.110
 zu haben, denn dann könnte man nämlich die
@@ -92,7 +93,7 @@ also das wird hier in einem 'where' definiert,
 
 0:03:43.770,0:03:55.030
 weil wir das hier lokal brauchen. 'alternate'
-von x soll so definiert sein, dass 'x 'mod' 2',
+von x soll so definiert sein, dass 'x mod 2',
 
 0:03:55.030,0:04:15.040
 wenn das 0 ist, dann multiplizieren wir mit -1
@@ -107,15 +108,15 @@ jetzt noch einmal ausführen und uns die ersten
 100 Werte anschauen, dann sehen wir jetzt hier
 
 0:04:25.780,0:04:32.800
-genau, dass dieses verhalten auftritt, dass 0 als
-erstes kommt und dann - 1 und 1 und so weiter. Es
+genau, dass dieses Verhalten auftritt, dass 0 als
+Erstes kommt und dann -1 und 1 und so weiter. Es
 
 0:04:32.800,0:04:36.850
 ist kein Wert doppelt, aber es sind alle Werte
 vorhanden und wir könnten ja noch mehr Werte
 
 0:04:36.850,0:04:43.150
-anzeigen, also kann uns sie auf 1000 Werte geben
+anzeigen, also kann uns Sie auf 1000 Werte geben
 lassen und sehen, dass sich das Schema fortsetzt.
 
 0:04:47.710,0:04:52.000
@@ -139,7 +140,7 @@ durchzunummerieren, beschäftigt sich mit der
 Frage, ob das überhaupt möglich ist, alle diese
 
 0:05:24.580,0:05:31.900
-Zahlenpaare mit natürlichen Zahlen auszudrücken,
+Zahlenpaare mit natürlichen Zahlen auszudrücken
 oder die sozusagen durchzunummerieren und das
 
 0:05:31.900,0:05:40.480
@@ -151,7 +152,7 @@ wieder eine List Comprehension genutzt, in der wir
 letztendlich x und y haben wollen und wir nutzen
 
 0:05:52.840,0:06:01.240
-halt diesen Ansatz, den auch Hilbert nimmt,
+halt diesen Ansatz, den auch Hilbert nimmt
 und nehmen die natürlichen Zahlen sozusagen,
 
 0:06:01.240,0:06:11.250
@@ -159,23 +160,23 @@ um abzuzählen, was wir haben wollen, aber das ist
 der gleiche Ansatz wie dort, aber wir zählen hier
 
 0:06:11.250,0:06:19.800
-die diagonalen, die wir haben wollen, wenn wir
+die Diagonalen, die wir haben wollen, wenn wir
 sozusagen tabellarisch x und y auflisten würden.
 
 0:06:19.800,0:06:29.820
-Also x in der Horizontalen und y der Vertikalen
+Also x in der Horizontalen und y in der Vertikalen
 und dann eben die Paare dort in die Tabelle alle
 
 0:06:29.820,0:06:35.250
 eintragen würden, dann könnten wir sozusagen die
-diagonalen, oben links in der ecke beginnend,
+Diagonalen, oben links in der Ecke beginnend,
 
 0:06:35.250,0:06:42.990
 weiter abgehen, nach rechts oder nach unten,
 was im Prinzip dasselbe ist, weil die Zahlen,
 
 0:06:42.990,0:06:47.760
-wenn man eins nach rechts geht, liegt genau auf
+wenn man eins nach rechts geht, liegen genau auf
 der Diagonalen, wie wenn man eins nach unten geht
 
 0:06:47.760,0:06:53.790
@@ -184,7 +185,7 @@ eins nach unten liegt auf derselben Diagonalen,
 
 0:06:53.790,0:07:06.690
 wie zwei nach rechts und so weiter. Das heißt,
-wir können sagen x ist eben genau eine Zahl, die
+wir können sagen, x ist eben genau eine Zahl, die
 
 0:07:06.690,0:07:19.980
 auch wieder aus dem Bereich 0 bis und dann aber n
@@ -196,10 +197,12 @@ Zahl in der Diagonalen. In der zweiten Diagonale
 
 0:07:29.820,0:07:38.820
 entstehen zwei Werte, nämlich 1 0 und 0 1, also
-alle, die in der Summe 1 ergeben, alle Zahlenpaare
+alle, die in der Summe 1 ergeben, alle Zahlenpaare.
+
+
 
 0:07:39.990,0:07:51.330
-in der zweiten Diagonalen stehen alle Zahlen die
+In der zweiten Diagonalen stehen alle Zahlen, die
 in der Summe 2 ergeben und so weiter. Das können
 
 0:07:51.330,0:07:58.050
@@ -219,7 +222,7 @@ immer eine Zahl pro Diagonale hinzu. Dann die
 dritte Aufgabe. Die sagt aus, dass wir nun die
 
 0:08:29.090,0:08:37.580
-Zahlen aller Triple von zwei natürlichen Zahlen
+Zahlen aller Tripel von zwei natürlichen Zahlen
 und einer Integerzahl bestimmen sollen. Das heißt,
 
 0:08:37.580,0:08:44.390
@@ -232,10 +235,10 @@ definiert haben, denn die können wir jetzt in dem
 
 0:08:52.100,0:09:09.890
 Fall wieder verwenden. Wir wollen jetzt drei
-Zahlen haben x, y und z. Wir wollen genau alle
+Zahlen haben: x, y und z. Wir wollen genau alle
 
 0:09:09.890,0:09:15.710
-natürlichen Zahlen, also wir wollen alle Triple
+natürlichen Zahlen, also wir wollen alle Tripel
 mit allen natürlichen Zahlenkombinationen und
 
 0:09:15.710,0:09:22.670
@@ -255,7 +258,7 @@ natürlichen Zahlen liefert und mit natürlichen
 Zahlen können wir in den Listen nachschlagen,
 
 0:09:40.490,0:09:51.260
-was wir brauchen. Also wir können uns Indizes
+was wir brauchen. Also, wir können uns Indizes
 geben lassen, mithilfe von 'pairs' und dann
 
 0:09:51.260,0:10:16.480
@@ -263,15 +266,15 @@ erhalten wir x und y, wenn wir in 'pairs' an
 der Stelle i nachschlagen. x und y erhalten wir,
 
 0:10:16.480,0:10:25.990
-wenn wir in 'pairs' an der Stelle i nachschlagen,
-dann erhalten wir sozusagen genau einen Wert hier
+wenn wir in 'pairs' an der Stelle i nachschlagen.
+Dann erhalten wir sozusagen genau einen Wert hier
 
 0:10:25.990,0:10:35.680
-raus, i läuft über alle natürlichen Zahlen, weil
-das die Liste an Kombination von natürlichen
+raus. i läuft über alle natürlichen Zahlen, weil
+das die Liste an Kombinationen von natürlichen
 
 0:10:35.680,0:10:46.270
-Zahlen ist und mit j können wir den das z
+Zahlen ist und mit j können wir das z
 nachschlagen, was wir noch benötigen, denn
 
 0:10:46.270,0:10:53.530
@@ -279,8 +282,8 @@ das ist nämlich eins aus diesen Integerzahlen. Und
 dafür können wir j verwenden, weil j nämlich auch
 
 0:10:53.530,0:10:58.420
-eine natürliche Zahl ist. Genaugenommen läuft es
-hier dann, durch per die Verwendung von 'pairs',
+eine natürliche Zahl ist. Genau genommen läuft es
+hier dann, durch die Verwendung von 'pairs',
 
 0:10:58.420,0:11:03.460
 auch über alle natürlichen Zahlen, sodass wir
@@ -288,15 +291,15 @@ dadurch alle Kombinationen auch bekommen. Ich
 
 0:11:03.460,0:11:19.510
 formatiere das hier mal leicht um, sodass das
-besser sichtbar bleibt. Also wir haben hier x
+besser sichtbar bleibt. Also, wir haben hier x
 
 0:11:19.510,0:11:34.060
 und y und kriegen hier noch z, indem wir in 'ints'
-nachschlagen, an der stelle j und dann erhalten
+nachschlagen, an der Stelle j und dann erhalten
 
 0:11:34.060,0:11:41.920
 wir die entsprechenden Zahlen. Wenn wir das auch
-kompilieren, dann gibt es ein Fehler. Und zwar
+kompilieren, dann gibt es einen Fehler. Und zwar
 
 0:11:41.920,0:11:49.420
 sagt er hier, dass 'Int' nicht mit 'Integer'
@@ -312,22 +315,22 @@ indem wir hier 'fromIntegral' verwenden. Und
 
 0:12:10.990,0:12:17.530
 dasselbe machen wir bei j auch, denn auch das
-ist ein 'Integer', mit 'fromIntegral' können
+ist ein 'Integer'. Mit 'fromIntegral' können
 
 0:12:17.530,0:12:28.180
-das zu einem 'Int' konvertieren und können damit
+wir das zu einem 'Int' konvertieren und können damit
 diese lookup-Funktion verwenden. Und jetzt können
 
 0:12:28.180,0:12:37.210
-wir auch von der 'triples' Funktion uns Werte
+wir auch von der 'triples'-Funktion uns Werte
 ausgeben lassen und sehen, dass das hier auch
 
 0:12:37.210,0:12:51.640
-eine immer weiter steigende Werte sind. Wir sehen,
-das hier die Integerzahlen etwas steiler steigen,
+immer weiter steigende Werte sind. Wir sehen,
+dass hier die Integerzahlen etwas steiler steigen,
 
 0:12:51.640,0:13:05.980
-aber im groben steigen schon alle Zahlen hier. Es
+aber im Großen steigen schon alle Zahlen hier. Es
 sind die Paare jeweils am Anfang, also wir haben
 
 0:13:05.980,0:13:15.970
@@ -336,7 +339,7 @@ einmal mit 0, einmal mit -1 und dann taucht
 
 0:13:15.970,0:13:21.670
 es aber auch später wieder auf, also hier mit 0
-0 auch mit 1, hier taucht 0 0 mit -2 auf, hier
+0, auch mit 1. Hier taucht 0 0 mit -2 auf, hier
 
 0:13:21.670,0:13:33.190
 taucht 0 0 mit 2 auf und zwischendrin tauchen
@@ -347,5 +350,6 @@ die sich dann auch später wieder in anderen
 Kombinationen wiederholen, mit anderen,
 
 0:13:45.370,0:13:56.950
-auch negativen Zahlen also 1 0 0 zum Beispiel
+auch negativen Zahlen, also 1 0 0 zum Beispiel
 hier, dann auch wieder mit 1 0 1 und so weiter.
+

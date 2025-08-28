@@ -1,3 +1,4 @@
+
 0:00:00.000,0:00:09.150
 In dieser Aufgabe geht es um Palindrome. Das
 sind Wörter, die vorwärts und rückwärts gleich
@@ -16,18 +17,18 @@ genutzt werden können, um die gewünschte
 
 0:00:34.410,0:00:42.720
 Funktionsimplementierung zu überprüfen. Und zwar
-ist die isPalindrome-Funktion zu implementieren
+ist die isPalindrome-Funktion zu implementieren.
 
 0:00:42.720,0:01:00.630
-und wenn ich jetzt im ghci, also im interaktiven
+Wenn ich jetzt im ghci, also im interaktiven
 Compiler das Programm lade, erst mal die Datei
 
 0:01:00.630,0:01:07.290
-speichern, und dann die main-Funktion aufrufe,
+speichern und dann die main-Funktion aufrufe,
 dann werden die Tests ausgeführt. In dem Fall
 
 0:01:07.290,0:01:15.990
-jetzt ist die Implementierung noch komplett
+ist die Implementierung noch komplett
 'undefined'. Das heißt, das ist natürlich
 
 0:01:15.990,0:01:27.930
@@ -43,15 +44,15 @@ dann zeigen uns diese Tests hier, dass es ein
 Gegenbeispiel gibt und zwar nach einem Test
 
 0:01:49.080,0:01:54.450
-konnte festgestellt werden, dass wenn man das
-Zeichen 'a' die isPalindrome-Funktion übergibt,
+konnte festgestellt werden, dass, wenn man das
+Zeichen 'a' der isPalindrome-Funktion übergibt,
 
 0:01:54.450,0:02:05.100
 dann liefert unsere aktuelle Implementierung,
-also dieses 'False', den nicht erwarteten Wert,
+also dieses 'False', den nicht erwarteten Wert.
 
 0:02:05.100,0:02:15.630
-es wurde nämlich ein Gegenbeispiel gefunden.
+Es wurde nämlich ein Gegenbeispiel gefunden.
 Und tatsächlich, also wenn wir einen Buchstaben
 
 0:02:15.630,0:02:23.580
@@ -64,7 +65,7 @@ das können Sie auch zum Lösen dieser Aufgabe
 
 0:02:29.430,0:02:42.390
 verwenden. Was gibt es für Möglichkeiten, um die
-'isPalindrome' Aufgabe zu lösen? Wir können zum
+'isPalindrome'-Aufgabe zu lösen? Wir können zum
 
 0:02:42.390,0:02:56.470
 einen die Buchstaben auf denselben Case bringen
@@ -79,7 +80,7 @@ verwenden können und 'toUpper' und 'toLower'.
 Naiv gesehen, wenn wir die den Case ignorieren,
 
 0:03:13.600,0:03:25.900
-könnten wir sagen, dass wenn wir eine Liste haben,
+könnten wir sagen, dass, wenn wir eine Liste haben,
 ich sag mal xs, und wir wollen das entscheiden,
 
 0:03:25.900,0:03:36.880
@@ -103,7 +104,7 @@ ob die Groß- und Kleinschreibung auch passt
 und das müssen wir hier sozusagen zusätzlich
 
 0:04:25.900,0:04:33.550
-machen. Eine Möglichkeit ist halt eben die
+machen. Eine Möglichkeit ist halt eben, die
 Buchstabenlisten beide erst mal auf denselben
 
 0:04:33.550,0:04:39.700
@@ -119,7 +120,7 @@ Buchstaben sein soll. Dafür können wir List
 Comprehension nutzen, also wir können sagen:
 
 0:04:56.920,0:05:10.180
-'toLower', alle Character, die in der
+'toLower', alle Characters, die in der
 Liste sind. Wenn wir das machen, dann
 
 0:05:10.180,0:05:18.460
@@ -140,10 +141,10 @@ ist in diesem Fall 'False'. Also deshalb mussten
 
 0:05:50.260,0:06:00.160
 wir auch noch den Case überprüfen. Es gibt noch
-andere Wege die Aufgabe zu lösen, also andere,
+andere Wege, die Aufgabe zu lösen, also andere,
 
 0:06:00.160,0:06:07.540
-grundsätzliche Ansätze wie man das machen kann.
+grundsätzliche Ansätze, wie man das machen kann.
 Man kann zum Beispiel erst mal feststellen,
 
 0:06:07.540,0:06:17.980
@@ -151,8 +152,8 @@ dass ein Palindrom immer existiert, also dass
 man sozusagen ein Palindrom nach der Listenmenge
 
 0:06:19.210,0:06:27.700
-sozusagen überprüft und man kann feststellen, dass
-xs ein Palindrom ist, ich kommentiere mal kurz die
+überprüft und man kann feststellen, dass
+xs ein Palindrom ist. Ich kommentiere mal kurz die
 
 0:06:27.700,0:06:45.580
 Implementierung aus, wenn die Länge der Liste
@@ -184,7 +185,7 @@ Also der Typ von 'isPalindrome' ist
 
 0:08:13.160,0:08:20.840
 'String' nach 'Bool'. Wenn ich jetzt die
-Tests laufen lassen, dann ist das falsch,
+Tests laufen lasse, dann ist das falsch,
 
 0:08:20.840,0:08:28.070
 weil 'ab' kein Palindrom ist. Warum ist
@@ -200,18 +201,20 @@ gibt es die init- und die tail-Funktion.
 
 0:08:50.600,0:08:57.560
 Mit der init-Funktion wird sozusagen der erste
-Teil der Liste genommen und mit 'tail' der hintere
+Teil der Liste genommen und mit 'tail' der hintere.
+
+
 
 0:08:57.560,0:09:03.260
 Teil der Liste. Wenn man beide anwendet auf xs,
-dann sind genau das erste und das letzte Element
+dann sind genau das erste und das letzte Element.
 
 0:09:03.260,0:09:09.770
-der Liste verschwunden. Jetzt würde das ganze
-schon wieder durch unsere Testsuite laufen,
+der Liste verschwunden. Jetzt würde das Ganze
+schon wieder durch unsere Testsuite laufen.
 
 0:09:09.770,0:09:16.460
-die wir hier gegeben haben, aber 'isPalindrome'
+Die wir hier gegeben haben, aber 'isPalindrome'
 von 'Abba' wäre noch falsch. Das lässt sich wieder
 
 0:09:16.460,0:09:23.690
@@ -219,7 +222,7 @@ beheben, indem hier 'toLower' verwendet wird,
 einmal auf 'head' und dasselbe auch nochmal auf
 
 0:09:23.690,0:09:43.730
-'last' und wenn das gemacht wurde, dann liefert
+'last'. Und wenn das gemacht wurde, dann liefert
 'isPalindrome' auf 'Abba' auch wieder 'True'. Als
 
 0:09:43.730,0:10:03.050
@@ -227,24 +230,24 @@ ein anderer Weg wäre auch eine Schreibweise
 mit List Comprehension denkbar. Wenn man
 
 0:10:03.050,0:10:15.590
-sozusagen jetzt den Ansatz hat erst die Liste
+sozusagen jetzt den Ansatz hat, erst die Liste
 zu reversen und dann in Lower Case zu setzen,
 
 0:10:15.590,0:10:30.020
-also sozusagen das umgekehrte zu dem ersten Fall,
+also sozusagen das Umgekehrte zu dem ersten Fall,
 dann ist das natürlich auch möglich, also erst das
 
 0:10:30.020,0:10:50.450
-reverse machen, ich definiere dafür die Liste ys als
-die reversed Liste von xs, also haben die gegebene
+Reverse machen. Ich definiere dafür die Liste ys als
+die reversed Liste von xs, also haben wir die gegebene
 
 0:10:50.450,0:11:02.310
 Liste und genau die umgekehrte Liste davon und
 wir können jetzt sagen, dass wir jedes Element
 
 0:11:02.310,0:11:14.220
-dieser Liste mit 'toUpper', oder alternativ auch
-mit 'toLower', vergleichen. Also wir benutzen
+dieser Liste mit 'toUpper' oder alternativ auch
+mit 'toLower' vergleichen. Also wir benutzen
 
 0:11:14.220,0:11:25.380
 'toUpper' auf dem jeweiligen ersten Element der
@@ -256,10 +259,10 @@ beiden Listen bekommen und dafür gibt es eine
 
 0:11:36.840,0:11:42.120
 praktische Funktion, die sich 'zip' nennt, die
-sozusagen genau diese beiden Listen zusammenführt,
+sozusagen genau diese beiden Listen zusammenführt.
 
 0:11:42.120,0:11:49.800
-also die reversed list mit der nicht reversed
+Also die reversed list mit der nicht reversed
 list. Die nimmt eben zwei Parameter, hier können
 
 0:11:49.800,0:11:56.550
@@ -267,17 +270,18 @@ wir also xs und ys übergeben, und jetzt haben wir
 eine Liste von Booleans, das ist noch nicht ganz
 
 0:11:56.550,0:12:03.570
-das was wir haben wollen, aber wir sagen jetzt
-einfach was für alle unsere Elemente in der Liste
+das, was wir haben wollen, aber wir sagen jetzt
+einfach, was für alle unsere Elemente in der Liste
 
 0:12:03.570,0:12:08.160
-gelten soll und dafür können wir die and-Funktion
+gelten soll, und dafür können wir die and-Funktion
 nehmen, die eben genau aus einer
 
 0:12:08.160,0:12:24.360
 Liste von Booleans einen Boolean macht. Wenn ich
-das jetzt erneut lade und den Test laufen lassen
+das jetzt erneut lade und den Test laufen lasse
 
 0:12:24.360,0:12:34.290
 für 'isPalindrome "Abba"', dann gibt der 'True'
 und auch die Tests mit 'main' funktionieren.
+

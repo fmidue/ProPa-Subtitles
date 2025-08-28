@@ -1,5 +1,6 @@
+
 0:00:01.500,0:00:08.990
-So, bei der Aufgabe 39 haben jetzt eine Prolog-Aufgabe,
+So, bei der Aufgabe 39 haben wir jetzt eine Prolog-Aufgabe,
 wo wir ein dreistelliges Prädikat schreiben
 
 0:00:08.990,0:00:16.180
@@ -7,7 +8,7 @@ sollen, wo wir als Erstes irgendein Element
 haben, als erstes Argument des Prädikats,
 
 0:00:16.180,0:00:22.060
-an zweiten Stelle haben eine Liste und an
+an zweiter Stelle haben wir eine Liste und an
 der dritten Stelle soll dann, was rauskommt,
 
 0:00:22.060,0:00:25.591
@@ -51,12 +52,12 @@ Da sind wir ja einigermaßen sicher und sollten
 das schnell hinkriegen.
 
 0:00:58.120,0:01:01.090
-Also wenn wir jetzt mal beispielhaft das ganze
+Also, wenn wir jetzt mal beispielhaft das Ganze
 in Haskell programmieren würden, hätten
 
 0:01:01.090,0:01:09.160
-wir zum Beispiel Funktion g nimmt irgendeinen
-Typen und in Haskell müsste es halt dann
+wir zum Beispiel die Funktion g, die irgendeinen
+Typen nimmt und in Haskell müsste es halt dann
 
 0:01:09.160,0:01:12.670
 auch eine Liste des gleichen Typs sein, weil
@@ -67,19 +68,19 @@ String einpacken kann oder so, das geht ja
 nicht.
 
 0:01:14.760,0:01:18.340
-Also bei Haskell müssten wir feste Typen
+Also, bei Haskell müssten wir feste Typen
 benutzen, sodass das auch eine Liste vom gleichen
 
 0:01:18.340,0:01:24.730
 Typ ist und dann soll auch wieder eine Liste
-vom gleichen Typen rauskommen und da würde
+vom gleichen Typ rauskommen und da würde
 
 0:01:24.730,0:01:29.259
 man jetzt zum Beispiel machen, fangen wir
 mit einem Basisfall an, wir haben irgendwas
 
 0:01:29.259,0:01:34.030
-und leere Liste, dann sollte einfach nichts
+und eine leere Liste, dann sollte einfach nichts
 passieren, wir bekommen wieder die leere Liste
 
 0:01:34.030,0:01:42.680
@@ -95,15 +96,15 @@ Der dritte Fall wäre, wir haben einfach eine
 Liste, die länger ist.
 
 0:01:56.490,0:02:06.030
-In nenne das jetzt einfach mal a, oder lieber
+Ich nenne das jetzt einfach mal a, oder lieber
 nicht, lieber y oder so etwas.
 
 0:02:06.030,0:02:11.200
-Dann würden wir jetzt einfach nur ein pattern
-match machen hier im ersten Element von der
+Dann würden wir jetzt einfach nur ein Pattern
+Match machen hier im ersten Element von der
 
 0:02:11.200,0:02:20.440
-liste und dann würde man ja das erste Element
+Liste und dann würde man ja das erste Element
 nehmen, das kommt nach ganz vorne, dann kommt
 
 0:02:20.440,0:02:27.700
@@ -118,11 +119,11 @@ Das wäre jetzt eine Möglichkeit, wie wir
 das in Haskell programmieren könnten.
 
 0:02:33.709,0:02:38.180
-Jetzt könnten wir versuchen das in Prolog
+Jetzt könnten wir versuchen, das in Prolog
 zu übertragen, ist ja nicht zu kompliziert.
 
 0:02:38.180,0:02:43.280
-Also wenn wir das jetzt einfach übersetzen
+Also, wenn wir das jetzt einfach übersetzen
 würden, machen wir mal.
 
 0:02:43.280,0:02:47.060
@@ -131,7 +132,7 @@ und wandeln die um in Regeln.
 
 0:02:47.060,0:02:52.940
 Der erste Fall, das können wir genauso übernehmen,
-wir haben irgendwas, das Füllelement und
+wir haben irgendwas, das Füllelement, und
 
 0:02:52.940,0:02:56.790
 wir haben eine leere Liste und dann bekommen
@@ -142,25 +143,25 @@ Der zweite Fall ist auch so simpel.
 
 0:03:00.760,0:03:07.019
 Wir haben irgendein Füllelement, wir haben
-eine Liste, wo nur ein Element drin ist und
+eine Liste, wo nur ein Element drin ist, und
 
 0:03:07.019,0:03:09.730
-dann bekommen wir das auch wieder, als Ergebnis.
+dann bekommen wir das auch wieder als Ergebnis.
 
 0:03:09.730,0:03:16.739
 Im letzten Fall hätten wir jetzt, wenn wir
 das so übersetzen wollten, hier vorne unser
 
 0:03:16.739,0:03:28.480
-Y, dann haben wir eine Liste, da ist vorne
-das X.
+y, dann haben wir eine Liste, da ist vorne
+das x.
 
 0:03:28.480,0:03:41.970
 In unserem Ergebnis hätten wir jetzt eine
-Liste, da steht X, dann Y und dann der Rest
+Liste, da steht x, dann y und dann der Rest
 
 0:03:41.970,0:03:46.970
-der Liste, nenne ich mal Zs hier.
+der Liste, nenne ich mal zs hier.
 
 0:03:46.970,0:03:52.670
 Ich habe jetzt hier zu viele Klammern gemacht.
@@ -170,12 +171,12 @@ Da würde dann jetzt rauskommen, dass das
 dann stimmt, wenn auch dieses Prädikat g
 
 0:03:59.450,0:04:05.110
-hier stimmt, und zwar wieder mit Y, dann mit
-Xs und Zs.
+hier stimmt, und zwar wieder mit y, dann mit
+xs und zs.
 
 0:04:05.110,0:04:12.299
-Also das wäre jetzt, was man so übersetzen
-könnte aus dieser Haskell Implementation,
+Also, das wäre jetzt, was man so übersetzen
+könnte aus dieser Haskell-Implementation,
 
 0:04:12.299,0:04:15.569
 allerdings wird man jetzt merken, wenn man
@@ -188,7 +189,7 @@ und nicht richtig funktioniert.
 Können wir direkt mal machen.
 
 0:04:19.370,0:04:22.900
-Ich habe immer noch einen Syntax error, gucken
+Ich habe immer noch einen Syntaxfehler, gucken
 wir mal.
 
 0:04:22.900,0:04:35.669
@@ -197,7 +198,7 @@ kommentiere ich einfach mal aus.
 
 0:04:35.669,0:04:41.140
 Wenn wir das jetzt ausprobieren würden, dann
-findet man schnell ein Fall, wo das nicht
+findet man schnell einen Fall, wo das nicht
 
 0:04:41.140,0:04:42.570
 so funktioniert, wie man eigentlich möchte.
@@ -207,7 +208,7 @@ Und zwar, wenn man hier eingibt, machen wir
 zum Beispiel eine 1, und unsere Liste ist
 
 0:04:50.840,0:04:56.880
-jetzt irgendwie zwei Elemente lang, ne ein
+jetzt irgendwie zwei Elemente lang, nein, ein
 Element lang, also wir machen eine Liste,
 
 0:04:56.880,0:05:03.490
@@ -215,7 +216,7 @@ da steht zum Beispiel nur b drin und jetzt
 möchten wir wissen, was könnte denn da eine
 
 0:05:03.490,0:05:06.250
-sinnvolle dritte Eingabe sein, damit das ganze
+sinnvolle dritte Eingabe sein, damit das Ganze
 wahr ist.
 
 0:05:06.250,0:05:13.520
@@ -230,9 +231,11 @@ immer wieder genau das einelementige, aber
 wenn wir jetzt hier gucken, gibt er uns auch
 [b, 1] zurück.
 
+
+
 0:05:23.240,0:05:30.479
 Das wollten wir eigentlich nicht haben und
-der Grund, warum der das macht, ist dass das
+der Grund, warum er das macht, ist, dass das
 
 0:05:30.479,0:05:35.229
 nicht wie in Haskell von oben nach unten durchgegangen
@@ -270,10 +273,10 @@ aber er findet auch raus, dass das hier wahr
 ist, weil man kann ja hier das auch so interpretieren,
 
 0:06:15.600,0:06:19.740
-dass hier X ist b und Xs ist die leere Liste.
+dass hier X b ist und Xs die leere Liste.
 
 0:06:19.740,0:06:23.979
-Die List, wo nur b drin ist, ist eigentlich
+Die Liste, wo nur b drin ist, ist eigentlich
 b angehängt an die leere Liste.
 
 0:06:23.979,0:06:28.289
@@ -320,7 +323,7 @@ gucken, dass diese Regel hier, diese letzte,
 
 0:07:11.680,0:07:18.380
 dass die nur funktioniert, wenn wir zweielementige
-Sachen haben, oder mehr, und dass das nicht
+Sachen haben oder mehr, und dass das nicht
 
 0:07:18.380,0:07:21.170
 bei einelementigen Listen funktioniert.
@@ -347,15 +350,15 @@ und, wie nenne ich das jetzt mal?
 Keine Ahnung, W zum Beispiel.
 
 0:07:39.810,0:07:45.289
-Dann ist ja immer noch nichts dran geändert,
-dass vorne eine X dran steht und bei der zweiten
+Dann ist ja immer noch nichts daran geändert,
+dass vorne ein X dran steht und bei der zweiten
 
 0:07:45.289,0:07:50.569
 Liste halt dann X, dann Y und der Rest der
 Liste kommt.
 
 0:07:50.569,0:07:54.330
-Aber stellen damit sicher, dass nicht gematched
+Aber wir stellen damit sicher, dass nicht gematched
 werden kann, sodass hier keine einelementige
 
 0:07:54.330,0:07:55.960
@@ -373,7 +376,7 @@ Das hat jetzt eigentlich keinen größeren
 Sinn, dass wir das da jetzt gemacht haben,
 
 0:08:08.389,0:08:15.470
-mit dem W außer, dass halt verhindert wird,
+mit dem W, außer, dass halt verhindert wird,
 dass das gematched wird bei einer einelementigen
 
 0:08:15.470,0:08:16.470
@@ -385,7 +388,7 @@ wir jetzt den richtigen Fall.
 
 0:08:23.770,0:08:27.250
 Wenn wir das jetzt nochmal machen, dann gibt
-er uns nur noch Liste b und ansonsten haben
+er uns nur noch die Liste b und ansonsten haben
 
 0:08:27.250,0:08:28.740
 wir keine richtige Lösung mehr.
@@ -406,11 +409,10 @@ man möchte, aber grundsätzlich richtig könnte
 
 0:08:42.990,0:08:51.400
 man es auch so machen, dass man das folgendermaßen
-machen würde: Man lässt es so wie es vorher
+machen würde: Man lässt es so, wie es vorher
 
 0:08:51.400,0:08:59.250
-war und dann macht hier hinter einfach noch
-weitere Regeln.
+war und dann macht hier einfach noch weitere Regeln.
 
 0:08:59.250,0:09:07.310
 Und zwar, dass Xs nicht die leere Liste sein
@@ -449,7 +451,7 @@ Nur um zu zeigen, dass das halt nicht unbedingt
 so sein muss.
 
 0:09:31.610,0:09:34.580
-Aber ich würde auf jeden Fall raten das so
+Aber ich würde auf jeden Fall raten, das so
 zu machen.
 
 0:09:34.580,0:09:40.190
@@ -462,21 +464,23 @@ darf man ja auch nur bestenfalls drei Klauseln
 
 0:09:46.459,0:09:54.880
 benutzen, weil, wenn wir das jetzt nochmal
-matchen würde, das wäre genau das gleiche
+matchen würden, das wäre genau das gleiche
 
 0:09:54.880,0:09:57.149
 Problem, was wir jetzt schon hatten, sagen
 wir mal, wir haben hier noch irgendeinen match,
+
+
 
 0:09:57.149,0:10:00.279
 der irgendwie nur für zweielementige Listen
 funktioniert.
 
 0:10:00.279,0:10:08.570
-Also wenn ich jetzt sagen würde,
+Also, wenn ich jetzt sagen würde,
 
 0:10:08.570,0:10:20.570
-das ist eigentlich fast das gleiche, was darunter
+das ist eigentlich fast das Gleiche, was darunter
 steht,
 
 0:10:20.570,0:10:28.790
@@ -492,7 +496,7 @@ aufpassen müsst, dass keine doppelten matches
 
 0:10:38.290,0:10:42.070
 irgendwo sind, weil es muss nicht unbedingt
-falsch sein, also wenn ich jetzt hier zweimal
+falsch sein. Also, wenn ich jetzt hier zweimal
 
 0:10:42.070,0:10:45.941
 die gleiche Regel hier schreiben würde, dann
@@ -504,13 +508,13 @@ zwei Elemente zum Beispiel stimmen würde,
 
 0:10:48.410,0:10:52.600
 wenn ich die gleichen Regeln nochmal fast
-genauso darunter schreiben würde, aber ist
+genauso darunter schreiben würde. Aber es ist
 
 0:10:52.600,0:10:53.600
 ja grundsätzlich nicht falsch.
 
 0:10:53.600,0:10:56.430
-Nur wenn er das richtige eben zweimal gibt,
+Nur wenn er das Richtige eben zweimal gibt,
 ist es nicht unbedingt falsch, aber es ist
 
 0:10:56.430,0:11:01.320
@@ -528,17 +532,17 @@ dann falsch ist, wenn wir dann Fälle doppelt
 haben.
 
 0:11:08.730,0:11:10.490
-Es halt nur nicht sein, dass wir zusätzlich
+Es darf halt nur nicht sein, dass wir zusätzlich
 solche falschen Fälle hier drin haben, so
 
 0:11:10.490,0:11:12.050
 wie das hier.
 
 0:11:12.050,0:11:17.450
-Das ist das wichtige.
+Das ist das Wichtige.
 
 0:11:17.450,0:11:19.820
-Noch ein kleiner Zusatz zu dem eben gesagte.
+Noch ein kleiner Zusatz zu dem eben Gesagten.
 
 0:11:19.820,0:11:21.839
 Mir ist gerade eingefallen, was ich hier noch
@@ -546,7 +550,7 @@ schreiben wollte.
 
 0:11:21.839,0:11:27.290
 Und zwar wollte ich nur nochmal zeigen, warum
-das keine gute Idee ist hier jetzt noch eine
+das keine gute Idee ist, hier jetzt noch eine
 
 0:11:27.290,0:11:29.560
 explizite Regel zu schreiben, was auch verboten
@@ -560,7 +564,7 @@ Wenn man jetzt noch zum Beispiel zweielementige
 direkt matchen würde, das wollte ich eben
 
 0:11:40.890,0:11:48.990
-aufschreiben, also wenn ich jetzt hier genau
+aufschreiben. Also, wenn ich jetzt hier genau
 schreiben würde, zwei Elemente nur
 
 0:11:48.990,0:11:58.339
@@ -572,20 +576,20 @@ Problem, dass ich ständig Resultate doppelt
 bekommen würde.
 
 0:12:03.100,0:12:15.529
-Also wenn ich jetzt hier zum Beispiel danach
-suchen würde, sagen wir mal so etwas, also ich
+Also, wenn ich jetzt hier zum Beispiel danach
+suchen würde, sagen wir mal so etwas. Also, ich
 
 0:12:15.529,0:12:20.279
 habe die Liste [a, b] und ich möchte die
 1 dazwischen legen, dann bekomme ich jetzt
 
 0:12:20.279,0:12:25.589
-auch wieder mehrere Möglichkeiten, ich bekomme
+auch wieder mehrere Möglichkeiten. Ich bekomme
 einfach die gleichen Ergebnisse mehrfach,
 
 0:12:25.589,0:12:32.170
-zweimal immer, weil das jetzt hier da gematched
-wird direkt, aber auch hier, da ich ja einfach
+zweimal immer, weil das jetzt hier da gematcht
+wird direkt. Aber auch hier, da ich ja einfach
 
 0:12:32.170,0:12:35.600
 hier das jeweils durch leere Listen ersetzen
@@ -598,11 +602,11 @@ Gleiche.
 Das ist das Problem.
 
 0:12:37.820,0:12:44.200
-Also deswegen durfte man hier auch nur drei
+Also, deswegen durfte man hier auch nur drei
 Regeln verwenden und deswegen ist es generell
 
 0:12:44.200,0:12:46.610
-eine schlechte Idee irgendwelche überlappenden
+eine schlechte Idee, irgendwelche überlappenden
 Fälle zu haben.
 
 0:12:46.610,0:12:49.750
@@ -617,24 +621,25 @@ Deswegen sollte man das vermeiden.
 
 0:12:53.500,0:12:57.450
 Es ist nicht grundsätzlich falsch, das ist
-ja trotzdem richtig jeweils, aber es ist halt
+ja trotzdem richtig jeweils. Aber es ist halt
 
 0:12:57.450,0:12:58.510
 alles doppelt.
 
 0:12:58.510,0:13:02.150
 Das ist erstens nervig, wenn man das versucht
-zu kontrollieren und zweitens ist das auch
+zu kontrollieren, und zweitens ist das auch
 
 0:13:02.150,0:13:03.150
 nicht wirklich optimal.
 
 0:13:03.150,0:13:07.230
-Also man will es ja lieber so haben, dass
+Also, man will es ja lieber so haben, dass
 man jedes Ergebnis nur einmal bekommt, wenn
 
 0:13:07.230,0:13:08.459
 es irgendwie geht.
 
 0:13:08.459,0:13:09.570
-Also das ist der Grund dafür.
+Also, das ist der Grund dafür.
+

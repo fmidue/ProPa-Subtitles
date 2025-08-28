@@ -1,22 +1,23 @@
+
 0:00:00.000,0:00:04.920
 In dieser Aufgabe geht es darum, eine
 Summenfunktion für Listen zu schreiben.
 
 0:00:04.920,0:00:12.990
 Das heißt, mit einer gegebenen Liste von
-Integern soll ein Integerwert berechnet werde,
+Integern soll ein Integerwert berechnet werden,
 
 0:00:12.990,0:00:19.770
 der eben genau die Summe der Elemente in der
 Liste entspricht. Dafür soll ein 'Divide and
 
 0:00:19.770,0:00:25.500
-Conquer' Ansatz verwendet werden. Das heißt,
+Conquer'-Ansatz verwendet werden. Das heißt,
 dass die Liste in Teillisten aufgeteilt wird
 
 0:00:25.500,0:00:34.830
 und dann die Summe dieser Teile berechnet wird.
-Wie das ganze gemacht wird, das steht auch gleich
+Wie das Ganze gemacht wird, das steht auch gleich
 
 0:00:34.830,0:00:43.500
 in der Aufgabenstellung, also man kann dafür
@@ -24,7 +25,7 @@ in der Aufgabenstellung, also man kann dafür
 
 0:00:43.500,0:00:53.850
 geteilt durch 2, um die Liste in zwei Teillisten zu
-unterteilen. Ich zeige das ganze einfach mal kurz
+unterteilen. Ich zeige das Ganze einfach mal kurz
 
 0:00:53.850,0:01:14.820
 im ghci, wie das an einem Beispiel aussieht,
@@ -32,7 +33,7 @@ wenn ich jetzt zum Beispiel als Liste '1234'
 
 0:01:14.820,0:01:30.630
 definiere und jetzt 'splitAt' mit 'length xs'
-und divided durch 2 und dann auf xs anwende,
+und geteilt durch 2 und dann auf xs anwende,
 
 0:01:30.630,0:01:41.340
 dann wird die Liste eben genau in diese zwei
@@ -43,7 +44,7 @@ dann enthält die erste Liste 2 Elemente und
 der zweite Listenteil enthält 3 Elemente. Das
 
 0:01:54.420,0:02:02.700
-können wir jetzt halt ausnutzen. Als erstes
+können wir jetzt halt ausnutzen. Als Erstes
 definiere ich genau eben dieses 'splitAt'
 
 0:02:02.700,0:02:13.560
@@ -52,7 +53,7 @@ hier neue Teillisten ys und zs definieren,
 
 0:02:16.680,0:02:24.810
 die sich eben genau aus diesen Teillisten ergeben.
-Jetzt können wir ein Fallunterscheidung machen,
+Jetzt können wir eine Fallunterscheidung machen,
 
 0:02:24.810,0:02:33.690
 um herauszufinden, wie wir die Summe berechnen
@@ -63,11 +64,11 @@ ob die erste Liste leer ist und wir wissen,
 dass die erste Liste leer ist, dann wissen
 
 0:02:41.370,0:02:50.310
-wir dass viele zweite Liste maximal ein Element
+wir, dass die zweite Liste maximal ein Element
 enthält. Das ist sehr praktisch. Wir überprüfen,
 
 0:02:50.310,0:03:02.760
-ob die erste Teilliste leer ist, wenn sie das ist,
+ob die erste Teilliste leer ist. Wenn sie das ist,
 dann überprüfen wir, ob die zweite Liste leer ist.
 
 0:03:02.760,0:03:12.420
@@ -84,14 +85,14 @@ funktionieren, den wir jetzt hier bekommen haben,
 
 0:03:38.700,0:03:46.950
 denn die Summe der leeren Liste ist nämlich
-genau 0. Wenn wir eine einelementige Liste haben,
+genau 0. Wenn wir eine ein-elementige Liste haben,
 
 0:03:46.950,0:03:51.570
 dann kriegen wir auch schon das richtige Ergebnis.
 Natürlich funktioniert jetzt unsere Funktion noch
 
 0:03:51.570,0:03:55.950
-nicht für mehrelementige Listen, weil die
+nicht für mehr-elementige Listen, weil die
 Implementierung des anderen Falls noch fehlt.
 
 0:03:56.710,0:04:12.100
@@ -99,7 +100,7 @@ Was wollen wir denn haben, wenn beide Listen noch
 etwas enthalten? Dann wollen wir den 'Divide and
 
 0:04:12.100,0:04:19.570
-Conquer' Ansatz weiter ausführen. Das heißt, wenn
+Conquer'-Ansatz weiter ausführen. Das heißt, wenn
 wir hier '12' und '345' als Teillisten haben,
 
 0:04:19.570,0:04:27.490
@@ -107,7 +108,7 @@ dann soll 'sum' genau wieder auf diese Liste
 '12' und auf die Liste '345' ausgeführt werden.
 
 0:04:28.240,0:04:39.430
-Das währen jetzt hier die Listen ys und die Liste
+Das wären jetzt hier die Listen ys und die Liste
 zs und das Ergebnis dieser Rechnung wird einfach
 
 0:04:39.430,0:04:55.240
@@ -115,9 +116,10 @@ aufsummiert. Wenn wir das machen, ja das war
 schon richtig, dann erhalten wir eben auch das
 
 0:04:55.240,0:05:02.590
-Ergebnisse der Summation von den beiden
+Ergebnis der Summation von den beiden
 Zahlen und wir können uns größere Listen
 
 0:05:02.590,0:05:09.220
 überlegen und erhalten dann entsprechend
 die Summe aller Elemente in der Liste.
+

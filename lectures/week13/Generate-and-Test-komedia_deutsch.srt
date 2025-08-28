@@ -1,15 +1,15 @@
+
 117 # slide
 00:00:00,000 --> 00:00:08,610
 Ich möchte als Nächstes mit Ihnen das sogenannte
-Generate-and-Test Prinzip
+Generate-and-Test-Prinzip
 
 00:00:08,610 --> 00:00:16,020
 besprechen. Das ist eine einfache und in
 Prolog sehr gut umsetzbare
 
 00:00:16,020 --> 00:00:22,620
-algorithmische Herangehensweise.
-Das möchte ich zunächst motivieren durch ein
+algorithmische Herangehensweise. Das möchte ich zunächst motivieren durch ein
 
 00:00:22,620 --> 00:00:29,880
 kleines Beispiel. Stellen wir uns vor, wir
@@ -20,7 +20,7 @@ gearbeitet haben, für die wir mehrere Prädikate
 kennengelernt hatten, um etwa Listen aneinander zu hängen,
 
 00:00:35,640 --> 00:00:42,675
-auseinanderzunehmen, Element in Listen zu suchen etc.
+auseinanderzunehmen, Elemente in Listen zu suchen etc.
 Jetzt haben wir die Aufgabenstellung:
 
 00:00:42,675 --> 00:00:47,610
@@ -33,11 +33,11 @@ Das erste Argument würden wir zum Beispiel belegen
 
 00:00:56,340 --> 00:01:02,040
 mit einer beliebigen Liste,
-die interessanter, nicht sortiert ist.
+die interessanterweise nicht sortiert ist.
 
 00:01:02,040 --> 00:01:11,670
 Also ihre Elemente nicht irgendwie aufsteigend durchgehend.
-Und wir würden gerne, wenn wir das sortingTo Prädikat haben
+Und wir würden gerne, wenn wir das sortingTo-Prädikat haben,
 
 00:01:11,670 --> 00:01:17,580
 und hier ein R, eine Resultatliste
@@ -53,19 +53,19 @@ Das ist ja ein klassisches Problem.
 
 00:01:32,370 --> 00:01:38,370
 Auch ein sehr altes, in der Informatik oft
-behandeltes, algorithmisches Problem. Wir haben eine
+behandeltes algorithmisches Problem. Wir haben eine
 
 00:01:38,370 --> 00:01:48,990
-Liste und möchten Sie gerne sortieren. Das tut ja
-keines von den bisher gesehenen Prädikaten, die wir haben.
+Liste und möchten sie gerne sortieren. Das tut ja
+keines der bisher gesehenen Prädikate, die wir haben.
 
 00:01:48,990 --> 00:01:55,320
-Wie können wir vorgehen? Jetzt können sagen, dann
+Wie können wir vorgehen? Jetzt können wir sagen, dann
 versuchen wir wahrscheinlich ein rekursives
 
 00:01:55,320 --> 00:02:00,630
 Prädikat zu definieren. Wir könnten ja sagen, wie die leere
-Liste sortieren ist und dann vielleicht, wie es
+Liste sortiert ist und dann vielleicht, wie es
 
 00:02:00,630 --> 00:02:06,780
 mit nicht leeren Listen ist. Dafür müssten wir dann
@@ -76,16 +76,16 @@ Spätestens, wenn Sie [als Komedia-Studierende] im nächsten Semester oder im n�
 die Programmiervorlesung hören, da werden Sie
 
 00:02:13,110 --> 00:02:16,860
-wahrscheinlich auch Algorithmen besprechen zum Sortieren zum Beispiel.
+wahrscheinlich auch Algorithmen besprechen, zum Sortieren zum Beispiel.
 Oder vielleicht haben Sie das auch in der Schule schon getan,
 
 00:02:16,860 --> 00:02:22,035
-wenn Sie da Informatikunterricht hatten. Und da gibt dann ganz viele
+wenn Sie da Informatikunterricht hatten. Und da gibt es dann ganz viele
 verschiedene Herangehensweisen, wie man eine Liste sortieren könnte.
 
 00:02:22,035 --> 00:02:29,520
 Aber im Moment wollen wir uns damit noch gar nicht beschäftigen.
-Wir sollten zunächst erst mal festhalten, was
+Wir sollten zunächst erst einmal festhalten, was
 
 00:02:29,520 --> 00:02:36,960
 genau wir eigentlich wollen. Das ist ja leicht dahingesagt.
@@ -93,23 +93,23 @@ genau wir eigentlich wollen. Das ist ja leicht dahingesagt.
 
 00:02:36,960 --> 00:02:40,800
 Logikvorlesung, also vielleicht wäre es geschickt,
-das auch mal ganz präzise ausdrücken, was das eigentlich heißt.
+das auch mal ganz präzise auszudrücken, was das eigentlich heißt.
 
 00:02:40,800 --> 00:02:45,480
 Und nicht nur einfach so verbal: "Die Elemente müssen
-halt in der richtigen Reihenfolge da stehen."
+halt in der richtigen Reihenfolge dastehen."
 
 00:02:45,480 --> 00:02:51,540
 Also eine mögliche Herangehensweise hier wäre,
-erst mal überhaupt zu spezifizieren, und zwar logisch
+erst einmal überhaupt zu spezifizieren, und zwar logisch
 
 00:02:51,540 --> 00:02:58,590
 zu spezifizieren, was es denn heißt, dass
-eine Liste sortiert ist. Uns also erst mal um das "Was?"
+eine Liste sortiert ist. Uns also erst einmal um das "Was?"
 
 00:02:58,590 --> 00:03:07,140
 kümmern, statt um das "Wie?". Wie sollte denn sortiert werden?
-Also da könnte man sich erst mal überlegen, welche
+Also da könnte man sich erst einmal überlegen, welche
 
 00:03:07,860 --> 00:03:14,430
 Eigenschaften denn die Resultatliste haben muss.
@@ -117,10 +117,10 @@ Das kann man ja in Prolog günstig ausdrücken über
 
 00:03:14,430 --> 00:03:19,440
 ein Prädikat. Ein einstelliges Prädikat. Während das
-ein zweistelliges Prädikat ist, das sagt für die Liste
+ein zweistelliges Prädikat ist, das sagt, für die Liste
 
 00:03:19,440 --> 00:03:25,350
-muss die Liste herauskommen sozusagen. Da wäre die
+muss die Liste herauskommen, sozusagen. Da wäre die
 Frage, wann ist denn eine Liste überhaupt sortiert?
 
 00:03:25,350 --> 00:03:30,240
@@ -133,24 +133,24 @@ erst einmal darüber, was denn diese Eigenschaft einer
 
 118 # slide
 00:03:36,060 --> 00:03:43,170
-Liste ist sortiert zu sein. Und es ist tatsächlich
-nicht schwer auszudrücken in Prolog. Das ist erst mal
+Liste ist, sortiert zu sein. Und es ist tatsächlich
+nicht schwer auszudrücken in Prolog. Das ist erst einmal
 
 00:03:43,170 --> 00:03:50,400
 ein rekursives Prädikat. Dann gibt es Basisfälle. Also z.B. die
 leere Liste ist immer sortiert. Eine einelementige
 
 00:03:50,400 --> 00:03:54,810
-Liste ist immer sortiert, egal, was das Element da drin ist.
-Deswegen wir das Vorkommen einer anonymen Variable.
+Liste ist immer sortiert, egal, was das Element darin ist.
+Deswegen nutzen wir das Vorkommen einer anonymen Variable.
 
 00:03:54,810 --> 00:04:02,460
-Eine beliebige Liste ist sortiert, insbesondere Liste,
-die mindestens zwei Elemente enthält.
+Eine beliebige Liste ist sortiert, insbesondere Listen,
+die mindestens zwei Elemente enthalten.
 
 00:04:02,460 --> 00:04:08,340
 Also wir zerlegen hier auf ähnliche Art und
-Weise wie wir das z.B. in den Übungen getan haben
+Weise, wie wir das z.B. in den Übungen getan haben
 
 00:04:08,340 --> 00:04:15,210
 für das Beispiel, wo wir das erste Element einer Liste
@@ -174,18 +174,20 @@ die ersten beiden Listenelemente und können dann vergleichen,
 
 00:04:41,050 --> 00:04:48,730
 ob die in der richtigen Reihenfolge stehen. Also wenn jetzt
-das erste X, das erste Element =< dem zweiten ist,
+das erste X, das erste Element =< dem zweiten ist.
+
+
 
 00:04:48,730 --> 00:04:53,590
-dann besteht zumindest eine Chance, dass die Liste insgesamt
+Dann besteht zumindest eine Chance, dass die Liste insgesamt
 sortiert ist. Wenn das hier nicht erfüllt ist,
 
 00:04:53,590 --> 00:05:01,390
 dann war die Ursprungsliste nicht sortiert. Und wir haben ja "Und".
-Wir zerlegen das und es muss gelten, dass X =< Y ist.
+Wir zerlegen das, und es muss gelten, dass X =< Y ist.
 
 00:05:01,390 --> 00:05:07,840
-Wenn das also nicht gilt, dann ist die Liste Xs nicht sortiert.
+Wenn das also nicht gilt, ist die Liste Xs nicht sortiert.
 Wenn allerdings X =< Y ist, dann heißt es noch nicht, dass die Liste sortiert ist.
 
 00:05:07,840 --> 00:05:13,000
@@ -197,8 +199,8 @@ Das reicht aber nicht. Das können wir uns überlegen:
 Es muss auch noch gelten, dass das Y sich geeignet zu
 
 00:05:20,830 --> 00:05:26,920
-den Restelementen verhält. Eine Möglichkeit das
-ausdrücken wäre zu sagen: "Nachdem wir geprüft haben, dass
+den Restelementen verhält. Eine Möglichkeit, das
+auszudrücken, wäre zu sagen: "Nachdem wir geprüft haben, dass
 
 00:05:26,920 --> 00:05:32,110
 das erste =< dem zweiten Element ist, fügen wir das
@@ -206,7 +208,7 @@ zweite Element einfach wieder der Restliste hinzu. Bilden also
 
 00:05:32,110 --> 00:05:38,500
 damit die Liste Zs. Das sind dann alle Listenelemente
-ohne das erste X und dann prüfen wir, ob denn
+ohne das erste X, und dann prüfen wir, ob denn
 
 00:05:38,500 --> 00:05:45,280
 diese Restliste sortiert ist. Das ist dann der rekursive Aufruf."
@@ -226,7 +228,7 @@ rekursive Prädikat sinnvoll funktioniert. Das sagt also,
 
 00:06:04,870 --> 00:06:11,170
 wann eine Liste sortiert ist. Tatsächlich können wir
-das überprüfen. Wenn wir das z.B. aufrufen für unsere
+das überprüfen. Wenn wir das z. B. aufrufen für unsere
 
 00:06:11,170 --> 00:06:17,200
 Ursprungsliste [4,2,6,9,1], dann kommt heraus, dass sie nicht
@@ -250,7 +252,7 @@ ignorieren würden und die Liste [6,9,1] hätten,
 
 00:06:42,250 --> 00:06:50,950
 und die hier in das isSorted stecken,
-dann wäre ja X = 6 und Y = 9. Wenn wir jetzt nur prüfen
+dann wäre ja X = 6 und Y = 9. Wenn wir jetzt nur prüfen,
 
 00:06:50,950 --> 00:06:58,090
 würden, dass X =< Y ist, dann wäre das erfüllt. 6 =< 9 stimmt.
@@ -265,7 +267,7 @@ Wenn wir allerdings so wie hier sagen:
 Es muss 6 =< 9 gelten und dann 9 wieder an die
 
 00:07:09,370 --> 00:07:10,983
-Restliste hängen, was dann diese Liste ergibt und die muss sortiert
+Restliste hängen, was dann diese Liste ergibt, und die muss sortiert
 sein, dann stellt sich sehr schnell und richtigerweise heraus,
 
 00:07:10,983 --> 00:07:24,370
@@ -339,31 +341,33 @@ Ich hatte aber auch gesagt, dass es auch ein
 
 00:09:09,330 --> 00:09:15,570
 vordefiniertes Permutationsprädikat mit
-diesen gleichen Namen in Prolog schon gibt.
+diesem gleichen Namen in Prolog schon gibt."
+
+
 
 00:09:15,570 --> 00:09:20,460
 Das heißt, wir müssen das, was auf der Folie steht,
-hier gar nicht extra hinzufügen. Wir können einfach das
+hier gar nicht extra hinzufügen. Wir können einfach das.
 
 00:09:20,460 --> 00:09:26,850
 vordefinierte Permutationsprädikat verwenden.
 Das liefert uns tatsächlich zu einer gegebenen Eingabeliste
 
 00:09:26,850 --> 00:09:33,150
-alle Permutation. Hier hatten wir jetzt eine sortierte
-Eingabeliste und die Permutation davon waren nicht unbedingt
+alle Permutationen. Hier hatten wir jetzt eine sortierte
+Eingabeliste, und die Permutationen davon waren nicht unbedingt
 
 00:09:33,150 --> 00:09:37,650
 alle sortiert. Jetzt wollen wir das umgekehrt haben.
 Wir geben irgendeine Liste vor, die nicht notwendigerweise sortiert ist.
 
 00:09:37,650 --> 00:09:43,620
-Dann würden wir alle Permutation bekommen.
-So wie hier: Alles aufgezählt. Alle Permutation dieser Eingabeliste.
+Dann würden wir alle Permutationen bekommen.
+So wie hier: Alles aufgezählt. Alle Permutationen dieser Eingabeliste.
 
 00:09:43,620 --> 00:09:53,220
 Und dann wollen wir von den Ergebnissen eines
-herausgreifen, was dotiert ist. Im Normalfall,
+herausgreifen, was sortiert ist. Im Normalfall,
 
 00:09:53,790 --> 00:10:04,930
 beziehungsweise immer, wird das sogar eindeutig sein.
@@ -374,11 +378,11 @@ Also wir sagen, um Xs zu Ys zu sortieren, permutieren wir Xs zu Ys.
 Das würde auch Ergebnisse liefern, die natürlich
 
 00:10:11,560 --> 00:10:15,580
-nicht korrekt sind. Einfach irgendwelche Permutation sind.
+nicht korrekt sind. Einfach irgendwelche Permutationen sind.
 Und dann sagen wir aber noch: Dieses Ys muss sortiert sein.
 
 00:10:15,580 --> 00:10:22,150
-In dem Sinne wie dieses Prädikat, das wir auch in Prolog
+In dem Sinne, wie dieses Prädikat, das wir auch in Prolog
 geschrieben haben, das ausdrückt.
 
 00:10:22,150 --> 00:10:27,280
@@ -407,7 +411,7 @@ Das ist, wie gesagt, ein wenig naiv, aber überraschend vielseitig.
 
 00:11:00,460 --> 00:11:08,290
 Tatsächlich steckt dahinter eben das
-allgemeine Generate and Test Prinzip.
+allgemeine Generate and Test-Prinzip.
 
 00:11:08,290 --> 00:11:16,300
 Was ist hier die Idee? Wir wollen irgendwie eine Regel
@@ -431,15 +435,15 @@ dass Ys und Xs in gewünschter Beziehung stehen.
 
 00:11:37,570 --> 00:11:42,040
 Und natürlich geht es darum, dass wir irgendein
-Problem haben (z.B. das Sortier-Problem) und
+Problem haben (z. B. das Sortierproblem) und
 
 00:11:42,040 --> 00:11:46,720
-wir versuchen eine Regel aufzuschreiben, die genau dann true liefert,
+wir versuchen, eine Regel aufzuschreiben, die genau dann true liefert,
 wenn wir eine gültige Lösung für das Problem hätten.
 
 00:11:46,720 --> 00:11:55,420
 Das war hier die Aufgabe letztlich, ein Prädikat
-zu schreiben, was korrekt ausdrückt, wann Ys eine
+zu schreiben, das korrekt ausdrückt, wann Ys eine
 
 00:11:55,420 --> 00:12:00,310
 sortierte Version von Xs ist. Und wir haben
@@ -459,10 +463,10 @@ Und dann gibt es den "Test-Teil", der unter den Kandidaten
 
 00:12:20,830 --> 00:12:29,380
 diejenigen herausfiltert, die gewünscht sind.
-Also irgendwie gibt es einen Suchraum. Alle möglichen Permutation
+Also irgendwie gibt es einen Suchraum. Alle möglichen Permutationen
 
 00:12:29,380 --> 00:12:35,440
-der Ursprungsliste wäre hier unser Suchraum gewesen.
+der Ursprungsliste wären hier unser Suchraum gewesen.
 Und es gibt den Testteil, der für Elemente des Suchraums
 
 00:12:35,440 --> 00:12:40,510
@@ -471,7 +475,7 @@ die erfüllt sein muss. In dem Fall wollten wir etwas sortieren.
 
 00:12:40,510 --> 00:12:51,160
 Also das Problem hier war das Sortierproblem und die Bedingung dazu war,
-dass die Liste, die rauskommt, sortiert sein muss.
+dass die Liste, die herauskommt, sortiert sein muss.
 
 00:12:52,150 --> 00:12:58,480
 Natürlich können das auch mehrere Bedingungen sein.
@@ -495,7 +499,7 @@ oder dieses Prinzip mehrmals in Aktion sehen wollen,
 
 00:13:30,850 --> 00:13:38,440
 um das identifizieren zu können, wann wir
-so eine Generate und Test Lösung haben.
+so eine Generate und Test-Lösung haben.
 
 00:13:38,440 --> 00:13:46,330
 Und dann werde ich in späteren Videos noch anschaulichere
@@ -507,12 +511,14 @@ Interessantere Beispiele, größerer Beispiel.
 Stellen wir uns folgende Aufgabe oder stellen Sie sich
 
 00:13:56,710 --> 00:14:03,220
-vor, ihnen sei als Aufgabe gestellt:
+vor, Ihnen sei als Aufgabe gestellt:
 Es mögen alle Möglichkeiten ermittelt werden, wie man bei
 
 00:14:03,220 --> 00:14:10,390
 dreimaligem Würfeln insgesamt 15 Punkte erzielen kann.
-Also wir haben drei Würfel oder einen Würfel,
+Also wir haben drei Würfel oder einen Würfel.
+
+
 
 00:14:10,390 --> 00:14:14,410
 den wir dreimal würfeln. Da kommt jeweils eine
@@ -527,7 +533,7 @@ Was hieße hier das Generieren?
 Generieren hieße hier, alle
 
 00:14:27,700 --> 00:14:34,000
-Kandidaten zu erzeugen, was bei diesen drei Würfel-Würfen
+Kandidaten zu erzeugen, was bei diesen drei Würfelwürfen
 herausgekommen sein könnte. Da geht es nicht ums Permutieren.
 
 00:14:34,000 --> 00:14:41,380
@@ -551,23 +557,23 @@ dass ich einfach direkt immer die Anfrage hinschreibe,
 die man in Prolog prompt eingeben könnte.
 
 00:15:02,110 --> 00:15:07,960
-Man könnte natürlich auch ein Prädikat schreiben "lösung"
-mit den Argumenten und dann was ich jetzt Anfrage habe,
+Man könnte natürlich auch ein Prädikat schreiben "Lösung"
+mit den Argumenten und dann was ich jetzt anfrage,
 
 00:15:07,960 --> 00:15:12,790
-als rechte Seite dieses Prädikat nehmen und
+als rechte Seite dieses Prädikats nehmen und
 der Aufruf des Prädikats würde dann die Lösungen liefern.
 
 00:15:12,790 --> 00:15:19,720
-Ich mache das jetzt hier so durch, dass ich das direkt als Query angebe.
+Ich mache das jetzt hier so, dass ich das direkt als Query angebe.
 Und dann kann man das hier fast wortwörtlich übersetzen,
 
 00:15:19,720 --> 00:15:25,420
-was ich gerade so angedeutet habe. Also wir müssen natürlich
+was ich gerade so angedeutet habe. Also, wir müssen natürlich
 festhalten, was überhaupt die möglichen Augenzahlen sind.
 
 00:15:25,420 --> 00:15:34,450
-Hier steht nur Würfeln. Ich meine einen W6. Also es gibt die Ergebnisse [1,2,3,4,5,6].
+Hier steht nur Würfeln. Ich meine einen W6. Also, es gibt die Ergebnisse [1, 2, 3, 4, 5, 6].
 Da kann ich sagen, das ist sozusagen eine Komponente meines Suchraums.
 
 00:15:34,450 --> 00:15:42,040
@@ -592,7 +598,7 @@ Oder wenn wir das nicht mit konkreten Werten aufrufen,
 
 00:16:07,060 --> 00:16:13,900
 sondern mit Variablen, dann werden alle
-Möglichkeiten betrachtet, wie A aus W sein kann
+Möglichkeiten betrachtet, wie A aus W sein kann.
 
 00:16:13,900 --> 00:16:19,540
 Das heißt, wenn W eine sechselementige Liste ist, wird allein
@@ -608,18 +614,18 @@ dieser sechselementigen Liste. Das heißt, mit diesen
 
 00:16:32,590 --> 00:16:39,220
 drei Aufrufen hier spanne ich den Suchraum auf.
-Ich ziehe nämlich sozusagen A B und C jeweils
+Ich ziehe nämlich sozusagen A, B und C jeweils
 
 00:16:39,220 --> 00:16:46,290
 unabhängig voneinander aus dieser Liste.
-Und dann prüfe ich, ob denn die Summe von A B und C 15 ist.
+Und dann prüfe ich, ob denn die Summe von A, B und C 15 ist.
 
 00:16:46,290 --> 00:16:54,330
 Jetzt muss ich kurz erklären, was das hier bedeutet.
 Das ist die sozusagen arithmetische Berechnung
 
 00:16:54,330 --> 00:16:59,850
-und Vergleich der Ergebnisse. Da gibt es einen kleinen Unterschied.
+und der Vergleich der Ergebnisse. Da gibt es einen kleinen Unterschied.
 Diese W = hier vorn, das berechnet ja nichts.
 
 00:16:59,850 --> 00:17:04,110
@@ -628,7 +634,7 @@ nicht um Addieren, Multiplizieren oder so.
 
 00:17:04,110 --> 00:17:12,420
 Hier wird einfach gesagt: Die Variable W sei dieser Liste gleich.
-Das möchte hier ich nicht machen. Ich möchte hier nicht schreiben:
+Das möchte ich hier nicht machen. Ich möchte hier nicht schreiben:
 
 00:17:12,420 --> 00:17:20,130
 A + B + C = 15. A + B + C, das sind ja einfach
@@ -655,7 +661,7 @@ und dann schaut, ob die gleiche Zahl herausgekommen ist.
 Dann hätte ich diese Aufgabe hier gelöst. Sie können das mal
 
 00:17:51,790 --> 00:17:59,830
-ausführen einfach an in Prolog. Und dann
+ausführen, einfach an in Prolog. Und dann
 würden Sie geeignete Antworten bekommen, wie denn
 
 00:17:59,830 --> 00:18:07,570
@@ -664,7 +670,7 @@ sind und die Summe 15 ist.
 
 00:18:07,570 --> 00:18:17,710
 Zur Identifizierung noch mal: Der Generate-Teil wäre hier
-Das + dem. Da wird der Suchraum aufgespannt.
+das + dem. Da wird der Suchraum aufgespannt.
 
 00:18:17,710 --> 00:18:27,490
 Die einfache Bedienung hier ist einfach nur: A + B + C soll 15 ergeben.
@@ -676,7 +682,7 @@ Stellen wir uns vor, ich möchte gern wissen,
 für welche Möglichkeiten es so ist, dass wir bei dreimaligem
 
 00:18:37,450 --> 00:18:43,480
-Würfeln, verschiedene Augenzahlen hatten und
+Würfeln verschiedene Augenzahlen hatten und
 insgesamt wieder 15 herausgekommen ist.
 
 00:18:43,480 --> 00:18:49,270
@@ -687,12 +693,14 @@ A, B, C bekommen, wo A und B zum Beispiel gleich sind
 oder wo alle drei einfach 5 sind. A = 5, B = 5, C = 5
 wäre hier eine Lösung.
 
+
+
 00:18:53,350 --> 00:18:59,890
 Angenommen, mein Problem ist eigentlich anders.
 Ich möchte keine wiederholten Augenzahlen haben.
 
 00:18:59,890 --> 00:19:04,900
-Ich frage mich, wenn ich dreimal Würfel und dreimal
+Ich frage mich, wenn ich dreimal würfle und dreimal
 etwas Verschiedenes herausgekommen ist, unter welchen Bedingungen
 
 00:19:04,900 --> 00:19:14,620
@@ -700,7 +708,7 @@ dann noch 15 entstanden sein kann. Wie kann ich das umsetzen?
 Ich werde einfach überlegen, ob ich entweder
 
 00:19:14,620 --> 00:19:28,060
-meinen Generator oder meinen Tester erweiter.
+meinen Generator oder meinen Tester erweitere.
 Man könnte sagen, statt einfach alle Kandidaten zu
 
 00:19:28,060 --> 00:19:37,120
@@ -713,7 +721,7 @@ wo A, B, C verschieden sind. Eine Möglichkeit wäre einfach
 
 00:19:44,410 --> 00:19:52,870
 zu sagen: Man macht das Gleiche wie eben, aber fügt hier noch etwas hinzu.
-Also wieder [1,2,3,4,5,6] als die Würfel Augenzahlen.
+Also wieder [1,2,3,4,5,6] als die Würfelaugenzahlen.
 
 00:19:52,870 --> 00:20:00,880
 A, B, C sollen aus diesem Bereich kommen. Und es wird noch geprüft,
@@ -737,7 +745,7 @@ der Ergebnisse dieser Anfrage herauskommen,
 
 00:20:31,320 --> 00:20:44,910
 weil ja zusätzliche Einschränkungen an
-die Elemente des Suchraums getroffen worden.
+die Elemente des Suchraums getroffen worden sind.
 
 00:20:44,910 --> 00:20:49,530
 Oder man kann das hier tatsächlich geschickter und kürzer ausdrücken,
@@ -768,7 +776,7 @@ Vielleicht auch deklarativer ausgedrückt.
 Und gibt einfach eine kürzere Art und Weise, diesen Suchraum zu beschreiben.
 
 00:21:38,160 --> 00:21:44,070
-Die Bedingung wiederum ist die Gleiche wie oben.
+Die Bedingung wiederum ist die gleiche wie oben.
 Ich habe hier sozusagen nur den Generate-Teil vereinfacht
 
 00:21:44,070 --> 00:21:53,280
@@ -784,11 +792,11 @@ Denn die Permutation muss ja auch wieder sechs Elemente enthalten.
 Aber ich kann sagen, von den Permutationen interessieren
 
 00:22:05,340 --> 00:22:11,070
-mich nur die ersten drei Elemente. Das heißt ich
+mich nur die ersten drei Elemente. Das heißt, ich
 verwende hier anonyme Variablen. Das steht einfach für:
 
 00:22:11,070 --> 00:22:16,670
-"Die restlichen Variablen sind mir egal. Ich weiß und brauche sie nicht."
+„Die restlichen Variablen sind mir egal. Ich weiß und brauche sie nicht.“
 Und wenn Sie das wieder ausprobieren würden, werden Sie feststellen,
 
 00:22:16,670 --> 00:22:28,430
@@ -812,12 +820,12 @@ in aufsteigender Reihenfolge aufgetreten sind.
 Also es kann nicht mehr sein, dass wir erst 6, dann 5, dann 4
 
 00:22:56,000 --> 00:23:02,510
-gewürfelt haben. Das sind zwar drei Würfe, die
+geworfen haben. Das sind zwar drei Würfe, die
 verschieden sind und die insgesamt 15 ergeben.
 
 00:23:02,510 --> 00:23:12,680
 Sondern wir betrachten nur Fälle, wo zum Beispiel 4, 5, 6
-gewürfelt worden. Können wir das auch ausdrücken?
+geworfen worden sind. Können wir das auch ausdrücken?
 
 00:23:12,680 --> 00:23:17,360
 Da müssen wir irgendwie noch stärkere Aussagen über A, B, C treffen,
@@ -825,16 +833,16 @@ als nur, dass sie verschieden sind. Was wir entweder hier oder hier
 
 00:23:17,360 --> 00:23:24,740
 durch die Verwendung der Permutation ausgedrückt haben.
-Was könnten wir machen? Wir könnten unser isSorted Prädikat verwenden,
+Was könnten wir machen? Wir könnten unser isSorted-Prädikat verwenden,
 
 00:23:24,740 --> 00:23:29,810
 das wir vorhin bei dem anderen Problem definiert haben.
-Das ist immer nett, wenn wir vorhandene Prädikate nach nutzen können.
+Das ist immer nett, wenn wir vorhandene Prädikate nachnutzen können.
 
 122 # slide
 00:23:29,810 --> 00:23:39,680
 Also es geht jetzt hier um diesen Zusatz: Es soll nur
-Konstellation betrachtet werden, wo die verschiedenen Augenzahlen
+Konstellationen betrachtet werden, wo die verschiedenen Augenzahlen
 
 00:23:39,680 --> 00:23:45,110
 in aufsteigender Reihenfolge waren.
@@ -842,7 +850,7 @@ Und insgesamt sollen sie nach wie vor 15 ergeben.
 
 00:23:45,710 --> 00:23:49,340
 Eine Lösung könnte sein, dass wir einen dieser beiden Lösungen nehmen.
-Zum Beispiel die Zweite, weil sie von sich aus schon kurz ist.
+Zum Beispiel die zweite, weil sie von sich aus schon kurz ist.
 
 00:23:49,340 --> 00:23:56,210
 Und einfach noch fordern, dass [A,B,C]
@@ -856,12 +864,14 @@ Schauen uns von diesen Permutationen die ersten drei Elemente an.
 Die anderen sind uns egal, weil wir einfach
 drei Augenzahlen brauchen. Und wir fordern auch noch,
 
+
+
 00:24:09,740 --> 00:24:15,500
 dass A, B, C in aufsteigender Reihenfolge sind.
-Verwenden also unser isSorted Prädikat, dass wir vorhin bei
+Verwenden wir also unser isSorted-Prädikat, das wir vorhin bei
 
 00:24:15,500 --> 00:24:20,570
-der Permutation Sortierung verwendet haben.
+der Permutationssortierung verwendet haben.
 Und nach wie vor soll natürlich A + B + C = 15 ergeben.
 
 00:24:20,570 --> 00:24:29,630
@@ -893,16 +903,16 @@ dass das der Generationsteil ist.
 Also unser Suchraum umfasst wie im Beispiel davor
 
 00:25:12,600 --> 00:25:19,650
-einfach alle dreimaligem Würfel mit
+einfach alle dreimaligen Würfel mit
 verschiedenen Ergebnissen und die Forderung,
 
 00:25:19,650 --> 00:25:26,700
 dass die in aufsteigender Reihenfolge sortiert sein sollen,
-das interpretieren wir als Teils des Tests.
+das interpretieren wir als Teil des Tests.
 
 00:25:26,700 --> 00:25:36,090
 Also der Auswertung der Kandidaten. Das ändert
-nichts an der Korrektheit des dieser Lösung.
+nichts an der Korrektheit dieser Lösung.
 
 00:25:36,090 --> 00:25:41,580
 Generate and Test ist ein Prinzip, wie man an bestimmte Problemstellungen
@@ -913,7 +923,7 @@ was unser Generator ist und was unser Test ist.
 Im Folgenden werden wir einige Beispiele sehen.
 
 00:25:52,750 --> 00:25:58,900
-Nicht mehr diesem Video, aber zur zwischen
+Nicht mehr in diesem Video, aber zur zwischen
 Zusammenfassung eine kurze Betrachtung, wann wir das
 
 00:25:58,900 --> 00:26:04,840
@@ -953,8 +963,8 @@ Ein sinnvolles Kriterium ist,
 die Menge der potenziellen Lösungen, der Kandidaten,
 
 00:26:58,570 --> 00:27:05,740
-sollte zumindest endlich sein. Also es darf nicht unendlich
-viele Lösungen geben. Da kommt man mit den Testen ja nicht zum Schluss.
+sollte zumindest enfinit sein. Also es darf nicht unendlich
+viele Lösungen geben. Da kommt man mit dem Testen ja nicht zum Schluss.
 
 00:27:05,740 --> 00:27:14,350
 Noch besser ist, wenn der Suchraum möglichst klein ist.
@@ -985,7 +995,7 @@ dafür kennt oder das Problem tatsächlich algorithmisch
 sehr schwer systematisch zu erfassen ist.
 
 00:27:51,970 --> 00:28:00,720
-Da kann es sein, dass man auf der Generate and Test
+Da kann es sein, dass man auf Generate and Test
 zurückgreift, weil es zumindest vom Aufwand
 
 00:28:00,720 --> 00:28:06,900
@@ -993,7 +1003,7 @@ des Programmschreibens relativ gering ist.
 Auch wenn vielleicht die Ausführung dann länger dauert.
 
 00:28:08,130 --> 00:28:15,510
-Also dann kann es auch, weil sich das Problem nicht
+Also kann es auch, weil sich das Problem nicht
 auf offensichtliche Art und Weise irgendwie einer
 
 00:28:15,510 --> 00:28:23,150
@@ -1001,7 +1011,7 @@ systematischen Lösung zuführen lässt, durchaus
 lohnend sein, es mal mit Generate and Test zu probieren.
 
 00:28:23,150 --> 00:28:26,100
-Und wie Sie natürlich, da Sie [als Komedia-Studierende] noch keine
+Und wie Sie natürlich wissen, da Sie [als Komedia-Studierende] noch keine
 Algorithmen-Vorlesung und noch keine
 
 00:28:26,100 --> 00:28:33,840
@@ -1027,3 +1037,4 @@ Ansatz sein, dass man schnell zu einem Programm kommt.
 00:29:00,000 --> 00:29:09,000
 Das waren hier natürlich immer noch sehr künstliche Beispiele.
 Wir schauen mal auf zwei etwas interessantere Beispiele in zwei weiteren Videos.
+

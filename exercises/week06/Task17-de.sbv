@@ -1,3 +1,4 @@
+
 0:00:00.834,0:00:02.725
 Ok, dann schauen wir jetzt die Aufgabe 17 an.
 
@@ -6,7 +7,7 @@ Da haben wir einmal die „hasEvenEvens“-Funktion ...
 
 0:00:06.125,0:00:15.209
 und die soll jetzt überprüfen, ob eine Integer-Liste,
-die als Eingabe kommt … Ob die eine gerade Anzahl gerader Zahlen enthält.
+die als Eingabe kommt … ob die eine gerade Anzahl gerader Zahlen enthält.
 
 0:00:15.209,0:00:21.750
 Da können wir jetzt eigentlich in zwei Wegen rangehen: Wir können entweder
@@ -22,21 +23,21 @@ man kann es natürlich mit if und else machen, das dauert dann länger ...
 
 0:00:31.042,0:00:41.625
 und wir überprüfen jetzt einfach zwei Fälle: Einmal ob wir die leere Liste haben.
-Wir haben einmal der Fall „null xs“, das heißt die Liste ist leer, da ist gar nichts drin.
+Wir haben einmal den Fall „null xs“, das heißt die Liste ist leer, da ist gar nichts drin.
 
 0:00:41.625,0:00:49.500
 Wenn das der Fall ist, dann soll es natürlich sofort true sein,
 denn dann haben wir gar kein Element und 0 ist auch eine gerade Zahl.
 
 0:00:49.500,0:00:52.667
-Okay und dann haben jetzt noch den anderen Fall, ....
+Okay und dann haben wir jetzt noch den anderen Fall, ...
 
 0:00:52.667,0:00:59.042
 dass wir mindestens ein Element haben und dann können wir jetzt einfach gucken:
 Ist das ein gerades oder ein ungerades Element und was machen wir dann.
 
 0:00:59.042,0:01:09.834
-Also wir machen zum Beispiel (eine) if-Bedingung.
+Also, wir machen zum Beispiel eine if-Bedingung.
 Wir können hier auch noch mehr guards machen, aber das ist so ein bisschen
 übersichtlicher und dann ist das erste Element jetzt gerade oder nicht.
 
@@ -45,16 +46,16 @@ Wir können hier auch noch mehr guards machen, aber das ist so ein bisschen
 dann muss der Rest der Liste ja gerade eine ungerade Anzahl ...
 
 0:01:21.875,0:01:31.292
-an geraden Element enthalten, weil sonst wäre das + unser noch gerades Element
-was vorne steht halt nicht insgesamt gerade. Das heißt der rest muss ungerade sein.
+an geraden Elementen enthalten, weil sonst wäre das + unser noch gerades Element,
+was vorne steht, halt nicht insgesamt gerade. Das heißt, der Rest muss ungerade sein.
 
 0:01:31.292,0:01:41.125
-Also wir nehmen „not“ und dann berechnen wir den Rest davon,
+Also, wir nehmen „not“ und dann berechnen wir den Rest davon,
 ... das wäre jetzt hier in dem Fall die Funktion selbst ...
 
 0:01:41.125,0:01:51.459
-Und da tun jetzt aber nur den Rest der Liste rein, anstatt alles.
-Also den "head", den schneiden wir sozusagen ab und nehmen nur den ganzen Rest.
+Und da tun wir jetzt aber nur den Rest der Liste rein, anstatt alles.
+Also, den "head", den schneiden wir sozusagen ab und nehmen nur den ganzen Rest.
 
 0:01:51.459,0:02:00.459
 Das heißt jetzt also, wenn wir den ganzen restlichen Wert berechnet haben
@@ -66,8 +67,8 @@ wäre dann auch richtig. Eine Liste mit ungerader Anzahl an Elementen +1 wäre d
 
 0:02:12.792,0:02:31.792
 Und im else-Fall würden wir dann einfach nur diese Rest-Liste verwerten,
-anstatt da „not“ vorzuschreiben, ...denn dann haben wir ja vorne
-ein ungerades Element, das heißt der ganze Rest muss eine gerade Anzahl (haben).
+anstatt da „not“ vorzuschreiben, ... denn dann haben wir ja vorne
+ein ungerades Element, das heißt, der ganze Rest muss eine gerade Anzahl haben.
 
 0:02:31.792,0:02:37.042
 Das hier können wir jetzt noch verkürzen
@@ -83,21 +84,21 @@ irgendwie zum Beispiel „rest“ und dann fügen wir das hier ein.
 
 0:02:59.625,0:03:06.375
 Wenn ich mich hier jetzt nicht vertippt habe,
-dann sollte das auch direkt (funktionieren) …
+dann sollte das auch direkt funktionieren …
 
 0:03:06.375,0:03:11.417
-Ja, also das wäre jetzt zum Beispiel eine Möglichkeit wie man das lösen könnte.
+Ja, also das wäre jetzt zum Beispiel eine Möglichkeit, wie man das lösen könnte.
 
 0:03:11.417,0:03:19.667
-Was auch noch geht, ist das Ganze weiter zu verkürzen, indem man gar
-keine guards hat, sondern alles in den gleichen Ausdrucken (packen) würden.
+Was auch noch geht, ist, das Ganze weiter zu verkürzen, indem man gar
+keine guards hat, sondern alles in den gleichen Ausdrücken packen würde.
 
 0:03:19.667,0:03:36.625
-(Da) können wir jetzt hier kopieren
+Da können wir jetzt hier kopieren
 und können da jetzt einfach das hier zusammenfassen...
 
 0:03:36.625,0:03:42.709
-und zwar indem wir sagen entweder haben wir halt „null xs“,
+und zwar indem wir sagen, entweder haben wir halt „null xs“,
 dann soll es ja true sein oder ...
 
 0:03:42.709,0:03:49.417
@@ -116,7 +117,7 @@ dann darf da nur true rauskommen.
 Immer genau das Gegenteil muss der Fall sein, sonst haben wir die falsche Anzahl.
 
 0:04:08.334,0:04:13.750
-Das heißt wir können jetzt hier einfach schreiben: „even head xs“.
+Das heißt, wir können jetzt hier einfach schreiben: „even (head xs)“.
 
 0:04:13.750,0:04:26.875
 Das ist ja ein Boolean-Wert, da kommt eben true und false raus
@@ -127,7 +128,7 @@ der bei unserem „hasEvenEvens“ von dem Rest der Liste rauskommt...
 zum Beispiel.
 
 0:04:30.959,0:04:34.084
-So jetzt haben wir das Ganze in einer einzigen logischen Aussage zusammengefasst.
+So, jetzt haben wir das Ganze in einer einzigen logischen Aussage zusammengefasst.
 
 0:04:34.084,0:04:37.750
 Da steht aber im Endeffekt nichts anderes als hier schon,
@@ -135,10 +136,10 @@ nur ein bisschen kürzer gefasst.
 
 0:04:37.750,0:04:49.584
 Das hier ist ja eigentlich …
-Diese ganze If-Klausel hier, die ist ja genau das Gleiche, wie diese Ungleichung ...
+Diese ganze If-Klausel hier, die ist ja genau das Gleiche wie diese Ungleichung ...
 
 0:04:49.584,0:04:53.042
-und wir sehen das funktioniert auch.
+und wir sehen, das funktioniert auch.
 
 0:04:53.042,0:05:00.042
 Davon kann man jetzt noch Variationen machen: Man kann hier auch noch
@@ -155,12 +156,14 @@ aber im Endeffekt sind diese ganzen Lösungen ja …
 Kann man die zusammenfassen unter so einer rekursiven Lösungsmöglichkeit.
 
 0:05:17.792,0:05:18.292
-Also wenn das bei euch ein bisschen anders aussah als hier,
+Also, wenn das bei euch ein bisschen anders aussah als hier,
 ist es eigentlich fast schon äquivalent zu diesen Sachen, solange das diesen Ansatz hat, ...
 
+
+
 0:05:24.584,0:05:37.459
-aber es gibt halt noch eine andere Möglichkeit wie man das lösen kann
-und der (Weg) ist auch schön kurz … Und zwar indem man eine „list comprehension“ benutzt.
+aber es gibt halt noch eine andere Möglichkeit, wie man das lösen kann.
+Und der (Weg) ist auch schön kurz … Und zwar indem man eine „list comprehension“ benutzt.
 
 0:05:37.459,0:05:43.750
 Dann kann man das auch in einer Zeile lösen und wir müssen einfach
@@ -170,31 +173,31 @@ nur kurz überlegen, was wir jetzt genau machen wollen: Wir wollen ja wissen ...
 wie viele gerade Zahlen wir haben und ob die Anzahl gerade ist. Das heißt, ...
 
 0:05:49.000,0:05:56.667
-(wir müssen) das jetzt ein bisschen aufteilen, erst mal überlegen welche Bausteine
-können wir gebrauchen, dann können wir erst mal überlegen – wir brauchen vielleicht
+(wir müssen) das jetzt ein bisschen aufteilen, erst mal überlegen, welche Bausteine
+können wir gebrauchen. Dann können wir erst mal überlegen – wir brauchen vielleicht
 erst mal die Liste von geraden Zahlen, die wir da haben.
 
 0:05:56.667,0:06:02.042
 Das können wir erst mal machen, das geht ja relativ einfach
-mit einer „list compression“. Wir sagen erst mal wir haben Elemente x, ...
+mit einer „list comprehension“. Wir sagen erst mal, wir haben Elemente x, ...
 
 0:06:02.042,0:06:11.042
 die kommen aus unserer Eingabe-Liste xs und wir nehmen jetzt einfach
-nur alle die gerade sind. Also es muss gelten „even x“, jeweils.
+nur alle, die gerade sind. Also es muss gelten „even x“, jeweils.
 
 0:06:11.042,0:06:15.917
-Jetzt haben einfach eine Liste aller geraden Zahlen,
+Jetzt haben wir einfach eine Liste aller geraden Zahlen,
 die in unserer Eingabe-Liste (sind) ...
 
 0:06:15.917,0:06:26.042
-und jetzt kann man sagen wir nehmen die Länge davon
+und jetzt kann man sagen, wir nehmen die Länge davon
 und da gucken wir einfach, ob diese Länge gerade ist.
 
 0:06:26.042,0:06:30.042
 So, und dann haben wir auch schon die Aufgabe gelöst.
 
 0:06:30.042,0:06:35.042
-Was wir jetzt da machen ist,
+Was wir jetzt da machen, ist,
 wir ziehen einfach alle geraden Zahlen raus, schmeißen alle ungeraden weg, ...
 
 0:06:35.042,0:06:42.000
@@ -202,20 +205,21 @@ dann nehmen wir die Länge dieser Liste, das ist dann genau die Anzahl
 der geraden Zahlen und dann gucken wir einfach, ob das gerade ist.
 
 0:06:42.000,0:06:55.000
-Und das funktioniert natürlich genauso gut wie die anderen Lösung ...
+Und das funktioniert natürlich genauso gut wie die anderen Lösungen ...
 und besteht auch alle Tests.
 
 0:06:55.000,0:07:02.625
-Also, es lohnt sich meist bei den Aufgaben mal kurz nachzudenken
-und zu überlegen, was man genau braucht man das vielleicht ein bisschen abstrakter ...
+Also, es lohnt sich meist, bei den Aufgaben mal kurz nachzudenken
+und zu überlegen, was man genau braucht. Man kann das vielleicht ein bisschen abstrakter ...
 
 0:07:02.625,0:07:06.542
 auszudrücken, als tatsächlich immer die ganzen Rekursionsschritte durchzugehen, ...
 
 0:07:06.542,0:07:11.959
 außer das wird eine Aufgabe explizit gefordert, dass man irgendwie
-„Divide and Conquer“ oder so etwas benutzen sollte, dann muss man das natürlich (machen).
+„Divide and Conquer“ oder so etwas benutzen sollte. Dann muss man das natürlich (machen).
 
 0:07:11.959,0:07:17.190
 Aber ansonsten kann man die Aufgaben meist auch relativ schnell elegant lösen,
 mit solchen Sachen.
+
