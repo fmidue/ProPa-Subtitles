@@ -1,7 +1,8 @@
+plaintext
 116 # slide
 00:00:01,959 --> 00:00:10,580
 Kommen wir nun zu dem Video über
-Funktionen höherer Ordnung speziell für Listen, als eine
+Funktionen höherer Ordnung, speziell für Listen, als eine
 
 00:00:10,580 --> 00:00:14,460
 interessantere Anwendung als die künstlichen Beispiele,
@@ -39,7 +40,7 @@ definieren und mit ihnen zu arbeiten, ist auch für
 andere Datentypen gültig und nützlich: für Bäume oder andere Dinge,
 
 00:00:52,460 --> 00:00:57,339
-die noch kommen werden, oder die in dieser Vorlesung gar
+die noch kommen werden oder die in dieser Vorlesung gar
 nicht behandelt werden, die aber in der Praxis nützlich sind.
 
 00:00:57,339 --> 00:01:06,630
@@ -170,7 +171,7 @@ für eine leere Liste verwenden.
 
 00:03:06,500 --> 00:03:12,740
 Und die Funktion setzt einen Operator zwischen alle
-Elemente der nicht leeren Liste, in einer links-assoziativen
+Elemente der nicht leeren Liste in einer links-assoziativen
 
 00:03:12,740 --> 00:03:13,740
 Weise.
@@ -222,9 +223,11 @@ einen Unterschied machen, ob wir links- oder rechts-assoziativ
 sind; ob wir das so betrachten,
 dass wir erst dies und dann
 
+
+
 00:03:57,490 --> 00:04:03,490
 dies und dann für die ganze Liste berechnen,
-oder ob wir irgendwie anders berechnen wollen, wie
+oder ob wir irgendwie anders berechnen wollen, wie.
 
 00:04:03,490 --> 00:04:06,830
 erst dies, dann dies
@@ -239,7 +242,7 @@ sie sein mag, wird also einfach dadurch beschrieben, dass man
 
 00:04:15,620 --> 00:04:18,310
 ein "+" zwischen
-alle benachbarten Elemente setzt.
+allen benachbarten Elementen setzt.
 
 00:04:18,310 --> 00:04:24,380
 Wenn Sie sich an unsere frühere Diskussion
@@ -276,7 +279,7 @@ Deshalb können wir
 sie so einfach verwenden.
 
 00:04:48,670 --> 00:04:53,230
-Wenn wir so etwas wie eine Liste von Booleschen
+Wenn wir so etwas wie eine Liste von booleschen
 Werten hätten, dann können wir sie nicht addieren, aber wir
 
 00:04:53,230 --> 00:04:56,600
@@ -288,12 +291,12 @@ Und dann können wir die gleiche polymorphe
 Funktion verwenden, nur mit einem anderen Operator hier.
 
 00:05:01,069 --> 00:05:09,150
-Wir haben Polymorphismus, und wir haben higher-order, und
+Wir haben Polymorphismus, und wir haben höherer Ordnung, und
 sie kombinieren sich hier zu sehr schönen Anwendungen.
 
 00:05:09,150 --> 00:05:15,360
 Und wir werden noch mehr Funktionen dieser Art
-sehen, und Anwendungen dieses Prinzips, dieser Kombination von
+sehen und Anwendungen dieses Prinzips, dieser Kombination von
 
 00:05:15,360 --> 00:05:16,699
 Polymorphismus und höherer Ordnung.
@@ -301,7 +304,7 @@ Polymorphismus und höherer Ordnung.
 118 # slide
 00:05:16,699 --> 00:05:25,050
 Hier ist ein weiteres Beispiel
-für eine higher-order Funktion auf Listen.
+für eine höherordentliche Funktion auf Listen.
 
 00:05:25,050 --> 00:05:31,050
 Und wieder ist es zwar, wie hier gezeigt, eine
@@ -312,7 +315,7 @@ auf andere Datenstrukturen anwendbar.
 
 00:05:32,050 --> 00:05:36,729
 Für andere Datenstrukturen, die Elemente irgendeines
-Typs enthalten, wie z.B. Bäume, Dictionaries oder
+Typs enthalten, wie z. B. Bäume, Dictionaries oder
 
 00:05:36,729 --> 00:05:44,289
 etwas, das nicht nur aus Listen
@@ -448,12 +451,14 @@ sein, weil das zweite Element aus dieser Liste
 Wir haben False, True, False, True,
 False, True, False, True, False, True.
 
+
+
 00:07:43,780 --> 00:07:45,079
-Insgesamt also 10 Boolesche Werte.
+Insgesamt also 10 boolesche Werte.
 
 00:07:45,079 --> 00:07:50,389
 Und jeder von ihnen ist das Ergebnis
-der Prüfung auf Geradheit des entsprechenden Elements
+der Prüfung auf Geradheit des entsprechenden Elements.
 
 00:07:50,389 --> 00:07:52,050
 aus der ursprünglichen Liste.
@@ -463,7 +468,7 @@ Das ist diese Zeile.
 
 00:07:53,759 --> 00:07:57,900
 Aber da die Funktion polymorph ist, müssen wir
-sie natürlich nicht auf Zahlen oder Boolesche Werte anwenden.
+sie natürlich nicht auf Zahlen oder boolesche Werte anwenden.
 
 00:07:57,900 --> 00:08:00,569
 Wir können sie zum
@@ -601,7 +606,7 @@ Zuvor war es eine Liste von 'b's, weil wir
 die Ergebnisse der Anwendung der Funktion auf Elemente von
 
 00:09:59,120 --> 00:10:00,210
-hier aus ausgegeben haben.
+hieraus ausgegeben haben.
 
 00:10:00,210 --> 00:10:05,390
 Jetzt geben wir, für die filter-Funktion
@@ -640,7 +645,7 @@ In der vorherigen Folie hatte ich 'map' und
 [False, True, False, True, ...].
 
 00:10:34,810 --> 00:10:41,780
-Zehn Elemente zu zehn Booleschen Werten, nämlich
+Zehn Elemente zu zehn booleschen Werten, nämlich
 False, True, usw., denn 1 ist nicht gerade,
 
 00:10:41,780 --> 00:10:44,350
@@ -694,6 +699,8 @@ mit dem Prädikat 'even'.
 Wir können uns
 weitere Beispiele ausdenken.
 
+
+
 00:11:28,470 --> 00:11:32,800
 Nehmen wir die Funktion 'isPalindrome', die wir in
 den Folien verwendet haben (und von der Sie
@@ -712,7 +719,7 @@ Wörter in unserem Wörterbuch Palindrome sind.
 
 00:11:44,270 --> 00:11:49,680
 Wir müssen einfach dieses komplette
-Wörterbuch (completeDictionary) nach dem isPalindrom-Prädikat filtern.
+Wörterbuch (completeDictionary) nach dem isPalindrome-Prädikat filtern.
 
 00:11:49,680 --> 00:11:57,700
 Das wäre also eine Liste von Strings, und 'isPalindrome'
@@ -742,7 +749,7 @@ Das Prädikat wäre also von 'Double' zu 'Bool'
 
 00:12:25,280 --> 00:12:30,420
 tut: für einen Double prüfen, ob er größer
-als 0.5 ist), dies wäre eine Liste von
+als 0,5 ist), dies wäre eine Liste von
 
 00:12:30,420 --> 00:12:35,760
 Doubles (die bonusPercentageList), und das Ergebnis
@@ -810,7 +817,7 @@ eine Liste, und was macht sie?
 
 00:13:43,200 --> 00:13:50,660
 Sie wählt jedes Element aus der Liste aus, wendet
-f darauf an, und sammelt die Ergebnisse in einer
+f darauf an und sammelt die Ergebnisse in einer
 
 00:13:50,660 --> 00:13:51,660
 Liste.
@@ -906,7 +913,9 @@ Wenn wir also eine Liste von Listen mit "a"s haben,
 dann gibt uns 'concat' eine Liste von "a"s, indem es alle
 
 00:15:25,680 --> 00:15:27,430
-inneren Listen miteinander verkettet.
+inneren Listen miteinander verknüpft.
+
+
 
 00:15:27,430 --> 00:15:31,780
 Und wenn Sie 'map', 'filter' und 'concat'
@@ -952,7 +961,7 @@ Bisher ging es bei meinen Beispielen zur
 Wholemeal-Programmierung um die Verwendung von List Comprehensions
 
 00:16:23,590 --> 00:16:27,140
-anstelle von expliziter Rekursion
+anstatt von expliziter Rekursion
 oder anstelle von Listenindexierung.
 
 00:16:27,140 --> 00:16:31,940
@@ -1132,13 +1141,15 @@ dann behalte ich das y.
 00:19:32,360 --> 00:19:35,279
 Das sind die beiden Versionen.
 
+
+
 00:19:35,279 --> 00:19:39,360
 Und ich muss etwas Arbeit leisten, um
 von der einen zur anderen zu wechseln.
 
 00:19:39,360 --> 00:19:45,860
 Es ist keine offensichtliche Transformation von hier
-nach dort, oder von hier nach dort.
+nach dort oder von hier nach dort.
 
 00:19:45,860 --> 00:19:47,850
 Und der einzige
@@ -1175,8 +1186,8 @@ Nun, die erste Version ist: Ich möchte mir
 alle Werte aus der ursprünglichen Liste ansehen, die
 
 00:20:22,070 --> 00:20:24,179
-durch 4 teilbar sind,
-dann möchte ich sie quadrieren.
+durch 4 teilbar sind.
+Dann möchte ich sie quadrieren.
 
 00:20:24,179 --> 00:20:25,750
 Aber wie kann ich das ausdrücken?
@@ -1352,9 +1363,11 @@ andere polymorphe Funktionen ersetzt werden kann, erhalten wir ein sehr
 00:23:41,759 --> 00:23:43,220
 allgemeines Gesetz.
 
+
+
 00:23:43,220 --> 00:23:51,299
 Und da map auch auf anderen
-Datenstrukturen ähnlich definiert werden kann, und
+Datenstrukturen ähnlich definiert werden kann und
 
 00:23:51,299 --> 00:23:56,340
 polymorphe Funktionen auf anderen Datenstrukturen existieren, können
@@ -1364,7 +1377,7 @@ wir das gleiche Ergebnis dann auch für andere
 Dinge als Listen haben.
 
 00:23:58,350 --> 00:24:03,309
-Was nicht klar wäre, wie man es
+Was nicht klar wäre, ist, wie man es
 ausdrückt, wenn wir von diesen List Comprehensions auf
 
 00:24:03,309 --> 00:24:04,529
@@ -1478,3 +1491,4 @@ werden, aber das werden Sie vielleicht in Aktion
 00:25:55,299 --> 00:25:59,970
 sehen, wenn Sie einige der Beispiele
 sehen und darüber nachdenken, wie sie zusammenhängen.
+

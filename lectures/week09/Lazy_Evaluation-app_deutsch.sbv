@@ -1,5 +1,6 @@
+
 0:00:01.440,0:00:03.440
-Okay, das ist also das versprochene Video
+Okay, das ist also das versprochene Video.
 
 0:00:03.440,0:00:07.760
 darüber, wie Pattern-Matching die
@@ -25,10 +26,10 @@ Ausdruck, den ich, glaube ich, auswerten wollte.
 Und nun, lassen Sie uns das angehen.
 
 0:00:33.600,0:00:35.040
-Okay, Sie haben also eine Definition von f
+Okay, Sie haben also eine Definition von f.
 
 0:00:35.040,0:00:36.880
-und Sie wissen, was Kopf und Rest sind.
+Und Sie wissen, was Kopf und Rest sind.
 
 0:00:36.880,0:00:38.640
 Wie werten wir das nun aus?
@@ -44,8 +45,8 @@ Aber das wäre falsch.
 Denn wir wollen nur bei Bedarf auswerten.
 
 0:00:47.120,0:00:49.680
-Man will nur das auswerten
-Dinge auswerten, die tatsächlich benötigt werden.
+Man will nur das auswerten,
+was tatsächlich benötigt wird.
 
 0:00:49.680,0:00:54.160
 Und das können wir jetzt nicht im Voraus sagen, dass
@@ -70,17 +71,17 @@ Nun, wir müssen wissen, was der Kopf von etwas ist.
 
 0:01:08.880,0:01:12.560
 Und das können wir nicht tun, ohne dass wir
-dieses Etwas berechnet haben, zumindest was
+dieses Etwas berechnet haben, zumindest so weit,
 
 0:01:12.560,0:01:15.440
-zumindest so weit, dass wir wissen, was der Kopf ist, okay.
+dass wir wissen, was der Kopf ist, okay.
 
 0:01:15.440,0:01:17.760
 Deshalb müssen wir also hineingehen.
 
 0:01:17.760,0:01:22.160
 Nun, wir können das Ende von etwas nur berechnen
-Rest von etwas berechnen, wenn wir zumindest
+oder den Rest von etwas berechnen, wenn wir zumindest
 
 0:01:22.160,0:01:24.240
 wissen, ob dieses Etwas
@@ -123,7 +124,7 @@ In dieser Listenperspektive der Datenkonstruktoren.
 
 0:02:09.680,0:02:14.480
 Und wenn Sie sich dann die Definition von
-f anschaut, dann gibt es einen Fall für x:xs.
+f anschauen, dann gibt es einen Fall für x:xs.
 
 0:02:14.480,0:02:16.640
 Dies wird also x und dies wird xs sein.
@@ -147,16 +148,16 @@ Und noch einmal, wir werten die
 3+1 zu 4 an dieser Stelle.
 
 0:02:45.120,0:02:48.800
-Denn wir sind noch nicht sicher
+Denn wir sind noch nicht sicher,
 dass dies tatsächlich benötigt wird.
 
 0:02:48.800,0:02:51.280
-Dies ist also der nächste Ausdruck
+Dies ist also der nächste Ausdruck,
 den Sie sich ansehen sollten.
 
 0:02:52.080,0:02:55.200
-Okay, dann müssen wir wieder sehen
-was müssen wir berechnen, wo
+Okay, dann müssen wir wieder sehen,
+was wir berechnen müssen, wo
 
 0:02:55.200,0:02:58.720
 wir den Kopf von etwas haben wollen, also sollten wir
@@ -164,7 +165,7 @@ wissen, was der Kopf der Sache ist.
 
 0:02:58.720,0:03:02.160
 Wir sollten uns den Datenkonstruktor
-für die nicht leere Liste.
+für die nicht leere Liste ansehen.
 
 0:03:02.720,0:03:04.480
 Wir können also noch nicht den Kopf berechnen.
@@ -242,23 +243,25 @@ Und was macht sie?
 0:04:24.480,0:04:28.000
 Nun, in diesem Kontext, natürlich,
 
+
+
 0:04:28.000,0:04:32.960
-erhalten wir einen g-Aufruf für das erste Argument
+Erhalten wir einen g-Aufruf für das erste Argument
 auf das erste Element dieser Liste.
 
 0:04:35.120,0:04:37.600
 Und wieder berechnen wir nicht die
-3+1 an diesem Punkt,
+3 + 1 an diesem Punkt.
 
 0:04:37.600,0:04:39.680
-denn es ist noch nicht klar, dass wir das brauchen werden.
+Denn es ist noch nicht klar, dass wir das brauchen werden.
 
 0:04:40.880,0:04:43.040
 Und was ist der Rest dieses Aufrufs?
 
 0:04:43.040,0:04:48.960
 Nun, es ist f, das auf die Restliste angewendet wird, und
-Nun, die Restliste ist hier das zweite Argument.
+nun, die Restliste ist hier das zweite Argument.
 
 0:04:48.960,0:04:49.920
 Es ist die leere Liste.
@@ -268,11 +271,11 @@ Okay, jetzt können wir tatsächlich den Kopf
 berechnen, weil wir jetzt innerhalb der
 
 0:04:57.440,0:05:03.240
-Argumentposition des Kopfes, haben wir wirklich
-etwas in der Form Kopfelement Restliste.
+Argumentposition des Kopfes wirklich
+etwas in der Form Kopfelement Restliste haben.
 
 0:05:04.640,0:05:10.640
-Okay, also reduziert sich das jetzt auf g(3+1).
+Okay, also reduziert sich das jetzt auf g(3 + 1).
 
 0:05:10.640,0:05:13.280
 Und wieder haben wir nicht berechnet
@@ -288,7 +291,7 @@ Aber wir berechnen das an dieser Stelle nicht.
 Denn dies wird von der head-Funktion verworfen;
 
 0:05:17.760,0:05:21.040
-berechnen wir nicht einige Unterausdrücke
+berechnen wir nicht einige Unterausdrücke,
 die nicht benötigt werden.
 
 0:05:21.840,0:05:25.120
@@ -299,7 +302,7 @@ finden wir über Pattern-Matching heraus.
 Okay, das haben wir also.
 
 0:05:27.760,0:05:31.120
-Jetzt müssen wir die 3+1 berechnen,
+Jetzt müssen wir die 3 + 1 berechnen,
 denn wenn Sie sich die Definition von
 
 0:05:31.120,0:05:33.760
@@ -331,29 +334,28 @@ Okay, sehen wir uns noch einmal die
 Definition von g, sie testet zwei Fälle.
 
 0:05:57.520,0:05:59.920
-Der erste Fall stimmt nicht überein
-hier nicht überein, weil wir eine andere
+Der erste Fall stimmt hier nicht überein, weil wir eine andere
 
 0:05:59.920,0:06:04.960
 konstante Zahl im ersten Fall
-des g-Aufrufs der g-Definition.
+des g-Aufrufs der g-Definition haben.
 
 0:06:04.960,0:06:09.120
 Also müssen wir den zweiten Fall anwenden und
-der zweite Fall ist g n ist n+1.
+der zweite Fall ist g n ist n + 1.
 
 0:06:09.760,0:06:11.040
 Okay, jetzt ist es also so,
 
 0:06:11.040,0:06:13.840
-natürlich, die Vier,
-also reduziert sich das auf 4+1.
+natürlich die Vier,
+also reduziert sich das auf 4 + 1.
 
 0:06:14.800,0:06:16.240
 Und dann bekommen wir 5.
 
 0:06:17.040,0:06:21.920
-Okay, das hätten Sie natürlich auch bekommen
+Okay, das hätten Sie natürlich auch bekommen,
 wenn Sie das einfach in den Interpreter eingegeben hätten.
 
 0:06:21.920,0:06:24.480
@@ -397,3 +399,4 @@ Beispiel und Ableitung/Auswertung
 0:07:00.240,0:07:09.760
 gilt für alle Haskell-Auswertungen,
 für alle Haskell-Programme.
+

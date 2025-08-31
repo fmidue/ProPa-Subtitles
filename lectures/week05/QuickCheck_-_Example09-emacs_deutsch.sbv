@@ -1,3 +1,4 @@
+
 0:00:02.000,0:00:06.720
 Okay, betrachten wir dieses
 Beispiel aus den Folien.
@@ -18,14 +19,14 @@ dass ich einen Fehler in dieses Programm eingebaut habe.
 
 0:00:26.400,0:00:30.240
 Es ist nicht wirklich ein korrektes Quicksort und
-wir werden sehen, ob Sie diesen Fehler finden werden
+wir werden sehen, ob Sie diesen Fehler finden werden.
 
 0:00:30.240,0:00:35.920
 Wir werden sehen, ob Sie diesen Fehler finden; nun, das werden wir, denn ich werde Ihnen
 einige Techniken zum Testen von Haskell-Programmen zeigen.
 
 0:00:36.640,0:00:43.840
-Okay, aber zuerst lassen Sie uns einfach den Interpreter starten
+Okay, aber zuerst lassen Sie uns einfach den Interpreter starten,
 den Interpreter und laden Sie dieses Beispiel.
 
 0:00:46.480,0:00:52.080
@@ -44,12 +45,12 @@ Also, irgendwie ist der Fehler nicht
 sofort offensichtlich.
 
 0:01:08.640,0:01:12.800
-Okay, aber sagen wir mal, wir wollen sicherstellen
+Okay, aber sagen wir mal, wir wollen sicherstellen,
 dass dies immer der Fall ist.
 
 0:01:12.800,0:01:24.240
 Also, lassen Sie uns vielleicht zuerst
-diesen einen Fall, den wir hier gerade gesehen haben
+diesen einen Fall, den wir hier gerade gesehen haben,
 
 0:01:31.680,0:01:35.200
 als wiederholten Testfall,
@@ -60,7 +61,7 @@ Okay, das würde man in einer anderen Sprache als
 einen Unit-Test in einer anderen Sprache nennen,
 
 0:01:41.840,0:01:49.200
-also schreiben wir einfach eine 'main' Definition,
+also schreiben wir einfach eine 'main'-Definition,
 die immer denselben Test ausführt.
 
 0:01:51.040,0:01:56.800
@@ -68,7 +69,7 @@ Und wenn ich dann das nächste Mal meine Datei lade, kann ich
 einfach ausführen und es wird "True" angezeigt.
 
 0:01:57.440,0:01:59.840
-Okay, das wäre also ein Unit-Test
+Okay, das wäre also ein Unit-Test.
 Unit-Tests, obwohl das nicht sehr attraktiv ist,
 
 0:02:01.360,0:02:03.920
@@ -97,7 +98,7 @@ Aufgaben wurde von Menschen überprüft, die sie sich ansahen.
 
 0:02:26.080,0:02:29.040
 Okay, denn da ist nicht
-viel Automatisierung möglich ist.
+viel Automatisierung möglich.
 
 0:02:29.040,0:02:34.080
 Aber für zukünftige Übungsaufgaben, na ja,
@@ -112,7 +113,7 @@ werden sich die Prüfungen mehr auf
 die Semantik der Funktionen beziehen.
 
 0:02:41.840,0:02:44.720
-Und die Art des Feedbacks, das Sie erhalten
+Und die Art des Feedbacks, das Sie erhalten,
 wird ähnlich sein wie die
 
 0:02:45.520,0:02:48.880
@@ -121,13 +122,13 @@ ich das hier im Beispiel mache,
 
 0:02:48.880,0:02:54.160
 denn wir verwenden im Grunde das gleiche
-Test-Framework in Autotool verwenden.
+Test-Framework, das in Autotool verwendet wird.
 
 0:02:54.880,0:02:58.320
 Okay, also zunächst einmal wollen wir nicht
 
 0:02:58.320,0:03:01.520
-oder, na ja, unsere Funktionen testen
+oder, na ja, unsere Funktionen testen,
 auf einige feste Eingaben testen.
 
 0:03:01.520,0:03:06.480
@@ -136,22 +137,22 @@ zu betrügen, indem sie einfach Funktionen
 
 0:03:07.200,0:03:10.800
 schreiben, die mit
-genau diese Beispieleingaben funktionieren.
+genau diesen Beispieleingaben funktionieren.
 
 0:03:10.800,0:03:13.920
-Stattdessen wollen wir Folgendes ausdrücken
+Stattdessen wollen wir Folgendes ausdrücken:
 einige allgemeinere Eigenschaften
 
 0:03:13.920,0:03:19.120
-unserer Funktionen, oder Ihrer
+unserer Funktionen oder Ihrer
 Eingaben ausdrücken und diese dann überprüfen.
 
 0:03:20.080,0:03:23.280
-Okay, und der Weg, dies zu tun, oder eine
+Okay, und der Weg, dies zu tun, oder ein
 Weg, dies in Haskell zu tun, ist die Verwendung
 
 0:03:24.000,0:03:30.080
-eine bestimmte Bibliothek, die ich hier
+einer bestimmten Bibliothek, die ich hier
 importieren werde, sie heißt QuickCheck.
 
 0:03:30.880,0:03:33.360
@@ -162,12 +163,12 @@ Und das wird von nun an oft
 in den Vorlagen für Ihre Übungsaufgaben auftauchen.
 
 0:03:39.840,0:03:46.720
-Und das ermöglicht es uns
+Und das ermöglicht es uns,
 umfassendere Testsuiten zu schreiben.
 
 0:03:46.720,0:03:51.360
 Insbesondere solche, die sich nicht nur auf feste
-Eingaben beziehen, so dass wir allgemeine Eigenschaften aufschreiben können.
+Eingaben beziehen, sodass wir allgemeine Eigenschaften aufschreiben können.
 
 0:03:51.920,0:03:54.320
 Und diese Eigenschaften werden dann getestet.
@@ -206,7 +207,7 @@ Was ich wirklich sagen will, ist so etwas wie: Ich will nicht
 eine feste Liste sortieren, sondern zum Beispiel,
 
 0:04:38.080,0:04:47.440
-Ich möchte eine beliebige Liste der Form '1..n' sortieren,
+ich möchte eine beliebige Liste der Form '1..n' sortieren,
 denn ich möchte über eine beliebige
 
 0:04:49.840,0:04:54.080
@@ -219,17 +220,19 @@ Nun, es wäre die Liste selbst.
 0:04:57.920,0:05:01.040
 Nun kann ich das nicht direkt als Check schreiben, oder?
 
+
+
 0:05:01.040,0:05:06.000
 Ich hätte es also nicht so schreiben können, denn
-woher kommt das 'n'? Das 'n' sollte etwas sein,
+woher kommt das 'n'? Das 'n' sollte etwas sein.
 
 0:05:06.720,0:05:09.360
-nicht fix sein, das wäre
-irgendwie allgemeingültig sein.
+Es sollte nicht fix sein, das wäre
+irgendwie allgemeingültig.
 
 0:05:09.360,0:05:12.640
 Nun, die Art und Weise, wie wir das machen, in
-QuickCheck' wie folgt.
+QuickCheck, ist wie folgt.
 
 0:05:12.640,0:05:17.280
 Wir können sagen, nun, lass mich einfach
@@ -241,16 +244,16 @@ Syntax, die Sie als gegeben hinnehmen müssen.
 
 0:05:26.000,0:05:31.680
 Sie werden später lernen, was das
-allgemein bedeutet, oder wie dies
+allgemein bedeutet oder wie dies
 
 0:05:32.560,0:05:37.840
 im Allgemeinen zu interpretieren ist.
 
 0:05:38.640,0:05:40.800
-Lassen Sie mich diesen Puffer löschen
+Lassen Sie mich diesen Puffer löschen.
 
 0:05:44.240,0:05:51.840
-weil er meinen Editor aus einem Grund verlangsamt
+Weil er meinen Editor aus einem Grund verlangsamt,
 aus irgendeinem Grund, den ich nicht ganz verstehe.
 
 0:06:01.440,0:06:08.080
@@ -258,11 +261,11 @@ Okay, lassen Sie uns das bedenken
 und starten wir den Interpreter neu.
 
 0:06:19.440,0:06:28.240
-Laden Sie das Beispiel erneut, und dann kann ich meine Testsuite aufrufen
-Suite aufrufen und sie sagt, okay, sie hat 100 Tests bestanden.
+Laden Sie das Beispiel erneut, und dann kann ich meine Testsuite aufrufen.
+Die Suite sagt, okay, sie hat 100 Tests bestanden.
 
 0:06:28.240,0:06:30.880
-Okay, die Frage ist jetzt
+Okay, die Frage ist jetzt,
 welche Tests hat es bestanden?
 
 0:06:30.880,0:06:37.280
@@ -274,22 +277,22 @@ kann ich anstelle von 'quickCheck' die Funktion 'verboseCheck' verwenden.
 
 0:06:43.600,0:06:50.480
 Ja, so erhalten wir eine ausführlichere
-Testausgabe, denn was dann passieren wird, ist
+Testausgabe, denn was dann passieren wird, ist,
 
 0:06:51.600,0:06:55.760
-dass ich darüber informiert werde
+dass ich darüber informiert werde,
 welche Eingaben geprüft werden.
 
 0:06:56.640,0:06:58.080
-Und was Sie hier sehen, ist
+Und was Sie hier sehen, ist,
 
 0:06:58.800,0:07:03.360
 wo es 100 Tests bestanden hat und
-Was sind diese Tests, die Testfälle?
+was sind diese Tests, die Testfälle?
 
 0:07:03.360,0:07:09.600
 Nun, das 'n' hat sich als
-26, 32, -61, und viele andere Werte.
+26, 32, -61 und viele andere Werte.
 
 0:07:10.720,0:07:14.880
 Okay, also 100 zufällige Auswahlmöglichkeiten für dieses "n" hier.
@@ -307,7 +310,7 @@ ist es ein bisschen blöd, das
 auf negative Zahlen zu prüfen.
 
 0:07:24.240,0:07:29.280
-Also sollten wir das wahrscheinlich ausschließen
+Also sollten wir das wahrscheinlich ausschließen,
 und eine Möglichkeit, das zu tun, ist hier zu sagen,
 
 0:07:29.280,0:07:33.280
@@ -319,7 +322,7 @@ im Grunde eine Quantifizierung über nur die
 positiven natürlichen Zahlen, den positiven ganzen Zahlen.
 
 0:07:40.240,0:07:47.280
-Und wenn wir das neu laden, und wieder
+Und wenn wir das neu laden und wieder
 die Testsuite laufen lassen, dann hat sie jetzt wieder
 
 0:07:47.280,0:07:51.760
@@ -348,7 +351,7 @@ vielleicht ein paar weitere Tests.
 Was könnten wir noch testen?
 
 0:08:14.160,0:08:19.920
-Nun, wir könnten sagen, es sollte nicht nur der Fall sein
+Nun, wir könnten sagen, es sollte nicht nur der Fall sein,
 dass wir, wenn wir die Liste '1..n' sortieren, '1..n' erhalten.
 
 0:08:19.920,0:08:22.480
@@ -390,7 +393,7 @@ vielleicht schreiben wir an dieser Stelle auch ein paar
 zusätzliche Tests.
 
 0:09:07.440,0:09:15.360
-Also, zum Beispiel, anstatt einfach zu sagen
+Also, zum Beispiel, anstatt einfach zu sagen,
 dass wir Listen von '1..n' sortieren wollen, vielleicht
 
 0:09:15.360,0:09:21.840
@@ -401,7 +404,7 @@ soll, wenn man eine beliebige Liste sortiert.
 Ja, genau,
 
 0:09:32.480,0:09:36.480
-Ich kann auch einfach quantifizieren
+ich kann auch einfach quantifizieren
 über eine beliebige Liste 'xs',
 
 0:09:37.760,0:09:45.200
@@ -409,14 +412,14 @@ dann wäre es natürlich blöd zu
 erwarten, dass die Sortierung von 'xs' gleich 'xs' ist.
 
 0:09:45.200,0:09:48.960
-Aber schauen wir doch mal nach
+Aber schauen wir doch mal nach,
 was passiert, wenn ich das tue.
 
 0:09:48.960,0:09:50.720
 Also, ich sollte jetzt ein Gegenbeispiel bekommen.
 
 0:09:52.800,0:09:57.360
-In der Tat, es gab zwei Tests
+In der Tat, es gab zwei Tests,
 die 100 Fälle bestanden haben.
 
 0:09:57.360,0:09:59.920
@@ -438,7 +441,7 @@ erwarten können, dass es tatsächlich funktioniert.
 
 0:10:19.280,0:10:22.560
 Und nun, vielleicht sollte ich an dieser Stelle
-sollte ich offenlegen, wo der Fehler liegt.
+offenlegen, wo der Fehler liegt.
 
 0:10:22.560,0:10:23.920
 Wenn ich nämlich
@@ -452,6 +455,8 @@ Aber gut.
 
 0:10:33.760,0:10:35.520
 Aber das liegt nur daran, dass die Eigenschaft falsch ist.
+
+
 
 0:10:35.520,0:10:39.440
 Wie auch immer, lassen Sie mich eine Eigenschaft aufschreiben, die
@@ -468,7 +473,7 @@ Sollte ich dann immer dasselbe erhalten wie die Liste?
 Die ursprüngliche Liste?
 
 0:10:49.040,0:10:52.720
-Nein, aber ich sollte immer das Gleiche erhalten
+Nein, aber ich sollte immer das Gleiche erhalten,
 als wenn ich die ursprüngliche Liste sortiert hätte.
 
 0:10:52.720,0:10:58.080
@@ -488,8 +493,8 @@ Also ist das schon auch noch richtig.
 Okay, wie kann ich nun meinen Fehler finden?
 
 0:11:22.080,0:11:24.240
-Auch wenn ich dir schon gezeigt habe
-Ihnen gezeigt habe, was der Fehler ist.
+Auch wenn ich Ihnen schon gezeigt habe,
+was der Fehler ist.
 
 0:11:24.240,0:11:27.280
 Also, das war eine Eigenschaft, die gar nicht wahr war.
@@ -500,14 +505,14 @@ die diesen Fehler tatsächlich aufdeckt.
 
 0:11:33.840,0:11:40.720
 Nun, hier ist etwas, ich kann mir eine
-Eigenschaft, die die Funktion 'length' betrifft.
+Eigenschaft, die die Funktion 'length' betrifft, vorstellen.
 
 0:11:41.520,0:11:47.840
-Also, vielleicht ist es vernünftig zu erwarten
+Also, vielleicht ist es vernünftig zu erwarten,
 dass, wenn ich eine beliebige Liste nehme, und dann
 
 0:11:48.960,0:11:56.720
-die Länge der sortierten Liste berechne, sollte diese
+die Länge der sortierten Liste berechne, diese
 gleich der Länge der ursprünglichen Liste ist.
 
 0:11:56.720,0:11:59.760
@@ -548,7 +553,7 @@ Okay, wenn ich also diesen Fehler behebe, dann läuft meine
 
 0:12:44.080,0:12:51.520
 Testreihe noch einmal durch, und um sicherzugehen,
-dass wir das auf einigen sinnvollen Listen testen
+dass wir das auf einigen sinnvollen Listen testen,
 
 0:12:51.520,0:13:00.480
 füge ich jetzt noch einmal den 'verboseCheck'
@@ -563,12 +568,12 @@ und bestätigt,
 dass sie alle diese Eigenschaft erfüllen.
 
 0:13:15.440,0:13:19.600
-Okay, und auf diese Weise, auch ohne zu wissen
+Okay, und auf diese Weise, auch ohne zu wissen,
 was die Lösung der Sortierfunktion ist,
 
 0:13:19.600,0:13:25.520
 könnte man sich bestimmte
-Tests, die erwartet werden sollten.
+Tests, die erwartet werden sollten, ausdenken.
 
 0:13:25.520,0:13:31.840
 Wir legen also Eigenschaften der Sortierfunktion fest,
@@ -580,7 +585,7 @@ Dinge, die ich mir ausdenken könnte.
 
 0:13:35.360,0:13:40.720
 Also, eine Idee wäre, durch alle
-Listenverarbeitungsfunktionen durchzugehen, die Sie kennen,
+Listenverarbeitungsfunktionen zu gehen, die Sie kennen,
 
 0:13:40.720,0:13:43.680
 und darüber nachzudenken, wie sie mit der Sortierung interagieren.
@@ -662,16 +667,18 @@ der Länge 20, 25, was auch immer.
 Aber wenn ich eine Eigenschaft hatte, die nicht wahr war,
 
 0:15:20.080,0:15:24.640
-bekam ich sehr kleine Zählbeispiele
+bekam ich sehr kleine Gegenbeispiele
 '[3, 3]', oder '[0, 0]', oder '[0, -1]'.
 
 0:15:24.640,0:15:30.480
 Das liegt daran, dass QuickCheck nicht nur versucht, die
-Gegenbeispiele zu finden, sondern sobald es herausgefunden hat
+Gegenbeispiele zu finden, sondern sobald es herausgefunden hat,
 
 0:15:30.480,0:15:36.560
-dass eine Eigenschaft nicht wahr ist, versucht es auch
+dass eine Eigenschaft nicht wahr ist, versucht es auch,
 ein möglichst kleines Gegenbeispiel zu finden, das auch
+
+
 
 0:15:36.560,0:15:41.920
 für Sie nützlich ist, wenn Sie eine Rückmeldung von Autotool erhalten.
@@ -687,7 +694,7 @@ mit einem großen Argument, der falsch ist.
 Sondern in den meisten Fällen ein kleines Gegenbeispiel.
 
 0:15:54.960,0:15:58.400
-Okay, lassen Sie uns also nicht versuchen
+Okay, lassen Sie uns also nicht versuchen,
 weitere Fehler einzuführen.
 
 0:15:58.400,0:16:03.920
@@ -812,11 +819,11 @@ Was ich also sagen kann, ist: Lass mich
 die Liste an Position eins teilen,
 
 0:18:24.160,0:18:29.280
-und dann bekomme ich ein Einzelelement
+und dann bekomme ich eine Einzelelement-
 Liste und entnehme daraus den Pivot.
 
 0:18:29.280,0:18:33.760
-Und ich erhalte den 'rest', der eine beliebige lange Liste sein
+Und ich erhalte den 'rest', der eine beliebig lange Liste sein
 kann, und der Rest wird an diesen beiden Stellen verwendet.
 
 0:18:36.160,0:18:39.600
@@ -835,11 +842,11 @@ wirklich etwas testen,
 
 0:18:52.320,0:18:58.320
 kann ich natürlich ausprobieren, was passieren würde, wenn
-ich einen anderen Fehler in mein Programm einführe
+ich einen anderen Fehler in mein Programm einführe.
 
 0:18:58.320,0:19:03.680
 Sagen wir, ich mache versehentlich die Kombination von größer
-und Kleiner-Kombination versehentlich auf die falsche Weise.
+und kleiner Kombination versehentlich auf die falsche Weise.
 
 0:19:05.760,0:19:10.240
 Dann würde ich sofort einige Testfehler bekommen.
@@ -876,9 +883,10 @@ für die Sortierfunktion und
 sie dann auf diese Weise überprüfen.
 
 0:19:55.040,0:19:58.000
-Und wenn Sie mehr sehen wollen
+Und wenn Sie mehr sehen wollen,
 welche Daten verwendet wurden,
 
 0:19:58.000,0:20:05.840
 können Sie jederzeit den 'quickCheck' durch
 'verboseCheck' ersetzen, wie ich es vorhin im Video getan habe.
+

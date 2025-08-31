@@ -1,16 +1,17 @@
+
 0:00:02.000,0:00:04.320
-Betrachten wir also noch ein paar weitere
+Betrachten wir also noch ein paar weitere.
 
 0:00:04.320,0:00:09.360
 Beispiele für diese Idee des Übergangs
-von Haskell Code zu Prolog Code.
+von Haskell-Code zu Prolog-Code.
 
 0:00:10.160,0:00:14.320
 Denn dann können wir die Prädikate in
 Prolog verwenden, und wie Sie gerade gesehen haben, können wir sie auch
 
 0:00:14.320,0:00:18.080
-sie auf ganz andere Weise verwenden
+auf ganz andere Weise verwenden
 als nur als eine Vorwärtsfunktion.
 
 0:00:18.080,0:00:25.120
@@ -23,10 +24,10 @@ Prolog für bestimmte Funktionen funktionieren kann.
 
 0:00:30.640,0:00:38.400
 Okay, und zur Erinnerung, die Grundidee
-Idee dieser Übersetzung war, dass
+dieser Übersetzung war, dass
 
 0:00:38.400,0:00:43.840
-wenn in Haskell, nun, um
+wir in Haskell, nun, um
 verschachtelte Funktionsaufrufe in Haskell zu vermeiden.
 
 0:00:48.680,0:00:49.680
@@ -38,7 +39,7 @@ denn die können wir in Prolog nicht haben.
 
 0:01:00.240,0:01:03.600
 Denn wir schreiben keine
-verschachtelte Ausdrücke, sondern nur
+verschachtelten Ausdrücke, sondern nur
 
 0:01:03.600,0:01:11.840
 Prädikatsanwendungen, Literale, die
@@ -49,11 +50,11 @@ Es gab also diese grundlegende Idee von
 wenn Sie etwas haben wie 'f (g x y) z'.
 
 0:01:21.600,0:01:25.040
-Also, eine verschachtelte Funktion von,
+Also, eine verschachtelte Funktion von
 Aufruf einer Funktion, die als
 
 0:01:25.040,0:01:28.080
-Argument einen anderen Funktionsaufruf verschachtelt hat.
+Argument einen anderen Funktionsaufruf eingeschlossen hat.
 
 0:01:29.680,0:01:31.200
 Und die Idee ist, dass
@@ -74,7 +75,7 @@ nämlich, dass es 'u = g x y' sein würde.
 Und da wir jetzt Dinge haben, die keine
 
 0:02:00.720,0:02:06.320
-verschachtelte Funktionsaufrufe sind, können sie sehr direkt
+verschachtelten Funktionsaufrufe sind, können sie sehr direkt
 etwas auf der Prolog-Seite übersetzt werden, okay?
 
 0:02:06.320,0:02:09.920
@@ -95,7 +96,7 @@ Ja, also auf der zusätzlichen Seite ist 'length'
 
 0:02:22.400,0:02:28.160
 sehr einfach definiert, indem sie besagt, dass
-die Länge der leeren Liste ist 0.
+die Länge der leeren Liste 0 ist.
 
 0:02:32.000,0:02:34.240
 Und die Länge der nicht leeren Liste ist was?
@@ -134,7 +135,7 @@ Nun, die erste Zeile ist eine, die sich sehr direkt
 
 0:03:18.480,0:03:21.440
 dazu eignet, geschrieben zu werden
-als binäres Prädikat zu schreiben, richtig?
+als binäres Prädikat, richtig?
 
 0:03:21.440,0:03:23.040
 Denn sie hat zwei Konstanten.
@@ -149,7 +150,7 @@ einfach so geschrieben werden.
 
 0:03:32.720,0:03:41.680
 Sagen wir einfach, es ist als Tatsache wahr, dass
-Länge der leeren Liste Null ist, richtig?
+die Länge der leeren Liste null ist, richtig?
 
 0:03:43.200,0:03:44.920
 Geschrieben als Tatsache, okay?
@@ -159,7 +160,7 @@ Was ist nun mit den anderen Regeln, bei denen
 wir gerade gesagt haben, wir müssten
 
 0:03:49.200,0:03:52.400
-dies als etwas interpretieren
+dies als etwas interpretieren,
 ohne einen verschachtelten Funktionsaufruf.
 
 0:03:53.600,0:03:57.480
@@ -184,11 +185,11 @@ wird auf die Liste und ihre Länge angewendet.
 Das ist die Idee dahinter.
 
 0:04:25.760,0:04:31.280
-Wie kann man nun, nachdem man das getan hat
-können wir die Definition umschreiben?
+Wie kann man nun, nachdem man das getan hat,
+die Definition umschreiben?
 
 0:04:34.800,0:04:44.800
-Nun, wir können dann auf der Prolog-Seite schreiben
+Nun, wir können dann auf der Prolog-Seite schreiben,
 etwas wie es ist der Fall, dass die
 
 0:04:44.800,0:04:53.120
@@ -217,7 +218,7 @@ für den Kopf, XS für den Rest.
 Das wäre also die Eingabeseite.
 
 0:05:24.800,0:05:28.320
-Und für die Ausgabeseite, nun
+Und für die Ausgabeseite, nun,
 lasst uns über dieses 'm + 1' nachdenken.
 
 0:05:28.320,0:05:30.640
@@ -227,18 +228,20 @@ Also, lassen Sie uns das erst einmal symbolisch machen.
 Wenn also diese ursprüngliche Idee
 
 0:05:34.080,0:05:39.600
-die auch für das 'add'-Prädikat verwendet wurde
-dass wir nicht extra die Zahlen zwei, drei usw. schreiben
+die auch für das 'add'-Prädikat verwendet wurde,
+dass wir nicht extra die Zahlen zwei, drei usw. schreiben,
 
 0:05:39.600,0:05:45.120
 sondern etwas wie: SS0 für die Zahl zwei, richtig?
+
+
 
 0:05:45.120,0:05:49.360
 Drücken wir also diese +1 mit
 dem Nachfolger-Konstruktor.
 
 0:05:50.240,0:05:55.040
-Dann würden wir hier also schreiben
+Dann würden wir hier also schreiben,
 dass die Länge dieser Zahl 'm + 1' ist.
 
 0:05:55.040,0:06:02.000
@@ -247,7 +250,7 @@ Variable 'M' gegeben, richtig?
 
 0:06:02.000,0:06:17.440
 Wir brauchen also diese Vorbedingung, wenn
-dass die Länge von Xs M ist, okay?
+die Länge von Xs M ist, okay?
 
 0:06:17.440,0:06:22.080
 Also, wenn die Länge von Xs M ist, dann
@@ -262,11 +265,11 @@ Das wäre also eine vernünftige Definition
 von Länge in Prolog als Prädikat.
 
 0:06:34.000,0:06:37.120
-Und dann könnten wir eigentlich auch anfangen
+Und dann könnten wir eigentlich auch anfangen,
 fragen, jetzt haben wir ein Prädikat
 
 0:06:37.120,0:06:42.160
-für Länge anstelle einer Funktion, wie
+für Länge anstelle einer Funktion. Wie
 wäre es, wenn wir es auf eine Art und Weise benutzen, wo wir
 
 0:06:42.960,0:06:48.320
@@ -274,11 +277,11 @@ dieser Instanziierung einen Wert für
 die Länge geben und nach der Liste fragen.
 
 0:06:48.320,0:06:52.720
-Was in Haskell natürlich nicht möglich ist
-natürlich nicht möglich, weil es nur mit Funktionen funktioniert.
+Was in Haskell natürlich nicht möglich ist.
+Natürlich nicht möglich, weil es nur mit Funktionen funktioniert.
 
 0:06:54.080,0:06:58.000
-Okay, das war also die Längenfunktion
+Okay, das war also die Längenfunktion,
 nun in ein Prolog-Prädikat verwandelt.
 
 0:06:58.000,0:07:00.080
@@ -289,7 +292,7 @@ Eine weitere typische Listenverarbeitungsfunktion in
 Haskell wäre natürlich das 'Listenanhängen'.
 
 0:07:12.880,0:07:14.320
-Also, der '++' Operator.
+Also, der '++'-Operator.
 
 0:07:14.960,0:07:19.920
 Den wir nicht in dieser Operator-Syntax
@@ -304,12 +307,12 @@ Es ist eine polymorphe Funktion und natürlich werden wir
 diesen Typ nicht in Prolog aufschreiben, weil
 
 0:07:33.840,0:07:37.680
-Prolog ist nicht typisiert, aber auf der Haskell-Seite
+Prolog nicht typisiert ist, aber auf der Haskell-Seite
 würden wir dies als polymorphe Funktion haben.
 
 0:07:38.320,0:07:45.600
-Und dann würde sie definiert werden, indem man sagt, dass,
-die leere Liste plus was auch immer ist das was-auch-immer,
+Und dann würde sie definiert werden, indem man sagt, dass
+die leere Liste plus was auch immer das was-auch-immer ist,
 
 0:07:46.720,0:07:52.320
 und die nicht leere Liste angehängt
@@ -317,24 +320,24 @@ mit einer anderen Liste ist was?
 
 0:07:52.320,0:07:57.840
 Nun, die Definition lautet eigentlich,
-es ist x vor was-auch-immer
+es ist x vor was-auch-immer.
 
 0:07:59.760,0:08:04.880
-ist das Anhängen von xs und ys, okay?
+Es ist das Anhängen von xs und ys, okay?
 
 0:08:06.080,0:08:12.080
 Das sollte Sinn machen.
 
 0:08:12.080,0:08:17.120
 Okay, natürlich können wir das nicht direkt
-auf die Prolog-Seite zu übersetzen, warum?
+auf die Prolog-Seite übersetzen. Warum?
 
 0:08:17.120,0:08:20.080
-Nun, hauptsächlich wegen der
-dieser verschachtelten Funktion, richtig?
+Nun, hauptsächlich wegen dieser
+verschachtelten Funktion, richtig?
 
 0:08:20.080,0:08:22.640
-Dies ist ein Funktionsaufruf
+Dies ist ein Funktionsaufruf,
 der eine Liste erzeugt, die dann
 
 0:08:22.640,0:08:25.360
@@ -358,7 +361,7 @@ Wir würden dies also umschreiben oder
 wir könnten auf der Haskell-Seite umschreiben,
 
 0:08:46.480,0:09:00.320
-indem wir sagen: Nun, das ist eigentlich x vor zs
+indem wir sagen: Nun, das ist eigentlich x vor zs,
 wobei wir zs als das "append" von xs und ys berechnen.
 
 0:09:00.320,0:09:04.400
@@ -378,7 +381,7 @@ Okay, was müssen wir also
 auf der Prolog-Seite machen?
 
 0:09:16.240,0:09:21.600
-Nun, wie ich schon sagte, wir werden keinen Operator verwenden
+Nun, wie ich schon sagte, wir werden keinen Operator verwenden,
 wie diesen. Stattdessen werden wir ein benanntes Prädikat verwenden.
 
 0:09:21.600,0:09:25.360
@@ -390,11 +393,11 @@ wir zumindest notieren, dass es ein ternäres Prädikat ist.
 
 0:09:32.800,0:09:37.680
 Die Syntax wurde auch auf den Folien erwähnt, dass
-manchmal, zum Beispiel zu Dokumentationszwecken
+manchmal, zum Beispiel zu Dokumentationszwecken,
 
 0:09:37.680,0:09:42.560
 zum Beispiel, wenn man zumindest die
-Stelligkeit eines Prädikats in Prolog aufzuschreiben.
+Stelligkeit eines Prädikats in Prolog aufschreibt.
 
 0:09:42.560,0:09:45.280
 Auch, weil dasselbe Prädikat
@@ -412,7 +415,7 @@ eine Tatsache und sollte sehr einfach sein.
 
 0:09:54.160,0:09:58.560
 Ja, sie besagt etwas über drei
-Dinge; die konstante leere Liste und dann
+Dinge: die konstante leere Liste und dann
 
 0:09:58.560,0:10:01.840
 zweimal die gleiche variable Liste.
@@ -422,14 +425,14 @@ Das übersetzt sich also direkt in
 
 0:10:06.000,0:10:10.960
 eine Regel, die einfach nur ein Faktum ist und keine
-eine Regel, weil sie nicht vorausgesetzt wird.
+Regel, weil sie nicht vorausgesetzt wird.
 
 0:10:10.960,0:10:11.680
 Etwa so.
 
 0:10:11.680,0:10:18.960
 Also, die leere Liste, die mit
-etwas ist dieses etwas, ein Fakt, okay?
+etwas ist, dieses etwas ist ein Fakt, okay?
 
 0:10:18.960,0:10:20.240
 Und was ist mit der zweiten Zeile?
@@ -446,7 +449,7 @@ in diese Syntax wie die eckigen Klammern,
 dann X | und der Name der Restliste.
 
 0:10:40.720,0:10:45.840
-Dies ist wieder nur eine Variable
+Dies ist wieder nur eine Variable,
 die einfach in Großbuchstaben geschrieben werden muss.
 
 0:10:47.760,0:10:49.520
@@ -458,7 +461,9 @@ wir wieder eine Liste haben.
 
 0:10:52.880,0:10:56.480
 Also ist es auch ein Listenmuster
-mit Kopf X und etwas Rest
+mit Kopf X und etwas Rest.
+
+
 
 0:10:56.480,0:11:02.080
 was vorher ein verschachtelter Funktionsaufruf war,
@@ -520,7 +525,7 @@ Aber für ein solches Prädikat können wir
 im Wesentlichen rückwärts ablaufen, okay?
 
 0:12:06.880,0:12:11.840
-Und lassen Sie mich ein drittes Beispiel machen
+Und lassen Sie mich ein drittes Beispiel machen,
 das kein rekursives Beispiel ist, sondern
 
 0:12:12.640,0:12:17.200
@@ -550,15 +555,15 @@ Ja, sagen wir, wir haben eine nicht leere Liste, also ist es
 etwas vor etwas, wenn das erste
 
 0:12:45.360,0:12:50.640
-etwas für uns nicht wichtig ist, ist es uns egal
+etwas für uns nicht wichtig ist, ist es uns egal,
 weil wir das zweite Etwas haben wollen.
 
 0:12:50.640,0:12:52.560
 Wir verwenden hier also eine anonyme Variable,
 
 0:12:53.280,0:12:57.120
-dann haben wir ein Element, an dem wir interessiert sind
-interessiert, also müssen wir es benennen.
+dann haben wir ein Element, an dem wir interessiert sind,
+also müssen wir es benennen.
 
 0:12:58.080,0:13:02.880
 Und dann muss es einen Rest geben, aber
@@ -642,8 +647,8 @@ Sache, dann haben wir eine Restliste
 von der wir wissen, dass das Kopfelement X sein wird.
 
 0:14:27.200,0:14:30.800
-Und dann gibt es eine weitere Restliste
-Liste, um die wir uns nicht kümmern.
+Und dann gibt es eine weitere Restliste,
+um die wir uns nicht kümmern.
 
 0:14:31.520,0:14:33.280
 Ja, das wäre also eine Übersetzung davon.
@@ -662,7 +667,7 @@ verschiedene Möglichkeiten, dies zu schreiben.
 
 0:14:47.600,0:14:50.320
 Das wurde auch schon erwähnt
-auf einer der Syntax-Folien erwähnt.
+auf einer der Syntax-Folien.
 
 0:14:50.320,0:15:00.720
 Zum Beispiel könnte dies auch
@@ -683,7 +688,7 @@ Und dann gibt es noch einen Rest, um den wir uns nicht kümmern.
 Und dieser ist durch dieses Prädikat mit X verbunden.
 
 0:15:22.880,0:15:29.200
-Oder eine andere Version wäre
+Oder eine andere Version wäre,
 das '.' als Konstruktor zu verwenden
 
 0:15:29.200,0:15:34.560
@@ -696,9 +701,11 @@ als dieses Muster für binäre '.'
 0:15:40.000,0:15:42.400
 das erste Element der leeren Liste.
 
+
+
 0:15:42.400,0:15:46.720
-Das ist etwas, das uns nicht wirklich interessiert
-und es gibt eine Restliste, die wiederum
+Das ist etwas, das uns nicht wirklich interessiert.
+Und es gibt eine Restliste, die wiederum
 
 0:15:46.720,0:15:52.240
 mit dem Datenkonstruktor erstellt wird, und das
@@ -723,7 +730,7 @@ Zum Beispiel könnten Sie es
 wieder durch dieses Muster ersetzen.
 
 0:16:14.000,0:16:19.360
-Okay, das sind gleichwertige Möglichkeiten, es ist nur sehr
+Okay, das sind gleichwertige Möglichkeiten. Es ist nur sehr
 wichtig, wenn Sie anfangen, Prädikate für Listen zu
 
 0:16:19.360,0:16:21.840
@@ -747,3 +754,4 @@ verschiedenen Möglichkeiten, dies in Prolog zu schreiben.
 
 0:16:43.040,0:16:49.840
 Okay, das war's für diese Beispiele.
+

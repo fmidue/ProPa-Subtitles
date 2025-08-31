@@ -1,3 +1,4 @@
+
 80 # slide
 00:00:02,639 --> 00:00:07,759
 In diesem Video möchte ich über das sprechen,
@@ -88,7 +89,7 @@ in Oxford nun an der Universität Kaiserslautern.
 
 00:01:49,689 --> 00:01:52,539
 Und Richard ist tatsächlich schon im Ruhestand.
-(Er ist in 2022 leider verstorben.)
+(Er ist 2022 leider verstorben.)
 
 00:01:52,539 --> 00:01:56,000
 Und beide sprechen hier von
@@ -121,7 +122,7 @@ Richard spricht hier auch von Indexitis.
 
 00:02:22,590 --> 00:02:29,620
 Das ist auch etwas, was ich bereits erwähnt habe,
-als ich darüber sprach, dass der Index-Zugriff auf Listen
+als ich darüber sprach, dass der Indexzugriff auf Listen
 
 00:02:29,620 --> 00:02:34,319
 ein No-Go in Haskell ist; dass es das gibt,
@@ -210,6 +211,8 @@ die sich das erste und das letzte Element
 00:04:06,069 --> 00:04:08,299
 ansah und dann
 einen rekursiven Aufruf machte.
+
+
 
 00:04:08,299 --> 00:04:13,819
 Das ist etwas, das vielleicht nicht
@@ -398,7 +401,7 @@ Es ist also egal, ob ich zuerst
 die dritte Sache und dann die nullte
 
 00:07:33,440 --> 00:07:34,440
-Sache berechne, oder umgekehrt.
+Sache berechne oder umgekehrt.
 
 00:07:34,440 --> 00:07:38,840
 Die Werte werden davon unabhängig
@@ -436,9 +439,11 @@ wäre die Äquivalenz, die hier gezeigt wird.
 00:08:16,200 --> 00:08:18,040
 Was sie aussagt, ist:
 
+
+
 00:08:18,040 --> 00:08:28,340
 Wenn ich einige Zahlen von null bis n nehme und
-dann "f von a" (f a) auf jedem Element berechne
+dann "f von a" (f a) auf jedem Element berechne,
 
 00:08:28,340 --> 00:08:36,510
 und dann die Ergebnisse in eine Liste schreibe, ist
@@ -484,7 +489,7 @@ bei einer for-Schleife nicht der Fall.
 84 # slide
 00:09:26,370 --> 00:09:33,110
 Wir können das tatsächlich überprüfen, indem wir uns einen
-C-ähnlichen oder Java-ähnlichen oder Python-ähnlichen Code oder was auch
+C-ähnlichen, Java-ähnlichen oder Python-ähnlichen Code oder was auch
 
 00:09:33,110 --> 00:09:34,110
 immer ansehen.
@@ -503,7 +508,7 @@ for-Schleife, die ebenfalls von null bis n geht, diesen
 
 00:09:51,830 --> 00:09:56,010
 Schleifenzähler inkrementiert und dann immer "f von a"
-berechnet, und dies dann in einer Liste, oder
+berechnet, und dies dann in einer Liste oder
 
 00:09:56,010 --> 00:09:57,610
 in diesem Fall einem Array, speichert.
@@ -521,7 +526,7 @@ Aber in C oder Java ist es nicht so,
 dass wir dies immer durch dies ersetzen können, aus verschiedenen
 
 00:10:14,030 --> 00:10:19,750
-Gründen, wie Seiteneffekte, wie Dinge, die die
+Gründen, wie Seiteneffekten, wie Dinge, die die
 f-Aufrufe zusätzlich zur Berechnung von Werten tun könnten.
 
 00:10:19,750 --> 00:10:25,690
@@ -651,9 +656,11 @@ Ihrem Code, und wenn Sie das "reverse" außerhalb
 dieser Liste verschieben, erkennen Sie, dass
 Sie diesen Ausdruck als gemeinsamen Unterausdruck mit
 
+
+
 00:12:45,300 --> 00:12:48,110
 einem anderen Teil
-Ihrer Funktionsdefinition sharen können.
+Ihrer Funktionsdefinition teilen können.
 
 00:12:48,110 --> 00:12:53,250
 Und dann haben Sie plötzlich ein effizienteres
@@ -755,7 +762,7 @@ Endbedingung haben, dass wir prüfen, dass i kleiner als
 
 00:14:40,870 --> 00:14:44,650
 n ist, und nicht zum Beispiel, dass i
-gleich n ist, oder kleiner-gleich n, oder etwas
+gleich n ist, oder kleiner gleich n, oder etwas
 
 00:14:44,650 --> 00:14:45,650
 in der Art.
@@ -789,7 +796,7 @@ oder ist der erste Eintrag 1?
 
 00:15:11,900 --> 00:15:15,970
 Wie machen wir hier
-also den richtigen Index-Zugriff?
+also den richtigen Indexzugriff?
 
 00:15:15,970 --> 00:15:24,260
 Das liegt daran, dass diese Lösung auf Indexzugriff
@@ -831,7 +838,7 @@ Es nimmt diese Liste.
 
 00:15:59,600 --> 00:16:05,000
 Es sagt, dass wir im Grunde
-jedes Listenelement mit aufeinanderfolgenden Zahlen kombinieren wollen.
+jedes Listenelement mit aufeinander folgenden Zahlen kombinieren wollen.
 
 00:16:05,000 --> 00:16:10,360
 Wir können das ausdrücken, indem wir sagen: Lasst
@@ -875,6 +882,8 @@ das "zip" wird einfach so viele Elemente aus
 dieser unendlichen Liste abarbeiten, wie nötig
 sind, um genügend Zahlen zu haben.
 
+
+
 00:16:51,510 --> 00:16:56,880
 Es gibt also keinen Vergleich gegen einen Endwert,
 wie n oder n - 1 oder so etwas.
@@ -889,7 +898,7 @@ einen Ausdruck, der etwas errechnet.
 
 00:17:03,010 --> 00:17:09,069
 Es gibt keine Schleife mit
-einer Schleifenbedingung, kein Überschreiben der Ergebnisvariablen
+einer Schleifenbedingung, kein Überschreiben der Ergebnisvariablen.
 
 00:17:09,069 --> 00:17:10,069
 oder ähnliches.
@@ -974,7 +983,7 @@ Wo speichere ich sie?
 
 00:18:35,670 --> 00:18:39,900
 Überschreibe ich mein ursprüngliches Array, sodass ich
-dann die Summenfunktion auf diesem Array aufrufen kann
+dann die Summenfunktion auf diesem Array aufrufen kann,
 
 00:18:39,900 --> 00:18:42,230
 (aber dann habe
@@ -1085,6 +1094,8 @@ aber auch dann gibt es dieses Fehlerpotential.
 Es gibt mehrere Stellen, an
 denen ich einen Fehler machen kann.
 
+
+
 00:20:45,190 --> 00:20:47,080
 Ich muss entscheiden, wo fange ich an?
 
@@ -1155,7 +1166,7 @@ nichts ändern.
 
 00:21:55,510 --> 00:21:58,010
 In diesem Sinne ist dies die
-minimale Änderung, und die gewünschte Änderung.
+minimale Änderung und die gewünschte Änderung.
 
 00:21:58,010 --> 00:21:59,640
 Es sollten keine
@@ -1224,7 +1235,7 @@ dass ich diese seltsamen Unterschiede habe,
 was ich mit welchem Arrayelement multipliziere.
 
 00:23:16,980 --> 00:23:23,590
-Also ich könnte diese Änderung als besser
+Also, ich könnte diese Änderung als besser
 ansehen als die auf der vorherigen Folie.
 
 00:23:23,590 --> 00:23:28,790
@@ -1252,7 +1263,7 @@ zu tun, und jede dieser Möglichkeiten birgt das Potenzial,
 
 00:23:47,100 --> 00:23:54,179
 Fehler zu machen, indem ich nicht alle 3
-Stellen ändere, oder nur die falsche Stelle, an
+Stellen ändere oder nur die falsche Stelle, an
 
 00:23:54,179 --> 00:23:55,980
 der eine Änderung
@@ -1304,6 +1315,8 @@ Es ist alles ein großes Durcheinander.
 In diesem Beispiel ist es noch kein *großes*
 Durcheinander, sondern Dinge, die synchronisiert gehalten werden müssen.
 
+
+
 00:24:48,160 --> 00:24:52,570
 In größeren Beispielen kann es wirklich zu einem
 großen Durcheinander werden, sich mit all diesen Aspekten auf
@@ -1333,7 +1346,7 @@ Hier befindet sich gewissermaßen
 die Schleifensteuerung, wenn Sie wollen.
 
 00:25:24,470 --> 00:25:25,720
-Aber es *gibt*
+Aber es gibt
 keine explizite Schleifensteuerung.
 
 00:25:25,720 --> 00:25:29,200
@@ -1531,9 +1544,11 @@ dass dazwischenliegende Datenstrukturen verwendet werden.
 00:28:36,480 --> 00:28:38,650
 Das ist also nicht wirklich ein Problem.
 
+
+
 00:28:38,650 --> 00:28:45,039
 Natürlich könnte das Programm am Ende immer
-noch weniger effizient sein als ein handgeschriebenes
+noch weniger effizient sein als ein handgeschriebenes.
 
 00:28:45,039 --> 00:28:50,160
 C-Programm, aber das
@@ -1545,7 +1560,7 @@ Compiler sogar Parallelisierungsmöglichkeiten erkennen.
 
 00:28:54,440 --> 00:28:58,789
 Dank des Aspekts der unabhängigen Werte, den
-wir beim Vergleich von List Comprehensions mit
+wir beim Vergleich von List Comprehensions mit.
 
 00:28:58,789 --> 00:29:04,360
 for-Schleifen besprochen haben, ist es (in einem Programm,
@@ -1553,7 +1568,7 @@ wie wir gerade gesehen haben) einfacher, Stellen zu erkennen,
 
 00:29:04,360 --> 00:29:09,250
 an denen eine Parallelisierung stattfinden könnte;
-viel einfacher als z.B. in einem C-Programm.
+viel einfacher als z. B. in einem C-Programm.
 
 00:29:09,250 --> 00:29:15,450
 Das alles hat auch mit dem Aspekt der
@@ -1565,20 +1580,20 @@ haben, kann also auch von einem Compiler ausgenutzt werden.
 
 00:29:18,330 --> 00:29:24,860
 Der Compiler kann Gesetze anwenden,
-um Ineffizienzen zu beseitigen, Datenstruktur-Traversierungen, Datenstrukturen
+um Ineffizienzen zu beseitigen, Datenstruktur-Traversierungen, Datenstrukturen.
 
 00:29:24,860 --> 00:29:25,860
-selbst.
+Selbst.
 
 00:29:25,860 --> 00:29:27,090
 Das ist genau das, was GHC macht.
 
 00:29:27,090 --> 00:29:33,450
 GHC führt zwar nicht von sich
-aus Parallelität ein, aber achtet zum Beispiel
+aus Parallelität ein, aber achtet zum Beispiel.
 
 00:29:33,450 --> 00:29:38,320
-sehr auf die Traversierung von
+Sehr auf die Traversierung von
 Datenstrukturen und kann viele davon eliminieren.
 
 00:29:38,320 --> 00:29:45,809
@@ -1667,3 +1682,4 @@ Diese Unterschiede sind real.
 
 00:31:09,850 --> 00:31:12,029
 Und sie sind relevant.
+

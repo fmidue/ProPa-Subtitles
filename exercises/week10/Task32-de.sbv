@@ -1,9 +1,10 @@
+
 0:00:00.000,0:00:05.010
 In Aufgabe 32 geht es wieder um IO.
 
 0:00:05.010,0:00:12.090
 Und zwar sollen wir diesmal ein imperatives
-Programm nach implementieren in Haskell.
+Programm nachimplementieren in Haskell.
 
 0:00:14.100,0:00:20.062
 Wir haben ein Programm gegeben, einmal in einer
@@ -11,25 +12,25 @@ C-Version und einmal in einer Python-Version.
 
 0:00:20.062,0:00:24.870
 Das ist zweimal dasselbe Programm; kann man
-sich jetzt aussuchen was man besser lesen kann.
+sich jetzt aussuchen, was man besser lesen kann.
 
 0:00:24.870,0:00:29.130
 Und wir sollen das einmal
 in Haskell implementieren.
 
 0:00:30.990,0:00:35.190
-Wie bei den IO Aufgaben habe
+Wie bei den IO-Aufgaben habe
 ich die autotoolspezifischen
 
 0:00:35.190,0:00:39.120
-Imports hier oben aus kommentiert
+Imports hier oben auskommentiert,
 damit wir das lokal testen können.
 
 0:00:43.620,0:00:46.920
 Und dann können wir im Prinzip direkt loslegen.
 
 0:00:47.490,0:00:55.860
-Wir arbeiten am Besten mit der Python-Version,
+Wir arbeiten am besten mit der Python-Version,
 die finde ich ein bisschen klarer zu lesen,
 
 0:00:55.860,0:00:59.310
@@ -38,7 +39,7 @@ syntaktisches Rauschen drin.
 
 0:00:59.310,0:01:06.570
 Aber natürlich, wenn man mit der C-Version besser
-klar kommt kann man auch die als Basis nehmen.
+klar kommt, kann man auch die als Basis nehmen.
 
 0:01:06.570,0:01:11.700
 Wie gesagt, beide Programme
@@ -49,10 +50,10 @@ Was haben wir als Erstes?
 
 0:01:16.920,0:01:24.960
 Wir lesen irgendwie x ein, als
-Integer und setzten y auf 0.
+Integer und setzen y auf 0.
 
 0:01:24.960,0:01:39.030
-Fangen wir als erstes mit irgendeinem
+Fangen wir als Erstes mit irgendeinem
 do-Block an und lesen ein x ein.
 
 0:01:39.030,0:01:45.240
@@ -63,8 +64,8 @@ einfach erst mal als 0 definieren.
 Und jetzt kommt irgendwie dieser while-loop hier.
 
 0:01:52.890,0:02:03.120
-Und danach sehen wir schon, müssen
-wir irgendwas ausgeben mit print.
+Und danach sehen wir schon, dass wir
+irgendwas ausgeben müssen mit print.
 
 0:02:03.120,0:02:06.720
 Können wir auch gleich das print hinschreiben.
@@ -74,7 +75,7 @@ Hier kommt irgendwas rein, was wir noch nicht
 
 0:02:08.490,0:02:14.400
 wissen und printen wollen wir auch
-irgendwas was wir noch nicht kennen.
+irgendwas, was wir noch nicht kennen.
 
 0:02:16.650,0:02:22.740
 Und in Haskell haben wir natürlich nicht
@@ -82,10 +83,10 @@ so einen expliziten loop, wie wir in den
 
 0:02:22.740,0:02:26.580
 imperativen Sprachen haben, sondern wir
-müssen das irgendwie Rekursion machen.
+müssen das irgendwie mit Rekursion umsetzen.
 
 0:02:26.580,0:02:35.550
-Und deswegen müssen wir uns erst mal überlegen
+Und deswegen müssen wir uns erst mal überlegen,
 was überhaupt diese Schleife sein soll.
 
 0:02:36.780,0:02:39.780
@@ -93,19 +94,18 @@ Ganz grob gesagt kann man natürlich sagen -
 okay - in der Schleife werden irgendwie die
 
 0:02:39.780,0:02:44.880
-variablen x und y angepasst, dann sagen
-wir doch einfach das ist eine Funktion,
+Variablen x und y angepasst, dann sagen
+wir doch einfach, das ist eine Funktion,
 
 0:02:44.880,0:02:58.800
-die nimmt irgendwie ein
-Integer x und ein Integer y.
+die irgendwie ein Integer x und ein Integer y
+nimmt und gibt uns am Ende aus, was die
 
 0:02:59.550,0:03:22.680
-Und gibt uns am Ende aus was die
 veränderten Werte sozusagen sind.
 
 0:03:22.680,0:03:25.800
-Das heißt wir starten hier mit x und y hier oben.
+Das heißt, wir starten hier mit x und y hier oben.
 
 0:03:25.800,0:03:32.970
 Tun die sozusagen in die Schleife rein
@@ -116,15 +116,15 @@ würden aus der Schleife sozusagen
 die neuen Werte für x und y fallen.
 
 0:03:38.340,0:03:45.420
-Und das ist wir darüber
+Und das ist, wie wir darüber
 nachdenken können in Haskell.
 
 0:03:45.420,0:03:56.400
-Und dann müssen wir uns überlegen
+Und dann müssen wir uns überlegen,
 wie wir das implementieren.
 
 0:03:56.400,0:04:10.170
-Aber wenn wir dann jetzt erst mal hier loop
+Aber wenn wir dann jetzt erst mal hier den loop
 einsetzen und sagen - okay - wir starten mit x und
 
 0:04:10.170,0:04:23.970
@@ -133,7 +133,7 @@ x und y und am Ende sollen wir das y ausgeben.
 
 0:04:23.970,0:04:29.700
 Jetzt sehen wir gleich hier schon eine
-Warnung, dass würde das x gar nicht benutzen.
+Warnung, dass wir das x gar nicht benutzen.
 
 0:04:29.700,0:04:34.950
 Das heißt, auch selbst wenn wir das
@@ -148,8 +148,8 @@ Das heißt, wir können noch mal eine Veränderung
 vornehmen und sagen - okay - dann schmeißen wir
 
 0:04:48.430,0:04:56.890
-am Ende nur das y zurück und benutzen das
-dann, weil wir den Rest nicht brauchen.
+am Ende nur das y zurück und benutzen das,
+weil wir den Rest nicht brauchen.
 
 0:04:57.730,0:05:00.040
 Das ist unser Basiskonstrukt.
@@ -159,37 +159,37 @@ Jetzt gucken wir, wie wir denn
 eigentlich den loop hier implementieren.
 
 0:05:06.580,0:05:12.490
-Als erstes haben wir die Bedingungen so
-lange x > 0 ist wollen wir weitermachen.
+Als Erstes haben wir die Bedingungen, so
+lange x > 0 ist, wollen wir weitermachen.
 
 0:05:12.490,0:05:18.430
 Das heißt, wir können zum Beispiel
-jetzt einem guard einführen:
+jetzt einen guard einführen:
 
 0:05:18.430,0:05:26.050
 Wenn x <= 0 ist, dann wissen wir,
 
 0:05:26.050,0:05:33.970
 sind wir fertig mit der Schleife und
-können einfach unser y zurück geben.
+können einfach unser y zurückgeben.
 
 0:05:40.100,0:05:48.950
 Dann, wenn das nicht der Fall ist, haben
-wir diese if-else Bedingungen und das heißt,
+wir diese if-else-Bedingungen und das heißt,
 
 0:05:48.950,0:05:50.780
 wir müssen jetzt diese Bedingungen prüfen.
 
 0:05:50.780,0:06:08.420
-Das heißt, wir prüfen hier wenn x `mod` 2 ==
-0 haben wir einen Fall und ein otherwise Fall.
+Das heißt, wir prüfen hier, wenn x `mod` 2 ==
+0, haben wir einen Fall und ein otherwise-Fall.
 
 0:06:08.420,0:06:16.700
 Jetzt müssen wir ein bisschen aufpassen,
 
 0:06:16.700,0:06:24.800
 weil nach dem if-then-else kommt immer
-noch diese print x in jedem Fall.
+noch dieses print x in jedem Fall.
 
 0:06:24.800,0:06:33.860
 Also müssen wir auf jeden Fall hier irgendwie
@@ -197,7 +197,7 @@ immer ein print drin haben in beiden Fällen.
 
 0:06:40.530,0:06:45.930
 Und dann müssen wir gleich mal gucken,
-was wir denn da rein schreiben.
+was wir denn da reinschreiben.
 
 0:06:49.440,0:07:01.650
 So, wenn x `mod` 2 == 0 ist, bekommen
@@ -205,14 +205,14 @@ wir ein neues x, das können wir uns
 
 0:07:01.650,0:07:05.730
 einfach zum Beispiel über ein let-binding
-bestimmen und das ist einfach x `div` 3.
+bestimmen, und das ist einfach x `div` 3.
 
 0:07:05.730,0:07:19.260
 Wir führen einfach eine Ganzzahldivision
 durch 3 durch und haben dann unser neues x.
 
 0:07:19.260,0:07:24.630
-Dann kommen wir hier hin, geben das neue x aus,
+Dann kommen wir hierhin, geben das neue x aus,
 
 0:07:24.630,0:07:31.380
 und jetzt sind wir fertig, jetzt müssen
@@ -231,23 +231,25 @@ Jetzt können wir das genauso
 hier machen für den anderen Fall.
 
 0:07:48.630,0:07:58.140
-Da haben wir auch, das neue x entsteht
+Da haben wir auch, dass neue x entsteht,
 indem wir einfach mit readLn ein neues
 
 0:07:58.140,0:08:06.660
-x einlesen und das neue y entsteht
-indem mit das alte y + 1 nehmen.
+x einlesen und das neue y entsteht,
+indem wir das alte y + 1 nehmen.
+
+
 
 0:08:06.660,0:08:16.980
 Dann geben wir noch das neue x aus, und
-stoßen auch hier den loop wieder neu an.
+stoßen auch hier den Loop wieder neu an.
 
 0:08:22.300,0:08:32.920
 Was wir natürlich machen können: Hier oben
-ergibt das mit dem let um x' zu definieren
+ergibt das mit dem let, um x' zu definieren
 
 0:08:32.920,0:08:37.450
-Sinn, weil wir das zweimal verwenden, da
+Sinn, weil wir das zweimal verwenden. Da
 sparen wir uns auf jeden Fall irgendwas.
 
 0:08:37.450,0:08:41.620
@@ -259,30 +261,30 @@ und das gleich bei der Parameterübergabe machen.
 
 0:08:57.220,0:09:02.620
 Und das ist im Prinzip dann
-auch schon unserer loop.
+auch schon unser Loop.
 
 0:09:02.620,0:09:08.560
-Okay, dann testen wir das ganze jetzt
+Okay, dann testen wir das Ganze jetzt
 einfach mal in ghci, gucken uns das an.
 
 0:09:08.560,0:09:15.550
-Wenn jetzt main aufrufen ...
+Wenn jetzt main aufgerufen wird ...
 
 0:09:15.550,0:09:18.610
 Jetzt müssen wir uns
 irgendwelche Inputs überlegen.
 
 0:09:18.610,0:09:21.460
-Wenn wir uns jetzt angucken was
+Wenn wir uns jetzt angucken, was
 das Programm hier macht, sagen wir,
 
 0:09:21.460,0:09:27.760
 wir geben mal irgendwas größer 0 ein,
-oder wie können auch erst mal 0 eingeben.
+oder wir können auch erst mal 0 eingeben.
 
 0:09:27.760,0:09:33.325
-Dann kommt sofort 0 raus weil y 0 ist und der
-loop gar nicht erst einmal ausgeführt wird.
+Dann kommt sofort 0 raus, weil y 0 ist und der
+Loop gar nicht erst einmal ausgeführt wird.
 
 0:09:33.325,0:09:34.990
 Das ist natürlich recht langweilig.
@@ -303,11 +305,11 @@ Fall einfach ab, geben einmal das x aus.
 Und das y ist immer noch 0.
 
 0:10:13.470,0:10:20.730
-Wenn wir jetzt einfach mal gucken - was
-geben wir ein? - irgendwas größer 0,
+Wenn wir jetzt einfach mal gucken – was
+geben wir ein? – irgendwas größer 0,
 
 0:10:20.730,0:10:25.800
-was nicht durch zwei teilbar ist glatt.
+was nicht durch 2 teilbar ist, glatt.
 
 0:10:25.800,0:10:27.780
 Nehmen wir zum Beispiel 3.
@@ -320,12 +322,12 @@ Und wenn wir jetzt zum Beispiel einfach 1
 hier einsetzen, wird uns die 1 ausgegeben.
 
 0:10:43.380,0:10:49.680
-Das ist immer noch nicht durch 2 teilbar,
-können wir einfach mal 0 eingeben,
+Das ist immer noch nicht durch 2 teilbar.
+Können wir einfach mal 0 eingeben,
 
 0:10:49.680,0:10:58.530
 und bekommen wieder unsere Ausgaben von
-vorher mit der 0 und unseren Abbruch.
+vorher mit der 0 und unserem Abbruch.
 
 0:10:58.530,0:11:02.010
 Aber wir haben halt zweimal das y inkrementiert.
@@ -336,14 +338,14 @@ das scheint zu funktionieren.
 
 0:11:06.570,0:11:15.420
 Dann haben wir das im Prinzip
-damit nach implementiert.
+damit implementiert.
 
 0:11:15.420,0:11:20.520
 Es gibt noch verschiedene andere
-Ansätzen wie man das machen kann.
+Ansätze, wie man das machen kann.
 
 0:11:20.520,0:11:29.280
-Wir könnten den loop auch prinzipiell
+Wir könnten den Loop auch prinzipiell
 hier direkt lokal definieren.
 
 0:11:29.280,0:11:36.540
@@ -352,7 +354,7 @@ liest sich so vielleicht ein bisschen schöner.
 
 0:11:36.540,0:11:41.280
 Wir können natürlich auch dieses, wie wir
-das hier unten im loop gemacht haben, das let
+das hier unten im Loop gemacht haben, das let
 
 0:11:41.280,0:11:51.960
 noch entfernen und das direkt benutzen, den
@@ -362,7 +364,7 @@ Wert, weil wir den auch nur einmal benutzen.
 Man kann auch noch sehr viele andere Möglichkeiten
 
 0:11:55.020,0:11:58.350
-finden wie man zum Beispiel dieses
+finden, wie man zum Beispiel dieses
 print nicht doppelt schreiben müsste,
 
 0:11:58.350,0:12:07.800
@@ -370,7 +372,7 @@ indem man hier genauer an diese Struktur dran
 geht und das if-then-else schachteln würde.
 
 0:12:07.800,0:12:12.060
-Ich finde eigentlich diese Version mit den guards
+Ich finde eigentlich diese Version mit den Guards
 
 0:12:12.060,0:12:15.210
 ganz praktisch, vor allem weil
@@ -379,3 +381,4 @@ man sie auch gut lesen kann.
 0:12:15.210,0:12:22.620
 Fast sogar besser als diese
 Version, meiner Meinung nach.
+

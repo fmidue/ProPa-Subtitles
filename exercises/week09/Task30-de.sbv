@@ -1,26 +1,27 @@
+
 0:00:00.000,0:00:05.880
 Hallo, für diese Aufgabe haben wir ein paar
 algebraische Datentypen gegeben, 'Animal' und
 
 0:00:05.880,0:00:13.350
 'Bit', und ihre Konstruktoren 'Cat', 'Dog' und
-'Bird', und 'O' und 'I', aber da wir vom Bits
+'Bird', und 'O' und 'I'; aber da wir vom Bits
 
 0:00:13.350,0:00:19.020
-sprechen, werde ich die einfach nur als null und
-eins benennen, weil wir reden hier von Bits und es
+sprechen, werde ich die einfach nur als Null und
+Eins benennen, weil wir hier von Bits reden und es
 
 0:00:19.020,0:00:26.550
-ist einfacher auszusprechen. Unsere eigentliche
-Aufgabe hier ist es die 'encode' und 'decode'
+einfacher auszusprechen ist. Unsere eigentliche
+Aufgabe hier ist es, die 'encode' und 'decode'
 
 0:00:26.550,0:00:34.620
 Funktionen zu implementieren. Die 'encode'
 Funktion macht aus Listen vom Typ 'Animal' Listen
 
 0:00:34.620,0:00:40.440
-vom Typ 'Bit' und die 'decode' Funktion macht
-das Gegenteil, also für eine Eingabeliste vom
+vom Typ 'Bit', und die 'decode' Funktion macht
+das Gegenteil; also für eine Eingabeliste vom
 
 0:00:40.440,0:00:48.660
 Typ 'Bit' sollen wir eine Liste vom Typ 'Animal'
@@ -28,7 +29,7 @@ zurückkriegen, aber in 'Maybe' verpackt, wegen
 
 0:00:48.660,0:00:54.810
 der Voraussetzungen, die wir hier unten haben,
-nämlich dass für jede Liste vom Typ 'Bit', für die
+nämlich dass es für jede Liste vom Typ 'Bit', für die
 
 0:00:54.810,0:01:00.960
 es keine originale Liste vom Typ 'Animal' gibt,
@@ -39,24 +40,24 @@ Im Umkehrschluss muss dann auf jede Liste vom Typ
 'Bit', die von 'encode' produziert werden kann,
 
 0:01:10.050,0:01:17.070
-die Funktion 'decode' darauf angewandt,
-dann die originale Liste wieder geben,
+die Funktion 'decode' angewandt werden, die dann
+die originale Liste wiedergeben,
 
 0:01:17.070,0:01:20.820
 halt nur in einem 'Just' verpackt. Das heißt,
 wenn wir 'encode' hier einmal durchlaufen lassen,
 
 0:01:20.820,0:01:25.740
-wir bauen uns eine Liste vom Typ 'Animal',
+bauen wir uns eine Liste vom Typ 'Animal';
 'Gencode' gibt uns eine Liste vom Typ 'Bit'
 
 0:01:25.740,0:01:31.050
 und wir lassen diese Liste dann durch das 'decode'
-laufen, dann soll die uns die originale Liste, die
+laufen; dann soll sie uns die originale Liste, die
 
 0:01:31.050,0:01:37.680
-wir in 'Gencode' rein gegeben haben, wiedergeben,
-nur halt in diesem 'Maybe' verpackt, weil wir halt
+wir in 'Gencode' reingegeben haben, wiedergeben,
+nur halt in diesem 'Maybe' verpackt; weil wir halt
 
 0:01:37.680,0:01:38.580
 den Fall haben können, dass es auch 'Nothing' sein
@@ -64,7 +65,7 @@ kann, weswegen es in einem 'Maybe' verpackt ist.
 
 0:01:38.580,0:01:46.380
 Damit das auch so funktionieren kann, müssen wir
-uns natürlich eine Enkodierungsstrategie ausdenken
+uns natürlich eine Enkodierungsstrategie ausdenken,
 
 0:01:46.380,0:01:54.330
 und unser 'Task' sagt uns auch, wir sollen eine
@@ -88,7 +89,7 @@ Wir brauchen hier eine Liste von Bits,
 
 0:02:18.420,0:02:25.830
 da wir drei 'Animals' haben, aber nur zwei Bits.
-Das heißt, wir können keine eins zu eins Kodierung
+Das heißt, wir können keine Eins-zu-eins-Kodierung
 
 0:02:25.830,0:02:30.720
 hier machen, ein Bit für ein Tier, sondern ein
@@ -96,10 +97,10 @@ paar von diesen 'Animals' müssen zwangsweise
 
 0:02:32.250,0:02:39.480
 zu mehreren Bits kodiert werden. Das wollen wir
-jetzt Schritt für Schritt machen, 'encodeAnimal'
+jetzt Schritt für Schritt machen; 'encodeAnimal'
 
 0:02:39.480,0:02:46.470
-für 'Cat' und da sagen wir dann einfach Eins
+für 'Cat', und da sagen wir dann einfach Eins
 und Eins. Ich könnte natürlich mehr machen,
 
 0:02:46.470,0:02:51.120
@@ -112,10 +113,10 @@ sind zwei Bits. 'encodeAnimal' für 'Dog',
 
 0:02:59.160,0:03:10.440
 schreiben eine Eins und machen dann eine
-Null. Und 'encodeAnimal Bird' ist jetzt ein
+Null. Und 'encodeAnimal' für 'Bird' ist jetzt ein
 
 0:03:10.440,0:03:17.100
-bisschen kniffliger, der erste Gedanke ist,
+bisschen kniffliger; der erste Gedanke ist,
 wir sagen Null und Null oder Null und Eins,
 
 0:03:17.100,0:03:23.760
@@ -123,8 +124,8 @@ aber hier können wir auch direkt Platz sparen,
 denn wir haben kein viertes 'Animal', also
 
 0:03:23.760,0:03:31.140
-brauchen wir nicht für alle zwei Bits, also können
-wir das auf ein Bit, das Null-Bit reduzieren. Wir
+brauchen wir nicht zwei Bits, also können
+wir das auf ein Bit, das Null-Bit, reduzieren. Wir
 
 0:03:31.140,0:03:39.480
 können nicht das Ein-Bit benutzen, denn so könnte
@@ -144,11 +145,11 @@ und ist das letzte einfach nur falsch kodiert,
 
 0:04:02.460,0:04:06.540
 oder ist das ein 'Bird' und ein 'Dog', oder ist
-das eine Katze und dann falsch kodiert. Das können
+das eine Katze und dann falsch kodiert? Das können
 
 0:04:06.540,0:04:11.160
 wir dann nicht mehr unterscheiden. Also müssen
-wir hier dann zwangsweise das Null-Bit benutzen
+wir hier dann zwangsweise das Null-Bit benutzen,
 
 0:04:12.440,0:04:18.380
 und das 'encodeAnimal' müssen wir mit einer
@@ -159,7 +160,7 @@ Das können wir logischerweise mit 'map' machen,
 wo wir 'encodeAnimal' einfach auf die Eingabeliste
 
 0:04:24.080,0:04:31.490
-aufrufen, aber damit würden wir einfach nur eine
+aufrufen; aber damit würden wir einfach nur eine
 Liste von Listen mit Bits kriegen. Das wollen
 
 0:04:31.490,0:04:34.910
@@ -167,19 +168,19 @@ wir nicht. Wir wollen nur eine flache Liste von
 Bits. Das heißt, wir müssen das jetzt noch mit
 
 0:04:34.910,0:04:43.790
-'concat' flach machen und weil dieses 'concat'
-'map' Konstrukt in dieser Form so oft vorkommt,
+'concat' flach machen, und weil dieses 'concat'
+'map'-Konstrukt in dieser Form so oft vorkommt,
 
 0:04:43.790,0:04:50.060
-gibt es direkt eine 'concatMap' Funktion,
-die das direkt kombiniert und damit hätten
+gibt es direkt eine 'concatMap'-Funktion,
+die das direkt kombiniert, und damit hätten
 
 0:04:50.060,0:04:57.710
-wir dann unsere 'encode' Funktion fertig. Jetzt
+wir dann unsere 'encode'-Funktion fertig. Jetzt
 müssen wir nur noch die dazu passende 'decode'
 
 0:04:59.990,0:05:02.510
-Funktion schreiben. Die 'decode' Funktion
+Funktion schreiben. Die 'decode'-Funktion
 kriegt als Parameter eine Liste von Bits,
 
 0:05:02.510,0:05:07.040
@@ -187,16 +188,18 @@ das heißt, wir müssen jetzt erst mal auf
 den simpelsten Fall von einer Listeneingabe
 
 0:05:07.040,0:05:13.850
-gucken, die leere Liste, und eine leere Liste
+gucken; die leere Liste, und eine leere Liste
 vom Typ 'Bit' ist auch eine valide Liste vom
 
 0:05:13.850,0:05:19.250
 Typ 'Animal', weil es auch eine Liste geben
-kann in der kein 'Animal' ist. Das ist immer
+kann, in der kein 'Animal' ist. Das ist immer
 
 0:05:19.250,0:05:24.650
 noch eine valide Liste vom Typ 'Animal'. Jetzt
 geben wir nur 'Just' die leere Liste zurück. Dann
+
+
 
 0:05:24.650,0:05:30.050
 haben wir jetzt den einzigen Fall, wo wir eine
@@ -204,19 +207,19 @@ invalide Kodierung haben, nämlich die Liste mit
 
 0:05:30.740,0:05:36.590
 nur einem Einser-Bit drinnen. Weil wir haben kein
-'Animal', was nur zu einem Einser-Bit kodiert. Da
+'Animal', das nur zu einem Einser-Bit kodiert. Da
 
 0:05:36.590,0:05:42.620
 würden wir dann das 'Nothing' verwenden
 und das 'Nothing' zurückgeben. Und jetzt
 
 0:05:42.620,0:05:50.390
-müssen wir anfangen zu gucken, am besten den
+müssen wir anfangen zu gucken. Am besten den
 ersten Fall nehmen wir für 'Bird', die Liste
 
 0:05:50.390,0:05:55.280
 fängt mit einem 'Bird' an, also machen wir direkt
-hier unser pattern-matching auf die Liste, die mit
+hier unser Pattern-Matching auf die Liste, die mit
 
 0:05:55.280,0:06:03.740
 einer Null anfängt und gucken uns dann rekursiv
@@ -224,7 +227,7 @@ den Rest der Liste an. Das können wir jetzt
 
 0:06:03.740,0:06:12.470
 hier mit Guards machen. Wir müssen gucken, ob
-der Rest der Liste ein valide Liste ist, also
+der Rest der Liste eine valide Liste ist, also
 
 0:06:13.550,0:06:24.447
 benutzen wir 'isNothing', um zu gucken, ob unsere
@@ -243,7 +246,7 @@ ganze Liste invalide macht. Unser 'otherwise'
 Fall ist dann, wenn es nicht passiert ist, also
 
 0:06:40.940,0:06:48.260
-der Rest der Liste ok ist, dann geben wir 'Just'
+der Rest der Liste okay ist, dann geben wir 'Just'
 zurück und in dem Fall unser Null-Bit dekodiert
 
 0:06:48.260,0:06:56.390
@@ -252,7 +255,7 @@ Liste an. Den bekommen wir als 'Maybe' zurück,
 
 0:06:56.390,0:07:01.400
 also als 'Just' und dann den Rest der Liste hinten
-dran gehangen. Das heißt, wir müssen das erst mal
+dran gehängt. Das heißt, wir müssen das erst mal
 
 0:07:01.400,0:07:08.780
 aus dem 'Maybe' herausholen mit 'fromJust' und
@@ -295,7 +298,7 @@ Rest der Liste. Dann machen wir direkt Guards
 und checken mit 'isNothing' den Rest der Liste,
 
 0:08:12.560,0:08:19.060
-ob da irgendeine Falsche Kodierung gefunden
+ob da irgendeine falsche Kodierung gefunden
 wurde. In dem Fall geben wir 'Nothing' zurück,
 
 0:08:19.060,0:08:22.540
@@ -304,7 +307,7 @@ Stelle und damit ist die ganze
 
 0:08:22.540,0:08:29.500
 Liste falsch. Unser 'otherwise' Fall wieder, wo
-der Rest der Liste ok ist, geben wir wieder 'Just'
+der Rest der Liste okay ist, geben wir wieder 'Just'
 
 0:08:29.500,0:08:33.040
 zurück. Jetzt können wir nicht einfach nur
@@ -315,12 +318,12 @@ unterscheiden, indem wir das zweite Bit angucken.
 Wenn das zweite Bit ein Einser-Bit ist, dann geben
 
 0:08:37.930,0:08:47.110
-wir 'Cat' zurück. Wenn das zweite Bit nicht ein
+wir 'Cat' zurück. Wenn das zweite Bit kein
 Einser-Bit ist, dann muss es ein Null-Bit sein,
 
 0:08:47.110,0:08:54.670
 also geben wir 'Dog' zurück. Und dann wieder aus
-dem 'Just' raus geholt den Rest der Liste. Und
+dem 'Just' herausgeholt den Rest der Liste. Und
 
 0:08:58.660,0:09:00.628
 da ich hier schon die ganze Zeit 'rest' benutzt
@@ -336,7 +339,7 @@ hier benutzen wir 'fromJust'. Das können
 
 0:09:13.930,0:09:19.150
 wir beides eliminieren, indem wir einfach
-nur statt Guards case expressions benutzen.
+nur statt Guards Case Expressions benutzen.
 
 0:09:19.990,0:09:24.550
 Ich werde das jetzt einfach mal hier machen.
@@ -347,7 +350,7 @@ dem 'Bird' bauen wir um in 'case' und dann
 machen wir unseren Rekursionsschritt 'case
 
 0:09:30.520,0:09:37.930
-decode xs of' und dann gucken wir was 'decode
+decode xs of' und dann gucken wir, was 'decode
 xs' zurückgibt. Wenn die Rückgabe 'Nothing' ist,
 
 0:09:37.930,0:09:48.640
@@ -359,7 +362,7 @@ das nicht der Fall ist, also der Rest der Liste
 ist in Ordnung, dann können wir hier direkt mit
 
 0:09:53.500,0:09:59.860
-diesem case pattern hier gucken: 'Just' und dann
+diesem Case Pattern hier gucken: 'Just' und dann
 können wir direkt den Rest der Liste aus dem
 
 0:10:01.210,0:10:07.480
@@ -376,7 +379,7 @@ Das machen wir jetzt auch natürlich noch für den
 
 0:10:23.010,0:10:36.901
 letzten Fall. Da machen wir auch 'case decode xs
-of'. Wieder wenn irgendwo eine falsche Kodierung
+of'. Wieder, wenn irgendwo eine falsche Kodierung
 
 0:10:36.901,0:10:40.020
 gefunden wurde im Rest der Liste, dann geben
@@ -384,7 +387,7 @@ wir 'Nothing' zurück und dann nehmen wir den
 
 0:10:40.020,0:10:47.700
 Rest der Liste direkt so raus. Dann machen wir
-das unsere Fallunterscheidung, also 'if' hier
+unsere Fallunterscheidung, also 'if' hier
 
 0:10:47.700,0:11:04.510
 auf dem zweiten Bit. Wenn das zweite Bit ein
@@ -392,8 +395,9 @@ Einser-Bit ist, dann 'Cat' und 'else Dog' und
 
 0:11:04.510,0:11:12.960
 den Rest der Liste. Wenn wir das jetzt speichern
-und hier im ghci rein laden und den Test ausführen,
+und hier im GHCi reinladen und den Test ausführen,
 
 0:11:12.960,0:11:17.910
 dann sehen wir: Der Test führt richtig
 aus und wir haben die Aufgabe erledigt.
+
