@@ -1,19 +1,19 @@
 106 # slide
 00:00:00,000 --> 00:00:07,590
-Wir haben eben unsere ersten rekursiven
-Prolog-Programme gesehen beziehungsweise erstmals Rekursion
+Wir haben eben unsere ersten rekursiven Prolog-Programme
+gesehen beziehungsweise erstmals Rekursion
 
 00:00:07,590 --> 00:00:14,880
 darin explizit diskutiert. Ich möchte in dem Video
 hier auf einige Aspekte eingehen. Die Überschrift
 
 00:00:14,880 --> 00:00:20,280
-sagt hier "potenzielle Probleme mit Rekursion".
-Nicht, weil Rekursion an sich problematisch ist, sondern
+sagt hier "potenzielle Probleme mit Rekursion". Nicht,
+weil Rekursion an sich problematisch ist, sondern
 
 00:00:20,280 --> 00:00:24,810
-weil sie manchmal etwas tricky in der Benutzung sein kann.
-Und man auch gut überlegen muss, wann und
+weil sie manchmal etwas tricky in der Benutzung sein
+kann. Und man auch gut überlegen muss, wann und
 
 00:00:24,810 --> 00:00:31,560
 wie man sie einsetzt. Das mache ich hier mit einer
@@ -24,12 +24,12 @@ sie kurz das Video anhalten und das in Ruhe durchlesen.
 Das ist eine Aufgabe, die ich in meinen englischsprachigen
 
 00:00:38,970 --> 00:00:44,520
-Lehrveranstaltungen genutzt habe, wo es auch um Prolog ging.
-Deswegen ist sie auf Englisch formuliert.
+Lehrveranstaltungen genutzt habe, wo es auch um
+Prolog ging. Deswegen ist sie auf Englisch formuliert.
 
 00:00:44,520 --> 00:00:49,770
-Letztlich geht es darum, dass wir so eine Datenbank von
-Fakten haben über Punkte in der Ebene. Also nicht Mutter, Vater
+Letztlich geht es darum, dass wir so eine Datenbank von Fakten
+haben über Punkte in der Ebene. Also nicht Mutter, Vater
 
 00:00:49,770 --> 00:00:59,220
 Kind, Klaus, Anja, Thorsten, sondern A, B, C etc. seien
@@ -40,20 +40,20 @@ da Beziehungen, also Linien dazwischen gibt. Wir sollen
 Prädikate schreiben, um Dreiecke und Vierecke zu beschreiben.
 
 00:01:05,640 --> 00:01:12,540
-Ein wichtiger Hinweis ist noch gegeben.
-Nämlich, dass eine Linie von A nach B natürlich auch
+Ein wichtiger Hinweis ist noch gegeben. Nämlich,
+dass eine Linie von A nach B natürlich auch
 
 00:01:12,540 --> 00:01:17,190
-eine Linie von B nach A ist. Aber in
-den Fakten ist das nicht unbedingt ausgedrückt.
+eine Linie von B nach A ist. Aber in den
+Fakten ist das nicht unbedingt ausgedrückt.
 
 00:01:17,190 --> 00:01:21,810
-Hier wird geschrieben: Linie von A nach B.
-Und das soll also behandelt werden, bei der Beschreibung
+Hier wird geschrieben: Linie von A nach B. Und das
+soll also behandelt werden, bei der Beschreibung
 
 00:01:21,810 --> 00:01:28,920
-der drei Dreiecke und Vierecke, dass man natürlich auch
-von B nach A mit einer Verbindung gehen kann.
+der drei Dreiecke und Vierecke, dass man natürlich
+auch von B nach A mit einer Verbindung gehen kann.
 
 00:01:28,920 --> 00:01:33,570
 Aber auch ohne, dass das in den Fakten explizit ausgedrückt ist.
@@ -64,52 +64,52 @@ Beschreibung hineinbringt. Ein möglicher Lösungsversuch
 wäre wie folgt: Es wird beschrieben, was ein Dreieck ist.
 
 00:01:41,700 --> 00:01:47,760
-Für drei Punkte X, Y, Z haben wir ein Dreieck, wenn
-wir von X nach Y eine Verbindung haben, von Y nach Z und
+Für drei Punkte X, Y, Z haben wir ein Dreieck, wenn wir
+von X nach Y eine Verbindung haben, von Y nach Z und
 
 00:01:47,760 --> 00:01:52,650
-von Z nach X und auch keiner dieser zwei Punkte kann gleich sein,
-weil hier schon vorausgesetzt wurde, dass
+von Z nach X und auch keiner dieser zwei Punkte kann
+gleich sein, weil hier schon vorausgesetzt wurde, dass
 
 00:01:52,650 --> 00:02:00,780
-das Linienprädikat nicht irgendwie zweimal den gleichen Punkt nennt.
-Und für Vierecke braucht man natürlich vier Parameter.
+das Linienprädikat nicht irgendwie zweimal den gleichen Punkt
+nennt. Und für Vierecke braucht man natürlich vier Parameter.
 
 00:02:00,780 --> 00:02:07,440
-Und dann braucht man eine Linie von X nach Y, Y nach Z,
-Z nach U und U nach X. Hier muss zusätzlich gefordert werden,
+Und dann braucht man eine Linie von X nach Y, Y nach Z, Z
+nach U und U nach X. Hier muss zusätzlich gefordert werden,
 
 00:02:07,440 --> 00:02:12,060
 dass X und Z verschieden sind und Y und U verschieden sind,
 weil man sonst irgendwelche entarteten Vierecke bekommen könnte,
 
 00:02:12,060 --> 00:02:18,570
-wo mehrere Punkte übereinstimmen und das allein
-durch die Tatsache, dass es keine Linie von A nach A gibt,
+wo mehrere Punkte übereinstimmen und das allein durch
+die Tatsache, dass es keine Linie von A nach A gibt,
 
 00:02:18,570 --> 00:02:23,820
-nicht ausgeschlossen ist. Das wäre ein sinnvolles Programm,
-was man sich hier vorstellen könnte.
+nicht ausgeschlossen ist. Das wäre ein sinnvolles
+Programm, was man sich hier vorstellen könnte.
 
 00:02:23,820 --> 00:02:31,590
-Es folgt auch etwa meiner Faustregel, dass
-wir negative Informationen/negative Literale immer
+Es folgt auch etwa meiner Faustregel, dass wir
+negative Informationen/negative Literale immer
 
 00:02:31,590 --> 00:02:39,690
 so weit wie möglich an das Ende unserer Regeln schreiben,
 wenn denn so etwas vorkommt. Das wurde hier eingehalten.
 
 00:02:39,690 --> 00:02:47,400
-Da können wir sagen: alles gut. Nun, das ist hier nur ein Versuch.
-Das ist noch nicht die Lösung. Warum nicht?
+Da können wir sagen: alles gut. Nun, das ist hier nur
+ein Versuch. Das ist noch nicht die Lösung. Warum nicht?
 
 00:02:47,400 --> 00:02:54,960
-Weil dieser Aspekt ignoriert wurde, dass es hier zum Beispiel
-nicht heißt, dass es eine Linie von B nach A gibt.
+Weil dieser Aspekt ignoriert wurde, dass es hier zum
+Beispiel nicht heißt, dass es eine Linie von B nach A gibt.
 
 00:02:54,960 --> 00:02:59,370
-Und deswegen bestimmte Dreiecke und Vierecke,
-die eigentlich in der Ebene da wären, wenn man die
+Und deswegen bestimmte Dreiecke und Vierecke, die
+eigentlich in der Ebene da wären, wenn man die
 
 00:02:59,370 --> 00:03:04,050
 Punkte einzeichnet und die Verbindungen zieht,
@@ -120,41 +120,41 @@ Anfrage nicht geliefert werden würden. Also wir müssten gegebenenfalls
 hier noch die Linie B nach A explizit der Faktenbasis hinzufügen.
 
 00:03:10,410 --> 00:03:14,700
-Das wollen wir aber nicht.
-Wir nehmen an, dass diese Faktenbasis gegeben ist und
+Das wollen wir aber nicht. Wir nehmen an,
+dass diese Faktenbasis gegeben ist und
 
 00:03:14,700 --> 00:03:19,710
-wir Prädikate und Anfragen schreiben sollen und wir
-das hier nicht verändern dürfen. Dann müssen wir es also im Programm tun.
+wir Prädikate und Anfragen schreiben sollen und wir das hier
+nicht verändern dürfen. Dann müssen wir es also im Programm tun.
 
 107 # slide
 00:03:19,710 --> 00:03:26,460
-Und nicht einfach nur in diesen Fakten, sondern in irgendwelchen Regeln.
-Jetzt wäre es verlockend, dann noch einfach zu sagen,
+Und nicht einfach nur in diesen Fakten, sondern in irgendwelchen
+Regeln. Jetzt wäre es verlockend, dann noch einfach zu sagen,
 
 00:03:26,460 --> 00:03:33,750
 dass es, wann immer es eine Linie von X nach Y gibt,
 beziehungsweise es gibt eine Linie von X nach Y,
 
 00:03:33,750 --> 00:03:40,260
-wenn es eine von Y nach X gibt.
-Das würde dafür sorgen, dass zu diesem Fall line(a,b)
+wenn es eine von Y nach X gibt. Das würde
+dafür sorgen, dass zu diesem Fall line(a,b)
 
 00:03:40,260 --> 00:03:47,520
-sozusagen implizit auch line(b,a) hinzugefügt würde.
-Aus logischer Sicht wäre es eine sehr geschickte Formulierung,
+sozusagen implizit auch line(b,a) hinzugefügt würde. Aus
+logischer Sicht wäre es eine sehr geschickte Formulierung,
 
 00:03:47,520 --> 00:03:56,280
-diese Symmetrie dieser Linienrelation auszudrücken
-und dann einfach ganz normal mit diesen Regeln zu arbeiten,
+diese Symmetrie dieser Linienrelation auszudrücken und
+dann einfach ganz normal mit diesen Regeln zu arbeiten,
 
 00:03:56,280 --> 00:04:03,930
-weil sich dann diese line-Literale ja auf das
-Prädikat beziehen würden, wo auch
+weil sich dann diese line-Literale ja
+auf das Prädikat beziehen würden, wo auch
 
 00:04:03,930 --> 00:04:14,640
-diese Symmetrie gerechtfertigt oder benutzt wird.
-Allerdings, wenn wir das ausführen, stellt
+diese Symmetrie gerechtfertigt oder benutzt
+wird. Allerdings, wenn wir das ausführen, stellt
 
 00:04:14,640 --> 00:04:20,280
 sich das als gefährlich dar. Im gewissen Sinne ist das
@@ -165,8 +165,8 @@ zu rekursiv. Das mag zunächst erst mal verwirren oder
 denn wenn wir noch mal auf unsere Faustregeln
 
 00:04:25,500 --> 00:04:32,040
-zur Rekursion zurückgehen (das waren diese hier), dann
-sind die alle in dem Beispiel erfüllt.
+zur Rekursion zurückgehen (das waren diese hier),
+dann sind die alle in dem Beispiel erfüllt.
 
 00:04:32,040 --> 00:04:37,410
 Also es muss mindestens ein Basisfall geben.
@@ -177,24 +177,24 @@ dann hat das etliche Basisfälle. Nämlich diese line(a,b),
 line(b,c), diese ganzen Fakten. Das sind ja Basisfälle.
 
 00:04:43,770 --> 00:04:48,300
-Die Basisfälle sollten zuerst aufgeführt werden.
-Im Programm sollten also erst die Basisfälle kommen und dann
+Die Basisfälle sollten zuerst aufgeführt werden. Im
+Programm sollten also erst die Basisfälle kommen und dann
 
 00:04:48,300 --> 00:04:53,700
 irgendwelche rekursiven Regeln. Das wäre in dem Fall ja auch gegeben,
 wenn wir dieses line(X,Y), line(Y,X), diese Regel ganz am Ende
 
 00:04:53,700 --> 00:04:59,940
-eines Programms schreiben würden oder zunächst unterhalb dieser
-ganzen line-Fakten. Und auch diese dritte Regel,
+eines Programms schreiben würden oder zunächst unterhalb
+dieser ganzen line-Fakten. Und auch diese dritte Regel,
 
 00:04:59,940 --> 00:05:05,280
-nämlich in den Regeln für die Nicht-Basisfälle,
-was jetzt nur unsere eine Regel line(X,Y), line(Y,X) wäre,
+nämlich in den Regeln für die Nicht-Basisfälle, was
+jetzt nur unsere eine Regel line(X,Y), line(Y,X) wäre,
 
 00:05:05,280 --> 00:05:12,600
-sollen die rekursiven Aufrufe möglichst weit hinten kommen.
-Das war in dem Beispiel auch erfüllt, denn
+sollen die rekursiven Aufrufe möglichst weit hinten
+kommen. Das war in dem Beispiel auch erfüllt, denn
 
 00:05:12,600 --> 00:05:19,680
 diese Regel sah ja so aus. Man könnte also vermuten, dass
@@ -205,108 +205,108 @@ wegen Tiefensuche, wir könnten auch anfangen, den Ableitungsbaum
 aufzuzeichnen, dann würden wir feststellen, dass das in dem
 
 00:05:25,740 --> 00:05:30,660
-Sinne zu rekursiv ist, als dass wir niemals
-eine Lösung finden würden. Der Grund ist letztlich,
+Sinne zu rekursiv ist, als dass wir niemals eine
+Lösung finden würden. Der Grund ist letztlich,
 
 00:05:30,660 --> 00:05:37,590
 dass man aus line(X,Y) und line(Y,X), dass diese Beziehung
 ständig hin und her springen könnte. Also, wenn man
 
 00:05:37,590 --> 00:05:42,750
-weiß line(a,b), dann weiß man auch line(b,a), dann weiß man auch line(a,b), ...
-Das wird also hier so ein Zirkelschluss,
+weiß line(a,b), dann weiß man auch line(b,a), dann weiß man
+auch line(a,b), ... Das wird also hier so ein Zirkelschluss,
 
 00:05:42,750 --> 00:05:48,030
 wo sich die Berechnung im Kreis dreht, statt
 dass wir tatsächlich mal irgendwie sinnvoll
 
 00:05:48,030 --> 00:05:56,610
-mit diesen Prädikaten arbeiten. Zumindest ist die Gefahr da,
-dass bei bestimmten Anfragen bei solch einer
+mit diesen Prädikaten arbeiten. Zumindest ist die
+Gefahr da, dass bei bestimmten Anfragen bei solch einer
 
 00:05:56,610 --> 00:06:04,290
-Regel Probleme entstehen, weil das einfach hier
-nicht genug Fortschritt gemacht wird, während der Berechnung,
+Regel Probleme entstehen, weil das einfach hier nicht
+genug Fortschritt gemacht wird, während der Berechnung,
 
 00:06:04,290 --> 00:06:12,150
-weil wir uns immer sozusagen im Kreis drehen mit dieser Regel.
-Wenn wir die andere Regel einmal angewendet haben, könnten wir sie direkt
+weil wir uns immer sozusagen im Kreis drehen mit dieser Regel. Wenn
+wir die andere Regel einmal angewendet haben, könnten wir sie direkt
 
 00:06:12,150 --> 00:06:18,240
-wieder anwenden, weil da nur Variablen stehen.
-Also, das könnten wir hier nicht machen. Das heißt, das hier
+wieder anwenden, weil da nur Variablen stehen. Also,
+das könnten wir hier nicht machen. Das heißt, das hier
 
 00:06:18,240 --> 00:06:23,190
-wäre tatsächlich ein Beispiel, was gegen Rekursion spricht.
-Die Warnung hier ist, dass man nicht
+wäre tatsächlich ein Beispiel, was gegen Rekursion
+spricht. Die Warnung hier ist, dass man nicht
 
 00:06:23,850 --> 00:06:28,840
 immer direkt zur Rekursion greifen soll/muss.
 Hier gibt es eine bessere Lösung, diese Symmetrie
 
 00:06:28,840 --> 00:06:33,730
-zu erreichen. Und letztlich ist die Idee schon
-so ähnlich wie hier, dass man nämlich diese Symmetrie
+zu erreichen. Und letztlich ist die Idee schon so
+ähnlich wie hier, dass man nämlich diese Symmetrie
 
 00:06:33,730 --> 00:06:39,910
 ausdrücken muss, aber man tut das nicht, indem
 man das line-Prädikat selber symmetrisch ergänzt,
 
 00:06:39,910 --> 00:06:44,980
-sondern man führt ein neues Prädikat ein.
-Man nimmt weiterhin an: Es gibt dieses line-Prädikat,
+sondern man führt ein neues Prädikat ein. Man
+nimmt weiterhin an: Es gibt dieses line-Prädikat,
 
 00:06:44,980 --> 00:06:50,740
 für das die Fakten/Basisfakten gegeben sind, welche
 konkreten Punkte verbunden sind und basierend auf diesem
 
 00:06:50,740 --> 00:06:56,740
-line-Prädikat definiert man ein
-neues Prädikat für symmetrische Verbindungen.
+line-Prädikat definiert man ein neues
+Prädikat für symmetrische Verbindungen.
 
 00:06:56,740 --> 00:07:01,930
-Also, wo beide Richtungen berücksichtigt sind.
-Und das kann nicht rekursiv passieren. Da muss man nicht
+Also, wo beide Richtungen berücksichtigt sind. Und
+das kann nicht rekursiv passieren. Da muss man nicht
 
 00:07:01,930 --> 00:07:10,540
-line - line verbinden oder auseinander ableiten, sondern man
-sagt: Wenn es eine Verbindung von X nach Y gibt,
+line - line verbinden oder auseinander ableiten, sondern
+man sagt: Wenn es eine Verbindung von X nach Y gibt,
 
 00:07:10,540 --> 00:07:15,010
-dann gibt es auch eine symmetrische Verbindung von X nach Y.
-Das heißt insbesondere, dass es dann auch
+dann gibt es auch eine symmetrische Verbindung von
+X nach Y. Das heißt insbesondere, dass es dann auch
 
 00:07:15,010 --> 00:07:19,570
-eine symmetrische Verbindung in die Gegenrichtung gibt.
-Also, sline-Prädikat für symmetrisches line
+eine symmetrische Verbindung in die Gegenrichtung
+gibt. Also, sline-Prädikat für symmetrisches line
 
 00:07:19,570 --> 00:07:29,170
 würde sozusagen die Ergänzung garantieren,
 dass zu jedem Prädikat/ jedem Fakt,
 
 00:07:29,170 --> 00:07:35,260
-der für das line-Prädikat gegeben ist, auch
-der symmetrische Fakt gilt. Dann würde man einfach
+der für das line-Prädikat gegeben ist, auch der
+symmetrische Fakt gilt. Dann würde man einfach
 
 00:07:35,260 --> 00:07:43,510
-die eigentlichen interessanten Anfragen für Dreiecke,
-Vierecke auf diesen symmetrischen Zeilenprädikat passieren lassen.
+die eigentlichen interessanten Anfragen für Dreiecke, Vierecke
+auf diesen symmetrischen Zeilenprädikat passieren lassen.
 
 00:07:43,510 --> 00:07:51,820
-Das wäre in dem Fall die Lösung der Übungsaufgabe gewesen.
-Das heißt, hier wäre die Lösung gewesen,
+Das wäre in dem Fall die Lösung der Übungsaufgabe
+gewesen. Das heißt, hier wäre die Lösung gewesen,
 
 00:07:51,820 --> 00:07:56,350
 auf Rekursion zu verzichten, obwohl sie
 zunächst erst einmal verlockend erscheinen mag,
 
 00:07:56,350 --> 00:08:07,320
-den Symmetrieabschluss auf diese einfache Weise auszudrücken.
-Das ist also im gewissen Sinne
+den Symmetrieabschluss auf diese einfache Weise
+auszudrücken. Das ist also im gewissen Sinne
 
 00:08:07,320 --> 00:08:13,500
-ein Negativbeispiel für Rekursion. Wir haben ja auch
-schon positive Beispiele gesehen. Deswegen als
+ein Negativbeispiel für Rekursion. Wir haben ja
+auch schon positive Beispiele gesehen. Deswegen als
 
 00:08:13,500 --> 00:08:21,180
 weitere und auch aus Vergangenheit/ aus einer anderen
@@ -318,92 +318,92 @@ mal dieses Beispiel. Wir nehmen an, wir haben
 irgendwelche Städte als unsere Entitäten, über
 
 00:08:28,530 --> 00:08:34,110
-die wir sprechen: Frankfurt, San Francisco, was auch immer.
-Und wir haben hier so eine Datenbank von Fakten.
+die wir sprechen: Frankfurt, San Francisco, was auch
+immer. Und wir haben hier so eine Datenbank von Fakten.
 
 00:08:34,110 --> 00:08:37,290
-Und zwar sind das Direktverbindungen, sagen wir Flugverbindungen.
-Also, es gibt eine direkte Verbindung von Frankfurt nach San Francisco.
+Und zwar sind das Direktverbindungen, sagen wir Flugverbindungen. Also,
+es gibt eine direkte Verbindung von Frankfurt nach San Francisco.
 
 00:08:37,290 --> 00:08:44,370
-Von Frankfurt nach Chicago etc. Hier stehen jetzt nur
-vier Beispiele, aber da könnte natürlich sozusagen ein ganzer Flugplan
+Von Frankfurt nach Chicago etc. Hier stehen jetzt nur vier
+Beispiele, aber da könnte natürlich sozusagen ein ganzer Flugplan
 
 00:08:44,370 --> 00:08:49,410
-abgedeckt sein. Wir wollen gern wissen, welche
-Verbindungen es gibt, wenn wir auch Zwischenstopps zulassen.
+abgedeckt sein. Wir wollen gern wissen, welche Verbindungen
+es gibt, wenn wir auch Zwischenstopps zulassen.
 
 00:08:49,410 --> 00:08:55,620
-Da können wir sagen, das ist ja so etwas ähnliches letztlich,
-wie das mit den Elternteilen und den Vorfahren.
+Da können wir sagen, das ist ja so etwas ähnliches
+letztlich, wie das mit den Elternteilen und den Vorfahren.
 
 00:08:55,620 --> 00:09:01,350
-Wir wollen wieder gerne im Grunde genommen
-eine transitive Hülle berechnen.
+Wir wollen wieder gerne im Grunde
+genommen eine transitive Hülle berechnen.
 
 00:09:01,350 --> 00:09:06,330
 Wir wollen sagen, wenn es eine Direktverbindung von
 X nach Y gibt, dann gibt es auch eine beliebig lange
 
 00:09:06,330 --> 00:09:14,010
-Verbindung von X nach Y. Es gibt auch eine Verbindung von X nach Y,
-wenn es nicht nur direkt geht, sondern wir von X
+Verbindung von X nach Y. Es gibt auch eine Verbindung von
+X nach Y, wenn es nicht nur direkt geht, sondern wir von X
 
 00:09:14,010 --> 00:09:20,100
-etwa direkt nach Z kommen und von Z dann in
-beliebig vielen Schritten nach Y. Also das hier ist sehr ähnlich
+etwa direkt nach Z kommen und von Z dann in beliebig
+vielen Schritten nach Y. Also das hier ist sehr ähnlich
 
 00:09:20,100 --> 00:09:27,240
-zu der Situation mit den Elternteilen. Das würde dem Direct
-hier entsprechen und letztlich dem Vorfahr, also
+zu der Situation mit den Elternteilen. Das würde dem
+Direct hier entsprechen und letztlich dem Vorfahr, also
 
 00:09:27,240 --> 00:09:33,270
 das über mehrere Schritte per Elternteil-Beziehung
 verbunden sein, beziehungsweise hier über mehrere Schritte
 
 00:09:33,270 --> 00:09:42,150
-per Direktverbindung verbunden zu sein, hieße, man
-hat eine allgemeine Connection von X nach Y.
+per Direktverbindung verbunden zu sein, hieße,
+man hat eine allgemeine Connection von X nach Y.
 
 00:09:42,150 --> 00:09:48,480
 Das können wir ausführen. Ein paar Beispiele anfragen.
 Einfach mal probieren. Kommen wir von Frankfurt nach Maui?
 
 00:09:48,480 --> 00:09:59,010
-Die Antwort ist ja, weil das eben aus den Fakten folgt.
-San Francisco → Honolulu → Maui geht. Also kommt hier true heraus.
+Die Antwort ist ja, weil das eben aus den Fakten folgt. San
+Francisco → Honolulu → Maui geht. Also kommt hier true heraus.
 
 00:09:59,010 --> 00:10:04,320
-Oder wir könnten fragen: "Wohin kommen wir denn von San Francisco?"
-Und dann müsste Prolog alle Lösungen finden.
+Oder wir könnten fragen: "Wohin kommen wir denn von San
+Francisco?" Und dann müsste Prolog alle Lösungen finden.
 
 00:10:04,320 --> 00:10:09,330
 Nämlich nicht nur, dass wir von San Francisco nach Honolulu
 kommen, weil es da eine Direktverbindung gibt, sondern
 
 00:10:09,330 --> 00:10:14,850
-auch diesen indirekten Weg, diesen mehrschrittigen Weg.
-Das müsste auch als Antwort kommen: dass X auch Maui sein kann,
+auch diesen indirekten Weg, diesen mehrschrittigen Weg. Das
+müsste auch als Antwort kommen: dass X auch Maui sein kann,
 
 00:10:14,850 --> 00:10:19,940
-weil wir von San Francisco letztlich per
-dieser rekursiven Regel und zweifacher Anwendung
+weil wir von San Francisco letztlich per dieser
+rekursiven Regel und zweifacher Anwendung
 
 00:10:19,940 --> 00:10:28,550
-von Direct auch von San Francisco nach Maui
-kommen können. Wir können zum Beispiel auch fragen:
+von Direct auch von San Francisco nach Maui kommen
+können. Wir können zum Beispiel auch fragen:
 
 00:10:28,550 --> 00:10:35,120
-"Kommen wir denn von Maui irgendwohin?" Und die Antwort wäre
-false, weil (egal mit welcher der beiden Regeln)
+"Kommen wir denn von Maui irgendwohin?" Und die Antwort
+wäre false, weil (egal mit welcher der beiden Regeln)
 
 00:10:35,120 --> 00:10:40,610
-wir nicht irgendwie erreichen oder zeigen
-können, dass man von Maui irgendwohin kommen könnte.
+wir nicht irgendwie erreichen oder zeigen können,
+dass man von Maui irgendwohin kommen könnte.
 
 00:10:40,610 --> 00:10:45,470
-Einfach, weil es keine Direktverbindung von Maui irgendwohin gibt.
-In diesem konkreten Beispiel. Das wären jetzt wieder
+Einfach, weil es keine Direktverbindung von Maui irgendwohin
+gibt. In diesem konkreten Beispiel. Das wären jetzt wieder
 
 00:10:45,470 --> 00:10:56,180
 unsymmetrische Verbindungen, zufälligerweise so
@@ -427,32 +427,32 @@ dass das wirklich wichtig ist, schauen wir uns einfach
 nochmal das Beispiel an, wenn wir diese Reihenfolge
 
 00:11:21,560 --> 00:11:25,220
-ändern würden. Ich habe jetzt hier mal gleichzeitig sowohl
-die Reihenfolge dieser beiden Regeln geändert,
+ändern würden. Ich habe jetzt hier mal gleichzeitig
+sowohl die Reihenfolge dieser beiden Regeln geändert,
 
 00:11:25,220 --> 00:11:31,880
-also den Basisfall als Zweites gepackt, als auch im
-rekursiven Fall die Reihenfolge von den beiden
+also den Basisfall als Zweites gepackt, als auch
+im rekursiven Fall die Reihenfolge von den beiden
 
 00:11:31,880 --> 00:11:39,830
 Aufrufen geändert. Also ich habe hier mit der Reihenfolge
 von und in Regeln herumgespielt. Und das führt sofort
 
 00:11:39,830 --> 00:11:45,920
-(in dem Beispiel zumindest) zu einem dieser besagten Fehler.
-In diesem Fall auch so ein Stack Overflow-Fehler.
+(in dem Beispiel zumindest) zu einem dieser besagten
+Fehler. In diesem Fall auch so ein Stack Overflow-Fehler.
 
 00:11:45,920 --> 00:11:52,460
-Also Prolog würde hier aufgeben und keine Lösung finden.
-Das nochmal zur Erinnerung, warum diese
+Also Prolog würde hier aufgeben und keine Lösung
+finden. Das nochmal zur Erinnerung, warum diese
 
 00:11:52,460 --> 00:11:58,370
-Regeln (die Faustregeln) wirklich sinnvoll sind
-und Sie diese bedenken sollten, wenn Sie
+Regeln (die Faustregeln) wirklich sinnvoll
+sind und Sie diese bedenken sollten, wenn Sie
 
 00:11:58,370 --> 00:12:06,530
-Prolog-Programme schreiben, inklusive rekursive Programme.
-Das ist insofern nicht anders als
+Prolog-Programme schreiben, inklusive rekursive
+Programme. Das ist insofern nicht anders als
 
 00:12:06,530 --> 00:12:14,480
 das Elternteil- und Vorfahrbeispiel, nur dass wir da
@@ -471,8 +471,8 @@ Beispiel (anders als das Vorfahrbeispiel) etwas
 komplizierter machen, wenn wir dafür sorgen,
 
 00:12:37,390 --> 00:12:45,280
-dass die Basisfakten, also die zugrunde liegenden Fakten,
-die Datenbasis sozusagen, selbst Zyklen enthält.
+dass die Basisfakten, also die zugrunde liegenden
+Fakten, die Datenbasis sozusagen, selbst Zyklen enthält.
 
 00:12:45,280 --> 00:12:50,530
 Also, wenn in den Daten Zyklen stecken. Was meine ich damit?
@@ -480,28 +480,28 @@ Stellen wir uns vor, unter diesen Direktverbindungen gäbe es
 
 110 # slide
 00:12:50,530 --> 00:12:56,020
-auch die Möglichkeit, im Kreis zu fliegen. Also, wir
-nehmen das gleiche Programm. Also das Programm, was hier stand,
+auch die Möglichkeit, im Kreis zu fliegen. Also, wir nehmen
+das gleiche Programm. Also das Programm, was hier stand,
 
 00:12:56,020 --> 00:13:04,750
-wo keine Probleme auftraten, und ich füge
-ein paar andere Fakten hinzu. Hier habe ich fünf Direct-Fakten.
+wo keine Probleme auftraten, und ich füge ein paar
+andere Fakten hinzu. Hier habe ich fünf Direct-Fakten.
 
 00:13:04,750 --> 00:13:10,990
-Das müssen auch nicht die gleichen sein wie vorher.
-Auf jeden Fall sind es mehr. Und ich frage wieder, welche Verbindung
+Das müssen auch nicht die gleichen sein wie vorher. Auf jeden
+Fall sind es mehr. Und ich frage wieder, welche Verbindung
 
 00:13:10,990 --> 00:13:15,580
-es denn gibt? Oder ich definiere darauf basierend
-die Verbindungen. Und jetzt kann ich hier mal eine Anfrage
+es denn gibt? Oder ich definiere darauf basierend die
+Verbindungen. Und jetzt kann ich hier mal eine Anfrage
 
 00:13:15,580 --> 00:13:19,540
-starten, die problematisch sein wird. Und zwar,
-wenn ich mich jetzt frage, wohin ich von
+starten, die problematisch sein wird. Und
+zwar, wenn ich mich jetzt frage, wohin ich von
 
 00:13:19,540 --> 00:13:24,490
-San Francisco kommen könnte, dann bekomme ich gesagt: Honolulu,
-Maui, San Francisco, Honolulu, Maui, San Francisco,
+San Francisco kommen könnte, dann bekomme ich gesagt:
+Honolulu, Maui, San Francisco, Honolulu, Maui, San Francisco,
 
 00:13:24,490 --> 00:13:32,470
 Honolulu, Maui usw. Also hier würde eine Endlossuche passieren.
@@ -512,12 +512,12 @@ aber auch nie sagen: "Jetzt ist mal gut."
 Woran liegt das? Obwohl ich mich doch an die
 
 00:13:39,880 --> 00:13:47,560
-Regeln für die Verwendung von Rekursion hier angemessen
-gehalten habe, liegt das Problem hier,
+Regeln für die Verwendung von Rekursion hier
+angemessen gehalten habe, liegt das Problem hier,
 
 00:13:47,560 --> 00:13:54,040
-dass jetzt in den Daten ein Zirkularitätsproblem vorliegt.
-Es ist eben so, dass wenn ich hier beliebige
+dass jetzt in den Daten ein Zirkularitätsproblem
+vorliegt. Es ist eben so, dass wenn ich hier beliebige
 
 00:13:54,040 --> 00:14:00,340
 Direkt Fakten zulassen, es sein kann, dass da auch
@@ -540,56 +540,56 @@ Also da war das so, dass wir so arbeiten konnten,
 weil in den Daten nichts an sozusagen gefährlichen
 
 00:14:26,290 --> 00:14:34,690
-zirkulären Beziehungen vorlag.
-Hier ist es so. Das heißt wiederum nicht, dass Rekursion
+zirkulären Beziehungen vorlag. Hier ist es
+so. Das heißt wiederum nicht, dass Rekursion
 
 00:14:34,690 --> 00:14:40,300
 per se schlecht ist. Das heißt nur, dass wir hier
 etwas vorsichtiger sein müssen. Also wir könnten
 
 00:14:40,300 --> 00:14:48,550
-mal überlegen, beziehungsweise ich habe auf der nächsten
-Folie mal einen Ansatz beschrieben und werde Ihnen den zeigen,
+mal überlegen, beziehungsweise ich habe auf der nächsten Folie
+mal einen Ansatz beschrieben und werde Ihnen den zeigen,
 
 00:14:48,550 --> 00:14:57,820
-wie wir denn diese Endlossuche vermeiden können.
-Da ist die grundlegende Idee einfach,
+wie wir denn diese Endlossuche vermeiden
+können. Da ist die grundlegende Idee einfach,
 
 00:14:57,820 --> 00:15:03,610
 dass wir dafür sorgen müssen, dass wir das merken, wenn
 wir sozusagen im Kreis fliegen. Also zum Beispiel müssten
 
 00:15:03,610 --> 00:15:08,440
-wir hier merken, wenn wir sagen: "Wir kommen von
-San Francisco nach San Francisco.", dass das nicht besonders
+wir hier merken, wenn wir sagen: "Wir kommen von San
+Francisco nach San Francisco.", dass das nicht besonders
 
 00:15:08,440 --> 00:15:15,040
-interessant ist, beziehungsweise dass wir dann zumindest sagen,
-okay, dann ist aber auch gut.
+interessant ist, beziehungsweise dass wir dann
+zumindest sagen, okay, dann ist aber auch gut.
 
 00:15:15,040 --> 00:15:19,810
 Und wir dann nicht versuchen, noch mal weiterzukommen, denn
 dann würden wir nur noch wieder nach Honolulu und Maui kommen,
 
 00:15:19,810 --> 00:15:24,670
-zu denen wir ja auch direkt von San Francisco gekommen sind.
-Das heißt, irgendwie müssten wir dafür sorgen,
+zu denen wir ja auch direkt von San Francisco gekommen
+sind. Das heißt, irgendwie müssten wir dafür sorgen,
 
 00:15:24,670 --> 00:15:30,310
 dass die Suche aufhört, wenn wir an einem
 Zwischenstopp ankommen, der gar kein interessanter
 
 00:15:30,310 --> 00:15:36,700
-Zwischenstopp ist, weil wir dort schon gewesen sind.
-Vielleicht sogar dort gestartet sind.
+Zwischenstopp ist, weil wir dort schon gewesen
+sind. Vielleicht sogar dort gestartet sind.
 
 00:15:36,700 --> 00:15:44,170
-Das ist hier in diesem einfachen Programm nicht enthalten
-als Wissen. Das wird unsere Brücke sein zur
+Das ist hier in diesem einfachen Programm nicht
+enthalten als Wissen. Das wird unsere Brücke sein zur
 
 00:15:44,170 --> 00:15:50,320
-Verwendung von weiteren Datenstrukturen.
-Nämlich Listen in Prolog. Und zwar könnten wir uns
+Verwendung von weiteren Datenstrukturen. Nämlich
+Listen in Prolog. Und zwar könnten wir uns
 
 00:15:50,320 --> 00:15:54,910
 merken, wo wir schon gewesen sind. Und das reicht eben
@@ -609,60 +609,60 @@ um sicherzugehen, dass wir keine davon irgendwie
 
 111 # slide
 00:16:09,430 --> 00:16:16,600
-zweimal ansteuern. Das könnte wie folgt aussehen:
-Ich erkläre gleich die einzelnen Teile.
+zweimal ansteuern. Das könnte wie folgt
+aussehen: Ich erkläre gleich die einzelnen Teile.
 
 00:16:16,600 --> 00:16:21,910
-Die Grundidee: Wir merken uns die schon
-bereisten Zwischenstationen und da das mehrere sein
+Die Grundidee: Wir merken uns die schon bereisten
+Zwischenstationen und da das mehrere sein
 
 00:16:21,910 --> 00:16:29,470
-können, merken wir uns die in einer Liste.
-Listen-Notation (hatte ich schon ganz auf einer Folie gezeigt)
+können, merken wir uns die in einer Liste. Listen-Notation
+(hatte ich schon ganz auf einer Folie gezeigt)
 
 00:16:29,470 --> 00:16:36,490
 ist in Prolog mit solchen eckigen Klammern. Also [X] heißt:
 Eine Liste mit einem Element X. Und dann gibt es hier
 
 00:16:36,490 --> 00:16:39,670
-bestimmte Prädikate, die auf Listen arbeiten, die
-ich gleich besprechen werde. Also was ist hier die Idee?
+bestimmte Prädikate, die auf Listen arbeiten, die ich
+gleich besprechen werde. Also was ist hier die Idee?
 
 00:16:42,600 --> 00:16:48,630
-Wir nehmen wieder an, wir haben hier unsere Fakten. Das könnten die
-fünf von hier sein. Das könnten aber auch andere oder
+Wir nehmen wieder an, wir haben hier unsere Fakten. Das könnten
+die fünf von hier sein. Das könnten aber auch andere oder
 
 00:16:48,630 --> 00:16:55,230
-noch viel mehr sein. Der Punkt ist ja:
-Hier sollen beliebige Direktverbindungen angebbar sein
+noch viel mehr sein. Der Punkt ist ja: Hier
+sollen beliebige Direktverbindungen angebbar sein
 
 00:16:55,230 --> 00:17:02,280
 und trotzdem sollte unsere Verbindungssuche
 funktionieren, ohne in solche Endlossuchen zu verfallen.
 
 00:17:02,280 --> 00:17:09,390
-Und so ein bisschen wie bei dem line- und sline-Beispiel,
-liegt die Lösung hier darin,
+Und so ein bisschen wie bei dem line- und
+sline-Beispiel, liegt die Lösung hier darin,
 
 00:17:09,390 --> 00:17:14,610
-dass wir ein weiteres Prädikat einführen, ein Hilfsprädikat.
-Dort hatten wir das getan, indem wir dieses
+dass wir ein weiteres Prädikat einführen, ein
+Hilfsprädikat. Dort hatten wir das getan, indem wir dieses
 
 00:17:14,610 --> 00:17:20,820
-symmetrische Linienprädikat auf Basis
-des normalen Linienprädikates definiert hatten.
+symmetrische Linienprädikat auf Basis des
+normalen Linienprädikates definiert hatten.
 
 00:17:20,820 --> 00:17:26,010
 Hier ist die Lösung, dass wir unser Connection-Prädikat
 sozusagen verallgemeinern, eine Variante davon angeben,
 
 00:17:26,010 --> 00:17:34,860
-die solch eine Zwischenstation-Liste mitführt.
-Das nenne ich hier jetzt mal connection1, aus mangelnder Fantasie,
+die solch eine Zwischenstation-Liste mitführt. Das nenne
+ich hier jetzt mal connection1, aus mangelnder Fantasie,
 
 00:17:34,860 --> 00:17:40,950
-wie ich das sonst nennen könnte. Unser Ziel wird also sein:
-Wir definieren nicht connection rekursiv,
+wie ich das sonst nennen könnte. Unser Ziel wird
+also sein: Wir definieren nicht connection rekursiv,
 
 00:17:40,950 --> 00:17:46,080
 sondern wir definieren connection1 rekursiv.
@@ -673,44 +673,44 @@ Connection1 ist allgemeiner als Connection, in dem
 Sinne, dass es eine Liste von Zwischenstationen mitführt.
 
 00:17:50,850 --> 00:17:57,330
-Die normale Suche nach einer Connection von X nach Y
-wäre dann: "Suche nach Connections in diesem
+Die normale Suche nach einer Connection von X nach
+Y wäre dann: "Suche nach Connections in diesem
 
 00:17:57,330 --> 00:18:03,480
-allgemeineren Sinne von X nach Y, aber merke
-dir dabei, dass du in X schon gewesen bist, weil du da
+allgemeineren Sinne von X nach Y, aber merke dir
+dabei, dass du in X schon gewesen bist, weil du da
 
 00:18:03,480 --> 00:18:10,020
-ja gerade losfliegst. Also kein Interesse hast, X noch
-einmal als Zwischenstation zu besuchen."
+ja gerade losfliegst. Also kein Interesse hast,
+X noch einmal als Zwischenstation zu besuchen."
 
 00:18:10,020 --> 00:18:14,850
-Wenn wir diese Intuition haben, was connection1 tun soll,
-können wir dafür Regeln angeben.
+Wenn wir diese Intuition haben, was connection1
+tun soll, können wir dafür Regeln angeben.
 
 00:18:14,850 --> 00:18:19,920
-Das wird rekursiv sein. Also sollten wir einen Basisfall haben.
-Der Basisfall sollte zuerst kommen, weil unsere Faustregeln das sagen.
+Das wird rekursiv sein. Also sollten wir einen Basisfall haben. Der
+Basisfall sollte zuerst kommen, weil unsere Faustregeln das sagen.
 
 00:18:19,920 --> 00:18:25,740
-Was wäre der Basisfall? Für den Basisfall, wenn es
-eine Direktverbindung gibt, können wir sagen:
+Was wäre der Basisfall? Für den Basisfall, wenn
+es eine Direktverbindung gibt, können wir sagen:
 
 00:18:27,300 --> 00:18:34,050
-Dann interessieren uns auch keine Zwischenstationen. Also, wir hatten hier
-connection gilt, wenn direct gilt. Das gilt auch für connection1.
+Dann interessieren uns auch keine Zwischenstationen. Also, wir hatten
+hier connection gilt, wenn direct gilt. Das gilt auch für connection1.
 
 00:18:34,050 --> 00:18:40,650
-Also, wenn es eine Direktverbindung von X nach Y gibt, dann gibt
-es auch eine connection (in diesem allgemeineren Sinne) von X nach Y.
+Also, wenn es eine Direktverbindung von X nach Y gibt, dann gibt es
+auch eine connection (in diesem allgemeineren Sinne) von X nach Y.
 
 00:18:40,650 --> 00:18:47,070
-Und zwar ist uns dabei egal, was die
-Liste der bisher besuchten Zwischenstationen ist.
+Und zwar ist uns dabei egal, was die Liste
+der bisher besuchten Zwischenstationen ist.
 
 00:18:47,070 --> 00:18:52,740
-Denn wir steuern ja keine neuen Zwischenstationen an.
-Wir kommen von X nach Y, und es ist egal, wo wir vorher schon gewesen sind.
+Denn wir steuern ja keine neuen Zwischenstationen an. Wir kommen
+von X nach Y, und es ist egal, wo wir vorher schon gewesen sind.
 
 00:18:52,740 --> 00:18:58,490
 Und das hindert uns auch nicht daran, diese
@@ -721,8 +721,8 @@ Basisfall hat sich gar nichts Interessantes geändert.
 Jetzt der interessante Fall, der rekursive Fall.
 
 00:19:05,450 --> 00:19:12,800
-Da haben wir hier gesagt, es gibt eine Connection von X nach Y,
-wenn man von X zu irgendeinem Z direkt kommt und dann von Z
+Da haben wir hier gesagt, es gibt eine Connection von X nach
+Y, wenn man von X zu irgendeinem Z direkt kommt und dann von Z
 
 00:19:12,800 --> 00:19:18,950
 in beliebig vielen Schritten weiter nach Y fliegen kann.
@@ -733,60 +733,60 @@ schon mal gesehen wurde und jetzt einfach noch mal
 angesteuert wird. Jetzt wird diese Zwischenliste benutzt.
 
 00:19:26,090 --> 00:19:33,200
-Das heißt, wir wissen, wir wollen von X nach Y
-und irgendwelche Ziele, die in dieser Liste L sind,
+Das heißt, wir wissen, wir wollen von X nach Y und
+irgendwelche Ziele, die in dieser Liste L sind,
 
 00:19:33,200 --> 00:19:38,780
-die wollen wir als Zwischenstation vermeiden. Deswegen haben wir hier
-auch so begonnen und gesagt: Wir vermeiden zu Beginn
+die wollen wir als Zwischenstation vermeiden. Deswegen haben
+wir hier auch so begonnen und gesagt: Wir vermeiden zu Beginn
 
 00:19:38,780 --> 00:19:44,390
-den Startpunkt als Zwischenstation. Und natürlich
-kann diese Liste noch größer werden. Je weiter wir reisen,
+den Startpunkt als Zwischenstation. Und natürlich kann
+diese Liste noch größer werden. Je weiter wir reisen,
 
 00:19:44,390 --> 00:19:51,470
 desto mehr Zwischenstationen müssen wir in der Zukunft
 vermeiden. Also, wir wollen von Y nach Y und Zwischenstationen
 
 00:19:51,470 --> 00:19:57,920
-in L vermeiden. Wie geht das? Nun, entweder direkt, das steht hier oben,
-oder wir müssen von X zu einer Zwischenstation fliegen.
+in L vermeiden. Wie geht das? Nun, entweder direkt, das steht
+hier oben, oder wir müssen von X zu einer Zwischenstation fliegen.
 
 00:19:58,460 --> 00:20:06,080
-Also, es müsste ein Z geben, sodass wir von X nach Z kommen.
-Nun wollen wir, dass Z keine Zwischenstation ist,
+Also, es müsste ein Z geben, sodass wir von X nach Z
+kommen. Nun wollen wir, dass Z keine Zwischenstation ist,
 
 00:20:06,080 --> 00:20:11,600
-die wir schon gesehen haben. Das heißt, wir fordern, für dieses Z,
-was wir direkt erreichen würden hier, dass es nicht
+die wir schon gesehen haben. Das heißt, wir fordern, für
+dieses Z, was wir direkt erreichen würden hier, dass es nicht
 
 00:20:11,600 --> 00:20:18,320
 Teil der schon gesehenen Liste von Zwischenstationen ist.
 Nicht Teil der Liste schon gesehener Zwischenstationen ist.
 
 00:20:19,460 --> 00:20:25,070
-Das heißt (das werde ich einführen), es gibt ein Prädikat member.
-Das prüft einfach, ob ein Ding in einer Liste vorkommt.
+Das heißt (das werde ich einführen), es gibt ein Prädikat
+member. Das prüft einfach, ob ein Ding in einer Liste vorkommt.
 
 00:20:25,070 --> 00:20:30,710
-In dem Fall würden wir überprüfen: Kommt das Z in L vor?
-Und nur, wenn das nicht der Fall ist,
+In dem Fall würden wir überprüfen: Kommt das Z
+in L vor? Und nur, wenn das nicht der Fall ist,
 
 00:20:30,710 --> 00:20:38,120
-wollen wir weitermachen. Das heißt, wir fordern, dass das Z,
-das wir direkt ansteuern, nicht Mitglied, also Element
+wollen wir weitermachen. Das heißt, wir fordern, dass das
+Z, das wir direkt ansteuern, nicht Mitglied, also Element
 
 00:20:38,120 --> 00:20:46,295
-von der Liste L ist. Dann dürften wir weitermachen.
-Dann dürften wir eine neue Connection weiterverfolgen, von Z nach Y.
+von der Liste L ist. Dann dürften wir weitermachen. Dann
+dürften wir eine neue Connection weiterverfolgen, von Z nach Y.
 
 00:20:46,295 --> 00:20:54,440
-Verlockend wäre hier zu sagen: "Dann eben connection1 von Z nach Y."
-Allerdings müssen wir auch sagen, was die
+Verlockend wäre hier zu sagen: "Dann eben connection1
+von Z nach Y." Allerdings müssen wir auch sagen, was die
 
 00:20:54,440 --> 00:20:58,880
-neue Liste von Zwischenzielen ist. Die müssen wir jetzt
-hier erweitern. Denn bisher hatten wir
+neue Liste von Zwischenzielen ist. Die müssen
+wir jetzt hier erweitern. Denn bisher hatten wir
 
 00:20:58,880 --> 00:21:03,590
 die Zwischenziele in L gesehen. Jetzt haben wir uns entschieden, Z
@@ -801,8 +801,8 @@ Das heißt, wir müssen Z da hinzufügen. Eine Möglichkeit
 dafür wäre, ein weiteres Prädikat zu verwenden,
 
 00:21:14,480 --> 00:21:19,160
-das ich auch auf Listen noch einführen werde.
-Wir können nämlich sagen: "Diese neue Liste L1, mit der
+das ich auch auf Listen noch einführen werde. Wir
+können nämlich sagen: "Diese neue Liste L1, mit der
 
 00:21:19,160 --> 00:21:25,940
 wir weiterarbeiten, die sei gebildet aus der
@@ -813,8 +813,8 @@ bisherigen Liste von Zwischenzielen." Also, append steht für
 Aneinanderhängen. Wir können zwei Listen aneinanderhängen.
 
 00:21:31,100 --> 00:21:36,530
-Wir nehmen die Liste, in der unser neues Zwischenziel Z steht.
-Wir nehmen die bisherige Liste der Zwischenziele.
+Wir nehmen die Liste, in der unser neues Zwischenziel Z
+steht. Wir nehmen die bisherige Liste der Zwischenziele.
 
 00:21:36,530 --> 00:21:41,720
 Bilden daraus eine neue Liste, nämlich die
@@ -825,32 +825,32 @@ und alle Elemente aus L. Diese neue Liste sei
 ab jetzt die Liste der verbotenen Zwischenziele.
 
 00:21:47,750 --> 00:21:55,700
-Und wenn wir das so machen, können wir feststellen,
-dass unser Problem gelöst ist. Wenn wir wieder diese Anfrage
+Und wenn wir das so machen, können wir feststellen, dass
+unser Problem gelöst ist. Wenn wir wieder diese Anfrage
 
 00:21:55,700 --> 00:22:00,860
-stellen, also wenn wir die gleichen Fakten wie auf
-der Folie davor nehmen und die gleiche Anfrage stellen,
+stellen, also wenn wir die gleichen Fakten wie auf der
+Folie davor nehmen und die gleiche Anfrage stellen,
 
 00:22:00,860 --> 00:22:05,300
-haben wir nicht mehr diese Endlossuche.
-Wir stellen fest, oder Prolog stellt für uns fest:
+haben wir nicht mehr diese Endlossuche. Wir
+stellen fest, oder Prolog stellt für uns fest:
 
 00:22:05,900 --> 00:22:11,000
 Wir kommen von San Francisco nach Honolulu, nach
 Maui, nach San Francisco, und gut ist. Es wird
 
 00:22:11,000 --> 00:22:19,550
-keine solche Endlossuche mehr gestartet und sich dann
-sozusagen im Kreis bewegt. Darauf hätten
+keine solche Endlossuche mehr gestartet und sich
+dann sozusagen im Kreis bewegt. Darauf hätten
 
 00:22:19,550 --> 00:22:26,840
 sie jetzt so nicht kommen müssen. Das habe ich
 ihnen so jetzt mal erklärt aus dem Wissen heraus
 
 00:22:26,840 --> 00:22:32,990
-und viel Erfahrung heraus mit Rekursion. Aber es
-lohnt sich für sie, mal über dieses Programm nachzudenken
+und viel Erfahrung heraus mit Rekursion. Aber es lohnt
+sich für sie, mal über dieses Programm nachzudenken
 
 00:22:32,990 --> 00:22:39,140
 und das auch mit unseren Faustregeln abzugleichen.
@@ -861,20 +861,20 @@ Basisfall geben muss. Ich habe den zuerst gewählt.
 Ich habe auch in der rekursiven Regel dafür
 
 00:22:45,530 --> 00:22:52,100
-gesorgt, dass der rekursive Aufruf ganz am Schluss kommt.
-Allerdings, wenn sie sehr aufmerksam waren, könnte
+gesorgt, dass der rekursive Aufruf ganz am Schluss
+kommt. Allerdings, wenn sie sehr aufmerksam waren, könnte
 
 00:22:52,100 --> 00:22:57,020
 ihnen aufgefallen sein, dass ich an anderer Stelle
 in der Vorlesung auch schon (mittlerweile auch
 
 00:22:57,020 --> 00:23:02,540
-mindestens zweimal) gesagt hatte, dass negative
-Literale auch immer möglichst weit am
+mindestens zweimal) gesagt hatte, dass
+negative Literale auch immer möglichst weit am
 
 00:23:02,540 --> 00:23:09,770
-Ende einer Regel stehen sollen. Das habe ich hier
-offenbar verletzt. Und das sind ja auch widerstrebende Ziele.
+Ende einer Regel stehen sollen. Das habe ich hier offenbar
+verletzt. Und das sind ja auch widerstrebende Ziele.
 
 00:23:09,770 --> 00:23:14,660
 Also einerseits sollen negative Informationen
@@ -885,56 +885,56 @@ rekursive Aufrufe am Ende einer Regel stehen.
 Also man kann sich fragen, warum es denn jetzt
 
 00:23:20,940 --> 00:23:25,650
-genau so hier ist und so funktioniert.
-Eine Antwort wäre, es funktioniert oder sie könnten
+genau so hier ist und so funktioniert. Eine
+Antwort wäre, es funktioniert oder sie könnten
 
 00:23:25,650 --> 00:23:30,300
 ausprobieren, ob es funktioniert. Man kann es ja probieren.
 Mal so herum, mal so herum. Und stellt dann fest, dass diese
 
 00:23:30,300 --> 00:23:37,170
-Variante, wie sie hier steht, besser funktioniert.
-Ich kann Ihnen aber auch sagen, dass es hier tatsächlich wichtig ist,
+Variante, wie sie hier steht, besser funktioniert. Ich kann
+Ihnen aber auch sagen, dass es hier tatsächlich wichtig ist,
 
 00:23:37,170 --> 00:23:45,690
 dass es kein Zufall ist, dass dieser negative
 Test vor dem rekursiven Aufruf passiert.
 
 00:23:45,690 --> 00:23:51,690
-Denn der soll ja gerade vermeiden, dass wir
-das Ziel Z noch mal ansteuern.
+Denn der soll ja gerade vermeiden, dass
+wir das Ziel Z noch mal ansteuern.
 
 00:23:51,690 --> 00:23:59,190
-Also nachdem wir Z gewählt haben, wollen wir den rekursiven
-Aufruf/die weitere Suche nur durchführen, wenn Z
+Also nachdem wir Z gewählt haben, wollen wir den
+rekursiven Aufruf/die weitere Suche nur durchführen, wenn Z
 
 00:23:59,190 --> 00:24:03,480
-wirklich bisher noch nicht besucht wurde.
-Das heißt, wenn wir diese Reihenfolge tauschen würden,
+wirklich bisher noch nicht besucht wurde. Das
+heißt, wenn wir diese Reihenfolge tauschen würden,
 
 00:24:03,480 --> 00:24:09,360
-das not(member(Z,L)) ans Ende schreiben würden,
-würden wir tatsächlich wieder in eine Unendlichkeitfalle
+das not(member(Z,L)) ans Ende schreiben würden, würden
+wir tatsächlich wieder in eine Unendlichkeitfalle
 
 00:24:09,870 --> 00:24:15,150
 sozusagen geraten. Also hier entweder durch Ausprobieren
 oder so ein bisschen Nachdenken, dass es wichtig ist,
 
 00:24:15,150 --> 00:24:22,800
-erst auszuschließen, dass Z schon gesehen wurde, bevor wir es
-sozusagen weiterverfolgen durch einen rekursiven Aufruf.
+erst auszuschließen, dass Z schon gesehen wurde, bevor wir
+es sozusagen weiterverfolgen durch einen rekursiven Aufruf.
 
 00:24:22,800 --> 00:24:30,630
-Das motiviert, warum hier die Reihenfolge so richtig ist.
-Wir könnten durchaus das not(member(Z,L))
+Das motiviert, warum hier die Reihenfolge so richtig
+ist. Wir könnten durchaus das not(member(Z,L))
 
 00:24:30,630 --> 00:24:36,840
 auch noch an diese Stelle schreiben. Also diese
 beiden Literale vertauschen. Das wäre okay.
 
 00:24:36,840 --> 00:24:44,640
-Was nicht okay wäre, wäre das not(member(Z,L))
-ganz an den Anfang dieser rechten Regelseite zu schreiben.
+Was nicht okay wäre, wäre das not(member(Z,L)) ganz
+an den Anfang dieser rechten Regelseite zu schreiben.
 
 00:24:44,640 --> 00:24:51,750
 Dann hätten wir wirklich not(member(Z,L)) zu
@@ -945,8 +945,8 @@ hinten zu schieben, die sollten wir zumindest soweit
 einhalten in diesem Beispiel, dass wir das erst testen,
 
 00:24:57,660 --> 00:25:05,910
-nachdem Z hier gewählt wurde. Das ist hier der Grund,
-warum wir das Beides nicht tauschen sollten. Aber ein bisschen,
+nachdem Z hier gewählt wurde. Das ist hier der Grund, warum
+wir das Beides nicht tauschen sollten. Aber ein bisschen,
 
 00:25:05,910 --> 00:25:12,330
 gerade wenn man noch nicht viel Erfahrung hat mit Prolog,

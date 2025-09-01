@@ -4,11 +4,12 @@ In der letzten Vorlesung haben wir letzte Woche
 über die deklarative Semantik von Prolog gesprochen.
 
 00:00:08,800 --> 00:00:12,000
-Das war die Semantik, die auf Herbrand-Modellen aufbaut.
+Das war die Semantik, die auf
+Herbrand-Modellen aufbaut.
 
 00:00:12,000 --> 00:00:18,240
-Das sind syntaktische Modelle, in denen wir
-syntaktische Begriffe als Zutaten und
+Das sind syntaktische Modelle, in denen
+wir syntaktische Begriffe als Zutaten und
 
 00:00:18,240 --> 00:00:24,480
 die Arbeit mit dem unmittelbaren Konsequenz-
@@ -19,8 +20,8 @@ solche Mengen von symbolischen Begriffen, bis entweder
 wir einen stabilen Zustand erreichen oder ad infinitum.
 
 00:00:31,440 --> 00:00:35,760
-Wir konstruieren den Grenzwert einer
-unendlichen Folge von Mengen.
+Wir konstruieren den Grenzwert
+einer unendlichen Folge von Mengen.
 
 00:00:37,120 --> 00:00:41,200
 Das war also die mathematische
@@ -34,41 +35,41 @@ operationale Semantik für Prolog anschauen.
 Und bevor wir das tun, noch ein paar Worte.
 
 00:00:48,480 --> 00:00:55,520
-In gewissem Sinne oder Wiederholung oder Anerkennung von
-Dingen, die für die deklarative Semantik gelten,
+In gewissem Sinne oder Wiederholung oder Anerkennung
+von Dingen, die für die deklarative Semantik gelten,
 
 00:00:55,520 --> 00:00:59,920
-die auch bis zu einem gewissen Grad erklären, warum die
-operationale Semantik auch berücksichtigt wird.
+die auch bis zu einem gewissen Grad erklären, warum
+die operationale Semantik auch berücksichtigt wird.
 
 00:01:01,120 --> 00:01:03,520
 Denn sie sind nicht genau gleichwertig.
 
 00:01:03,520 --> 00:01:08,400
-Einige unterscheiden sich von der Situation in Haskell,
-wo es eine denotationelle Semantik gibt, die
+Einige unterscheiden sich von der Situation in
+Haskell, wo es eine denotationelle Semantik gibt, die
 
 00:01:09,040 --> 00:01:13,440
 mathematisches Denken und Bedeutungsinterpretation,
 mengentheoretische Interpretation von
 
 00:01:13,440 --> 00:01:20,000
-Funktionsdefinitionen steht in sehr guter Korrespondenz
-mit der operativen Auswertungssemantik.
+Funktionsdefinitionen steht in sehr guter
+Korrespondenz mit der operativen Auswertungssemantik.
 
 00:01:20,560 --> 00:01:22,800
 Okay, was war also die deklarative Semantik?
 
 00:01:22,800 --> 00:01:25,840
-Was auch immer es war, es ist enthalten
-im vorherigen Video.
+Was auch immer es war, es ist
+enthalten im vorherigen Video.
 
 00:01:26,480 --> 00:01:28,720
 Und sie war anwendbar und wurde diskutiert
 
 00:01:28,720 --> 00:01:32,800
-gegen Ende des Videos für bestimmte
-rein logische Programme.
+gegen Ende des Videos für
+bestimmte rein logische Programme.
 
 00:01:32,800 --> 00:01:36,720
 Also zum Beispiel die Arithmetik,
@@ -86,34 +87,35 @@ Es gab auch ein Problem mit der Negation,
 das erwähnt wurde, dass dies nicht
 
 00:01:46,800 --> 00:01:53,600
-zumindest nicht generell in der Reichweite von
-dieser deklarativen Semantik.
+zumindest nicht generell in der Reichweite
+von dieser deklarativen Semantik.
 
 00:01:53,600 --> 00:01:56,240
-Und auch Eigenschaften, die wir überhaupt nicht behandeln werden.
+Und auch Eigenschaften, die wir
+überhaupt nicht behandeln werden.
 
 00:01:56,240 --> 00:02:00,080
-Also, nicht-logische Features, die Prolog
-hat, die wir im Kurs nicht
+Also, nicht-logische Features, die
+Prolog hat, die wir im Kurs nicht
 
 00:02:00,080 --> 00:02:06,000
-berücksichtigen werden, liegen auch außerhalb des Bereichs
-der Reichweite dieser Herbrand-Modellsemantik.
+berücksichtigen werden, liegen auch außerhalb des
+Bereichs der Reichweite dieser Herbrand-Modellsemantik.
 
 00:02:06,720 --> 00:02:10,000
 Okay, das ist also ein Nachteil dieser Semantik.
 
 00:02:10,000 --> 00:02:14,320
-Während die operationale Semantik
-diese Eigenschaften gut abdeckt, weil die operative
+Während die operationale Semantik diese
+Eigenschaften gut abdeckt, weil die operative
 
 00:02:14,320 --> 00:02:18,720
-Semantik wirklich das ist, was die Implementierung
-eines Prolog-Interpreters basiert.
+Semantik wirklich das ist, was die
+Implementierung eines Prolog-Interpreters basiert.
 
 00:02:18,720 --> 00:02:23,920
-Und dieser Interpreter muss natürlich
-mit allen Eigenschaften der Sprache umgehen.
+Und dieser Interpreter muss natürlich mit
+allen Eigenschaften der Sprache umgehen.
 
 00:02:24,480 --> 00:02:27,520
 Okay, das ist also schon eine Einschränkung.
@@ -126,16 +128,16 @@ die deklarative Semantik spricht nicht wirklich
 über verschiedene enthaltende Variablen.
 
 00:02:36,480 --> 00:02:41,760
-Was man also in der Herbrand-Semantik konstruiert,
-sind Mengen von Grundbegriffen.
+Was man also in der Herbrand-Semantik
+konstruiert, sind Mengen von Grundbegriffen.
 
 00:02:41,760 --> 00:02:48,000
-Dies erklärt also genau, welche Abfragen
-erfolgreich sind, wenn man alle
+Dies erklärt also genau, welche
+Abfragen erfolgreich sind, wenn man alle
 
 00:02:48,000 --> 00:02:54,080
-Argumentpositionen der Prädikate instanziiert, aber für Abfragen
-mit Variablen ist dies nicht direkt anwendbar.
+Argumentpositionen der Prädikate instanziiert, aber für
+Abfragen mit Variablen ist dies nicht direkt anwendbar.
 
 00:02:54,880 --> 00:02:56,560
 Wir haben auch nicht behauptet, dass es so ist.
@@ -144,27 +146,27 @@ Wir haben auch nicht behauptet, dass es so ist.
 Etwas, das Sie nicht
 
 00:03:00,480 --> 00:03:05,440
-im Moment nicht sehen können, aber wahrscheinlich zustimmen werden,
-sobald wir die operative Semantik eingeführt
+im Moment nicht sehen können, aber wahrscheinlich zustimmen
+werden, sobald wir die operative Semantik eingeführt
 
 00:03:05,440 --> 00:03:10,560
 haben, ist, dass die Herbrand-Modelle
 Semantik mathematisch sehr einfach ist.
 
 00:03:10,560 --> 00:03:15,280
-Ich meine, es ist vielleicht nicht einfach für Sie, weil
-Sie müssen erst lernen, wie das funktioniert,
+Ich meine, es ist vielleicht nicht einfach für Sie,
+weil Sie müssen erst lernen, wie das funktioniert,
 
 00:03:15,280 --> 00:03:18,320
-aber von der mathematischen Seite her
-ist es sehr einfach.
+aber von der mathematischen
+Seite her ist es sehr einfach.
 
 00:03:18,320 --> 00:03:20,320
 Es hat eine sehr einfache Definition.
 
 00:03:20,320 --> 00:03:24,480
-Im Grunde genommen hat der Operator der unmittelbaren Folge
-nur eine Folie zur Definition.
+Im Grunde genommen hat der Operator der
+unmittelbaren Folge nur eine Folie zur Definition.
 
 00:03:24,480 --> 00:03:25,680
 Das war's dann auch schon.
@@ -174,8 +176,8 @@ Für die deklarative Semantik
 gibt es mehr Bestandteile
 
 00:03:28,080 --> 00:03:33,200
-die zusammenkommen und zusammenwirken müssen,
-um die Semantik zu etablieren.
+die zusammenkommen und zusammenwirken
+müssen, um die Semantik zu etablieren.
 
 00:03:33,200 --> 00:03:36,800
 In diesem Sinne ist die deklarative Semantik
@@ -192,24 +194,24 @@ Dennoch sind diese Semantiken verwandt.
 Sie sind also nicht gleichwertig.
 
 00:03:44,240 --> 00:03:49,120
-Ich habe das gerade schon erwähnt, aber
-sie sind in einer geeigneten Weise verwandt.
+Ich habe das gerade schon erwähnt, aber sie
+sind in einer geeigneten Weise verwandt.
 
 00:03:49,120 --> 00:03:52,880
 Also, insbesondere für jene Programme,
 wo beide Semantiken anwendbar sind.
 
 00:03:52,880 --> 00:03:56,480
-Wenn Sie also nicht die nicht-logischen
-Eigenschaften, dann
+Wenn Sie also nicht die
+nicht-logischen Eigenschaften, dann
 
 00:03:57,040 --> 00:04:05,920
 könnte man als Theorem angeben, wie
 diese beiden Semantiken zusammenhängen.
 
 00:04:06,480 --> 00:04:10,160
-Und nun, diese Beziehung ist
-eine Art von Äquivalent.
+Und nun, diese Beziehung
+ist eine Art von Äquivalent.
 
 00:04:10,160 --> 00:04:13,840
 Sie sind also nicht getrennt und sagen
@@ -219,32 +221,32 @@ unterschiedliche Dinge über dasselbe Programm.
 Okay.
 
 00:04:15,920 --> 00:04:23,920
-Und ein wichtiger Aspekt, der bisher nicht
-relevant war, ist, dass die deklarative Semantik einfach
+Und ein wichtiger Aspekt, der bisher nicht relevant
+war, ist, dass die deklarative Semantik einfach
 
 00:04:23,920 --> 00:04:27,760
-als eine Beobachtung, weil sie rein mengenbasiert ist,
-basiert und zum Beispiel nicht berücksichtigt,
+als eine Beobachtung, weil sie rein mengenbasiert
+ist, basiert und zum Beispiel nicht berücksichtigt,
 
 00:04:27,760 --> 00:04:33,760
-die Reihenfolge der Literale, die auf der
-rechten Seite einer Regel oder einer Abfrage stehen.
+die Reihenfolge der Literale, die auf der rechten
+Seite einer Regel oder einer Abfrage stehen.
 
 00:04:35,600 --> 00:04:40,880
-Einfach durch die Definition ist diese Semantik, die
-wir hier sehen, völlig unempfindlich gegenüber
+Einfach durch die Definition ist diese Semantik,
+die wir hier sehen, völlig unempfindlich gegenüber
 
 00:04:40,880 --> 00:04:45,920
-Änderungen in der Reihenfolge von Text und Wörtern
-oder der Reihenfolge von Literalen innerhalb von Regeln.
+Änderungen in der Reihenfolge von Text und Wörtern oder
+der Reihenfolge von Literalen innerhalb von Regeln.
 
 00:04:46,480 --> 00:04:50,320
 Ja, das kam also einfach nicht vor; es
 spielte keine Rolle in der Semantik.
 
 00:04:50,320 --> 00:04:57,360
-Wenn Sie also die Reihenfolge von Regeln oder
-die Reihenfolge der Dinge auf der rechten Seite einer Regel
+Wenn Sie also die Reihenfolge von Regeln oder die
+Reihenfolge der Dinge auf der rechten Seite einer Regel
 
 00:04:57,360 --> 00:05:01,040
 ändern, kann dies unmöglich eine Änderung
@@ -258,16 +260,16 @@ macht die Semantik sehr wohl einen Unterschied.
 Und das kann ein wichtiger Punkt sein,
 
 00:05:05,440 --> 00:05:09,280
-denn die operationale Semantik erklärt,
-was Prolog tut.
+denn die operationale Semantik
+erklärt, was Prolog tut.
 
 00:05:09,280 --> 00:05:12,400
-Und wir sind bereits darauf gestoßen,
-früher auf den Folien,
+Und wir sind bereits darauf
+gestoßen, früher auf den Folien,
 
 00:05:12,400 --> 00:05:16,480
-in einer seltsamen Situation, wo ich sagte, zum
-Beispiel, dass die Negation eines Literals,
+in einer seltsamen Situation, wo ich sagte,
+zum Beispiel, dass die Negation eines Literals,
 
 00:05:16,480 --> 00:05:21,280
 wenn sie in einer Regel vorkommen soll,
@@ -282,8 +284,8 @@ Die deklarative Semantik kann dies also nicht erklären,
 denn sie kümmert sich überhaupt nicht um die Reihenfolge.
 
 00:05:31,680 --> 00:05:34,560
-Das ist also etwas, wofür wir
-definitiv eine operationale Semantik brauchen.
+Das ist also etwas, wofür wir definitiv
+eine operationale Semantik brauchen.
 
 00:05:34,560 --> 00:05:39,040
 Und in der Tat, das erste motivierende Beispiel,
@@ -295,8 +297,8 @@ mit dieser Beobachtung im letzten Punkt hier.
 
 47 # slide
 00:05:50,160 --> 00:05:56,000
-Wie bereits erwähnt, entspricht die operationale Semantik,
-wie bereits erwähnt, etwa der
+Wie bereits erwähnt, entspricht die operationale
+Semantik, wie bereits erwähnt, etwa der
 
 00:05:57,200 --> 00:06:02,320
 Ausführung von Herbrand-Programmen
@@ -307,16 +309,16 @@ Also, auch wenn ich vorhin
 im Prolog-Teil über die
 
 00:06:07,200 --> 00:06:13,280
-Operation Intuition, wie ein Programm ausgeführt wird,
-habe ich bereits eine Verbindung zum Pattern-Matching hergestellt.
+Operation Intuition, wie ein Programm ausgeführt wird, habe
+ich bereits eine Verbindung zum Pattern-Matching hergestellt.
 
 00:06:13,280 --> 00:06:18,240
 Wir werden jedoch sehen, dass es noch weitere
 kompliziertere Bestandteile für die operationale
 
 00:06:18,240 --> 00:06:23,280
-Semantik von Prolog gibt, weil wir nicht nur
-Pattern-Matching brauchen, sondern ein
+Semantik von Prolog gibt, weil wir nicht
+nur Pattern-Matching brauchen, sondern ein
 
 00:06:23,280 --> 00:06:25,280
 allgemeineres Konzept namens Unifikation.
@@ -326,8 +328,8 @@ Und wie auch schon erwähnt,
 verschiedene dieser Bestandteile,
 
 00:06:30,720 --> 00:06:35,200
-die wir für die operationale Semantik benötigen,
-nämlich Unifikation und Resolution,
+die wir für die operationale Semantik
+benötigen, nämlich Unifikation und Resolution,
 
 00:06:35,200 --> 00:06:42,000
 sind bereits in der Logik-Vorlesung,
@@ -350,8 +352,8 @@ Also, wir werden ein paar Beispiele durchgehen
 von vielleicht etwas überraschendem Verhalten von
 
 00:07:04,480 --> 00:07:09,360
-bestimmten Prolog-Programmen, die sich später
-in der Lage sehen werden, mit der operationalen Semantik zu erklären.
+bestimmten Prolog-Programmen, die sich später in der Lage
+sehen werden, mit der operationalen Semantik zu erklären.
 
 48 # slide
 00:07:13,840 --> 00:07:16,480
@@ -362,12 +364,12 @@ Ja, eine kleine Datenbank von Verbindungen, die angeblich
 von Direktflügen in den ersten vier Zeilen handelt.
 
 00:07:26,480 --> 00:07:34,480
-Also, für eine Stadtkonstante sagen wir, dass es
-Direktverbindungen, Direktflüge gibt.
+Also, für eine Stadtkonstante sagen wir,
+dass es Direktverbindungen, Direktflüge gibt.
 
 00:07:34,480 --> 00:07:37,520
-Und dann haben wir ein Prädikat, das definiert,
-was eine Verbindung ist, was ein
+Und dann haben wir ein Prädikat, das
+definiert, was eine Verbindung ist, was ein
 
 00:07:38,320 --> 00:07:40,320
 mächtiger Schritt sein könnte, richtig?
@@ -380,8 +382,8 @@ aber man kann auch eine Situation haben, in der
 wir einen Direktflug von x nach z haben und
 
 00:07:48,720 --> 00:07:53,600
-dann eine weitere Verbindung von z nach y, die
-ein Aufstieg von einem anderen Direktflug sein kann.
+dann eine weitere Verbindung von z nach y, die ein
+Aufstieg von einem anderen Direktflug sein kann.
 
 00:07:53,600 --> 00:07:57,920
 Aber wie auch immer, eine Verbindung
@@ -395,7 +397,8 @@ nach y, die indirekt sein kann, okay?
 Das ist also eine nützliche Definition.
 
 00:08:05,200 --> 00:08:08,480
-Und wir können sie bei einigen Abfragen verwenden.
+Und wir können sie bei
+einigen Abfragen verwenden.
 
 00:08:08,480 --> 00:08:11,600
 Wir können also fragen, ob es eine
@@ -406,42 +409,44 @@ Und wenn wir das kombinieren, dann wäre das im Grunde
 die Berechnung des transitiven Abschlusses der direkten
 
 00:08:17,680 --> 00:08:22,880
-Beziehung, die wir finden, oder Prolog
-sagt, dass ja, es gibt eine solche Verbindung.
+Beziehung, die wir finden, oder Prolog sagt,
+dass ja, es gibt eine solche Verbindung.
 
 00:08:23,600 --> 00:08:29,200
 Man könnte auch eine Variable x haben, ob das etwas
 ist, das man von San Francisco aus erreichen kann.
 
 00:08:29,200 --> 00:08:33,360
-Und tatsächlich, was ist erreichbar von San
-Francisco aus, wenn man eine Variable in der Abfrage hier verwendet?
+Und tatsächlich, was ist erreichbar von San Francisco aus,
+wenn man eine Variable in der Abfrage hier verwendet?
 
 00:08:33,360 --> 00:08:36,720
-Und die Antworten werden sein, dass, nun ja,
-es gibt eine Verbindung nach Honolulu.
+Und die Antworten werden sein, dass, nun
+ja, es gibt eine Verbindung nach Honolulu.
 
 00:08:36,720 --> 00:08:39,520
-Es gibt eine Verbindung nach Maui, aber keine weiteren.
+Es gibt eine Verbindung nach
+Maui, aber keine weiteren.
 
 00:08:39,520 --> 00:08:45,200
-Und auch dies könnte man
-aus den Regeln hier intuitiv herausfinden.
+Und auch dies könnte man aus den
+Regeln hier intuitiv herausfinden.
 
 00:08:46,320 --> 00:08:49,600
 Okay, und wir können Fragen stellen wie: Gibt
 es eine Verbindung von Maui nach irgendwo?
 
 00:08:49,600 --> 00:08:52,960
-Und die Antwort ist nein, denn es gibt
-keine direkte Verbindung, wie wir sehen können.
+Und die Antwort ist nein, denn es gibt keine
+direkte Verbindung, wie wir sehen können.
 
 00:08:52,960 --> 00:08:55,440
-Und dann kann das auch keine indirekte Sammlung sein.
+Und dann kann das auch keine
+indirekte Sammlung sein.
 
 00:08:56,400 --> 00:09:03,120
-Okay, also was wir hier sehen, kann erklärt werden
-durch die deklarative Semantik.
+Okay, also was wir hier sehen, kann erklärt
+werden durch die deklarative Semantik.
 
 00:09:03,120 --> 00:09:05,360
 Das erste sofort, denn das würde man
@@ -451,26 +456,27 @@ im Herbrand-Modell sehen, dass es diese Verbindung
 gibt, Zusammenhang mit Frankfurt, Maui, wörtlich.
 
 00:09:15,760 --> 00:09:22,560
-Und in diesen, den anderen, ist es klar, wenn
-das aus der Herbrand-Semantik erklärt werden könnte
+Und in diesen, den anderen, ist es klar, wenn das
+aus der Herbrand-Semantik erklärt werden könnte
 
 00:09:22,560 --> 00:09:27,120
 oder in der Sammlung PDF-Dokument.
 
 00:09:27,120 --> 00:09:31,760
-Eigentlich gibt es für dieses Programm die
-Berechnung des Herbrand-Modells.
+Eigentlich gibt es für dieses Programm
+die Berechnung des Herbrand-Modells.
 
 00:09:31,760 --> 00:09:37,360
-Und zum Beispiel, wenn man sich die Menge ansieht, die
-endgültige Menge, die man dort erhält, und prüft
+Und zum Beispiel, wenn man sich die Menge ansieht,
+die endgültige Menge, die man dort erhält, und prüft
 
 00:09:38,080 --> 00:09:43,280
-welche Verbindungsliterale vorkommen, bei denen die
-erste Position auf San Francisco gesetzt ist,
+welche Verbindungsliterale vorkommen, bei denen
+die erste Position auf San Francisco gesetzt ist,
 
 00:09:43,280 --> 00:09:45,360
-dann werden wir tatsächlich auch diese beiden finden.
+dann werden wir tatsächlich
+auch diese beiden finden.
 
 00:09:45,360 --> 00:09:49,280
 Denn es gibt eine Verbindung zwischen San
@@ -492,11 +498,12 @@ finden wir keine Verbindung
 zu Maui an erster Stelle.
 
 00:10:03,680 --> 00:10:09,760
-Also, auch dieses operative Ergebnis des
-Interpreters wird durch die deklarative Semantik erklärt.
+Also, auch dieses operative Ergebnis des Interpreters
+wird durch die deklarative Semantik erklärt.
 
 00:10:09,760 --> 00:10:12,160
-Okay, das sieht so aus, als ob alles in Ordnung wäre.
+Okay, das sieht so aus, als
+ob alles in Ordnung wäre.
 
 00:10:12,160 --> 00:10:15,120
 Ja, die deklarative Semantik
@@ -511,8 +518,8 @@ Wir haben also eine sehr unschuldige
 Änderung an dem Programm vorgenommen.
 
 00:10:28,720 --> 00:10:32,960
-Und zwar haben wir einfach die
-Reihenfolge von Fakt und Regel geändert, richtig?
+Und zwar haben wir einfach die Reihenfolge
+von Fakt und Regel geändert, richtig?
 
 00:10:32,960 --> 00:10:37,040
 Dies war also vorher die erste Zeile der
@@ -523,20 +530,20 @@ Und im nicht grundlegenden Fall,
 haben wir einfach die Bedeutung
 
 00:10:44,800 --> 00:10:47,520
-oder die Positionen von
-direkt und Verbindung, richtig?
+oder die Positionen von direkt
+und Verbindung, richtig?
 
 00:10:47,520 --> 00:10:51,840
-Zuvor hieß es, dass es eine
-direkte Verbindung von x nach z und eine Verbindung von z nach y geben muss.
+Zuvor hieß es, dass es eine direkte Verbindung von x
+nach z und eine Verbindung von z nach y geben muss.
 
 00:10:51,840 --> 00:10:56,640
-Jetzt sage ich, dass es eine
-Verbindung von x nach z und eine direkte von z nach y gibt.
+Jetzt sage ich, dass es eine Verbindung von
+x nach z und eine direkte von z nach y gibt.
 
 00:10:56,640 --> 00:11:00,720
-Logischerweise sollte das im Hinblick auf die Bedeutung dieses
-Programms doch einen Unterschied machen, oder?
+Logischerweise sollte das im Hinblick auf die Bedeutung
+dieses Programms doch einen Unterschied machen, oder?
 
 00:11:00,720 --> 00:11:04,800
 Es drückt immer noch das gleiche Konzept aus
@@ -547,8 +554,8 @@ Führt man dieses Programm jedoch jetzt in
 Prolog aus und stellt eine ähnliche Frage
 
 00:11:09,120 --> 00:11:13,920
-wie auf der vorherigen Folie, bekommt man plötzlich
-einen Fehler, einen Laufzeitfehler, okay?
+wie auf der vorherigen Folie, bekommt man
+plötzlich einen Fehler, einen Laufzeitfehler, okay?
 
 00:11:13,920 --> 00:11:15,920
 Es ist also etwas schiefgelaufen.
@@ -566,34 +573,36 @@ Interpretation von Prolog-Fakten und -Regeln,
 et cetera, nicht kommutativ sind, richtig?
 
 00:11:34,720 --> 00:11:36,960
-Ich habe gesagt, ich habe die Reihenfolge dieser beiden
+Ich habe gesagt, ich habe
+die Reihenfolge dieser beiden
 
 00:11:38,400 --> 00:11:44,720
-Klauseln geändert und das würde einem Oder entsprechen,
-weil wir vorher gesagt haben, dass mehrere
+Klauseln geändert und das würde einem Oder
+entsprechen, weil wir vorher gesagt haben, dass mehrere
 
 00:11:45,520 --> 00:11:51,840
-Klauseln einer Verknüpfung von
-Aussagen entsprechen, indem man hier einfach die Reihenfolge vertauscht.
+Klauseln einer Verknüpfung von Aussagen entsprechen,
+indem man hier einfach die Reihenfolge vertauscht.
 
 00:11:52,480 --> 00:11:57,920
-Logischerweise würde das bedeuten, aus A oder B habe ich B
-oder A, das sollte eigentlich keinen Unterschied machen.
+Logischerweise würde das bedeuten, aus A oder B habe ich
+B oder A, das sollte eigentlich keinen Unterschied machen.
 
 00:11:57,920 --> 00:12:01,440
-Und ähnlich ist es auch, wenn die Rollen von Verbindung
+Und ähnlich ist es auch, wenn
+die Rollen von Verbindung
 
 00:12:01,440 --> 00:12:07,200
-und direkt getauscht werden, könnte man das
-als so etwas wie ein Und sehen, oder?
+und direkt getauscht werden, könnte man
+das als so etwas wie ein Und sehen, oder?
 
 00:12:07,200 --> 00:12:14,960
-Oder es ist nicht wirklich nur ein Tausch der beiden
-Partner, aber es ist trotzdem seltsam, dass
+Oder es ist nicht wirklich nur ein Tausch der
+beiden Partner, aber es ist trotzdem seltsam, dass
 
 00:12:14,960 --> 00:12:22,240
-dies eine so große Auswirkung haben würde, wo "und" eine
-logische Operation ist und kommutativ sein sollte.
+dies eine so große Auswirkung haben würde, wo "und"
+eine logische Operation ist und kommutativ sein sollte.
 
 00:12:23,120 --> 00:12:23,520
 Ist das klar?
@@ -606,8 +615,8 @@ Und natürlich bedeutet es auch, dass
 diese Programmausführung irgendwie
 
 00:12:30,640 --> 00:12:34,480
-mehr Aspekte hat als
-nur eine rein logische Lesart.
+mehr Aspekte hat als nur
+eine rein logische Lesart.
 
 00:12:34,480 --> 00:12:38,080
 Denn mit der logischen Seite,
@@ -629,24 +638,24 @@ Es geht also etwas vor sich.
 
 50 # slide
 00:12:56,920 --> 00:13:04,480
-In einem anderen, etwas subtileren Beispiel, haben wir
-auch schon das Additions-Prädikat
+In einem anderen, etwas subtileren Beispiel,
+haben wir auch schon das Additions-Prädikat
 
 00:13:04,480 --> 00:13:12,080
-früher in der Vorlesung kennengelernt und auch gesehen, wie
-wir es verwenden können, um die Subtraktion zu definieren, richtig?
+früher in der Vorlesung kennengelernt und auch gesehen, wie wir
+es verwenden können, um die Subtraktion zu definieren, richtig?
 
 00:13:12,080 --> 00:13:20,320
-Dies war eine geeignete Definition für die Addition
-und wir sagten x - y = z, wenn z + y = x.
+Dies war eine geeignete Definition für die
+Addition und wir sagten x - y = z, wenn z + y = x.
 
 00:13:20,960 --> 00:13:24,240
 Okay, und wir haben einige Fälle
 gesehen, wie es schön aufgebaut ist.
 
 00:13:24,800 --> 00:13:28,960
-Okay, lassen Sie mich sagen, ich hätte einige
-etwas andere Implementierungsentscheidungen getroffen.
+Okay, lassen Sie mich sagen, ich hätte einige etwas
+andere Implementierungsentscheidungen getroffen.
 
 00:13:28,960 --> 00:13:34,640
 So hätte ich zum Beispiel für die Addition
@@ -667,30 +676,31 @@ ist dies wirklich die gleiche Strategie.
 Ja, es gibt also keinen großen Unterschied.
 
 00:13:49,120 --> 00:13:53,200
-Diese Ausgabe ist auch eine vernünftige
-Definition von Addition.
+Diese Ausgabe ist auch eine
+vernünftige Definition von Addition.
 
 00:13:53,200 --> 00:14:00,880
-Ja, x + 0 = x und x plus Nachfolger von etwas
-ist der Nachfolger von etwas anderem, wenn x und die
+Ja, x + 0 = x und x plus Nachfolger von etwas ist
+der Nachfolger von etwas anderem, wenn x und die
 
 00:14:01,680 --> 00:14:06,960
-andere Sache, auf die ich hier Zugriff genommen habe, ist
-eben das Ding, von dem dies der Nachfolger ist.
+andere Sache, auf die ich hier Zugriff genommen habe,
+ist eben das Ding, von dem dies der Nachfolger ist.
 
 00:14:06,960 --> 00:14:09,520
-Okay, das macht also mathematisch vollkommen Sinn.
+Okay, das macht also
+mathematisch vollkommen Sinn.
 
 00:14:09,520 --> 00:14:15,840
-Es gibt keinen Grund, warum wir diese Version
-gegenüber dieser bevorzugen müssen, was die Bedeutung der Addition angeht.
+Es gibt keinen Grund, warum wir diese Version gegenüber dieser
+bevorzugen müssen, was die Bedeutung der Addition angeht.
 
 00:14:16,400 --> 00:14:17,120
 Okay?
 
 00:14:17,120 --> 00:14:20,960
-Und dann könnte ich auch hoffen, nun, wenn
-dies eine nützliche Definition für Addition ist,
+Und dann könnte ich auch hoffen, nun, wenn dies
+eine nützliche Definition für Addition ist,
 
 00:14:20,960 --> 00:14:24,160
 dann wäre dies auch eine nützliche
@@ -701,13 +711,15 @@ Denn sie hat denselben
 deklarativen Charakter wie zuvor;
 
 00:14:27,600 --> 00:14:29,840
-Definition der Subtraktion in Bezug auf die Addition.
+Definition der Subtraktion
+in Bezug auf die Addition.
 
 00:14:30,880 --> 00:14:32,480
 Okay, also ist alles in Ordnung.
 
 00:14:33,040 --> 00:14:37,520
-Logisch gesehen sind diese beiden Programme gleich nützlich.
+Logisch gesehen sind diese
+beiden Programme gleich nützlich.
 
 00:14:39,200 --> 00:14:45,760
 Das könnte sich jedoch ändern, wenn wir uns
@@ -721,16 +733,16 @@ und wir erhalten ein nützliches Ergebnis: 1.
 Okay, das ist gut.
 
 00:14:55,280 --> 00:14:59,600
-Was passiert, wenn Sie Fragen stellen
-wie: n - m sollte 1 sein?
+Was passiert, wenn Sie Fragen
+stellen wie: n - m sollte 1 sein?
 
 00:14:59,600 --> 00:15:04,400
-Ja, das ist etwas, was wir auch für
-dieses Beispiel vorhin in der Vorlesung gemacht haben.
+Ja, das ist etwas, was wir auch für dieses
+Beispiel vorhin in der Vorlesung gemacht haben.
 
 00:15:04,400 --> 00:15:10,160
-Lassen Sie uns das für diese Definition tun, die
-mathematisch genauso gut ist wie diese.
+Lassen Sie uns das für diese Definition tun,
+die mathematisch genauso gut ist wie diese.
 
 00:15:10,160 --> 00:15:12,000
 Okay, was wird also passieren?
@@ -739,8 +751,8 @@ Okay, was wird also passieren?
 Nichts sehr Nützliches.
 
 00:15:13,920 --> 00:15:20,320
-Aber hier haben wir dieses Ergebnis von einer früheren Folie wiederholt.
-Was passiert hier unten?
+Aber hier haben wir dieses Ergebnis von einer
+früheren Folie wiederholt. Was passiert hier unten?
 
 00:15:20,960 --> 00:15:26,400
 Anstatt eine schöne Lösung zu erhalten
@@ -754,52 +766,54 @@ eine unendliche Anzahl von Antworten auf diese
 Abfrage wird in einer sehr kompakten Form ausgedrückt.
 
 00:15:35,440 --> 00:15:41,280
-Stattdessen erhalten wir in dieser Definition plötzlich
-keine solche geschlossene Lösung,
+Stattdessen erhalten wir in dieser Definition
+plötzlich keine solche geschlossene Lösung,
 
 00:15:41,280 --> 00:15:46,080
 stattdessen erhalten wir eine Aufzählung von Ergebnissen
 wie z. B. n könnte eins sein, m könnte null sein,
 
 00:15:46,080 --> 00:15:49,120
-oder n könnte zwei sein und m könnte eins sein, und so weiter.
+oder n könnte zwei sein und m
+könnte eins sein, und so weiter.
 
 00:15:49,120 --> 00:15:54,400
 Hier können wir also plötzlich eine
 unendliche Folge von Ergebnissen.
 
 00:15:54,400 --> 00:15:57,360
-Hier hingegen haben wir eine sehr schöne geschlossene Form.
+Hier hingegen haben wir eine
+sehr schöne geschlossene Form.
 
 00:15:58,240 --> 00:16:00,720
 Okay, also die Wahl und Behandlung der
 
 00:16:01,680 --> 00:16:07,680
-Argumente hier plötzlich zumindest die
-Qualität der Ergebnisse in dem Sinne, dass es ein
+Argumente hier plötzlich zumindest die Qualität
+der Ergebnisse in dem Sinne, dass es ein
 
 00:16:07,680 --> 00:16:13,920
-schöneres Ergebnis gibt, weil es eine Lösung gibt und nicht
-als eine Aufzählung von unendlich vielen Lösungen.
+schöneres Ergebnis gibt, weil es eine Lösung gibt und
+nicht als eine Aufzählung von unendlich vielen Lösungen.
 
 00:16:14,720 --> 00:16:16,640
 Okay, und das geschah nur durch
 
 00:16:16,640 --> 00:16:21,840
-eine kleine, scheinbar unschuldige Änderung
-an der Definition der Addition.
+eine kleine, scheinbar unschuldige
+Änderung an der Definition der Addition.
 
 51 # slide
 00:16:24,880 --> 00:16:28,080
-Und diese Änderungen können wirklich
-unerwünschte Folgen haben.
+Und diese Änderungen können
+wirklich unerwünschte Folgen haben.
 
 00:16:28,080 --> 00:16:30,240
 Schauen wir uns also ein weiteres Beispiel an
 
 00:16:31,520 --> 00:16:35,440
-anstelle von Addition und Subtraktion,
-lassen Sie uns die Addition und Multiplikation betrachten.
+anstelle von Addition und Subtraktion, lassen Sie
+uns die Addition und Multiplikation betrachten.
 
 00:16:35,440 --> 00:16:44,260
 Ja, wenn wir eine Addition haben, können wir definitiv
@@ -814,15 +828,16 @@ Y wieder, erhält man tatsächlich
 das Ergebnis von X + 1 * Y.
 
 00:16:58,720 --> 00:17:05,200
-Dies ist also eine schöne anschauliche Lösung für
-die Berechnung der Multiplikation, zusätzlich zur Addition.
+Dies ist also eine schöne anschauliche Lösung für die
+Berechnung der Multiplikation, zusätzlich zur Addition.
 
 00:17:06,320 --> 00:17:11,680
 Probieren wir es aus, das funktioniert
 für verschiedene Arten von Abfragen gut.
 
 00:17:11,680 --> 00:17:14,800
-So können wir zum Beispiel zwei und drei multiplizieren, um sechs zu erhalten.
+So können wir zum Beispiel zwei und drei
+multiplizieren, um sechs zu erhalten.
 
 00:17:16,560 --> 00:17:19,600
 Oder wir können grundsätzlich dividieren.
@@ -831,8 +846,8 @@ Oder wir können grundsätzlich dividieren.
 Wir können fragen, was N erfüllt 2(n) ist vier.
 
 00:17:23,840 --> 00:17:27,840
-Das heißt also eigentlich,
-Wie können wir vier durch zwei teilen?
+Das heißt also eigentlich, Wie
+können wir vier durch zwei teilen?
 
 00:17:27,840 --> 00:17:28,880
 Und die Antwort ist zwei.
@@ -844,20 +859,20 @@ Das ist also schön.
 Und als diese flexible Variante, bei der wir
 
 00:17:34,320 --> 00:17:38,880
-uns nicht festlegen müssen, ob wir
-vorwärts oder rückwärts gehen wollen, richtig?
+uns nicht festlegen müssen, ob wir vorwärts
+oder rückwärts gehen wollen, richtig?
 
 00:17:38,880 --> 00:17:43,600
-So wie wir es zuvor bei der Addition gemacht haben,
-gibt es jedoch eine sehr seltsame Situation.
+So wie wir es zuvor bei der Addition gemacht
+haben, gibt es jedoch eine sehr seltsame Situation.
 
 00:17:43,600 --> 00:17:48,160
 Also, mit der gleichen Definition,
 könnten wir uns auch fragen, oder Prolog,
 
 00:17:48,880 --> 00:17:52,320
-Welche zwei Dinge müssen wir
-multiplizieren, um die Antwort vier zu erhalten?
+Welche zwei Dinge müssen wir multiplizieren,
+um die Antwort vier zu erhalten?
 
 00:17:53,040 --> 00:17:57,600
 Ja, das wäre eine Faktorisierung einer Zahl.
@@ -866,19 +881,19 @@ Ja, das wäre eine Faktorisierung einer Zahl.
 Okay, was wird passieren?
 
 00:17:59,920 --> 00:18:06,000
-Nun, Prolog wird heftig sagen, nun, eins und
-vier ist die Lösung, und tatsächlich ist 1 * 4 = 4.
+Nun, Prolog wird heftig sagen, nun, eins und vier
+ist die Lösung, und tatsächlich ist 1 * 4 = 4.
 
 00:18:06,000 --> 00:18:07,920
 Wir können auch sagen, gut, 2 * 2 ist die Lösung.
 
 00:18:08,480 --> 00:18:12,000
-Ja, zwei und zwei könnten für N
-und M verwendet werden, denn zwei mal zwei ist vier.
+Ja, zwei und zwei könnten für N und M
+verwendet werden, denn zwei mal zwei ist vier.
 
 00:18:12,000 --> 00:18:16,880
-So, jetzt würden wir auch hoffen, dass wir am Ende
-die Antwort 4 * 1 erhalten.
+So, jetzt würden wir auch hoffen, dass
+wir am Ende die Antwort 4 * 1 erhalten.
 
 00:18:17,440 --> 00:18:22,720
 Doch plötzlich stößt das Prolog-Programm
@@ -899,23 +914,23 @@ Aber es würde nicht die endgültige Antwort 4 * 1 liefern,
 was sehr enttäuschend ist, weil es für die Addition
 
 00:18:43,040 --> 00:18:47,360
-sehr gut mit dem gleichen
-Prädikat vorwärts und rückwärts funktioniert.
+sehr gut mit dem gleichen Prädikat
+vorwärts und rückwärts funktioniert.
 
 00:18:48,720 --> 00:18:49,220
 Ja.
 
 00:18:49,680 --> 00:18:54,880
-Eine Möglichkeit, dies auszudrücken, ist, dass
-die Multiplikation den sogenannten Aufrufmodus unterstützt;
+Eine Möglichkeit, dies auszudrücken, ist, dass die
+Multiplikation den sogenannten Aufrufmodus unterstützt;
 
 00:18:55,840 --> 00:19:06,080
-+X, +Y, ?Z und +X, ?Y, +Z. Dies ist also ein Weg,
-in Prolog-Bibliotheken zu dokumentieren, dass sie es sind,
++X, +Y, ?Z und +X, ?Y, +Z. Dies ist also ein Weg, in
+Prolog-Bibliotheken zu dokumentieren, dass sie es sind,
 
 00:19:06,080 --> 00:19:09,280
-zum Beispiel kann die Multiplikation
-verwendet werden, indem man uns Input liefert.
+zum Beispiel kann die Multiplikation verwendet
+werden, indem man uns Input liefert.
 
 00:19:09,280 --> 00:19:13,840
 Das ist es, was das Plus bedeutet, die Bereitstellung
@@ -936,21 +951,23 @@ und die Frage nach der mittleren
 Position stellt.
 
 00:19:26,000 --> 00:19:30,320
-Das ist ein anderer Aufrufmodus, aber
-es funktioniert
+Das ist ein anderer Aufrufmodus,
+aber es funktioniert
 
 00:19:30,320 --> 00:19:32,000
 nicht so schön, oder?
 
 00:19:32,000 --> 00:19:35,040
-Hier sehen wir also zum Beispiel, dass wir generell
+Hier sehen wir also zum
+Beispiel, dass wir generell
 
 00:19:35,920 --> 00:19:45,040
-dieses Prädikat verwenden können, indem wir das dritte Argument
-angeben und nach den beiden anderen fragen, richtig?
+dieses Prädikat verwenden können, indem wir das dritte
+Argument angeben und nach den beiden anderen fragen, richtig?
 
 00:19:45,040 --> 00:19:46,960
-Das funktioniert bis zu einem gewissen Grad, aber nicht vollständig.
+Das funktioniert bis zu einem
+gewissen Grad, aber nicht vollständig.
 
 52 # slide
 00:19:49,600 --> 00:19:52,640
@@ -958,32 +975,32 @@ Und das steht wirklich im Gegensatz zu
 Dingen, die wir zuvor gesehen haben, richtig?
 
 00:19:52,640 --> 00:20:01,600
-Wenn wir uns nur die Addition ansehen, also das, was wir
-vorher in diesem Zusammenhang gemacht haben, dann ist es genau der
+Wenn wir uns nur die Addition ansehen, also das, was wir vorher
+in diesem Zusammenhang gemacht haben, dann ist es genau der
 
 00:20:01,600 --> 00:20:07,120
-Aufrufmodus, bei dem wir das letzte Argument angeben
-und nach den anderen beiden fragen, funktioniert recht gut.
+Aufrufmodus, bei dem wir das letzte Argument angeben und
+nach den anderen beiden fragen, funktioniert recht gut.
 
 00:20:07,120 --> 00:20:13,440
-Denn wir können fragen, welche N und M in
-Addition drei ergeben?
+Denn wir können fragen, welche N
+und M in Addition drei ergeben?
 
 00:20:14,000 --> 00:20:20,240
-Und gut, dann wird Prolog sicher
-genau alle richtigen Lösungen produzieren.
+Und gut, dann wird Prolog sicher genau
+alle richtigen Lösungen produzieren.
 
 00:20:20,800 --> 00:20:24,320
-Und bei Multiplikationen funktioniert das plötzlich
-auf der vorherigen Folie nicht.
+Und bei Multiplikationen funktioniert das
+plötzlich auf der vorherigen Folie nicht.
 
 00:20:25,040 --> 00:20:33,360
-Ja, also in der Tat unterstützt die Addition alle Aufrufmodi,
-auch wenn man drei Variablen aufruft oder keine
+Ja, also in der Tat unterstützt die Addition alle
+Aufrufmodi, auch wenn man drei Variablen aufruft oder keine
 
 00:20:33,360 --> 00:20:39,040
-konkrete Eingabe wie diesen konkreten Wert
-hier; die Addition macht einfach etwas Sinnvolles.
+konkrete Eingabe wie diesen konkreten Wert hier;
+die Addition macht einfach etwas Sinnvolles.
 
 00:20:39,040 --> 00:20:42,960
 Was natürlich die Multiplikation auf der
@@ -993,8 +1010,8 @@ vorhergehenden Folie nicht tut, denn bereits, wenn ein
 Stelle mit konkreten Werten gefüllt ist,
 
 00:20:47,520 --> 00:20:52,160
-hat sie bereits versagt, nützliche
-Ausgaben für die andere Stelle zu liefern, okay?
+hat sie bereits versagt, nützliche Ausgaben
+für die andere Stelle zu liefern, okay?
 
 00:20:52,160 --> 00:20:53,760
 Bei der Addition hingegen funktioniert das.
@@ -1009,23 +1026,24 @@ Warum funktioniert es bei der Addition?
 Für diese Definition von Addition?
 
 00:20:59,040 --> 00:21:01,680
-Warum funktioniert es nicht bei der
-Definition der Multiplikation?
+Warum funktioniert es nicht bei
+der Definition der Multiplikation?
 
 00:21:01,680 --> 00:21:04,400
-Und die deklarative Semantik kann dies nicht erklären.
+Und die deklarative Semantik
+kann dies nicht erklären.
 
 00:21:05,920 --> 00:21:09,600
-Und nicht nur, warum es anders ist,
-sondern auch warum es bei der Multiplikation nicht funktioniert.
+Und nicht nur, warum es anders ist, sondern auch
+warum es bei der Multiplikation nicht funktioniert.
 
 00:21:09,600 --> 00:21:12,320
-Wir können uns auch überzeugen lassen
-von etwas in der Definition,
+Wir können uns auch überzeugen
+lassen von etwas in der Definition,
 
 00:21:12,320 --> 00:21:17,200
-sodass die Multiplikationsfunktion
-auch auf diese flexible Weise funktionieren wird.
+sodass die Multiplikationsfunktion auch auf
+diese flexible Weise funktionieren wird.
 
 00:21:18,000 --> 00:21:23,120
 Und wieder kann die deklarative Semantik nicht erklären
@@ -1036,8 +1054,8 @@ einen Einblick in die operationale Semantik,
 um zu wissen, wie man das Programm
 
 00:21:27,600 --> 00:21:33,280
-von der vorherigen Folie zu ändern hat, damit auch
-Multiplikation flexibler funktioniert.
+von der vorherigen Folie zu ändern hat, damit
+auch Multiplikation flexibler funktioniert.
 
 00:21:33,280 --> 00:21:37,600
 Und in der Tat wird dies ein laufendes
@@ -1048,20 +1066,21 @@ die konkrete Ausführung erklärt wird; werden
 wir dies tatsächlich tun und verschiedene
 
 00:21:43,040 --> 00:21:48,160
-Fälle untersuchen, indem wir uns die Kombination aus Addition und
-Multiplikation betrachten und versuchen, das
+Fälle untersuchen, indem wir uns die Kombination aus
+Addition und Multiplikation betrachten und versuchen, das
 
 00:21:49,760 --> 00:21:57,840
-Programm flexibler zu machen, indem
-wir verstehen, wie es ausgeführt werden soll.
+Programm flexibler zu machen, indem wir
+verstehen, wie es ausgeführt werden soll.
 
 53 # slide
 00:21:58,720 --> 00:22:05,200
-Und als letztes Beispiel dafür, was seltsam ist oder
+Und als letztes Beispiel
+dafür, was seltsam ist oder
 
 00:22:06,080 --> 00:22:10,880
-problematisch zur deklarativen Semantik: Es ist nicht genug,
-um das Verhalten aller Prolog-Programme zu erklären.
+problematisch zur deklarativen Semantik: Es ist nicht
+genug, um das Verhalten aller Prolog-Programme zu erklären.
 
 00:22:10,880 --> 00:22:12,560
 Schauen wir uns dieses Beispiel noch einmal an.
@@ -1071,7 +1090,8 @@ Also, es war aus der ersten
 Vorlesung im Prolog-Teil,
 
 00:22:15,600 --> 00:22:18,720
-haben sie diese Konzepte definiert, das Grundkonzept
+haben sie diese Konzepte
+definiert, das Grundkonzept
 
 00:22:19,360 --> 00:22:24,960
 und diese Beziehung dort oben mit ihren ersten
@@ -1085,23 +1105,24 @@ eine Negation in einer Abfrage vorkommt,
 oder man sollte sie immer ans Ende setzen.
 
 00:22:34,560 --> 00:22:38,720
-Und ich habe gesagt, na ja, es ist halt so, dass man
-einfach so akzeptieren sollte.
+Und ich habe gesagt, na ja, es ist halt
+so, dass man einfach so akzeptieren sollte.
 
 00:22:38,720 --> 00:22:40,880
-Nun, was wäre denn passiert,
-wenn wir das nicht gemacht hätten?
+Nun, was wäre denn passiert, wenn
+wir das nicht gemacht hätten?
 
 00:22:40,880 --> 00:22:45,920
 Also, sagen wir, wir haben das etwas geändert,
 sehr geringfügig geändert, indem wir diese negierte
 
 00:22:47,280 --> 00:22:53,600
-Einschränkung zuerst vor die rechte Seite der
-rechten Seite dieser Liebes-Regel, okay?
+Einschränkung zuerst vor die rechte Seite
+der rechten Seite dieser Liebes-Regel, okay?
 
 00:22:53,600 --> 00:22:55,360
-Wiederum sollte das logischerweise keinen Unterschied machen.
+Wiederum sollte das logischerweise
+keinen Unterschied machen.
 
 00:22:55,360 --> 00:23:01,840
 Wenn das Komma wirklich ein logisches "und" ist, und
@@ -1112,18 +1133,20 @@ dann müssen wir einen Unterschied machen, ob das
 hier oder hier oder tatsächlich vorangestellt wird.
 
 00:23:06,960 --> 00:23:10,560
-Aber diese logische Lesart reicht offenbar nicht aus,
+Aber diese logische Lesart
+reicht offenbar nicht aus,
 
 00:23:10,560 --> 00:23:15,520
-nicht völlig ausreichend, um zu verstehen, was hier passiert
-denn wenn man das zweite Programm
+nicht völlig ausreichend, um zu verstehen, was
+hier passiert denn wenn man das zweite Programm
 
 00:23:15,520 --> 00:23:19,360
-hier nach dieser kleinen Änderung ausführt,
-dann erhalten wir sehr seltsame Ergebnisse, richtig?
+hier nach dieser kleinen Änderung ausführt, dann
+erhalten wir sehr seltsame Ergebnisse, richtig?
 
 00:23:19,360 --> 00:23:23,440
-Im Grunde ist also niemand auf jemanden eifersüchtig.
+Im Grunde ist also niemand
+auf jemanden eifersüchtig.
 
 00:23:23,440 --> 00:23:28,800
 Ja, Marsellus ist auf niemanden eifersüchtig, sagt
@@ -1134,12 +1157,12 @@ zuvor festgestellt haben, dass es tatsächlich
 Eifersucht bei Marsellus oder jemandem besteht.
 
 00:23:34,640 --> 00:23:38,400
-Und das Gleiche gilt im Grunde für
-alle Fragen, die wir hier gestellt haben, richtig?
+Und das Gleiche gilt im Grunde für alle
+Fragen, die wir hier gestellt haben, richtig?
 
 00:23:38,400 --> 00:23:41,200
-Selbst wenn man mit zwei Variablen fragt,
-erhalten wir keine Ergebnisse.
+Selbst wenn man mit zwei Variablen
+fragt, erhalten wir keine Ergebnisse.
 
 00:23:41,200 --> 00:23:42,640
 Niemand ist eifersüchtig, richtig?
@@ -1149,8 +1172,8 @@ Das ist nicht das, was wir unter dieser
 Kontextualisierung verstanden haben, okay?
 
 00:23:48,080 --> 00:23:50,960
-In der Tat, vor dieser Änderung,
-haben Sie sinnvolle Ergebnisse erhalten.
+In der Tat, vor dieser Änderung, haben
+Sie sinnvolle Ergebnisse erhalten.
 
 00:23:50,960 --> 00:23:55,920
 Sie können zurück zu den ersten Zeilen von Prolog gehen,
@@ -1161,32 +1184,35 @@ Aber irgendwie hat diese kleine Änderung
 hier einen großen Unterschied gemacht.
 
 00:24:02,800 --> 00:24:08,080
-Okay, die deklarative Semantik kann das nicht
-erklären, weil sie nicht einmal
+Okay, die deklarative Semantik kann das
+nicht erklären, weil sie nicht einmal
 
 00:24:08,080 --> 00:24:11,440
 Fälle von Negation erfasst, okay?
 
 00:24:11,440 --> 00:24:13,120
-Wir bräuchten also wirklich eine operationale Semantik.
+Wir bräuchten also wirklich
+eine operationale Semantik.
 
 00:24:13,680 --> 00:24:15,360
-Ich weiß nicht, ob wir tatsächlich zu dem Punkt kommen werden,
+Ich weiß nicht, ob wir tatsächlich
+zu dem Punkt kommen werden,
 
 00:24:16,240 --> 00:24:21,280
 an den Punkt kommen, wo wir in der operationalen
 Semantik definieren, wie die Negation behandelt wird.
 
 00:24:21,280 --> 00:24:25,360
-Also, das ist möglich für die operationale
-Semantik im Gegensatz zur deklarativen Semantik möglich.
+Also, das ist möglich für die operationale Semantik
+im Gegensatz zur deklarativen Semantik möglich.
 
 00:24:25,360 --> 00:24:27,280
-Kommt man im Kurs vielleicht gar nicht an diesen Punkt
+Kommt man im Kurs vielleicht
+gar nicht an diesen Punkt
 
 00:24:27,280 --> 00:24:30,960
-Kurses kommen, denn das ist der einzige
-der halben Vorlesung, der grundlegend übrig bleibt.
+Kurses kommen, denn das ist der einzige der
+halben Vorlesung, der grundlegend übrig bleibt.
 
 00:24:31,520 --> 00:24:36,640
 Aber gut, wir würden die operationale
@@ -1196,31 +1222,33 @@ Semantik und nicht die deklarative Semantik
 um dieses Problem zu lösen.
 
 00:24:38,960 --> 00:24:41,600
-Und das ist der Punkt hier,
-weil ich motivieren möchte, warum
+Und das ist der Punkt hier, weil
+ich motivieren möchte, warum
 
 00:24:41,600 --> 00:24:45,840
-wir uns überhaupt mit der operationalen Semantik beschäftigen sollten.
+wir uns überhaupt mit der operationalen
+Semantik beschäftigen sollten.
 
 54 # slide
 00:24:46,400 --> 00:24:49,920
-Okay, wir sollten uns also die
-operationale Semantik ansehen, um zu verstehen
+Okay, wir sollten uns also die operationale
+Semantik ansehen, um zu verstehen
 
 00:24:49,920 --> 00:24:54,000
-diese Phänomene, die ich gerade
-auf den vorherigen Folien gezeigt habe.
+diese Phänomene, die ich gerade auf
+den vorherigen Folien gezeigt habe.
 
 00:24:54,960 --> 00:25:00,160
-Wir müssen also wissen, wie Prolog
-konkret Programme ausführt.
+Wir müssen also wissen, wie
+Prolog konkret Programme ausführt.
 
 00:25:00,160 --> 00:25:02,640
-Das ist es, was die operationale Semantik erklärt.
+Das ist es, was die
+operationale Semantik erklärt.
 
 00:25:02,640 --> 00:25:08,400
-Und um dies zu etablieren und zu bauen,
-brauchen wir mehrere Zutaten.
+Und um dies zu etablieren und zu
+bauen, brauchen wir mehrere Zutaten.
 
 00:25:08,960 --> 00:25:09,520
 Ja.
@@ -1233,8 +1261,8 @@ ein komplizierterer Aufbau als nur die
 Konstruktion für die deklarative Semantik.
 
 00:25:17,600 --> 00:25:20,320
-Okay, es gibt im Grunde drei
-Dinge, die wir brauchen: Unifikation,
+Okay, es gibt im Grunde drei Dinge,
+die wir brauchen: Unifikation,
 
 00:25:20,320 --> 00:25:24,800
 Resolution und das Konzept der
@@ -1253,17 +1281,17 @@ aber es ist nicht genau die Ableitung,
 die auf Prolog angewendet wird.
 
 00:25:37,120 --> 00:25:43,120
-Der dritte Punkt hier ist etwas, das
-nicht durch das vorherige Material abgedeckt ist,
+Der dritte Punkt hier ist etwas, das nicht
+durch das vorherige Material abgedeckt ist,
 
 00:25:43,760 --> 00:25:50,880
-die Folien im Moodle-Kurs von
-der Vorlesung von Professor König. Aber die ersten beiden
+die Folien im Moodle-Kurs von der Vorlesung
+von Professor König. Aber die ersten beiden
 
 00:25:50,880 --> 00:25:56,800
 sind eigentlich da, nur die Begriffe, die auch
 die in der letzten Logikvorlesung vorkommen.
 
 00:25:56,800 --> 00:26:08,080
-Ich werde einige Wiederholungen dazu geben, aber ich
-werde keine vollständige Formulierung dieser Konzepte liefern.
+Ich werde einige Wiederholungen dazu geben, aber ich werde
+keine vollständige Formulierung dieser Konzepte liefern.

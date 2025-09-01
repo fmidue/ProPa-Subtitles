@@ -1,19 +1,19 @@
 133 # slide
 00:00:01,840 --> 00:00:07,600
-Nachdem wir über einfache Aufzählungstypen
-und nicht-rekursive algebraische Datentypen gesprochen haben,
+Nachdem wir über einfache Aufzählungstypen und
+nicht-rekursive algebraische Datentypen gesprochen haben,
 
 00:00:07,600 --> 00:00:12,160
-können wir nun über
-rekursive algebraische Datentypen sprechen.
+können wir nun über rekursive
+algebraische Datentypen sprechen.
 
 00:00:14,720 --> 00:00:19,280
 Hier ist ein Beispiel, und es sollte wahrscheinlich
 nicht überraschen, dass, genau wie Funktionen
 
 00:00:19,280 --> 00:00:24,400
-rekursiv sein können, auch Typen rekursiv sein können. Also, was
-definieren wir hier? Wir definieren einen Typ 'Nat'
+rekursiv sein können, auch Typen rekursiv sein können. Also,
+was definieren wir hier? Wir definieren einen Typ 'Nat'
 
 00:00:25,440 --> 00:00:33,840
 (für natürliche Zahlen). Und Werte dieses Typs sind
@@ -32,12 +32,12 @@ und da 'Zero' ein Element von 'Nat' ist, also
 Succ 'Zero' usw. Es ist also genau wie im
 
 00:00:57,200 --> 00:01:03,760
-Verbindungsbeispiel, nur dass jetzt
-an den Stellen, die hier als
+Verbindungsbeispiel, nur dass
+jetzt an den Stellen, die hier als
 
 00:01:03,760 --> 00:01:08,240
-Argumente für die Datenkonstruktoren auftreten, verwenden wir
-denselben Typ, den wir gerade definieren.
+Argumente für die Datenkonstruktoren auftreten,
+verwenden wir denselben Typ, den wir gerade definieren.
 
 00:01:08,240 --> 00:01:13,360
 Das ist erlaubt, und es gibt unendlich
@@ -52,56 +52,56 @@ dieses Typs. Und es ist klar, was die Systematik
 hier ist ... wie das weitergeht. Dies drückt genau
 
 00:01:27,760 --> 00:01:34,000
-alle natürlichen Zahlen aus. Wie rechnen wir dann
-damit? Durch Pattern-Matching und Rekursion.
+alle natürlichen Zahlen aus. Wie rechnen wir
+dann damit? Durch Pattern-Matching und Rekursion.
 
 00:01:35,520 --> 00:01:40,080
-Wenn Sie einen rekursiven Datentyp haben,
-dann werden die meisten Funktionen darauf auch rekursiv sein
+Wenn Sie einen rekursiven Datentyp haben, dann werden
+die meisten Funktionen darauf auch rekursiv sein
 
 00:01:40,640 --> 00:01:46,400
-(die meisten interessanten Funktionen). Betrachten wir
-Addition. Natürlich können wir nicht einfach nur
+(die meisten interessanten Funktionen). Betrachten
+wir Addition. Natürlich können wir nicht einfach nur
 
 00:01:46,400 --> 00:01:51,947
-das Pluszeichen, das wir normalerweise für
-Zahlen verwenden, da es sich nicht um einen Zahlentyp handelt. Es
+das Pluszeichen, das wir normalerweise für Zahlen
+verwenden, da es sich nicht um einen Zahlentyp handelt. Es
 
 00:01:51,947 --> 00:01:57,120
-ist ein benutzerdefinierter Typ. Wenn wir also eine Addition durchführen
-wollen, sollten wir uns eine Funktion dafür definieren.
+ist ein benutzerdefinierter Typ. Wenn wir also eine Addition
+durchführen wollen, sollten wir uns eine Funktion dafür definieren.
 
 00:01:58,000 --> 00:02:03,200
-Dies ist die Addition von natürlichen Zahlen.
-Zwei natürliche Zahlen kommen rein, eine kommt raus. Wie
+Dies ist die Addition von natürlichen Zahlen. Zwei
+natürliche Zahlen kommen rein, eine kommt raus. Wie
 
 00:02:03,200 --> 00:02:08,480
-ist das definiert? Es gibt verschiedene Möglichkeiten, dies zu tun.
-Hier geschieht es durch Fallunterscheidung beim ersten
+ist das definiert? Es gibt verschiedene Möglichkeiten, dies
+zu tun. Hier geschieht es durch Fallunterscheidung beim ersten
 
 00:02:08,480 --> 00:02:13,360
 Argument. Also, mit dem ersten Argument Null, und
 dem zweiten Argument etwas... eine Variable m,
 
 00:02:14,480 --> 00:02:22,000
-dann ist die Addition von 'Zero' und m gleich m. Das erste
-Argument ist noch nicht rekursiv. Dies ist der
+dann ist die Addition von 'Zero' und m gleich m. Das
+erste Argument ist noch nicht rekursiv. Dies ist der
 
 00:02:22,000 --> 00:02:26,400
-Grundfall der Rekursion. Und wenn das erste
-Argument nicht 'Zero' ist, dann muss es Nachfolger von
+Grundfall der Rekursion. Und wenn das erste Argument
+nicht 'Zero' ist, dann muss es Nachfolger von
 
 00:02:26,400 --> 00:02:31,120
-etwas sein, denn es gibt keine andere Wahl, weil
-Zero und 'Succ' die einzigen beiden Datenkonstruktoren
+etwas sein, denn es gibt keine andere Wahl, weil Zero
+und 'Succ' die einzigen beiden Datenkonstruktoren
 
 00:02:31,680 --> 00:02:39,920
-des Typs 'Nat' sind. Es ist also der Nachfolger von etwas.
-Und dieses Etwas ist eine Variable. Es kann
+des Typs 'Nat' sind. Es ist also der Nachfolger von
+etwas. Und dieses Etwas ist eine Variable. Es kann
 
 00:02:41,120 --> 00:02:46,160
-durch eine Variable ersetzt werden. Dies wäre also
-eine natürliche Zahl desselben Typs sein. Und
+durch eine Variable ersetzt werden. Dies wäre
+also eine natürliche Zahl desselben Typs sein. Und
 
 00:02:46,160 --> 00:02:50,480
 das zweite Argument ist auch eine natürliche Zahl.
@@ -112,12 +112,12 @@ Was können wir dann tun? Wir können die Funktion
 auf zwei natürlichen Zahlen. Dies ergibt eine natürliche
 
 00:02:56,240 --> 00:03:01,760
-Zahl. Und auf diese natürliche Zahl können wir
-den Nachfolger-Konstruktor anwenden und erhalten eine weitere
+Zahl. Und auf diese natürliche Zahl können wir den
+Nachfolger-Konstruktor anwenden und erhalten eine weitere
 
 00:03:01,760 --> 00:03:06,960
-natürliche Zahl. Das ist also aus Sicht der Typisierung sinnvoll
-und auch mathematisch sinnvoll,
+natürliche Zahl. Das ist also aus Sicht der
+Typisierung sinnvoll und auch mathematisch sinnvoll,
 
 00:03:06,960 --> 00:03:13,920
 denn es bedeutet im Grunde genommen: Null plus
@@ -128,16 +128,16 @@ etwas plus etwas anderem ist der Nachfolger
 von plus der beiden Einzelwerte. So,
 
 00:03:20,960 --> 00:03:26,240
-machen diese Gleichungen mathematisch Sinn. Also,
-geben sie eine korrekte Definition. Sie geben auch eine
+machen diese Gleichungen mathematisch Sinn. Also, geben
+sie eine korrekte Definition. Sie geben auch eine
 
 00:03:26,240 --> 00:03:30,800
-vollständige Definition, und der Compiler prüft
-dies. Also wird der Compiler, wenn er diese Definition hat,
+vollständige Definition, und der Compiler prüft dies.
+Also wird der Compiler, wenn er diese Definition hat,
 
 00:03:30,800 --> 00:03:36,080
-sicherstellen, dass er, wenn er dazu angewiesen wird,
-alle Fälle behandelt. Also
+sicherstellen, dass er, wenn er dazu
+angewiesen wird, alle Fälle behandelt. Also
 
 00:03:36,080 --> 00:03:45,840
 ist die Fallunterscheidung wirklich vollständig. Und dies
@@ -153,16 +153,16 @@ tief verschachtelte Baumstrukturen. Also, hier
 ist ein weiterer rekursiver Datentyp. Und jetzt,
 
 00:03:59,200 --> 00:04:03,840
-der wichtigste/konzeptionelle Unterschied ist,
-dass wir zwei rekursive Vorkommen haben.
+der wichtigste/konzeptionelle Unterschied
+ist, dass wir zwei rekursive Vorkommen haben.
 
 00:04:04,960 --> 00:04:12,480
-Ein 'Tree' ist also ein 'Leaf' oder ein 'Node', bei dem eines
-seiner Argumente ein 'Integer' (eine Zahl) ist,
+Ein 'Tree' ist also ein 'Leaf' oder ein 'Node', bei dem
+eines seiner Argumente ein 'Integer' (eine Zahl) ist,
 
 00:04:12,480 --> 00:04:17,680
-aber er hat auch zwei Argumente, die rekursiv sind.
-rekursive Vorkommen sind, im Grunde ein linker erfolgreicher und ein rechter
+aber er hat auch zwei Argumente, die rekursiv sind. rekursive
+Vorkommen sind, im Grunde ein linker erfolgreicher und ein rechter
 
 00:04:17,680 --> 00:04:24,160
 Nachfolger. So sehen natürlich die Werte dieses Typs
@@ -173,20 +173,20 @@ Typs, und ein Knoten mit einem Blatt und der Zahl 2
 und ein Blatt ist auch ein Wert dieses Typs, aber auch
 
 00:04:31,920 --> 00:04:36,960
-Beispiele, in denen dieses Blatt durch etwas
-dieser Form ersetzt wird, vielleicht mit einer anderen Zahl.
+Beispiele, in denen dieses Blatt durch etwas dieser
+Form ersetzt wird, vielleicht mit einer anderen Zahl.
 
 00:04:37,600 --> 00:04:43,920
 Das wäre natürlich ähnlich wie bei dem Verbindungs-Beispiel,
 wo wir einen Baum auf dem Whiteboard gesehen haben.
 
 00:04:43,920 --> 00:04:50,160
-Aber dort war die Verschachtelung tatsächlich endlich,
-weil keine Rekursion stattfand. Aber hier
+Aber dort war die Verschachtelung tatsächlich
+endlich, weil keine Rekursion stattfand. Aber hier
 
 00:04:50,160 --> 00:04:56,160
-können wir immer wieder einen Baum in den
-linken oder rechten Nachfolger eines Knotens stecken.
+können wir immer wieder einen Baum in den linken
+oder rechten Nachfolger eines Knotens stecken.
 
 00:04:56,160 --> 00:05:01,840
 Das kann beliebig tief verschachtelt werden.
@@ -200,12 +200,12 @@ Pattern-Matching und Rekursion im Allgemeinen. Also,
 wenn wir zum Beispiel einen solchen Baum mit beliebig
 
 00:05:15,600 --> 00:05:19,760
-tiefer Verschachtelung haben und wir berechnen wollen, wie tief er
-tatsächlich verschachtelt ist, wollen wir die Höhe
+tiefer Verschachtelung haben und wir berechnen wollen, wie
+tief er tatsächlich verschachtelt ist, wollen wir die Höhe
 
 00:05:19,760 --> 00:05:24,880
-des Baums berechnen wollen, dann sollte das eine Funktion sein
-von 'Tree' zu 'Integer' sein. Wie berechnen wir das? Wir
+des Baums berechnen wollen, dann sollte das eine Funktion
+sein von 'Tree' zu 'Integer' sein. Wie berechnen wir das? Wir
 
 00:05:24,880 --> 00:05:29,760
 machen eine Fallunterscheidung: ein 'Tree' kann ein 'Leaf' sein
@@ -216,27 +216,28 @@ Blattes macht Sinn, wenn sie als 0 definiert wird, oder vielleicht
 als 1. Das ist eine Entscheidung, die wir an diesem Punkt treffen,
 
 00:05:35,680 --> 00:05:40,960
-wie wir die Höhe eines einzelnen Blattes interpretieren wollen.
-Blattes. Und der interessantere Fall ist natürlich,
+wie wir die Höhe eines einzelnen Blattes interpretieren
+wollen. Blattes. Und der interessantere Fall ist natürlich,
 
 00:05:40,960 --> 00:05:47,120
 wenn der Baum kein Blatt ist. Er ist also ein Knoten.
 Und dann hat er drei Argumente. Also, der linke
 
 00:05:47,120 --> 00:05:53,680
-Tree, eine Zahl und der rechte Tree. Und wie
-sollte die Höhe berechnet werden? Wir sollten berechnen,
+Tree, eine Zahl und der rechte Tree. Und wie sollte
+die Höhe berechnet werden? Wir sollten berechnen,
 
 00:05:53,680 --> 00:05:59,680
-rekursiv die Höhe des linken und rechten
-Sub-Trees berechnen und das Maximum davon nehmen und
+rekursiv die Höhe des linken und rechten Sub-Trees
+berechnen und das Maximum davon nehmen und
 
 00:05:59,680 --> 00:06:05,840
 1. Dann erhalten wir eine ganze Zahl, die sinnvollerweise
 als die Höhe des Baums interpretiert werden kann.
 
 00:06:07,280 --> 00:06:10,480
-Also, das gleiche Muster wie zuvor: Fallunterscheidung,
+Also, das gleiche Muster wie
+zuvor: Fallunterscheidung,
 
 00:06:12,400 --> 00:06:19,840
 Zugriff auf die Unterstrukturen, Rekursion,
@@ -248,16 +249,16 @@ Dann können wir auch etwas abstrakter werden und
 algebraische Datentypen mit Polymorphismus kombinieren. So,
 
 00:06:30,640 --> 00:06:34,240
-hatten wir Funktionen, die rekursiv sein können
-und polymorph sein können, und wir haben Datentypen.
+hatten wir Funktionen, die rekursiv sein können und
+polymorph sein können, und wir haben Datentypen.
 
 00:06:34,240 --> 00:06:38,080
 Sie können rekursiv sein, und sie können
 polymorph sein. Wie könnte das aussehen?
 
 00:06:38,080 --> 00:06:43,360
-Betrachten wir den Fall, dass wir Trees
-wie auf der vorherigen Folie haben, aber wir werden nicht unbedingt
+Betrachten wir den Fall, dass wir Trees wie auf der
+vorherigen Folie haben, aber wir werden nicht unbedingt
 
 00:06:43,360 --> 00:06:52,560
 immer Zahlen darin speichern wollen. Wir wollen
@@ -268,32 +269,32 @@ die Art der Dinge, die im 'Tree' gespeichert werden,
 so wie wir wissen, dass Listen über verschiedene
 
 00:06:59,840 --> 00:07:05,120
-Typen. Was müssen wir also ändern,
-dann? Lassen wir dieses 'a' für einen Moment beiseite. Also,
+Typen. Was müssen wir also ändern, dann? Lassen
+wir dieses 'a' für einen Moment beiseite. Also,
 
 00:07:05,120 --> 00:07:09,920
-wir haben immer noch 'Tree' als Datendefinition. Ein
-'Tree' kann ein 'Leaf' sein und es wird nichts gespeichert,
+wir haben immer noch 'Tree' als Datendefinition. Ein 'Tree'
+kann ein 'Leaf' sein und es wird nichts gespeichert,
 
 00:07:09,920 --> 00:07:18,320
 also gibt es keine Änderung im Datenkonstruktor
 für den Basisfall. Wenn wir jedoch einen 'Node',
 
 00:07:18,320 --> 00:07:22,800
-dann wollen wir immer noch zwei Sub-Trees haben, aber
-in der Mitte wollen wir keinen 'Integer' haben,
+dann wollen wir immer noch zwei Sub-Trees haben,
+aber in der Mitte wollen wir keinen 'Integer' haben,
 
 00:07:22,800 --> 00:07:27,600
-sondern etwas anderes. Und da wir uns nicht darauf festlegen wollen,
-was das ist, ist es einfach eine Typvariable.
+sondern etwas anderes. Und da wir uns nicht darauf festlegen
+wollen, was das ist, ist es einfach eine Typvariable.
 
 00:07:27,600 --> 00:07:32,960
 Wenn wir das tun, dann sollte diese Variable
 irgendwie irgendwo eingeführt werden, und sie
 
 00:07:32,960 --> 00:07:37,973
-wird hier eingeführt. Im Grunde bedeutet dies also
-zu sagen: 'Tree' ist nicht nur ein einfacher Datentyp. Er
+wird hier eingeführt. Im Grunde bedeutet dies also zu
+sagen: 'Tree' ist nicht nur ein einfacher Datentyp. Er
 
 00:07:37,973 --> 00:07:43,680
 ist jetzt wirklich ein Typkonstruktor. Er konstruiert einen
@@ -304,16 +305,16 @@ ist ein Baum aus 'a's. Dieses 'a' könnte also später
 'Int' oder 'Bool' oder was auch immer sein. Aber abstrakt,
 
 00:07:49,840 --> 00:07:55,440
-in der Definition, ist es einfach eine Variable, weil
-wir uns hier nicht auf einen bestimmten Typ festlegen. Dann können
+in der Definition, ist es einfach eine Variable, weil wir uns
+hier nicht auf einen bestimmten Typ festlegen. Dann können
 
 00:07:55,440 --> 00:08:01,440
-wir diese Typvariable hier verwenden, aber auch in den
-rekursiven Vorkommen in der Definition müssen wir
+wir diese Typvariable hier verwenden, aber auch in
+den rekursiven Vorkommen in der Definition müssen wir
 
 00:08:01,440 --> 00:08:13,200
-sicherstellen, dass wir hier a-Trees haben, nicht nur Trees
-von Integern. Denn man möchte vielleicht den
+sicherstellen, dass wir hier a-Trees haben, nicht nur
+Trees von Integern. Denn man möchte vielleicht den
 
 00:08:13,200 --> 00:08:17,040
 Typ jedes Labels als diesen Typ, der hier als Argument
@@ -324,20 +325,20 @@ angegeben wurde. Wir wollen also nicht, dass wir
 sowohl für die linken als auch für die rechten Sub-Trees.
 
 00:08:24,560 --> 00:08:30,720
-Dies führt zu recht interessanten Typen dieser
-Datenkonstruktoren. Erinnern Sie sich, ein paar Folien weiter hinten
+Dies führt zu recht interessanten Typen dieser Datenkonstruktoren.
+Erinnern Sie sich, ein paar Folien weiter hinten
 
 00:08:30,720 --> 00:08:38,160
-für 'Day' und 'Train' usw., habe ich die Typen dieser
-Datenkonstruktoren. Jetzt, mit Polymorphismus,
+für 'Day' und 'Train' usw., habe ich die Typen
+dieser Datenkonstruktoren. Jetzt, mit Polymorphismus,
 
 00:08:38,160 --> 00:08:45,120
-werden sie noch interessanter. Ich werde das hier
-nicht weiter erörtern. Mein Vorschlag ist also, dass Sie
+werden sie noch interessanter. Ich werde das hier nicht
+weiter erörtern. Mein Vorschlag ist also, dass Sie
 
 00:08:45,120 --> 00:08:49,360
-so etwas wie diese Definition
-in eine Haskell-Datei schreiben, sie in ghci laden,
+so etwas wie diese Definition in eine
+Haskell-Datei schreiben, sie in ghci laden,
 
 00:08:49,360 --> 00:08:57,760
 und die Typen dieser Konstruktoren überprüfen,
@@ -352,28 +353,28 @@ rechnen wir mit Fallunterscheidung, Pattern-Matching
 und, da es sich um einen rekursiven Typ handelt,
 
 00:09:12,560 --> 00:09:18,720
-Rekursion. So können wir zum Beispiel eine height-Funktion
-haben, die nicht nur die Höhe von
+Rekursion. So können wir zum Beispiel eine
+height-Funktion haben, die nicht nur die Höhe von
 
 00:09:18,720 --> 00:09:24,720
-Integer-Bäumen berechnen, sondern auch für Bäume dieser Art
-für jedes 'a'. Eigentlich ist die Definition genau
+Integer-Bäumen berechnen, sondern auch für Bäume dieser
+Art für jedes 'a'. Eigentlich ist die Definition genau
 
 00:09:24,720 --> 00:09:29,040
-die gleiche wie auf der vorherigen Folie. Warum ist das so?
-Weil wir uns hier nicht mit dem
+die gleiche wie auf der vorherigen Folie. Warum
+ist das so? Weil wir uns hier nicht mit dem
 
 00:09:29,600 --> 00:09:37,840
-Elementtyp,  mit den Elementen des Label-Typs befassen.
-Die Berechnung der Höhe ist davon
+Elementtyp, mit den Elementen des Label-Typs
+befassen. Die Berechnung der Höhe ist davon
 
 00:09:37,840 --> 00:09:43,040
 nicht betroffen. Diese 'height' ist eigentlich eine polymorphe
 Funktion auf einen polymorphen Datentyp. Sie nimmt also
 
 00:09:43,040 --> 00:09:48,560
-Bäume eines beliebigen Inhaltstyps und gibt einen Integer zurück.
-Und die Definition ist genau wie zuvor, denn
+Bäume eines beliebigen Inhaltstyps und gibt einen Integer
+zurück. Und die Definition ist genau wie zuvor, denn
 
 00:09:48,560 --> 00:09:55,840
 für ein 'Leaf' erhalten wir eine 0, und wir müssen nicht wissen,
@@ -384,20 +385,20 @@ also ein Knoten mit linkem und rechtem Baum und irgendeinem
 Wert hier, der natürlich von diesem Typ sein wird.
 
 00:10:02,880 --> 00:10:07,760
-Aber er wird nicht benutzt, also müssen wir uns nicht darum kümmern,
-was genau dieser Typ ist. Und was ist
+Aber er wird nicht benutzt, also müssen wir uns nicht
+darum kümmern, was genau dieser Typ ist. Und was ist
 
 00:10:07,760 --> 00:10:11,680
 die Berechnung? Es ist immer noch 1 + das Maximum
 der linken und rechten Höhe. Natürlich ist
 
 00:10:11,680 --> 00:10:16,240
-nicht jede Funktion auf Trees polymorph,
-aber diese Höhenfunktion ist polymorph und sie
+nicht jede Funktion auf Trees polymorph, aber
+diese Höhenfunktion ist polymorph und sie
 
 00:10:16,240 --> 00:10:22,720
-braucht nicht einmal eine Änderung im Vergleich zu dem
-monomorphen Tree-Typ aus der vorherigen Folie.
+braucht nicht einmal eine Änderung im Vergleich zu
+dem monomorphen Tree-Typ aus der vorherigen Folie.
 
 136 # slide
 00:10:27,920 --> 00:10:33,680
@@ -409,8 +410,8 @@ selbst definieren müssen. Das ist der Maybe-Typ.
 Er ist auch polymorph, nicht rekursiv,
 
 00:10:39,440 --> 00:10:45,440
-aber polymorph. Was sind also Werte dieses
-Typs? Ein Vielleicht etwas ("Maybe a") könnte sein
+aber polymorph. Was sind also Werte dieses Typs?
+Ein Vielleicht etwas ("Maybe a") könnte sein
 
 00:10:45,440 --> 00:10:52,320
 Nichts oder könnte nur ein Wert des Typs
@@ -421,24 +422,24 @@ Typ-Konstruktor ist ("Just a"). Was ist also der Sinn,
 diesen Typ zu haben? Er ist nützlich für Funktionen,
 
 00:10:58,160 --> 00:11:03,600
-die sonst partiell wären. Also Funktionen,
-bei denen wir in manchen Fällen keinen Rückgabewert haben.
+die sonst partiell wären. Also Funktionen, bei denen
+wir in manchen Fällen keinen Rückgabewert haben.
 
 00:11:03,600 --> 00:11:08,640
-Dann können wir
-den Ausgabeteil dieser Funktion als Maybe
+Dann können wir den Ausgabeteil
+dieser Funktion als Maybe
 
 00:11:09,200 --> 00:11:12,640
 "welcher Typ es auch immer vorher war"
 ("Maybe a") wählen. Dies macht also deutlich,
 
 00:11:12,640 --> 00:11:15,920
-wo wir keine Rückgabewerte für einige Dinge
-haben. Aber es ist völlig anders,
+wo wir keine Rückgabewerte für einige
+Dinge haben. Aber es ist völlig anders,
 
 00:11:15,920 --> 00:11:21,840
-natürlich von der Partialität in anderen Sprachen,
-wo das irgendwie implizit ist, wenn es sich um einen Nicht-Wert oder
+natürlich von der Partialität in anderen Sprachen, wo das
+irgendwie implizit ist, wenn es sich um einen Nicht-Wert oder
 
 00:11:21,840 --> 00:11:28,480
 ungültig handelt. Nun... das Leere ist eine
@@ -449,52 +450,52 @@ nichts zurückgeben (void). Hier geht es also
 um Funktionen, die manchmal etwas zurückgeben
 
 00:11:32,560 --> 00:11:37,040
-und manchmal nichts zurückgeben.
-Aber es ist explizit in der Typsignatur.
+und manchmal nichts zurückgeben. Aber
+es ist explizit in der Typsignatur.
 
 00:11:39,040 --> 00:11:45,280
 Das kann man auch gut gebrauchen. Und das wird
 tatsächlich in den Übungen zu unserem Spiel
 
 00:11:45,280 --> 00:11:49,840
-Level-Beispiel wieder vorkommen. Also, lassen Sie uns das
-noch weiter umgestalten. Zuvor hatten wir diesen Aufzählungstyp,
+Level-Beispiel wieder vorkommen. Also, lassen Sie uns das noch
+weiter umgestalten. Zuvor hatten wir diesen Aufzählungstyp,
 
 00:11:49,840 --> 00:11:54,640
-wo wir auch diesen Blank als mögliche 'Tile' hatten.
-Wir könnten argumentieren: Blank ist nicht wirklich eine 'Tile'. Blank
+wo wir auch diesen Blank als mögliche 'Tile' hatten. Wir könnten
+argumentieren: Blank ist nicht wirklich eine 'Tile'. Blank
 
 00:11:54,640 --> 00:12:02,080
-ist nichts. Vielleicht sollte der Tile-Typ also nur für
-Dinge verwendet werden, die tatsächlich Kacheln sind, wie Block,
+ist nichts. Vielleicht sollte der Tile-Typ also nur für Dinge
+verwendet werden, die tatsächlich Kacheln sind, wie Block,
 
 00:12:02,080 --> 00:12:07,200
-Perle, Wasser, Luft, vielleicht Spike, oder was auch immer. Und
-wo würden wir ausdrücken, dass wir an einigen Koordinaten
+Perle, Wasser, Luft, vielleicht Spike, oder was auch immer.
+Und wo würden wir ausdrücken, dass wir an einigen Koordinaten
 
 00:12:07,200 --> 00:12:13,200
-keine dieser Kacheln vorhanden sind? Zuvor haben wir
-die leere 'Tile' eingefügt. Wir werden die
+keine dieser Kacheln vorhanden sind? Zuvor haben
+wir die leere 'Tile' eingefügt. Wir werden die
 
 00:12:13,200 --> 00:12:18,400
-Level-Funktion ein bisschen weiter bearbeiten. Also, jetzt sind die Level
-Funktionen von Integer-Koordinatenpaaren
+Level-Funktion ein bisschen weiter bearbeiten. Also, jetzt
+sind die Level Funktionen von Integer-Koordinatenpaaren
 
 00:12:18,400 --> 00:12:23,840
-zu Maybe Tile (nicht nur Tile). Wo wir früher
-Blank zurückgegeben haben, geben wir nun Nothing zurück,
+zu Maybe Tile (nicht nur Tile). Wo wir früher Blank
+zurückgegeben haben, geben wir nun Nothing zurück,
 
 00:12:24,480 --> 00:12:30,080
-das es von hier gibt. Denn wir haben jetzt Maybe Tile.
-Und an den Stellen, an denen wir
+das es von hier gibt. Denn wir haben jetzt
+Maybe Tile. Und an den Stellen, an denen wir
 
 00:12:31,200 --> 00:12:36,000
 eine beliebige 'Tile', eine nicht-leere
 Tile, haben, werden wir Just zurückgeben,
 
 00:12:36,000 --> 00:12:43,520
-und dann dieses Tile. Für die Funktion 'aTile' bedeutet dies
-nun, dass sie keinen Fall für Blank benötigt.
+und dann dieses Tile. Für die Funktion 'aTile' bedeutet
+dies nun, dass sie keinen Fall für Blank benötigt.
 
 00:12:44,480 --> 00:12:51,520
 Sie muss nur für die tatsächlichen Kacheln definiert werden,
@@ -505,32 +506,32 @@ dass es etwas Leeres gibt. Es gibt
 nichts, das ist nicht etwas, was die aTile
 
 00:12:56,080 --> 00:13:00,240
-Funktion zu tun hat. Das wäre etwas,
-das man im Grunde in der eigentlichen Zeichnung macht,
+Funktion zu tun hat. Das wäre etwas, das man
+im Grunde in der eigentlichen Zeichnung macht,
 
 00:13:00,240 --> 00:13:06,800
 indem man die Nothings herausfiltert, die aus der
 Level-Funktion kommen könnten. Aber das, wie ich schon sagte,
 
 00:13:06,800 --> 00:13:13,840
-ist etwas, das in den Übungen gemacht werden muss.
-Die Vorteile, die sich aus dieser Umgestaltung ergeben, sind
+ist etwas, das in den Übungen gemacht werden muss. Die
+Vorteile, die sich aus dieser Umgestaltung ergeben, sind
 
 00:13:13,840 --> 00:13:19,520
-immer noch vorhanden, oder jetzt sogar noch präsenter. Wir haben
-immer noch diese Redundanz- und Vollständigkeitskontrolle,
+immer noch vorhanden, oder jetzt sogar noch präsenter. Wir
+haben immer noch diese Redundanz- und Vollständigkeitskontrolle,
 
 00:13:19,520 --> 00:13:23,760
 insbesondere bei dieser Funktion hier. Also, wenn Sie
 den Datentyp erweitern, dann sind wir sicher, dass der
 
 00:13:23,760 --> 00:13:32,320
-Compiler feststellen wird, wo wir Fälle hinzufügen müssen usw. Wir
-haben gerade umgestaltet, um die leere 'Tile' nicht als
+Compiler feststellen wird, wo wir Fälle hinzufügen müssen usw.
+Wir haben gerade umgestaltet, um die leere 'Tile' nicht als
 
 00:13:32,320 --> 00:13:38,720
-tatsächliche 'Tile' zu betrachten. Also haben wir diesen Partialitätsmarker verwendet,
-indem wir sagten: die Level-Funktion gibt ein Maybe Tile.
+tatsächliche 'Tile' zu betrachten. Also haben wir diesen Partialitätsmarker
+verwendet, indem wir sagten: die Level-Funktion gibt ein Maybe Tile.
 
 137 # slide
 00:13:43,920 --> 00:13:49,440
@@ -542,16 +543,16 @@ Und das ist die Tatsache, dass die Daten, die wir erhalten,
 mit Datentypen/Baum-Strukturen, wie wir gesehen haben,
 
 00:13:59,680 --> 00:14:04,720
-in Haskell nicht dasselbe sind wie Zeigerbäume
-in einer imperativen Sprache.
+in Haskell nicht dasselbe sind wie
+Zeigerbäume in einer imperativen Sprache.
 
 00:14:05,440 --> 00:14:11,520
 Die Daten, die wir hier haben, die Werte, die wir
 haben, sind unveränderlich. Sie sind keine Dinge, die
 
 00:14:11,520 --> 00:14:16,160
-mutiert und verändert werden können. Oft, wenn Sie
-einen Baumalgorithmus in etwas wie C haben,
+mutiert und verändert werden können. Oft, wenn
+Sie einen Baumalgorithmus in etwas wie C haben,
 
 00:14:16,160 --> 00:14:20,720
 dann werden Bäume als Zeigerstrukturen bezeichnet.
@@ -570,44 +571,44 @@ wir fügen etwas in ihn ein, dann machen wir es an
 diesem Baum. Das ist nicht das, was in Haskell passiert.
 
 00:14:35,120 --> 00:14:41,280
-Weil in Haskell alle Werte einfach nur Werte sind.
-Sie sind keine veränderbaren Strukturen / veränderbaren Objekte.
+Weil in Haskell alle Werte einfach nur Werte sind. Sie sind
+keine veränderbaren Strukturen / veränderbaren Objekte.
 
 00:14:41,920 --> 00:14:47,760
 Was bedeutet das nun konkret im Fall von
 Bäumen? Betrachten wir also diese Funktion, die
 
 00:14:47,760 --> 00:14:55,520
-einen Wert in einen Baum einfügt. Also, die Annahme
-ist, dass ein 'Tree' ein sortierter 'Tree' ist, der geordnet ist.
+einen Wert in einen Baum einfügt. Also, die Annahme ist,
+dass ein 'Tree' ein sortierter 'Tree' ist, der geordnet ist.
 
 00:14:55,520 --> 00:15:02,080
-Man hat also immer links kleinere
-Elemente als auf der rechten Seite, wenn Sie einen bestimmten
+Man hat also immer links kleinere Elemente als
+auf der rechten Seite, wenn Sie einen bestimmten
 
 00:15:02,080 --> 00:15:08,720
 internen Knoten haben. Und die Hoffnung hier ist, dass wir eine
 neue Ganzzahl... wir bekommen eine Ganzzahl und einen Baum, und
 
 00:15:08,720 --> 00:15:13,200
-wir wollen diese Ganzzahl an der passenden Stelle
-in diesen Baum einfügen. Und das Einfügen bedeutet nicht,
+wir wollen diese Ganzzahl an der passenden Stelle in
+diesen Baum einfügen. Und das Einfügen bedeutet nicht,
 
 00:15:13,200 --> 00:15:18,400
 dass wir den ursprünglichen Baum überschreiben. Es bedeutet,
 dass wir einen neuen 'Tree' berechnen. Dieser neue 'Tree' könnte
 
 00:15:18,400 --> 00:15:22,480
-viel Struktur mit dem vorherigen Baum
-teilen, aber er ist ein unabhängiger Baum. Also, wie
+viel Struktur mit dem vorherigen Baum teilen,
+aber er ist ein unabhängiger Baum. Also, wie
 
 00:15:22,480 --> 00:15:27,760
 geschieht das? Schauen wir uns die Definition von
 dieser Funktion an. Es gibt einen Basisfall, wenn ich
 
 00:15:27,760 --> 00:15:33,360
-etwas in einen im Grunde leeren Baum einfügen möchte.
-Dann ist das, was ich erhalte, ein sehr kleiner Baum, aber nicht
+etwas in einen im Grunde leeren Baum einfügen möchte. Dann
+ist das, was ich erhalte, ein sehr kleiner Baum, aber nicht
 
 00:15:33,360 --> 00:15:39,760
 mehr leer. Er hat also einen Knoten, den neuen Wert,
@@ -626,32 +627,32 @@ Diese Syntax bedeutet, dass neben der Verwendung dieser
 Übereinstimmung die Werte dieser Variablen zu identifizieren,
 
 00:16:02,960 --> 00:16:10,640
-in diesem Knoten verschachtelt sind, kann ich auch in der
-rechten Seite der Definition für diesen Fall,
+in diesem Knoten verschachtelt sind, kann ich auch
+in der rechten Seite der Definition für diesen Fall,
 
 00:16:10,640 --> 00:16:15,840
 auf den Baum als Ganzes verweisen. Das ist es, was
 das bedeutet. Es wird eine spezielle Variable für
 
 00:16:15,840 --> 00:16:23,120
-den gesamten Baum zusammen mit Variablen für die Dinge
-die ich tiefer im Inneren zugeordnet habe. Und was ist das
+den gesamten Baum zusammen mit Variablen für die Dinge die
+ich tiefer im Inneren zugeordnet habe. Und was ist das
 
 00:16:24,000 --> 00:16:27,760
 Verhalten, wenn das Ding, das ich einfügen
 möchte, kleiner ist als der aktuelle
 
 00:16:29,040 --> 00:16:34,240
-Knoten (die Wurzel des aktuellen Baums)? Dann weiß ich,
-dass ich es in den linken Teilbaum einfügen
+Knoten (die Wurzel des aktuellen Baums)? Dann weiß
+ich, dass ich es in den linken Teilbaum einfügen
 
 00:16:34,240 --> 00:16:40,880
 muss. Was ich also erhalte, ist ein neuer Knoten, der
 denselben rechten Nachfolger wie der ursprüngliche Baum hat.
 
 00:16:40,880 --> 00:16:48,480
-Er hat wieder denselben internen Knoten, und er hat einen
-neuen linken Teilbaum, der mit rekursivem
+Er hat wieder denselben internen Knoten, und er
+hat einen neuen linken Teilbaum, der mit rekursivem
 
 00:16:48,480 --> 00:16:54,240
 Aufruf mit dem Einfügen dieses n in den linken
@@ -662,8 +663,8 @@ den rechten. Der Fall ist: Wenn n größer ist als das
 aktuelle Label. Und ansonsten, wenn keiner der beiden
 
 00:17:01,760 --> 00:17:06,640
-Fälle wahr ist, dann müssen n und m natürlich
-gleich sein, und dann geben wir einfach den unveränderten
+Fälle wahr ist, dann müssen n und m natürlich gleich
+sein, und dann geben wir einfach den unveränderten
 
 00:17:06,640 --> 00:17:13,920
 Baum als Ganzes zurück. Sie können dies also ausprobieren und
@@ -674,8 +675,8 @@ Aber es sind wirklich neue Trees. Das heißt, sie
 verändern den ursprünglichen Baum nicht. Das ist es, was
 
 00:17:18,736 --> 00:17:24,160
-man Persistenz von Datenstrukturen nennt. Und
-das ist eine Eigenschaft, die einige Datentypen in
+man Persistenz von Datenstrukturen nennt. Und das
+ist eine Eigenschaft, die einige Datentypen in
 
 00:17:24,880 --> 00:17:29,200
 imperativen Sprachen haben. Wenn Sie also 3 + 5 in einer
@@ -694,20 +695,20 @@ zum Beispiel für Datenstrukturen wie Arrays,
 Listen, Bäume, ist das Verständnis in
 
 00:17:44,720 --> 00:17:50,400
-imperativen Sprachen oft, dass man, wenn man z. B.
-etwas in die Datenstruktur einfügt, dann
+imperativen Sprachen oft, dass man, wenn man
+z. B. etwas in die Datenstruktur einfügt, dann
 
 00:17:50,400 --> 00:17:55,920
-nicht eine neue Kopie mit dem neuen zusätzlichen
-Wert anlegt, sondern man eigentlich das alte Ding überschreibt.
+nicht eine neue Kopie mit dem neuen zusätzlichen Wert
+anlegt, sondern man eigentlich das alte Ding überschreibt.
 
 00:17:55,920 --> 00:18:00,320
-Was dann natürlich auch Auswirkungen
-auf andere Verwendungen dieser Daten haben kann.
+Was dann natürlich auch Auswirkungen auf
+andere Verwendungen dieser Daten haben kann.
 
 00:18:00,320 --> 00:18:06,640
-Das ist etwas, was wir in der Mathematik nicht haben.
-In Haskell bekommen wir also einen neuen Tree,
+Das ist etwas, was wir in der Mathematik nicht
+haben. In Haskell bekommen wir also einen neuen Tree,
 
 00:18:06,640 --> 00:18:11,200
 der unabhängig von dem anderen ist, aber natürlich auch
@@ -718,5 +719,5 @@ mathematisch ein neuer Baum, und der alte
 ist immer noch da und kann benutzt werden.
 
 00:18:16,640 --> 00:18:24,000
-Dies hat also Konsequenzen für
-Algorithmik, zum Beispiel.
+Dies hat also Konsequenzen
+für Algorithmik, zum Beispiel.

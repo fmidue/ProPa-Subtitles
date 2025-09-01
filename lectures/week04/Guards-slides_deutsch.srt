@@ -1,35 +1,35 @@
 55 # slide
 00:00:01,430 --> 00:00:06,260
-Lassen Sie uns heute auch ein
-bisschen mehr über die Syntax sprechen.
+Lassen Sie uns heute auch ein bisschen
+mehr über die Syntax sprechen.
 
 00:00:06,260 --> 00:00:11,980
-Und im Wesentlichen wird es hier
-mehr um die Programmierung durch Fallunterscheidung gehen.
+Und im Wesentlichen wird es hier mehr um die
+Programmierung durch Fallunterscheidung gehen.
 
 00:00:11,980 --> 00:00:16,170
-Das ist natürlich ein wichtiger
-Aspekt bei der Definition von Funktionen.
+Das ist natürlich ein wichtiger Aspekt
+bei der Definition von Funktionen.
 
 00:00:16,170 --> 00:00:19,550
 Wir haben das schon einmal
 gesehen und in Übungen verwendet.
 
 00:00:19,550 --> 00:00:24,030
-Und bisher geschah
-dies durch "if-then-else"-Ausdrücke.
+Und bisher geschah dies durch
+"if-then-else"-Ausdrücke.
 
 00:00:24,030 --> 00:00:30,140
-Vielleicht haben Sie sogar in Ihren
-Übungsaufgaben Gründe gehabt, if-then-else-Ausdrücke zu verschachteln.
+Vielleicht haben Sie sogar in Ihren Übungsaufgaben
+Gründe gehabt, if-then-else-Ausdrücke zu verschachteln.
 
 00:00:30,140 --> 00:00:33,620
 Und sobald Sie damit anfangen,
 wird das etwas umständlich.
 
 00:00:33,620 --> 00:00:40,700
-Es gibt also andere Möglichkeiten, und einige
-davon werden wir jetzt besprechen (weitere Möglichkeiten
+Es gibt also andere Möglichkeiten, und einige davon
+werden wir jetzt besprechen (weitere Möglichkeiten
 
 00:00:40,700 --> 00:00:42,030
 der Fallunterscheidung).
@@ -47,32 +47,32 @@ zu programmieren) wird in
 einer anderen Woche behandelt.
 
 00:00:53,560 --> 00:00:58,191
-Aber schauen wir uns zunächst wieder die Situation mit
-if-then-else an und was wir tun können, wenn die
+Aber schauen wir uns zunächst wieder die Situation
+mit if-then-else an und was wir tun können, wenn die
 
 00:00:58,191 --> 00:01:05,059
 Verschachtelung zu weit geht.
 
 56 # slide
 00:01:05,059 --> 00:01:07,240
-Erinnern Sie sich zunächst
-daran, wie ein if-then-else aussieht.
+Erinnern Sie sich zunächst daran,
+wie ein if-then-else aussieht.
 
 00:01:07,240 --> 00:01:11,000
-Das war also ein Beispiel,
-das ich letzte Woche verwendet habe.
+Das war also ein Beispiel, das
+ich letzte Woche verwendet habe.
 
 00:01:11,000 --> 00:01:15,159
-Und Sie haben ähnliche
-Dinge in den Übungen gemacht.
+Und Sie haben ähnliche Dinge
+in den Übungen gemacht.
 
 00:01:15,159 --> 00:01:19,810
 Also, in einer Funktionsdefinition auf der rechten
 Seite (als Ausdruck) können wir if-then-else verwenden.
 
 00:01:19,810 --> 00:01:23,520
-Es muss eine Bedingung
-und dann zwei Ausdrücke geben.
+Es muss eine Bedingung und
+dann zwei Ausdrücke geben.
 
 00:01:23,520 --> 00:01:26,840
 Sie müssen vom gleichen Typ sein,
@@ -86,12 +86,12 @@ Wir können also z.B. nicht das "else" weglassen,
 denn dann würde das nicht zu einem vernünftigen
 
 00:01:33,759 --> 00:01:35,880
-Wert oder überhaupt
-einem Wert ausgewertet werden.
+Wert oder überhaupt einem
+Wert ausgewertet werden.
 
 00:01:35,880 --> 00:01:43,580
-Das war die Haskell-Syntax, und das
-habe ich entsprechend dieser mathematischen Syntax erklärt.
+Das war die Haskell-Syntax, und das habe ich
+entsprechend dieser mathematischen Syntax erklärt.
 
 00:01:43,580 --> 00:01:45,900
 So weit, so gut.
@@ -101,8 +101,8 @@ Nun, wie ich gerade erwähnt habe, sobald
 Sie mehr als eine Bedingung haben, oder Sie
 
 00:01:50,840 --> 00:01:55,560
-komplexere Bedingungen haben, dann müssten Sie
-auf dieser Seite einen if-then-else-Ausdruck verschachteln.
+komplexere Bedingungen haben, dann müssten Sie auf
+dieser Seite einen if-then-else-Ausdruck verschachteln.
 
 00:01:55,560 --> 00:01:58,960
 Also müssen Sie vielleicht im "then"-Zweig ein
@@ -116,20 +116,20 @@ Und das wird schnell
 nicht mehr so schön.
 
 00:02:02,920 --> 00:02:04,960
-In der Mathematik gibt
-es natürlich einen anderen Ansatz.
+In der Mathematik gibt es
+natürlich einen anderen Ansatz.
 
 00:02:04,960 --> 00:02:09,679
-In der Mathematik neigt man dazu, in einem
-Ausdruck wie diesem mehr als zwei Fälle zu schreiben.
+In der Mathematik neigt man dazu, in einem Ausdruck
+wie diesem mehr als zwei Fälle zu schreiben.
 
 00:02:09,679 --> 00:02:12,950
-Wir haben also den einen Fall, einen anderen Fall,
-und noch einen Fall, ..., und dann den "otherwise"-Fall.
+Wir haben also den einen Fall, einen anderen Fall, und
+noch einen Fall, ..., und dann den "otherwise"-Fall.
 
 00:02:12,950 --> 00:02:17,819
-Mathematiker verschachteln diese Art von Ausdrücken also
-nicht, sie geben hier einfach eine längere Liste
+Mathematiker verschachteln diese Art von Ausdrücken
+also nicht, sie geben hier einfach eine längere Liste
 
 00:02:17,819 --> 00:02:25,299
 von Bedingungen und Ausdrücken an.
@@ -143,44 +143,44 @@ auch in Haskell abbilden.
 Das könnte so aussehen.
 
 00:02:31,760 --> 00:02:38,529
-Diese Art der Definition haben Sie wahrscheinlich noch
-nie gesehen, es sei denn, Sie haben HLint
+Diese Art der Definition haben Sie wahrscheinlich
+noch nie gesehen, es sei denn, Sie haben HLint
 
 00:02:38,529 --> 00:02:41,670
-benutzt und es hat es vorgeschlagen, was
-es bei verschachtelten if-then-else-Ausdrücken zu tun pflegt.
+benutzt und es hat es vorgeschlagen, was es bei
+verschachtelten if-then-else-Ausdrücken zu tun pflegt.
 
 00:02:41,670 --> 00:02:48,480
-Dies könnte also ein Beispiel sein, das wir gerade
-wieder sehen: eine "scene" aus einem Zeitparameter zu berechnen.
+Dies könnte also ein Beispiel sein, das wir gerade wieder
+sehen: eine "scene" aus einem Zeitparameter zu berechnen.
 
 00:02:48,480 --> 00:02:53,841
-Und vielleicht gibt es komplexere Bedingungen als
-einfach, wenn t kleiner ist als dies, dann
+Und vielleicht gibt es komplexere Bedingungen
+als einfach, wenn t kleiner ist als dies, dann
 
 00:02:53,841 --> 00:02:56,290
-... else ..., oder
-vielleicht gibt es mehr Bedingungen.
+... else ..., oder vielleicht
+gibt es mehr Bedingungen.
 
 00:02:56,290 --> 00:02:57,680
 Wir könnten also so
 etwas wie das hier haben.
 
 00:02:57,680 --> 00:03:01,430
-Und eigentlich, wenn Sie das gerade gelesen
-haben, wissen Sie wahrscheinlich, was hier gemeint ist.
+Und eigentlich, wenn Sie das gerade gelesen haben,
+wissen Sie wahrscheinlich, was hier gemeint ist.
 
 00:03:01,430 --> 00:03:07,199
 Also, unter der Bedingung, dass t
 kleiner-gleich pi ist, sollten wir etwas tun.
 
 00:03:07,199 --> 00:03:13,389
-Unter der Bedingung, dass das nicht der Fall
-ist, sondern t tatsächlich größer als pi, aber kleiner-gleich
+Unter der Bedingung, dass das nicht der Fall ist,
+sondern t tatsächlich größer als pi, aber kleiner-gleich
 
 00:03:13,389 --> 00:03:16,629
-dem Doppelten von pi ist,
-dann sollten wir etwas anderes haben.
+dem Doppelten von pi ist, dann
+sollten wir etwas anderes haben.
 
 00:03:16,629 --> 00:03:24,530
 Und unter einer dritten Bedingung, nämlich dass t
@@ -190,26 +190,26 @@ tatsächlich größer als 2*pi ist, dann soll noch ein
 anderer Ausdruck ausgewertet werden.
 
 00:03:26,599 --> 00:03:33,879
-Dies ist also auch eine Art, bedingtes
-Verhalten auszudrücken, und es entspricht sehr direkt
+Dies ist also auch eine Art, bedingtes Verhalten
+auszudrücken, und es entspricht sehr direkt
 
 00:03:33,879 --> 00:03:37,109
 dem, was Mathematiker gerne schreiben.
 
 00:03:37,109 --> 00:03:46,249
-Hier ist eine Funktionsdefinition f(x) = ...,
-und dann vielleicht noch drei sich gegenseitig ausschließende
+Hier ist eine Funktionsdefinition f(x) = ..., und dann
+vielleicht noch drei sich gegenseitig ausschließende
 
 00:03:46,249 --> 00:03:49,010
 Bedingungen auf den x-Wert.
 
 00:03:49,010 --> 00:03:55,839
-Und je nachdem, was wir
-hier haben, bekommen wir unterschiedliche Ausdrücke.
+Und je nachdem, was wir hier haben,
+bekommen wir unterschiedliche Ausdrücke.
 
 00:03:55,839 --> 00:04:02,219
-Genau wie hier könnten wir nun jede beliebige
-Boolesche Bedingung schreiben: alles, was in der Mathematik ausgewertet
+Genau wie hier könnten wir nun jede beliebige Boolesche
+Bedingung schreiben: alles, was in der Mathematik ausgewertet
 
 00:04:02,219 --> 00:04:04,180
 oder überprüft werden kann.
@@ -219,8 +219,8 @@ Hier können wir alles schreiben,
 was vom Booleschen Typ ist.
 
 00:04:07,569 --> 00:04:12,519
-Oft werden das natürlich Vergleiche wie
-hier sein, oder Kombinationen von Vergleichen.
+Oft werden das natürlich Vergleiche wie hier
+sein, oder Kombinationen von Vergleichen.
 
 00:04:12,519 --> 00:04:13,869
 Aber das muss nicht der Fall sein.
@@ -230,28 +230,28 @@ Sie könnten jeden beliebigen Ausdruck schreiben,
 der zu einem Boolean ausgewertet wird.
 
 00:04:17,440 --> 00:04:23,259
-Es müssen nicht unbedingt arithmetische Vergleiche sein,
-die mit "und" und "oder" usw. kombiniert werden.
+Es müssen nicht unbedingt arithmetische Vergleiche
+sein, die mit "und" und "oder" usw. kombiniert werden.
 
 00:04:23,259 --> 00:04:30,419
 Sie können hier alles schreiben, jedes Prädikat,
 alles, was zu einem Booleschen Wert ausgewertet wird.
 
 00:04:30,419 --> 00:04:34,330
-Und wie ich bereits erwähnt habe,
-sobald Sie anfangen, verschachtelte if-then-else-Ausdrücke zu schreiben,
+Und wie ich bereits erwähnt habe, sobald Sie anfangen,
+verschachtelte if-then-else-Ausdrücke zu schreiben,
 
 00:04:34,330 --> 00:04:38,050
 wird HLint vorschlagen, Dinge
 wie diese zu schreiben.
 
 00:04:38,050 --> 00:04:40,880
-Dieses HLint ist eine
-Komponente innerhalb von Autotool.
+Dieses HLint ist eine Komponente
+innerhalb von Autotool.
 
 00:04:40,880 --> 00:04:46,860
-Sie profitieren also von diesen Vorschlägen auch
-im Autotool, ohne HLint als separates Tool
+Sie profitieren also von diesen Vorschlägen
+auch im Autotool, ohne HLint als separates Tool
 
 00:04:46,860 --> 00:04:52,770
 zu verwenden.
@@ -273,8 +273,8 @@ Das ist der Ausdruck
 einer Funktion mit Guards.
 
 00:05:06,260 --> 00:05:10,139
-Und ein Guard ist diese Art von
-Booleschem Ausdruck, der hier geschrieben werden kann.
+Und ein Guard ist diese Art von Booleschem
+Ausdruck, der hier geschrieben werden kann.
 
 00:05:10,139 --> 00:05:14,580
 In if-then-else ist es klar, was passiert: Sie
@@ -285,12 +285,12 @@ oder das rechte, das
 "then" oder das "else".
 
 00:05:16,110 --> 00:05:19,740
-Es gibt also keine Frage der Reihenfolge, weil
-das "then" und das "else" klar sind, in
+Es gibt also keine Frage der Reihenfolge,
+weil das "then" und das "else" klar sind, in
 
 00:05:19,740 --> 00:05:26,790
-welchen Fällen sie ausgeführt werden
-(beziehungsweise der entsprechende Ausdruck ausgewertet wird).
+welchen Fällen sie ausgeführt werden (beziehungsweise
+der entsprechende Ausdruck ausgewertet wird).
 
 00:05:26,790 --> 00:05:31,940
 Hier stellt sich nun natürlich zumindest die
@@ -300,8 +300,8 @@ Frage, was passiert, wenn sich z. B. diese Guards
 überschneiden.
 
 00:05:33,069 --> 00:05:36,069
-Oder ist es egal, in
-welcher Reihenfolge man sie aufschreibt?
+Oder ist es egal, in welcher
+Reihenfolge man sie aufschreibt?
 
 00:05:36,069 --> 00:05:41,820
 Das werde ich am Beispiel der Fakultät diskutieren,
@@ -311,12 +311,12 @@ die natürlich auch ein sehr einfaches Beispiel für
 Rekursion ist.
 
 00:05:42,850 --> 00:05:46,719
-Also, die factorial-Funktion, wie sie
-in der Mathematik definiert ist.
+Also, die factorial-Funktion, wie
+sie in der Mathematik definiert ist.
 
 00:05:46,719 --> 00:05:53,090
-Man könnte sie natürlich auch über
-ein if-then-else schreiben, aber mathematisch gesehen, würde
+Man könnte sie natürlich auch über ein if-then-else
+schreiben, aber mathematisch gesehen, würde
 
 00:05:53,090 --> 00:05:54,090
 man schreiben:
@@ -341,30 +341,30 @@ Was ist nun mit
 der Reihenfolge der Klauseln?
 
 00:06:15,969 --> 00:06:20,819
-Spielt es also eine Rolle, in
-welcher Reihenfolge ich diese Dinge aufschreibe?
+Spielt es also eine Rolle, in welcher
+Reihenfolge ich diese Dinge aufschreibe?
 
 00:06:20,819 --> 00:06:22,919
 Nun, das hängt von den Bedingungen ab.
 
 00:06:22,919 --> 00:06:26,789
-In diesem Fall hier schließen
-sich die beiden Bedingungen gegenseitig aus:
+In diesem Fall hier schließen sich die
+beiden Bedingungen gegenseitig aus:
 
 00:06:26,789 --> 00:06:33,060
 Es ist keine Eingabe n möglich, die
 sowohl null als auch größer als null wäre.
 
 00:06:33,060 --> 00:06:39,999
-Und da das der Fall ist, ist die folgende
-Variante, bei der ich die beiden Zeilen hier einfach
+Und da das der Fall ist, ist die folgende Variante,
+bei der ich die beiden Zeilen hier einfach
 
 00:06:39,999 --> 00:06:42,639
 vertauscht habe, gleichwertig.
 
 00:06:42,639 --> 00:06:47,060
-Denn es entscheidet einfach der Wert von n, welche
-der beiden Zeilen genommen wird, und die Reihenfolge, in
+Denn es entscheidet einfach der Wert von n, welche der
+beiden Zeilen genommen wird, und die Reihenfolge, in
 
 00:06:47,060 --> 00:06:51,229
 der diese niedergeschrieben
@@ -379,16 +379,16 @@ Und was ich in der Vergangenheit getan hätte, ist, ein
 separates Fenster offen zu haben, in dem ich dieses Programm
 
 00:07:00,009 --> 00:07:05,360
-in Haskell habe und das Programm editiere, und
-es laufen lasse, um die Auswirkungen zu sehen, wenn
+in Haskell habe und das Programm editiere, und es
+laufen lasse, um die Auswirkungen zu sehen, wenn
 
 00:07:05,360 --> 00:07:09,330
 ich die Reihenfolge der Dinge ändere und
 die Bedingungen in den Guards ändere, usw.
 
 00:07:09,330 --> 00:07:13,749
-Das will ich jetzt nicht machen,
-weil das zu viel Anhalten und Neustarten
+Das will ich jetzt nicht machen, weil
+das zu viel Anhalten und Neustarten
 
 00:07:13,749 --> 00:07:15,199
 meiner Videoaufzeichnung wäre.
@@ -398,8 +398,8 @@ Was ich also vorschlage, wenn Sie den Argumenten
 hier folgen wollen, ist, dass Sie das selbst tun.
 
 00:07:20,360 --> 00:07:26,639
-Sie können das Video anhalten und den Code
-in ein Editor-Fenster kopieren und diesen dann in GHCi
+Sie können das Video anhalten und den Code in ein
+Editor-Fenster kopieren und diesen dann in GHCi
 
 00:07:26,639 --> 00:07:30,409
 ausführen, alle Versionen des
@@ -413,15 +413,15 @@ Sie können es selbst überprüfen (wenn Sie den Code
 kopiert haben).
 
 00:07:36,120 --> 00:07:39,150
-Aber ich werde das hier
-nicht wirklich für alle Versionen demonstrieren.
+Aber ich werde das hier nicht wirklich
+für alle Versionen demonstrieren.
 
 00:07:39,150 --> 00:07:40,340
 Ich werde einfach darüber sprechen.
 
 00:07:40,340 --> 00:07:47,150
-Daher wird dies wahrscheinlich etwas kürzer sein, als
-wenn ich es in der Vergangenheit getan habe.
+Daher wird dies wahrscheinlich etwas kürzer sein,
+als wenn ich es in der Vergangenheit getan habe.
 
 00:07:47,150 --> 00:07:48,539
 In diesem Beispiel werden wir sehen:
@@ -435,21 +435,21 @@ was auch immer laufen lassen, irgendeine nette
 nicht-negative Zahl (hier sehen Sie schon, dass negative
 
 00:07:59,289 --> 00:08:06,419
-Zahlen ein Problem sein könnten, aber lassen
-Sie uns "factorial" jetzt nur auf nicht-negative Eingaben
+Zahlen ein Problem sein könnten, aber lassen Sie uns
+"factorial" jetzt nur auf nicht-negative Eingaben
 
 00:08:06,419 --> 00:08:16,319
-anwenden), dann verhalten sich diese beiden Versionen,
-die wir hier und hier sehen, gleich.
+anwenden), dann verhalten sich diese beiden
+Versionen, die wir hier und hier sehen, gleich.
 
 59 # slide
 00:08:16,319 --> 00:08:18,180
-Was ist, wenn
-sich die Guard-Bedingungen überschneiden?
+Was ist, wenn sich die
+Guard-Bedingungen überschneiden?
 
 00:08:18,180 --> 00:08:23,580
-Wenn Sie also nicht haben, dass einfach
-der Eingabewert eindeutig bestimmt, welche der beiden
+Wenn Sie also nicht haben, dass einfach der
+Eingabewert eindeutig bestimmt, welche der beiden
 
 00:08:23,580 --> 00:08:28,159
 Zeilen genommen wird?
@@ -466,16 +466,16 @@ Dann gibt es
 plötzlich einen Unterschied.
 
 00:08:37,579 --> 00:08:43,409
-Plötzlich funktioniert diese Version noch
-gut, aber diese ist problematisch.
+Plötzlich funktioniert diese Version
+noch gut, aber diese ist problematisch.
 
 00:08:43,409 --> 00:08:49,970
 Vielleicht können Sie schon erahnen, was passieren würde,
 oder Sie können nebenbei prüfen, was passiert, wenn
 
 00:08:49,970 --> 00:08:58,050
-Sie diesen Code nehmen und ihn
-noch einmal ausführen, vielleicht mit Eingabe 12.
+Sie diesen Code nehmen und ihn noch einmal
+ausführen, vielleicht mit Eingabe 12.
 
 00:08:58,050 --> 00:09:09,070
 Was Sie sehen
@@ -498,24 +498,24 @@ Und dann ist in diesem Fall wieder 11.
 Also ist es 11 * factorial 10.
 
 00:09:25,810 --> 00:09:28,650
-Das geht runter, runter, runter,
-... bis zur Fakultät 0.
+Das geht runter, runter,
+runter, ... bis zur Fakultät 0.
 
 00:09:28,650 --> 00:09:34,300
-Was dann passiert, ist, dass factorial
-0 mit dem zweiten Fall übereinstimmen würde.
+Was dann passiert, ist, dass factorial 0
+mit dem zweiten Fall übereinstimmen würde.
 
 00:09:34,300 --> 00:09:38,100
-Aber eigentlich wertet Haskell diese
-von oben nach unten aus.
+Aber eigentlich wertet Haskell
+diese von oben nach unten aus.
 
 00:09:38,100 --> 00:09:41,760
-Es wird also zuerst prüfen,
-ob die erste Guard-Bedingung erfüllt ist.
+Es wird also zuerst prüfen, ob die
+erste Guard-Bedingung erfüllt ist.
 
 00:09:41,760 --> 00:09:47,380
-Und für die Eingabe n = 0 ist
-dieser erste Guard tatsächlich erfüllt, denn 0 ist größer-gleich
+Und für die Eingabe n = 0 ist dieser erste Guard
+tatsächlich erfüllt, denn 0 ist größer-gleich
 
 00:09:47,380 --> 00:09:48,380
 0.
@@ -525,16 +525,16 @@ Was also passieren wird,
 ist: 0 * factorial (-1).
 
 00:09:52,820 --> 00:09:58,360
-Und tatsächlich wird Haskell nicht irgendwie magisch
-sagen: "Nun, 0 * irgendwas ist irrelevant."
+Und tatsächlich wird Haskell nicht irgendwie
+magisch sagen: "Nun, 0 * irgendwas ist irrelevant."
 
 00:09:58,360 --> 00:10:03,310
 Stattdessen wird es tatsächlich versuchen,
 die Fakultät von -1 zu berechnen.
 
 00:10:03,310 --> 00:10:09,750
-Und wenn man dann für die Fakultät von -1
-wieder in die Rekursion geht, dann haben wir -1, und
+Und wenn man dann für die Fakultät von -1 wieder
+in die Rekursion geht, dann haben wir -1, und
 
 00:10:09,750 --> 00:10:13,610
 -1 ist nicht größer oder gleich 0.
@@ -561,15 +561,15 @@ Das passiert hier nicht.
 Und warum nicht?
 
 00:10:21,380 --> 00:10:27,490
-Weil es hier nicht der Fall ist, dass
-wir, sobald wir factorial 0 haben, wieder einen rekursiven
+Weil es hier nicht der Fall ist, dass wir, sobald
+wir factorial 0 haben, wieder einen rekursiven
 
 00:10:27,490 --> 00:10:28,960
 Aufruf machen.
 
 00:10:28,960 --> 00:10:34,259
-Denn beim Auswerten/Prüfen von oben nach unten wird
-die Fakultät von null mit dem ersten Fall übereinstimmen.
+Denn beim Auswerten/Prüfen von oben nach unten wird die
+Fakultät von null mit dem ersten Fall übereinstimmen.
 
 00:10:34,259 --> 00:10:36,279
 Die Ausgabe wird also 1 sein.
@@ -578,8 +578,8 @@ Die Ausgabe wird also 1 sein.
 Und dann hört die Rekursion auf.
 
 00:10:37,279 --> 00:10:44,480
-Wenn Sie also einen Basisfall wie hier haben, dann
-sollte dieser Basisfall der erste in einer solchen Folge von
+Wenn Sie also einen Basisfall wie hier haben, dann sollte
+dieser Basisfall der erste in einer solchen Folge von
 
 00:10:44,480 --> 00:10:48,540
 Prüfungen sein.
@@ -589,8 +589,8 @@ Manchmal ist der Compiler in der Lage,
 vor Fällen wie diesem zu warnen, denn
 
 00:10:57,340 --> 00:11:01,160
-im Wesentlichen ist der Laufzeitfehler, den wir
-dadurch bekommen, dass dies nicht vollständig definiert ist.
+im Wesentlichen ist der Laufzeitfehler, den wir dadurch
+bekommen, dass dies nicht vollständig definiert ist.
 
 00:11:01,160 --> 00:11:05,890
 Integers enthalten negative Zahlen, aber für
@@ -602,12 +602,12 @@ Lage, vor diesem Problem zu warnen.
 
 60 # slide
 00:11:11,279 --> 00:11:18,940
-Okay, aber sagen wir mal,
-wir machen diesen Fehler nicht.
+Okay, aber sagen wir mal, wir
+machen diesen Fehler nicht.
 
 00:11:18,940 --> 00:11:23,690
-Sagen wir, wir bleiben
-bei der korrekten Reihenfolge.
+Sagen wir, wir bleiben bei
+der korrekten Reihenfolge.
 
 00:11:23,690 --> 00:11:27,779
 Was ist dann das Problem?
@@ -623,24 +623,24 @@ kommen.
 Dieses Problem haben wir nicht.
 
 00:11:35,250 --> 00:11:41,010
-Wenn wir aber gleich diese Funktion mit
--1 aufrufen, haben wir wieder einen Laufzeitfehler.
+Wenn wir aber gleich diese Funktion mit -1
+aufrufen, haben wir wieder einen Laufzeitfehler.
 
 00:11:41,010 --> 00:11:46,920
-Wenn wir also mit -1 aufrufen, dann
-passt weder der Basisfall noch der rekursive Fall.
+Wenn wir also mit -1 aufrufen, dann passt
+weder der Basisfall noch der rekursive Fall.
 
 00:11:46,920 --> 00:11:51,560
 Wir erhalten also einen Laufzeitfehler.
 
 61 # slide
 00:11:51,560 --> 00:11:58,199
-Wie bereits erwähnt, kann uns der Compiler
-mit entsprechenden Einstellungen vor diesem Fehler warnen.
+Wie bereits erwähnt, kann uns der Compiler mit
+entsprechenden Einstellungen vor diesem Fehler warnen.
 
 00:11:58,199 --> 00:12:05,230
-Und im Autotool werden wir diese
-Warnungen fortan aktivieren, sodass der Compiler
+Und im Autotool werden wir diese Warnungen
+fortan aktivieren, sodass der Compiler
 
 00:12:05,230 --> 00:12:13,630
 sich beschwert, wenn Sie z. B. mit Guards
@@ -658,8 +658,8 @@ Also wird der
 Compiler übervorsichtig sein.
 
 00:12:21,250 --> 00:12:26,440
-Es kann also sein, dass er Sie
-warnt, obwohl man mit etwas mathematischem Verständnis sehen
+Es kann also sein, dass er Sie warnt, obwohl
+man mit etwas mathematischem Verständnis sehen
 
 00:12:26,440 --> 00:12:28,880
 kann, dass Ihr Code alle Fälle abdeckt.
@@ -672,50 +672,50 @@ denen er nicht weiß, dass Sie alle Fälle abgedeckt
 haben, weil er es nicht erkennen kann.
 
 00:12:37,880 --> 00:12:43,079
-Eine Möglichkeit, um sicherzustellen, dass Sie alle Fälle abgedeckt
-haben, und auch, um den Compiler sicher sein zu lassen,
+Eine Möglichkeit, um sicherzustellen, dass Sie alle Fälle
+abgedeckt haben, und auch, um den Compiler sicher sein zu lassen,
 
 00:12:43,079 --> 00:12:47,160
-dass Sie alle Fälle abgedeckt haben, ist,
-dass Sie so etwas wie eine "catch-all"-Klausel haben.
+dass Sie alle Fälle abgedeckt haben, ist, dass
+Sie so etwas wie eine "catch-all"-Klausel haben.
 
 00:12:47,160 --> 00:12:53,410
 In dem Beispiel von vorhin könnten Sie, anstatt
 zwei Bedingungen zu haben, von denen eine n==0 und
 
 00:12:53,410 --> 00:12:58,230
-die andere etwas wie n>0
-oder n>=0 ist, sagen: "otherwise".
+die andere etwas wie n>0 oder
+n>=0 ist, sagen: "otherwise".
 
 00:12:58,230 --> 00:13:05,399
-Dann wird von oben nach unten geprüft. Für
-jede Eingabe, die nicht null ist, wird diese letzte
+Dann wird von oben nach unten geprüft. Für jede
+Eingabe, die nicht null ist, wird diese letzte
 
 00:13:05,399 --> 00:13:06,399
 Zeile genommen.
 
 00:13:06,399 --> 00:13:13,000
-Zumindest haben wir dann keinen Laufzeitfehler, in dem
-Sinne, dass die Fakultät für eine Eingabe nicht
+Zumindest haben wir dann keinen Laufzeitfehler, in
+dem Sinne, dass die Fakultät für eine Eingabe nicht
 
 00:13:13,000 --> 00:13:15,540
 weiß, was sie berechnen soll.
 
 00:13:15,540 --> 00:13:21,320
-In GHCi würde das jetzt
-also nicht zu einem Laufzeitfehler führen.
+In GHCi würde das jetzt also nicht
+zu einem Laufzeitfehler führen.
 
 00:13:21,320 --> 00:13:25,670
 Natürlich könnte es trotzdem ein Problem sein,
 wenn Sie mit negativen Werten aufrufen, aber
 
 00:13:25,670 --> 00:13:31,190
-dann nicht wegen eines Laufzeitfehlers (eines
-fehlenden Falls), sondern tatsächlich wegen Nichttermination.
+dann nicht wegen eines Laufzeitfehlers (eines fehlenden
+Falls), sondern tatsächlich wegen Nichttermination.
 
 00:13:31,190 --> 00:13:36,860
-Denn dann laufen Sie (beim Aufruf
-mit negativen Eingaben) in eine unendliche Rekursion.
+Denn dann laufen Sie (beim Aufruf mit negativen
+Eingaben) in eine unendliche Rekursion.
 
 00:13:36,860 --> 00:13:39,050
 Denn bei negativen Werten
@@ -725,8 +725,8 @@ hört man nie auf.
 Aber das ist ein separates Problem.
 
 00:13:40,300 --> 00:13:46,779
-Und natürlich ein Problem, das kein
-Compiler im Allgemeinen abfangen kann; einfach
+Und natürlich ein Problem, das kein Compiler
+im Allgemeinen abfangen kann; einfach
 
 00:13:46,779 --> 00:13:52,910
 wegen des "Halteproblems".
@@ -736,12 +736,12 @@ wegen des "Halteproblems".
 Das war diese Beobachtung.
 
 00:13:53,910 --> 00:13:56,660
-In diesem Fall würden
-negative Eingaben ein Problem darstellen.
+In diesem Fall würden negative
+Eingaben ein Problem darstellen.
 
 00:13:56,660 --> 00:14:00,389
-Wir könnten das auch in
-gewissem Sinne beheben, indem wir sagen:
+Wir könnten das auch in gewissem
+Sinne beheben, indem wir sagen:
 
 00:14:00,389 --> 00:14:05,700
 Wir nehmen den Basisfall, wann immer wir einen nicht-positiven
@@ -758,8 +758,8 @@ besteht, denn der Compiler kann erkennen, dass
 wir alle Fälle abgedeckt haben.
 
 00:14:12,820 --> 00:14:18,170
-Er hat auch nie ein Problem zur Laufzeit,
-dass er nicht weiß, welchen Fall er nehmen soll,
+Er hat auch nie ein Problem zur Laufzeit, dass
+er nicht weiß, welchen Fall er nehmen soll,
 
 00:14:18,170 --> 00:14:19,430
 eben wegen dieses letzten Falles.
@@ -768,8 +768,8 @@ eben wegen dieses letzten Falles.
 Der Compiler garantiert dies also.
 
 00:14:20,920 --> 00:14:26,639
-Dann stimmt es, dass Ihnen sozusagen nie
-die zu berücksichtigenden Fälle ausgehen, weil immer der
+Dann stimmt es, dass Ihnen sozusagen nie die zu
+berücksichtigenden Fälle ausgehen, weil immer der
 
 00:14:26,639 --> 00:14:28,070
 "otherwise"-Fall gilt.
@@ -794,31 +794,31 @@ Die Reihenfolge spielt eine Rolle bei
 der Auswahl der Zeile, die wir nehmen.
 
 00:14:58,649 --> 00:15:03,470
-Die Semantik wird
-die Reihenfolge berücksichtigen.
+Die Semantik wird die
+Reihenfolge berücksichtigen.
 
 00:15:03,470 --> 00:15:06,009
-Das bedeutet auch, dass
-wir diese Reihenfolge ausnutzen können.
+Das bedeutet auch, dass wir diese
+Reihenfolge ausnutzen können.
 
 00:15:06,009 --> 00:15:08,350
-So können wir vielleicht
-einige spätere Bedingungen vereinfachen.
+So können wir vielleicht einige
+spätere Bedingungen vereinfachen.
 
 00:15:08,350 --> 00:15:12,040
 Wir werden das gleich
 an einem Beispiel sehen.
 
 00:15:12,040 --> 00:15:23,029
-Wir können einige spätere Bedingungen vereinfachen, da
-wir wissen, dass die vorhergehenden Guards bereits
+Wir können einige spätere Bedingungen vereinfachen,
+da wir wissen, dass die vorhergehenden Guards bereits
 
 00:15:23,029 --> 00:15:24,089
 überprüft wurden.
 
 00:15:24,089 --> 00:15:29,459
-Die Vollständigkeit ist wichtig,
-weil wir Laufzeitfehler vermeiden wollen.
+Die Vollständigkeit ist wichtig, weil
+wir Laufzeitfehler vermeiden wollen.
 
 63 # slide
 00:15:29,459 --> 00:15:37,350
@@ -829,8 +829,8 @@ Die Compiler-Prüfungen im Vorfeld sind
 nett, aber sie sind nicht perfekt.
 
 00:15:40,610 --> 00:15:44,230
-Sie können nicht perfekt
-sein, z.B. wegen des "Halteproblems".
+Sie können nicht perfekt sein,
+z.B. wegen des "Halteproblems".
 
 00:15:44,230 --> 00:15:48,560
 So ist es z.B. unmöglich, unendliche Rekursion
@@ -851,12 +851,12 @@ Perfektion abzielen, sind nicht so mächtig, wie man
 manchmal hoffen könnte.
 
 00:16:08,220 --> 00:16:13,149
-Manchmal könnte man aufgrund einer mathematischen Einsicht
-in das Problem denken, dass der Compiler in
+Manchmal könnte man aufgrund einer mathematischen
+Einsicht in das Problem denken, dass der Compiler in
 
 00:16:13,149 --> 00:16:17,019
-der Lage sein sollte, zu erkennen,
-dass eine bestimmte Definition erschöpfend ist.
+der Lage sein sollte, zu erkennen, dass
+eine bestimmte Definition erschöpfend ist.
 
 00:16:17,019 --> 00:16:19,519
 Aber manchmal ist das nicht der
@@ -866,19 +866,19 @@ Fall, und zwar aus gutem Grund.
 Hier ist ein Beispiel.
 
 00:16:20,550 --> 00:16:26,930
-Es wird Sie davor warnen, sich auf
-bestimmte Eigenschaften zu verlassen, z.B. auf Beziehungen aus
+Es wird Sie davor warnen, sich auf bestimmte
+Eigenschaften zu verlassen, z.B. auf Beziehungen aus
 
 00:16:26,930 --> 00:16:27,930
 der Mathematik.
 
 00:16:27,930 --> 00:16:33,680
-Sie könnten denken, wenn Sie eine Bedingung wie diese schreiben,
-f x y ist: wenn x und y gleich sind,
+Sie könnten denken, wenn Sie eine Bedingung wie diese
+schreiben, f x y ist: wenn x und y gleich sind,
 
 00:16:33,680 --> 00:16:39,629
-dann etwas, und wenn x und y nicht
-gleich sind, dann etwas anderes; Sie könnten annehmen,
+dann etwas, und wenn x und y nicht gleich
+sind, dann etwas anderes; Sie könnten annehmen,
 
 00:16:39,629 --> 00:16:41,810
 dass dies statisch sicher wäre.
@@ -888,36 +888,36 @@ Nun, der Compiler wird nicht in der Lage sein,
 zu sagen, dass dies sicher ist, etwa weil "im
 
 00:16:45,490 --> 00:16:50,480
-Grunde diese beiden Dinge Gegensätze voneinander sind, sodass
-nur und genau eines von ihnen wahr sein wird".
+Grunde diese beiden Dinge Gegensätze voneinander sind,
+sodass nur und genau eines von ihnen wahr sein wird".
 
 00:16:50,480 --> 00:16:54,360
 Das ist eine vernünftige Annahme,
 aber tatsächlich nicht so einfach.
 
 00:16:54,360 --> 00:17:00,110
-Es gibt einen guten Grund, warum dies vom
-Compiler im Allgemeinen nicht als sicher angesehen wird.
+Es gibt einen guten Grund, warum dies vom Compiler
+im Allgemeinen nicht als sicher angesehen wird.
 
 00:17:00,110 --> 00:17:06,830
-Und der Grund ist, dass dies zwar für
-Basistypen wie Zahlen, Zeichen oder Zeichenketten gilt (dass bei
+Und der Grund ist, dass dies zwar für Basistypen wie
+Zahlen, Zeichen oder Zeichenketten gilt (dass bei
 
 00:17:06,830 --> 00:17:13,250
 diesen beiden Dingen immer eines davon wahr
 sein wird); aber tatsächlich können Sie in
 
 00:17:13,250 --> 00:17:18,760
-Haskell Gleichheit und Ungleichheit für Ihre eigenen
-Typen überladen, und niemand kann Sie als
+Haskell Gleichheit und Ungleichheit für Ihre
+eigenen Typen überladen, und niemand kann Sie als
 
 00:17:18,760 --> 00:17:24,371
 Programmierer daran hindern, einen neuen Typ mit
 Gleichheits- und Ungleichheitsprüfungen zu schreiben, bei dem
 
 00:17:24,371 --> 00:17:29,050
-es einige Wertepaare x und y gibt,
-bei denen keine dieser beiden Bedingungen wahr ist.
+es einige Wertepaare x und y gibt, bei denen
+keine dieser beiden Bedingungen wahr ist.
 
 00:17:29,050 --> 00:17:32,410
 Und dann kann der Compiler nicht versprechen, dass
@@ -928,8 +928,8 @@ Vielleicht ist das für Ihren
 eigenen Typ nicht einmal der Fall.
 
 00:17:34,930 --> 00:17:40,440
-In diesem Sinne ist es also besser,
-die zweite Bedingung wieder durch "otherwise" zu
+In diesem Sinne ist es also besser, die
+zweite Bedingung wieder durch "otherwise" zu
 
 00:17:40,440 --> 00:17:53,590
 ersetzen, denn dann kann auch der Compiler sagen,
@@ -937,20 +937,20 @@ dass definitiv einer der beiden Fälle zutreffen wird.
 
 64 # slide
 00:17:53,590 --> 00:18:01,790
-Außerdem wären wir in einer idealen Welt nicht
-so sehr auf das Massieren unserer Guard-Bedingungen angewiesen.
+Außerdem wären wir in einer idealen Welt nicht so sehr
+auf das Massieren unserer Guard-Bedingungen angewiesen.
 
 00:18:01,790 --> 00:18:06,790
-Kehren wir also zu diesem Thema zurück,
-bei dem wir Probleme mit negativen Eingaben hatten.
+Kehren wir also zu diesem Thema zurück, bei
+dem wir Probleme mit negativen Eingaben hatten.
 
 00:18:06,790 --> 00:18:13,190
-Und die Lösung war, im ersten Fall von n == 0
-auf n ≤ 0 umzuschalten, denn dann hätten wir alle Fälle
+Und die Lösung war, im ersten Fall von n == 0 auf
+n ≤ 0 umzuschalten, denn dann hätten wir alle Fälle
 
 00:18:13,190 --> 00:18:20,850
-abgedeckt und wären auch bei negativen
-Eingaben nicht in eine unendliche Rekursion geraten.
+abgedeckt und wären auch bei negativen Eingaben
+nicht in eine unendliche Rekursion geraten.
 
 00:18:20,850 --> 00:18:26,040
 Man könnte einwenden, dass das nicht das
@@ -961,15 +961,15 @@ alle negativen Zahlen eins zurückgibt,
 wenn man hier auf "n ≤ 0" wechselt.
 
 00:18:29,400 --> 00:18:35,240
-Die eigentliche Lösung (die konzeptionell ansprechendste Lösung) wäre
-also, das Typsystem zu verwenden, um zu verhindern,
+Die eigentliche Lösung (die konzeptionell ansprechendste Lösung)
+wäre also, das Typsystem zu verwenden, um zu verhindern,
 
 00:18:35,240 --> 00:18:37,500
 dass man hier negative Eingaben bekommt.
 
 00:18:37,500 --> 00:18:44,630
-Der Typ 'Integer' enthält also negative Zahlen,
-aber man könnte ein ausdrucksstärkeres Typsystem verwenden,
+Der Typ 'Integer' enthält also negative Zahlen, aber
+man könnte ein ausdrucksstärkeres Typsystem verwenden,
 
 00:18:44,630 --> 00:18:49,220
 das tatsächlich garantieren kann, dass die
@@ -979,31 +979,31 @@ Fakultät in einem gegebenen Programm niemals auf
 negativen Zahlen aufgerufen wird.
 
 00:18:50,910 --> 00:18:56,400
-Das ist etwas, das möglich ist, aber das
-ist wirklich ein Thema für eine andere Vorlesung, und
+Das ist etwas, das möglich ist, aber das ist
+wirklich ein Thema für eine andere Vorlesung, und
 
 00:18:56,400 --> 00:18:57,770
 vielleicht nicht einmal für diesen Kurs.
 
 00:18:57,770 --> 00:19:03,741
-Es ist eigentlich für einen anderen Kurs oder ein
-Seminar oder eine weiterführende Vorlesung, nicht unbedingt für dieses
+Es ist eigentlich für einen anderen Kurs oder ein Seminar
+oder eine weiterführende Vorlesung, nicht unbedingt für dieses
 
 00:19:03,741 --> 00:19:04,741
 Semester.
 
 00:19:04,741 --> 00:19:16,760
-Ich wollte nur erwähnen, dass eine
-solche eher statische Lösung auch möglich ist.
+Ich wollte nur erwähnen, dass eine solche
+eher statische Lösung auch möglich ist.
 
 65 # slide
 00:19:16,760 --> 00:19:18,000
-Aber lassen Sie uns
-nicht in diese Richtung gehen.
+Aber lassen Sie uns nicht
+in diese Richtung gehen.
 
 00:19:18,000 --> 00:19:24,270
-Wenden wir unsere Erkenntnisse, die wir bei der Besprechung
-des factorial-Beispiels gewonnen haben, zunächst auf die Situation an,
+Wenden wir unsere Erkenntnisse, die wir bei der Besprechung des
+factorial-Beispiels gewonnen haben, zunächst auf die Situation an,
 
 00:19:24,270 --> 00:19:25,690
 die wir vorhin betrachtet haben.
@@ -1020,20 +1020,20 @@ Ich prüfe, ob t kleiner-gleich pi ist, dann
 prüfe ich die nächste Periode von pi bis 2 * pi,
 
 00:19:36,550 --> 00:19:40,260
-und dann über 2 * pi (das könnte
-etwas sein, was ich ausdrücken möchte).
+und dann über 2 * pi (das könnte etwas
+sein, was ich ausdrücken möchte).
 
 00:19:40,260 --> 00:19:46,180
 Nun, angesichts dessen, was wir über die Reihenfolge der
 Überprüfung solcher Guards wissen, und was wir über erschöpfende
 
 00:19:46,180 --> 00:19:52,310
-Definitionen wissen, können wir
-dies ein wenig revidieren.
+Definitionen wissen, können
+wir dies ein wenig revidieren.
 
 00:19:52,310 --> 00:19:58,990
-Der ideale Weg, dies zu schreiben, wäre also so etwas
-wie das hier, was sowohl kürzer ist als auch einige zusätzliche
+Der ideale Weg, dies zu schreiben, wäre also so etwas wie
+das hier, was sowohl kürzer ist als auch einige zusätzliche
 
 00:19:58,990 --> 00:20:02,680
 Vorteile hat, wie
@@ -1051,12 +1051,12 @@ In der zweiten Bedingung muss nicht geprüft
 werden, ob t größer als pi ist, weil
 
 00:20:13,870 --> 00:20:18,760
-wir wissen, dass die zweite Zeile nur
-geprüft wird, wenn die erste Zeile nicht zutrifft.
+wir wissen, dass die zweite Zeile nur geprüft
+wird, wenn die erste Zeile nicht zutrifft.
 
 00:20:18,760 --> 00:20:24,090
-Wir kommen also nur in die zweite
-Zeile, wenn die erste Bedingung nicht wahr war.
+Wir kommen also nur in die zweite Zeile,
+wenn die erste Bedingung nicht wahr war.
 
 00:20:24,090 --> 00:20:30,300
 Und da es sich um Fließkommazahlen handelt,
@@ -1067,8 +1067,8 @@ pi ist, wenn t
 nicht kleiner-gleich pi ist.
 
 00:20:32,590 --> 00:20:36,830
-Also ist diese Prüfung in diesem
-Guard hier eigentlich überflüssig in diesem Sinne.
+Also ist diese Prüfung in diesem Guard hier
+eigentlich überflüssig in diesem Sinne.
 
 00:20:36,830 --> 00:20:43,460
 Denn die zweite Zeile erreichen wir ohnehin
@@ -1079,52 +1079,52 @@ Und ganz ähnlich können wir argumentieren, dass
 wir in der letzten Zeile dies nicht prüfen
 
 00:20:50,380 --> 00:20:55,680
-müssen, denn wenn dies nicht wahr wäre,
-dann hätten wir schon den Fall vorher genommen.
+müssen, denn wenn dies nicht wahr wäre, dann
+hätten wir schon den Fall vorher genommen.
 
 00:20:55,680 --> 00:21:01,530
 Indem wir hier also "otherwise" schreiben, drücken wir
 dieselben Bedingungen aus, und wir helfen dem Compiler
 
 00:21:01,530 --> 00:21:08,010
-zu wissen, dass dies ein
-gültiger und vollständiger Ausdruck ist.
+zu wissen, dass dies ein gültiger
+und vollständiger Ausdruck ist.
 
 00:21:08,010 --> 00:21:16,070
-Wir vermeiden also syntaktische Wiederholungen, wir vermeiden redundante
-Prüfungen, indem wir die Reihenfolge ausnutzen und das,
+Wir vermeiden also syntaktische Wiederholungen, wir vermeiden
+redundante Prüfungen, indem wir die Reihenfolge ausnutzen und das,
 
 00:21:16,070 --> 00:21:20,220
 was wir über
 die Vollständigkeit wissen.
 
 00:21:20,220 --> 00:21:26,330
-Und in gewisser Weise würde ich behaupten,
-dass wir die Definition auch lesbarer gemacht haben.
+Und in gewisser Weise würde ich behaupten, dass
+wir die Definition auch lesbarer gemacht haben.
 
 00:21:26,330 --> 00:21:31,520
-Versuchen Sie also, Strategien wie diese in
-Ihren nächsten Übungsaufgaben anzuwenden, wenn Sie komplexe
+Versuchen Sie also, Strategien wie diese in Ihren
+nächsten Übungsaufgaben anzuwenden, wenn Sie komplexe
 
 00:21:31,520 --> 00:21:37,420
 Bedingungen wie oben haben.
 
 66 # slide
 00:21:37,420 --> 00:21:43,290
-Schauen wir uns noch ein paar weitere
-Beispiele und verschiedene Möglichkeiten an, Definitionen zu schreiben.
+Schauen wir uns noch ein paar weitere Beispiele und
+verschiedene Möglichkeiten an, Definitionen zu schreiben.
 
 00:21:43,290 --> 00:21:49,570
-Bisher haben wir immer den Fall betrachtet,
-dass wir im Grunde einen "Funktionskopf" haben, wenn
+Bisher haben wir immer den Fall betrachtet, dass
+wir im Grunde einen "Funktionskopf" haben, wenn
 
 00:21:49,570 --> 00:21:52,230
 Sie so wollen, und
 dann eventuell mehrere Guards.
 
 00:21:52,230 --> 00:21:56,680
-Tatsächlich können wir aber auch
-mehrere Zeilen für eine Funktionsdefinition schreiben.
+Tatsächlich können wir aber auch mehrere
+Zeilen für eine Funktionsdefinition schreiben.
 
 00:21:56,680 --> 00:22:02,100
 Anstatt also "factorial n" und dann diesen Guard
@@ -1142,8 +1142,8 @@ Fakultät n unter der Bedingung "otherwise"
 (die eigentlich keine Bedingung ist,
 
 00:22:14,530 --> 00:22:16,640
-weil sie immer wahr ist), berechnet
-n * factorial (n - 1).
+weil sie immer wahr ist),
+berechnet n * factorial (n - 1).
 
 00:22:16,640 --> 00:22:19,890
 Dies wäre also äquivalent zu den
@@ -1154,8 +1154,8 @@ Warum sollten wir das überhaupt
 tun (es mehrfach zu schreiben)?
 
 00:22:24,790 --> 00:22:30,750
-Nun, dank der Top-Down-Auswertungsreihenfolge in Bezug
-auf die Auswahl der Fälle können wir
+Nun, dank der Top-Down-Auswertungsreihenfolge
+in Bezug auf die Auswahl der Fälle können wir
 
 00:22:30,750 --> 00:22:33,240
 es dann z.B. auch so schreiben.
@@ -1175,8 +1175,8 @@ hat es die gleiche Semantik wie das, was wir hier
 oben geschrieben haben.
 
 00:22:49,420 --> 00:22:54,920
-Es ist natürlich auch wieder
-anfällig für Änderungen in der Reihenfolge.
+Es ist natürlich auch wieder anfällig
+für Änderungen in der Reihenfolge.
 
 00:22:54,920 --> 00:22:59,750
 Wenn wir hier also die Reihenfolge ändern, dann kann
@@ -1193,8 +1193,8 @@ eine Prüfung wie diese: factorial n unter der Bedingung,
 dass n gleich null ist, ist etwas.
 
 00:23:11,880 --> 00:23:15,060
-Diese Bedingung n == 0 würden
-Sie in der Mathematik anders schreiben.
+Diese Bedingung n == 0 würden Sie
+in der Mathematik anders schreiben.
 
 00:23:15,060 --> 00:23:17,270
 Sie würden einfach sagen:
@@ -1205,81 +1205,81 @@ Anstatt zu sagen: Die Fakultät von n,
 wenn das gleich null ist, ist eins.
 
 00:23:21,130 --> 00:23:24,210
-Dann können wir die
-erste Zeile auch so schreiben.
+Dann können wir die erste
+Zeile auch so schreiben.
 
 00:23:24,210 --> 00:23:28,740
-Und dann zahlt es sich wirklich aus, dass wir
-mehrere Zeilen schreiben, statt uns auf Guards zu verlassen.
+Und dann zahlt es sich wirklich aus, dass wir mehrere
+Zeilen schreiben, statt uns auf Guards zu verlassen.
 
 00:23:28,740 --> 00:23:34,470
 Hier sagen wir: Die Fakultät von null ist
 eins, und die Fakultät von n ist dies.
 
 00:23:34,470 --> 00:23:41,460
-Und da wir von oben nach unten prüfen, bedeutet
-die letzte Zeile eigentlich die Fakultät für ein beliebiges
+Und da wir von oben nach unten prüfen, bedeutet die
+letzte Zeile eigentlich die Fakultät für ein beliebiges
 
 00:23:41,460 --> 00:23:44,240
-n ungleich null, weil
-null hier schon behandelt wird.
+n ungleich null, weil null
+hier schon behandelt wird.
 
 00:23:44,240 --> 00:23:49,760
-Und das ist jetzt wieder etwas, was
-Sie so ähnlich auch in einer Lehrbuchdefinition (in
+Und das ist jetzt wieder etwas, was Sie so
+ähnlich auch in einer Lehrbuchdefinition (in
 
 00:23:49,760 --> 00:23:52,520
 der Mathematik) der
 Fakultät finden würden.
 
 00:23:52,520 --> 00:23:57,750
-Da steht: Fakultät 0 ist dies und
-Fakultät von n (im Hinterkopf: für irgendetwas anderes
+Da steht: Fakultät 0 ist dies und Fakultät
+von n (im Hinterkopf: für irgendetwas anderes
 
 00:23:57,750 --> 00:24:00,750
 als null) ist dieser Ausdruck.
 
 00:24:00,750 --> 00:24:05,510
-Sie können diese Stile mischen und für Ihre
-Funktion, die Sie ausdrücken wollen, herausfinden, was die
+Sie können diese Stile mischen und für Ihre Funktion,
+die Sie ausdrücken wollen, herausfinden, was die
 
 00:24:05,510 --> 00:24:12,280
-schönste Art ist, die Fallunterscheidungen auszudrücken, die
-Sie für die Lösung Ihres Problems brauchen.
+schönste Art ist, die Fallunterscheidungen auszudrücken,
+die Sie für die Lösung Ihres Problems brauchen.
 
 00:24:12,280 --> 00:24:13,490
 Dies kann gemischt werden.
 
 00:24:13,490 --> 00:24:19,080
-Schauen wir uns also ein anderes Beispiel
-an, bei dem wir mehrere Eingabewerte haben und
+Schauen wir uns also ein anderes Beispiel an,
+bei dem wir mehrere Eingabewerte haben und
 
 00:24:19,080 --> 00:24:28,650
-dann auch diese Art
-von Guard-Stil und Matchen-gegen-Konstanten-Stil mischen.
+dann auch diese Art von Guard-Stil und
+Matchen-gegen-Konstanten-Stil mischen.
 
 67 # slide
 00:24:28,650 --> 00:24:29,830
 Dies ist ein solches Beispiel.
 
 00:24:29,830 --> 00:24:37,930
-Dies ist die Ackermann-Funktion, die Sie
-vielleicht aus Ihrer Vorlesung über Komplexitätstheorie kennen.
+Dies ist die Ackermann-Funktion, die Sie vielleicht
+aus Ihrer Vorlesung über Komplexitätstheorie kennen.
 
 00:24:37,930 --> 00:24:40,000
-Und selbst wenn Sie das nicht
-tun, ist es nicht wirklich wichtig.
+Und selbst wenn Sie das nicht tun,
+ist es nicht wirklich wichtig.
 
 00:24:40,000 --> 00:24:43,530
-Es ist eine Funktion, die
-einige interessante und komplexe Bedingungen hat.
+Es ist eine Funktion, die einige
+interessante und komplexe Bedingungen hat.
 
 00:24:43,530 --> 00:24:45,220
 So hat sie verschiedene Basisfälle.
 
 00:24:45,220 --> 00:24:50,680
-Entweder ist die erste oder die zweite
-Eingabe null, aber es gibt auch einige Bedingungen
+Entweder ist die erste oder die zweite Eingabe
+null, aber es gibt auch einige Bedingungen
 
 00:24:50,680 --> 00:24:53,540
 für die jeweils andere Eingabe.
@@ -1303,12 +1303,12 @@ formulierte Bedingung auf
 der ersten Eingabe.
 
 00:25:11,510 --> 00:25:18,480
-Und es gibt auch einen Fall, in
-dem wir numerische Prüfungen auf beiden Eingaben haben.
+Und es gibt auch einen Fall, in dem wir
+numerische Prüfungen auf beiden Eingaben haben.
 
 00:25:18,480 --> 00:25:22,600
-Dann haben wir in jedem Fall
-irgendeinen Ausdruck, der berechnet werden muss.
+Dann haben wir in jedem Fall irgendeinen
+Ausdruck, der berechnet werden muss.
 
 00:25:22,600 --> 00:25:26,200
 Es ist nicht wirklich wichtig, was die Funktion
@@ -1318,19 +1318,19 @@ genau tut; der Punkt ist, dass wir diese Art
 haben, unsere Bedingungen auszudrücken.
 
 00:25:29,120 --> 00:25:31,880
-Und wieder wird dies
-von oben nach unten abgeglichen.
+Und wieder wird dies von
+oben nach unten abgeglichen.
 
 00:25:31,880 --> 00:25:36,740
-Wenn also die erste Eingabe null ist
-und die zweite eine nicht-negative Zahl, dann wird
+Wenn also die erste Eingabe null ist und die
+zweite eine nicht-negative Zahl, dann wird
 
 00:25:36,740 --> 00:25:38,940
 der erste Basisfall genommen.
 
 00:25:38,940 --> 00:25:44,720
-Wenn Sie dies mit GHC ausprobieren, erhalten
-Sie einige Warnungen, dass die Bedingungen nicht erfüllt sind.
+Wenn Sie dies mit GHC ausprobieren, erhalten Sie einige
+Warnungen, dass die Bedingungen nicht erfüllt sind.
 
 00:25:44,720 --> 00:25:51,510
 Denn der Compiler versucht auch hier,
@@ -1344,24 +1344,24 @@ Sie sollten sich die Warnungen ansehen und versuchen, sie
 zu interpretieren, um zu sehen, wie weit der Compiler
 
 00:25:57,390 --> 00:26:03,370
-es geschafft hat, dieses Programm und die
-verschiedenen Fälle, die hier auftreten, zu analysieren.
+es geschafft hat, dieses Programm und die verschiedenen
+Fälle, die hier auftreten, zu analysieren.
 
 68 # slide
 00:26:03,370 --> 00:26:08,440
 Das war nur ein Beispiel.
 
 00:26:08,440 --> 00:26:11,350
-Lassen Sie uns eigentlich
-zu einigen allgemeinen Bemerkungen zurückkehren.
+Lassen Sie uns eigentlich zu einigen
+allgemeinen Bemerkungen zurückkehren.
 
 00:26:11,350 --> 00:26:16,290
 Und das wird fast
 das Ende dieses Videos sein.
 
 00:26:16,290 --> 00:26:21,810
-Lassen Sie uns also rekapitulieren, was
-die allgemeinen Regeln für Funktionsdefinitionen sind.
+Lassen Sie uns also rekapitulieren, was die
+allgemeinen Regeln für Funktionsdefinitionen sind.
 
 00:26:21,810 --> 00:26:23,110
 Wir können eine
@@ -1371,8 +1371,8 @@ oder mehrere Gleichungen haben.
 Wir haben mit einer angefangen.
 
 00:26:24,110 --> 00:26:27,580
-Aber jetzt haben wir gesehen, dass wir
-mehrere Gleichungen für eine Funktion haben können.
+Aber jetzt haben wir gesehen, dass wir mehrere
+Gleichungen für eine Funktion haben können.
 
 00:26:27,580 --> 00:26:29,910
 Und sie werden von
@@ -1389,8 +1389,8 @@ gesehen haben.
 Es kann ein oder mehrere Argumente geben.
 
 00:26:43,810 --> 00:26:49,290
-Bisher sind diese Argumente Variablennamen, auf die
-Sie vielleicht einige Bedingungen über Guards ausdrücken wollen,
+Bisher sind diese Argumente Variablennamen, auf die Sie
+vielleicht einige Bedingungen über Guards ausdrücken wollen,
 
 00:26:49,290 --> 00:26:55,990
 oder sie können Konstanten wie null oder eins
@@ -1403,52 +1403,52 @@ haben.
 Die Variablennamen können anonym sein.
 
 00:26:58,370 --> 00:27:05,550
-Das heißt, wie Sie gleich in einem Beispiel
-auf der letzten Folie für heute sehen werden, wir
+Das heißt, wie Sie gleich in einem Beispiel auf
+der letzten Folie für heute sehen werden, wir
 
 00:27:05,550 --> 00:27:09,630
-können Fälle haben, in denen wir gegen eine
-Variable abgleichen, aber diese Variable nie wieder verwenden werden.
+können Fälle haben, in denen wir gegen eine Variable
+abgleichen, aber diese Variable nie wieder verwenden werden.
 
 00:27:09,630 --> 00:27:13,560
 Und damit sich der Compiler nicht beschwert,
 dass wir eine Variable benannt haben, die wir
 
 00:27:13,560 --> 00:27:18,510
-nicht verwenden, können wir das "_" als
-eine Variable verwenden, die wir nie verwenden werden.
+nicht verwenden, können wir das "_" als eine
+Variable verwenden, die wir nie verwenden werden.
 
 00:27:18,510 --> 00:27:25,300
-Das wird nützlich sein, wie Sie
-auf der nächsten Folie sehen werden.
+Das wird nützlich sein, wie Sie auf
+der nächsten Folie sehen werden.
 
 00:27:25,300 --> 00:27:28,200
 Innerhalb einer Gleichung müssen
 die Variablennamen eindeutig sein.
 
 00:27:28,200 --> 00:27:33,390
-Wie wir also vor ein paar Folien gesehen haben,
-können wir zwei Gleichungen für die Fakultät mit demselben
+Wie wir also vor ein paar Folien gesehen haben, können
+wir zwei Gleichungen für die Fakultät mit demselben
 
 00:27:33,390 --> 00:27:35,870
-Variablennamen haben, aber
-es sind unterschiedliche Gleichungen.
+Variablennamen haben, aber es
+sind unterschiedliche Gleichungen.
 
 00:27:35,870 --> 00:27:39,300
-In einer Gleichung können wir
-nicht ZWEIMAL DEN GLEICHEN Variablennamen haben.
+In einer Gleichung können wir nicht
+ZWEIMAL DEN GLEICHEN Variablennamen haben.
 
 00:27:39,300 --> 00:27:42,420
-Wir können nicht ackermann von n
-und n haben (ackermann n n).
+Wir können nicht ackermann von
+n und n haben (ackermann n n).
 
 00:27:42,420 --> 00:27:46,630
-Wir können ackermann von n und m
-haben, aber nicht ackermann von n und n.
+Wir können ackermann von n und m haben,
+aber nicht ackermann von n und n.
 
 00:27:46,630 --> 00:27:50,260
-Denn in einer Zeile, in einer
-Gleichung, müssen die Variablennamen eindeutig sein.
+Denn in einer Zeile, in einer Gleichung,
+müssen die Variablennamen eindeutig sein.
 
 00:27:50,260 --> 00:27:53,290
 Dies gilt nicht für anonyme Variablen.
@@ -1469,24 +1469,24 @@ würden (weil Sie vielleicht mathematische Definitionen gesehen
 haben, die eine Funktionalität wie "Lösen von Bedingungen
 
 00:28:13,500 --> 00:28:20,750
-an Eingaben über
-mathematische Ausdrücke" verwenden):
+an Eingaben über mathematische
+Ausdrücke" verwenden):
 
 00:28:20,750 --> 00:28:27,220
 So etwas wie eine Funktionsdefinition in der
 Mathematik, die zum Beispiel sagt: f(2×n)= ...
 
 00:28:27,220 --> 00:28:33,460
-(etwas, das "f(n)" beinhaltet); das ist eine
-Definitionsart, die Leute manchmal in der Mathematik schreiben
+(etwas, das "f(n)" beinhaltet); das ist eine Definitionsart,
+die Leute manchmal in der Mathematik schreiben
 
 00:28:33,460 --> 00:28:39,140
 (weil sie vielleicht eine Funktion für alle geraden
 ganzen Zahlen definieren wollen, also sagen sie: f(2×n)=
 
 00:28:39,140 --> 00:28:41,400
-...); aber das ist nicht
-etwas, das Haskell akzeptieren würde.
+...); aber das ist nicht etwas,
+das Haskell akzeptieren würde.
 
 00:28:41,400 --> 00:28:46,520
 Denn dann müsste Haskell aus einer gegebenen
@@ -1496,8 +1496,8 @@ Eingabe wie 12 herausfinden, ob das zu
 2×n passt oder nicht.
 
 00:28:47,740 --> 00:28:53,820
-Haskell müsste also tatsächlich arithmetische Gleichungen auf eine
-Weise lösen, die nicht so allgemein möglich ist, wie
+Haskell müsste also tatsächlich arithmetische Gleichungen auf
+eine Weise lösen, die nicht so allgemein möglich ist, wie
 
 00:28:53,820 --> 00:28:56,020
 man es sich in
@@ -1507,8 +1507,8 @@ einem Compiler wünschen würde.
 Es ist also nicht möglich.
 
 00:28:57,270 --> 00:29:03,000
-In diesen Argumentpositionen können wir also
-einfache Dinge haben, wie Konstanten, Variablennamen, später
+In diesen Argumentpositionen können wir also einfache
+Dinge haben, wie Konstanten, Variablennamen, später
 
 00:29:03,000 --> 00:29:09,070
 auch einige Pattern über Datentypen, aber
@@ -1518,8 +1518,8 @@ nicht so etwas wie einen arithmetischen
 Ausdruck beliebiger Art, wie 2 * n.
 
 00:29:12,080 --> 00:29:21,200
-Denn das würde das "Lösen" von
-Gleichungen erfordern, nur um zu entscheiden, welche
+Denn das würde das "Lösen" von Gleichungen
+erfordern, nur um zu entscheiden, welche
 
 00:29:21,200 --> 00:29:25,530
 Funktionsdefinition für eine bestimmte
@@ -1544,8 +1544,8 @@ Nun, lassen Sie
 uns dieses Beispiel betrachten.
 
 00:29:42,020 --> 00:29:50,720
-Sagen wir also, wir wollen die
-logischen Operationen auf dem Typ 'Boolean' definieren.
+Sagen wir also, wir wollen die logischen
+Operationen auf dem Typ 'Boolean' definieren.
 
 00:29:50,720 --> 00:29:53,410
 Wir könnten sagen: "not True =
@@ -1556,16 +1556,16 @@ Aber eigentlich brauchen wir in der zweiten
 Zeile nicht "not False = True" zu schreiben.
 
 00:29:58,860 --> 00:30:04,040
-Denn das Einzige, was hier stehen kann,
-wäre "False", weil "True" bereits behandelt wird.
+Denn das Einzige, was hier stehen kann, wäre
+"False", weil "True" bereits behandelt wird.
 
 00:30:04,040 --> 00:30:10,220
-Dann könnten wir sagen: Gut, schreiben wir "not x
-= True", also verwenden wir hier eine Variable namens x.
+Dann könnten wir sagen: Gut, schreiben wir "not x =
+True", also verwenden wir hier eine Variable namens x.
 
 00:30:10,220 --> 00:30:14,610
-Aber auch das wäre nicht so schön, denn
-dann ist das x auf der rechten Seite unbenutzt.
+Aber auch das wäre nicht so schön, denn dann
+ist das x auf der rechten Seite unbenutzt.
 
 00:30:14,610 --> 00:30:18,800
 Und bei bestimmten Einstellungen würde sich
@@ -1576,8 +1576,8 @@ Variable x einführen, aber dann im
 Scope das x gar nicht verwenden.
 
 00:30:22,520 --> 00:30:25,600
-Und dann ist die Lösung "_", was
-im Grunde genommen sagt: "Das ist mir egal".
+Und dann ist die Lösung "_", was im
+Grunde genommen sagt: "Das ist mir egal".
 
 00:30:25,600 --> 00:30:30,860
 Also ist "not" von "True" "False", und "not"
@@ -1592,44 +1592,44 @@ Und es ist
 auch sehr intuitiv geschrieben.
 
 00:30:37,450 --> 00:30:41,200
-Und ähnlich könnte man auch
-bei anderen logischen Operationen vorgehen.
+Und ähnlich könnte man auch bei
+anderen logischen Operationen vorgehen.
 
 00:30:41,200 --> 00:30:46,790
-Sagen wir zum Beispiel, wir wollen
-die Konjunktion von Booleschen Werten implementieren.
+Sagen wir zum Beispiel, wir wollen die
+Konjunktion von Booleschen Werten implementieren.
 
 00:30:46,790 --> 00:30:51,380
-Dann könnten wir sagen: "True and True ist
-True", und wir könnten drei Fälle schreiben wie "True
+Dann könnten wir sagen: "True and True ist True",
+und wir könnten drei Fälle schreiben wie "True
 
 00:30:51,380 --> 00:30:55,150
-and False ist False", "False and True
-ist False" und "False and False ist False".
+and False ist False", "False and True ist
+False" und "False and False ist False".
 
 00:30:55,150 --> 00:30:59,970
 Aber warum sollten wir das tun, wenn wir auch
 sagen können: "was auch immer 'and' was auch immer
 
 00:30:59,970 --> 00:31:03,060
-ist False", da "True and True"
-bereits durch die erste Zeile geprüft wurde?
+ist False", da "True and True" bereits
+durch die erste Zeile geprüft wurde?
 
 00:31:03,060 --> 00:31:09,070
-Dann ist damit sehr
-kompakt definiert, wie Konjunktion funktioniert.
+Dann ist damit sehr kompakt definiert,
+wie Konjunktion funktioniert.
 
 00:31:09,070 --> 00:31:14,490
-Und ähnlich könnten wir
-auch einen anderen Stil verwenden.
+Und ähnlich könnten wir auch
+einen anderen Stil verwenden.
 
 00:31:14,490 --> 00:31:20,040
 Wir könnten sagen: "b and True ist
 b" und "egal and egal ist False".
 
 00:31:20,040 --> 00:31:23,040
-Dann würden wir zwei Fälle
-in der ersten Zeile behandeln.
+Dann würden wir zwei Fälle in
+der ersten Zeile behandeln.
 
 00:31:23,040 --> 00:31:32,260
 Es ist vielleicht ein bisschen Geschmackssache,
@@ -1640,24 +1640,24 @@ Für Ihre Übungsaufgaben ist
 das nicht wirklich wichtig.
 
 00:31:35,660 --> 00:31:41,820
-In der Realität gibt es einen kleinen
-Unterschied zwischen diesen beiden Versionen der Funktion, insbesondere
+In der Realität gibt es einen kleinen Unterschied zwischen
+diesen beiden Versionen der Funktion, insbesondere
 
 00:31:41,820 --> 00:31:47,780
-dann, wenn Sie sie mit teuren
-Berechnungen wie der Ackermann-Funktion in einer der
+dann, wenn Sie sie mit teuren Berechnungen
+wie der Ackermann-Funktion in einer der
 
 00:31:47,780 --> 00:31:48,970
 Argumentpositionen kombinieren.
 
 00:31:48,970 --> 00:31:57,620
-Aber das werden Fälle sein, die nicht in
-der Art und Weise auftreten, wie Sie z. B. Konjunktionen
+Aber das werden Fälle sein, die nicht in der Art
+und Weise auftreten, wie Sie z. B. Konjunktionen
 
 00:31:57,620 --> 00:31:59,760
 und Bedingungskombinationen
 verwenden wollen.
 
 00:31:59,760 --> 00:32:03,710
-Ich werde also nicht
-weiter auf diesen Teil eingehen.
+Ich werde also nicht weiter
+auf diesen Teil eingehen.

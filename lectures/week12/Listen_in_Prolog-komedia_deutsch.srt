@@ -8,8 +8,8 @@ da die Liste der schon besuchten Zwischenstationen
 gespeichert bei diesem transitive-Hülle-Beispiel mit
 
 00:00:16,680 --> 00:00:22,320
-möglichen Zyklen zwischen den Städten und
-deren Verbindungen, also zyklischen Verbindungen.
+möglichen Zyklen zwischen den Städten und deren
+Verbindungen, also zyklischen Verbindungen.
 
 00:00:22,320 --> 00:00:28,320
 Listen hatte ich vorher nur ganz kurz an
@@ -28,36 +28,36 @@ aus denen man Datenstrukturen erzeugen kann.
 Also wir hatten das mit s/1 und z/0 gemacht.
 
 00:00:44,400 --> 00:00:50,580
-s(s(z)) zum Beispiel als Repräsentation für
-eine symbolische Zahl 2. Und auf der Folie, wo das
+s(s(z)) zum Beispiel als Repräsentation für eine
+symbolische Zahl 2. Und auf der Folie, wo das
 
 00:00:50,580 --> 00:00:56,820
-erstmals auftauchte, hatte ich auch erwähnt, dass es eine Listen-Syntax gibt,
-dass man Listen in Prolog darstellen kann.
+erstmals auftauchte, hatte ich auch erwähnt, dass es eine
+Listen-Syntax gibt, dass man Listen in Prolog darstellen kann.
 
 00:00:56,820 --> 00:01:01,350
 Also zum Beispiel so etwas wie ein [1,2,3,4,5]
 mit eckigen Klammern und Kommas dazwischen.
 
 00:01:02,040 --> 00:01:06,870
-Und dass das aber auch genauso gut nicht nur bei Zahlen,
-sondern bei beliebigen anderen Daten geht.
+Und dass das aber auch genauso gut nicht nur bei
+Zahlen, sondern bei beliebigen anderen Daten geht.
 
 00:01:06,870 --> 00:01:12,450
-Also wir können da Atome drinstehen haben. Wir können da auch
-Variablen drinstehen haben. Wir können das auch mischen.
+Also wir können da Atome drinstehen haben. Wir können da
+auch Variablen drinstehen haben. Wir können das auch mischen.
 
 00:01:12,450 --> 00:01:19,680
-Wir könnten auch solche s(s(z)) Terme in einer Liste
-auftreten sehen. Also Listen sind prinzipiell
+Wir könnten auch solche s(s(z)) Terme in einer
+Liste auftreten sehen. Also Listen sind prinzipiell
 
 00:01:19,680 --> 00:01:27,870
 vorhanden oder verfügbar, um beliebige Datenobjekte
 in Prolog zusammenzufassen, um dann mit diesen Listen
 
 00:01:27,870 --> 00:01:36,075
-zu arbeiten. In dem Beispiel eben hatte ich
-Listen verwendet. Insbesondere schon zwei Prädikate auf
+zu arbeiten. In dem Beispiel eben hatte ich Listen
+verwendet. Insbesondere schon zwei Prädikate auf
 
 00:01:36,075 --> 00:01:37,400
 Listen verwendet.
@@ -67,16 +67,16 @@ Tatsächlich gibt es einen sehr reichhaltigen Vorrat
 an Prädikaten für die Arbeit mit Listen in Prolog.
 
 00:01:42,690 --> 00:01:50,460
-Ich erwähne hier zunächst erst einmal drei und werde mit denen
-dann sozusagen etwas herumspielen auf den Folien.
+Ich erwähne hier zunächst erst einmal drei und werde mit
+denen dann sozusagen etwas herumspielen auf den Folien.
 
 00:01:50,460 --> 00:01:57,750
-Und dann auch kurz angeben,
-wie man eigene Prädikate definieren kann.
+Und dann auch kurz angeben, wie man
+eigene Prädikate definieren kann.
 
 00:01:57,750 --> 00:02:05,110
-Also bereits aufgetreten in dem vorigen Beispiel
-ist das member-Prädikat. Das ist ein zweistelliges Prädikat.
+Also bereits aufgetreten in dem vorigen Beispiel ist
+das member-Prädikat. Das ist ein zweistelliges Prädikat.
 
 00:02:05,650 --> 00:02:10,390
 Das schreiben wir ja so durch diese zwei hier.
@@ -87,48 +87,48 @@ Und zwar soll das ausdrücken, dass ein Element in einer Liste
 vorkommt. Das hätte also zwei Argumente. Das erste Argument wäre
 
 00:02:16,120 --> 00:02:21,340
-gedacht als ein Element. So etwas wie Duisburg oder Essen in
-dem Beispiel hier. Also etwa eine Konstante oder
+gedacht als ein Element. So etwas wie Duisburg oder
+Essen in dem Beispiel hier. Also etwa eine Konstante oder
 
 00:02:21,340 --> 00:02:26,320
-auch ein anderes Datum/eine andere Datenstruktur.
-Und das zweite Argument wäre eine Liste. Member drückt aus,
+auch ein anderes Datum/eine andere Datenstruktur. Und
+das zweite Argument wäre eine Liste. Member drückt aus,
 
 00:02:26,320 --> 00:02:31,900
-dass besagtes Element in besagter Liste vorkommt und
-zwar irgendwo. Die Liste muss nicht mit dem Element beginnen,
+dass besagtes Element in besagter Liste vorkommt und zwar
+irgendwo. Die Liste muss nicht mit dem Element beginnen,
 
 00:02:31,900 --> 00:02:37,540
 sondern irgendwo in der Liste muss das Element
 vorkommen. Dann wäre member true. Wir werden gleich
 
 00:02:37,540 --> 00:02:47,080
-sehen, wie man member benutzen kann. Ein zweites Prädikat,
-was auch bereits in dem Beispiel vorkam, war das append-Prädikat.
+sehen, wie man member benutzen kann. Ein zweites Prädikat, was
+auch bereits in dem Beispiel vorkam, war das append-Prädikat.
 
 00:02:47,080 --> 00:02:53,050
-Das ist sogar dreistellig. Das hat also drei Argumente.
-Die Intuition ist, dass alle drei Argumente
+Das ist sogar dreistellig. Das hat also drei
+Argumente. Die Intuition ist, dass alle drei Argumente
 
 00:02:53,050 --> 00:02:58,150
-Listen sind und dass die ersten beiden Listen,
-wenn man sie aneinander hängt, die dritte Liste ergeben.
+Listen sind und dass die ersten beiden Listen, wenn
+man sie aneinander hängt, die dritte Liste ergeben.
 
 00:02:58,150 --> 00:03:05,920
-Also wir werden gleich Aufrufe sehen. Aber man könnte zum Beispiel
-append benutzen, wenn man das sozusagen vorwärts liest,
+Also wir werden gleich Aufrufe sehen. Aber man könnte zum
+Beispiel append benutzen, wenn man das sozusagen vorwärts liest,
 
 00:03:05,920 --> 00:03:11,050
-indem man zwei Listen hineingibt und eine dritte Liste herauskriegt,
-die dann die Hintereinanderschreibung der ersten
+indem man zwei Listen hineingibt und eine dritte Liste
+herauskriegt, die dann die Hintereinanderschreibung der ersten
 
 00:03:11,050 --> 00:03:16,510
 beiden Listen ist. Aber wie viele andere Prädikate auch
 in Prolog kann man append auch auf andere Weise aufrufen,
 
 00:03:16,510 --> 00:03:22,990
-um etwa eine Liste rückwärts zu zerlegen,
-statt vorwärts zwei Listen aneinander zu hängen.
+um etwa eine Liste rückwärts zu zerlegen, statt
+vorwärts zwei Listen aneinander zu hängen.
 
 00:03:22,990 --> 00:03:29,470
 Ein drittes sehr naheliegendes Prädikat auf Listen
@@ -139,8 +139,8 @@ Das ist wieder ein zweistelliges Prädikat,
 das allerdings nicht Elemente und Listen
 
 00:03:37,360 --> 00:03:45,010
-oder mehrere Listen in Beziehung setzt, sondern eine Liste
-und ihre Länge. Also length hätte zwei Argumente.
+oder mehrere Listen in Beziehung setzt, sondern eine
+Liste und ihre Länge. Also length hätte zwei Argumente.
 
 00:03:45,010 --> 00:03:54,970
 Eine Liste und eine Zahl. Und length mit diesen Argumenten
@@ -151,21 +151,21 @@ Auch dafür werden wir gleich Beispiele sehen.
 Interessant an allen drei Prädikaten und
 
 00:04:03,100 --> 00:04:08,920
-auf vielen weiteren Listenprädikaten in Prolog ist,
-dass sie wieder im Sinne unserer Addition
+auf vielen weiteren Listenprädikaten in Prolog
+ist, dass sie wieder im Sinne unserer Addition
 
 113 # slide
 00:04:08,920 --> 00:04:14,310
-sozusagen rückwärts verwendet werden können.
-Das hatten wir ja bereits mehrfach jetzt schon angesprochen,
+sozusagen rückwärts verwendet werden können. Das hatten
+wir ja bereits mehrfach jetzt schon angesprochen,
 
 00:04:14,310 --> 00:04:22,410
-dass wir etwa die Addition, die wir definiert
-hatten als dreistelliges Prädikat, letztlich sowohl vorwärts
+dass wir etwa die Addition, die wir definiert hatten
+als dreistelliges Prädikat, letztlich sowohl vorwärts
 
 00:04:22,410 --> 00:04:26,400
-zum Addieren als auch rückwärts zum Beispiel zum
-Subtrahieren oder zum Zerlegen von Zahlen in
+zum Addieren als auch rückwärts zum Beispiel
+zum Subtrahieren oder zum Zerlegen von Zahlen in
 
 00:04:26,400 --> 00:04:33,450
 Summanden benutzen konnten. Auf ähnliche Weise werden
@@ -180,8 +180,8 @@ ob denn ein Element in einer Liste vorkommt.
 Also wir können etwa folgende Anfrage stellen:
 
 00:04:46,830 --> 00:04:54,480
-"Ist 3 enthalten in [1,2,3,4,5]?" Und die Antwort würde
-naheliegenderweise wahr sein.
+"Ist 3 enthalten in [1,2,3,4,5]?" Und die
+Antwort würde naheliegenderweise wahr sein.
 
 00:04:54,480 --> 00:04:59,880
 Wenn man hier nach sechs gefragt hätte, zum Beispiel,
@@ -196,28 +196,28 @@ Membership vorliegt. Es gibt aber auch die Möglichkeit,
 einzelne Teile in dieser Anfrage zum Beispiel durch
 
 00:05:14,940 --> 00:05:20,340
-Variablen zu ersetzen. Also wir könnten zum Beispiel
-auch fragen: "Was sind denn alle Member von einer Liste [1,3,3]?"
+Variablen zu ersetzen. Also wir könnten zum Beispiel auch
+fragen: "Was sind denn alle Member von einer Liste [1,3,3]?"
 
 00:05:20,340 --> 00:05:27,030
 Also man könnte fragen: "Gibt es denn ein X, sodass
 das Element von [1,2,3] ist?" Und wenn ja, würden wir
 
 00:05:27,030 --> 00:05:33,210
-gern alle Antworten bekommen. Und dann würde Prolog uns
-in dem Fall sagen: "Ja, X kann 1 sein." Und wenn wir dann durch;
+gern alle Antworten bekommen. Und dann würde Prolog uns in
+dem Fall sagen: "Ja, X kann 1 sein." Und wenn wir dann durch;
 
 00:05:33,870 --> 00:05:40,020
-nachfragen, ob es noch weitere Lösungen gibt, würde Prolog
-tatsächlich alle Member aufzählen.
+nachfragen, ob es noch weitere Lösungen gibt,
+würde Prolog tatsächlich alle Member aufzählen.
 
 00:05:40,020 --> 00:05:47,370
 Also dann würden wir X = 1 bekommen oder X = 2 oder X = 3,
 weil das alle Elemente dieser Liste sind. Da könnten wir also
 
 00:05:47,370 --> 00:05:56,340
-eine Liste nehmen und die durchzählen und uns die
-einzelnen Elemente nach und nach anschauen.
+eine Liste nehmen und die durchzählen und uns
+die einzelnen Elemente nach und nach anschauen.
 
 00:05:56,340 --> 00:06:02,040
 Oder wir könnten uns zum Beispiel entscheiden,
@@ -248,32 +248,32 @@ Und egal, was Y, Z sind. Oder Y kann 3 sein.
 Oder Z kann 3 sein. Man beachte, dass in
 
 00:06:42,630 --> 00:06:47,730
-diesen drei Fällen jeweils immer nur genau
-eine Variable belegt wird. Hier oben gab es nur
+diesen drei Fällen jeweils immer nur genau eine
+Variable belegt wird. Hier oben gab es nur
 
 00:06:47,730 --> 00:06:53,880
 eine Variable. Die wurde auf drei Weisen belegt.
 Hier wird jetzt jeweils eine der Variablen belegt und
 
 00:06:53,880 --> 00:07:00,090
-zwar der Reihe nach, alternativ. Und die anderen beiden
-müssen jeweils nicht belegt werden. Also wenn
+zwar der Reihe nach, alternativ. Und die anderen
+beiden müssen jeweils nicht belegt werden. Also wenn
 
 00:07:00,090 --> 00:07:06,300
-zum Beispiel Y = 3 ist, ist es vollkommen egal, was X und Z sind.
-Es würde dann stimmen, dass 3 Element von [X,3,Z] ist.
+zum Beispiel Y = 3 ist, ist es vollkommen egal, was X und Z
+sind. Es würde dann stimmen, dass 3 Element von [X,3,Z] ist.
 
 00:07:06,300 --> 00:07:14,550
-Hier unten gibt es irgendwie keine Konjunktion.
-Es muss nicht X, Y und Z 3 sein, sondern wirklich in jedem Fall
+Hier unten gibt es irgendwie keine Konjunktion. Es muss
+nicht X, Y und Z 3 sein, sondern wirklich in jedem Fall
 
 00:07:14,550 --> 00:07:21,480
-muss eine der Variablen 3 sein und für die anderen beiden ist
-es egal, wird also auch nichts weiter darüber ausgesagt.
+muss eine der Variablen 3 sein und für die anderen beiden
+ist es egal, wird also auch nichts weiter darüber ausgesagt.
 
 00:07:21,480 --> 00:07:25,740
-Noch allgemeiner könnte man die Frage natürlich auch stellen:
-"Was ist denn, wenn ich hier noch weniger vorgebe?"
+Noch allgemeiner könnte man die Frage natürlich auch
+stellen: "Was ist denn, wenn ich hier noch weniger vorgebe?"
 
 00:07:25,740 --> 00:07:31,800
 Also nicht dreielementig X, Y, Z, sondern einfach L.
@@ -284,16 +284,16 @@ Wenn ich einfach fragen würde, für welche L gilt, dass
 einer Antwort reagieren, die beschreibt oder
 
 00:07:39,090 --> 00:07:44,220
-erfasst alle Fälle aller Listen, in denen irgendwie eine 4 vorkommt,
-was natürlich noch allgemeiner ist als nur
+erfasst alle Fälle aller Listen, in denen irgendwie eine
+4 vorkommt, was natürlich noch allgemeiner ist als nur
 
 00:07:44,220 --> 00:07:52,320
 zu fragen, unter welchen Umständen 3 Element dieser
 dreielementigen Liste ist. Das ist schon relativ mächtig,
 
 00:07:52,320 --> 00:07:56,730
-obwohl es nur eine Definition von Member gibt.
-Die wir hier jetzt nicht gesehen haben, sondern die irgendwie
+obwohl es nur eine Definition von Member gibt. Die wir
+hier jetzt nicht gesehen haben, sondern die irgendwie
 
 00:07:56,730 --> 00:08:04,050
 in Prolog eingebaut ist. Prinzipiell aber auch
@@ -305,84 +305,84 @@ Verhalten für die anderen Prädikate auf Listen.
 
 114 # slide
 00:08:08,150 --> 00:08:14,150
-Also nehmen wir etwa das append-Prädikat.
-Das können wir ganz klassisch sozusagen vorwärts verwenden.
+Also nehmen wir etwa das append-Prädikat. Das können
+wir ganz klassisch sozusagen vorwärts verwenden.
 
 00:08:14,150 --> 00:08:19,820
-Wir können uns fragen, für welches L gilt denn,
-dass L die Aneinanderhängung von [1,2,3] und [4,5] ist?
+Wir können uns fragen, für welches L gilt denn, dass
+L die Aneinanderhängung von [1,2,3] und [4,5] ist?
 
 00:08:19,820 --> 00:08:28,130
-Die Antwort wäre eindeutig. Es gibt genau eine Antwort darauf.
-Nämlich [1,2,3,4,5]. Das wäre einfach das
+Die Antwort wäre eindeutig. Es gibt genau eine Antwort
+darauf. Nämlich [1,2,3,4,5]. Das wäre einfach das
 
 00:08:28,130 --> 00:08:37,280
 Ausführen von append. Von einer Aneinanderhängung.
 Aber da Prolog relational arbeitet und wir nicht
 
 00:08:37,280 --> 00:08:41,570
-unbedingt Dinge immer vorwärts interpretieren müssen,
-könnten wir uns auch entscheiden,
+unbedingt Dinge immer vorwärts interpretieren
+müssen, könnten wir uns auch entscheiden,
 
 00:08:41,570 --> 00:08:47,120
-etwa die Ergebnisliste vorzugeben
-und nach den Eingabelisten zu fragen.
+etwa die Ergebnisliste vorzugeben und
+nach den Eingabelisten zu fragen.
 
 00:08:47,120 --> 00:08:54,740
-Also nach den Ursprungslisten, die zusammengehängt
-die Ergebnisliste ergeben. Also eine Anfrage könnte dann etwa
+Also nach den Ursprungslisten, die zusammengehängt die
+Ergebnisliste ergeben. Also eine Anfrage könnte dann etwa
 
 00:08:54,740 --> 00:09:00,050
-so aussehen: Wir wollen gern wissen, unter welchen Umständen für X, Y
-(was jetzt Variablen sind, da großgeschrieben)
+so aussehen: Wir wollen gern wissen, unter welchen Umständen
+für X, Y (was jetzt Variablen sind, da großgeschrieben)
 
 00:09:00,050 --> 00:09:06,800
 unter welchen Umständen X und Y zusammengehängt
 die Liste [a,b] ergeben. a und b sind hier klein
 
 00:09:06,800 --> 00:09:13,400
-geschrieben, sind also feste, konstante Werte.
-Und was ist die Antwort? Es sind wieder mehrere Antworten.
+geschrieben, sind also feste, konstante Werte. Und was
+ist die Antwort? Es sind wieder mehrere Antworten.
 
 00:09:13,400 --> 00:09:19,790
-Denn es gibt diverse Möglichkeiten, zwei Listen so zu
-haben, dass sie zusammen eine zweielementige Liste [a,b] ergeben.
+Denn es gibt diverse Möglichkeiten, zwei Listen so zu haben,
+dass sie zusammen eine zweielementige Liste [a,b] ergeben.
 
 00:09:19,790 --> 00:09:28,220
-Zum Beispiel könnte X leer sein und Y die gesamte Liste.
-Oder X die gesamte Liste und Y leer.
+Zum Beispiel könnte X leer sein und Y die gesamte
+Liste. Oder X die gesamte Liste und Y leer.
 
 00:09:28,220 --> 00:09:34,700
-Aber auch der Fall, dass tatsächlich [a,b]
-in der Mitte, zum Beispiel, geteilt ist in die Liste [a]
+Aber auch der Fall, dass tatsächlich [a,b] in der
+Mitte, zum Beispiel, geteilt ist in die Liste [a]
 
 00:09:34,700 --> 00:09:41,870
-die Liste mit [b]. Also die Liste [a] und [b]. Und wenn
-hier stattdessen eine zehnelementige Liste stünde,
+die Liste mit [b]. Also die Liste [a] und [b]. Und
+wenn hier stattdessen eine zehnelementige Liste stünde,
 
 00:09:41,870 --> 00:09:46,040
 dann würden elf Fälle entstehen. Es würde nämlich
 alles aufgezählt werden von Prolog. Jede Möglichkeit
 
 00:09:46,040 --> 00:09:53,450
-einer höchstens zehnelementigen Liste
-und einer entsprechend sozusagen gegenteilig
+einer höchstens zehnelementigen Liste und
+einer entsprechend sozusagen gegenteilig
 
 00:09:53,450 --> 00:09:59,000
-kürzeren Liste, sodass die beiden Listen einander
-gehängt, genau die eine vorgegebene zehnelementige Liste ergeben.
+kürzeren Liste, sodass die beiden Listen einander gehängt,
+genau die eine vorgegebene zehnelementige Liste ergeben.
 
 00:09:59,000 --> 00:10:05,660
 Also letztlich verwenden wir hier append rückwärts,
 nicht um zwei Listen aneinander zu hängen,
 
 00:10:05,660 --> 00:10:12,800
-sondern um eine Liste zu zerlegen in zwei
-geeignete Listen. Nämlich sozusagen ein Cut an irgendeiner
+sondern um eine Liste zu zerlegen in zwei geeignete
+Listen. Nämlich sozusagen ein Cut an irgendeiner
 
 00:10:12,800 --> 00:10:20,710
-Stelle in der gegebenen Liste. Dann könnte man
-auch Fragen stellen, auf die Prolog vielleicht keine
+Stelle in der gegebenen Liste. Dann könnte man auch
+Fragen stellen, auf die Prolog vielleicht keine
 
 00:10:20,710 --> 00:10:25,900
 Antwort hat, weil es keine Antwort gibt. Wir könnten zum
@@ -401,20 +401,20 @@ es muss der gleiche Wert belegt sein und es gibt
 keine Möglichkeit, zwei gleiche Listen zu haben,
 
 00:10:46,090 --> 00:10:53,920
-sodass sie aneinandergehängt [a,b] ergeben.
-Das sehen wir hier schon, weil es hier auch kein Paar gibt,
+sodass sie aneinandergehängt [a,b] ergeben. Das sehen
+wir hier schon, weil es hier auch kein Paar gibt,
 
 00:10:53,920 --> 00:10:59,410
 wo X und Y gleich sind. Wenn hier hingegen zum Beispiel [a,a] stünde,
 dann wäre Prolog in der Lage herauszufinden, dass X dann offensichtlich
 
 00:10:59,410 --> 00:11:05,440
-die Liste mit genau einem a sein muss. Denn dann sind
-ja X und X aneinandergehängt eine zweielementige Liste [a,a].
+die Liste mit genau einem a sein muss. Denn dann sind ja
+X und X aneinandergehängt eine zweielementige Liste [a,a].
 
 00:11:05,440 --> 00:11:10,660
-Aber wenn a und b hier verschieden sind,
-dann findet Prolog heraus, dass es darauf keine
+Aber wenn a und b hier verschieden sind, dann
+findet Prolog heraus, dass es darauf keine
 
 00:11:10,660 --> 00:11:17,950
 Antwort gibt. Also keine positive Antwort gibt.
@@ -429,16 +429,16 @@ Umständen ist denn der Fall, dass X und X aneinandergehängt
 die zweielementige Liste ergibt, wo das erste Element a ist
 
 00:11:29,950 --> 00:11:36,610
-und das zweite Element eine Variable Y?
-Da kann Prolog herausfinden, dass das geht.
+und das zweite Element eine Variable Y? Da
+kann Prolog herausfinden, dass das geht.
 
 00:11:36,610 --> 00:11:43,180
-Und zwar genau dann, wenn X die einelementige Liste mit [a] ist.
-Das kann Prolog letztlich hier dran erkennen,
+Und zwar genau dann, wenn X die einelementige Liste mit
+[a] ist. Das kann Prolog letztlich hier dran erkennen,
 
 00:11:43,180 --> 00:11:48,700
-dass X dann mit a beginnen muss. Und dann auch aufhören muss,
-damit die Gesamtlistenlänge erreicht
+dass X dann mit a beginnen muss. Und dann auch
+aufhören muss, damit die Gesamtlistenlänge erreicht
 
 00:11:48,700 --> 00:11:54,310
 beim Verdoppeln von X sozusagen.
@@ -461,8 +461,8 @@ da ein kleines a hinschreibt, es eben doch eine Lösung gibt.
 Nämlich X ist dann die einelementige Liste mit einem a.
 
 00:12:17,080 --> 00:12:23,560
-Also hier ist Prolog einfach anhand Definition von append
-in der Lage, auch etwas kompliziertere Bedingungen aufzulösen
+Also hier ist Prolog einfach anhand Definition von append in
+der Lage, auch etwas kompliziertere Bedingungen aufzulösen
 
 00:12:24,580 --> 00:12:40,540
 und einer Belegung zuzuführen.
@@ -478,32 +478,32 @@ einer Liste und ihrer Länge. Also klassisch vorwärts
 berechnet wäre: Ich gebe eine Liste vor [a,b,c]
 
 00:12:53,590 --> 00:12:59,620
-zum Beispiel und frage mich nach der Länge.
-Da kann ich sagen, dafür nehme ich eine Variable hier.
+zum Beispiel und frage mich nach der Länge. Da
+kann ich sagen, dafür nehme ich eine Variable hier.
 
 00:12:59,620 --> 00:13:02,140
-Und dann würde Prolog antworten: "N = 3". Oder wenn ich length([a,b,c],3)
-angefragt hätte, dann wäre die Antwort true gewesen.
+Und dann würde Prolog antworten: "N = 3". Oder wenn ich
+length([a,b,c],3) angefragt hätte, dann wäre die Antwort true gewesen.
 
 00:13:02,140 --> 00:13:15,130
 Wenn ich length([a,b,c],4) gefragt hätte, wäre die Antwort
 false gewesen. Wenn ich eine Variable vorgebe, liefert Prolog
 
 00:13:15,130 --> 00:13:21,910
-die richtige Lösung. Kann ich hier auch rückwärts arbeiten?
-Kann ich mich stattdessen fragen, was denn Listen der Länge 3 sind?
+die richtige Lösung. Kann ich hier auch rückwärts arbeiten? Kann
+ich mich stattdessen fragen, was denn Listen der Länge 3 sind?
 
 00:13:21,910 --> 00:13:27,490
-Das hieße, ich lasse das hier vorn eine Variable, sagen wir L.
-Und gebe das N vor, zum Beispiel 3,
+Das hieße, ich lasse das hier vorn eine Variable,
+sagen wir L. Und gebe das N vor, zum Beispiel 3,
 
 00:13:27,490 --> 00:13:33,940
-dann wäre [a,b,c] ja eine Antwort, aber auch viele andere Listen.
-Also ich würde jetzt nicht erwarten, wenn ich
+dann wäre [a,b,c] ja eine Antwort, aber auch viele andere
+Listen. Also ich würde jetzt nicht erwarten, wenn ich
 
 00:13:33,940 --> 00:13:39,010
-hier L hinschreibe und hier 3, dass nur für L
-genau diese eine Liste herauskommt. Das wäre ungewöhnlich.
+hier L hinschreibe und hier 3, dass nur für L genau
+diese eine Liste herauskommt. Das wäre ungewöhnlich.
 
 00:13:39,010 --> 00:13:47,050
 Was passiert tatsächlich? Prolog antwortet mir einer Liste
@@ -514,8 +514,8 @@ sehr merkwürdig aussehen: _ und irgendwas.
 Das sind im Grunde genommen so etwas wie
 
 00:13:52,630 --> 00:13:57,760
-anonyme Variablen. Wir hatten _ für anonyme Variablen.
-Allerdings sind sie benannt.
+anonyme Variablen. Wir hatten _ für anonyme
+Variablen. Allerdings sind sie benannt.
 
 00:13:57,760 --> 00:14:02,020
 Nämlich nummeriert mit irgendwelchen internen Zählern.
@@ -526,12 +526,12 @@ Das können bei der nächsten Ausführung von Prolog auch
 andere Zahlen sein. Entscheidend ist: Prolog hat hier
 
 00:14:06,670 --> 00:14:12,760
-sozusagen drei Variablen erfunden/ neu eingeführt,
-die nicht in meiner Query auftauchten/ in meiner Anfrage
+sozusagen drei Variablen erfunden/ neu eingeführt, die
+nicht in meiner Query auftauchten/ in meiner Anfrage
 
 00:14:12,760 --> 00:14:21,010
-und sagt, die Antwort ist eine Liste der Länge 3,
-aber was die einzelnen Elemente sind, ist egal oder unbekannt.
+und sagt, die Antwort ist eine Liste der Länge 3, aber
+was die einzelnen Elemente sind, ist egal oder unbekannt.
 
 00:14:21,010 --> 00:14:26,290
 Deswegen stehen da einfach Variablen.
@@ -550,24 +550,24 @@ aus der Anfrage und dem Programm/ den definierten
 Prädikaten folgt. Jetzt kann ich das etwas
 
 00:14:44,710 --> 00:14:50,320
-kombinieren mit vorherigen Prädikaten. Zum
-Beispiel mit dem append-Prädikat.
+kombinieren mit vorherigen Prädikaten.
+Zum Beispiel mit dem append-Prädikat.
 
 00:14:50,320 --> 00:14:57,010
 Ich könnte z.B. auch sagen: "Ich möchte gern alle dreielementigen
 Listen haben, die noch eine weitere Eigenschaft erfüllen."
 
 00:14:57,010 --> 00:15:02,290
-Ich könnte z.B. sagen (etwas zurückgreifend auf ein Beispiel von
-der vorigen Folie): "Was sind denn Listen der Länge 3,
+Ich könnte z.B. sagen (etwas zurückgreifend auf ein Beispiel
+von der vorigen Folie): "Was sind denn Listen der Länge 3,
 
 00:15:02,290 --> 00:15:08,680
 die man auch erhalten kann durch Aneinanderhängen
 einer Liste und der gleichen Liste?"
 
 00:15:08,680 --> 00:15:15,610
-Die Antwort ist false. Warum? Weil wenn ich
-eine Liste an die gleiche Liste hänge,
+Die Antwort ist false. Warum? Weil wenn
+ich eine Liste an die gleiche Liste hänge,
 
 00:15:15,610 --> 00:15:22,930
 immer Listen gerader Länge herauskommen und das
@@ -582,8 +582,8 @@ auch in endlicher Zeit heraus. Wenn wir hier stattdessen
 eine gerade Länge vorgeben, kann Prolog eine Lösung finden.
 
 00:15:37,420 --> 00:15:45,670
-Also fragen wir L, 4. Also Listen der Länge 4,
-so dass es eine Liste X gibt, sodass
+Also fragen wir L, 4. Also Listen der Länge
+4, so dass es eine Liste X gibt, sodass
 
 00:15:45,670 --> 00:15:53,440
 X aneinandergehängt mit X L ergibt. Dann gibt
@@ -618,8 +618,8 @@ hier das zweite noch mal und in X auch genau
 diese beiden Objekte/ diese beiden Elemente, dann
 
 00:16:36,550 --> 00:16:44,530
-und genau dann sind das Lösungen dieser Anfrage.
-Das sind alle Möglichkeiten, wie wir eine Liste der Länge 4
+und genau dann sind das Lösungen dieser Anfrage. Das
+sind alle Möglichkeiten, wie wir eine Liste der Länge 4
 
 00:16:44,530 --> 00:16:51,130
 haben können, die entstanden ist oder sich
@@ -630,32 +630,32 @@ gleichen Liste. Und noch ein Beispiel, wo wir das
 auch mit member mal im Zusammenhang sehen. Also die
 
 00:17:00,970 --> 00:17:10,030
-Länge und das member-Prädikat.
-Zum Beispiel können wir fragen: "Gibt es Listen der Länge 2,
+Länge und das member-Prädikat. Zum Beispiel
+können wir fragen: "Gibt es Listen der Länge 2,
 
 00:17:11,890 --> 00:17:15,610
-sodass das Element a da drin vorkommt, das Element b darin vorkommt,
-das Element c da drin vorkommt?" Da sagt Prolog: "Nein."
+sodass das Element a da drin vorkommt, das Element b darin
+vorkommt, das Element c da drin vorkommt?" Da sagt Prolog: "Nein."
 
 00:17:15,610 --> 00:17:25,330
-Das kann man sich indirekt sozusagen überlegen, dass
-dieses Prädikat/ dieser Aufruf sagt: L muss die Länge 2 haben.
+Das kann man sich indirekt sozusagen überlegen, dass dieses
+Prädikat/ dieser Aufruf sagt: L muss die Länge 2 haben.
 
 00:17:25,330 --> 00:17:32,200
-Und diese drei Forderungen zusammen lassen L schon
-mal mindestens 3 Elemente enthalten.
+Und diese drei Forderungen zusammen lassen
+L schon mal mindestens 3 Elemente enthalten.
 
 00:17:33,460 --> 00:17:38,350
-Während, wenn man hier den letzten wegfallen lassen würde,
-wenn wir nur diese Anfrage stellen würden,
+Während, wenn man hier den letzten wegfallen lassen
+würde, wenn wir nur diese Anfrage stellen würden,
 
 00:17:38,350 --> 00:17:46,420
-dann könnte Prolog Lösungen finden. Zum Beispiel die Liste
-[a,a], [a,b], [b,a], [b,b]. Beziehungsweise genau diese vier Fälle,
+dann könnte Prolog Lösungen finden. Zum Beispiel die Liste [a,a],
+[a,b], [b,a], [b,b]. Beziehungsweise genau diese vier Fälle,
 
 00:17:46,420 --> 00:17:52,330
-aber mit der zusätzlichen Forderung, dass auch c in L
-vorkommen soll, könnten wir keine Lösung finden.
+aber mit der zusätzlichen Forderung, dass auch c in
+L vorkommen soll, könnten wir keine Lösung finden.
 
 00:17:52,330 --> 00:17:59,590
 Und das stellt Prolog auch fest, dass es keine Lösung gibt.
@@ -666,41 +666,41 @@ von diesen vordefinierten Prädikaten können wir
 viele Forderungen auf Listen ausdrücken und Prolog
 
 00:18:05,380 --> 00:18:11,320
-das lösen lassen oder auch feststellen lassen,
-dass es keine Lösung gibt. Und natürlich werden diese
+das lösen lassen oder auch feststellen lassen, dass
+es keine Lösung gibt. Und natürlich werden diese
 
 00:18:11,320 --> 00:18:18,430
-vordefinierten Prädikate auch nützlich sein, wenn
-wir eigene Funktionalitäten/ eigene Prädikate auf Listen
+vordefinierten Prädikate auch nützlich sein, wenn wir
+eigene Funktionalitäten/ eigene Prädikate auf Listen
 
 00:18:18,430 --> 00:18:29,260
-in Prolog ausdrücken wollen. Das möchte ich tatsächlich auf
-einer letzten Folie noch tun in diesem Video.
+in Prolog ausdrücken wollen. Das möchte ich tatsächlich
+auf einer letzten Folie noch tun in diesem Video.
 
 116 # slide
 00:18:29,260 --> 00:18:35,530
-Und zwar ist die Feststellung erst mal, dass man, wenn man
-eigene Prädikate definiert, natürlich zurückgreift
+Und zwar ist die Feststellung erst mal, dass man, wenn
+man eigene Prädikate definiert, natürlich zurückgreift
 
 00:18:35,530 --> 00:18:46,090
-auf vorhandene Prädikate. Also ein Beispiel hier:
-Ich würde gern ausdrücken, dass zwischen einem Element und
+auf vorhandene Prädikate. Also ein Beispiel hier: Ich
+würde gern ausdrücken, dass zwischen einem Element und
 
 00:18:46,090 --> 00:18:53,380
-zwei Listen die Beziehung besteht, dass wenn
-man X an irgendeiner Stelle in die Liste L einfügt,
+zwei Listen die Beziehung besteht, dass wenn man
+X an irgendeiner Stelle in die Liste L einfügt,
 
 00:18:53,380 --> 00:19:01,210
 man die Liste R erhalten kann. Und das soll
 möglich sein, wenn X ein Wert ist und L
 
 00:19:01,210 --> 00:19:07,480
-zum Beispiel eine Liste der Länge N, dann sollen
-N + 1 mögliche Ergebnisse entstehen.
+zum Beispiel eine Liste der Länge N, dann
+sollen N + 1 mögliche Ergebnisse entstehen.
 
 00:19:07,480 --> 00:19:14,530
-Also R steht für Resultatliste, und zum Beispiel könnte man 1
-in die Liste [a,b,c] einfügen. Und dann soll herauskommen: [1,a,b,c],
+Also R steht für Resultatliste, und zum Beispiel könnte man 1 in
+die Liste [a,b,c] einfügen. Und dann soll herauskommen: [1,a,b,c],
 
 00:19:16,060 --> 00:19:24,730
 [a,1,b,c], [a,b,1,c] und [a,b,c,1]. Also alle Möglichkeiten
@@ -711,8 +711,8 @@ entsteht als Resultatliste. Das könnte ich irgendwie
 versuchen, rekursiv zum Beispiel zu berechnen.
 
 00:19:30,970 --> 00:19:35,560
-Mir einen Algorithmus überlegen. Mir ein Vorgehen
-überlegen, wie man das ausdrücken kann.
+Mir einen Algorithmus überlegen. Mir ein
+Vorgehen überlegen, wie man das ausdrücken kann.
 
 00:19:35,560 --> 00:19:41,830
 Oder ich kann geschickt die vorhandenen Prädikate
@@ -723,36 +723,36 @@ rechte Seite aus), damit so etwas zutrifft, damit X
 eingefügt in L R ergibt, müsste man das X ja irgendwo
 
 00:19:51,760 --> 00:19:57,550
-in L einfügen, an irgendeiner bestimmten Stelle.
-Wir könnten dieses append-Prädikat benutzen, um L zunächst
+in L einfügen, an irgendeiner bestimmten Stelle. Wir
+könnten dieses append-Prädikat benutzen, um L zunächst
 
 00:19:57,550 --> 00:20:03,310
 in zwei Teilelisten zu zerlegen. Mit dem Gedanken,
 dass U die Elemente sein sollen, die vor dem X stehen
 
 00:20:03,310 --> 00:20:09,610
-und V die Elemente, die nach dem X stehen,
-wenn wir die Ergebnisliste R bilden. Also durch Verwendung
+und V die Elemente, die nach dem X stehen, wenn wir
+die Ergebnisliste R bilden. Also durch Verwendung
 
 00:20:09,610 --> 00:20:17,020
 von append(U,V,L) sozusagen, würden wir
 implizit L zerlegen in U und V. Und dann könnte
 
 00:20:17,020 --> 00:20:21,850
-ich sagen, jetzt muss ich das X nur noch da an passender
-Stelle einfügen. Da könnte ich: "Ich hänge
+ich sagen, jetzt muss ich das X nur noch da an
+passender Stelle einfügen. Da könnte ich: "Ich hänge
 
 00:20:21,850 --> 00:20:28,030
-aneinander das U (also den gewählten linken Teil von L)
-und eine einelementige Liste mit genau X an."
+aneinander das U (also den gewählten linken Teil von
+L) und eine einelementige Liste mit genau X an."
 
 00:20:28,030 --> 00:20:35,290
-Dann erhalte ich irgendeine Liste Y. Die enthält
-dann alle Elemente aus U, dann das X. Und dann ist Schluss.
+Dann erhalte ich irgendeine Liste Y. Die enthält dann
+alle Elemente aus U, dann das X. Und dann ist Schluss.
 
 00:20:35,290 --> 00:20:42,970
-Und dann hänge ich an diese Liste, an diese Y-Liste,
-noch die zweite Hälfte sozusagen oder den zweiten Teil von L an,
+Und dann hänge ich an diese Liste, an diese Y-Liste, noch
+die zweite Hälfte sozusagen oder den zweiten Teil von L an,
 
 00:20:42,970 --> 00:20:50,860
 um insgesamt R zu erhalten. Und das würde mir
@@ -763,8 +763,8 @@ beliebiger Stelle in L einfügen kann, um R zu erhalten.
 Also ich würde hier einfach mal ermutigen, genau das mal
 
 00:20:59,440 --> 00:21:06,640
-einzutippen in Prolog und dann einige Aufrufe dieses insert-
-Prädikats auszuprobieren. Da werden Sie sehen, dass
+einzutippen in Prolog und dann einige Aufrufe dieses
+insert- Prädikats auszuprobieren. Da werden Sie sehen, dass
 
 00:21:06,640 --> 00:21:12,040
 man ohne weitere Programmierung, einfach durch Verwendung
@@ -783,52 +783,52 @@ Datenstrukturen, auf den s(z)-Zahlen zum Beispiel,
 mit Rekursion gearbeitet haben bei der Addition
 
 00:21:33,160 --> 00:21:39,790
-der vergangenen Vorlesung schon, so können
-wir auch auf Listen arbeiten. Also zum Beispiel können wir sagen,
+der vergangenen Vorlesung schon, so können wir auch auf
+Listen arbeiten. Also zum Beispiel können wir sagen,
 
 00:21:39,790 --> 00:21:50,230
-wir wollen gerne Listen permutieren.
-Dafür könnte ich folgende Definition erstellen:
+wir wollen gerne Listen permutieren. Dafür
+könnte ich folgende Definition erstellen:
 
 00:21:50,230 --> 00:21:57,370
-Also zum Beispiel, wenn ich die Liste [1,2,3] habe, möchte ich gerne
-die Liste [1,2,3], [1,3,2], [2,1,3], etc. bekommen.
+Also zum Beispiel, wenn ich die Liste [1,2,3] habe, möchte
+ich gerne die Liste [1,2,3], [1,3,2], [2,1,3], etc. bekommen.
 
 00:21:57,370 --> 00:22:04,300
 Also alle Permutationen einer gegebenen Liste. Da kann ich mir eine Rekursion
 erstellen. Da erinnern wir uns: Eine Rekursion sollte einen Basisfall haben.
 
 00:22:04,300 --> 00:22:09,850
-Ein naheliegender Basisfall hier wäre zu sagen,
-dass die Permutation der leeren Liste die leere Liste ist.
+Ein naheliegender Basisfall hier wäre zu sagen, dass
+die Permutation der leeren Liste die leere Liste ist.
 
 00:22:09,850 --> 00:22:17,650
-Das ist ein ganz einfacher Fakt über Listen und deren Permutationen.
-Und der könnte zugleich als Basisfall hier dienen.
+Das ist ein ganz einfacher Fakt über Listen und deren
+Permutationen. Und der könnte zugleich als Basisfall hier dienen.
 
 00:22:17,650 --> 00:22:22,390
 Der steht zuerst, wie meine Faustregeln besagen.
 Und dann würde ich noch mindestens einen
 
 00:22:22,390 --> 00:22:27,790
-rekursiven Fall erwarten.
-In dem Fall kommt damit ein rekursiver Fall hin.
+rekursiven Fall erwarten. In dem Fall
+kommt damit ein rekursiver Fall hin.
 
 00:22:27,790 --> 00:22:35,170
 Man kann sich fragen: "Was wäre denn für nicht leere
 Listen zu tun?" Also hier oben werden leere Listen
 
 00:22:35,170 --> 00:22:42,565
-erschöpfend behandelt, sozusagen. Und man fragt sich dann noch,
-was denn auf nicht leeren Listen ist?
+erschöpfend behandelt, sozusagen. Und man fragt sich
+dann noch, was denn auf nicht leeren Listen ist?
 
 00:22:42,565 --> 00:22:46,030
-Was zeichnet nichtleere Listen aus? Nichtleere Listen zeichnen aus,
-dass sie mit irgendwas beginnen und dann einen Rest haben.
+Was zeichnet nichtleere Listen aus? Nichtleere Listen zeichnen
+aus, dass sie mit irgendwas beginnen und dann einen Rest haben.
 
 00:22:46,030 --> 00:22:53,180
-Also so ähnlich wie oben kann man sagen:
-Hier hatten wir L zerlegt in irgendwelche zwei Teillisten.
+Also so ähnlich wie oben kann man sagen: Hier hatten
+wir L zerlegt in irgendwelche zwei Teillisten.
 
 00:22:53,180 --> 00:22:59,090
 Ich kann auch sagen, ich möchte L gern
@@ -839,12 +839,12 @@ Das kann ich ausdrücken, indem ich sage, nichtleere Listen L
 lassen sich ja darstellen als die Aneinanderhängung irgendeiner
 
 00:23:06,800 --> 00:23:14,930
-einelementigen Liste und einer weiteren Liste.
-Was ich implizit mit diesem Aufruf hier erreiche, ist,
+einelementigen Liste und einer weiteren Liste. Was
+ich implizit mit diesem Aufruf hier erreiche, ist,
 
 00:23:14,930 --> 00:23:22,670
-dass X gesetzt wird auf das erste Element der Liste L
-und Y auf alle verbleibenden Elemente. Dann kann ich sagen,
+dass X gesetzt wird auf das erste Element der Liste L und
+Y auf alle verbleibenden Elemente. Dann kann ich sagen,
 
 00:23:22,670 --> 00:23:30,230
 eine Strategie, eine Liste zu permutieren, ist: genau das
@@ -859,56 +859,56 @@ Und dann das erste Element, das ich ursprünglich der
 Liste L entnommen habe, das ich hier abgespalten habe,
 
 00:23:42,950 --> 00:23:49,760
-wieder in die permutierte Restliste einzufügen.
-Dafür können wir unser insert-Prädikat / unser Einfüge-Prädikat benutzen,
+wieder in die permutierte Restliste einzufügen. Dafür können
+wir unser insert-Prädikat / unser Einfüge-Prädikat benutzen,
 
 00:23:49,760 --> 00:23:58,460
-das ich hier oben nicht rekursiv definiert hatte.
-Also von der Liste L, die nicht leer ist, sondern zerlegbar in X und Rest,
+das ich hier oben nicht rekursiv definiert hatte. Also von der
+Liste L, die nicht leer ist, sondern zerlegbar in X und Rest,
 
 00:23:58,460 --> 00:24:05,450
 permutiere den Rest und füge dann X in diesen Rest ein,
 um das Ergebnis / die Ergebnispermutation zu erhalten,
 
 00:24:05,450 --> 00:24:12,890
-die dann auch das Ergebnis dieses Permutationsaufrufs ist.
-Das wäre die kurz gefasste logische
+die dann auch das Ergebnis dieses Permutationsaufrufs
+ist. Das wäre die kurz gefasste logische
 
 00:24:12,890 --> 00:24:20,240
-Begründung für diese beiden Regeln.
-Funktioniert das? Ja, auch da die Ermutigung, das mal
+Begründung für diese beiden Regeln. Funktioniert
+das? Ja, auch da die Ermutigung, das mal
 
 00:24:20,240 --> 00:24:25,100
-auszuprobieren und dann zum Beispiel Aufrufe
-zu tätigen wie: "Was sind Permutationen von [1,2,3]?"
+auszuprobieren und dann zum Beispiel Aufrufe zu
+tätigen wie: "Was sind Permutationen von [1,2,3]?"
 
 00:24:25,100 --> 00:24:30,560
-Da kommen tatsächlich insgesamt genau sechs
-Listen heraus. Wir sehen hier mal die ersten beiden.
+Da kommen tatsächlich insgesamt genau sechs Listen
+heraus. Wir sehen hier mal die ersten beiden.
 
 00:24:30,560 --> 00:24:41,180
-Aber auch alle anderen Vermischungen von [1,2,3].
-Also Neuanordnungen der Elemente [1,2,3] kämen hier heraus.
+Aber auch alle anderen Vermischungen von [1,2,3]. Also
+Neuanordnungen der Elemente [1,2,3] kämen hier heraus.
 
 00:24:41,180 --> 00:24:47,360
 Wir sehen hier, dass ich von meiner Faustregel abgewichen bin
 und tatsächlich den rekursiven Aufruf nicht ganz hinten habe,
 
 00:24:47,360 --> 00:24:53,120
-sondern ein Stück weit hinten/in der Mitte.
-Das könnten Sie auch mal durchprobieren/herausfinden,
+sondern ein Stück weit hinten/in der Mitte. Das
+könnten Sie auch mal durchprobieren/herausfinden,
 
 00:24:53,120 --> 00:24:59,930
-ob das wichtig ist. Ein Stück weit ist das wichtig,
-wo dieser Permutationsaufruf steht.
+ob das wichtig ist. Ein Stück weit ist das
+wichtig, wo dieser Permutationsaufruf steht.
 
 00:24:59,930 --> 00:25:06,260
-Genau genommen ist es so, dass das Permutationsprädikat in
-Prolog sowieso schon vordefiniert ist.
+Genau genommen ist es so, dass das Permutationsprädikat
+in Prolog sowieso schon vordefiniert ist.
 
 00:25:06,260 --> 00:25:14,840
-Wir müssten das gar nicht selbst definieren. Und dann ist auch
-gar nicht sichtbar, wie diese Definition ist.
+Wir müssten das gar nicht selbst definieren. Und dann
+ist auch gar nicht sichtbar, wie diese Definition ist.
 
 00:25:14,840 --> 00:25:21,200
 Aber das vordefinierte Permutationsprädikat funktioniert
@@ -919,5 +919,5 @@ ausprobieren wollen, sollten Sie das tatsächlich nicht Permutation
 nennen, sondern irgendwie anders nennen, damit Sie nicht in Konflikt
 
 00:25:24,860 --> 00:25:33,080
-geraten mit dem vordefinierten Prolog-Prädikat. Aber so wie es hier
-steht, würden Aufrufe dieser Form hier funktionieren.
+geraten mit dem vordefinierten Prolog-Prädikat. Aber so wie
+es hier steht, würden Aufrufe dieser Form hier funktionieren.

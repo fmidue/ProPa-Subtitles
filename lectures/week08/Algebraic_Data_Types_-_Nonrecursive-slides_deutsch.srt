@@ -4,8 +4,8 @@ Willkommen zurück zu
 einer weiteren Woche ProPa.
 
 00:00:04,680 --> 00:00:12,139
-Diese Woche werden wir wieder über Typen
-sprechen, aber nicht über polymorphe Typen, nicht über
+Diese Woche werden wir wieder über Typen sprechen,
+aber nicht über polymorphe Typen, nicht über
 
 00:00:12,139 --> 00:00:16,880
 Typen höherer Ordnung,
@@ -16,16 +16,16 @@ Stattdessen werden wir über neue Typkonstrukte
 sprechen, die algebraische Datentypen genannt werden.
 
 00:00:22,519 --> 00:00:27,830
-Tatsächlich lassen sie sich auch mit Polymorphie
-kombinieren und haben interessante Anwendungen höherer Ordnung.
+Tatsächlich lassen sie sich auch mit Polymorphie kombinieren
+und haben interessante Anwendungen höherer Ordnung.
 
 00:00:27,830 --> 00:00:33,780
-Aber zumindest für dieses erste Video werden
-wir uns auf sehr einfache algebraische Datentypen
+Aber zumindest für dieses erste Video werden wir
+uns auf sehr einfache algebraische Datentypen
 
 00:00:33,780 --> 00:00:41,680
-konzentrieren: zunächst einfache Aufzählungstypen und
-dann nicht-rekursive algebraische Datentypen, und wahrscheinlich
+konzentrieren: zunächst einfache Aufzählungstypen und dann
+nicht-rekursive algebraische Datentypen, und wahrscheinlich
 
 00:00:41,680 --> 00:00:44,289
 auch noch nicht auf Polymorphie eingehen.
@@ -40,31 +40,31 @@ auch in dieser Woche Thema sein.
 
 125 # slide
 00:00:57,110 --> 00:01:03,019
-Welche Arten von Typen
-haben wir also bisher gesehen?
+Welche Arten von Typen haben
+wir also bisher gesehen?
 
 00:01:03,019 --> 00:01:10,030
-Zum einen haben wir uns natürlich mit
-Dingen wie einfachen Basistypen wie Zahlentypen oder
+Zum einen haben wir uns natürlich mit Dingen
+wie einfachen Basistypen wie Zahlentypen oder
 
 00:01:10,030 --> 00:01:12,330
 Booleans und Zeichen beschäftigt.
 
 00:01:12,330 --> 00:01:19,110
-Also Dinge, die in die Sprache eingebaut sind,
-und aus denen andere Typen konstruiert werden können.
+Also Dinge, die in die Sprache eingebaut sind, und
+aus denen andere Typen konstruiert werden können.
 
 00:01:19,110 --> 00:01:24,650
-Und insbesondere haben wir uns Listen- und
-Tupelkonstruktionen angesehen, mit denen man zusammengesetzte Typen bilden
+Und insbesondere haben wir uns Listen- und Tupelkonstruktionen
+angesehen, mit denen man zusammengesetzte Typen bilden
 
 00:01:24,650 --> 00:01:29,380
-kann: Listen von Paaren von
-Ganzzahlen und Fließkommazahlen und solchen Dingen.
+kann: Listen von Paaren von Ganzzahlen
+und Fließkommazahlen und solchen Dingen.
 
 00:01:29,380 --> 00:01:34,240
-Natürlich gab es ab letzter Woche, als
-wir uns mit Polymorphismus beschäftigt haben, Typvariablen.
+Natürlich gab es ab letzter Woche, als wir uns mit
+Polymorphismus beschäftigt haben, Typvariablen.
 
 00:01:34,240 --> 00:01:38,170
 Aber letztlich würden auch diese Typvariablen
@@ -79,24 +79,24 @@ Dann gibt es natürlich Funktionstypen, die
 wir jetzt aus dem Higher-Order-Teil der
 
 00:01:47,479 --> 00:01:51,479
-Vorlesung kennen, dass wir Typen haben
-können, die z.B. Funktionen als Argumente nehmen.
+Vorlesung kennen, dass wir Typen haben können,
+die z.B. Funktionen als Argumente nehmen.
 
 00:01:51,479 --> 00:01:57,259
 Dann haben wir den Funktionspfeil, der auch
 in Typen und Teilen von Typen vorkommt.
 
 00:01:57,259 --> 00:02:03,829
-Aber letztlich wären die Dinge, die
-zwischen den Funktionspfeilen stehen, bisher vorwiegend
+Aber letztlich wären die Dinge, die zwischen
+den Funktionspfeilen stehen, bisher vorwiegend
 
 00:02:03,829 --> 00:02:11,570
 Basistypen wie diese, oder zusammengesetzte
 Typen, die aus diesen bestehen.
 
 00:02:11,570 --> 00:02:16,580
-Denken Sie auch daran, dass ich bei
-der Einführung von Listen bereits gesagt habe, dass
+Denken Sie auch daran, dass ich bei der
+Einführung von Listen bereits gesagt habe, dass
 
 00:02:16,580 --> 00:02:19,260
 wir letztlich nicht alle unsere
@@ -107,8 +107,8 @@ Denn obwohl es für Beispiele in einer Vorlesung
 wie dieser ganz nett ist, sind Listen in der
 
 00:02:25,420 --> 00:02:32,720
-Realität nicht immer die beste Struktur, um Dinge
-zu halten, zum Beispiel in einer zusammengesetzten Umgebung.
+Realität nicht immer die beste Struktur, um Dinge zu
+halten, zum Beispiel in einer zusammengesetzten Umgebung.
 
 00:02:32,720 --> 00:02:36,020
 Um Dinge zu kombinieren, können Sie manchmal Listen verwenden,
@@ -118,40 +118,40 @@ aber Sie sollten nicht immer eine Liste verwenden, also
 muss es auch etwas anderes geben.
 
 00:02:37,290 --> 00:02:41,040
-Genauso wie wir in
-anderen Sprachen andere Datentypen haben.
+Genauso wie wir in anderen
+Sprachen andere Datentypen haben.
 
 00:02:41,040 --> 00:02:45,020
 Wir haben nicht nur die Typen gesehen,
 die in diesem ersten Punkt erwähnt werden.
 
 00:02:45,020 --> 00:02:52,300
-Im Fall der Bibliothek CodeWorld (auf der CodeWorld-Website)
-haben wir zum Beispiel auch gesehen, dass
+Im Fall der Bibliothek CodeWorld (auf der
+CodeWorld-Website) haben wir zum Beispiel auch gesehen, dass
 
 00:02:52,300 --> 00:02:56,190
-es auch domänenspezifische Typen wie diesen Picture-Typ
-geben kann, der eindeutig nicht etwas ist,
+es auch domänenspezifische Typen wie diesen
+Picture-Typ geben kann, der eindeutig nicht etwas ist,
 
 00:02:56,190 --> 00:02:59,460
 das in die Sprache eingebaut ist,
 wie es Integer und Floats sind.
 
 00:02:59,460 --> 00:03:04,250
-Es war etwas, das wir verwendet haben (das
-uns von der Bibliothek gegeben wurde), aber es ist
+Es war etwas, das wir verwendet haben (das uns
+von der Bibliothek gegeben wurde), aber es ist
 
 00:03:04,250 --> 00:03:09,450
 wahrscheinlich etwas, das jemand in der Sprache
 definiert hat, anstatt dass es bereits von
 
 00:03:09,450 --> 00:03:16,560
-der Sprache selbst, vom Compiler
-oder etwas Ähnlichem bereitgestellt wird.
+der Sprache selbst, vom Compiler oder
+etwas Ähnlichem bereitgestellt wird.
 
 00:03:16,560 --> 00:03:22,030
-Das ist letztendlich das, was wir wollen, wenn
-wir eine Menge Projekte erstellen, dass wir unsere eigenen
+Das ist letztendlich das, was wir wollen, wenn wir
+eine Menge Projekte erstellen, dass wir unsere eigenen
 
 00:03:22,030 --> 00:03:23,060
 Typen definieren können.
@@ -172,8 +172,8 @@ Klasse sein und hat Objekte und Methoden, die auf
 diesen Objekten operieren.
 
 00:03:37,090 --> 00:03:40,740
-Und die Situation ist hier ähnlich, nur
-dass wir keine Klassen im Sinne der objektorientierten
+Und die Situation ist hier ähnlich, nur dass wir
+keine Klassen im Sinne der objektorientierten
 
 00:03:40,740 --> 00:03:41,740
 Programmierung haben.
@@ -192,19 +192,19 @@ Und wir haben Funktionen, die
 mit Werten dieses Typs arbeiten.
 
 00:03:48,160 --> 00:03:55,970
-Den Typ 'Picture' selbst werden
-wir in der Vorlesung nicht definieren.
+Den Typ 'Picture' selbst werden wir
+in der Vorlesung nicht definieren.
 
 00:03:55,970 --> 00:03:59,710
-Er könnte mit algebraischen Datentypen definiert werden,
-aber das ist nichts, was wir tun
+Er könnte mit algebraischen Datentypen definiert
+werden, aber das ist nichts, was wir tun
 
 00:03:59,710 --> 00:04:00,710
 werden.
 
 00:04:00,710 --> 00:04:06,950
-Denn für unsere Zwecke und Anwendungen von
-CodeWorld ist es ausreichend, wenn wir 'Picture' einfach
+Denn für unsere Zwecke und Anwendungen von CodeWorld
+ist es ausreichend, wenn wir 'Picture' einfach
 
 00:04:06,950 --> 00:04:07,950
 als abstrakten Typ haben.
@@ -216,20 +216,20 @@ Wir wissen also, dass er existiert.
 Wir kennen die Operationen auf ihm.
 
 00:04:10,870 --> 00:04:13,550
-Wir wollen nicht
-unseren eigenen Picture-Typ definieren.
+Wir wollen nicht unseren
+eigenen Picture-Typ definieren.
 
 00:04:13,550 --> 00:04:20,820
-Aber wenn wir das tun wollten oder
-etwas Ähnliches für eine andere Domäne als Vektorgrafik,
+Aber wenn wir das tun wollten oder etwas
+Ähnliches für eine andere Domäne als Vektorgrafik,
 
 00:04:20,820 --> 00:04:23,820
-dann würden wir
-algebraische Datentypen verwenden.
+dann würden wir algebraische
+Datentypen verwenden.
 
 00:04:23,820 --> 00:04:35,550
-Das ist also der Weg, um über
-diese Basistypen und vorgegebene Kombinationen von ihnen mit
+Das ist also der Weg, um über diese Basistypen
+und vorgegebene Kombinationen von ihnen mit
 
 00:04:35,550 --> 00:04:37,630
 Konstrukten wie Listen
@@ -247,8 +247,8 @@ Sinne sind sie algebraisch?
 Das klingt etwas mathematisch.
 
 00:04:43,740 --> 00:04:46,980
-Und wir werden die
-Mathematik dahinter nicht diskutieren.
+Und wir werden die Mathematik
+dahinter nicht diskutieren.
 
 00:04:46,980 --> 00:04:52,830
 Aber ich hoffe, dass trotzdem deutlich wird,
@@ -258,16 +258,16 @@ was daran algebraisch ist, sobald wir einige
 Signaturen sehen.
 
 00:04:55,430 --> 00:05:00,150
-In erster Näherung könnten wir sagen,
-dass algebraische Datentypen etwas sind, was Sie
+In erster Näherung könnten wir sagen, dass
+algebraische Datentypen etwas sind, was Sie
 
 00:05:00,150 --> 00:05:03,460
 vielleicht schon in anderen Sprachen
 in irgendeiner Form gesehen haben.
 
 00:05:03,460 --> 00:05:12,060
-Man kann sie zum Beispiel als
-allgemeinere (und auch strengere, statisch sichere)
+Man kann sie zum Beispiel als allgemeinere
+(und auch strengere, statisch sichere)
 
 00:05:12,060 --> 00:05:19,400
 Versionen dessen sehen, was man als
@@ -278,20 +278,20 @@ einfachen Formen
 algebraischer Datentypen).
 
 00:05:21,530 --> 00:05:29,070
-Aber tatsächlich haben moderne Sprachen
-wie Swift Funktionen wie *rekursive* Aufzählungstypen,
+Aber tatsächlich haben moderne Sprachen wie Swift
+Funktionen wie *rekursive* Aufzählungstypen,
 
 00:05:29,070 --> 00:05:36,300
 die wirklich weit von einfachen
 Aufzählungstypen in z.B. C entfernt sind.
 
 00:05:36,300 --> 00:05:41,780
-Und diese (rekursive Aufzählungstypen) sind
-schon etwas Ähnliches wie algebraische Datentypen.
+Und diese (rekursive Aufzählungstypen) sind schon
+etwas Ähnliches wie algebraische Datentypen.
 
 00:05:41,780 --> 00:05:48,840
-Und noch einmal, die Übertragung hier ist nicht, dass
-algebraische Datentypen das sind, was Swift hat und dann allgemeiner
+Und noch einmal, die Übertragung hier ist nicht, dass algebraische
+Datentypen das sind, was Swift hat und dann allgemeiner
 
 00:05:48,840 --> 00:05:49,980
 gemacht wird.
@@ -304,27 +304,27 @@ Algebraische Datentypen gibt es schon
 seit langer Zeit in funktionalen Sprachen.
 
 00:05:55,150 --> 00:06:02,500
-Und dann haben sich Swift und
-andere moderne Mainstream-Sprachen davon inspirieren lassen.
+Und dann haben sich Swift und andere moderne
+Mainstream-Sprachen davon inspirieren lassen.
 
 00:06:02,500 --> 00:06:06,930
 Und letztendlich würde ich sagen, dass algebraische
 Datentypen immer noch die schönere Version davon
 
 00:06:06,930 --> 00:06:12,080
-sind, während die rekursiven Enum-Typen in Swift
-ähnlich sind, aber einige pragmatische Kompromisse gemacht
+sind, während die rekursiven Enum-Typen in Swift ähnlich
+sind, aber einige pragmatische Kompromisse gemacht
 
 00:06:12,080 --> 00:06:13,080
 haben.
 
 00:06:13,080 --> 00:06:18,960
-Sie sind also nicht auf dem gleichen,
-sagen wir mal, mathematischen Niveau wie algebraische Datentypen.
+Sie sind also nicht auf dem gleichen, sagen wir mal,
+mathematischen Niveau wie algebraische Datentypen.
 
 00:06:18,960 --> 00:06:28,830
-Aber für Anwender, für Sie, wenn Sie diese
-verwenden, wird das nicht allzu sehr durchscheinen, denke ich.
+Aber für Anwender, für Sie, wenn Sie diese verwenden,
+wird das nicht allzu sehr durchscheinen, denke ich.
 
 126 # slide
 00:06:28,830 --> 00:06:31,920
@@ -332,64 +332,64 @@ Lassen Sie uns
 also ganz einfach anfangen.
 
 00:06:31,920 --> 00:06:35,870
-Nehmen wir an, wir wollen
-über die Wochentage sprechen können.
+Nehmen wir an, wir wollen über
+die Wochentage sprechen können.
 
 00:06:35,870 --> 00:06:39,700
 Also, Montag, Dienstag, Mittwoch usw.
 
 00:06:39,700 --> 00:06:45,642
-Und auf diesen Daten wollen wir Dinge berechnen wie:
-Das ist ein Werktag, ja oder nein, oder eine
+Und auf diesen Daten wollen wir Dinge berechnen
+wie: Das ist ein Werktag, ja oder nein, oder eine
 
 00:06:45,642 --> 00:06:52,030
-andere Ermittlung, welche Eigenschaften
-ein bestimmter Tag hat.
+andere Ermittlung, welche
+Eigenschaften ein bestimmter Tag hat.
 
 00:06:52,030 --> 00:06:54,990
 Wie würden wir dies derzeit tun?
 
 00:06:54,990 --> 00:06:56,610
-Wie würden wir das
-vielleicht in anderen Sprachen machen?
+Wie würden wir das vielleicht
+in anderen Sprachen machen?
 
 00:06:56,610 --> 00:06:58,810
 Wie würden wir es in Haskell machen?
 
 00:06:58,810 --> 00:07:05,060
-Typischerweise könnten wir sagen: Wir legen eine
-Kodierung der Wochentage (Montag, Dienstag etc.) als Zahlen
+Typischerweise könnten wir sagen: Wir legen eine Kodierung
+der Wochentage (Montag, Dienstag etc.) als Zahlen
 
 00:07:05,060 --> 00:07:06,060
 fest.
 
 00:07:06,060 --> 00:07:07,600
-Und selbstverständlich gibt
-es einige natürliche Wahlmöglichkeiten.
+Und selbstverständlich gibt es
+einige natürliche Wahlmöglichkeiten.
 
 00:07:07,600 --> 00:07:12,170
 Zum Beispiel könnten wir sagen: Montag ist der
 erste Tag, Dienstag ist der zweite Tag, usw.
 
 00:07:12,170 --> 00:07:16,860
-Wir würden also die Zahlen von 1 bis
-7 verwenden, um Montag bis Sonntag zu kodieren.
+Wir würden also die Zahlen von 1 bis 7
+verwenden, um Montag bis Sonntag zu kodieren.
 
 00:07:16,860 --> 00:07:21,720
-Und wenn wir dann Funktionen schreiben wollen, die ausdrücken,
-ob ein Tag ein Werktag ist oder eine andere
+Und wenn wir dann Funktionen schreiben wollen, die
+ausdrücken, ob ein Tag ein Werktag ist oder eine andere
 
 00:07:21,720 --> 00:07:24,960
-Eigenschaft hat, dann könnten wir
-eine Funktion wie diese hier schreiben.
+Eigenschaft hat, dann könnten wir eine
+Funktion wie diese hier schreiben.
 
 00:07:24,960 --> 00:07:27,100
 Die Funktion 'workday' geht
 also von 'Integer' zu 'Bool'.
 
 00:07:27,100 --> 00:07:32,510
-Es ist ein Prädikat auf
-'Integer', die als Wochentage interpretiert werden.
+Es ist ein Prädikat auf 'Integer', die
+als Wochentage interpretiert werden.
 
 00:07:32,510 --> 00:07:34,510
 Und wir wollen wissen, ob
@@ -413,19 +413,19 @@ Das ist natürlich möglich.
 In diesem Fall haben wir etwas Glück.
 
 00:07:53,590 --> 00:07:59,050
-Die Funktion ist so einfach, dass sie
-einfach ein Vergleich ist, denn die Eigenschaft, die
+Die Funktion ist so einfach, dass sie einfach
+ein Vergleich ist, denn die Eigenschaft, die
 
 00:07:59,050 --> 00:08:03,210
-uns hier interessiert, entspricht wirklich einem Zahlenbereich, in
-diesem Fall 1 bis 5, während das Gegenteil
+uns hier interessiert, entspricht wirklich einem
+Zahlenbereich, in diesem Fall 1 bis 5, während das Gegenteil
 
 00:08:03,210 --> 00:08:04,840
 6 bis 7 wäre.
 
 00:08:04,840 --> 00:08:09,550
-Wenn wir also eine so einfache Eigenschaft wie diese
-haben, bei der man die Sache, die man wissen
+Wenn wir also eine so einfache Eigenschaft wie
+diese haben, bei der man die Sache, die man wissen
 
 00:08:09,550 --> 00:08:17,169
 will, wirklich berechnen kann, indem man Zahlen
@@ -437,8 +437,8 @@ einfach sein, wenn Sie etwas zu Tagen berechnen wollen.
 
 127 # slide
 00:08:21,160 --> 00:08:32,210
-Wir könnten zum Beispiel berechnen wollen, an welchen
-Tagen der Woche eine Übungsstunde
+Wir könnten zum Beispiel berechnen wollen,
+an welchen Tagen der Woche eine Übungsstunde
 
 00:08:32,210 --> 00:08:33,210
 in dieser Lehrveranstaltung stattfindet.
@@ -451,8 +451,8 @@ vielleicht nicht so eine nützliche Frage, weil wir keine
 tatsächlichen Übungseinheiten haben.
 
 00:08:38,540 --> 00:08:43,750
-Diese Frage stammt eigentlich aus den Folien von einem früheren Jahr,
-wo das mehr Sinn machte.)
+Diese Frage stammt eigentlich aus den Folien von
+einem früheren Jahr, wo das mehr Sinn machte.)
 
 00:08:43,750 --> 00:08:53,950
 Aber es ist immer noch eine sinnvolle Sache: generell
@@ -462,8 +462,8 @@ eine Eigenschaft an unseren Wochentagen haben zu wollen,
 die diese Form hat.
 
 00:08:55,240 --> 00:09:00,230
-Wenn wir also bestimmte Wochentage auswählen, die
-die Eigenschaft "An diesem Tag findet eine Übungseinheit
+Wenn wir also bestimmte Wochentage auswählen, die die
+Eigenschaft "An diesem Tag findet eine Übungseinheit
 
 00:09:00,230 --> 00:09:04,270
 statt" (oder etwas anderes)
@@ -474,8 +474,8 @@ Okay, dieses Mal ist die Antwort nicht so einfach...
 das Programm ist nicht so einfach wie ein Vergleich
 
 00:09:09,990 --> 00:09:12,460
-wie: ist d kleiner als 6 aus der vorherigen
-Folie.
+wie: ist d kleiner als 6
+aus der vorherigen Folie.
 
 00:09:12,460 --> 00:09:13,460
 Warum nicht?
@@ -488,11 +488,12 @@ gibt, an denen wir Übungen haben und an denen wir
 nicht haben.
 
 00:09:19,290 --> 00:09:21,980
-Eine Möglichkeit, diese Eigenschaft zu berechnen, ist zum Beispiel
+Eine Möglichkeit, diese Eigenschaft
+zu berechnen, ist zum Beispiel
 
 00:09:21,980 --> 00:09:27,990
-(Ich glaube, das stammt aus den Daten des letzten Jahres,
-also, als es tatsächlich Übungseinheiten gab
+(Ich glaube, das stammt aus den Daten des letzten
+Jahres, also, als es tatsächlich Übungseinheiten gab
 
 00:09:27,990 --> 00:09:28,990
 letztes Jahr.
@@ -502,18 +503,19 @@ Und wahrscheinlich hätte derselbe Plan auch dieses Jahr gegolten,
 wenn wir einen tatsächlichen Präsenzkurs gehabt hätten.)
 
 00:09:34,560 --> 00:09:40,770
-Also, man kann hier etwas ausdrücken wie:
-Die 3 ist kein Übungstag.
+Also, man kann hier etwas ausdrücken
+wie: Die 3 ist kein Übungstag.
 
 00:09:40,770 --> 00:09:41,950
 Er entspricht dem Mittwoch.
 
 00:09:41,950 --> 00:09:45,740
-Und am Wochenende gab es letztes Jahr auch keine Übungen.
+Und am Wochenende gab es
+letztes Jahr auch keine Übungen.
 
 00:09:45,740 --> 00:09:49,880
-Wir könnten also sagen: Am Mittwoch, Samstag
-und Sonntag haben wir keine Übungen.
+Wir könnten also sagen: Am Mittwoch,
+Samstag und Sonntag haben wir keine Übungen.
 
 00:09:49,880 --> 00:09:51,970
 Und an allen Tagen haben wir Übungen.
@@ -528,55 +530,58 @@ Natürlich können wir das auch schreiben.
 Es ist vielleicht nicht sehr lesbar.
 
 00:10:03,000 --> 00:10:07,839
-Da muss man schon etwas nachdenken: Was ist das
-3 eigentlich?
+Da muss man schon etwas nachdenken:
+Was ist das 3 eigentlich?
 
 00:10:07,839 --> 00:10:12,520
-Warum sagen wir, das sind die Falsch-Fälle, und
-dann haben wir einen Auffangfall für Wahr?
+Warum sagen wir, das sind die Falsch-Fälle,
+und dann haben wir einen Auffangfall für Wahr?
 
 00:10:12,520 --> 00:10:14,760
 Warum machen wir es nicht andersherum?
 
 00:10:14,760 --> 00:10:16,430
-Außerdem können wir wieder Fehler machen, die nicht von der Hand zu weisen sind.
+Außerdem können wir wieder Fehler machen,
+die nicht von der Hand zu weisen sind.
 
 00:10:16,430 --> 00:10:22,470
-Wenn ich mir also nicht sicher bin, wie meine Kodierung funktioniert:
-Je nachdem, ob ich mit der Zählung des Montags
+Wenn ich mir also nicht sicher bin, wie meine Kodierung
+funktioniert: Je nachdem, ob ich mit der Zählung des Montags
 
 00:10:22,470 --> 00:10:27,510
-bei 1 oder bei 0 beginne, könnte ich leicht falsch interpretieren,
-was hier geschieht.
+bei 1 oder bei 0 beginne, könnte ich leicht
+falsch interpretieren, was hier geschieht.
 
 00:10:27,510 --> 00:10:32,330
-Aber natürlich, wenn ich eine feste Kodierung habe wie:
-Montag beginnt bei 1, usw., dann ist das
+Aber natürlich, wenn ich eine feste Kodierung habe
+wie: Montag beginnt bei 1, usw., dann ist das
 
 00:10:32,330 --> 00:10:35,380
-eine Möglichkeit, die Eigenschaft zu implementieren.
+eine Möglichkeit, die
+Eigenschaft zu implementieren.
 
 00:10:35,380 --> 00:10:44,391
-Wir könnten auch versuchen, dies scheinbar effizienter zu
-machen, indem wir etwas sagen wie: Vielleicht
+Wir könnten auch versuchen, dies scheinbar effizienter
+zu machen, indem wir etwas sagen wie: Vielleicht
 
 00:10:44,391 --> 00:10:48,460
-kann ich immer noch einen Vergleich anstellen, indem ich zuerst
-alle Wochenendtage ausschließe.
+kann ich immer noch einen Vergleich anstellen,
+indem ich zuerst alle Wochenendtage ausschließe.
 
 00:10:48,460 --> 00:10:53,520
-Vielleicht kann ich einen Guard verwenden, der sagt: Wenn der Tag
-mehr als 6 ist, oder wenn er größer als 5 ist,
+Vielleicht kann ich einen Guard verwenden, der sagt: Wenn
+der Tag mehr als 6 ist, oder wenn er größer als 5 ist,
 
 00:10:53,520 --> 00:10:54,980
 dann ist es definitiv kein Übungstag.
 
 00:10:54,980 --> 00:10:58,170
-Ich könnte hier also tatsächlich verschiedene Definitionen schreiben.
+Ich könnte hier also tatsächlich
+verschiedene Definitionen schreiben.
 
 00:10:58,170 --> 00:11:02,860
-Aber es ist nicht klar, dass die Arbeit mit diesen
-Vergleichen und Zahlen wirklich zu einer
+Aber es ist nicht klar, dass die Arbeit mit
+diesen Vergleichen und Zahlen wirklich zu einer
 
 00:11:02,860 --> 00:11:06,500
 schönen Art wird, diese Funktion auszudrücken.
@@ -586,8 +591,8 @@ Außerdem besteht eine weitere Gefahr, wenn man diesen Typ
 'Integer → Bool' verwendet, denn 'Integer' ist ein viel größerer
 
 00:11:15,339 --> 00:11:19,279
-Typ als nur 1 bis 7, die ich für
-meine Wochentage brauche.
+Typ als nur 1 bis 7, die ich
+für meine Wochentage brauche.
 
 00:11:19,279 --> 00:11:23,970
 Nehmen wir also an, ich hätte eine Funktion wie diese...
@@ -608,53 +613,53 @@ Dann ist natürlich die Frage: Was macht
 sie?
 
 00:11:36,649 --> 00:11:42,680
-Sie berechnet etwas wie: im 'workday'
-aus der vorherigen Folie würde es Folgendes berechnen:
+Sie berechnet etwas wie: im 'workday' aus der
+vorherigen Folie würde es Folgendes berechnen:
 
 00:11:42,680 --> 00:11:48,220
-False, weil der Vergleich 'd < 6' war,
-also wird aus irgendeinem Grund der 12. Tag der Woche,
+False, weil der Vergleich 'd < 6' war, also wird
+aus irgendeinem Grund der 12. Tag der Woche,
 
 00:11:48,220 --> 00:11:51,590
 den es gar nicht gibt, kein Arbeitstag sein.
 
 00:11:51,590 --> 00:11:58,860
-Während die hier beschriebene Funktion 'exerciseDay' hingegen
-für die Eingabe 12 sagen würde: Es ist ein
+Während die hier beschriebene Funktion 'exerciseDay'
+hingegen für die Eingabe 12 sagen würde: Es ist ein
 
 00:11:58,860 --> 00:12:00,610
 Übungstag, aus welchem Grund auch immer.
 
 00:12:00,610 --> 00:12:04,820
-Der Grund dafür ist, dass sie in diesen Auffangfall
-Fall hier
+Der Grund dafür ist, dass sie
+in diesen Auffangfall Fall hier
 
 00:12:04,820 --> 00:12:07,290
-True zurückgeben würde, aber das hat keine
-sinnvolle Interpretation.
+True zurückgeben würde, aber das
+hat keine sinnvolle Interpretation.
 
 00:12:07,290 --> 00:12:14,190
-Und wenn ich versuchen würde, diese Funktion auf andere Weise umzuschreiben,
-vielleicht mit einem Abgleich auf die Übungstage,
+Und wenn ich versuchen würde, diese Funktion auf andere Weise
+umzuschreiben, vielleicht mit einem Abgleich auf die Übungstage,
 
 00:12:14,190 --> 00:12:18,950
-anstatt einen Auffangfall zu haben,
-oder das für False zu tun, dann wäre plötzlich der 12.
+anstatt einen Auffangfall zu haben, oder das
+für False zu tun, dann wäre plötzlich der 12.
 
 00:12:18,950 --> 00:12:21,149
 Tag der Woche kein Übungstag.
 
 00:12:21,149 --> 00:12:25,610
-Aus Sicht der Wochentage ist es also
-nicht wirklich sinnvoll.
+Aus Sicht der Wochentage ist es
+also nicht wirklich sinnvoll.
 
 00:12:25,610 --> 00:12:34,220
 Die Tage haben also nicht die Eigenschaft, dass
 es einen 12. Wochentag oder etwas Ähnliches gibt.
 
 00:12:34,220 --> 00:12:41,399
-Hier ist etwas faul, und
-es hat mit dieser naiven Kodierung/Verwendung
+Hier ist etwas faul, und es hat mit
+dieser naiven Kodierung/Verwendung
 
 00:12:41,399 --> 00:12:45,149
 von Zahlen für Wochentage zu tun.
@@ -677,25 +682,26 @@ wie dieses definieren, das neue Werte eines
 neuen Typs einführt.
 
 00:13:02,360 --> 00:13:06,580
-Hier sagen wir also: Wir führen einen Datentyp ein.
+Hier sagen wir also: Wir
+führen einen Datentyp ein.
 
 00:13:06,580 --> 00:13:08,310
 Er bekommt den Namen 'Day'.
 
 00:13:08,310 --> 00:13:13,140
-Das ist also nicht so etwas wie Picture, etwas,
-das wir in anderen Typen als Argumente verwenden können
+Das ist also nicht so etwas wie Picture, etwas, das
+wir in anderen Typen als Argumente verwenden können
 
 00:13:13,140 --> 00:13:14,740
 oder Ergebnisse von Funktionen.
 
 00:13:14,740 --> 00:13:19,570
-Und dann führen wir auch ein, welche Werte dieser
-neue Typ 'Day' hat.
+Und dann führen wir auch ein, welche
+Werte dieser neue Typ 'Day' hat.
 
 00:13:19,570 --> 00:13:26,600
-Und er hat die neuen Werte: Montag, Dienstag,
-Mittwoch, usw. bis hin zu Sonntag.
+Und er hat die neuen Werte: Montag,
+Dienstag, Mittwoch, usw. bis hin zu Sonntag.
 
 00:13:26,600 --> 00:13:34,180
 Und dann können wir diese neuen Konstanten in
@@ -705,15 +711,15 @@ Berechnungen verwenden, als Rückgabewerte von Funktionen,
 usw.
 
 00:13:35,180 --> 00:13:39,250
-Auf den ersten Blick sieht das aus wie ein Union-Typ
-oder ein Aufzählungstyp.
+Auf den ersten Blick sieht das aus wie
+ein Union-Typ oder ein Aufzählungstyp.
 
 00:13:39,250 --> 00:13:41,480
 Sogar so etwas wie C hat so etwas.
 
 00:13:41,480 --> 00:13:48,910
-Der Unterschied ist zum Beispiel, dass Aufzählungstypen
-in C durch die Einführung von Namen
+Der Unterschied ist zum Beispiel, dass
+Aufzählungstypen in C durch die Einführung von Namen
 
 00:13:48,910 --> 00:13:49,910
 Konstanten einführen.
@@ -723,27 +729,28 @@ Wenn wir also etwas wie dieses mit der
 Syntax, die C für Aufzählungstypen erlaubt,
 
 00:13:54,430 --> 00:13:58,450
-dann sind wir eigentlich wieder bei demselben Ansatz
-wie auf den vorherigen Folien.
+dann sind wir eigentlich wieder bei demselben
+Ansatz wie auf den vorherigen Folien.
 
 00:13:58,450 --> 00:14:06,280
-Dann wäre 'Day' im Grunde nur ein anderer / ein Deckname
-für 'Integer' oder einen anderen
+Dann wäre 'Day' im Grunde nur ein anderer /
+ein Deckname für 'Integer' oder einen anderen
 
 00:14:06,280 --> 00:14:09,339
-Basistyp, und Montag wäre eine Konstante
-(0 oder 1).
+Basistyp, und Montag wäre
+eine Konstante (0 oder 1).
 
 00:14:09,339 --> 00:14:14,380
-Es würde also wieder davon abhängen, wie C entscheidet,
-die Dinge zu zählen.
+Es würde also wieder davon abhängen,
+wie C entscheidet, die Dinge zu zählen.
 
 00:14:14,380 --> 00:14:19,100
-Es könnte mit der Zählung bei 0 oder 1 beginnen, aber eigentlich
-würde man letztlich einfach neue
+Es könnte mit der Zählung bei 0 oder 1 beginnen,
+aber eigentlich würde man letztlich einfach neue
 
 00:14:19,100 --> 00:14:21,040
-benannte Konstanten einführen, die Integer-Konstanten sind.
+benannte Konstanten einführen,
+die Integer-Konstanten sind.
 
 00:14:21,040 --> 00:14:25,640
 Sie würden diese Namen haben, aber unter der
@@ -764,49 +771,50 @@ völlig neuer Typ ist, der sich von allen
 anderen Typen in der Sprache unterscheidet.
 
 00:14:35,589 --> 00:14:38,420
-Es handelt sich also nicht um einen Integer-Typ oder eine Umbenennung
-des Integer-Typs.
+Es handelt sich also nicht um einen Integer-Typ
+oder eine Umbenennung des Integer-Typs.
 
 00:14:38,420 --> 00:14:43,050
-Es handelt sich wirklich um etwas völlig Neues, und
-der Compiler erlaubt nun zum Beispiel,
+Es handelt sich wirklich um etwas völlig Neues,
+und der Compiler erlaubt nun zum Beispiel,
 
 00:14:43,050 --> 00:14:46,500
-diese Konstanten als Zahlen zu verwenden, weil
-sie keine Zahlen sind.
+diese Konstanten als Zahlen zu
+verwenden, weil sie keine Zahlen sind.
 
 00:14:46,500 --> 00:14:51,300
 Sie sind neue Werte des neuen Typs, der
 in dieser Deklaration eingeführt wurde.
 
 00:14:51,300 --> 00:14:57,380
-Sie sind also völlig unabhängig von allem,
-was bereits in der Sprache oder im Code des Benutzers existiert.
+Sie sind also völlig unabhängig von allem, was bereits
+in der Sprache oder im Code des Benutzers existiert.
 
 00:15:02,380 --> 00:15:04,399
 Und wie würden wir dann damit rechnen?
 
 00:15:04,399 --> 00:15:08,470
-Zum Beispiel könnte unsere exerciseDay-Funktion
-wie folgt aussehen.
+Zum Beispiel könnte unsere
+exerciseDay-Funktion wie folgt aussehen.
 
 00:15:08,470 --> 00:15:12,780
-Sie würde natürlich nicht mehr von Integer
-zu Bool, sondern von diesem neuen Typ 'Day' zu 'Bool'.
+Sie würde natürlich nicht mehr von Integer zu
+Bool, sondern von diesem neuen Typ 'Day' zu 'Bool'.
 
 00:15:12,780 --> 00:15:15,820
 Deshalb verwenden wir hier den Typnamen.
 
 00:15:15,820 --> 00:15:18,850
-Das, was links von diesem Gleichheitszeichen steht,
-ist der Name des Typs.
+Das, was links von diesem Gleichheitszeichen
+steht, ist der Name des Typs.
 
 00:15:18,850 --> 00:15:21,100
-Und auf der rechten Seite haben wir die Wertnamen.
+Und auf der rechten Seite
+haben wir die Wertnamen.
 
 00:15:21,100 --> 00:15:25,550
-'Day' kann hier also als Typname vorkommen, und
-dann haben wir eine Eigenschaft.
+'Day' kann hier also als Typname vorkommen,
+und dann haben wir eine Eigenschaft.
 
 00:15:25,550 --> 00:15:26,950
 Wir geben also 'Bool' zurück.
@@ -816,8 +824,8 @@ Und wenn wir unsere Definition der Funktion angeben,
 erwähnen wir hier nicht 2 oder 3 oder 6 oder 7,
 
 00:15:34,029 --> 00:15:38,579
-oder so etwas in der Art, sondern wir erwähnen tatsächlich
-die Konstanten, die wir für diesen neuen
+oder so etwas in der Art, sondern wir erwähnen
+tatsächlich die Konstanten, die wir für diesen neuen
 
 00:15:38,579 --> 00:15:39,579
 Typ eingeführt haben.
@@ -835,15 +843,16 @@ Sonntag ist False.
 Alles andere ist True.
 
 00:15:44,570 --> 00:15:47,360
-Natürlich stellt sich hier die Frage: Was ist alles
-anderes?
+Natürlich stellt sich hier die
+Frage: Was ist alles anderes?
 
 00:15:47,360 --> 00:15:52,209
 Nun, alles andere sind genau die vier
 Werte, die hier erwähnt werden und die
 
 00:15:52,209 --> 00:15:54,230
-auf den vorherigen drei Folien nicht behandelt wurden.
+auf den vorherigen drei
+Folien nicht behandelt wurden.
 
 00:15:54,230 --> 00:16:01,140
 Also, es gibt keinen 12. Wochentag in
@@ -859,33 +868,34 @@ Das sind keine Ganzzahlen.
 Das sind nicht einfach nur Indizes.
 
 00:16:09,680 --> 00:16:14,770
-Nein, wir haben genau sieben Werte von diesem Typ,
-wie hier eingeführt.
+Nein, wir haben genau sieben Werte
+von diesem Typ, wie hier eingeführt.
 
 00:16:14,770 --> 00:16:20,660
-Und alles, was in diesen anonymen
-Platz kommen könnte, wären die, die hier noch nicht
+Und alles, was in diesen anonymen Platz
+kommen könnte, wären die, die hier noch nicht
 
 00:16:20,660 --> 00:16:21,839
 behandelt wurden.
 
 00:16:21,839 --> 00:16:28,250
-Es ist also einfach illegal, aus der Sicht des Compilers
-bereits, etwas anderes zu übergeben
+Es ist also einfach illegal, aus der Sicht des
+Compilers bereits, etwas anderes zu übergeben
 
 00:16:28,250 --> 00:16:30,899
 als einen dieser sieben Tage.
 
 00:16:30,899 --> 00:16:34,890
-Natürlich würde jemand sagen: Wir verlieren einige
-Möglichkeiten.
+Natürlich würde jemand sagen: Wir
+verlieren einige Möglichkeiten.
 
 00:16:34,890 --> 00:16:37,760
-Also, zum Beispiel können wir jetzt nicht mehr mit
-Zahlen rechnen.
+Also, zum Beispiel können wir jetzt
+nicht mehr mit Zahlen rechnen.
 
 00:16:37,760 --> 00:16:40,950
-Also, wenn man den "Wochenendtag" einführen will...
+Also, wenn man den
+"Wochenendtag" einführen will...
 
 00:16:40,950 --> 00:16:49,920
 Wenn man also mit der Funktion 'workday' prüfen will,
@@ -899,27 +909,28 @@ dann vergleiche ich, ob er kleiner ist als
 6.
 
 00:16:55,120 --> 00:16:56,990
-Das ergibt keinen Sinn, denn das sind
-keine Zahlen mehr.
+Das ergibt keinen Sinn, denn
+das sind keine Zahlen mehr.
 
 00:16:56,990 --> 00:17:02,230
-Wir verlieren einige Tricks, die wir mit enum
-Typen in C machen können, zum Beispiel das Wissen, dass sie
+Wir verlieren einige Tricks, die wir mit enum Typen
+in C machen können, zum Beispiel das Wissen, dass sie
 
 00:17:02,230 --> 00:17:06,279
-letztlich nur Zahlen sind, aber diese Tricks
-sind einfach Tricks.
+letztlich nur Zahlen sind, aber
+diese Tricks sind einfach Tricks.
 
 00:17:06,279 --> 00:17:09,749
-Sie sind keine gut zu pflegende Art der Programmierung.
+Sie sind keine gut zu pflegende
+Art der Programmierung.
 
 00:17:09,749 --> 00:17:12,669
-Ich würde das also nicht einmal einen Vorteil nennen,
-den wir hier verlieren.
+Ich würde das also nicht einmal einen
+Vorteil nennen, den wir hier verlieren.
 
 00:17:12,669 --> 00:17:19,640
-Es ist einfach deklarativer und klarer,
-dass es sich um neue Werte eines neuen Typs handelt, und
+Es ist einfach deklarativer und klarer, dass es
+sich um neue Werte eines neuen Typs handelt, und
 
 00:17:19,640 --> 00:17:23,890
 wir nicht mit ihnen rechnen können durch '+' oder
@@ -929,44 +940,46 @@ wir nicht mit ihnen rechnen können durch '+' oder
 nicht auf diese Weise funktionieren.
 
 00:17:26,069 --> 00:17:32,869
-Sie sind keine Zahlen, also sollten wir sie auch nicht
-wie Zahlen behandeln, wie es eine weniger streng typisierte Sprache
+Sie sind keine Zahlen, also sollten wir sie auch nicht wie
+Zahlen behandeln, wie es eine weniger streng typisierte Sprache
 
 00:17:32,869 --> 00:17:34,210
 tut.
 
 00:17:34,210 --> 00:17:38,809
-Dann gibt es noch ein weiteres Problem oder eine Sorge, die
-sich an dieser Stelle aufdrängt.
+Dann gibt es noch ein weiteres Problem oder
+eine Sorge, die sich an dieser Stelle aufdrängt.
 
 00:17:38,809 --> 00:17:42,789
-Man könnte also denken: Der C-Ansatz muss
-viel effizienter sein.
+Man könnte also denken: Der
+C-Ansatz muss viel effizienter sein.
 
 00:17:42,789 --> 00:17:48,049
 Diese Dinge einfach als Zahlen zu kodieren und
 dann mit Zahlen zu rechnen, ist natürlich viel
 
 00:17:48,049 --> 00:17:52,889
-effizienter als dieser Ansatz, bei dem
-wir diese neuen Strings einführen und dann vergleichen.
+effizienter als dieser Ansatz, bei dem wir diese
+neuen Strings einführen und dann vergleichen.
 
 00:17:53,889 --> 00:17:57,759
-Bedeutet das, dass ich zwei Strings der Länge 8 oder so ähnlich
+Bedeutet das, dass ich zwei Strings
+der Länge 8 oder so ähnlich
 
 00:17:57,759 --> 00:18:00,539
-vergleichen muss, anstatt einfach etwas
-mit der Zahl 6 zu vergleichen?
+vergleichen muss, anstatt einfach
+etwas mit der Zahl 6 zu vergleichen?
 
 00:18:00,539 --> 00:18:01,539
 Nun... nein.
 
 00:18:01,539 --> 00:18:02,980
-Das ist nur das, was an der Oberfläche dieser
-Sprache passiert.
+Das ist nur das, was an der
+Oberfläche dieser Sprache passiert.
 
 00:18:02,980 --> 00:18:05,070
-Das ist nicht das, was in der Implementierung passiert.
+Das ist nicht das, was in
+der Implementierung passiert.
 
 00:18:05,070 --> 00:18:11,830
 Sie müssen sich keine Sorgen machen, dass diese irgendwie
@@ -977,25 +990,27 @@ einige dieser Strings verglichen werden mit
 einigen dieser Strings oder so etwas ähnliches.
 
 00:18:16,159 --> 00:18:18,919
-Natürlich macht der Compiler effizienteren
-Code daraus.
+Natürlich macht der Compiler
+effizienteren Code daraus.
 
 00:18:18,919 --> 00:18:23,289
-Unter der Haube handelt es sich also nicht um einen String-Vergleich.
+Unter der Haube handelt es sich also
+nicht um einen String-Vergleich.
 
 00:18:23,289 --> 00:18:29,609
 Das bedeutet auch, dass Sie nicht einmal versuchen
 müssen, die Namen Ihrer Werte kurzzuhalten,
 
 00:18:29,609 --> 00:18:32,619
-in der Hoffnung, dass dies das Programm effizienter
-macht.
+in der Hoffnung, dass dies das
+Programm effizienter macht.
 
 00:18:32,619 --> 00:18:34,809
 Das ist völliger Blödsinn.
 
 00:18:34,809 --> 00:18:38,019
-Man muss uns beibringen, dass das so nicht funktioniert.
+Man muss uns beibringen, dass
+das so nicht funktioniert.
 
 00:18:38,019 --> 00:18:42,840
 Das ist etwas, was der Compiler und der
@@ -1005,8 +1020,8 @@ Programmierer sehen (diese Namen), aber die Maschine
 wird diese Namen im kompilierten Code nie sehen.
 
 00:18:46,639 --> 00:18:50,679
-Unter der Haube wird dies in etwas umgewandelt,
-das der C-Methode ähnelt, bei der es sich gewissermaßen um
+Unter der Haube wird dies in etwas umgewandelt, das
+der C-Methode ähnelt, bei der es sich gewissermaßen um
 
 00:18:50,679 --> 00:18:54,710
 Zahlen handelt.
@@ -1016,8 +1031,8 @@ Aber das ist nichts, womit sich der Programmierer
 befassen muss, oder dem Programmierer
 
 00:18:58,350 --> 00:19:02,629
-überhaupt bewusst sein sollte, denn das würde nur
-zu Missbrauch führen.
+überhaupt bewusst sein sollte, denn
+das würde nur zu Missbrauch führen.
 
 00:19:02,629 --> 00:19:09,359
 Das ist etwas, was man bedenken muss, dass diese
@@ -1031,24 +1046,24 @@ Und eine weitere Sache, die man im Auge behalten sollte,
 nämlich, dass es sich um unterschiedliche Entitäten handelt.
 
 00:19:21,980 --> 00:19:26,609
-Was also auf der linken Seite einer solchen Definition erscheint,
-steht nicht auf der rechten Seite.
+Was also auf der linken Seite einer solchen Definition
+erscheint, steht nicht auf der rechten Seite.
 
 00:19:26,609 --> 00:19:33,210
 Es sind völlig unterschiedliche Dinge, auch
 in Bezug auf ihre Rolle in der Sprache.
 
 00:19:33,210 --> 00:19:36,519
-Das, was hier links auftaucht, heißt also
-ein Typ-Konstruktor.
+Das, was hier links auftaucht,
+heißt also ein Typ-Konstruktor.
 
 00:19:36,519 --> 00:19:40,490
-Wir konstruieren einen neuen Typ, wenn wir eine
-Definition wie diese einführen.
+Wir konstruieren einen neuen Typ, wenn
+wir eine Definition wie diese einführen.
 
 00:19:40,490 --> 00:19:44,690
-Und was wir auf der rechten Seite haben, nennt man
-Datenkonstruktoren.
+Und was wir auf der rechten Seite
+haben, nennt man Datenkonstruktoren.
 
 00:19:44,690 --> 00:19:50,049
 Sie konstruieren Daten, sie konstruieren Werte,
@@ -1058,8 +1073,8 @@ die einen Typ haben, in diesem Fall den Typ, der
 hier konstruiert wird.
 
 00:19:51,049 --> 00:19:54,859
-Es sind also verschiedene Entitäten: Typkonstruktoren,
-Datenkonstrukteure.
+Es sind also verschiedene Entitäten:
+Typkonstruktoren, Datenkonstrukteure.
 
 00:19:54,859 --> 00:19:57,539
 Sie leben zufällig in verschiedenen Namensräumen.
@@ -1072,34 +1087,35 @@ Bezeichner für den Typkonstruktor und den
 Datenkonstruktor verwenden.
 
 00:20:06,570 --> 00:20:07,990
-Sie müssen also in Großbuchstaben geschrieben werden, wie wir bereits
-hier sehen.
+Sie müssen also in Großbuchstaben geschrieben
+werden, wie wir bereits hier sehen.
 
 00:20:07,990 --> 00:20:10,370
-Diese Bezeichner müssen also in Großbuchstaben geschrieben werden.
+Diese Bezeichner müssen also in
+Großbuchstaben geschrieben werden.
 
 00:20:10,370 --> 00:20:14,830
-Das unterscheidet sie z. B. von
-Funktionsnamen, die kleingeschrieben werden müssen.
+Das unterscheidet sie z. B. von Funktionsnamen,
+die kleingeschrieben werden müssen.
 
 00:20:14,830 --> 00:20:21,989
-Theoretisch könnte man aber denselben Bezeichner in Großbuchstaben
-sowohl als Typnamen als auch als
+Theoretisch könnte man aber denselben Bezeichner
+in Großbuchstaben sowohl als Typnamen als auch als
 
 00:20:21,989 --> 00:20:22,989
 Wertnamen verwenden.
 
 00:20:22,989 --> 00:20:27,330
-Dies wird normalerweise nicht empfohlen, es sei denn,
-es gibt besondere Gründe dafür.
+Dies wird normalerweise nicht empfohlen, es
+sei denn, es gibt besondere Gründe dafür.
 
 00:20:27,330 --> 00:20:34,630
 Wir werden in der Vorlesung davon absehen, dies zu tun,
 aber Sie sollten sich bewusst sein, dass theoretisch
 
 00:20:34,630 --> 00:20:42,229
-derselbe Name hier und hier verwendet werden könnte, oder
-sogar hier als Name eines Datenkonstruktors
+derselbe Name hier und hier verwendet werden könnte,
+oder sogar hier als Name eines Datenkonstruktors
 
 00:20:42,229 --> 00:20:43,450
 in einem anderen Typ.
@@ -1112,17 +1128,17 @@ Wir werden das normalerweise nicht tun, aber der
 Compiler wird sich nicht darüber beschweren, weil
 
 00:20:54,029 --> 00:21:04,499
-es in der Sprache zulässig ist, denselben
-Bezeichner an einer solchen Stelle und an einer solchen Stelle zu verwenden.
+es in der Sprache zulässig ist, denselben Bezeichner an einer
+solchen Stelle und an einer solchen Stelle zu verwenden.
 
 129 # slide
 00:21:04,499 --> 00:21:11,210
-Auf der vorherigen Folie habe ich dieses Beispiel erwähnt
-mit dem 12. Tag, der natürlich als Wochentag
+Auf der vorherigen Folie habe ich dieses Beispiel
+erwähnt mit dem 12. Tag, der natürlich als Wochentag
 
 00:21:11,210 --> 00:21:19,940
-betrachtet wird, und dank der Einführung
-dieses neuen Typs wurde diese absurde Eingabe ausgeschlossen.
+betrachtet wird, und dank der Einführung dieses neuen
+Typs wurde diese absurde Eingabe ausgeschlossen.
 
 00:21:19,940 --> 00:21:21,889
 Das war eine schöne statische Garantie.
@@ -1135,12 +1151,12 @@ dieses expliziten Typansatzes anstelle von einfachen
 Zahlencodes.
 
 00:21:30,460 --> 00:21:34,940
-Zum Beispiel erhalten wir auch mehr Vollständigkeit
-und Redundanzprüfung.
+Zum Beispiel erhalten wir auch mehr
+Vollständigkeit und Redundanzprüfung.
 
 00:21:34,940 --> 00:21:39,999
-Das ist etwas, worüber wir gesprochen haben, als wir
-über die Fallunterscheidung in Haskell
+Das ist etwas, worüber wir gesprochen haben,
+als wir über die Fallunterscheidung in Haskell
 
 00:21:39,999 --> 00:21:40,999
 Code gesprochen haben.
@@ -1153,15 +1169,16 @@ dem Level-Beispiel, das wir in den Übungen hatten.
 Erinnern Sie sich, da war diese Funktion.
 
 00:21:49,360 --> 00:21:53,379
-Sie wurde als eine Beschreibung einer Ebene interpretiert.
+Sie wurde als eine Beschreibung
+einer Ebene interpretiert.
 
 00:21:53,379 --> 00:21:56,960
-Anhand einiger Koordinaten gab sie also eine
-Ganzzahl zurück.
+Anhand einiger Koordinaten gab
+sie also eine Ganzzahl zurück.
 
 00:21:56,960 --> 00:22:01,220
-Und dieser Integer-Code wurde als Block, Wasser,
-Perle usw.
+Und dieser Integer-Code wurde
+als Block, Wasser, Perle usw.
 
 00:22:01,220 --> 00:22:09,789
 Wir haben diese aTile-Funktion, die diese
@@ -1174,27 +1191,27 @@ Das birgt natürlich schon eine gewisse Gefahr.
 Wir können hier leicht Dinge verwechseln.
 
 00:22:14,360 --> 00:22:19,229
-Also, wenn jemand die Level-Funktion schreibt,
-ist es vielleicht nicht immer klar. Er hat vielleicht
+Also, wenn jemand die Level-Funktion schreibt, ist
+es vielleicht nicht immer klar. Er hat vielleicht
 
 00:22:19,229 --> 00:22:22,299
 nicht immer im Kopf, was genau
 wofür steht.
 
 00:22:22,299 --> 00:22:27,330
-Manchmal schreibt er vielleicht 3 statt 2,
-weil 2 und 3 einfach nur Zahlen sind.
+Manchmal schreibt er vielleicht 3 statt
+2, weil 2 und 3 einfach nur Zahlen sind.
 
 00:22:27,330 --> 00:22:30,450
-Sie sind keine wirklich schönen deklarativen Namen
-für Dinge.
+Sie sind keine wirklich schönen
+deklarativen Namen für Dinge.
 
 00:22:30,450 --> 00:22:32,019
 'level' hat keine '2'.
 
 00:22:32,019 --> 00:22:33,539
-'level' hat 'water' oder 'pearl'
-oder was auch immer.
+'level' hat 'water' oder
+'pearl' oder was auch immer.
 
 00:22:33,539 --> 00:22:40,950
 In diesem Sinne ist das schon etwas unglücklich,
@@ -1208,8 +1225,8 @@ Natürlich kann man sich an dieser Stelle schon
 vorstellen, dass es wahrscheinlich eine gute Idee wäre,
 
 00:22:48,429 --> 00:22:53,169
-auch hier einen Aufzählungstyp zu verwenden, ähnlich wie
-bei den Wochentagen.
+auch hier einen Aufzählungstyp zu
+verwenden, ähnlich wie bei den Wochentagen.
 
 00:22:53,169 --> 00:22:59,359
 Aber eigentlich gibt es noch einen weiteren Grund
@@ -1219,12 +1236,12 @@ zur Sorge bei einer Funktion wie dieser, nämlich
 Erweiterbarkeit.
 
 00:23:00,359 --> 00:23:03,830
-Nehmen wir also an, wir wollen unsere
-Levels reichhaltiger machen.
+Nehmen wir also an, wir wollen
+unsere Levels reichhaltiger machen.
 
 00:23:03,830 --> 00:23:11,269
-Wir haben eine neue Idee für unser Spiel, und wir
-führen eine neue Art von Spielstein ein, vielleicht einen 'Spike',
+Wir haben eine neue Idee für unser Spiel, und wir führen
+eine neue Art von Spielstein ein, vielleicht einen 'Spike',
 
 00:23:11,269 --> 00:23:12,659
 der irgendwo sein kann.
@@ -1234,16 +1251,16 @@ Wir werden also den Wert 5 dafür verwenden,
 denn 5 scheint noch nicht verwendet zu werden.
 
 00:23:17,710 --> 00:23:23,210
-Also schreiben wir jetzt Level-Funktionen, die
-irgendwo eine 5 zurückgeben, die für
+Also schreiben wir jetzt Level-Funktionen,
+die irgendwo eine 5 zurückgeben, die für
 
 00:23:23,210 --> 00:23:28,260
 'spike' stehen soll. Aber tatsächlich
 vergessen wir, diesen zusätzlichen Fall in der
 
 00:23:28,260 --> 00:23:32,769
-aTile-Funktion hinzuzufügen. Oder vielleicht hat jemand in unserem Team, der
-dafür verantwortlich ist, einfach vergessen, hier
+aTile-Funktion hinzuzufügen. Oder vielleicht hat jemand in unserem
+Team, der dafür verantwortlich ist, einfach vergessen, hier
 
 00:23:32,769 --> 00:23:34,359
 einen neuen Fall hinzuzufügen.
@@ -1255,8 +1272,8 @@ Was würde dann passieren?
 Der Compiler würde uns nicht davor warnen.
 
 00:23:37,399 --> 00:23:41,109
-Wir möchten vom Compiler gewarnt werden, wenn
-mögliche Fehler in unserem Code sind.
+Wir möchten vom Compiler gewarnt werden,
+wenn mögliche Fehler in unserem Code sind.
 
 00:23:41,109 --> 00:23:47,840
 Aber wenn ich hier 5 produziere, aber auch vergesse,
@@ -1269,11 +1286,12 @@ keine Chance, mich zu warnen.
 Warum nicht?
 
 00:23:50,690 --> 00:23:55,409
-Weil die 5 in diesen letzten Fall hineinlaufen wird.
+Weil die 5 in diesen letzten
+Fall hineinlaufen wird.
 
 00:23:55,409 --> 00:24:00,799
-Also, obwohl ich meine 5 in meiner
-Level-Funktion hinzufüge, wird der Zeichencode einfach
+Also, obwohl ich meine 5 in meiner Level-Funktion
+hinzufüge, wird der Zeichencode einfach
 
 00:24:00,799 --> 00:24:06,419
 nichts für diese Positionen zeichnen, weil
@@ -1283,19 +1301,19 @@ wir hier auf diesen 'blank'-Fall stoßen.
 Dieser "leere" Fall machte vorher Sinn, richtig?
 
 00:24:08,820 --> 00:24:14,030
-Denn in unseren Beispielen in der Übung hatten wir nur die
-Zahlencodes 0 bis 4. Und
+Denn in unseren Beispielen in der Übung
+hatten wir nur die Zahlencodes 0 bis 4. Und
 
 00:24:14,030 --> 00:24:19,659
-0 sollte für "nichts" stehen,
-also würde die 0 natürlich auf diesen letzten Fall treffen.
+0 sollte für "nichts" stehen, also würde die
+0 natürlich auf diesen letzten Fall treffen.
 
 00:24:19,659 --> 00:24:21,070
 Dann würde 'blank' genommen werden.
 
 00:24:21,070 --> 00:24:27,330
-Wenn wir nun aber die Level-Funktion erweitern
-und vergessen diese Änderung in der
+Wenn wir nun aber die Level-Funktion
+erweitern und vergessen diese Änderung in der
 
 00:24:27,330 --> 00:24:30,759
 aTile-Funktion, dann haben wir plötzlich auch 'blank'
@@ -1320,23 +1338,23 @@ Zumindest zur Laufzeit würde er nicht leer zeichnen,
 denn 5 würde auf keinen dieser Fälle passen.
 
 00:24:50,549 --> 00:24:54,879
-Also würde man zumindest zur Laufzeit einen
-Fehler statt dieses seltsamen leeren Bildes bekommen.
+Also würde man zumindest zur Laufzeit einen Fehler
+statt dieses seltsamen leeren Bildes bekommen.
 
 00:24:54,879 --> 00:25:01,169
-Dies könnte man erreichen, indem man
-hier in der ursprünglichen Version einfach eine '0' schreibt.
+Dies könnte man erreichen, indem man hier in der
+ursprünglichen Version einfach eine '0' schreibt.
 
 00:25:01,169 --> 00:25:04,269
-Aber das hat natürlich auch seine Nachteile,
-denn dann würde sich der Compiler darüber beschweren,
+Aber das hat natürlich auch seine Nachteile, denn
+dann würde sich der Compiler darüber beschweren,
 
 00:25:04,269 --> 00:25:05,929
 dass dies keine erschöpfende Funktion ist.
 
 00:25:05,929 --> 00:25:11,080
-Und der Compiler hätte recht, denn
-wenn man nur sagt, die Funktion aTile geht von
+Und der Compiler hätte recht, denn wenn
+man nur sagt, die Funktion aTile geht von
 
 00:25:11,080 --> 00:25:15,789
 Integer nach Picture, und dann gibt man nur
@@ -1352,12 +1370,12 @@ Und warum ist das so?
 Weil die Integer-Größe viel zu groß ist.
 
 00:25:21,929 --> 00:25:24,950
-Der Level gibt keinen 'Integer' an, er gibt
-eine 'Tile'.
+Der Level gibt keinen 'Integer'
+an, er gibt eine 'Tile'.
 
 00:25:24,950 --> 00:25:30,529
-Wir sollten also einen deskriptiveren, einen aussagekräftigeren
-Typ verwenden.
+Wir sollten also einen deskriptiveren,
+einen aussagekräftigeren Typ verwenden.
 
 00:25:30,529 --> 00:25:31,529
 Und was könnte das sein?
@@ -1366,28 +1384,28 @@ Und was könnte das sein?
 Ein Zahlentyp kann es nicht sein.
 
 00:25:32,879 --> 00:25:41,409
-Es sollte eine Aufzählung sein oder ein algebraischer
-Datentyp sein.
+Es sollte eine Aufzählung sein oder
+ein algebraischer Datentyp sein.
 
 130 # slide
 00:25:41,409 --> 00:25:48,450
-So könnte es also aussehen, wenn Sie
-einen neuen Typ namens 'Tile' einführen, und wir führen
+So könnte es also aussehen, wenn Sie einen neuen
+Typ namens 'Tile' einführen, und wir führen
 
 00:25:48,450 --> 00:25:55,279
 einige Konstanten dieses Typs ein, und wir führen
 genau eine Konstante für jede Art von 'Tile'
 
 00:25:55,279 --> 00:25:59,980
-die wir haben wollen: Blank (nichts), Block, Pearl, Water,
-Luft.
+die wir haben wollen: Blank
+(nichts), Block, Pearl, Water, Luft.
 
 00:25:59,980 --> 00:26:01,649
 Dies hat einen klaren Dokumentationswert.
 
 00:26:01,649 --> 00:26:09,019
-Außerdem kann es von nun an keine Verwirrung mehr geben
-in Bezug auf Zahlencodes, also, was ist was?
+Außerdem kann es von nun an keine Verwirrung mehr
+geben in Bezug auf Zahlencodes, also, was ist was?
 
 00:26:09,019 --> 00:26:10,019
 Ist die 2 die Perle?
@@ -1396,22 +1414,24 @@ Ist die 2 die Perle?
 Oder ist die 3 die Perle?
 
 00:26:11,019 --> 00:26:14,119
-Es gibt also keine Nummerncodes mehr, wir
-haben diese beschreibenden Namen.
+Es gibt also keine Nummerncodes mehr,
+wir haben diese beschreibenden Namen.
 
 00:26:14,119 --> 00:26:17,419
-Und die werden in allen unseren Funktionen verwendet.
+Und die werden in allen
+unseren Funktionen verwendet.
 
 00:26:17,419 --> 00:26:20,009
-Das bedeutet auch, dass die Reihenfolge nicht relevant ist.
+Das bedeutet auch, dass die
+Reihenfolge nicht relevant ist.
 
 00:26:20,009 --> 00:26:26,000
-Die Reihenfolge ist auch nicht relevant, wenn wir diese Dinge
-hier auflisten, denn es sind keine Zahlen
+Die Reihenfolge ist auch nicht relevant, wenn wir
+diese Dinge hier auflisten, denn es sind keine Zahlen
 
 00:26:26,000 --> 00:26:32,009
-beteiligt und die Reihenfolge ist auch nicht relevant, wenn
-wir Fälle für diese Konstanten in unseren
+beteiligt und die Reihenfolge ist auch nicht relevant,
+wenn wir Fälle für diese Konstanten in unseren
 
 00:26:32,009 --> 00:26:33,309
 Funktionsdefinitionen schreiben.
@@ -1452,58 +1472,59 @@ Es ist also der Typ unserer level-Funktion,
 und eine Tile-Funktion sieht dann so aus.
 
 00:27:06,659 --> 00:27:09,309
-Sie geht nicht von 'Integer' zu 'Picture', sondern
-von 'Tile' zu 'Picture'.
+Sie geht nicht von 'Integer' zu 'Picture',
+sondern von 'Tile' zu 'Picture'.
 
 00:27:09,309 --> 00:27:11,870
-Und natürlich ist die Zuweisung hier sehr einfach.
+Und natürlich ist die
+Zuweisung hier sehr einfach.
 
 00:27:11,870 --> 00:27:18,369
-Außerdem brauchen wir keinen Catch-All-Fall, weil
-wir genau fünf Werte vom Typ 'Tile' haben.
+Außerdem brauchen wir keinen Catch-All-Fall,
+weil wir genau fünf Werte vom Typ 'Tile' haben.
 
 00:27:18,369 --> 00:27:25,129
-Wenn Sie also eine Definition, eine Zeile, für
-jede dieser Konstanten angeben, dann ist dies eine vollständige
+Wenn Sie also eine Definition, eine Zeile, für jede
+dieser Konstanten angeben, dann ist dies eine vollständige
 
 00:27:25,129 --> 00:27:29,890
-Definition und der Compiler
-wird herausfinden, dass dies eine Nicht-Redundanz ist,
+Definition und der Compiler wird herausfinden,
+dass dies eine Nicht-Redundanz ist,
 
 00:27:29,890 --> 00:27:33,450
-sondern eine vollständige Definition von Funktionen dieses
-Typs ist.
+sondern eine vollständige Definition
+von Funktionen dieses Typs ist.
 
 00:27:33,450 --> 00:27:38,159
-Es besteht also keine Notwendigkeit für einen Auffangtatbestand
-wie im vorigen Fall, wo dies tatsächlich
+Es besteht also keine Notwendigkeit für einen
+Auffangtatbestand wie im vorigen Fall, wo dies tatsächlich
 
 00:27:38,159 --> 00:27:47,460
-zu Problemen führte, als wir unser
-Spektrum der Dinge, die 'Tile' sein können, erweitern wollten.
+zu Problemen führte, als wir unser Spektrum der
+Dinge, die 'Tile' sein können, erweitern wollten.
 
 00:27:47,460 --> 00:27:51,690
-Was würde nun passieren, wenn wir Folgendes einführen wollten:
-eine neue 'Tile' wie die Spike-Sache?
+Was würde nun passieren, wenn wir Folgendes einführen
+wollten: eine neue 'Tile' wie die Spike-Sache?
 
 00:27:51,690 --> 00:27:53,850
 Dann müssten wir sie zu diesem Typ hinzufügen.
 
 00:27:53,850 --> 00:27:57,809
-Andernfalls wäre es nicht möglich, sie
-im Level zurückzugeben.
+Andernfalls wäre es nicht möglich,
+sie im Level zurückzugeben.
 
 00:27:57,809 --> 00:28:01,950
-Wir können also nichts bei der level-Funktion zurückgeben,
-was nicht zu diesem Typ gehört.
+Wir können also nichts bei der level-Funktion
+zurückgeben, was nicht zu diesem Typ gehört.
 
 00:28:01,950 --> 00:28:06,769
 Wenn wir also Spikes haben wollen, dann führen wir
 einen neuen Fall von Spikes hier ein, dann können wir
 
 00:28:06,769 --> 00:28:14,879
-dies in der level-Funktion verwenden
-und es kann uns nicht passieren, dass wir vergessen, zu deklarieren oder zu beschreiben,
+dies in der level-Funktion verwenden und es kann uns nicht
+passieren, dass wir vergessen, zu deklarieren oder zu beschreiben,
 
 00:28:14,879 --> 00:28:17,240
 wie das in der aTile-Funktion zu behandeln ist.
@@ -1512,8 +1533,8 @@ wie das in der aTile-Funktion zu behandeln ist.
 Warum?
 
 00:28:18,240 --> 00:28:23,309
-Weil, wenn ich 'Spike' zu diesem Typ hinzufüge, ich
-aber vergesse, in der aTile-Funktion auch einen Fall für ihn hinzuzufügen,
+Weil, wenn ich 'Spike' zu diesem Typ hinzufüge, ich aber vergesse,
+in der aTile-Funktion auch einen Fall für ihn hinzuzufügen,
 
 00:28:23,309 --> 00:28:25,450
 dann wird sich der Compiler beschweren.
@@ -1522,18 +1543,19 @@ dann wird sich der Compiler beschweren.
 Der Compiler wird mir helfen.
 
 00:28:26,450 --> 00:28:29,309
-Er wird warnen, wenn wir einen neuen Wert vergessen.
+Er wird warnen, wenn wir
+einen neuen Wert vergessen.
 
 00:28:29,309 --> 00:28:34,341
-Also, alles muss passen: Wenn ich
-es hier verwenden will, muss ich es zum
+Also, alles muss passen: Wenn ich es
+hier verwenden will, muss ich es zum
 
 00:28:34,341 --> 00:28:36,019
 Typ hinzufügen, dann kann ich es hier verwenden.
 
 00:28:36,019 --> 00:28:40,190
-Aber dann kann ich auch nicht vergessen, es hier zu behandeln,
-denn der Compiler würde sich darüber
+Aber dann kann ich auch nicht vergessen, es hier
+zu behandeln, denn der Compiler würde sich darüber
 
 00:28:40,190 --> 00:28:41,190
 beschweren.
@@ -1555,50 +1577,50 @@ Bibliotheken mit vielen Funktionen und komplizierten
 Invarianten, kann dies sehr wichtig sein.
 
 00:29:02,480 --> 00:29:08,999
-Also, alles, was wir tun können, damit der
-Compiler bei der Erkennung von Inkonsistenzen hilft,
+Also, alles, was wir tun können, damit der Compiler
+bei der Erkennung von Inkonsistenzen hilft,
 
 00:29:08,999 --> 00:29:10,140
 ist wertvoll.
 
 00:29:10,140 --> 00:29:15,869
-Und die Definition unserer eigenen Typen und ihre Verwendung
-in sinnvoller Weise in unseren Funktionen, sowohl
+Und die Definition unserer eigenen Typen und ihre
+Verwendung in sinnvoller Weise in unseren Funktionen, sowohl
 
 00:29:15,869 --> 00:29:20,799
-für Ausgaben als auch für Eingaben, ist ein Weg, dies
-zu erreichen.
+für Ausgaben als auch für Eingaben,
+ist ein Weg, dies zu erreichen.
 
 00:29:20,799 --> 00:29:26,059
-Nun könnten Sie sich bei diesem sehr einfachen Beispiel
-vielleicht auch fragen: Wozu das Ganze?
+Nun könnten Sie sich bei diesem sehr einfachen
+Beispiel vielleicht auch fragen: Wozu das Ganze?
 
 00:29:26,059 --> 00:29:31,090
-Es sieht sehr trivial aus, wenn man 'Blank'
-mit 'blank', 'Block' mit 'block',
+Es sieht sehr trivial aus, wenn man
+'Blank' mit 'blank', 'Block' mit 'block',
 
 00:29:31,090 --> 00:29:32,090
 usw...
 
 00:29:32,090 --> 00:29:35,580
-Warum lassen wir nicht einfach unsere level-Funktion
-stattdessen 'Picture' zurückgeben?
+Warum lassen wir nicht einfach unsere
+level-Funktion stattdessen 'Picture' zurückgeben?
 
 00:29:35,580 --> 00:29:39,071
-Dann können wir die ganze Sache vergessen, und die
-Level-Funktion würde einfach sagen: für zwei
+Dann können wir die ganze Sache vergessen, und
+die Level-Funktion würde einfach sagen: für zwei
 
 00:29:39,071 --> 00:29:45,059
 Integer gebe ich dir ein Bild. Und dann,
 anstatt den konstanten Großbuchstaben
 
 00:29:45,059 --> 00:29:47,779
-Block zurückzugeben, würde sie einfach den Picture
-Block zurückgeben.
+Block zurückzugeben, würde sie
+einfach den Picture Block zurückgeben.
 
 00:29:47,779 --> 00:29:53,529
-Das wäre ein vernünftiger Entwurf, könnte man meinen.
-Aber es würde eine Menge Potenzial
+Das wäre ein vernünftiger Entwurf, könnte man
+meinen. Aber es würde eine Menge Potenzial
 
 00:29:53,529 --> 00:29:56,960
 für Manipulationen verlieren, weil Sie auch
@@ -1608,8 +1630,8 @@ diese level-Funktion als Daten verwenden wollen.
 Sie haben das schon gesehen.
 
 00:29:57,960 --> 00:30:03,269
-Wir hatten diese Übungsaufgabe, bei der Sie
-zwei level-Funktionen hatten und entscheiden sollten,
+Wir hatten diese Übungsaufgabe, bei der Sie zwei
+level-Funktionen hatten und entscheiden sollten,
 
 00:30:03,269 --> 00:30:08,859
 welche davon kleiner oder dichter besetzt ist.
@@ -1626,62 +1648,63 @@ Nun, das ist auch mit Zahlen möglich, aber Zahlen
 haben einen Nachteil, wie auf der vorherigen Folie
 
 00:30:21,039 --> 00:30:23,549
-erklärt wurde und hier noch einmal besprochen wird.
+erklärt wurde und hier noch
+einmal besprochen wird.
 
 00:30:23,549 --> 00:30:27,620
-Wenn Sie hier 'Picture' verwenden, können Sie sie nicht
-vergleichen.
+Wenn Sie hier 'Picture' verwenden,
+können Sie sie nicht vergleichen.
 
 00:30:27,620 --> 00:30:31,960
-Wenn also zwei beliebige 'Picture' gegeben werden, gibt
-es keine Möglichkeit, sie wirklich vernünftig zu vergleichen.
+Wenn also zwei beliebige 'Picture' gegeben werden, gibt es
+keine Möglichkeit, sie wirklich vernünftig zu vergleichen.
 
 00:30:31,960 --> 00:30:35,999
-Man braucht hier also Daten... etwas, das
-inspiziert werden kann.
+Man braucht hier also Daten...
+etwas, das inspiziert werden kann.
 
 00:30:35,999 --> 00:30:38,710
-Und nun... Konstanten wie diese haben diese
-Eigenschaft.
+Und nun... Konstanten wie
+diese haben diese Eigenschaft.
 
 00:30:38,710 --> 00:30:45,979
-Wenn wir also von Zahlen zu diesem neuen Typ wechseln, können wir
-eine sinnvolle Zeichenfunktion haben,
+Wenn wir also von Zahlen zu diesem neuen Typ wechseln,
+können wir eine sinnvolle Zeichenfunktion haben,
 
 00:30:45,979 --> 00:30:51,100
-aber auch dieses Level als Daten behandeln, wo
-wir uns das Ergebnis für eine bestimmte Position ansehen
+aber auch dieses Level als Daten behandeln, wo wir
+uns das Ergebnis für eine bestimmte Position ansehen
 
 00:30:51,100 --> 00:30:55,539
-und damit rechnen können, wie
-einen Block mit einer Perle vergleichen, etc...
+und damit rechnen können, wie einen
+Block mit einer Perle vergleichen, etc...
 
 00:30:55,539 --> 00:30:57,440
-Vergleichen im Sinne von: Ist das eine ein Block
-und der andere eine Perle?
+Vergleichen im Sinne von: Ist das eine
+ein Block und der andere eine Perle?
 
 00:30:57,440 --> 00:31:03,980
-Oder das eine ist Wasser und das andere ist eine Perle,
-usw., nicht Vergleiche im Sinne von Zahlen.
+Oder das eine ist Wasser und das andere ist eine
+Perle, usw., nicht Vergleiche im Sinne von Zahlen.
 
 00:31:03,980 --> 00:31:07,960
-Deshalb wollen wir etwas haben, das
-kein Bild ist, etwas, mit dem wir arbeiten
+Deshalb wollen wir etwas haben, das kein
+Bild ist, etwas, mit dem wir arbeiten
 
 00:31:07,960 --> 00:31:13,570
-können, wie diese Konstanten, die wir
-anschauen können, und dann brauchen wir so etwas wie diese
+können, wie diese Konstanten, die wir anschauen
+können, und dann brauchen wir so etwas wie diese
 
 00:31:13,570 --> 00:31:15,200
 Funktion.
 
 00:31:15,200 --> 00:31:20,190
-Aber dank dieses Aufzählungstyps kann eine
-solche Funktion sicher in einem
+Aber dank dieses Aufzählungstyps kann
+eine solche Funktion sicher in einem
 
 00:31:20,190 --> 00:31:29,159
-nicht redundanten, aber auch erschöpfenden Weise implementiert werden,
-was vom Compiler überprüft wird.
+nicht redundanten, aber auch erschöpfenden Weise
+implementiert werden, was vom Compiler überprüft wird.
 
 131 # slide
 00:31:29,159 --> 00:31:33,019
@@ -1691,72 +1714,77 @@ Dies waren einfache Aufzählungstypen.
 Lassen Sie uns nun darüber hinausgehen.
 
 00:31:35,479 --> 00:31:43,190
-Wir bewegen uns in einem Bereich, in dem es nicht nur um
-Namenskonstanten geht, die wir leicht
+Wir bewegen uns in einem Bereich, in dem es nicht
+nur um Namenskonstanten geht, die wir leicht
 
 00:31:43,190 --> 00:31:45,799
-mit Zahlen simulieren können, wie in C oder ähnlichem.
+mit Zahlen simulieren können,
+wie in C oder ähnlichem.
 
 00:31:45,799 --> 00:31:50,229
-Lassen Sie uns allgemeinere algebraische Datentypen verwenden.
+Lassen Sie uns allgemeinere
+algebraische Datentypen verwenden.
 
 00:31:50,229 --> 00:31:54,210
 Inwiefern werden sie allgemeiner sein?
 
 00:31:54,210 --> 00:31:57,749
-Nun, sie können zusätzliche Werte in diesen Alternativen kapseln.
+Nun, sie können zusätzliche Werte
+in diesen Alternativen kapseln.
 
 00:31:57,749 --> 00:32:05,320
-Bislang hatten wir zum Beispiel: Ein Tag kann Montag sein,
-Dienstag usw., oder eine 'Tile' kann Wasser, Perle,
+Bislang hatten wir zum Beispiel: Ein Tag kann Montag
+sein, Dienstag usw., oder eine 'Tile' kann Wasser, Perle,
 
 00:32:05,320 --> 00:32:07,470
 Block und Blank oder was auch immer sein.
 
 00:32:07,470 --> 00:32:13,710
-Dies sind die Alternativen, die wir mit diesem
-logischen Balken '|' (pipe) darstellen. Nun, jede dieser Alternativen
+Dies sind die Alternativen, die wir mit diesem logischen
+Balken '|' (pipe) darstellen. Nun, jede dieser Alternativen
 
 00:32:13,710 --> 00:32:23,669
-kann zusätzliche Werte im Sinne eines
-Datensatzes annehmen, also einige zusätzliche Daten enthalten.
+kann zusätzliche Werte im Sinne eines Datensatzes
+annehmen, also einige zusätzliche Daten enthalten.
 
 00:32:23,669 --> 00:32:24,669
 Was bedeutet das?
 
 00:32:24,669 --> 00:32:27,499
-Die Datenkonstruktoren können jetzt Argumente annehmen.
+Die Datenkonstruktoren können
+jetzt Argumente annehmen.
 
 00:32:27,499 --> 00:32:31,049
-Sie sind nicht nur Konstanten, sondern jetzt
-Funktionen, die Argumente annehmen.
+Sie sind nicht nur Konstanten, sondern
+jetzt Funktionen, die Argumente annehmen.
 
 00:32:31,049 --> 00:32:37,559
-Syntaktisch bedeutet dies eine Bereicherung dessen, was
-wir in diese Datendefinitionen schreiben können.
+Syntaktisch bedeutet dies eine Bereicherung dessen,
+was wir in diese Datendefinitionen schreiben können.
 
 00:32:37,559 --> 00:32:44,059
-Lassen Sie mich also drei Datendefinitionen zeigen,
-die miteinander in Beziehung stehen.
+Lassen Sie mich also drei Datendefinitionen
+zeigen, die miteinander in Beziehung stehen.
 
 00:32:44,059 --> 00:32:46,340
-Bzw. voneinander abhängen, nämlich das, was wir hier sehen.
+Bzw. voneinander abhängen,
+nämlich das, was wir hier sehen.
 
 00:32:46,340 --> 00:32:51,899
-Ich habe einen neuen Typ Datum definiert, und er hat nur
-eine Alternative.
+Ich habe einen neuen Typ Datum definiert,
+und er hat nur eine Alternative.
 
 00:32:51,899 --> 00:32:55,039
-Es gibt hier also keinen vertikalen Balken für andere
-Aufzählungsoptionen.
+Es gibt hier also keinen vertikalen
+Balken für andere Aufzählungsoptionen.
 
 00:32:55,039 --> 00:33:01,499
 Es gibt nur eine Option, und zwar: Tag ist
 ein Datenkonstruktor, und dann gibt es drei
 
 00:33:01,499 --> 00:33:05,730
-Argumente, und die Typen werden hier geschrieben,
-weil dies eine Typdefinition ist.
+Argumente, und die Typen werden hier
+geschrieben, weil dies eine Typdefinition ist.
 
 00:33:05,730 --> 00:33:13,370
 Einige Dinge sind zu beachten: Erstens verwende ich 'Day'
@@ -1766,15 +1794,16 @@ als Datenkonstruktor, während ich ihn vor ein paar Folien
 als Typkonstruktor verwendet habe.
 
 00:33:15,960 --> 00:33:18,330
-Ich sagte, dass ich das normalerweise nicht tun würde.
+Ich sagte, dass ich das
+normalerweise nicht tun würde.
 
 00:33:18,330 --> 00:33:21,799
-Stellen Sie sich also vor, dass dies ein Beispiel ist, das
-von dem vorherigen Beispiel getrennt ist.
+Stellen Sie sich also vor, dass dies ein Beispiel
+ist, das von dem vorherigen Beispiel getrennt ist.
 
 00:33:21,799 --> 00:33:26,879
-Ich würde also diese und die andere Definition nicht verwenden
-der Daten Tag (als Montag, Dienstag usw.) im
+Ich würde also diese und die andere Definition nicht
+verwenden der Daten Tag (als Montag, Dienstag usw.) im
 
 00:33:26,879 --> 00:33:27,879
 demselben Programm verwenden.
@@ -1792,16 +1821,16 @@ aber 'Day' ist nicht konstant, es hat drei Argumente
 vom Typ Integer, wobei die Idee natürlich ist,
 
 00:33:45,519 --> 00:33:52,049
-dass ich den Tag des Monats speichere, die
-Nummer des Monats...
+dass ich den Tag des Monats
+speichere, die Nummer des Monats...
 
 00:33:52,049 --> 00:33:58,480
-Man könnte sagen: Ich sollte hier eigentlich Januar,
-Februar usw. verwenden, anstatt Zahlen, aber
+Man könnte sagen: Ich sollte hier eigentlich
+Januar, Februar usw. verwenden, anstatt Zahlen, aber
 
 00:33:58,480 --> 00:34:02,340
-normalerweise werden Datumsangaben als Nummer, Nummer,
-Nummer gespeichert.
+normalerweise werden Datumsangaben als
+Nummer, Nummer, Nummer gespeichert.
 
 00:34:02,340 --> 00:34:06,889
 Lassen Sie mich das also auch hier tun.
@@ -1810,15 +1839,16 @@ Lassen Sie mich das also auch hier tun.
 Dann habe ich einen weiteren Typ, nämlich Zeit.
 
 00:34:09,320 --> 00:34:15,210
-Ich habe beschlossen, dass ich für meine Zeit nur
-die Stunden speichern möchte.
+Ich habe beschlossen, dass ich für meine
+Zeit nur die Stunden speichern möchte.
 
 00:34:15,210 --> 00:34:21,070
-'Time' wird also einfach konstruiert, indem ich sage:
-Die Stunden sind so und so.
+'Time' wird also einfach konstruiert, indem
+ich sage: Die Stunden sind so und so.
 
 00:34:21,070 --> 00:34:26,929
-Wir können 11 Uhr morgens oder etwas Ähnliches speichern.
+Wir können 11 Uhr morgens oder
+etwas Ähnliches speichern.
 
 00:34:26,929 --> 00:34:32,460
 Was mich eigentlich interessiert, ist der neue
@@ -1835,8 +1865,8 @@ Ich möchte in der Lage sein, über sowohl Zug-
 als auch Flugverbindungen sprechen zu können.
 
 00:34:38,110 --> 00:34:42,600
-Dies wären also meine Alternativen: Zug
-oder Flug, wie Montag und Dienstag, aber eigentlich
+Dies wären also meine Alternativen: Zug oder
+Flug, wie Montag und Dienstag, aber eigentlich
 
 00:34:42,600 --> 00:34:48,060
 Zug und Flug sind nicht einfach Konstanten
@@ -1849,8 +1879,8 @@ tragen einige Daten.
 Und sie tragen unterschiedliche Daten.
 
 00:34:50,260 --> 00:34:53,690
-Daher hat jeder von ihnen seinen eigenen Satz von Konstruktor
-Argumenten.
+Daher hat jeder von ihnen seinen
+eigenen Satz von Konstruktor Argumenten.
 
 00:34:53,690 --> 00:35:01,420
 So möchte ich zum Beispiel für einen Zug Folgendes speichern:
@@ -1863,8 +1893,8 @@ Ankunftszeit.
 Das kann ich hier sagen.
 
 00:35:04,850 --> 00:35:12,480
-Und natürlich werden die Werte 'Day' und 'Time' und 'Time'
-in der Art und Weise konstruiert werden, wie diese
+Und natürlich werden die Werte 'Day' und 'Time' und
+'Time' in der Art und Weise konstruiert werden, wie diese
 
 00:35:12,480 --> 00:35:15,090
 zwei Definitionen hier erklären.
@@ -1876,22 +1906,23 @@ Außerdem gibt es Flugverbindungen.
 Und für Flüge speichere ich etwas anderes.
 
 00:35:18,970 --> 00:35:23,270
-Ich speichere die Fluggesellschaft, und sagen wir, diese wird
-als 'String' gespeichert.
+Ich speichere die Fluggesellschaft, und sagen
+wir, diese wird als 'String' gespeichert.
 
 00:35:23,270 --> 00:35:30,080
-Und dann speichere ich auch das Datum, an dem diese
-Flugverbindung stattfindet, und zwei Zeiten
+Und dann speichere ich auch das Datum, an dem
+diese Flugverbindung stattfindet, und zwei Zeiten
 
 00:35:30,080 --> 00:35:33,260
 für Abflug und Ankunft.
 
 00:35:33,260 --> 00:35:39,800
-Wie Sie sehen, können diese Definitionen
-voneinander abhängen, so wie ich einen selbst definierten
+Wie Sie sehen, können diese Definitionen voneinander
+abhängen, so wie ich einen selbst definierten
 
 00:35:39,800 --> 00:35:42,480
-Typ in einem anderen selbst definierten Typ verwenden kann.
+Typ in einem anderen selbst
+definierten Typ verwenden kann.
 
 00:35:42,480 --> 00:35:44,470
 Auch die Reihenfolge ist hier nicht relevant.
@@ -1901,21 +1932,23 @@ So ist es auch bei Funktionsdefinitionen:
 Ich muss diese Typen nicht definieren, bevor
 
 00:35:48,630 --> 00:35:50,350
-ich diese Typen definiere, oder so etwas in der Art.
+ich diese Typen definiere,
+oder so etwas in der Art.
 
 00:35:50,350 --> 00:35:53,100
-Es kann also eine gegenseitige Abhängigkeit bestehen.
+Es kann also eine gegenseitige
+Abhängigkeit bestehen.
 
 00:35:53,100 --> 00:35:57,220
-In diesem Fall ist das nicht der Fall, aber es könnte
-im Allgemeinen sein.
+In diesem Fall ist das nicht der Fall,
+aber es könnte im Allgemeinen sein.
 
 00:35:57,220 --> 00:36:00,270
 Schauen wir uns nun ein Beispiel an.
 
 00:36:00,270 --> 00:36:04,160
-Was möchte ich zum Beispiel wissen, wenn ich einen Wert von
-dem Typ Verbindung
+Was möchte ich zum Beispiel wissen, wenn
+ich einen Wert von dem Typ Verbindung
 
 00:36:04,160 --> 00:36:08,701
 habe? Natürlich wird es jetzt etwas komplizierter,
@@ -1925,16 +1958,16 @@ diese Werte zu konstruieren, weil sie
 nur Konstanten wie Montag, Dienstag usw. sind.
 
 00:36:11,660 --> 00:36:15,540
-Ein Wert dieses Typs wäre entweder ein Zug
-oder ein Flug.
+Ein Wert dieses Typs wäre
+entweder ein Zug oder ein Flug.
 
 00:36:15,540 --> 00:36:19,270
-Nehmen wir also an, wir wollen einen Wert für
-Zug.
+Nehmen wir also an, wir
+wollen einen Wert für Zug.
 
 00:36:19,270 --> 00:36:26,010
-Dann wäre Train der Name, der erscheint...
-der Name des Konstruktors (nur Montag, Dienstag)
+Dann wäre Train der Name, der erscheint... der
+Name des Konstruktors (nur Montag, Dienstag)
 
 00:36:26,010 --> 00:36:28,130
 was wir als Konstante verwenden.
@@ -1946,34 +1979,35 @@ Und jetzt ist dies natürlich eine Funktion.
 Sie benötigt also drei Argumente.
 
 00:36:30,960 --> 00:36:33,890
-Das erste Argument ist ein Datum, das
-so aufgebaut ist.
+Das erste Argument ist ein
+Datum, das so aufgebaut ist.
 
 00:36:33,890 --> 00:36:40,050
-Es wird also etwas mit dem Konstruktor
-'Day' und dann drei Zahlen, dann zwei Zeiten,
+Es wird also etwas mit dem Konstruktor 'Day'
+und dann drei Zahlen, dann zwei Zeiten,
 
 00:36:40,050 --> 00:36:44,700
-und zwar von der Form Stunde und einer Zahl (Integer).
+und zwar von der Form Stunde
+und einer Zahl (Integer).
 
 00:36:44,700 --> 00:36:49,540
-Ein möglicher Wert dieses Verbindungstyps könnte
-wie folgt aussehen.
+Ein möglicher Wert dieses Verbindungstyps
+könnte wie folgt aussehen.
 
 00:36:49,540 --> 00:36:51,550
 Dies folgt diesem Schema.
 
 00:36:51,550 --> 00:36:57,120
-Es ist Train... und dass ich Train verwendet habe, sagt
-mir, dass ich hier drei Argumente brauche.
+Es ist Train... und dass ich Train verwendet habe,
+sagt mir, dass ich hier drei Argumente brauche.
 
 00:36:57,120 --> 00:37:00,280
-Und wie sähen die Typen aus, wenn ich stattdessen geschrieben hätte
-Flug hier stattdessen geschrieben hätte?
+Und wie sähen die Typen aus, wenn ich stattdessen
+geschrieben hätte Flug hier stattdessen geschrieben hätte?
 
 00:37:00,280 --> 00:37:04,670
-Dann bräuchten wir drei Argumente, und es
-sollte hier zusätzlich ein String (Zeichenkette) stehen.
+Dann bräuchten wir drei Argumente, und es sollte
+hier zusätzlich ein String (Zeichenkette) stehen.
 
 00:37:04,670 --> 00:37:06,250
 Aber für Train habe ich drei Argumente.
@@ -1982,15 +2016,16 @@ Aber für Train habe ich drei Argumente.
 Das erste ist ein Datum.
 
 00:37:07,990 --> 00:37:11,540
-Und ein Datum ist ein Tag mit drei Zahlen, wie
-wir hier sehen.
+Und ein Datum ist ein Tag mit
+drei Zahlen, wie wir hier sehen.
 
 00:37:11,540 --> 00:37:15,960
-Und die beiden Times sind Dinge der Form Hour
-und eine Zahl (Integer).
+Und die beiden Times sind Dinge der
+Form Hour und eine Zahl (Integer).
 
 00:37:15,960 --> 00:37:17,880
-Und jetzt kann das natürlich verschachtelt werden.
+Und jetzt kann das natürlich
+verschachtelt werden.
 
 00:37:17,880 --> 00:37:19,560
 Und das entspricht den Bäumen.
@@ -2004,12 +2039,13 @@ Aber geschrieben als Wert im Interpreter,
 zum Beispiel, oder im Code, wäre das einfach
 
 00:37:31,480 --> 00:37:40,000
-so, wenn man sie als Funktionen auf Argumenten betrachtet.
+so, wenn man sie als Funktionen
+auf Argumenten betrachtet.
 
 132 # slide
 00:37:40,000 --> 00:37:45,480
-Wie können wir dann mit solchen Werten rechnen... Werte
-dieser Art, die wir gerade gesehen haben?
+Wie können wir dann mit solchen Werten rechnen...
+Werte dieser Art, die wir gerade gesehen haben?
 
 00:37:45,480 --> 00:37:47,490
 Durch etwas, das man Pattern-Matching nennt.
@@ -2018,19 +2054,19 @@ Durch etwas, das man Pattern-Matching nennt.
 Das ist das Konzept, das hier zugrunde liegt.
 
 00:37:52,420 --> 00:37:55,860
-Und das ist etwas, das wir schon oft gesehen haben,
-aber wir haben es nur auf
+Und das ist etwas, das wir schon oft
+gesehen haben, aber wir haben es nur auf
 
 00:37:55,860 --> 00:38:01,310
-Werte ... wie dieses 'aTile' von Block ist
-gleich etwas.
+Werte ... wie dieses 'aTile'
+von Block ist gleich etwas.
 
 00:38:01,310 --> 00:38:02,700
 Es war bereits ein Pattern-Match.
 
 00:38:02,700 --> 00:38:09,630
-Es wurde mit einem konstanten Pattern abgeglichen: Block
-oder Perle, usw. wie bei Wochentagen und auch
+Es wurde mit einem konstanten Pattern abgeglichen:
+Block oder Perle, usw. wie bei Wochentagen und auch
 
 00:38:09,630 --> 00:38:11,000
 für Zahlen, vorher.
@@ -2047,19 +2083,20 @@ für eine Verbindung ist, könnten wir sagen: Was
 ist eine Verbindung?
 
 00:38:23,261 --> 00:38:25,080
-Eine Verbindung ist entweder ein Zug oder ein Flug.
+Eine Verbindung ist entweder
+ein Zug oder ein Flug.
 
 00:38:25,080 --> 00:38:28,100
-Das besagt die vorherige Definition von
-der vorigen Folie.
+Das besagt die vorherige
+Definition von der vorigen Folie.
 
 00:38:28,100 --> 00:38:34,300
-Sie wissen auch, dass ein Zug
-drei Argumente hat: ein Datum, das wir vielleicht
+Sie wissen auch, dass ein Zug drei
+Argumente hat: ein Datum, das wir vielleicht
 
 00:38:34,300 --> 00:38:37,280
-ignorieren wollen, wenn wir berechnen wollen, wie lange
-die Reise dauert.
+ignorieren wollen, wenn wir berechnen
+wollen, wie lange die Reise dauert.
 
 00:38:37,280 --> 00:38:41,830
 Es hängt nicht wirklich von dem Datum ab,
@@ -2081,8 +2118,8 @@ die Abfahrt als 'd' und die Ankunft als
 minus der Abfahrtsstunde, plus eins, denn
 
 00:38:57,410 --> 00:39:01,020
-man braucht etwas Zeit, um zum Bahnhof zu kommen
-oder etwas Ähnliches.
+man braucht etwas Zeit, um zum Bahnhof
+zu kommen oder etwas Ähnliches.
 
 00:39:01,020 --> 00:39:06,670
 Dies ist also eine Alternative, denn Connection
@@ -2092,11 +2129,12 @@ hat eine Alternative: es könnte ein Zug sein, und
 es könnte auch ein Flug sein.
 
 00:39:07,770 --> 00:39:09,850
-Wir sollten also noch einen weiteren Fall schreiben.
+Wir sollten also noch einen
+weiteren Fall schreiben.
 
 00:39:09,850 --> 00:39:12,850
-Also einen Fall für die travelTime-Funktion für
-Flugverbindungen.
+Also einen Fall für die
+travelTime-Funktion für Flugverbindungen.
 
 00:39:12,850 --> 00:39:19,080
 Und die Beschreibung/Definition dieses
@@ -2116,15 +2154,15 @@ davon abhängt.
 Auch das Datum sollte nicht relevant sein.
 
 00:39:28,380 --> 00:39:34,550
-Wir haben Abflug- und Ankunftszeiten, aber für
-einen Flug müssen wir zwei Stunden für die Anreise zum
+Wir haben Abflug- und Ankunftszeiten, aber für einen
+Flug müssen wir zwei Stunden für die Anreise zum
 
 00:39:34,550 --> 00:39:37,310
 Flughafen und zum Einchecken usw.
 
 00:39:37,310 --> 00:39:44,390
-Dies könnte also eine anschauliche Erklärung dafür sein,
-wie 'travelTime' ins Spiel kommt / definiert wird
+Dies könnte also eine anschauliche Erklärung dafür
+sein, wie 'travelTime' ins Spiel kommt / definiert wird
 
 00:39:44,390 --> 00:39:47,370
 bei Zügen und Flügen.
@@ -2133,54 +2171,55 @@ bei Zügen und Flügen.
 Ist dies eine vollständige Fallunterscheidung?
 
 00:39:48,480 --> 00:39:53,030
-Ja, das ist sie, denn der Typ Verbindung hat
-genau diese beiden Alternativen.
+Ja, das ist sie, denn der Typ Verbindung
+hat genau diese beiden Alternativen.
 
 00:39:53,030 --> 00:39:57,880
-Und der Compiler wird dafür sorgen, dass wir hier
-nichts vergessen.
+Und der Compiler wird dafür sorgen,
+dass wir hier nichts vergessen.
 
 00:39:57,880 --> 00:40:02,430
 Wenn Sie also nur die erste Zeile geschrieben hätten,
 dann könnte der Compiler warnen und fragen: Sie
 
 00:40:02,430 --> 00:40:07,320
-sagen, Sie haben eine Funktion 'travelTime'
-von 'Connection' zu 'Integer' definiert, aber Sie haben sie nur
+sagen, Sie haben eine Funktion 'travelTime' von
+'Connection' zu 'Integer' definiert, aber Sie haben sie nur
 
 00:40:07,320 --> 00:40:12,650
-für einige Pattern definiert, nämlich für Train,
-nicht für Flug.
+für einige Pattern definiert,
+nämlich für Train, nicht für Flug.
 
 00:40:12,650 --> 00:40:15,230
-An dieser Stelle kommt der Beschreibungswert ins
-Spiel.
+An dieser Stelle kommt der
+Beschreibungswert ins Spiel.
 
 00:40:15,230 --> 00:40:16,640
 Auch überlappende Pattern.
 
 00:40:16,640 --> 00:40:22,650
-Wenn wir also zwei Möglichkeiten haben,
-etwas über Zug zu sagen, was aus irgendeinem Grund
+Wenn wir also zwei Möglichkeiten haben, etwas
+über Zug zu sagen, was aus irgendeinem Grund
 
 00:40:22,650 --> 00:40:27,060
 relevant sein könnte, denn wenn vielleicht die Stunde
 12 ist, also wenn man mittags anfängt, aus irgendeinem
 
 00:40:27,060 --> 00:40:29,630
-Grund, dann muss dieser Summand anders sein,
-oder was auch immer.
+Grund, dann muss dieser Summand
+anders sein, oder was auch immer.
 
 00:40:29,630 --> 00:40:32,550
-Man könnte sich hier also weitere Fälle ausdenken.
+Man könnte sich hier also
+weitere Fälle ausdenken.
 
 00:40:32,550 --> 00:40:38,000
 Und dann könnte der Compiler prüfen, dass wir
 keine Redundanz haben. Wir haben nicht irgendeinen
 
 00:40:38,000 --> 00:40:44,380
-Fall, der von zwei verschiedenen
-Zeilen abgedeckt wird, und es ergibt keinen Sinn, eine
+Fall, der von zwei verschiedenen Zeilen
+abgedeckt wird, und es ergibt keinen Sinn, eine
 
 00:40:44,380 --> 00:40:51,080
 solche Definition zu haben, dank dieser präzisen
@@ -2208,20 +2247,20 @@ die Auswahl von Teilen des Baums, wenn wir einen Wert
 mit einem Wert.
 
 00:41:19,840 --> 00:41:26,050
-Und zur gleichen Zeit, abgesehen von der
-Rolle der Datenkonstrukteure, die als Namen dienen,
+Und zur gleichen Zeit, abgesehen von der Rolle
+der Datenkonstrukteure, die als Namen dienen,
 
 00:41:26,050 --> 00:41:30,460
-bei diesem Pattern-Matching, sind sie auch noch
-Funktionen, wie ich bereits sagte.
+bei diesem Pattern-Matching, sind sie auch
+noch Funktionen, wie ich bereits sagte.
 
 00:41:30,460 --> 00:41:33,950
-Diese Datenkonstruktoren haben diese doppelte Rolle:
-Sie sind Dinge, die wir mit
+Diese Datenkonstruktoren haben diese
+doppelte Rolle: Sie sind Dinge, die wir mit
 
 00:41:33,950 --> 00:41:38,140
-in einer Definition wie dieser, aber sie sind auch
-Konstrukteure von Daten.
+in einer Definition wie dieser, aber
+sie sind auch Konstrukteure von Daten.
 
 00:41:38,140 --> 00:41:40,010
 Sie sind normale Funktionen.
@@ -2230,8 +2269,8 @@ Sie sind normale Funktionen.
 Hier sind ihre Typen.
 
 00:41:41,520 --> 00:41:50,440
-Wie ich bereits sagte, wird ein Datum immer konstruiert
-von 'Day' mit drei Argumenten, nämlich drei
+Wie ich bereits sagte, wird ein Datum immer
+konstruiert von 'Day' mit drei Argumenten, nämlich drei
 
 00:41:50,440 --> 00:41:51,440
 Ganzzahlen.
@@ -2251,37 +2290,38 @@ auf diese drei Argumente.
 Genauso sind Train und Flight Funktionen.
 
 00:42:07,590 --> 00:42:11,990
-So gibt es zum Beispiel zwei verschiedene Möglichkeiten,
-um Verbindungen zu konstruieren.
+So gibt es zum Beispiel zwei verschiedene
+Möglichkeiten, um Verbindungen zu konstruieren.
 
 00:42:11,990 --> 00:42:14,260
 Eine davon ist der Train-Konstruktor.
 
 00:42:14,260 --> 00:42:19,750
-Und die Typdefinition für Connection sagt
-uns, dass Train drei Argumente hat: Datum, Zeit,
+Und die Typdefinition für Connection sagt uns,
+dass Train drei Argumente hat: Datum, Zeit,
 
 00:42:19,750 --> 00:42:20,900
 Zeit.
 
 00:42:20,900 --> 00:42:25,170
-Also ist Train eigentlich eine Funktion dieses
-Typs.
+Also ist Train eigentlich
+eine Funktion dieses Typs.
 
 00:42:25,170 --> 00:42:31,040
 Sie kann verwendet werden, um Werte des Typs
 Verbindung zu konstruieren, aber sie kann auch auf jede
 
 00:42:31,040 --> 00:42:32,890
-andere Art und Weise, wie Funktionen verwendet werden können.
+andere Art und Weise, wie
+Funktionen verwendet werden können.
 
 00:42:32,890 --> 00:42:38,480
 Wenn wir also an die Funktionen höherer Ordnung zurückdenken,
 von letzter Woche: diese Konstruktoren 'Day' und
 
 00:42:38,480 --> 00:42:44,860
-'Train', sie könnten auch Argumente für Funktionen höherer Ordnung sein,
-wenn wir etwas haben, das
+'Train', sie könnten auch Argumente für Funktionen
+höherer Ordnung sein, wenn wir etwas haben, das
 
 00:42:44,860 --> 00:42:50,130
 entweder polymorph oder mit konkreten Typen
@@ -2291,8 +2331,8 @@ etwas von dieser Form mit drei Argumenten
 und einem Ergebnis.
 
 00:42:51,130 --> 00:42:56,350
-Sie haben also alle Rechte, die eine normale Funktion
-hat, auch wenn wir sie nicht mit
+Sie haben also alle Rechte, die eine normale
+Funktion hat, auch wenn wir sie nicht mit
 
 00:42:56,350 --> 00:42:57,350
 Funktionsdefinitionen.
@@ -2305,19 +2345,19 @@ eingeführt, wenn der Typ Verbindung oder der
 Typ Datum definiert wird.
 
 00:43:03,280 --> 00:43:07,950
-Sie sind keine nutzerdefinierten Funktionen, per se,
-wie es Funktionen wie diese sind.
+Sie sind keine nutzerdefinierten Funktionen,
+per se, wie es Funktionen wie diese sind.
 
 00:43:07,950 --> 00:43:12,940
-Aber sie sind einfach Funktionen, die
-auf jede Art und Weise verwendet werden können, die Haskell für eine Funktion
+Aber sie sind einfach Funktionen, die auf jede Art und
+Weise verwendet werden können, die Haskell für eine Funktion
 
 00:43:12,940 --> 00:43:14,230
 verwenden kann.
 
 00:43:14,230 --> 00:43:21,070
-Und das ist wichtig für die Strukturierung von Programmen
-und um alle Möglichkeiten sinnvoll zu nutzen,
+Und das ist wichtig für die Strukturierung von
+Programmen und um alle Möglichkeiten sinnvoll zu nutzen,
 
 00:43:21,070 --> 00:43:21,670
 die wir haben.

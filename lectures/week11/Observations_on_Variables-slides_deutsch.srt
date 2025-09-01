@@ -14,26 +14,27 @@ dem Ende des vorherigen Videos.
 Und was wir dort gesehen haben.
 
 00:00:16,800 --> 00:00:22,880
-Und ich habe dies bereits kommentiert, dass es natürlich
-keinen Widerspruch oder
+Und ich habe dies bereits kommentiert,
+dass es natürlich keinen Widerspruch oder
 
 00:00:22,880 --> 00:00:32,960
-Interferenz zwischen einer Variablenverwendung in
-der Abfrage hier und in der Regel in einem Programm gibt.
+Interferenz zwischen einer Variablenverwendung in der
+Abfrage hier und in der Regel in einem Programm gibt.
 
 00:00:32,960 --> 00:00:33,520
 Oder?
 
 00:00:33,520 --> 00:00:36,400
-Dass wir X hier und X hier haben, ist kein Problem,
+Dass wir X hier und X hier
+haben, ist kein Problem,
 
 00:00:36,400 --> 00:00:40,640
-genauso wie in Haskell oder anderen
-Sprachen haben Variablen einen Geltungsbereich.
+genauso wie in Haskell oder anderen Sprachen
+haben Variablen einen Geltungsbereich.
 
 00:00:40,640 --> 00:00:44,160
-Und normalerweise ist der Geltungsbereich zum
-Beispiel über eine Funktionsdefinition.
+Und normalerweise ist der Geltungsbereich
+zum Beispiel über eine Funktionsdefinition.
 
 00:00:44,160 --> 00:00:46,160
 Also, dieses X und Y sind dieses X und Y.
@@ -46,8 +47,8 @@ Man könnte sich diese X und Y so vorstellen,
 einige werden umbenannt in X′ und
 
 00:00:52,000 --> 00:00:56,560
-Y′ umbenannt werden, wenn Sie sicherstellen wollen, dass
-man dieses X nicht mit jenem X verwechselt.
+Y′ umbenannt werden, wenn Sie sicherstellen wollen,
+dass man dieses X nicht mit jenem X verwechselt.
 
 00:00:56,560 --> 00:00:57,760
 Aber das müssen Sie nicht tun,
@@ -57,8 +58,8 @@ das wird vom Laufzeitsystem erledigt,
 genauso wie in anderen Sprachen auch.
 
 00:01:01,040 --> 00:01:03,680
-Okay, das ist also etwas,
-das nicht neu oder überraschend ist.
+Okay, das ist also etwas, das
+nicht neu oder überraschend ist.
 
 00:01:04,720 --> 00:01:07,920
 Außerdem sollte es selbstverständlich
@@ -79,24 +80,24 @@ Nochmals, Standardpraxis.
 Okay.
 
 00:01:25,120 --> 00:01:31,760
-Gleichermaßen können verschiedene Variablen
-aber sie müssen nicht verschiedene Objekte repräsentieren.
+Gleichermaßen können verschiedene Variablen aber sie
+müssen nicht verschiedene Objekte repräsentieren.
 
 00:01:31,760 --> 00:01:34,960
-Ja, deshalb mussten wir diese
-explizite Einschränkung hier hinzufügen.
+Ja, deshalb mussten wir diese explizite
+Einschränkung hier hinzufügen.
 
 00:01:34,960 --> 00:01:38,320
 Denn wenn wir das nicht täten, dann würde trotz
 der Tatsache, dass wir hier X und Y haben,
 
 00:01:38,320 --> 00:01:42,800
-könnten sie natürlich dieselbe
-Entität in einer konkreten Instanziierung sein.
+könnten sie natürlich dieselbe Entität
+in einer konkreten Instanziierung sein.
 
 00:01:44,400 --> 00:01:49,280
-Nochmals, genau wie bei einer funktionalen
-Prozedur in einer anderen Sprache haben, und Sie haben
+Nochmals, genau wie bei einer funktionalen Prozedur
+in einer anderen Sprache haben, und Sie haben
 
 00:01:49,280 --> 00:01:53,040
 zwei Argumentvariablen, auch wenn,
@@ -119,25 +120,28 @@ Und wahrscheinlich auch in anderen Sprachen,
 die Sie betrachtet oder gesehen haben.
 
 00:02:08,400 --> 00:02:10,000
-Das ist der Grund, warum die letzten beiden Punkte rot markiert sind.
+Das ist der Grund, warum die letzten
+beiden Punkte rot markiert sind.
 
 00:02:10,000 --> 00:02:14,960
-Weil sie etwas sind, dessen man sich wirklich
-bewusst sein und sich darum kümmern, vorsichtig damit sein.
+Weil sie etwas sind, dessen man sich wirklich bewusst
+sein und sich darum kümmern, vorsichtig damit sein.
 
 00:02:15,680 --> 00:02:19,360
 Es ist also möglich, mehrere Vorkommen
 der gleichen Variable im Kopf einer Regel.
 
 00:02:19,360 --> 00:02:21,280
-Das hatten wir hier nicht, wir haben X und Y verwendet.
+Das hatten wir hier nicht,
+wir haben X und Y verwendet.
 
 00:02:21,280 --> 00:02:22,960
-Aber wir hätten hier auch X und X verwenden können.
+Aber wir hätten hier auch
+X und X verwenden können.
 
 00:02:24,640 --> 00:02:29,280
-Okay, wir könnten also eine Regel der
-Form "jealous(X, X)" unter bestimmten Bedingungen.
+Okay, wir könnten also eine Regel der Form
+"jealous(X, X)" unter bestimmten Bedingungen.
 
 00:02:30,080 --> 00:02:30,580
 Okay.
@@ -147,8 +151,8 @@ Und dann, natürlich, würden sie durch diese
 Interpretation, durch diese Beobachtung, dann müssten sie
 
 00:02:36,800 --> 00:02:44,880
-wirklich auf dasselbe Objekt beziehen müssen in
-allen Aufrufen für diese Regel oder Tatsache oder was auch immer.
+wirklich auf dasselbe Objekt beziehen müssen in allen
+Aufrufen für diese Regel oder Tatsache oder was auch immer.
 
 00:02:46,000 --> 00:02:48,800
 Okay, und das ist jetzt wirklich
@@ -162,8 +166,8 @@ Diskussion darüber in einigen ihrer frühen
 Videos, dass wenn man eine Funktion, wie
 
 00:02:55,520 --> 00:03:01,360
-f, mit einigen Argumenten definiert, dann kann man nicht eine Regel
-der Form "f von x und x ist gleich etwas" haben, richtig?
+f, mit einigen Argumenten definiert, dann kann man nicht eine
+Regel der Form "f von x und x ist gleich etwas" haben, richtig?
 
 00:03:01,360 --> 00:03:03,840
 Man kann das mit Guards ausdrücken,
@@ -173,30 +177,32 @@ mit explizitem Ausdruck.
 Also, zwei verschiedene Variablen verwenden
 
 00:03:05,760 --> 00:03:09,360
-und dann explizit verlangen, dass die
-Werte gleich sein sollen, usw.
+und dann explizit verlangen, dass
+die Werte gleich sein sollen, usw.
 
 00:03:09,360 --> 00:03:13,040
 Aber man kann nicht syntaktisch schreiben
 "f von x und x ist gleich etwas".
 
 00:03:13,040 --> 00:03:17,760
-Und genauso ist es in anderen Sprachen,
-sei es Python, sei es Java, was auch immer,
+Und genauso ist es in anderen Sprachen, sei
+es Python, sei es Java, was auch immer,
 
 00:03:17,760 --> 00:03:22,400
-wenn Sie eine Prozedur definieren und
-Sie geben die Signatur oder die Argumente an,
+wenn Sie eine Prozedur definieren und Sie
+geben die Signatur oder die Argumente an,
 
 00:03:22,400 --> 00:03:24,720
-dann wird von Ihnen erwartet, dass Sie verschiedene Variablen verwenden.
+dann wird von Ihnen erwartet, dass
+Sie verschiedene Variablen verwenden.
 
 00:03:24,720 --> 00:03:32,720
-Man schreibt nicht f, oder einen anderen Namen, und dann
-ein x : Int und x : Bool oder etwas Ähnliches.
+Man schreibt nicht f, oder einen anderen Namen, und
+dann ein x : Int und x : Bool oder etwas Ähnliches.
 
 00:03:32,720 --> 00:03:34,480
-Ja, man muss unterschiedliche Variablennamen verwenden.
+Ja, man muss unterschiedliche
+Variablennamen verwenden.
 
 00:03:34,480 --> 00:03:35,600
 In Prolog, nicht so,
@@ -206,8 +212,8 @@ können Sie sogar denselben Variablennamen
 mehrmals im Kopf einer Regel verwenden, okay?
 
 00:03:40,560 --> 00:03:45,840
-Und wir werden sehen müssen, was das für die Auswertung bedeutet,
-zum Beispiel für das Rechnen.
+Und wir werden sehen müssen, was das für die
+Auswertung bedeutet, zum Beispiel für das Rechnen.
 
 00:03:47,040 --> 00:03:48,960
 Okay, aber es ist syntaktisch erlaubt.
@@ -216,50 +222,50 @@ Okay, aber es ist syntaktisch erlaubt.
 Okay, das ist wichtig.
 
 00:03:51,120 --> 00:03:54,640
-Und vielleicht ist es zumindest überraschend,
-und zumindest ist es wichtig.
+Und vielleicht ist es zumindest
+überraschend, und zumindest ist es wichtig.
 
 00:03:55,840 --> 00:03:57,840
 Auf der rechten Seite einer Regel, wie hier,
 
 00:03:57,840 --> 00:04:00,160
-können Sie tatsächlich Variablen haben,
-die nicht im Kopf vorkommen.
+können Sie tatsächlich Variablen
+haben, die nicht im Kopf vorkommen.
 
 00:04:00,720 --> 00:04:08,800
 Auch das ist etwas, das in Haskell ungewöhnlich
 ist. Wenn man f von x und y definiert, ist etwas
 
 00:04:09,440 --> 00:04:13,040
-gleich etwas, dann sollten Sie auf der rechten Seite
-nur Dinge verwenden, die bereits im Gültigkeitsbereich sind.
+gleich etwas, dann sollten Sie auf der rechten Seite nur
+Dinge verwenden, die bereits im Gültigkeitsbereich sind.
 
 00:04:13,040 --> 00:04:17,440
 Sie können natürlich x und y verwenden, Sie können
 globale Werte, globale Konstanten verwenden.
 
 00:04:17,440 --> 00:04:21,440
-Aber Sie können nicht ein z verwenden, das einfach
-an dieser Stelle zum ersten Mal auftaucht.
+Aber Sie können nicht ein z verwenden, das
+einfach an dieser Stelle zum ersten Mal auftaucht.
 
 00:04:21,440 --> 00:04:22,880
 Das wäre sehr merkwürdig.
 
 00:04:22,880 --> 00:04:27,920
-Und auch in anderen Sprachen, wenn Sie eine
-Prozedur in Java definiert haben, und diese hat Argumente x und y,
+Und auch in anderen Sprachen, wenn Sie eine Prozedur in
+Java definiert haben, und diese hat Argumente x und y,
 
 00:04:27,920 --> 00:04:32,480
-dann kann man nicht irgendwie aus dem Rumpf der Methode
-auf ein unbekanntes z zugreifen.
+dann kann man nicht irgendwie aus dem Rumpf
+der Methode auf ein unbekanntes z zugreifen.
 
 00:04:33,360 --> 00:04:36,560
-Sie können eine lokale Variable haben, aber dann
-muss sie an diesem Punkt eingeführt werden.
+Sie können eine lokale Variable haben, aber
+dann muss sie an diesem Punkt eingeführt werden.
 
 00:04:36,560 --> 00:04:41,760
-Sie ist nicht etwas, das sich irgendwie auf
-eine unbekannte Sache verweist, die nicht einmal im Gültigkeitsbereich ist.
+Sie ist nicht etwas, das sich irgendwie auf eine unbekannte
+Sache verweist, die nicht einmal im Gültigkeitsbereich ist.
 
 00:04:41,760 --> 00:04:42,000
 Okay?
@@ -276,19 +282,20 @@ Das ist eigentlich das Thema der nächsten Folie.
 
 10 # slide
 00:04:58,800 --> 00:05:02,800
-Also, Variablen, die gewissermaßen aus dem Nichts entstehen,
+Also, Variablen, die gewissermaßen
+aus dem Nichts entstehen,
 
 00:05:02,800 --> 00:05:06,080
-aus dem Nichts auftauchen, nennt man freie
-Variablen in Prolog, richtig?
+aus dem Nichts auftauchen, nennt man
+freie Variablen in Prolog, richtig?
 
 00:05:06,080 --> 00:05:11,480
-Sie sind frei in dem Sinne, dass sie nicht
-durch den Kopf hier oder durch irgendetwas anderes gebunden sind.
+Sie sind frei in dem Sinne, dass sie nicht durch den
+Kopf hier oder durch irgendetwas anderes gebunden sind.
 
 00:05:11,480 --> 00:05:15,520
-Sie erscheinen einfach nur in der rechten Hand
-der Regel und sind nirgendwo gebunden.
+Sie erscheinen einfach nur in der rechten
+Hand der Regel und sind nirgendwo gebunden.
 
 00:05:15,520 --> 00:05:16,400
 Sie sind also frei.
@@ -300,7 +307,8 @@ Wie sollten sie nun interpretiert werden?
 Wie sollte Z in diesem Fall interpretiert werden?
 
 00:05:21,040 --> 00:05:23,840
-Oder wie sollte die ganze Regel interpretiert werden?
+Oder wie sollte die ganze
+Regel interpretiert werden?
 
 00:05:24,560 --> 00:05:29,200
 Okay, um darüber nachzudenken, können wir
@@ -311,8 +319,8 @@ Also, das alles, das sind irgendwie
 Prädikate, und wir haben Variablen.
 
 00:05:34,080 --> 00:05:37,200
-In der Logik würde man also über
-den Quantor für diese Variable nachdenken.
+In der Logik würde man also über den
+Quantor für diese Variable nachdenken.
 
 00:05:37,200 --> 00:05:40,960
 Also, irgendwie implizit, zumindest muss es einen
@@ -323,7 +331,8 @@ oder "für alle Z", oder "existiert Z" oder was auch immer, also,
 vielleicht ein paar vernünftige Ideen, über die man nachdenken kann.
 
 00:05:46,160 --> 00:05:48,800
-Nun, wie wird dieses Z in einem logischen Sinn eingeführt?
+Nun, wie wird dieses Z in einem
+logischen Sinn eingeführt?
 
 00:05:49,440 --> 00:05:51,840
 Und da gibt es verschiedene Möglichkeiten.
@@ -333,8 +342,8 @@ Und wir müssen wissen, welche
 diejenige ist, die Prolog verwendet.
 
 00:05:55,520 --> 00:05:58,560
-Das wird erklären, welche Rolle
-freie Variablen spielen.
+Das wird erklären, welche
+Rolle freie Variablen spielen.
 
 00:05:58,560 --> 00:05:59,280
 Und wir haben, natürlich,
@@ -344,19 +353,19 @@ irgendwie aus dem vorherigen Beispiel, oder aus
 diesem Beispiel, wie vorher schon besprochen,
 
 00:06:04,640 --> 00:06:11,120
-eine Idee, was wir damit ausdrücken wollen, um wirklich
-Eifersucht bedeuten soll, und dann werden wir sehen, dass Prolog tatsächlich
+eine Idee, was wir damit ausdrücken wollen, um wirklich Eifersucht
+bedeuten soll, und dann werden wir sehen, dass Prolog tatsächlich
 
 00:06:11,120 --> 00:06:13,520
 genau diese Interpretation hat.
 
 00:06:13,520 --> 00:06:16,640
-Aber das lässt sich dann
-von diesem Beispiel auf andere Fälle übertragen.
+Aber das lässt sich dann von diesem
+Beispiel auf andere Fälle übertragen.
 
 00:06:17,280 --> 00:06:20,160
-Okay, also eine Möglichkeit, darüber nachzudenken
-diesen Weg wäre wie folgt.
+Okay, also eine Möglichkeit, darüber
+nachzudenken diesen Weg wäre wie folgt.
 
 00:06:20,160 --> 00:06:24,320
 Also, sagen wir mal, die X und Y, die sind
@@ -367,7 +376,8 @@ Prädikat, können wir natürlich sagen, sie
 sind willkürlich oder irgendwie quantifiziert,
 
 00:06:28,080 --> 00:06:31,280
-aber für einen bestimmten Aufruf dann festgelegt, richtig?
+aber für einen bestimmten
+Aufruf dann festgelegt, richtig?
 
 00:06:31,280 --> 00:06:35,600
 Also, wir nennen "jealous" vielleicht
@@ -381,7 +391,8 @@ Aufrufe sind sie dann auf zwei Argumente festgelegt.
 Okay, was ist dann mit dem Z?
 
 00:06:45,360 --> 00:06:49,120
-Es sollte eingeführt werden, wenn wir diese Regel verwenden.
+Es sollte eingeführt werden,
+wenn wir diese Regel verwenden.
 
 00:06:50,560 --> 00:06:51,060
 Nun.
@@ -391,7 +402,8 @@ Und eine Möglichkeit, darüber nachzudenken, wäre
 zu sagen, nun, lasst uns das Z quantifizieren.
 
 00:06:58,320 --> 00:07:01,120
-Quantifizieren wir es universell, es ist also willkürlich.
+Quantifizieren wir es universell,
+es ist also willkürlich.
 
 00:07:01,120 --> 00:07:01,680
 Es ist frei.
@@ -400,26 +412,27 @@ Es ist frei.
 Für jede Wahl von Z kann also etwas gelten.
 
 00:07:05,600 --> 00:07:09,760
-Und dann kann man das als
-Vorbedingung für diese Regel verwenden, oder?
+Und dann kann man das als Vorbedingung
+für diese Regel verwenden, oder?
 
 00:07:09,760 --> 00:07:12,960
 Aus der dann etwas anderes abgeleitet wird.
 
 00:07:12,960 --> 00:07:14,960
-Denn eine Möglichkeit, darüber nachzudenken, wäre zu sagen,
+Denn eine Möglichkeit, darüber
+nachzudenken, wäre zu sagen,
 
 00:07:14,960 --> 00:07:18,800
-na ja, wenn für jede Wahl von
-Z, denn Z ist hier frei.
+na ja, wenn für jede Wahl
+von Z, denn Z ist hier frei.
 
 00:07:18,800 --> 00:07:21,680
 Wenn für jede Wahl von Z,
 gilt die rechte Seite.
 
 00:07:21,680 --> 00:07:26,800
-Also, liebt(X,Z) und liebt(Y,Z) und X ist anders
-von Y, was man überprüfen könnte.
+Also, liebt(X,Z) und liebt(Y,Z) und X ist
+anders von Y, was man überprüfen könnte.
 
 00:07:28,080 --> 00:07:30,480
 Dann sollte auch der Kopf gelten.
@@ -436,16 +449,19 @@ die wir über X und Y herausfinden wollten.
 Okay, das ist eine mögliche Interpretation.
 
 00:07:44,320 --> 00:07:46,640
-Es gibt eine andere, die wiederum sagen könnte, na ja,
+Es gibt eine andere, die
+wiederum sagen könnte, na ja,
 
 00:07:47,440 --> 00:07:51,840
-für beliebige, aber feste X und Y, nehmen wir diesen Ansatz.
+für beliebige, aber feste X und
+Y, nehmen wir diesen Ansatz.
 
 00:07:51,840 --> 00:07:54,240
 Also etwas, das wiederum universell ist.
 
 00:07:54,240 --> 00:07:58,640
-Also, für jede Wahl von Z. Weil es frei ist, können wir alles wählen, was wir wollen.
+Also, für jede Wahl von Z. Weil es frei ist,
+können wir alles wählen, was wir wollen.
 
 00:07:58,640 --> 00:08:00,800
 Wenn es der Fall ist, dass die rechte Seite gilt.
@@ -455,71 +471,88 @@ Also, wenn es der Fall ist, dass X Z liebt
 und Y Z liebt und X verschieden ist von Y,
 
 00:08:05,120 --> 00:08:09,440
-dann wissen wir auch, dass diese Hauptaussage gilt.
+dann wissen wir auch, dass
+diese Hauptaussage gilt.
 
 00:08:11,600 --> 00:08:16,480
-Okay, jetzt eine andere Sache, von der man sich selbst überzeugen
-muss. Vielleicht muss man
+Okay, jetzt eine andere Sache, von der man sich
+selbst überzeugen muss. Vielleicht muss man
 
 00:08:16,480 --> 00:08:21,200
-an die logische Interpretation zurückdenken, oder wie Quantoren und Implikationen
+an die logische Interpretation zurückdenken,
+oder wie Quantoren und Implikationen
 
 00:08:21,200 --> 00:08:25,840
-et cetera in der formalen Logik funktionieren. Sagt das wirklich etwas anderes aus?
+et cetera in der formalen Logik funktionieren.
+Sagt das wirklich etwas anderes aus?
 
 00:08:25,840 --> 00:08:26,800
 Sind das zwei verschiedene Dinge?
 
 00:08:26,800 --> 00:08:32,000
-Nun, es ist technisch gesehen, wenn es geschrieben wird, es scheint einen kleinen Unterschied in dem Sinne zu geben, dass
+Nun, es ist technisch gesehen, wenn es geschrieben wird, es
+scheint einen kleinen Unterschied in dem Sinne zu geben, dass
 
 00:08:32,000 --> 00:08:35,440
-in der Reihenfolge der Implikation oder die Verschachtelung der Implikation,
+in der Reihenfolge der Implikation oder
+die Verschachtelung der Implikation,
 
 00:08:35,440 --> 00:08:39,840
-und dem für-alle-Quantor, für jede Wahl, scheint hier und hier leicht unterschiedlich zu sein.
+und dem für-alle-Quantor, für jede Wahl, scheint
+hier und hier leicht unterschiedlich zu sein.
 
 00:08:40,960 --> 00:08:44,560
-Aber macht es auch einen Unterschied in Bezug auf die tatsächliche Bedeutung der Aussagen?
+Aber macht es auch einen Unterschied in Bezug
+auf die tatsächliche Bedeutung der Aussagen?
 
 00:08:44,560 --> 00:08:47,760
-Es gibt natürlich einige Regeln und Logik, bei denen man einfach die
+Es gibt natürlich einige Regeln und
+Logik, bei denen man einfach die
 
 00:08:47,760 --> 00:08:49,120
 Reihenfolge der Operationen.
 
 00:08:49,120 --> 00:08:52,000
-Und manchmal ändert das nicht einmal, was die Anweisung aussagt.
+Und manchmal ändert das nicht
+einmal, was die Anweisung aussagt.
 
 00:08:52,000 --> 00:08:53,040
 Und manchmal schon.
 
 00:08:53,040 --> 00:08:55,200
-Gibt es also einen Unterschied zwischen diesen beiden Interpretationen?
+Gibt es also einen Unterschied zwischen
+diesen beiden Interpretationen?
 
 00:08:55,760 --> 00:08:58,080
 Ja, leider, oder vielleicht auch nicht leider.
 
 00:08:58,080 --> 00:09:00,560
-Aber es ist einfach eine Frage der Tatsache, es gibt einen Unterschied.
+Aber es ist einfach eine Frage der
+Tatsache, es gibt einen Unterschied.
 
 00:09:02,240 --> 00:09:06,400
-Es ist ein Unterschied zu sagen, nun, um festzustellen, dass X eifersüchtig auf Y ist,
+Es ist ein Unterschied zu sagen, nun, um
+festzustellen, dass X eifersüchtig auf Y ist,
 
 00:09:06,400 --> 00:09:17,760
-müssen wir herausfinden, dass für jede Wahl von Z dieses Dreieck gilt oder ob es der Fall ist, dass
+müssen wir herausfinden, dass für jede Wahl von Z
+dieses Dreieck gilt oder ob es der Fall ist, dass
 
 00:09:19,440 --> 00:09:25,680
-für jede Wahl von Z, wenn wir diesen Teil haben, dann wissen wir bereits, dass Eifersucht vorliegt.
+für jede Wahl von Z, wenn wir diesen Teil haben,
+dann wissen wir bereits, dass Eifersucht vorliegt.
 
 00:09:26,640 --> 00:09:31,840
-Hier müssen wir also für Zs und dann können wir unsere Deduktion machen.
+Hier müssen wir also für Zs und dann
+können wir unsere Deduktion machen.
 
 00:09:31,840 --> 00:09:35,680
-Und hier heißt es, für jede Wahl von Z können wir diese Herleitung machen.
+Und hier heißt es, für jede Wahl von
+Z können wir diese Herleitung machen.
 
 00:09:35,680 --> 00:09:42,640
-Sobald wir also ein Z hinzufügen, das dies festlegt, dann können wir ableiten, was wir hier haben.
+Sobald wir also ein Z hinzufügen, das dies festlegt,
+dann können wir ableiten, was wir hier haben.
 
 00:09:44,320 --> 00:09:50,000
 Welches ist also das, was wir verwenden?
@@ -529,95 +562,117 @@ Welches ist also das, was wir verwenden?
 Dies ist die, die wir verwenden.
 
 00:09:51,120 --> 00:09:55,280
-Die zweite ist, wie Prolog dies interpretiert, richtig?
+Die zweite ist, wie Prolog
+dies interpretiert, richtig?
 
 00:09:55,280 --> 00:10:04,400
-Also, der für-alle-Quantor ist in gewisser Weise außerhalb der Implikation.
+Also, der für-alle-Quantor ist in
+gewisser Weise außerhalb der Implikation.
 
 00:10:04,400 --> 00:10:12,080
-Also, für alle Z war diese Implikation von diesem folgt. Das heißt, sobald wir ein Z
+Also, für alle Z war diese Implikation von
+diesem folgt. Das heißt, sobald wir ein Z
 
 00:10:12,880 --> 00:10:17,200
-haben, für das wir dies feststellen können, dann können wir schon ableiten, was wir hier haben.
+haben, für das wir dies feststellen können, dann
+können wir schon ableiten, was wir hier haben.
 
 00:10:17,200 --> 00:10:21,120
-Es ist nicht so, dass der für-alle-Quantor irgendwie implizit auf der rechten Seite steht,
+Es ist nicht so, dass der für-alle-Quantor
+irgendwie implizit auf der rechten Seite steht,
 
 00:10:21,120 --> 00:10:25,680
-sodass wir für alle Z beweisen müssen, dass es gilt, und erst dann können wir dies beweisen.
+sodass wir für alle Z beweisen müssen, dass es
+gilt, und erst dann können wir dies beweisen.
 
 00:10:25,680 --> 00:10:26,800
 Das ist der logische Unterschied.
 
 00:10:26,800 --> 00:10:29,760
-Also, wenn man das noch genauer ausbuchstabieren muss,
+Also, wenn man das noch
+genauer ausbuchstabieren muss,
 
 00:10:29,760 --> 00:10:34,880
-dann kann man eigentlich die Formeln aufschreiben, die diesen beiden Zuständen entsprechen würden.
+dann kann man eigentlich die Formeln aufschreiben,
+die diesen beiden Zuständen entsprechen würden.
 
 00:10:34,880 --> 00:10:39,440
-Dann sehen Sie auch, dass
-ob man das for-all innerhalb oder außerhalb hat,
+Dann sehen Sie auch, dass ob man das
+for-all innerhalb oder außerhalb hat,
 
 00:10:39,440 --> 00:10:42,320
-einen logischen Unterschied für die Implikation macht.
+einen logischen Unterschied
+für die Implikation macht.
 
 00:10:42,320 --> 00:10:45,840
-Wenn man das mit den Regeln überprüft, zum Beispiel aus der Logikvorlesung.
+Wenn man das mit den Regeln überprüft,
+zum Beispiel aus der Logikvorlesung.
 
 00:10:49,280 --> 00:10:52,160
-Okay, das ist also die eine Interpretation, die Sie verwenden wollen.
+Okay, das ist also die eine
+Interpretation, die Sie verwenden wollen.
 
 12 # slide
 00:10:56,080 --> 00:10:59,840
-Und eigentlich ist sie logisch äquivalent zu einer etwas anderen
+Und eigentlich ist sie logisch
+äquivalent zu einer etwas anderen
 
 00:11:01,680 --> 00:11:06,800
-Formel oder Ausdruck. Was
-auch erklärt, wie wir das bisher verwendet haben.
+Formel oder Ausdruck. Was auch erklärt,
+wie wir das bisher verwendet haben.
 
 00:11:06,800 --> 00:11:12,000
-Also, wenn Sie sich noch einmal an die Formelregeln der Prädikatenlogik,
+Also, wenn Sie sich noch einmal an
+die Formelregeln der Prädikatenlogik,
 
 00:11:12,000 --> 00:11:15,920
-für Logik mit Variablen erinnern, dann sehen Sie, dass, wenn Sie so etwas haben,
+für Logik mit Variablen erinnern, dann
+sehen Sie, dass, wenn Sie so etwas haben,
 
 00:11:15,920 --> 00:11:20,880
-für jede Wahl von Z gilt, wenn dann ist das logisch äquivalent.
+für jede Wahl von Z gilt, wenn
+dann ist das logisch äquivalent.
 
 00:11:20,880 --> 00:11:23,280
 Wiederum für beliebige, aber feste X, Y, zu
 
 00:11:24,480 --> 00:11:27,760
-einer Situation, in der tatsächlich die Implikation wiederum außerhalb liegt.
+einer Situation, in der tatsächlich die
+Implikation wiederum außerhalb liegt.
 
 00:11:27,760 --> 00:11:30,640
-Aber das "every" wurde durch ein "any" ersetzt, richtig?
+Aber das "every" wurde durch
+ein "any" ersetzt, richtig?
 
 00:11:30,640 --> 00:11:33,360
-Es gibt eine logische Äquivalenz zwischen einem All-Quantor und einer Implikation versus einem
+Es gibt eine logische Äquivalenz zwischen einem
+All-Quantor und einer Implikation versus einem
 
 00:11:33,360 --> 00:11:41,840
-All-Quantor, einem Existenzquantor und einer Implikation, wenn die Verschachtelung geändert wurde.
+All-Quantor, einem Existenzquantor und einer
+Implikation, wenn die Verschachtelung geändert wurde.
 
 00:11:42,400 --> 00:11:47,040
-Okay, das ist also logisch äquivalent zu, wenn tatsächlich für jede Wahl von Z,
+Okay, das ist also logisch äquivalent zu,
+wenn tatsächlich für jede Wahl von Z,
 
 00:11:47,840 --> 00:11:52,240
 die rechte Seite gilt, dann gilt auch der Kopf.
 
 00:11:52,240 --> 00:12:00,080
-Man könnte dies also entweder als impliziten für-alle-Quantor an der Außenseite der Regel sehen, oder als einen
+Man könnte dies also entweder als impliziten für-alle-Quantor
+an der Außenseite der Regel sehen, oder als einen
 
 00:12:00,080 --> 00:12:06,560
-impliziten Existenzquantor auf der Innenseite, nämlich auf der rechten Seite der Regel.
+impliziten Existenzquantor auf der Innenseite,
+nämlich auf der rechten Seite der Regel.
 
 00:12:06,560 --> 00:12:06,880
 So.
 
 00:12:06,880 --> 00:12:09,920
-Und das entspricht dann
-unserer intuitiven Interpretation.
+Und das entspricht dann unserer
+intuitiven Interpretation.
 
 00:12:09,920 --> 00:12:15,680
 So wie ich vorhin über dieses Beispiel gesprochen habe,
@@ -631,8 +686,8 @@ eifersüchtig aufeinander, oder zumindest ist X eifersüchtig auf Y.
 Und aufgrund der Symmetrie dieser Regeln,
 
 00:12:24,800 --> 00:12:29,920
-wird es von diesen Aussagen natürlich tatsächlich,
-sobald X auf Y eifersüchtig ist, wäre Y auch auf X eifersüchtig.
+wird es von diesen Aussagen natürlich tatsächlich, sobald
+X auf Y eifersüchtig ist, wäre Y auch auf X eifersüchtig.
 
 00:12:29,920 --> 00:12:30,800
 Aber das ist hier nicht der Punkt.
@@ -650,15 +705,16 @@ so dass die rechte Seite gilt,
 dann gilt auch die linke Seite.
 
 00:12:42,480 --> 00:12:46,400
-Okay, es gibt also einen impliziten existentiellen
-Quantor für die freie Variable
+Okay, es gibt also einen impliziten
+existentiellen Quantor für die freie Variable
 
 00:12:46,400 --> 00:12:51,920
-auf der Innenseite der Regel,
-und zwar auf der Seite der Vorbedingung.
+auf der Innenseite der Regel, und
+zwar auf der Seite der Vorbedingung.
 
 00:12:54,000 --> 00:12:56,640
-Das ist wichtig für das Verständnis dieses Programms.
+Das ist wichtig für das
+Verständnis dieses Programms.
 
 00:12:56,640 --> 00:12:57,760
 Aber natürlich, ganz allgemein,

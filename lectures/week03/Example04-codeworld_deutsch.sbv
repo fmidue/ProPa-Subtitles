@@ -1,14 +1,14 @@
 0:00:02.800,0:00:06.700
-Lassen Sie mich auch kurz dieses Beispiel aus
-den Folien in Aktion zeigen.
+Lassen Sie mich auch kurz dieses
+Beispiel aus den Folien in Aktion zeigen.
 
 0:00:06.700,0:00:17.260
-Das war also das Beispiel für die Physik-Animation/Simulation.
-Also das Werfen eines Balls.
+Das war also das Beispiel für die
+Physik-Animation/Simulation. Also das Werfen eines Balls.
 
 0:00:17.260,0:00:23.470
-Und was ich hier erklären oder kurz diskutieren wollte,
-war die Frage des Umfangs.
+Und was ich hier erklären oder kurz
+diskutieren wollte, war die Frage des Umfangs.
 
 0:00:23.470,0:00:31.460
 Also, der Punkt, dass hier die x- und y-Definitionen
@@ -21,20 +21,20 @@ verwenden können.
 Warum ist das so?
 
 0:00:33.820,0:00:38.610
-Weil das, was ich sagte... weil sie in der
-lokalen Definition hier sind, richtig?
+Weil das, was ich sagte... weil sie in
+der lokalen Definition hier sind, richtig?
 
 0:00:38.610,0:00:44.280
-Und dieser Geltungsbereich des t erstreckt sich auch über
-lokale Definitionen.
+Und dieser Geltungsbereich des t erstreckt
+sich auch über lokale Definitionen.
 
 0:00:44.280,0:00:50.840
-Was hätten wir also tun müssen, wenn wir das irgendwie
-als Top-Level-Definition haben wollten?
+Was hätten wir also tun müssen, wenn wir das
+irgendwie als Top-Level-Definition haben wollten?
 
 0:00:50.840,0:00:55.010
-Es würde also nicht direkt funktionieren. Und es wäre
-überraschend, wenn es funktionieren würde.
+Es würde also nicht direkt funktionieren. Und es
+wäre überraschend, wenn es funktionieren würde.
 
 0:00:55.010,0:00:57.010
 Warum sollte es?
@@ -47,8 +47,8 @@ hätten, dann würde das nicht funktionieren.
 Und Sie sehen es schon hier. Warum ist das so?
 
 0:01:06.110,0:01:11.960
-Wir bekommen alle diese Pfeile, wo irgendwie
-Haskell nicht glücklich darüber ist, dass diese Variable
+Wir bekommen alle diese Pfeile, wo irgendwie Haskell
+nicht glücklich darüber ist, dass diese Variable
 
 0:01:11.960,0:01:13.020
 nicht im Gültigkeitsbereich ist.
@@ -60,7 +60,8 @@ Ja.
 Okay.
 
 0:01:15.020,0:01:17.190
-Und wie könnte ich sie dann in den Gültigkeitsbereich bringen?
+Und wie könnte ich sie dann in
+den Gültigkeitsbereich bringen?
 
 0:01:17.190,0:01:22.860
 Nun, da ich sie jetzt aus dem lokalen Bereich
@@ -76,15 +77,15 @@ Die andere Funktion kennt es also nicht.
 Ich könnte es also tatsächlich einführen, oder?
 
 0:01:28.870,0:01:33.570
-Ich könnte sagen: "Nun, ich mache aus x und y
-Funktionen, die t als Argument nehmen,
+Ich könnte sagen: "Nun, ich mache aus x und
+y Funktionen, die t als Argument nehmen,
 
 0:01:33.570,0:01:35.190
 dann funktioniert das."
 
 0:01:35.190,0:01:38.420
-Aber natürlich sind das jetzt nicht die x und
-y, die hier verwendet werden.
+Aber natürlich sind das jetzt nicht die
+x und y, die hier verwendet werden.
 
 0:01:38.420,0:01:45.220
 Sie verwenden also immer noch die x und y von hier,
@@ -98,37 +99,39 @@ Aber diese x und y sind einfach die Namen von
 anderen Funktionen auf der obersten Ebene.
 
 0:01:54.170,0:01:59.850
-Lassen Sie mich diese lokalen Definitionen loswerden,
-damit ich sicher sein kann, dass dieses x und dieses y sich tatsächlich
+Lassen Sie mich diese lokalen Definitionen loswerden, damit ich
+sicher sein kann, dass dieses x und dieses y sich tatsächlich
 
 0:01:59.850,0:02:01.380
 auf diese x und y beziehen.
 
 0:02:01.380,0:02:03.800
-Aber jetzt gibt es natürlich einen weiteren Fehler.
+Aber jetzt gibt es natürlich
+einen weiteren Fehler.
 
 0:02:03.800,0:02:08.319
-Und wenn man es sich genau ansieht, läuft es auf
-ein Typproblem hinaus.
+Und wenn man es sich genau ansieht,
+läuft es auf ein Typproblem hinaus.
 
 0:02:08.319,0:02:13.790
 Also, x und y werden hier als Zahlen verwendet,
 aber ich habe sie gerade in Funktionen umgewandelt.
 
 0:02:13.790,0:02:22.880
-Was ich also tun könnte, ist
-das t an diese Funktionen weitergeben.
+Was ich also tun könnte, ist das
+t an diese Funktionen weitergeben.
 
 0:02:22.880,0:02:28.490
-Okay, dann würde anscheinend alles kompiliert werden.
+Okay, dann würde anscheinend
+alles kompiliert werden.
 
 0:02:28.490,0:02:31.330
-Zumindest gibt es keine offensichtlichen Fehler,
-die hier angezeigt werden.
+Zumindest gibt es keine offensichtlichen
+Fehler, die hier angezeigt werden.
 
 0:02:31.330,0:02:36.380
-Und tatsächlich, wenn ich es kompiliere und ausführe, wird
-es funktionieren, hoffe ich.
+Und tatsächlich, wenn ich es kompiliere und
+ausführe, wird es funktionieren, hoffe ich.
 
 0:02:36.380,0:02:42.310
 Ja, es funktioniert und es tut dasselbe wie
@@ -149,8 +152,8 @@ dies erstreckt sich auch auf die lokalen Definitionen
 hier,
 
 0:02:55.840,0:02:58.790
-wie wir es vorher hatten, ist natürlich eine schöne
-Sache, das so zu haben.
+wie wir es vorher hatten, ist natürlich
+eine schöne Sache, das so zu haben.
 
 0:02:58.790,0:03:04.010
 Einfach, wir können diese Ausdrücke

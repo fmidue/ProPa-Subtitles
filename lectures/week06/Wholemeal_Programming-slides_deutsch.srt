@@ -1,69 +1,69 @@
 80 # slide
 00:00:02,639 --> 00:00:07,759
-In diesem Video möchte ich über das sprechen,
-was man manchmal als "Wholemeal Programming" bezeichnet, in
+In diesem Video möchte ich über das sprechen, was man
+manchmal als "Wholemeal Programming" bezeichnet, in
 
 00:00:07,759 --> 00:00:09,780
 diesem Fall auf Listen.
 
 00:00:09,780 --> 00:00:16,379
-Ich habe dieses Konzept der Wholemeal-Programmierung
-im Gegensatz zur Piecemeal-Programmierung bereits kurz erwähnt,
+Ich habe dieses Konzept der Wholemeal-Programmierung im
+Gegensatz zur Piecemeal-Programmierung bereits kurz erwähnt,
 
 00:00:16,379 --> 00:00:21,220
-als wir über Animationen
-als zeitabhängige Funktionen gesprochen haben.
+als wir über Animationen als
+zeitabhängige Funktionen gesprochen haben.
 
 00:00:21,220 --> 00:00:28,810
-Ich erwähnte, dass wir in CodeWorld, wenn wir
-eine Animation als Funktion definieren, in gewissem Sinne
+Ich erwähnte, dass wir in CodeWorld, wenn wir eine
+Animation als Funktion definieren, in gewissem Sinne
 
 00:00:28,810 --> 00:00:31,340
 die ganze Animation
 auf einmal programmieren.
 
 00:00:31,340 --> 00:00:37,050
-Sie schreiben also keine Befehlssequenz: Zuerst machen
-Sie dies, dann bewegt sich das Bild dorthin,
+Sie schreiben also keine Befehlssequenz: Zuerst
+machen Sie dies, dann bewegt sich das Bild dorthin,
 
 00:00:37,050 --> 00:00:38,050
 und dann passiert dies.
 
 00:00:38,050 --> 00:00:42,899
-Natürlich verwenden Sie die Fallunterscheidung, um verschiedene
-Fälle zu unterscheiden, aber es gibt eine
+Natürlich verwenden Sie die Fallunterscheidung, um
+verschiedene Fälle zu unterscheiden, aber es gibt eine
 
 00:00:42,899 --> 00:00:48,850
-Funktion als Ganzes, die die gesamte Animation für
-alle Zeitpunkte beschreibt, anstatt eine Abfolge zu haben.
+Funktion als Ganzes, die die gesamte Animation für alle
+Zeitpunkte beschreibt, anstatt eine Abfolge zu haben.
 
 00:00:48,850 --> 00:00:52,910
 Die gleiche Idee der Wholemeal-Programmierung
 kann auch auf Listen angewendet werden.
 
 00:00:52,910 --> 00:00:56,640
-Und sie wird manchmal auch
-in der Literatur verwendet, in Büchern.
+Und sie wird manchmal auch in der
+Literatur verwendet, in Büchern.
 
 00:00:56,640 --> 00:01:02,820
-Wenn Sie versuchen würden, dies ins Deutsche
-zu übersetzen, gibt es, glaube ich, keine Eins-zu-Eins-Übersetzung,
+Wenn Sie versuchen würden, dies ins Deutsche zu übersetzen,
+gibt es, glaube ich, keine Eins-zu-Eins-Übersetzung,
 
 00:01:02,820 --> 00:01:07,130
-sodass "piecemeal programming" (das Gegenteil
-von "wholemeal programming") vielleicht mit "stückweise"
+sodass "piecemeal programming" (das Gegenteil von
+"wholemeal programming") vielleicht mit "stückweise"
 
 00:01:07,130 --> 00:01:13,350
-/ "allmählich", etwas "unsystematisch", übersetzt
-werden könnte, während für "wholemeal
+/ "allmählich", etwas "unsystematisch",
+übersetzt werden könnte, während für "wholemeal
 
 00:01:13,350 --> 00:01:16,320
 programming" die deutsche Übersetzung
 vielleicht "in einem Rutsch" wäre.
 
 00:01:16,320 --> 00:01:23,840
-Also, etwas auf einmal / in einem Rutsch zu
-tun, statt in vielen verschiedenen kleinen Schritten, indem man
+Also, etwas auf einmal / in einem Rutsch zu tun, statt
+in vielen verschiedenen kleinen Schritten, indem man
 
 00:01:23,840 --> 00:01:30,369
 einzelne Listenelemente durch
@@ -71,8 +71,8 @@ Indizierung usw. betrachtet.
 
 81 # slide
 00:01:30,369 --> 00:01:35,690
-Im Kontext der funktionalen Programmierung
-wird das Konzept der Wholemeal-Programmierung durch diese
+Im Kontext der funktionalen Programmierung wird das
+Konzept der Wholemeal-Programmierung durch diese
 
 00:01:35,690 --> 00:01:38,960
 beiden Zitate hier
@@ -83,35 +83,35 @@ Also, diesmal kein Zitat eines mittelalterlichen
 Königs, sondern von zwei ehemaligen Oxford-Professoren.
 
 00:01:45,810 --> 00:01:49,689
-Ralf ist nach ein paar Jahren
-in Oxford nun an der Universität Kaiserslautern.
+Ralf ist nach ein paar Jahren in Oxford
+nun an der Universität Kaiserslautern.
 
 00:01:49,689 --> 00:01:52,539
-Und Richard ist tatsächlich schon im Ruhestand.
-(Er ist 2022 leider verstorben.)
+Und Richard ist tatsächlich schon im
+Ruhestand. (Er ist 2022 leider verstorben.)
 
 00:01:52,539 --> 00:01:56,000
 Und beide sprechen hier von
 der gleichen Idee: groß denken.
 
 00:01:56,000 --> 00:02:00,660
-Über eine ganze Lösung auf einmal
-nachzudenken, einen ganzen Lösungsraum, anstatt vielleicht eine
+Über eine ganze Lösung auf einmal nachzudenken,
+einen ganzen Lösungsraum, anstatt vielleicht eine
 
 00:02:00,660 --> 00:02:01,660
 einzelne Lösung.
 
 00:02:01,660 --> 00:02:07,080
-In dem Zitat von Ralf geht
-es also darum, im Rahmen von Graphenalgorithmen
+In dem Zitat von Ralf geht es also
+darum, im Rahmen von Graphenalgorithmen
 
 00:02:07,080 --> 00:02:10,390
 über einen Graphen als Ganzes
 nachzudenken, anstatt über einzelne Pfade.
 
 00:02:10,390 --> 00:02:17,819
-Es ist also alles die gleiche Idee:
-über Datenstrukturen als Ganzes nachzudenken, anstatt zum Beispiel
+Es ist also alles die gleiche Idee: über Datenstrukturen
+als Ganzes nachzudenken, anstatt zum Beispiel
 
 00:02:17,819 --> 00:02:20,390
 über einzelne Elemente zu sprechen.
@@ -120,32 +120,32 @@ Es ist also alles die gleiche Idee:
 Richard spricht hier auch von Indexitis.
 
 00:02:22,590 --> 00:02:29,620
-Das ist auch etwas, was ich bereits erwähnt habe,
-als ich darüber sprach, dass der Indexzugriff auf Listen
+Das ist auch etwas, was ich bereits erwähnt habe, als
+ich darüber sprach, dass der Indexzugriff auf Listen
 
 00:02:29,620 --> 00:02:34,319
-ein No-Go in Haskell ist; dass es das gibt,
-aber man immer versuchen sollte, es zu vermeiden und
+ein No-Go in Haskell ist; dass es das gibt, aber
+man immer versuchen sollte, es zu vermeiden und
 
 00:02:34,319 --> 00:02:38,010
 Programme mit anderen Ansätzen
 und anderen Ideen zu schreiben.
 
 00:02:38,010 --> 00:02:44,210
-Das ist also der gleiche Gedanke, den Richard
-hier zum Ausdruck bringt: zu sagen, dass Indexitis eine
+Das ist also der gleiche Gedanke, den Richard hier
+zum Ausdruck bringt: zu sagen, dass Indexitis eine
 
 00:02:44,210 --> 00:02:47,379
-Krankheit ist, die
-gutes Programmdesign behindert.
+Krankheit ist, die gutes
+Programmdesign behindert.
 
 00:02:47,379 --> 00:02:54,000
-Und er spricht von gesetzmäßiger Programmkonstruktion, also:
-algebraische Gesetze über Ihre Programme zu haben,
+Und er spricht von gesetzmäßiger Programmkonstruktion,
+also: algebraische Gesetze über Ihre Programme zu haben,
 
 00:02:54,000 --> 00:03:00,349
-wird gefördert und unterstützt, wenn Sie
-über umfassende Operationen auf Ihren Datenstrukturen wie
+wird gefördert und unterstützt, wenn Sie über
+umfassende Operationen auf Ihren Datenstrukturen wie
 
 00:03:00,349 --> 00:03:05,569
 Listen nachdenken, statt
@@ -156,8 +156,8 @@ Auch der Umgang mit unendlichen Listen
 ist in gewissem Sinne ein Ergebnis der
 
 00:03:10,680 --> 00:03:15,840
-Wholemeal-Programmierung, weil man dann nicht (zumindest nicht
-zu viel) über einzelne Listenelemente reden will,
+Wholemeal-Programmierung, weil man dann nicht (zumindest
+nicht zu viel) über einzelne Listenelemente reden will,
 
 00:03:15,840 --> 00:03:19,390
 sondern vielleicht über Listen
@@ -172,32 +172,32 @@ für Wholemeal-
 vs. Piecemeal-Programmierung sind.
 
 00:03:26,459 --> 00:03:32,450
-Die Quicksort-Implementierung von letzter Woche ist
-offensichtlich weder das eine noch das andere.
+Die Quicksort-Implementierung von letzter Woche
+ist offensichtlich weder das eine noch das andere.
 
 00:03:32,450 --> 00:03:36,849
-Es gibt dort
-einiges an elementweiser Verarbeitung.
+Es gibt dort einiges an
+elementweiser Verarbeitung.
 
 00:03:36,849 --> 00:03:40,860
-List Comprehensions sind oft ein
-gutes Beispiel für Wholemeal Programming.
+List Comprehensions sind oft ein gutes
+Beispiel für Wholemeal Programming.
 
 00:03:40,860 --> 00:03:43,070
 Das ist also auch
 in diesem Beispiel geschehen.
 
 00:03:43,070 --> 00:03:48,840
-Wenn Sie an das "isPalindrome"-Beispiel denken,
-gab es zwei Versionen in den Folien.
+Wenn Sie an das "isPalindrome"-Beispiel
+denken, gab es zwei Versionen in den Folien.
 
 00:03:48,840 --> 00:03:52,599
-Es gab diese Version, die einfach
-die Liste mit ihrer Umkehrung verglichen hat.
+Es gab diese Version, die einfach die
+Liste mit ihrer Umkehrung verglichen hat.
 
 00:03:52,599 --> 00:03:57,230
-Das ist ein sehr gutes Beispiel
-für Wholemeal-Programmierung, weil wir nicht einzelne Elemente
+Das ist ein sehr gutes Beispiel für
+Wholemeal-Programmierung, weil wir nicht einzelne Elemente
 
 00:03:57,230 --> 00:04:01,240
 anfassen, sondern einfach eine Eigenschaft
@@ -212,43 +212,43 @@ ansah und dann
 einen rekursiven Aufruf machte.
 
 00:04:08,299 --> 00:04:13,819
-Das ist etwas, das vielleicht nicht
-an Indexitis leidet, weil wir nie explizit
+Das ist etwas, das vielleicht nicht an
+Indexitis leidet, weil wir nie explizit
 
 00:04:13,819 --> 00:04:17,500
 über Indizes von Datenelementen
 in der Liste sprechen.
 
 00:04:17,500 --> 00:04:22,370
-Aber auch dieses rekursive
-Verfahren ist nicht wirklich Wholemeal-Programmierung.
+Aber auch dieses rekursive Verfahren ist
+nicht wirklich Wholemeal-Programmierung.
 
 00:04:22,370 --> 00:04:26,170
 Es spricht wirklich über das erste Element
 und das letzte Element, macht die Liste
 
 00:04:26,170 --> 00:04:32,130
-kleiner usw., statt der schönen rekursiven Lösung,
-die einfach sagt: Eine Liste ist ein
+kleiner usw., statt der schönen rekursiven
+Lösung, die einfach sagt: Eine Liste ist ein
 
 00:04:32,130 --> 00:04:34,050
 Palindrom, wenn sie dasselbe
 ist wie ihre Umkehrung.
 
 00:04:34,050 --> 00:04:41,160
-Man kann es nicht wirklich
-umfassender auf einen Schlag ausdrücken.
+Man kann es nicht wirklich umfassender
+auf einen Schlag ausdrücken.
 
 00:04:41,160 --> 00:04:43,550
 Das ist ein sehr schönes Beispiel.
 
 00:04:43,550 --> 00:04:49,940
-In gewissem Sinne könnte man auch
-die Version von "isPalindrome", die ich im
+In gewissem Sinne könnte man auch die
+Version von "isPalindrome", die ich im
 
 00:04:49,940 --> 00:04:53,630
-Video kurz vor diesem entwickelt habe,
-als im Geiste der Wholemeal-Programmierung sehen.
+Video kurz vor diesem entwickelt habe, als
+im Geiste der Wholemeal-Programmierung sehen.
 
 00:04:53,630 --> 00:04:56,670
 Denn es spricht auch
@@ -262,15 +262,15 @@ Es hat eine List Comprehension, dann sagt es
 sein.
 
 00:05:00,620 --> 00:05:06,530
-Das ist auch etwas, wo man etwas
-in einem Zug ausdrückt und nicht eine Rekursion
+Das ist auch etwas, wo man etwas in einem
+Zug ausdrückt und nicht eine Rekursion
 
 00:05:06,530 --> 00:05:08,790
 über die Listenstruktur programmiert.
 
 00:05:08,790 --> 00:05:16,160
-Das wären schöne Beispiele, und Sie
-werden natürlich noch weitere Beispiele sehen.
+Das wären schöne Beispiele, und Sie werden
+natürlich noch weitere Beispiele sehen.
 
 82 # slide
 00:05:16,160 --> 00:05:19,830
@@ -282,50 +282,50 @@ Es tauchte im Zusammenhang mit der Diskussion
 darüber auf, warum wir keine for-Schleifen verwenden.
 
 00:05:26,580 --> 00:05:31,010
-Und in der Tat, wir *brauchen* keine
-for-Schleifen, weil wir verschiedene Möglichkeiten haben, so etwas
+Und in der Tat, wir *brauchen* keine for-Schleifen,
+weil wir verschiedene Möglichkeiten haben, so etwas
 
 00:05:31,010 --> 00:05:36,160
-wie eine Wiederholung, in diesem Fall,
-von Bildern in einer bestimmten Szene auszudrücken.
+wie eine Wiederholung, in diesem Fall, von
+Bildern in einer bestimmten Szene auszudrücken.
 
 00:05:36,160 --> 00:05:39,810
 Die Zahlen hier sind keine Listenindizes.
 
 00:05:39,810 --> 00:05:43,540
-Wir haben [0..5], aber
-das ist keine Listenindizierung.
+Wir haben [0..5], aber das
+ist keine Listenindizierung.
 
 00:05:43,540 --> 00:05:49,650
-Es ist nur ein umfassender Weg, um
-auszudrücken, dass wir mehrere Szenen haben, und sie
+Es ist nur ein umfassender Weg, um auszudrücken,
+dass wir mehrere Szenen haben, und sie
 
 00:05:49,650 --> 00:05:52,840
 werden alle von dieser
 Funktion da unten berechnet.
 
 00:05:52,840 --> 00:06:00,770
-Das ist also in gewisser Weise der
-ganzheitliche Ansatz, weil wir die Anwendung von "scene"
+Das ist also in gewisser Weise der ganzheitliche
+Ansatz, weil wir die Anwendung von "scene"
 
 00:06:00,770 --> 00:06:03,380
-auf diese Elemente in
-einem Zug ausgedrückt haben.
+auf diese Elemente in einem
+Zug ausgedrückt haben.
 
 00:06:03,380 --> 00:06:08,230
-Es gibt keinen Schleifenzähler,
-keine explizite Schleifensteuerung oder Ähnliches.
+Es gibt keinen Schleifenzähler, keine
+explizite Schleifensteuerung oder Ähnliches.
 
 00:06:08,230 --> 00:06:13,560
-Es sind also die gleichen Gründe, die ich dort
-erwähnt habe, warum dies nicht dasselbe ist wie eine Schleifenbildung
+Es sind also die gleichen Gründe, die ich dort erwähnt habe,
+warum dies nicht dasselbe ist wie eine Schleifenbildung
 
 00:06:13,560 --> 00:06:14,630
 in einer imperativen Sprache.
 
 00:06:14,630 --> 00:06:19,610
-Im gleichen Sinne ist dies ein
-Wholemeal-Ansatz im Gegensatz zu einem Piecemeal-Ansatz.
+Im gleichen Sinne ist dies ein Wholemeal-Ansatz
+im Gegensatz zu einem Piecemeal-Ansatz.
 
 00:06:19,610 --> 00:06:25,260
 Es gab keine konzeptionelle Überlegung,
@@ -339,24 +339,24 @@ Man hätte diese Berechnung natürlich auch
 irgendwie rekursiv durchführen können, indem man
 
 00:06:35,190 --> 00:06:37,850
-eine rekursive Funktion definiert, aber
-warum sollten wir das tun?
+eine rekursive Funktion definiert,
+aber warum sollten wir das tun?
 
 00:06:37,850 --> 00:06:39,470
 Warum sollten wir
 uns damit beschäftigen?
 
 00:06:39,470 --> 00:06:44,600
-Eine Rekursion hier zu programmieren, hätte
-eine Art Traversierungsordnung offengelegt, die wir nicht
+Eine Rekursion hier zu programmieren, hätte eine
+Art Traversierungsordnung offengelegt, die wir nicht
 
 00:06:44,600 --> 00:06:49,150
-brauchen, wenn wir einfach nur an
-"wir haben diese Bilder" interessiert sind.
+brauchen, wenn wir einfach nur an "wir
+haben diese Bilder" interessiert sind.
 
 00:06:49,150 --> 00:06:55,290
-Wie ich bereits erwähnt habe, erhalten wir
-in der mathematischen Mengenschreibweise einfach: "für alle
+Wie ich bereits erwähnt habe, erhalten wir in der
+mathematischen Mengenschreibweise einfach: "für alle
 
 00:06:55,290 --> 00:06:59,250
 Zahlen in einem bestimmten Bereich, ..." oder vielleicht
@@ -370,8 +370,8 @@ wir bekommen das Ergebnis davon.
 Das war's.
 
 00:07:03,030 --> 00:07:11,970
-In einem Rutsch, anstatt einen Schleifenzähler zu
-schreiben und ein Programm in einer Schleife.
+In einem Rutsch, anstatt einen Schleifenzähler
+zu schreiben und ein Programm in einer Schleife.
 
 83 # slide
 00:07:11,970 --> 00:07:17,780
@@ -379,30 +379,30 @@ Natürlich wird die individuelle Auswertung dieser
 Bilder (die Berechnung der verschiedenen Szenen)
 
 00:07:17,780 --> 00:07:21,260
-immer noch in irgendeiner Reihenfolge
-auf einer sequenziellen Maschine passieren.
+immer noch in irgendeiner Reihenfolge auf
+einer sequenziellen Maschine passieren.
 
 00:07:21,260 --> 00:07:24,240
-Und außerdem ist die Liste eine
-Sequenz, sie ist keine mathematische Menge.
+Und außerdem ist die Liste eine Sequenz,
+sie ist keine mathematische Menge.
 
 00:07:24,240 --> 00:07:26,360
 Sie hat also eine gewisse Ordnung.
 
 00:07:26,360 --> 00:07:28,940
-Aber die einzelnen Werte
-sind unabhängig von der Reihenfolge.
+Aber die einzelnen Werte sind
+unabhängig von der Reihenfolge.
 
 00:07:28,940 --> 00:07:33,440
-Es ist also egal, ob ich zuerst
-die dritte Sache und dann die nullte
+Es ist also egal, ob ich zuerst die
+dritte Sache und dann die nullte
 
 00:07:33,440 --> 00:07:34,440
 Sache berechne oder umgekehrt.
 
 00:07:34,440 --> 00:07:38,840
-Die Werte werden davon unabhängig
-sein, weil es unabhängige Berechnungen sind.
+Die Werte werden davon unabhängig sein,
+weil es unabhängige Berechnungen sind.
 
 00:07:38,840 --> 00:07:46,500
 Es gibt keinen Effekt, der irgendwie die dritte
@@ -412,12 +412,12 @@ Berechnung beeinflusst, basierend auf dem, was in der
 ersten Berechnung passiert ist.
 
 00:07:47,500 --> 00:07:51,720
-Das liegt daran, dass es sich um
-Werte handelt, die aus Ausdrücken berechnet werden.
+Das liegt daran, dass es sich um Werte
+handelt, die aus Ausdrücken berechnet werden.
 
 00:07:51,720 --> 00:07:57,750
-In der Tat kann man einige Eigenschaften
-zeigen, die in einer inkrementellen, iterativen Schleifenform nicht
+In der Tat kann man einige Eigenschaften zeigen, die
+in einer inkrementellen, iterativen Schleifenform nicht
 
 00:07:57,750 --> 00:07:59,590
 gelten würden.
@@ -441,12 +441,12 @@ Wenn ich einige Zahlen von null bis n nehme und
 dann "f von a" (f a) auf jedem Element berechne,
 
 00:08:28,340 --> 00:08:36,510
-und dann die Ergebnisse in eine Liste schreibe, ist
-es dasselbe, als wenn ich diese Zahlenliste zuerst umkehre,
+und dann die Ergebnisse in eine Liste schreibe, ist es
+dasselbe, als wenn ich diese Zahlenliste zuerst umkehre,
 
 00:08:36,510 --> 00:08:44,150
-sodass ich die Zahlen von n bis null
-bekomme, immer noch f auf jedem dieser Werte berechne
+sodass ich die Zahlen von n bis null bekomme,
+immer noch f auf jedem dieser Werte berechne
 
 00:08:44,150 --> 00:08:47,060
 und dann die Liste wieder umkehre.
@@ -459,8 +459,8 @@ um die Ergebnisse in der richtigen Reihenfolge
 anzuordnen.
 
 00:08:54,740 --> 00:09:02,320
-Aber der Punkt ist, dass *wenn* ich ein bestimmtes "f"
-für ein bestimmtes "a" berechne, keinen Einfluss auf die Werte
+Aber der Punkt ist, dass *wenn* ich ein bestimmtes "f" für
+ein bestimmtes "a" berechne, keinen Einfluss auf die Werte
 
 00:09:02,320 --> 00:09:04,100
 hat, die ich erhalte.
@@ -470,16 +470,16 @@ Deshalb werden diese
 beiden Listen gleich sein.
 
 00:09:06,900 --> 00:09:12,860
-Wenn ich die Zahlen in umgekehrter
-Reihenfolge nehme, erhalte ich die gleichen Werte.
+Wenn ich die Zahlen in umgekehrter Reihenfolge
+nehme, erhalte ich die gleichen Werte.
 
 00:09:12,860 --> 00:09:17,250
 Ich bekomme sie nur in umgekehrter Reihenfolge,
 also muss ich am Ende wieder umkehren.
 
 00:09:17,250 --> 00:09:26,370
-Und so etwas wäre zum Beispiel
-bei einer for-Schleife nicht der Fall.
+Und so etwas wäre zum Beispiel bei
+einer for-Schleife nicht der Fall.
 
 84 # slide
 00:09:26,370 --> 00:09:33,110
@@ -490,8 +490,8 @@ C-ähnlichen, Java-ähnlichen oder Python-ähnlichen Code oder was auch
 immer ansehen.
 
 00:09:34,110 --> 00:09:38,510
-Nehmen wir also zwei for-Schleifen, die in
-etwa den beiden Richtungen entsprechen, in denen
+Nehmen wir also zwei for-Schleifen, die in etwa
+den beiden Richtungen entsprechen, in denen
 
 00:09:38,510 --> 00:09:42,760
 man eine solche
@@ -502,8 +502,8 @@ In den oberen beiden Zeilen haben wir eine
 for-Schleife, die ebenfalls von null bis n geht, diesen
 
 00:09:51,830 --> 00:09:56,010
-Schleifenzähler inkrementiert und dann immer "f von a"
-berechnet, und dies dann in einer Liste oder
+Schleifenzähler inkrementiert und dann immer "f von
+a" berechnet, und dies dann in einer Liste oder
 
 00:09:56,010 --> 00:09:57,610
 in diesem Fall einem Array, speichert.
@@ -517,12 +517,12 @@ die Ergebnisse ebenfalls in einer
 Liste oder in einem Array ablegen.
 
 00:10:07,690 --> 00:10:14,030
-Aber in C oder Java ist es nicht so,
-dass wir dies immer durch dies ersetzen können, aus verschiedenen
+Aber in C oder Java ist es nicht so, dass wir dies
+immer durch dies ersetzen können, aus verschiedenen
 
 00:10:14,030 --> 00:10:19,750
-Gründen, wie Seiteneffekte, wie Dinge, die die
-f-Aufrufe zusätzlich zur Berechnung von Werten tun könnten.
+Gründen, wie Seiteneffekte, wie Dinge, die die f-Aufrufe
+zusätzlich zur Berechnung von Werten tun könnten.
 
 00:10:19,750 --> 00:10:25,690
 Es handelt sich also nicht um zwei Codestücke,
@@ -532,8 +532,8 @@ die in einer Sprache wie Java oder C
 immer austauschbar sind.
 
 00:10:26,690 --> 00:10:31,380
-Natürlich gibt es auch diese Schleifenindizierung, die
-an sich schon gegen den Geist der Wholemeal-Programmierung
+Natürlich gibt es auch diese Schleifenindizierung, die an
+sich schon gegen den Geist der Wholemeal-Programmierung
 
 00:10:31,380 --> 00:10:32,380
 ist.
@@ -547,12 +547,12 @@ sähe es nicht
 nach Array-Indizierung aus.
 
 00:10:38,390 --> 00:10:45,950
-Aber selbst dann wären diese beiden
-Codestücke, oder ähnliche Codestücke, nicht gleichwertig.
+Aber selbst dann wären diese beiden Codestücke,
+oder ähnliche Codestücke, nicht gleichwertig.
 
 00:10:45,950 --> 00:10:51,250
-Und selbst wenn man spezielle Situationen hat, in
-denen sich das f sehr gut verhält (es macht
+Und selbst wenn man spezielle Situationen hat,
+in denen sich das f sehr gut verhält (es macht
 
 00:10:51,250 --> 00:10:57,820
 keine Schreib- oder Lesevorgänge oder was auch
@@ -574,60 +574,60 @@ Das macht diese
 beiden Ausdrücke symmetrischer.
 
 00:11:11,460 --> 00:11:16,510
-Und natürlich gilt das
-nicht nur für nummerierte Listen.
+Und natürlich gilt das nicht
+nur für nummerierte Listen.
 
 00:11:16,510 --> 00:11:23,380
-Wir können beliebige Listen nehmen, und diese Eigenschaft
-gilt immer noch für jedes f und jede
+Wir können beliebige Listen nehmen, und diese
+Eigenschaft gilt immer noch für jedes f und jede
 
 00:11:23,380 --> 00:11:29,930
-Liste, die wir haben, und sogar für
-eine ganze Klasse von Funktionen anstelle dieses "reverse".
+Liste, die wir haben, und sogar für eine ganze
+Klasse von Funktionen anstelle dieses "reverse".
 
 00:11:29,930 --> 00:11:35,690
-Und sie kann direkt zur Manipulation
-von Programmen durch algebraische Transformationen verwendet
+Und sie kann direkt zur Manipulation von Programmen
+durch algebraische Transformationen verwendet
 
 00:11:35,690 --> 00:11:39,620
-werden, so wie wir es in der
-Vorlesung schon bei anderen Gesetzen gesehen haben.
+werden, so wie wir es in der Vorlesung
+schon bei anderen Gesetzen gesehen haben.
 
 00:11:39,620 --> 00:11:47,370
-Das ist also das, was Richard in
-dem anderen Zitat als gesetzmäßige Programmkonstruktion bezeichnet hat.
+Das ist also das, was Richard in dem anderen Zitat
+als gesetzmäßige Programmkonstruktion bezeichnet hat.
 
 00:11:47,370 --> 00:11:52,080
 Über Gesetze nachzudenken, denen die
 Funktionen in unseren Programmen genügen.
 
 00:11:52,080 --> 00:11:54,330
-Sie könnten auch
-für QuickCheck-Tests verwendet werden.
+Sie könnten auch für
+QuickCheck-Tests verwendet werden.
 
 00:11:54,330 --> 00:11:55,770
 Dort sind wir
 auch an Eigenschaften interessiert.
 
 00:11:55,770 --> 00:11:59,750
-Und dies könnte eine Eigenschaft sein,
-die in diesem Zusammenhang von Interesse ist.
+Und dies könnte eine Eigenschaft sein, die
+in diesem Zusammenhang von Interesse ist.
 
 00:11:59,750 --> 00:12:06,870
 Außerdem ist diese Eigenschaft tatsächlich
 wieder für das "isPalindrome"-Beispiel relevant.
 
 00:12:06,870 --> 00:12:13,949
-Wahrscheinlich haben viele von Ihnen eine Lösung
-für "isPalindrome" (zusammen mit Klein-/Großbuchstaben), die irgendwie so
+Wahrscheinlich haben viele von Ihnen eine Lösung für "isPalindrome"
+(zusammen mit Klein-/Großbuchstaben), die irgendwie so
 
 00:12:13,949 --> 00:12:19,170
 etwas wie ein "reverse" einer Liste nutzt,
 bei der jedes Element aus einem String
 
 00:12:19,170 --> 00:12:24,430
-an die toUpper-
-oder toLower-Funktion gegeben wurde.
+an die toUpper- oder
+toLower-Funktion gegeben wurde.
 
 00:12:24,430 --> 00:12:27,230
 Und wenn Sie dann so etwas sehen,
@@ -644,52 +644,52 @@ der Berechnung ändern oder einsparen.
 Oder vielleicht ist es auch andersherum.
 
 00:12:33,510 --> 00:12:38,650
-Vielleicht haben Sie die zweite Zeile in
-Ihrem Code, und wenn Sie das "reverse" außerhalb
+Vielleicht haben Sie die zweite Zeile in Ihrem
+Code, und wenn Sie das "reverse" außerhalb
 
 00:12:38,650 --> 00:12:45,300
-dieser Liste verschieben, erkennen Sie, dass
-Sie diesen Ausdruck als gemeinsamen Unterausdruck mit
+dieser Liste verschieben, erkennen Sie, dass Sie
+diesen Ausdruck als gemeinsamen Unterausdruck mit
 
 00:12:45,300 --> 00:12:48,110
-einem anderen Teil
-Ihrer Funktionsdefinition teilen können.
+einem anderen Teil Ihrer
+Funktionsdefinition teilen können.
 
 00:12:48,110 --> 00:12:53,250
 Und dann haben Sie plötzlich ein effizienteres
 Programm, bei dem Sie eine Liste nicht
 
 00:12:53,250 --> 00:12:55,900
-zweimal mit toUpper
-oder toLower durchlaufen müssen.
+zweimal mit toUpper oder
+toLower durchlaufen müssen.
 
 00:12:55,900 --> 00:12:58,960
-Das ist also ein Vorteil, wenn
-man Gesetze wie diese zur Verfügung hat.
+Das ist also ein Vorteil, wenn man
+Gesetze wie diese zur Verfügung hat.
 
 00:12:58,960 --> 00:13:08,980
-Und er kommt daher,
-wie wir unsere Berechnungen ausdrücken.
+Und er kommt daher, wie wir
+unsere Berechnungen ausdrücken.
 
 85 # slide
 00:13:08,980 --> 00:13:15,610
-Um diesen Punkt zu verdeutlichen, lassen Sie uns
-ein anderes Beispiel betrachten, das etwas künstlich ist.
+Um diesen Punkt zu verdeutlichen, lassen Sie uns ein
+anderes Beispiel betrachten, das etwas künstlich ist.
 
 00:13:15,610 --> 00:13:21,120
-Nehmen wir an, wir wollen jedes Element
-eines Arrays oder einer Liste mit seiner Position
+Nehmen wir an, wir wollen jedes Element eines
+Arrays oder einer Liste mit seiner Position
 
 00:13:21,120 --> 00:13:25,160
-in dieser Struktur multiplizieren
-und alle resultierenden Werte zusammenzählen.
+in dieser Struktur multiplizieren und
+alle resultierenden Werte zusammenzählen.
 
 00:13:25,160 --> 00:13:26,520
 Das ist ein ganz einfaches Problem.
 
 00:13:26,520 --> 00:13:35,190
-In jeder imperativen Sprache, die Sie kennen,
-würden Sie es oft auf ähnliche Weise
+In jeder imperativen Sprache, die Sie
+kennen, würden Sie es oft auf ähnliche Weise
 
 00:13:35,190 --> 00:13:36,190
 lösen wie dies.
@@ -699,8 +699,8 @@ Wir brauchen also ein paar Deklarationen, aber
 die sind hier nicht wirklich das Problem.
 
 00:13:40,470 --> 00:13:45,970
-Natürlich müssen wir uns darüber im Klaren sein,
-wie wir die Ergebnisberechnung starten, wie wir diese
+Natürlich müssen wir uns darüber im Klaren sein, wie
+wir die Ergebnisberechnung starten, wie wir diese
 
 00:13:45,970 --> 00:13:46,970
 initialisieren, usw.
@@ -709,53 +709,53 @@ initialisieren, usw.
 Aber das ist hier nicht der Punkt.
 
 00:13:47,970 --> 00:13:50,839
-Der Punkt ist, dass wir
-dann durch diese Schleife gehen.
+Der Punkt ist, dass wir dann
+durch diese Schleife gehen.
 
 00:13:50,839 --> 00:13:56,730
-Wir müssen also sicherstellen, wo wir beginnen, wir
-müssen eine Endbedingung haben, wir müssen inkrementieren, und
+Wir müssen also sicherstellen, wo wir beginnen, wir müssen
+eine Endbedingung haben, wir müssen inkrementieren, und
 
 00:13:56,730 --> 00:14:03,690
-dann haben wir unsere Berechnung, die
-wir in jeder Iteration der Schleife durchführen.
+dann haben wir unsere Berechnung, die wir
+in jeder Iteration der Schleife durchführen.
 
 00:14:03,690 --> 00:14:05,560
 Und das sieht ungefähr richtig aus.
 
 00:14:05,560 --> 00:14:10,720
-Das ist ein gültiges Programm, um
-das zu berechnen, was oben geschrieben steht.
+Das ist ein gültiges Programm, um das zu
+berechnen, was oben geschrieben steht.
 
 00:14:10,720 --> 00:14:16,740
-Aber man könnte sagen, und sollte wohl
-auch zugeben, dass dies unter dem Indexitis-Problem leidet.
+Aber man könnte sagen, und sollte wohl auch zugeben,
+dass dies unter dem Indexitis-Problem leidet.
 
 00:14:16,740 --> 00:14:18,420
 Wie äußert sich das hier?
 
 00:14:18,420 --> 00:14:25,529
-Zum Beispiel müssen wir im Voraus wissen,
-wie Array-Indizes in der Sprache gezählt werden.
+Zum Beispiel müssen wir im Voraus wissen, wie
+Array-Indizes in der Sprache gezählt werden.
 
 00:14:25,529 --> 00:14:31,779
-Wir könnten also leicht einen "off-by-one"-Fehler machen, wenn
-wir vergessen, dass wir bei null anfangen müssen
+Wir könnten also leicht einen "off-by-one"-Fehler machen,
+wenn wir vergessen, dass wir bei null anfangen müssen
 
 00:14:31,779 --> 00:14:32,779
 zu zählen.
 
 00:14:32,779 --> 00:14:35,700
-Wir müssen sicherstellen, dass
-wir hier inkrementieren statt dekrementieren.
+Wir müssen sicherstellen, dass wir hier
+inkrementieren statt dekrementieren.
 
 00:14:35,700 --> 00:14:40,870
 Wir müssen sicherstellen, dass wir hier die richtige
 Endbedingung haben, dass wir prüfen, dass i kleiner als
 
 00:14:40,870 --> 00:14:44,650
-n ist, und nicht zum Beispiel, dass i
-gleich n ist, oder kleiner-gleich n, oder etwas
+n ist, und nicht zum Beispiel, dass i gleich
+n ist, oder kleiner-gleich n, oder etwas
 
 00:14:44,650 --> 00:14:45,650
 in der Art.
@@ -765,8 +765,8 @@ Tatsächlich gibt es hier also mindestens drei
 Stellen, an denen wir einen Fehler machen könnten.
 
 00:14:50,120 --> 00:14:53,860
-Wir könnten hier einen Fehler machen,
-indem wir mit dem falschen Startindex beginnen.
+Wir könnten hier einen Fehler machen, indem
+wir mit dem falschen Startindex beginnen.
 
 00:14:53,860 --> 00:14:58,880
 Wir könnten hier einen Fehler machen, indem wir uns
@@ -777,8 +777,8 @@ wir z.B. mit n -
 1 oder n + 1 vergleichen.
 
 00:15:01,350 --> 00:15:05,760
-Und auch hier gibt es das Problem, dass
-wir sicherstellen müssen, dass wir die richtige Vorstellung davon
+Und auch hier gibt es das Problem, dass wir sicherstellen
+müssen, dass wir die richtige Vorstellung davon
 
 00:15:05,760 --> 00:15:07,450
 haben, wie Arrays gezählt werden.
@@ -788,24 +788,24 @@ Ist also der erste Eintrag 0,
 oder ist der erste Eintrag 1?
 
 00:15:11,900 --> 00:15:15,970
-Wie machen wir hier
-also den richtigen Indexzugriff?
+Wie machen wir hier also
+den richtigen Indexzugriff?
 
 00:15:15,970 --> 00:15:24,260
-Das liegt daran, dass diese Lösung auf Indexzugriff
-und Schleifenbildung basiert, und zwar auf diese explizite
+Das liegt daran, dass diese Lösung auf Indexzugriff und
+Schleifenbildung basiert, und zwar auf diese explizite
 
 00:15:24,260 --> 00:15:28,570
 Weise.
 
 86 # slide
 00:15:28,570 --> 00:15:33,030
-Schauen wir uns im Gegensatz dazu an, wie
-das gleiche Problem in Haskell gelöst werden könnte.
+Schauen wir uns im Gegensatz dazu an, wie das
+gleiche Problem in Haskell gelöst werden könnte.
 
 00:15:33,030 --> 00:15:39,800
-In Haskell könnten wir natürlich auch eine
-rekursive Funktion schreiben, die im Wesentlichen die
+In Haskell könnten wir natürlich auch eine rekursive
+Funktion schreiben, die im Wesentlichen die
 
 00:15:39,800 --> 00:15:44,399
 gleiche Art von Iteration durchführt wie
@@ -830,38 +830,38 @@ aus, was wir tun wollen.
 Es nimmt diese Liste.
 
 00:15:59,600 --> 00:16:05,000
-Es sagt, dass wir im Grunde
-jedes Listenelement mit aufeinander folgenden Zahlen kombinieren wollen.
+Es sagt, dass wir im Grunde jedes Listenelement mit
+aufeinander folgenden Zahlen kombinieren wollen.
 
 00:16:05,000 --> 00:16:10,360
-Wir können das ausdrücken, indem wir sagen: Lasst
-uns das mit 0, 1, 2, ([0..]) paaren.
+Wir können das ausdrücken, indem wir sagen:
+Lasst uns das mit 0, 1, 2, ([0..]) paaren.
 
 00:16:10,360 --> 00:16:15,340
-Dann nimmt es alle diese Paare, die
-es gebildet hat, und berechnet die Multiplikation,
+Dann nimmt es alle diese Paare, die es
+gebildet hat, und berechnet die Multiplikation,
 
 00:16:15,340 --> 00:16:17,040
 und dann wird das aufsummiert.
 
 00:16:17,040 --> 00:16:24,470
-Kürzer und deklarativer kann man es
-nicht machen, um in einem Rutsch auszudrücken,
+Kürzer und deklarativer kann man es nicht
+machen, um in einem Rutsch auszudrücken,
 
 00:16:24,470 --> 00:16:26,690
 was hier passiert.
 
 00:16:26,690 --> 00:16:29,300
-Beachten Sie den Unterschied
-im Ansatz zur vorherigen Lösung.
+Beachten Sie den Unterschied im
+Ansatz zur vorherigen Lösung.
 
 00:16:29,300 --> 00:16:34,220
 Es gibt keine Ergebnisvariable, die irgendwie
 immer wieder in einer Schleife überschrieben wird.
 
 00:16:34,220 --> 00:16:37,680
-Wir brauchen keine
-explizite Endbedingung zu haben.
+Wir brauchen keine explizite
+Endbedingung zu haben.
 
 00:16:37,680 --> 00:16:41,870
 Es gibt nicht einmal einen Verweis
@@ -872,24 +872,24 @@ Das wird hier einfach nicht benötigt, denn
 das "zip" wird einfach so viele Elemente aus
 
 00:16:47,149 --> 00:16:51,510
-dieser unendlichen Liste abarbeiten, wie nötig
-sind, um genügend Zahlen zu haben.
+dieser unendlichen Liste abarbeiten, wie
+nötig sind, um genügend Zahlen zu haben.
 
 00:16:51,510 --> 00:16:56,880
-Es gibt also keinen Vergleich gegen einen Endwert,
-wie n oder n - 1 oder so etwas.
+Es gibt also keinen Vergleich gegen einen
+Endwert, wie n oder n - 1 oder so etwas.
 
 00:16:56,880 --> 00:17:01,130
-Wir können auf diese Weise
-auch keine wirklichen Fehler machen.
+Wir können auf diese Weise auch
+keine wirklichen Fehler machen.
 
 00:17:01,130 --> 00:17:03,010
-Es handelt sich nur um
-einen Ausdruck, der etwas errechnet.
+Es handelt sich nur um einen
+Ausdruck, der etwas errechnet.
 
 00:17:03,010 --> 00:17:09,069
-Es gibt keine Schleife mit
-einer Schleifenbedingung, kein Überschreiben der Ergebnisvariablen
+Es gibt keine Schleife mit einer Schleifenbedingung,
+kein Überschreiben der Ergebnisvariablen
 
 00:17:09,069 --> 00:17:10,069
 oder ähnliches.
@@ -902,20 +902,20 @@ dass wir nicht im Voraus wissen müssen, wie
 viele Werte wir benötigen werden.
 
 00:17:18,270 --> 00:17:23,179
-Denn es werden einfach so viele aus dieser
-unendlichen Liste verbraucht, wie für unsere gegebene endliche Liste
+Denn es werden einfach so viele aus dieser unendlichen
+Liste verbraucht, wie für unsere gegebene endliche Liste
 
 00:17:23,179 --> 00:17:28,020
 benötigt werden (unter der Annahme,
 dass diese Liste endlich ist).
 
 00:17:28,020 --> 00:17:34,679
-Sie könnten natürlich argumentieren, dass dies geschummelt ist,
-weil ich hier die Funktion "sum" verwendet habe.
+Sie könnten natürlich argumentieren, dass dies geschummelt
+ist, weil ich hier die Funktion "sum" verwendet habe.
 
 00:17:34,679 --> 00:17:39,600
-Also, vielleicht ist das nur kurz, weil
-ich die sum-Funktion verwendet habe, anstatt diese
+Also, vielleicht ist das nur kurz, weil ich
+die sum-Funktion verwendet habe, anstatt diese
 
 00:17:39,600 --> 00:17:41,390
 wiederholte Akkumulation der Addition.
@@ -925,34 +925,34 @@ Aber ich würde argumentieren, dass
 dies nicht wirklich der Punkt ist.
 
 00:17:46,110 --> 00:17:51,160
-Einerseits ist es eine Komfortfunktion, aber auch
-ohne diese zur Verfügung zu haben oder von
+Einerseits ist es eine Komfortfunktion, aber
+auch ohne diese zur Verfügung zu haben oder von
 
 00:17:51,160 --> 00:17:55,800
-jemand anderem programmiert, wären es nur
-ein paar Tastenanschläge gewesen, um die Summation
+jemand anderem programmiert, wären es nur ein
+paar Tastenanschläge gewesen, um die Summation
 
 00:17:55,800 --> 00:17:56,800
 auszudrücken.
 
 00:17:56,800 --> 00:17:59,800
-Also, auch wenn wir die Funktion "sum" nicht haben,
-können wir das mit vielleicht zehn weiteren Tastenanschlägen schreiben.
+Also, auch wenn wir die Funktion "sum" nicht haben, können wir
+das mit vielleicht zehn weiteren Tastenanschlägen schreiben.
 
 00:17:59,800 --> 00:18:04,280
-Wir können die Summierung auch mit einer Funktion höherer
-Ordnung (siehe später) ausdrücken, und wir würden immer noch diesen
+Wir können die Summierung auch mit einer Funktion höherer Ordnung
+(siehe später) ausdrücken, und wir würden immer noch diesen
 
 00:18:04,280 --> 00:18:07,660
 schönen deklarativen Ausdruck erhalten.
 
 00:18:07,660 --> 00:18:14,030
-Und auch wenn Sie sich in der
-C-, Python- oder Java-Version irgendwie erlauben würden,
+Und auch wenn Sie sich in der C-, Python-
+oder Java-Version irgendwie erlauben würden,
 
 00:18:14,030 --> 00:18:18,340
-eine bequeme Array-Summenfunktion zu verwenden, hätte
-dies das Programm von der vorherigen
+eine bequeme Array-Summenfunktion zu verwenden,
+hätte dies das Programm von der vorherigen
 
 00:18:18,340 --> 00:18:22,340
 Folie nicht wirklich deklarativer
@@ -981,12 +981,12 @@ dann die Summenfunktion auf diesem Array aufrufen kann
 ich meine Eingabedaten zerstört)?
 
 00:18:42,230 --> 00:18:48,670
-Oder führe ich ein Hilfsarray ein, in
-dem ich zuerst alle Multiplikationen speichere und
+Oder führe ich ein Hilfsarray ein, in dem ich
+zuerst alle Multiplikationen speichere und
 
 00:18:48,670 --> 00:18:53,970
-dann meine Summenfunktion auf dieses Hilfsarray anwende,
-und dann muss ich es wieder verwerfen?
+dann meine Summenfunktion auf dieses Hilfsarray
+anwende, und dann muss ich es wieder verwerfen?
 
 00:18:53,970 --> 00:19:02,070
 Solche Dinge tauchen in diesem stückweisen Ansatz
@@ -998,12 +998,12 @@ es zu diesem Problem zu sagen gibt.
 
 87 # slide
 00:19:12,600 --> 00:19:18,010
-Wenn also das Vorhandensein oder Nichtvorhandensein der Summenfunktion nicht
-das ist, was die beiden Fälle, die Haskell-Version und
+Wenn also das Vorhandensein oder Nichtvorhandensein der Summenfunktion
+nicht das ist, was die beiden Fälle, die Haskell-Version und
 
 00:19:18,010 --> 00:19:23,780
-die imperative Version, wirklich unterscheidet, dann lassen
-Sie uns diskutieren, was die eigentlichen Aspekte
+die imperative Version, wirklich unterscheidet, dann
+lassen Sie uns diskutieren, was die eigentlichen Aspekte
 
 00:19:23,780 --> 00:19:24,990
 hier sind.
@@ -1039,8 +1039,8 @@ Schauen wir uns
 die C-ähnliche Version an.
 
 00:19:52,650 --> 00:19:58,240
-Dort hatten wir vorher diese Schleife, und jetzt
-könnten wir eigentlich diese Änderung vornehmen, indem wir sagen:
+Dort hatten wir vorher diese Schleife, und jetzt könnten
+wir eigentlich diese Änderung vornehmen, indem wir sagen:
 
 00:19:58,240 --> 00:20:04,720
 Also, wir fangen tatsächlich bei
@@ -1058,8 +1058,8 @@ Sonst würden wir einen
 Schritt zu früh aufhören.
 
 00:20:13,059 --> 00:20:17,730
-Und wir müssen sicherstellen, dass wir beim Zugriff
-auf unsere Arrays, da sich deren Nummerierungsschema nicht geändert
+Und wir müssen sicherstellen, dass wir beim Zugriff auf unsere
+Arrays, da sich deren Nummerierungsschema nicht geändert
 
 00:20:17,730 --> 00:20:22,100
 hat (nur weil ich die erste Multiplikation
@@ -1078,12 +1078,12 @@ Um diese Änderung vorzunehmen, musste ich also
 tatsächlich 3 Stellen in diesem Code ändern.
 
 00:20:37,080 --> 00:20:42,010
-Man könnte es auch anders machen,
-aber auch dann gibt es dieses Fehlerpotential.
+Man könnte es auch anders machen, aber
+auch dann gibt es dieses Fehlerpotential.
 
 00:20:42,010 --> 00:20:45,190
-Es gibt mehrere Stellen, an
-denen ich einen Fehler machen kann.
+Es gibt mehrere Stellen, an denen
+ich einen Fehler machen kann.
 
 00:20:45,190 --> 00:20:47,080
 Ich muss entscheiden, wo fange ich an?
@@ -1092,8 +1092,8 @@ Ich muss entscheiden, wo fange ich an?
 Wo höre ich auf?
 
 00:20:48,340 --> 00:20:52,230
-Wie greife ich auf
-die Elemente der Datenstruktur zu?
+Wie greife ich auf die
+Elemente der Datenstruktur zu?
 
 00:20:52,230 --> 00:20:58,910
 Es gibt also mehrere Stellen, an
@@ -1112,20 +1112,20 @@ Im Gegensatz dazu, in der Haskell-Version, wenn
 ich diese Änderung machen will, ich will das
 
 00:21:17,230 --> 00:21:20,640
-erste Element mit 1 statt mit
-0 multiplizieren, was ändere ich dann?
+erste Element mit 1 statt mit 0
+multiplizieren, was ändere ich dann?
 
 00:21:20,640 --> 00:21:23,799
-Ich ändere eine
-0 in eine 1 (von '[0..]' zu '[1..]').
+Ich ändere eine 0 in eine
+1 (von '[0..]' zu '[1..]').
 
 00:21:23,799 --> 00:21:28,260
-Das ist alles, was ich tun
-muss, um diese gewünschte Änderung auszudrücken.
+Das ist alles, was ich tun muss, um
+diese gewünschte Änderung auszudrücken.
 
 00:21:28,260 --> 00:21:33,330
-Ich muss mir keine Gedanken über die
-Schleifenendbedingung machen, weil es keine Schleifenendbedingung gibt.
+Ich muss mir keine Gedanken über die Schleifenendbedingung
+machen, weil es keine Schleifenendbedingung gibt.
 
 00:21:33,330 --> 00:21:36,280
 Und dann habe ich über n oder
@@ -1143,66 +1143,66 @@ Ich muss auch nicht darüber nachdenken, wie meine Liste
 indiziert ist (wie greife ich auf das nullte, oder erste
 
 00:21:47,540 --> 00:21:49,640
-oder zweite Element zu?),
-denn es gibt keine Indizierung.
+oder zweite Element zu?), denn
+es gibt keine Indizierung.
 
 00:21:49,640 --> 00:21:54,510
-Da ich auf die Elemente dieser Liste
-nicht per Index zugreife, muss ich daran auch
+Da ich auf die Elemente dieser Liste nicht
+per Index zugreife, muss ich daran auch
 
 00:21:54,510 --> 00:21:55,510
 nichts ändern.
 
 00:21:55,510 --> 00:21:58,010
-In diesem Sinne ist dies die
-minimale Änderung und die gewünschte Änderung.
+In diesem Sinne ist dies die minimale
+Änderung und die gewünschte Änderung.
 
 00:21:58,010 --> 00:21:59,640
 Es sollten keine
 weiteren Änderungen nötig sein.
 
 00:21:59,640 --> 00:22:07,470
-In diesem Sinne könnte man sagen, dass dies
-ein wartungsfreundlicheres Programm ist, weil wir die gewünschten Änderungen
+In diesem Sinne könnte man sagen, dass dies ein wartungsfreundlicheres
+Programm ist, weil wir die gewünschten Änderungen
 
 00:22:07,470 --> 00:22:11,100
 an einer lokalen
 Stelle vornehmen können.
 
 00:22:11,100 --> 00:22:16,150
-Natürlich will ich nicht schwindeln; man könnte argumentieren,
-dass man bei der C-Version die Änderung auch
+Natürlich will ich nicht schwindeln; man könnte
+argumentieren, dass man bei der C-Version die Änderung auch
 
 00:22:16,150 --> 00:22:18,679
-durch eine kleinere
-Bearbeitung hätte vornehmen können.
+durch eine kleinere Bearbeitung
+hätte vornehmen können.
 
 00:22:18,679 --> 00:22:24,770
-Man könnte sagen: Auch in der C-Version hätte ich das,
-was ich auf der vorherigen Folie gemacht habe, nicht tun müssen.
+Man könnte sagen: Auch in der C-Version hätte ich das, was
+ich auf der vorherigen Folie gemacht habe, nicht tun müssen.
 
 00:22:24,770 --> 00:22:28,270
 Ich hätte stattdessen die
 Multiplikation hier unten ändern können.
 
 00:22:28,270 --> 00:22:39,260
-Also, den Array-Anfang und das Array-Ende so lassen,
-wie sie waren, und einfach irgendwie diesen Multiplikator hier
+Also, den Array-Anfang und das Array-Ende so lassen, wie
+sie waren, und einfach irgendwie diesen Multiplikator hier
 
 00:22:39,260 --> 00:22:40,260
 ändern.
 
 00:22:40,260 --> 00:22:44,860
-Und zufälligerweise hätte das
-auch zu demselben Verhalten geführt.
+Und zufälligerweise hätte das auch
+zu demselben Verhalten geführt.
 
 00:22:44,860 --> 00:22:47,480
 Aber ich würde argumentieren, es ist
 nur Indexitis in einer anderen Form.
 
 00:22:47,480 --> 00:22:51,480
-Also, ich muss noch die Stelle
-finden, wo ich diese Änderung vornehmen kann.
+Also, ich muss noch die Stelle finden,
+wo ich diese Änderung vornehmen kann.
 
 00:22:51,480 --> 00:22:56,590
 Es ist irgendwie seltsam, dass ich jetzt denken
@@ -1212,8 +1212,8 @@ muss, dass ich das (i+1)-te Ding mit dem Array
 bei Index i multipliziere.
 
 00:22:57,790 --> 00:23:01,880
-Ich muss aufpassen, dass ich
-hier nicht einen "off-by-one"-Fehler mache.
+Ich muss aufpassen, dass ich hier
+nicht einen "off-by-one"-Fehler mache.
 
 00:23:01,880 --> 00:23:12,520
 Ich habe es vermieden, den Iterationskopf der Schleife
@@ -1228,16 +1228,16 @@ Also, ich könnte diese Änderung als besser
 ansehen als die auf der vorherigen Folie.
 
 00:23:23,590 --> 00:23:28,790
-Aber schon allein die Tatsache, dass es diese
-zwei getrennten Änderungen *gibt*, die zum gewünschten Verhalten
+Aber schon allein die Tatsache, dass es diese zwei
+getrennten Änderungen *gibt*, die zum gewünschten Verhalten
 
 00:23:28,790 --> 00:23:34,160
-führen, könnte auch als
-Grund zur Sorge gesehen werden.
+führen, könnte auch als Grund
+zur Sorge gesehen werden.
 
 00:23:34,160 --> 00:23:37,120
-Ich möchte ändern, wo
-ich meine Multiplikation beginne.
+Ich möchte ändern, wo ich
+meine Multiplikation beginne.
 
 00:23:37,120 --> 00:23:41,100
 In der Haskell-Version gibt es genau eine Stelle, an
@@ -1247,8 +1247,8 @@ der ich diese Änderung vornehme, und sie drückt alles
 aus, was es auszudrücken gibt.
 
 00:23:42,440 --> 00:23:47,100
-In der C-Version gibt es mehrere Möglichkeiten, dies
-zu tun, und jede dieser Möglichkeiten birgt das Potenzial,
+In der C-Version gibt es mehrere Möglichkeiten, dies zu
+tun, und jede dieser Möglichkeiten birgt das Potenzial,
 
 00:23:47,100 --> 00:23:54,179
 Fehler zu machen, indem ich nicht alle 3
@@ -1263,24 +1263,24 @@ Das erfordert sicherlich mehr Nachdenken seitens
 des Programmierers als diese sehr deklarative Art,
 
 00:24:02,870 --> 00:24:07,620
-bei der wir genau eine Stelle
-haben, die einen Unterschied zwischen den
+bei der wir genau eine Stelle haben,
+die einen Unterschied zwischen den
 
 00:24:07,620 --> 00:24:12,320
 beiden Versionen des Programms macht.
 
 89 # slide
 00:24:12,320 --> 00:24:18,980
-Warum also muss die C-Version
-all diese bürokratischen Entscheidungen treffen?
+Warum also muss die C-Version all diese
+bürokratischen Entscheidungen treffen?
 
 00:24:18,980 --> 00:24:24,860
-Entscheidungen, die aus algorithmischer Sicht nicht
-wirklich von Bedeutung sind, aber einfach
+Entscheidungen, die aus algorithmischer Sicht
+nicht wirklich von Bedeutung sind, aber einfach
 
 00:24:24,860 --> 00:24:28,230
-da sind, weil Sie sicherstellen müssen, dass
-Sie alles richtig machen, was den Schleifenstart, das
+da sind, weil Sie sicherstellen müssen, dass Sie
+alles richtig machen, was den Schleifenstart, das
 
 00:24:28,230 --> 00:24:31,090
 Schleifenende und die
@@ -1290,75 +1290,75 @@ Array-Indizierung usw. betrifft.
 Warum ist das so?
 
 00:24:32,090 --> 00:24:37,181
-Nun, konzeptionell liegt es daran, dass es in
-der C-Version keine Trennung zwischen den Werten, die
+Nun, konzeptionell liegt es daran, dass es in der
+C-Version keine Trennung zwischen den Werten, die
 
 00:24:37,181 --> 00:24:40,580
-Sie aufzählen und verarbeiten wollen, auf der einen
-Seite und der Schleifensteuerung auf der anderen Seite gibt.
+Sie aufzählen und verarbeiten wollen, auf der einen Seite
+und der Schleifensteuerung auf der anderen Seite gibt.
 
 00:24:40,580 --> 00:24:42,130
 Es ist alles ein großes Durcheinander.
 
 00:24:42,130 --> 00:24:48,160
-In diesem Beispiel ist es noch kein *großes*
-Durcheinander, sondern Dinge, die synchronisiert gehalten werden müssen.
+In diesem Beispiel ist es noch kein *großes* Durcheinander,
+sondern Dinge, die synchronisiert gehalten werden müssen.
 
 00:24:48,160 --> 00:24:52,570
-In größeren Beispielen kann es wirklich zu einem
-großen Durcheinander werden, sich mit all diesen Aspekten auf
+In größeren Beispielen kann es wirklich zu einem großen
+Durcheinander werden, sich mit all diesen Aspekten auf
 
 00:24:52,570 --> 00:24:55,540
 einmal zu beschäftigen, weil es
 keine Trennung dieser Belange gibt.
 
 00:24:55,540 --> 00:24:59,309
-Im Gegensatz dazu haben wir
-in der Haskell-Version diese perfekte Trennung.
+Im Gegensatz dazu haben wir in der
+Haskell-Version diese perfekte Trennung.
 
 00:24:59,309 --> 00:25:05,660
-Sie ergibt sich in diesem
-speziellen Beispiel tatsächlich aus diesem Ausdruck.
+Sie ergibt sich in diesem speziellen
+Beispiel tatsächlich aus diesem Ausdruck.
 
 00:25:05,660 --> 00:25:12,679
-Wir drücken aus, dass wir die Dinge, die
-aus welcher Liste auch immer hier kommen, mit
+Wir drücken aus, dass wir die Dinge, die aus
+welcher Liste auch immer hier kommen, mit
 
 00:25:12,679 --> 00:25:20,429
-Werten ab k und wie weit wir auch immer
-gehen müssen, bis wir alle Werte verarbeitet haben, kombinieren wollen.
+Werten ab k und wie weit wir auch immer gehen müssen,
+bis wir alle Werte verarbeitet haben, kombinieren wollen.
 
 00:25:20,429 --> 00:25:24,470
-Hier befindet sich gewissermaßen
-die Schleifensteuerung, wenn Sie wollen.
+Hier befindet sich gewissermaßen die
+Schleifensteuerung, wenn Sie wollen.
 
 00:25:24,470 --> 00:25:25,720
-Aber es *gibt*
-keine explizite Schleifensteuerung.
+Aber es *gibt* keine
+explizite Schleifensteuerung.
 
 00:25:25,720 --> 00:25:29,200
 Man drückt einfach aus,
 was berechnet werden soll.
 
 00:25:29,200 --> 00:25:34,260
-Ganz grundsätzlich braucht diese
-Haskell-Version keine explizite Schleifenkontrolle.
+Ganz grundsätzlich braucht diese Haskell-Version
+keine explizite Schleifenkontrolle.
 
 00:25:34,260 --> 00:25:36,740
-Sie greift nicht per
-Index auf Datenstrukturelemente zu.
+Sie greift nicht per Index
+auf Datenstrukturelemente zu.
 
 00:25:36,740 --> 00:25:41,440
-Das ist wieder der Punkt, den ich jetzt
-schon mehrfach gemacht habe, dass man in Haskell die
+Das ist wieder der Punkt, den ich jetzt schon
+mehrfach gemacht habe, dass man in Haskell die
 
 00:25:41,440 --> 00:25:46,680
-Verwendung von Indexierungsoperatoren fast
-immer vermeiden sollte und kann.
+Verwendung von Indexierungsoperatoren
+fast immer vermeiden sollte und kann.
 
 00:25:46,680 --> 00:25:50,510
-Denn so denkt man in Haskell
-nicht über Datenstrukturen nach (durch stückweisen Zugriff
+Denn so denkt man in Haskell nicht über
+Datenstrukturen nach (durch stückweisen Zugriff
 
 00:25:50,510 --> 00:25:51,660
 auf einzelne Elemente).
@@ -1371,39 +1371,39 @@ und die Operation, die auf der Datenstruktur
 als Ganzes passiert.
 
 00:25:57,750 --> 00:26:00,200
-Wir brauchen also den
-Schleifenzähler nicht zu inkrementieren.
+Wir brauchen also den Schleifenzähler
+nicht zu inkrementieren.
 
 00:26:00,200 --> 00:26:04,570
-Wir brauchen in der Haskell-Version nicht über
-die Schleifenendbedingung zu sprechen, einfach wegen dieser
+Wir brauchen in der Haskell-Version nicht über die
+Schleifenendbedingung zu sprechen, einfach wegen dieser
 
 00:26:04,570 --> 00:26:10,360
 Ausdruckskraft, die gerade in
 diesem Fall unendliche Listen haben.
 
 00:26:10,360 --> 00:26:16,830
-Das ist der Punkt, dass wir hier
-eine unendliche Liste im Grunde als Strukturierungswerkzeug verwenden
+Das ist der Punkt, dass wir hier eine unendliche
+Liste im Grunde als Strukturierungswerkzeug verwenden
 
 00:26:16,830 --> 00:26:22,070
-können, und trotzdem werden nur genau so
-viele Elemente aus dieser Liste berechnet, wie benötigt
+können, und trotzdem werden nur genau so viele
+Elemente aus dieser Liste berechnet, wie benötigt
 
 00:26:22,070 --> 00:26:23,070
 werden.
 
 00:26:23,070 --> 00:26:28,419
-Das ist also gewissermaßen eine Aufgabe, die
-der Auswertungsmechanismus der Sprache für uns übernimmt.
+Das ist also gewissermaßen eine Aufgabe, die der
+Auswertungsmechanismus der Sprache für uns übernimmt.
 
 00:26:28,419 --> 00:26:30,920
-Wir müssen uns als
-Programmierer darüber keine Gedanken machen.
+Wir müssen uns als Programmierer
+darüber keine Gedanken machen.
 
 00:26:30,920 --> 00:26:35,930
-Das ist es, was uns hier hilft
-und all diese bürokratischen Entscheidungen, die die C-Version
+Das ist es, was uns hier hilft und all diese
+bürokratischen Entscheidungen, die die C-Version
 
 00:26:35,930 --> 00:26:36,930
 treffen muss, vermeidet:
@@ -1418,8 +1418,8 @@ Wie wird inkrementiert?
 Wo beende ich die Zählung?
 
 00:26:40,299 --> 00:26:43,900
-Bin ich sicher, dass ich genau so
-viele Iterationen gemacht habe, wie ich brauche?
+Bin ich sicher, dass ich genau so viele
+Iterationen gemacht habe, wie ich brauche?
 
 00:26:43,900 --> 00:26:45,030
 Oder eine zu viel?
@@ -1431,8 +1431,8 @@ Eine zu wenig?
 Wie greife ich auf Elemente per Index zu?
 
 00:26:48,660 --> 00:26:55,380
-All diese Dinge verschwinden, wenn wir
-die Lösung auf diese deklarativere Weise ausdrücken.
+All diese Dinge verschwinden, wenn wir die
+Lösung auf diese deklarativere Weise ausdrücken.
 
 90 # slide
 00:26:55,380 --> 00:27:03,040
@@ -1448,8 +1448,8 @@ Vielleicht mache ich mir
 etwas über die Effizienz vor.
 
 00:27:07,650 --> 00:27:14,240
-Sicherlich könnten Sie denken, dass der
-C-Code effizienter ist als mein deklarativer Code.
+Sicherlich könnten Sie denken, dass der C-Code
+effizienter ist als mein deklarativer Code.
 
 00:27:14,240 --> 00:27:22,400
 Es scheint eine vernünftige Sache zu sein, anzunehmen,
@@ -1463,16 +1463,16 @@ Das braucht also zusätzlichen Speicher, und
 dann durchlaufen wir die Daten mehrfach.
 
 00:27:27,510 --> 00:27:32,470
-Selbst als ich die C-Version mit dieser
-Hilfsfunktion "sum" besprochen habe, habe ich erwähnt,
+Selbst als ich die C-Version mit dieser Hilfsfunktion
+"sum" besprochen habe, habe ich erwähnt,
 
 00:27:32,470 --> 00:27:36,760
-dass wir wahrscheinlich entweder unser erstes
-Array überschreiben oder ein Hilfsarray erstellen wollen.
+dass wir wahrscheinlich entweder unser erstes Array
+überschreiben oder ein Hilfsarray erstellen wollen.
 
 00:27:36,760 --> 00:27:39,510
-In der Haskell-Version haben
-wir natürlich auch diese Aspekte.
+In der Haskell-Version haben wir
+natürlich auch diese Aspekte.
 
 00:27:39,510 --> 00:27:42,730
 Das ist also
@@ -1483,8 +1483,8 @@ Wir sollten uns also nicht für diese deklarative Version
 entscheiden, so nett ich sie Ihnen auch zu verkaufen versuche.
 
 00:27:47,920 --> 00:27:52,520
-Denn dieses Programm ist einfach effizienter, weil
-es eine sehr enge Schleife macht und genau
+Denn dieses Programm ist einfach effizienter,
+weil es eine sehr enge Schleife macht und genau
 
 00:27:52,520 --> 00:27:55,210
 das tut, was nötig ist.
@@ -1494,16 +1494,16 @@ Vielleicht ist es nicht schön ausgedrückt, weil
 ich an all diesen Stellen Fehler machen kann,
 
 00:27:58,390 --> 00:28:00,650
-aber zumindest tut es
-das auf eine effiziente Weise.
+aber zumindest tut es das
+auf eine effiziente Weise.
 
 00:28:00,650 --> 00:28:06,049
 Das könnte also Ihr Gegenargument dafür sein, überhaupt
 zu versuchen, ein Programm wie dieses zu schreiben,
 
 00:28:06,049 --> 00:28:11,840
-wo alles besser wartbar ist, weil
-wir eine klarere Trennung der Belange haben.
+wo alles besser wartbar ist, weil wir
+eine klarere Trennung der Belange haben.
 
 00:28:11,840 --> 00:28:19,300
 Das könnte eine Sorge sein,
@@ -1521,27 +1521,27 @@ aber sie trifft nicht wirklich zu.
 Wir haben ja Compiler.
 
 00:28:26,750 --> 00:28:32,330
-Und Compiler können deklarativen Code, wie Sie ihn
-gerade gesehen haben, sehr gut in eine enge
+Und Compiler können deklarativen Code, wie Sie
+ihn gerade gesehen haben, sehr gut in eine enge
 
 00:28:32,330 --> 00:28:36,480
-C-ähnliche Schleife übersetzen, ohne
-dass dazwischenliegende Datenstrukturen verwendet werden.
+C-ähnliche Schleife übersetzen, ohne dass
+dazwischenliegende Datenstrukturen verwendet werden.
 
 00:28:36,480 --> 00:28:38,650
 Das ist also nicht wirklich ein Problem.
 
 00:28:38,650 --> 00:28:45,039
-Natürlich könnte das Programm am Ende immer
-noch weniger effizient sein als ein handgeschriebenes
+Natürlich könnte das Programm am Ende immer noch
+weniger effizient sein als ein handgeschriebenes
 
 00:28:45,039 --> 00:28:50,160
-C-Programm, aber das
-macht keine Größenordnungen aus.
+C-Programm, aber das macht
+keine Größenordnungen aus.
 
 00:28:50,160 --> 00:28:54,440
-Zum Beispiel kann der
-Compiler sogar Parallelisierungsmöglichkeiten erkennen.
+Zum Beispiel kann der Compiler sogar
+Parallelisierungsmöglichkeiten erkennen.
 
 00:28:54,440 --> 00:28:58,789
 Dank des Aspekts der unabhängigen Werte, den
@@ -1556,16 +1556,16 @@ an denen eine Parallelisierung stattfinden könnte;
 viel einfacher als z. B. in einem C-Programm.
 
 00:29:09,250 --> 00:29:15,450
-Das alles hat auch mit dem Aspekt der
-gesetzmäßigen Programmkonstruktion aus dem Zitat von Richard zu tun.
+Das alles hat auch mit dem Aspekt der gesetzmäßigen
+Programmkonstruktion aus dem Zitat von Richard zu tun.
 
 00:29:15,450 --> 00:29:18,330
 Die Tatsache, dass wir Gesetze über unsere Programme
 haben, kann also auch von einem Compiler ausgenutzt werden.
 
 00:29:18,330 --> 00:29:24,860
-Der Compiler kann Gesetze anwenden,
-um Ineffizienzen zu beseitigen, Datenstruktur-Traversierungen,
+Der Compiler kann Gesetze anwenden, um Ineffizienzen
+zu beseitigen, Datenstruktur-Traversierungen,
 
 00:29:24,860 --> 00:29:25,860
 oder Datenstrukturen selbst.
@@ -1574,12 +1574,12 @@ oder Datenstrukturen selbst.
 Das ist genau das, was GHC macht.
 
 00:29:27,090 --> 00:29:33,450
-GHC führt zwar nicht von sich
-aus Parallelität ein, aber achtet zum Beispiel
+GHC führt zwar nicht von sich aus
+Parallelität ein, aber achtet zum Beispiel
 
 00:29:33,450 --> 00:29:38,320
-sehr auf die Traversierung von
-Datenstrukturen und kann viele davon eliminieren.
+sehr auf die Traversierung von Datenstrukturen
+und kann viele davon eliminieren.
 
 00:29:38,320 --> 00:29:45,809
 Als Programmierer können wir es uns also tatsächlich
@@ -1597,20 +1597,20 @@ wegen der Gesetze, die für unsere Programme gelten,
 und wegen der Purheit.
 
 00:29:57,650 --> 00:30:02,250
-Alles ist standardmäßig pur, anders als in
-C, wo wir zusätzliche Annotationen benötigen würden,
+Alles ist standardmäßig pur, anders als in C, wo
+wir zusätzliche Annotationen benötigen würden,
 
 00:30:02,250 --> 00:30:07,820
-und selbst dann kann der Compiler nicht
-so viele Änderungen am Code vornehmen, wie er
+und selbst dann kann der Compiler nicht so
+viele Änderungen am Code vornehmen, wie er
 
 00:30:07,820 --> 00:30:11,120
-aus einer, sozusagen,
-eher algorithmischen Perspektive möchte.
+aus einer, sozusagen, eher
+algorithmischen Perspektive möchte.
 
 00:30:11,120 --> 00:30:16,900
-In einer funktionalen Sprache ist also viel
-mehr Transformation von Programmen auf automatische Weise möglich,
+In einer funktionalen Sprache ist also viel mehr
+Transformation von Programmen auf automatische Weise möglich,
 
 00:30:16,900 --> 00:30:27,340
 weil es mehr semantisches Wissen über die
@@ -1625,12 +1625,12 @@ Das möchte ich an
 dieser Stelle aber nicht tun.
 
 00:30:31,380 --> 00:30:36,120
-Das war ein Exkurs
-in dieses Thema der Wholemeal-Programmierung.
+Das war ein Exkurs in dieses Thema
+der Wholemeal-Programmierung.
 
 00:30:36,120 --> 00:30:43,240
-Ich möchte also nicht zu viel
-Zeit der Vorlesungszeit dieser Woche darauf verwenden.
+Ich möchte also nicht zu viel Zeit der
+Vorlesungszeit dieser Woche darauf verwenden.
 
 00:30:43,240 --> 00:30:49,129
 Außerdem könnten Sie natürlich argumentieren oder sich
@@ -1648,19 +1648,19 @@ Meine uneingeschränkte
 Behauptung ist: Ja!
 
 00:30:55,650 --> 00:30:58,360
-Das kann ich Ihnen
-in dieser Vorlesung nicht beweisen.
+Das kann ich Ihnen in dieser
+Vorlesung nicht beweisen.
 
 00:30:58,360 --> 00:31:03,270
-Aber das ist die Erfahrung, die
-man macht, wenn man deklarativ programmiert.
+Aber das ist die Erfahrung, die man
+macht, wenn man deklarativ programmiert.
 
 00:31:03,270 --> 00:31:04,410
 Also, das ist wirklich repräsentativ.
 
 00:31:04,410 --> 00:31:08,210
-Es ist nicht nur etwas, das
-in diesem kleinen Beispiel passiert ist.
+Es ist nicht nur etwas, das in
+diesem kleinen Beispiel passiert ist.
 
 00:31:08,210 --> 00:31:09,850
 Diese Unterschiede sind real.

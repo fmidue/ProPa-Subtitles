@@ -15,32 +15,32 @@ wahrscheinlich zu bemerken. Es sei denn, Sie wissen
 bereits davon.
 
 00:00:22,670 --> 00:00:25,410
-Es hat mit Typen zu
-tun, wie sie hier geschrieben sind.
+Es hat mit Typen zu tun, wie
+sie hier geschrieben sind.
 
 00:00:25,410 --> 00:00:31,970
 Und wir können tatsächlich auch die Notwendigkeit und den
 Nutzen dafür sehen, wenn wir uns wieder mit Listen beschäftigen.
 
 00:00:31,970 --> 00:00:40,340
-Aber wie auch immer, das Konzept ist allgemeiner
-und wir werden auch Anwendungen und Verwendungen abseits des
+Aber wie auch immer, das Konzept ist allgemeiner und
+wir werden auch Anwendungen und Verwendungen abseits des
 
 00:00:40,340 --> 00:00:43,290
 Falls von Listen sehen.
 
 93 # slide
 00:00:43,290 --> 00:00:48,680
-Erinnern wir uns daran,
-dass jede Haskell-Liste homogen ist.
+Erinnern wir uns daran, dass
+jede Haskell-Liste homogen ist.
 
 00:00:48,680 --> 00:00:53,170
-Das bedeutet, dass wir in ein und derselben
-Liste keine Elemente von verschiedenen Typen haben können.
+Das bedeutet, dass wir in ein und derselben Liste
+keine Elemente von verschiedenen Typen haben können.
 
 00:00:53,170 --> 00:00:56,780
-Wir können einen String haben,
-wie hier in der ersten Beispielzeile.
+Wir können einen String haben, wie
+hier in der ersten Beispielzeile.
 
 00:00:56,780 --> 00:00:59,820
 Das bedeutet, wir haben
@@ -51,23 +51,23 @@ Und wir können eine Liste von Integern haben
 und dann haben wir Zahlen in dieser Liste.
 
 00:01:04,210 --> 00:01:08,530
-Aber wir können keine Liste haben, die
-sowohl ein Zeichen als auch einen Integer enthält.
+Aber wir können keine Liste haben, die sowohl
+ein Zeichen als auch einen Integer enthält.
 
 00:01:08,530 --> 00:01:10,811
-Es ist nicht nur so, dass wir
-nicht wissen, was wir hier schreiben sollen.
+Es ist nicht nur so, dass wir nicht
+wissen, was wir hier schreiben sollen.
 
 00:01:10,811 --> 00:01:11,869
 Es ist einfach falsch getypt.
 
 00:01:11,869 --> 00:01:16,360
-Es ist also nichts, was von
-einem Haskell-Compiler oder -Interpreter akzeptiert würde.
+Es ist also nichts, was von einem Haskell-Compiler
+oder -Interpreter akzeptiert würde.
 
 00:01:16,360 --> 00:01:20,350
-Er würde es einfach ablehnen, weil er ihm
-weder einen dieser beiden Typen noch irgendeinen anderen Typ
+Er würde es einfach ablehnen, weil er ihm weder einen
+dieser beiden Typen noch irgendeinen anderen Typ
 
 00:01:20,350 --> 00:01:21,350
 geben kann.
@@ -94,8 +94,8 @@ und damit eine andere Liste von Zeichen erhalten,
 nämlich den umgekehrten String.
 
 00:01:44,469 --> 00:01:49,619
-Aber wir haben die gleiche Funktion "reverse" auch
-auf Integers angewendet, und dann erhielten wir eine neue
+Aber wir haben die gleiche Funktion "reverse" auch auf
+Integers angewendet, und dann erhielten wir eine neue
 
 00:01:49,619 --> 00:01:50,619
 Integer-Liste, usw.
@@ -105,8 +105,8 @@ Außerdem hatten wir eine Verkettung (++),
 die auf Strings angewendet werden konnte.
 
 00:01:54,209 --> 00:01:56,630
-Sie kann auf Listen
-von Integers angewendet werden, usw.
+Sie kann auf Listen von
+Integers angewendet werden, usw.
 
 00:01:56,630 --> 00:02:01,119
 Und auf diese Flexibilität haben
@@ -117,16 +117,16 @@ Auch List Comprehensions sind
 in diesem Sinne flexibel.
 
 00:02:03,789 --> 00:02:09,060
-So haben wir zum Beispiel (und Sie
-in den Übungen) List Comprehensions sowohl auf
+So haben wir zum Beispiel (und Sie in den
+Übungen) List Comprehensions sowohl auf
 
 00:02:09,060 --> 00:02:14,510
 der Ebene von Zahlen oder Zahlenpaaren verwendet, aber
 auch auf der Ebene von Zeichenketten und vielleicht sogar
 
 00:02:14,510 --> 00:02:19,459
-Paaren von Zeichenketten, je nachdem, wie
-Sie einige der Übungen gelöst haben.
+Paaren von Zeichenketten, je nachdem,
+wie Sie einige der Übungen gelöst haben.
 
 00:02:19,459 --> 00:02:25,650
 Gehen Sie also vielleicht zu einigen der Übungen zurück und
@@ -143,16 +143,16 @@ von Liste war das eigentlich?
 Und war das wichtig?
 
 00:02:30,239 --> 00:02:33,760
-Und in jedem Fall wird es eine
-von Listen gewesen sein, die homogen sind.
+Und in jedem Fall wird es eine von
+Listen gewesen sein, die homogen sind.
 
 00:02:33,760 --> 00:02:38,260
-Aber Funktionen könnten auf
-Listen unterschiedlichen Typs verwendet werden.
+Aber Funktionen könnten auf Listen
+unterschiedlichen Typs verwendet werden.
 
 00:02:38,260 --> 00:02:44,890
-Aber *in* jeder Liste müssen
-die Werte den gleichen Typ haben.
+Aber *in* jeder Liste müssen die
+Werte den gleichen Typ haben.
 
 94 # slide
 00:02:44,890 --> 00:02:49,870
@@ -217,15 +217,15 @@ Nun, wenn wir das täten, dann würden
 wir, obwohl dies eine homogene Liste ist,
 
 00:03:38,540 --> 00:03:43,219
-und ++ auf beide Arten von Listen
-angewendet werden kann, am Ende eine inhomogene Liste
+und ++ auf beide Arten von Listen angewendet
+werden kann, am Ende eine inhomogene Liste
 
 00:03:43,219 --> 00:03:44,219
 erhalten.
 
 00:03:44,219 --> 00:03:48,330
-Wenn wir das wirklich anhängen würden, bekämen wir eine
-Liste, die die Zeichen 'a' und 'b' und dann
+Wenn wir das wirklich anhängen würden, bekämen wir
+eine Liste, die die Zeichen 'a' und 'b' und dann
 
 00:03:48,330 --> 00:03:49,500
 die Zahlen 3 und 4 enthält.
@@ -234,12 +234,12 @@ die Zahlen 3 und 4 enthält.
 Und das ist nicht etwas, das wir wollen.
 
 00:03:50,860 --> 00:03:55,749
-Das würde die Strenge von
-"Listen sind immer homogen" zerstören.
+Das würde die Strenge von "Listen
+sind immer homogen" zerstören.
 
 00:03:55,749 --> 00:03:59,900
-Und in ähnlicher Weise wollen wir fragen, ob
-eine Zahl in einer Liste von Zahlen ist.
+Und in ähnlicher Weise wollen wir fragen,
+ob eine Zahl in einer Liste von Zahlen ist.
 
 00:03:59,900 --> 00:04:04,000
 Wir wollen fragen, ob ein Zeichen
@@ -250,8 +250,8 @@ Aber wir wollen nicht fragen, ob ein
 Zeichen in einer Liste von Zahlen ist.
 
 00:04:07,270 --> 00:04:10,579
-Und nein, wir wollen nicht,
-dass dies zu False ausgewertet wird.
+Und nein, wir wollen nicht, dass
+dies zu False ausgewertet wird.
 
 00:04:10,579 --> 00:04:14,999
 Ja, in vielen Sprachen wäre das in Ordnung,
@@ -272,25 +272,25 @@ Das ist also nicht einmal
 eine Frage, die Sinn ergibt.
 
 00:04:21,639 --> 00:04:27,110
-Wenn diese von unterschiedlichen Typen sind, dann
-kann 'a' kein Element dieser Liste sein.
+Wenn diese von unterschiedlichen Typen sind,
+dann kann 'a' kein Element dieser Liste sein.
 
 00:04:27,110 --> 00:04:30,720
 Einfach deshalb, weil die
 Typen keinen Sinn ergeben.
 
 00:04:30,720 --> 00:04:34,430
-Wir wollen also nicht, dass
-dies dynamisch zu False ausgewertet wird.
+Wir wollen also nicht, dass dies
+dynamisch zu False ausgewertet wird.
 
 00:04:34,430 --> 00:04:41,380
-Wir wollen, dass dies statisch als
-eine nicht sinnvolle Frage zurückgewiesen wird.
+Wir wollen, dass dies statisch als eine
+nicht sinnvolle Frage zurückgewiesen wird.
 
 95 # slide
 00:04:41,380 --> 00:04:48,229
-Was sind also die Typen
-von Funktionen wie der gerade gesehenen?
+Was sind also die Typen von
+Funktionen wie der gerade gesehenen?
 
 00:04:48,229 --> 00:04:54,710
 Tatsächlich, und das ist vielleicht verdächtig, wurde
@@ -303,8 +303,8 @@ in den Vorlesungen noch in den Übungen.
 Wir haben dies umschifft.
 
 00:04:58,160 --> 00:05:02,850
-Hätten wir Ihnen z. B. gesagt, was der Typ
-von "reverse" ist, dann hätten wir Ihnen vielleicht
+Hätten wir Ihnen z. B. gesagt, was der Typ von
+"reverse" ist, dann hätten wir Ihnen vielleicht
 
 00:05:02,850 --> 00:05:04,750
 zwei Typen nennen müssen.
@@ -314,45 +314,45 @@ Also vielleicht: "reverse auf Zeichen", das Ihnen
 bei einer Liste von Zeichen wieder eine Liste
 
 00:05:12,820 --> 00:05:17,360
-von Zeichenwerten liefert; und vielleicht ein "reverseInteger",
-das Ihnen bei einer Liste von Integern eine
+von Zeichenwerten liefert; und vielleicht ein
+"reverseInteger", das Ihnen bei einer Liste von Integern eine
 
 00:05:17,360 --> 00:05:18,360
 Liste von Integern liefert.
 
 00:05:18,360 --> 00:05:23,250
-Das ist also die Art von Typen, die
-Sie bisher gesehen haben und die in den Typsignaturen
+Das ist also die Art von Typen, die Sie bisher
+gesehen haben und die in den Typsignaturen
 
 00:05:23,250 --> 00:05:25,099
 in den Übungsvorlagen vorkamen.
 
 00:05:25,099 --> 00:05:30,729
-Und wenn wir etwas für "reverse" gemacht
-hätten, indem wir es als Top-Level-Funktion gegeben hätten,
+Und wenn wir etwas für "reverse" gemacht hätten,
+indem wir es als Top-Level-Funktion gegeben hätten,
 
 00:05:30,729 --> 00:05:34,660
-dann hätten wir uns vielleicht entscheiden müssen, welche
-der beiden zu wählen, oder vielleicht in einer
+dann hätten wir uns vielleicht entscheiden müssen,
+welche der beiden zu wählen, oder vielleicht in einer
 
 00:05:34,660 --> 00:05:36,819
-Übung so und in einer
-anderen Übung so zu schreiben.
+Übung so und in einer anderen
+Übung so zu schreiben.
 
 00:05:36,819 --> 00:05:40,972
 Das ist eindeutig nicht etwas, das
 auf Dauer irgendwie schön wartbar ist.
 
 00:05:40,972 --> 00:05:43,009
-Das ist nicht die
-Art, wie wir programmieren wollen.
+Das ist nicht die Art, wie
+wir programmieren wollen.
 
 00:05:43,009 --> 00:05:44,009
 Also, was stattdessen?
 
 00:05:44,009 --> 00:05:50,510
-Nun, der Punkt ist, dass wir Variablen auch
-auf der Ebene von Typen verwenden können: Typvariablen.
+Nun, der Punkt ist, dass wir Variablen auch auf
+der Ebene von Typen verwenden können: Typvariablen.
 
 00:05:50,510 --> 00:05:54,130
 Der Typ von "reverse" ist
@@ -362,8 +362,8 @@ also weder dies noch das.
 Der Typ von "reverse" ist dies.
 
 00:05:55,750 --> 00:05:59,020
-Und das "a" hier
-ist eine Variable, eine Typvariable.
+Und das "a" hier ist eine
+Variable, eine Typvariable.
 
 00:05:59,020 --> 00:06:03,389
 Es verwendet die gleiche Syntax wie eine gewöhnliche
@@ -382,27 +382,27 @@ Dies ist nicht
 dasselbe wie "untypisiert".
 
 00:06:17,860 --> 00:06:21,509
-Betrachten wir den Typ
-von ++, dem Verkettungsoperator.
+Betrachten wir den Typ von
+++, dem Verkettungsoperator.
 
 00:06:21,509 --> 00:06:23,099
 Er nimmt zwei Listen
 und gibt eine Liste aus.
 
 00:06:23,099 --> 00:06:26,490
-Er ist also in diesem Sinne flexibel, Sie
-können ihm zwei Strings geben und erhalten einen String.
+Er ist also in diesem Sinne flexibel, Sie können
+ihm zwei Strings geben und erhalten einen String.
 
 00:06:26,490 --> 00:06:29,961
-Aber es ist immer noch
-unmöglich, etwas wie dieses zu schreiben.
+Aber es ist immer noch unmöglich,
+etwas wie dieses zu schreiben.
 
 00:06:29,961 --> 00:06:31,669
 Dies ist also nicht "alles geht".
 
 00:06:31,669 --> 00:06:34,180
-Es bedeutet nicht: zwei beliebige Listen
-und ich gebe Ihnen eine Liste.
+Es bedeutet nicht: zwei beliebige
+Listen und ich gebe Ihnen eine Liste.
 
 00:06:34,180 --> 00:06:40,259
 Nein, es heißt: Gib mir zwei Listen des
@@ -435,8 +435,8 @@ vom *gleichen* Typ sein müssen.
 Andernfalls wird ++ nicht anwendbar sein.
 
 00:07:06,289 --> 00:07:14,889
-Und so wird das dann abgelehnt, obwohl
-++ sowohl auf Strings als auch auf Zahlenlisten
+Und so wird das dann abgelehnt, obwohl ++
+sowohl auf Strings als auch auf Zahlenlisten
 
 00:07:14,889 --> 00:07:17,500
 funktioniert.
@@ -450,23 +450,23 @@ Beispiele gesehen; wir haben nur die Typen
 nicht aufgeschrieben.
 
 00:07:22,270 --> 00:07:28,580
-Wenn Sie also zu einer der Folien zurückgehen,
-auf der ich einige Listenfunktionen vorgestellt habe (es gab
+Wenn Sie also zu einer der Folien zurückgehen, auf der
+ich einige Listenfunktionen vorgestellt habe (es gab
 
 00:07:28,580 --> 00:07:34,600
 eine Bibliothek von Listenfunktionen, die wir für
 die ersten paar Übungen zu Listen verwendet haben),
 
 00:07:34,600 --> 00:07:38,099
-dann haben die meisten der dort
-vorkommenden Funktionen solche Typvariablen, wenn man ihre
+dann haben die meisten der dort vorkommenden
+Funktionen solche Typvariablen, wenn man ihre
 
 00:07:38,099 --> 00:07:39,099
 Typen tatsächlich aufschreibt.
 
 00:07:39,099 --> 00:07:45,060
-So ist z. B. die Funktion "head" eine
-Funktion von Listen zu nicht Listen, sondern Elementen.
+So ist z. B. die Funktion "head" eine Funktion
+von Listen zu nicht Listen, sondern Elementen.
 
 00:07:45,060 --> 00:07:47,200
 Die Funktion "head" gibt
@@ -485,8 +485,8 @@ Wohingegen die tail-Funktion zum Beispiel bei einer
 Liste von "a"s eine Liste von "a"s zurückgibt.
 
 00:07:56,539 --> 00:08:00,370
-Denn sie nimmt nur ein Element weg und
-gibt Ihnen dann immer noch eine Liste zurück.
+Denn sie nimmt nur ein Element weg und gibt
+Ihnen dann immer noch eine Liste zurück.
 
 00:08:00,370 --> 00:08:03,759
 Ähnliches gilt für "last" und "init".
@@ -503,8 +503,8 @@ Ich habe diesen Begriff noch nicht erwähnt, aber
 diese Art von Typen werden polymorphe Typen genannt,
 
 00:08:13,879 --> 00:08:15,919
-weil sie grundsätzlich
-viele Formen annehmen können.
+weil sie grundsätzlich viele
+Formen annehmen können.
 
 00:08:15,919 --> 00:08:22,180
 Sie arbeiten mit Daten verschiedener
@@ -515,15 +515,15 @@ Und natürlich muss eine Funktion
 nicht in *allem* polymorph sein.
 
 00:08:25,450 --> 00:08:31,039
-Zum Beispiel geht die length-Funktion nicht von
-einer Liste von "a"s zu "a" wie die
+Zum Beispiel geht die length-Funktion nicht
+von einer Liste von "a"s zu "a" wie die
 
 00:08:31,039 --> 00:08:32,039
 head-Funktion.
 
 00:08:32,039 --> 00:08:35,980
-Sie geht von einer Liste von "a"s zu
-Int, weil die Ausgabe definitiv eine Zahl ist.
+Sie geht von einer Liste von "a"s zu Int,
+weil die Ausgabe definitiv eine Zahl ist.
 
 00:08:35,980 --> 00:08:40,829
 Die length-Funktion ist polymorph, sie funktioniert
@@ -563,46 +563,46 @@ Und das ist *nicht* flexibel, weil
 die Länge eine Zahl sein muss.
 
 00:09:06,130 --> 00:09:10,660
-Das ist *nicht* flexibel, weil das Ergebnis
-einer solchen Prädikatsprüfung ein Boolescher Wert sein
+Das ist *nicht* flexibel, weil das Ergebnis einer
+solchen Prädikatsprüfung ein Boolescher Wert sein
 
 00:09:10,660 --> 00:09:11,660
 sollte.
 
 00:09:11,660 --> 00:09:13,279
-Okay, und Polymorphismus
-kann auch verschachtelt auftreten.
+Okay, und Polymorphismus kann
+auch verschachtelt auftreten.
 
 00:09:13,279 --> 00:09:19,990
-Zum Beispiel die concat-Funktion: sie war für die
-Verkettung von (möglicherweise) mehr als zwei Listen gedacht.
+Zum Beispiel die concat-Funktion: sie war für die Verkettung
+von (möglicherweise) mehr als zwei Listen gedacht.
 
 00:09:19,990 --> 00:09:25,910
-Man gibt ihr also eine Liste von Listen von
-irgendetwas, und sie gibt eine Liste von diesen irgendetwas
+Man gibt ihr also eine Liste von Listen von irgendetwas,
+und sie gibt eine Liste von diesen irgendetwas
 
 00:09:25,910 --> 00:09:29,100
 zurück, weil eine
 Listenebene reduziert wird.
 
 00:09:29,100 --> 00:09:33,870
-Eine Verschachtelungsebene der
-Liste wird eliminiert.
+Eine Verschachtelungsebene
+der Liste wird eliminiert.
 
 00:09:33,870 --> 00:09:36,510
 Aus einer Liste von Listen
 wird also nur noch eine Liste.
 
 00:09:36,510 --> 00:09:41,230
-Und was sind die Einträge in diesen
-Listen in einer Liste, und in der Ergebnisliste?
+Und was sind die Einträge in diesen Listen
+in einer Liste, und in der Ergebnisliste?
 
 00:09:41,230 --> 00:09:42,230
 Irgendetwas!
 
 00:09:42,230 --> 00:09:47,430
-Aber auf der Eingabe- und
-auf der Ausgabeseite das Gleiche.
+Aber auf der Eingabe- und auf
+der Ausgabeseite das Gleiche.
 
 00:09:47,430 --> 00:09:51,130
 In konkreten Anwendungen von solchen polymorphen
@@ -612,19 +612,19 @@ Funktionen sieht man die Polymorphie nicht
 mehr.
 
 00:09:52,130 --> 00:09:56,620
-Wenn Sie also z. B. die Funktion "head"
-auf einen String anwenden, dann ist sie natürlich
+Wenn Sie also z. B. die Funktion "head" auf
+einen String anwenden, dann ist sie natürlich
 
 00:09:56,620 --> 00:09:58,120
 nicht mehr polymorph.
 
 00:09:58,120 --> 00:10:04,030
-Wenn Sie ihr nun eine konkrete Liste geben,
-die ein String ist (also eine Liste von Zeichen),
+Wenn Sie ihr nun eine konkrete Liste geben, die
+ein String ist (also eine Liste von Zeichen),
 
 00:10:04,030 --> 00:10:07,670
-dann ist klar, dass
-dieses "a" Zeichen sein müssen.
+dann ist klar, dass dieses
+"a" Zeichen sein müssen.
 
 00:10:07,670 --> 00:10:08,670
 Und was ist dann das Ergebnis?
@@ -633,31 +633,31 @@ Und was ist dann das Ergebnis?
 Natürlich ein Zeichen.
 
 00:10:09,730 --> 00:10:15,130
-Dann passiert also diese Instanziierung, und
-"a" wird zu einem konkreten Typ.
+Dann passiert also diese Instanziierung,
+und "a" wird zu einem konkreten Typ.
 
 00:10:15,130 --> 00:10:17,240
 Und dann ist auch der Ausgabetyp klar.
 
 00:10:17,240 --> 00:10:20,420
-Es muss Char sein, denn das geht
-von Listen von etwas zu diesem Etwas.
+Es muss Char sein, denn das geht von
+Listen von etwas zu diesem Etwas.
 
 00:10:20,420 --> 00:10:23,890
-Da ein String also eine Liste von
-Zeichen ist, ist das Ergebnis ein Zeichen.
+Da ein String also eine Liste von Zeichen
+ist, ist das Ergebnis ein Zeichen.
 
 00:10:23,890 --> 00:10:30,860
 Als Randbemerkung, eigentlich haben diese Typen,
 wenn Sie wirklich in einer Interpreter-Sitzung
 
 00:10:30,860 --> 00:10:34,952
-nachschauen, sogar noch stärker polymorphe
-Typen, als Sie hier sehen.
+nachschauen, sogar noch stärker
+polymorphe Typen, als Sie hier sehen.
 
 00:10:34,952 --> 00:10:38,089
-Sie erhalten also etwas mit
-einigen zusätzlichen Type Constraints wie "Foldable".
+Sie erhalten also etwas mit einigen
+zusätzlichen Type Constraints wie "Foldable".
 
 00:10:38,089 --> 00:10:40,389
 Aber das ignorieren
@@ -676,16 +676,16 @@ Polymorphismus über die Listenstruktur (wobei wir diese
 durch eine andere Datenstruktur als Listen ersetzen).
 
 00:10:53,790 --> 00:10:57,030
-Das ist nicht die Art
-von Polymorphismus, die uns interessiert.
+Das ist nicht die Art von
+Polymorphismus, die uns interessiert.
 
 00:10:57,030 --> 00:11:02,630
-Wir reden also über diese
-Typvariablen, in diesem Fall die Listeneinträge.
+Wir reden also über diese Typvariablen,
+in diesem Fall die Listeneinträge.
 
 00:11:02,630 --> 00:11:10,260
-Das gilt aber auch für
-andere Datenstrukturen, dazu später mehr.
+Das gilt aber auch für andere
+Datenstrukturen, dazu später mehr.
 
 97 # slide
 00:11:10,260 --> 00:11:15,260
@@ -693,8 +693,8 @@ Auch auf der Eingabeseite muss eine
 Funktion nicht in allem polymorph sein.
 
 00:11:15,260 --> 00:11:20,050
-So wie die Funktionen "length" und "null"
-in der Ausgabe nicht polymorph sind, könnte eine
+So wie die Funktionen "length" und "null" in
+der Ausgabe nicht polymorph sind, könnte eine
 
 00:11:20,050 --> 00:11:24,930
 Funktion auch in den Argumenten nicht polymorph
@@ -705,16 +705,16 @@ Schauen wir uns also
 einige weitere Beispiele an.
 
 00:11:26,620 --> 00:11:31,930
-Dies ist der
-berüchtigte und unerwünschte Listenindexierungsoperator.
+Dies ist der berüchtigte und
+unerwünschte Listenindexierungsoperator.
 
 00:11:31,930 --> 00:11:37,070
 Er nimmt eine Liste, und er funktioniert auf jeder
 Art von Listen, und er nimmt eine Zahl als Index,
 
 00:11:37,070 --> 00:11:40,480
-und er gibt ein
-Element der ursprünglichen Liste zurück.
+und er gibt ein Element der
+ursprünglichen Liste zurück.
 
 00:11:40,480 --> 00:11:44,670
 Deshalb haben wir eine Liste von "a"s, eine ganze
@@ -728,32 +728,32 @@ und das Ergebnis wird ein "a" sein.
 Oder die Funktionen "take" und "drop".
 
 00:11:51,600 --> 00:11:56,149
-Sie nehmen wiederum eine Zahl (denn Sie müssen
-ihnen sagen, wie viel sie von der Eingabeliste nehmen
+Sie nehmen wiederum eine Zahl (denn Sie müssen ihnen
+sagen, wie viel sie von der Eingabeliste nehmen
 
 00:11:56,149 --> 00:11:58,889
-oder fallen lassen sollen), und
-dann haben Sie eine Liste.
+oder fallen lassen sollen),
+und dann haben Sie eine Liste.
 
 00:11:58,889 --> 00:12:03,040
 Und diese Liste ist polymorph; es spielt keine Rolle,
 ob wir etwas von einer Liste von Strings, einer Liste
 
 00:12:03,040 --> 00:12:07,480
-von Zeichen, einer Liste von Zahlen oder
-was auch immer nehmen, es funktioniert immer.
+von Zeichen, einer Liste von Zahlen oder was
+auch immer nehmen, es funktioniert immer.
 
 00:12:07,480 --> 00:12:10,190
-Aber das erste Argument muss eine
-Zahl sein und nicht irgendetwas anderes.
+Aber das erste Argument muss eine Zahl
+sein und nicht irgendetwas anderes.
 
 00:12:10,190 --> 00:12:19,230
-Die Funktion "splitAt", zum Beispiel, die in
-einer der Übungen verwendet werden musste, nimmt wieder
+Die Funktion "splitAt", zum Beispiel, die in einer
+der Übungen verwendet werden musste, nimmt wieder
 
 00:12:19,230 --> 00:12:22,970
-eine Zahl, weil man ihr sagen muss, wo
-sie eine Liste aufteilen soll; dann gibt man
+eine Zahl, weil man ihr sagen muss, wo sie
+eine Liste aufteilen soll; dann gibt man
 
 00:12:22,970 --> 00:12:23,970
 ihr eine Liste.
@@ -776,28 +776,28 @@ Liste mit Zeichen (einen String) und eine Liste mit etwas
 anderem zurück.
 
 00:12:34,779 --> 00:12:37,380
-Wenn Sie ihr einen String
-geben, erhalten Sie zwei Strings zurück.
+Wenn Sie ihr einen String geben,
+erhalten Sie zwei Strings zurück.
 
 00:12:37,380 --> 00:12:42,370
 Wenn Sie ihr eine Liste von Zahlen geben,
 erhalten Sie zwei Listen von Zahlen zurück, usw.
 
 00:12:42,370 --> 00:12:46,709
-Das ist auch wichtig, dass man
-in der Ausgabe mehrere Dinge haben kann.
+Das ist auch wichtig, dass man in
+der Ausgabe mehrere Dinge haben kann.
 
 00:12:46,709 --> 00:12:53,550
 Und in diesem Fall müssen sie z. B. den
 gleichen Typ haben, aber flexibel in der Eingabe
 
 00:12:53,550 --> 00:12:56,440
-(im Elementtyp), jedoch den
-gleichen Elementtyp für beide Listen.
+(im Elementtyp), jedoch den gleichen
+Elementtyp für beide Listen.
 
 00:12:56,440 --> 00:13:00,040
-Und dann können Sie
-wieder die gleiche Frage haben:
+Und dann können Sie wieder
+die gleiche Frage haben:
 
 00:13:00,040 --> 00:13:03,540
 Was ist, wenn Sie mehrere Eingabelisten
@@ -814,8 +814,8 @@ Also, was ist damit?
 Die Idee war:
 
 00:13:09,950 --> 00:13:14,750
-Sie geben ihr zwei unabhängige Listen, und
-was Sie zurückbekommen, ist eine Liste von Paaren.
+Sie geben ihr zwei unabhängige Listen, und was
+Sie zurückbekommen, ist eine Liste von Paaren.
 
 00:13:14,750 --> 00:13:18,209
 Also, wie sollte das typisiert werden?
@@ -843,16 +843,16 @@ Wir haben dies
 tatsächlich schon benutzt.
 
 00:13:36,899 --> 00:13:41,860
-Wir haben Dinge wie Listen von Zahlen
-und Listen von Zeichen per "zip" verknüpft.
+Wir haben Dinge wie Listen von Zahlen und
+Listen von Zeichen per "zip" verknüpft.
 
 00:13:41,860 --> 00:13:47,389
-Ich weiß nicht, ob das schon in
-Übungen vorgekommen ist, aber Sie können das tun.
+Ich weiß nicht, ob das schon in Übungen
+vorgekommen ist, aber Sie können das tun.
 
 00:13:47,389 --> 00:13:53,500
-Sie können eine Liste von Zahlen und eine
-Zeichenkette nehmen und erhalten zum Beispiel eine Liste von
+Sie können eine Liste von Zahlen und eine Zeichenkette
+nehmen und erhalten zum Beispiel eine Liste von
 
 00:13:53,500 --> 00:13:56,000
 Zahlen/Zeichen-Paaren zurück.
@@ -868,28 +868,28 @@ Anders als bei ++ wollen wir nicht nur
 und jede Mischverwendung verbieten.
 
 00:14:06,730 --> 00:14:09,700
-Für "zip" wollen wir tatsächlich
-auch alle diese Kombinationen zulassen.
+Für "zip" wollen wir tatsächlich auch
+alle diese Kombinationen zulassen.
 
 00:14:09,700 --> 00:14:15,579
-Also das Zippen von zwei Strings, das
-Zippen von zwei Zahlenlisten, aber auch das Zippen
+Also das Zippen von zwei Strings, das Zippen
+von zwei Zahlenlisten, aber auch das Zippen
 
 00:14:15,579 --> 00:14:18,589
 von z. B. einem
 String und einer Zahlenliste.
 
 00:14:18,589 --> 00:14:23,600
-Der Typ muss also offensichtlich anders sein als der
-Typ von ++, denn für ++ haben wir gesagt:
+Der Typ muss also offensichtlich anders sein als
+der Typ von ++, denn für ++ haben wir gesagt:
 
 00:14:23,600 --> 00:14:30,550
 Wir geben ihm zwei Listen vom gleichen Elementtyp,
 und es gibt eine Liste vom gleichen Typ zurück.
 
 00:14:30,550 --> 00:14:35,380
-Im Fall von "zip" würde es wohl
-eine Liste von Paaren zurückgeben, aber konzentrieren wir
+Im Fall von "zip" würde es wohl eine Liste
+von Paaren zurückgeben, aber konzentrieren wir
 
 00:14:35,380 --> 00:14:36,639
 uns hier auf die Eingabeseite.
@@ -907,15 +907,15 @@ zurückweist, auch
 dies zurückgewiesen werden.
 
 00:14:48,019 --> 00:14:54,449
-Aber es gibt keinen Grund, dies zu verwerfen,
-denn das Zippen funktioniert konzeptionell auch, wenn man ihm
+Aber es gibt keinen Grund, dies zu verwerfen, denn das
+Zippen funktioniert konzeptionell auch, wenn man ihm
 
 00:14:54,449 --> 00:14:56,750
 zwei verschiedene Arten von Listen gibt.
 
 00:14:56,750 --> 00:15:01,769
-Jede Liste muss homogen sein, aber
-sie könnten von unterschiedlichem Typ sein.
+Jede Liste muss homogen sein, aber sie
+könnten von unterschiedlichem Typ sein.
 
 99 # slide
 00:15:01,769 --> 00:15:05,730
@@ -926,16 +926,16 @@ Es wird also wieder mit Typvariablen
 gearbeitet, jetzt aber mit mehr als einer.
 
 00:15:09,639 --> 00:15:14,259
-Um auszudrücken, dass die beiden Eingabelisten nicht
-die gleiche Art von Listen sein müssen.
+Um auszudrücken, dass die beiden Eingabelisten
+nicht die gleiche Art von Listen sein müssen.
 
 00:15:14,259 --> 00:15:19,410
 Also, wenn Sie hier "a" und "a" hätten, würde das
 bedeuten, dass es uns egal ist, was für eine Art von
 
 00:15:19,410 --> 00:15:22,640
-Liste es ist, aber es muss der
-gleiche Listentyp im ersten und zweiten Argument sein.
+Liste es ist, aber es muss der gleiche
+Listentyp im ersten und zweiten Argument sein.
 
 00:15:22,640 --> 00:15:23,779
 Was wir hier sagen wollen, ist:
@@ -948,8 +948,8 @@ es ist uns sogar egal, ob die erste und die
 zweite Liste den gleichen Typ haben.
 
 00:15:29,290 --> 00:15:34,960
-Sie müssen also jeweils eine homogene Liste
-sein, aber sie könnten unterschiedliche Elementtypen haben.
+Sie müssen also jeweils eine homogene Liste sein,
+aber sie könnten unterschiedliche Elementtypen haben.
 
 00:15:34,960 --> 00:15:36,410
 Und was ist das Ergebnis?
@@ -969,8 +969,8 @@ hat den Typ, der aus der zweiten Argumentliste
 von "zip" kommt.
 
 00:15:54,110 --> 00:15:57,019
-Das "a" und das "b" *können* vom gleichen Typ
-sein, aber sie *müssen* nicht vom gleichen Typ sein.
+Das "a" und das "b" *können* vom gleichen Typ sein,
+aber sie *müssen* nicht vom gleichen Typ sein.
 
 00:15:57,019 --> 00:16:02,010
 In diesem Sinne können wir dies
@@ -999,16 +999,16 @@ Daher machen jetzt
 alle diese Aufrufe Sinn.
 
 00:16:22,160 --> 00:16:29,620
-Wenn wir zwei Strings zippen, dann wird dieses "a"
-zu Char und dieses "b" zu Char, und die
+Wenn wir zwei Strings zippen, dann wird dieses
+"a" zu Char und dieses "b" zu Char, und die
 
 00:16:29,620 --> 00:16:33,100
-Ergebnisliste ist eine Liste von
-Paaren aus Char und Char.
+Ergebnisliste ist eine Liste
+von Paaren aus Char und Char.
 
 00:16:33,100 --> 00:16:37,470
-Wenn wir zwei Listen von Zahlen zippen, dann wird
-dieses "a" zu Int und "b" zu Int und das
+Wenn wir zwei Listen von Zahlen zippen, dann
+wird dieses "a" zu Int und "b" zu Int und das
 
 00:16:37,470 --> 00:16:41,009
 Ergebnis ist eine Liste von
@@ -1019,15 +1019,15 @@ Und schließlich, wenn wir einen String und eine Liste
 von Zahlen zippen, dann wird dieses "a" zu Char, weil
 
 00:16:46,889 --> 00:16:51,940
-dies eine Liste von Zeichen ist, dieses "b" wird
-zu Int, weil dies eine Liste von Ints ist.
+dies eine Liste von Zeichen ist, dieses "b"
+wird zu Int, weil dies eine Liste von Ints ist.
 
 00:16:51,940 --> 00:16:53,350
 Und was ist die Ergebnisliste?
 
 00:16:53,350 --> 00:17:00,720
-Es ist eine Liste von Paaren aus
-"a = Char" und "b = Int".
+Es ist eine Liste von Paaren
+aus "a = Char" und "b = Int".
 
 00:17:00,720 --> 00:17:05,870
 Deshalb ergibt das jetzt Sinn, während ein gemischter
@@ -1038,23 +1038,23 @@ macht, denn dort war die Anforderung: eine
 Liste von "a" und eine Liste von "a".
 
 00:17:10,640 --> 00:17:15,030
-Wenn Sie also versuchen, es so zu verwenden,
-dann müsste der Compiler entscheiden, ob diese Variable
+Wenn Sie also versuchen, es so zu verwenden, dann
+müsste der Compiler entscheiden, ob diese Variable
 
 00:17:15,030 --> 00:17:16,920
 "a" Char oder Int ist.
 
 00:17:16,920 --> 00:17:21,210
-Sie kann nicht beides gleichzeitig sein, aber sie müsste
-beides sein, weil dies eine Liste von "a" ist,
+Sie kann nicht beides gleichzeitig sein, aber sie
+müsste beides sein, weil dies eine Liste von "a" ist,
 
 00:17:21,210 --> 00:17:25,770
 die Zeichen sind, und dies eine
 Liste von "a", die Ints sind.
 
 00:17:25,770 --> 00:17:32,262
-Die Variablen unterschiedlichen Typs hier verhindern also dieses
-Problem für "zip", aber für ++ wollen wir auf
+Die Variablen unterschiedlichen Typs hier verhindern also
+dieses Problem für "zip", aber für ++ wollen wir auf
 
 00:17:32,262 --> 00:17:34,330
 jeden Fall, dass beide
@@ -1065,15 +1065,15 @@ Deshalb kommt das "a" zweimal
 im Typ des ++ Operators vor.
 
 00:17:39,700 --> 00:17:48,650
-Leider ist es nicht unbedingt so,
-dass Typ-Fehlermeldungen des Compilers so eindeutig
+Leider ist es nicht unbedingt so, dass
+Typ-Fehlermeldungen des Compilers so eindeutig
 
 00:17:48,650 --> 00:17:51,260
 sind wie die Kommentare hier.
 
 00:17:51,260 --> 00:17:56,780
-Vielleicht ist nicht immer so direkt aus
-den Typ-Fehlermeldungen ersichtlich, wenn man einen Typfehler
+Vielleicht ist nicht immer so direkt aus den
+Typ-Fehlermeldungen ersichtlich, wenn man einen Typfehler
 
 00:17:56,780 --> 00:18:03,680
 macht: was erwartet wurde
@@ -1101,12 +1101,12 @@ können, dass eine Funktion flexibel über verschiedenen
 Elementtypen eines Kollektions-Typs verwendet wird, zum Beispiel.
 
 00:18:35,190 --> 00:18:37,020
-Wahrscheinlich nicht, wenn Sie
-aus einer untypisierten Sprache kommen.
+Wahrscheinlich nicht, wenn Sie aus
+einer untypisierten Sprache kommen.
 
 00:18:37,020 --> 00:18:42,600
-Aber wenn Sie aus einer Sprache wie Java oder
-C# oder C++ kommen, haben Sie vielleicht so etwas wie
+Aber wenn Sie aus einer Sprache wie Java oder C#
+oder C++ kommen, haben Sie vielleicht so etwas wie
 
 00:18:42,600 --> 00:18:43,760
 Generics in Java gesehen.
@@ -1119,34 +1119,34 @@ Form gibt es sie auch in anderen Sprachen dieser
 Familie.
 
 00:18:51,560 --> 00:19:00,430
-Dieser T-Parameter, den Sie in einer
-generischen Kollektions-Methodensignatur haben würden, entspricht in
+Dieser T-Parameter, den Sie in einer generischen
+Kollektions-Methodensignatur haben würden, entspricht in
 
 00:19:00,430 --> 00:19:01,430
 etwa dem "a".
 
 00:19:01,430 --> 00:19:06,970
-Das heißt also so viel wie: Für
-ein beliebiges T habe ich vielleicht diese "reverse"-Methode,
+Das heißt also so viel wie: Für ein beliebiges
+T habe ich vielleicht diese "reverse"-Methode,
 
 00:19:06,970 --> 00:19:13,190
 oder eine statische Methode, die für eine Liste,
 die eine Liste über etwas vom Typ 'T' ist,
 
 00:19:13,190 --> 00:19:15,830
-eine Liste von etwas
-vom gleichen Typ 'T' zurückgibt.
+eine Liste von etwas vom
+gleichen Typ 'T' zurückgibt.
 
 00:19:15,830 --> 00:19:20,690
-Und auch hier wird das 'T' mehr als einmal verwendet,
-um auszudrücken, dass es sich immer um den gleichen Typ handeln
+Und auch hier wird das 'T' mehr als einmal verwendet, um
+auszudrücken, dass es sich immer um den gleichen Typ handeln
 
 00:19:20,690 --> 00:19:21,690
 muss.
 
 00:19:21,690 --> 00:19:27,320
-Das entspricht also sehr direkt
-der "reverse"-Annotation hier, die Listen nimmt
+Das entspricht also sehr direkt der
+"reverse"-Annotation hier, die Listen nimmt
 
 00:19:27,320 --> 00:19:30,990
 und Listen zurückgibt und diese
@@ -1157,8 +1157,8 @@ Das ist nicht irgendwie zufällig, dass
 das auch in anderen Sprachen vorkommt.
 
 00:19:35,480 --> 00:19:39,890
-Es ist aber auch nicht so, dass
-Haskell irgendwie nach diesen Beispielen, diesen Sprachen, modelliert
+Es ist aber auch nicht so, dass Haskell irgendwie
+nach diesen Beispielen, diesen Sprachen, modelliert
 
 00:19:39,890 --> 00:19:41,520
 ist.
@@ -1167,8 +1167,8 @@ ist.
 Das Gegenteil ist der Fall.
 
 00:19:43,970 --> 00:19:49,530
-Haskell und ähnliche typisierte funktionale Sprachen
-hatten dieses Feature viel früher als
+Haskell und ähnliche typisierte funktionale
+Sprachen hatten dieses Feature viel früher als
 
 00:19:49,530 --> 00:19:51,070
 z.B. alle objektorientierten Sprachen.
@@ -1181,20 +1181,20 @@ einer Person (Phil Wadler) entworfen, die zuvor
 ein Designer von Haskell war.
 
 00:19:59,560 --> 00:20:05,850
-Die Richtung ist also wirklich von hier
-nach dort und nicht in die entgegengesetzte Richtung.
+Die Richtung ist also wirklich von hier nach
+dort und nicht in die entgegengesetzte Richtung.
 
 00:20:05,850 --> 00:20:09,450
-Außerdem gibt es in diesen Sprachen
-wie Java, C# usw. unterschiedliche Design- und
+Außerdem gibt es in diesen Sprachen wie
+Java, C# usw. unterschiedliche Design- und
 
 00:20:09,450 --> 00:20:16,850
-Implementierungsentscheidungen rund um diese Polymorphie-Funktionalität, und
-ich würde behaupten, dass die ursprüngliche
+Implementierungsentscheidungen rund um diese Polymorphie-Funktionalität,
+und ich würde behaupten, dass die ursprüngliche
 
 00:20:16,850 --> 00:20:21,680
-Version, die in Sprachen wie Haskell
-oder ML auftaucht, die sauberste und mathematisch
+Version, die in Sprachen wie Haskell oder
+ML auftaucht, die sauberste und mathematisch
 
 00:20:21,680 --> 00:20:22,700
 ansprechendste ist.
@@ -1204,24 +1204,24 @@ In den objektorientierten Sprachen wurden bestimmte
 Kompromisse eingegangen, um zum Beispiel Generics mit
 
 00:20:28,220 --> 00:20:33,030
-anderen Sprachfeatures zu integrieren, die in
-der reineren Umgebung der funktionalen Sprachen nicht
+anderen Sprachfeatures zu integrieren, die in der
+reineren Umgebung der funktionalen Sprachen nicht
 
 00:20:33,030 --> 00:20:39,460
 als Kompromisse notwendig waren.
 
 101 # slide
 00:20:39,460 --> 00:20:44,530
-Ein Aspekt, der den Polymorphismus in
-Haskell und seinen Vorgängern der funktionalen
+Ein Aspekt, der den Polymorphismus in Haskell
+und seinen Vorgängern der funktionalen
 
 00:20:44,530 --> 00:20:48,160
-Programmierung von diesen anderen
-Sprachen unterscheidet, ist die Typinferenz.
+Programmierung von diesen anderen Sprachen
+unterscheidet, ist die Typinferenz.
 
 00:20:48,160 --> 00:20:55,300
-Nicht nur, dass Polymorphismus in diesen Sprachen
-viel früher auftrat, sie verfügen auch über Typinferenz.
+Nicht nur, dass Polymorphismus in diesen Sprachen viel
+früher auftrat, sie verfügen auch über Typinferenz.
 
 00:20:55,300 --> 00:20:57,170
 Wir müssen den
@@ -1239,12 +1239,12 @@ So müssen wir z.B. für die Funktion
 "reverse" nicht deklarieren, dass es ihr egal
 
 00:21:05,650 --> 00:21:12,330
-ist, welchen Typ das Element
-in einer ihr übergebenen Liste hat.
+ist, welchen Typ das Element in
+einer ihr übergebenen Liste hat.
 
 00:21:12,330 --> 00:21:15,470
-Tatsächlich wird der Compiler das schon
-aus der Definition der Funktion herausfinden.
+Tatsächlich wird der Compiler das schon aus
+der Definition der Funktion herausfinden.
 
 00:21:15,470 --> 00:21:19,130
 Das ist anders als zum Beispiel in Java.
@@ -1262,16 +1262,16 @@ Schauen wir uns ein
 paar einfachere Beispiele an.
 
 00:21:29,030 --> 00:21:34,700
-Wenn wir zum Beispiel eine Funktion wie diese aufschreiben:
-'f (x,y) = x', und wir sagen nicht, sind
+Wenn wir zum Beispiel eine Funktion wie diese
+aufschreiben: 'f (x,y) = x', und wir sagen nicht, sind
 
 00:21:34,700 --> 00:21:37,040
 das Zahlen, sind das
 Zeichen, was sind das?
 
 00:21:37,040 --> 00:21:42,280
-Dann wird der Compiler schlussfolgern: Nun, das
-ist der Typ, den Sie hier sehen.
+Dann wird der Compiler schlussfolgern:
+Nun, das ist der Typ, den Sie hier sehen.
 
 00:21:42,280 --> 00:21:44,470
 Also wird der Compiler sagen:
@@ -1285,19 +1285,19 @@ Und es ist eigentlich egal, welche
 Typen diese Elemente des Paares haben.
 
 00:21:55,680 --> 00:21:59,380
-Es sind also Paare von "a"
-und "b", und das Ergebnis ist "a".
+Es sind also Paare von "a" und
+"b", und das Ergebnis ist "a".
 
 00:21:59,380 --> 00:22:00,550
 Warum ist es "a"?
 
 00:22:00,550 --> 00:22:03,620
-Weil die Funktion auf
-die erste Komponente projiziert.
+Weil die Funktion auf die
+erste Komponente projiziert.
 
 00:22:03,620 --> 00:22:09,790
-Daraus weiß der Compiler und folgert, dass
-dies polymorph ist, das Ergebnis ist vom gleichen
+Daraus weiß der Compiler und folgert, dass dies
+polymorph ist, das Ergebnis ist vom gleichen
 
 00:22:09,790 --> 00:22:16,220
 Typ wie die erste Komponente des Paares, die
@@ -1315,20 +1315,20 @@ Aber sie *kann* von
 einem anderen Typ sein.
 
 00:22:19,310 --> 00:22:21,940
-Deshalb wird hier
-eine andere Typvariable verwendet.
+Deshalb wird hier eine
+andere Typvariable verwendet.
 
 00:22:21,940 --> 00:22:27,230
-Und auch bei der zip-Funktion
-würde der Compiler automatisch herausfinden, dass
+Und auch bei der zip-Funktion würde der
+Compiler automatisch herausfinden, dass
 
 00:22:27,230 --> 00:22:31,260
-die beiden Eingabelisten von unterschiedlichem Typ
-sein können, anders als beim ++-Operator.
+die beiden Eingabelisten von unterschiedlichem
+Typ sein können, anders als beim ++-Operator.
 
 00:22:31,260 --> 00:22:36,360
-Wenn dies also nicht deklariert ist,
-wird der Compiler es trotzdem herausfinden.
+Wenn dies also nicht deklariert ist, wird
+der Compiler es trotzdem herausfinden.
 
 00:22:36,360 --> 00:22:44,160
 Was vielleicht ein wenig überrascht, ist, dass
@@ -1343,42 +1343,42 @@ Wenn wir also eine ähnliche Funktion schreiben,
 die irgendwie sagt "if pi>3 then x else
 
 00:22:53,060 --> 00:22:58,180
-y", dann wird der Compiler wieder herausfinden, dass
-x und y alles sein können, also wird er
+y", dann wird der Compiler wieder herausfinden,
+dass x und y alles sein können, also wird er
 
 00:22:58,180 --> 00:22:59,240
 eine Typvariable verwenden.
 
 00:22:59,240 --> 00:23:05,250
-Denn wenn man sich dieses if-then-else anschaut, wird
-nichts wirklich mit x und y gemacht, also
+Denn wenn man sich dieses if-then-else anschaut,
+wird nichts wirklich mit x und y gemacht, also
 
 00:23:05,250 --> 00:23:09,910
 gibt es nichts, was sie
 zwingt, Zahlen oder so zu sein.
 
 00:23:09,910 --> 00:23:13,960
-Klar, pi ist eine Zahl, aber
-x und y können alles Mögliche sein.
+Klar, pi ist eine Zahl, aber x
+und y können alles Mögliche sein.
 
 00:23:13,960 --> 00:23:18,370
-Und etwas vom Typ x
-oder y wird dabei herauskommen.
+Und etwas vom Typ x oder
+y wird dabei herauskommen.
 
 00:23:18,370 --> 00:23:23,490
-Aber tatsächlich zwingt der Compiler in diesem Fall
-die beiden Werte, vom *gleichen* Typ zu sein.
+Aber tatsächlich zwingt der Compiler in diesem
+Fall die beiden Werte, vom *gleichen* Typ zu sein.
 
 00:23:23,490 --> 00:23:25,540
 Warum ist das so?
 
 00:23:25,540 --> 00:23:30,210
-Weil der Compiler nicht versucht, mathematisch zu
-beweisen, dass pi etwas größer als 3 ist.
+Weil der Compiler nicht versucht, mathematisch
+zu beweisen, dass pi etwas größer als 3 ist.
 
 00:23:30,210 --> 00:23:31,790
-In diesem speziellen Fall
-ist das natürlich sehr einfach.
+In diesem speziellen Fall ist
+das natürlich sehr einfach.
 
 00:23:31,790 --> 00:23:34,060
 Also könnte der
@@ -1393,12 +1393,12 @@ von if-then-else: Hier muss eine Bedingung stehen, und
 die then- und else-Zweige müssen den gleichen Typ haben.
 
 00:23:45,890 --> 00:23:50,640
-Da in diesem Fall x oder y, eine
-der beiden Paarkomponenten, in den then- und else-Zweigen
+Da in diesem Fall x oder y, eine der beiden
+Paarkomponenten, in den then- und else-Zweigen
 
 00:23:50,640 --> 00:23:53,500
-zurückgegeben wird, müssen sie
-vom gleichen Typ sein.
+zurückgegeben wird, müssen
+sie vom gleichen Typ sein.
 
 00:23:53,500 --> 00:23:58,490
 Andernfalls wäre es statisch nicht
@@ -1419,15 +1419,15 @@ Sie können die Funktionsdefinition aufschreiben, und der
 Compiler wird die am wenigsten restriktiven Bedingungen
 
 00:24:08,290 --> 00:24:13,560
-für die Typen der Ein- und Ausgaben
-herausfinden, sodass es immer funktioniert und immer
+für die Typen der Ein- und Ausgaben herausfinden,
+sodass es immer funktioniert und immer
 
 00:24:13,560 --> 00:24:14,560
 Sinn ergibt.
 
 00:24:14,560 --> 00:24:18,550
-Das bedeutet nicht, dass Sie von nun
-an auf das Schreiben von Typsignaturen verzichten sollten.
+Das bedeutet nicht, dass Sie von nun an auf das
+Schreiben von Typsignaturen verzichten sollten.
 
 00:24:18,550 --> 00:24:25,250
 Oft ist es immer noch sinnvoll, eigene Typsignaturen
@@ -1438,12 +1438,12 @@ Einfach, um auszudrücken, was Sie von Ihrer
 Funktion erwarten. Und dann kann und wird
 
 00:24:30,180 --> 00:24:33,740
-der Compiler dies mit dem
-vergleichen, was er selbst herausfindet.
+der Compiler dies mit dem vergleichen,
+was er selbst herausfindet.
 
 00:24:33,740 --> 00:24:36,050
-Und Sie können
-einen spezifischeren Typ aufschreiben.
+Und Sie können einen
+spezifischeren Typ aufschreiben.
 
 00:24:36,050 --> 00:24:41,500
 Also, wenn Sie sagen: Ich möchte, dass meine f-Funktion von Paaren
@@ -1457,8 +1457,8 @@ Der Compiler wird
 sich nicht darüber beschweren.
 
 00:24:43,950 --> 00:24:47,680
-Der Compiler wird sich beschweren, wenn Sie mehr
-Allgemeinheit für Ihre Funktionen beanspruchen, als sie tatsächlich
+Der Compiler wird sich beschweren, wenn Sie mehr Allgemeinheit
+für Ihre Funktionen beanspruchen, als sie tatsächlich
 
 00:24:47,680 --> 00:24:48,680
 bieten.
@@ -1480,12 +1480,12 @@ wirklich interessante
 semantische Konsequenzen hat.
 
 00:25:09,400 --> 00:25:15,720
-Wir können das sehen, wenn wir uns von früher
-in der Vorlesung an das folgende Gesetz erinnern, wo
+Wir können das sehen, wenn wir uns von früher in
+der Vorlesung an das folgende Gesetz erinnern, wo
 
 00:25:15,720 --> 00:25:22,390
-ich darüber gesprochen habe, die Reihenfolge zu vertauschen, in
-der wir eine Liste umkehren oder Funktionen auf die
+ich darüber gesprochen habe, die Reihenfolge zu vertauschen,
+in der wir eine Liste umkehren oder Funktionen auf die
 
 00:25:22,390 --> 00:25:23,940
 Elemente der Liste anwenden.
@@ -1495,52 +1495,52 @@ Sie erinnern sich also wahrscheinlich
 an dieses Gesetz von damals.
 
 00:25:30,400 --> 00:25:35,960
-Vielleicht überraschend, oder vielleicht nicht überraschend für
-Sie, gilt es nicht nur für beliebige
+Vielleicht überraschend, oder vielleicht nicht
+überraschend für Sie, gilt es nicht nur für beliebige
 
 00:25:35,960 --> 00:25:37,130
 f und Listen.
 
 00:25:37,130 --> 00:25:39,850
-Ich habe also gesagt, dass wir
-hier eine beliebige Liste nehmen können.
+Ich habe also gesagt, dass wir hier
+eine beliebige Liste nehmen können.
 
 00:25:39,850 --> 00:25:41,620
 Wir können hier
 eine beliebige Funktion nehmen.
 
 00:25:41,620 --> 00:25:46,400
-Tatsächlich kann auch das "reverse" gegen etwas
-anderes ausgetauscht werden, nämlich gegen eine beliebige
+Tatsächlich kann auch das "reverse" gegen etwas anderes
+ausgetauscht werden, nämlich gegen eine beliebige
 
 00:25:46,400 --> 00:25:47,710
 Funktion des gleichen Typs.
 
 00:25:47,710 --> 00:25:52,190
-Das "reverse" hat, wie wir jetzt wissen, diesen Typ: Liste
-von "a"s zu Liste von "a"s, für was auch immer
+Das "reverse" hat, wie wir jetzt wissen, diesen Typ:
+Liste von "a"s zu Liste von "a"s, für was auch immer
 
 00:25:52,190 --> 00:25:53,390
 "a" ist.
 
 00:25:53,390 --> 00:26:00,290
-Und tatsächlich hängt dieses Gesetz nicht davon
-ab, was "reverse" tut, dass es die Liste
+Und tatsächlich hängt dieses Gesetz nicht
+davon ab, was "reverse" tut, dass es die Liste
 
 00:26:00,290 --> 00:26:01,290
 umkehrt.
 
 00:26:01,290 --> 00:26:06,490
-Wir könnten dies durch eine beliebige Funktion g ersetzen,
-die denselben Typ wie diese hier hat, und das
+Wir könnten dies durch eine beliebige Funktion g
+ersetzen, die denselben Typ wie diese hier hat, und das
 
 00:26:06,490 --> 00:26:09,350
 Gesetz würde immer noch gelten,
 egal wie g definiert ist.
 
 00:26:09,350 --> 00:26:12,330
-Und das ist, würde ich
-sagen, zumindest ein wenig überraschend.
+Und das ist, würde ich sagen,
+zumindest ein wenig überraschend.
 
 00:26:12,330 --> 00:26:18,130
 Sie könnten also vielleicht darüber nachdenken, welche Funktionen
@@ -1566,44 +1566,44 @@ Und auch andere Funktionen,
 die Sie sich vorstellen können.
 
 00:26:31,580 --> 00:26:36,210
-Und welche dieser Funktionen Sie auch immer in
-die beiden Stellen von "reverse" hier einfügen, dieses Gesetz
+Und welche dieser Funktionen Sie auch immer in die
+beiden Stellen von "reverse" hier einfügen, dieses Gesetz
 
 00:26:36,210 --> 00:26:38,290
 wird gelten.
 
 00:26:38,290 --> 00:26:43,300
-Viel allgemeiner als für bestimmte for-Schleifen, wo
-Sie vielleicht auch ein Gesetz finden könnten.
+Viel allgemeiner als für bestimmte for-Schleifen,
+wo Sie vielleicht auch ein Gesetz finden könnten.
 
 00:26:43,300 --> 00:26:46,140
 Dies ist also ein Gesetz,
 das es fast umsonst gibt.
 
 00:26:46,140 --> 00:26:53,870
-Es ist sehr frei anwendbar, und zwar
-nur abhängig vom Typ dieser Funktion hier.
+Es ist sehr frei anwendbar, und zwar nur
+abhängig vom Typ dieser Funktion hier.
 
 00:26:53,870 --> 00:26:59,330
-Und da ich vorhin schon erwähnt habe,
-dass solche Gesetze zur Programmoptimierung verwendet werden können,
+Und da ich vorhin schon erwähnt habe, dass solche
+Gesetze zur Programmoptimierung verwendet werden können,
 
 00:26:59,330 --> 00:27:04,970
 bedeutet das auch, dass es eine Menge Potenzial
 gibt, dies zum Beispiel in einem Compiler zu tun.
 
 00:27:04,970 --> 00:27:15,040
-Denn man kann Gesetze aus den Typen
-von Funktionen ableiten, wie in diesem Fall.
+Denn man kann Gesetze aus den Typen von
+Funktionen ableiten, wie in diesem Fall.
 
 103 # slide
 00:27:15,040 --> 00:27:21,230
-Kehren wir kurz zu der Formulierung
-in der C-ähnlichen, imperativen Umgebung zurück.
+Kehren wir kurz zu der Formulierung in der
+C-ähnlichen, imperativen Umgebung zurück.
 
 00:27:21,230 --> 00:27:29,320
-Eigentlich ist die "reverse"-Behauptung, die ich vorhin
-besprochen habe, im Kontext des Vergleichs
+Eigentlich ist die "reverse"-Behauptung, die ich
+vorhin besprochen habe, im Kontext des Vergleichs
 
 00:27:29,320 --> 00:27:33,890
 dieser beiden for-Schleifen entstanden, und
@@ -1614,32 +1614,32 @@ Und dann kam
 diese "reverse"-Behauptung zustande.
 
 00:27:37,350 --> 00:27:42,170
-Und an dieser Stelle der Vorlesung habe
-ich bereits erwähnt, dass in einer imperativen Umgebung
+Und an dieser Stelle der Vorlesung habe ich
+bereits erwähnt, dass in einer imperativen Umgebung
 
 00:27:42,170 --> 00:27:47,490
-diese Schleifen möglicherweise nicht äquivalent sind,
-je nachdem, was z. B. das f tut.
+diese Schleifen möglicherweise nicht äquivalent
+sind, je nachdem, was z. B. das f tut.
 
 00:27:47,490 --> 00:27:49,700
 Es könnte hier
 also einen Unterschied geben.
 
 00:27:49,700 --> 00:27:54,170
-Und jetzt wissen wir, dass, selbst wenn sie
-in bestimmten Situationen äquivalent sind, z. B. weil wir
+Und jetzt wissen wir, dass, selbst wenn sie in
+bestimmten Situationen äquivalent sind, z. B. weil wir
 
 00:27:54,170 --> 00:27:59,920
-mehr über das f und über das, was
-passiert, wissen, sie zumindest nicht so allgemein sind.
+mehr über das f und über das, was passiert,
+wissen, sie zumindest nicht so allgemein sind.
 
 00:27:59,920 --> 00:28:01,590
 Diese "reverse"-Behauptung
 ist viel allgemeiner.
 
 00:28:01,590 --> 00:28:05,710
-Nun wissen wir aber auch, dass die reverse-Funktion
-durch eine beliebige polymorphe Funktion von Listen zu Listen
+Nun wissen wir aber auch, dass die reverse-Funktion durch
+eine beliebige polymorphe Funktion von Listen zu Listen
 
 00:28:05,710 --> 00:28:10,400
 ersetzt werden kann; das
@@ -1654,30 +1654,30 @@ austauschbar sein, aber sie verallgemeinern sich
 nicht in der Weise, wie diese "reverse"-Behauptung
 
 00:28:20,800 --> 00:28:23,640
-auf jede Funktion
-des gleichen Typs verallgemeinert.
+auf jede Funktion des
+gleichen Typs verallgemeinert.
 
 00:28:23,640 --> 00:28:29,400
-Für jede spezifische Funktion wie "tail" könnte
-man auch sehen, na ja, was bedeutet
+Für jede spezifische Funktion wie "tail"
+könnte man auch sehen, na ja, was bedeutet
 
 00:28:29,400 --> 00:28:30,870
 das im Kontext von for-Schleifen?
 
 00:28:30,870 --> 00:28:36,410
-Gibt es ein entsprechendes
-Ergebnis in einer imperativen Umgebung?
+Gibt es ein entsprechendes Ergebnis
+in einer imperativen Umgebung?
 
 00:28:36,410 --> 00:28:41,570
-Vielleicht können wir das herausfinden, aber wir erhalten
-kein allgemeines Gesetz wie in dem Fall zuvor.
+Vielleicht können wir das herausfinden, aber wir
+erhalten kein allgemeines Gesetz wie in dem Fall zuvor.
 
 00:28:41,570 --> 00:28:43,270
 Auch Generics geben das nicht her.
 
 00:28:43,270 --> 00:28:48,050
-Obwohl also Generics in Java
-irgendwie polymorphen Typen entsprechen, liefern sie
+Obwohl also Generics in Java irgendwie
+polymorphen Typen entsprechen, liefern sie
 
 00:28:48,050 --> 00:28:50,360
 nicht diese Art von Ergebnissen.
@@ -1700,15 +1700,15 @@ sprechen können.
 Es kommt von der Typdisziplin.
 
 00:29:05,470 --> 00:29:10,730
-Es kommt von der mathematischen Basis,
-dass alles kompositorisch entworfen und definiert
+Es kommt von der mathematischen Basis, dass
+alles kompositorisch entworfen und definiert
 
 00:29:10,730 --> 00:29:12,850
 ist.
 
 00:29:12,850 --> 00:29:22,530
-In diesem Sinne ist es also wirklich etwas,
-das zusätzlich zu den anderen Ausdrucksmöglichkeiten, die wir
+In diesem Sinne ist es also wirklich etwas, das
+zusätzlich zu den anderen Ausdrucksmöglichkeiten, die wir
 
 00:29:22,530 --> 00:29:23,710
 bereits haben, gegeben ist.

@@ -8,56 +8,56 @@ so ein kleines arithmetisches Puzzle sein.
 Kryptologisch im Sinne, dass irgendetwas
 
 00:00:16,490 --> 00:00:22,239
-codiert ist und wir erst einmal herausfinden müssen
-und hoffentlich können, welche Buchstaben
+codiert ist und wir erst einmal herausfinden
+müssen und hoffentlich können, welche Buchstaben
 
 00:00:22,239 --> 00:00:28,829
 für welche (in dem Fall) Ziffern stehen.
 Diese Art Rätsel kennen Sie sicherlich.
 
 00:00:28,829 --> 00:00:33,950
-Dieses Beispiel konkret kommt tatsächlich aus dem
-Wikipedia-Eintrag zu Prolog. Da könnten Sie
+Dieses Beispiel konkret kommt tatsächlich aus
+dem Wikipedia-Eintrag zu Prolog. Da könnten Sie
 
 00:00:33,950 --> 00:00:41,990
-das also auch so ähnlich nachlesen, wie ich das
-jetzt hier mache. Der Punkt ist: Wir haben
+das also auch so ähnlich nachlesen, wie ich
+das jetzt hier mache. Der Punkt ist: Wir haben
 
 00:00:41,990 --> 00:00:49,340
-hier mehrere solcher Rechnungen skizziert.
-Da kommen Buchstaben drin vor. Die sollen für Ziffern stehen.
+hier mehrere solcher Rechnungen skizziert. Da kommen
+Buchstaben drin vor. Die sollen für Ziffern stehen.
 
 00:00:49,340 --> 00:00:53,980
 Und zwar jeder Buchstabe für eine andere Ziffer.
 Also A und B können nicht durch die gleiche Ziffer
 
 00:00:53,980 --> 00:01:00,280
-ersetzt werden. Und natürlich soll das, was hier
-jeweils sowohl in den Zeilen als auch in
+ersetzt werden. Und natürlich soll das, was
+hier jeweils sowohl in den Zeilen als auch in
 
 00:01:00,280 --> 00:01:05,719
-den Spalten als Rechnungen/ als Gleichungen steht,
-erfüllt sein für eine passende Belegung.
+den Spalten als Rechnungen/ als Gleichungen
+steht, erfüllt sein für eine passende Belegung.
 
 00:01:05,719 --> 00:01:10,550
-Und eigentlich kommt am Ende auch noch ein Ergebnis heraus.
-Das interessiert uns gar nicht so sehr.
+Und eigentlich kommt am Ende auch noch ein Ergebnis
+heraus. Das interessiert uns gar nicht so sehr.
 
 00:01:10,550 --> 00:01:17,799
-Uns interessiert eine passende Belegung.
-Und zwar derart, dass hier und hier der gleiche
+Uns interessiert eine passende Belegung. Und
+zwar derart, dass hier und hier der gleiche
 
 00:01:17,799 --> 00:01:22,941
 Wert herauskommt. Welcher das konkret ist, das kann man am Ende
 einfach ausrechnen. Aber der Punkt ist, dass die Belegungen
 
 00:01:22,941 --> 00:01:26,439
-natürlich dadurch eingeschränkt sind, dass überhaupt erst einmal
-alle anderen Gleichungen auch gelten müssen
+natürlich dadurch eingeschränkt sind, dass überhaupt
+erst einmal alle anderen Gleichungen auch gelten müssen
 
 00:01:26,439 --> 00:01:36,609
-und die Gleichheit dieser beiden Rechnungen.
-Wie können wir jetzt zu so einer gültigen Belegung kommen?
+und die Gleichheit dieser beiden Rechnungen. Wie
+können wir jetzt zu so einer gültigen Belegung kommen?
 
 00:01:36,609 --> 00:01:44,350
 Wir sind im Generate-and-Test-Teil.
@@ -65,12 +65,12 @@ Das besprechen wir gerade.
 
 124 # slide
 00:01:44,350 --> 00:01:51,810
-Also vielleicht ist es naheliegend, eine Generate-and-Test
-Lösung zu versuchen. Also was wären
+Also vielleicht ist es naheliegend, eine
+Generate-and-Test Lösung zu versuchen. Also was wären
 
 00:01:51,810 --> 00:01:58,179
-hier unsere Antworten, die wir haben wollen?
-Wir wollen Belegungen/Werte für A, B, C, D, E, F, G, H haben.
+hier unsere Antworten, die wir haben wollen? Wir wollen
+Belegungen/Werte für A, B, C, D, E, F, G, H haben.
 
 00:01:58,179 --> 00:02:04,939
 Eine Solution/ eine Lösung wird aus diesen
@@ -89,40 +89,40 @@ Belegung von Ziffern für A, B, C bis H
 auch wirklich gültig und gewünscht ist.
 
 00:02:23,210 --> 00:02:31,930
-Dann könnten wir zu einer konkreten Lösung kommen.
-Wie sollte jetzt das Generieren aussehen?
+Dann könnten wir zu einer konkreten Lösung
+kommen. Wie sollte jetzt das Generieren aussehen?
 
 00:02:31,930 --> 00:02:37,160
-Was heißt hier das Generieren? Nun hier entspricht
-vor allem diese erste Zeile sozusagen dem Generate-Teil.
+Was heißt hier das Generieren? Nun hier entspricht vor
+allem diese erste Zeile sozusagen dem Generate-Teil.
 
 00:02:37,160 --> 00:02:44,560
 Und dann die Gültigkeit, also die Erfüllung
 all dieser Gleichungen wäre der Test-Teil.
 
 00:02:44,560 --> 00:02:49,910
-Also was ist der Generate-Teil? Der sagt:
-Jeder Buchstabe entspräche einer Ziffer, und zwar einer
+Also was ist der Generate-Teil? Der sagt: Jeder
+Buchstabe entspräche einer Ziffer, und zwar einer
 
 00:02:49,910 --> 00:02:56,020
 anderen Ziffer. Wir suchen also Zuordnungen von den
 Buchstaben/ von den Werten A bis H zu einzelnen Ziffern.
 
 00:02:56,020 --> 00:03:03,480
-Also letztlich Zahlen von 0 bis 9. Und zwar derart,
-dass verschiedene Buchstaben auch verschiedene Ziffern haben.
+Also letztlich Zahlen von 0 bis 9. Und zwar derart, dass
+verschiedene Buchstaben auch verschiedene Ziffern haben.
 
 00:03:03,480 --> 00:03:10,090
-So etwas haben wir jetzt ja schon mehrfach gesehen.
-Auch in dem Würfelbeispiel.
+So etwas haben wir jetzt ja schon mehrfach
+gesehen. Auch in dem Würfelbeispiel.
 
 00:03:10,090 --> 00:03:14,460
-Wie kann ich solch eine Auswahl und gleichzeitig
-Verschiedenheit ausdrücken?
+Wie kann ich solch eine Auswahl und
+gleichzeitig Verschiedenheit ausdrücken?
 
 00:03:14,460 --> 00:03:22,870
-Durch Verwendung des Permutationsprädikats.
-Also ich könnte sagen: Diese A bis H, das seien Werte,
+Durch Verwendung des Permutationsprädikats. Also
+ich könnte sagen: Diese A bis H, das seien Werte,
 
 00:03:22,870 --> 00:03:28,960
 einer Permutation dieser Liste aller infrage kommenden Ziffern
@@ -133,52 +133,52 @@ ist es wieder so, da das ja zehn Ziffern sind,
 muss ich hier in der Permutation natürlich auch
 
 00:03:32,790 --> 00:03:37,630
-zehn Plätze vorsehen, von denen mich aber
-zwei nicht interessieren sollen, da ich tatsächlich
+zehn Plätze vorsehen, von denen mich aber zwei
+nicht interessieren sollen, da ich tatsächlich
 
 00:03:37,630 --> 00:03:41,570
 nur acht Buchstaben zu belegen habe. Also wir haben zehn
 Ziffern, aber im Rätsel kommen nur acht Buchstaben vor.
 
 00:03:41,570 --> 00:03:46,720
-Das heißt, zwei Ziffern werden ungenutzt bleiben.
-Das ungenutzt bleiben kann ich wieder mit dieser anonymen
+Das heißt, zwei Ziffern werden ungenutzt bleiben. Das
+ungenutzt bleiben kann ich wieder mit dieser anonymen
 
 00:03:46,720 --> 00:03:53,040
 Variable ausdrücken, wo ich sage: Die letzten beiden
 Plätze interessieren mich nicht. Damit hätte ich bereits
 
 00:03:53,040 --> 00:03:59,710
-den Generierungs-Teil ausgedrückt. Das ist
-oftmals der einfachere Teil beim Generate-and-Test.
+den Generierungs-Teil ausgedrückt. Das ist oftmals
+der einfachere Teil beim Generate-and-Test.
 
 00:03:59,710 --> 00:04:10,180
 So auch hier. Wie sieht dann der Test-Teil aus?
 Also wie drücke ich denn aus, dass eine solche
 
 00:04:10,180 --> 00:04:14,160
-Belegung, die hier generiert wurde (das können ja sehr
-viele verschiedene sein), dass die gültig ist?
+Belegung, die hier generiert wurde (das können ja
+sehr viele verschiedene sein), dass die gültig ist?
 
 00:04:14,160 --> 00:04:19,630
-Also jetzt die Frage, wie ich dieses Test-Prädikat schreibe,
-was ich hier an Bedingungen habe. Und natürlich
+Also jetzt die Frage, wie ich dieses Test-Prädikat
+schreibe, was ich hier an Bedingungen habe. Und natürlich
 
 00:04:19,630 --> 00:04:26,010
-muss ich da das haben, was in meinem Rätsel vorkommt.
-Das sind mehrere Bedingungen.
+muss ich da das haben, was in meinem Rätsel
+vorkommt. Das sind mehrere Bedingungen.
 
 00:04:26,010 --> 00:04:34,540
-Letztlich würde jede Zeile und jede Spalte irgendwie
-in dieses Test-Prädikat eingehen müssen, denn genau diese
+Letztlich würde jede Zeile und jede Spalte irgendwie in
+dieses Test-Prädikat eingehen müssen, denn genau diese
 
 00:04:34,540 --> 00:04:40,200
 Rechnungen, die hier symbolisch stehen, das sind die Bedingungen,
 die wirklich die Gültigkeit einer Belegung ausmachen.
 
 00:04:40,200 --> 00:04:52,720
-Also wie wäre es zum Beispiel mit der ersten Zeile?
-Die sagt: ABB - CD = EED.
+Also wie wäre es zum Beispiel mit der
+ersten Zeile? Die sagt: ABB - CD = EED.
 
 00:04:52,720 --> 00:04:57,630
 Das heißt, da müssen wir rechnen. Wenn wir eine
@@ -197,20 +197,20 @@ aus ihrer Zifferndarstellung erreichen.
 Dann müssten wir einfach überprüfen, ob
 
 00:05:15,880 --> 00:05:20,120
-denn tatsächlich diese Gleichheit gilt.
-Also den linken Teil ausrechnen. Die rechte Zahl
+denn tatsächlich diese Gleichheit gilt. Also
+den linken Teil ausrechnen. Die rechte Zahl
 
 00:05:20,120 --> 00:05:23,960
-ausrechnen und schauen, ob die gleich sind.
-Das sind alles Sachen, die wir schon gesehen haben, wie
+ausrechnen und schauen, ob die gleich sind. Das
+sind alles Sachen, die wir schon gesehen haben, wie
 
 00:05:23,960 --> 00:05:32,410
-wir das in Prolog tun können. Die erste Zeile könnte dieser
-Bedingung entsprechen. Im Test haben wir jetzt
+wir das in Prolog tun können. Die erste Zeile könnte
+dieser Bedingung entsprechen. Im Test haben wir jetzt
 
 00:05:32,410 --> 00:05:36,990
-angenommen, dass wir irgendwelche Ziffern für A, B, C etc.
-gewählt haben. Also können wir die nehmen und daraus
+angenommen, dass wir irgendwelche Ziffern für A, B, C
+etc. gewählt haben. Also können wir die nehmen und daraus
 
 00:05:36,990 --> 00:05:42,370
 die Zahlen bilden. Das wäre die erste Zahl ABB.
@@ -225,16 +225,16 @@ arithmetisch gleich sein soll dieser Zahl.
 Das ist eine sehr direkte Übersetzung
 
 00:05:59,540 --> 00:06:05,050
-dieser ersten Zeile. Genauso können wir vorgehen
-für die Spalten etwa. Wenn wir uns die erste Spalte anschauen,
+dieser ersten Zeile. Genauso können wir vorgehen für die
+Spalten etwa. Wenn wir uns die erste Spalte anschauen,
 
 00:06:05,050 --> 00:06:09,740
-so runterwärts gelesen. Dann würden wir
-für ABB wieder vorgehen wie eben.
+so runterwärts gelesen. Dann würden
+wir für ABB wieder vorgehen wie eben.
 
 00:06:09,740 --> 00:06:16,419
-FD wäre F × 10 + D × 1 und EGD können wir
-auch zusammenbasteln aus den Ziffereinträgen für EGD.
+FD wäre F × 10 + D × 1 und EGD können wir auch
+zusammenbasteln aus den Ziffereinträgen für EGD.
 
 00:06:16,419 --> 00:06:22,930
 Und dann fordern wir eben, dass diese Subtraktion
@@ -246,48 +246,48 @@ Das nächste wäre dann zum Beispiel, zweite Zeile
 
 125 # slide
 00:06:30,240 --> 00:06:41,430
-und zweite Spalte umzusetzen. Das geht so:
-(Das können Sie in der Darstellung hier wieder nachschlagen.)
+und zweite Spalte umzusetzen. Das geht so: (Das können
+Sie in der Darstellung hier wieder nachschlagen.)
 
 00:06:41,430 --> 00:06:47,150
-Das ist sogar etwas kürzer, weil jetzt in
-zweiter Zeile und zweiter Spalte keine dreistelligen
+Das ist sogar etwas kürzer, weil jetzt in zweiter
+Zeile und zweiter Spalte keine dreistelligen
 
 00:06:47,150 --> 00:06:52,060
-Zahlen vorkommen. Deswegen ist der Zusammenbau
-der Zahlen aus den Ziffern etwas einfacher/ etwas kürzer.
+Zahlen vorkommen. Deswegen ist der Zusammenbau der
+Zahlen aus den Ziffern etwas einfacher/ etwas kürzer.
 
 00:06:52,060 --> 00:07:01,070
-Deswegen passt da auch jeweils jede Bedingung in eine Zeile.
-Anders als in diesen beiden Bedingungen hier.
+Deswegen passt da auch jeweils jede Bedingung in eine
+Zeile. Anders als in diesen beiden Bedingungen hier.
 
 00:07:01,070 --> 00:07:05,790
-Deswegen ist das etwas kürzer hier, aber
-entspricht genau demselben Schema.
+Deswegen ist das etwas kürzer hier,
+aber entspricht genau demselben Schema.
 
 00:07:05,790 --> 00:07:12,871
 Dann müssen wir uns noch um die letzte Zeile und
 die letzte Spalte kümmern. Für die ist es so,
 
 00:07:12,871 --> 00:07:18,979
-dass da dieses Fragezeichen steht. Wir können also nicht
-sagen: "Die Zahl gebaut * die Zahl gebaut ist
+dass da dieses Fragezeichen steht. Wir können also
+nicht sagen: "Die Zahl gebaut * die Zahl gebaut ist
 
 00:07:18,979 --> 00:07:24,770
-irgendwie eine ganz konkrete Zahl."
-So wie es in den anderen Zeilen und Spalten der Fall war.
+irgendwie eine ganz konkrete Zahl." So wie es
+in den anderen Zeilen und Spalten der Fall war.
 
 00:07:24,770 --> 00:07:31,930
-Nun, die Bedingung hier ist einfach,
-dass bei dieser Multiplikation und dieser Multiplikation
+Nun, die Bedingung hier ist einfach, dass bei
+dieser Multiplikation und dieser Multiplikation
 
 00:07:31,930 --> 00:07:37,479
 das Gleiche herauszukommen hat. Irgendetwas, aber
 das Gleiche. Wir haben keine konkrete Vorgabe dafür,
 
 00:07:37,479 --> 00:07:44,470
-dass das irgendwie ABEHG oder so sein soll.
-Aber natürlich können wir auch diese
+dass das irgendwie ABEHG oder so sein
+soll. Aber natürlich können wir auch diese
 
 00:07:44,470 --> 00:07:49,130
 Gleichheit von diesen beiden Multiplikationen in Prolog
@@ -302,8 +302,8 @@ einmal das, was in der letzten Zeile steht.
 Einmal das, was in der letzten Spalte steht.
 
 00:07:58,320 --> 00:08:04,010
-Und fordern einfach, dass die Ergebnisse gleich zu sein haben.
-Nicht irgendwie gleich einer bestimmten Konstante, sondern einfach gleich.
+Und fordern einfach, dass die Ergebnisse gleich zu sein haben. Nicht
+irgendwie gleich einer bestimmten Konstante, sondern einfach gleich.
 
 00:08:04,010 --> 00:08:13,501
 Das können wir so ausdrücken. Wir bilden die eine Zahl,
@@ -314,8 +314,8 @@ Damit entspricht dieser Test hier oder
 diese Zeile/ dieser Teil des Tests genau
 
 00:08:20,560 --> 00:08:26,410
-der Tatsache, dass hier das Gleiche herauszukommen hat
-in der letzten Zeile und letzten Spalte.
+der Tatsache, dass hier das Gleiche herauszukommen
+hat in der letzten Zeile und letzten Spalte.
 
 00:08:26,410 --> 00:08:35,180
 Damit sind wir fertig. Jetzt müssen wir nur noch die Sachen,
@@ -327,8 +327,8 @@ zusammensammeln, und zwar im Test-Prädikat.
 Das sind die gleichen Bedingungen,
 
 00:08:42,380 --> 00:08:47,920
-die ich gerade schrittweise aufgestellt hatte.
-Die packe ich alle zusammen, durch Konjunktion verknüpft.
+die ich gerade schrittweise aufgestellt hatte. Die
+packe ich alle zusammen, durch Konjunktion verknüpft.
 
 00:08:47,920 --> 00:08:52,330
 Wie in Prolog üblich auf der rechten Seite durch Kommata getrennt.
@@ -339,40 +339,40 @@ Die müssen also alle zutreffen.
 Und das sind Bedingungen an solch
 
 00:08:56,210 --> 00:09:05,130
-einen Lösungskandidaten, bestehend aus acht Ziffern für A bis H.
-Dann haben wir ein Prolog-Programm vervollständigt.
+einen Lösungskandidaten, bestehend aus acht Ziffern für A
+bis H. Dann haben wir ein Prolog-Programm vervollständigt.
 
 00:09:05,130 --> 00:09:10,390
 Jetzt können wir das Prolog einfach
 übergeben und es lösen lassen.
 
 00:09:10,390 --> 00:09:18,649
-Lösen lassen heißt in dem Fall natürlich: Aufruf unseres
-solve-Prädikats, welches den Generations- und
+Lösen lassen heißt in dem Fall natürlich: Aufruf
+unseres solve-Prädikats, welches den Generations- und
 
 00:09:18,649 --> 00:09:26,279
 den Test-Teil zusammenfügt. Dann müssten
 wir eine Lösung für dieses Rätsel bekommen.
 
 00:09:26,279 --> 00:09:32,730
-Rufen wir das auf. Und wir bekommen genau eine Belegung.
-Es wäre denkbar gewesen, dass es vielleicht
+Rufen wir das auf. Und wir bekommen genau eine
+Belegung. Es wäre denkbar gewesen, dass es vielleicht
 
 00:09:32,730 --> 00:09:35,970
 mehrere Belegungen/ mehrere Wahlen gibt, aber
 tatsächlich erhalten wir genau eine Belegung.
 
 00:09:35,970 --> 00:09:43,050
-Nämlich diese hier. Prolog antwortet, dass
-A = 2, B = 0, C = 8 etc. sein soll.
+Nämlich diese hier. Prolog antwortet,
+dass A = 2, B = 0, C = 8 etc. sein soll.
 
 00:09:43,050 --> 00:09:48,160
-Prolog behauptet damit natürlich auch, dass alle
-diese Bedingungen erfüllt sind, sonst wäre das nicht die Antwort.
+Prolog behauptet damit natürlich auch, dass alle diese
+Bedingungen erfüllt sind, sonst wäre das nicht die Antwort.
 
 00:09:48,160 --> 00:09:54,140
-Dann können wir das noch in unser Schema einsetzen
-und einfach schauen, wie denn die Lösung
+Dann können wir das noch in unser Schema
+einsetzen und einfach schauen, wie denn die Lösung
 
 127 # slide
 00:09:54,140 --> 00:09:59,910
@@ -380,84 +380,84 @@ dann konkret aussieht, wenn wir das aufschreiben.
 Dann würden wir eben dieses Bild erhalten.
 
 00:09:59,910 --> 00:10:07,540
-Das sind jetzt jeweils für A, B, C etc. einfach
-die Ziffern eingesetzt aus dieser
+Das sind jetzt jeweils für A, B, C etc.
+einfach die Ziffern eingesetzt aus dieser
 
 00:10:07,540 --> 00:10:13,110
-Antwort von Prolog. Die Zahl hier unten ist einfach mal ausgerechnet.
-Vielleicht einfach nur zum Test für uns noch mal,
+Antwort von Prolog. Die Zahl hier unten ist einfach mal
+ausgerechnet. Vielleicht einfach nur zum Test für uns noch mal,
 
 00:10:13,110 --> 00:10:17,610
 dass wirklich der gleiche Wert herauskommt.
 In dem Rätsel war es ja egal, was dort steht.
 
 00:10:17,610 --> 00:10:22,610
-Es musste nur das Gleiche sein, dieses Fragezeichen. Wenn wir jetzt konkrete Belegungen haben,
-können wir einfach ausrechnen, was da rauskommt.
+Es musste nur das Gleiche sein, dieses Fragezeichen. Wenn wir jetzt
+konkrete Belegungen haben, können wir einfach ausrechnen, was da rauskommt.
 
 00:10:22,610 --> 00:10:26,550
-Natürlich hat Prolog das bei der Suche auch schon getan,
-weil das ja eine der Bedingungen war zu prüfen, dass diese beiden
+Natürlich hat Prolog das bei der Suche auch schon getan, weil
+das ja eine der Bedingungen war zu prüfen, dass diese beiden
 
 00:10:26,550 --> 00:10:31,730
-Multiplikationen das gleiche Ergebnis haben.
-In dem konkreten Fall ist es eben das Ergebnis 9315.
+Multiplikationen das gleiche Ergebnis haben. In
+dem konkreten Fall ist es eben das Ergebnis 9315.
 
 00:10:31,730 --> 00:10:36,790
 Was wir auch sehen, ist, dass nicht alle Ziffern
 benutzt wurden. Wenn wir hier drauf schauen,
 
 00:10:36,790 --> 00:10:40,160
-sehen wir, dass die Ziffern vier und sieben nicht genutzt wurden.
-Das hätten wir natürlich auch schon hier gesehen.
+sehen wir, dass die Ziffern vier und sieben nicht genutzt
+wurden. Das hätten wir natürlich auch schon hier gesehen.
 
 00:10:40,160 --> 00:10:46,350
-Also diese Tatsache, dass wir zehn Ziffern haben,
-aber nur acht Buchstaben, sorgt dafür,
+Also diese Tatsache, dass wir zehn Ziffern
+haben, aber nur acht Buchstaben, sorgt dafür,
 
 00:10:46,350 --> 00:10:49,589
 dass zwei Ziffern nicht genutzt werden. In dem
 konkreten Fall sind das eben die vier und die sieben,
 
 00:10:49,589 --> 00:10:54,990
-die nicht gebraucht werden für diese Lösung.
-Was wir auch sehen, ist, dass (glücklicherweise könnte man sagen)
+die nicht gebraucht werden für diese Lösung. Was wir
+auch sehen, ist, dass (glücklicherweise könnte man sagen)
 
 00:10:54,990 --> 00:10:59,820
 jetzt nicht irgendwie die Null für eine erste Ziffer
 genommen wurde. Wir hätten uns auch Sorgen machen können,
 
 00:10:59,820 --> 00:11:05,980
-wenn hier statt sechs die Null stünde, ob es denn
-überhaupt noch eine sinnvolle Zahl ist 05?
+wenn hier statt sechs die Null stünde, ob es
+denn überhaupt noch eine sinnvolle Zahl ist 05?
 
 00:11:05,980 --> 00:11:11,160
-Nun ist es bei dieser Lösung so, dass die Null eben nie an
-erster Stelle steht. Wir hätten natürlich auch in dem Generate-Teil
+Nun ist es bei dieser Lösung so, dass die Null eben nie an erster
+Stelle steht. Wir hätten natürlich auch in dem Generate-Teil
 
 00:11:11,160 --> 00:11:17,390
-einfach fordern können, dass alles,
-was in dem Rätsel jemals an erster Stelle
+einfach fordern können, dass alles, was
+in dem Rätsel jemals an erster Stelle
 
 00:11:17,390 --> 00:11:23,640
 auftaucht, also A, C etc., die nicht null sein dürfen.
 Dann hätten wir die Suche vielleicht etwas eingeschränkt.
 
 00:11:23,640 --> 00:11:31,870
-Diesem Prädikat hätten wir einfach auch verbieten können,
-dass zum Beispiel A = 0 sein darf.
+Diesem Prädikat hätten wir einfach auch verbieten
+können, dass zum Beispiel A = 0 sein darf.
 
 00:11:31,870 --> 00:11:38,120
-Das haben wir nicht getan. War aber auch nicht nötig.
-Insofern, als die entstehende Lösung
+Das haben wir nicht getan. War aber auch nicht
+nötig. Insofern, als die entstehende Lösung
 
 00:11:38,120 --> 00:11:47,740
-sowieso die Eigenschaft hat, dass nie eine Null vorn steht.
-So hat uns Prolog geholfen, dieses
+sowieso die Eigenschaft hat, dass nie eine Null
+vorn steht. So hat uns Prolog geholfen, dieses
 
 00:11:47,740 --> 00:11:52,279
-konkrete Rätsel zu lösen. Natürlich lassen sich
-sehr viele ähnliche Rätsel auf analoge
+konkrete Rätsel zu lösen. Natürlich lassen
+sich sehr viele ähnliche Rätsel auf analoge
 
 00:11:52,279 --> 00:11:58,370
 Art und Weise lösen. Man muss einfach immer sinnvoll
@@ -472,33 +472,33 @@ noch irgendwie Ziffern vergeben werden dürfen oder nicht.
 Also zum Beispiel, dass nicht verschiedene Buchstaben
 
 00:12:07,730 --> 00:12:13,360
-die gleiche Ziffer haben dürfen. Das müssen wir ausdrücken
-in dem Generierungsprädikat. Das war hier durch
+die gleiche Ziffer haben dürfen. Das müssen wir
+ausdrücken in dem Generierungsprädikat. Das war hier durch
 
 00:12:13,360 --> 00:12:17,950
-die Permutation geschehen. In anderen Aufgaben mag das
-vielleicht keine Forderung sein. Da muss man das anders beschreiben.
+die Permutation geschehen. In anderen Aufgaben mag das vielleicht
+keine Forderung sein. Da muss man das anders beschreiben.
 
 00:12:17,950 --> 00:12:24,310
-Vielleicht nur mit member, statt mit permutieren.
-Dann muss man im Test-Teil eben alle Bedingungen ausdrücken.
+Vielleicht nur mit member, statt mit permutieren. Dann
+muss man im Test-Teil eben alle Bedingungen ausdrücken.
 
 00:12:24,310 --> 00:12:29,660
-Dann kann man das mit Prolog lösen.
-Und auf ähnliche Art und Weise lassen sich natürlich
+Dann kann man das mit Prolog lösen. Und auf
+ähnliche Art und Weise lassen sich natürlich
 
 00:12:29,660 --> 00:12:36,060
 viele so arithmetische oder kombinatorische Probleme
 prinzipiell lösen. Also auch Sudoku kann man auf
 
 00:12:36,060 --> 00:12:40,790
-ähnliche Weise letztlich ausdrücken in Prolog.
-Da dauert die Suche nur etwas länger wahrscheinlich, weil
+ähnliche Weise letztlich ausdrücken in Prolog. Da
+dauert die Suche nur etwas länger wahrscheinlich, weil
 
 00:12:40,790 --> 00:12:45,330
 Sudokus größer sind und sehr viel mehr Wahlen
 zulassen, als jetzt einfach nur die Belegung
 
 00:12:45,330 --> 00:12:55,240
-dieser acht Buchstaben. Aber das generelle Prinzip
-lässt sich auf sehr viele solche kombinatorischen Probleme anwenden.
+dieser acht Buchstaben. Aber das generelle Prinzip lässt sich
+auf sehr viele solche kombinatorischen Probleme anwenden.

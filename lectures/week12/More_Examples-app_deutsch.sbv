@@ -6,8 +6,8 @@ Beispiele für diese Idee des Übergangs
 von Haskell-Code zu Prolog-Code.
 
 0:00:10.160,0:00:14.320
-Denn dann können wir die Prädikate in
-Prolog verwenden, und wie Sie gerade gesehen haben, können wir sie auch
+Denn dann können wir die Prädikate in Prolog verwenden,
+und wie Sie gerade gesehen haben, können wir sie auch
 
 0:00:14.320,0:00:18.080
 auf ganz andere Weise verwenden
@@ -18,16 +18,16 @@ Aber lassen Sie uns die Programme nicht wirklich ausführen,
 sondern nur sehen, wie diese Übersetzung funktioniert,
 
 0:00:25.120,0:00:30.640
-Übertragung von Code von Haskell nach
-Prolog für bestimmte Funktionen funktionieren kann.
+Übertragung von Code von Haskell nach Prolog
+für bestimmte Funktionen funktionieren kann.
 
 0:00:30.640,0:00:38.400
-Okay, und zur Erinnerung, die Grundidee
-dieser Übersetzung war, dass
+Okay, und zur Erinnerung, die
+Grundidee dieser Übersetzung war, dass
 
 0:00:38.400,0:00:43.840
-wir in Haskell, nun, um
-verschachtelte Funktionsaufrufe in Haskell zu vermeiden.
+wir in Haskell, nun, um verschachtelte
+Funktionsaufrufe in Haskell zu vermeiden.
 
 0:00:48.680,0:00:49.680
 Ja,
@@ -41,30 +41,31 @@ Denn wir schreiben keine
 verschachtelten Ausdrücke, sondern nur
 
 0:01:03.600,0:01:11.840
-Prädikatsanwendungen, Literale, die
-in Regeln, Fakten und Abfragen vorkommen.
+Prädikatsanwendungen, Literale, die in
+Regeln, Fakten und Abfragen vorkommen.
 
 0:01:12.400,0:01:21.600
 Es gab also diese grundlegende Idee von
 wenn Sie etwas haben wie 'f (g x y) z'.
 
 0:01:21.600,0:01:25.040
-Also, eine verschachtelte Funktion von
-Aufruf einer Funktion, die als
+Also, eine verschachtelte Funktion
+von Aufruf einer Funktion, die als
 
 0:01:25.040,0:01:28.080
-Argument einen anderen Funktionsaufruf eingeschlossen hat.
+Argument einen anderen
+Funktionsaufruf eingeschlossen hat.
 
 0:01:29.680,0:01:31.200
 Und die Idee ist, dass
 
 0:01:32.960,0:01:42.000
-auf der Haskell-Seite grundsätzlich als
-etwas wie für die neue Variable 'z', sagen wir mal.
+auf der Haskell-Seite grundsätzlich als etwas
+wie für die neue Variable 'z', sagen wir mal.
 
 0:01:46.240,0:01:49.280
-Schreiben wir diese Zeile, die wir
-in Haskell geschrieben haben, vielleicht.
+Schreiben wir diese Zeile, die wir in
+Haskell geschrieben haben, vielleicht.
 
 0:01:49.280,0:01:56.080
 Also, die lokale Definition für das 'u',
@@ -74,8 +75,8 @@ nämlich, dass es 'u = g x y' sein würde.
 Und da wir jetzt Dinge haben, die keine
 
 0:02:00.720,0:02:06.320
-verschachtelten Funktionsaufrufe sind, können sie sehr direkt
-etwas auf der Prolog-Seite übersetzt werden, okay?
+verschachtelten Funktionsaufrufe sind, können sie sehr
+direkt etwas auf der Prolog-Seite übersetzt werden, okay?
 
 0:02:06.320,0:02:09.920
 Das ist das, was auf der vorherigen
@@ -94,43 +95,45 @@ Schauen wir uns also die Funktion "length" an.
 Ja, also auf der zusätzlichen Seite ist 'length'
 
 0:02:22.400,0:02:28.160
-sehr einfach definiert, indem sie besagt, dass
-die Länge der leeren Liste 0 ist.
+sehr einfach definiert, indem sie besagt,
+dass die Länge der leeren Liste 0 ist.
 
 0:02:32.000,0:02:34.240
 Und die Länge der nicht leeren Liste ist was?
 
 0:02:34.240,0:02:43.920
-Der Mustervergleich mit der
-nicht leeren Liste, und was dann?
+Der Mustervergleich mit der nicht
+leeren Liste, und was dann?
 
 0:02:43.920,0:02:52.080
 Nun, das ist die Länge der restlichen Liste + 1.
 
 0:02:52.800,0:02:56.080
-Und natürlich ist dies auch
-ein verschachtelter Funktionsaufruf, richtig?
+Und natürlich ist dies auch ein
+verschachtelter Funktionsaufruf, richtig?
 
 0:02:56.080,0:03:00.800
-Ich meine, Sie müssen nicht unbedingt diese
-Klammern schreiben, und das liegt an den Parsing-Regeln,
+Ich meine, Sie müssen nicht unbedingt diese Klammern
+schreiben, und das liegt an den Parsing-Regeln,
 
 0:03:00.800,0:03:03.120
-aber dies ist wirklich ein verschachtelter Funktionsaufruf.
+aber dies ist wirklich ein
+verschachtelter Funktionsaufruf.
 
 0:03:03.120,0:03:06.160
 Dabei ist die äußere Funktion das '+',
 und die innere Funktion ist "length".
 
 0:03:06.160,0:03:12.560
-Es passt also in das obige Muster, wir könnten nicht direkt
-so etwas in Prolog schreiben, okay?
+Es passt also in das obige Muster, wir könnten
+nicht direkt so etwas in Prolog schreiben, okay?
 
 0:03:13.120,0:03:15.200
 Was können wir aber tun?
 
 0:03:15.200,0:03:18.480
-Nun, die erste Zeile ist eine, die sich sehr direkt
+Nun, die erste Zeile ist
+eine, die sich sehr direkt
 
 0:03:18.480,0:03:21.440
 dazu eignet, geschrieben zu werden
@@ -140,8 +143,8 @@ als binäres Prädikat, richtig?
 Denn sie hat zwei Konstanten.
 
 0:03:23.040,0:03:26.960
-Die leere Liste als eine Konstante und
-Null als die Ergebniskonstante.
+Die leere Liste als eine Konstante
+und Null als die Ergebniskonstante.
 
 0:03:26.960,0:03:32.720
 In Prolog würde dies also
@@ -155,12 +158,12 @@ die Länge der leeren Liste null ist, richtig?
 Geschrieben als Tatsache, okay?
 
 0:03:45.840,0:03:49.200
-Was ist nun mit den anderen Regeln, bei denen
-wir gerade gesagt haben, wir müssten
+Was ist nun mit den anderen Regeln, bei
+denen wir gerade gesagt haben, wir müssten
 
 0:03:49.200,0:03:52.400
-dies als etwas interpretieren,
-ohne einen verschachtelten Funktionsaufruf.
+dies als etwas interpretieren, ohne
+einen verschachtelten Funktionsaufruf.
 
 0:03:53.600,0:03:57.480
 Also, der vernünftige Weg wäre zu sagen, die -.
@@ -170,68 +173,71 @@ Zuerst formulieren wir dies als, sagen
 wir, m + 1, wobei m die Länge von xs ist.
 
 0:04:13.520,0:04:18.240
-Und der Vorteil davon ist, dass 'length xs'
-gleich m in diesem Stil geschrieben werden kann, richtig?
+Und der Vorteil davon ist, dass 'length xs' gleich
+m in diesem Stil geschrieben werden kann, richtig?
 
 0:04:18.240,0:04:19.680
 Einfach als binäres Prädikat.
 
 0:04:19.680,0:04:23.920
-Das binäre Prädikat 'length'
-wird auf die Liste und ihre Länge angewendet.
+Das binäre Prädikat 'length' wird auf
+die Liste und ihre Länge angewendet.
 
 0:04:24.640,0:04:25.140
 Das ist die Idee dahinter.
 
 0:04:25.760,0:04:31.280
-Wie kann man nun, nachdem man das getan hat,
-die Definition umschreiben?
+Wie kann man nun, nachdem man das
+getan hat, die Definition umschreiben?
 
 0:04:34.800,0:04:44.800
-Nun, wir können dann auf der Prolog-Seite schreiben,
-etwas wie es ist der Fall, dass die
+Nun, wir können dann auf der Prolog-Seite
+schreiben, etwas wie es ist der Fall, dass die
 
 0:04:44.800,0:04:53.120
 Länge einer solchen Liste, und natürlich müssen wir
 umschreiben als Listenmuster im Prolog-Stil, richtig?
 
 0:04:53.120,0:04:57.440
-Und zwar nicht mit diesem Doppelpunkt als cons-Konstruktor,
-sondern mit einem senkrechten Strich
+Und zwar nicht mit diesem Doppelpunkt als
+cons-Konstruktor, sondern mit einem senkrechten Strich
 
 0:04:58.000,0:04:59.200
 in eckigen Klammern.
 
 0:05:00.880,0:05:05.120
-Und außerdem müssen wir die
-Variablen in Großbuchstaben umschreiben, Sie wissen schon, um die
+Und außerdem müssen wir die Variablen in
+Großbuchstaben umschreiben, Sie wissen schon, um die
 
 0:05:05.680,0:05:09.200
-oder an die syntaktischen Richtlinien von Prolog anzupassen.
+oder an die syntaktischen
+Richtlinien von Prolog anzupassen.
 
 0:05:09.200,0:05:16.080
-Dies würde also geschrieben werden als X
-für den Kopf, XS für den Rest.
+Dies würde also geschrieben werden
+als X für den Kopf, XS für den Rest.
 
 0:05:19.440,0:05:23.840
 Das wäre also die Eingabeseite.
 
 0:05:24.800,0:05:28.320
-Und für die Ausgabeseite, nun,
-lasst uns über dieses 'm + 1' nachdenken.
+Und für die Ausgabeseite, nun, lasst
+uns über dieses 'm + 1' nachdenken.
 
 0:05:28.320,0:05:30.640
-Also, lassen Sie uns das erst einmal symbolisch machen.
+Also, lassen Sie uns das erst
+einmal symbolisch machen.
 
 0:05:30.640,0:05:32.960
 Wenn also diese ursprüngliche Idee
 
 0:05:34.080,0:05:39.600
-die auch für das 'add'-Prädikat verwendet wurde,
-dass wir nicht extra die Zahlen zwei, drei usw. schreiben,
+die auch für das 'add'-Prädikat verwendet wurde, dass
+wir nicht extra die Zahlen zwei, drei usw. schreiben,
 
 0:05:39.600,0:05:45.120
-sondern etwas wie: SS0 für die Zahl zwei, richtig?
+sondern etwas wie: SS0 für
+die Zahl zwei, richtig?
 
 0:05:45.120,0:05:49.360
 Drücken wir also diese +1 mit
@@ -246,36 +252,36 @@ Also, der Nachfolger von einer
 Variable 'M' gegeben, richtig?
 
 0:06:02.000,0:06:17.440
-Wir brauchen also diese Vorbedingung, wenn
-die Länge von Xs M ist, okay?
+Wir brauchen also diese Vorbedingung,
+wenn die Länge von Xs M ist, okay?
 
 0:06:17.440,0:06:22.080
 Also, wenn die Länge von Xs M ist, dann
 die Länge von etwas mit dem Präfix -.
 
 0:06:22.080,0:06:28.080
-Also, ein Element mit einem Präfix vor
-Xs vorangestellt ist, ist die Länge davon s(M), okay?
+Also, ein Element mit einem Präfix vor Xs
+vorangestellt ist, ist die Länge davon s(M), okay?
 
 0:06:28.080,0:06:34.000
 Das wäre also eine vernünftige Definition
 von Länge in Prolog als Prädikat.
 
 0:06:34.000,0:06:37.120
-Und dann könnten wir eigentlich auch anfangen,
-fragen, jetzt haben wir ein Prädikat
+Und dann könnten wir eigentlich auch
+anfangen, fragen, jetzt haben wir ein Prädikat
 
 0:06:37.120,0:06:42.160
-für Länge anstelle einer Funktion. Wie
-wäre es, wenn wir es auf eine Art und Weise benutzen, wo wir
+für Länge anstelle einer Funktion. Wie wäre es,
+wenn wir es auf eine Art und Weise benutzen, wo wir
 
 0:06:42.960,0:06:48.320
-dieser Instanziierung einen Wert für
-die Länge geben und nach der Liste fragen.
+dieser Instanziierung einen Wert für die
+Länge geben und nach der Liste fragen.
 
 0:06:48.320,0:06:52.720
-Was in Haskell natürlich nicht möglich ist.
-Natürlich nicht möglich, weil es nur mit Funktionen funktioniert.
+Was in Haskell natürlich nicht möglich ist. Natürlich
+nicht möglich, weil es nur mit Funktionen funktioniert.
 
 0:06:54.080,0:06:58.000
 Okay, das war also die Längenfunktion,
@@ -285,8 +291,8 @@ nun in ein Prolog-Prädikat verwandelt.
 Lassen Sie uns ein weiteres Beispiel machen.
 
 0:07:01.760,0:07:12.160
-Eine weitere typische Listenverarbeitungsfunktion in
-Haskell wäre natürlich das 'Listenanhängen'.
+Eine weitere typische Listenverarbeitungsfunktion
+in Haskell wäre natürlich das 'Listenanhängen'.
 
 0:07:12.880,0:07:14.320
 Also, der '++'-Operator.
@@ -296,12 +302,12 @@ Den wir nicht in dieser Operator-Syntax
 verwenden, sondern als ternäres Prädikat.
 
 0:07:19.920,0:07:29.280
-Erinnern wir uns also daran, was die Definition und auch die
-Syntax auf der Haskell-Seite tatsächlich sein wird.
+Erinnern wir uns also daran, was die Definition und auch
+die Syntax auf der Haskell-Seite tatsächlich sein wird.
 
 0:07:29.280,0:07:33.840
-Es ist eine polymorphe Funktion und natürlich werden wir
-diesen Typ nicht in Prolog aufschreiben, weil
+Es ist eine polymorphe Funktion und natürlich werden
+wir diesen Typ nicht in Prolog aufschreiben, weil
 
 0:07:33.840,0:07:37.680
 Prolog nicht typisiert ist, aber auf der Haskell-Seite
@@ -338,8 +344,8 @@ Dies ist ein Funktionsaufruf,
 der eine Liste erzeugt, die dann
 
 0:08:22.640,0:08:25.360
-mit einem anderen Element kombiniert
-wird, um die endgültige Ausgabeliste zu erzeugen.
+mit einem anderen Element kombiniert wird,
+um die endgültige Ausgabeliste zu erzeugen.
 
 0:08:25.360,0:08:30.080
 Das ist also ein verschachtelter Funktionsaufruf, den wir
@@ -350,12 +356,12 @@ Also, was würde dies bedeuten
 nach der gleichen Idee wie hier?
 
 0:08:35.760,0:08:40.960
-Nun, man müsste den
-Unterausdruck umbenennen, der ein weiterer Funktionsaufruf ist.
+Nun, man müsste den Unterausdruck umbenennen,
+der ein weiterer Funktionsaufruf ist.
 
 0:08:40.960,0:08:46.480
-Wir würden dies also umschreiben oder
-wir könnten auf der Haskell-Seite umschreiben,
+Wir würden dies also umschreiben oder wir
+könnten auf der Haskell-Seite umschreiben,
 
 0:08:46.480,0:09:00.320
 indem wir sagen: Nun, das ist eigentlich x vor zs,
@@ -366,8 +372,8 @@ Und die Idee ist wiederum, dass, wenn wir
 ein ternäres Prädikat für "append" haben,
 
 0:09:04.400,0:09:07.120
-dann ist dies, mit nur Variablen
-und ohne verschachtelte Funktionsaufrufe,
+dann ist dies, mit nur Variablen und
+ohne verschachtelte Funktionsaufrufe,
 
 0:09:07.120,0:09:10.480
 als ein Literal geschrieben werden kann, wie wir
@@ -378,8 +384,8 @@ Okay, was müssen wir also
 auf der Prolog-Seite machen?
 
 0:09:16.240,0:09:21.600
-Nun, wie ich schon sagte, wir werden keinen Operator verwenden,
-wie diesen. Stattdessen werden wir ein benanntes Prädikat verwenden.
+Nun, wie ich schon sagte, wir werden keinen Operator verwenden, wie
+diesen. Stattdessen werden wir ein benanntes Prädikat verwenden.
 
 0:09:21.600,0:09:25.360
 Nennen wir es also 'append'.
@@ -393,26 +399,27 @@ Die Syntax wurde auch auf den Folien erwähnt, dass
 manchmal, zum Beispiel zu Dokumentationszwecken,
 
 0:09:37.680,0:09:42.560
-zum Beispiel, wenn man zumindest die
-Stelligkeit eines Prädikats in Prolog aufschreibt.
+zum Beispiel, wenn man zumindest die Stelligkeit
+eines Prädikats in Prolog aufschreibt.
 
 0:09:42.560,0:09:45.280
-Auch, weil dasselbe Prädikat
-eine unterschiedliche Stelligkeit haben kann.
+Auch, weil dasselbe Prädikat eine
+unterschiedliche Stelligkeit haben kann.
 
 0:09:45.280,0:09:46.800
-Also ist es hilfreich, diese Information zu haben.
+Also ist es hilfreich,
+diese Information zu haben.
 
 0:09:47.520,0:09:48.800
 Und was sind dann die Regeln?
 
 0:09:49.360,0:09:54.160
-Nun, die erste Regel ist einfach
-eine Tatsache und sollte sehr einfach sein.
+Nun, die erste Regel ist einfach eine
+Tatsache und sollte sehr einfach sein.
 
 0:09:54.160,0:09:58.560
-Ja, sie besagt etwas über drei
-Dinge: die konstante leere Liste und dann
+Ja, sie besagt etwas über drei Dinge:
+die konstante leere Liste und dann
 
 0:09:58.560,0:10:01.840
 zweimal die gleiche variable Liste.
@@ -421,15 +428,15 @@ zweimal die gleiche variable Liste.
 Das übersetzt sich also direkt in
 
 0:10:06.000,0:10:10.960
-eine Regel, die einfach nur ein Faktum ist und keine
-Regel, weil sie nicht vorausgesetzt wird.
+eine Regel, die einfach nur ein Faktum ist und
+keine Regel, weil sie nicht vorausgesetzt wird.
 
 0:10:10.960,0:10:11.680
 Etwa so.
 
 0:10:11.680,0:10:18.960
-Also, die leere Liste, die mit
-etwas ist, dieses etwas ist ein Fakt, okay?
+Also, die leere Liste, die mit etwas
+ist, dieses etwas ist ein Fakt, okay?
 
 0:10:18.960,0:10:20.240
 Und was ist mit der zweiten Zeile?
@@ -439,15 +446,15 @@ Nun, jetzt sind wir schon ein bisschen
 komfortabler mit der unterschiedlichen
 
 0:10:26.720,0:10:34.000
-Listensyntax oder das übersetzt sich auf der Prolog-Seite
-in diese Syntax wie die eckigen Klammern,
+Listensyntax oder das übersetzt sich auf der
+Prolog-Seite in diese Syntax wie die eckigen Klammern,
 
 0:10:34.560,0:10:39.120
 dann X | und der Name der Restliste.
 
 0:10:40.720,0:10:45.840
-Dies ist wieder nur eine Variable,
-die einfach in Großbuchstaben geschrieben werden muss.
+Dies ist wieder nur eine Variable, die einfach
+in Großbuchstaben geschrieben werden muss.
 
 0:10:47.760,0:10:49.520
 Und was sollte dann das Ergebnis sein?
@@ -484,8 +491,8 @@ Es besagt, dass das Anhängen
 von Xs und Ys Zs sein sollte.
 
 0:11:24.480,0:11:31.040
-Hier hätten wir also als Vorbedingung für
-unser ternäres Prädikat, dass die Aneinanderreihung von Xs
+Hier hätten wir also als Vorbedingung für unser
+ternäres Prädikat, dass die Aneinanderreihung von Xs
 
 0:11:31.760,0:11:34.160
 und Ys Zs ist.
@@ -512,8 +519,8 @@ angeben und nach allen Listenpaaren fragen,
 die aneinander gehängt die Ausgabeliste ergeben.
 
 0:11:57.120,0:12:00.800
-Das ist etwas, was wir in Haskell nicht machen können
-Seite machen, weil man das nicht rückwärts ablaufen lassen kann.
+Das ist etwas, was wir in Haskell nicht machen können Seite
+machen, weil man das nicht rückwärts ablaufen lassen kann.
 
 0:12:00.800,0:12:06.880
 Aber für ein solches Prädikat können wir
@@ -524,19 +531,20 @@ Und lassen Sie mich ein drittes Beispiel machen,
 das kein rekursives Beispiel ist, sondern
 
 0:12:12.640,0:12:17.200
-veranschaulicht wieder die Syntax der Mustererkennung.
+veranschaulicht wieder die
+Syntax der Mustererkennung.
 
 0:12:17.200,0:12:23.840
 Schauen wir uns also kurz eine sehr einfache Funktion an
 eine Sekunde lang auf der Haskell-Seite, die im Wesentlichen
 
 0:12:24.560,0:12:29.680
-für eine beliebige Liste das zweite
-Element zurückgeben soll, und wir wollen das nicht
+für eine beliebige Liste das zweite Element
+zurückgeben soll, und wir wollen das nicht
 
 0:12:29.680,0:12:33.760
-mit Listenindizierung oder so
-machen, sondern einfach mit einem Mustervergleich.
+mit Listenindizierung oder so machen,
+sondern einfach mit einem Mustervergleich.
 
 0:12:33.760,0:12:36.640
 Wie könnte dies also ausgedrückt werden
@@ -546,23 +554,23 @@ auf der Haskell-Seite ausgedrückt werden?
 Wir werden etwas in dieser Art schreiben.
 
 0:12:39.680,0:12:45.360
-Ja, sagen wir, wir haben eine nicht leere Liste, also ist es
-etwas vor etwas, wenn das erste
+Ja, sagen wir, wir haben eine nicht leere Liste,
+also ist es etwas vor etwas, wenn das erste
 
 0:12:45.360,0:12:50.640
-etwas für uns nicht wichtig ist, ist es uns egal,
-weil wir das zweite Etwas haben wollen.
+etwas für uns nicht wichtig ist, ist es uns
+egal, weil wir das zweite Etwas haben wollen.
 
 0:12:50.640,0:12:52.560
 Wir verwenden hier also eine anonyme Variable,
 
 0:12:53.280,0:12:57.120
-dann haben wir ein Element, an dem wir interessiert sind,
-also müssen wir es benennen.
+dann haben wir ein Element, an dem wir
+interessiert sind, also müssen wir es benennen.
 
 0:12:58.080,0:13:02.880
-Und dann muss es einen Rest geben, aber
-das ist wiederum etwas, das uns nicht interessiert.
+Und dann muss es einen Rest geben, aber das
+ist wiederum etwas, das uns nicht interessiert.
 
 0:13:02.880,0:13:05.200
 Er muss da sein, denn wir brauchen
@@ -579,8 +587,8 @@ Es könnte die leere Liste sein,
 irgendetwas, und es ist uns egal.
 
 0:13:12.080,0:13:20.160
-Wir verwenden also das Muster der anonymen Variablen und
-nun, das Ergebnis wäre einfach X, okay?
+Wir verwenden also das Muster der anonymen Variablen
+und nun, das Ergebnis wäre einfach X, okay?
 
 0:13:20.160,0:13:21.040
 Das ist auf der Haskell-Seite.
@@ -594,8 +602,8 @@ Trotzdem wollen wir sehen, wie
 das auf der Prolog-Seite aussieht.
 
 0:13:30.000,0:13:38.640
-Das ist jetzt eher eine Frage, wie
-diese unterschiedliche Listensyntax zu verwenden.
+Das ist jetzt eher eine Frage, wie diese
+unterschiedliche Listensyntax zu verwenden.
 
 0:13:38.640,0:13:43.120
 Also, was wir wollen, ist natürlich
@@ -606,29 +614,30 @@ Denn es ist eine Funktion mit
 einem Argument und einem Ergebnis.
 
 0:13:45.200,0:13:47.520
-Auf der Prolog-Seite sollte das Prädikat binär sein,
+Auf der Prolog-Seite sollte
+das Prädikat binär sein,
 
 0:13:47.520,0:13:50.880
-damit es sowohl für die
-Eingabe als auch für die Ausgabe.
+damit es sowohl für die Eingabe
+als auch für die Ausgabe.
 
 0:13:51.760,0:13:52.880
 Und was wäre das?
 
 0:13:52.880,0:13:54.960
-Nun, es gäbe nur
-eine Regel, die eine Tatsache ist.
+Nun, es gäbe nur eine Regel,
+die eine Tatsache ist.
 
 0:13:54.960,0:13:56.960
-Denn es gibt keine
-Vorbedingung oder rekursive Aufrufe.
+Denn es gibt keine Vorbedingung
+oder rekursive Aufrufe.
 
 0:13:57.680,0:14:01.840
 Wie könnte dieses Faktum also aussehen?
 
 0:14:03.600,0:14:08.400
-Nun, auf der linken Seite haben wir hier die
-Prolog-Version dieses Musters.
+Nun, auf der linken Seite haben wir
+hier die Prolog-Version dieses Musters.
 
 0:14:08.400,0:14:14.880
 Und was ist die Prolog-Version dieses Musters?
@@ -639,22 +648,23 @@ Also, wir kümmern uns nicht um das erste
 Sache, dann haben wir eine Restliste
 
 0:14:23.440,0:14:27.200
-von der wir wissen, dass das Kopfelement X sein wird.
+von der wir wissen, dass
+das Kopfelement X sein wird.
 
 0:14:27.200,0:14:30.800
-Und dann gibt es eine weitere Restliste,
-um die wir uns nicht kümmern.
+Und dann gibt es eine weitere
+Restliste, um die wir uns nicht kümmern.
 
 0:14:31.520,0:14:33.280
 Ja, das wäre also eine Übersetzung davon.
 
 0:14:34.000,0:14:39.360
-Eine Übersetzung dieses Haskell-Musters
-und dann sagen wir, na ja, die Ausgabe ist X.
+Eine Übersetzung dieses Haskell-Musters und
+dann sagen wir, na ja, die Ausgabe ist X.
 
 0:14:40.240,0:14:43.280
-Dies könnte ein Fakt sein, der
-die obige Zeile darstellt.
+Dies könnte ein Fakt sein,
+der die obige Zeile darstellt.
 
 0:14:43.280,0:14:47.600
 Oder jetzt in Prolog gibt es tatsächlich mehr
@@ -665,26 +675,28 @@ Das wurde auch schon erwähnt
 auf einer der Syntax-Folien.
 
 0:14:50.320,0:15:00.720
-Zum Beispiel könnte dies auch
-so geschrieben werden:
+Zum Beispiel könnte dies
+auch so geschrieben werden:
 
 0:15:01.840,0:15:05.680
-Wir wollen eine Liste haben, uns ist das
-erste Element egal,
+Wir wollen eine Liste haben,
+uns ist das erste Element egal,
 
 0:15:06.640,0:15:12.480
 wir interessieren uns für das zweite Element, es soll die
 Variable X sein oder an die Variable X angepasst/gebunden sein.
 
 0:15:13.280,0:15:16.000
-Und dann gibt es noch einen Rest, um den wir uns nicht kümmern.
+Und dann gibt es noch einen Rest,
+um den wir uns nicht kümmern.
 
 0:15:18.240,0:15:21.120
-Und dieser ist durch dieses Prädikat mit X verbunden.
+Und dieser ist durch dieses
+Prädikat mit X verbunden.
 
 0:15:22.880,0:15:29.200
-Oder eine andere Version wäre,
-das '.' als Konstruktor zu verwenden
+Oder eine andere Version wäre, das
+'.' als Konstruktor zu verwenden
 
 0:15:29.200,0:15:34.560
 für den cons-Konstruktor aus Haskell.
@@ -701,8 +713,8 @@ Das ist etwas, das uns nicht wirklich interessiert.
 Und es gibt eine Restliste, die wiederum
 
 0:15:46.720,0:15:52.240
-mit dem Datenkonstruktor erstellt wird, und das
-erste Element ist das X, an dem wir interessiert sind.
+mit dem Datenkonstruktor erstellt wird, und das erste
+Element ist das X, an dem wir interessiert sind.
 
 0:15:53.440,0:15:59.040
 Und dann gibt es wieder einen
@@ -719,31 +731,31 @@ Und wahrscheinlich gibt es noch einige andere
 Möglichkeiten, wie man das schreiben könnte.
 
 0:16:09.200,0:16:14.000
-Zum Beispiel könnten Sie es
-wieder durch dieses Muster ersetzen.
+Zum Beispiel könnten Sie es wieder
+durch dieses Muster ersetzen.
 
 0:16:14.000,0:16:19.360
-Okay, das sind gleichwertige Möglichkeiten. Es ist nur sehr
-wichtig, wenn Sie anfangen, Prädikate für Listen zu
+Okay, das sind gleichwertige Möglichkeiten. Es ist nur
+sehr wichtig, wenn Sie anfangen, Prädikate für Listen zu
 
 0:16:19.360,0:16:21.840
 schreiben, sich damit vertraut zu machen.
 
 0:16:22.880,0:16:25.840
-Ja, auf der Haskell-Seite gibt es auch
-verschiedene Wege, dies zu finden, natürlich, richtig?
+Ja, auf der Haskell-Seite gibt es auch verschiedene
+Wege, dies zu finden, natürlich, richtig?
 
 0:16:25.840,0:16:31.120
-Es gibt auch Literalmuster, die
-man in Funktionsdefinitionen schreiben kann.
+Es gibt auch Literalmuster, die man in
+Funktionsdefinitionen schreiben kann.
 
 0:16:31.120,0:16:34.880
-Okay, aber wir wollen uns jetzt nicht
-auf Haskell konzentrieren, sondern einfach
+Okay, aber wir wollen uns jetzt nicht auf
+Haskell konzentrieren, sondern einfach
 
 0:16:34.880,0:16:40.160
-schätzen und betrachten diese
-verschiedenen Möglichkeiten, dies in Prolog zu schreiben.
+schätzen und betrachten diese verschiedenen
+Möglichkeiten, dies in Prolog zu schreiben.
 
 0:16:43.040,0:16:49.840
 Okay, das war's für diese Beispiele.

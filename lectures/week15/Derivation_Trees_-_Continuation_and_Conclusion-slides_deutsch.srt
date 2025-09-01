@@ -1,19 +1,19 @@
 83 # slide
 00:00:01,599 --> 00:00:07,459
-Okay, bevor wir uns daran machen, das Programm zu reparieren,
-wollen wir uns kurz davon überzeugen, dass das
+Okay, bevor wir uns daran machen, das Programm zu
+reparieren, wollen wir uns kurz davon überzeugen, dass das
 
 00:00:07,459 --> 00:00:15,440
 was wir bei dem komplexeren Beispiel gemacht haben
 tatsächlich mit der informellen Beschreibung übereinstimmt,
 
 00:00:15,440 --> 00:00:17,940
-wie diese Ableitungsbäume zu generieren sind,
-oder?
+wie diese Ableitungsbäume
+zu generieren sind, oder?
 
 00:00:17,940 --> 00:00:23,070
-Wir hatten diese verbale Beschreibung am Ende
-des letzten Videos zum ersten Teil.
+Wir hatten diese verbale Beschreibung am
+Ende des letzten Videos zum ersten Teil.
 
 00:00:23,070 --> 00:00:30,410
 Und wir können sie Seite an Seite mit dem tatsächlichen
@@ -23,8 +23,8 @@ Ableitungsbaum, den wir gerade konstruiert haben,
 und gehen Sie das kurz durch.
 
 00:00:31,410 --> 00:00:37,159
-Okay, das ist also das Programm, das wir nach
-der Umstellung der Reihenfolge dieser beiden Literale
+Okay, das ist also das Programm, das wir nach der
+Umstellung der Reihenfolge dieser beiden Literale
 
 00:00:37,159 --> 00:00:39,679
 in der letzten Programmklausel.
@@ -43,16 +43,16 @@ Abfrage, für die wir nach einer Lösung suchen,
 in einen Wurzelknoten.
 
 00:00:56,690 --> 00:01:00,719
-Und in gewisser Weise, denken Sie daran, dass wir
-daran arbeiten müssen, richtig?
+Und in gewisser Weise, denken Sie daran,
+dass wir daran arbeiten müssen, richtig?
 
 00:01:00,719 --> 00:01:05,460
-Ich erwähnte, dass wir im Auge behalten müssen, welche
-Knoten die sind, die noch nicht fertig sind.
+Ich erwähnte, dass wir im Auge behalten müssen,
+welche Knoten die sind, die noch nicht fertig sind.
 
 00:01:05,460 --> 00:01:10,860
-Okay, solange es solche Knoten gibt, die
-noch bearbeitet werden müssen, wählen wir den ganz linken,
+Okay, solange es solche Knoten gibt, die noch
+bearbeitet werden müssen, wählen wir den ganz linken,
 
 00:01:10,860 --> 00:01:12,170
 und das ist genau dieser.
@@ -62,7 +62,8 @@ Wir bestimmen, welche der Fakten oder Regeln aus
 dem Programm in ihrem Kopfliteral unifizierbar sind
 
 00:01:19,860 --> 00:01:26,159
-mit dem am weitesten links stehenden Literal der Abfrage.
+mit dem am weitesten links
+stehenden Literal der Abfrage.
 
 00:01:26,159 --> 00:01:32,180
 Okay, und in diesem Fall war dies nur die
@@ -72,30 +73,30 @@ zweite.
 Denn die 0 und s(0).
 
 00:01:34,219 --> 00:01:39,380
-Also generieren wir mit jedem von ihnen, das ist
-genau einer in diesem Fall, einen neuen Nachfolgeknoten.
+Also generieren wir mit jedem von ihnen, das ist genau
+einer in diesem Fall, einen neuen Nachfolgeknoten.
 
 00:01:39,380 --> 00:01:46,229
-Über die Resolution, um diese mit
-dieser Abfrage erhielten wir diesen Knoten, der natürlich
+Über die Resolution, um diese mit dieser Abfrage
+erhielten wir diesen Knoten, der natürlich
 
 00:01:46,229 --> 00:01:49,359
 noch weiter bearbeitet werden muss.
 
 00:01:49,359 --> 00:01:53,710
-Wenn es mehrere solcher Knoten gibt, ordnen wir
-von links nach rechts in der Reihenfolge, in der die
+Wenn es mehrere solcher Knoten gibt, ordnen wir von
+links nach rechts in der Reihenfolge, in der die
 
 00:01:53,710 --> 00:01:54,710
 Regeln im Programm vorkommen.
 
 00:01:54,710 --> 00:01:57,720
-In diesem Fall gab es natürlich nur einen
-Nachfolger.
+In diesem Fall gab es
+natürlich nur einen Nachfolger.
 
 00:01:57,720 --> 00:02:03,650
-Wir mussten den Unifikator an die Verbindung setzen,
-was wir auch schon auf den vorherigen
+Wir mussten den Unifikator an die Verbindung
+setzen, was wir auch schon auf den vorherigen
 
 00:02:03,650 --> 00:02:07,700
 Folien bereits getan haben.
@@ -106,29 +107,31 @@ Dann fuhren wir fort, indem wir nun diesen
 Knoten als den nächsten zu bearbeiten wählten.
 
 00:02:15,110 --> 00:02:20,480
-Auch hier gibt es nur eine Wahl für den Suchknoten ganz links,
-Knoten ist genau dieser Knoten.
+Auch hier gibt es nur eine Wahl für den Suchknoten
+ganz links, Knoten ist genau dieser Knoten.
 
 00:02:20,480 --> 00:02:28,610
-In diesem Knoten wählen wir das ganz linke Literal
-und prüfen, ob es mit einer
+In diesem Knoten wählen wir das ganz
+linke Literal und prüfen, ob es mit einer
 
 00:02:28,610 --> 00:02:31,330
-oder mehreren Klauseln aus dem Programm unifizierbar ist.
+oder mehreren Klauseln aus
+dem Programm unifizierbar ist.
 
 00:02:31,330 --> 00:02:36,830
-In diesem Fall ist es tatsächlich unifizierbar mit
-diesen beiden Klauseln.
+In diesem Fall ist es tatsächlich
+unifizierbar mit diesen beiden Klauseln.
 
 00:02:36,830 --> 00:02:41,970
-Denn diese kann zur Übereinstimmung gebracht werden, aber auch
-die zweite.
+Denn diese kann zur Übereinstimmung
+gebracht werden, aber auch die zweite.
 
 00:02:41,970 --> 00:02:46,760
 Also gab es jetzt zwei Nachfolger.
 
 00:02:46,760 --> 00:02:48,731
-Die Resolution ergab in beiden Fällen diese Ergebnisse.
+Die Resolution ergab in beiden
+Fällen diese Ergebnisse.
 
 00:02:48,731 --> 00:02:51,290
 Also, wir wenden die Tatsache an.
@@ -140,15 +143,15 @@ Dies verschwand.
 Und es blieb dieses neue Literal übrig.
 
 00:02:54,830 --> 00:03:00,150
-Und durch die Anwendung dieser rekursiven Regel für die Addition
-erhalten wir ein anderes zusätzliches Literal, auch
+Und durch die Anwendung dieser rekursiven Regel für die
+Addition erhalten wir ein anderes zusätzliches Literal, auch
 
 00:03:00,150 --> 00:03:02,120
 eine Änderung des Multiplikationsliterals.
 
 00:03:02,120 --> 00:03:07,790
-Weil wir den Unifikator, der für
-diesen Resolutionsschritt verwendet wurde, auch auf
+Weil wir den Unifikator, der für diesen
+Resolutionsschritt verwendet wurde, auch auf
 
 00:03:07,790 --> 00:03:12,680
 die übrigen Literale.
@@ -159,11 +162,12 @@ zwei Unifikatoren, die wir dafür verwendet haben.
 
 85 # slide
 00:03:26,280 --> 00:03:30,380
-Dann haben wir uns auf den linken dieser beiden Knoten konzentriert.
+Dann haben wir uns auf den linken
+dieser beiden Knoten konzentriert.
 
 00:03:30,380 --> 00:03:35,390
-Denn wir wählen immer den ganz linken Knoten,
-für den wir noch nicht fertig sind.
+Denn wir wählen immer den ganz linken
+Knoten, für den wir noch nicht fertig sind.
 
 00:03:35,390 --> 00:03:37,610
 Hier gibt es also nur ein einziges Literal.
@@ -173,8 +177,8 @@ Das ist also das Literal, das wir jetzt vergleichen
 mit den Köpfen unserer Programmklauseln.
 
 00:03:44,130 --> 00:03:49,740
-In diesem Fall erhalten wir wieder zwei Möglichkeiten
-für unseren Resolutionsschritt.
+In diesem Fall erhalten wir wieder zwei
+Möglichkeiten für unseren Resolutionsschritt.
 
 00:03:49,740 --> 00:03:52,160
 Die erste führt zu einem leeren Knoten.
@@ -186,50 +190,50 @@ Denn dieser ist ein Fakt.
 Die zweite hingegen führt zu diesem Knoten.
 
 00:03:57,510 --> 00:04:08,750
-Hier sind also die beiden Unifikatoren, hier war dies
-die Annotation für eine leere Notiz und dies
+Hier sind also die beiden Unifikatoren, hier war
+dies die Annotation für eine leere Notiz und dies
 
 00:04:08,750 --> 00:04:10,560
 sind die Erfolgsknoten.
 
 00:04:10,560 --> 00:04:18,870
-Wo wir auch aufschreiben können, was die Lösung
-ist und ein Knoten wie dieser, wo es unmöglich ist,
+Wo wir auch aufschreiben können, was die Lösung ist
+und ein Knoten wie dieser, wo es unmöglich ist,
 
 00:04:18,870 --> 00:04:26,760
-das ganz linke Literal mit einer Programmklausel zu unifizieren,
-Klausel zu vereinen, ist ein gescheiterter Knoten und wir verwenden dieses
+das ganz linke Literal mit einer Programmklausel zu unifizieren, Klausel
+zu vereinen, ist ein gescheiterter Knoten und wir verwenden dieses
 
 00:04:26,760 --> 00:04:31,310
 Blitzsymbol für diese Stellen.
 
 00:04:31,310 --> 00:04:37,120
-Im Erfolgsknoten wollen wir die
-eigentliche Lösung.
+Im Erfolgsknoten wollen
+wir die eigentliche Lösung.
 
 00:04:37,120 --> 00:04:44,160
-Wie sollen also die Variablen aus der ursprünglichen
-Abfrage mit Werten belegt werden?
+Wie sollen also die Variablen aus der
+ursprünglichen Abfrage mit Werten belegt werden?
 
 00:04:44,160 --> 00:04:46,540
 Also, dass es eine Lösung gibt.
 
 86 # slide
 00:04:46,540 --> 00:04:51,540
-Das war also der Weg, der nicht sichtbar ist,
-auf dieser Folie nicht sichtbar ist, aber auf der vorherigen
+Das war also der Weg, der nicht sichtbar ist, auf
+dieser Folie nicht sichtbar ist, aber auf der vorherigen
 
 00:04:51,540 --> 00:04:54,690
-Folie zu sehen, wo der vollständige Baum gezeigt wurde. Die vollständige
-Entwicklung des Baumes wurde gezeigt.
+Folie zu sehen, wo der vollständige Baum gezeigt wurde.
+Die vollständige Entwicklung des Baumes wurde gezeigt.
 
 00:04:54,690 --> 00:05:00,750
 Wir würden also irgendwo am Wurzelknoten beginnen
 hier und gehen durch alle Substitutionen entlang
 
 00:05:00,750 --> 00:05:09,590
-dem Pfad zu diesem Erfolgsknoten und sammeln im Grunde
-durch Komposition sammeln, was die Ergebnisse
+dem Pfad zu diesem Erfolgsknoten und sammeln im
+Grunde durch Komposition sammeln, was die Ergebnisse
 
 00:05:09,590 --> 00:05:14,320
 für die beiden Ebenen von Interesse sind.
@@ -245,20 +249,20 @@ an diesem Knoten, aber das war das Problem, das
 aufgetreten ist, das wir uns ansehen wollen.
 
 00:05:26,220 --> 00:05:32,530
-Aber wie Sie hier sehen, hoffe ich, dass das, was
-wir bis jetzt gemacht haben, wirklich mit dieser verbalen
+Aber wie Sie hier sehen, hoffe ich, dass das, was wir
+bis jetzt gemacht haben, wirklich mit dieser verbalen
 
 00:05:32,530 --> 00:05:34,290
 Beschreibung übereinstimmt.
 
 87 # slide
 00:05:34,290 --> 00:05:41,840
-Okay, das ist also die Situation, in der
-wir bisher gelandet sind.
+Okay, das ist also die Situation,
+in der wir bisher gelandet sind.
 
 00:05:41,840 --> 00:05:48,230
-Und das würden wir erreichen, wenn wir den
-des letzten unvollendeten Knotens von der vorherigen
+Und das würden wir erreichen, wenn wir den des
+letzten unvollendeten Knotens von der vorherigen
 
 00:05:48,230 --> 00:05:49,230
 Folie.
@@ -277,20 +281,20 @@ diese Abfrage wieder und wieder.
 Jetzt wollen wir uns das mal genauer anschauen.
 
 00:05:59,150 --> 00:06:01,200
-Und vielleicht auch darüber nachdenken, wie wir das verhindern
-können.
+Und vielleicht auch darüber nachdenken,
+wie wir das verhindern können.
 
 00:06:01,200 --> 00:06:05,240
-Wenn wir uns diese Abfrage gut anschauen, dann steht da,
-es geht um die Multiplikation.
+Wenn wir uns diese Abfrage gut anschauen,
+dann steht da, es geht um die Multiplikation.
 
 00:06:05,240 --> 00:06:08,680
-Wo einer der Faktoren 0 ist, aber das
-Ergebnis nicht 0 ist.
+Wo einer der Faktoren 0 ist,
+aber das Ergebnis nicht 0 ist.
 
 00:06:08,680 --> 00:06:12,680
-Und dann gibt es die Regel, die besagt, wie man das
-zu lösen versucht werden soll.
+Und dann gibt es die Regel, die besagt,
+wie man das zu lösen versucht werden soll.
 
 00:06:12,680 --> 00:06:18,820
 Aber, nun, es ist nicht wirklich gelöst, weil es
@@ -311,11 +315,12 @@ nicht 0 sein?
 Nun gut.
 
 00:06:29,170 --> 00:06:32,210
-So, jetzt muss man Prolog nur noch sagen, dass
-wir das nicht wollen.
+So, jetzt muss man Prolog nur noch
+sagen, dass wir das nicht wollen.
 
 00:06:32,210 --> 00:06:36,210
-Und nun, vielleicht gibt es einen Punkt, an dem wir das tun müssen, ist die Anwendung
+Und nun, vielleicht gibt es einen Punkt, an
+dem wir das tun müssen, ist die Anwendung
 
 00:06:36,210 --> 00:06:37,210
 dieser Regel.
@@ -325,28 +330,28 @@ Also, vielleicht wollen wir diese Regel nicht anwenden,
 dass die Multiplikation des Nachfolgers von etwas
 
 00:06:41,620 --> 00:06:44,660
-und etwas anderem ein Ergebnis unter einer bestimmten
-Bedingung ist.
+und etwas anderem ein Ergebnis unter
+einer bestimmten Bedingung ist.
 
 00:06:44,660 --> 00:06:47,730
-Vielleicht wollen wir diese Regel nicht anwenden, wenn
-dieses y tatsächlich 0 ist.
+Vielleicht wollen wir diese Regel nicht
+anwenden, wenn dieses y tatsächlich 0 ist.
 
 00:06:47,730 --> 00:06:50,230
-Denn wenn es 0 ist, dann wird das Ergebnis
-0 sein.
+Denn wenn es 0 ist, dann
+wird das Ergebnis 0 sein.
 
 00:06:50,230 --> 00:06:57,310
-Es hat keinen Sinn, die Multiplikation
-von etwas Positivem und 0 auf einen früheren
+Es hat keinen Sinn, die Multiplikation von
+etwas Positivem und 0 auf einen früheren
 
 00:06:57,310 --> 00:07:02,500
-Nachfolger mal 0, wenn überhaupt für 0,
-wir erwarten, dass das Ergebnis 0 sein wird.
+Nachfolger mal 0, wenn überhaupt für 0, wir
+erwarten, dass das Ergebnis 0 sein wird.
 
 00:07:02,500 --> 00:07:05,990
-Okay, vielleicht sollten wir diesen Weg gar nicht erst einschlagen.
-Weg gehen.
+Okay, vielleicht sollten wir diesen Weg
+gar nicht erst einschlagen. Weg gehen.
 
 00:07:05,990 --> 00:07:11,270
 Wegen der Entfaltung des ersten Arguments
@@ -368,23 +373,23 @@ Okay, eine Möglichkeit wäre also, einfach
 diesen rekursiven Abstieg zu verhindern.
 
 00:07:29,400 --> 00:07:35,199
-Fügen Sie also in das Programm einfach eine Bedingung ein,
-dass y nicht 0 sein darf.
+Fügen Sie also in das Programm einfach eine
+Bedingung ein, dass y nicht 0 sein darf.
 
 00:07:35,199 --> 00:07:41,330
 Und zwar vor dem Aufruf der Multiplikation
 rekursiven Aufruf, in gewissem Sinne.
 
 00:07:41,330 --> 00:07:45,050
-Okay, erinnern Sie sich daran, dass ich bei der Negation
-in einer früheren Vorlesung darauf hingewiesen habe, dass sie
+Okay, erinnern Sie sich daran, dass ich bei der Negation in
+einer früheren Vorlesung darauf hingewiesen habe, dass sie
 
 00:07:45,050 --> 00:07:47,680
 so spät wie möglich erscheinen sollte.
 
 00:07:47,680 --> 00:07:53,139
-Nun, wenn man sie einfach an das Ende der
-Regel setzt, würde dieser rekursive
+Nun, wenn man sie einfach an das Ende
+der Regel setzt, würde dieser rekursive
 
 00:07:53,139 --> 00:07:54,139
 Abstieg nicht verhindert.
@@ -393,27 +398,28 @@ Abstieg nicht verhindert.
 Also sollten wir es vielleicht hier einfügen.
 
 00:07:55,419 --> 00:07:57,050
-Und jetzt wollen wir einfach mal sehen, was passiert.
+Und jetzt wollen wir einfach
+mal sehen, was passiert.
 
 00:07:57,050 --> 00:08:01,701
-Und auch wenn ich nicht formell definiert habe,
-wie Negation in Prolog funktioniert, werden Sie tatsächlich
+Und auch wenn ich nicht formell definiert habe, wie
+Negation in Prolog funktioniert, werden Sie tatsächlich
 
 00:08:01,701 --> 00:08:07,870
 sehen, wie dies in dieser Semantik, im Gegensatz zu der
 deklarativen Semantik, die Berechnungen beeinflusst.
 
 00:08:07,870 --> 00:08:14,270
-Okay, lassen Sie uns das noch einmal für die Abfrage machen, die
-wir zuvor betrachtet haben.
+Okay, lassen Sie uns das noch einmal für die
+Abfrage machen, die wir zuvor betrachtet haben.
 
 00:08:14,270 --> 00:08:19,540
 Und natürlich gibt es in den ersten paar Schritten
 nicht viel anders sein als zuvor, außer dass
 
 00:08:19,540 --> 00:08:23,480
-wir diese Einschränkung an den richtigen Stellen
-platzieren müssen, richtig?
+wir diese Einschränkung an den richtigen
+Stellen platzieren müssen, richtig?
 
 00:08:23,480 --> 00:08:26,120
 Dies ist also derselbe Unifikator wie zuvor.
@@ -426,16 +432,16 @@ Aber natürlich, da dies jetzt in der
 rechten Seite der Klausel, die wir auflösen,
 
 00:08:33,380 --> 00:08:36,569
-müssen wir das natürlich auch reproduzieren
-hier reproduzieren, richtig?
+müssen wir das natürlich auch
+reproduzieren hier reproduzieren, richtig?
 
 00:08:36,569 --> 00:08:42,500
 Dies ist also der einzige Unterschied zum vorherigen
 Suchbaum für diese Abfrage bis zu diesem Punkt.
 
 00:08:42,500 --> 00:08:49,869
-Etwas Ähnliches gilt dann für die nächsten
-Schritte.
+Etwas Ähnliches gilt dann
+für die nächsten Schritte.
 
 00:08:49,869 --> 00:08:56,480
 Außer, dass wir jetzt natürlich auch dafür sorgen,
@@ -445,12 +451,12 @@ dass wir unseren Unifikator oder Substitution
 auch auf diese neue Bedingung anwenden.
 
 00:08:58,819 --> 00:09:03,959
-Also, wir bekommen das an dieser Stelle, weil dieser
-Addition verschwunden ist.
+Also, wir bekommen das an dieser Stelle,
+weil dieser Addition verschwunden ist.
 
 00:09:03,959 --> 00:09:09,959
-Aber wir erhalten nicht Y verschieden von 0, sondern
-erhalten dies: s(0) ist verschieden von 0.
+Aber wir erhalten nicht Y verschieden von 0,
+sondern erhalten dies: s(0) ist verschieden von 0.
 
 00:09:09,959 --> 00:09:12,269
 Wegen des Unifikators hier.
@@ -459,23 +465,23 @@ Wegen des Unifikators hier.
 Okay, jetzt müssen wir das behandeln.
 
 00:09:15,000 --> 00:09:17,860
-Nun, aber das ist eine Tatsache, die offensichtlich
-wahr ist, richtig?
+Nun, aber das ist eine Tatsache, die
+offensichtlich wahr ist, richtig?
 
 00:09:17,860 --> 00:09:19,670
 s(0) ist anders als 0.
 
 00:09:19,670 --> 00:09:27,930
-Hier würde Prolog also einfach diese Einschränkung akzeptieren
-und mit der nächsten interessanten strukturellen Einschränkung fortfahren,
+Hier würde Prolog also einfach diese Einschränkung akzeptieren und
+mit der nächsten interessanten strukturellen Einschränkung fortfahren,
 
 00:09:27,930 --> 00:09:30,500
 die eigentlich die Anwendung
 von Regeln erfordert.
 
 00:09:30,500 --> 00:09:35,959
-Also, im linken Zweig hier, sagen wir, dass
-wir trotzdem die Lösung finden würden, weil diese
+Also, im linken Zweig hier, sagen wir, dass wir
+trotzdem die Lösung finden würden, weil diese
 
 00:09:35,959 --> 00:09:38,300
 Beschränkung nicht im Wege steht.
@@ -499,8 +505,8 @@ Auf der anderen Seite hier, nun, wenn wir die
 Resolution mit dem gleichen Unifikator wie
 
 00:10:00,149 --> 00:10:07,820
-im vorherigen Baum machen, erhalten wir natürlich wieder
-hier eine neue Einschränkung.
+im vorherigen Baum machen, erhalten wir
+natürlich wieder hier eine neue Einschränkung.
 
 00:10:07,820 --> 00:10:09,160
 Ja.
@@ -509,12 +515,12 @@ Ja.
 Und wieder.
 
 00:10:11,839 --> 00:10:20,010
-Das liegt daran, dass wir für dieses Literal diese
-rechte Seite.
+Das liegt daran, dass wir für
+dieses Literal diese rechte Seite.
 
 00:10:20,010 --> 00:10:25,459
-Und das Y, das hier auftritt, ist das Y2 und dieses
-wird mit s(0) abgeglichen.
+Und das Y, das hier auftritt, ist das
+Y2 und dieses wird mit s(0) abgeglichen.
 
 00:10:25,459 --> 00:10:27,129
 Deshalb erhalten wir dies.
@@ -530,19 +536,19 @@ s(0).
 Okay.
 
 00:10:35,720 --> 00:10:40,080
-Und dann wieder, wie auch immer, dies ist nicht einmal
-relevant.
+Und dann wieder, wie auch immer,
+dies ist nicht einmal relevant.
 
 00:10:40,080 --> 00:10:46,899
-Denn schon dieses erste Literal hier ist
-nicht mit einer der Programmklauseln unifizierbar
+Denn schon dieses erste Literal hier ist nicht
+mit einer der Programmklauseln unifizierbar
 
 00:10:46,899 --> 00:10:47,899
 Köpfen.
 
 00:10:47,899 --> 00:10:52,980
-Okay, das ist auch so wie vorher, also wird dieser Teil
-des Baums also nicht wirklich von dieser
+Okay, das ist auch so wie vorher, also wird dieser
+Teil des Baums also nicht wirklich von dieser
 
 00:10:52,980 --> 00:10:55,320
 Änderung im Programm betroffen.
@@ -551,38 +557,39 @@ des Baums also nicht wirklich von dieser
 Was ist mit der anderen Seite?
 
 00:10:57,819 --> 00:11:07,899
-Also, diese Abfrage jetzt, ja, die erscheint, weil
-dies mit der zweiten Programmklausel
+Also, diese Abfrage jetzt, ja, die erscheint,
+weil dies mit der zweiten Programmklausel
 
 00:11:07,899 --> 00:11:13,170
-Klausel gelöst werden konnte, was zu diesem neuen Literal führte.
+Klausel gelöst werden konnte, was
+zu diesem neuen Literal führte.
 
 00:11:13,170 --> 00:11:18,890
 Und natürlich mussten wir auch die Substitution
 auf den Kontext dieser Abfrage anwenden.
 
 00:11:18,890 --> 00:11:24,379
-So wird also aus diesem Y ungleich 0
-Y3 verschieden von 0.
+So wird also aus diesem Y
+ungleich 0 Y3 verschieden von 0.
 
 00:11:24,379 --> 00:11:30,540
-Und hier bekommen wir auch eine leichte Instanziierung,
-weil das U und s(X3).
+Und hier bekommen wir auch eine leichte
+Instanziierung, weil das U und s(X3).
 
 00:11:30,540 --> 00:11:34,220
-Okay, das ist also unser nächstes Ziel an diesem
-Ort.
+Okay, das ist also unser
+nächstes Ziel an diesem Ort.
 
 00:11:34,220 --> 00:11:41,699
-Nun, wir beginnen natürlich mit dem ganz linken
-Literal, das ist dieses, das nur mit dem ersten Satz für die Addition unifizierbar ist.
+Nun, wir beginnen natürlich mit dem ganz linken Literal, das ist
+dieses, das nur mit dem ersten Satz für die Addition unifizierbar ist.
 
 00:11:41,699 --> 00:11:44,279
 Mit der ersten Klausel für Addition.
 
 00:11:44,279 --> 00:11:48,730
-Also, das ist wieder, wie zuvor, alles ist
-auf 0 gesetzt, weil dies 0 und dies
+Also, das ist wieder, wie zuvor, alles
+ist auf 0 gesetzt, weil dies 0 und dies
 
 00:11:48,730 --> 00:11:52,980
 0, und diese beiden müssen derselbe
@@ -601,12 +608,12 @@ Vorher hatten wir das rote Zeug nicht.
 Wir hatten also einfach diese Abfrage hier.
 
 00:12:02,779 --> 00:12:05,170
-Und das ist genau die Abfrage, die zu
-Problemen führte, richtig?
+Und das ist genau die Abfrage,
+die zu Problemen führte, richtig?
 
 00:12:05,170 --> 00:12:08,910
-Denn wenn etwas mal 0 etwas ist,
-etwas anderes als 0 ist, also haben wir vorher
+Denn wenn etwas mal 0 etwas ist, etwas
+anderes als 0 ist, also haben wir vorher
 
 00:12:08,910 --> 00:12:12,930
 diesen unendlichen Suchpfad konstruiert.
@@ -616,12 +623,12 @@ Aber jetzt, dank dieser Einschränkung, die
 nun tatsächlich durch Substitution zu 0 wird,
 
 00:12:17,999 --> 00:12:21,980
-von 0 verschieden ist, und das ganz linke
-Literal.
+von 0 verschieden ist, und
+das ganz linke Literal.
 
 00:12:21,980 --> 00:12:26,149
-Prolog würde dies nicht berücksichtigen und 0 anders
-von 0 ist offensichtlich falsch.
+Prolog würde dies nicht berücksichtigen und
+0 anders von 0 ist offensichtlich falsch.
 
 00:12:26,149 --> 00:12:31,410
 Also könnte Prolog dies sofort als
@@ -632,63 +639,64 @@ Prolog müsste nicht einmal nach Lösungen
 für dieses Literal hier suchen, was zu
 
 00:12:37,250 --> 00:12:41,639
-einer unendlichen Suche führen würde, denn tatsächlich ist 0
-von 0 verschieden falsch.
+einer unendlichen Suche führen würde, denn
+tatsächlich ist 0 von 0 verschieden falsch.
 
 00:12:41,639 --> 00:12:44,740
 Und daher kann diese Abfrage niemals wahr werden.
 
 00:12:44,740 --> 00:12:50,739
-Also hat das Hinzufügen dieser Einschränkung
-nicht verhindert, dass die eigentliche Lösung gefunden wird.
+Also hat das Hinzufügen dieser Einschränkung nicht
+verhindert, dass die eigentliche Lösung gefunden wird.
 
 00:12:50,739 --> 00:12:56,449
-Die Lösung, die Sie haben wollen, aber sie hat die
-Erkundung eines unendlichen Suchpfades, der
+Die Lösung, die Sie haben wollen, aber sie hat
+die Erkundung eines unendlichen Suchpfades, der
 
 00:12:56,449 --> 00:12:57,449
 nicht zu Lösungen führt.
 
 00:12:57,449 --> 00:13:02,649
-In diesem Sinne scheint dies also sehr erfolgreich zu sein,
+In diesem Sinne scheint dies
+also sehr erfolgreich zu sein,
 
 00:13:02,649 --> 00:13:08,639
 diese Änderung des Programms.
 
 89 # slide
 00:13:08,639 --> 00:13:14,989
-Lassen Sie uns den Erfolg bestätigen, indem wir uns auch
-die andere, kompliziertere Abfrage ansehen, mit der
+Lassen Sie uns den Erfolg bestätigen, indem wir uns
+auch die andere, kompliziertere Abfrage ansehen, mit der
 
 00:13:14,989 --> 00:13:17,269
 wir eigentlich unsere Motivation begonnen haben.
 
 00:13:17,269 --> 00:13:22,740
-Wo wir also auch die fehlende Lösung finden
-in diesem Fall, ja.
+Wo wir also auch die fehlende
+Lösung finden in diesem Fall, ja.
 
 00:13:22,740 --> 00:13:29,749
-Das waren also die beiden Lösungen, die wir
-vorher schon gesehen haben, mit dem unveränderten Programm
+Das waren also die beiden Lösungen, die wir vorher
+schon gesehen haben, mit dem unveränderten Programm
 
 00:13:29,749 --> 00:13:31,069
 für Addition, Multiplikation.
 
 00:13:31,069 --> 00:13:37,429
-Aber dann, erinnern Sie sich an das erste Video heute, hatten wir
-ein Problem, das eigentlich, wenn wir nach
+Aber dann, erinnern Sie sich an das erste Video heute,
+hatten wir ein Problem, das eigentlich, wenn wir nach
 
 00:13:37,429 --> 00:13:40,779
-weiteren Lösungen suchten, mussten wir abbrechen, weil
-wir in eine unendliche Suche gingen.
+weiteren Lösungen suchten, mussten wir abbrechen,
+weil wir in eine unendliche Suche gingen.
 
 00:13:40,779 --> 00:13:47,069
 Jetzt, mit diesem geänderten Programm,
 erhalten wir auch hier die endgültige Antwort.
 
 00:13:47,069 --> 00:13:54,389
-Vier mal eins ist auch eine Lösung für n mal
-m ist vier.
+Vier mal eins ist auch eine
+Lösung für n mal m ist vier.
 
 00:13:54,389 --> 00:13:56,499
 Okay, jetzt sind alle glücklich.
@@ -703,38 +711,39 @@ Sag ja, es ist nur ein Teilerfolg.
 Und warum?
 
 00:14:00,660 --> 00:14:04,699
-Nun, wenn wir anfangen, einige weitere Abfragen auszuprobieren,
-finden wir einige unglückliche Lösungen
+Nun, wenn wir anfangen, einige weitere Abfragen
+auszuprobieren, finden wir einige unglückliche Lösungen
 
 00:14:04,699 --> 00:14:08,949
-oder Antworten, wie zum Beispiel die Frage, ob
-1 mal 0 gleich 0 ist.
+oder Antworten, wie zum Beispiel
+die Frage, ob 1 mal 0 gleich 0 ist.
 
 00:14:08,949 --> 00:14:10,819
 Prolog wird plötzlich sagen: falsch.
 
 00:14:10,819 --> 00:14:13,480
-Also haben wir das Programm in gewissem Sinne repariert.
+Also haben wir das Programm
+in gewissem Sinne repariert.
 
 00:14:13,480 --> 00:14:16,889
-Damit es sich bei solchen Abfragen besser verhält
-so.
+Damit es sich bei solchen
+Abfragen besser verhält so.
 
 00:14:16,889 --> 00:14:24,720
 Aber jetzt versagt es tatsächlich oder gibt die falschen
 Antworten auf einige, eigentlich sehr einfache Abfragen.
 
 00:14:24,720 --> 00:14:29,689
-Sie sollten also vielleicht untersuchen, was
-hier passiert ist.
+Sie sollten also vielleicht
+untersuchen, was hier passiert ist.
 
 00:14:29,689 --> 00:14:37,189
-Und nun, wenn Sie sich das Programm ansehen,
-dann sehen Sie, dass es jetzt eine unbrauchbare Geschichte gibt
+Und nun, wenn Sie sich das Programm ansehen, dann sehen
+Sie, dass es jetzt eine unbrauchbare Geschichte gibt
 
 00:14:37,189 --> 00:14:43,889
-für etwas, das nicht 0 mal 0 ist, was auch immer,
-oder?
+für etwas, das nicht 0 mal
+0 ist, was auch immer, oder?
 
 00:14:43,889 --> 00:14:45,740
 Die erste Regel wird hier nicht zutreffen.
@@ -743,19 +752,20 @@ Die erste Regel wird hier nicht zutreffen.
 Weil 0 und s(0) nicht übereinstimmen.
 
 00:14:48,939 --> 00:14:54,019
-Aber die zweite Regel ist auch nicht gut für den Beweis
-dieser Abfrage.
+Aber die zweite Regel ist auch nicht
+gut für den Beweis dieser Abfrage.
 
 00:14:54,019 --> 00:14:57,749
-Wegen dieser Einschränkung, dass das zweite
-Argument nicht 0 sein sollte.
+Wegen dieser Einschränkung, dass das
+zweite Argument nicht 0 sein sollte.
 
 00:14:57,749 --> 00:15:01,839
-Okay, wir haben also einen Fehler gemacht, als wir diese Änderung vornahmen.
+Okay, wir haben also einen Fehler
+gemacht, als wir diese Änderung vornahmen.
 
 00:15:01,839 --> 00:15:07,410
-Wir hätten auch einen Fall angeben sollen, in dem das
-zweite Argument tatsächlich 0 ist.
+Wir hätten auch einen Fall angeben sollen,
+in dem das zweite Argument tatsächlich 0 ist.
 
 00:15:07,410 --> 00:15:09,870
 Aber wir können das einfach beheben.
@@ -765,12 +775,12 @@ Aber wir können das einfach beheben.
 Also, hier ist die Lösung.
 
 00:15:13,449 --> 00:15:19,870
-Wir führen einfach eine Regel für den Fall ein, dass es tatsächlich 0 ist,
-es ist nur die Tatsache, dass wir für den
+Wir führen einfach eine Regel für den Fall ein, dass es
+tatsächlich 0 ist, es ist nur die Tatsache, dass wir für den
 
 00:15:19,870 --> 00:15:23,249
-Fall, dass wir etwas anderes als
-0 mit 0 multiplizieren.
+Fall, dass wir etwas anderes
+als 0 mit 0 multiplizieren.
 
 00:15:23,249 --> 00:15:28,180
 Ja, wir brauchen den Fall nicht, dass 0 und
@@ -780,8 +790,8 @@ Ja, wir brauchen den Fall nicht, dass 0 und
 durch die erste Tatsache abgedeckt.
 
 00:15:29,569 --> 00:15:37,860
-Wenn wir also diese Tatsache hinzufügen, erhalten wir tatsächlich wieder
-das korrekte Ergebnis für z.B. 1 mal
+Wenn wir also diese Tatsache hinzufügen, erhalten wir
+tatsächlich wieder das korrekte Ergebnis für z.B. 1 mal
 
 00:15:37,860 --> 00:15:38,860
 0.
@@ -793,43 +803,45 @@ Anders als auf der vorherigen Folie.
 Okay.
 
 00:15:41,019 --> 00:15:51,579
-Und in der Tat, das funktioniert immer noch für die Fälle,
-in denen wir faktorisieren wollen.
+Und in der Tat, das funktioniert immer noch für
+die Fälle, in denen wir faktorisieren wollen.
 
 00:15:51,579 --> 00:15:57,769
-Also, wenn wir das Ergebnis liefern und nach den
-Argumenten, richtig?
+Also, wenn wir das Ergebnis liefern
+und nach den Argumenten, richtig?
 
 00:15:57,769 --> 00:15:59,269
 Zum Beispiel N mal M ist vier.
 
 00:15:59,269 --> 00:16:01,839
-Das funktioniert also immer noch, aber auch das hier funktioniert.
+Das funktioniert also immer noch,
+aber auch das hier funktioniert.
 
 00:16:01,839 --> 00:16:03,910
 Okay, sind wir jetzt fertig?
 
 00:16:03,910 --> 00:16:08,139
-Ist das jetzt das perfekte Programm, das Sie
-für Addition und Multiplikation verwenden wollen?
+Ist das jetzt das perfekte Programm, das Sie für
+Addition und Multiplikation verwenden wollen?
 
 00:16:08,139 --> 00:16:09,509
 Nun, leider nicht.
 
 00:16:09,509 --> 00:16:12,989
-Also, es gibt noch etwas, das nicht
-mehr funktioniert.
+Also, es gibt noch etwas,
+das nicht mehr funktioniert.
 
 00:16:12,989 --> 00:16:16,490
-Also, wir können jetzt nicht sinnvoll weiterarbeiten.
+Also, wir können jetzt nicht
+sinnvoll weiterarbeiten.
 
 00:16:16,490 --> 00:16:22,129
-Also, wenn wir fragen, was eins mal eins
-ist, dann bekommen wir eine Lösung.
+Also, wenn wir fragen, was eins mal
+eins ist, dann bekommen wir eine Lösung.
 
 00:16:22,129 --> 00:16:28,569
-Aber wenn wir dann weiter suchen, anders als wir
-eigentlich gerne hätten, erhalten wir wieder
+Aber wenn wir dann weiter suchen, anders als
+wir eigentlich gerne hätten, erhalten wir wieder
 
 00:16:28,569 --> 00:16:29,569
 eine unendliche Suche.
@@ -838,20 +850,20 @@ eine unendliche Suche.
 Okay.
 
 00:16:30,569 --> 00:16:35,369
-Und eigentlich ist das nicht erst durch dieses Programm
-verursacht, das trat schon bei einer der
+Und eigentlich ist das nicht erst durch dieses
+Programm verursacht, das trat schon bei einer der
 
 00:16:35,369 --> 00:16:39,429
-früheren Versionen dieses Zwischenprogramms,
-die wir gesehen haben.
+früheren Versionen dieses
+Zwischenprogramms, die wir gesehen haben.
 
 00:16:39,429 --> 00:16:43,129
-Es ist einfach nicht aufgetreten, weil wir es nicht
-ausprobiert haben.
+Es ist einfach nicht aufgetreten,
+weil wir es nicht ausprobiert haben.
 
 00:16:43,129 --> 00:16:47,749
-Okay, das ist also immer noch nicht das Programm, mit
-dem wir sehr zufrieden sein sollten.
+Okay, das ist also immer noch nicht das Programm,
+mit dem wir sehr zufrieden sein sollten.
 
 00:16:47,749 --> 00:16:52,670
 Es funktioniert in gewisser Weise, in einigen Richtungen,
@@ -861,38 +873,39 @@ aber es ist nicht so allgemein, wie wir es gerne hätten.
 Was können wir also tun?
 
 00:16:54,089 --> 00:16:58,199
-Nun, was wir tun sollten, ist einen Ableitungsbaum
-für diese Abfrage zu erstellen.
+Nun, was wir tun sollten, ist einen
+Ableitungsbaum für diese Abfrage zu erstellen.
 
 00:16:58,199 --> 00:17:02,459
-Denn das ist die Art und Weise, wie wir
-Probleme wie dieses angehen.
+Denn das ist die Art und Weise, wie
+wir Probleme wie dieses angehen.
 
 00:17:02,459 --> 00:17:07,870
-Wir nehmen also diese Abfrage und dieses nun kandidierende
-Programm und sehen, wie der Ableitungsbaum
+Wir nehmen also diese Abfrage und dieses nun
+kandidierende Programm und sehen, wie der Ableitungsbaum
 
 00:17:07,870 --> 00:17:08,870
 für diese Abfrage aussieht.
 
 00:17:08,870 --> 00:17:15,380
-Und hoffentlich sehen wir dadurch, was
-wir tun können, um die Situation zu verbessern.
+Und hoffentlich sehen wir dadurch, was wir
+tun können, um die Situation zu verbessern.
 
 91 # slide
 00:17:15,380 --> 00:17:19,390
 Schauen wir uns also diesen Ableitungsbaum an.
 
 00:17:19,390 --> 00:17:25,019
-Und eigentlich werde ich nicht jeden Schritt
-der Konstruktion kommentieren, da dies inzwischen
+Und eigentlich werde ich nicht jeden Schritt der
+Konstruktion kommentieren, da dies inzwischen
 
 00:17:25,019 --> 00:17:27,400
-mehrere Male für verschiedene Bäume gemacht wurde.
+mehrere Male für verschiedene
+Bäume gemacht wurde.
 
 00:17:27,400 --> 00:17:32,059
-Also, wir können sehen, dass wir zum Beispiel hier
-nur einen Nachfolger haben.
+Also, wir können sehen, dass wir zum
+Beispiel hier nur einen Nachfolger haben.
 
 00:17:32,059 --> 00:17:36,620
 Da die ersten beiden Klauseln, die Fakten über
@@ -906,34 +919,34 @@ Hier sehen wir auch, dass die verschiedenen von 0
 Beschränkungen immer noch gelten und wir sehen auch,
 
 00:17:43,830 --> 00:17:48,010
-dass es in diesem Schritt instanziiert werden wird
-etwas, das keine Probleme verursachen wird.
+dass es in diesem Schritt instanziiert werden
+wird etwas, das keine Probleme verursachen wird.
 
 00:17:48,010 --> 00:17:49,360
 Denn es ist offensichtlich wahr.
 
 00:17:49,360 --> 00:17:53,250
-Also wird es einfach verschwinden, wenn wir darauf
-es.
+Also wird es einfach
+verschwinden, wenn wir darauf es.
 
 00:17:53,250 --> 00:17:59,529
-Wir haben diese beiden Nachfolger hier, weil
-dieses "add"-Literal mit beiden Klauseln übereinstimmt
+Wir haben diese beiden Nachfolger hier, weil dieses
+"add"-Literal mit beiden Klauseln übereinstimmt
 
 00:17:59,529 --> 00:18:00,529
 für Addition.
 
 00:18:00,529 --> 00:18:05,039
-Auf der linken Seite finden wir schließlich
-unsere Lösung.
+Auf der linken Seite finden
+wir schließlich unsere Lösung.
 
 00:18:05,039 --> 00:18:14,520
 Wir wenden hier also einfach die Idee der Resolution,
 wie wir es jetzt schon mehrmals getan haben.
 
 00:18:14,520 --> 00:18:19,659
-Und es führt tatsächlich zu einer Lösung, weil
-N gesetzt ist, d.h. s(0), so erhalten wir die richtige
+Und es führt tatsächlich zu einer Lösung, weil N
+gesetzt ist, d.h. s(0), so erhalten wir die richtige
 
 00:18:19,659 --> 00:18:20,659
 Antwort N.
@@ -943,8 +956,8 @@ Aber das Interessante ist natürlich, was
 auf diesem anderen Suchpfad passiert.
 
 00:18:28,000 --> 00:18:32,890
-Denn wie wir auf der vorigen Folie gesehen haben, war offenbar
-eine gewisse Unendlichkeit vor sich.
+Denn wie wir auf der vorigen Folie gesehen haben,
+war offenbar eine gewisse Unendlichkeit vor sich.
 
 00:18:32,890 --> 00:18:36,350
 Und nun, wenn Sie sehen, was hier passiert.
@@ -953,31 +966,31 @@ Und nun, wenn Sie sehen, was hier passiert.
 Dies wird also mit dieser Klausel unifiziert.
 
 00:18:40,050 --> 00:18:43,760
-Auf der rechten Seite werden wir also eine weitere
-Zusatz.
+Auf der rechten Seite werden
+wir also eine weitere Zusatz.
 
 00:18:43,760 --> 00:18:52,309
-Nämlich die von hier, aber mit angewandtem Unifikator
-angewandt, was zu der folgenden neuen
+Nämlich die von hier, aber mit angewandtem
+Unifikator angewandt, was zu der folgenden neuen
 
 00:18:52,309 --> 00:18:53,309
 Abfrage.
 
 00:18:53,309 --> 00:18:58,669
-Dies ist also das, was wir auf der rechten Seite
-unter diesem Unifikator.
+Dies ist also das, was wir auf der
+rechten Seite unter diesem Unifikator.
 
 00:18:58,669 --> 00:19:05,100
-Und der Rest bleibt, außer dass wir auch
-die Substitution auf diese Kontextliterale anwenden.
+Und der Rest bleibt, außer dass wir auch die
+Substitution auf diese Kontextliterale anwenden.
 
 00:19:05,100 --> 00:19:07,950
-Das ändert also die Multiplikationsliterale
-leicht.
+Das ändert also die
+Multiplikationsliterale leicht.
 
 00:19:07,950 --> 00:19:10,649
-Aber das eigentliche Problem liegt schon bei der
-Addition.
+Aber das eigentliche Problem
+liegt schon bei der Addition.
 
 00:19:10,649 --> 00:19:16,220
 Wenn man sich das und das ansieht, dann wieder,
@@ -994,20 +1007,20 @@ keine Hoffnung gibt, dass dies ein endlicher Suchbaum sein
 kann.
 
 00:19:25,780 --> 00:19:29,820
-Denn was immer wir von hier bis hier gemacht haben,
-kann durch eine geringfügige Änderung wieder getan werden,
+Denn was immer wir von hier bis hier gemacht haben, kann
+durch eine geringfügige Änderung wieder getan werden,
 
 00:19:29,820 --> 00:19:32,500
 was mit dem Multiplikationsliteral passiert
 hier.
 
 00:19:32,500 --> 00:19:39,470
-Aber das ändert nichts an der Tatsache, dass diese Suche
-niemals enden wird.
+Aber das ändert nichts an der Tatsache,
+dass diese Suche niemals enden wird.
 
 00:19:39,470 --> 00:19:46,020
-Vielleicht können wir die erste Klausel anwenden, die Tatsache,
-um hier etwas auf der linken Seite zu erhalten.
+Vielleicht können wir die erste Klausel anwenden, die
+Tatsache, um hier etwas auf der linken Seite zu erhalten.
 
 00:19:46,020 --> 00:19:50,230
 Aber das spielt keine Rolle, denn wir können
@@ -1023,32 +1036,34 @@ Okay, was können wir also tun?
 Nun, das ist etwas subtiler.
 
 00:19:57,320 --> 00:20:03,929
-Und eigentlich ist ein ähnlicher Fall, der nicht in
-diesem Detail behandelt wurde, aber es ist eine subtile Beobachtung,
+Und eigentlich ist ein ähnlicher Fall, der nicht in diesem
+Detail behandelt wurde, aber es ist eine subtile Beobachtung,
 
 00:20:03,929 --> 00:20:06,370
 die bereits in der letzten Woche gemacht wurde.
 
 00:20:06,370 --> 00:20:09,830
-Da hatten wir etwas über Addition und
-Subtraktion gesprochen.
+Da hatten wir etwas über Addition
+und Subtraktion gesprochen.
 
 00:20:09,830 --> 00:20:11,639
-Wir definieren also die Subtraktion in Bezug auf die Addition.
+Wir definieren also die Subtraktion
+in Bezug auf die Addition.
 
 00:20:11,639 --> 00:20:20,519
-Und wir suchen nach Fällen, in denen einer der
-Summanden auf eins gesetzt wird und die anderen beiden sind
+Und wir suchen nach Fällen, in denen einer der Summanden
+auf eins gesetzt wird und die anderen beiden sind
 
 00:20:20,519 --> 00:20:21,519
 Variablen.
 
 00:20:21,519 --> 00:20:23,649
-Der andere Summand und das Ergebnis sind also eine Variable.
+Der andere Summand und das
+Ergebnis sind also eine Variable.
 
 00:20:23,649 --> 00:20:29,680
-Und wir beobachten, dass es dann sehr subtil sein kann,
-wenn wir eine Abfrage wie diese stellen.
+Und wir beobachten, dass es dann sehr subtil sein
+kann, wenn wir eine Abfrage wie diese stellen.
 
 00:20:29,680 --> 00:20:36,130
 Wenn wir etwas sagen wie U plus eins sollte
@@ -1058,28 +1073,28 @@ Z sein oder ob wir fragen, dass eins plus U
 Z sein soll.
 
 00:20:37,130 --> 00:20:40,720
-In einem Fall haben wir alle unendlich vielen
-Lösungen.
+In einem Fall haben wir alle
+unendlich vielen Lösungen.
 
 00:20:40,720 --> 00:20:44,640
-Und im anderen Fall haben wir eine geschlossene
-Form-Lösung.
+Und im anderen Fall haben wir
+eine geschlossene Form-Lösung.
 
 00:20:44,640 --> 00:20:49,240
 Und jetzt haben wir hier in dieser problematischen
 Situation so etwas wie dies, eine Abfrage
 
 00:20:49,240 --> 00:20:54,570
-wie diese, die zu unendlich vielen weiteren
-Schritten führt.
+wie diese, die zu unendlich
+vielen weiteren Schritten führt.
 
 00:20:54,570 --> 00:20:58,580
-Und es gibt immer einen Zweig, der nicht
-abgeschlossen ist.
+Und es gibt immer einen Zweig,
+der nicht abgeschlossen ist.
 
 00:20:58,580 --> 00:21:04,570
-Wären wir stattdessen in einer
-Situation, in der es genau eine geschlossene Antwort
+Wären wir stattdessen in einer Situation,
+in der es genau eine geschlossene Antwort
 
 00:21:04,570 --> 00:21:06,120
 auf eine Frage wie diese gibt.
@@ -1091,19 +1106,19 @@ Dann wären wir in einer viel besseren Situation.
 Also, vielleicht ist das eine Lösung.
 
 00:21:11,539 --> 00:21:14,850
-Vielleicht sollten wir also diese Kommutativität ausnutzen,
-oder?
+Vielleicht sollten wir also diese
+Kommutativität ausnutzen, oder?
 
 00:21:14,850 --> 00:21:17,120
 Denn das ist fast die gleiche Frage.
 
 00:21:17,120 --> 00:21:19,870
-Es wurde einfach das Argument der Addition
-geändert.
+Es wurde einfach das Argument
+der Addition geändert.
 
 00:21:19,870 --> 00:21:24,580
-Und da wir wissen, dass Addition kommutativ ist,
-macht das mathematisch keinen Unterschied.
+Und da wir wissen, dass Addition kommutativ
+ist, macht das mathematisch keinen Unterschied.
 
 00:21:24,580 --> 00:21:26,620
 Vielleicht können wir also hier dasselbe tun.
@@ -1116,20 +1131,20 @@ plus Variable anstelle von Variable plus eins
 ist variabel.
 
 00:21:33,399 --> 00:21:37,400
-Wir müssen nur die beiden Argumente der
-Addition hier ändern.
+Wir müssen nur die beiden
+Argumente der Addition hier ändern.
 
 00:21:37,400 --> 00:21:39,419
-Logischerweise sollte das keinen Unterschied machen,
-oder?
+Logischerweise sollte das
+keinen Unterschied machen, oder?
 
 00:21:39,419 --> 00:21:44,159
-In Bezug auf die mathematische Korrektheit dieses
-Programms, dieser Regeln.
+In Bezug auf die mathematische Korrektheit
+dieses Programms, dieser Regeln.
 
 00:21:44,159 --> 00:21:47,170
-Es spielt keine Rolle, ob wir hier U, Y oder
-Y, U hier haben.
+Es spielt keine Rolle, ob wir
+hier U, Y oder Y, U hier haben.
 
 00:21:47,170 --> 00:21:48,509
 Also, versuchen wir das.
@@ -1142,17 +1157,17 @@ Ja, das ist also das gleiche Programm wie vorher.
 Ich habe das hier einfach umgestellt.
 
 00:21:54,919 --> 00:22:02,120
-In der Hoffnung, in einer Situation wie dieser zu sein,
-anstatt der weniger komfortablen hier.
+In der Hoffnung, in einer Situation wie dieser
+zu sein, anstatt der weniger komfortablen hier.
 
 93 # slide
 00:22:02,120 --> 00:22:12,070
-Okay, um zu sehen, ob das wirklich hilft, sollten
-wir nun dieses Programm nehmen und es auf
+Okay, um zu sehen, ob das wirklich hilft,
+sollten wir nun dieses Programm nehmen und es auf
 
 00:22:12,070 --> 00:22:15,740
-unsere Abfrage, die in der letzten Instanz problematisch war,
-anwenden.
+unsere Abfrage, die in der letzten
+Instanz problematisch war, anwenden.
 
 00:22:15,740 --> 00:22:16,740
 Nun gut.
@@ -1161,12 +1176,12 @@ Nun gut.
 Schauen wir mal, was dann passiert.
 
 00:22:20,009 --> 00:22:24,649
-Nun, auch hier gelten die ersten beiden Klauseln
-nicht für diese Abfrage.
+Nun, auch hier gelten die ersten beiden
+Klauseln nicht für diese Abfrage.
 
 00:22:24,649 --> 00:22:28,610
-Wir gehen also gleich zur letzten Klausel des
-Programms.
+Wir gehen also gleich zur
+letzten Klausel des Programms.
 
 00:22:28,610 --> 00:22:34,950
 Natürlich erhalten wir dank dieser Umschaltung
@@ -1176,45 +1191,45 @@ auch die umgekehrte Reihenfolge der beiden
 Argumente an dieser Stelle hier.
 
 00:22:37,269 --> 00:22:41,090
-Das ist also die Stelle, an der wir vorher
-in eine unendliche Verzweigung übergegangen sind.
+Das ist also die Stelle, an der wir vorher in
+eine unendliche Verzweigung übergegangen sind.
 
 00:22:41,090 --> 00:22:43,100
 Schauen wir also, was jetzt passiert.
 
 00:22:43,100 --> 00:22:50,250
-Nun, was jetzt passiert, ist, dass die erste Zusatzklausel
-nicht mehr anwendbar ist, also
+Nun, was jetzt passiert, ist, dass die erste
+Zusatzklausel nicht mehr anwendbar ist, also
 
 00:22:50,250 --> 00:22:51,529
 gilt nur noch die zweite.
 
 00:22:51,529 --> 00:22:57,559
-Wir erhalten also keine Verzweigung, sondern dies
-als unseren nächsten Schritt.
+Wir erhalten also keine Verzweigung,
+sondern dies als unseren nächsten Schritt.
 
 00:22:57,559 --> 00:23:06,130
 Und was noch wichtiger ist, nach diesem einen Schritt
 können wir nur noch die erste Zusatzklausel anwenden.
 
 00:23:06,130 --> 00:23:12,039
-Wir erhalten also nicht diese wachsende Ordnung, diese
-Erweiterung des Pfades, weil dies keine
+Wir erhalten also nicht diese wachsende Ordnung,
+diese Erweiterung des Pfades, weil dies keine
 
 00:23:12,039 --> 00:23:13,039
 Wirkung hat.
 
 00:23:13,039 --> 00:23:18,630
-Nach diesem Schritt wird die Abfrage also tatsächlich
-wirklich kürzer werden.
+Nach diesem Schritt wird die Abfrage
+also tatsächlich wirklich kürzer werden.
 
 00:23:18,630 --> 00:23:24,889
 Das passt also perfekt zum Kopf hier,
 also verschwindet dies im Grunde einfach.
 
 00:23:24,889 --> 00:23:30,010
-Dann haben wir diese Einschränkung, dass s(0)
-von 0 verschieden ist, was wahr ist.
+Dann haben wir diese Einschränkung, dass
+s(0) von 0 verschieden ist, was wahr ist.
 
 00:23:30,010 --> 00:23:33,890
 Dies verschwindet also.
@@ -1229,12 +1244,12 @@ Denn sie ist wahr.
 Und dann bleibt uns dieses Literal.
 
 00:23:43,149 --> 00:23:47,110
-Und nun, dies entspricht genau einer der
-Multiplikationsklauseln.
+Und nun, dies entspricht genau
+einer der Multiplikationsklauseln.
 
 00:23:47,110 --> 00:23:52,920
-Nämlich mit der ersten und führt zu einem
-Erfolgsknoten.
+Nämlich mit der ersten und
+führt zu einem Erfolgsknoten.
 
 00:23:52,920 --> 00:23:54,809
 Wie lautet die Lösung?
@@ -1251,8 +1266,8 @@ natürlich die richtige Antwort für die Multiplikation
 von eins mit eins.
 
 00:24:05,840 --> 00:24:11,000
-Aber was noch wichtiger ist: Es gibt keinen verbleibenden
-unendlichen Suchpfad.
+Aber was noch wichtiger ist: Es gibt
+keinen verbleibenden unendlichen Suchpfad.
 
 00:24:11,000 --> 00:24:12,720
 Wir erhalten also die Lösung.
@@ -1262,32 +1277,32 @@ Und dann ist Prolog bereit zu sagen, gut, es
 gibt keine weiteren Möglichkeiten zu erforschen.
 
 00:24:18,220 --> 00:24:22,010
-Und das wurde durch diese kleine Änderung
-am Programm erreicht.
+Und das wurde durch diese kleine
+Änderung am Programm erreicht.
 
 00:24:22,010 --> 00:24:30,100
-Und wir konnten dies nur durch die Erforschung
-dieser Ableitungsbäume, denke ich.
+Und wir konnten dies nur durch die
+Erforschung dieser Ableitungsbäume, denke ich.
 
 94 # slide
 00:24:30,100 --> 00:24:37,160
-Und tatsächlich stellt sich heraus, dass dies nun
-ein sehr gut funktionierendes Programm ist.
+Und tatsächlich stellt sich heraus, dass dies
+nun ein sehr gut funktionierendes Programm ist.
 
 00:24:37,160 --> 00:24:38,160
 In der Tat.
 
 00:24:38,160 --> 00:24:41,679
-Es ist etwas komplizierter als das Programm,
-mit dem wir angefangen haben, aber wir haben es so
+Es ist etwas komplizierter als das Programm, mit
+dem wir angefangen haben, aber wir haben es so
 
 00:24:41,679 --> 00:24:46,750
-massiert, dass jetzt wirklich interessante Aufrufmodi
-unterstützt werden.
+massiert, dass jetzt wirklich interessante
+Aufrufmodi unterstützt werden.
 
 00:24:46,750 --> 00:24:54,259
-Wir können jetzt also fragen, was wir eigentlich
-am Anfang wollten, was sind alle Wahlmöglichkeiten oder alle
+Wir können jetzt also fragen, was wir eigentlich am
+Anfang wollten, was sind alle Wahlmöglichkeiten oder alle
 
 00:24:54,259 --> 00:24:59,419
 die Möglichkeiten der Faktorisierung bestimmter Zahlen,
@@ -1318,24 +1333,24 @@ eigentlich funktionieren auch mehrere weitere Aufrufmodi
 jetzt gut.
 
 00:25:26,190 --> 00:25:30,580
-Ja, also, bis auf den Aufrufmodus, wo wir
-alles unbekannt lassen.
+Ja, also, bis auf den Aufrufmodus,
+wo wir alles unbekannt lassen.
 
 00:25:30,580 --> 00:25:36,919
-Also, wir haben eigentlich nur gefragt: Was ist die Multiplikation
-von X, Y, Z ohne irgendwelche festen Werte? Diese
+Also, wir haben eigentlich nur gefragt: Was ist die
+Multiplikation von X, Y, Z ohne irgendwelche festen Werte? Diese
 
 00:25:36,919 --> 00:25:42,020
-ist ein Aufruf, der vom Programm nicht schön unterstützt wird,
-aber alles andere, Vorwärtsmultiplikation,
+ist ein Aufruf, der vom Programm nicht schön unterstützt
+wird, aber alles andere, Vorwärtsmultiplikation,
 
 00:25:42,020 --> 00:25:49,130
-Rückwärtsdivision/Faktorisierung, Überprüfung,
-ob einfach drei Argumente diese
+Rückwärtsdivision/Faktorisierung,
+Überprüfung, ob einfach drei Argumente diese
 
 00:25:49,130 --> 00:25:53,760
-Multiplikationseigenschaft haben, all diese Aufrufe werden
-jetzt einwandfrei funktionieren.
+Multiplikationseigenschaft haben, all diese
+Aufrufe werden jetzt einwandfrei funktionieren.
 
 00:25:53,760 --> 00:25:54,760
 Okay.
@@ -1366,8 +1381,8 @@ Aber das ist nur ein bisschen Spielerei.
 
 95 # slide
 00:26:27,730 --> 00:26:33,750
-Als allgemeinere Schlussfolgerung sollten wir darüber
-nachdenken, was wir mit der operationalen Semantik erreicht haben.
+Als allgemeinere Schlussfolgerung sollten wir darüber nachdenken,
+was wir mit der operationalen Semantik erreicht haben.
 
 00:26:33,750 --> 00:26:40,200
 Also, das Wichtigste, was wirklich
@@ -1384,8 +1399,8 @@ den Tracing-Modus einstellt.
 Aber dann erhält man nicht diese Baumstruktur.
 
 00:26:48,669 --> 00:26:53,769
-Man muss sie aus den Zwischenschritten rekonstruieren,
-die auf der Konsole angezeigt werden.
+Man muss sie aus den Zwischenschritten
+rekonstruieren, die auf der Konsole angezeigt werden.
 
 00:26:53,769 --> 00:27:00,970
 Also, mit dieser Baumstruktur und eigentlich
@@ -1399,7 +1414,8 @@ erklärt dies wirklich, wie die Ergebnisse von
 Prolog erzeugt werden.
 
 00:27:08,440 --> 00:27:11,029
-Und auch, in welcher Reihenfolge sie produziert werden.
+Und auch, in welcher Reihenfolge
+sie produziert werden.
 
 00:27:11,029 --> 00:27:15,029
 Und natürlich auch Situationen, in denen keine weiteren
@@ -1409,66 +1425,67 @@ Ergebnisse erzeugt werden, weil die Suche unendlich
 ist.
 
 00:27:16,029 --> 00:27:19,899
-Okay, die Semantik baut also auf Unifikation
-und Resolutionsschritten auf.
+Okay, die Semantik baut also auf
+Unifikation und Resolutionsschritten auf.
 
 00:27:19,899 --> 00:27:27,529
 Also, Unifikation zur Auswahl der anzuwendenden Regeln
 und auch die richtigen Instanziierungen vorzunehmen.
 
 00:27:27,529 --> 00:27:33,360
-Die Resolution ist dieses einstufige Verfahren, bei dem
-ein Teil einer Abfrage nach einer Regel des
+Die Resolution ist dieses einstufige Verfahren, bei
+dem ein Teil einer Abfrage nach einer Regel des
 
 00:27:33,360 --> 00:27:35,629
 Programms gelöst wird.
 
 00:27:35,629 --> 00:27:42,540
-Und dann werden diese kombiniert, oder mehrere Resolutionsschritte
-werden in dieser Ableitungsbaumstruktur
+Und dann werden diese kombiniert, oder mehrere
+Resolutionsschritte werden in dieser Ableitungsbaumstruktur
 
 00:27:42,540 --> 00:27:47,649
-kombiniert, um zu erklären, wie die Suche insgesamt
-funktioniert.
+kombiniert, um zu erklären, wie
+die Suche insgesamt funktioniert.
 
 00:27:47,649 --> 00:27:54,179
 Aber die Basisschritte zur Unifikation und Resolution
 sind, wie man sie aus der Logik erster Ordnung, der
 
 00:27:54,179 --> 00:27:57,529
-Prädikatenlogik, und auch aus der vorherigen Vorlesung kennt.
+Prädikatenlogik, und auch aus
+der vorherigen Vorlesung kennt.
 
 00:27:57,529 --> 00:28:03,639
-Okay, diese Semantik erlaubt es uns zu verstehen,
-Dinge wie Nichtterminierung.
+Okay, diese Semantik erlaubt es uns zu
+verstehen, Dinge wie Nichtterminierung.
 
 00:28:03,639 --> 00:28:10,580
 Also, warum gibt ein Programm keine Ergebnisse zurück,
 oder gibt nicht alle Ergebnisse zurück, oder nachdem es
 
 00:28:10,580 --> 00:28:14,769
-alle Ergebnisse in eine unendliche Suche übergeht, oder
-so etwas in der Art.
+alle Ergebnisse in eine unendliche Suche
+übergeht, oder so etwas in der Art.
 
 00:28:14,769 --> 00:28:19,570
-Das ist also in dem Programm passiert, das wir
-heute besprochen haben.
+Das ist also in dem Programm passiert,
+das wir heute besprochen haben.
 
 00:28:19,570 --> 00:28:23,230
-Und mit den Ableitungsbäumen kann man tatsächlich
-entschlüsseln, was das Problem ist.
+Und mit den Ableitungsbäumen kann man
+tatsächlich entschlüsseln, was das Problem ist.
 
 00:28:23,230 --> 00:28:28,460
 Und mit etwas Einsicht, vielleicht auch mit etwas
 Versuch und Irrtum, das Programm zu korrigieren.
 
 00:28:28,460 --> 00:28:33,270
-Und am Ende hatten wir ein schönes Programm, das
-auf mehr Situationen anwendbar war,
+Und am Ende hatten wir ein schönes Programm,
+das auf mehr Situationen anwendbar war,
 
 00:28:33,270 --> 00:28:40,049
-als das ursprüngliche Programm, das
-nur durch logisches Denken und nicht durch
+als das ursprüngliche Programm, das nur
+durch logisches Denken und nicht durch
 
 00:28:40,049 --> 00:28:43,110
 Überlegen über den Suchprozess.
@@ -1482,11 +1499,12 @@ Auswirkungen von Änderungen zu verstehen, wie die
 Reihenfolge von Fakten und Regeln oder die Änderung der
 
 00:28:55,120 --> 00:28:57,140
-Reihenfolge von Literalen innerhalb von Fakten und Regeln.
+Reihenfolge von Literalen
+innerhalb von Fakten und Regeln.
 
 00:28:57,140 --> 00:29:01,210
-Wir haben also bei der Erkundung dieses Beispielprogramms
-gesehen, dass dies wirklich
+Wir haben also bei der Erkundung dieses
+Beispielprogramms gesehen, dass dies wirklich
 
 00:29:01,210 --> 00:29:02,210
 einen Unterschied machen kann.
@@ -1502,12 +1520,12 @@ und dem Herbrand-Modell war nicht in der Lage,
 dies zu erklären.
 
 00:29:12,110 --> 00:29:17,299
-Ja, das ist eine Motivation für die Verwendung der operativen
-Semantik.
+Ja, das ist eine Motivation für die
+Verwendung der operativen Semantik.
 
 00:29:17,299 --> 00:29:25,039
-Okay, jetzt müssen Sie natürlich keine Fallstudie machen,
-eine Fallstudie wie in der heutigen Vorlesung.
+Okay, jetzt müssen Sie natürlich keine Fallstudie
+machen, eine Fallstudie wie in der heutigen Vorlesung.
 
 00:29:25,039 --> 00:29:31,639
 Ihre Aufgabe, zum Beispiel in der Übung oder
@@ -1517,19 +1535,20 @@ Prüfung, ist nicht die Aufgabe, ein Programm zu
 verbessern, um mehr Anrufarten zu erfassen.
 
 00:29:33,610 --> 00:29:38,100
-Die Strategie für diese Aufgabe wäre also, die operative
-Semantik zu verwenden, aber das erfordert
+Die Strategie für diese Aufgabe wäre also, die
+operative Semantik zu verwenden, aber das erfordert
 
 00:29:38,100 --> 00:29:39,620
 mehr Erfahrung mit Prolog, denke ich.
 
 00:29:39,620 --> 00:29:42,669
-Das ist also nichts, was wir von Ihnen verlangen würden.
+Das ist also nichts, was wir
+von Ihnen verlangen würden.
 
 00:29:42,669 --> 00:29:47,580
-Aber natürlich ist das Ausführen der operativen Semantik
-an einem Beispiel etwas, das Sie
+Aber natürlich ist das Ausführen der operativen
+Semantik an einem Beispiel etwas, das Sie
 
 00:29:47,580 --> 00:29:52,380
-wirklich üben und bereit sein sollten, eine Aufgabe zu
-erledigen.
+wirklich üben und bereit sein
+sollten, eine Aufgabe zu erledigen.

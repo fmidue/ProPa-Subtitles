@@ -1,17 +1,18 @@
 0:00:01.840,0:00:05.760
-Okay, nachdem ich den Polymorphismus im letzten Video so sehr
+Okay, nachdem ich den Polymorphismus
+im letzten Video so sehr
 
 0:00:05.760,0:00:11.440
-gelobt habe, möchte ich ein
-weiteres kurzes Video nutzen, um eine
+gelobt habe, möchte ich ein weiteres
+kurzes Video nutzen, um eine
 
 0:00:11.440,0:00:16.320
 Warnung über eine Wechselwirkung auszusprechen,
 die Polymorphie mit dem Testen haben kann.
 
 0:00:16.880,0:00:22.960
-Also, es wird ein kurzes Video
-in einer Interpreter-Sitzung hier,
+Also, es wird ein kurzes Video in
+einer Interpreter-Sitzung hier,
 
 0:00:22.960,0:00:27.680
 in der ich auf etwas hinweisen möchte, das vielleicht,
@@ -21,25 +22,27 @@ zunächst ein wenig überraschend oder rätselhaft sein mag.
 Und dann werden wir sehen, was hier los ist.
 
 0:00:30.560,0:00:34.160
-Und es hat mit Polymorphismus zu tun,
-als eine Warnung, okay.
+Und es hat mit Polymorphismus
+zu tun, als eine Warnung, okay.
 
 0:00:34.160,0:00:38.320
 Also, lassen Sie mich GHCi tatsächlich aufrufen.
 
 0:00:38.880,0:00:44.960
-Und lassen Sie mich nicht irgendeine Quelldatei laden,
-sondern einfach die QuickCheck-Bibliothek,
+Und lassen Sie mich nicht irgendeine Quelldatei
+laden, sondern einfach die QuickCheck-Bibliothek,
 
 0:00:45.680,0:00:48.320
-sodass ich ein paar schnelle Tests schreiben kann.
+sodass ich ein paar schnelle
+Tests schreiben kann.
 
 0:00:48.320,0:00:53.280
-Okay, und lassen Sie uns tatsächlich versuchen, unsere
-polymorphe reverse-Funktion zu testen, die
+Okay, und lassen Sie uns tatsächlich versuchen,
+unsere polymorphe reverse-Funktion zu testen, die
 
 0:00:54.400,0:00:58.000
-ich im vorherigen Video vorgestellt oder besprochen habe.
+ich im vorherigen Video
+vorgestellt oder besprochen habe.
 
 0:00:58.000,0:01:02.400
 Was könnte also eine nette
@@ -50,62 +53,64 @@ So ist es zum Beispiel sicherlich
 der Fall, dass, wenn ich die Länge
 
 0:01:09.280,0:01:15.840
-einer umgekehrten Liste nehme, dann ist das die
-gleiche wie die Länge der Liste selbst.
+einer umgekehrten Liste nehme, dann ist das
+die gleiche wie die Länge der Liste selbst.
 
 0:01:15.840,0:01:16.080
 Das stimmt.
 
 0:01:16.080,0:01:19.440
-Die Umkehrung einer Liste ändert also nicht
-die Länge der Liste.
+Die Umkehrung einer Liste ändert
+also nicht die Länge der Liste.
 
 0:01:19.440,0:01:21.040
 Das scheint eine vernünftige Eigenschaft zu sein.
 
 0:01:21.680,0:01:25.840
-Lassen Sie mich das überprüfen, und es
-sagt, ja, das ist tatsächlich wahr.
+Lassen Sie mich das überprüfen, und
+es sagt, ja, das ist tatsächlich wahr.
 
 0:01:26.720,0:01:27.120
 Okay.
 
 0:01:27.120,0:01:30.240
-Und mir könnten noch ein paar weitere Eigenschaften der
+Und mir könnten noch ein paar
+weitere Eigenschaften der
 
 0:01:30.240,0:01:34.560
-reverse-Funktion einfallen, die Sie auch prüfen könnten
-und herausfinden: Nun, sie sind alle wahr.
+reverse-Funktion einfallen, die Sie auch prüfen
+könnten und herausfinden: Nun, sie sind alle wahr.
 
 0:01:35.760,0:01:42.400
-Okay, dann könnte ich an einem bestimmten Punkt
-etwas zu ehrgeizig oder vielleicht ein wenig verrückt werden,
+Okay, dann könnte ich an einem bestimmten Punkt etwas
+zu ehrgeizig oder vielleicht ein wenig verrückt werden,
 
 0:01:42.400,0:01:47.520
 und behaupten, na ja, lassen Sie mich doch von der
 Eigenschaft oben einfach den length-Aufruf weglassen.
 
 0:01:48.560,0:01:54.880
-Das würde die Behauptung ergeben,
-dass das Umgedrehte von xs auch xs ist.
+Das würde die Behauptung ergeben, dass
+das Umgedrehte von xs auch xs ist.
 
 0:01:56.080,0:01:58.960
 Das ist falsch, würde ich erwarten, richtig?
 
 0:01:58.960,0:02:02.160
-Die Umkehrung einer Liste ist also nicht dasselbe
-wie einfach nur diese Liste zu haben.
+Die Umkehrung einer Liste ist also nicht
+dasselbe wie einfach nur diese Liste zu haben.
 
 0:02:03.120,0:02:06.720
-Wenn ich dies jedoch ausführe, wird es akzeptiert.
+Wenn ich dies jedoch
+ausführe, wird es akzeptiert.
 
 0:02:06.720,0:02:10.960
 Und das ist nicht zufällig durch
 irgendwie den Zufall generiert, der
 
 0:02:10.960,0:02:14.320
-zufällig 100
-Listen erstellt hat, auf denen dies tatsächlich der Fall ist.
+zufällig 100 Listen erstellt hat, auf
+denen dies tatsächlich der Fall ist.
 
 0:02:14.320,0:02:15.040
 Nein, es ist nicht wahr.
@@ -121,46 +126,50 @@ Wenn ich jedoch die Reverse-Funktion aufrufe,
 hat sie diese Eigenschaft tatsächlich nicht.
 
 0:02:24.960,0:02:27.520
-Die Umkehrung von "abc" ist nicht "abc", sondern "cba".
+Die Umkehrung von "abc" ist
+nicht "abc", sondern "cba".
 
 0:02:28.880,0:02:29.600
 Ja.
 
 0:02:29.600,0:02:34.160
-Und in der Tat, wenn ich das für viele Beispiele mache,
+Und in der Tat, wenn ich das
+für viele Beispiele mache,
 
 0:02:34.160,0:02:38.240
-zeigt es immer nicht das Verhalten, das ich erfolgreich mit
-QuickCheck getestet habe.
+zeigt es immer nicht das Verhalten, das ich
+erfolgreich mit QuickCheck getestet habe.
 
 0:02:39.520,0:02:40.560
 Was ist also passiert?
 
 0:02:42.160,0:02:46.640
-Nun, ich habe Ihnen gesagt, was Sie tun sollen,
-um herauszufinden, was
+Nun, ich habe Ihnen gesagt, was Sie
+tun sollen, um herauszufinden, was
 
 0:02:46.640,0:02:50.080
-mit den QuickCheck-Tests los ist, entweder zu Ihrer eigenen
+mit den QuickCheck-Tests los
+ist, entweder zu Ihrer eigenen
 
 0:02:51.600,0:02:57.360
-Seelenfriedens zu wissen, was tatsächlich getestet
-wurde, oder einfach aus Neugier.
+Seelenfriedens zu wissen, was tatsächlich
+getestet wurde, oder einfach aus Neugier.
 
 0:02:57.920,0:03:03.120
-Und Sie können quickCheck jederzeit durch verboseCheck ersetzen,
-und Sie werden sehen, welche Eingaben geprüft wurden.
+Und Sie können quickCheck jederzeit durch verboseCheck
+ersetzen, und Sie werden sehen, welche Eingaben geprüft wurden.
 
 0:03:03.120,0:03:06.720
 Offensichtlich hat es nicht
 "abc" oder [1..10] geprüft, denn
 
 0:03:06.720,0:03:10.480
-dann hätte es nicht diese
-falsche Behauptung aufgestellt, dass alles in Ordnung sei.
+dann hätte es nicht diese falsche Behauptung
+aufgestellt, dass alles in Ordnung sei.
 
 0:03:11.120,0:03:13.280
-Lassen Sie uns eine ausführliche Prüfung derselben Eigenschaft durchführen.
+Lassen Sie uns eine ausführliche Prüfung
+derselben Eigenschaft durchführen.
 
 0:03:14.400,0:03:18.240
 Ah, das sieht interessant und seltsam aus.
@@ -169,34 +178,34 @@ Ah, das sieht interessant und seltsam aus.
 Was ist passiert?
 
 0:03:19.600,0:03:25.280
-Tatsächlich wurde die Eigenschaft 100 Mal getestet,
-aber auf sehr seltsamen Listen,
+Tatsächlich wurde die Eigenschaft 100 Mal
+getestet, aber auf sehr seltsamen Listen,
 
 0:03:25.280,0:03:27.760
 die immer dieses triviale Element enthalten.
 
 0:03:28.560,0:03:33.280
-Und tatsächlich, wenn ich eine Liste wie diese nehme, wo
-alles das Gleiche ist, nämlich dieser seltsame
+Und tatsächlich, wenn ich eine Liste wie diese nehme,
+wo alles das Gleiche ist, nämlich dieser seltsame
 
 0:03:33.280,0:03:39.040
 leere Wert hier, dann ist natürlich, wenn ich das
 Umgedrehte dieser Liste das Gleiche wie die Liste selbst.
 
 0:03:39.040,0:03:45.120
-Denn wenn die Liste nur ein Element enthält,
-und dieses mehrfach, aber alle Elemente sind gleich,
+Denn wenn die Liste nur ein Element enthält, und
+dieses mehrfach, aber alle Elemente sind gleich,
 
 0:03:45.120,0:03:47.360
-dann ändert natürlich die Umkehrung
-die Liste nicht.
+dann ändert natürlich die
+Umkehrung die Liste nicht.
 
 0:03:48.640,0:03:50.560
 Okay, was ist also die Lehre daraus?
 
 0:03:50.560,0:03:53.280
-Wenn Sie eine polymorphe
-Funktion prüfen, wie die reverse-Funktion,
+Wenn Sie eine polymorphe Funktion
+prüfen, wie die reverse-Funktion,
 
 0:03:53.280,0:03:55.360
 ist es wirklich wichtig, worauf man sie prüft.
@@ -210,8 +219,8 @@ Elementtyp für die Listen
 prüfen, zum Beispiel.
 
 0:04:04.880,0:04:09.520
-Das ist nicht stark genug, um tatsächlich
-zu zeigen, dass unsere Eigenschaft falsch war.
+Das ist nicht stark genug, um tatsächlich zu
+zeigen, dass unsere Eigenschaft falsch war.
 
 0:04:11.360,0:04:11.860
 Ja.
@@ -233,85 +242,85 @@ Okay, was können oder sollten wir also tun,
 wenn wir eine polymorphe Funktion testen?
 
 0:04:33.360,0:04:37.440
-Wir sollten sicherstellen, dass das, was wir testen oder welcher Typ
-es ist, das sollte man nicht QuickCheck überlassen.
+Wir sollten sicherstellen, dass das, was wir testen oder
+welcher Typ es ist, das sollte man nicht QuickCheck überlassen.
 
 0:04:37.440,0:04:40.480
-Denn das kann zu diesen
-Artefakten oder falschen Ergebnissen führen.
+Denn das kann zu diesen Artefakten
+oder falschen Ergebnissen führen.
 
 0:04:41.040,0:04:41.840
 Wie können wir das sagen?
 
 0:04:41.840,0:04:45.680
-Nun, man könnte zum Beispiel sagen, na ja,
-lassen Sie uns das auf Listen von ganzen Zahlen überprüfen.
+Nun, man könnte zum Beispiel sagen, na ja, lassen
+Sie uns das auf Listen von ganzen Zahlen überprüfen.
 
 0:04:45.680,0:04:48.160
 Und ich kann das in der Eigenschaft tun,
 
 0:04:48.720,0:04:55.200
-zuweisen oder deklarieren, dass dieses xs
-eine Liste von ganzen Zahlen sein soll, zum Beispiel, richtig?
+zuweisen oder deklarieren, dass dieses xs eine Liste
+von ganzen Zahlen sein soll, zum Beispiel, richtig?
 
 0:04:55.200,0:05:02.640
-Dann verhindere ich, dass QuickCheck eine Entscheidung trifft
-und wählt dieses seltsame Element und den Typ hier.
+Dann verhindere ich, dass QuickCheck eine Entscheidung
+trifft und wählt dieses seltsame Element und den Typ hier.
 
 0:05:03.440,0:05:08.480
-Okay, und wenn ich das mache, dann
-findet QuickCheck heraus, dass die Eigenschaft
+Okay, und wenn ich das mache, dann findet
+QuickCheck heraus, dass die Eigenschaft
 
 0:05:08.480,0:05:12.960
 nicht gilt. Genau hier, ganz schnell, findet es
 ein Gegenbeispiel, nämlich für die Liste [0,1].
 
 0:05:13.520,0:05:17.920
-Es ist nicht wahr, dass die Umkehrung
-die gleiche Liste ergibt.
+Es ist nicht wahr, dass die
+Umkehrung die gleiche Liste ergibt.
 
 0:05:17.920,0:05:21.920
 Und das hätte ich auch mit String machen können.
 
 0:05:21.920,0:05:25.120
-Zum Beispiel könnte ich sagen,
-für jede Zeichenkette wird dies gelten.
+Zum Beispiel könnte ich sagen, für
+jede Zeichenkette wird dies gelten.
 
 0:05:25.680,0:05:29.680
-Ich würde erwarten, dass QuickCheck
-ein Gegenbeispiel findet. Es sagt nein, für einen String "ab",
+Ich würde erwarten, dass QuickCheck ein Gegenbeispiel
+findet. Es sagt nein, für einen String "ab",
 
 0:05:29.680,0:05:34.080
 ist die Eigenschaft nicht wahr. Oder ich könnte
 hier sogar Listen von Bools genommen haben,
 
 0:05:34.080,0:05:37.600
-dann hätte es ein Gegenbeispiel gefunden,
-das im Zusammenhang mit der Eigenschaft [True, False] ist.
+dann hätte es ein Gegenbeispiel gefunden, das im
+Zusammenhang mit der Eigenschaft [True, False] ist.
 
 0:05:37.600,0:05:43.360
-Also, für jeden nicht-trivialen Typ erhält man ein Gegenbeispiel,
-außer in dem Fall, in dem wir keinen Typ angeben,
+Also, für jeden nicht-trivialen Typ erhält man ein
+Gegenbeispiel, außer in dem Fall, in dem wir keinen Typ angeben,
 
 0:05:43.360,0:05:47.040
 wo wir es einfach QuickCheck überlassen und
 QuickCheck trifft eine sehr schlechte Wahl,
 
 0:05:47.040,0:05:52.640
-nämlich diese. Okay, also müssen wir
-sehr bewusst sein, wenn wir Tests schreiben.
+nämlich diese. Okay, also müssen wir sehr
+bewusst sein, wenn wir Tests schreiben.
 
 0:05:52.640,0:05:56.640
-Und natürlich achten wir in unseren Tests für Ihre
-Autotool-Einreichungen darauf.
+Und natürlich achten wir in unseren Tests
+für Ihre Autotool-Einreichungen darauf.
 
 0:05:56.640,0:06:00.720
 Aber wenn Sie auf eigene Faust testen wollen und
 Sie eine polymorphe Funktion haben, müssen Sie
 
 0:06:01.760,0:06:07.440
-etwas nachdenken,
-auf was Sie Ihre polymorphe Funktion eigentlich prüfen wollen.
+etwas nachdenken, auf was Sie Ihre
+polymorphe Funktion eigentlich prüfen wollen.
 
 0:06:08.240,0:06:14.720
 In diesem Fall sollten wir sie nicht auf diesen
@@ -321,12 +330,12 @@ trivialen Typ prüfen. Okay, das ist kein Fehler per se,
 in der Logik. Es ist
 
 0:06:16.800,0:06:22.000
-eine gewisse Vorsicht, die man walten lassen muss, um
-zu wissen, was man eigentlich testet.
+eine gewisse Vorsicht, die man walten lassen
+muss, um zu wissen, was man eigentlich testet.
 
 0:06:22.000,0:06:24.880
-Und wenn man sich unsicher ist, kann
-man immer eine ausführliche Prüfung durchführen, und dann
+Und wenn man sich unsicher ist, kann man immer
+eine ausführliche Prüfung durchführen, und dann
 
 0:06:24.880,0:06:31.600
 sehen Sie, was hinter den Kulissen passiert ist.

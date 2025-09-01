@@ -1,52 +1,52 @@
 138 # slide
 00:00:01,840 --> 00:00:10,160
-Letzte Woche haben wir über
-algebraische Datentypen gesprochen, und zwar über
+Letzte Woche haben wir über algebraische
+Datentypen gesprochen, und zwar über
 
 00:00:10,720 --> 00:00:17,120
 Berechnungen durch Pattern-Matching, was natürlich
 nur ein weiterer Weg war, ein zusätzlicher Weg zur
 
 00:00:17,760 --> 00:00:23,520
-Programmierung durch Fallunterscheidung. Außer dass dabei
-Fallunterscheidung nicht über if-then-else
+Programmierung durch Fallunterscheidung. Außer dass
+dabei Fallunterscheidung nicht über if-then-else
 
 00:00:23,520 --> 00:00:31,360
 oder Guards, sondern durch Abgleich mit den verschiedenen
 Fällen, die der Wert des definierten algebraischen
 
 00:00:31,360 --> 00:00:40,400
-Datentyps annehmen kann. Wir werden heute damit
-fortsetzen, insofern als wir später
+Datentyps annehmen kann. Wir werden heute
+damit fortsetzen, insofern als wir später
 
 00:00:40,400 --> 00:00:45,920
-kurz darauf eingehen werden, wie Pattern-Matching
-in Haskell
+kurz darauf eingehen werden,
+wie Pattern-Matching in Haskell
 
 00:00:45,920 --> 00:00:52,560
 im Allgemeinen geht. Im Grunde auch, wie die "lazy"-Auswertung
 letztlich von Pattern-Matching angetrieben wird. Aber
 
 00:00:52,560 --> 00:00:58,320
-bevor wir das tun, werden wir einen Blick auf
-Listen, die bisher in der Vorlesung
+bevor wir das tun, werden wir einen Blick
+auf Listen, die bisher in der Vorlesung
 
 00:00:58,320 --> 00:01:04,320
-eine besondere Behandlung durch eine spezielle Syntax, durch
-Listenkomplexe, die es bei anderen Typen nicht gibt.
+eine besondere Behandlung durch eine spezielle Syntax,
+durch Listenkomplexe, die es bei anderen Typen nicht gibt.
 
 00:01:04,320 --> 00:01:09,680
-beliebige andere Typen. Aber letztlich,
-sind Listen auch nur algebraische Datentypen und
+beliebige andere Typen. Aber letztlich, sind
+Listen auch nur algebraische Datentypen und
 
 00:01:09,680 --> 00:01:13,920
-das ist die Verbindung, die wir
-in dieser Vorlesung endlich herstellen sollten.
+das ist die Verbindung, die wir in dieser
+Vorlesung endlich herstellen sollten.
 
 139 # slide
 00:01:17,680 --> 00:01:23,440
-Stellen wir uns also vor, Haskell hätte noch
-keinen vordefinierten Listen-Datentyp.
+Stellen wir uns also vor, Haskell hätte
+noch keinen vordefinierten Listen-Datentyp.
 
 00:01:25,520 --> 00:01:28,160
 Dann würden wir selbst einen definieren.
@@ -57,16 +57,16 @@ mit der Art von Definition, die wir letzte Woche
 gesehen haben. Und da Listen polymorph sind,
 
 00:01:33,520 --> 00:01:37,440
-könnte das in etwa so aussehen. Wir
-definieren einen Listen-Datentyp. Er ist parametrisiert
+könnte das in etwa so aussehen. Wir definieren
+einen Listen-Datentyp. Er ist parametrisiert
 
 00:01:37,440 --> 00:01:42,160
 über einen Parameter, weil wir Listen haben wollen
 von Zahlen, Listen von Zeichen, etc. Und dann
 
 00:01:42,160 --> 00:01:48,240
-gibt es zwei Fälle: Es gibt die leere Liste, und
-aus historischen Gründen wird diese oft 'Nil' genannt.
+gibt es zwei Fälle: Es gibt die leere Liste, und aus
+historischen Gründen wird diese oft 'Nil' genannt.
 
 00:01:49,200 --> 00:01:55,920
 Das wäre einer der möglichen Konstruktoren für
@@ -81,48 +81,48 @@ wie soll der heißen? Er wird oft 'Cons' genannt,
 für Konstruktor. In gewisser Weise, wenn Liste der
 
 00:02:09,600 --> 00:02:16,320
-erste Datentyp ist, den man sich ausdenkt, dann ergibt es vielleicht einfach
-Sinn, "Konstruktor" als Name für den Konstruktor zu verwenden.
+erste Datentyp ist, den man sich ausdenkt, dann ergibt es vielleicht
+einfach Sinn, "Konstruktor" als Name für den Konstruktor zu verwenden.
 
 00:02:16,320 --> 00:02:18,560
-'Nil' und 'Cons': 'Nil' ist der leere
-Listen-Konstruktor für die Konstruktion einer leeren Liste.
+'Nil' und 'Cons': 'Nil' ist der leere Listen-Konstruktor
+für die Konstruktion einer leeren Liste.
 
 00:02:18,560 --> 00:02:24,800
-'Cons' ist für die Konstruktion einer nicht leeren Liste. Und
-was sind dann die Argumente? Ein Element des
+'Cons' ist für die Konstruktion einer nicht leeren
+Liste. Und was sind dann die Argumente? Ein Element des
 
 00:02:24,800 --> 00:02:29,200
-Trägertyps, des Typs (a), den wir
-Elemente in der Liste sehen wollen, und dann der
+Trägertyps, des Typs (a), den wir Elemente
+in der Liste sehen wollen, und dann der
 
 00:02:29,200 --> 00:02:35,440
 Rest der Liste. Und dann ein rekursives Vorkommen von
 was? Von einer Liste von 'a'. Das ist sehr ähnlich,
 
 00:02:35,440 --> 00:02:42,000
-natürlich dem Baum-Datentyp, den wir letzte Woche
-gesehen haben, wo wir Leaf und dann Node mit einem linken
+natürlich dem Baum-Datentyp, den wir letzte Woche gesehen
+haben, wo wir Leaf und dann Node mit einem linken
 
 00:02:42,000 --> 00:02:49,200
 Nachfolger, einem Label und einem rechten Nachfolger. Wir
 haben hier keine zwei rekursiven Vorkommen für die Liste
 
 00:02:49,200 --> 00:02:54,480
-weil es sich nicht um einen Baum, sondern nur um eine Liste handelt. Also,
-hat sie diese Schräglage nach rechts. Sie hat immer
+weil es sich nicht um einen Baum, sondern nur um eine Liste
+handelt. Also, hat sie diese Schräglage nach rechts. Sie hat immer
 
 00:02:54,480 --> 00:02:58,800
-genau den richtigen Nachfolger. Natürlich könnten wir
-auch als Baum zeichnen, aber das wäre dann ein
+genau den richtigen Nachfolger. Natürlich könnten
+wir auch als Baum zeichnen, aber das wäre dann ein
 
 00:02:58,800 --> 00:03:04,240
 sehr spezieller Baum, der immer nur nach rechts
 wächst. Dann ist es letztlich wirklich nur eine Liste.
 
 00:03:04,960 --> 00:03:09,600
-Das ist etwas, was wir durchaus einführen könnten.
-Und dann, zum Beispiel,
+Das ist etwas, was wir durchaus einführen
+könnten. Und dann, zum Beispiel,
 
 00:03:09,600 --> 00:03:15,120
 könnte der Wert so aussehen. Das wäre dann
@@ -133,28 +133,28 @@ und Zwei beinhaltet, weil wir die nicht-leere Liste haben und die
 Bezeichnung des Knotens ist Eins, und es gibt eine Nachfolgeliste,
 
 00:03:21,520 --> 00:03:27,040
-die das spezifische Element Zwei hat, und dann
-als Nachfolgeliste eine, die die leere Liste ist. Und
+die das spezifische Element Zwei hat, und dann als
+Nachfolgeliste eine, die die leere Liste ist. Und
 
 00:03:27,040 --> 00:03:33,280
 dies zusammen wäre eine Liste von Ints. Und wie wird
 man darauf arbeiten? Durch Pattern-Matching. Also,
 
 00:03:33,280 --> 00:03:39,600
-wenn wir die Länge einer solchen Liste
-aus diesem Datentyp berechnen wollen, dann machen wir eine Fallunterscheidung.
+wenn wir die Länge einer solchen Liste aus diesem Datentyp
+berechnen wollen, dann machen wir eine Fallunterscheidung.
 
 00:03:40,320 --> 00:03:46,880
-Wir erhalten eine Liste von etwas zu 'Int'. Das ist
-polymorph im Elementtyp hier, weil
+Wir erhalten eine Liste von etwas zu 'Int'.
+Das ist polymorph im Elementtyp hier, weil
 
 00:03:46,880 --> 00:03:52,160
 die Berechnung der Länge einer Liste nicht davon abhängt,
 was in der Liste gespeichert ist. Wir führen gerade
 
 00:03:52,160 --> 00:03:56,640
-Struktur ein. Und dann hatten wir einen Fall für
-die leere Liste. Und natürlich ist die Länge dieser Liste
+Struktur ein. Und dann hatten wir einen Fall für die
+leere Liste. Und natürlich ist die Länge dieser Liste
 
 00:03:56,640 --> 00:04:02,160
 gleich null. Und für den Fall der nicht leeren Liste
@@ -165,17 +165,17 @@ Position in der Liste befindet, ist dafür irrelevant. Also,
 haben wir diese anonyme Variable. Aber wir haben eine
 
 00:04:06,720 --> 00:04:11,040
-Restliste. Und was ist dann die Länge der
-gesamten Liste? Sie ist eins plus die Länge der restlichen
+Restliste. Und was ist dann die Länge der gesamten
+Liste? Sie ist eins plus die Länge der restlichen
 
 00:04:11,040 --> 00:04:18,960
-Liste. Das ist eine sehr einfache Definition, die
-uns zeigt, wie wir die Länge einer solchen Liste berechnen können.
+Liste. Das ist eine sehr einfache Definition, die uns zeigt,
+wie wir die Länge einer solchen Liste berechnen können.
 
 140 # slide
 00:04:23,920 --> 00:04:29,600
-Nun, der Punkt ist, dass das, was wir auf der
-vorherigen Folie gesehen haben, genau so ist, wie Listen tatsächlich
+Nun, der Punkt ist, dass das, was wir auf der vorherigen
+Folie gesehen haben, genau so ist, wie Listen tatsächlich
 
 00:04:29,600 --> 00:04:34,640
 in Haskell implementiert sind. Wir haben einfach nicht
@@ -190,16 +190,16 @@ im Code, den wir als Benutzer normalerweise nicht sehen,
 würden wir so etwas wie das hier finden. Das ist natürlich,
 
 00:04:46,960 --> 00:04:52,480
-sieht es ein wenig seltsam aus, weil es jetzt nicht
-'List' und 'Nil' und 'Cons' sind, sondern vielmehr einige Symbole.
+sieht es ein wenig seltsam aus, weil es jetzt nicht 'List'
+und 'Nil' und 'Cons' sind, sondern vielmehr einige Symbole.
 
 00:04:52,480 --> 00:04:58,320
-Aber das sind die Symbole, die wir gewohnt sind,
-von der Listensyntax in Haskell kennen. Also, im Wesentlichen,
+Aber das sind die Symbole, die wir gewohnt sind, von der
+Listensyntax in Haskell kennen. Also, im Wesentlichen,
 
 00:05:02,000 --> 00:05:06,400
-werden Listen also auch nur als algebraische
-Datentypen eingeführt. Also, es gibt den Typ der Liste (a).
+werden Listen also auch nur als algebraische Datentypen
+eingeführt. Also, es gibt den Typ der Liste (a).
 
 00:05:06,400 --> 00:05:11,360
 Und er wird mit diesen eckigen Klammern geschrieben. Es
@@ -218,60 +218,60 @@ wird hier als Präfix-Operator verwendet. Er kann aber auch
 infix geschrieben werden. Und was sind die Argumente von
 
 00:05:28,160 --> 00:05:33,680
-diesem Konstruktor? Zunächst ist da nur ein Element
-vom Typ a, und dann gibt es ein rekursives
+diesem Konstruktor? Zunächst ist da nur ein
+Element vom Typ a, und dann gibt es ein rekursives
 
 00:05:33,680 --> 00:05:39,440
-Auftreten einer Liste von a, die nun natürlich auch mit
-dieser Listensyntax geschrieben wird. Aber anders
+Auftreten einer Liste von a, die nun natürlich auch
+mit dieser Listensyntax geschrieben wird. Aber anders
 
 00:05:39,440 --> 00:05:46,480
-als diese Namen der Operatoren
-im Daten- und Typkonstruktor, ist dies genau
+als diese Namen der Operatoren im Daten-
+und Typkonstruktor, ist dies genau
 
 00:05:46,480 --> 00:05:51,840
-die gleiche Definition wie auf der vorherigen Folie.
-Und so werden Listen in Haskell definiert.
+die gleiche Definition wie auf der vorherigen
+Folie. Und so werden Listen in Haskell definiert.
 
 00:05:52,480 --> 00:05:57,200
 Es ist nur nicht etwas, das dem Programmierer
 explizit angezeigt wird. Sie werden diese Definition
 
 00:05:57,200 --> 00:06:00,960
-nie in dieser Form sehen, denn Listen sind
-bereits vorhanden. Wir brauchen sie nicht zu definieren.
+nie in dieser Form sehen, denn Listen sind bereits
+vorhanden. Wir brauchen sie nicht zu definieren.
 
 00:06:00,960 --> 00:06:07,760
-Was bedeutet das dann? Listen, wie wir sie
-bisher gesehen haben. Normalerweise haben wir bis jetzt
+Was bedeutet das dann? Listen, wie wir sie bisher
+gesehen haben. Normalerweise haben wir bis jetzt
 
 00:06:07,760 --> 00:06:11,760
-eine Syntax wie diese verwendet. Also, in eckigen Klammern,
-werden die Elemente nacheinander mit einem
+eine Syntax wie diese verwendet. Also, in eckigen
+Klammern, werden die Elemente nacheinander mit einem
 
 00:06:11,760 --> 00:06:19,120
-Komma getrennt. Das ist einfach syntaktischer Zucker für
-diesen eigentlichen Ausdruck, der besagt, dass es sich um eine 'Cons' handelt,
+Komma getrennt. Das ist einfach syntaktischer Zucker für diesen
+eigentlichen Ausdruck, der besagt, dass es sich um eine 'Cons' handelt,
 
 00:06:19,120 --> 00:06:25,280
 also ist es keine leere Liste. Es ist eine nicht-leere
 Liste. Sie hat ein aktuelles Element, das das
 
 00:06:25,280 --> 00:06:30,160
-erste Argument dieses Doppelpunktes ist, jetzt in
-Infix-Syntax. Es ist das erste Listenelement,
+erste Argument dieses Doppelpunktes ist, jetzt
+in Infix-Syntax. Es ist das erste Listenelement,
 
 00:06:30,160 --> 00:06:34,400
-also sollte es die 1 sein. Dann gibt es die
-Restliste, die wiederum eine nicht leere Liste ist, weil sie die
+also sollte es die 1 sein. Dann gibt es die Restliste,
+die wiederum eine nicht leere Liste ist, weil sie die
 
 00:06:34,400 --> 00:06:38,720
-2 enthält. Und nun, wie wird
-sie in dieser algebraischen Datentyp
+2 enthält. Und nun, wie wird sie
+in dieser algebraischen Datentyp
 
 00:06:38,720 --> 00:06:44,320
-Syntax dargestellt? Sie ist eine nicht leere Liste. Sie hat also
-diesen Cons-Konstruktor. Sie hat das aktuelle
+Syntax dargestellt? Sie ist eine nicht leere Liste. Sie
+hat also diesen Cons-Konstruktor. Sie hat das aktuelle
 
 00:06:44,880 --> 00:06:51,040
 Element 2. Und es hat die restliche Liste. Und diese
@@ -286,12 +286,12 @@ Aber unter der Haube wird diese Liste
 wie folgt dargestellt. Und dann,
 
 00:07:01,840 --> 00:07:07,600
-da dieser Operator vordefiniert ist, rechts-assoziativ zu sein,
-brauchen wir diese Klammern hier nicht.
+da dieser Operator vordefiniert ist, rechts-assoziativ
+zu sein, brauchen wir diese Klammern hier nicht.
 
 00:07:07,600 --> 00:07:12,160
-Eigentlich können wir diese Liste [1,2] auch in
-dieser Form schreiben. Und das ist völlig gleichwertig. Also
+Eigentlich können wir diese Liste [1,2] auch in dieser
+Form schreiben. Und das ist völlig gleichwertig. Also
 
 00:07:12,160 --> 00:07:18,640
 konvertiert der Compiler stillschweigend zwischen
@@ -306,20 +306,20 @@ eine Liste in ihren Kopf und den Rest zerlegen wollen (die Liste
 per Pattern zerlegen wollen). Dann können wir das ganz einfach tun,
 
 00:07:33,440 --> 00:07:39,280
-so wie wir es in der vorigen Woche für die
-Knoten eines Baumes, oder auf der vorherigen Folie,
+so wie wir es in der vorigen Woche für die Knoten
+eines Baumes, oder auf der vorherigen Folie,
 
 00:07:39,280 --> 00:07:47,680
-konnten wir gegen das Cons-Element
-und die Restliste. Aber dafür müssen wir
+konnten wir gegen das Cons-Element und
+die Restliste. Aber dafür müssen wir
 
 00:07:47,680 --> 00:07:53,520
-die Verbindung zwischen den Listen, wie wir
-sie bisher gesehen haben, und dieser Datentypansicht
+die Verbindung zwischen den Listen, wie wir sie
+bisher gesehen haben, und dieser Datentypansicht
 
 00:07:53,520 --> 00:07:58,240
-von Listen und wie diese realisiert wird, nämlich mit
-diesem rechtsassoziativen Operator, wobei immer
+von Listen und wie diese realisiert wird, nämlich
+mit diesem rechtsassoziativen Operator, wobei immer
 
 00:07:58,240 --> 00:08:03,640
 nach links, wir schreiben in Infix, haben wir das
@@ -335,64 +335,64 @@ aber noch nicht die Definitionen
 davon. Dies ist die Funktion length.
 
 00:08:17,120 --> 00:08:23,920
-Und sie ist genauso definiert wie vor zwei Folien, wo
-ich mit der Nil-Cons-Syntax für Listen, aber jetzt
+Und sie ist genauso definiert wie vor zwei Folien,
+wo ich mit der Nil-Cons-Syntax für Listen, aber jetzt
 
 00:08:23,920 --> 00:08:29,200
-verwendet sie die symbolische Syntax. Also, wir
-haben den Basisfall, der einfach mit
+verwendet sie die symbolische Syntax. Also,
+wir haben den Basisfall, der einfach mit
 
 00:08:29,200 --> 00:08:34,240
-diesem nullstelligen Konstruktor der leeren Liste ist. Und natürlich
-ist die Länge einer leeren Liste null. Diese
+diesem nullstelligen Konstruktor der leeren Liste ist. Und
+natürlich ist die Länge einer leeren Liste null. Diese
 
 00:08:34,240 --> 00:08:40,960
-ist eine polymorphe Liste, und wir kümmern uns nicht um den
-Elementtyp. Und die leere Liste wird auf 0 abgebildet.
+ist eine polymorphe Liste, und wir kümmern uns nicht um
+den Elementtyp. Und die leere Liste wird auf 0 abgebildet.
 
 00:08:40,960 --> 00:08:47,200
-Und was ist mit der nicht leeren Liste? Die nicht leere
-Liste wird definitiv zerlegbar sein in einen
+Und was ist mit der nicht leeren Liste? Die nicht
+leere Liste wird definitiv zerlegbar sein in einen
 
 00:08:47,200 --> 00:08:52,480
-Kopf, der hier ignoriert wird, weil wir uns nicht
-für das Element interessieren. Und dann dieser symbolische
+Kopf, der hier ignoriert wird, weil wir uns nicht für
+das Element interessieren. Und dann dieser symbolische
 
 00:08:52,480 --> 00:08:58,000
-Cons-Konstruktor und der Rest der Liste. Und dann ist die
-rechte Seite 1 + Länge der Restliste.
+Cons-Konstruktor und der Rest der Liste. Und dann
+ist die rechte Seite 1 + Länge der Restliste.
 
 00:09:00,640 --> 00:09:04,880
 Viele Listenfunktionen, wenn wir uns ihre
 Definitionen ansehen, werden so definiert, mit dem
 
 00:09:05,440 --> 00:09:10,000
-Fall der leeren Liste und genau dem Fall der nicht leeren
-Listen. Wir können auch zusätzliche Fälle haben.
+Fall der leeren Liste und genau dem Fall der nicht
+leeren Listen. Wir können auch zusätzliche Fälle haben.
 
 00:09:10,000 --> 00:09:16,960
 Zum Beispiel könnten wir explizite Pattern haben...
 explizite Regeln für Singleton-Listen oder Listen,
 
 00:09:16,960 --> 00:09:23,920
-die aus genau 2 Elementen bestehen. Und dann vielleicht
-ein rekursiver Fall für Listen der Länge von mindestens zwei
+die aus genau 2 Elementen bestehen. Und dann vielleicht ein
+rekursiver Fall für Listen der Länge von mindestens zwei
 
 00:09:23,920 --> 00:09:28,480
-oder so etwas. Aber oft werden wir genau diese beiden Fälle haben:
-eine leere Liste und eine nicht leere Liste.
+oder so etwas. Aber oft werden wir genau diese beiden
+Fälle haben: eine leere Liste und eine nicht leere Liste.
 
 00:09:31,120 --> 00:09:36,000
-Eine andere Funktion: die append-Funktion,
-auch der (++) Operator, wenn er infix geschrieben wird,
+Eine andere Funktion: die append-Funktion, auch
+der (++) Operator, wenn er infix geschrieben wird,
 
 00:09:36,000 --> 00:09:41,440
 eigentlich. Aber hier definiere ich 'append' als eine
 Präfix-Funktion, die zwei Listen eines bestimmten Typs nimmt
 
 00:09:41,440 --> 00:09:46,080
-und eine Liste desselben Typs zurückgibt. Wie wird
-sie definiert? Eine Möglichkeit, sie zu definieren, ist
+und eine Liste desselben Typs zurückgibt. Wie wird sie
+definiert? Eine Möglichkeit, sie zu definieren, ist
 
 00:09:46,080 --> 00:09:50,960
 durch Fallunterscheidung auf dem ersten Argument.
@@ -403,24 +403,24 @@ wenn wir diese mit einer anderen Liste anhängen,
 dann erhalten wir einfach diese andere Liste.
 
 00:09:55,520 --> 00:10:00,400
-Oder die erste Liste kann nicht leer sein, dann
-zerfällt sie in das erste Element und eine
+Oder die erste Liste kann nicht leer sein,
+dann zerfällt sie in das erste Element und eine
 
 00:10:00,400 --> 00:10:08,400
-Restliste. Und wenn wir diese Liste dann an eine neue
-oder eine beliebige andere Liste anhängen, was? Es ist eine Liste,
+Restliste. Und wenn wir diese Liste dann an eine neue oder
+eine beliebige andere Liste anhängen, was? Es ist eine Liste,
 
 00:10:08,960 --> 00:10:17,520
 die mit x beginnt und dann einen rekursiven Aufruf hat
 zur Berechnung der Anfügung der restlichen Liste und
 
 00:10:17,520 --> 00:10:24,000
-der zweiten Liste. Was wir hier sehen, ist, dass wir
-diesen Datenkonstruktor nicht nur im Pattern
+der zweiten Liste. Was wir hier sehen, ist, dass
+wir diesen Datenkonstruktor nicht nur im Pattern
 
 00:10:24,560 --> 00:10:30,000
-zum Dekonstruieren, sondern auch zum Konstruieren von
-neuen Listen verwenden können. Was genau der Verwendung der
+zum Dekonstruieren, sondern auch zum Konstruieren von neuen
+Listen verwenden können. Was genau der Verwendung der
 
 00:10:30,000 --> 00:10:35,920
 Konstruktoren des Typs Baum letzte Woche entspricht. Wir
@@ -431,52 +431,52 @@ Pattern-Teile, wo wir entschieden, welchen Fall wir
 anwenden sollten. Und wenn wir neue Trees konstruierten,
 
 00:10:42,800 --> 00:10:47,600
-zum Beispiel im insert-Beispiel, dann
-hatten wir auch Leaf und Node auf der rechten Seite
+zum Beispiel im insert-Beispiel, dann hatten
+wir auch Leaf und Node auf der rechten Seite
 
 00:10:47,600 --> 00:10:51,680
-für die Konstruktion neuer Trees. Dasselbe
-geschieht hier mit diesen symbolischen Konstruktoren.
+für die Konstruktion neuer Trees. Dasselbe geschieht
+hier mit diesen symbolischen Konstruktoren.
 
 00:10:53,520 --> 00:10:58,720
-Oder etwa die head-Funktion, die bisher
-für uns eine gegebene Funktion war, die von
+Oder etwa die head-Funktion, die bisher für
+uns eine gegebene Funktion war, die von
 
 00:10:58,720 --> 00:11:03,440
 irgendwoher kommt. Wo ist sie definiert und wie? Sie hat
 einen polymorphen Typ. Diesen Typ kennen wir bereits.
 
 00:11:03,440 --> 00:11:07,840
-Wie ist er definiert? Er hat nur einen Fall mit
-der Teilfunktion. Eigentlich scheitert er
+Wie ist er definiert? Er hat nur einen Fall
+mit der Teilfunktion. Eigentlich scheitert er
 
 00:11:07,840 --> 00:11:11,840
-wenn wir ihm die leere Liste geben, was wir
-vielleicht auch schon erlebt haben. Und
+wenn wir ihm die leere Liste geben, was
+wir vielleicht auch schon erlebt haben. Und
 
 00:11:11,840 --> 00:11:19,120
-warum ist das so? Weil sie nur einen Fall von den
-erwarteten zwei Fällen für listenverarbeitende Funktionen hat.
+warum ist das so? Weil sie nur einen Fall von den erwarteten
+zwei Fällen für listenverarbeitende Funktionen hat.
 
 00:11:19,120 --> 00:11:23,760
-Die head-Funktion hat nur einen Fall, nämlich den
-Fall für die nicht leere Liste. Was tut sie?
+Die head-Funktion hat nur einen Fall, nämlich
+den Fall für die nicht leere Liste. Was tut sie?
 
 00:11:23,760 --> 00:11:29,920
-Sie vergleicht mit der nicht leeren Liste, ignoriert den
-Rest und gibt das Gefundene einfach als linkes
+Sie vergleicht mit der nicht leeren Liste, ignoriert
+den Rest und gibt das Gefundene einfach als linkes
 
 00:11:29,920 --> 00:11:35,120
-Argument des Cons-Konstruktors zurück. Und wenn wir
-mit einer leeren Liste aufrufen, erhalten wir einen Laufzeitfehler.
+Argument des Cons-Konstruktors zurück. Und wenn wir mit einer
+leeren Liste aufrufen, erhalten wir einen Laufzeitfehler.
 
 00:11:37,840 --> 00:11:42,240
-Auch die zip-Funktion war bisher eine primitive
-Funktion, die wir einfach zur Verfügung gestellt haben, ohne uns die
+Auch die zip-Funktion war bisher eine primitive Funktion,
+die wir einfach zur Verfügung gestellt haben, ohne uns die
 
 00:11:42,240 --> 00:11:47,280
-Definition angesehen zu haben. Sie könnte wie folgt definiert werden.
-Sie nimmt zwei Listen von möglicherweise unterschiedlichen Typen entgegen,
+Definition angesehen zu haben. Sie könnte wie folgt definiert werden. Sie
+nimmt zwei Listen von möglicherweise unterschiedlichen Typen entgegen,
 
 00:11:47,280 --> 00:11:52,800
 und gibt eine Liste von Paaren zurück. Wie macht sie das?
@@ -487,16 +487,16 @@ ist es, erstens den Fall abzufangen, in dem
 beide Listen nicht leer sind. Die erste Liste
 
 00:11:59,840 --> 00:12:03,680
-zerfällt in ein erstes Element
-x und einen Rest, und die zweite
+zerfällt in ein erstes Element x
+und einen Rest, und die zweite
 
 00:12:03,680 --> 00:12:07,680
-zerfällt in eine nicht leere Liste
-mit dem ersten Element y und einem Rest.
+zerfällt in eine nicht leere Liste mit
+dem ersten Element y und einem Rest.
 
 00:12:07,680 --> 00:12:14,240
-Und was wird dann zurückgegeben? Das Paar (x, y)
-und das, was 'zip' für die beiden restlichen
+Und was wird dann zurückgegeben? Das Paar (x,
+y) und das, was 'zip' für die beiden restlichen
 
 00:12:15,520 --> 00:12:22,080
 Listen zurückgibt. Und in diesem Fall kann man eine weitere
@@ -507,20 +507,20 @@ wir nicht diese erste Situation haben, in der beide
 Listen mindestens ein Element lang sind. Und in diesem
 
 00:12:27,120 --> 00:12:32,240
-Fall wollen wir einfach die leere Liste zurückgeben,
-denn wenn wir nicht auf dieses Pattern,
+Fall wollen wir einfach die leere Liste
+zurückgeben, denn wenn wir nicht auf dieses Pattern,
 
 00:12:32,240 --> 00:12:39,440
-in dem beide Elemente diese Form haben, dann ist eines
-von ihnen die leere Liste. Und dann können wir
+in dem beide Elemente diese Form haben, dann ist
+eines von ihnen die leere Liste. Und dann können wir
 
 00:12:39,440 --> 00:12:45,280
-ignorieren, was auch immer die konkreten Listen sind,
-die wir erhalten, und einfach die leere Liste zurückgeben.
+ignorieren, was auch immer die konkreten Listen sind, die
+wir erhalten, und einfach die leere Liste zurückgeben.
 
 00:12:48,160 --> 00:12:57,840
-Etwas anderes, das hier jetzt deutlich wird,
-ist, dass dieses Rekursionsmuster oder die Art und Weise,
+Etwas anderes, das hier jetzt deutlich wird, ist,
+dass dieses Rekursionsmuster oder die Art und Weise,
 
 00:12:57,840 --> 00:13:03,360
 wie Listen als spezielle Bäume betrachtet werden, die
@@ -531,24 +531,24 @@ wie teuer bestimmte Berechnungen sein werden.
 Was wir hier in der Funktion 'append' sehen,
 
 00:13:07,840 --> 00:13:13,520
-zum Beispiel, dass die Berechnung des Anhängens so viele Schritte erfordert,
-um das Anhängen zu berechnen, wie das erste Element hat.
+zum Beispiel, dass die Berechnung des Anhängens so viele Schritte
+erfordert, um das Anhängen zu berechnen, wie das erste Element hat.
 
 00:13:13,520 --> 00:13:19,200
-Wir sehen die Rekursionen für die erste
-Liste. Das zweite Element wird also nie wirklich
+Wir sehen die Rekursionen für die erste Liste.
+Das zweite Element wird also nie wirklich
 
 00:13:19,840 --> 00:13:26,480
-untersucht, aber das Anhängen ist so kostspielig, wie die erste
-Liste lang ist. Denn so viele Schritte müssen wir
+untersucht, aber das Anhängen ist so kostspielig, wie die
+erste Liste lang ist. Denn so viele Schritte müssen wir
 
 00:13:26,480 --> 00:13:32,160
 machen. Und das bedeutet, dass das Anhängen eine lineare
 Operation in der Länge der ersten Liste ist. Und
 
 00:13:32,160 --> 00:13:40,320
-zum Beispiel auch die Funktion 'last' oder die Indexierung der Liste
-ist linear. Die Funktion 'last' ist linear
+zum Beispiel auch die Funktion 'last' oder die Indexierung
+der Liste ist linear. Die Funktion 'last' ist linear
 
 00:13:40,320 --> 00:13:46,320
 und die Länge der Eingabeliste, und die
@@ -559,25 +559,25 @@ normalerweise nicht in den Übungen verwenden soll...
 Dieser Operator braucht so viele Schritte wie lang...
 
 00:13:57,520 --> 00:14:04,080
-mindestens proportional zur Anzahl der
-Listenindizes, die Sie betrachten.
+mindestens proportional zur Anzahl
+der Listenindizes, die Sie betrachten.
 
 00:14:04,640 --> 00:14:16,240
-Wenn Sie eine Liste haben und einen Index an Position n,
-dann ist das O(n) in Bezug auf die Laufzeitkosten.
+Wenn Sie eine Liste haben und einen Index an Position
+n, dann ist das O(n) in Bezug auf die Laufzeitkosten.
 
 142 # slide
 00:14:16,240 --> 00:14:22,720
-Basierend auf der Zip-Funktion auf der vorherigen Folie,
-habe ich bereits darauf hingewiesen, dass wir manchmal die Wahl haben,
+Basierend auf der Zip-Funktion auf der vorherigen Folie, habe
+ich bereits darauf hingewiesen, dass wir manchmal die Wahl haben,
 
 00:14:22,720 --> 00:14:28,720
-wie wir unsere Definitionen strukturieren. Das gilt natürlich
-für alle Funktionen auf beliebigen Datentypen,
+wie wir unsere Definitionen strukturieren. Das gilt
+natürlich für alle Funktionen auf beliebigen Datentypen,
 
 00:14:28,720 --> 00:14:35,280
-aber hier können wir dies speziell bei
-Listen sehen. Und das ist ein typischer Fall, wo man
+aber hier können wir dies speziell bei Listen
+sehen. Und das ist ein typischer Fall, wo man
 
 00:14:35,280 --> 00:14:39,360
 dies insbesondere dann in Betracht zieht, wenn man eine
@@ -588,20 +588,20 @@ Also, für die Zip-Funktion könnten wir vielleicht
 als ersten Versuch so geschrieben haben, dass wir,
 
 00:14:45,920 --> 00:14:51,760
-zunächst eine Fallunterscheidung für das erste Argument
-der Liste unterscheiden und fragen, ob diese Liste leer ist,
+zunächst eine Fallunterscheidung für das erste Argument der
+Liste unterscheiden und fragen, ob diese Liste leer ist,
 
 00:14:51,760 --> 00:14:56,240
-und uns das zweite Argument egal ist, dann
-erhalten wir die leere Liste. Und wenn die erste Liste
+und uns das zweite Argument egal ist, dann erhalten
+wir die leere Liste. Und wenn die erste Liste
 
 00:14:56,240 --> 00:15:01,200
 nicht leer ist und die zweite leer ist, erhalten wir auch
 die leere Liste. Und erst dann haben wir den vollständig
 
 00:15:01,200 --> 00:15:07,600
-rekursiven Fall, in dem beide Listen nicht leer sind.
-Das ist eine Möglichkeit, diese Definition zu schreiben. Wir
+rekursiven Fall, in dem beide Listen nicht leer sind. Das
+ist eine Möglichkeit, diese Definition zu schreiben. Wir
 
 00:15:07,600 --> 00:15:12,160
 hätten auch hier anonyme Variablen verwenden können
@@ -616,59 +616,60 @@ mit diesem Fall abgleichen und dies zu unserer ersten
 Wahl. Denken Sie daran: Wenn wir mehrere Gleichungen für
 
 00:15:24,800 --> 00:15:30,400
-eine Funktion haben, werden sie von oben nach unten geprüft. Also,
-wenn wir dies an die erste Stelle setzen, dann würden wir,
+eine Funktion haben, werden sie von oben nach unten geprüft.
+Also, wenn wir dies an die erste Stelle setzen, dann würden wir,
 
 00:15:30,400 --> 00:15:37,520
-zuerst den Fall prüfen, dass beide Listen
-nicht leer sind. Und wenn das nicht der Fall ist,
+zuerst den Fall prüfen, dass beide Listen nicht
+leer sind. Und wenn das nicht der Fall ist,
 
 00:15:37,520 --> 00:15:42,400
-würden wir sowieso auf einen dieser Fälle stoßen. Wir
-können genauso gut sagen, dass alle anderen Fälle
+würden wir sowieso auf einen dieser Fälle stoßen.
+Wir können genauso gut sagen, dass alle anderen Fälle
 
 00:15:42,400 --> 00:15:49,760
-die leere Liste zurückgeben, wie es auf der vorherigen Folie gemacht wurde.
-Das funktioniert eigentlich gar nicht irgendwie nur
+die leere Liste zurückgeben, wie es auf der vorherigen Folie
+gemacht wurde. Das funktioniert eigentlich gar nicht irgendwie nur
 
 00:15:49,760 --> 00:15:55,920
 für endliche Listen. Beide Versionen, sowohl die von
 der vorherigen Folie, als auch die hier angegebene,
 
 00:15:56,800 --> 00:16:03,680
-funktionieren problemlos mit unendlichen Listen. Das liegt daran,
-dass sie die Listen nur so weit verbrauchen
+funktionieren problemlos mit unendlichen Listen. Das
+liegt daran, dass sie die Listen nur so weit verbrauchen
 
 00:16:03,680 --> 00:16:11,280
-wie nötig. Wenn wir zum Beispiel eins
-oder zwei Elemente in der Liste haben, dann werden wir oft
+wie nötig. Wenn wir zum Beispiel eins oder zwei
+Elemente in der Liste haben, dann werden wir oft
 
 00:16:12,480 --> 00:16:17,040
-diesen Fall, der auf der vorherigen Folie
-der erste war, und hier kommt, nachdem wir keine
+diesen Fall, der auf der vorherigen Folie der
+erste war, und hier kommt, nachdem wir keine
 
 00:16:17,040 --> 00:16:21,440
-leere Liste an der ersten oder zweiten Stelle gefunden
-haben. Und nur wenn eine der Listen
+leere Liste an der ersten oder zweiten Stelle
+gefunden haben. Und nur wenn eine der Listen
 
 00:16:21,440 --> 00:16:26,160
-tatsächlich endlich ist, dann würden wir nach einer endlichen
-Anzahl von Schritten in einem dieser
+tatsächlich endlich ist, dann würden wir nach einer
+endlichen Anzahl von Schritten in einem dieser
 
 00:16:26,160 --> 00:16:30,080
-Fälle landen, in denen wir die leere Liste zurückgeben. Aber
-wenn z. B. beide Listen unendlich sind,
+Fälle landen, in denen wir die leere Liste zurückgeben.
+Aber wenn z. B. beide Listen unendlich sind,
 
 00:16:30,080 --> 00:16:36,640
-dann würden wir diese Funktion immer anwenden und
-eine unendliche Liste zurückgeben. Und wenn es einen Kontext gibt,
+dann würden wir diese Funktion immer anwenden und eine
+unendliche Liste zurückgeben. Und wenn es einen Kontext gibt,
 
 00:16:36,640 --> 00:16:41,920
-der nur die ersten 200 Werte aus der
-Ergebnisliste nimmt, dann würde auch die Zip-Funktion nur
+der nur die ersten 200 Werte aus der Ergebnisliste
+nimmt, dann würde auch die Zip-Funktion nur
 
 00:16:42,880 --> 00:16:48,960
-bis zu 200 Elemente tief in ihre beiden Argumente hinabsteigen. Denn das ist es, was diese Gleichung
+bis zu 200 Elemente tief in ihre beiden Argumente
+hinabsteigen. Denn das ist es, was diese Gleichung
 
 00:16:48,960 --> 00:16:56,160
 sagt. Sie nimmt ein Element nach dem anderen aus beiden
@@ -691,12 +692,12 @@ dann können wir natürlich kein Pattern-Matching mit den
 Funktionen durchführen. Wenn wir aber eine Funktion als
 
 00:17:22,720 --> 00:17:28,640
-Argument haben, dann funktioniert die Funktionsdefinition durch Groß-/Kleinschreibung
-Unterscheidung auf das Listenelement und das Funktionsargument
+Argument haben, dann funktioniert die Funktionsdefinition durch
+Groß-/Kleinschreibung Unterscheidung auf das Listenelement und das Funktionsargument
 
 00:17:29,200 --> 00:17:35,840
-wird einfach weitergegeben und dort
-verwendet, wie wir auf den nächsten Folien sehen werden.
+wird einfach weitergegeben und dort verwendet,
+wie wir auf den nächsten Folien sehen werden.
 
 143 # slide
 00:17:40,720 --> 00:17:43,680
@@ -708,12 +709,12 @@ Wochen vorgestellt habe, habe ich erklärt, dass sie
 im Wesentlichen das tut, was eine List-Comprehension
 
 00:17:54,080 --> 00:17:59,680
-tut, wenn es eine Funktion auf jedes
-Element einer als Generator verwendeten Eingabeliste anwendet.
+tut, wenn es eine Funktion auf jedes Element einer
+als Generator verwendeten Eingabeliste anwendet.
 
 00:17:59,680 --> 00:18:05,280
-Aber ich habe auch schon erwähnt, dass das
-nicht die Definition von map sein soll. Außerdem,
+Aber ich habe auch schon erwähnt, dass das nicht
+die Definition von map sein soll. Außerdem,
 
 00:18:05,280 --> 00:18:09,040
 ist dies nicht genau die Definition von map, denn
@@ -724,12 +725,12 @@ Kombinator höherer Ordnung in der Prelude definiert.
 Das hängt auch von der Compiler-Version oder
 
 00:18:14,560 --> 00:18:19,680
-vom konkreten Compiler ab. Ich bin mir da ziemlich sicher,
-dass es in ghc nicht genau so definiert ist.
+vom konkreten Compiler ab. Ich bin mir da ziemlich
+sicher, dass es in ghc nicht genau so definiert ist.
 
 00:18:19,680 --> 00:18:24,320
-Aber dies ist eine Möglichkeit, die map-Funktion zu definieren. Sie
-nimmt ein Funktionsargument, das eine Funktion ist.
+Aber dies ist eine Möglichkeit, die map-Funktion zu definieren.
+Sie nimmt ein Funktionsargument, das eine Funktion ist.
 
 00:18:24,320 --> 00:18:29,120
 Sie nimmt eine Liste an. Was macht sie? Was muss sie
@@ -740,12 +741,12 @@ was auch immer darüber gemappt wird, ist es immer noch die leere
 Liste. Wenn es nicht die leere Liste ist, was passiert dann?
 
 00:18:34,080 --> 00:18:40,080
-Was passiert, wenn wir die Funktion f auf eine nicht-leere
-Liste, die aus x und der restlichen Liste besteht, anwenden? Das erste
+Was passiert, wenn wir die Funktion f auf eine nicht-leere Liste,
+die aus x und der restlichen Liste besteht, anwenden? Das erste
 
 00:18:40,080 --> 00:18:44,720
-Element der Ergebnisliste sollte das Ergebnis
-der Anwendung von 'f' auf x sein, was hier der Fall ist.
+Element der Ergebnisliste sollte das Ergebnis der
+Anwendung von 'f' auf x sein, was hier der Fall ist.
 
 00:18:44,720 --> 00:18:50,000
 Und dann haben wir einen rekursiven Aufruf, der die Funktion
@@ -764,8 +765,8 @@ dies bereits im Zusammenhang mit der Wholemeal
 Programmierung erwähnt, dass wir uns zwar hauptsächlich mit
 
 00:19:09,680 --> 00:19:16,320
-Listen und Listenberechnungen beschäftigen, aber auch für
-andere Datentypen kann es z.B.
+Listen und Listenberechnungen beschäftigen,
+aber auch für andere Datentypen kann es z.B.
 
 00:19:16,320 --> 00:19:22,000
 Funktionen höherer Ordnung geben, die den Dingen entsprechen,
@@ -780,81 +781,81 @@ typischen Funktionen, die wir auf Listen anwenden, um
 das gesamte Programm zu erhalten. Also, zum Beispiel,
 
 00:19:35,120 --> 00:19:40,800
-gibt es eine treeMap-Funktion, die wir einfach definieren
-können, die eine Funktion nimmt, einen Tree
+gibt es eine treeMap-Funktion, die wir einfach
+definieren können, die eine Funktion nimmt, einen Tree
 
 00:19:40,800 --> 00:19:48,080
-nimmt, der polymorph in einem Typ ist, und einen Tree
-über den anderen Typ zurückgibt, je nachdem, was die Funktion
+nimmt, der polymorph in einem Typ ist, und einen Tree über
+den anderen Typ zurückgibt, je nachdem, was die Funktion
 
 00:19:48,080 --> 00:19:55,120
-von und nach abbildet. Was passiert, wenn wir die Funktion
-auf einen leeren Tree abbilden? Dann erhalten wir einen leeren Tree.
+von und nach abbildet. Was passiert, wenn wir die Funktion auf
+einen leeren Tree abbilden? Dann erhalten wir einen leeren Tree.
 
 00:19:55,120 --> 00:20:00,720
 Und für den rekursiven Fall erhalten wir einfach einen neuen
 Knoten, während wir die Funktion angewendet haben, um die
 
 00:20:00,720 --> 00:20:07,920
-Labels an diesem Knoten anzuwenden, und wir müssen zwei rekursive Aufrufe
-der gleichen Funktion mit der Mapping-Funktion machen.
+Labels an diesem Knoten anzuwenden, und wir müssen zwei rekursive
+Aufrufe der gleichen Funktion mit der Mapping-Funktion machen.
 
 144 # slide
 00:20:13,360 --> 00:20:20,480
-Ein weiteres Beispiel. Vorhin erwähnten wir, als wir
-über Funktionen höherer Ordnung gesprochen haben, dass die Funktion foldl1
+Ein weiteres Beispiel. Vorhin erwähnten wir, als wir über Funktionen
+höherer Ordnung gesprochen haben, dass die Funktion foldl1
 
 00:20:21,040 --> 00:20:26,320
 eine Funktion ist, die dort z.B. verwendet wurde
 für die Summierung der Elemente einer Liste.
 
 00:20:26,320 --> 00:20:30,800
-Dann habe ich den Plus-Operator (+)
-für diesen binären Operator genannt und einige
+Dann habe ich den Plus-Operator (+) für
+diesen binären Operator genannt und einige
 
 00:20:31,680 --> 00:20:39,120
-endliche Listen. Das war eine Liste von Zahlen, und wir
-haben den Plus-Operator verwendet, und wir erhielten die Summe
+endliche Listen. Das war eine Liste von Zahlen, und wir haben
+den Plus-Operator verwendet, und wir erhielten die Summe
 
 00:20:39,120 --> 00:20:46,080
 der Listenelemente. Jetzt können wir uns hoffentlich
 vorstellen, wie dies mit dieser Syntax für
 
 00:20:46,080 --> 00:20:52,080
-Pattern-Matching definiert wird. Auf dieser Folie möchte ich nicht
-genau diesen Operator / diese Funktion definieren,
+Pattern-Matching definiert wird. Auf dieser Folie möchte ich
+nicht genau diesen Operator / diese Funktion definieren,
 
 00:20:52,080 --> 00:20:58,720
-sondern stattdessen eine ähnliche Funktion, die Funktion foldr,
-weil diese bekannter ist und häufiger verwendet wird,
+sondern stattdessen eine ähnliche Funktion, die Funktion
+foldr, weil diese bekannter ist und häufiger verwendet wird,
 
 00:20:59,680 --> 00:21:10,080
-aber vom Konzept her eine ähnliche Funktion ist. Sie verwendet die
-"r"-Abkürzung anstelle von "l", weil sie
+aber vom Konzept her eine ähnliche Funktion ist. Sie
+verwendet die "r"-Abkürzung anstelle von "l", weil sie
 
 00:21:10,080 --> 00:21:15,840
-ihren Operator als rechtsassoziativ betrachtet,
-während dieser hier linksassoziativ verwendet wurde. Und
+ihren Operator als rechtsassoziativ betrachtet, während
+dieser hier linksassoziativ verwendet wurde. Und
 
 00:21:16,560 --> 00:21:22,400
-die Eins (1) steht hier für "wir sollten dieser
-Funktion eine nicht-leere Liste geben", also eine Liste mit mindestens
+die Eins (1) steht hier für "wir sollten dieser Funktion
+eine nicht-leere Liste geben", also eine Liste mit mindestens
 
 00:21:22,400 --> 00:21:27,600
-einem Element. Die Funktion foldr funktioniert auch mit einer
-leeren Liste, wie wir hier sehen. Sie gibt also auch für die leere Liste
+einem Element. Die Funktion foldr funktioniert auch mit einer leeren
+Liste, wie wir hier sehen. Sie gibt also auch für die leere Liste
 
 00:21:27,600 --> 00:21:33,360
-etwas Nützliches zurück. Und zusätzlich
-hat die Funktion foldl1 Probleme mit unendlichen
+etwas Nützliches zurück. Und zusätzlich hat
+die Funktion foldl1 Probleme mit unendlichen
 
 00:21:33,360 --> 00:21:41,200
-Listen, während foldr mit unendlichen Listen arbeitet, wie wir
-grundsätzlich daran erkennen können, dass selbst wenn dies
+Listen, während foldr mit unendlichen Listen arbeitet, wie
+wir grundsätzlich daran erkennen können, dass selbst wenn dies
 
 00:21:41,200 --> 00:21:47,920
-eine unendliche Liste wäre, xs also
-nicht enden würde, können wir trotzdem etwas berechnen. Denn
+eine unendliche Liste wäre, xs also nicht enden
+würde, können wir trotzdem etwas berechnen. Denn
 
 00:21:47,920 --> 00:21:53,920
 zumindest können wir 'f' aus x und was auch immer berechnen, und
@@ -885,25 +886,25 @@ und gibt etwas zurück, das vom gleichen Typ ist wie das
 Startelement. Was ist die Idee dahinter? Wenn wir die
 
 00:22:32,720 --> 00:22:38,240
-leere Liste haben, dann geben wir einfach diese Konstante
-in gewissem Sinne zurück. Dieses b wird also als Endwert zurückgegeben.
+leere Liste haben, dann geben wir einfach diese Konstante in
+gewissem Sinne zurück. Dieses b wird also als Endwert zurückgegeben.
 
 00:22:38,240 --> 00:22:43,920
-Wenn wir eine nicht leere Liste haben, dann
-können wir einen rekursiven Aufruf der restlichen Liste durchführen,
+Wenn wir eine nicht leere Liste haben, dann können wir
+einen rekursiven Aufruf der restlichen Liste durchführen,
 
 00:22:43,920 --> 00:22:49,760
-und kombinieren, was immer bei diesem rekursiven Aufruf herauskommt
-mit dem aktuellen Element über die bereitgestellte
+und kombinieren, was immer bei diesem rekursiven Aufruf
+herauskommt mit dem aktuellen Element über die bereitgestellte
 
 00:22:49,760 --> 00:22:55,360
-Funktion f. Wie gesagt, wenn diese Funktion f, zum Beispiel
-ihr zweites Argument nicht braucht, dann können
+Funktion f. Wie gesagt, wenn diese Funktion f, zum
+Beispiel ihr zweites Argument nicht braucht, dann können
 
 00:22:55,360 --> 00:22:59,680
-wir daraus etwas berechnen, auch wenn dieser
-rekursive Aufruf (vielleicht) nicht einmal beendet werden würde.
+wir daraus etwas berechnen, auch wenn dieser rekursive
+Aufruf (vielleicht) nicht einmal beendet werden würde.
 
 00:23:01,040 --> 00:23:07,840
-Ich werde dazu einige Beispiele im
-Whiteboard-Video durchgehen.
+Ich werde dazu einige Beispiele
+im Whiteboard-Video durchgehen.

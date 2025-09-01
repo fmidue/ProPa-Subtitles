@@ -16,12 +16,12 @@ in der Vorlesung von Professor König gesehen haben, sondern
 es wird auf die Verwendung in Prolog zugeschnitten sein.
 
 00:00:30,960 --> 00:00:35,920
-Die Notation wird also etwas
-anders sein, eigentlich spezialisierter
+Die Notation wird also etwas anders
+sein, eigentlich spezialisierter
 
 00:00:35,920 --> 00:00:41,280
-für die Syntax, die wir in Prolog haben
-und die Art, wie die Abfragen organisiert sind.
+für die Syntax, die wir in Prolog haben und
+die Art, wie die Abfragen organisiert sind.
 
 00:00:41,280 --> 00:00:49,040
 Aber das allgemeine Konzept dahinter ist genau das,
@@ -29,8 +29,8 @@ was die Auflösung auch in der Prädikatenlogik ist.
 
 73 # slide
 00:00:53,120 --> 00:00:58,800
-Wir werden wieder zuerst einen einfachen Fall betrachten,
-nämlich ohne Variablen, und betrachten dann
+Wir werden wieder zuerst einen einfachen Fall
+betrachten, nämlich ohne Variablen, und betrachten dann
 
 00:00:58,800 --> 00:01:05,360
 den eigentlich wichtigen und etwas komplizierteren
@@ -45,7 +45,8 @@ Unsere Abfrage, die wir behandeln wollen,
 mit der wir umgehen wollen, wäre etwa so.
 
 00:01:17,760 --> 00:01:22,000
-Also im Grunde eine Liste von variablenfreien Literalen.
+Also im Grunde eine Liste von
+variablenfreien Literalen.
 
 00:01:22,000 --> 00:01:24,480
 Dies wären also Vereinfachungen von Atomen,
@@ -58,31 +59,31 @@ Datenkonstruktoren und Konstanten, aber keine Variablen.
 Das ist gut.
 
 00:01:32,480 --> 00:01:39,360
-Und die Notation hier soll bedeuten, dass P und
-Q Folgen von solchen Literalen sein können.
+Und die Notation hier soll bedeuten, dass P
+und Q Folgen von solchen Literalen sein können.
 
 00:01:39,360 --> 00:01:41,120
 Und L ist ein bestimmtes Literal.
 
 00:01:41,120 --> 00:01:45,920
-Natürlich können P oder Q auch leer sein,
-dann wäre die Abfrage nur ein einziges Literal.
+Natürlich können P oder Q auch leer sein, dann
+wäre die Abfrage nur ein einziges Literal.
 
 00:01:45,920 --> 00:01:50,240
-Aber im Allgemeinen, vielleicht haben wir drei Literale
-hier, dann haben wir ein Literal L, das uns
+Aber im Allgemeinen, vielleicht haben wir drei
+Literale hier, dann haben wir ein Literal L, das uns
 
 00:01:50,240 --> 00:01:54,160
-gerade interessiert oder das
-in diesem Auflösungsschritt behandelt wird.
+gerade interessiert oder das in diesem
+Auflösungsschritt behandelt wird.
 
 00:01:54,160 --> 00:01:57,680
-Und dann haben wir vielleicht, ich weiß es nicht,
-zwei weitere Literale in Q.
+Und dann haben wir vielleicht, ich weiß
+es nicht, zwei weitere Literale in Q.
 
 00:01:58,320 --> 00:02:01,760
-Okay, und dann das Resolutions-Beweisprinzip,
-das uns erlaubt,
+Okay, und dann das
+Resolutions-Beweisprinzip, das uns erlaubt,
 
 00:02:01,760 --> 00:02:04,560
 eine solche Aussage zu beweisen.
@@ -98,18 +99,19 @@ und L und alle Literale in Q wahr sind, richtig?
 Das Komma entspricht dem "und", wie wir wissen.
 
 00:02:16,080 --> 00:02:21,040
-Und das wollen wir beweisen, oder zumindest wollen Sie
-einen Schritt in einem solchen Beweis machen. Das wäre also kein
+Und das wollen wir beweisen, oder zumindest wollen Sie einen
+Schritt in einem solchen Beweis machen. Das wäre also kein
 
 00:02:21,040 --> 00:02:26,880
-Beweis für die ganze Aussage auf einmal, aber
-wir wollen Fortschritte bei der Verbesserung dieses Teils L machen.
+Beweis für die ganze Aussage auf einmal, aber wir wollen
+Fortschritte bei der Verbesserung dieses Teils L machen.
 
 00:02:28,240 --> 00:02:30,720
 Okay, was brauchen wir dafür?
 
 00:02:30,720 --> 00:02:33,680
-Wir müssen eine Regel haben, die irgendwie L impliziert.
+Wir müssen eine Regel haben,
+die irgendwie L impliziert.
 
 00:02:34,240 --> 00:02:40,560
 Ja, das wäre eine Regel, eine Programmregel, bei der
@@ -126,15 +128,15 @@ Eine Programmklausel, die L als ihren
 Kopf hat oder die einfach L als Fakt hat.
 
 00:02:53,280 --> 00:02:57,840
-Und für den Moment würden diese auch alle
-ohne Variablen betrachtet werden.
+Und für den Moment würden diese auch
+alle ohne Variablen betrachtet werden.
 
 00:02:57,840 --> 00:03:00,960
 Also, auch L im Kopf einer Klausel
 
 00:03:00,960 --> 00:03:05,120
-sollte ohne Variablen sein, was natürlich
-nicht generell der Fall ist.
+sollte ohne Variablen sein, was
+natürlich nicht generell der Fall ist.
 
 00:03:06,560 --> 00:03:08,560
 Okay, wie können wir also Fortschritte machen?
@@ -144,47 +146,50 @@ Nun, was wäre, wenn Sie eine Regel hätten, die
 besagt, dass L durch L1, ..., Ln impliziert wird.
 
 00:03:16,080 --> 00:03:22,080
-Ja, also könnte n sogar null sein; dann wäre das
-ein Faktum, denn es gäbe keine rechte
+Ja, also könnte n sogar null sein; dann wäre
+das ein Faktum, denn es gäbe keine rechte
 
 00:03:22,080 --> 00:03:29,440
 Seite, oder wenn n eins, zwei oder drei ist, dann ist L
 durch die Konjunktion einiger anderer Literale impliziert.
 
 00:03:29,440 --> 00:03:33,040
-Oder L ist nur durch L1 impliziert, wenn n = 1 ist.
+Oder L ist nur durch L1
+impliziert, wenn n = 1 ist.
 
 00:03:34,000 --> 00:03:36,480
 Okay, wir wollen also P und L und Q beweisen.
 
 00:03:36,480 --> 00:03:40,160
-Wir wissen, dass L durch L1 bis Ln impliziert ist,
+Wir wissen, dass L durch
+L1 bis Ln impliziert ist,
 
 00:03:40,160 --> 00:03:46,080
-also könnten wir natürlich auch sagen: Nun, lasst uns
-P und L1 und L2 et cetera und Q beweisen.
+also könnten wir natürlich auch sagen: Nun, lasst
+uns P und L1 und L2 et cetera und Q beweisen.
 
 00:03:46,880 --> 00:03:50,240
-Es wird klar und sehr intuitiv sein,
-dass wir, wenn wir P und L und Q beweisen wollen,
+Es wird klar und sehr intuitiv sein, dass
+wir, wenn wir P und L und Q beweisen wollen,
 
 00:03:50,240 --> 00:03:53,840
-und wir wissen, dass L impliziert ist durch
-die Konjunktion dieser Dinge,
+und wir wissen, dass L impliziert ist
+durch die Konjunktion dieser Dinge,
 
 00:03:53,840 --> 00:03:59,840
-dann ist es auch in Ordnung und nützlich,
-diese Konjunktion zu beweisen.
+dann ist es auch in Ordnung und
+nützlich, diese Konjunktion zu beweisen.
 
 00:04:00,800 --> 00:04:01,120
 Okay?
 
 00:04:01,120 --> 00:04:03,840
-Natürlich sieht das jetzt so aus, als ob wir
-nicht wirklich weitergekommen sind.
+Natürlich sieht das jetzt so aus, als ob
+wir nicht wirklich weitergekommen sind.
 
 00:04:03,840 --> 00:04:06,480
-Wir sind im Beweis nicht wirklich weitergekommen, da dieser nun allgemein größer ist.
+Wir sind im Beweis nicht wirklich weitergekommen,
+da dieser nun allgemein größer ist.
 
 00:04:06,480 --> 00:04:11,920
 Aber das hängt sowohl von n ab als auch davon,
@@ -198,25 +203,27 @@ Aussagen als die L-Aussagen.
 Dann ist es eine gute Idee, das zu reduzieren.
 
 00:04:16,960 --> 00:04:20,800
-Oder wenn n gleich null ist, dann ist es eigentlich
-kleiner geworden, weil
+Oder wenn n gleich null ist, dann ist
+es eigentlich kleiner geworden, weil
 
 00:04:20,800 --> 00:04:22,720
 dann ist die Folge eigentlich die leere Folge.
 
 00:04:22,720 --> 00:04:29,280
-Dann ist wirklich L eliminiert worden, weil
-wir einen Fakt hatten. Das gilt, wenn n gleich null ist.
+Dann ist wirklich L eliminiert worden, weil wir
+einen Fakt hatten. Das gilt, wenn n gleich null ist.
 
 00:04:30,160 --> 00:04:33,440
-Okay, aber das ist ein sehr intuitiver Beweisschritt.
+Okay, aber das ist ein sehr
+intuitiver Beweisschritt.
 
 00:04:33,440 --> 00:04:37,280
 Wir wollen nur diese Konjunktion beweisen. Wir
 wissen, dass L durch die rechte Seite impliziert ist.
 
 00:04:37,280 --> 00:04:40,240
-Dann können wir genauso gut diese neue Frage beweisen.
+Dann können wir genauso gut
+diese neue Frage beweisen.
 
 00:04:40,240 --> 00:04:42,960
 Und wenn wir das geschafft haben,
@@ -237,12 +244,12 @@ Die eine ist natürlich, dass
 das L willkürlich gewählt wurde.
 
 00:04:55,520 --> 00:05:00,960
-Nun, es wurde gewählt, weil ich
-mit dieser speziellen Programmklausel auflösen wollte.
+Nun, es wurde gewählt, weil ich mit dieser
+speziellen Programmklausel auflösen wollte.
 
 00:05:01,600 --> 00:05:07,520
-Aber natürlich hätte ich bei einer Sequenz mit mehr als einem
-Literal jedes beliebige davon wählen können.
+Aber natürlich hätte ich bei einer Sequenz mit mehr
+als einem Literal jedes beliebige davon wählen können.
 
 00:05:07,520 --> 00:05:13,440
 Ich hätte also... wenn ich tatsächlich drei Literale habe
@@ -253,20 +260,20 @@ Literal aus dieser Liste von Literalen wählen, ich
 hätte auch das erste nehmen können, zum Beispiel.
 
 00:05:18,960 --> 00:05:26,080
-Und auch nachdem ich mich auf ein L festgelegt habe, also sagen wir
-mal das vierte von sechs Literalen in einer Abfrage hier,
+Und auch nachdem ich mich auf ein L festgelegt habe, also sagen
+wir mal das vierte von sechs Literalen in einer Abfrage hier,
 
 00:05:27,200 --> 00:05:32,800
-könnte ich dann immer noch die Wahl haben
-zwischen mehreren Programmklauseln.
+könnte ich dann immer noch die Wahl
+haben zwischen mehreren Programmklauseln.
 
 00:05:32,800 --> 00:05:37,280
 Vielleicht gibt es also in dem Programm
 eine weitere Regel, ebenfalls mit L als Kopf
 
 00:05:37,280 --> 00:05:44,240
-und einige andere L1', L2',
-et cetera, bis hin zu einem Ln'.
+und einige andere L1', L2', et
+cetera, bis hin zu einem Ln'.
 
 00:05:44,960 --> 00:05:46,800
 Dann hätte ich jede dieser Regeln wählen können.
@@ -284,8 +291,8 @@ Aber eigentlich geht dieser Schritt hier, wie
 er hier geschrieben ist, einfach gut aus.
 
 00:05:59,200 --> 00:06:04,640
-Ich habe ein L gewählt, ich habe eine
-Klausel gewählt, was ist dann die aufgelöste Abfrage?
+Ich habe ein L gewählt, ich habe eine Klausel
+gewählt, was ist dann die aufgelöste Abfrage?
 
 00:06:05,360 --> 00:06:09,440
 Diese Kontrolle trifft tatsächlich eine Auswahl
@@ -296,15 +303,15 @@ zwischen möglicherweise verschiedenen
 Programmklauseln, das ist ein separater Prozess.
 
 00:06:13,920 --> 00:06:20,160
-Ein Auflösungsschritt ist nur ein solcher
-Schritt, bei dem die Wahl bereits getroffen wurde.
+Ein Auflösungsschritt ist nur ein solcher Schritt,
+bei dem die Wahl bereits getroffen wurde.
 
 00:06:20,160 --> 00:06:20,560
 Ist das in Ordnung?
 
 00:06:20,560 --> 00:06:24,560
-Das ist eine Sache, die man im Hinterkopf behalten sollte, wenn
-wir später Ableitungsbäume betrachten.
+Das ist eine Sache, die man im Hinterkopf behalten
+sollte, wenn wir später Ableitungsbäume betrachten.
 
 00:06:24,560 --> 00:06:26,480
 Und die andere Sache ist etwas,
@@ -322,12 +329,12 @@ Es kann auch der Fall sein, dass das wirklich
 kleiner wird, weil dann das verschwindet.
 
 00:06:42,160 --> 00:06:46,880
-So kommen wir letztlich weiter
-und können einen Beweis fertigstellen, der ein
+So kommen wir letztlich weiter und können
+einen Beweis fertigstellen, der ein
 
 00:06:47,520 --> 00:06:53,200
-wir ein paar Mal Regeln anwenden, wir Fakten anwenden, die
-keine rechte Seite haben, und das Zeug verschwindet.
+wir ein paar Mal Regeln anwenden, wir Fakten anwenden,
+die keine rechte Seite haben, und das Zeug verschwindet.
 
 00:06:53,760 --> 00:06:57,040
 Aber es kann sein, dass wir zuerst
@@ -338,12 +345,12 @@ Subliterale einführen müssen und erst irgendwann später
 verschwinden die Dinge und wir kommen zu einem Faktum, richtig?
 
 00:07:04,720 --> 00:07:08,800
-Denn wenn man jedes
-Literal durch eine Abfolge von solchen
+Denn wenn man jedes Literal
+durch eine Abfolge von solchen
 
 00:07:08,800 --> 00:07:15,840
-Schritten entfernt hat, dann hat man eine leere
-Konjunktion, die einfach wahr ist.
+Schritten entfernt hat, dann hat man eine
+leere Konjunktion, die einfach wahr ist.
 
 74 # slide
 00:07:17,920 --> 00:07:20,400
@@ -355,15 +362,16 @@ wenn man keine Variablen hat. Und
 natürlich ist das sehr eingeschränkt.
 
 00:07:24,640 --> 00:07:30,080
-Ja, wir können keine
-Variablen in der Abfrage haben, okay?
+Ja, wir können keine Variablen
+in der Abfrage haben, okay?
 
 00:07:30,080 --> 00:07:31,920
-Das ist etwas, das wir von Haskell gewohnt sind, dass
+Das ist etwas, das wir von
+Haskell gewohnt sind, dass
 
 00:07:31,920 --> 00:07:34,640
-wir müssen konkrete Werte haben
-in der Sache, die man berechnen will.
+wir müssen konkrete Werte haben in
+der Sache, die man berechnen will.
 
 00:07:35,760 --> 00:07:38,880
 Aber man kann auch keine
@@ -373,8 +381,8 @@ Variablen im Programm haben.
 Ja, eigentlich hätten die Programmregeln
 
 00:07:43,200 --> 00:07:49,120
-Köpfe genau wie das L aus der Abfrage haben müssen,
-um überhaupt weiterzukommen.
+Köpfe genau wie das L aus der Abfrage
+haben müssen, um überhaupt weiterzukommen.
 
 00:07:49,120 --> 00:07:50,800
 Sie müssen also sehr spezifisch sein.
@@ -399,7 +407,8 @@ Schauen wir uns also den allgemeinen Fall an.
 Also, jetzt mit Variablen, ja.
 
 00:08:08,080 --> 00:08:10,880
-Wir nehmen also immer noch eine Zerlegung wie diese.
+Wir nehmen also immer noch
+eine Zerlegung wie diese.
 
 00:08:10,880 --> 00:08:17,280
 Wir nehmen also an, wir haben eine Folge von Literalen und
@@ -420,27 +429,28 @@ Nun, wir wollen, wieder, reduzieren
 auf eine andere Abfrage reduzieren.
 
 00:08:31,200 --> 00:08:35,440
-Und vorzugsweise wollen wir eine Regel verwenden,
-die uns etwas über L sagt.
+Und vorzugsweise wollen wir eine Regel
+verwenden, die uns etwas über L sagt.
 
 00:08:35,440 --> 00:08:42,400
 Aber wir wollen nicht im Programm nach einer
 Regel suchen, die genau L als Kopf hat.
 
 00:08:42,400 --> 00:08:45,680
-Denn das wäre zu
-eingeschränkt, dann könnten wir nicht
+Denn das wäre zu eingeschränkt,
+dann könnten wir nicht
 
 00:08:45,680 --> 00:08:47,840
-allgemeine Dinge mit allgemeinen Programmen beweisen.
+allgemeine Dinge mit
+allgemeinen Programmen beweisen.
 
 00:08:49,200 --> 00:08:52,400
 Okay, deshalb erhalten wir etwas
 anders als auf der Folie zuvor.
 
 00:08:52,400 --> 00:08:59,200
-Wir werden also nicht P und L1 bis Ln haben, wobei L
-durch L1 bis Ln impliziert ist und dann auch Q.
+Wir werden also nicht P und L1 bis Ln haben, wobei
+L durch L1 bis Ln impliziert ist und dann auch Q.
 
 00:08:59,200 --> 00:09:04,960
 Aber es wird eine Substitution angewendet.
@@ -451,20 +461,20 @@ Okay, woher kommt nun dieser Unifikator
 und wie wird nun die Regel ausgewählt?
 
 00:09:12,880 --> 00:09:17,280
-Denn wir werden nicht
-eine Regel nehmen, die genau L als Kopf hat.
+Denn wir werden nicht eine Regel
+nehmen, die genau L als Kopf hat.
 
 00:09:17,840 --> 00:09:21,520
 Stattdessen suchen wir nach etwas,
 das ähnlich zu L ist. Und ähnlich
 
 00:09:21,520 --> 00:09:27,040
-bedeutet natürlich im Sinne von Pattern-Matching
-oder allgemeiner Unifikation.
+bedeutet natürlich im Sinne von
+Pattern-Matching oder allgemeiner Unifikation.
 
 00:09:28,880 --> 00:09:32,960
-Okay, wir suchen also nicht nach einer Programmklausel,
-die genau L als Kopf hat.
+Okay, wir suchen also nicht nach einer
+Programmklausel, die genau L als Kopf hat.
 
 00:09:32,960 --> 00:09:37,680
 Man sucht nach einer Programmklausel,
@@ -481,8 +491,8 @@ Die Programmklausel wird also etwas sein
 wie: L0 impliziert durch L1 bis Ln.
 
 00:09:46,320 --> 00:09:50,640
-Und L1 bis Ln sind die Dinge, auf die
-wir hier reduziert haben.
+Und L1 bis Ln sind die Dinge,
+auf die wir hier reduziert haben.
 
 00:09:50,640 --> 00:09:53,360
 Auch hier ersetzen wir L durch die Konjunktion
@@ -498,12 +508,12 @@ könnte auch ein Faktum für n = 0 sein.
 Für n > 0 ist es eine echte Regel.
 
 00:10:06,240 --> 00:10:12,720
-Und diese L1 bis Ln implizieren L0,
-was mit L unifizierbar sein sollte, okay?
+Und diese L1 bis Ln implizieren L0, was
+mit L unifizierbar sein sollte, okay?
 
 00:10:12,720 --> 00:10:20,320
-Und da Sie jetzt Variablen haben, sowohl
-in den Programmklauseln als auch in der Abfrage,
+Und da Sie jetzt Variablen haben, sowohl in
+den Programmklauseln als auch in der Abfrage,
 
 00:10:20,320 --> 00:10:25,360
 dieser, aber auch in der aufgelösten Abfrage
@@ -514,26 +524,28 @@ Und als Faustregel könnte man einfach
 immer die Variablen im Programm umbenennen.
 
 00:10:31,440 --> 00:10:34,720
-Ja, wenn Sie ein Programm haben,
-in dem P(X) durch Q(X) impliziert wird,
+Ja, wenn Sie ein Programm haben, in
+dem P(X) durch Q(X) impliziert wird,
 
 00:10:34,720 --> 00:10:37,520
-können Sie genauso gut schreiben: P(Y) ist impliziert durch Q(Y).
+können Sie genauso gut schreiben:
+P(Y) ist impliziert durch Q(Y).
 
 00:10:37,520 --> 00:10:40,240
-Wenn Sie Variablen konsequent umbenennen, indem Sie die
+Wenn Sie Variablen konsequent
+umbenennen, indem Sie die
 
 00:10:40,800 --> 00:10:46,000
 Variablennamen umbenennen oder sie mit Zahlen
 indizieren, dann können wir keinen Fehler machen.
 
 00:10:46,000 --> 00:10:51,680
-Und das Ziel ist im Grunde, sicherzustellen, dass
-es keine gefährlichen Überschneidungen zwischen Variablen gibt
+Und das Ziel ist im Grunde, sicherzustellen, dass es keine
+gefährlichen Überschneidungen zwischen Variablen gibt
 
 00:10:53,760 --> 00:10:57,760
-in der Programmklausel, die wir
-und in der Abfrage gibt.
+in der Programmklausel, die
+wir und in der Abfrage gibt.
 
 00:10:57,760 --> 00:11:03,760
 Also, keine Überschneidung, nicht nur zwischen L und dieser
@@ -551,8 +563,8 @@ gemeinsam mit der Programmklausel
 haben, die wir verwenden wollen.
 
 00:11:14,400 --> 00:11:19,680
-Ja, es ist vielleicht nicht immer ein Problem, wenn
-Überschneidungen vorhanden sind, aber sie können zu Problemen führen.
+Ja, es ist vielleicht nicht immer ein Problem, wenn Überschneidungen
+vorhanden sind, aber sie können zu Problemen führen.
 
 00:11:19,680 --> 00:11:21,920
 Wir sollten sie also vermeiden.
@@ -561,8 +573,8 @@ Wir sollten sie also vermeiden.
 Okay, und wo ist jetzt die Verbindung?
 
 00:11:24,720 --> 00:11:27,760
-Nun, die Verbindung ist, dass es
-einen Unifikator zwischen L und L0 gibt.
+Nun, die Verbindung ist, dass es einen
+Unifikator zwischen L und L0 gibt.
 
 00:11:28,400 --> 00:11:32,240
 Und natürlich, wie bereits erwähnt, suchen
@@ -577,32 +589,32 @@ wollen wir dies
 auf die allgemeinste Weise.
 
 00:11:41,120 --> 00:11:47,280
-Also, nicht zu spezifische
-Instanziierungen für die Variablen in L oder in L0.
+Also, nicht zu spezifische Instanziierungen
+für die Variablen in L oder in L0.
 
 00:11:48,160 --> 00:11:54,160
-Okay, und die Idee dabei ist, wenn man
-P und L und Q beweisen will, und wir haben eine Regel,
+Okay, und die Idee dabei ist, wenn man P und L
+und Q beweisen will, und wir haben eine Regel,
 
 00:11:54,960 --> 00:11:58,080
 die besagt, dass L0 impliziert ist durch
 eine Konjunktion von einigen anderen Dingen,
 
 00:11:58,080 --> 00:12:03,040
-und L und L0 ähnlich genug sind, dass sie
-unifiziert werden können, dann kann man auch sagen, na ja,
+und L und L0 ähnlich genug sind, dass sie unifiziert
+werden können, dann kann man auch sagen, na ja,
 
 00:12:03,040 --> 00:12:05,760
-lasst uns diesen Unifikator betrachten,
-der sie gleich macht.
+lasst uns diesen Unifikator
+betrachten, der sie gleich macht.
 
 00:12:06,640 --> 00:12:14,240
 Dann würde U(L0), (U angewandt auf L0)
 durch U(L1) und U(L2) impliziert werden usw.
 
 00:12:16,080 --> 00:12:19,360
-Okay?
-Aber U(L0) ist natürlich nicht L, sondern U(L)
+Okay? Aber U(L0) ist natürlich
+nicht L, sondern U(L)
 
 00:12:19,360 --> 00:12:24,800
 ist U(L0), wenn es sich um einen allgemeinsten
@@ -613,22 +625,23 @@ Okay, man könnte also ersetzen
 U(L) durch U(L1) bis U(Ln).
 
 00:12:31,440 --> 00:12:33,920
-Ja, denn dann hätten
-wir einfach einen Unifikator auf
+Ja, denn dann hätten wir
+einfach einen Unifikator auf
 
 00:12:34,560 --> 00:12:40,480
-diese Regel als Ganzes angewendet, indem wir einfach die
-Variablen konsistent instanziieren.
+diese Regel als Ganzes angewendet, indem wir
+einfach die Variablen konsistent instanziieren.
 
 00:12:41,200 --> 00:12:41,600
 Aha.
 
 00:12:41,600 --> 00:12:45,520
-Dann können wir U(L) durch U(L1) bis U(Ln) ersetzen.
+Dann können wir U(L) durch
+U(L1) bis U(Ln) ersetzen.
 
 00:12:46,240 --> 00:12:49,840
-Aber natürlich können wir das nicht einfach tun,
-ohne den Kontext zu berücksichtigen, denn
+Aber natürlich können wir das nicht einfach
+tun, ohne den Kontext zu berücksichtigen, denn
 
 00:12:49,840 --> 00:12:55,840
 wenn wir den Unifikator auf dieses Literal anwenden,
@@ -646,8 +659,8 @@ dieser Art von Abfragen, dass die
 Variablen in mehreren Literalen vorkommen.
 
 00:13:04,320 --> 00:13:08,640
-Wenn also X in L vorkommt, können wir nicht einfach sagen,
-der Unifikator ersetzt X durch null
+Wenn also X in L vorkommt, können wir nicht
+einfach sagen, der Unifikator ersetzt X durch null
 
 00:13:10,000 --> 00:13:15,120
 in L, sondern wir lassen die X
@@ -661,40 +674,43 @@ um diese Abfrage zu löschen.
 Ist das klar?
 
 00:13:20,320 --> 00:13:23,760
-Wenn Sie also beschließen, dass, um
-L und L0 zu unifizieren,
+Wenn Sie also beschließen, dass,
+um L und L0 zu unifizieren,
 
 00:13:24,560 --> 00:13:28,800
-um sie gleichzumachen, müssen wir
-X durch null ersetzen, sagen wir in L.
+um sie gleichzumachen, müssen wir X
+durch null ersetzen, sagen wir in L.
 
 00:13:29,520 --> 00:13:31,600
-Dann können wir das nur tun, wenn wir das auch in P und Q tun.
+Dann können wir das nur tun, wenn
+wir das auch in P und Q tun.
 
 00:13:32,160 --> 00:13:34,400
-Wenn wir uns dafür entscheiden, X auf null zu instanziieren, dann
+Wenn wir uns dafür entscheiden,
+X auf null zu instanziieren, dann
 
 00:13:35,840 --> 00:13:40,640
-haben wir U auf P und L und Q angewandt, und
-das ist nicht die Abfrage, mit der wir es zu tun haben.
+haben wir U auf P und L und Q angewandt, und das
+ist nicht die Abfrage, mit der wir es zu tun haben.
 
 00:13:40,640 --> 00:13:46,560
-Und dann wissen wir, dass U(L) dasselbe ist
-wie U(L0), wegen dieses Unifikators.
+Und dann wissen wir, dass U(L) dasselbe
+ist wie U(L0), wegen dieses Unifikators.
 
 00:13:46,560 --> 00:13:49,680
-Dann wissen wir, dass U(L0) durch U(L1) impliziert wird zu
+Dann wissen wir, dass U(L0)
+durch U(L1) impliziert wird zu
 
 00:13:51,360 --> 00:13:59,600
-U(Ln) impliziert wird, und dann kann man U(L)
-durch diese Folge von substituierten Literalen ersetzen.
+U(Ln) impliziert wird, und dann kann man U(L) durch
+diese Folge von substituierten Literalen ersetzen.
 
 00:14:00,640 --> 00:14:01,200
 Das geht?
 
 00:14:01,200 --> 00:14:03,520
-Und natürlich, links und
-auf der rechten Seite haben wir immer noch
+Und natürlich, links und auf der
+rechten Seite haben wir immer noch
 
 00:14:04,560 --> 00:14:09,520
 den Unifikator U auf alle Literale
@@ -707,8 +723,8 @@ Und das ist dann unsere neue Unterabfrage.
 Unsere neue Unterabfrage für den Beweis.
 
 00:14:15,600 --> 00:14:19,120
-Und dann fahren wir fort, indem wir
-das wieder und wieder, und dann
+Und dann fahren wir fort, indem
+wir das wieder und wieder, und dann
 
 00:14:19,120 --> 00:14:23,360
 haben wir hoffentlich die gesamte

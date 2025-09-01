@@ -1,14 +1,15 @@
 36 # slide
 00:00:02,000 --> 00:00:06,640
-Lassen Sie uns kurz auf das Längenbeispiel zurückkommen.
+Lassen Sie uns kurz auf das
+Längenbeispiel zurückkommen.
 
 00:00:06,640 --> 00:00:14,160
-Das war eines der Beispiele, die ich
-im vorherigen Video aus der Haskell-Version abgeleitet habe.
+Das war eines der Beispiele, die ich im vorherigen
+Video aus der Haskell-Version abgeleitet habe.
 
 00:00:14,160 --> 00:00:22,320
-Ich habe also angefangen und dann berechnet oder abgeleitet,
-diese symbolische Version des Längenprädikats in
+Ich habe also angefangen und dann berechnet oder
+abgeleitet, diese symbolische Version des Längenprädikats in
 
 00:00:22,320 --> 00:00:27,680
 Prolog, welches, wenn wir ihm eine Liste geben,
@@ -21,38 +22,40 @@ die Länge dieser Liste mit diesem s von s von
 Nun möchten wir vielleicht eine echte Zahl haben.
 
 00:00:36,480 --> 00:00:38,720
-Also muss ich Ihnen von einer Auswertung erzählen.
+Also muss ich Ihnen von
+einer Auswertung erzählen.
 
 00:00:38,720 --> 00:00:42,480
-Weil ich bis jetzt hatte, dass fast
-alles in Prolog symbolisch behandelt wird.
+Weil ich bis jetzt hatte, dass fast alles
+in Prolog symbolisch behandelt wird.
 
 00:00:42,480 --> 00:00:46,960
-Also, selbst wenn ich drei plus fünf addiere, dann
-ist das drei plus fünf und nicht acht.
+Also, selbst wenn ich drei plus fünf addiere,
+dann ist das drei plus fünf und nicht acht.
 
 00:00:46,960 --> 00:00:52,240
 Wenn Sie also wirklich tatsächliche Zahlen haben wollen,
 das Ergebnis der Länge, wie wir es in Haskell tun,
 
 00:00:52,240 --> 00:00:55,920
-müssen wir etwas anders vorgehen,
-als das, was ich im vorherigen Video gemacht habe.
+müssen wir etwas anders vorgehen, als das,
+was ich im vorherigen Video gemacht habe.
 
 00:00:55,920 --> 00:00:58,960
-Und in der Tat, so könnte man
-dies in Prolog schreiben.
+Und in der Tat, so könnte
+man dies in Prolog schreiben.
 
 00:00:59,760 --> 00:01:05,040
 Ja, so im vorherigen Video,
 hatte ich diesen Teil hier nicht.
 
 00:01:05,040 --> 00:01:13,040
-Und stattdessen hatte ich an dieser Stelle einfach s von M,
-mit diesem kleinen s als Nachfolger-Konstruktor.
+Und stattdessen hatte ich an dieser Stelle einfach s
+von M, mit diesem kleinen s als Nachfolger-Konstruktor.
 
 00:01:13,680 --> 00:01:16,000
-Okay, wenn ich die eigentliche Berechnung durchführen will,
+Okay, wenn ich die eigentliche
+Berechnung durchführen will,
 
 00:01:16,800 --> 00:01:20,560
 wirklich die Ausgangszahl berechnen,
@@ -62,8 +65,8 @@ dann muss ich es so schreiben.
 Ich kann M plus eins schreiben.
 
 00:01:23,120 --> 00:01:27,920
-Aber um dies nicht nur als symbolisches
-M plus eins, um wirklich die resultierende Zahl zu erhalten,
+Aber um dies nicht nur als symbolisches M plus eins,
+um wirklich die resultierende Zahl zu erhalten,
 
 00:01:27,920 --> 00:01:31,440
 kann ich sagen: M ist dieses Ding.
@@ -72,12 +75,12 @@ kann ich sagen: M ist dieses Ding.
 Und dann kann ich das N hier einfügen.
 
 00:01:32,960 --> 00:01:36,480
-Und das bedeutet dann wirklich, dass dieser
-arithmetische Ausdruck wirklich auf
+Und das bedeutet dann wirklich, dass
+dieser arithmetische Ausdruck wirklich auf
 
 00:01:37,120 --> 00:01:39,920
-eine Zahl heruntergerechnet wird und das ist
-die Zahl, die dann das N ist.
+eine Zahl heruntergerechnet wird und
+das ist die Zahl, die dann das N ist.
 
 00:01:40,720 --> 00:01:43,760
 Okay, also formulieren wir die Version aus den
@@ -87,12 +90,12 @@ Folien auf diese Weise für explizite Zahlen
 Berechnungen umformuliert, kommen wir zu dieser Version.
 
 00:01:49,280 --> 00:01:53,120
-Und dann können wir in der Tat Fragen stellen
-wie: Wie lang ist diese Liste?
+Und dann können wir in der Tat Fragen
+stellen wie: Wie lang ist diese Liste?
 
 00:01:53,120 --> 00:01:57,200
-Nun, dies ist die gemischte Liste, denn im Gegensatz zu
-Haskell haben wir keine homogenen Listen.
+Nun, dies ist die gemischte Liste, denn im Gegensatz
+zu Haskell haben wir keine homogenen Listen.
 
 00:01:57,200 --> 00:01:59,200
 Dies ist also eine gültige Prolog-Liste,
@@ -115,8 +118,8 @@ Zahl drei und nicht s von s von s von null.
 Das ist gut.
 
 00:02:13,440 --> 00:02:22,240
-Und natürlich kann ich jetzt auch
-eine Art Rückwärtsabfrage machen, richtig?
+Und natürlich kann ich jetzt auch eine
+Art Rückwärtsabfrage machen, richtig?
 
 00:02:22,240 --> 00:02:25,840
 Erinnern Sie sich, dass wir, sobald wir die
@@ -127,18 +130,20 @@ nicht dazu verdammt sind, sie nur
 in genau eine Richtung zu verwenden.
 
 00:02:30,240 --> 00:02:33,040
-So könnte ich zum Beispiel auch sagen, nun, was wäre, wenn ich
+So könnte ich zum Beispiel auch
+sagen, nun, was wäre, wenn ich
 
 00:02:33,840 --> 00:02:40,800
-hier eine Zahl eingebe und nach
-Listen dieser Zahl als deren Länge frage?
+hier eine Zahl eingebe und nach Listen
+dieser Zahl als deren Länge frage?
 
 00:02:40,800 --> 00:02:43,440
 Okay, also das ist natürlich
 in Haskell nicht möglich.
 
 00:02:43,440 --> 00:02:45,600
-In Prolog könnte man eine Frage wie diese stellen.
+In Prolog könnte man eine
+Frage wie diese stellen.
 
 00:02:45,600 --> 00:02:46,560
 Was ist eine Liste?
@@ -168,11 +173,12 @@ ist es, alle möglichen Antworten zu geben.
 Nun, was sind alle Listen der Länge drei?
 
 00:03:08,880 --> 00:03:12,000
-Nun, es gibt viel zu viele, um sie
-wirklich eine nach der anderen aufzuschreiben.
+Nun, es gibt viel zu viele, um sie wirklich
+eine nach der anderen aufzuschreiben.
 
 00:03:12,560 --> 00:03:16,320
-Aber es ist möglich, sie auf eine sehr allgemeine Weise aufzuschreiben.
+Aber es ist möglich, sie auf eine
+sehr allgemeine Weise aufzuschreiben.
 
 00:03:16,320 --> 00:03:20,640
 Nämlich, indem man sagt: Nun, alle
@@ -186,16 +192,16 @@ Und hier sehen Sie etwas,
 das ich bereits erwähnt habe,
 
 00:03:23,040 --> 00:03:25,680
-als ich über die
-Syntax von Variablen in Prolog gesprochen habe.
+als ich über die Syntax von
+Variablen in Prolog gesprochen habe.
 
 00:03:25,680 --> 00:03:28,480
 Wo ich sagte, dass manchmal
 Prolog den Unterstrich verwendet,
 
 00:03:28,480 --> 00:03:34,080
-und dann irgendeine kryptische Kombination von Buchstaben und
-Zahlen, wenn es eine neue Variable einführen muss.
+und dann irgendeine kryptische Kombination von Buchstaben
+und Zahlen, wenn es eine neue Variable einführen muss.
 
 00:03:34,080 --> 00:03:36,480
 Also, was das im Grunde sagt, ist, nun,
@@ -208,8 +214,8 @@ dann, nun ja, sollte sie diese Form haben.
 Und diese drei Dinge sind alles, richtig?
 
 00:03:45,440 --> 00:03:48,320
-Etwas, das uns nicht interessiert oder
-wir wissen nichts darüber.
+Etwas, das uns nicht interessiert
+oder wir wissen nichts darüber.
 
 00:03:48,320 --> 00:03:49,840
 Das sind also drei Variablen.
@@ -219,15 +225,16 @@ Drei verschiedene Variablen, weil
 die Liste könnte verschiedene
 
 00:03:54,880 --> 00:03:57,600
-Einträge haben und trotzdem eine Liste der Länge drei sein.
+Einträge haben und trotzdem
+eine Liste der Länge drei sein.
 
 00:03:59,280 --> 00:04:04,000
 Okay, das heißt also, es ist eine Liste mit drei
 willkürlichen Elementen und natürlich willkürlich.
 
 00:04:04,000 --> 00:04:09,200
-In dem Sinne, dass wir nur die Variable
-dort haben, was bedeutet, dass sie mit allem Möglichen gefüllt werden könnte.
+In dem Sinne, dass wir nur die Variable dort haben, was
+bedeutet, dass sie mit allem Möglichen gefüllt werden könnte.
 
 37 # slide
 00:04:13,040 --> 00:04:16,240
@@ -260,7 +267,8 @@ Das wäre also ein kürzerer Weg, das zu
 schreiben, aber es hätte nicht dasselbe Ergebnis.
 
 00:04:53,280 --> 00:04:56,000
-Denn jetzt würde dies wieder voll symbolisch behandelt werden.
+Denn jetzt würde dies wieder
+voll symbolisch behandelt werden.
 
 00:04:56,000 --> 00:05:00,160
 Vollständig symbolisch behandelt, genau wie wenn
@@ -271,58 +279,61 @@ Also, dieses plus eins bedeutet nicht, dass
 man eine Zahl nimmt und eins dazu addiert,
 
 00:05:04,160 --> 00:05:10,800
-es bedeutet einfach, dass man den
-Ausdruck, einen Syntaxbaum mit Plus an der Wurzel,
+es bedeutet einfach, dass man den Ausdruck,
+einen Syntaxbaum mit Plus an der Wurzel,
 
 00:05:10,800 --> 00:05:14,560
-links davon, was immer N ist, und
-auf der rechten Seite die Konstante Eins hat.
+links davon, was immer N ist, und auf
+der rechten Seite die Konstante Eins hat.
 
 00:05:15,200 --> 00:05:19,280
-Während dies also etwas ist, das man
-in Prolog schreiben könnte, also ist das
+Während dies also etwas ist, das man in
+Prolog schreiben könnte, also ist das
 
 00:05:19,920 --> 00:05:23,840
 nicht der Punkt, dass wir das nicht verwenden
 können, aber es hat ein anderes Ergebnis.
 
 00:05:24,400 --> 00:05:28,400
-Also, wenn wir jetzt etwa die
-Länge dieser Liste wieder eins zu A,
+Also, wenn wir jetzt etwa die Länge
+dieser Liste wieder eins zu A,
 
 00:05:28,400 --> 00:05:30,960
-erhalten wir nicht drei, sondern null
-plus eins plus eins plus eins.
+erhalten wir nicht drei, sondern
+null plus eins plus eins plus eins.
 
 00:05:30,960 --> 00:05:33,440
-Dies wird also als symbolischer Ausdruck beibehalten.
+Dies wird also als symbolischer
+Ausdruck beibehalten.
 
 00:05:33,440 --> 00:05:37,840
-Es wird nicht auf den tatsächlichen Wert drei heruntergerechnet.
+Es wird nicht auf den tatsächlichen
+Wert drei heruntergerechnet.
 
 00:05:38,720 --> 00:05:40,560
 Okay, und dann würden Sie sagen, na ja,
 
 00:05:41,200 --> 00:05:43,760
-wo ist das Problem, dass es sich um
-null plus eins plus eins plus eins handelt?
+wo ist das Problem, dass es sich um null
+plus eins plus eins plus eins handelt?
 
 00:05:43,760 --> 00:05:45,120
 Und dann rechne ich das bis auf drei herunter.
 
 00:05:45,120 --> 00:05:49,920
-Nun, es gibt keine Nebeneffekte oder Nebenprobleme.
+Nun, es gibt keine Nebeneffekte
+oder Nebenprobleme.
 
 00:05:49,920 --> 00:05:52,320
 Wo ich also etwa früher sagen konnte,
 
 00:05:52,960 --> 00:05:58,320
-gib mir alle Listen der Länge drei, und dann
-habe ich diese nützliche Sache mit den drei Variablen.
+gib mir alle Listen der Länge drei, und dann habe
+ich diese nützliche Sache mit den drei Variablen.
 
 00:05:58,320 --> 00:06:02,080
-Wenn ich das jetzt für dieses Prädikat mache
-und frage, was die Listen der
+Wenn ich das jetzt für dieses Prädikat
+mache und frage, was die Listen der
 
 00:06:02,080 --> 00:06:03,760
 Länge drei sind, dann ist die Antwort falsch.
@@ -332,8 +343,8 @@ Das heißt, nein, es gibt keine Listen der
 dieser Länge, was sehr überraschend ist.
 
 00:06:08,720 --> 00:06:13,200
-Aber es hat damit zu tun, dass Prolog
-diese drei nicht als dasselbe behandeln wird wie
+Aber es hat damit zu tun, dass Prolog diese
+drei nicht als dasselbe behandeln wird wie
 
 00:06:13,200 --> 00:06:16,560
 ein null plus eins plus eins plus eins, weil
@@ -344,18 +355,19 @@ In der Tat könnten wir also zum Beispiel
 immer noch Prolog fragen, was die
 
 00:06:21,440 --> 00:06:23,760
-Listen der Länge null plus eins plus eins plus eins sind?
+Listen der Länge null plus
+eins plus eins plus eins sind?
 
 00:06:23,760 --> 00:06:25,440
 Und es würde dieses Ergebnis liefern.
 
 00:06:25,440 --> 00:06:28,960
-Aber wenn man es nach Listen der Länge
-drei fragt, wäre es nicht in der Lage, dies zu beantworten.
+Aber wenn man es nach Listen der Länge drei fragt,
+wäre es nicht in der Lage, dies zu beantworten.
 
 00:06:28,960 --> 00:06:34,880
-Denn bei dieser Version des Prädikats
-werden Zahlen vollständig symbolisch behandelt,
+Denn bei dieser Version des Prädikats werden
+Zahlen vollständig symbolisch behandelt,
 
 00:06:34,880 --> 00:06:40,800
 Prolog wird also nicht irgendwie eine Übereinstimmung zwischen
@@ -368,8 +380,8 @@ Das passiert hier einfach nicht.
 Weil wir keine Funktionsauswertung machen.
 
 00:06:45,360 --> 00:06:48,480
-Es sei denn, man benutzt spezielle Dinge
-für Zahlen, ist dies der Fall.
+Es sei denn, man benutzt spezielle
+Dinge für Zahlen, ist dies der Fall.
 
 00:06:48,480 --> 00:06:50,560
 Ja, genau das macht den Unterschied aus.
@@ -378,23 +390,24 @@ Ja, genau das macht den Unterschied aus.
 Das bringt uns von hier auf drei herunter.
 
 00:06:56,880 --> 00:06:58,880
-Okay, das ist etwas, das ich
-an diesem Beispiel zeigen möchte.
+Okay, das ist etwas, das ich an
+diesem Beispiel zeigen möchte.
 
 00:06:59,440 --> 00:07:01,840
 Und dann habe ich noch ein anderes Beispiel.
 
 38 # slide
 00:07:04,400 --> 00:07:08,560
-Und ich denke, ich werde dieses Beispiel
-nicht im Detail durchgehen.
+Und ich denke, ich werde dieses
+Beispiel nicht im Detail durchgehen.
 
 00:07:08,560 --> 00:07:11,840
 Es ist also auf den Folien, Sie
 können die Entwicklung hier verfolgen.
 
 00:07:11,840 --> 00:07:17,600
-Die Idee hier ist also, nehmen wir wieder eine Haskell-Funktion.
+Die Idee hier ist also, nehmen
+wir wieder eine Haskell-Funktion.
 
 00:07:17,600 --> 00:07:22,960
 Dies ist also nicht genau die Quicksort-Version,
@@ -408,8 +421,8 @@ Sagen wir also, wir haben eine Partitionsfunktion,
 die verwendet werden kann, um eine Liste in
 
 00:07:30,240 --> 00:07:38,000
-ein Pivotelement in kleinere und größere
-Listenelemente zu partitionieren oder in der früheren Haskell-
+ein Pivotelement in kleinere und größere Listenelemente
+zu partitionieren oder in der früheren Haskell-
 
 00:07:38,000 --> 00:07:41,600
 Version dieses Programms habe ich
@@ -431,20 +444,20 @@ Und dann die Ergebnisse richtig kombinieren mit
 rekursiven Aufrufen und (abhängig) et cetera.
 
 00:07:59,760 --> 00:08:02,800
-Dies ist also ein Beispiel, bei dem
-wir mehrere verschachtelte Aufrufe haben.
+Dies ist also ein Beispiel, bei dem wir
+mehrere verschachtelte Aufrufe haben.
 
 00:08:02,800 --> 00:08:06,080
-Und die Botschaft dieser Folie
-ist hauptsächlich, wie dies zu behandeln ist.
+Und die Botschaft dieser Folie ist
+hauptsächlich, wie dies zu behandeln ist.
 
 00:08:06,080 --> 00:08:10,640
-Und die Antwort lautet: Behandeln Sie es so,
-wie wir es auch bei den einfacheren Beispielen gemacht haben.
+Und die Antwort lautet: Behandeln Sie es so, wie wir
+es auch bei den einfacheren Beispielen gemacht haben.
 
 00:08:10,640 --> 00:08:18,800
-Vermeiden Sie also diese verschachtelten Funktionsaufrufe, indem Sie
-Namen für die Unterausdrücke einführen,
+Vermeiden Sie also diese verschachtelten Funktionsaufrufe,
+indem Sie Namen für die Unterausdrücke einführen,
 
 00:08:20,000 --> 00:08:22,320
 oder Unterausdrücke, wenn es mehrere davon gibt.
@@ -454,19 +467,20 @@ Und fügen Sie lokale Definitionen hinzu
 und interpretieren Sie diese später als
 
 00:08:27,200 --> 00:08:30,320
-zusätzliche Vorbedingungen, wenn Sie eine Regel aufschreiben.
+zusätzliche Vorbedingungen, wenn
+Sie eine Regel aufschreiben.
 
 00:08:31,680 --> 00:08:40,080
-Ja, ein erster Schritt könnte also sein, einen
-Namen ls-Follower für diesen ersten rekursiven Aufruf einzuführen.
+Ja, ein erster Schritt könnte also sein, einen Namen
+ls-Follower für diesen ersten rekursiven Aufruf einzuführen.
 
 00:08:40,960 --> 00:08:48,160
 Und etwas Ähnliches, die größeren Listenelemente
 für den zweiten Unterausdruck hier.
 
 00:08:50,000 --> 00:08:54,960
-Okay, dann haben Sie auch dieses append, das
-im Grunde auch ein verschachtelter Funktionsaufruf ist, richtig?
+Okay, dann haben Sie auch dieses append, das im Grunde
+auch ein verschachtelter Funktionsaufruf ist, richtig?
 
 00:08:54,960 --> 00:08:58,000
 Er ruft eine Funktion für diesen
@@ -480,26 +494,28 @@ Es wäre schön, wenn wir nicht diese ganze verschachtelte Funktion
 Aufrufe auf der rechten Seite zu haben und stattdessen eine
 
 00:09:12,960 --> 00:09:18,000
-Variable hier, sodass man diese Regel leicht
-in Prädikatsform umschreiben kann.
+Variable hier, sodass man diese Regel
+leicht in Prädikatsform umschreiben kann.
 
 00:09:18,000 --> 00:09:20,240
-Lassen Sie uns also auch einen Namen dafür einführen.
+Lassen Sie uns also auch
+einen Namen dafür einführen.
 
 00:09:20,240 --> 00:09:24,160
 Das sollte also das Ergebnis sein,
 diese Liste ist dieser Ausdruck.
 
 00:09:24,160 --> 00:09:26,640
-Und dann, zum Beispiel, sind diese beiden Zeilen bereits
+Und dann, zum Beispiel, sind
+diese beiden Zeilen bereits
 
 00:09:26,640 --> 00:09:30,320
-in der Form, in der wir sie direkt
-in die Prädikatsform übersetzen können.
+in der Form, in der wir sie direkt in
+die Prädikatsform übersetzen können.
 
 00:09:31,120 --> 00:09:36,160
-Und auch hier, weil Sie immer
-Variablen auf der Ein- und Ausgabeseite haben,
+Und auch hier, weil Sie immer Variablen
+auf der Ein- und Ausgabeseite haben,
 
 00:09:36,160 --> 00:09:38,400
 haben wir keine verschachtelten Aufrufe mehr.
@@ -511,7 +527,8 @@ Okay, so könnte das dann geschrieben werden.
 Ja, also Quicksort der leeren Liste.
 
 00:09:51,680 --> 00:09:54,000
-Das ist eine Übersetzung der ersten Gleichung hier.
+Das ist eine Übersetzung
+der ersten Gleichung hier.
 
 00:09:54,000 --> 00:09:56,000
 Und dann ist das jetzt systematisch.
@@ -521,14 +538,16 @@ Anders als hier, wo wir wahrscheinlich keine
 direkt mit der Prolog-Seite übereinstimmen.
 
 00:10:01,520 --> 00:10:04,880
-Also, Quicksort von Kopf und Schwanz ist eine Liste.
+Also, Quicksort von Kopf
+und Schwanz ist eine Liste.
 
 00:10:04,880 --> 00:10:09,760
-In Ordnung, das ist eine Übersetzung dieser Zeile: if, und
-dann listen wir alle Vorbedingungen auf, welche die
+In Ordnung, das ist eine Übersetzung dieser Zeile: if,
+und dann listen wir alle Vorbedingungen auf, welche die
 
 00:10:10,480 --> 00:10:12,960
-Abhängigkeiten, die in dieser lokalen Definition eingeführt wurden.
+Abhängigkeiten, die in dieser
+lokalen Definition eingeführt wurden.
 
 00:10:12,960 --> 00:10:14,240
 Zum Beispiel, diese Partition.
@@ -545,8 +564,8 @@ Prädikate mit vier Argumentpositionen umgewandelt.
 Zwei für die Eingänge und zwei für die Ausgänge.
 
 00:10:25,200 --> 00:10:28,560
-Mit diesem Aufruf ist also die Partitionierung
-von H und T das Ergebnis.
+Mit diesem Aufruf ist also die
+Partitionierung von H und T das Ergebnis.
 
 00:10:28,560 --> 00:10:30,960
 Und eins und zwei würden zu einem Literal werden
@@ -560,7 +579,8 @@ Der Kopf, das Ende als Eingaben
 und l1, l2 als die Ausgaben.
 
 00:10:38,240 --> 00:10:40,320
-Also, die Eingabe-Ausgabe ist nur durch Konvention,
+Also, die Eingabe-Ausgabe
+ist nur durch Konvention,
 
 00:10:40,320 --> 00:10:42,640
 denn hier werden zuerst die
@@ -578,32 +598,32 @@ Okay, und dann hat man diese
 rekursiven Aufrufe der Funktion hier,
 
 00:10:54,320 --> 00:10:59,040
-sie werden jetzt zu Vorbedingungen,
-die sich auf das gleiche Prädikat beziehen,
+sie werden jetzt zu Vorbedingungen, die
+sich auf das gleiche Prädikat beziehen,
 
 00:10:59,040 --> 00:11:07,440
-quicksort von l1 ist ls, quicksort
-von l2 ist lg, quicksort von l2 ist lg.
+quicksort von l1 ist ls, quicksort von
+l2 ist lg, quicksort von l2 ist lg.
 
 00:11:07,440 --> 00:11:12,960
-Und dann kann dieser append-Operator auf der
-Haskell-Seite nun durch das
+Und dann kann dieser append-Operator
+auf der Haskell-Seite nun durch das
 
 00:11:12,960 --> 00:11:19,440
-append-Prädikat ersetzt werden, das eigentlich
-im vorherigen Video als Beispiel vorgestellt wurde.
+append-Prädikat ersetzt werden, das eigentlich im
+vorherigen Video als Beispiel vorgestellt wurde.
 
 00:11:19,440 --> 00:11:27,280
-Sie haben hier also ls an
-H, die Liste h lg, sollte die Ergebnisliste sein.
+Sie haben hier also ls an H, die Liste
+h lg, sollte die Ergebnisliste sein.
 
 00:11:28,080 --> 00:11:30,640
 Lassen Sie uns dies in einen Aufruf
 des Prädikats append umwandeln.
 
 00:11:31,360 --> 00:11:39,440
-Die eine Liste, die andere Liste in dieser Prolog-Syntax
-für Listen und an eine Variable,
+Die eine Liste, die andere Liste in dieser
+Prolog-Syntax für Listen und an eine Variable,
 
 00:11:39,440 --> 00:11:46,000
 die gleichzeitig auch die Ausgabevariable
@@ -618,21 +638,21 @@ für "append", die im vorherigen Video entwickelt
 wurde, dann haben Sie einen Quicksort in Prolog.
 
 00:11:59,120 --> 00:12:04,640
-Und die Hauptaussage ist, dass man
-diese verschachtelten Funktionsaufrufe durch diese Verkettung
+Und die Hauptaussage ist, dass man diese
+verschachtelten Funktionsaufrufe durch diese Verkettung
 
 00:12:04,640 --> 00:12:08,960
 von Prädikaten mit dem Nachteil, dass wir dafür
 neue Variablennamen einführen müssen, richtig?
 
 00:12:08,960 --> 00:12:14,240
-Also, diese ls, lg, das sind Dinge, die wir nicht
-brauchten, um die ursprüngliche Haskell-Version auszudrücken.
+Also, diese ls, lg, das sind Dinge, die wir nicht brauchten,
+um die ursprüngliche Haskell-Version auszudrücken.
 
 00:12:15,200 --> 00:12:21,680
-Okay, aber wir gewinnen dadurch, dass wir jetzt zumindest hoffen können,
-dass wir dieses Quicksort-Prädikat auch
+Okay, aber wir gewinnen dadurch, dass wir jetzt zumindest
+hoffen können, dass wir dieses Quicksort-Prädikat auch
 
 00:12:22,240 --> 00:12:30,640
-auf andere Weise aufrufen können, als ihm nur
-eine Eingabe zu geben und nach der Ausgabe zu fragen.
+auf andere Weise aufrufen können, als ihm nur eine
+Eingabe zu geben und nach der Ausgabe zu fragen.

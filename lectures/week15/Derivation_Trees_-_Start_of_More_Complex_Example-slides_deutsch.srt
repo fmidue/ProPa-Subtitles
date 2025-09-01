@@ -1,6 +1,7 @@
 79 # slide
 00:00:01,520 --> 00:00:04,720
-Lassen Sie uns nun ein komplizierteres Beispiel betrachten.
+Lassen Sie uns nun ein
+komplizierteres Beispiel betrachten.
 
 00:00:04,720 --> 00:00:08,400
 Das Programm von vorhin mit der Multiplikation.
@@ -21,15 +22,16 @@ ein paar Folien zurück, wo wir eine Multiplikation
 von n und m und dann einen größeren Term hier.
 
 00:00:28,960 --> 00:00:34,240
-Es stellt sich heraus, dass, selbst wenn wir nur
-nach der Multiplikation von zwei
+Es stellt sich heraus, dass, selbst wenn
+wir nur nach der Multiplikation von zwei
 
 00:00:35,680 --> 00:00:40,720
-Werten fragen, was das Ergebnis
-1 ergeben sollte, erhalten wir eine unendliche Suche.
+Werten fragen, was das Ergebnis 1 ergeben
+sollte, erhalten wir eine unendliche Suche.
 
 00:00:41,680 --> 00:00:46,320
-Auch wenn es eine offensichtliche Lösung gibt, wird Prolog diese nicht finden,
+Auch wenn es eine offensichtliche Lösung
+gibt, wird Prolog diese nicht finden,
 
 00:00:47,120 --> 00:00:48,400
 wird diese nicht entdecken.
@@ -38,12 +40,12 @@ wird diese nicht entdecken.
 Und wir werden dies nutzen, um
 
 00:00:52,000 --> 00:00:56,720
-Visualisierung, Veranschaulichung der Ableitungsbäume
-zu veranschaulichen, und zwar in einer komplexeren Umgebung.
+Visualisierung, Veranschaulichung der Ableitungsbäume zu
+veranschaulichen, und zwar in einer komplexeren Umgebung.
 
 00:00:56,720 --> 00:01:00,560
-Und wir werden herausfinden, warum diese
-unendliche Suche passiert.
+Und wir werden herausfinden, warum
+diese unendliche Suche passiert.
 
 00:01:00,560 --> 00:01:01,060
 Also gut.
@@ -52,18 +54,19 @@ Also gut.
 Also, mal sehen, wie fangen wir an?
 
 00:01:04,080 --> 00:01:09,360
-Mit der intuitiven Erklärung von Ableitungsbäumen.
+Mit der intuitiven Erklärung
+von Ableitungsbäumen.
 
 00:01:09,360 --> 00:01:10,000
 Was sollten wir tun?
 
 00:01:10,000 --> 00:01:16,000
-Nun, wir sollten sehen, ob diese Abfrage, die wir
-haben, und zwar das erste Literal in der
+Nun, wir sollten sehen, ob diese Abfrage, die
+wir haben, und zwar das erste Literal in der
 
 00:01:16,000 --> 00:01:20,720
-Abfrage, das das einzige Literal ist, ob es
-mit dem Kopf einer beliebigen Programmklausel übereinstimmt.
+Abfrage, das das einzige Literal ist, ob es mit dem
+Kopf einer beliebigen Programmklausel übereinstimmt.
 
 00:01:20,720 --> 00:01:23,600
 Natürlich sind die zusätzlichen
@@ -74,11 +77,12 @@ Wir müssen uns nur die
 Multiplikationsklauseln ansehen.
 
 00:01:26,160 --> 00:01:27,840
-Und tatsächlich lässt sich die erste Klausel nicht
+Und tatsächlich lässt sich
+die erste Klausel nicht
 
 00:01:27,840 --> 00:01:31,200
-unifizieren, weil wir an der letzten Stelle
-hier 0 und hier s(0) haben.
+unifizieren, weil wir an der letzten
+Stelle hier 0 und hier s(0) haben.
 
 00:01:31,200 --> 00:01:34,000
 Es gibt keine positive Übereinstimmung,
@@ -118,11 +122,12 @@ eine Zahl zu allen Variablen hinzuzufügen.
 Das werde ich in den späteren Schritten tun.
 
 00:02:05,600 --> 00:02:12,000
-Da also N und M und X, Y,
-Z unterschiedlich sind, besteht keine Gefahr der Verwechslung.
+Da also N und M und X, Y, Z unterschiedlich
+sind, besteht keine Gefahr der Verwechslung.
 
 00:02:12,000 --> 00:02:14,640
-Außerdem kommt das u hier nicht in der Abfrage vor.
+Außerdem kommt das u hier
+nicht in der Abfrage vor.
 
 00:02:14,640 --> 00:02:18,640
 Im ersten Schritt besteht keine Notwendigkeit,
@@ -139,22 +144,23 @@ was ist dann die nächste Abfrage?
 Nun, es ist die rechte Seite dieser Klausel.
 
 00:02:27,840 --> 00:02:36,240
-Denn dieses Literal wird durch
-die rechte Seite der Programmklausel ersetzt.
+Denn dieses Literal wird durch die
+rechte Seite der Programmklausel ersetzt.
 
 00:02:36,240 --> 00:02:39,360
 Aber natürlich mit dieser Ersetzung.
 
 00:02:39,360 --> 00:02:41,920
-Und wenn Sie genau hinschauen, sehen wir, dass, nun ja,
+Und wenn Sie genau hinschauen,
+sehen wir, dass, nun ja,
 
 00:02:41,920 --> 00:02:44,560
-n und m nicht einmal auf der
-rechten Seite vorkommen.
+n und m nicht einmal auf
+der rechten Seite vorkommen.
 
 00:02:44,560 --> 00:02:48,400
-Das einzige, was ersetzt werden muss, ist also
-Z, das hier vorkommt.
+Das einzige, was ersetzt werden
+muss, ist also Z, das hier vorkommt.
 
 00:02:48,400 --> 00:02:50,000
 Es muss durch s(0) ersetzt werden.
@@ -170,16 +176,16 @@ wobei Z durch s(0) ersetzt wird.
 Okay, als Nächstes sehen wir uns das hier an.
 
 00:03:01,760 --> 00:03:05,920
-Jetzt haben wir zum ersten Mal in einem Beispiel,
-zwei Literale in unserer Abfrage.
+Jetzt haben wir zum ersten Mal in einem
+Beispiel, zwei Literale in unserer Abfrage.
 
 00:03:06,720 --> 00:03:09,920
 Und in der verbalen Beschreibung
 habe ich gesagt, dass wir immer
 
 00:03:10,560 --> 00:03:15,280
-das am weitesten links stehende Literal auswählen und
-nach Resolutionsmöglichkeiten suchen.
+das am weitesten links stehende Literal auswählen
+und nach Resolutionsmöglichkeiten suchen.
 
 00:03:15,280 --> 00:03:17,360
 Wir müssen uns das also ansehen.
@@ -193,7 +199,8 @@ Und versuchen, es mit dem
 Kopf einer Programmklausel.
 
 00:03:25,200 --> 00:03:27,600
-Natürlich ist die Additionsklausel wieder irrelevant.
+Natürlich ist die Additionsklausel
+wieder irrelevant.
 
 00:03:28,640 --> 00:03:35,120
 Und von diesen beiden Klauseln können wir jetzt eigentlich
@@ -204,15 +211,16 @@ Die Situation war im ersten Schritt anders,
 denn wir hatten hier dieses s(0), das
 
 00:03:40,240 --> 00:03:42,160
-eindeutig nicht mit der 0 unifiziert werden konnte.
+eindeutig nicht mit der 0
+unifiziert werden konnte.
 
 00:03:42,160 --> 00:03:47,120
-Aber da wir jetzt mult(X, Y, U) haben, also
-drei Variablen haben, besteht eine gute Chance, dass
+Aber da wir jetzt mult(X, Y, U) haben, also drei
+Variablen haben, besteht eine gute Chance, dass
 
 00:03:47,120 --> 00:03:52,480
-wir tatsächlich mit beiden Köpfen mit dem
-Kopf dieser zweiten Klausel.
+wir tatsächlich mit beiden Köpfen
+mit dem Kopf dieser zweiten Klausel.
 
 00:03:52,480 --> 00:03:54,080
 Das ist in der Tat der Fall.
@@ -224,56 +232,61 @@ Okay, in welcher Reihenfolge machen wir das?
 Nun, von oben nach unten.
 
 00:03:57,200 --> 00:04:01,040
-Wir sehen uns also die erste Klausel des Programms an.
+Wir sehen uns also die erste
+Klausel des Programms an.
 
 00:04:01,040 --> 00:04:04,800
-Das ist der erste Nachfolger,
-den wir für diese Abfrage erstellen.
+Das ist der erste Nachfolger, den
+wir für diese Abfrage erstellen.
 
 00:04:06,080 --> 00:04:07,760
 Okay, und was ist der Unifikator dort?
 
 00:04:08,720 --> 00:04:15,840
-Nun, dieses X wird zu 0, dieses Y wird zu
-der Unterstrich, die anonyme Variable.
+Nun, dieses X wird zu 0, dieses Y wird
+zu der Unterstrich, die anonyme Variable.
 
 00:04:15,840 --> 00:04:20,160
-Und um auf der sicheren Seite zu sein, haben wir
-auch Zahlen für diese Variablen eingeführt.
+Und um auf der sicheren Seite zu sein, haben
+wir auch Zahlen für diese Variablen eingeführt.
 
 00:04:20,160 --> 00:04:21,680
 Denn sie könnten relevant sein.
 
 00:04:21,680 --> 00:04:26,000
-Ich meine, sie sind nicht relevant im Sinne von,
-dass sie dem Benutzer am Ende als Ergebnis angezeigt werden.
+Ich meine, sie sind nicht relevant im Sinne von, dass
+sie dem Benutzer am Ende als Ergebnis angezeigt werden.
 
 00:04:26,000 --> 00:04:29,200
 Aber sie werden bei der Substitution vorkommen.
 
 00:04:29,200 --> 00:04:34,240
-Wir sollten also in der Lage sein, sie zu unterscheiden, falls es mehrere Unterstrich-Variablen gibt.
+Wir sollten also in der Lage sein, sie zu unterscheiden,
+falls es mehrere Unterstrich-Variablen gibt.
 
 00:04:34,240 --> 00:04:36,480
-Okay, sie bekommen also eine Reihe von diesen, die auch
+Okay, sie bekommen also eine
+Reihe von diesen, die auch
 
 00:04:36,480 --> 00:04:41,840
 ähnlich wie die künstlichen Variablennamen sind, die Sie
 manchmal erhalten, wenn Prolog Ihnen eine Antwort gibt.
 
 00:04:42,960 --> 00:04:49,360
-Okay, deshalb haben wir hier das _1
-und das U aus der Abfrage wird durch 0 ersetzt.
+Okay, deshalb haben wir hier das _1 und
+das U aus der Abfrage wird durch 0 ersetzt.
 
 00:04:49,360 --> 00:04:54,080
-Ja, das ist der allgemeinste Unifikator zwischen diesem
+Ja, das ist der allgemeinste
+Unifikator zwischen diesem
 
 00:04:54,080 --> 00:04:58,960
-Literal und der ersten Klausel hier,
-dem Kopf der ersten Klausel.
+Literal und der ersten Klausel
+hier, dem Kopf der ersten Klausel.
 
 00:04:58,960 --> 00:05:01,280
-Okay, und es wird einen weiteren Nachfolger geben,
+Okay, und es wird einen
+weiteren Nachfolger geben,
 
 00:05:01,280 --> 00:05:06,640
 denn dieser unifiziert sich auch mit dem
@@ -291,7 +304,8 @@ Nun, wir müssen die Literale ersetzen,
 die wir für die Resolution verwendet haben
 
 00:05:19,680 --> 00:05:23,760
-durch die rechte Seite der entsprechenden Klausel.
+durch die rechte Seite der
+entsprechenden Klausel.
 
 00:05:23,760 --> 00:05:25,840
 Dies ist die leere rechte Seite.
@@ -307,19 +321,19 @@ nicht, dass die Abfrage jetzt schon beendet ist.
 Denn es gab ja einen Kontext, nicht wahr?
 
 00:05:35,120 --> 00:05:39,600
-Wenn wir also vorher einen Fakt verwendet haben, waren
-wir fertig, wir konnten das Feld zeichnen, weil
+Wenn wir also vorher einen Fakt verwendet haben,
+waren wir fertig, wir konnten das Feld zeichnen, weil
 
 00:05:40,240 --> 00:05:41,920
 wir bei der leeren Abfrage angekommen waren.
 
 00:05:41,920 --> 00:05:45,200
-Aber das war nur, weil wir vorher
-immer nur ein Literal in der Abfrage hatten.
+Aber das war nur, weil wir vorher immer
+nur ein Literal in der Abfrage hatten.
 
 00:05:45,200 --> 00:05:48,720
-Wenn wir dieses nun durch leer ersetzen,
-sind wir immer noch nicht bei der leeren Abfrage angelangt.
+Wenn wir dieses nun durch leer ersetzen, sind wir
+immer noch nicht bei der leeren Abfrage angelangt.
 
 00:05:48,720 --> 00:05:52,160
 Denn es gibt noch dieses andere
@@ -330,8 +344,8 @@ Und wir können nicht einfach dieses
 Literal als nächste Abfrage verwenden,
 
 00:05:56,880 --> 00:06:01,040
-denn wir müssen auch den
-Unifikator auf den gesamten Kontext anwenden.
+denn wir müssen auch den Unifikator
+auf den gesamten Kontext anwenden.
 
 00:06:01,040 --> 00:06:06,720
 Die nächste Abfrage wird also tatsächlich
@@ -344,15 +358,15 @@ gemäß der Substitution ersetzt.
 Das ist also unser Ergebnis.
 
 00:06:14,640 --> 00:06:17,680
-X kommt also nicht vor, aber
-U sollte durch 0 ersetzt werden.
+X kommt also nicht vor, aber U
+sollte durch 0 ersetzt werden.
 
 00:06:17,680 --> 00:06:19,680
 Sie haben hier also 0.
 
 00:06:19,680 --> 00:06:23,120
-Das Y wird durch diese
-bestimmte anonyme Variable ersetzt.
+Das Y wird durch diese bestimmte
+anonyme Variable ersetzt.
 
 00:06:23,840 --> 00:06:25,840
 Und das s(0) ist immer noch das, was es war.
@@ -365,30 +379,32 @@ Okay, das ist also das nächste,
 worauf Sie arbeiten sollten.
 
 00:06:29,360 --> 00:06:36,720
-Denn unter all den unvollendeten Abfragen ist auch die,
-die hier erscheinen würde, nach diesem Schritt mit
+Denn unter all den unvollendeten Abfragen ist auch
+die, die hier erscheinen würde, nach diesem Schritt mit
 
 00:06:36,720 --> 00:06:42,720
-der zweiten Multiplikationsklausel, verwenden wir immer
-diejenige, die am weitesten links steht, als Nächstes in Betracht.
+der zweiten Multiplikationsklausel, verwenden wir immer diejenige,
+die am weitesten links steht, als Nächstes in Betracht.
 
 00:06:42,720 --> 00:06:45,840
-Das ist also der Punkt, an dem wir Fortschritte machen müssen.
+Das ist also der Punkt, an dem
+wir Fortschritte machen müssen.
 
 00:06:46,640 --> 00:06:52,160
 Wir müssen also versuchen, dies mit allen
 Klauseln des Programms zu unifizieren.
 
 00:06:52,160 --> 00:06:54,960
-Natürlich kann es nur unifiziert werden
-mit den Zusatzklauseln.
+Natürlich kann es nur unifiziert
+werden mit den Zusatzklauseln.
 
 00:06:54,960 --> 00:06:58,800
-Und tatsächlich lässt sie sich nicht unifizieren
-mit der zweiten Zusatzklausel.
+Und tatsächlich lässt sie sich nicht
+unifizieren mit der zweiten Zusatzklausel.
 
 00:06:58,800 --> 00:07:02,000
-Das liegt daran, dass hier s(etwas) gegen 0 steht.
+Das liegt daran, dass hier
+s(etwas) gegen 0 steht.
 
 00:07:02,000 --> 00:07:07,680
 Es gibt also eigentlich nur einen Nachfolger
@@ -399,33 +415,34 @@ dieses Literals mit der Tatsache
 aus den Zusatzklauseln hier ergibt.
 
 00:07:14,320 --> 00:07:22,720
-Okay, also 0 und 0 unifiziert X und X sollte
-durch eine Variable ersetzt werden.
+Okay, also 0 und 0 unifiziert X und X
+sollte durch eine Variable ersetzt werden.
 
 00:07:22,720 --> 00:07:24,880
 Vielleicht X2 oder X3 oder so etwas in der Art.
 
 00:07:24,880 --> 00:07:30,160
-Aber dann sind sie mit dem, was wir hier sehen, unifiziert.
+Aber dann sind sie mit dem,
+was wir hier sehen, unifiziert.
 
 00:07:30,160 --> 00:07:39,520
-Ich ersetze dies also durch X1, X1,
-und dann kann ich unifizieren, dass X1 eine 0 wird.
+Ich ersetze dies also durch X1, X1, und dann
+kann ich unifizieren, dass X1 eine 0 wird.
 
 00:07:39,520 --> 00:07:44,320
-Dieses _1 muss dann auch
-s(0) sein, und 0 und 0 stimmen bereits überein.
+Dieses _1 muss dann auch s(0) sein,
+und 0 und 0 stimmen bereits überein.
 
 00:07:44,320 --> 00:07:45,600
 Das ist also der nächste Unifikator.
 
 00:07:45,600 --> 00:07:50,960
-Ich verwende also X1, X1 hier, weil ich
-die früheren Vorkommen nicht umbenannt habe.
+Ich verwende also X1, X1 hier, weil ich die
+früheren Vorkommen nicht umbenannt habe.
 
 00:07:53,040 --> 00:07:57,440
-Okay, dann wird dies durch
-die rechte Seite ersetzt, die leer ist.
+Okay, dann wird dies durch die
+rechte Seite ersetzt, die leer ist.
 
 00:07:57,440 --> 00:08:01,040
 Wir kommen also jetzt zu der leeren Abfrage.
@@ -437,8 +454,8 @@ Und was sind die Lösungen?
 Nun, sehen wir mal, N wird zu s(X), X wird zu 0.
 
 00:08:07,760 --> 00:08:14,400
-Letztendlich wird N also zu s(0), und
-M wird zu Y, Y wird zu _1,
+Letztendlich wird N also zu s(0),
+und M wird zu Y, Y wird zu _1,
 
 00:08:14,400 --> 00:08:16,480
 und _1 wird zu s(0).
@@ -454,12 +471,12 @@ Wir haben eine Lösung gefunden.
 Okay, aber wir sind noch nicht fertig.
 
 00:08:26,880 --> 00:08:30,480
-Denn Prolog wird angewiesen,
-jetzt nach weiteren Lösungen zu suchen.
+Denn Prolog wird angewiesen, jetzt
+nach weiteren Lösungen zu suchen.
 
 00:08:30,480 --> 00:08:35,040
-Und es gibt hier eine Stelle, an der wir
-noch nicht bedacht haben, was passiert, richtig?
+Und es gibt hier eine Stelle, an der wir noch
+nicht bedacht haben, was passiert, richtig?
 
 00:08:35,040 --> 00:08:40,960
 Also, dieses Multiplikationsliteral unifiziert sich auch
@@ -481,32 +498,34 @@ Nun, dieses X sollte s(X2) sein, dieses Y2 und
 dieses Y werden einfach unifiziert, und gut, da
 
 00:09:01,600 --> 00:09:08,400
-haben wir Z2 und U, und auch hier spielt es keine Rolle,
-ob wir Z2 durch U oder U durch Z2 ersetzen.
+haben wir Z2 und U, und auch hier spielt es keine
+Rolle, ob wir Z2 durch U oder U durch Z2 ersetzen.
 
 00:09:09,360 --> 00:09:12,880
-In jedem Fall erhalten Sie einen sehr allgemeinen Unifikator.
+In jedem Fall erhalten Sie einen
+sehr allgemeinen Unifikator.
 
 00:09:12,880 --> 00:09:14,320
 Lassen Sie uns also diesen wählen.
 
 00:09:15,280 --> 00:09:23,200
-Das Wichtigste ist, dass das X aus dem
-Literal und der Abfrage durch s(X2) ersetzt wird,
+Das Wichtigste ist, dass das X aus dem Literal
+und der Abfrage durch s(X2) ersetzt wird,
 
 00:09:23,200 --> 00:09:28,480
-denn so sieht diese Stelle aus
-nach einer konsequenten Umbenennung der Variablennamen.
+denn so sieht diese Stelle aus nach einer
+konsequenten Umbenennung der Variablennamen.
 
 00:09:30,160 --> 00:09:32,000
 Okay, wie lautet die nächste Abfrage?
 
 00:09:32,000 --> 00:09:37,360
-Nun, die Regel lautet, dass wir folgendes ersetzen müssen:
-dieses Literal durch die rechte Seite
+Nun, die Regel lautet, dass wir folgendes ersetzen
+müssen: dieses Literal durch die rechte Seite
 
 00:09:37,360 --> 00:09:41,040
-der Klausel ersetzen, die wir zur Resolution verwendet haben.
+der Klausel ersetzen, die wir
+zur Resolution verwendet haben.
 
 00:09:41,040 --> 00:09:45,360
 Wir ersetzen also dieses eine
@@ -516,8 +535,8 @@ Literal durch diese beiden Literale.
 Aber natürlich mit der angewandten Substitution.
 
 00:09:49,760 --> 00:09:54,960
-Das heißt insbesondere, dass
-dieses U und dieses U durch Z2 ersetzt werden.
+Das heißt insbesondere, dass dieses U
+und dieses U durch Z2 ersetzt werden.
 
 00:09:58,400 --> 00:10:03,840
 Okay.
@@ -535,20 +554,20 @@ Also, lassen Sie mich das Letzte zurücknehmen.
 Wir ersetzen dies also durch die rechte Seite.
 
 00:10:14,320 --> 00:10:20,480
-Aber natürlich sind dieses U und dieses U nicht das
-U, weil ich die Variablen in der Abfrage umbenannt habe.
+Aber natürlich sind dieses U und dieses U nicht das U,
+weil ich die Variablen in der Abfrage umbenannt habe.
 
 00:10:20,480 --> 00:10:28,880
 Ich erhalte also mult(X2, Y2, U2),
 add(U2, Y2, Z2).
 
 00:10:28,880 --> 00:10:32,640
-Und zusätzlich erhalte ich das, was
-von der vorherigen Abfrage übrig geblieben ist.
+Und zusätzlich erhalte ich das, was von
+der vorherigen Abfrage übrig geblieben ist.
 
 00:10:33,440 --> 00:10:40,240
-Dieser Teil, der durch den Resolutionsschritt nicht
-ersetzt wurde, und aufgrund dieser beiden
+Dieser Teil, der durch den Resolutionsschritt
+nicht ersetzt wurde, und aufgrund dieser beiden
 
 00:10:42,160 --> 00:10:47,840
 Ersetzungsteile muss ich
@@ -562,30 +581,31 @@ was bereits problematisch aussieht,
 weil sie größer ist als diese.
 
 00:10:54,640 --> 00:10:59,840
-Und es ist nicht klar, ob Sie irgendwann einmal
-in der Lage sein werden, diese Abfrage auf eine leere Abfrage zu reduzieren.
+Und es ist nicht klar, ob Sie irgendwann einmal in der Lage
+sein werden, diese Abfrage auf eine leere Abfrage zu reduzieren.
 
 00:11:00,400 --> 00:11:05,600
-Okay, aber im Moment ist das einfach das,
-was sich aus diesem Resolutionsschritt ergibt.
+Okay, aber im Moment ist das einfach das, was
+sich aus diesem Resolutionsschritt ergibt.
 
 00:11:06,800 --> 00:11:07,600
 Okay, machen wir weiter.
 
 00:11:08,880 --> 00:11:12,560
-Die Strategie ist, dass wir uns das äußerste linke
-Literal, das ist dieses hier,
+Die Strategie ist, dass wir uns das
+äußerste linke Literal, das ist dieses hier,
 
 00:11:12,560 --> 00:11:18,720
-und wir überprüfen, ob es mit einem
-Kopf von Klauseln aus dem Programm übereinstimmt.
+und wir überprüfen, ob es mit einem Kopf
+von Klauseln aus dem Programm übereinstimmt.
 
 00:11:18,720 --> 00:11:20,960
-Okay, und da es sich hier nur um Variablen handelt,
+Okay, und da es sich hier
+nur um Variablen handelt,
 
 00:11:20,960 --> 00:11:24,640
-besteht eine gute Chance, dass es
-mit diesen beiden Köpfen unifiziert werden kann.
+besteht eine gute Chance, dass es mit
+diesen beiden Köpfen unifiziert werden kann.
 
 00:11:24,640 --> 00:11:26,160
 Und das ist der Fall.
@@ -594,8 +614,8 @@ Und das ist der Fall.
 Ja.
 
 00:11:27,040 --> 00:11:32,960
-Wir haben also zum Beispiel 0, etwas, 0.
-Das können wir eindeutig unifizieren.
+Wir haben also zum Beispiel 0, etwas,
+0. Das können wir eindeutig unifizieren.
 
 00:11:32,960 --> 00:11:38,800
 Und jetzt verwende ich für diesen Unterstrich _2,
@@ -613,7 +633,8 @@ dieser unifiziert sich auch mit
 dem Kopf der zweiten Klasse.
 
 00:11:51,840 --> 00:11:53,680
-Aber konzentrieren wir uns zunächst auf diesen hier.
+Aber konzentrieren wir uns
+zunächst auf diesen hier.
 
 00:11:53,680 --> 00:11:58,480
 Was wird passieren, wenn wir dies durch die
@@ -623,18 +644,20 @@ rechte Seite dieses Fakts ersetzen, die leer ist?
 Dies wird also verschwinden.
 
 00:12:00,320 --> 00:12:07,280
-Und für die übrigen Literale müssen wir
-die Substitution anwenden, die wir hier entdeckt haben.
+Und für die übrigen Literale müssen wir die
+Substitution anwenden, die wir hier entdeckt haben.
 
 00:12:07,920 --> 00:12:11,520
-Okay, wenn Sie das tun, erhalten Sie die nächste Abfrage.
+Okay, wenn Sie das tun, erhalten
+Sie die nächste Abfrage.
 
 00:12:12,800 --> 00:12:14,800
-Okay, und eigentlich werde ich diese Suche nicht fortsetzen.
+Okay, und eigentlich werde ich
+diese Suche nicht fortsetzen.
 
 00:12:16,240 --> 00:12:21,440
-Ich werde die Suche hier nicht fortsetzen, also werden
-weitere Schritte hier unten stattfinden.
+Ich werde die Suche hier nicht fortsetzen, also
+werden weitere Schritte hier unten stattfinden.
 
 00:12:21,440 --> 00:12:24,640
 Okay, aber wenn Sie sich diese
@@ -652,8 +675,8 @@ eine Auswahl für diese beiden Variablen zu sein,
 so dass 0 plus diese Sache diese Sache ist.
 
 00:12:39,120 --> 00:12:43,440
-Natürlich kann dies nur mathematisch
-wahr sein, wenn diese beiden Werte identisch sind.
+Natürlich kann dies nur mathematisch wahr
+sein, wenn diese beiden Werte identisch sind.
 
 00:12:43,440 --> 00:12:49,280
 Aber dann gibt es noch eine andere Formel, die besagt,
@@ -663,7 +686,8 @@ dass die Summe dieser beiden Werte eins sein sollte.
 Das kann doch nicht wahr sein, oder?
 
 00:12:51,520 --> 00:12:55,280
-Es kann keine Ersetzung für diese beiden Variablen geben, so dass...
+Es kann keine Ersetzung für diese
+beiden Variablen geben, so dass...
 
 00:12:56,080 --> 00:12:59,440
 Sowohl gilt, dass 0 plus dies gleich
@@ -680,24 +704,26 @@ Okay, es wird also keine
 Lösung gefunden.
 
 00:13:05,760 --> 00:13:10,160
-Die Abfrage wird also letztendlich
-auch auf diese Verzweigung schauen müssen.
+Die Abfrage wird also letztendlich auch
+auf diese Verzweigung schauen müssen.
 
 00:13:10,800 --> 00:13:12,000
 Was ist nun diese Verzweigung?
 
 00:13:12,000 --> 00:13:20,880
-Nun, sie ergibt sich aus der Verknüpfung dieses Literals mit
-dem Kopf der zweiten Multiplikationsklausel.
+Nun, sie ergibt sich aus der Verknüpfung dieses Literals
+mit dem Kopf der zweiten Multiplikationsklausel.
 
 00:13:20,880 --> 00:13:23,200
-Und wir werden auch hier wieder Variablen umbenennen.
+Und wir werden auch hier
+wieder Variablen umbenennen.
 
 00:13:23,200 --> 00:13:26,080
 Daraus wird also X3, Y3, Z3 und so weiter.
 
 00:13:26,080 --> 00:13:29,840
-Und wenn wir das tun, können wir tatsächlich einen Unifikator finden.
+Und wenn wir das tun, können wir
+tatsächlich einen Unifikator finden.
 
 00:13:29,840 --> 00:13:31,760
 Und wir erhalten eine neue Abfrage.
@@ -707,15 +733,16 @@ Und diese hat wiederum weitere
 Möglichkeiten zur Anwendung von Schritten.
 
 00:13:37,840 --> 00:13:43,760
-Und an diesem Punkt wird klar, dass
-dies kein guter Prozess ist, der hier abläuft.
+Und an diesem Punkt wird klar, dass dies
+kein guter Prozess ist, der hier abläuft.
 
 00:13:43,760 --> 00:13:46,320
 Denn dieser Prozess wird immer
 größer und größer, nicht wahr?
 
 00:13:46,320 --> 00:13:49,920
-Wir haben hier also ein Multiplikationsliteral und ein Additionsliteral.
+Wir haben hier also ein Multiplikationsliteral
+und ein Additionsliteral.
 
 00:13:49,920 --> 00:13:56,240
 Dann verwenden wir diese Regel, um aufzulösen, aber das führte
@@ -729,12 +756,12 @@ ein Multiplikations- und drei Additionsliterale.
 Denn wir haben hier immer Variablen.
 
 00:14:02,400 --> 00:14:05,600
-Wir können also immer die
-zweite Multiplikationsregel anwenden.
+Wir können also immer die zweite
+Multiplikationsregel anwenden.
 
 00:14:05,600 --> 00:14:11,600
-Das Ganze wird also immer länger und länger und
-wird niemals den ganzen Baum abschließen.
+Das Ganze wird also immer länger und länger
+und wird niemals den ganzen Baum abschließen.
 
 00:14:11,600 --> 00:14:14,480
 Deshalb haben wir hier eine unendliche Suche.
@@ -746,17 +773,17 @@ Wir finden eine Lösung.
 Aber danach sucht Prolog nach weiteren Lösungen.
 
 00:14:19,040 --> 00:14:22,960
-Er wird nie eine finden, aber er wird auch nie
-den Prozess der Suche nach ihnen beenden.
+Er wird nie eine finden, aber er wird auch
+nie den Prozess der Suche nach ihnen beenden.
 
 00:14:27,120 --> 00:14:30,160
-Okay, wir müssen also etwas tun,
-damit dieses Programm besser funktioniert.
+Okay, wir müssen also etwas tun, damit
+dieses Programm besser funktioniert.
 
 80 # slide
 00:14:35,520 --> 00:14:43,840
-Eine Sache, die wir versuchen könnten, ist, die Änderung der
-Reihenfolge der Literale in der letzten Programmklausel hier vorzunehmen.
+Eine Sache, die wir versuchen könnten, ist, die Änderung der Reihenfolge
+der Literale in der letzten Programmklausel hier vorzunehmen.
 
 00:14:44,960 --> 00:14:49,520
 Ja, wenn das Problem darin besteht, dass wir
@@ -771,12 +798,12 @@ Aber wir kommen nie dazu, diese zu
 überprüfen, weil die Multiplikation
 
 00:14:58,080 --> 00:15:02,240
-immer das Erste ist, was wir in
-all diesen Schritten auf der vorherigen Folie.
+immer das Erste ist, was wir in all
+diesen Schritten auf der vorherigen Folie.
 
 00:15:02,240 --> 00:15:05,920
-Dann ist es vielleicht besser, einfach die
-Reihenfolge dieser Literale zu ändern.
+Dann ist es vielleicht besser, einfach
+die Reihenfolge dieser Literale zu ändern.
 
 00:15:05,920 --> 00:15:09,120
 Also, logischerweise aus der logischen Lesart
@@ -795,24 +822,24 @@ Denn die Konjunktion ist kommutativ.
 Aber der Suchprozess könnte sich dadurch ändern.
 
 00:15:22,400 --> 00:15:28,080
-Denn wenn Sie diesen Zusatz nach vorn verschieben, wird er
-während des Suchvorgangs zuerst untersucht.
+Denn wenn Sie diesen Zusatz nach vorn verschieben,
+wird er während des Suchvorgangs zuerst untersucht.
 
 00:15:28,080 --> 00:15:32,560
-Und das könnte bedeuten, dass einige dieser
-unendlichen Verzweigungen tatsächlich abgeschnitten werden.
+Und das könnte bedeuten, dass einige dieser unendlichen
+Verzweigungen tatsächlich abgeschnitten werden.
 
 00:15:32,560 --> 00:15:36,480
 Denn wir finden keine
 Lösung für diesen Zusatz.
 
 00:15:36,480 --> 00:15:42,240
-Und dann können wir sagen, dass ein ganzer Teil dieses
-Suchbaums nicht erforscht werden muss.
+Und dann können wir sagen, dass ein ganzer Teil
+dieses Suchbaums nicht erforscht werden muss.
 
 00:15:42,240 --> 00:15:47,680
-Anders als in dem Fall, in dem wir diese Multiplikation
-hier als erstes Nachfolgeliteral haben.
+Anders als in dem Fall, in dem wir diese
+Multiplikation hier als erstes Nachfolgeliteral haben.
 
 00:15:47,680 --> 00:15:49,680
 Und wir kommen nie dazu, tatsächlich
@@ -826,12 +853,12 @@ Und lassen Sie uns einfach sehen, was passiert,
 wenn wir dies für dieselbe Abfrage tun.
 
 00:15:56,720 --> 00:16:01,120
-Okay, natürlich ist das, was am Anfang passiert,
-sehr ähnlich, richtig?
+Okay, natürlich ist das, was am Anfang
+passiert, sehr ähnlich, richtig?
 
 00:16:01,120 --> 00:16:07,600
-Also, im ersten Schritt, wieder,
-können wir diese Tatsache nicht anwenden.
+Also, im ersten Schritt, wieder, können
+wir diese Tatsache nicht anwenden.
 
 00:16:07,600 --> 00:16:10,720
 Wir haben also nur einen Nachfolger,
@@ -841,15 +868,15 @@ und das wird dieser sein.
 Der Unifikator ist also wie zuvor.
 
 00:16:13,520 --> 00:16:17,680
-Aber natürlich ist jetzt die Reihenfolge der Literale
-in der nächsten Abfrage anders, richtig?
+Aber natürlich ist jetzt die Reihenfolge der
+Literale in der nächsten Abfrage anders, richtig?
 
 00:16:17,680 --> 00:16:19,760
 Das ist also wie im vorherigen Beispiel.
 
 00:16:19,760 --> 00:16:23,440
-Aber jetzt ist natürlich die Reihenfolge dieser
-zwei genau umgekehrt.
+Aber jetzt ist natürlich die
+Reihenfolge dieser zwei genau umgekehrt.
 
 00:16:24,800 --> 00:16:25,520
 Nun gut.
@@ -882,8 +909,8 @@ Dadurch wird die Abfrage tatsächlich kleiner.
 Denn mit dieser Unifikation,
 
 00:16:50,800 --> 00:16:54,480
-mit dieser Substitution können wir
-dieses Literal und diesen Fakt unifizieren.
+mit dieser Substitution können wir dieses
+Literal und diesen Fakt unifizieren.
 
 00:16:55,040 --> 00:16:58,240
 Und der Nachfolger wird dies sein,
@@ -893,15 +920,16 @@ weil dieses Literal verschwindet.
 Denn es gibt keine rechte Seite dieser Klausel.
 
 00:17:01,120 --> 00:17:05,120
-Und wir bleiben mit dem zurück, was
-in der Abfrage übrig ist.
+Und wir bleiben mit dem zurück,
+was in der Abfrage übrig ist.
 
 00:17:05,120 --> 00:17:08,640
 Aber natürlich müssen wir den
 Substitutionsunifikator anwenden.
 
 00:17:08,640 --> 00:17:12,640
-Deshalb erhalten wir dies als unseren neuen Unteraufruf.
+Deshalb erhalten wir dies als
+unseren neuen Unteraufruf.
 
 81 # slide
 00:17:17,040 --> 00:17:19,360
@@ -927,14 +955,15 @@ wenn wir diesen mit mult(0,_,0) unifizieren,
 was mit dieser Substitution möglich ist.
 
 00:17:49,360 --> 00:17:52,000
-Dann ersetzen wir diesen durch die leere rechte Seite.
+Dann ersetzen wir diesen
+durch die leere rechte Seite.
 
 00:17:52,000 --> 00:17:55,120
 Wir erhalten also eine leere Abfrage.
 
 00:17:55,120 --> 00:17:58,400
-Und wie zuvor können wir sehen, was
-diese Lösung tatsächlich ist.
+Und wie zuvor können wir sehen,
+was diese Lösung tatsächlich ist.
 
 00:17:58,400 --> 00:18:02,000
 N ist s(X), X wird hier nicht verändert.
@@ -957,8 +986,8 @@ Okay, die erste Lösung.
 Wie suchen wir nach weiteren Lösungen?
 
 00:18:19,040 --> 00:18:22,800
-Nun, wir haben jetzt eigentlich zwei Stellen,
-wo wir die Suche fortsetzen könnten.
+Nun, wir haben jetzt eigentlich zwei
+Stellen, wo wir die Suche fortsetzen könnten.
 
 00:18:23,360 --> 00:18:27,360
 Aber die mündliche Beschreibung sagte, dass
@@ -969,59 +998,61 @@ Also erkunden wir diesen Weg nicht weiter,
 wo wir ankommen würden, wenn wir dies
 
 00:18:35,040 --> 00:18:39,840
-mit der zweiten zusätzlichen Klausel;
-stattdessen schauen wir uns zuerst diesen Knoten an.
+mit der zweiten zusätzlichen Klausel; stattdessen
+schauen wir uns zuerst diesen Knoten an.
 
 00:18:39,840 --> 00:18:42,320
 Okay, das wäre entstanden durch
 
 00:18:42,320 --> 00:18:47,120
-die Unifikation dieses Literals mit der zweiten
-Programmklausel für die Multiplikation.
+die Unifikation dieses Literals mit der
+zweiten Programmklausel für die Multiplikation.
 
 00:18:47,120 --> 00:18:50,640
-Natürlich, nachdem wir die X,
-Y, Z et cetera durch umbenannte Varianten ersetzt haben.
+Natürlich, nachdem wir die X, Y, Z et cetera
+durch umbenannte Varianten ersetzt haben.
 
 00:18:50,640 --> 00:18:55,280
 Da wir hier also bereits X1 verwendet haben,
 lassen Sie uns X2, Y2, Z2 usw. sagen.
 
 00:18:55,280 --> 00:18:58,880
-Und dann unifizieren Sie dies mit dem, was
-wir hier im Literal haben,
+Und dann unifizieren Sie dies mit
+dem, was wir hier im Literal haben,
 
 00:18:58,880 --> 00:19:02,240
-dann werden wir feststellen, dass dies der zu verwendende Unifikator ist.
+dann werden wir feststellen, dass dies
+der zu verwendende Unifikator ist.
 
 00:19:02,880 --> 00:19:14,960
-Ja, X wird zu s(X2), dieses Z2 wird zu
-0, und dieses Y2 wird zu s(0).
+Ja, X wird zu s(X2), dieses Z2 wird
+zu 0, und dieses Y2 wird zu s(0).
 
 00:19:15,840 --> 00:19:18,080
-Okay, deshalb haben wir also diesen Unifikator hier.
+Okay, deshalb haben wir
+also diesen Unifikator hier.
 
 00:19:18,080 --> 00:19:19,840
 Und was wird die neue Abfrage sein?
 
 00:19:19,840 --> 00:19:24,800
-Nun, wir ersetzen dies durch die rechte Seite
-der Klausel, die wir verwenden, aber
+Nun, wir ersetzen dies durch die rechte
+Seite der Klausel, die wir verwenden, aber
 
 00:19:24,800 --> 00:19:29,040
 wendet auch eine Ersetzung
 auf diese rechte Seite an.
 
 00:19:29,040 --> 00:19:32,640
-So wird insbesondere Y2, das wir nach der
-Umbenennung hier haben,
+So wird insbesondere Y2, das wir
+nach der Umbenennung hier haben,
 
 00:19:32,640 --> 00:19:36,080
 zu s(0) und Z2 wird zu 0.
 
 00:19:37,600 --> 00:19:41,200
-Dies ist also die nächste Programmklausel,
-die nächste Abfrage.
+Dies ist also die nächste
+Programmklausel, die nächste Abfrage.
 
 00:19:43,280 --> 00:19:45,040
 Okay, wie kommen wir voran?
@@ -1034,8 +1065,8 @@ Und lassen Sie uns versuchen, es mit einer der
 Programmklauseln für Addition zu unifizieren.
 
 00:19:54,640 --> 00:19:59,440
-Okay, wir sehen, dass add(0, X, X)
-sich nicht mit dieser unifizieren lässt.
+Okay, wir sehen, dass add(0, X, X) sich
+nicht mit dieser unifizieren lässt.
 
 00:19:59,440 --> 00:20:00,800
 Denn diese beiden sind nicht dasselbe.
@@ -1047,8 +1078,8 @@ Okay?
 Es kann also nur einen Nachfolger geben.
 
 00:20:04,400 --> 00:20:09,920
-add(s(X), Y, s(Z)) ist ebenfalls nicht
-unifizierbar mit diesem Literal.
+add(s(X), Y, s(Z)) ist ebenfalls
+nicht unifizierbar mit diesem Literal.
 
 00:20:09,920 --> 00:20:13,120
 Wegen der 0 hier und dem s(etwas) hier.
@@ -1058,7 +1089,8 @@ Es gibt also tatsächlich keinen
 Nachfolger für diese Abfrage.
 
 00:20:18,240 --> 00:20:21,520
-Ja, denn Sie müssen das Literal ganz links verwenden.
+Ja, denn Sie müssen das
+Literal ganz links verwenden.
 
 00:20:21,520 --> 00:20:26,400
 Aber wir können es nicht mit einer der
@@ -1072,24 +1104,24 @@ Knoten, der kein Nachfolgeknoten ist.
 Und dafür brauchen Sie ein Symbol.
 
 00:20:31,120 --> 00:20:36,000
-Lassen Sie uns also diesen Blitz hier verwenden, um
-zu sagen, dass wir hier keine Fortschritte machen können.
+Lassen Sie uns also diesen Blitz hier verwenden, um zu
+sagen, dass wir hier keine Fortschritte machen können.
 
 00:20:36,000 --> 00:20:39,680
 Es ist ein beendeter Knoten, aber kein erfolgreicher
 Knoten, denn es ist kein leerer Knoten.
 
 00:20:40,320 --> 00:20:44,320
-Daher schreiben wir auch keine Lösung für ihn,
-denn es gibt hier keine Lösung.
+Daher schreiben wir auch keine Lösung
+für ihn, denn es gibt hier keine Lösung.
 
 00:20:44,320 --> 00:20:52,480
-Das ist ein gescheiterter Knoten, der einigermaßen erfolgreich ist
-in dem Sinne, dass er die Suche abkürzt, nicht wahr?
+Das ist ein gescheiterter Knoten, der einigermaßen erfolgreich
+ist in dem Sinne, dass er die Suche abkürzt, nicht wahr?
 
 00:20:52,480 --> 00:20:56,160
-Denn, wenn wir die umgekehrte Reihenfolge hätten
-der Multiplikation und der Addition hier,
+Denn, wenn wir die umgekehrte Reihenfolge
+hätten der Multiplikation und der Addition hier,
 
 00:20:56,160 --> 00:21:00,560
 hätte es weitere Schritte gegeben
@@ -1099,30 +1131,30 @@ um diese Multiplikation aufzulösen
 und hätte nie gemerkt, dass es keine Lösung gibt.
 
 00:21:02,800 --> 00:21:08,480
-Aber wenn wir hier die Reihenfolge ändern, indem wir die
-Addition zuerst, können wir tatsächlich die gesamte
+Aber wenn wir hier die Reihenfolge ändern, indem wir
+die Addition zuerst, können wir tatsächlich die gesamte
 
 00:21:08,480 --> 00:21:10,960
 weitere Suche in diesem Teil des Baums.
 
 00:21:11,600 --> 00:21:15,440
-Das heißt aber noch nicht, dass wir fertig sind, denn
-es gibt noch einen weiteren Knoten, der noch nicht fertig ist, richtig.
+Das heißt aber noch nicht, dass wir fertig sind, denn es gibt
+noch einen weiteren Knoten, der noch nicht fertig ist, richtig.
 
 00:21:15,440 --> 00:21:20,000
-Hier haben wir also bereits erwähnt, dass
-es einen weiteren Nachfolgeknoten geben würde.
+Hier haben wir also bereits erwähnt, dass es
+einen weiteren Nachfolgeknoten geben würde.
 
 00:21:20,000 --> 00:21:24,560
-Denn wir könnten dies auch
-mit der zweiten Klausel für die Addition verbinden.
+Denn wir könnten dies auch mit der zweiten
+Klausel für die Addition verbinden.
 
 00:21:24,560 --> 00:21:25,440
 Also, lassen Sie uns das tun.
 
 00:21:26,080 --> 00:21:30,000
-Denn dies ist jetzt der
-äußerste linke, noch nicht beendete Knoten.
+Denn dies ist jetzt der äußerste
+linke, noch nicht beendete Knoten.
 
 00:21:30,000 --> 00:21:30,240
 Okay.
@@ -1132,26 +1164,27 @@ Dies wäre also entstanden durch
 die folgende Substitution.
 
 00:21:33,520 --> 00:21:36,320
-Ja, durch die Wiederholung von X3, Y3, Z3 und so weiter.
+Ja, durch die Wiederholung
+von X3, Y3, Z3 und so weiter.
 
 00:21:36,320 --> 00:21:40,960
 Und dann unifizieren, zum Beispiel Z3
 wegen dieser Position 0 sein muss.
 
 00:21:41,520 --> 00:21:50,080
-Und das U hier wird ab hier zu s(X3)
-und das Y und Y3 werden einfach umbenannt,
+Und das U hier wird ab hier zu s(X3) und
+das Y und Y3 werden einfach umbenannt,
 
 00:21:51,520 --> 00:21:52,640
 das eine wird in das andere umbenannt.
 
 00:21:53,280 --> 00:21:56,480
-Okay, was ist dann die rechte Seite
-bei der neuen Abfrage hier?
+Okay, was ist dann die rechte
+Seite bei der neuen Abfrage hier?
 
 00:21:56,480 --> 00:22:03,680
-Nun, wir müssen dies durch die rechte Seite ersetzen
-und die Seite durch dies ersetzen, während wir den Unifikator anwenden.
+Nun, wir müssen dies durch die rechte Seite ersetzen und die
+Seite durch dies ersetzen, während wir den Unifikator anwenden.
 
 00:22:03,680 --> 00:22:06,080
 So wird insbesondere das Z zu 0.
@@ -1160,7 +1193,8 @@ So wird insbesondere das Z zu 0.
 Aber Sie müssen auch den Kontext beibehalten.
 
 00:22:07,760 --> 00:22:10,320
-Wir müssen also dieses Multiplikationsliteral beibehalten.
+Wir müssen also dieses
+Multiplikationsliteral beibehalten.
 
 00:22:10,320 --> 00:22:14,880
 Und darauf wenden wir auch den Unifikator an.
@@ -1172,8 +1206,8 @@ Dies führt zu dieser neuen Abfrage.
 Zumindest ist sie nicht länger geworden.
 
 00:22:19,120 --> 00:22:26,240
-Ja, sie ist immer noch zwei Literale lang, also müssen wir
-weitere Suchen, weitere Schritte durchführen.
+Ja, sie ist immer noch zwei Literale lang, also müssen
+wir weitere Suchen, weitere Schritte durchführen.
 
 00:22:26,960 --> 00:22:27,840
 Okay, was machen wir?
@@ -1183,18 +1217,19 @@ Wir schauen uns das äußerste linke
 Literale an, das ist dieses hier.
 
 00:22:30,000 --> 00:22:34,400
-Wir versuchen, es mit den Klauseln für die Addition zu unifizieren.
+Wir versuchen, es mit den Klauseln
+für die Addition zu unifizieren.
 
 00:22:34,400 --> 00:22:36,880
-Wir können sehen, dass es nicht
-mit der zweiten Klausel unifizieren lässt.
+Wir können sehen, dass es nicht mit
+der zweiten Klausel unifizieren lässt.
 
 00:22:36,880 --> 00:22:38,960
 Denn s(etwas) ist gleich 0.
 
 00:22:38,960 --> 00:22:42,880
-Das Einzige, was also passieren könnte,
-ist, dass wir dies mit der ersten Klausel unifizieren
+Das Einzige, was also passieren könnte, ist,
+dass wir dies mit der ersten Klausel unifizieren
 
 00:22:42,880 --> 00:22:44,080
 Klausel, die eine Tatsache ist.
@@ -1209,7 +1244,8 @@ Ja, wenn Sie alles auf 0 setzen.
 Ja, mit diesem Unifikator sind sie
 
 00:22:52,880 --> 00:22:54,960
-Mit dieser Ersetzung sind diese beiden unifizierbar.
+Mit dieser Ersetzung sind
+diese beiden unifizierbar.
 
 00:22:54,960 --> 00:22:58,400
 Und hier sehen wir auch einen Fall,
@@ -1225,12 +1261,12 @@ Okay, das ist also möglich.
 Dann erhalten wir eine neue Abfrage.
 
 00:23:06,160 --> 00:23:08,960
-Diese verschwindet, weil die
-rechte Seite leer ist.
+Diese verschwindet, weil
+die rechte Seite leer ist.
 
 00:23:08,960 --> 00:23:14,880
-Aber wir haben noch den Rest der Abfrage,
-auf den wir ebenfalls den Unifikator anwenden müssen.
+Aber wir haben noch den Rest der Abfrage, auf
+den wir ebenfalls den Unifikator anwenden müssen.
 
 00:23:14,880 --> 00:23:17,280
 Das ist also das nächste Beweisziel.
@@ -1243,22 +1279,23 @@ Dieses Y3 wird zu 0, und
 dieses X3 wird ebenfalls zu 0.
 
 00:23:24,080 --> 00:23:26,320
-Okay, sehen wir mal, ob wir Fortschritte machen können.
+Okay, sehen wir mal, ob wir
+Fortschritte machen können.
 
 00:23:26,320 --> 00:23:30,720
 Nun, lässt sich dies mit einer der
 Programmklauseln für die Multiplikation?
 
 00:23:30,720 --> 00:23:34,240
-Es ist nicht unifizierbar mit der ersten
-wegen der 0 gegen s(0).
+Es ist nicht unifizierbar mit der
+ersten wegen der 0 gegen s(0).
 
 00:23:34,240 --> 00:23:36,160
 Es kann also nur einen Nachfolger geben.
 
 00:23:36,160 --> 00:23:40,240
-Aber diesen Nachfolger gibt es wirklich, denn
-er ist tatsächlich unifizierbar mit dem
+Aber diesen Nachfolger gibt es wirklich,
+denn er ist tatsächlich unifizierbar mit dem
 
 00:23:41,120 --> 00:23:43,040
 Kopf der zweiten Multiplikationsklausel.
@@ -1294,28 +1331,30 @@ Schauen wir uns also diesen rechten
 Teil des Baums an und das war
 
 00:24:21,360 --> 00:24:24,800
-die Abfrage, mit der wir auf der vorherigen Folie geendet haben.
+die Abfrage, mit der wir auf der
+vorherigen Folie geendet haben.
 
 00:24:24,800 --> 00:24:32,400
-Konzentrieren wir uns also auf das äußerste linke Literal und versuchen
-es mit den Programmklauseln für die Addition zu unifizieren.
+Konzentrieren wir uns also auf das äußerste linke Literal und
+versuchen es mit den Programmklauseln für die Addition zu unifizieren.
 
 00:24:33,120 --> 00:24:36,880
-Die erste brauchen wir nicht zu berücksichtigen,
-da diese nicht dasselbe sind.
+Die erste brauchen wir nicht zu
+berücksichtigen, da diese nicht dasselbe sind.
 
 00:24:37,760 --> 00:24:38,000
 Okay.
 
 00:24:38,000 --> 00:24:43,040
-Wir müssen also nur mit der
-zweiten Programmklausel für die Addition.
+Wir müssen also nur mit der zweiten
+Programmklausel für die Addition.
 
 00:24:43,040 --> 00:24:44,560
 Und sie ist unifizierbar.
 
 00:24:45,200 --> 00:24:48,640
-Wie Sie hier sehen können, können wir eine 0 erhalten.
+Wie Sie hier sehen können,
+können wir eine 0 erhalten.
 
 00:24:48,640 --> 00:24:50,400
 Wir können dies auch auf 0 setzen.
@@ -1331,11 +1370,12 @@ Wir ersetzen also jetzt diese
 durch X6, Y6, Z6 und so weiter.
 
 00:25:02,560 --> 00:25:09,680
-Und dann können wir unifizieren. Nun, das Ergebnis ist,
-dies wird ersetzt durch die rechte
+Und dann können wir unifizieren. Nun, das
+Ergebnis ist, dies wird ersetzt durch die rechte
 
 00:25:09,680 --> 00:25:15,440
-Seite dieser Abfrage, die diese Klausel ersetzt, die den Unifikator anwendet.
+Seite dieser Abfrage, die diese Klausel
+ersetzt, die den Unifikator anwendet.
 
 00:25:15,440 --> 00:25:21,680
 Aber wir behalten auch den Rest der Abfrage bei
@@ -1345,12 +1385,12 @@ und wenden den Unifikator auch auf diesen Teil an.
 Das führt zu der folgenden Abfrage.
 
 00:25:25,920 --> 00:25:38,480
-Okay, X6 wegen dieser 0, 0, weil alle Y
-und Z aus der Klausel durch 0 ersetzt wurden.
+Okay, X6 wegen dieser 0, 0, weil alle Y und
+Z aus der Klausel durch 0 ersetzt wurden.
 
 00:25:39,120 --> 00:25:44,240
-Und in der restlichen Abfrage im Kontext hier
-müssen wir die U5 durch s(X6) ersetzen?
+Und in der restlichen Abfrage im Kontext
+hier müssen wir die U5 durch s(X6) ersetzen?
 
 00:25:45,040 --> 00:25:46,560
 Okay, neue Abfrage.
@@ -1362,18 +1402,20 @@ Wie kommen wir voran?
 Nun, schauen wir uns das ganz linke Literal an.
 
 00:25:49,920 --> 00:25:52,960
-Versuchen Sie, es zu unifizieren, wenn die Zusatzklauseln.
+Versuchen Sie, es zu unifizieren,
+wenn die Zusatzklauseln.
 
 00:25:52,960 --> 00:25:57,200
-Es lässt sich nicht mit der zweiten Klausel unifizieren
-wegen des s(etwas) gegen 0.
+Es lässt sich nicht mit der zweiten Klausel
+unifizieren wegen des s(etwas) gegen 0.
 
 00:25:57,200 --> 00:26:00,480
-Aber es lässt sich natürlich mit dem Fakt hier unifizieren.
+Aber es lässt sich natürlich
+mit dem Fakt hier unifizieren.
 
 00:26:01,280 --> 00:26:06,160
-Wenn Sie nämlich alles durch
-0 ersetzen, dann stimmt (0,0,0) mit (0,0,0) überein.
+Wenn Sie nämlich alles durch 0 ersetzen,
+dann stimmt (0,0,0) mit (0,0,0) überein.
 
 00:26:06,960 --> 00:26:08,720
 Okay, das lässt sich also machen.
@@ -1385,8 +1427,8 @@ Was ist die nächste Abfrage?
 Nun, diese wird durch leer ersetzt.
 
 00:26:14,160 --> 00:26:16,720
-Denn es gibt keine rechte Hand
-Seite für diese Klausel.
+Denn es gibt keine rechte
+Hand Seite für diese Klausel.
 
 00:26:16,720 --> 00:26:19,520
 Die Abfrage wird jetzt also wieder kleiner.
@@ -1408,7 +1450,8 @@ Ist dieser Prozess nun ergiebig?
 Nicht wirklich.
 
 00:26:36,720 --> 00:26:38,960
-Denn, wenn Sie das noch einmal in ein paar Schritten machen,
+Denn, wenn Sie das noch einmal
+in ein paar Schritten machen,
 
 00:26:38,960 --> 00:26:42,560
 werden Sie feststellen, dass dies
@@ -1418,8 +1461,8 @@ immer noch ein unendlicher Zweig ist.
 Warum ist das so?
 
 00:26:43,520 --> 00:26:47,280
-Nun, wir können es tatsächlich sehen, wenn
-Sie sich diese Stelle und diese Stelle ansehen.
+Nun, wir können es tatsächlich sehen, wenn Sie
+sich diese Stelle und diese Stelle ansehen.
 
 00:26:47,280 --> 00:26:49,120
 Sie sehen sich sehr ähnlich.
@@ -1429,7 +1472,8 @@ Also, nur der Name der Variablen
 ist hier anders.
 
 00:26:51,760 --> 00:26:54,880
-Aber alle Schritte, die wir gemacht haben, um von hier nach hier zu gelangen,
+Aber alle Schritte, die wir gemacht
+haben, um von hier nach hier zu gelangen,
 
 00:26:54,880 --> 00:26:58,240
 könnten hier wieder gemacht werden und
@@ -1440,8 +1484,8 @@ Also, nach drei weiteren Resolutionsschritten
 sind wir wieder an einem sehr ähnlichen Ort.
 
 00:27:02,880 --> 00:27:07,360
-Dies ist natürlich kein so großer
-Baum wie der vorherige unendliche Baum.
+Dies ist natürlich kein so großer Baum
+wie der vorherige unendliche Baum.
 
 00:27:07,360 --> 00:27:09,520
 Bei dem alle Abfragen immer länger wurden.
@@ -1450,14 +1494,16 @@ Bei dem alle Abfragen immer länger wurden.
 Aber dennoch ist dies ein unendlicher Suchpfad.
 
 00:27:14,000 --> 00:27:17,840
-Also noch einmal, das Programm, das wir jetzt haben,
-ist etwas schöner als das vorherige,
+Also noch einmal, das Programm, das wir jetzt
+haben, ist etwas schöner als das vorherige,
 
 00:27:17,840 --> 00:27:19,200
 aber es ist immer noch eine unendliche Suche.
 
 00:27:19,200 --> 00:27:21,760
-Wir müssen also vielleicht noch ein paar Änderungen vornehmen.
+Wir müssen also vielleicht noch
+ein paar Änderungen vornehmen.
 
 00:27:22,480 --> 00:27:29,600
-Lassen Sie uns also im nächsten Video darauf zurückkommen.
+Lassen Sie uns also im nächsten
+Video darauf zurückkommen.

@@ -1,11 +1,11 @@
 149 # slide
 00:00:01,920 --> 00:00:12,320
-Nach den mehreren kurzen Videos diese Woche bisher,
-wird nun wieder ein längeres Video kommen. Und dies wird
+Nach den mehreren kurzen Videos diese Woche bisher, wird
+nun wieder ein längeres Video kommen. Und dies wird
 
 00:00:12,320 --> 00:00:18,800
-das letzte Video zum Haskell-Teil dieses Kurses
-sein. Also, mit diesem Kapitel
+das letzte Video zum Haskell-Teil dieses
+Kurses sein. Also, mit diesem Kapitel
 
 00:00:18,800 --> 00:00:25,040
 werden wir den Haskell-Teil der Vorlesung abschließen,
@@ -27,12 +27,12 @@ Eingabemöglichkeiten programmiert, bei denen der Benutzer
 nach einer Eingabe gefragt wird. Wenn wir also bisher
 
 00:00:47,360 --> 00:00:51,600
-unsere Funktionen auf eine Eingabe anwenden wollten, dann
-mussten wir sie im Interpreter aufrufen.
+unsere Funktionen auf eine Eingabe anwenden wollten,
+dann mussten wir sie im Interpreter aufrufen.
 
 00:00:51,600 --> 00:00:55,600
-Wir haben keine eigenständigen Programme geschrieben, die
-den Benutzer nach einer Eingabe fragen und eine Ausgabe zurückgeben.
+Wir haben keine eigenständigen Programme geschrieben, die den
+Benutzer nach einer Eingabe fragen und eine Ausgabe zurückgeben.
 
 00:00:57,200 --> 00:01:02,160
 Um ernst genommen zu werden, sollte eine Sprache über
@@ -43,24 +43,24 @@ Und tatsächlich habe ich hier auf dieser Folie ein etwas
 überraschendes Zitat, das behauptet, Haskell sei die
 
 00:01:09,040 --> 00:01:13,680
-beste imperative Programmiersprache der Welt.
-Was wahrscheinlich ein wenig kontraintuitiv ist, weil
+beste imperative Programmiersprache der Welt. Was
+wahrscheinlich ein wenig kontraintuitiv ist, weil
 
 00:01:13,680 --> 00:01:19,360
-ich bisher in diesem Kurs immer die Unterschiede
-zwischen Haskell und imperativen
+ich bisher in diesem Kurs immer die
+Unterschiede zwischen Haskell und imperativen
 
 00:01:19,360 --> 00:01:27,200
-Programmiersprachen, wie das Fehlen von
-Effekten, kein Umgang mit nicht-lokalen Informationen,
+Programmiersprachen, wie das Fehlen von Effekten,
+kein Umgang mit nicht-lokalen Informationen,
 
 00:01:27,200 --> 00:01:32,000
-globalem Zustand, solche Dinge, betont habe. Nun, hier ist ein
-Zitat von Simon Peyton Jones. Was ist das? Er
+globalem Zustand, solche Dinge, betont habe. Nun, hier
+ist ein Zitat von Simon Peyton Jones. Was ist das? Er
 
 00:01:32,000 --> 00:01:37,680
-weiß ein paar Dinge über Haskell. Er ist eine der
-Hauptpersonen, der Projektleiter,
+weiß ein paar Dinge über Haskell. Er ist
+eine der Hauptpersonen, der Projektleiter,
 
 00:01:37,680 --> 00:01:43,280
 hinter dem GHC (dem Compiler, den wir
@@ -75,16 +75,16 @@ nur ein Scherz. Wie meint er das? Der Punkt ist,
 dass, obwohl Haskell eine funktionale Sprache ist,
 
 00:01:54,080 --> 00:01:59,120
-nicht imperativ ist, es dennoch
-über Möglichkeiten verfügt, mit all diesen
+nicht imperativ ist, es dennoch über
+Möglichkeiten verfügt, mit all diesen
 
 00:01:59,120 --> 00:02:05,440
-imperativen Effekten umzugehen. Und wir werden
-in dieser halben Vorlesung nur einen kurzen Blick darauf werfen.
+imperativen Effekten umzugehen. Und wir werden in dieser
+halben Vorlesung nur einen kurzen Blick darauf werfen.
 
 00:02:06,880 --> 00:02:12,800
-Und die Art und Weise, wie diese Funktionen in
-Haskell integriert sind, ist viel dsiziplinierter als eine
+Und die Art und Weise, wie diese Funktionen in Haskell
+integriert sind, ist viel dsiziplinierter als eine
 
 00:02:12,800 --> 00:02:18,640
 Sprache, die von Anfang an nur imperativ ist.
@@ -95,44 +95,44 @@ Sie hat Unterstützung für alle Arten von imperativen
 Funktionalitäten. Aber sie sind auf eine Weise integriert, die
 
 00:02:24,480 --> 00:02:30,080
-die mathematischen Eigenschaften der Sprache
-nicht beeinträchtigt. In diesem Sinne gibt es eine gewisse
+die mathematischen Eigenschaften der Sprache nicht
+beeinträchtigt. In diesem Sinne gibt es eine gewisse
 
 00:02:30,080 --> 00:02:37,120
 Schönheit auch darin, wie diese imperativen Eigenschaften
 verwendet werden können. Sie können also von allen
 
 00:02:37,120 --> 00:02:42,240
-Abstraktionsmöglichkeiten nutzen, die wir bis jetzt
-im reinen Teil der Sprache gesehen haben. Aber natürlich
+Abstraktionsmöglichkeiten nutzen, die wir bis jetzt im
+reinen Teil der Sprache gesehen haben. Aber natürlich
 
 00:02:42,240 --> 00:02:47,440
-werde ich nicht in der Lage sein, dieser Schönheit voll gerecht zu werden.
-Denn ich habe nur diese halbe Vorlesung, die ich
+werde ich nicht in der Lage sein, dieser Schönheit voll gerecht
+zu werden. Denn ich habe nur diese halbe Vorlesung, die ich
 
 00:02:47,440 --> 00:02:52,800
 aufwenden werde. Und wir werden nicht über das allgemeine
 Bild der allgemeinen Einrichtungen dafür sprechen.
 
 00:02:52,800 --> 00:02:59,280
-Das würde unter die Überschrift "Monaden" fallen,
-von denen Sie vielleicht schon gehört haben und die ein
+Das würde unter die Überschrift "Monaden" fallen, von
+denen Sie vielleicht schon gehört haben und die ein
 
 00:02:59,280 --> 00:03:04,560
-wichtiger Teil des Sprachdesigns von Haskell sind. Aber das
-ist nicht etwas, das ich in diesem Kurs auf abstrakte
+wichtiger Teil des Sprachdesigns von Haskell sind. Aber
+das ist nicht etwas, das ich in diesem Kurs auf abstrakte
 
 00:03:05,120 --> 00:03:10,160
-Weise behandele. Das wäre etwas
-für eine Vorlesung oder ein Seminar für Fortgeschrittene.
+Weise behandele. Das wäre etwas für eine
+Vorlesung oder ein Seminar für Fortgeschrittene.
 
 00:03:10,720 --> 00:03:17,200
 Aber wir werden die spezifische Anwendung
 dieses Konzepts für Input und Output sehen.
 
 00:03:17,200 --> 00:03:22,480
-Diese sind nur ein Teil der imperativen Eigenschaften. Aber andere
-Merkmale, die aus imperativen Sprachen bekannt sind, können
+Diese sind nur ein Teil der imperativen Eigenschaften. Aber
+andere Merkmale, die aus imperativen Sprachen bekannt sind, können
 
 00:03:22,480 --> 00:03:27,520
 in einer syntaktisch ähnlichen Weise integriert werden.
@@ -140,44 +140,44 @@ Aber das ist nicht etwas, was ich hier tun werde.
 
 150 # slide
 00:03:31,360 --> 00:03:36,800
-Also, selbst in einer deklarativen Sprache, sei es
-Haskell oder ab nächster Woche auch Prolog,
+Also, selbst in einer deklarativen Sprache, sei
+es Haskell oder ab nächster Woche auch Prolog,
 
 00:03:36,800 --> 00:03:41,520
-sollte es einen Weg geben, imperative Befehle einzubetten.
-Weil wir vielleicht etwas tun wollen,
+sollte es einen Weg geben, imperative Befehle
+einzubetten. Weil wir vielleicht etwas tun wollen,
 
 00:03:41,520 --> 00:03:45,840
-wie etwas auf dem Bildschirm unseres
-Computers ausgeben. Oder wir wollen den Benutzer fragen,
+wie etwas auf dem Bildschirm unseres Computers
+ausgeben. Oder wir wollen den Benutzer fragen,
 
 00:03:46,720 --> 00:03:51,600
-"Was soll ich tun?", also nach einer
-Eingabezahl, auf der dann eine Funktion berechnet werden soll.
+"Was soll ich tun?", also nach einer Eingabezahl,
+auf der dann eine Funktion berechnet werden soll.
 
 00:03:51,600 --> 00:03:59,600
-Erinnern wir uns an diese Unterscheidung
-zwischen Ausdrücken und Befehlen. Ich habe sehr viel Wert darauf gelegt,
+Erinnern wir uns an diese Unterscheidung zwischen Ausdrücken
+und Befehlen. Ich habe sehr viel Wert darauf gelegt,
 
 00:03:59,600 --> 00:04:03,920
 dass Haskell auf Ausdrücken basiert,
 und Ausdrücke haben keine Nebeneffekte.
 
 00:04:03,920 --> 00:04:09,360
-Sie berechnen einfach einen Wert. Etwas
-auf den Bildschirm zu drucken, ist etwas völlig anderes. Und wir
+Sie berechnen einfach einen Wert. Etwas auf den
+Bildschirm zu drucken, ist etwas völlig anderes. Und wir
 
 00:04:09,360 --> 00:04:13,680
-wissen, dass bei reinen Funktionen, wie wir sie bisher programmiert
-haben, keine solche Interaktion mit dem
+wissen, dass bei reinen Funktionen, wie wir sie bisher
+programmiert haben, keine solche Interaktion mit dem
 
 00:04:13,680 --> 00:04:19,440
-Betriebssystem, mit der Benutzereingabe über die
-Tastatur oder was auch immer möglich sind.
+Betriebssystem, mit der Benutzereingabe über
+die Tastatur oder was auch immer möglich sind.
 
 00:04:19,440 --> 00:04:24,640
-Und das ist sehr wichtig, denn sonst
-würde das die referenzielle Transparenz verletzen. Also
+Und das ist sehr wichtig, denn sonst würde das
+die referenzielle Transparenz verletzen. Also
 
 00:04:24,640 --> 00:04:30,000
 die Idee, dass ein Ausdruck einen Wert errechnet
@@ -192,28 +192,28 @@ nicht gültig, wenn wir nicht-reine Ausdrücke betrachten, also,
 wenn wir Befehle betrachten. Das war die Diskussion, die ich
 
 00:04:41,600 --> 00:04:47,440
-in einem der allerersten Videos in der ersten
-oder zweiten Vorlesungswoche über die Idee, dass, wenn wir
+in einem der allerersten Videos in der ersten oder
+zweiten Vorlesungswoche über die Idee, dass, wenn wir
 
 00:04:47,440 --> 00:04:52,080
 einen Ausdruck haben, der etwas liest... der einen
 Seiteneffekt hat, etwas vom Benutzer zu lesen,
 
 00:04:52,080 --> 00:04:56,480
-dann wären plötzlich mathematische Transformationen
-von Ausdrücken nicht mehr gültig.
+dann wären plötzlich mathematische
+Transformationen von Ausdrücken nicht mehr gültig.
 
 00:04:56,480 --> 00:05:02,320
-Sie würden die Semantik verändern, weil vielleicht
-die Reihenfolge der Auswertung darauf schließen lässt, welcher von zwei
+Sie würden die Semantik verändern, weil vielleicht die Reihenfolge
+der Auswertung darauf schließen lässt, welcher von zwei
 
 00:05:03,200 --> 00:05:12,240
 Eingabebefehlen zuerst ausgeführt wird, usw. Einfach
 solche imperativen Befehle als Ausdrücke hinzuzufügen
 
 00:05:12,240 --> 00:05:19,600
-ist ein No-Go, denn damit würde die
-Mathematik der Sprache zerstört werden. Trotzdem,
+ist ein No-Go, denn damit würde die Mathematik
+der Sprache zerstört werden. Trotzdem,
 
 00:05:19,600 --> 00:05:24,720
 brauchen wir solche Möglichkeiten in gewissem Sinne. Wir müssen
@@ -236,28 +236,28 @@ Interaktion mit dieser Funktion. Und wir werden sehen,
 wie sie verwendet wird. Eigentlich haben wir schon gesehen
 
 00:05:45,680 --> 00:05:54,080
-die do-Notation gesehen, denn die main-Definitionen,
-wo die Testsuiten in viele der Autotool-Aufgaben integriert wurden,
+die do-Notation gesehen, denn die main-Definitionen, wo die
+Testsuiten in viele der Autotool-Aufgaben integriert wurden,
 
 00:05:55,200 --> 00:05:59,840
 Autotool-Aufgaben haben bereits die do-Notation verwendet. Dort
 wurde etwas auf den Bildschirm gedruckt und dann ausgeführt
 
 00:05:59,840 --> 00:06:05,840
-von Testsuiten, etc. Das war natürlich schon
-ein Effekt-Werkzeug für das Ausdrucken auf dem Bildschirm.
+von Testsuiten, etc. Das war natürlich schon ein
+Effekt-Werkzeug für das Ausdrucken auf dem Bildschirm.
 
 00:06:06,960 --> 00:06:10,880
-Es gibt also die spezielle do-Notation. Wir werden
-sehen, wie sie funktioniert. Sie ermöglicht eine solche Interaktion
+Es gibt also die spezielle do-Notation. Wir werden sehen,
+wie sie funktioniert. Sie ermöglicht eine solche Interaktion
 
 00:06:10,880 --> 00:06:14,640
-und von dieser do-Notation aus können wir natürlich auch
-normale Funktionen aufrufen. Wir werden also die do-Notation verwenden, wo
+und von dieser do-Notation aus können wir natürlich auch normale
+Funktionen aufrufen. Wir werden also die do-Notation verwenden, wo
 
 00:06:14,640 --> 00:06:20,960
-wir interaktives Verhalten mit dem Benutzer machen.
-Und natürlich rufen wir sogenannte normale Funktionen auf,
+wir interaktives Verhalten mit dem Benutzer machen. Und
+natürlich rufen wir sogenannte normale Funktionen auf,
 
 00:06:20,960 --> 00:06:27,440
 also die mathematischen Funktionen von Haskell, um
@@ -268,65 +268,65 @@ auszuführen. Das wäre der sehr naive Weg, einfach
 die do-Notation zu haben, und dann nehmen wir normale
 
 00:06:32,800 --> 00:06:37,760
-Funktionen. Aber eigentlich ist die Integration viel tiefer,
-weil alle Funktionen und Abstraktionskonzepte
+Funktionen. Aber eigentlich ist die Integration viel
+tiefer, weil alle Funktionen und Abstraktionskonzepte
 
 00:06:37,760 --> 00:06:42,000
-wie Higher-Orderedness, Polymorphismus,
-..., also all die Dinge, die wir in Haskell gesehen haben,
+wie Higher-Orderedness, Polymorphismus, ..., also
+all die Dinge, die wir in Haskell gesehen haben,
 
 00:06:42,000 --> 00:06:48,240
-sie bleiben auch in und mit do-Code verfügbar.
-Es ist also nicht so, dass es eine strikte Trennung gibt.
+sie bleiben auch in und mit do-Code verfügbar. Es ist
+also nicht so, dass es eine strikte Trennung gibt.
 
 00:06:48,880 --> 00:06:52,560
-Natürlich gibt es eine Trennung, aber diese
-Trennung findet auf der Typebene statt, wie Sie sehen werden.
+Natürlich gibt es eine Trennung, aber diese Trennung
+findet auf der Typebene statt, wie Sie sehen werden.
 
 00:06:52,560 --> 00:06:58,080
 Aber wir geben unsere Abstraktionsmöglichkeiten nicht auf
 Möglichkeiten wie das Schreiben von Funktionen höherer Ordnung,
 
 00:06:58,880 --> 00:07:04,560
-polymorphen Code zu schreiben, nur weil wir auch
-Do-Code machen müssen, weil wir auch
+polymorphen Code zu schreiben, nur weil wir
+auch Do-Code machen müssen, weil wir auch
 
 00:07:04,560 --> 00:07:09,680
-einige Effekte haben wollen. Wir werden auch in der Lage sein, zu abstrahieren
-Code zu abstrahieren, der die do-Notation verwendet. Das ist sehr
+einige Effekte haben wollen. Wir werden auch in der Lage sein, zu
+abstrahieren Code zu abstrahieren, der die do-Notation verwendet. Das ist sehr
 
 00:07:09,680 --> 00:07:16,160
 wichtig, weil es uns eine Möglichkeit gibt, über
 imperativen Code zu denken, die es in einer
 
 00:07:16,160 --> 00:07:21,440
-vollständig imperativen Sprache gibt. Das ist es, worauf Simon
-auf der vorigen Folie angesprochen hat.
+vollständig imperativen Sprache gibt. Das ist es,
+worauf Simon auf der vorigen Folie angesprochen hat.
 
 151 # slide
 00:07:24,560 --> 00:07:31,440
-Hier ist also das erste, sehr einfache Beispiel. Wir
-wollen das "Hallo Welt" der Haskell-Do-Notation.
+Hier ist also das erste, sehr einfache Beispiel.
+Wir wollen das "Hallo Welt" der Haskell-Do-Notation.
 
 00:07:32,080 --> 00:07:36,160
-Und die Aufgabe ist es, zwei Zahlen vom
-Benutzer zu bekommen und dann etwas daraus zu berechnen,
+Und die Aufgabe ist es, zwei Zahlen vom Benutzer
+zu bekommen und dann etwas daraus zu berechnen,
 
 00:07:36,160 --> 00:07:43,600
-in diesem Fall das Produkt aller ganzen Zahlen
-von der ersten Zahl zur zweiten Zahl,
+in diesem Fall das Produkt aller ganzen
+Zahlen von der ersten Zahl zur zweiten Zahl,
 
 00:07:43,600 --> 00:07:47,840
-und dann das Ergebnis auf dem Bildschirm auszugeben.
-Und das ist genau das, was dieser Code
+und dann das Ergebnis auf dem Bildschirm
+auszugeben. Und das ist genau das, was dieser Code
 
 00:07:49,200 --> 00:07:56,000
 sagt. Dies ist die main-Definition. Normalerweise
 in der Autotool-Aufgabe wird hier die
 
 00:07:56,720 --> 00:08:03,440
-Testsuite hier geschrieben. Jetzt haben wir stattdessen
-eine Eingabe. Diese Notation ist also für:
+Testsuite hier geschrieben. Jetzt haben wir
+stattdessen eine Eingabe. Diese Notation ist also für:
 
 00:08:03,440 --> 00:08:11,440
 Lesen eines Wertes vom Benutzer und Binden des Ergebnisses
@@ -345,24 +345,24 @@ Funktion auf Integer-Listen sein, die Sie definieren können
 über List Comprehensions oder foldr oder was auch immer,
 
 00:08:29,920 --> 00:08:36,240
-und dann wird das Ergebnis gedruckt. Was gibt uns die
-do-Notation? Sie gibt uns ein Mittel zur
+und dann wird das Ergebnis gedruckt. Was gibt
+uns die do-Notation? Sie gibt uns ein Mittel zur
 
 00:08:36,240 --> 00:08:42,480
-Sequenzialisierung. Der Punkt war: Wir sollten nicht
-so etwas wie das Produkt von zwei Reads
+Sequenzialisierung. Der Punkt war: Wir sollten
+nicht so etwas wie das Produkt von zwei Reads
 
 00:08:42,480 --> 00:08:49,040
-haben. Denn dann wird die Reihenfolge unklar.
-Also, das ist wirklich ähnlich wie bei imperativem Code in
+haben. Denn dann wird die Reihenfolge unklar. Also,
+das ist wirklich ähnlich wie bei imperativem Code in
 
 00:08:49,040 --> 00:08:54,000
-dem Sinne, dass wir, wenn wir darüber nachdenken wollen,
-ein Semikolon am Ende jeder Zeile haben,
+dem Sinne, dass wir, wenn wir darüber nachdenken
+wollen, ein Semikolon am Ende jeder Zeile haben,
 
 00:08:54,000 --> 00:09:00,240
-das irgendwie eine sequenzielle Reihenfolge ergibt. Also,
-zuerst etwas lesen, das Ergebnis an n binden,
+das irgendwie eine sequenzielle Reihenfolge ergibt.
+Also, zuerst etwas lesen, das Ergebnis an n binden,
 
 00:09:01,040 --> 00:09:04,800
 lese etwas, binde das Ergebnis an m, dann wissen
@@ -389,16 +389,16 @@ Typ-Inferenz. Da die Variablen n und m,
 hier nicht typisiert sind, werden als
 
 00:09:36,240 --> 00:09:40,960
-Eingaben für die Funktion prod, die vom Typ Integer ist,
-der Compiler automatisch herausfinden,
+Eingaben für die Funktion prod, die vom Typ
+Integer ist, der Compiler automatisch herausfinden,
 
 00:09:40,960 --> 00:09:45,520
-dass wir hier einen Integer lesen sollten. Also, wenn
-der Benutzer hier etwas eingibt, das nicht
+dass wir hier einen Integer lesen sollten. Also,
+wenn der Benutzer hier etwas eingibt, das nicht
 
 00:09:45,520 --> 00:09:51,280
-als Integer durchgeht, weil er "abc" verwendet
-und nicht nur Ziffern, dann wird dies zurückgewiesen.
+als Integer durchgeht, weil er "abc" verwendet und
+nicht nur Ziffern, dann wird dies zurückgewiesen.
 
 00:09:52,640 --> 00:09:58,320
 Aber das ist nicht der Hauptpunkt (Typinferenz).
@@ -409,109 +409,109 @@ dem Berechnungscode, und die Tatsache, dass hier
 das "do", wir haben dieses sequenzielle Verhalten
 
 00:10:04,640 --> 00:10:10,480
-das deutlich macht, und das entspricht
-C- oder Python-Code in dem Sinne, dass wir
+das deutlich macht, und das entspricht C-
+oder Python-Code in dem Sinne, dass wir
 
 00:10:10,480 --> 00:10:18,400
-Befehle haben. Wir können diese als Befehle lesen,
-und sie werden in einer bestimmten Reihenfolge ausgeführt, die nicht
+Befehle haben. Wir können diese als Befehle lesen, und sie
+werden in einer bestimmten Reihenfolge ausgeführt, die nicht
 
 00:10:18,960 --> 00:10:24,800
-lazy evaluation, sondern wirklich durch das
-syntaktische Erscheinungsbild in diesem sequenziellen do-Block.
+lazy evaluation, sondern wirklich durch das syntaktische
+Erscheinungsbild in diesem sequenziellen do-Block.
 
 152 # slide
 00:10:28,480 --> 00:10:32,880
-Das Prinzip hinter dieser Integration und auch
-wo die Garantien für das mathematische
+Das Prinzip hinter dieser Integration und
+auch wo die Garantien für das mathematische
 
 00:10:32,880 --> 00:10:39,040
-Wohlverhalten und die gute Integration mit dem Rest
-der Sprache auf der Ebene der Typen
+Wohlverhalten und die gute Integration mit
+dem Rest der Sprache auf der Ebene der Typen
 
 00:10:39,040 --> 00:10:44,400
-herkommt. Wie Sie also auf der vorherigen Folie gesehen haben,
-und auch in den Testsuiten, war der Typ von main
+herkommt. Wie Sie also auf der vorherigen Folie gesehen
+haben, und auch in den Testsuiten, war der Typ von main
 
 00:10:44,400 --> 00:10:49,040
-etwas wie IO und dann das leere Tupel.
-Das leere Tupel ist nicht der wichtige Teil. Das IO
+etwas wie IO und dann das leere Tupel. Das
+leere Tupel ist nicht der wichtige Teil. Das IO
 
 00:10:49,040 --> 00:10:54,240
 ist der wichtige Teil. Es ist ein Typkonstruktor,
 so wie wir Typkonstruktoren gesehen haben
 
 00:10:54,240 --> 00:10:59,440
-wie Tree oder List, die ein Argument annehmen und dann
-einen Tree of Bools, einen Tree of Ints, etc.
+wie Tree oder List, die ein Argument annehmen und
+dann einen Tree of Bools, einen Tree of Ints, etc.
 
 00:10:59,440 --> 00:11:03,520
 Es gibt den Typkonstruktor IO, aber es ist kein
 Typkonstruktor, den wir selbst definieren können,
 
 00:11:03,520 --> 00:11:07,360
-es ist nicht etwas, das ein Benutzer geschrieben hat
-mit der data-Syntax. Es ist ein abstrakter Typ,
+es ist nicht etwas, das ein Benutzer geschrieben
+hat mit der data-Syntax. Es ist ein abstrakter Typ,
 
 00:11:07,360 --> 00:11:14,240
-der von der Sprache bereitgestellt wird, von einem Teil
-des Laufzeitsystems bereitgestellt wird. Es ist ein Typkonstruktor.
+der von der Sprache bereitgestellt wird, von einem Teil des
+Laufzeitsystems bereitgestellt wird. Es ist ein Typkonstruktor.
 
 00:11:14,240 --> 00:11:18,560
-Er wird wie die anderen Typkonstruktoren verwendet, die wir
-bisher gesehen haben. Da wir Grundtypen wie
+Er wird wie die anderen Typkonstruktoren verwendet,
+die wir bisher gesehen haben. Da wir Grundtypen wie
 
 00:11:22,800 --> 00:11:27,840
 Int, oder benutzerdefinierte Typen wie Tree of something,
 oder zusammengesetzte Typen wie Listen von Paaren, usw.,
 
 00:11:28,640 --> 00:11:34,320
-dann können wir mit jedem dieser Typen auch den
-Typ IO von Int, IO von Tree Bool, IO wovon auch immer,
+dann können wir mit jedem dieser Typen auch den Typ
+IO von Int, IO von Tree Bool, IO wovon auch immer,
 
 00:11:34,880 --> 00:11:39,120
-denn IO ist ein polymorpher Typkonstruktor.
-Es wartet auf ein Argument vom Typ, und dann ist es
+denn IO ist ein polymorpher Typkonstruktor. Es
+wartet auf ein Argument vom Typ, und dann ist es
 
 00:11:39,120 --> 00:11:47,360
-IO vom beliebigen Typ. Was ist die Interpretation von
-dies? Wenn wir etwas wie IO von einem abstrakten
+IO vom beliebigen Typ. Was ist die Interpretation
+von dies? Wenn wir etwas wie IO von einem abstrakten
 
 00:11:47,360 --> 00:11:54,560
-Typs (a), oder eines Typs Int, Bool, was auch immer, dann
-ist die Idee, dass die Elemente dieses IO-Typs
+Typs (a), oder eines Typs Int, Bool, was auch immer,
+dann ist die Idee, dass die Elemente dieses IO-Typs
 
 00:11:54,560 --> 00:12:01,520
-selbst keine konkreten Werte sind. Es ist nicht so wie,
-IO Int ist fünf. Sie sind Befehle. Sie sind
+selbst keine konkreten Werte sind. Es ist nicht so
+wie, IO Int ist fünf. Sie sind Befehle. Sie sind
 
 00:12:02,160 --> 00:12:05,968
 potenziell willkürliche komplexe Sequenzen
 von Eingabe- und Ausgabeoperationen (deshalb
 
 00:12:05,968 --> 00:12:10,720
-IO genannt), und Berechnungen
-abhängig von den Werten, die eingelesen werden,
+IO genannt), und Berechnungen abhängig
+von den Werten, die eingelesen werden,
 
 00:12:10,720 --> 00:12:16,240
-und schließlich ein Wert vom Typ (a) erzeugt wird.
-IO Int könnte also ein vollständiges Programm sein, das
+und schließlich ein Wert vom Typ (a) erzeugt wird. IO
+Int könnte also ein vollständiges Programm sein, das
 
 00:12:17,040 --> 00:12:20,240
-den Benutzer um Eingaben bittet, einige
-Berechnungen durchführt, etwas auf dem Bildschirm ausgibt,
+den Benutzer um Eingaben bittet, einige Berechnungen
+durchführt, etwas auf dem Bildschirm ausgibt,
 
 00:12:20,800 --> 00:12:25,600
-nach weiteren Eingaben fragt usw., und dann, ganz am
-Ende all dieser Effekte einen Wert ausgibt,
+nach weiteren Eingaben fragt usw., und dann, ganz
+am Ende all dieser Effekte einen Wert ausgibt,
 
 00:12:25,600 --> 00:12:32,240
-vielleicht wie einen Exit-Code des Programms. Das ganze
-Programm dieser Art kann in einem langen
+vielleicht wie einen Exit-Code des Programms. Das
+ganze Programm dieser Art kann in einem langen
 
 00:12:32,240 --> 00:12:36,800
-do-Block und vielleicht sogar in verschachtelten do-Blöcken geschrieben werden und
-Aufrufe zu anderen Funktionen wären etwas vom
+do-Block und vielleicht sogar in verschachtelten do-Blöcken
+geschrieben werden und Aufrufe zu anderen Funktionen wären etwas vom
 
 00:12:36,800 --> 00:12:44,640
 Typ IO Int sein, zum Beispiel weil es komplexe
@@ -522,12 +522,12 @@ In diesem Sinne ist es sinnvoll, dass ein Haskell
 Programm, das kompiliert werden kann und dann als
 
 00:12:53,280 --> 00:12:56,800
-eigenständiges Programm ausgeführt werden kann, weder den
-Compiler noch den Interpreter mehr benötigt,
+eigenständiges Programm ausgeführt werden kann, weder
+den Compiler noch den Interpreter mehr benötigt,
 
 00:12:57,360 --> 00:13:03,360
-einen IO-Typ haben sollte. Und normalerweise ist es ein
-leerer Typ IO, weil wir daran interessiert sind
+einen IO-Typ haben sollte. Und normalerweise ist es
+ein leerer Typ IO, weil wir daran interessiert sind
 
 00:13:03,360 --> 00:13:07,200
 was das Programm tut und nicht, was es am
@@ -538,8 +538,8 @@ und dann könnte der Int vielleicht der Exit-Code sein,
 wie es oft in C-Programmen gemacht wird, die einen
 
 00:13:12,640 --> 00:13:20,840
-Exit-Code an die Shell zurückgeben. Aber normalerweise verwenden wir in Haskell,
-benutzen wir normalerweise IO und dieses leere Tupel ().
+Exit-Code an die Shell zurückgeben. Aber normalerweise verwenden wir
+in Haskell, benutzen wir normalerweise IO und dieses leere Tupel ().
 
 153 # slide
 00:13:22,480 --> 00:13:29,360
@@ -551,8 +551,8 @@ und sie sind erkennbar an ihren IO-basierten
 Typen. Diese Primitive sind die Dinge, die
 
 00:13:37,040 --> 00:13:43,120
-in einer imperativen Sprache Befehle wären...
-die in einer imperativen Sprache die Befehle bilden würden
+in einer imperativen Sprache Befehle wären... die in
+einer imperativen Sprache die Befehle bilden würden
 
 00:13:43,120 --> 00:13:48,160
 Sprache. Also, Lesen vom Benutzer, Schreiben
@@ -583,32 +583,32 @@ Und was ist dann das Ergebnis? Es ist ein Zeichen,
 das der Benutzer eingegeben hat. Es ist nicht dasselbe
 
 00:14:20,800 --> 00:14:27,040
-wie eine Konstante vom Typ Char, die nur
-für ein bestimmtes Char konstant sein kann. Da es sich um IO Char,
+wie eine Konstante vom Typ Char, die nur für ein
+bestimmtes Char konstant sein kann. Da es sich um IO Char,
 
 00:14:27,040 --> 00:14:32,480
-ist es eine Berechnung, die davon abhängt, was der
-Benutzer tut, was der Benutzer bereitstellt,
+ist es eine Berechnung, die davon abhängt, was
+der Benutzer tut, was der Benutzer bereitstellt,
 
 00:14:32,480 --> 00:14:37,840
-und dann gibt es ein Char. Wenn der Benutzer antwortet mit
-dem Zeichen 'a', ist das Ergebnis hier 'a'.
+und dann gibt es ein Char. Wenn der Benutzer antwortet
+mit dem Zeichen 'a', ist das Ergebnis hier 'a'.
 
 00:14:37,840 --> 00:14:42,000
 Und wenn der Benutzer das Zeichen 'b' eingibt, dann ist das
 Ergebnis 'b', obwohl es sich nicht um eine Funktion handelt.
 
 00:14:42,640 --> 00:14:48,480
-Es gibt keine Abhängigkeit von einer Eingabe. Es hängt implizit
-davon ab, was der Benutzer tut. Und der IO-Typ
+Es gibt keine Abhängigkeit von einer Eingabe. Es hängt
+implizit davon ab, was der Benutzer tut. Und der IO-Typ
 
 00:14:48,480 --> 00:14:58,880
-Konstruktor kapselt dies. 'putChar' druckt
-ein Zeichen auf dem Bildschirm aus. Und basierend auf diesem,
+Konstruktor kapselt dies. 'putChar' druckt ein Zeichen
+auf dem Bildschirm aus. Und basierend auf diesem,
 
 00:14:58,880 --> 00:15:03,520
-wird es eine weitere Funktion geben, die dasselbe
-für einen 'String' tut, usw. Aber das grundlegende Primitiv ist,
+wird es eine weitere Funktion geben, die dasselbe für einen
+'String' tut, usw. Aber das grundlegende Primitiv ist,
 
 00:15:03,520 --> 00:15:07,760
 ein Zeichen auf den Bildschirm zu bringen. Dies ist
@@ -623,52 +623,52 @@ auf den Bildschirm aus, und sie gibt nichts zurück, weil
 es keine Notwendigkeit gibt, etwas zurückzugeben, wenn wir
 
 00:15:17,200 --> 00:15:21,520
-etwas auf dem Bildschirm ausgeben. Es gibt keine
-Benutzereingaben, die an den Aufrufer
+etwas auf dem Bildschirm ausgeben. Es gibt
+keine Benutzereingaben, die an den Aufrufer
 
 00:15:22,080 --> 00:15:26,800
-der Funktion reflektiert werden müssen. Deshalb ist es eine
-Funktion, die ein Zeichen entgegennimmt,
+der Funktion reflektiert werden müssen. Deshalb ist
+es eine Funktion, die ein Zeichen entgegennimmt,
 
 00:15:26,800 --> 00:15:32,320
-ein IO durchführt und dann kein Ergebnis zurückgeben muss.
-Sie könnte einen Fehlercode zurückgeben, etwa wenn
+ein IO durchführt und dann kein Ergebnis zurückgeben
+muss. Sie könnte einen Fehlercode zurückgeben, etwa wenn
 
 00:15:32,960 --> 00:15:37,840
-die Ausgabe eines Zeichens auf dem Bildschirm
-aus irgendeinem Grund fehlschlägt. Aber es ist einfach. Der Typ ist
+die Ausgabe eines Zeichens auf dem Bildschirm aus irgendeinem
+Grund fehlschlägt. Aber es ist einfach. Der Typ ist
 
 00:15:38,720 --> 00:15:47,760
-mit Character als Eingabe und IO () als
-Ausgabe. Das ist das Ergebnis dieser Funktion. Wir
+mit Character als Eingabe und IO () als Ausgabe.
+Das ist das Ergebnis dieser Funktion. Wir
 
 00:15:48,320 --> 00:15:53,360
 haben eine leistungsfähigere Version davon: die
 ganze Zeile, was eine IO-Aktion ist, die einen
 
 00:15:53,360 --> 00:16:00,640
-String zurückgibt, einen 'String' setzt und auch einen Zeilenvorschub.
-Wir geben diesen Funktionen einen String, und sie
+String zurückgibt, einen 'String' setzt und auch einen
+Zeilenvorschub. Wir geben diesen Funktionen einen String, und sie
 
 00:16:02,320 --> 00:16:08,640
-führen den Befehl aus und geben nichts von
-Interesse. Das ist auch der Grund für diesen leeren Tupeltyp.
+führen den Befehl aus und geben nichts von Interesse.
+Das ist auch der Grund für diesen leeren Tupeltyp.
 
 00:16:10,480 --> 00:16:14,640
 Dies war für die Berechnung von Strings und es gibt
 auch polymorphe Versionen davon, die mit anderen
 
 00:16:14,640 --> 00:16:21,840
-Typen, das Lesen eines Integers.
-Abstrakter ausgedrückt, wenn Haskell die Sprache
+Typen, das Lesen eines Integers. Abstrakter
+ausgedrückt, wenn Haskell die Sprache
 
 00:16:22,560 --> 00:16:25,920
-selbst, oder mithilfe von
-Bibliotheken, die der Benutzer geschrieben hat,
+selbst, oder mithilfe von Bibliotheken,
+die der Benutzer geschrieben hat,
 
 00:16:27,120 --> 00:16:32,480
-weiß, wie man einen Typ wie Integer
-oder Trees oder was auch immer, von und nach Strings konvertieren kann,
+weiß, wie man einen Typ wie Integer oder Trees oder
+was auch immer, von und nach Strings konvertieren kann,
 
 00:16:32,480 --> 00:16:37,360
 dann können wir auch die 'readLn' und die
@@ -679,36 +679,36 @@ Beschränkungen hier. Sie sind polymorph. Also, 'readLn'
 sagt: Ich bin eine IO-Aktion, und ich gebe dir ein (a),
 
 00:16:45,760 --> 00:16:53,600
-und ich kann dies für alle (a)-Typen tun, mit denen die
-Sprache weiß, wie man liest. Das sind Typen wie
+und ich kann dies für alle (a)-Typen tun, mit denen
+die Sprache weiß, wie man liest. Das sind Typen wie
 
 00:16:53,600 --> 00:17:01,120
-Integer, Bool, usw., und auch benutzerdefinierte Typen,
-wenn wir den Compiler angewiesen haben, eine
+Integer, Bool, usw., und auch benutzerdefinierte
+Typen, wenn wir den Compiler angewiesen haben, eine
 
 00:17:01,120 --> 00:17:06,880
-Lesemethode für diese abzuleiten. Aber der wichtigste Punkt hier
-ist, dass Haskell für bestimmte Typen weiß, wie man
+Lesemethode für diese abzuleiten. Aber der wichtigste Punkt
+hier ist, dass Haskell für bestimmte Typen weiß, wie man
 
 00:17:06,880 --> 00:17:14,000
 von Strings in diesen Typ zu parsen, und dann können
 wir einfach 'readLn' anstelle von IO 'String' verwenden,
 
 00:17:14,000 --> 00:17:20,160
-und wir erhalten zum Beispiel direkt Integer. Und
-umgekehrt, für das Drucken, wenn wir einen Typ haben, für den
+und wir erhalten zum Beispiel direkt Integer. Und umgekehrt,
+für das Drucken, wenn wir einen Typ haben, für den
 
 00:17:20,160 --> 00:17:26,960
 die Sprache kennt oder ausrechnen kann, wie er
 dargestellt werden soll, im Sinne einer Umwandlung in
 
 00:17:26,960 --> 00:17:31,600
-eine Zeichenkette, dann können wir direkt die Funktion print
-mit einem Wert dieses Typs direkt aufrufen. Sie wird
+eine Zeichenkette, dann können wir direkt die Funktion
+print mit einem Wert dieses Typs direkt aufrufen. Sie wird
 
 00:17:31,600 --> 00:17:40,000
-IO und gibt den Wert auf der Konsole aus. Das 'print'
-ist eigentlich eine Funktion. Wir geben ihr ein Argument von
+IO und gibt den Wert auf der Konsole aus. Das 'print' ist
+eigentlich eine Funktion. Wir geben ihr ein Argument von
 
 00:17:40,000 --> 00:17:45,840
 einem Typ, der "anzeigbar" ist (zum Beispiel Typ a,
@@ -720,44 +720,44 @@ Wir brauchen eine Möglichkeit, diese kleinen IO-
 Berechnungen zu kombinieren. Wir wollen komplexere
 
 00:17:54,080 --> 00:17:58,400
-Aktionssequenzen oder ganze Programme auf der Grundlage dieser
-IO-Primitiven. Es ist nicht nur mit den Primitiven aus
+Aktionssequenzen oder ganze Programme auf der Grundlage
+dieser IO-Primitiven. Es ist nicht nur mit den Primitiven aus
 
 00:17:58,400 --> 00:18:04,400
-der vorherigen Folie. Dort hatten wir Drucken und
-Lesen von der Konsole über die Tastatur,
+der vorherigen Folie. Dort hatten wir Drucken
+und Lesen von der Konsole über die Tastatur,
 
 00:18:04,400 --> 00:18:08,320
 aber natürlich gibt es noch viel mehr
 Primitive, wie das Schreiben in eine Datei
 
 00:18:08,880 --> 00:18:14,080
-und das Öffnen eines Fensters und das Zeichnen auf dem
-Bildschirm. Es gibt viele IO-Primitive. Ich habe
+und das Öffnen eines Fensters und das Zeichnen auf
+dem Bildschirm. Es gibt viele IO-Primitive. Ich habe
 
 00:18:14,080 --> 00:18:18,480
-Ihnen auf der vorherigen Folie nur einige wenige davon
-gezeigt. Und wir werden auch nicht Datei-IO in
+Ihnen auf der vorherigen Folie nur einige wenige
+davon gezeigt. Und wir werden auch nicht Datei-IO in
 
 00:18:18,480 --> 00:18:23,360
 Übungen behandeln. Aber für all die Dinge, bei denen
 wir mit dem Betriebssystem interagieren würden,
 
 00:18:24,560 --> 00:18:30,800
-wäre das ein IO-Primitiv. Dies sind die grundlegenden
-Bausteine. Wir wollen
+wäre das ein IO-Primitiv. Dies sind
+die grundlegenden Bausteine. Wir wollen
 
 00:18:30,800 --> 00:18:35,920
-darauf komplexere Programme aufbauen, und hier kommt die
-do-Notation ins Spiel. Wir haben sie
+darauf komplexere Programme aufbauen, und hier
+kommt die do-Notation ins Spiel. Wir haben sie
 
 00:18:35,920 --> 00:18:41,840
-bereits in diesem Hallo-Welt-Programm mit nur
-drei Zeilen gesehen, aber die allgemeine Form ist wie folgt.
+bereits in diesem Hallo-Welt-Programm mit nur drei
+Zeilen gesehen, aber die allgemeine Form ist wie folgt.
 
 00:18:42,640 --> 00:18:51,920
-Es gibt dieses do-Schlüsselwort und dann, mit
-layoutbasierter Syntax, eine Folge von
+Es gibt dieses do-Schlüsselwort und dann,
+mit layoutbasierter Syntax, eine Folge von
 
 00:18:51,920 --> 00:18:59,440
 Befehlen, die ausgeführt werden sollen. Diese Befehle
@@ -776,36 +776,36 @@ Beispielprogramm. Wir haben unsere Befehle. Sie
 haben IO-Typen. Wir können, müssen aber nicht,
 
 00:19:20,000 --> 00:19:25,280
-die Ergebnisse an Variablen binden. Und diese
-Variablen können verwendet werden. Das ist wie das Lesen von
+die Ergebnisse an Variablen binden. Und diese Variablen
+können verwendet werden. Das ist wie das Lesen von
 
 00:19:25,280 --> 00:19:33,040
 etwas in eine Variable x2. Dann kann natürlich jeder
 spätere Code diesen Variablenwert x2 verwenden. Es ist
 
 00:19:33,040 --> 00:19:38,320
-aber nicht wie ein let-Block, bei dem die Dinge
-gegenseitig rekursiv sein könnten. Es gibt hier eine Reihenfolge.
+aber nicht wie ein let-Block, bei dem die Dinge gegenseitig
+rekursiv sein könnten. Es gibt hier eine Reihenfolge.
 
 00:19:38,320 --> 00:19:44,080
-Wir können x2 nicht im ersten Befehl verwenden, weil dieser
-erste Befehl vor dieser Zeile steht. Wir haben
+Wir können x2 nicht im ersten Befehl verwenden, weil
+dieser erste Befehl vor dieser Zeile steht. Wir haben
 
 00:19:44,080 --> 00:19:53,280
-eine sequenzielle Reihenfolge, genau wie bei Zeilencode in einer
-imperativen Sprache. Diese Befehle haben IO-Typen.
+eine sequenzielle Reihenfolge, genau wie bei Zeilencode in
+einer imperativen Sprache. Diese Befehle haben IO-Typen.
 
 00:19:53,280 --> 00:19:57,600
-Wenn wir etwas an eine Variable binden
-(was wir nicht tun müssen, aber tun können),
+Wenn wir etwas an eine Variable binden (was
+wir nicht tun müssen, aber tun können),
 
 00:19:58,480 --> 00:20:04,480
-dann wird diese auf dieselbe Weise typisiert wie ein
-Typ, der in dem Befehl i gekapselt wurde.
+dann wird diese auf dieselbe Weise typisiert wie
+ein Typ, der in dem Befehl i gekapselt wurde.
 
 00:20:04,480 --> 00:20:13,040
-Wenn der Befehl i IO Int ist, dann ist xi
-Int. Wenn der Befehl i von Typ IO Tree of something war,
+Wenn der Befehl i IO Int ist, dann ist xi Int.
+Wenn der Befehl i von Typ IO Tree of something war,
 
 00:20:13,040 --> 00:20:20,480
 dann wird xi Tree of whatever sein und kann
@@ -821,16 +821,16 @@ wenn wir ihm einen Typ wie pure Int zuweisen würden,
 dann gäbe es nichts, was ihn daran hindern würde,
 
 00:20:40,960 --> 00:20:45,360
-in reinem Code verwendet zu werden. Dann hätten wir nicht
-diese typbasierte Trennung zwischen reinem
+in reinem Code verwendet zu werden. Dann hätten wir
+nicht diese typbasierte Trennung zwischen reinem
 
 00:20:46,240 --> 00:20:53,440
 Zeug und imperativ aussehendem Zeug. Also, der
 do-Block hat auch einen IO-Typ. Und welchen Typ
 
 00:20:53,440 --> 00:20:59,840
-wird er haben? Den Typ des letzten Befehls. Also, wenn
-wir n Zeilen haben und Befehl n wäre etwas,
+wird er haben? Den Typ des letzten Befehls. Also,
+wenn wir n Zeilen haben und Befehl n wäre etwas,
 
 00:20:59,840 --> 00:21:03,280
 dann wäre genau dieses IO irgendwas
@@ -841,28 +841,28 @@ Wenn es dann irgendwo anders verwendet wird, dann
 natürlich, wenn wir einen Wert von ihm bekommen,
 
 00:21:09,200 --> 00:21:14,720
-dann wird es der Wert sein, den der letzte Befehl
-und der ursprüngliche Do-Block erzeugt hat. Sagen wir mal,
+dann wird es der Wert sein, den der letzte Befehl und
+der ursprüngliche Do-Block erzeugt hat. Sagen wir mal,
 
 00:21:14,720 --> 00:21:20,560
-er befindet sich in einer Funktion und diese Funktion wird aufgerufen.
-Wenn wir dann auf den gekapselten Wert zugreifen, ist es
+er befindet sich in einer Funktion und diese Funktion wird
+aufgerufen. Wenn wir dann auf den gekapselten Wert zugreifen, ist es
 
 00:21:20,560 --> 00:21:28,320
-was auch immer der Befehl n erzeugt hat
-innen. Im do-Block selbst hat der letzte Befehl
+was auch immer der Befehl n erzeugt hat innen.
+Im do-Block selbst hat der letzte Befehl
 
 00:21:28,320 --> 00:21:34,880
-n keine bindende Variable. Es hat also keinen
-"xn wird von Befehl n gezogen", und
+n keine bindende Variable. Es hat also
+keinen "xn wird von Befehl n gezogen", und
 
 00:21:34,880 --> 00:21:39,040
-das ist die letzte Zeile des do-Blocks, weil
-wir nichts mehr mit xn machen können.
+das ist die letzte Zeile des do-Blocks,
+weil wir nichts mehr mit xn machen können.
 
 00:21:39,040 --> 00:21:44,160
-Denken Sie daran, dass die Variablen im
-Rest des Do-Blocks verwendbar sind. Für die letzte Zeile macht es also
+Denken Sie daran, dass die Variablen im Rest des Do-Blocks
+verwendbar sind. Für die letzte Zeile macht es also
 
 00:21:44,160 --> 00:21:48,800
 keinen Sinn. Die letzte Zeile wird immer
@@ -889,20 +889,20 @@ dieses Typs. Und die Wirkung dieses IO-Befehls wird
 überhaupt keine Auswirkung haben, sondern der gekapselte Wert
 
 00:22:25,360 --> 00:22:30,960
-ist der Wert, der an die return-Funktion übergeben wurde.
-Es findet also keine tatsächliche IO-Aktion statt,
+ist der Wert, der an die return-Funktion übergeben
+wurde. Es findet also keine tatsächliche IO-Aktion statt,
 
 00:22:31,520 --> 00:22:37,840
-wenn der Befehl "return something" ausgeführt wird. Es ist
-kein Return wie in C, der die Ausführung der Funktion irgendwie abbricht.
+wenn der Befehl "return something" ausgeführt wird. Es ist kein
+Return wie in C, der die Ausführung der Funktion irgendwie abbricht.
 
 00:22:38,480 --> 00:22:43,200
-Also, wenn wir
-einen Do-Block mit mehreren Zeilen haben,
+Also, wenn wir einen Do-Block
+mit mehreren Zeilen haben,
 
 00:22:43,200 --> 00:22:48,720
-und irgendwo in der Mitte in der 3. oder 10.
-Zeile einen Return-Aufruf haben, bedeutet das nicht,
+und irgendwo in der Mitte in der 3. oder 10. Zeile
+einen Return-Aufruf haben, bedeutet das nicht,
 
 00:22:48,720 --> 00:22:55,360
 dass wir die Berechnung abbrechen. Es bedeutet einfach,
@@ -913,107 +913,108 @@ Er könnte an eine Variable gebunden sein.
 Return ändert den Kontrollfluss nicht.
 
 00:23:01,200 --> 00:23:08,720
-Es ist lediglich eine Möglichkeit, einen reinen Wert in diesen
-IO-Bereich einzubetten, sodass er innerhalb von Do-Blöcken verwendet werden kann.
+Es ist lediglich eine Möglichkeit, einen reinen Wert in diesen IO-Bereich
+einzubetten, sodass er innerhalb von Do-Blöcken verwendet werden kann.
 
 00:23:09,520 --> 00:23:13,760
 Oder, besonders häufig, am Ende des
 do-Blocks, wenn wir einen Wert zurückgeben
 
 00:23:13,760 --> 00:23:19,680
-wollen, den wir aus zuvor verpackten
-Eingaben berechnet haben, zum Beispiel an den Aufrufer des Blocks zurückgeben.
+wollen, den wir aus zuvor verpackten Eingaben berechnet
+haben, zum Beispiel an den Aufrufer des Blocks zurückgeben.
 
 00:23:21,280 --> 00:23:27,360
-Auf diese Weise kapseln wir also einen reinen
-Wert in IO. Wir könnten uns fragen,
+Auf diese Weise kapseln wir also einen
+reinen Wert in IO. Wir könnten uns fragen,
 
 00:23:27,360 --> 00:23:32,880
-wie sieht es mit der Umkehrung aus? Kann ich auch eine Funktion
-haben, die nicht von a nach
+wie sieht es mit der Umkehrung aus? Kann ich
+auch eine Funktion haben, die nicht von a nach
 
 00:23:34,560 --> 00:23:39,120
-IO a übergeht, sondern vielleicht andersherum? Dann könnte ich
-einen Do-Block haben, der IO beliebigen Typs hat, und
+IO a übergeht, sondern vielleicht andersherum? Dann könnte
+ich einen Do-Block haben, der IO beliebigen Typs hat, und
 
 00:23:39,120 --> 00:23:43,520
-ich möchte das Ding darin haben. Also, vielleicht möchte ich
-so etwas wie das Gegenteil dieser return-Funktion haben,
+ich möchte das Ding darin haben. Also, vielleicht möchte
+ich so etwas wie das Gegenteil dieser return-Funktion haben,
 
 00:23:43,520 --> 00:23:51,040
-die von IO irgendetwas zu nur dem
-gekapselten Typ übergeht. Aber das ist nicht erlaubt. Das ist
+die von IO irgendetwas zu nur dem gekapselten
+Typ übergeht. Aber das ist nicht erlaubt. Das ist
 
 00:23:51,040 --> 00:23:56,560
 der ganze Sinn dieser Typentrennung. Es geht darum,
 sicherzustellen, dass reiner Code nicht irgendwie mit
 
 00:23:56,560 --> 00:24:04,560
-Effekten oder durch effektbehafteten Code zerstört wird.
-Es ist nicht möglich, eine Funktion zu haben, die
+Effekten oder durch effektbehafteten Code zerstört
+wird. Es ist nicht möglich, eine Funktion zu haben, die
 
 00:24:04,560 --> 00:24:13,040
 von IO a nach a geht. Nie und nimmer. Das ist nicht
 erlaubt. Es wird verhindert. Die einzige Möglichkeit, auf
 
 00:24:13,760 --> 00:24:19,840
-Dinge, die in IO-irgendwas-Werten gekapselt sind, zuzugreifen,
-ist diese explizite Sequenzialisierung und diese
+Dinge, die in IO-irgendwas-Werten gekapselt sind,
+zuzugreifen, ist diese explizite Sequenzialisierung und diese
 
 00:24:19,840 --> 00:24:26,720
 Bindung über Variablen innerhalb von Do-Blöcken. Es
 gibt keine andere Möglichkeit, den Wert aus einer
 
 00:24:26,720 --> 00:24:32,240
-IO-Berechnung zu erhalten. Wenn wir dies tun könnten, dann wären
-wir in der Welt der hässlichen imperativen Programme,
+IO-Berechnung zu erhalten. Wenn wir dies tun könnten, dann
+wären wir in der Welt der hässlichen imperativen Programme,
 
 00:24:32,240 --> 00:24:38,720
 wo innerhalb eines Ausdrucks, der rein aussieht,
 plötzlich eine Wirkung oder ein Verhalten eintritt,
 
 00:24:38,720 --> 00:24:44,080
-und alle Garantien weg sind... die Garantien,
-auf die wir uns sonst verlassen würden, wenn wir uns
+und alle Garantien weg sind... die Garantien, auf
+die wir uns sonst verlassen würden, wenn wir uns
 
 00:24:44,080 --> 00:24:50,240
 auf Typen verlassen. Wenn ich etwas sage wie, niemals
 überhaupt nicht, gibt es wahrscheinlich eine Ausnahme.
 
 00:24:50,240 --> 00:24:56,240
-Und die gibt es. Es gibt unsichere Funktionen, auf die wir
-nicht zugreifen können, weil wir dem Compiler
+Und die gibt es. Es gibt unsichere Funktionen, auf
+die wir nicht zugreifen können, weil wir dem Compiler
 
 00:24:56,240 --> 00:25:00,800
-sagen müssen, dass wir diese unsicheren
-Funktionen erlauben wollen. Und dann gibt es einen Workaround.
+sagen müssen, dass wir diese unsicheren Funktionen
+erlauben wollen. Und dann gibt es einen Workaround.
 
 00:25:00,800 --> 00:25:06,160
 Wir können Dinge wie diese tun: auf etwas zugreifen
 von innen, aber auch diese Funktionen sind
 
 00:25:06,960 --> 00:25:13,280
-unsicher genannt und dürfen nicht von einem
-normalen Haskell-Programmierer verwendet werden. Manchmal,
+unsicher genannt und dürfen nicht von einem normalen
+Haskell-Programmierer verwendet werden. Manchmal,
 
 00:25:13,280 --> 00:25:18,480
-wenn wir eine spezielle Bibliothek auf sehr niedriger Ebene schreiben,
-müssen wir diese vielleicht benutzen, weil wir
+wenn wir eine spezielle Bibliothek auf sehr niedriger Ebene
+schreiben, müssen wir diese vielleicht benutzen, weil wir
 
 00:25:18,480 --> 00:25:26,480
 Dinge sehr direkt manipulieren wollen. Aber für normalen
 Benutzercode ist das, was ich hier sage, die Wahrheit.
 
 00:25:27,760 --> 00:25:34,480
-Das ist für Systemprogrammierer, um diese Garantien zu
-umgehen, aber nicht für normalen Haskell-Code. Der
+Das ist für Systemprogrammierer, um diese Garantien
+zu umgehen, aber nicht für normalen Haskell-Code. Der
 
 00:25:34,480 --> 00:25:41,840
-Compiler kann tatsächlich die Verwendung dieser unsicheren
-Funktionen verhindern. Und in unserem Autotool verhindern wir das auch.
+Compiler kann tatsächlich die Verwendung dieser unsicheren Funktionen
+verhindern. Und in unserem Autotool verhindern wir das auch.
 
 00:25:46,000 --> 00:25:55,840
-Weitere Beispiele, in denen Sie sehen, wie diese Do-Blöcke
+Weitere Beispiele, in denen
+Sie sehen, wie diese Do-Blöcke
 
 00:25:55,840 --> 00:26:01,760
 in der Praxis funktionieren, finden Sie in den Übungsaufgaben
@@ -1024,21 +1025,21 @@ die PDF-Datei, die im Moodle-Kurs enthalten ist,
 aus den Übungen des letzten Jahres, finden Sie auch
 
 00:26:08,240 --> 00:26:14,960
-komplexere Beispiele als die 'main'-Definition Lesen, Drucken
-Produktfunktion, die ich hier bisher gezeigt habe.
+komplexere Beispiele als die 'main'-Definition Lesen,
+Drucken Produktfunktion, die ich hier bisher gezeigt habe.
 
 156 # slide
 00:26:20,160 --> 00:26:26,800
-Abschließend und zum Abschluss möchte ich noch einmal
-zu diesem Punkt über die Verwendung von Abstraktionskonzepten
+Abschließend und zum Abschluss möchte ich noch einmal zu
+diesem Punkt über die Verwendung von Abstraktionskonzepten
 
 00:26:26,800 --> 00:26:32,080
 im Kontext von IO-Berechnungen, wie
 Polymorphismus, höhere Ordnung, etc.
 
 00:26:32,080 --> 00:26:37,120
-Lassen Sie mich dies im Zusammenhang mit der Frage diskutieren, was
-wir in Bezug auf Kontrollstrukturen tun sollten.
+Lassen Sie mich dies im Zusammenhang mit der Frage diskutieren,
+was wir in Bezug auf Kontrollstrukturen tun sollten.
 
 00:26:37,840 --> 00:26:44,720
 Kontrollstrukturen wie Schleifen, while, for,
@@ -1057,68 +1058,68 @@ wäre es natürlich zu fragen: Was ist mit
 anderen Kontrollstrukturen? Oder zumindest,
 
 00:27:01,200 --> 00:27:06,400
-Kontrollstrukturen wie die while-Schleife?
-Sobald wir Blöcke dieser Form haben, können wir keine
+Kontrollstrukturen wie die while-Schleife? Sobald
+wir Blöcke dieser Form haben, können wir keine
 
 00:27:06,400 --> 00:27:11,440
-eine while-Schleife um einen solchen Block herum schreiben? Wir wollen nicht
-nur sequenziellen Code haben, sondern Schleifen.
+eine while-Schleife um einen solchen Block herum schreiben? Wir
+wollen nicht nur sequenziellen Code haben, sondern Schleifen.
 
 00:27:13,040 --> 00:27:18,080
-Nun, wir sollten auch ein Schleifenschlüsselwort
-in Haskell einführen. Es gibt keine Schleifenschlüsselwörter.
+Nun, wir sollten auch ein Schleifenschlüsselwort in
+Haskell einführen. Es gibt keine Schleifenschlüsselwörter.
 
 00:27:18,080 --> 00:27:24,160
-Es gibt kein while. Es gibt ein do, aber kein
-while. Warum gibt es das nicht? Ist das nicht zu wenig?
+Es gibt kein while. Es gibt ein do, aber kein while.
+Warum gibt es das nicht? Ist das nicht zu wenig?
 
 00:27:24,720 --> 00:27:30,560
-Nein, das ist es nicht. Und warum nicht? Weil
-etwas wie ein while in Haskell benutzerdefiniert ist.
+Nein, das ist es nicht. Und warum nicht? Weil etwas
+wie ein while in Haskell benutzerdefiniert ist.
 
 00:27:30,560 --> 00:27:36,880
-Wir brauchen keine Unterstützung des Compilers für eine
-while-Schleife, denn wir können sie bereits
+Wir brauchen keine Unterstützung des Compilers für
+eine while-Schleife, denn wir können sie bereits
 
 00:27:36,880 --> 00:27:44,080
-als eine Funktion höherer Ordnung implementieren. So würde dies
-aussehen. Lassen Sie mich das in einer Minute erläutern.
+als eine Funktion höherer Ordnung implementieren. So würde
+dies aussehen. Lassen Sie mich das in einer Minute erläutern.
 
 00:27:44,080 --> 00:27:49,440
-Zur Motivation möchte ich zunächst sagen: Es ist fast
-wie das Divide-and-Conquer-Skeleton aus den
+Zur Motivation möchte ich zunächst sagen: Es ist
+fast wie das Divide-and-Conquer-Skeleton aus den
 
 00:27:49,440 --> 00:27:54,320
-Übungen. Wir hatten eine Funktion höherer Ordnung,
-die polymorph war. Und die
+Übungen. Wir hatten eine Funktion höherer
+Ordnung, die polymorph war. Und die
 
 00:27:54,320 --> 00:28:00,480
-Idee war, dass sie von dem Konzept eines
-Divide-and-Conquer-Algorithmus abgeleitet ist. Und durch die Bereitstellung
+Idee war, dass sie von dem Konzept eines Divide-and-Conquer-Algorithmus
+abgeleitet ist. Und durch die Bereitstellung
 
 00:28:00,480 --> 00:28:07,040
-verschiedener Instanziierungen des Typs und
-der Funktionsargumente haben wir dann
+verschiedener Instanziierungen des Typs
+und der Funktionsargumente haben wir dann
 
 00:28:07,760 --> 00:28:12,880
-verschiedene Divide-and-Conquer-Berechnungen. Und die
-gleiche Idee gilt hier. Warum muss es nicht
+verschiedene Divide-and-Conquer-Berechnungen. Und
+die gleiche Idee gilt hier. Warum muss es nicht
 
 00:28:12,880 --> 00:28:17,600
 ein Schlüsselwort geben, das vom Compiler unterstützt wird?
 Es kann einfach eine polymorphe Funktion höherer Ordnung sein.
 
 00:28:17,600 --> 00:28:22,960
-Es ist wie ein Skeleton, aber nicht für divide
-and conquer, sondern für das Konzept der while-Schleife.
+Es ist wie ein Skeleton, aber nicht für divide and
+conquer, sondern für das Konzept der while-Schleife.
 
 00:28:23,760 --> 00:28:29,760
 Was sind die konzeptionellen Bestandteile
 einer while-Schleife? Ein Startwert
 
 00:28:30,720 --> 00:28:38,800
-für die Schleifenvariable, dann ein Prädikat für
-diese Schleifenvariable, und wir wollen die
+für die Schleifenvariable, dann ein Prädikat
+für diese Schleifenvariable, und wir wollen die
 
 00:28:38,800 --> 00:28:47,680
 Schleife so lange wiederholen, wie dieses Prädikat für den
@@ -1129,12 +1130,12 @@ den Körper angeben. Das wäre der syntaktische
 Block im imperativen Code, wo wir sagen: while
 
 00:28:55,040 --> 00:29:01,280
-Bedingung für die Schleifenvariable, und was soll
-getan werden, während diese wahr ist? Irgendein Code. Und dieser
+Bedingung für die Schleifenvariable, und was soll getan
+werden, während diese wahr ist? Irgendein Code. Und dieser
 
 00:29:01,280 --> 00:29:08,000
-Code wird nun einfach ein Do-Block sein... ein Stück IO-
-Code, der natürlich von dem aktuellen Wert der
+Code wird nun einfach ein Do-Block sein... ein Stück
+IO- Code, der natürlich von dem aktuellen Wert der
 
 00:29:08,000 --> 00:29:13,760
 Schleifenvariablen abhängt. Dies ist eine Funktion aus
@@ -1157,20 +1158,20 @@ zurück. So geschieht die Änderung. Insgesamt
 erhalten wir eine IO-Berechnung, weil diese
 
 00:29:39,040 --> 00:29:44,800
-effektbehaftet ist. Das ist die Erklärung des Typs.
-Was ist mit der Definition? Wir müssen
+effektbehaftet ist. Das ist die Erklärung des
+Typs. Was ist mit der Definition? Wir müssen
 
 00:29:45,360 --> 00:29:50,800
-ein paar Argumente, also den Startwert, das
-Prädikat dieses Typs und den eigentlichen Körper. Und
+ein paar Argumente, also den Startwert, das Prädikat
+dieses Typs und den eigentlichen Körper. Und
 
 00:29:50,800 --> 00:29:58,560
-wie ist er dann definiert? Sie implementiert die Idee,
-dass eine while-Schleife immer durch eine Rekursion ausgedrückt
+wie ist er dann definiert? Sie implementiert die Idee, dass
+eine while-Schleife immer durch eine Rekursion ausgedrückt
 
 00:29:58,560 --> 00:30:06,640
-werden kann. Diese Interaktion/Analogie von Rekursion
-und fallender Iteration ist etwas,
+werden kann. Diese Interaktion/Analogie von
+Rekursion und fallender Iteration ist etwas,
 
 00:30:06,640 --> 00:30:11,120
 das Sie aus einigen Theorievorlesungen kennen sollten,
@@ -1181,28 +1182,28 @@ Es wurde auf abstrakter Ebene diskutiert, dass
 rekursive Algorithmen und iterative Algorithmen
 
 00:30:16,400 --> 00:30:23,920
-äquivalent sind, wenn Sie einen Beweis haben wollen. Wir brauchen keine
-iterativen Konzepte wie while-Schleifen als
+äquivalent sind, wenn Sie einen Beweis haben wollen. Wir
+brauchen keine iterativen Konzepte wie while-Schleifen als
 
 00:30:23,920 --> 00:30:29,280
 Sprachkonstrukt in Haskell, weil es sich leicht mit
 Rekursion ausdrücken lässt. Das ist es, was hier passiert.
 
 00:30:29,280 --> 00:30:34,080
-Wir definieren eine rekursive Funktion, die
-einen aktuellen Wert hat. Und natürlich am Anfang,
+Wir definieren eine rekursive Funktion, die einen
+aktuellen Wert hat. Und natürlich am Anfang,
 
 00:30:34,080 --> 00:30:40,400
-wird diese Funktion mit dem Startwert für die while-
-Variable aufgerufen, dann prüfen wir das Prädikat. Hier machen
+wird diese Funktion mit dem Startwert für die while- Variable
+aufgerufen, dann prüfen wir das Prädikat. Hier machen
 
 00:30:40,400 --> 00:30:44,480
-wir Gebrauch von diesem Funktionsargument. Da es sich um
-eine Funktion höherer Ordnung handelt, erhalten wir die Funktion als
+wir Gebrauch von diesem Funktionsargument. Da es sich um eine
+Funktion höherer Ordnung handelt, erhalten wir die Funktion als
 
 00:30:44,480 --> 00:30:49,680
-Argument. Das p, das Prädikat, wird auf den aktuellen Wert
-der Schleifenvariablen angewendet.
+Argument. Das p, das Prädikat, wird auf den
+aktuellen Wert der Schleifenvariablen angewendet.
 
 00:30:49,680 --> 00:30:54,000
 Dieser kann dann True sein oder nicht. Wenn es nicht True ist,
@@ -1217,28 +1218,28 @@ aktuellen Wert der Schleifenvariablen zurückgeben, aber wir
 können nicht einfach x hinschreiben, denn das wäre dann
 
 00:31:04,160 --> 00:31:09,680
-ein (a) sein, und nicht ein (IO a). An dieser Stelle kommt die
-return-Funktion zum Einsatz. Sie wird benutzt, um den
+ein (a) sein, und nicht ein (IO a). An dieser Stelle kommt
+die return-Funktion zum Einsatz. Sie wird benutzt, um den
 
 00:31:09,680 --> 00:31:18,800
 aktuellen Wert, der ein reiner (a)-Wert ist, in einen
 IO-Kontext zu verwandeln. Denn das ist es, was das Ergebnis von
 
 00:31:18,800 --> 00:31:24,320
-der "while"-Schleife sein sollte, ein IO-irgendwas.
-Das ist, wenn wir das Ende der Schleife erreicht haben,
+der "while"-Schleife sein sollte, ein IO-irgendwas. Das
+ist, wenn wir das Ende der Schleife erreicht haben,
 
 00:31:25,200 --> 00:31:31,920
 sobald das Prädikat nicht mehr gilt. Und während das
 Prädikat noch gilt, machen wir die erste Variante
 
 00:31:31,920 --> 00:31:36,880
-hier. Was macht sie?
-Sie ruft den Körper auf, der eine beliebige.
+hier. Was macht sie? Sie ruft den
+Körper auf, der eine beliebige.
 
 00:31:36,880 --> 00:31:41,040
-Funktion ist. Es wird also wahrscheinlich implementiert werden
-mit einem do-Block oder vielleicht mit einer weiteren while-Schleife.
+Funktion ist. Es wird also wahrscheinlich implementiert werden mit
+einem do-Block oder vielleicht mit einer weiteren while-Schleife.
 
 00:31:41,840 --> 00:31:48,880
 Wir führen den Body mit dem aktuellen Wert aus. Diese
@@ -1269,24 +1270,24 @@ aber jetzt mit dem aktuellen x'. Dies implementiert
 dieses while-Konstrukt, ohne dass die Sprache
 
 00:32:28,720 --> 00:32:33,520
-das bereitstellt. Es ist nicht etwas, was der Compiler
-zu tun hat. Der Benutzer kann dies tun. Dies ist vollständig
+das bereitstellt. Es ist nicht etwas, was der Compiler zu
+tun hat. Der Benutzer kann dies tun. Dies ist vollständig
 
 00:32:33,520 --> 00:32:38,160
 benutzerdefiniert. Wenn Sie also andere Kontrollstrukturen
 im Sinn haben... andere Schleifentypen oder ein
 
 00:32:38,160 --> 00:32:43,040
-etwas anderes Verhalten für Schleifen wünschen, dann steht es Ihnen frei,
-Ihre eigenen Funktionen dafür zu schreiben. Aber natürlich
+etwas anderes Verhalten für Schleifen wünschen, dann steht es Ihnen
+frei, Ihre eigenen Funktionen dafür zu schreiben. Aber natürlich
 
 00:32:43,040 --> 00:32:48,960
 gibt es bereits Bibliotheken mit solchen Funktionen,
 wie z. B. Kontrollstrukturen, die viele Menschen
 
 00:32:49,680 --> 00:32:53,360
-interessant und nützlich finden. Wir müssen das also nicht
-immer selbst tun. Aber wir sind
+interessant und nützlich finden. Wir müssen
+das also nicht immer selbst tun. Aber wir sind
 
 00:32:53,360 --> 00:33:00,560
 völlig frei, denn wir haben die Kontrolle über
@@ -1301,8 +1302,8 @@ Bibliothek mit nützlichen Schleifenfunktionen importiert.
 Dann könnten wir einen sehr kurzen Code wie diesen schreiben,
 
 00:33:14,320 --> 00:33:20,720
-wo wir etwas sagen wollen wie: Ich möchte
-eine while-Schleife mit dem Ausgangswert null starten,
+wo wir etwas sagen wollen wie: Ich möchte eine
+while-Schleife mit dem Ausgangswert null starten,
 
 00:33:20,720 --> 00:33:26,320
 das Prädikat ist die Section "kleiner als zehn" (<10).
@@ -1313,12 +1314,12 @@ noch kleiner als 10 ist. Das ist also wie eine
 while-Schleife, bei der die Schleifenabbruchbedingung lautet,
 
 00:33:31,920 --> 00:33:38,160
-sagen wir, wir beginnen mit einer Variablen n, n ist gleich null,
-und dann, solange n kleiner als 10 ist, irgendetwas tun.
+sagen wir, wir beginnen mit einer Variablen n, n ist gleich
+null, und dann, solange n kleiner als 10 ist, irgendetwas tun.
 
 00:33:39,040 --> 00:33:43,760
-Was wir tun wollen, wird im Body ausgedrückt.
-Es ist eine Funktion. Wir verwenden die Lambda-Abstraktion
+Was wir tun wollen, wird im Body ausgedrückt. Es ist
+eine Funktion. Wir verwenden die Lambda-Abstraktion
 
 00:33:43,760 --> 00:33:49,200
 weil sie von der aktuellen Schleifenvariablen abhängt,
@@ -1333,16 +1334,16 @@ Schleifeniteration mit einem erhöhten Wert...
 um eins erhöht, für die Schleifenvariable.
 
 00:34:03,040 --> 00:34:10,720
-Was würde dies tun? Es würde die Zahlen
-von null bis neun ausgeben, da sie mit null beginnt und
+Was würde dies tun? Es würde die Zahlen von null
+bis neun ausgeben, da sie mit null beginnt und
 
 00:34:10,720 --> 00:34:16,480
-solange der aktuelle Wert kleiner als zehn ist, wird er
-gedruckt und um eins inkrementiert. Das wäre
+solange der aktuelle Wert kleiner als zehn ist,
+wird er gedruckt und um eins inkrementiert. Das wäre
 
 00:34:16,480 --> 00:34:24,000
-wie eine kurze while-Schleife, die syntaktisch in
-C geschrieben ist, in der der Body den aktuellen Wert ausgibt und dann
+wie eine kurze while-Schleife, die syntaktisch in C geschrieben
+ist, in der der Body den aktuellen Wert ausgibt und dann
 
 00:34:24,000 --> 00:34:34,240
 den aktuellen Wert. Dies ist nur eine weitere

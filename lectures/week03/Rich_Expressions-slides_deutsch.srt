@@ -3,8 +3,8 @@
 Zurück zu den Folien für eine Weile.
 
 00:00:04,400 --> 00:00:10,080
-Als kurze Rekapitulation, sowohl von letzter Woche als auch
-vom vorangegangenen Video heute, lassen Sie mich
+Als kurze Rekapitulation, sowohl von letzter Woche als
+auch vom vorangegangenen Video heute, lassen Sie mich
 
 00:00:10,720 --> 00:00:13,440
 ein paar Begriffe/Beobachtungen
@@ -34,20 +34,20 @@ Und ich habe Ihnen, als Gedächtnisstütze oder zur
 Unterscheidung, was Ausdrücke in Sprachen sind, die Sie
 
 00:00:46,640 --> 00:00:53,840
-kennen, zum Beispiel gegeben: Es wären die Dinge,
-die nach "=" in einer Variablenzuweisung auftreten können.
+kennen, zum Beispiel gegeben: Es wären die Dinge, die
+nach "=" in einer Variablenzuweisung auftreten können.
 
 00:00:54,720 --> 00:00:59,520
-Als Dinge, die zu etwas evaluiert werden
-und dann einer Variablen zugewiesen werden können.
+Als Dinge, die zu etwas evaluiert werden und
+dann einer Variablen zugewiesen werden können.
 
 00:00:59,520 --> 00:01:02,800
-Das wären also die Dinge, die man
-einen Ausdruck nennen würde, auch in anderen Sprachen.
+Das wären also die Dinge, die man einen
+Ausdruck nennen würde, auch in anderen Sprachen.
 
 00:01:02,800 --> 00:01:06,320
-Und der Punkt war, dass zum Beispiel
-in Haskell im Grunde alles ein Ausdruck ist.
+Und der Punkt war, dass zum Beispiel in
+Haskell im Grunde alles ein Ausdruck ist.
 
 00:01:07,440 --> 00:01:11,840
 Programmieren besteht dort fast ausschließlich
@@ -57,28 +57,28 @@ aus dem Schreiben von Ausdrücken.
 Was sind Werte?
 
 00:01:15,200 --> 00:01:18,000
-Werte sind die Ergebnisse
-der Auswertung eines Ausdrucks.
+Werte sind die Ergebnisse der
+Auswertung eines Ausdrucks.
 
 00:01:18,720 --> 00:01:24,400
-Sie werden also durch die
-Kombination von Werten von Unterausdrücken erhalten.
+Sie werden also durch die Kombination
+von Werten von Unterausdrücken erhalten.
 
 00:01:24,400 --> 00:01:28,640
-Es gab auch diese Idee, dass die
-Reihenfolge der Auswertung nicht relevant sein sollte.
+Es gab auch diese Idee, dass die Reihenfolge
+der Auswertung nicht relevant sein sollte.
 
 00:01:29,600 --> 00:01:36,400
-Wenn man einen Ausdruck hat, der
-so aus Unterausdrücken kombiniert wird, können
+Wenn man einen Ausdruck hat, der so aus
+Unterausdrücken kombiniert wird, können
 
 00:01:39,200 --> 00:01:43,040
 Werte tatsächlich durch Ausdrücke ersetzt
 werden und Ausdrücke durch ihre Werte.
 
 00:01:43,840 --> 00:01:48,400
-In einer Sprache, in der es
-nur auf Ausdrücke und deren Werte ankommt.
+In einer Sprache, in der es nur auf
+Ausdrücke und deren Werte ankommt.
 
 00:01:50,480 --> 00:01:57,120
 Im Gegensatz dazu stehen Befehle, syntaktische
@@ -89,65 +89,65 @@ sind, was sie, wenn überhaupt, auswerten,
 sondern eher dadurch, welche Wirkung sie haben.
 
 00:02:00,960 --> 00:02:04,240
-Also Dinge wie Zuweisungsanweisungen, die
-Speicherzellen verändern, oder Schlüsselwörter/Befehle für
+Also Dinge wie Zuweisungsanweisungen, die Speicherzellen
+verändern, oder Schlüsselwörter/Befehle für
 
 00:02:04,240 --> 00:02:10,800
-Schleifen oder Dinge, bei denen es nicht
-um die Auswertung eines Ausdrucks geht, sondern
+Schleifen oder Dinge, bei denen es nicht um
+die Auswertung eines Ausdrucks geht, sondern
 
 00:02:10,800 --> 00:02:13,440
 darum, etwas zu tun
 oder einen Effekt zu haben.
 
 00:02:14,960 --> 00:02:19,680
-Und das ist eine andere
-Art von Struktur in einer Programmiersprache.
+Und das ist eine andere Art von
+Struktur in einer Programmiersprache.
 
 00:02:19,680 --> 00:02:24,880
-Und es ist immer noch eine
-dominante Struktur in imperativen Programmiersprachen, weil
+Und es ist immer noch eine dominante Struktur
+in imperativen Programmiersprachen, weil
 
 00:02:24,880 --> 00:02:28,560
-es dort darum geht, etwas zu
-tun und nicht darum, Werte zu berechnen.
+es dort darum geht, etwas zu tun
+und nicht darum, Werte zu berechnen.
 
 00:02:31,040 --> 00:02:36,640
-Und es gab diese wichtige Beobachtung, die oben
-schon angedeutet wurde, dass, wenn man in einer reinen
+Und es gab diese wichtige Beobachtung, die oben schon
+angedeutet wurde, dass, wenn man in einer reinen
 
 00:02:36,640 --> 00:02:40,480
 Umgebung ist (also keine Befehle hat und
 auch die Ausdrücke, die wir haben, sind reine
 
 00:02:41,040 --> 00:02:44,880
-Ausdrücke), dann können jede zwei Ausdrücke, die
-den gleichen Wert haben, füreinander ersetzt werden, ohne
+Ausdrücke), dann können jede zwei Ausdrücke, die den
+gleichen Wert haben, füreinander ersetzt werden, ohne
 
 00:02:44,880 --> 00:02:46,720
 dass sich das
 Verhalten des Programms ändert.
 
 00:02:46,720 --> 00:02:51,360
-Das ist es, was ich beim Rechnen
-mit Programmen im vorherigen Video gemacht habe.
+Das ist es, was ich beim Rechnen mit
+Programmen im vorherigen Video gemacht habe.
 
 00:02:51,360 --> 00:02:55,200
-Und das ist auch das, was z. B.
-ein Compiler zur Optimierung eines Programms verwenden kann.
+Und das ist auch das, was z. B. ein Compiler
+zur Optimierung eines Programms verwenden kann.
 
 32 # slide
 00:03:01,120 --> 00:03:08,880
-Speziell für die Subsprache CodeWorld: Dort geht
-es jetzt bei unseren Ausdrücken um Bilder.
+Speziell für die Subsprache CodeWorld: Dort
+geht es jetzt bei unseren Ausdrücken um Bilder.
 
 00:03:09,520 --> 00:03:12,160
-Die Werte von Ausdrücken
-sind also Bilder oder Zutaten,
+Die Werte von Ausdrücken sind
+also Bilder oder Zutaten,
 
 00:03:12,160 --> 00:03:16,000
-die für Bilder benötigt
-werden, wie Farben, Koordinaten etc.
+die für Bilder benötigt werden,
+wie Farben, Koordinaten etc.
 
 00:03:16,000 --> 00:03:17,360
 Sie können benannt werden, usw.
@@ -157,8 +157,8 @@ Das haben Sie natürlich schon
 in der ersten Übung gemacht.
 
 00:03:21,280 --> 00:03:23,120
-Und dafür haben
-Sie Funktionen/Operatoren verwendet.
+Und dafür haben Sie
+Funktionen/Operatoren verwendet.
 
 00:03:24,960 --> 00:03:27,600
 Hier liste ich einige
@@ -173,8 +173,8 @@ hätten, hätten Sie
 so etwas gefunden wie:
 
 00:03:35,200 --> 00:03:39,440
-Die Funktion "circle" nimmt einen Radius, der eine
-reelle Zahl ist, und gibt ein Bild aus.
+Die Funktion "circle" nimmt einen Radius, der
+eine reelle Zahl ist, und gibt ein Bild aus.
 
 00:03:39,440 --> 00:03:40,960
 Es gibt noch andere
@@ -184,31 +184,31 @@ Notationen, die in Haskell nicht genau so sind, aber wir
 haben sie auf dieser Folie, um den Funktionen und ihren Typen
 
 00:03:50,560 --> 00:03:54,240
-ähnlich zu sein, so wie Sie es
-aus der Mathematik, aus der Mengenlehre gewohnt sind.
+ähnlich zu sein, so wie Sie es aus der
+Mathematik, aus der Mengenlehre gewohnt sind.
 
 00:03:54,240 --> 00:03:56,320
 So geht es zum Beispiel
 
 00:03:56,320 --> 00:04:01,840
-bei der Funktion "polygon" auch darum, ein Bild
-zurückzugeben, aber sie nimmt eigentlich eine Liste von Koordinatenpaaren.
+bei der Funktion "polygon" auch darum, ein Bild zurückzugeben,
+aber sie nimmt eigentlich eine Liste von Koordinatenpaaren.
 
 00:04:01,840 --> 00:04:07,040
-Natürlich ist ein Koordinatenpaar das, was in
-der Mathematik durch ein kartesisches Produkt dargestellt wird.
+Natürlich ist ein Koordinatenpaar das, was in der
+Mathematik durch ein kartesisches Produkt dargestellt wird.
 
 00:04:07,040 --> 00:04:10,880
-Man nimmt also R × R,
-um Paare von reellen Zahlen zu erhalten.
+Man nimmt also R × R, um Paare
+von reellen Zahlen zu erhalten.
 
 00:04:10,880 --> 00:04:14,560
-Und eine Liste solcher Dinge wird ein Argument
-der polygon-Funktion sein, um ein Bild zu erhalten.
+Und eine Liste solcher Dinge wird ein Argument der
+polygon-Funktion sein, um ein Bild zu erhalten.
 
 00:04:15,840 --> 00:04:19,520
-Für "colored" nehmen Sie zwei Argumente, eine Farbe
-und ein Bild, und geben ein Bild zurück.
+Für "colored" nehmen Sie zwei Argumente, eine
+Farbe und ein Bild, und geben ein Bild zurück.
 
 00:04:19,520 --> 00:04:21,120
 Darüber haben wir schon gesprochen.
@@ -218,20 +218,20 @@ Und ebenso, für mehr als zwei
 Argumente, erhalten Sie so etwas wie ein
 
 00:04:25,840 --> 00:04:29,760
-dreifaches kartesisches/Kreuz-Produkt aus zwei mal
-einer reellen Zahl (für x- und
+dreifaches kartesisches/Kreuz-Produkt aus
+zwei mal einer reellen Zahl (für x- und
 
 00:04:29,760 --> 00:04:32,320
 y-Richtung) für eine Bewegung, und dann
 irgendein Bild, das Sie bewegen wollen.
 
 00:04:32,320 --> 00:04:34,720
-Und das Ergebnis ist ein
-Bild, nämlich das bewegte Bild.
+Und das Ergebnis ist ein Bild,
+nämlich das bewegte Bild.
 
 00:04:35,840 --> 00:04:40,080
-Was die Typen betrifft: Sie
-haben das vielleicht schon gesehen, z.B.
+Was die Typen betrifft: Sie haben
+das vielleicht schon gesehen, z.B.
 
 00:04:40,080 --> 00:04:46,240
 in Fehlermeldungen in CodeWorld - wenn Ihr Programm
@@ -245,79 +245,79 @@ gesehen, und die sahen etwas anders aus.
 Ich werde später darauf zurückkommen.
 
 00:04:51,040 --> 00:04:54,640
-Dass eigentlich, aus
-syntaktischen Gründen oder aus Gründen
+Dass eigentlich, aus syntaktischen
+Gründen oder aus Gründen
 
 00:04:54,640 --> 00:04:59,200
 der Organisation der Funktionsanwendung in
 Haskell, Sie dieses Kreuz selten sehen werden.
 
 00:04:59,200 --> 00:05:04,000
-Sie werden andere syntaktische Mittel sehen,
-um zum Beispiel eine binäre Funktion
+Sie werden andere syntaktische Mittel
+sehen, um zum Beispiel eine binäre Funktion
 
 00:05:04,560 --> 00:05:06,480
-oder eine Funktion mit
-drei Argumenten usw. auszudrücken.
+oder eine Funktion mit drei
+Argumenten usw. auszudrücken.
 
 00:05:06,480 --> 00:05:09,200
-Aber mathematisch, im Geiste, ist
-es das, was wir haben.
+Aber mathematisch, im Geiste,
+ist es das, was wir haben.
 
 00:05:09,200 --> 00:05:13,760
-Zum Beispiel eine Verknüpfung: Das Und-Zeichen (&) nimmt
-hier zwei Bilder und gibt ein Bild zurück.
+Zum Beispiel eine Verknüpfung: Das Und-Zeichen (&)
+nimmt hier zwei Bilder und gibt ein Bild zurück.
 
 00:05:16,080 --> 00:05:20,400
-Ich habe bereits im vorigen Video über
-Eigenschaften/Gesetze gesprochen, die wir uns vorstellen können.
+Ich habe bereits im vorigen Video über Eigenschaften/Gesetze
+gesprochen, die wir uns vorstellen können.
 
 00:05:21,200 --> 00:05:23,840
-Sie sind wie die
-arithmetischen Gesetze in der Mathematik.
+Sie sind wie die arithmetischen
+Gesetze in der Mathematik.
 
 00:05:23,840 --> 00:05:28,880
 Aber sie sprechen jetzt über die
 Funktionen, die wir in unserer Domäne haben.
 
 00:05:28,880 --> 00:05:32,480
-In diesem Fall habe ich
-über Rotation und Färbung gesprochen.
+In diesem Fall habe ich über
+Rotation und Färbung gesprochen.
 
 00:05:32,480 --> 00:05:35,920
-Aber ich habe auch angefangen,
-das Gesetz für Translation und Färbung
+Aber ich habe auch angefangen, das
+Gesetz für Translation und Färbung
 
 00:05:35,920 --> 00:05:37,840
 aufzuschreiben, und das wäre
 die vollständige Version davon.
 
 00:05:37,840 --> 00:05:41,520
-Und die Liste der
-Funktionen, die wir betrachten, wächst.
+Und die Liste der Funktionen,
+die wir betrachten, wächst.
 
 00:05:41,520 --> 00:05:44,080
-Es wird also noch mehr Dinge
-geben, die wir mit Bildern machen können.
+Es wird also noch mehr Dinge geben,
+die wir mit Bildern machen können.
 
 00:05:44,080 --> 00:05:46,720
-Dann kann man sich
-auch immer neue Gesetze ausdenken.
+Dann kann man sich auch
+immer neue Gesetze ausdenken.
 
 00:05:46,720 --> 00:05:49,040
 Man muss sie natürlich nicht beweisen.
 
 00:05:49,040 --> 00:05:53,760
-In dieser Vorlesung geht es darum:
-Wenn Sie vernünftige Eigenschaften/Gesetze über die
+In dieser Vorlesung geht es darum: Wenn Sie
+vernünftige Eigenschaften/Gesetze über die
 
 00:05:53,760 --> 00:05:57,920
 Funktionen, mit denen Sie arbeiten, kennen,
 dann können Sie schönere Programme schreiben.
 
 00:05:57,920 --> 00:06:00,960
-Und Sie können Ihre Programme
-mit viel mehr Vertrauen refaktorieren,
+Und Sie können Ihre Programme mit
+viel mehr Vertrauen refaktorieren,
 
 00:06:00,960 --> 00:06:05,840
 als wenn Sie nur raten, was
@@ -333,24 +333,24 @@ Das ist eigentlich ein sehr kleiner Schritt,
 denn eine Animation ist, wie ich schon
 
 00:06:19,920 --> 00:06:25,440
-vorher auf einer intuitiven Ebene angedeutet habe, nur
-ein Bild, das sich mit der Zeit verändert.
+vorher auf einer intuitiven Ebene angedeutet habe,
+nur ein Bild, das sich mit der Zeit verändert.
 
 00:06:25,440 --> 00:06:31,280
 Und mathematisch wäre eine solche Abhängigkeit von
 der Zeit einfach durch die Einführung von Parametern.
 
 00:06:31,280 --> 00:06:37,280
-Das Beispiel, das Sie hier sehen, ist
-eine kleine Abwandlung des Beispiels von letzter Woche,
+Das Beispiel, das Sie hier sehen, ist eine kleine
+Abwandlung des Beispiels von letzter Woche,
 
 00:06:37,280 --> 00:06:44,640
-wo wir im Grunde keine
-Animation hatten, sondern nur eine Zeichnung.
+wo wir im Grunde keine Animation
+hatten, sondern nur eine Zeichnung.
 
 00:06:44,640 --> 00:06:50,000
-In dem letzten Beispiel, das ich in
-der Diskussion über den Ausdrucksstil in CodeWorld durchgespielt
+In dem letzten Beispiel, das ich in der Diskussion
+über den Ausdrucksstil in CodeWorld durchgespielt
 
 00:06:50,000 --> 00:06:53,280
 habe, hatten wir
@@ -361,8 +361,8 @@ In einem der Beispiele gab
 es hier einen festen Wert.
 
 00:06:57,200 --> 00:07:01,040
-Es gab also ein farbiges rotes
-Dreieck, das irgendwohin verschoben wurde.
+Es gab also ein farbiges rotes Dreieck,
+das irgendwohin verschoben wurde.
 
 00:07:01,040 --> 00:07:04,880
 Und jetzt, indem ich sage "na ja, eigentlich
@@ -372,28 +372,28 @@ will ich das von der Zeit t abhängig machen",
 ist das schon eine Animation.
 
 00:07:07,120 --> 00:07:12,720
-Ich muss einfach den Aufruf oben, hier, ändern, um
-auch auszudrücken, dass ich jetzt eine Animation haben möchte.
+Ich muss einfach den Aufruf oben, hier, ändern, um auch
+auszudrücken, dass ich jetzt eine Animation haben möchte.
 
 00:07:12,720 --> 00:07:17,440
-Und das mache ich mit
-der Funktion hier, und außerdem definiere
+Und das mache ich mit der Funktion
+hier, und außerdem definiere
 
 00:07:18,800 --> 00:07:23,040
 ich, statt eine Szene als Bild zu
 definieren, eine Funktion von Double zu Bild.
 
 00:07:23,040 --> 00:07:29,840
-Das ist also so etwas wie das R aus
-den vorherigen Folien, das mathematische R, die reellen Zahlen.
+Das ist also so etwas wie das R aus den vorherigen
+Folien, das mathematische R, die reellen Zahlen.
 
 00:07:31,520 --> 00:07:34,400
-Die Funktion hängt also von der Zeit ab,
-ihre erste Variable ist also der Parameter t, in
+Die Funktion hängt also von der Zeit ab, ihre
+erste Variable ist also der Parameter t, in
 
 00:07:35,120 --> 00:07:39,440
-der einfachen mathematischen Interpretation
-und im einfachen Stil.
+der einfachen mathematischen
+Interpretation und im einfachen Stil.
 
 00:07:40,640 --> 00:07:42,400
 Dieser Parameter wird hier
@@ -404,40 +404,40 @@ Sie sehen also nie, dass ich in diesem kurzen
 Stück Code das t auf einen bestimmten Wert setze.
 
 00:07:49,760 --> 00:07:51,680
-Wir können dies tun
-und mit dem Beispielcode herumspielen.
+Wir können dies tun und mit
+dem Beispielcode herumspielen.
 
 00:07:51,680 --> 00:07:55,920
-Wir können auch bestimmte Aufrufe der scene-Funktion
-mit den Werten 1, 2, 3, was auch
+Wir können auch bestimmte Aufrufe der
+scene-Funktion mit den Werten 1, 2, 3, was auch
 
 00:07:55,920 --> 00:07:58,080
 immer, mit
 bestimmten Werten berücksichtigen.
 
 00:07:58,080 --> 00:08:02,000
-Aber für eine Animation ist das
-nichts, was ich als Programmierer tun würde.
+Aber für eine Animation ist das nichts,
+was ich als Programmierer tun würde.
 
 00:08:03,760 --> 00:08:07,520
-Eine weitere Beobachtung ist: Es gibt
-keine for-Schleife oder andere explizite Steuerung.
+Eine weitere Beobachtung ist: Es gibt keine
+for-Schleife oder andere explizite Steuerung.
 
 00:08:07,520 --> 00:08:12,240
-Wenn Sie ein sich bewegendes
-Dreieck in einer anderen Sprache betrachten
+Wenn Sie ein sich bewegendes Dreieck
+in einer anderen Sprache betrachten
 
 00:08:12,240 --> 00:08:17,200
 würden, könnten Sie sich vorstellen, dass Sie eine for-Schleife
 schreiben, die tatsächlich eine Variable t für die Zeit
 
 00:08:17,200 --> 00:08:23,280
-nimmt und dann verschiedene Zeitschritte durchläuft: t = 1, 2,
-3, 4, was auch immer, in einer for-Schleife; und dies
+nimmt und dann verschiedene Zeitschritte durchläuft: t = 1,
+2, 3, 4, was auch immer, in einer for-Schleife; und dies
 
 00:08:23,280 --> 00:08:31,440
-dann benutzen, um wiederholte Aufrufe an eine Zeichenfunktion zu machen,
-um ein sich bewegendes Dreieck zu simulieren oder zu animieren.
+dann benutzen, um wiederholte Aufrufe an eine Zeichenfunktion zu
+machen, um ein sich bewegendes Dreieck zu simulieren oder zu animieren.
 
 00:08:31,440 --> 00:08:34,400
 Das ist nicht das, was hier
@@ -448,8 +448,8 @@ beschäftigt, dies
 mathematisch auszudrücken.
 
 00:08:36,480 --> 00:08:41,440
-Und mathematisch lässt sich mit
-diesem Ausdruck perfekt beschreiben, was
+Und mathematisch lässt sich mit diesem
+Ausdruck perfekt beschreiben, was
 
 00:08:42,240 --> 00:08:46,240
 es bedeutet, dass die Position
@@ -459,24 +459,24 @@ des Dreiecks von der Zeit abhängt.
 Es gibt also keine explizite Steuerung.
 
 00:08:50,400 --> 00:08:53,840
-Stattdessen kümmert sich
-irgendwie dieses animationOf-Konstrukt darum.
+Stattdessen kümmert sich irgendwie
+dieses animationOf-Konstrukt darum.
 
 00:08:55,040 --> 00:09:00,240
-Und als Benutzer der Bibliothek brauchen wir
-nicht zu wissen, wie es das macht.
+Und als Benutzer der Bibliothek brauchen
+wir nicht zu wissen, wie es das macht.
 
 00:09:00,240 --> 00:09:05,040
-Es macht das, indem es clevere
-Entscheidungen darüber trifft, wie oft die scene-Funktion
+Es macht das, indem es clevere Entscheidungen
+darüber trifft, wie oft die scene-Funktion
 
 00:09:05,040 --> 00:09:11,680
 aufgerufen werden soll. Vielleicht synchron mit der
 Aktualisierungsrate des Browsers entscheidet, wann und mit welchen
 
 00:09:11,680 --> 00:09:15,760
-Werten es die scene-Funktion aufrufen soll. Und
-dann alle Bilder, die dabei entstehen, zu
+Werten es die scene-Funktion aufrufen soll.
+Und dann alle Bilder, die dabei entstehen, zu
 
 00:09:15,760 --> 00:09:19,520
 einer netten Animation kombiniert (die im Browser angezeigt
@@ -487,20 +487,20 @@ auf andere Weise, wenn
 Sie es offline benutzen).
 
 00:09:23,680 --> 00:09:27,680
-Der Punkt ist, dass
-das animationOf-Konstrukt dies tut.
+Der Punkt ist, dass das
+animationOf-Konstrukt dies tut.
 
 00:09:27,680 --> 00:09:32,160
-Es ist eine Funktion, die eine andere Funktion,
-in diesem Fall eine scene-Funktion, als Argument nimmt.
+Es ist eine Funktion, die eine andere Funktion, in
+diesem Fall eine scene-Funktion, als Argument nimmt.
 
 00:09:32,160 --> 00:09:34,640
-Es ist nicht etwas,
-das wir selbst implementiert haben.
+Es ist nicht etwas, das wir
+selbst implementiert haben.
 
 00:09:34,640 --> 00:09:38,880
-Es ist ein Teil der Bibliothek, oder der
-Semantik dessen, was eine Animation in CodeWorld ist.
+Es ist ein Teil der Bibliothek, oder der Semantik
+dessen, was eine Animation in CodeWorld ist.
 
 00:09:39,520 --> 00:09:44,000
 Und wir können es einfach verwenden,
@@ -543,8 +543,8 @@ würde man das "Schiefer Wurf" nennen.
 Wo man etwas in einem Startwinkel wirft.
 
 00:10:31,200 --> 00:10:34,240
-Und wenn man in solchen
-Physik-Lehrbüchern nachschlägt, wie das Experiment
+Und wenn man in solchen Physik-Lehrbüchern
+nachschlägt, wie das Experiment
 
 00:10:35,120 --> 00:10:40,480
 beschrieben werden kann, dann würde man so
@@ -562,8 +562,8 @@ Startgeschwindigkeit in der x-Richtung und
 eine Startgeschwindigkeit in der y-Richtung.
 
 00:10:54,640 --> 00:10:58,240
-Und da es sich in x-Richtung
-um eine gleichförmige Bewegung handelt, ist es
+Und da es sich in x-Richtung um eine
+gleichförmige Bewegung handelt, ist es
 
 00:10:59,520 --> 00:11:03,360
 im Grunde die Multiplikation dieses
@@ -586,12 +586,12 @@ Und das ist eine vollständige
 Beschreibung der Dynamik des Systems.
 
 00:11:24,720 --> 00:11:28,320
-Und es dient auch als
-die Implementierung, wenn Sie so wollen.
+Und es dient auch als die
+Implementierung, wenn Sie so wollen.
 
 00:11:29,120 --> 00:11:32,400
-Sie könnten also in CodeWorld
-ein kleines Programm schreiben, das
+Sie könnten also in CodeWorld ein
+kleines Programm schreiben, das
 
 00:11:32,400 --> 00:11:35,280
 im Grunde diese
@@ -602,40 +602,40 @@ Und was Sie aufschreiben, ist
 eigentlich das, was wir oben
 
 00:11:38,080 --> 00:11:42,080
-von der mathematischen Seite sehen, nur
-dass Sie es im Haskell-Stil schreiben müssen.
+von der mathematischen Seite sehen, nur dass
+Sie es im Haskell-Stil schreiben müssen.
 
 00:11:43,280 --> 00:11:52,640
-Sie werden diese Ausdrücke hier unten für
-die x- und y-Werte natürlich in Programmsyntax erkennen.
+Sie werden diese Ausdrücke hier unten für die x-
+und y-Werte natürlich in Programmsyntax erkennen.
 
 00:11:52,640 --> 00:11:56,000
 Nicht zum Beispiel
 diese Bruch-Syntax hier.
 
 00:11:56,000 --> 00:11:58,880
-Aber abgesehen davon, und
-dem Setzen einiger spezifischer Parameter
+Aber abgesehen davon, und dem Setzen
+einiger spezifischer Parameter
 
 00:11:59,440 --> 00:12:05,760
 und spezifischer Konstanten, ist das wirklich
 die Implementierung dessen, was wir oben sehen.
 
 00:12:05,760 --> 00:12:09,840
-Es ist sehr eng mit
-der mathematischen/physikalischen Seite der Programmierung verbunden.
+Es ist sehr eng mit der mathematischen/physikalischen
+Seite der Programmierung verbunden.
 
 00:12:12,160 --> 00:12:14,240
-Auch das ist nicht
-etwas, das super überraschend ist.
+Auch das ist nicht etwas,
+das super überraschend ist.
 
 00:12:14,880 --> 00:12:20,400
 Aber es ist auch interessant, weil
 es nützlich ist, um durch das
 
 00:12:20,400 --> 00:12:23,600
-Spielen mit diesem Programm die
-Verwendung bestimmter Konzepte zu veranschaulichen.
+Spielen mit diesem Programm die Verwendung
+bestimmter Konzepte zu veranschaulichen.
 
 00:12:23,600 --> 00:12:25,120
 Zum Beispiel Scope.
@@ -645,12 +645,12 @@ Ein Unterschied, den
 Sie hier vielleicht schon
 
 00:12:28,160 --> 00:12:33,520
-bemerken, ist zum Beispiel, dass x und y
-hier oben explizite Funktionen sind, die diesen t-Parameter nehmen.
+bemerken, ist zum Beispiel, dass x und y hier oben
+explizite Funktionen sind, die diesen t-Parameter nehmen.
 
 00:12:33,520 --> 00:12:39,520
-Hingegen hier unten, wo ich x und
-y berechne, weil ich sie zur Beschreibung der
+Hingegen hier unten, wo ich x und y
+berechne, weil ich sie zur Beschreibung der
 
 00:12:41,280 --> 00:12:47,680
 Position meiner kleinen Kugel (die dieser "circle 0,1"
@@ -670,8 +670,8 @@ Wir beschreiben also die scene-Funktion.
 Die Funktion nimmt ein Argument t.
 
 00:12:57,520 --> 00:12:59,280
-Dann ist dort auf der
-rechten Seite das t im Gültigkeitsbereich.
+Dann ist dort auf der rechten
+Seite das t im Gültigkeitsbereich.
 
 00:12:59,280 --> 00:13:00,400
 Es kann verwendet werden.
@@ -681,65 +681,65 @@ Und wenn ich hier eine lokale Definition für x
 einführe (oder sogar mehrere für x und für y),
 
 00:13:06,080 --> 00:13:11,680
-dann ist das t im Gültigkeitsbereich, aber ich muss
-nicht, wie hier oben, das t explizit als Argument übergeben.
+dann ist das t im Gültigkeitsbereich, aber ich muss nicht,
+wie hier oben, das t explizit als Argument übergeben.
 
 00:13:11,680 --> 00:13:13,120
 Das ist etwas, mit
 dem Sie herumspielen können.
 
 00:13:13,120 --> 00:13:16,160
-Was passiert also, wenn Sie diese x
-und y auf die oberste Ebene verschieben?
+Was passiert also, wenn Sie diese x und
+y auf die oberste Ebene verschieben?
 
 00:13:16,160 --> 00:13:18,560
-Ich habe bereits über
-die Organisation von Programmen gesprochen.
+Ich habe bereits über die Organisation
+von Programmen gesprochen.
 
 00:13:18,560 --> 00:13:23,840
-Lokale Definitionen oder Top-Level/Global-Definitionen zu haben,
-ist etwas, das wir hier beobachten können.
+Lokale Definitionen oder Top-Level/Global-Definitionen
+zu haben, ist etwas, das wir hier beobachten können.
 
 00:13:24,640 --> 00:13:29,360
-Außerdem ist dies ein Programm,
-das weitgehend ohne Schlüsselwörter auskommt.
+Außerdem ist dies ein Programm, das
+weitgehend ohne Schlüsselwörter auskommt.
 
 00:13:29,360 --> 00:13:31,040
 Denn wir befinden uns im Expression-Stil.
 
 00:13:31,040 --> 00:13:36,160
-So wie die mathematische Welt keine
-Schlüsselwörter kennt, sondern nur mathematische Symbole, Variablen,
+So wie die mathematische Welt keine Schlüsselwörter
+kennt, sondern nur mathematische Symbole, Variablen,
 
 00:13:36,160 --> 00:13:42,080
-Operatoren und Kombinationen von Ausdrücken;
-so ist es auch hier.
+Operatoren und Kombinationen von
+Ausdrücken; so ist es auch hier.
 
 00:13:42,080 --> 00:13:43,040
 Es gibt also keine Schlüsselwörter.
 
 00:13:43,600 --> 00:13:46,400
-Das "where" könnte man
-vielleicht als Schlüsselwort betrachten,
+Das "where" könnte man vielleicht
+als Schlüsselwort betrachten,
 
 00:13:46,400 --> 00:13:49,360
-aber es ist wirklich nur
-etwas zum Organisieren unseres Ausdrucks.
+aber es ist wirklich nur etwas zum
+Organisieren unseres Ausdrucks.
 
 00:13:49,360 --> 00:13:50,720
 Es ist nicht wie die "while"-
 
 00:13:51,360 --> 00:13:57,520
-oder "for"-Schleifenschlüsselwörter in einer imperativen Sprache,
-dass es wirklich die ganze Berechnung antreibt.
+oder "for"-Schleifenschlüsselwörter in einer imperativen
+Sprache, dass es wirklich die ganze Berechnung antreibt.
 
 00:13:57,520 --> 00:13:59,520
 Dieses "where" hier ist also
 ein Schlüsselwort, aber es ist
 
 00:14:00,160 --> 00:14:03,680
-wirklich nur ein Hilfsmittel, um
-unsere mathematischen Ausdrücke zu organisieren.
+wirklich nur ein Hilfsmittel, um unsere
+mathematischen Ausdrücke zu organisieren.
 
 00:14:03,680 --> 00:14:07,680
 Was wirklich wichtig an diesem Programm
@@ -747,16 +747,16 @@ ist, sind die Ausdrücke, die wir bilden.
 
 35 # slide
 00:14:14,320 --> 00:14:17,500
-Da wir gerade von Ausdrücken
-sprechen, was ich anscheinend ständig tue:
+Da wir gerade von Ausdrücken sprechen,
+was ich anscheinend ständig tue:
 
 00:14:17,500 --> 00:14:25,040
-Wir brauchen natürlich ein paar mehr
-Zutaten als nur Operatoren, Konstanten und Variablen.
+Wir brauchen natürlich ein paar mehr Zutaten
+als nur Operatoren, Konstanten und Variablen.
 
 00:14:25,040 --> 00:14:31,600
-Ich habe also diese idealisierte Vorstellung,
-dass es nur mathematische Funktionen, mathematische Symbole,
+Ich habe also diese idealisierte Vorstellung, dass es
+nur mathematische Funktionen, mathematische Symbole,
 
 00:14:31,600 --> 00:14:36,960
 Variablen und Konstanten gibt,
@@ -767,20 +767,20 @@ Es wird noch etwas mehr benötigt, aber es
 wird immer noch im Stil von Ausdrücken sein.
 
 00:14:41,520 --> 00:14:45,200
-Das "where"-Schlüsselwort aus der vorherigen Folie
-war also schon ein Beispiel, wo
+Das "where"-Schlüsselwort aus der vorherigen
+Folie war also schon ein Beispiel, wo
 
 00:14:45,200 --> 00:14:52,640
 etwas eingeführt wurde, das nicht nur ein Wert
 ist oder etwas, das selbst ein Ausdruck ist.
 
 00:14:52,640 --> 00:14:55,040
-Es ist also ein
-Schlüsselwort zum Organisieren von Ausdrücken.
+Es ist also ein Schlüsselwort
+zum Organisieren von Ausdrücken.
 
 00:14:55,040 --> 00:14:57,840
-Und tatsächlich wird es
-weitere syntaktische Konstrukte geben,
+Und tatsächlich wird es weitere
+syntaktische Konstrukte geben,
 
 00:14:59,200 --> 00:15:04,480
 die es uns erlauben, interessantere,
@@ -790,8 +790,8 @@ größere und nützlichere Ausdrücke zu bauen.
 Ich nenne dies "rich expressions".
 
 00:15:07,360 --> 00:15:11,840
-Ich werde diese Eigenschaften
-im folgenden Material nacheinander vorstellen,
+Ich werde diese Eigenschaften im folgenden
+Material nacheinander vorstellen,
 
 00:15:12,640 --> 00:15:18,480
 und zwar jeweils motiviert
@@ -806,8 +806,8 @@ Nehmen wir an, dass wir, anders als bei dem
 Beispiel, das wir heute gesehen haben (wo wir eine
 
 00:15:30,320 --> 00:15:36,400
-kontinuierliche Verteilung über die Zeit hatten, sodass
-unsere Funktion von der Zeit abhängig war, um
+kontinuierliche Verteilung über die Zeit hatten,
+sodass unsere Funktion von der Zeit abhängig war, um
 
 00:15:36,400 --> 00:15:42,480
 eine kontinuierliche Verteilung von Bildern über die Zeit auszudrücken,
@@ -824,8 +824,8 @@ Dreieck haben, sondern vielleicht viele Dreiecke,
 die statisch sind, aber räumlich getrennt.
 
 00:15:52,800 --> 00:15:56,960
-Sie erscheinen also zum Beispiel
-an verschiedenen Stellen in unserer Koordinatenebene.
+Sie erscheinen also zum Beispiel an verschiedenen
+Stellen in unserer Koordinatenebene.
 
 00:15:59,360 --> 00:16:00,960
 Jetzt ist natürlich die Magie
@@ -839,36 +839,36 @@ Denn es gibt keinen offensichtlichen
 Weg, wie man die Dinge im
 
 00:16:08,800 --> 00:16:11,360
-Raum verteilen kann, im
-Gegensatz zur vorwärts laufenden Zeit.
+Raum verteilen kann, im Gegensatz
+zur vorwärts laufenden Zeit.
 
 00:16:11,360 --> 00:16:15,840
-Wir müssen also für jeden Punkt
-einfach sagen, wo sich unser Dreieck befindet.
+Wir müssen also für jeden Punkt einfach
+sagen, wo sich unser Dreieck befindet.
 
 00:16:16,640 --> 00:16:19,680
-Nun wollen wir vielleicht ein
-bestimmtes Muster auf dem Bildschirm haben,
+Nun wollen wir vielleicht ein bestimmtes
+Muster auf dem Bildschirm haben,
 
 00:16:19,680 --> 00:16:23,680
 wie diese verschiedenen Dreiecke
 statisch platziert werden sollen.
 
 00:16:23,680 --> 00:16:28,000
-Und das ist nicht etwas, das irgendwie
-von so etwas wie der animationOf-Funktion kommen kann.
+Und das ist nicht etwas, das irgendwie von so
+etwas wie der animationOf-Funktion kommen kann.
 
 00:16:30,160 --> 00:16:33,360
-Es ist also etwas,
-das der Programmierer tun müsste.
+Es ist also etwas, das der
+Programmierer tun müsste.
 
 00:16:33,360 --> 00:16:34,880
 Und natürlich könnte
 der Programmierer das tun.
 
 00:16:34,880 --> 00:16:40,000
-Der Programmierer könnte unsere alte scene-Funktion nehmen, die
-mit dem Parameter das Dreieck an einem bestimmten Punkt
+Der Programmierer könnte unsere alte scene-Funktion nehmen,
+die mit dem Parameter das Dreieck an einem bestimmten Punkt
 
 00:16:40,000 --> 00:16:45,520
 platziert, und vorher diesen Parameter in der
@@ -883,20 +883,20 @@ einzelne Aufrufe der scene-Funktion mit
 unterschiedlichen Werten für diesen Parameter machen.
 
 00:16:51,680 --> 00:16:55,440
-Dann können wir natürlich die
-Orte ausdrücken, die uns interessieren.
+Dann können wir natürlich die Orte
+ausdrücken, die uns interessieren.
 
 00:16:55,440 --> 00:16:57,280
 Aber dann müssten
 wir diese Aufrufe replizieren.
 
 00:16:57,280 --> 00:17:01,520
-Wir müssten "scene von 1",
-"scene von 1,5" aufschreiben, wenn das
+Wir müssten "scene von 1", "scene
+von 1,5" aufschreiben, wenn das
 
 00:17:01,520 --> 00:17:05,520
-die zwei Kopien sind, die wir von
-unserer "scene", von unserem Dreieck haben wollen.
+die zwei Kopien sind, die wir von unserer
+"scene", von unserem Dreieck haben wollen.
 
 00:17:05,520 --> 00:17:09,120
 Und wenn Sie zehn Kopien des Dreiecks
@@ -907,12 +907,12 @@ dieser scene-Funktion machen,
 die ein Dreieck zeichnet.
 
 00:17:13,520 --> 00:17:15,920
-Aber das ist nichts, was
-Sie von Hand machen wollen, richtig?
+Aber das ist nichts, was Sie
+von Hand machen wollen, richtig?
 
 00:17:15,920 --> 00:17:18,240
-Es ist auch nicht etwas,
-das Sie im Programm aufschreiben wollen:
+Es ist auch nicht etwas, das Sie
+im Programm aufschreiben wollen:
 
 00:17:19,280 --> 00:17:21,840
 zehnmal derselbe Aufruf,
@@ -922,8 +922,8 @@ nur mit anderen Argumenten.
 Was soll man stattdessen tun?
 
 00:17:24,480 --> 00:17:27,840
-Lassen Sie uns
-über imperative Programmierung nachdenken.
+Lassen Sie uns über imperative
+Programmierung nachdenken.
 
 00:17:27,840 --> 00:17:28,800
 Was würden wir tun?
@@ -933,12 +933,12 @@ Das würde wahrscheinlich
 eine for-Schleife erfordern.
 
 00:17:30,240 --> 00:17:36,400
-Wir würden sagen, wir wollen
-zehn Kopien unseres Aufrufs der scene-Funktion.
+Wir würden sagen, wir wollen zehn Kopien
+unseres Aufrufs der scene-Funktion.
 
 00:17:36,400 --> 00:17:42,320
-Dann schreiben wir eine for-Schleife, in der
-wir die Schleifenvariable so verwenden, dass wir unsere
+Dann schreiben wir eine for-Schleife, in der wir
+die Schleifenvariable so verwenden, dass wir unsere
 
 00:17:42,320 --> 00:17:45,840
 zehn Kopien des
@@ -948,8 +948,8 @@ Dreiecks bekommen, zum Beispiel.
 Aber das haben wir ja nicht, oder?
 
 00:17:48,160 --> 00:17:53,040
-Das ist etwas, was ich von Anfang
-an gesagt habe, dass wir nicht in solchen
+Das ist etwas, was ich von Anfang an
+gesagt habe, dass wir nicht in solchen
 
 00:17:53,040 --> 00:17:59,360
 Kontrollkonstrukten denken, wo wir ausdrücken, was zu
@@ -959,8 +959,8 @@ tun ist, oder eine wiederholte Wirkung ausdrücken.
 Das wäre nicht im Sinne von Expression.
 
 00:18:01,040 --> 00:18:05,280
-Es ist nicht etwas, das in einer
-funktionalen Sprache auf diese Weise verfügbar ist.
+Es ist nicht etwas, das in einer funktionalen
+Sprache auf diese Weise verfügbar ist.
 
 00:18:05,280 --> 00:18:06,080
 Wir haben das nicht.
@@ -970,16 +970,16 @@ Nun, dann sollten wir
 vielleicht etwas anderes haben.
 
 00:18:10,720 --> 00:18:12,880
-Wir wollen natürlich in
-der Lage sein, dies auszudrücken.
+Wir wollen natürlich in der
+Lage sein, dies auszudrücken.
 
 00:18:12,880 --> 00:18:13,840
 Also, was haben wir stattdessen?
 
 37 # slide
 00:18:16,880 --> 00:18:21,280
-Was wir haben, sind die
-sogenannten "List Comprehensions", die unsere erste
+Was wir haben, sind die sogenannten
+"List Comprehensions", die unsere erste
 
 00:18:21,280 --> 00:18:24,960
 Art von "Rich Expressions" sind,
@@ -989,12 +989,12 @@ die wir in Betracht ziehen.
 Und ein Beispiel sehen Sie hier.
 
 00:18:27,680 --> 00:18:32,080
-Vielleicht haben Sie solche Comprehensions auch
-schon in anderen Programmiersprachen gesehen, aber sie
+Vielleicht haben Sie solche Comprehensions auch schon
+in anderen Programmiersprachen gesehen, aber sie
 
 00:18:32,720 --> 00:18:35,440
-haben ihren Ursprung
-in der funktionalen Programmierung.
+haben ihren Ursprung in der
+funktionalen Programmierung.
 
 00:18:36,320 --> 00:18:37,440
 Also, was haben wir hier?
@@ -1023,23 +1023,23 @@ Aber dann verwende ich
 sie auf eine andere Weise.
 
 00:18:59,360 --> 00:19:01,680
-Anstatt sie an
-einen animationOf-Aufruf zu übergeben,
+Anstatt sie an einen
+animationOf-Aufruf zu übergeben,
 
 00:19:01,680 --> 00:19:06,880
-übergebe ich sie stattdessen an einen
-drawingOf-Aufruf, aber eigentlich übergebe ich mehrere Kopien.
+übergebe ich sie stattdessen an einen drawingOf-Aufruf,
+aber eigentlich übergebe ich mehrere Kopien.
 
 00:19:06,880 --> 00:19:08,560
 Und das mache ich in einer Liste.
 
 00:19:08,560 --> 00:19:12,640
-Die eckigen Klammern hier
-stehen also für die Listensyntax.
+Die eckigen Klammern hier stehen
+also für die Listensyntax.
 
 00:19:12,640 --> 00:19:16,880
-Und im Besonderen habe ich hier zwei
-Dinge kombiniert: Ich habe eine Funktion "pictures".
+Und im Besonderen habe ich hier zwei Dinge
+kombiniert: Ich habe eine Funktion "pictures".
 
 00:19:16,880 --> 00:19:18,960
 Sie ist hier unten
@@ -1049,16 +1049,16 @@ mit ihrem Typ angegeben.
 Also, was sagt sie?
 
 00:19:20,000 --> 00:19:22,400
-Sie gibt ein Bild an und
-nimmt eine Liste von Bildern auf.
+Sie gibt ein Bild an und nimmt
+eine Liste von Bildern auf.
 
 00:19:22,400 --> 00:19:25,440
-Man könnte meinen, es sei eine Menge
-von Bildern, aber eigentlich ist es eine Liste.
+Man könnte meinen, es sei eine Menge von
+Bildern, aber eigentlich ist es eine Liste.
 
 00:19:26,480 --> 00:19:29,600
-Es werden also mehrere
-Bilder in ein Bild umgewandelt.
+Es werden also mehrere Bilder
+in ein Bild umgewandelt.
 
 00:19:29,600 --> 00:19:31,840
 Man kann sich die pictures-Funktion
@@ -1076,12 +1076,12 @@ Hier haben wir mehrere Bilder,
 die wir zu einem kombinieren.
 
 00:19:52,000 --> 00:19:54,391
-Und was sind unsere Bilder,
-die wir zu einem kombinieren wollen?
+Und was sind unsere Bilder, die
+wir zu einem kombinieren wollen?
 
 00:19:54,391 --> 00:19:57,440
-Sie sind dieser Ausdruck hier, der
-hier wiederholt wird, eine "List Comprehension".
+Sie sind dieser Ausdruck hier, der hier
+wiederholt wird, eine "List Comprehension".
 
 00:19:57,440 --> 00:20:02,960
 Denn es beschreibt umfassend mehrere
@@ -1091,23 +1091,23 @@ Elemente der Liste auf einmal.
 Und wie macht er das?
 
 00:20:04,500 --> 00:20:07,410
-Nun, er enthält Aufrufe
-der scene-Funktion für einige Werte.
+Nun, er enthält Aufrufe der
+scene-Funktion für einige Werte.
 
 00:20:07,410 --> 00:20:12,460
-Und diese Werte werden
-aus einer anderen Liste gezogen.
+Und diese Werte werden aus
+einer anderen Liste gezogen.
 
 00:20:12,460 --> 00:20:16,470
 Was es in gewissem Sinne sagt, ist genau:
 
 00:20:16,470 --> 00:20:27,479
-Lassen Sie die Variable d aus 0, 1, 2,
-3, 4, 5, also sechs Aufrufen (im Grunde sechs Kopien);
+Lassen Sie die Variable d aus 0, 1, 2, 3, 4, 5,
+also sechs Aufrufen (im Grunde sechs Kopien);
 
 00:20:27,479 --> 00:20:34,170
-und rufen Sie für jeden dieser Werte die
-scene-Funktion auf, die eine Version dieses bewegten Dreiecks ergibt;
+und rufen Sie für jeden dieser Werte die scene-Funktion
+auf, die eine Version dieses bewegten Dreiecks ergibt;
 
 00:20:34,170 --> 00:20:40,830
 packen Sie sie alle in eine Liste; übergeben
@@ -1121,16 +1121,16 @@ in ein Bild verwandelt.
 Und das ist das Bild, das wir zeichnen.
 
 00:20:44,450 --> 00:20:52,970
-Von diesem Stück Code sollten Sie
-also sechs Dreiecke an verschiedenen Stellen
+Von diesem Stück Code sollten Sie also
+sechs Dreiecke an verschiedenen Stellen
 
 00:20:52,970 --> 00:20:56,410
 im Raum
 unseres Koordinatensystems erwarten.
 
 00:20:56,410 --> 00:21:01,210
-In gewisser Weise erinnert uns
-das natürlich an eine for-Schleife.
+In gewisser Weise erinnert uns das
+natürlich an eine for-Schleife.
 
 00:21:01,210 --> 00:21:03,870
 Man könnte sagen, dass dies eine for-Schleife
@@ -1148,16 +1148,16 @@ Zum Beispiel gibt es nicht
 wirklich "eins nach dem anderen".
 
 00:21:09,810 --> 00:21:18,400
-Es ist also nicht so wie: zuerst zeichne dies;
-dann zeichne das; bringe sie irgendwie in eine Reihenfolge.
+Es ist also nicht so wie: zuerst zeichne dies; dann
+zeichne das; bringe sie irgendwie in eine Reihenfolge.
 
 00:21:18,400 --> 00:21:23,179
-Was hier herauskommt, ist eine Liste von
-Werten, und diese sind völlig unabhängig voneinander.
+Was hier herauskommt, ist eine Liste von Werten,
+und diese sind völlig unabhängig voneinander.
 
 00:21:23,179 --> 00:21:26,840
-Keiner von ihnen wird vor oder
-nach dem anderen berechnet, mathematisch gesehen.
+Keiner von ihnen wird vor oder nach dem
+anderen berechnet, mathematisch gesehen.
 
 00:21:26,840 --> 00:21:31,510
 Natürlich werden sie auf unserem sequenziellen Computer
@@ -1185,8 +1185,8 @@ ob sie rückwärts oder vorwärts arbeitet.
 Zählt sie also aufwärts oder abwärts?
 
 00:21:46,730 --> 00:21:51,730
-Das alles sind Dinge, die für eine for-Schleife oder
-jede Art von Schleife in einer imperativen Sprache wichtig
+Das alles sind Dinge, die für eine for-Schleife oder jede
+Art von Schleife in einer imperativen Sprache wichtig
 
 00:21:51,730 --> 00:21:53,839
 sind, aber nicht
@@ -1197,16 +1197,16 @@ Es handelt sich
 also um unabhängige Berechnungen.
 
 00:21:56,690 --> 00:22:02,169
-Es gibt auch keinen Effekt, bei
-dem irgendwie eine Iteration die nächste beeinflusst.
+Es gibt auch keinen Effekt, bei dem irgendwie
+eine Iteration die nächste beeinflusst.
 
 00:22:02,169 --> 00:22:09,810
-Der scene-Aufruf für den Wert, sagen wir d
-= 1, kann also keine Auswirkung auf den "scene"-Aufruf
+Der scene-Aufruf für den Wert, sagen wir d = 1,
+kann also keine Auswirkung auf den "scene"-Aufruf
 
 00:22:09,810 --> 00:22:15,880
-für den Wert d = 4 haben, egal ob
-4 nach oder vor 1 in dieser Liste steht.
+für den Wert d = 4 haben, egal ob 4
+nach oder vor 1 in dieser Liste steht.
 
 00:22:15,880 --> 00:22:20,870
 Es handelt sich also um unabhängige Berechnungen,
@@ -1217,35 +1217,35 @@ B. über globale Variablen oder lokale Variablen,
 denen Sie Werte zuweisen), dass die Reihenfolge, in
 
 00:22:26,050 --> 00:22:31,529
-der die Dinge in der Schleife passieren, wichtig ist,
-und dass der zweite Durchlauf durch den Schleifenkörper wirklich einen
+der die Dinge in der Schleife passieren, wichtig ist, und dass
+der zweite Durchlauf durch den Schleifenkörper wirklich einen
 
 00:22:31,529 --> 00:22:36,860
 Einfluss darauf haben könnte, was in der fünften
 oder sechsten oder was auch immer Iteration passiert.
 
 00:22:36,860 --> 00:22:42,859
-Das passiert hier nicht, denn dies
-ist wirklich wie eine Art mathematische Mengen-Komprehension.
+Das passiert hier nicht, denn dies ist wirklich
+wie eine Art mathematische Mengen-Komprehension.
 
 00:22:42,859 --> 00:22:47,490
-Diese Notation, die Sie aus der Mathematik kennen:
-Ich nehme die Menge aller "2 × n", wobei
+Diese Notation, die Sie aus der Mathematik
+kennen: Ich nehme die Menge aller "2 × n", wobei
 
 00:22:47,490 --> 00:22:50,070
 n aus den natürlichen Zahlen kommt.
 
 00:22:50,070 --> 00:22:53,760
-Das ist es, woran Sie denken sollten,
-wenn Sie an eine List Comprehension denken.
+Das ist es, woran Sie denken sollten, wenn
+Sie an eine List Comprehension denken.
 
 00:22:53,760 --> 00:22:58,500
-Es ist auch sehr eng in
-der Syntax, und das ist gewollt.
+Es ist auch sehr eng in der
+Syntax, und das ist gewollt.
 
 00:22:58,500 --> 00:23:01,609
-Sie können sich dies
-also als "Elementsymbol" vorstellen.
+Sie können sich dies also als
+"Elementsymbol" vorstellen.
 
 00:23:01,609 --> 00:23:03,890
 Also, d ist ein Element dieser Liste.
@@ -1262,12 +1262,12 @@ Ich füge sie in eine Liste
 ein, so wie hier in eine Menge.
 
 00:23:16,070 --> 00:23:19,880
-Und diese Liste, wie hier diese
-Menge, ist dann das, was ich weitergebe.
+Und diese Liste, wie hier diese Menge,
+ist dann das, was ich weitergebe.
 
 00:23:19,880 --> 00:23:24,499
-In diesem Fall ist es das, was an
-die pictures-Funktion weitergegeben wird, um meine verschiedenen Bilder zu
+In diesem Fall ist es das, was an die pictures-Funktion
+weitergegeben wird, um meine verschiedenen Bilder zu
 
 00:23:24,499 --> 00:23:27,490
 einem großen zusammenzufügen,
@@ -1286,12 +1286,12 @@ Um List Comprehensions weiter zu
 erklären: ein paar künstliche Beispiele.
 
 00:23:43,620 --> 00:23:47,409
-Dabei geht es nicht um Bilder,
-sondern nur um Zahlen, Zahlenpaare, etc.
+Dabei geht es nicht um Bilder, sondern
+nur um Zahlen, Zahlenpaare, etc.
 
 00:23:47,409 --> 00:23:55,499
-Um es vorwegzunehmen: Auf der vorigen
-Folie wurde bereits eine Notation gezeigt, um einfach
+Um es vorwegzunehmen: Auf der vorigen Folie
+wurde bereits eine Notation gezeigt, um einfach
 
 00:23:55,499 --> 00:23:56,790
 eine Liste von Werten zu haben.
@@ -1315,41 +1315,41 @@ Dann würde es alle ungeraden
 Zahlen bis zu dieser Zahl geben.
 
 00:24:17,050 --> 00:24:21,089
-In diesem Fall, wo die letzte Zahl 10
-ist (was keine ungerade Zahl ist), würde es also
+In diesem Fall, wo die letzte Zahl 10 ist
+(was keine ungerade Zahl ist), würde es also
 
 00:24:21,089 --> 00:24:22,089
 bei 9 aufhören.
 
 00:24:22,089 --> 00:24:27,140
-Und das könnte man z. B. als eine der
-Listen verwenden, die man in eine List Comprehension packt (um
+Und das könnte man z. B. als eine der Listen
+verwenden, die man in eine List Comprehension packt (um
 
 00:24:27,140 --> 00:24:30,770
-Werte wie d auf
-der vorherigen Folie zu zeichnen).
+Werte wie d auf der
+vorherigen Folie zu zeichnen).
 
 00:24:30,770 --> 00:24:35,070
-Im Allgemeinen können diese
-List Comprehensions diese Form haben.
+Im Allgemeinen können diese List
+Comprehensions diese Form haben.
 
 00:24:35,070 --> 00:24:39,040
-Hier sehen wir die Teile, aus
-denen sich eine List Comprehension zusammensetzt.
+Hier sehen wir die Teile, aus denen sich
+eine List Comprehension zusammensetzt.
 
 00:24:39,040 --> 00:24:40,040
 Im Allgemeinen haben wir:
 
 00:24:40,040 --> 00:24:46,100
-Den Rumpf, das ist das, was Sie für
-jede Kombination von Werten, die aus den späteren Teilen
+Den Rumpf, das ist das, was Sie für jede
+Kombination von Werten, die aus den späteren Teilen
 
 00:24:46,100 --> 00:24:48,070
 gezogen werden, berechnen wollen.
 
 00:24:48,070 --> 00:24:51,440
-Das ist also das, was
-in der endgültigen Menge landet.
+Das ist also das, was in der
+endgültigen Menge landet.
 
 00:24:51,440 --> 00:24:58,070
 Normalerweise wird dies einige Variablen
@@ -1362,8 +1362,8 @@ List Comprehension gebunden sind.
 Und hier haben wir Generatoren.
 
 00:25:01,920 --> 00:25:08,310
-Etwas wie "x aus diesen 1..10" wäre
-ein Generator, weil es neue Elemente erzeugt,
+Etwas wie "x aus diesen 1..10" wäre ein
+Generator, weil es neue Elemente erzeugt,
 
 00:25:08,310 --> 00:25:10,290
 für die Sie den Rumpf berechnen.
@@ -1378,16 +1378,16 @@ Ein Prädikat, eine Bedingung.
 Im Grunde ein Boolescher Wert.
 
 00:25:15,190 --> 00:25:21,420
-Sie haben das noch nicht gesehen, aber es gibt
-eine Funktion "even" in Haskell, die eine Zahl nimmt
+Sie haben das noch nicht gesehen, aber es gibt eine
+Funktion "even" in Haskell, die eine Zahl nimmt
 
 00:25:21,420 --> 00:25:25,730
-und "true" liefert, wenn diese Zahl
-gerade ist; andernfalls liefert sie "false".
+und "true" liefert, wenn diese Zahl gerade
+ist; andernfalls liefert sie "false".
 
 00:25:25,730 --> 00:25:31,869
-Was wir hier also sagen, ist: Prüfe für jedes
-x von 1 bis 10, ob diese Zahl gerade
+Was wir hier also sagen, ist: Prüfe für
+jedes x von 1 bis 10, ob diese Zahl gerade
 
 00:25:31,869 --> 00:25:32,869
 ist.
@@ -1396,8 +1396,8 @@ ist.
 Das wird für 2, 4, 6, 8, 10 wahr sein.
 
 00:25:35,489 --> 00:25:42,310
-Und dann wird für jede aus diesem
-Generator gezogene Zahl, die auch diesen Guard-Ausdruck
+Und dann wird für jede aus diesem Generator
+gezogene Zahl, die auch diesen Guard-Ausdruck
 
 00:25:42,310 --> 00:25:43,350
 besteht, der Rumpf berechnet.
@@ -1439,41 +1439,41 @@ Lassen Sie x irgendetwas von 1 bis 10 sein
 (so wird nacheinander 1 bis 10 für x gewählt).
 
 00:26:23,929 --> 00:26:28,080
-Dann berechnen wir für
-jedes solche x einen Hilfswert.
+Dann berechnen wir für jedes
+solche x einen Hilfswert.
 
 00:26:28,080 --> 00:26:34,700
-Wir berechnen also y aus dem x, das
-wir hier gezeichnet haben, und geben dann den Guard-Ausdruck
+Wir berechnen also y aus dem x, das wir hier
+gezeichnet haben, und geben dann den Guard-Ausdruck
 
 00:26:34,700 --> 00:26:35,700
 für y an.
 
 00:26:35,700 --> 00:26:40,589
-Das Programm nimmt also alle Zahlen von
-1 bis 10, berechnet die Quadrate und prüft,
+Das Programm nimmt also alle Zahlen von 1
+bis 10, berechnet die Quadrate und prüft,
 
 00:26:40,589 --> 00:26:43,630
 ob die Quadrate durch 4 teilbar sind.
 
 00:26:43,630 --> 00:26:47,440
-Das führt natürlich zu
-dem selben Ergebnis wie hier.
+Das führt natürlich zu dem
+selben Ergebnis wie hier.
 
 00:26:47,440 --> 00:26:52,260
-Denn das werden genau die Quadrate der
-geraden Zahlen sein, denn natürlich ist das Quadrat
+Denn das werden genau die Quadrate der geraden
+Zahlen sein, denn natürlich ist das Quadrat
 
 00:26:52,260 --> 00:26:57,210
-genau dann durch 4 teilbar,
-wenn die ursprüngliche Zahl gerade ist.
+genau dann durch 4 teilbar, wenn
+die ursprüngliche Zahl gerade ist.
 
 00:26:57,210 --> 00:27:00,290
 Aber das ist nur in diesem Fall der Fall.
 
 00:27:00,290 --> 00:27:05,839
-Der Punkt ist, dass wir lokale Werte
-dazwischen definieren können und diese verwenden können.
+Der Punkt ist, dass wir lokale Werte dazwischen
+definieren können und diese verwenden können.
 
 00:27:05,839 --> 00:27:10,060
 Eine weitere Sache, die in diesem
@@ -1486,23 +1486,23 @@ Das ist der Gleichheitsoperator.
 Und der ist wirklich anders als das hier.
 
 00:27:14,239 --> 00:27:21,280
-Also, hier wird y als x^2 definiert und
-dieses "==" ist der Operator, der prüft, ob dieser
+Also, hier wird y als x^2 definiert und dieses
+"==" ist der Operator, der prüft, ob dieser
 
 00:27:21,280 --> 00:27:30,730
-Aufruf, der den Modulo von y bei der
-Division durch 4 berechnet, gleich dem Wert 0 ist.
+Aufruf, der den Modulo von y bei der Division
+durch 4 berechnet, gleich dem Wert 0 ist.
 
 00:27:30,730 --> 00:27:38,760
-Dann können wir Fälle haben, in denen wir
-nicht nur mehrere Wächter haben, sondern auch mehrere Generatoren.
+Dann können wir Fälle haben, in denen wir nicht nur
+mehrere Wächter haben, sondern auch mehrere Generatoren.
 
 00:27:38,760 --> 00:27:40,360
 Dies ist hier der Fall.
 
 00:27:40,360 --> 00:27:45,639
-Anstatt nur eine Variable zu haben, wie
-hier, oder eine Generatorvariable und eine berechnete
+Anstatt nur eine Variable zu haben, wie hier,
+oder eine Generatorvariable und eine berechnete
 
 00:27:45,639 --> 00:27:51,049
 Hilfsvariable, können wir tatsächlich zwei Variablen
@@ -1523,44 +1523,44 @@ einem Wert aus [1, 2, 3] und einem anderen Wert
 aus [1, 2, 3].
 
 00:28:10,410 --> 00:28:18,200
-Die 1 ergibt sich also aus der Multiplikation von
-1 × 1, und dann erhalten wir auch alle
+Die 1 ergibt sich also aus der Multiplikation
+von 1 × 1, und dann erhalten wir auch alle
 
 00:28:18,200 --> 00:28:21,570
 anderen Kombinationen.
 
 39 # slide
 00:28:21,570 --> 00:28:29,250
-Sobald Sie mehr als eine Variable im
-Rumpf einer List Comprehension haben, stellt sich die
+Sobald Sie mehr als eine Variable im Rumpf
+einer List Comprehension haben, stellt sich die
 
 00:28:29,250 --> 00:28:34,729
-Frage: In welcher Reihenfolge werden
-die Dinge in einer Ergebnisliste kombiniert?
+Frage: In welcher Reihenfolge werden die
+Dinge in einer Ergebnisliste kombiniert?
 
 00:28:34,729 --> 00:28:40,109
 Im vorherigen Beispiel mit der Multiplikation war
 das aus dem Ergebnis nicht ersichtlich, weil wir
 
 00:28:40,109 --> 00:28:42,380
-nicht sehen können,
-welche Faktoren kombiniert wurden.
+nicht sehen können, welche
+Faktoren kombiniert wurden.
 
 00:28:42,380 --> 00:28:45,030
-Aber wenn Sie zum
-Beispiel dieses Beispiel betrachten:
+Aber wenn Sie zum Beispiel
+dieses Beispiel betrachten:
 
 00:28:45,030 --> 00:28:50,741
-Das x kommt aus [1, 2, 3] und y aus
-[4, 5], und wir bilden das Paar der Werte x
+Das x kommt aus [1, 2, 3] und y aus [4,
+5], und wir bilden das Paar der Werte x
 
 00:28:50,741 --> 00:28:57,099
 und y (vielleicht als Koordinaten); dann sehen
 wir im Ergebnis, wie die Dinge angeordnet sind.
 
 00:28:57,099 --> 00:29:03,289
-Sie sehen, dass zuerst das x aus [1, 2, 3]
-als 1 gewählt wird, und dann wird dies mit jeder
+Sie sehen, dass zuerst das x aus [1, 2, 3] als
+1 gewählt wird, und dann wird dies mit jeder
 
 00:29:03,289 --> 00:29:06,229
 möglichen Wahl für das
@@ -1574,8 +1574,8 @@ Und dann erhalten wir alle Kombinationen, bei denen
 x das zweite Element seines Generators gewählt hat.
 
 00:29:13,880 --> 00:29:19,159
-Und dies wird mit y als 4 und 5
-in diesen beiden Elementen kombiniert, und so weiter.
+Und dies wird mit y als 4 und 5 in diesen
+beiden Elementen kombiniert, und so weiter.
 
 00:29:19,159 --> 00:29:22,410
 So erhalten wir
@@ -1594,16 +1594,16 @@ alle möglichen Auswahlen für y, und
 dann die nächste Auswahl für x, usw.
 
 00:29:40,550 --> 00:29:47,550
-Das bedeutet auch, dass, wenn Sie die Reihenfolge
-solcher Generatoren ändern, Sie die gleichen Werte erhalten,
+Das bedeutet auch, dass, wenn Sie die Reihenfolge solcher
+Generatoren ändern, Sie die gleichen Werte erhalten,
 
 00:29:47,550 --> 00:29:49,730
 aber möglicherweise in
 einer anderen Reihenfolge.
 
 00:29:49,730 --> 00:29:53,130
-Nehmen Sie also denselben Rumpf, aber vertauschen Sie
-die Reihenfolge dieser Generatoren; dann hat die resultierende
+Nehmen Sie also denselben Rumpf, aber vertauschen Sie die
+Reihenfolge dieser Generatoren; dann hat die resultierende
 
 00:29:53,130 --> 00:29:56,210
 Liste eine etwas andere Reihenfolge.
@@ -1613,8 +1613,8 @@ Denn jetzt wird zuerst das y gewählt, und dann
 betrachten wir für jede gültige Wahl für y, zum
 
 00:30:01,510 --> 00:30:05,909
-Beispiel für die Wahl "y ist
-4", alle Wahlmöglichkeiten für das x.
+Beispiel für die Wahl "y ist 4",
+alle Wahlmöglichkeiten für das x.
 
 00:30:05,909 --> 00:30:09,190
 Wir erhalten also (1,4), (2,4), (3,4).
@@ -1628,12 +1628,12 @@ bekannt sein oder irgendwie aus dem Teil des Programms,
 in dem dieser Ausdruck vorkommt, oder das z müsste
 
 00:30:22,110 --> 00:30:26,800
-durch einen anderen
-Generator hier gesetzt werden.
+durch einen anderen Generator
+hier gesetzt werden.
 
 00:30:26,800 --> 00:30:33,190
-Wir können also keine Variablen haben, die überhaupt nicht
-bekannt sind, weder aus dem Kontext noch aus dieser
+Wir können also keine Variablen haben, die überhaupt
+nicht bekannt sind, weder aus dem Kontext noch aus dieser
 
 00:30:33,190 --> 00:30:36,440
 Liste von Generatoren.
@@ -1654,15 +1654,15 @@ der Liste
 der Generatoren/Wächter auftritt.
 
 00:30:50,610 --> 00:30:57,080
-Das bedeutet also Folgendes: Ich möchte alle Paare x
-und y haben, bei denen x aus [1, 2, 3]
+Das bedeutet also Folgendes: Ich möchte alle
+Paare x und y haben, bei denen x aus [1, 2, 3]
 
 00:30:57,080 --> 00:31:00,130
 und y aus [1 .. x] kommt (1 bis x).
 
 00:31:00,130 --> 00:31:05,150
-Also für die Wahl "x ist 1", dann haben wir
-für y auch die Wahl "1", denn [1 .. 1]
+Also für die Wahl "x ist 1", dann haben
+wir für y auch die Wahl "1", denn [1 .. 1]
 
 00:31:05,150 --> 00:31:06,229
 (1 bis 1) ist eben nur [1].
@@ -1678,20 +1678,20 @@ wir, dass y von 1 bis 2 gewählt wird.
 Wir erhalten also (2,1) und (2,2).
 
 00:31:13,229 --> 00:31:19,820
-Und für "3" erhalten wir (3,1), (3,2), (3,3),
-denn für ein anderes x haben wir verschiedene Auswahlmöglichkeiten,
+Und für "3" erhalten wir (3,1), (3,2), (3,3), denn für
+ein anderes x haben wir verschiedene Auswahlmöglichkeiten,
 
 00:31:19,820 --> 00:31:25,070
-weil wir an dieser
-Stelle verschiedene Listen haben.
+weil wir an dieser Stelle
+verschiedene Listen haben.
 
 00:31:25,070 --> 00:31:26,290
 Andersherum würde
 es nicht funktionieren.
 
 00:31:26,290 --> 00:31:31,250
-Wir könnten y hier nicht erwähnen,
-wenn y als spätere Generatorvariable auftritt.
+Wir könnten y hier nicht erwähnen, wenn
+y als spätere Generatorvariable auftritt.
 
 00:31:31,250 --> 00:31:38,410
 Natürlich könnte man y an dieser Stelle
@@ -1701,8 +1701,8 @@ verwenden, weil y hier die erste Generatorvariable
 ist.
 
 00:31:40,440 --> 00:31:43,300
-Und das kann auch auf
-andere Art und Weise interessant werden.
+Und das kann auch auf andere Art
+und Weise interessant werden.
 
 00:31:43,300 --> 00:31:49,260
 Zum Beispiel könnte man sich auch dafür entscheiden,
@@ -1724,12 +1724,12 @@ funktioniert auch bei anderen Datentypen in Haskell.
 Nehmen wir also Zeichenketten.
 
 00:32:00,979 --> 00:32:05,490
-Wenn wir eine Liste von Paaren von Zeichenketten
-haben, dann könnten wir auch einen Generator-Ausdruck haben,
+Wenn wir eine Liste von Paaren von Zeichenketten haben,
+dann könnten wir auch einen Generator-Ausdruck haben,
 
 00:32:05,490 --> 00:32:12,580
-der sagt: "Lass mich alle
-(x,y) Paare aus dieser Liste auswählen."
+der sagt: "Lass mich alle (x,y)
+Paare aus dieser Liste auswählen."
 
 00:32:12,580 --> 00:32:17,250
 Und dann würden wir natürlich kein kartesisches
@@ -1750,8 +1750,8 @@ Und dann sammeln wir ihre Verkettung.
 Das ist es, was dieses Symbol macht.
 
 00:32:26,779 --> 00:32:29,330
-Wir konkatenieren also "a" und
-"b", was die Zeichenkette "ab" ergibt.
+Wir konkatenieren also "a" und "b",
+was die Zeichenkette "ab" ergibt.
 
 00:32:29,330 --> 00:32:32,080
 Und die nächste Auswahl ist
@@ -1762,28 +1762,28 @@ Stattdessen ist die nächste Auswahl wirklich: Wir
 wenden dieses Paar-Muster an und erhalten seine
 
 00:32:38,960 --> 00:32:41,479
-Bestandteile aus dem
-nächsten Paar der Generatorliste.
+Bestandteile aus dem nächsten
+Paar der Generatorliste.
 
 00:32:41,479 --> 00:32:44,779
-Die nächste Wahl wäre also: x
-ist "c" und y ist "d".
+Die nächste Wahl wäre also:
+x ist "c" und y ist "d".
 
 00:32:44,779 --> 00:32:49,870
-Das nächste, was hier zu berechnen wäre,
-wäre also die Zeichenkette "cd", und das war's.
+Das nächste, was hier zu berechnen wäre, wäre
+also die Zeichenkette "cd", und das war's.
 
 00:32:49,870 --> 00:32:53,979
-Kein kreuzweiser Vergleich, denn hier
-binden wir x und y.
+Kein kreuzweiser Vergleich,
+denn hier binden wir x und y.
 
 00:32:53,979 --> 00:32:57,570
-Wir wählen x und y auf
-einmal aus all diesen Paaren aus.
+Wir wählen x und y auf einmal
+aus all diesen Paaren aus.
 
 00:32:57,570 --> 00:33:00,940
-Während wir hier unabhängige Auswahlen für
-das x und für das y hatten.
+Während wir hier unabhängige Auswahlen
+für das x und für das y hatten.
 
 00:33:00,940 --> 00:33:03,260
 Deshalb bekommen wir
@@ -1794,8 +1794,8 @@ Hier verwenden wir diesen
 Abgleich gegen das Paar.
 
 00:33:07,180 --> 00:33:14,390
-Das ist auch etwas, was man
-oft in der mathematischen Mengenschreibweise niederschreiben würde.
+Das ist auch etwas, was man oft in der mathematischen
+Mengenschreibweise niederschreiben würde.
 
 40 # slide
 00:33:17,390 --> 00:33:24,339
@@ -1807,8 +1807,8 @@ Einige Schlüsse aus den
 Beispielen, die wir gesehen haben:
 
 00:33:27,289 --> 00:33:31,860
-Wir können jetzt über
-eine Funktion nicht-konstantes Verhalten ausdrücken.
+Wir können jetzt über eine Funktion
+nicht-konstantes Verhalten ausdrücken.
 
 00:33:31,860 --> 00:33:35,720
 Also Funktionen im mathematischen Sinne.
@@ -1832,15 +1832,15 @@ Teil der Animation aus, dann diesen Teil und dann
 etwas anderes".
 
 00:33:56,420 --> 00:34:04,409
-Das war nicht etwas, was in einer
-solchen Beschreibung einer Animation in Form von mathematischen
+Das war nicht etwas, was in einer solchen Beschreibung
+einer Animation in Form von mathematischen
 
 00:34:04,409 --> 00:34:05,450
 Funktionen passiert.
 
 00:34:05,450 --> 00:34:09,659
-In der Tat gibt es nicht einmal ein Konzept
-von "dieses Stück Animation hört an einem bestimmten Punkt auf".
+In der Tat gibt es nicht einmal ein Konzept von "dieses
+Stück Animation hört an einem bestimmten Punkt auf".
 
 00:34:09,659 --> 00:34:14,120
 Wir haben nicht gesagt: "Nimm das von
@@ -1854,8 +1854,8 @@ der ein Bild beschreibt, in dem ein t vorkommen
 kann.
 
 00:34:21,289 --> 00:34:27,360
-Und das ist dann
-eine immer wieder ablaufende Animation.
+Und das ist dann eine immer
+wieder ablaufende Animation.
 
 00:34:27,360 --> 00:34:33,219
 Sie tut dies mit zunehmendem t,
@@ -1865,8 +1865,8 @@ wie lang das auch immer sein mag.
 Es gibt keinen Endpunkt.
 
 00:34:37,660 --> 00:34:42,890
-Das heißt natürlich nicht, dass wir nicht
-auch ein möglicherweise nicht-kontinuierliches Verhalten ausdrücken wollen.
+Das heißt natürlich nicht, dass wir nicht auch ein möglicherweise
+nicht-kontinuierliches Verhalten ausdrücken wollen.
 
 00:34:42,890 --> 00:34:48,890
 Man möchte vielleicht eine Animation nur für einige Zeit
@@ -1880,12 +1880,12 @@ Animation) wechseln, basierend auf einer Bedingung über
 die Zeit (z. B. Zeitintervalle).
 
 00:34:57,909 --> 00:35:00,580
-Aber wir werden dies nicht tun,
-indem wir auf sequenzielle Befehle zurückgreifen.
+Aber wir werden dies nicht tun, indem wir
+auf sequenzielle Befehle zurückgreifen.
 
 00:35:00,580 --> 00:35:05,650
-Wir werden keine imperativen Schlüsselwörter oder Semikolons
-für die Komposition in einer sequenziellen Weise
+Wir werden keine imperativen Schlüsselwörter oder
+Semikolons für die Komposition in einer sequenziellen Weise
 
 00:35:05,650 --> 00:35:06,650
 verwenden.
@@ -1895,8 +1895,8 @@ Zum Beispiel sagen wir: "diese
 Animation und dann diese Animation".
 
 00:35:08,479 --> 00:35:15,670
-Das wäre eine zu große Abweichung von
-der mathematischen Idee des Ausdrucks von Funktionen.
+Das wäre eine zu große Abweichung von der
+mathematischen Idee des Ausdrucks von Funktionen.
 
 00:35:15,670 --> 00:35:17,250
 Wir brauchen also etwas anderes.
@@ -1906,16 +1906,16 @@ Leider sind List Comprehensions
 auch nicht die Lösung.
 
 00:35:20,210 --> 00:35:30,250
-Wir haben sie in den letzten Beispielen nur
-eingeführt, um die Duplizierung von Ausdrücken zu vermeiden.
+Wir haben sie in den letzten Beispielen nur eingeführt,
+um die Duplizierung von Ausdrücken zu vermeiden.
 
 00:35:30,250 --> 00:35:34,599
-Zum Beispiel, um
-diese diskrete Verteilung auszudrücken.
+Zum Beispiel, um diese diskrete
+Verteilung auszudrücken.
 
 00:35:34,599 --> 00:35:38,820
-Aber es ist nichts, das
-zur Definition von Funktionen verwendet wird.
+Aber es ist nichts, das zur Definition
+von Funktionen verwendet wird.
 
 00:35:38,820 --> 00:35:40,080
 List Comprehensions definieren Werte.
@@ -1925,8 +1925,8 @@ Sie sind zwar Listenwerte,
 aber es sind Werte.
 
 00:35:42,870 --> 00:35:49,000
-Sie definieren also nicht zum Beispiel
-eine Animation, die aus mehreren Teilen besteht.
+Sie definieren also nicht zum Beispiel eine
+Animation, die aus mehreren Teilen besteht.
 
 00:35:49,000 --> 00:35:51,159
 Wir brauchen also etwas anderes.
@@ -1937,12 +1937,12 @@ innerhalb von Ausdrücken verwendet werden.
 
 41 # slide
 00:35:58,340 --> 00:36:01,479
-Was wir brauchen, ist
-eine Möglichkeit, Konditionale auszudrücken.
+Was wir brauchen, ist eine
+Möglichkeit, Konditionale auszudrücken.
 
 00:36:01,479 --> 00:36:08,460
-Und das wird, wie in wahrscheinlich fast
-allen Programmiersprachen, die Sie kennen, durch "if-then" oder
+Und das wird, wie in wahrscheinlich fast allen
+Programmiersprachen, die Sie kennen, durch "if-then" oder
 
 00:36:08,460 --> 00:36:09,460
 "if-then-else" gemacht.
@@ -1954,19 +1954,19 @@ Hier eigentlich durch "if-then-else".
 Schauen wir uns also ein Beispiel an.
 
 00:36:12,469 --> 00:36:14,800
-Das "if", "then" und
-"else" sind natürlich Schlüsselwörter.
+Das "if", "then" und "else"
+sind natürlich Schlüsselwörter.
 
 00:36:14,800 --> 00:36:17,019
-Aber sie werden
-innerhalb von Ausdrücken verwendet.
+Aber sie werden innerhalb
+von Ausdrücken verwendet.
 
 00:36:17,019 --> 00:36:19,110
 Betrachten wir also diese Beispiele.
 
 00:36:19,110 --> 00:36:23,920
-Diese Beispielszene ist, wieder, eine Animation;
-denn: von Zeit zu Zeit zu etwas.
+Diese Beispielszene ist, wieder, eine
+Animation; denn: von Zeit zu Zeit zu etwas.
 
 00:36:23,920 --> 00:36:25,479
 Und was sagt es aus?
@@ -1976,12 +1976,12 @@ Es prüft die Zeit, ob sie
 kleiner als 3 ist oder nicht.
 
 00:36:29,459 --> 00:36:34,349
-Und wenn ja, dann berechnet es
-diesen Ausdruck, der von der t abhängt.
+Und wenn ja, dann berechnet es diesen
+Ausdruck, der von der t abhängt.
 
 00:36:34,349 --> 00:36:40,390
-Und wenn man sich das ein wenig anschaut, dann
-sieht man, dass es im Grunde einen beweglichen Kreis animiert,
+Und wenn man sich das ein wenig anschaut, dann sieht
+man, dass es im Grunde einen beweglichen Kreis animiert,
 
 00:36:40,390 --> 00:36:46,930
 der sich irgendwie diagonal bewegt (weil x und
@@ -1991,16 +1991,16 @@ y immer den gleichen Wert haben werden, nämlich
 die aktuelle Zeit in Sekunden).
 
 00:36:48,530 --> 00:36:53,670
-Das wird also ein kleiner Kreis sein,
-der sich hier vom Ursprung aus diagonal bewegt.
+Das wird also ein kleiner Kreis sein, der
+sich hier vom Ursprung aus diagonal bewegt.
 
 00:36:53,670 --> 00:36:57,349
 Das tut er aber nur
 solange, bis t zu 3 wird.
 
 00:36:57,349 --> 00:37:02,520
-Denn wenn t 3 plus etwas
-ist, dann bedeutet dieses "if-then-else" eigentlich,
+Denn wenn t 3 plus etwas ist, dann
+bedeutet dieses "if-then-else" eigentlich,
 
 00:37:02,520 --> 00:37:07,310
 dass der "then"-Zweig nicht wichtig ist
@@ -2027,42 +2027,42 @@ Was Sie vielleicht für
 ein dummes Bild halten.
 
 00:37:17,740 --> 00:37:23,370
-Aber eigentlich ist das hier in diesem Fall
-eine nette Art auszudrücken, dass unsere Animation nach
+Aber eigentlich ist das hier in diesem Fall eine
+nette Art auszudrücken, dass unsere Animation nach
 
 00:37:23,370 --> 00:37:25,290
 drei Sekunden nichts mehr zeigen soll.
 
 00:37:25,290 --> 00:37:28,770
-Es wird also das
-leere Bild gezeigt, nämlich nichts.
+Es wird also das leere Bild
+gezeigt, nämlich nichts.
 
 00:37:28,770 --> 00:37:36,860
-Nun, diese Notation hier (diese Art, Dinge
-auszudrücken) ist ähnlich und erinnert an Konditionale in
+Nun, diese Notation hier (diese Art, Dinge auszudrücken)
+ist ähnlich und erinnert an Konditionale in
 
 00:37:36,860 --> 00:37:38,650
 der Mathematik.
 
 00:37:38,650 --> 00:37:44,590
-Das sind Schlüsselwörter in Haskell, aber sie sind
-nur eine Möglichkeit, einen Ausdruck zu organisieren, eigentlich
+Das sind Schlüsselwörter in Haskell, aber sie sind nur eine
+Möglichkeit, einen Ausdruck zu organisieren, eigentlich
 
 00:37:44,590 --> 00:37:47,260
 mehrere Fälle von
 Ausdrücken zu organisieren.
 
 00:37:47,260 --> 00:37:53,000
-Mathematisch gesehen sind sie Funktionen, so wie f(x)
-ist: Wenn x größer als Null ist (oder eine
+Mathematisch gesehen sind sie Funktionen, so wie
+f(x) ist: Wenn x größer als Null ist (oder eine
 
 00:37:53,000 --> 00:37:56,290
 andere Eigenschaft), dann dieser
 Ausdruck; sonst dieser Ausdruck.
 
 00:37:56,290 --> 00:37:58,250
-Und es wird immer
-zu einem von beiden ausgewertet.
+Und es wird immer zu einem
+von beiden ausgewertet.
 
 00:37:58,250 --> 00:38:01,770
 Er wird nicht zu beiden auswerten,
@@ -2084,8 +2084,8 @@ Wir können die Situation auch mit anderen Sprachen
 vergleichen, die Sie kennen, wie C oder Java.
 
 00:38:20,580 --> 00:38:27,610
-Dort haben Sie auch
-ein "if"-Konstrukt und ein "if-else"-Konstrukt.
+Dort haben Sie auch ein "if"-Konstrukt
+und ein "if-else"-Konstrukt.
 
 00:38:27,610 --> 00:38:29,780
 Das ist also die Syntax von C oder Java.
@@ -2095,15 +2095,15 @@ Es gibt natürlich einige syntaktische Unterschiede
 zu dem, was wir gerade gesehen haben.
 
 00:38:33,490 --> 00:38:38,130
-Aber eigentlich ist der wichtigere Unterschied, dass
-wir sogar diese zwei Versionen haben: nur
+Aber eigentlich ist der wichtigere Unterschied,
+dass wir sogar diese zwei Versionen haben: nur
 
 00:38:38,130 --> 00:38:39,920
 ein "if" oder ein "if-else".
 
 00:38:39,920 --> 00:38:44,400
-Während in einer Ausdruckssprache die Form
-ohne das "else" keinen Sinn ergibt.
+Während in einer Ausdruckssprache die
+Form ohne das "else" keinen Sinn ergibt.
 
 00:38:44,400 --> 00:38:47,750
 In Haskell haben wir also immer
@@ -2114,8 +2114,8 @@ Denn wir haben hier eine Bedingung, und
 entweder ist diese Bedingung wahr oder falsch.
 
 00:38:51,250 --> 00:38:54,410
-Und selbst wenn sie falsch
-ist, müssen wir irgendeinen Wert haben.
+Und selbst wenn sie falsch ist,
+müssen wir irgendeinen Wert haben.
 
 00:38:54,410 --> 00:38:55,410
 Das ist hier anders.
@@ -2136,15 +2136,15 @@ Das ist eine sinnvolle Aussage in einer befehlsbasierten
 Sprache, wo man Befehle hat, die ausgeführt werden.
 
 00:39:11,640 --> 00:39:14,770
-Dann kann man sagen: Nun,
-in manchen Fällen tue ich nichts.
+Dann kann man sagen: Nun, in
+manchen Fällen tue ich nichts.
 
 00:39:14,770 --> 00:39:15,770
 Das ist in Ordnung.
 
 00:39:15,770 --> 00:39:21,010
-Aber in einer mathematischen/ausdrucksbasierten Sprache
-müssen Sie irgendeinen Wert haben.
+Aber in einer mathematischen/ausdrucksbasierten
+Sprache müssen Sie irgendeinen Wert haben.
 
 00:39:21,010 --> 00:39:24,050
 Alles muss zu irgendeinem Wert ausgewertet werden,
@@ -2157,8 +2157,8 @@ Bedingungen werte ich zu nichts aus.
 Sie müssen einen Wert haben.
 
 00:39:26,590 --> 00:39:30,750
-Sie können also kein
-"if-then" ohne den "else"-Zweig haben.
+Sie können also kein "if-then"
+ohne den "else"-Zweig haben.
 
 00:39:30,750 --> 00:39:32,110
 Denn Sie müssen einen Wert berechnen.
@@ -2185,24 +2185,24 @@ nicht wirklich so ähnlich wie "if-else" als
 Schlüsselwörter in C oder Java.
 
 00:39:52,480 --> 00:39:56,860
-Es ist eigentlich mehr ähnlich wie
-der bedingte Operator in diesen Sprachen.
+Es ist eigentlich mehr ähnlich wie der
+bedingte Operator in diesen Sprachen.
 
 00:39:56,860 --> 00:40:02,100
-Das ist auch etwas, was Sie in C
-oder Java auf der Ausdrucksebene verwenden; nicht mit
+Das ist auch etwas, was Sie in C oder Java
+auf der Ausdrucksebene verwenden; nicht mit
 
 00:40:02,100 --> 00:40:05,800
-Befehlen (hier, hier und
-hier), sondern tatsächlich mit Ausdrücken.
+Befehlen (hier, hier und hier),
+sondern tatsächlich mit Ausdrücken.
 
 00:40:05,800 --> 00:40:11,250
-Das ist etwas, das in einem Ausdruck
-auf der rechten Seite einer Variablenzuweisung vorkommen könnte,
+Das ist etwas, das in einem Ausdruck auf der rechten
+Seite einer Variablenzuweisung vorkommen könnte,
 
 00:40:11,250 --> 00:40:17,080
-während so etwas in C oder Java
-nicht auf der rechten Seite einer Variablenzuweisung vorkommen
+während so etwas in C oder Java nicht auf der
+rechten Seite einer Variablenzuweisung vorkommen
 
 00:40:17,080 --> 00:40:18,080
 kann.
@@ -2212,36 +2212,36 @@ Weil es sich um Befehle
 handelt und nicht um Ausdrücke.
 
 00:40:20,310 --> 00:40:30,000
-Es ist auch etwas seltsam, dass Sie
-in C und Java zwei Möglichkeiten haben, Konditionale auszudrücken.
+Es ist auch etwas seltsam, dass Sie in C und Java
+zwei Möglichkeiten haben, Konditionale auszudrücken.
 
 00:40:30,000 --> 00:40:33,640
-Aber das liegt daran, dass Sie diese zwei Ebenen
-haben: Sie haben die Befehle und Sie haben die Ausdrücke.
+Aber das liegt daran, dass Sie diese zwei Ebenen haben:
+Sie haben die Befehle und Sie haben die Ausdrücke.
 
 00:40:33,640 --> 00:40:37,040
-Und in einer Sprache, in der Sie
-nur Ausdrücke haben (in der alles auf Ausdrücken
+Und in einer Sprache, in der Sie nur
+Ausdrücke haben (in der alles auf Ausdrücken
 
 00:40:37,040 --> 00:40:39,620
 basiert), haben Sie
 nur eine dieser Formen.
 
 00:40:39,620 --> 00:40:47,370
-Das bedeutet zum Beispiel auch, dass Sie in
-Haskell (mit all dem Gerede über syntaktische Kompositionalität,
+Das bedeutet zum Beispiel auch, dass Sie in Haskell
+(mit all dem Gerede über syntaktische Kompositionalität,
 
 00:40:47,370 --> 00:40:50,840
-das ich bereits erwähnt habe)
-beliebige Teile dieser Ausdrücke benennen können.
+das ich bereits erwähnt habe) beliebige
+Teile dieser Ausdrücke benennen können.
 
 00:40:50,840 --> 00:40:53,080
 Sie können den
 Ausdruck als Ganzes benennen.
 
 00:40:53,080 --> 00:40:57,020
-Sie können ein "if-then-else" als
-Ausdruck innerhalb eines Funktionsaufrufs setzen.
+Sie können ein "if-then-else" als Ausdruck
+innerhalb eines Funktionsaufrufs setzen.
 
 00:40:57,020 --> 00:40:58,230
 Sie können Teile davon benennen.
@@ -2251,23 +2251,23 @@ Während Sie zum Beispiel hier, diesen
 Teil eines "if" nicht benennen können.
 
 00:41:04,270 --> 00:41:09,880
-Das ist die Diskussion, die ich in einem
-früheren Video über Ausdrücke versus Befehle in Bezug
+Das ist die Diskussion, die ich in einem früheren
+Video über Ausdrücke versus Befehle in Bezug
 
 00:41:09,880 --> 00:41:13,480
-auf die Benennung von
-Teilbereichen eines Programms hatte.
+auf die Benennung von Teilbereichen
+eines Programms hatte.
 
 00:41:13,480 --> 00:41:17,760
-Was hier problemlos möglich ist, aber
-nicht in der befehlsbasierten Umgebung, in der
+Was hier problemlos möglich ist, aber nicht
+in der befehlsbasierten Umgebung, in der
 
 00:41:17,760 --> 00:41:21,910
 die "if" und "if-else" von Java leben.
 
 00:41:21,910 --> 00:41:24,260
-Hier ist es ein bisschen
-anders, weil es ausdrucksbasiert ist.
+Hier ist es ein bisschen anders,
+weil es ausdrucksbasiert ist.
 
 00:41:24,260 --> 00:41:29,570
 Aber gut, in
@@ -2296,8 +2296,8 @@ natürlich gibt es bestimmte Werte, die dem "Nichts"
 entsprechen.
 
 00:41:50,040 --> 00:41:53,260
-Wie im Fall des Bildes: das
-"blank" ist so etwas wie "kein Bild".
+Wie im Fall des Bildes: das "blank"
+ist so etwas wie "kein Bild".
 
 00:41:53,260 --> 00:41:54,260
 Aber es ist ein Bild.
@@ -2315,8 +2315,8 @@ Es ist nicht "kein Wert".
 Und das Gleiche gilt für viele Typen.
 
 00:42:00,940 --> 00:42:03,710
-Nehmen wir also an, wir haben
-die gleiche Situation in einem Listenkontext.
+Nehmen wir also an, wir haben die
+gleiche Situation in einem Listenkontext.
 
 00:42:03,710 --> 00:42:07,800
 Wir wollen sagen: Wenn eine Bedingung wahr ist,
@@ -2330,8 +2330,8 @@ Aber es gibt nicht nichts;
 es gibt die leere Liste.
 
 00:42:11,360 --> 00:42:16,830
-Wir können also die leere Liste verwenden,
-denn die leere Liste ist algebraisch ein neutraler
+Wir können also die leere Liste verwenden, denn
+die leere Liste ist algebraisch ein neutraler
 
 00:42:16,830 --> 00:42:18,330
 Wert im Typ der Listen.
@@ -2344,12 +2344,12 @@ mindestens eine der nächsten Übungsaufgaben nützlich sein
 wird.
 
 00:42:26,840 --> 00:42:30,570
-Und dann gibt es noch eine Sache, die
-ich auch schon auf der vorigen Folie erwähnt
+Und dann gibt es noch eine Sache, die ich
+auch schon auf der vorigen Folie erwähnt
 
 00:42:30,570 --> 00:42:33,660
-habe und mit der ich
-dieses Video jetzt beenden möchte.
+habe und mit der ich dieses
+Video jetzt beenden möchte.
 
 00:42:33,660 --> 00:42:41,570
 Es ist diese Bemerkung, dass "if-then-else" ein
@@ -2363,27 +2363,27 @@ Sie können seine Teile,
 sich selbst usw. benennen.
 
 00:42:44,850 --> 00:42:52,130
-Was ich hier also betonen möchte, ist wirklich
-dieser Punkt, nicht zu zögern, wirklich frei "if-then-else"
+Was ich hier also betonen möchte, ist wirklich dieser
+Punkt, nicht zu zögern, wirklich frei "if-then-else"
 
 00:42:52,130 --> 00:42:55,460
 als Teil anderer Ausdrücke zu verwenden.
 
 00:42:55,460 --> 00:43:02,350
-Ich habe in der Vergangenheit oft beobachtet,
-dass Studierende irgendwie besorgt sind oder zögern, so
+Ich habe in der Vergangenheit oft beobachtet, dass
+Studierende irgendwie besorgt sind oder zögern, so
 
 00:43:02,350 --> 00:43:07,260
 etwas zu schreiben, wo das "if-then-else" nicht irgendwie
 auf der obersten Ebene steht (wie Sie es wahrscheinlich
 
 00:43:07,260 --> 00:43:12,240
-von anderen Sprachen wie C oder Java
-gewohnt sind, wo man das nicht wirklich innerhalb
+von anderen Sprachen wie C oder Java gewohnt
+sind, wo man das nicht wirklich innerhalb
 
 00:43:12,240 --> 00:43:18,960
-eines Ausdrucks haben kann; Sie haben das
-"if-then" immer als Schlüsselwörter außen, auf der obersten
+eines Ausdrucks haben kann; Sie haben das "if-then"
+immer als Schlüsselwörter außen, auf der obersten
 
 00:43:18,960 --> 00:43:19,960
 Ebene).
@@ -2393,19 +2393,19 @@ Aber in einer ausdrucksbasierten Sprache gibt
 es keinen Grund für diese Zurückhaltung.
 
 00:43:22,610 --> 00:43:27,910
-Sie können also so etwas haben wie: f
-ist eine Funktion, die drei Argumente annimmt, und
+Sie können also so etwas haben wie: f ist
+eine Funktion, die drei Argumente annimmt, und
 
 00:43:27,910 --> 00:43:31,590
-vielleicht sind x und y die ersten beiden
-Argumente, und das letzte Argument hängt tatsächlich von einer
+vielleicht sind x und y die ersten beiden Argumente,
+und das letzte Argument hängt tatsächlich von einer
 
 00:43:31,590 --> 00:43:32,590
 Bedingung ab.
 
 00:43:32,590 --> 00:43:36,150
-Sie können so etwas schreiben wie "if",
-"Bedingung" (Ausdruck), "then" irgendein Bild, irgendein anderes Bild
+Sie können so etwas schreiben wie "if", "Bedingung"
+(Ausdruck), "then" irgendein Bild, irgendein anderes Bild
 
 00:43:36,150 --> 00:43:38,840
 (oder was auch immer hier der Typ ist).
@@ -2418,15 +2418,15 @@ Es ist also dasselbe, als wenn Sie sagen würden:
 wenn die Bedingung wahr ist, dann wollen Sie f auf
 
 00:43:46,740 --> 00:43:52,640
-x und y und diesen ersten Ausdruck anwenden, ansonsten wollen
-Sie f auf x und y und den letzten Ausdruck
+x und y und diesen ersten Ausdruck anwenden, ansonsten
+wollen Sie f auf x und y und den letzten Ausdruck
 
 00:43:52,640 --> 00:43:53,640
 anwenden.
 
 00:43:53,640 --> 00:43:58,030
-Natürlich können Sie das so schreiben und
-oft schreiben Studierende in diesem Stadium diesen
+Natürlich können Sie das so schreiben und oft
+schreiben Studierende in diesem Stadium diesen
 
 00:43:58,030 --> 00:43:59,030
 Code so.
@@ -2447,8 +2447,8 @@ müssen nur noch entscheiden, ob das
 letzte Argument exp2 oder exp3 ist.
 
 00:44:15,880 --> 00:44:21,720
-Dies wird in der ersten Zeile perfekt
-ausgedrückt, und in der letzten Zeile etwas versteckt
+Dies wird in der ersten Zeile perfekt ausgedrückt,
+und in der letzten Zeile etwas versteckt
 
 00:44:21,720 --> 00:44:23,150
 (und erfordert mehr Überprüfung).
@@ -2461,8 +2461,8 @@ wie dieser die erste Zeile bevorzugen, weil sie
 deutlicher ausdrückt, was vor sich geht.
 
 00:44:31,420 --> 00:44:37,070
-Aber dafür müssen Sie akzeptieren, dass "if-then-else" nur ein
-Ausdruck ist, der als Unterausdruck wovon auch immer
+Aber dafür müssen Sie akzeptieren, dass "if-then-else" nur
+ein Ausdruck ist, der als Unterausdruck wovon auch immer
 
 00:44:37,070 --> 00:44:45,240
 verwendet werden kann: andere
@@ -2481,12 +2481,12 @@ Ich möchte eigentlich noch ein paar Bemerkungen zur Syntax
 und zu Typen machen, und auch zur Syntax von Typen.
 
 00:44:59,570 --> 00:45:04,580
-Also, ich habe das eigentlich schon vorhin im
-Video angekündigt, dass ich dazu noch etwas zu sagen
+Also, ich habe das eigentlich schon vorhin im Video
+angekündigt, dass ich dazu noch etwas zu sagen
 
 00:45:04,580 --> 00:45:08,300
-habe, auch wahrscheinlich
-für Ihre nächsten Übungsaufgaben.
+habe, auch wahrscheinlich für
+Ihre nächsten Übungsaufgaben.
 
 00:45:08,300 --> 00:45:09,550
 Lassen Sie uns das
@@ -2501,8 +2501,8 @@ dies die Typen einiger der Primitiven sind, die
 Sie gesehen und verwendet haben.
 
 00:45:22,990 --> 00:45:27,220
-Und ich habe gesagt, dass dies wie
-eine mathematische Notation ist, wie das kartesische Produkt.
+Und ich habe gesagt, dass dies wie eine mathematische
+Notation ist, wie das kartesische Produkt.
 
 00:45:27,220 --> 00:45:33,740
 Zum Beispiel, für eine Drei-Argumente-Funktion wie
@@ -2513,42 +2513,42 @@ Produkt von zweimal den reellen Zahlen
 gibt, und dann den Typ 'Picture'.
 
 00:45:38,450 --> 00:45:42,300
-Und ich habe auch gesagt: Das ist nicht genau
-das, was Sie sehen, wenn Sie die Definitionen dieser
+Und ich habe auch gesagt: Das ist nicht genau das,
+was Sie sehen, wenn Sie die Definitionen dieser
 
 00:45:42,300 --> 00:45:43,300
 Funktionen nachschlagen.
 
 00:45:43,300 --> 00:45:49,440
-Und in der Tat, was Sie stattdessen sehen werden,
-ist so etwas, auch wenn Sie in die Online-Dokumentation
+Und in der Tat, was Sie stattdessen sehen werden, ist
+so etwas, auch wenn Sie in die Online-Dokumentation
 
 00:45:49,440 --> 00:45:50,440
 schauen.
 
 00:45:50,440 --> 00:45:56,540
-Aber das ist wirklich nur, aus bestimmten
-Gründen, eine andere Art, die Dinge niederzuschreiben.
+Aber das ist wirklich nur, aus bestimmten Gründen,
+eine andere Art, die Dinge niederzuschreiben.
 
 00:45:56,540 --> 00:45:59,930
-Schauen wir uns zum
-Beispiel die Funktion "translated" an.
+Schauen wir uns zum Beispiel
+die Funktion "translated" an.
 
 00:45:59,930 --> 00:46:04,220
-Das ist eine Funktion mit drei
-Argumenten und deren Ergebnis ist Picture.
+Das ist eine Funktion mit drei Argumenten
+und deren Ergebnis ist Picture.
 
 00:46:04,220 --> 00:46:10,570
-Wie sie dann tatsächlich als Typ in
-Haskell geschrieben wird, ist diese Notation, wo man
+Wie sie dann tatsächlich als Typ in Haskell
+geschrieben wird, ist diese Notation, wo man
 
 00:46:10,570 --> 00:46:13,350
-auch vor den ersten
-paar Argumenten dieses Pfeilsymbol hat.
+auch vor den ersten paar
+Argumenten dieses Pfeilsymbol hat.
 
 00:46:13,350 --> 00:46:19,930
-Anstatt also diese drei Argumente
-irgendwie durch diese beiden kartesischen Produkte
+Anstatt also diese drei Argumente irgendwie
+durch diese beiden kartesischen Produkte
 
 00:46:19,930 --> 00:46:24,200
 hier zu bezeichnen, und dann den
@@ -2570,8 +2570,8 @@ den eigentlichen Typ 'Double' in Haskell,
 das ist äquivalent zu hier oben.
 
 00:46:40,800 --> 00:46:43,370
-Und alle anderen Typen
-sind auch gleich und ähnlich.
+Und alle anderen Typen sind
+auch gleich und ähnlich.
 
 00:46:43,370 --> 00:46:46,800
 Hier, innerhalb der Liste,
@@ -2582,28 +2582,28 @@ Sie wollen also wirklich
 eine Liste von Paaren.
 
 00:46:50,500 --> 00:46:56,911
-Es ist keine Funktion wie hier,
-wo man sagt: Mach diese Drei-Argumenten-Funktion in
+Es ist keine Funktion wie hier, wo man
+sagt: Mach diese Drei-Argumenten-Funktion in
 
 00:46:56,911 --> 00:47:01,650
-eine Notation wie diese, wo
-wir immer den Funktionspfeil haben.
+eine Notation wie diese, wo wir
+immer den Funktionspfeil haben.
 
 00:47:01,650 --> 00:47:05,770
 Das würde hier keinen Sinn ergeben, denn
 das ist wirklich eine Menge von Paaren.
 
 00:47:05,770 --> 00:47:10,240
-Und dann ist die Notation in Haskell
-eben nicht mit dem Kreuz für das kartesische
+Und dann ist die Notation in Haskell eben
+nicht mit dem Kreuz für das kartesische
 
 00:47:10,240 --> 00:47:13,360
-Produkt, sondern eigentlich schreibt man
-auch auf Typebene einfach Paare.
+Produkt, sondern eigentlich schreibt
+man auch auf Typebene einfach Paare.
 
 00:47:13,360 --> 00:47:21,120
-Also, das ist der Typ
-der Paare von Doubles und Doubles.
+Also, das ist der Typ der
+Paare von Doubles und Doubles.
 
 46 # slide
 00:47:21,120 --> 00:47:27,930
@@ -2611,12 +2611,12 @@ Was dann die Syntax auf der Ausdrucks-
 und nicht auf der Typebene angeht, so
 
 00:47:27,930 --> 00:47:32,250
-habe ich diesen Unterschied zwischen der
-mathematischen Notation und der Funktionsnotation schon früher
+habe ich diesen Unterschied zwischen der mathematischen
+Notation und der Funktionsnotation schon früher
 
 00:47:32,250 --> 00:47:34,700
-(in einem der
-Beispielvideos) ausführlich kommentiert.
+(in einem der Beispielvideos)
+ausführlich kommentiert.
 
 00:47:34,700 --> 00:47:40,520
 Es sollte also an dieser Stelle keine Neuigkeit für Sie
@@ -2626,8 +2626,8 @@ sein, dass wir in dieser Form ohne so viele Klammern
 und Kommata schreiben.
 
 00:47:43,200 --> 00:47:45,970
-Bei verschachtelten Funktionsaufrufen brauchen
-wir natürlich manchmal Klammern.
+Bei verschachtelten Funktionsaufrufen
+brauchen wir natürlich manchmal Klammern.
 
 00:47:45,970 --> 00:47:52,360
 Wenn zum Beispiel ein f-Aufruf als Argument an
@@ -2641,62 +2641,62 @@ Denn dann wäre nicht
 klar, wer was aufruft.
 
 00:47:56,840 --> 00:48:03,110
-Aber so würden wir dann ausdrücken,
-dass dies zusammen das zweite Argument dieses
+Aber so würden wir dann ausdrücken, dass
+dies zusammen das zweite Argument dieses
 
 00:48:03,110 --> 00:48:04,110
 g-Aufrufs ist.
 
 00:48:04,110 --> 00:48:11,300
-So etwas haben wir auch schon in
-komplexeren Ausdrücken mit "rotated" und "colored" und
+So etwas haben wir auch schon in komplexeren
+Ausdrücken mit "rotated" und "colored" und
 
 00:48:11,300 --> 00:48:12,300
 was auch immer gesehen.
 
 00:48:12,300 --> 00:48:18,320
-Die gleiche Syntax wie gerade diese,
-bei welcher der Funktionsaufruf mit Leerzeichen
+Die gleiche Syntax wie gerade diese, bei
+welcher der Funktionsaufruf mit Leerzeichen
 
 00:48:18,320 --> 00:48:21,830
-und ohne Komma steht,
-wird auch bei Funktionsdefinitionen verwendet.
+und ohne Komma steht, wird auch bei
+Funktionsdefinitionen verwendet.
 
 00:48:21,830 --> 00:48:27,770
-Auch das haben Sie zumindest für "scene t
-= something" (scene von t ist etwas) gesehen.
+Auch das haben Sie zumindest für "scene t =
+something" (scene von t ist etwas) gesehen.
 
 00:48:27,770 --> 00:48:31,200
-Und es gilt auch, wenn wir
-Funktionen mit mehr als einem Argument haben.
+Und es gilt auch, wenn wir Funktionen
+mit mehr als einem Argument haben.
 
 00:48:31,200 --> 00:48:37,000
-Also etwas, das in Java oder C so aussehen
-würde: Wir deklarieren, dass f eine Funktion ist, die
+Also etwas, das in Java oder C so aussehen würde:
+Wir deklarieren, dass f eine Funktion ist, die
 
 00:48:37,000 --> 00:48:41,770
 eine Ganzzahl und ein Zeichen
 entgegennimmt und einen Float zurückgibt.
 
 00:48:41,770 --> 00:48:47,960
-In Haskell würde sich das in diese
-mehr mathematische Art verwandeln, die Typen aufzuschreiben.
+In Haskell würde sich das in diese mehr mathematische
+Art verwandeln, die Typen aufzuschreiben.
 
 00:48:47,960 --> 00:48:52,790
-Integer und Char sind also die
-beiden Argumenttypen, und Float ist der Rückgabetyp.
+Integer und Char sind also die beiden
+Argumenttypen, und Float ist der Rückgabetyp.
 
 00:48:52,790 --> 00:48:57,490
-Es gibt natürlich Unterschiede in der Syntax, wie
-zum Beispiel, dass diese Typen in Großbuchstaben geschrieben werden.
+Es gibt natürlich Unterschiede in der Syntax, wie zum Beispiel,
+dass diese Typen in Großbuchstaben geschrieben werden.
 
 00:48:57,490 --> 00:49:03,180
-Aber das ist natürlich nur, wie
-die Sprache auf der lexikalischen Ebene funktioniert.
+Aber das ist natürlich nur, wie die Sprache
+auf der lexikalischen Ebene funktioniert.
 
 00:49:03,180 --> 00:49:08,200
-Und dann die Benennung der Funktion: Hier wird
-die Funktion im Typ benannt, und in der
+Und dann die Benennung der Funktion: Hier
+wird die Funktion im Typ benannt, und in der
 
 00:49:08,200 --> 00:49:09,790
 Definition wird sie nochmals benannt.
@@ -2710,8 +2710,8 @@ dann haben wir
 den Rumpf der Funktionsdefinition.
 
 00:49:19,320 --> 00:49:24,660
-Natürlich gibt es auch Unterschiede, wie z. B.,
-dass wir im Java-Code hier Befehle hätten
+Natürlich gibt es auch Unterschiede, wie z.
+B., dass wir im Java-Code hier Befehle hätten
 
 00:49:24,660 --> 00:49:30,660
 und wir vielleicht nicht einmal einen Rückgabewert
@@ -2725,66 +2725,66 @@ Nun, hier würde sie einen Float zurückgeben,
 aber Sie könnten zum Beispiel "void" haben.
 
 00:49:36,060 --> 00:49:37,460
-Und dann gibt die
-Funktion vielleicht gar nichts zurück.
+Und dann gibt die Funktion
+vielleicht gar nichts zurück.
 
 00:49:37,460 --> 00:49:39,290
-Es handelt sich also nicht
-wirklich um eine mathematische Funktion.
+Es handelt sich also nicht wirklich
+um eine mathematische Funktion.
 
 00:49:39,290 --> 00:49:42,510
-Im Gegensatz dazu muss es
-in Haskell natürlich irgendeinen Ausdruck geben.
+Im Gegensatz dazu muss es in Haskell
+natürlich irgendeinen Ausdruck geben.
 
 00:49:42,510 --> 00:49:49,080
-Also muss aus einem Aufruf von f auf a
-und b (auf irgendwelche Werte, irgendwelche Argumente) immer ein Float
+Also muss aus einem Aufruf von f auf a und b (auf
+irgendwelche Werte, irgendwelche Argumente) immer ein Float
 
 00:49:49,080 --> 00:49:50,080
 herauskommen.
 
 00:49:50,080 --> 00:49:55,890
-Und es gibt auch Unterschiede
-wie die Semantik dieser lokalen Variablen.
+Und es gibt auch Unterschiede wie die
+Semantik dieser lokalen Variablen.
 
 00:49:55,890 --> 00:50:00,250
-Was sie tun, ist in Haskell
-anders als in diesen imperativen Sprachen.
+Was sie tun, ist in Haskell anders
+als in diesen imperativen Sprachen.
 
 00:50:00,250 --> 00:50:03,650
-Hier könnten Sie Zuweisungen haben, bei
-denen Sie a und b überschreiben.
+Hier könnten Sie Zuweisungen haben,
+bei denen Sie a und b überschreiben.
 
 00:50:03,650 --> 00:50:09,830
-Hier sind a und b Eingaben und sie können auf
-der rechten Seite verwendet werden, aber sie können nicht verändert
+Hier sind a und b Eingaben und sie können auf der rechten
+Seite verwendet werden, aber sie können nicht verändert
 
 00:50:09,830 --> 00:50:10,830
 werden.
 
 00:50:10,830 --> 00:50:17,800
-Die Rolle der Variablen ist also eine andere,
-was Sie natürlich schon aus den vorherigen Beispielen
+Die Rolle der Variablen ist also eine andere, was
+Sie natürlich schon aus den vorherigen Beispielen
 
 00:50:17,800 --> 00:50:19,140
 kennen.
 
 47 # slide
 00:50:19,140 --> 00:50:22,590
-Dann gibt es noch ein Problem
-mit Whitespace und Layout in Haskell.
+Dann gibt es noch ein Problem mit
+Whitespace und Layout in Haskell.
 
 00:50:22,590 --> 00:50:28,640
 Haskell ist eine layoutsensitive Sprache, das
 heißt, wenn Sie Dinge wie lokale Definitionen
 
 00:50:28,640 --> 00:50:31,780
-gruppieren, dann ist
-das horizontale Layout wichtig.
+gruppieren, dann ist das
+horizontale Layout wichtig.
 
 00:50:31,780 --> 00:50:40,670
-Das Layout in dem Sinne:
-in welcher Spalte die Dinge beginnen.
+Das Layout in dem Sinne: in
+welcher Spalte die Dinge beginnen.
 
 00:50:40,670 --> 00:50:41,670
 Was bedeutet das?
@@ -2793,28 +2793,28 @@ Was bedeutet das?
 Betrachten wir "let" und "in".
 
 00:50:43,200 --> 00:50:46,490
-Dies ist eine weitere
-Möglichkeit, lokale Definitionen zu organisieren.
+Dies ist eine weitere Möglichkeit,
+lokale Definitionen zu organisieren.
 
 00:50:46,490 --> 00:50:51,820
-Wir haben schon so etwas gesehen wie: "f x ist
-etwas, wobei ..." und dann hatten wir einige lokale Definitionen.
+Wir haben schon so etwas gesehen wie: "f x ist etwas,
+wobei ..." und dann hatten wir einige lokale Definitionen.
 
 00:50:51,820 --> 00:50:57,240
-Wobei die Dinge, die lokal definiert
-sind, nach dem Hauptausdruck erwähnt werden.
+Wobei die Dinge, die lokal definiert sind,
+nach dem Hauptausdruck erwähnt werden.
 
 00:50:57,240 --> 00:51:00,910
-Wir können es auch andersherum haben, aber
-dann benutzen wir nicht "where", sondern "let-in".
+Wir können es auch andersherum haben, aber dann
+benutzen wir nicht "where", sondern "let-in".
 
 00:51:00,910 --> 00:51:07,410
-Was das hier also aussagt, ist: Wir wollen den
-Ausdruck f c + f d berechnen, und darin
+Was das hier also aussagt, ist: Wir wollen
+den Ausdruck f c + f d berechnen, und darin
 
 00:51:07,410 --> 00:51:10,570
-wollen wir einige Dinge verwenden, zum
-Beispiel das y und das f.
+wollen wir einige Dinge verwenden,
+zum Beispiel das y und das f.
 
 00:51:10,570 --> 00:51:13,740
 Tatsächlich wird hier y verwendet, und f
@@ -2828,12 +2828,12 @@ anders im Programm vorkommt, sondern sie ist lokal
 zu diesem Ausdruck.
 
 00:51:18,610 --> 00:51:24,900
-Und dann sagen wir "let something and something in"
-und dann verwenden wir das, was wir vorher definiert haben.
+Und dann sagen wir "let something and something in" und
+dann verwenden wir das, was wir vorher definiert haben.
 
 00:51:24,900 --> 00:51:29,710
-Anders als im "where"-Fall, wo wir
-die lokalen Definitionen nach dem Ausdruck genannt
+Anders als im "where"-Fall, wo wir die
+lokalen Definitionen nach dem Ausdruck genannt
 
 00:51:29,710 --> 00:51:31,710
 haben, in dem sie verwendet werden.
@@ -2842,24 +2842,24 @@ haben, in dem sie verwendet werden.
 Das ist etwas, das man aufschreiben kann.
 
 00:51:33,920 --> 00:51:38,360
-Und es ist wichtig, dass diese
-Dinge hier in der gleichen Spalte beginnen.
+Und es ist wichtig, dass diese Dinge
+hier in der gleichen Spalte beginnen.
 
 00:51:38,360 --> 00:51:44,780
-In diesem Sinne ist also das Layout
-(wie weit Sie die Dinge einrücken) wichtig.
+In diesem Sinne ist also das Layout (wie
+weit Sie die Dinge einrücken) wichtig.
 
 00:51:44,780 --> 00:51:50,590
-Wir könnten dies auch vermeiden
-und eine explizite Gruppierung schreiben.
+Wir könnten dies auch vermeiden und
+eine explizite Gruppierung schreiben.
 
 00:51:50,590 --> 00:51:55,720
-Das gilt also auch in
-Haskell, wo ich kein Layout verwende.
+Das gilt also auch in Haskell,
+wo ich kein Layout verwende.
 
 00:51:55,720 --> 00:52:02,830
-Ich sage einfach: Ich möchte diese beiden Definitionen
-gruppieren, und dann verwenden wir tatsächlich Semikolons und diese
+Ich sage einfach: Ich möchte diese beiden Definitionen gruppieren,
+und dann verwenden wir tatsächlich Semikolons und diese
 
 00:52:02,830 --> 00:52:03,830
 geschweiften Klammern.
@@ -2868,33 +2868,33 @@ geschweiften Klammern.
 Und das ist äquivalent.
 
 00:52:05,770 --> 00:52:10,330
-Dann müssen wir nicht auf das Layout
-achten, weil diese geschweiften Klammern und das Semikolon
+Dann müssen wir nicht auf das Layout achten, weil
+diese geschweiften Klammern und das Semikolon
 
 00:52:10,330 --> 00:52:15,060
 erklären, was die Gruppierung ist.
 
 00:52:15,060 --> 00:52:21,390
-Aber wenn Sie das nicht verwenden, dann müssen
-Sie auf das Layout aufpassen, wie in anderen layoutsensitiven
+Aber wenn Sie das nicht verwenden, dann müssen Sie auf
+das Layout aufpassen, wie in anderen layoutsensitiven
 
 00:52:21,390 --> 00:52:23,720
 Sprachen wie Python.
 
 00:52:23,720 --> 00:52:29,140
-Das bedeutet auch, dass z. B.
-diese beiden Programmteile nicht akzeptiert werden.
+Das bedeutet auch, dass z. B. diese beiden
+Programmteile nicht akzeptiert werden.
 
 00:52:29,140 --> 00:52:35,420
-Sie würden abgelehnt werden oder nicht das bedeuten, was
-Sie denken, dass sie bedeuten, weil das Layout nicht verwendet
+Sie würden abgelehnt werden oder nicht das bedeuten, was Sie
+denken, dass sie bedeuten, weil das Layout nicht verwendet
 
 00:52:35,420 --> 00:52:37,050
 werden kann, um Dinge zu gruppieren.
 
 00:52:37,050 --> 00:52:43,100
-Das bedeutet auch, dass Sie, wenn Sie
-Haskell-Code schreiben, einen Editor bevorzugen sollten, in dem
+Das bedeutet auch, dass Sie, wenn Sie Haskell-Code
+schreiben, einen Editor bevorzugen sollten, in dem
 
 00:52:43,100 --> 00:52:48,890
 Sie sicherstellen können, dass die Einrückung über
@@ -2905,8 +2905,8 @@ Normalerweise sollten Sie Leerzeichen anstelle von
 Tabulatorzeichen verwenden, weil der Compiler standardmäßig
 
 00:52:54,980 --> 00:53:02,940
-nicht wissen kann, welcher Einrückungsebene
-ein Tabulatorzeichen in Ihrem Editor entspricht.
+nicht wissen kann, welcher Einrückungsebene ein
+Tabulatorzeichen in Ihrem Editor entspricht.
 
 00:53:02,940 --> 00:53:08,290
 Wenn Sie also in Ihrem Editor nachschauen, sieht
@@ -2916,8 +2916,8 @@ es für Sie vielleicht ganz gut aus, aber der
 Compiler sieht es tatsächlich so.
 
 00:53:09,350 --> 00:53:17,920
-Das ist also eine typische Falle, in die man
-tappen kann, wenn man noch nie in einer layoutsensitiven Sprache
+Das ist also eine typische Falle, in die man tappen
+kann, wenn man noch nie in einer layoutsensitiven Sprache
 
 00:53:17,920 --> 00:53:21,800
 programmiert hat.
@@ -2935,16 +2935,16 @@ Ich habe bereits erwähnt, dass wir weniger Klammern
 verwenden, als Sie vielleicht erwarten, wenn Sie noch nie
 
 00:53:38,330 --> 00:53:41,010
-in einer Sprache mit dieser
-Art von Syntaxregeln programmiert haben.
+in einer Sprache mit dieser Art von
+Syntaxregeln programmiert haben.
 
 00:53:41,010 --> 00:53:46,350
-So brauchen wir zum Beispiel das x-Argument
-in einem Aufruf wie diesem nicht einzuklammern, weil
+So brauchen wir zum Beispiel das x-Argument in
+einem Aufruf wie diesem nicht einzuklammern, weil
 
 00:53:46,350 --> 00:53:50,880
-dieser Ausdruck eben so
-ist und eindeutig parsebar ist.
+dieser Ausdruck eben so ist
+und eindeutig parsebar ist.
 
 00:53:50,880 --> 00:53:51,910
 Es ist also klar, was das bedeutet.
@@ -2954,8 +2954,8 @@ Wir brauchen hier
 keine zusätzlichen Klammern.
 
 00:53:53,470 --> 00:53:58,610
-Und ebenso brauchen wir in Aufrufen wie
-diesem keine Klammern um diese beiden Funktionsaufrufe,
+Und ebenso brauchen wir in Aufrufen wie diesem
+keine Klammern um diese beiden Funktionsaufrufe,
 
 00:53:58,610 --> 00:54:02,010
 deren Ergebnisse addiert werden.
@@ -2969,8 +2969,8 @@ Es ist also nicht nötig zu sagen, dass man
 (f x) will und dies dann zu (g y) addiert.
 
 00:54:12,560 --> 00:54:17,040
-Tatsächlich wird der Parser, selbst wenn Sie
-es so schreiben, dies als eine Einheit betrachten,
+Tatsächlich wird der Parser, selbst wenn Sie es
+so schreiben, dies als eine Einheit betrachten,
 
 00:54:17,040 --> 00:54:19,240
 die zu diesem
@@ -2980,23 +2980,23 @@ anderen Ausdruck hinzugefügt wird.
 Dies ist also eine Einheit.
 
 00:54:22,140 --> 00:54:28,200
-Und wir haben bereits erwähnt, dass
-Autotool Sie auch vor redundanten Klammern warnt
+Und wir haben bereits erwähnt, dass Autotool
+Sie auch vor redundanten Klammern warnt
 
 00:54:28,200 --> 00:54:30,800
 und Sie auffordert, diese zu entfernen.
 
 00:54:30,800 --> 00:54:36,280
-Dann gibt es noch eine andere Sache,
-die Studierende manchmal machen, wenn sie Haskell-Beispielcode
+Dann gibt es noch eine andere Sache, die Studierende
+manchmal machen, wenn sie Haskell-Beispielcode
 
 00:54:36,280 --> 00:54:39,430
 an anderen Stellen oder
 im Internet gelesen haben.
 
 00:54:39,430 --> 00:54:43,980
-So gibt es die Möglichkeit, noch mehr
-Klammern zu sparen, indem man den Dollar-Operator verwendet.
+So gibt es die Möglichkeit, noch mehr Klammern zu
+sparen, indem man den Dollar-Operator verwendet.
 
 00:54:43,980 --> 00:54:51,400
 Das würde zum Beispiel erlauben, alle Klammern
@@ -3006,35 +3006,35 @@ in diesem Ausdruck zu vermeiden, indem man so
 etwas schreibt.
 
 00:54:52,560 --> 00:54:57,950
-Aber ich muss sagen, dass ich den Dollar-Operator
-nicht mag, insbesondere bei Anfängern, weil er leicht missbraucht
+Aber ich muss sagen, dass ich den Dollar-Operator nicht
+mag, insbesondere bei Anfängern, weil er leicht missbraucht
 
 00:54:57,950 --> 00:55:03,570
-wird oder in einer Art und Weise
-verwendet wird, die die Lesbarkeit nicht wirklich verbessert.
+wird oder in einer Art und Weise verwendet wird,
+die die Lesbarkeit nicht wirklich verbessert.
 
 00:55:03,570 --> 00:55:09,540
-Also rät Autotool wieder von der
-Verwendung des Dollar-Operators ab oder verbietet ihn sogar.
+Also rät Autotool wieder von der Verwendung des
+Dollar-Operators ab oder verbietet ihn sogar.
 
 00:55:09,540 --> 00:55:14,040
-Aber ich wollte es zumindest erwähnen, weil ich
-weiß, dass einige Studierende an anderen Stellen darüber
+Aber ich wollte es zumindest erwähnen, weil ich weiß,
+dass einige Studierende an anderen Stellen darüber
 
 00:55:14,040 --> 00:55:19,610
-lesen und sich dann vielleicht wundern, warum
-sie ihn nicht in ihren Übungsaufgaben verwenden können.
+lesen und sich dann vielleicht wundern, warum sie
+ihn nicht in ihren Übungsaufgaben verwenden können.
 
 00:55:19,610 --> 00:55:25,620
-Das liegt im Grunde daran, dass ich hier der
-Diktator bin, und ich es vorziehe, Sie ihn zumindest nicht
+Das liegt im Grunde daran, dass ich hier der Diktator
+bin, und ich es vorziehe, Sie ihn zumindest nicht
 
 00:55:25,620 --> 00:55:26,920
 zu früh verwenden zu lassen.
 
 00:55:26,920 --> 00:55:30,780
-Für fortgeschrittene Haskell-Programmierer kann dies eine
-wichtige Funktion sein, um ihren Code zu
+Für fortgeschrittene Haskell-Programmierer kann
+dies eine wichtige Funktion sein, um ihren Code zu
 
 00:55:30,780 --> 00:55:36,160
 strukturieren, aber nicht für Sie,
@@ -3045,20 +3045,20 @@ Und wie erwähnt, gibt Autotool manchmal
 Warnungen über Dinge wie redundante Klammern
 
 00:55:43,360 --> 00:55:45,910
-oder sogar übermäßige
-Verwendung dieses Dollar-Symbols.
+oder sogar übermäßige Verwendung
+dieses Dollar-Symbols.
 
 00:55:45,910 --> 00:55:49,680
-Und manchmal sind das nicht nur
-Warnungen, sondern sie werden wirklich erzwungen.
+Und manchmal sind das nicht nur Warnungen,
+sondern sie werden wirklich erzwungen.
 
 00:55:49,680 --> 00:55:52,430
 Sie müssen also
 immer die Rückmeldungen lesen.
 
 00:55:52,430 --> 00:55:56,940
-Und wenn das Feedback rot ist, dann
-wissen Sie, dass Sie wirklich etwas ändern müssen,
+Und wenn das Feedback rot ist, dann wissen
+Sie, dass Sie wirklich etwas ändern müssen,
 
 00:55:56,940 --> 00:55:58,860
 weil Sie die
