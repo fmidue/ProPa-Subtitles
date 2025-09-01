@@ -1,4 +1,3 @@
-
 0:00:00.000,0:00:08.700
 Diese Aufgabe ist erneut eine CodeWorld-Aufgabe.
 Erneut geht es um eine Erweiterung eines alten
@@ -92,7 +91,7 @@ gesehen, habe ich gesagt, man könnte hier jetzt
 einfach den t-Parameter mit in diese 'branches'
 
 0:04:04.780,0:04:12.910
-packen, und wenn man das ausführt, dann stellt man
+packen. Und wenn man das ausführt, dann stellt man
 fest: irgendwas ist verkehrt, nämlich es rotieren
 
 0:04:12.910,0:04:19.690
@@ -199,104 +198,134 @@ der y-Koordinate, da hier ja schon um 2 verschoben
 wird. Dann funktioniert die Rotation so, wie
 wir uns das vorstellen. Kleine Änderung am
 
-
-
 0:09:07.100,0:09:13.700
-Code. Wir haben hier zweimal 'translated 0 2' und 'rotated t'. Das heißt, wir können
+Code. Wir haben hier zweimal 'translated 0 2'
+und 'rotated t'. Das heißt, wir können
 
 0:09:13.700,0:09:20.990
-das Ganze auch zusammenfassen und können hier sagen, dass 'branches' und 'leaves', dass das
+das Ganze auch zusammenfassen und können hier sagen,
+dass 'branches' und 'leaves', dass das
 
 0:09:20.990,0:09:44.900
-als Parameter sein soll. 'Rotated t (branches & leaves)'. Das erhält erstmal die Funktionalität,
+als Parameter sein soll. 'Rotated t (branches & leaves)'.
+Das erhält erstmal die Funktionalität,
 
 0:09:44.900,0:09:59.090
-aber ist besser lesbarer Code. Nun müssen wir es noch schaffen, dass der Baum, also die Krone,
+aber ist besser lesbarer Code. Nun müssen wir
+es noch schaffen, dass der Baum, also die Krone,
 
 0:09:59.090,0:10:06.860
-nicht komplett im Kreis dreht, sondern sich nur hin und her bewegt. Dafür können wir uns
+nicht komplett im Kreis dreht, sondern sich
+nur hin und her bewegt. Dafür können wir uns
 
 0:10:06.860,0:10:14.890
-jetzt überlegen, dass wir an den beweglichen Teil hier nicht t übergeben, sondern einfach nur einen
+jetzt überlegen, dass wir an den beweglichen Teil
+hier nicht t übergeben, sondern einfach nur einen
 
 0:10:14.890,0:10:25.360
-bestimmten Winkel, den wir gerade haben wollen. Den bekommen wir mit einer trigonometrischen
+bestimmten Winkel, den wir gerade haben wollen.
+Den bekommen wir mit einer trigonometrischen
 
 0:10:25.360,0:10:32.680
-Funktion. In dem Fall bietet sich Sinus an, da wir am Anfang den Baum genau so rotiert haben wollen,
+Funktion. In dem Fall bietet sich Sinus an, da wir
+am Anfang den Baum genau so rotiert haben wollen,
 
 0:10:32.680,0:10:51.670
-wie er am Anfang ist und danach wollen wir den Baum nach rechts und nach links rotieren. Hier
+wie er am Anfang ist und danach wollen wir den
+Baum nach rechts und nach links rotieren. Hier
 
 0:10:51.670,0:11:03.430
-rotieren wir erst nach links und dann nach rechts und rotieren immer wieder hin und zurück. Jetzt
+rotieren wir erst nach links und dann nach rechts
+und rotieren immer wieder hin und zurück. Jetzt
 
 0:11:03.430,0:11:11.890
-kann man noch ein bisschen an der Darstellung arbeiten. Die Äste gehen relativ weit rüber,
+kann man noch ein bisschen an der Darstellung
+arbeiten. Die Äste gehen relativ weit rüber,
 
 0:11:11.890,0:11:18.250
-deshalb kann man vielleicht die Amplitude der Rotation noch etwas senken. Sagen wir mal mit
+deshalb kann man vielleicht die Amplitude der
+Rotation noch etwas senken. Sagen wir mal mit
 
 0:11:18.250,0:11:27.370
-0,3 mal. Wenn die Amplitude gesenkt wird, ändert sich auch die Geschwindigkeit der
+0,3 mal. Wenn die Amplitude gesenkt wird,
+ändert sich auch die Geschwindigkeit der
 
 0:11:27.370,0:11:33.040
-Rotation. Das könnte man beheben, indem man dann die Geschwindigkeit erhöht. Also z.B.
+Rotation. Das könnte man beheben, indem man
+dann die Geschwindigkeit erhöht. Also z.B.
 
 0:11:33.040,0:11:42.550
-die doppelte Geschwindigkeit, indem wir 2 * t als Parameter an die Sinus-Funktion übergeben.
+die doppelte Geschwindigkeit, indem wir 2 * t
+als Parameter an die Sinus-Funktion übergeben.
 
 0:11:42.550,0:11:51.040
-Und dann kommen wir natürlich zu unserer letzten Anforderung an das Programm. Es soll auch so sein,
+Und dann kommen wir natürlich zu unserer letzten
+Anforderung an das Programm. Es soll auch so sein,
 
 0:11:51.040,0:12:01.060
-dass die Rotation nach einer bestimmten Zeit endet. Das können wir erreichen, indem wir eine
+dass die Rotation nach einer bestimmten Zeit
+endet. Das können wir erreichen, indem wir eine
 
 0:12:01.060,0:12:13.420
-Fallunterscheidung machen. Das heißt, wir können sagen, wenn t kleiner als irgendein Endwert ist,
+Fallunterscheidung machen. Das heißt, wir können
+sagen, wenn t kleiner als irgendein Endwert ist,
 
 0:12:13.420,0:12:27.740
-z.B. '2 * pi', dann rotieren wir, ansonsten geben wir als Winkel 0 an. Das heißt, die Rotation endet
+z.B. '2 * pi', dann rotieren wir, ansonsten geben
+wir als Winkel 0 an. Das heißt, die Rotation endet
 
 0:12:27.740,0:12:42.890
-dann, weil wir nicht mehr weiter rotieren. Jetzt muss man beachten, dass man für dieses Beenden
+dann, weil wir nicht mehr weiter rotieren. Jetzt
+muss man beachten, dass man für dieses Beenden
 
 0:12:42.890,0:12:51.920
-auch einen günstigen Zeitpunkt nimmt, nämlich einen, zu dem die Animation auch wirklich sanft
+auch einen günstigen Zeitpunkt nimmt, nämlich
+einen, zu dem die Animation auch wirklich sanft
 
 0:12:51.920,0:12:58.580
-beendet wird. Wenn ich hier z.B. einfach < 2 wähle, dann werden wir in der Animation sehen,
+beendet wird. Wenn ich hier z.B. einfach < 2
+wähle, dann werden wir in der Animation sehen,
 
 0:12:58.580,0:13:09.020
-dass es abrupt endet. Das heißt, es gibt so einen Sprung. Das wollen wir nicht haben,
+dass es abrupt endet. Das heißt, es gibt so
+einen Sprung. Das wollen wir nicht haben,
 
 0:13:09.020,0:13:21.170
-deshalb müssen wir einen Wert wählen, der genau am Ende einer solchen Rotation liegt, damit dann auch
+deshalb müssen wir einen Wert wählen, der genau am
+Ende einer solchen Rotation liegt, damit dann auch
 
 0:13:22.190,0:13:32.120
-das Wanken des Baumes sanft endet. Dann können wir die 'coordinatePlane' da wegnehmen, dann die
+das Wanken des Baumes sanft endet. Dann können
+wir die 'coordinatePlane' da wegnehmen, dann die
 
 0:13:32.120,0:13:40.370
-Animation noch einmal anschauen und jetzt sehen wir auch, dass die Rotation nach einer gewissen
+Animation noch einmal anschauen und jetzt sehen
+wir auch, dass die Rotation nach einer gewissen
 
 0:13:40.370,0:13:53.390
-Zeit endet. Somit haben wir die Aufgabe gelöst und das basierend auf dem alten Programm. Man kann das
+Zeit endet. Somit haben wir die Aufgabe gelöst und
+das basierend auf dem alten Programm. Man kann das
 
 0:13:53.390,0:14:03.500
-Ganze auch von Grund auf neu entwickeln. Dabei kann man vermeiden, dass die Rotation zweimal
+Ganze auch von Grund auf neu entwickeln. Dabei
+kann man vermeiden, dass die Rotation zweimal
 
 0:14:03.500,0:14:19.790
-durchgeführt wird. Also wir rotieren hier ja einmal den Gesamtteil der Krone und man könnte
+durchgeführt wird. Also wir rotieren hier ja
+einmal den Gesamtteil der Krone und man könnte
 
 0:14:19.790,0:14:28.710
-es aber auch so machen, dass man die Rotation hier mit in den 'branch'-Teil mit einbaut und
+es aber auch so machen, dass man die Rotation
+hier mit in den 'branch'-Teil mit einbaut und
 
 0:14:28.710,0:14:36.360
-dann die 'leaves' nur noch rotiert. Das wäre dann auch eine mögliche Option, um nicht den 'branch'
+dann die 'leaves' nur noch rotiert. Das wäre dann
+auch eine mögliche Option, um nicht den 'branch'
 
 0:14:36.360,0:14:42.360
-Teil sozusagen zweimal zu rotieren. Das könnte man machen, wenn man das von Grund auf entwickelt.
+Teil sozusagen zweimal zu rotieren. Das könnte
+man machen, wenn man das von Grund auf entwickelt.
 
 0:14:42.360,0:14:48.810
-Aber darauf möchte ich nicht weiter eingehen, stattdessen belasse ich das hier jetzt dabei.
-
+Aber darauf möchte ich nicht weiter eingehen,
+stattdessen belasse ich das hier jetzt dabei.

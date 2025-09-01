@@ -1,17 +1,16 @@
-
 0:00:00.000,0:00:05.010
 In Aufgabe 32 geht es wieder um IO.
 
 0:00:05.010,0:00:12.090
 Und zwar sollen wir diesmal ein imperatives
-Programm nachimplementieren in Haskell.
+Programm in Haskell nachimplementieren.
 
 0:00:14.100,0:00:20.062
 Wir haben ein Programm gegeben, einmal in einer
 C-Version und einmal in einer Python-Version.
 
 0:00:20.062,0:00:24.870
-Das ist zweimal dasselbe Programm; kann man
+Das ist zweimal dasselbe Programm; da kann man
 sich jetzt aussuchen, was man besser lesen kann.
 
 0:00:24.870,0:00:29.130
@@ -65,7 +64,7 @@ Und jetzt kommt irgendwie dieser while-loop hier.
 
 0:01:52.890,0:02:03.120
 Und danach sehen wir schon, dass wir
-irgendwas ausgeben müssen mit print.
+irgendwas mit 'print' ausgeben müssen.
 
 0:02:03.120,0:02:06.720
 Können wir auch gleich das print hinschreiben.
@@ -75,7 +74,7 @@ Hier kommt irgendwas rein, was wir noch nicht
 
 0:02:08.490,0:02:14.400
 wissen und printen wollen wir auch
-irgendwas, was wir noch nicht kennen.
+irgendwas, das wir noch nicht kennen.
 
 0:02:16.650,0:02:22.740
 Und in Haskell haben wir natürlich nicht
@@ -99,17 +98,17 @@ wir doch einfach, das ist eine Funktion,
 
 0:02:44.880,0:02:58.800
 die irgendwie ein Integer x und ein Integer y
-nimmt und gibt uns am Ende aus, was die
+nimmt und uns am Ende ausgibt, was
 
 0:02:59.550,0:03:22.680
-veränderten Werte sozusagen sind.
+sozusagen die veränderten Werte sind.
 
 0:03:22.680,0:03:25.800
-Das heißt, wir starten hier mit x und y hier oben.
+Das heißt, wir starten mit x und y hier oben.
 
 0:03:25.800,0:03:32.970
 Tun die sozusagen in die Schleife rein
-und am Ende, zu sagen vor diesem print,
+und am Ende, sozusagen vor diesem 'print',
 
 0:03:32.970,0:03:38.340
 würden aus der Schleife sozusagen
@@ -159,12 +158,12 @@ Jetzt gucken wir, wie wir denn
 eigentlich den loop hier implementieren.
 
 0:05:06.580,0:05:12.490
-Als Erstes haben wir die Bedingungen, so
-lange x > 0 ist, wollen wir weitermachen.
+Als Erstes haben wir die Bedingungen,
+solange x > 0 ist, wollen wir weitermachen.
 
 0:05:12.490,0:05:18.430
 Das heißt, wir können zum Beispiel
-jetzt einen guard einführen:
+jetzt einen Guard einführen:
 
 0:05:18.430,0:05:26.050
 Wenn x <= 0 ist, dann wissen wir,
@@ -175,21 +174,21 @@ können einfach unser y zurückgeben.
 
 0:05:40.100,0:05:48.950
 Dann, wenn das nicht der Fall ist, haben
-wir diese if-else-Bedingungen und das heißt,
+wir diese if-else-Bedingungen, und das heißt,
 
 0:05:48.950,0:05:50.780
 wir müssen jetzt diese Bedingungen prüfen.
 
 0:05:50.780,0:06:08.420
 Das heißt, wir prüfen hier, wenn x `mod` 2 ==
-0, haben wir einen Fall und ein otherwise-Fall.
+0, haben wir einen Fall, und einen otherwise-Fall.
 
 0:06:08.420,0:06:16.700
 Jetzt müssen wir ein bisschen aufpassen,
 
 0:06:16.700,0:06:24.800
 weil nach dem if-then-else kommt immer
-noch dieses print x in jedem Fall.
+noch dieses 'print x' in jedem Fall.
 
 0:06:24.800,0:06:33.860
 Also müssen wir auf jeden Fall hier irgendwie
@@ -231,14 +230,12 @@ Jetzt können wir das genauso
 hier machen für den anderen Fall.
 
 0:07:48.630,0:07:58.140
-Da haben wir auch, dass neue x entsteht,
+Da haben wir auch: das neue x entsteht,
 indem wir einfach mit readLn ein neues
 
 0:07:58.140,0:08:06.660
-x einlesen und das neue y entsteht,
-indem wir das alte y + 1 nehmen.
-
-
+x einlesen, und das neue y entsteht,
+indem wir das alte y plus 1 nehmen.
 
 0:08:06.660,0:08:16.980
 Dann geben wir noch das neue x aus, und
@@ -246,7 +243,7 @@ stoßen auch hier den Loop wieder neu an.
 
 0:08:22.300,0:08:32.920
 Was wir natürlich machen können: Hier oben
-ergibt das mit dem let, um x' zu definieren
+ergibt das mit dem let, um x' zu definieren,
 
 0:08:32.920,0:08:37.450
 Sinn, weil wir das zweimal verwenden. Da
@@ -256,7 +253,7 @@ sparen wir uns auf jeden Fall irgendwas.
 Das y' verwenden wir nur einmal, das heißt,
 
 0:08:41.620,0:08:52.510
-wir können im Prinzip auch uns das let sparen
+wir können uns im Prinzip das let auch sparen
 und das gleich bei der Parameterübergabe machen.
 
 0:08:57.220,0:09:02.620
@@ -276,15 +273,15 @@ irgendwelche Inputs überlegen.
 
 0:09:18.610,0:09:21.460
 Wenn wir uns jetzt angucken, was
-das Programm hier macht, sagen wir,
+das Programm hier macht; sagen wir,
 
 0:09:21.460,0:09:27.760
 wir geben mal irgendwas größer 0 ein,
 oder wir können auch erst mal 0 eingeben.
 
 0:09:27.760,0:09:33.325
-Dann kommt sofort 0 raus, weil y 0 ist und der
-Loop gar nicht erst einmal ausgeführt wird.
+Dann kommt sofort 0 raus, weil y = 0 ist und der
+Loop gar nicht erst ausgeführt wird.
 
 0:09:33.325,0:09:34.990
 Das ist natürlich recht langweilig.
@@ -345,7 +342,7 @@ Es gibt noch verschiedene andere
 Ansätze, wie man das machen kann.
 
 0:11:20.520,0:11:29.280
-Wir könnten den Loop auch prinzipiell
+Wir könnten den Loop prinzipiell auch
 hier direkt lokal definieren.
 
 0:11:29.280,0:11:36.540
@@ -365,7 +362,7 @@ Man kann auch noch sehr viele andere Möglichkeiten
 
 0:11:55.020,0:11:58.350
 finden, wie man zum Beispiel dieses
-print nicht doppelt schreiben müsste,
+'print' nicht doppelt schreiben müsste,
 
 0:11:58.350,0:12:07.800
 indem man hier genauer an diese Struktur dran
@@ -381,4 +378,3 @@ man sie auch gut lesen kann.
 0:12:15.210,0:12:22.620
 Fast sogar besser als diese
 Version, meiner Meinung nach.
-

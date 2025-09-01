@@ -1,4 +1,3 @@
-
 0:00:00.000,0:00:07.230
 In dieser Aufgabe soll eine Funktion 'notElem'
 geschrieben werden, die zurückgibt, ob ein
@@ -29,15 +28,15 @@ für die Restliste gelten muss. Also wenn das
 
 0:01:25.530,0:01:34.440
 erste Element nicht dem gesuchten Element
-entspricht oder dem nicht gesuchten Element, dann
+entspricht bzw. dem nicht vorzukommenden Element, dann
 
 0:01:34.440,0:01:46.290
 suchen wir halt weiter im Rest der Liste, also
-im 'tail'. Wir können das Ganze wieder in ghci,
+im 'tail'. Wir können das Ganze wieder in ghci
 
 0:01:46.290,0:01:56.790
 als Task12 machen und haben hier auch wieder Testfälle,
-die wir hier ausführen können und da schlägt
+die wir hier ausführen können. Und da schlägt
 
 0:01:56.790,0:02:09.270
 auch schon ein Test fehl, und der sagt, dass hier
@@ -60,7 +59,7 @@ Test immer noch fehl bei den leeren Listen. Warum
 ist das der Fall? Die Reihenfolge der Guards ist
 
 0:02:46.440,0:02:53.310
-hier entscheidend und es wird zuerst das erste
+hier entscheidend und es wird zuerst der erste
 überprüft. Und was passiert hier? Hier wird 'head'
 
 0:02:53.310,0:03:02.100
@@ -96,7 +95,7 @@ natürlich gleich sein und auch die Parameter.
 Was könnten wir auch machen? Wir könnten das
 
 0:04:09.660,0:04:19.290
-Ganze als booleschen Ausdruck schreiben, also
+Ganze als Booleschen Ausdruck schreiben, also
 dieses, was wir hier als Guard geschrieben haben,
 
 0:04:19.290,0:04:27.390
@@ -104,11 +103,11 @@ könnten wir sozusagen auch umschreiben. Wenn die
 Liste leer ist, dann wissen wir, dass das Ganze
 
 0:04:27.390,0:04:41.550
-'True' ist und 'False' ist das Ganze, wenn 'head'
+'True' ist, und 'False' ist das Ganze, wenn 'head'
 genau dem gesuchten Element entspricht. Das heißt,
 
 0:04:41.550,0:04:52.650
-wenn das nicht der Fall ist und 'notElem' für
+wenn das nicht der Fall ist, und 'notElem' für
 den Rest gilt, dann wissen wir, dass das Ganze
 
 0:04:52.650,0:05:11.040
@@ -166,4 +165,3 @@ können wir auch noch einmal durchführen durch
 0:07:21.900,0:07:29.760
 unsere Testsuite und sehen, dass das
 entsprechend auch erfolgreich durchläuft.
-

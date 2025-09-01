@@ -1,4 +1,3 @@
-
 0:00:00.000,0:00:05.880
 Hallo, für diese Aufgabe haben wir ein paar
 algebraische Datentypen gegeben, 'Animal' und
@@ -28,12 +27,12 @@ Typ 'Bit' sollen wir eine Liste vom Typ 'Animal'
 zurückkriegen, aber in 'Maybe' verpackt, wegen
 
 0:00:48.660,0:00:54.810
-der Voraussetzungen, die wir hier unten haben,
-nämlich dass es für jede Liste vom Typ 'Bit', für die
+der Voraussetzungen, die wir hier unten haben.
+Nämlich dass für jede Liste vom Typ 'Bit', für die
 
 0:00:54.810,0:01:00.960
 es keine originale Liste vom Typ 'Animal' gibt,
-soll 'decode' einfach nur 'Nothing' zurückgeben.
+'decode' einfach nur 'Nothing' zurückgeben soll.
 
 0:01:00.960,0:01:10.050
 Im Umkehrschluss muss dann auf jede Liste vom Typ
@@ -56,7 +55,7 @@ und wir lassen diese Liste dann durch das 'decode'
 laufen; dann soll sie uns die originale Liste, die
 
 0:01:31.050,0:01:37.680
-wir in 'Gencode' reingegeben haben, wiedergeben,
+wir in 'encode' reingegeben haben, wiedergeben,
 nur halt in diesem 'Maybe' verpackt; weil wir halt
 
 0:01:37.680,0:01:38.580
@@ -65,10 +64,10 @@ kann, weswegen es in einem 'Maybe' verpackt ist.
 
 0:01:38.580,0:01:46.380
 Damit das auch so funktionieren kann, müssen wir
-uns natürlich eine Enkodierungsstrategie ausdenken,
+uns natürlich eine Enkodierungsstrategie ausdenken.
 
 0:01:46.380,0:01:54.330
-und unser 'Task' sagt uns auch, wir sollen eine
+Und unser 'Task' sagt uns auch, wir sollen eine
 möglichst platzeffiziente Enkodierung ausdenken,
 
 0:01:54.330,0:02:03.120
@@ -168,7 +167,7 @@ wir nicht. Wir wollen nur eine flache Liste von
 Bits. Das heißt, wir müssen das jetzt noch mit
 
 0:04:34.910,0:04:43.790
-'concat' flach machen, und weil dieses 'concat'
+'concat' flach machen, und weil dieses 'concat',
 'map'-Konstrukt in dieser Form so oft vorkommt,
 
 0:04:43.790,0:04:50.060
@@ -198,8 +197,6 @@ kann, in der kein 'Animal' ist. Das ist immer
 0:05:19.250,0:05:24.650
 noch eine valide Liste vom Typ 'Animal'. Jetzt
 geben wir nur 'Just' die leere Liste zurück. Dann
-
-
 
 0:05:24.650,0:05:30.050
 haben wir jetzt den einzigen Fall, wo wir eine
@@ -255,7 +252,7 @@ Liste an. Den bekommen wir als 'Maybe' zurück,
 
 0:06:56.390,0:07:01.400
 also als 'Just' und dann den Rest der Liste hinten
-dran gehängt. Das heißt, wir müssen das erst mal
+drangehängt. Das heißt, wir müssen das erstmal
 
 0:07:01.400,0:07:08.780
 aus dem 'Maybe' herausholen mit 'fromJust' und
@@ -323,7 +320,7 @@ Einser-Bit ist, dann muss es ein Null-Bit sein,
 
 0:08:47.110,0:08:54.670
 also geben wir 'Dog' zurück. Und dann wieder aus
-dem 'Just' herausgeholt den Rest der Liste. Und
+dem 'Just' herausgeholt, den Rest der Liste. Und
 
 0:08:58.660,0:09:00.628
 da ich hier schon die ganze Zeit 'rest' benutzt
@@ -339,7 +336,7 @@ hier benutzen wir 'fromJust'. Das können
 
 0:09:13.930,0:09:19.150
 wir beides eliminieren, indem wir einfach
-nur statt Guards Case Expressions benutzen.
+nur statt Guards Case-Expressions benutzen.
 
 0:09:19.990,0:09:24.550
 Ich werde das jetzt einfach mal hier machen.
@@ -355,7 +352,7 @@ xs' zurückgibt. Wenn die Rückgabe 'Nothing' ist,
 
 0:09:37.930,0:09:48.640
 also irgendwas schiefgelaufen ist an irgendeiner
-Stelle, dann geben wir 'Nothing' zurück und wenn
+Stelle, dann geben wir 'Nothing' zurück; und wenn
 
 0:09:48.640,0:09:53.500
 das nicht der Fall ist, also der Rest der Liste
@@ -383,7 +380,7 @@ of'. Wieder, wenn irgendwo eine falsche Kodierung
 
 0:10:36.901,0:10:40.020
 gefunden wurde im Rest der Liste, dann geben
-wir 'Nothing' zurück und dann nehmen wir den
+wir 'Nothing' zurück, und dann nehmen wir den
 
 0:10:40.020,0:10:47.700
 Rest der Liste direkt so raus. Dann machen wir
@@ -400,4 +397,3 @@ und hier im GHCi reinladen und den Test ausführen,
 0:11:12.960,0:11:17.910
 dann sehen wir: Der Test führt richtig
 aus und wir haben die Aufgabe erledigt.
-

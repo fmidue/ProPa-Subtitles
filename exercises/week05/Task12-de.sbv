@@ -1,4 +1,3 @@
-
 0:00:00.000,0:00:09.150
 In dieser Aufgabe geht es um Palindrome. Das
 sind Wörter, die vorwärts und rückwärts gleich
@@ -21,10 +20,10 @@ ist die isPalindrome-Funktion zu implementieren.
 
 0:00:42.720,0:01:00.630
 Wenn ich jetzt im ghci, also im interaktiven
-Compiler das Programm lade, erst mal die Datei
+Compiler, das Programm lade, erst mal die Datei
 
 0:01:00.630,0:01:07.290
-speichern und dann die main-Funktion aufrufe,
+speichere und dann die main-Definition aufrufe,
 dann werden die Tests ausgeführt. In dem Fall
 
 0:01:07.290,0:01:15.990
@@ -141,7 +140,7 @@ ist in diesem Fall 'False'. Also deshalb mussten
 
 0:05:50.260,0:06:00.160
 wir auch noch den Case überprüfen. Es gibt noch
-andere Wege, die Aufgabe zu lösen, also andere,
+andere Wege, die Aufgabe zu lösen, also andere
 
 0:06:00.160,0:06:07.540
 grundsätzliche Ansätze, wie man das machen kann.
@@ -203,18 +202,16 @@ gibt es die init- und die tail-Funktion.
 Mit der init-Funktion wird sozusagen der erste
 Teil der Liste genommen und mit 'tail' der hintere.
 
-
-
 0:08:57.560,0:09:03.260
 Teil der Liste. Wenn man beide anwendet auf xs,
-dann sind genau das erste und das letzte Element.
+dann sind genau das erste und das letzte Element
 
 0:09:03.260,0:09:09.770
 der Liste verschwunden. Jetzt würde das Ganze
-schon wieder durch unsere Testsuite laufen.
+schon wieder durch unsere Testsuite laufen,
 
 0:09:09.770,0:09:16.460
-Die wir hier gegeben haben, aber 'isPalindrome'
+die wir hier gegeben haben. Aber 'isPalindrome'
 von 'Abba' wäre noch falsch. Das lässt sich wieder
 
 0:09:16.460,0:09:23.690
@@ -234,8 +231,8 @@ sozusagen jetzt den Ansatz hat, erst die Liste
 zu reversen und dann in Lower Case zu setzen,
 
 0:10:15.590,0:10:30.020
-also sozusagen das Umgekehrte zu dem ersten Fall,
-dann ist das natürlich auch möglich, also erst das
+also sozusagen das Umgekehrte zu dem ersten Fall.
+Dann ist das natürlich auch möglich, also erst das
 
 0:10:30.020,0:10:50.450
 Reverse machen. Ich definiere dafür die Liste ys als
@@ -274,7 +271,7 @@ das, was wir haben wollen, aber wir sagen jetzt
 einfach, was für alle unsere Elemente in der Liste
 
 0:12:03.570,0:12:08.160
-gelten soll, und dafür können wir die and-Funktion
+gelten soll. Und dafür können wir die and-Funktion
 nehmen, die eben genau aus einer
 
 0:12:08.160,0:12:24.360
@@ -284,4 +281,3 @@ das jetzt erneut lade und den Test laufen lasse
 0:12:24.360,0:12:34.290
 für 'isPalindrome "Abba"', dann gibt der 'True'
 und auch die Tests mit 'main' funktionieren.
-
