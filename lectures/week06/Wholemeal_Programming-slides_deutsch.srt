@@ -1,4 +1,3 @@
-
 80 # slide
 00:00:02,639 --> 00:00:07,759
 In diesem Video möchte ich über das sprechen,
@@ -211,8 +210,6 @@ die sich das erste und das letzte Element
 00:04:06,069 --> 00:04:08,299
 ansah und dann
 einen rekursiven Aufruf machte.
-
-
 
 00:04:08,299 --> 00:04:13,819
 Das ist etwas, das vielleicht nicht
@@ -439,8 +436,6 @@ wäre die Äquivalenz, die hier gezeigt wird.
 00:08:16,200 --> 00:08:18,040
 Was sie aussagt, ist:
 
-
-
 00:08:18,040 --> 00:08:28,340
 Wenn ich einige Zahlen von null bis n nehme und
 dann "f von a" (f a) auf jedem Element berechne,
@@ -526,7 +521,7 @@ Aber in C oder Java ist es nicht so,
 dass wir dies immer durch dies ersetzen können, aus verschiedenen
 
 00:10:14,030 --> 00:10:19,750
-Gründen, wie Seiteneffekten, wie Dinge, die die
+Gründen, wie Seiteneffekte, wie Dinge, die die
 f-Aufrufe zusätzlich zur Berechnung von Werten tun könnten.
 
 00:10:19,750 --> 00:10:25,690
@@ -656,8 +651,6 @@ Ihrem Code, und wenn Sie das "reverse" außerhalb
 dieser Liste verschieben, erkennen Sie, dass
 Sie diesen Ausdruck als gemeinsamen Unterausdruck mit
 
-
-
 00:12:45,300 --> 00:12:48,110
 einem anderen Teil
 Ihrer Funktionsdefinition teilen können.
@@ -762,7 +755,7 @@ Endbedingung haben, dass wir prüfen, dass i kleiner als
 
 00:14:40,870 --> 00:14:44,650
 n ist, und nicht zum Beispiel, dass i
-gleich n ist, oder kleiner gleich n, oder etwas
+gleich n ist, oder kleiner-gleich n, oder etwas
 
 00:14:44,650 --> 00:14:45,650
 in der Art.
@@ -882,8 +875,6 @@ das "zip" wird einfach so viele Elemente aus
 dieser unendlichen Liste abarbeiten, wie nötig
 sind, um genügend Zahlen zu haben.
 
-
-
 00:16:51,510 --> 00:16:56,880
 Es gibt also keinen Vergleich gegen einen Endwert,
 wie n oder n - 1 oder so etwas.
@@ -898,7 +889,7 @@ einen Ausdruck, der etwas errechnet.
 
 00:17:03,010 --> 00:17:09,069
 Es gibt keine Schleife mit
-einer Schleifenbedingung, kein Überschreiben der Ergebnisvariablen.
+einer Schleifenbedingung, kein Überschreiben der Ergebnisvariablen
 
 00:17:09,069 --> 00:17:10,069
 oder ähnliches.
@@ -983,7 +974,7 @@ Wo speichere ich sie?
 
 00:18:35,670 --> 00:18:39,900
 Überschreibe ich mein ursprüngliches Array, sodass ich
-dann die Summenfunktion auf diesem Array aufrufen kann,
+dann die Summenfunktion auf diesem Array aufrufen kann
 
 00:18:39,900 --> 00:18:42,230
 (aber dann habe
@@ -1093,8 +1084,6 @@ aber auch dann gibt es dieses Fehlerpotential.
 00:20:42,010 --> 00:20:45,190
 Es gibt mehrere Stellen, an
 denen ich einen Fehler machen kann.
-
-
 
 00:20:45,190 --> 00:20:47,080
 Ich muss entscheiden, wo fange ich an?
@@ -1315,8 +1304,6 @@ Es ist alles ein großes Durcheinander.
 In diesem Beispiel ist es noch kein *großes*
 Durcheinander, sondern Dinge, die synchronisiert gehalten werden müssen.
 
-
-
 00:24:48,160 --> 00:24:52,570
 In größeren Beispielen kann es wirklich zu einem
 großen Durcheinander werden, sich mit all diesen Aspekten auf
@@ -1346,7 +1333,7 @@ Hier befindet sich gewissermaßen
 die Schleifensteuerung, wenn Sie wollen.
 
 00:25:24,470 --> 00:25:25,720
-Aber es gibt
+Aber es *gibt*
 keine explizite Schleifensteuerung.
 
 00:25:25,720 --> 00:25:29,200
@@ -1544,11 +1531,9 @@ dass dazwischenliegende Datenstrukturen verwendet werden.
 00:28:36,480 --> 00:28:38,650
 Das ist also nicht wirklich ein Problem.
 
-
-
 00:28:38,650 --> 00:28:45,039
 Natürlich könnte das Programm am Ende immer
-noch weniger effizient sein als ein handgeschriebenes.
+noch weniger effizient sein als ein handgeschriebenes
 
 00:28:45,039 --> 00:28:50,160
 C-Programm, aber das
@@ -1560,7 +1545,7 @@ Compiler sogar Parallelisierungsmöglichkeiten erkennen.
 
 00:28:54,440 --> 00:28:58,789
 Dank des Aspekts der unabhängigen Werte, den
-wir beim Vergleich von List Comprehensions mit.
+wir beim Vergleich von List Comprehensions mit
 
 00:28:58,789 --> 00:29:04,360
 for-Schleifen besprochen haben, ist es (in einem Programm,
@@ -1580,20 +1565,20 @@ haben, kann also auch von einem Compiler ausgenutzt werden.
 
 00:29:18,330 --> 00:29:24,860
 Der Compiler kann Gesetze anwenden,
-um Ineffizienzen zu beseitigen, Datenstruktur-Traversierungen, Datenstrukturen.
+um Ineffizienzen zu beseitigen, Datenstruktur-Traversierungen,
 
 00:29:24,860 --> 00:29:25,860
-Selbst.
+oder Datenstrukturen selbst.
 
 00:29:25,860 --> 00:29:27,090
 Das ist genau das, was GHC macht.
 
 00:29:27,090 --> 00:29:33,450
 GHC führt zwar nicht von sich
-aus Parallelität ein, aber achtet zum Beispiel.
+aus Parallelität ein, aber achtet zum Beispiel
 
 00:29:33,450 --> 00:29:38,320
-Sehr auf die Traversierung von
+sehr auf die Traversierung von
 Datenstrukturen und kann viele davon eliminieren.
 
 00:29:38,320 --> 00:29:45,809
@@ -1682,4 +1667,3 @@ Diese Unterschiede sind real.
 
 00:31:09,850 --> 00:31:12,029
 Und sie sind relevant.
-

@@ -1,4 +1,3 @@
-
 138 # slide
 00:00:01,840 --> 00:00:10,160
 Letzte Woche haben wir über
@@ -95,7 +94,7 @@ was sind dann die Argumente? Ein Element des
 
 00:02:24,800 --> 00:02:29,200
 Trägertyps, des Typs (a), den wir
-Elemente in der Liste sehen wollen, und dann die
+Elemente in der Liste sehen wollen, und dann der
 
 00:02:29,200 --> 00:02:35,440
 Rest der Liste. Und dann ein rekursives Vorkommen von
@@ -182,8 +181,6 @@ vorherigen Folie gesehen haben, genau so ist, wie Listen tatsächlich
 in Haskell implementiert sind. Wir haben einfach nicht
 diese Perspektive noch nicht eingenommen. Aber das ist
 
-
-
 00:04:34,640 --> 00:04:41,680
 so ist es. Letztendlich ist also irgendwo tief
 in den Standarddefinitionen von Haskell, also,
@@ -221,7 +218,7 @@ wird hier als Präfix-Operator verwendet. Er kann aber auch
 infix geschrieben werden. Und was sind die Argumente von
 
 00:05:28,160 --> 00:05:33,680
-diesem Konstrukts? Zunächst ist da nur ein Element
+diesem Konstruktor? Zunächst ist da nur ein Element
 vom Typ a, und dann gibt es ein rekursives
 
 00:05:33,680 --> 00:05:39,440
@@ -253,8 +250,8 @@ eine Syntax wie diese verwendet. Also, in eckigen Klammern,
 werden die Elemente nacheinander mit einem
 
 00:06:11,760 --> 00:06:19,120
-Komma getrennt. Das ist einfach syntaktischer Zucker für den eigentlichen
-diesen Ausdruck, der besagt, dass es sich um eine 'Cons',
+Komma getrennt. Das ist einfach syntaktischer Zucker für
+diesen eigentlichen Ausdruck, der besagt, dass es sich um eine 'Cons' handelt,
 
 00:06:19,120 --> 00:06:25,280
 also ist es keine leere Liste. Es ist eine nicht-leere
@@ -289,12 +286,12 @@ Aber unter der Haube wird diese Liste
 wie folgt dargestellt. Und dann,
 
 00:07:01,840 --> 00:07:07,600
-da dieser Operator vordefiniert ist, rechts assoziativ zu sein,
+da dieser Operator vordefiniert ist, rechts-assoziativ zu sein,
 brauchen wir diese Klammern hier nicht.
 
 00:07:07,600 --> 00:07:12,160
 Eigentlich können wir diese Liste [1,2] auch in
-dieser Form schreiben. Und das ist völlig gleichwertig. Also,
+dieser Form schreiben. Und das ist völlig gleichwertig. Also
 
 00:07:12,160 --> 00:07:18,640
 konvertiert der Compiler stillschweigend zwischen
@@ -305,8 +302,8 @@ Und diese Notation ist natürlich diejenige, die
 wir für das Pattern-Matching verwenden, weil wir
 
 00:07:26,160 --> 00:07:33,440
-eine Liste in ihren Kopf und den Rest zerlegen wollen, die Liste
-per Pattern zerlegen wollen. Dann können wir das ganz einfach tun,
+eine Liste in ihren Kopf und den Rest zerlegen wollen (die Liste
+per Pattern zerlegen wollen). Dann können wir das ganz einfach tun,
 
 00:07:33,440 --> 00:07:39,280
 so wie wir es in der vorigen Woche für die
@@ -346,8 +343,8 @@ verwendet sie die symbolische Syntax. Also, wir
 haben den Basisfall, der einfach mit
 
 00:08:29,200 --> 00:08:34,240
-diesem Nullary-Konstrukt der leeren Liste. Und natürlich
-ist die Länge einer leeren Liste natürlich null. Diese
+diesem nullstelligen Konstruktor der leeren Liste ist. Und natürlich
+ist die Länge einer leeren Liste null. Diese
 
 00:08:34,240 --> 00:08:40,960
 ist eine polymorphe Liste, und wir kümmern uns nicht um den
@@ -358,10 +355,8 @@ Und was ist mit der nicht leeren Liste? Die nicht leere
 Liste wird definitiv zerlegbar sein in einen
 
 00:08:47,200 --> 00:08:52,480
-Kopf, was hier ignoriert wird, weil wir uns nicht
-für das Element nicht interessieren. Und dann dieser symbolische
-
-
+Kopf, der hier ignoriert wird, weil wir uns nicht
+für das Element interessieren. Und dann dieser symbolische
 
 00:08:52,480 --> 00:08:58,000
 Cons-Konstruktor und der Rest der Liste. Und dann ist die
@@ -400,7 +395,7 @@ und eine Liste desselben Typs zurückgibt. Wie wird
 sie definiert? Eine Möglichkeit, sie zu definieren, ist
 
 00:09:46,080 --> 00:09:50,960
-durch Fallunterscheidung beim ersten Argument.
+durch Fallunterscheidung auf dem ersten Argument.
 So kann die erste Liste leer sein, und dann,
 
 00:09:51,680 --> 00:09:55,520
@@ -425,10 +420,10 @@ diesen Datenkonstruktor nicht nur im Pattern
 
 00:10:24,560 --> 00:10:30,000
 zum Dekonstruieren, sondern auch zum Konstruieren von
-neuen Listen verwenden können, was genau der Verwendung der
+neuen Listen verwenden können. Was genau der Verwendung der
 
 00:10:30,000 --> 00:10:35,920
-Konstruktoren des Typs Baum letzte Woche verwendet wurde. Wir
+Konstruktoren des Typs Baum letzte Woche entspricht. Wir
 hatten Knoten und Blätter (Leafs) auf der linken Seite als
 
 00:10:35,920 --> 00:10:42,240
@@ -485,10 +480,10 @@ Sie nimmt zwei Listen von möglicherweise unterschiedlichen Typen entgegen,
 
 00:11:47,280 --> 00:11:52,800
 und gibt eine Liste von Paaren zurück. Wie macht sie das?
-Es führt Pattern-Matching durch. Und eine Möglichkeit
+Sie führt Pattern-Matching durch. Und eine Möglichkeit
 
 00:11:53,360 --> 00:11:59,040
-ist es, erstens den Fall abzugleichen, in dem
+ist es, erstens den Fall abzufangen, in dem
 beide Listen nicht leer sind. Die erste Liste
 
 00:11:59,840 --> 00:12:03,680
@@ -497,14 +492,14 @@ x und einen Rest, und die zweite
 
 00:12:03,680 --> 00:12:07,680
 zerfällt in eine nicht leere Liste
-mit dem ersten Element y und einigem Rest.
+mit dem ersten Element y und einem Rest.
 
 00:12:07,680 --> 00:12:14,240
 Und was wird dann zurückgegeben? Das Paar (x, y)
 und das, was 'zip' für die beiden restlichen
 
 00:12:15,520 --> 00:12:22,080
-Listen zurückgibt. Und in diesem Fall kann die eine weitere
+Listen zurückgibt. Und in diesem Fall kann man eine weitere
 Standardregel haben, die in allen Situationen gilt, in denen
 
 00:12:22,080 --> 00:12:27,120
@@ -521,7 +516,7 @@ von ihnen die leere Liste. Und dann können wir
 
 00:12:39,440 --> 00:12:45,280
 ignorieren, was auch immer die konkreten Listen sind,
-die wir erhalten, ignorieren und einfach die leere Liste zurückgeben.
+die wir erhalten, und einfach die leere Liste zurückgeben.
 
 00:12:48,160 --> 00:12:57,840
 Etwas anderes, das hier jetzt deutlich wird,
@@ -537,20 +532,18 @@ Was wir hier in der Funktion 'append' sehen,
 
 00:13:07,840 --> 00:13:13,520
 zum Beispiel, dass die Berechnung des Anhängens so viele Schritte erfordert,
-um das Anhängen zu berechnen, wie: das erste Element hat.
-
-
+um das Anhängen zu berechnen, wie das erste Element hat.
 
 00:13:13,520 --> 00:13:19,200
-Elemente. Wir sehen die Rekursionen für die erste
-Liste. Das zweite Element wird also nie wirklich.
+Wir sehen die Rekursionen für die erste
+Liste. Das zweite Element wird also nie wirklich
 
 00:13:19,840 --> 00:13:26,480
 untersucht, aber das Anhängen ist so kostspielig, wie die erste
-Liste lang ist, denn so viele Schritte müssen wir
+Liste lang ist. Denn so viele Schritte müssen wir
 
 00:13:26,480 --> 00:13:32,160
-machen müssen. Und das bedeutet, dass das Anhängen eine lineare
+machen. Und das bedeutet, dass das Anhängen eine lineare
 Operation in der Länge der ersten Liste ist. Und
 
 00:13:32,160 --> 00:13:40,320
@@ -644,10 +637,10 @@ der vorherigen Folie, als auch die hier angegebene,
 
 00:15:56,800 --> 00:16:03,680
 funktionieren problemlos mit unendlichen Listen. Das liegt daran,
-weil sie die Listen nur so weit verbrauchen,
+dass sie die Listen nur so weit verbrauchen
 
 00:16:03,680 --> 00:16:11,280
-so weit wie nötig. Wenn wir zum Beispiel eine
+wie nötig. Wenn wir zum Beispiel eins
 oder zwei Elemente in der Liste haben, dann werden wir oft
 
 00:16:12,480 --> 00:16:17,040
@@ -656,14 +649,14 @@ der erste war, und hier kommt, nachdem wir keine
 
 00:16:17,040 --> 00:16:21,440
 leere Liste an der ersten oder zweiten Stelle gefunden
-haben, und nur wenn eine der Listen
+haben. Und nur wenn eine der Listen
 
 00:16:21,440 --> 00:16:26,160
 tatsächlich endlich ist, dann würden wir nach einer endlichen
 Anzahl von Schritten in einem dieser
 
 00:16:26,160 --> 00:16:30,080
-Fälle, in denen wir die leere Liste zurückgeben. Aber
+Fälle landen, in denen wir die leere Liste zurückgeben. Aber
 wenn z. B. beide Listen unendlich sind,
 
 00:16:30,080 --> 00:16:36,640
@@ -672,10 +665,10 @@ eine unendliche Liste zurückgeben. Und wenn es einen Kontext gibt,
 
 00:16:36,640 --> 00:16:41,920
 der nur die ersten 200 Werte aus der
-leeren Liste nimmt, dann würde auch die Zip-Funktion nur
+Ergebnisliste nimmt, dann würde auch die Zip-Funktion nur
 
 00:16:42,880 --> 00:16:48,960
-bis zu 200 Elemente tief in ihre beiden Argumente hinabsteigen, denn das ist es, was diese Gleichung
+bis zu 200 Elemente tief in ihre beiden Argumente hinabsteigen. Denn das ist es, was diese Gleichung
 
 00:16:48,960 --> 00:16:56,160
 sagt. Sie nimmt ein Element nach dem anderen aus beiden
@@ -712,13 +705,11 @@ Als ich sie vor zwei
 
 00:17:46,480 --> 00:17:53,280
 Wochen vorgestellt habe, habe ich erklärt, dass sie
-im Wesentlichen das tut, was eine List-Comprehension.
-
-
+im Wesentlichen das tut, was eine List-Comprehension
 
 00:17:54,080 --> 00:17:59,680
 tut, wenn es eine Funktion auf jedes
-Element einer als Generator verwendeten Eingabeliste eine Funktion anwendet.
+Element einer als Generator verwendeten Eingabeliste anwendet.
 
 00:17:59,680 --> 00:18:05,280
 Aber ich habe auch schon erwähnt, dass das
@@ -742,7 +733,7 @@ nimmt ein Funktionsargument, das eine Funktion ist.
 
 00:18:24,320 --> 00:18:29,120
 Sie nimmt eine Liste an. Was macht sie? Was muss sie
-unterscheiden? Ist die Liste die leere Liste? Dann
+unterscheiden? Ist die Liste die leere Liste? Dann,
 
 00:18:29,120 --> 00:18:34,080
 was auch immer darüber gemappt wird, ist es immer noch die leere
@@ -765,15 +756,15 @@ Und wieder ist dies genau die Art und Weise, wie Berechnungen
 funktionieren, angetrieben durch Pattern-Matching.
 
 00:18:59,600 --> 00:19:03,760
-Und natürlich können wir ähnliche Dinge mit anderen
-Dingen für andere Datentypen tun. Ich habe bereits
+Und natürlich können wir ähnliche Dinge
+für andere Datentypen tun. Ich habe
 
 00:19:03,760 --> 00:19:08,480
-dies bereits im Zusammenhang mit der ganzheitlichen
+dies bereits im Zusammenhang mit der Wholemeal
 Programmierung erwähnt, dass wir uns zwar hauptsächlich mit
 
 00:19:09,680 --> 00:19:16,320
-Listen und Listenberechnungen beschäftigen, auch für
+Listen und Listenberechnungen beschäftigen, aber auch für
 andere Datentypen kann es z.B.
 
 00:19:16,320 --> 00:19:22,000
@@ -814,7 +805,7 @@ Ein weiteres Beispiel. Vorhin erwähnten wir, als wir
 über Funktionen höherer Ordnung gesprochen haben, dass die Funktion foldl1
 
 00:20:21,040 --> 00:20:26,320
-eine Funktion ist, die dort z.B. verwendet wurde,
+eine Funktion ist, die dort z.B. verwendet wurde
 für die Summierung der Elemente einer Liste.
 
 00:20:26,320 --> 00:20:30,800
@@ -862,7 +853,8 @@ Listen, während foldr mit unendlichen Listen arbeitet, wie wir
 grundsätzlich daran erkennen können, dass selbst wenn dies
 
 00:21:41,200 --> 00:21:47,920
-eine unendliche Liste wäre, xs also nicht enden würde, können wir trotzdem etwas berechnen, denn
+eine unendliche Liste wäre, xs also
+nicht enden würde, können wir trotzdem etwas berechnen. Denn
 
 00:21:47,920 --> 00:21:53,920
 zumindest können wir 'f' aus x und was auch immer berechnen, und
@@ -884,11 +876,9 @@ foldr-Funktion. Sie ist polymorph. Sie nimmt
 zwei Argumente und einen Operator, der als
 rechtsassoziativ ist, und einen Art Startwert.
 
-
-
 00:22:19,200 --> 00:22:26,160
 und sie nimmt eine Liste von Elementen dieses Typs,
-der die erste Eingabe dieses binären Operators ist.
+der die erste Eingabe dieses binären Operators ist,
 
 00:22:26,160 --> 00:22:32,720
 und gibt etwas zurück, das vom gleichen Typ ist wie das
@@ -917,4 +907,3 @@ rekursive Aufruf (vielleicht) nicht einmal beendet werden würde.
 00:23:01,040 --> 00:23:07,840
 Ich werde dazu einige Beispiele im
 Whiteboard-Video durchgehen.
-

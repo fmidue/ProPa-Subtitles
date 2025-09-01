@@ -207,7 +207,6 @@ Ja.
 Nehmen wir also an, wir haben ein Prädikat, und das ist
 eigentlich ein vordefiniertes Prädikat in Prolog.
 
-
 00:04:40,800 --> 00:04:48,400
 um zu prüfen, ob ein Element, nun ja, ein beliebiger
 Begriff in einer Liste ist.
@@ -432,8 +431,6 @@ Denn zum einen können wir nicht
 zeigen, dass aus den Klauseln eines Programms
 bestimmte negative Aussagen folgen.
 
-
-
 00:08:56,560 --> 00:08:59,520
 Ganz genau, denn die Regeln sind alle positiv.
 
@@ -651,8 +648,6 @@ fragen, ob p gilt oder nicht.
 
 00:13:14,000 --> 00:13:15,360
 Ja, ich stelle die Frage not-p.
-
-
 
 00:13:16,240 --> 00:13:18,320
 Und ich habe nur das Wissen,
@@ -885,8 +880,6 @@ Es gibt auch einen unendlichen Suchbaum dahinter.
 Aber eigentlich wird Prolog nicht
 in diese unendliche Suche laufen.
 
-
-
 00:17:16,960 --> 00:17:25,200
 Denn um zu sagen, dass \+ q falsch ist, reicht es aus,
 reicht es, festzustellen, dass q eine Lösung hat.
@@ -1110,13 +1103,11 @@ nun, das sollte keinen Unterschied machen, oder?
 Denn dieses Komma ist im Grunde eine Konjunktion.
 
 00:21:28,240 --> 00:21:33,360
-Und die Konjunktion und wird
+Und die Konjunktion "und" wird
 normalerweise als kommutativ angesehen.
 
-
-
 00:21:34,480 --> 00:21:37,840
-was keinen Unterschied machen sollte, ob
+Weshalb es keinen Unterschied machen sollte, ob
 ich die Frage auf diese oder auf jene Weise gestellt habe.
 
 00:21:37,840 --> 00:21:41,280
@@ -1172,7 +1163,7 @@ Die Antwort ist wahr.
 
 00:22:11,360 --> 00:22:16,400
 Dann hätte ich natürlich auch erwartet,
-hier die Antwort X = Marsellus.
+hier die Antwort X = marsellus.
 
 00:22:16,400 --> 00:22:20,160
 Dies ist also ein Widerspruch
@@ -1353,8 +1344,6 @@ Und es scheitert sofort auf eine endliche Weise.
 00:25:36,880 --> 00:25:40,240
 Denn es gibt keinen Schritt zu tun.
 
-
-
 00:25:40,240 --> 00:25:43,200
 Und dann, nun, das ist ein klassischer Fall
 von Negation-als-Fehlschlag.
@@ -1512,10 +1501,10 @@ Beispiel, von der vorherigen Folie,
 
 00:28:06,560 --> 00:28:12,720
 wo wir uns einfach zuerst damit befasst und eine
-Instanziierung für X1, nämlich Marsellus,
+Instanziierung für X1, nämlich marsellus.
 
 00:28:12,720 --> 00:28:13,840
-Wir hatten Marsellus hier.
+Wir hatten marsellus hier.
 
 00:28:13,840 --> 00:28:15,680
 Jetzt haben wir (X1,Y1).
@@ -1587,9 +1576,7 @@ Baum, bei dem es einen Erfolg gibt.
 
 00:29:22,240 --> 00:29:26,960
 Das reicht aus, um zu sagen, na ja,
-+ verheiratet(X1,Y1) ist falsch.
-
-
+\+ verheiratet(X1,Y1) ist falsch.
 
 00:29:26,960 --> 00:29:30,160
 Und wenn dies falsch ist, ist die
@@ -1613,7 +1600,7 @@ Und auch anders als auf der nächsten Folie,
 
 00:29:45,200 --> 00:29:53,840
 wo wir den Fall betrachten werden, dass ich für dieses
-Programm die Abfrage ausführe, bei der X Marsellus ist.
+Programm die Abfrage ausführe, bei der X marsellus ist.
 
 103 # slide
 00:29:56,480 --> 00:30:02,560
@@ -1636,11 +1623,11 @@ die Resolution mit dieser Klausel.
 
 00:30:16,800 --> 00:30:22,080
 Jetzt wird also X1 direkt zu
-Marsellus durch Unifikation.
+marsellus durch Unifikation.
 
 00:30:22,080 --> 00:30:26,480
 Und natürlich haben wir in unserer Abfrage
-auch Marsellus hier und hier.
+auch marsellus hier und hier.
 
 00:30:28,080 --> 00:30:28,580
 Okay.
@@ -1657,7 +1644,7 @@ Und da es eine Verneinung ist, bedeutet das, dass wir
 die verneinte Sache in einem Nebenzweig untersuchen.
 
 00:30:42,320 --> 00:30:43,680
-Also: verheiratet(Marsellus,Y1).
+Also: verheiratet(marsellus,Y1).
 
 00:30:43,680 --> 00:30:46,240
 Etwas Ähnliches haben wir schon einmal gesehen.
@@ -1688,7 +1675,7 @@ Okay, das ist also tatsächlich resolviert.
 
 00:31:14,800 --> 00:31:19,200
 Es bleibt also der Rest der
-Abfrage, nämlich: human(Marsellus).
+Abfrage, nämlich: human(marsellus).
 
 00:31:19,200 --> 00:31:23,600
 Und nun, das ist etwas, das
@@ -1702,7 +1689,7 @@ und wir erhalten einen Erfolgsknoten.
 Wenn wir also Prolog fragen,
 
 00:31:30,800 --> 00:31:34,800
-ob Marsellus ledig ist, wird die Antwort wahr sein.
+ob Marsellus ledig ist, wird die Antwort "true" sein.
 
 00:31:34,800 --> 00:31:38,320
 Auch wenn wir auf der vorherigen Folie
@@ -1811,8 +1798,6 @@ Nun, sie ist eine Konjunktion von zwei Dingen.
 00:33:43,760 --> 00:33:47,600
 Und die erste Sache ist
 human(X), ja, für alle X gilt.
-
-
 
 00:33:48,720 --> 00:33:52,800
 Wenn human(X) und etwas
@@ -2033,12 +2018,10 @@ den Beweis für die verneinte Sache zu finden.
 
 00:38:12,720 --> 00:38:16,160
 Und je nachdem, was in dem
-Nebenzweig passiert, entscheiden wir.
-
-
+Nebenzweig passiert, entscheiden wir,
 
 00:38:16,160 --> 00:38:19,040
-Was an der verneinten Worthülse wahr ist.
+was an der verneinten Worthülse wahr ist.
 
 00:38:19,920 --> 00:38:23,920
 Okay, und der Nebenzweig ist nicht wirklich ein Nebenzweig,
@@ -2210,4 +2193,3 @@ Es würde einfach scheitern.
 00:41:30,960 --> 00:41:42,320
 Okay, deshalb müssen wir die
 Negation auf diese operative Weise verstehen.
-

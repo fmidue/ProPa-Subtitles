@@ -1,12 +1,11 @@
-
 145 # slide
 00:00:01,680 --> 00:00:09,040
 Lassen Sie mich einige abschließende Anmerkungen
-zum Pattern-Matching machen.
+zum Pattern-Matching machen,
 
 00:00:10,000 --> 00:00:15,680
-Die für das allgemeine Verständnis wichtig sein werden,
-wie die Auswertung in Haskell funktioniert, aber auch einige
+die für das allgemeine Verständnis wichtig sein werden,
+wie die Auswertung in Haskell funktioniert. Aber auch einige
 
 00:00:15,680 --> 00:00:24,800
 konkrete Hinweise und Kommentare zu Dingen, die
@@ -110,7 +109,7 @@ Seite der Funktionsdefinition beschränkt ist, wie
 wir gesehen haben, wo ich die Funktion definiere,
 
 00:02:54,960 --> 00:03:01,680
-und mehrere Gleichungen für sie aufstelle, und
+und mehrere Gleichungen für sie aufstelle. Und
 auf der linken Seite verwende ich Pattern wie
 
 00:03:01,680 --> 00:03:07,040
@@ -118,11 +117,11 @@ Nil oder Cons in der Funktionsdefinition. Wie auch immer,
 wir können Pattern-Matching auch expliziter verwenden
 
 00:03:07,040 --> 00:03:11,360
-auf der rechten Seite von Funktionen, und dann
+auf der rechten Seite von Funktionen. Und dann
 dies mithilfe des case-Schlüsselworts, das eine Art
 
 00:03:11,360 --> 00:03:18,000
-eines mächtigeren if-then-else, wenn Sie so wollen, das
+eines mächtigeren if-then-else ist, wenn Sie so wollen, das
 ein Teil von Ausdrücken ist. Hier ist ein Beispiel, bei dem
 
 00:03:18,000 --> 00:03:24,400
@@ -138,24 +137,24 @@ Pattern / Struktur, die wir haben könnten, ist, dass
 wir ein Maybe-Ding haben und zuerst prüfen wollen,
 
 00:03:36,960 --> 00:03:44,320
-ob es 'Nothing' ist, und wenn ja, dann tun wir
+ob es 'Nothing' ist. Und wenn ja, dann tun wir
 etwas, und wenn es nicht 'Nothing' ist und es 'Just'
 
 00:03:44,320 --> 00:03:49,440
 etwas ist, dann wollen wir etwas mit
-dem Wert, der in diesem 'Just' gekapselt wurde,
+dem Wert, der in diesem 'Just' gekapselt wurde, tun.
 
 00:03:49,440 --> 00:03:54,160
-dann würden wir etwas tun wie 'fromJust' von diesem
+Dann würden wir etwas tun wie 'fromJust' von diesem
 maybeThing, und dann etwas mit diesem Wert machen.
 
 00:03:55,120 --> 00:04:01,920
 Das ist wahrscheinlich die Art und Weise, wie wir angedeutet oder
-vorgeschlagen haben, dass wir mit Maybe-Werten arbeiten,
+vorgeschlagen haben, dass wir mit Maybe-Werten arbeiten.
 
 00:04:01,920 --> 00:04:07,040
-weil wir kein Pattern-Matching mit dem
-case-Schlüsselwort haben. Aber wenn wir das case-Schlüsselwort haben
+Weil wir kein Pattern-Matching mit dem
+case-Schlüsselwort haben. Aber wenn wir das case-Schlüsselwort haben,
 
 00:04:07,040 --> 00:04:10,800
 und wir erlauben uns Pattern-Matching
@@ -175,13 +174,11 @@ Was sind die Fälle? Es kann 'Nothing' sein,
 
 00:04:26,720 --> 00:04:32,320
 und dann tun wir etwas, und ansonsten ist es
-'Just', und dann können wir hier eine Variable binden.
-
-
+'Just', und dann können wir hier eine Variable binden,
 
 00:04:32,320 --> 00:04:40,960
 und tun, was immer wir im Fall von 'Just' tun wollen.
-Fall tun und das Ding direkt verwenden. Das ist
+Das ist
 
 00:04:40,960 --> 00:04:45,520
 wie eine Switch-Anweisung, aber jetzt für algebraische
@@ -197,11 +194,11 @@ sehr ähnlich aus, aber tatsächlich gibt es
 
 00:05:01,520 --> 00:05:06,080
 wichtige Unterschiede, die diese Version zur
-bevorzugten Version machen, nämlich vor allem,
+bevorzugten Version machen. Nämlich vor allem,
 
 00:05:06,080 --> 00:05:14,480
 dass der Compiler nun wieder zum Beispiel
-erschöpfende und überlappende Prüfungen durchführen kann. Hier,
+erschöpfende und überlappende Prüfungen durchführen kann. Hier
 
 00:05:14,480 --> 00:05:19,280
 sieht der Compiler nur ein if-then-else. Hier sieht der
@@ -216,7 +213,7 @@ Fälle abgedeckt haben. Außerdem können wir hier nicht versehentlich versuchen
 auf das Ding von innerhalb des 'Just' im
 
 00:05:32,720 --> 00:05:38,960
-Nichts-Fall. Hier könnten wir also zum Beispiel auch
+Nothing-Fall zuzugreifen. Hier könnten wir also zum Beispiel auch
 'fromJust maybeThing' in den then-Zweig schreiben,
 
 00:05:38,960 --> 00:05:43,280
@@ -224,12 +221,12 @@ aber das würde zu einem Laufzeitfehler führen, denn in
 diesem then-Zweig haben wir ein 'Nothing'. Wir können also nicht
 
 00:05:43,280 --> 00:05:48,880
-'fromJust' schreiben, aber der Compiler sieht das nicht,
-während wir hier nicht einmal etwas schreiben dürften,
+'fromJust' erfolgreich verwenden, aber der Compiler sieht das nicht.
+Während wir hier nicht einmal etwas schreiben dürften,
 
 00:05:48,880 --> 00:05:55,120
 das sich auf dieses Ding im 'Nothing'
-bezieht, weil es dort nicht einmal gebunden ist. Also,
+bezieht, weil es dort nicht einmal gebunden ist. Also
 
 00:05:55,120 --> 00:06:02,800
 kann der Compiler hier mehr Sicherheit geben. Außerdem,
@@ -265,14 +262,14 @@ Da wir in der Vorlesung bisher noch kein Pattern-Matching
 
 00:06:50,560 --> 00:06:57,280
 vorgestellt haben, haben Sie oft
-mit Null-Tests und Head- und Tail-Zugriffsfunktionen programmiert.
+mit null-Tests und head- und tail-Zugriffsfunktionen programmiert.
 
 00:06:58,400 --> 00:07:06,480
 Arbeiten Sie von nun an vorzugsweise mit
-case-Ausdrücken. Anstelle von head und tail,
+case-Ausdrücken. Anstelle von head und tail
 
 00:07:06,480 --> 00:07:11,520
-könnten Sie etwas haben wie: case Ihre Liste
+könnten Sie etwas haben wie: case Ihre-Liste,
 Ding der leeren Liste, tun, was immer man tun möchte
 
 00:07:11,520 --> 00:07:17,440
@@ -288,10 +285,10 @@ Wir könnten vielleicht einen weiteren case-Ausdruck
 
 00:07:31,520 --> 00:07:39,840
 auf der rechten Seite haben, der auf etwas anderes passt,
-sei es das maybeThing oder eine Liste
+sei es das maybeThing oder eine Liste.
 
 00:07:39,840 --> 00:07:46,160
-Ding. Dann müssen wir vorsichtig sein, was das
+Dann müssen wir vorsichtig sein, was das
 Layout angeht, damit das nicht zufällig eingerückt ist
 
 00:07:46,960 --> 00:07:53,440
@@ -324,22 +321,22 @@ die Variablen (die Namen, die in den Patterns
 
 00:08:28,320 --> 00:08:35,200
 vorkommen), und das könnte bestehende Dinge
-mit demselben Namen überschreiben, was nicht unbedingt nach dem klingt, worüber
+mit demselben Namen überschatten, was nicht unbedingt nach dem klingt, worüber
 
 00:08:36,640 --> 00:08:42,080
 man stolpern könnte. Aber es gibt
 Situationen, in denen dies für Anfänger verwirrend sein kann.
 
 00:08:42,080 --> 00:08:48,800
-Anfänger verwirren kann. Zum Beispiel, wenn Sie mit dem
+Zum Beispiel, wenn Sie mit dem
 CodeWorld-Farbtyp arbeiten, für den Sie wahrscheinlich
 
 00:08:48,800 --> 00:08:54,480
 wissen, dass es einige konstante Werte gibt,
-wie z.B. die aktuelle Farbe ist rot, grün, etc.,
+wie z.B. die aktuelle Farbe ist rot, grün, etc.
 
 00:08:54,480 --> 00:09:01,120
-dann könnten Sie versucht sein, eine
+Dann könnten Sie versucht sein, eine
 Funktion für Farben zu schreiben, die auf dem Prinzip des Pattern-Matching beruht:
 
 00:09:03,200 --> 00:09:07,680
@@ -352,12 +349,10 @@ und für andere Fälle False.
 
 00:09:12,960 --> 00:09:19,280
 Aber das ist nicht das, was der Autor dieses Codes
-dachte, was es tun sollte. Warum ist das nicht das?
-
-
+dachte, was es tun sollte. Warum ist das nicht das,
 
 00:09:19,280 --> 00:09:23,920
-Was er sich vorgestellt hat? Weil
+was er sich vorgestellt hat? Weil
 rot hier eine Variable ist. Es handelt sich also nicht um einen
 
 00:09:23,920 --> 00:09:29,040
@@ -378,18 +373,18 @@ je nach den verwendeten Warnstufen
 
 00:09:47,600 --> 00:09:52,480
 verhalten. So könnte er sich zum Beispiel über
-Abschattung beschweren und sagen, dass dieser Variablenname hier
+Überschattung beschweren und sagen, dass dieser Variablenname hier
 
 00:09:52,480 --> 00:09:58,480
-den vorhandenen Wert "red" aus der CodeWorld-Bibliothek überschattet
-oder der Compiler könnte auch
+den vorhandenen Wert "red" aus der CodeWorld-Bibliothek überschattet.
+Oder der Compiler könnte auch
 
 00:09:58,480 --> 00:10:03,120
-beschweren, dass es Überschneidungen gibt, denn
+bemängeln, dass es Überschneidungen gibt. Denn
 wenn dies nur eine Variable ist, dann ist dies auch eine,
 
 00:10:03,120 --> 00:10:08,800
-und dies ist auch, also haben wir drei Fälle wie
+und dies auch. Also haben wir drei Fälle wie
 Primärfarbe x, Primärfarbe y, Primärfarbe z,
 
 00:10:09,600 --> 00:10:15,840
@@ -398,11 +393,11 @@ Regel bis auf den Namen von x, y oder z.
 
 00:10:15,840 --> 00:10:21,440
 Der Compiler hat also viele Gründe, sich zu beschweren
-über einen Code wie diesen zu beanstanden, der mit dem
+über einen Code wie diesen, der mit dem
 
 00:10:21,440 --> 00:10:27,040
 falschen Verständnis davon geschrieben wurde, was Pattern-Matching
-hier ist. Er vergleicht nicht mit diesen Konstanten;
+hier ist. Der Code vergleicht nicht mit diesen Konstanten;
 
 00:10:27,040 --> 00:10:31,680
 er verwendet sie als Variablen. Die Situation ist
@@ -410,11 +405,11 @@ anders als bei den Zahlenkonstanten, denn diese sind
 
 00:10:31,680 --> 00:10:39,840
 Konstruktoren. Oder wenn Sie eine Aufzählung haben,
-wo es einige Konstanten gibt... einige Null-Daten
+wo es einige Konstanten gibt... einige nullstellige
 
 00:10:39,840 --> 00:10:44,453
-Konstruktoren, dann kann man sie natürlich auch
-hier verwenden, aber das ist nicht das, was die rote Farbe ist. Es
+Datenkonstruktoren, dann kann man sie natürlich auch
+hier verwenden. Aber das ist nicht das, was die rote Farbe ist. Es
 
 00:10:44,453 --> 00:10:50,080
 ist kein Datenkonstruktor. Es ist eine Variable...
@@ -423,4 +418,3 @@ ein konstanter Wert, aber kein Datenkonstruktor.
 00:10:51,520 --> 00:10:58,080
 Seien Sie also vorsichtig mit so etwas wie
 diesem Missverständnis.
-

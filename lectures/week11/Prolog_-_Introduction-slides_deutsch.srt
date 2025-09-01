@@ -1,4 +1,4 @@
-"1 # slide
+1 # slide
 00:00:01,689 --> 00:00:06,180
 Okay, willkommen zurück zur
 Programmierparadigmen-Vorlesung.
@@ -74,15 +74,15 @@ auch hier zum Tragen kommen.
 Das beginnt also mit der allgemeinen Idee, ein völlig
 neues Programmierparadigma.
 
-00:01:35,630 --> 00:01:41,320
+00:01:35,630 --> 00:01:43,340
 Also, dass die Dinge wirklich anders sind als
-in den imperativen Sprachen, die Sie bisher kannten.
+in den imperativen Sprachen, die Sie bisher kennen.
 
-00:01:41,320 --> 00:01:43,340
+00:01:43,340 --> 00:01:49,110
 Die Idee der Deklarativität ist also etwas,
 das sowohl Haskell als auch Prolog gemein ist,
 
-00:01:43,340 --> 00:01:50,980
+00:01:49,110 --> 00:01:50,980
 beziehungsweise sowohl der funktionalen als auch der Logikprogrammierung.
 
 00:01:50,980 --> 00:01:56,330
@@ -152,14 +152,14 @@ worauf ich mich im Haskell-Teil konzentriert habe.
 Aber Prolog ist sicherlich nicht kommandobasiert,
 aber es ist auch nicht ausdrucksbasiert in dem
 
-00:03:06,270 --> 00:03:11,959
+00:03:06,270 --> 00:03:13,680
 Sinne, dass die Ausführung von Prolog nicht darauf basiert,
 dass ein Ausdruck zu einem Wert ausgewertet wird.
 
-00:03:11,959 --> 00:03:13,680
+00:03:13,680 --> 00:03:16,350
 Stattdessen basiert Prolog auf Propositionen.
 
-00:03:13,680 --> 00:03:21,520
+00:03:16,350 --> 00:03:21,520
 Wir haben also atomare Propositionen und logische
 Konnektive zwischen diesen.
 
@@ -207,8 +207,7 @@ Völlig anders als im Haskell-Teil,
 dass das Ergebnis der Wert ist, auf den ein
 
 00:04:11,870 --> 00:04:13,100
-Ausdruck am Ende reduziert wurde."
-
+Ausdruck am Ende reduziert wurde.
 
 00:04:13,100 --> 00:04:17,430
 Es gibt also Unterschiede, auch das Pattern-Matching
@@ -239,58 +238,55 @@ Und dies wird sehr beispielorientiert sein.
 
 00:04:44,320 --> 00:04:50,680
 Und tatsächlich werden viele der Beispiele bereits
-heute auch bis zu einem gewissen Grad in späteren Vorlesungen
+heute, bis zu einem gewissen Grad auch in späteren Vorlesungen,
 
 00:04:50,680 --> 00:04:56,350
-verwendet.
-
-00:04:56,350 --> 00:05:01,650
-Aber sicherlich heute, zu einem großen Teil aus dem
+aber sicherlich heute, zu einem großen Teil aus dem
 Buch "Learn Prolog Now", das ist eines der
 
-00:05:01,650 --> 00:05:04,190
+00:04:56,350 --> 00:05:01,650
 Bücher, die ich als Literatur für Prolog
 in der allerersten Vorlesung vorgeschlagen habe.
 
-00:05:04,190 --> 00:05:08,130
+00:05:01,650 --> 00:05:04,190
 Das war also ein Buch, das online verfügbar ist.
 
-00:05:08,130 --> 00:05:14,020
+00:05:04,190 --> 00:05:08,130
 Sie müssen es also nicht kaufen, Sie können es
 einfach im Web durchblättern.
 
-00:05:14,020 --> 00:05:15,020
+00:05:08,130 --> 00:05:14,020
 Und Sie werden sehen, dass viele der Beispiele, die
 ich heute verwende, auch in diesem Buch
 
-00:05:15,020 --> 00:05:17,840
+00:05:14,020 --> 00:05:15,020
 zu finden sind.
 
-00:05:17,840 --> 00:05:22,190
+00:05:15,020 --> 00:05:17,840
 Ich habe einige von ihnen verändert, um einige Punkte zu verdeutlichen,
 die ich machen möchte.
 
-00:05:22,190 --> 00:05:30,750
+00:05:17,840 --> 00:05:22,190
 Es sind also nicht genau die gleichen kleinen Programme,
 aber sehr ähnlich.
 
-00:05:30,750 --> 00:05:36,490
-Das erklärt auch, dass Sie gleich sehen werden
-einen Moment sehen werden, wenn Sie sich an die Popkultur erinnern,
+00:05:22,190 --> 00:05:30,750
+Das erklärt auch, dass Sie gleich sehen werden,
+wenn Sie sich an die Popkultur erinnern,
 
-00:05:36,490 --> 00:05:42,100
+00:05:30,750 --> 00:05:36,490
 und Sie werden sehen, dass viele der Beispiele
 im Buch und dann hier auf einen
 
-00:05:42,100 --> 00:05:43,100
+00:05:36,490 --> 00:05:42,100
 populären Film beziehen, den Sie vielleicht wiedererkennen werden
 oder vielleicht auch nicht.
 
-00:05:43,100 --> 00:05:44,100
+00:05:42,100 --> 00:05:43,100
 Nun gut.
 
 3 # slide
-00:05:44,100 --> 00:05:47,840
+00:05:43,100 --> 00:05:47,840
 Also, Prolog im einfachsten Fall.
 
 00:05:47,840 --> 00:05:58,669
@@ -313,7 +309,7 @@ diese Art von atomaren Fakten hat, die Sie hier
 sehen.
 
 00:06:12,419 --> 00:06:17,430
-Ich werde dies also auch benutzen, um mit der Erklärung der
+Ich werde dies also auch benutzen, um die
 Syntax zu erklären.
 
 00:06:17,430 --> 00:06:21,870
@@ -340,7 +336,7 @@ aber natürlich ist es letztendlich nur einfacher.
 
 00:06:38,790 --> 00:06:43,400
 Was wir also sagen, ist, dass Mia eine Frau ist, Jody
-eine Frau ist, und Yolanda ist eine Frau.
+eine Frau ist, und Yolanda eine Frau ist.
 
 00:06:43,400 --> 00:06:48,680
 Und es scheint, dass Jody Luftgitarre spielt.
@@ -385,7 +381,7 @@ dann können wir Dinge fragen wie: Ist Mia eine Frau?
 
 00:07:28,750 --> 00:07:32,610
 Und dann wird Prolog wahrheitsgemäß mit Ja antworten
-oder wahr, richtig?
+oder True, richtig?
 
 00:07:32,610 --> 00:07:37,320
 Denn das ist etwas, das in der
@@ -421,16 +417,12 @@ was Sie erwarten würden.
 
 00:08:07,130 --> 00:08:10,039
 Ich meine, dass die Maschine anfängt, diese Frage zu beantworten.
-Frage.
 
 00:08:10,039 --> 00:08:12,940
-Okay, das ist wirklich etwas, das Sie tun sollten
-tun.
+Okay, das ist wirklich etwas, das Sie tun sollten.
 
 00:08:12,940 --> 00:08:15,190
 Okay, dann lassen Sie uns ein paar andere Fragen stellen.
-
-
 
 00:08:15,190 --> 00:08:19,220
 So können wir natürlich auch fragen, ob Jody
@@ -452,10 +444,10 @@ Gitarre spielt, und die Antwort ist falsch.
 
 00:08:32,870 --> 00:08:39,300
 Und das ist schon die erste, also wichtige
-Erkenntnis vielleicht, oder etwas, das man
+Erkenntnis vielleicht, oder etwas, dessen man
 
 00:08:39,300 --> 00:08:40,300
-bewusst sein sollte.
+sich bewusst sein sollte.
 
 00:08:40,300 --> 00:08:44,180
 Nämlich, wir haben natürlich nie gesagt, dass
@@ -480,7 +472,7 @@ spielt, auch wenn das hier nicht ausgedrückt wird.
 Was bedeutet das?
 
 00:09:02,130 --> 00:09:06,339
-Nun, es bedeutet, dass Prolog alles als
+Nun, es bedeutet, dass Prolog alles für
 falsch hält, das nicht explizit bewiesen ist.
 
 00:09:06,339 --> 00:09:09,080
@@ -527,22 +519,22 @@ Das heißt nicht unbedingt, dass ich weiß,
 dass Mia nicht Luftgitarre spielt.
 
 00:09:50,160 --> 00:09:51,750
-Aber eigentlich hat Prolog diese Interpretation.
+Aber tatsächlich hat Prolog diese Interpretation.
 
 00:09:51,750 --> 00:09:56,770
-Okay, wenn wir eine Frage haben, die nicht positiv beantwortet wird,
+Okay, wenn wir eine Frage haben, die durch
 die Wissensbasis, die wir haben, nicht positiv beantwortet wird,
 
 00:09:56,770 --> 00:10:04,930
 dann wird die Aussage tatsächlich als
-nicht wahr, nicht der Fall, angesehen.
+nicht wahr angesehen.
 
 00:10:04,930 --> 00:10:07,500
 Das stimmt.
 
 00:10:07,500 --> 00:10:13,180
 Das gilt auch für Situationen wie diese,
-wo wir etwas über eine Person oder ein Individuum fragen
+wo wir etwas über eine Person oder ein Individuum
 
 00:10:13,180 --> 00:10:15,690
 oder eine Entität fragen, die nicht Teil des Programms ist.
@@ -604,8 +596,8 @@ spielt.
 Okay, okay.
 
 00:10:57,450 --> 00:11:04,130
-Und dann noch ein paar letzte Beispiele, ein einfaches Beispiel,
-wir könnten auch fragen, ob Jody Klavier spielt.
+Und dann noch ein paar letzte Beispiele, ein einfaches Beispiel.
+Wir könnten auch fragen, ob Jody Klavier spielt.
 
 00:11:04,130 --> 00:11:05,980
 Darüber wissen wir aber nichts, richtig?
@@ -617,14 +609,14 @@ Wir wissen nur, dass Jody Luftgitarre spielt.
 Wir wissen nicht, dass Jody Klavier spielt.
 
 00:11:09,930 --> 00:11:12,410
-Die Antwort könnte also falsch sein.
+Die Antwort könnte also "false" sein.
 
 00:11:12,410 --> 00:11:16,740
 Aber eigentlich ist es in diesem Fall etwas
 subtiler, weil manchmal Prolog, oder einige
 
 00:11:16,740 --> 00:11:24,230
-Prolog-Systeme, oder Prolog-Systeme mit bestimmten Einstellungen,
+Prolog-Systeme bzw. Prolog-Systeme mit bestimmten Einstellungen,
 in diesem Fall sogar eine Fehlermeldung ausgeben
 
 00:11:24,230 --> 00:11:25,830
@@ -660,14 +652,12 @@ hier ein falsches Prädikat geschrieben haben.
 Es gibt also eine nützliche Interpretation, die besagt,
 nun, es ist falsch.
 
-
-
 00:11:53,720 --> 00:11:59,420
 Aber eigentlich werden sich einige Systeme eher beschweren
-und sagen, wahrscheinlich meinten Sie eine andere Eigenschaft.
+und sagen, wahrscheinlich meinten Sie eine andere Eigenschaft
 
 00:11:59,420 --> 00:12:00,420
-Hier.
+hier.
 
 00:12:00,420 --> 00:12:09,110
 Okay, das wird natürlich nicht passieren, wenn Sie nur
@@ -678,7 +668,7 @@ in der Faktenbasis vorkommen, oder die von Ihnen
 in den Aufgaben definiert wurden, wenn Sie
 
 00:12:15,490 --> 00:12:16,740
-Übungsaufgaben zu lösen.
+Übungsaufgaben lösen.
 
 00:12:16,740 --> 00:12:18,800
 Okay, dann sollten Sie diese Fehlermeldung nicht erhalten.
@@ -787,7 +777,7 @@ nicht explizit beantwortet werden können, indem man sich Fakten ansieht,
 
 00:14:01,180 --> 00:14:06,050
 sondern wo Prolog tatsächlich die bekannten
-Fakten, die bekannt sind, nutzt.
+Fakten nutzt.
 
 00:14:06,050 --> 00:14:09,910
 Plus einige Aussagen, Implikationen, einige Regeln.
@@ -798,7 +788,7 @@ fragen kann, ob Mia Luftgitarre spielt.
 
 00:14:16,050 --> 00:14:20,060
 Und obwohl es keinen Fakt gibt, der das tatsächlich besagt,
-wird Prolog trotzdem wahr sagen.
+wird Prolog trotzdem "true" sagen.
 
 00:14:20,060 --> 00:14:21,230
 Und wie kommt das?
@@ -813,7 +803,7 @@ hört, dann spielt Mia Luftgitarre.
 
 00:14:31,380 --> 00:14:35,680
 Also wird Prolog dies aus dem ableiten, was wir wissen
-über die Fakten und die Regeln.
+aus den Fakten und den Regeln.
 
 00:14:35,680 --> 00:14:38,760
 In der Tat, ja, Mia spielt Luftgitarre.
@@ -892,8 +882,6 @@ dass Yolanda, und nach der letzten Regel bedeutet dies wiederum,
 00:15:50,209 --> 00:15:52,199
 dass Yolanda Luftgitarre spielt.
 
-
-
 00:15:52,199 --> 00:15:53,639
 Also ist die Antwort hier wahr.
 
@@ -903,7 +891,7 @@ hier.
 
 00:15:55,540 --> 00:16:00,980
 Zumindest nicht in diesem Modus hier. Es gibt
-einige Debug-Funktionen, mit denen man herausfinden kann
+einige Debug-Funktionen, mit denen man herausfinden kann,
 
 00:16:00,980 --> 00:16:03,899
 wie Prolog zu dieser Schlussfolgerung gekommen ist.
@@ -940,7 +928,7 @@ Schauen wir uns noch komplexere Regeln an, richtig?
 Dies sind sehr einfache Regeln.
 
 00:16:32,029 --> 00:16:38,150
-Einige Fakten und dann, wenn dies, dann das, also
+Einige Fakten und dann, wenn dies, dann das. Also
 eine Aussage impliziert eine andere Aussage.
 
 00:16:38,150 --> 00:16:42,850
@@ -1101,11 +1089,8 @@ Das stimmt.
 00:18:57,909 --> 00:19:01,429
 Wir wissen das über Vincent, aber nicht über Butch.
 
-00:19:01,429 --> 00:19:07,249
+00:19:01,429 --> 00:19:08,249
 Aber es gibt eine andere Regel, die besagt: Wenn Butch Musik hört, dann spielt er Luftgitarre.
-
-00:19:07,249 --> 00:19:08,249
-Gitarre.
 
 00:19:08,249 --> 00:19:11,479
 Und wir wissen tatsächlich, dass Butch Musik
@@ -1124,8 +1109,6 @@ Und warum?
 00:19:19,320 --> 00:19:21,950
 Weil wir diese zwei Regeln haben, und Prolog
 kann sich entscheiden, eine von beiden zu verwenden.
-
-
 
 00:19:21,950 --> 00:19:25,820
 Und wenn Prolog sich dafür entscheidet, dies zu verwenden, oder tatsächlich
@@ -1205,12 +1188,12 @@ mit einem Semikolon verbinden.
 Das Komma wird also als "und" verwendet.
 
 00:20:26,289 --> 00:20:29,220
-Und wir könnten das Semikolon als ein oder verwenden,
+Und wir könnten das Semikolon als ein "oder" auf
 der rechten Seite verwenden.
 
 00:20:29,220 --> 00:20:34,519
 Aber das ist gleichbedeutend mit diesen beiden Regeln
-oder mit dieser Regel, aber in der Praxis,
+oder mit dieser Regel. Aber in der Praxis,
 
 00:20:34,519 --> 00:20:43,029
 und auch in den Beispielen in diesem Kurs, zumindest
@@ -1218,7 +1201,7 @@ von meiner Seite aus, werde ich das Komma für
 
 00:20:43,029 --> 00:20:46,869
 das "und" verwenden, um mehrere Dinge auf der rechten
-Seite einer Regel.
+Seite einer Regel zu verknüpfen.
 
 00:20:46,869 --> 00:20:48,299
 Aber das Semikolon werde ich normalerweise nicht verwenden.
@@ -1349,8 +1332,6 @@ jede Person, richtig?
 00:23:01,019 --> 00:23:02,830
 Mia ist eine Frau, Jody, Yolanda ist eine Frau.
 
-
-plaintext
 00:23:02,830 --> 00:23:05,359
 Das sind Fakten, die wir schon gesehen haben.
 
@@ -1380,7 +1361,7 @@ Ja, gut.
 
 00:23:29,690 --> 00:23:39,200
 Also, in der Position hier von etwas wie
-das ist in diesem Fall eine Relation oder ein mehrstelliges
+das ist in diesem Fall eine Relation oder ein
 
 00:23:39,200 --> 00:23:40,340
 binäres Prädikat.
@@ -1581,11 +1562,9 @@ Du fragst: 'oder'.
 00:26:57,559 --> 00:26:58,999
 Nun, dann sage ich dir eine andere Möglichkeit."
 
-
-
 00:26:58,999 --> 00:27:03,659
 Also, Prolog würde sagen, nun, Jody ist auch eine
-Frau, denn das ist auch etwas, das.
+Frau, denn das ist auch etwas, das
 
 00:27:03,659 --> 00:27:06,210
 aus der Faktenbasis folgt.
@@ -1664,7 +1643,7 @@ Denn in der Tat ist es der Fall, dass Vincent
 jemanden liebt, aber eigentlich, nochmal, Prolog
 
 00:28:20,919 --> 00:28:22,339
-nicht einfach wahr sagt.
+nicht einfach "true" sagt.
 
 00:28:22,339 --> 00:28:24,679
 Es würde uns sagen, wen Vincent liebt.
@@ -1681,7 +1660,7 @@ auch, dass X gleich Vincent eine vernünftige Antwort ist.
 
 00:28:39,729 --> 00:28:46,070
 Okay, und dann könnte man sogar noch weitergehen und
-fragen, nun, vielleicht will man mehr wissen, oder
+fragen: Nun, vielleicht will man mehr wissen, oder
 
 00:28:46,070 --> 00:28:47,719
 diese beiden Abfragen kombinieren.
@@ -1807,11 +1786,9 @@ in Abfragen, sondern auch im Programm nutzen.
 00:30:56,259 --> 00:30:57,259
 Oder?
 
-
-
 00:30:57,259 --> 00:31:03,129
-Es ist schließlich langweilig im Programm, die
-Faktenbasen immer nur Grundaussagen haben.
+Es ist schließlich langweilig im Programm, in
+Faktenbasen, immer nur Grundaussagen haben.
 
 00:31:03,129 --> 00:31:05,129
 Mit festen Individuen, richtig?
@@ -1885,8 +1862,8 @@ Variablen.
 Also, wir definieren im Grunde eine neue Beziehung.
 
 00:32:14,249 --> 00:32:21,379
-Aber sie wird nicht definiert, indem man explizit auflistet,
-einige Paare, die diese Beziehung erfüllen.
+Aber sie wird nicht definiert, indem man explizit
+einige Paare auflistet, die diese Beziehung erfüllen.
 
 00:32:21,379 --> 00:32:23,470
 Aber eigentlich ist es eine abgeleitete Eigenschaft.
@@ -2044,8 +2021,6 @@ Es gibt also unterschiedliche Geltungsbereiche.
 00:34:55,929 --> 00:35:00,190
 Also, hier haben wir nach dem X in der Antwort gefragt.
 
-
-
 00:35:00,190 --> 00:35:05,460
 Und es gibt keine mögliche Verwechslung zwischen
 diesem X und jenem X, weil es zum Beispiel
@@ -2071,7 +2046,6 @@ Marsellus eifersüchtig ist.
 
 00:35:26,300 --> 00:35:28,920
 Und vielleicht ist es überraschend, dass er auch auf sich selbst eifersüchtig ist.
-Auch auf sich selbst.
 
 00:35:28,920 --> 00:35:30,570
 Aber das ist eigentlich nicht so überraschend.
@@ -2132,8 +2106,8 @@ ist.
 Aber das wird nicht gedruckt, richtig?
 
 00:36:15,720 --> 00:36:19,779
-Das ist also so etwas wie eine Variable, um die
-wir uns nicht um das Ergebnis, um die Instanziierung kümmern.
+Das ist also so etwas wie eine Variable, um deren
+Ergebnis/Instanziierung wir uns nicht kümmern.
 
 00:36:19,779 --> 00:36:23,200
 Was würde also passieren, wenn wir diese
@@ -2272,9 +2246,7 @@ Ja, wir wollen vielleicht nicht, dass Mia als eifersüchtig angesehen wird,
 nur weil sie Vincent liebt.
 
 00:38:37,220 --> 00:38:39,210
-Also sollte sie nicht eifersüchtig auf dich sein.
-
-
+Also sollte sie nicht eifersüchtig auf sich sein.
 
 00:38:39,210 --> 00:38:45,310
 Nun, ich habe bereits erwähnt, dass verschiedene Variablen
@@ -2300,7 +2272,7 @@ Und eigentlich sind es zwei verschiedene Personen.
 
 00:39:03,539 --> 00:39:09,089
 Wir könnten also sagen, wenn X anders ist als Y,
-von Y und X liebt Z, und Y liebt Z,
+und X liebt Z, und Y liebt Z,
 
 00:39:09,089 --> 00:39:11,400
 dann ist X eifersüchtig auf Y.
@@ -2313,8 +2285,8 @@ Okay, so muss das geschrieben werden.
 Ja.
 
 00:39:17,170 --> 00:39:22,119
-Das ist also etwas anders als die Haskell-
-Syntax für nicht gleich.
+Das ist also etwas anders als die
+Haskell-Syntax für nicht gleich.
 
 00:39:22,119 --> 00:39:23,119
 Ja.
@@ -2452,7 +2424,7 @@ dies am Ende der Regel oder der Abfrage zu tun.
 
 00:41:45,059 --> 00:41:51,039
 Wenn wir dies also an den Anfang stellen würden,
-dann wäre die Interpretation von Prolog's
+dann wäre die Interpretation von Prologs
 
 00:41:51,039 --> 00:41:52,420
 Seite etwas anders ausfallen.
@@ -2502,7 +2474,6 @@ Aber die Negation ist in Prolog immer etwas speziell.
 00:42:42,790 --> 00:42:46,950
 Also wenn Sie etwas ohne Negation
 ausdrücken können, ist das besser.
-
 
 00:42:46,950 --> 00:42:53,509
 Wenn man etwas mit Verneinung ausdrücken muss,

@@ -1,15 +1,17 @@
-
 0:00:01.840,0:00:05.760
 Okay, nachdem ich den Polymorphismus im letzten Video so sehr
 
 0:00:05.760,0:00:11.440
-gelobt habe, möchte ich ein weiteres kurzes Video, um eine
+gelobt habe, möchte ich ein
+weiteres kurzes Video nutzen, um eine
 
 0:00:11.440,0:00:16.320
-Warnung über eine Wechselwirkung, die Polymorphie mit dem Testen haben kann, auszusprechen.
+Warnung über eine Wechselwirkung auszusprechen,
+die Polymorphie mit dem Testen haben kann.
 
 0:00:16.880,0:00:22.960
-Also, es wird eine kurze Sitzung in einer Interpreter-Sitzung hier,
+Also, es wird ein kurzes Video
+in einer Interpreter-Sitzung hier,
 
 0:00:22.960,0:00:27.680
 in der ich auf etwas hinweisen möchte, das vielleicht,
@@ -19,7 +21,8 @@ zunächst ein wenig überraschend oder rätselhaft sein mag.
 Und dann werden wir sehen, was hier los ist.
 
 0:00:30.560,0:00:34.160
-Und es hat mit Polymorphismus zu tun, als eine Warnung, okay.
+Und es hat mit Polymorphismus zu tun,
+als eine Warnung, okay.
 
 0:00:34.160,0:00:38.320
 Also, lassen Sie mich GHCi tatsächlich aufrufen.
@@ -98,10 +101,11 @@ Wenn ich dies jedoch ausführe, wird es akzeptiert.
 
 0:02:06.720,0:02:10.960
 Und das ist nicht zufällig durch
-irgendwie der Zufall generiert, der
+irgendwie den Zufall generiert, der
 
 0:02:10.960,0:02:14.320
-zufällig 100 Listen erstellt hat, auf denen dies tatsächlich der Fall ist.
+zufällig 100
+Listen erstellt hat, auf denen dies tatsächlich der Fall ist.
 
 0:02:14.320,0:02:15.040
 Nein, es ist nicht wahr.
@@ -166,7 +170,7 @@ Was ist passiert?
 
 0:03:19.600,0:03:25.280
 Tatsächlich wurde die Eigenschaft 100 Mal getestet,
-aber auf sehr seltsamen Listen von Listen,
+aber auf sehr seltsamen Listen,
 
 0:03:25.280,0:03:27.760
 die immer dieses triviale Element enthalten.
@@ -176,8 +180,8 @@ Und tatsächlich, wenn ich eine Liste wie diese nehme, wo
 alles das Gleiche ist, nämlich dieser seltsame
 
 0:03:33.280,0:03:39.040
-leere Wert hier, dann ist natürlich, wenn ich die
-dieser Liste das Gleiche wie die Liste selbst.
+leere Wert hier, dann ist natürlich, wenn ich das
+Umgedrehte dieser Liste das Gleiche wie die Liste selbst.
 
 0:03:39.040,0:03:45.120
 Denn wenn die Liste nur ein Element enthält,
@@ -203,10 +207,10 @@ kann QuickCheck, und in diesem Fall tut es das, einen
 
 0:04:01.680,0:04:04.880
 Elementtyp für die Listen
-prüfen, zum Beispiel,
+prüfen, zum Beispiel.
 
 0:04:04.880,0:04:09.520
-das ist nicht stark genug, um tatsächlich
+Das ist nicht stark genug, um tatsächlich
 zu zeigen, dass unsere Eigenschaft falsch war.
 
 0:04:11.360,0:04:11.860
@@ -227,8 +231,6 @@ die Identität ist, wonach es aussieht.
 0:04:30.160,0:04:33.360
 Okay, was können oder sollten wir also tun,
 wenn wir eine polymorphe Funktion testen?
-
-
 
 0:04:33.360,0:04:37.440
 Wir sollten sicherstellen, dass das, was wir testen oder welcher Typ
@@ -257,10 +259,11 @@ Dann verhindere ich, dass QuickCheck eine Entscheidung trifft
 und wählt dieses seltsame Element und den Typ hier.
 
 0:05:03.440,0:05:08.480
-Okay, und wenn ich das mache, dann findet QuickCheck heraus, dass die Eigenschaft
+Okay, und wenn ich das mache, dann
+findet QuickCheck heraus, dass die Eigenschaft
 
 0:05:08.480,0:05:12.960
-nicht hält. Genau hier, ganz schnell, findet es
+nicht gilt. Genau hier, ganz schnell, findet es
 ein Gegenbeispiel, nämlich für die Liste [0,1].
 
 0:05:13.520,0:05:17.920
@@ -279,7 +282,7 @@ Ich würde erwarten, dass QuickCheck
 ein Gegenbeispiel findet. Es sagt nein, für einen String "ab",
 
 0:05:29.680,0:05:34.080
-ist es nicht wahr, dass die Eigenschaft, oder ich könnte
+ist die Eigenschaft nicht wahr. Oder ich könnte
 hier sogar Listen von Bools genommen haben,
 
 0:05:34.080,0:05:37.600
@@ -315,7 +318,7 @@ In diesem Fall sollten wir sie nicht auf diesen
 trivialen Typ prüfen. Okay, das ist kein Fehler per se,
 
 0:06:14.720,0:06:16.800
-in der Logik, so ist es
+in der Logik. Es ist
 
 0:06:16.800,0:06:22.000
 eine gewisse Vorsicht, die man walten lassen muss, um
@@ -327,4 +330,3 @@ man immer eine ausführliche Prüfung durchführen, und dann
 
 0:06:24.880,0:06:31.600
 sehen Sie, was hinter den Kulissen passiert ist.
-

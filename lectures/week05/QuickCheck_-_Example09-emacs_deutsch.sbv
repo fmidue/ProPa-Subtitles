@@ -1,4 +1,3 @@
-
 0:00:02.000,0:00:06.720
 Okay, betrachten wir dieses
 Beispiel aus den Folien.
@@ -19,15 +18,15 @@ dass ich einen Fehler in dieses Programm eingebaut habe.
 
 0:00:26.400,0:00:30.240
 Es ist nicht wirklich ein korrektes Quicksort und
-wir werden sehen, ob Sie diesen Fehler finden werden.
+wir werden sehen, ob wir diesen Fehler finden werden.
 
 0:00:30.240,0:00:35.920
-Wir werden sehen, ob Sie diesen Fehler finden; nun, das werden wir, denn ich werde Ihnen
+Nun, das werden wir, denn ich werde Ihnen
 einige Techniken zum Testen von Haskell-Programmen zeigen.
 
 0:00:36.640,0:00:43.840
 Okay, aber zuerst lassen Sie uns einfach den Interpreter starten,
-den Interpreter und laden Sie dieses Beispiel.
+und laden wir dieses Beispiel.
 
 0:00:46.480,0:00:52.080
 Okay, dann können wir die
@@ -53,27 +52,27 @@ Also, lassen Sie uns vielleicht zuerst
 diesen einen Fall, den wir hier gerade gesehen haben,
 
 0:01:31.680,0:01:35.200
-als wiederholten Testfall,
-damit wir ihn immer ausführen können.
+als wiederholten Testfall anlegen,
+damit wir ihn immer wieder ausführen können.
 
 0:01:36.480,0:01:41.200
 Okay, das würde man in einer anderen Sprache als
-einen Unit-Test in einer anderen Sprache nennen,
+einen Unit-Test bezeichnen.
 
 0:01:41.840,0:01:49.200
-also schreiben wir einfach eine 'main'-Definition,
+Also wir schreiben einfach eine 'main'-Definition,
 die immer denselben Test ausführt.
 
 0:01:51.040,0:01:56.800
 Und wenn ich dann das nächste Mal meine Datei lade, kann ich
-einfach ausführen und es wird "True" angezeigt.
+das einfach ausführen und es wird "True" angezeigt.
 
 0:01:57.440,0:01:59.840
 Okay, das wäre also ein Unit-Test.
-Unit-Tests, obwohl das nicht sehr attraktiv ist,
+Unit-Tests, obwohl das
 
 0:02:01.360,0:02:03.920
-irgendwie nicht sehr attraktiv, nur solche Tests zu haben.
+irgendwie nicht sehr attraktiv ist, nur solche Tests zu haben.
 
 0:02:03.920,0:02:06.320
 Also, wie testen wir stattdessen in Haskell?
@@ -97,7 +96,7 @@ aber die Korrektheit Ihrer CodeWorld
 Aufgaben wurde von Menschen überprüft, die sie sich ansahen.
 
 0:02:26.080,0:02:29.040
-Okay, denn da ist nicht
+Okay, denn da scheint nicht
 viel Automatisierung möglich.
 
 0:02:29.040,0:02:34.080
@@ -140,11 +139,11 @@ schreiben, die mit
 genau diesen Beispieleingaben funktionieren.
 
 0:03:10.800,0:03:13.920
-Stattdessen wollen wir Folgendes ausdrücken:
+Stattdessen wollen wir
 einige allgemeinere Eigenschaften
 
 0:03:13.920,0:03:19.120
-unserer Funktionen oder Ihrer
+unserer Funktionen oder ihrer
 Eingaben ausdrücken und diese dann überprüfen.
 
 0:03:20.080,0:03:23.280
@@ -153,7 +152,7 @@ Weg, dies in Haskell zu tun, ist die Verwendung
 
 0:03:24.000,0:03:30.080
 einer bestimmten Bibliothek, die ich hier
-importieren werde, sie heißt QuickCheck.
+importieren werde. Sie heißt QuickCheck.
 
 0:03:30.880,0:03:33.360
 Und so wird sie importiert.
@@ -220,15 +219,13 @@ Nun, es wäre die Liste selbst.
 0:04:57.920,0:05:01.040
 Nun kann ich das nicht direkt als Check schreiben, oder?
 
-
-
 0:05:01.040,0:05:06.000
 Ich hätte es also nicht so schreiben können, denn
 woher kommt das 'n'? Das 'n' sollte etwas sein.
 
 0:05:06.720,0:05:09.360
 Es sollte nicht fix sein, das wäre
-irgendwie allgemeingültig.
+irgendwie nicht allgemeingültig.
 
 0:05:09.360,0:05:12.640
 Nun, die Art und Weise, wie wir das machen, in
@@ -253,8 +250,8 @@ im Allgemeinen zu interpretieren ist.
 Lassen Sie mich diesen Puffer löschen.
 
 0:05:44.240,0:05:51.840
-Weil er meinen Editor aus einem Grund verlangsamt,
-aus irgendeinem Grund, den ich nicht ganz verstehe.
+Weil er meinen Editor aus irgndeinem Grund verlangsamt,
+den ich nicht ganz verstehe.
 
 0:06:01.440,0:06:08.080
 Okay, lassen Sie uns das bedenken
@@ -287,12 +284,12 @@ welche Eingaben geprüft werden.
 Und was Sie hier sehen, ist,
 
 0:06:58.800,0:07:03.360
-wo es 100 Tests bestanden hat und
+wo es 100 Tests bestanden hat. Und
 was sind diese Tests, die Testfälle?
 
 0:07:03.360,0:07:09.600
 Nun, das 'n' hat sich als
-26, 32, -61 und viele andere Werte.
+26, 32, -61 und viele andere Werte herausgestellt.
 
 0:07:10.720,0:07:14.880
 Okay, also 100 zufällige Auswahlmöglichkeiten für dieses "n" hier.
@@ -310,8 +307,8 @@ ist es ein bisschen blöd, das
 auf negative Zahlen zu prüfen.
 
 0:07:24.240,0:07:29.280
-Also sollten wir das wahrscheinlich ausschließen,
-und eine Möglichkeit, das zu tun, ist hier zu sagen,
+Also sollten wir das wahrscheinlich ausschließen.
+Und eine Möglichkeit, das zu tun, ist hier zu sagen,
 
 0:07:29.280,0:07:33.280
 dass man nur
@@ -319,7 +316,7 @@ positive 'n', das ist wie,
 
 0:07:33.280,0:07:39.600
 im Grunde eine Quantifizierung über nur die
-positiven natürlichen Zahlen, den positiven ganzen Zahlen.
+positiven natürlichen/ganzen Zahlen.
 
 0:07:40.240,0:07:47.280
 Und wenn wir das neu laden und wieder
@@ -423,7 +420,7 @@ In der Tat, es gab zwei Tests,
 die 100 Fälle bestanden haben.
 
 0:09:57.360,0:09:59.920
-Das sind die ersten beiden, und
+Das sind die ersten beiden. Und
 dann gibt es ein Gegenbeispiel.
 
 0:10:01.040,0:10:02.240
@@ -455,8 +452,6 @@ Aber gut.
 
 0:10:33.760,0:10:35.520
 Aber das liegt nur daran, dass die Eigenschaft falsch ist.
-
-
 
 0:10:35.520,0:10:39.440
 Wie auch immer, lassen Sie mich eine Eigenschaft aufschreiben, die
@@ -552,7 +547,7 @@ einen Fehler eingeführt habe, indem ich nicht in '<' und
 Okay, wenn ich also diesen Fehler behebe, dann läuft meine
 
 0:12:44.080,0:12:51.520
-Testreihe noch einmal durch, und um sicherzugehen,
+Testreihe noch einmal durch. Und um sicherzugehen,
 dass wir das auf einigen sinnvollen Listen testen,
 
 0:12:51.520,0:13:00.480
@@ -676,9 +671,7 @@ Gegenbeispiele zu finden, sondern sobald es herausgefunden hat,
 
 0:15:30.480,0:15:36.560
 dass eine Eigenschaft nicht wahr ist, versucht es auch,
-ein möglichst kleines Gegenbeispiel zu finden, das auch
-
-
+ein möglichst kleines Gegenbeispiel zu finden. Was auch
 
 0:15:36.560,0:15:41.920
 für Sie nützlich ist, wenn Sie eine Rückmeldung von Autotool erhalten.
@@ -819,8 +812,8 @@ Was ich also sagen kann, ist: Lass mich
 die Liste an Position eins teilen,
 
 0:18:24.160,0:18:29.280
-und dann bekomme ich eine Einzelelement-
-Liste und entnehme daraus den Pivot.
+und dann bekomme ich eine Einzelelement-Liste
+und entnehme daraus den Pivot.
 
 0:18:29.280,0:18:33.760
 Und ich erhalte den 'rest', der eine beliebig lange Liste sein
@@ -846,7 +839,7 @@ ich einen anderen Fehler in mein Programm einführe.
 
 0:18:58.320,0:19:03.680
 Sagen wir, ich mache versehentlich die Kombination von größer
-und kleiner Kombination versehentlich auf die falsche Weise.
+und kleiner auf die falsche Weise.
 
 0:19:05.760,0:19:10.240
 Dann würde ich sofort einige Testfehler bekommen.
@@ -889,4 +882,3 @@ welche Daten verwendet wurden,
 0:19:58.000,0:20:05.840
 können Sie jederzeit den 'quickCheck' durch
 'verboseCheck' ersetzen, wie ich es vorhin im Video getan habe.
-
