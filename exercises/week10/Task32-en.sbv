@@ -9,7 +9,7 @@ This time we have a C program and a Python
 program for the same program written in both C
 
 0:00:13.760,0:00:18.800
-and Python and we should
+and Python, and we should
 re-implement this in Haskell.
 
 0:00:22.480,0:00:30.080
@@ -32,7 +32,7 @@ and b) I find it a bit more readable.
 
 0:00:59.600,0:01:07.600
 But, as I said, they both have the same
-behavior and we can choose the one to
+behavior, and we can choose the one to
 
 0:01:08.160,0:01:13.280
 work with, or derive our Haskell solution from,
@@ -61,7 +61,7 @@ And then let y = 0, just for the moment.
 
 0:02:05.360,0:02:09.520
 Then there's something we don't
-know how to do this while-loop.
+know how to do, this while-loop.
 
 0:02:10.240,0:02:25.200
 And finally, we print something, let's say,
@@ -92,14 +92,14 @@ and y, modifying them, iterating over this
 
 0:03:06.560,0:03:12.320
 thing until this condition
-is no longer true and then
+is no longer true, and then
 
 0:03:15.760,0:03:20.560
 it will return the new values of x and
 y for the following program to use.
 
 0:03:24.640,0:03:33.920
-So we're making this implicit state
+So we're making this explicit state
 of this imperative program explicit.
 
 0:03:35.520,0:03:40.720
@@ -107,7 +107,7 @@ Okay, let's define a function that does this.
 
 0:03:40.720,0:03:59.680
 So, as I said, it takes two Integers
-and in principle, it returns the
+and, in principle, it returns the
 
 0:04:10.000,0:04:12.240
 values of x and y after the loop.
@@ -154,15 +154,15 @@ because then our loop is finished.
 
 0:05:27.280,0:05:35.040
 And we return the current value for y that we
-kept as the state and we'll be passing around.
+kept as the state, and we'll be passing around.
 
 0:05:36.720,0:05:43.440
 Okay, so the next condition then is if this
 is actually true we go into the loop body.
 
 0:05:43.440,0:05:53.840
-And then we check if this condition holds
-so x `mod` 2 == 0 then we do something.
+And then we check if this condition holds,
+so x `mod` 2 == 0, then we do something.
 
 0:05:54.480,0:05:59.280
 And we also need an otherwise case which is
@@ -172,19 +172,19 @@ kind of the else branch here, but we have to keep
 in mind that this print is always executed after
 
 0:06:11.520,0:06:18.480
-one iteration of the loop no matter
+one iteration of the loop, no matter
 what the branching condition was.
 
 0:06:18.480,0:06:26.400
-So we can just say, there's a
-print in here somewhere at the end
+So we can just say there's a
+print in here somewhere at the end,
 
 0:06:32.960,0:06:36.800
 but we're also not sure
 what to print at the moment.
 
 0:06:36.800,0:06:45.760
-So let's see, we need to compute
+So, let's see, we need to compute
 the new values for x and y.
 
 0:06:45.760,0:06:52.800
@@ -196,22 +196,22 @@ So the new value for x is just x
 divided by 3 without any floating-point
 
 0:07:10.160,0:07:14.240
-stuff just plain old whole number division.
+stuff, just plain old whole number division.
 
 0:07:14.960,0:07:20.400
 So, let's say we use a let statement
-and say, okay, the new value of x
+and say, okay, the new value of x,
 
 0:07:20.400,0:07:29.840
-call it x' is the old value of x,
+call it x', is the old value of x,
 which is our input here, divided by 3.
 
 0:07:30.800,0:07:35.600
-And then before we continue with the next
-loop iteration we have to print the current
+And then, before we continue with the next
+loop iteration, we have to print the current
 
 0:07:35.600,0:07:41.920
-value of x which is now the new value,
+value of x, which is now the new value,
 obviously, because we updated it here.
 
 0:07:41.920,0:07:44.320
@@ -230,7 +230,7 @@ for the else branch here.
 
 0:08:03.760,0:08:11.840
 The first thing we do is we read
-in a new value for x so x' here is
+in a new value for x, so x' here is
 
 0:08:14.560,0:08:17.680
 this IO action reading in from the command line.
@@ -239,7 +239,7 @@ this IO action reading in from the command line.
 Then we say, the new y is
 
 0:08:22.320,0:08:30.080
-the old y plus 1 and again we print the current
+the old y + 1, and again we print the current
 value of x, which is the one we just read in.
 
 0:08:31.760,0:08:41.120
@@ -252,7 +252,7 @@ here just once, we can just simply
 
 0:08:51.920,0:08:59.280
 put it here without duplicating any
-subexpressions and it gets a little
+subexpressions, and it gets a little
 
 0:09:00.800,0:09:01.520
 easier to read.

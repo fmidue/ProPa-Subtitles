@@ -29,8 +29,8 @@ The first case checks if head
 xs is actually equivalent to v.
 
 0:01:06.880,0:01:16.160
-If this is the case we found v in
-the list so we return False, right?
+If this is the case, we found v in
+the list, so we return False, right?
 
 0:01:17.600,0:01:23.600
 This is the simplest thing we can think of.
@@ -57,7 +57,7 @@ element we are not looking for.
 Okay, so does this work?
 
 0:02:20.560,0:02:24.720
-Well, probably not but let's try it anyway.
+Well, probably not, but let's try it anyway.
 
 0:02:27.760,0:02:39.360
 So let's say we're looking
@@ -86,7 +86,7 @@ Well, we're trying to get
 the head of an empty list.
 
 0:03:20.960,0:03:28.080
-So, this is because we forgot to handle
+So this is because we forgot to handle
 the case that the list could be empty.
 
 0:03:28.640,0:03:36.080
@@ -94,7 +94,7 @@ So if the list is empty, what's our result?
 
 0:03:36.080,0:03:41.600
 Well, no element is present in
-the empty list so we return True
+the empty list, so we return True
 
 0:03:43.920,0:03:47.520
 if we check that v is not in the empty list.
@@ -143,7 +143,7 @@ state true facts in these QuickCheck tests.
 
 0:04:59.520,0:05:07.920
 Okay, then [y] does not contain
-x, if x and y are different.
+x if x and y are different.
 
 0:05:08.840,0:05:11.360
 This is how we write this in QuickCheck.
@@ -161,7 +161,7 @@ exactly if it is not contained in one of the
 lists from which the combined list is made.
 
 0:05:35.600,0:05:41.280
-So, if we have a list xs and a list
+So if we have a list xs and a list
 ys then (checking whether) v is not
 
 0:05:41.280,0:05:44.880
@@ -179,7 +179,7 @@ Okay, this is what these tests do.
 
 0:06:07.040,0:06:17.840
 And we more or less do, at least for the first few
-tests, we can see that these are our cases here.
+tests; we can see that these are our cases here.
 
 0:06:20.320,0:06:25.360
 Okay, so is there another way to solve this?
@@ -190,13 +190,13 @@ are actually dealing with Booleans here.
 
 0:06:33.120,0:06:37.920
 So on this side we have Boolean
-values and here we have Boolean values
+values, and here we have Boolean values
 
 0:06:37.920,0:06:48.000
 so we can rewrite this using Boolean connectives.
 
 0:06:48.000,0:07:00.400
-So, instead of these guards let's say in one
+So, instead of these guards, let's say in one
 Boolean expression what notElem really is.
 
 0:07:01.280,0:07:13.280
@@ -219,7 +219,7 @@ any guards, that either the list is empty or
 
 0:07:54.720,0:08:00.960
 the first element is different (from v) and the
-rest list also does not contain the element.
+rest of the list also does not contain the element.
 
 0:08:02.720,0:08:11.840
 And that's the definition of what it means
@@ -235,15 +235,15 @@ connectives to write a thing like this.
 
 0:08:29.520,0:08:36.000
 And sometimes you would prefer this version
-with guards over this expression and
+with guards over this expression, and
 
 0:08:36.000,0:08:43.680
-sometimes depending on the context this
+sometimes depending on the context, this
 single expression might be favorable.
 
 0:08:45.120,0:08:52.640
-But there's another solution that is interesting.
-Maybe a bit more declarative.
+But there's another solution that is interesting,
+maybe a bit more declarative.
 
 0:08:56.160,0:08:59.400
 We use the observation that ...
@@ -265,7 +265,7 @@ are equal to v in that list and
 
 0:09:38.160,0:09:43.200
 for an element to not be in the
-list this list now has to be empty.
+list, this list now has to be empty.
 
 0:09:45.120,0:09:57.120
 This says if there is no element in xs
@@ -276,7 +276,7 @@ This is a nice declarative alternative to this
 Boolean expression with recursion, because
 
 0:10:05.440,0:10:07.280
-as you can see there's no recursion here.
+as you can see there’s no recursion here.
 
 0:10:07.840,0:10:16.800
 And this is also correct as we
@@ -290,7 +290,7 @@ first and now run the tests.)
 It passes all the tests,
 
 0:10:27.200,0:10:36.560
-but it's way harder to see by looking at
+but it’s way harder to see by looking at
 the code that it fulfills these properties.
 
 0:10:37.360,0:10:41.440

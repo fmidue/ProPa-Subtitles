@@ -31,7 +31,7 @@ the 'Left a' constructor or something of type
 'b', represented by the 'Right b' constructor.
 
 0:00:53.120,0:00:57.360
-At this point we should note that these type
+At this point, we should note that these type
 variables 'a' and 'b' don't necessarily have to
 
 0:00:57.360,0:01:07.680
@@ -39,8 +39,8 @@ be different types, so we could go and say 'Either
 String String' and then construct 'Left String'
 
 0:01:07.680,0:01:15.520
-and 'Right String' instances for example, and
-this would be valid. With that out of the way we
+and 'Right String' instances, for example, and
+this would be valid. With that out of the way, we
 
 0:01:15.520,0:01:20.960
 can actually start solving the task, which is just
@@ -60,11 +60,11 @@ constructor of 'Maybe' and 'Either' at least
 
 0:01:40.640,0:01:47.360
 once somewhere down in here. Starting with
-the first value we have the type signature of
+the first value, we have the type signature of
 
 0:01:47.360,0:01:54.000
-'Either Bool' for our 'a' so if we look at
-this as 'Either a b' our 'a' would be 'Bool'
+'Either Bool' for our 'a', so if we look at
+this as 'Either a b', our 'a' would be 'Bool'
 
 0:01:54.000,0:02:00.640
 and our 'b' would be a list with tuples
@@ -72,14 +72,14 @@ and 'Integer' and 'Bool' inside the tuple;
 
 0:02:01.920,0:02:09.120
 so here we can use the constructors 'Left' and
-'Right' so if we just go 'Left' here we need to
+'Right', so if we just go 'Left' here we need to
 
 0:02:09.680,0:02:15.840
-use something of type 'Bool' for 'a' so go
+use something of type 'Bool' for 'a', so go
 with 'True' or 'False', which are the only
 
 0:02:16.640,0:02:22.480
-values for 'Bool' of course, and for value 2 since
+values for 'Bool', of course, and for value 2 since
 these are the same type signatures we're gonna go
 
 0:02:22.480,0:02:29.680
@@ -87,7 +87,7 @@ with the 'Right' constructor and build something
 with the lists with tuple 'Integer', 'Bool'
 
 0:02:31.280,0:02:34.160
-type over here, so of course an
+type over here, so, of course, an
 empty list would be acceptable,
 
 0:02:34.800,0:02:41.520
@@ -95,11 +95,11 @@ or we can create a list with actual tuples
 inside. Let's say tuple 10 and True for example,
 
 0:02:43.440,0:02:49.840
-and of course this could be a list
+and, of course, this could be a list
 with multiple tuples, so 8 and False,
 
 0:02:51.280,0:02:59.040
-and these two would be valid values for value
+and these two would be valid values for values
 one and two. Now these were pretty simple and
 
 0:03:00.800,0:03:04.400
@@ -115,7 +115,7 @@ see in this case this is just parentheses around
 these... this type thing, which over here is
 
 0:03:17.360,0:03:21.520
-defining this 'Either' over here, there's not
+defining this 'Either' over here; there's not
 a comma over here, so this is not a tuple,
 
 0:03:23.280,0:03:29.040
@@ -124,7 +124,7 @@ take care to not get our tuple parentheses and
 
 0:03:29.040,0:03:36.560
 just regular parentheses confused here. So we
-start with this, we have an outside tuple over
+start with this; we have an outside tuple over
 
 0:03:36.560,0:03:45.360
 here consisting of 'Maybe' and this 'Either'
@@ -132,7 +132,7 @@ structure over here, and 'Maybe Integer',
 
 0:03:45.360,0:03:50.560
 so if we just go with the lazy round starting out
-here 'Maybe' has the constructors 'Nothing' and
+here, 'Maybe' has the constructors 'Nothing' and
 
 0:03:50.560,0:03:57.760
 'Just a', so we can go 'Nothing' and 'Nothing'
@@ -151,7 +151,7 @@ need to look at this 'Either' construction over
 here, which is 'Either' tuple 'Maybe Integer'
 
 0:04:18.160,0:04:31.120
-or 'Bool' and we can say for example: 'Left' and
+or 'Bool', and we can say for example: 'Left' and
 then creating this tuple here 10 and 'Nothing'
 
 0:04:32.320,0:04:42.160
@@ -163,24 +163,24 @@ and for our second part of the tuple for the
 second 'Maybe Integer' over here you can go with
 
 0:04:50.960,0:04:57.360
-either 'Nothing' of course, or just any
-integer let's say 'Just 12' in this case.
+either 'Nothing', of course, or just any
+integer, let's say 'Just 12' in this case.
 
 0:05:00.320,0:05:07.200
 For value five we have once again the same type
 signature, so let's start again with 'Just'
 
 0:05:07.200,0:05:14.960
-and we use 'Left' over here so we use 'Right'
-now and 'Right' was of type 'Bool' so we're
+and we use 'Left' over here, so we use 'Right'
+now and 'Right' was of type 'Bool', so we're
 
 0:05:14.960,0:05:26.720
 gonna go 'Right True' here and for the other
-side we're gonna go with 'Just' let's say 24,
+side we're gonna go with 'Just', let's say 24,
 
 0:05:29.680,0:05:37.680
 because we could also go with 'Nothing' again over
-here but well you can decide that for yourself
+here, but well you can decide that for yourself
 
 0:05:40.000,0:05:48.720
 which you want to use here, they just need to be
@@ -191,19 +191,20 @@ and seven, these are just one 'Either' of either
 'Maybe Integer' or 'Bool', this is a tuple again
 
 0:05:59.280,0:06:04.960
-here so careful about looking at this, and
-this is not a tuple this is just a 'Maybe'
+here, so careful about looking at this, and
+this is not a tuple, this is just a 'Maybe'
 
 0:06:05.520,0:06:11.840
 which could be a tuple of 'Integer', 'Maybe
-Bool', or 'Nothing' of course, so since we have
+Bool', or 'Nothing', of course, so since we have
 
 0:06:11.840,0:06:16.400
-two of these again let's go with the 'Left'
-and 'Right' constructors, let's go 'Left'
+two of these again, let's go with the 'Left'
+and 'Right' constructors; let's go 'Left'
+
 
 0:06:17.920,0:06:29.600
-and create a tuple of 'Maybe Integer Bool' so just
+and create a tuple of 'Maybe Integer' and 'Bool' so just
 1 for example, and 'True', or 'Nothing' of course.
 
 0:06:31.840,0:06:38.880
@@ -219,7 +220,7 @@ with 10 and 'Nothing' for 'Maybe Bool'
 or 'Just 2' or 'Just 4' of course.
 
 0:06:59.600,0:07:06.640
-And now if we save all of this, and reload
+And now if we save all of this and reload
 the task in ghci and just run the test,
 
 0:07:07.520,0:07:12.720
