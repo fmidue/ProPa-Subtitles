@@ -262,19 +262,19 @@ of length in Prolog as a predicate.
 
 0:06:34.000,0:06:37.120
 And then we could also actually start
-asking right now we have a predicate
+asking right now if we have a predicate
 
 0:06:37.120,0:06:42.160
-for length instead of a function, what
+for length instead of a function. What
 about using it in a fashion where we
 
 0:06:42.960,0:06:48.320
 give this instantiation a value for
-the length and ask about the list.
+the length and ask about the list?
 
 0:06:48.320,0:06:52.720
 Which is not possible in Haskell, of
-course because it only works forwards with functions.
+course, because it only works forwards with functions.
 
 0:06:54.080,0:06:58.000
 Okay, so this was the length function
@@ -326,7 +326,7 @@ That should make sense.
 
 0:08:12.080,0:08:17.120
 Okay, again, of course, we won't be able to
-translate this directly to the Prolog side, why?
+translate this directly to the Prolog side. Why?
 
 0:08:17.120,0:08:20.080
 Well, mainly because of
@@ -357,7 +357,7 @@ So, actually, we would rewrite this or
 we could rewrite on the Haskell side
 
 0:08:46.480,0:09:00.320
-by saying well, this is actually x in front of zs
+by saying, well, this is actually x in front of zs
 where we compute zs as the 'append' of xs and ys.
 
 0:09:00.320,0:09:04.400
@@ -370,7 +370,7 @@ and no nested function calls,
 
 0:09:07.120,0:09:10.480
 can be written as a literal like we
-did for 'length' up here for example.
+did for 'length' up here, for example.
 
 0:09:12.080,0:09:14.320
 Okay, so what do we have to
@@ -384,7 +384,7 @@ like this. Rather, we will use a named predicate.
 So, let's call it 'append'.
 
 0:09:28.000,0:09:31.920
-And while we can’t write down the type, so we
+And while we can’t write down the type, we
 can at least write down that it is a ternary predicate.
 
 0:09:32.800,0:09:37.680
@@ -392,7 +392,7 @@ Syntax was also mentioned on slides that
 sometimes, for documentation purposes for
 
 0:09:37.680,0:09:42.560
-example when at least write down the
+example, we at least write down the
 arity of a predicate in Prolog.
 
 0:09:42.560,0:09:45.280
@@ -483,7 +483,7 @@ It is saying that the appending
 of Xs and Ys should be Zs.
 
 0:11:24.480,0:11:31.040
-So, here we would have as precondition for
+So, here we would have as a precondition for
 our ternary predicate that the appending of Xs
 
 0:11:31.760,0:11:34.160
@@ -498,7 +498,7 @@ And again, with this, we could do things
 
 0:11:43.840,0:11:47.600
 we can in Haskell, like providing two
-input lists and ask for the output list.
+input lists and asking for the output list.
 
 0:11:47.600,0:11:49.360
 But we could do other queries.
@@ -531,7 +531,7 @@ a second on the Haskell side, which essentially
 
 0:12:24.560,0:12:29.680
 given any list is supposed to return
-the second element and we don't want
+the second element, and we don't want
 
 0:12:29.680,0:12:33.760
 to do this with list indexing or something
@@ -546,7 +546,7 @@ We are going to write something like this.
 
 0:12:39.680,0:12:45.360
 Yes, say we have a non-empty list, so it’s
-something in front of something if the first
+something in front of something; if the first
 
 0:12:45.360,0:12:50.640
 something doesn’t matter to us, we don’t care
@@ -578,7 +578,7 @@ It could be the empty list,
 something, and we don't care about it.
 
 0:13:12.080,0:13:20.160
-So, we use the anonymous variable pattern and
+So, we use the anonymous variable pattern, and
 well, the outcome would be simply X, okay?
 
 0:13:20.160,0:13:21.040
@@ -626,7 +626,7 @@ precondition or recursive calls.
 So, what could that fact look like?
 
 0:14:03.600,0:14:08.400
-Well, on the left we have this the
+Well, on the left, we have the
 Prolog version of this pattern.
 
 0:14:08.400,0:14:14.880
@@ -635,7 +635,7 @@ Well, the syntax could be something like this.
 
 0:14:15.520,0:14:20.000
 So, we don't care about the first
-thing, then we have a rest list
+thing; then we have a rest list
 
 0:14:23.440,0:14:27.200
 of which we know that the head element would be X.
@@ -648,7 +648,7 @@ list about which we do not care.
 Yes, so this would be a translation of this.
 
 0:14:34.000,0:14:39.360
-One translation of this Haskell pattern
+One translation of this Haskell pattern,
 and then we say, well, the output is X.
 
 0:14:40.240,0:14:43.280
@@ -668,11 +668,11 @@ For example, this could also
 have been written as saying:
 
 0:15:01.840,0:15:05.680
-We want to have a list, we don’t
+We want to have a list; we don’t
 care about the first element,
 
 0:15:06.640,0:15:12.480
-we care about the second element, it should be the
+we care about the second element; it should be the
 variable X or matched/bound to the variable X.
 
 0:15:13.280,0:15:16.000
@@ -686,7 +686,7 @@ Or another version would be to
 use the '.' as the constructor
 
 0:15:29.200,0:15:34.560
-for basically the cons-constructor from Haskell.
+for basically the cons constructor from Haskell.
 
 0:15:34.560,0:15:38.800
 Then this would be written
@@ -719,7 +719,7 @@ ways you could think of writing this.
 
 0:16:09.200,0:16:14.000
 For example, you could replace
-this by this pattern again.
+this with this pattern again.
 
 0:16:14.000,0:16:19.360
 Okay, these are equivalent ways; it’s just very
