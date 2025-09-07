@@ -185,7 +185,7 @@ then the original list was not sorted. And we have "and".
 We decompose that, and it must hold that X =< Y.
 
 00:05:01,390 --> 00:05:07,840
-So, if that doesn't hold, then the list Xs not sorted.
+So, if that doesn't hold, then the list Xs is not sorted.
 However, if X =< Y, then it still doesn't mean that the list is sorted.
 
 00:05:07,840 --> 00:05:13,000
@@ -198,15 +198,15 @@ It must also still be true that the Y relates appropriately to
 
 00:05:20,830 --> 00:05:26,920
 the residual elements. One way to
-would be to say: "After we have checked that
+say: "After we have checked that
 
 00:05:26,920 --> 00:05:32,110
-the first =< the second element, we simply add the
+the first <= the second element, we simply add the
 second element back to the residue list. So, we form
 
 00:05:32,110 --> 00:05:38,500
 with it the list Zs. These are then all list elements
-without the first X and then we check, if this
+without the first X and then we check if this
 
 00:05:38,500 --> 00:05:45,280
 remaining list is sorted. This is then the recursive call."
@@ -214,11 +214,11 @@ So, use isSorted here, although at the same time we also define isSorted
 
 00:05:45,280 --> 00:05:50,560
 at the same time. But of course, we use that on a different
-Argument, on a different list. And if we look at,
+argument, on a different list. And if we look at,
 
 00:05:50,560 --> 00:05:57,820
 what these two append calls in particular
-that mean that Zs is shorter than Xs.
+mean that Zs is shorter than Xs.
 
 00:05:57,820 --> 00:06:04,870
 That's why there's a real chance here that this
@@ -253,7 +253,7 @@ and put these into the isSorted,
 then X = 6 and Y = 9. If we checked now only
 
 00:06:50,950 --> 00:06:58,090
-that X =< Y, then this would be fulfilled. 6 =< 9 is true.
+that X <= Y, then this would be fulfilled. 6 <= 9 is true.
 And we would then check if the rest list Ys sorted,
 
 00:06:58,090 --> 00:07:03,130
@@ -363,7 +363,7 @@ Like this: All enumerated. All permutations of that input list.
 
 00:09:43,620 --> 00:09:53,220
 And then from the results we want to pick out one
-out, which is sorted. In the normal case,
+that is sorted. In the normal case,
 
 00:09:53,790 --> 00:10:04,930
 or always, this will even be unique.
@@ -378,7 +378,7 @@ not correct. Just are any permutations.
 But then we still say, this Ys must be sorted.
 
 00:10:15,580 --> 00:10:22,150
-In the sense as this predicate, which we have also written in Prolog
+In the sense of this predicate, which we have also written in Prolog
 expresses that.
 
 00:10:22,150 --> 00:10:27,280
@@ -470,7 +470,7 @@ whether the solution condition is true. So, the condition,
 which must be fulfilled. In this case, we wanted to sort something.
 
 00:12:40,510 --> 00:12:51,160
-So, the problem here was the sorting problem and the condition for that was,
+So, the problem here was the sorting problem and the condition for that was
 that the list that comes out must be sorted.
 
 00:12:52,150 --> 00:12:58,480
@@ -592,7 +592,7 @@ Or if we call that not with concrete values,
 
 00:16:07,060 --> 00:16:13,900
 but with variables, then all
-possibilities are considered, how A can be from W
+possibilities are considered, how A can be from W.
 
 00:16:13,900 --> 00:16:19,540
 That is, if W is a six-element list, then alone
@@ -953,7 +953,7 @@ A reasonable criterion is
 the set of potential solutions, the candidates,
 
 00:26:58,570 --> 00:27:05,740
-should at least be finite. So, there must not be an infinite
+should at least be finite. So, there must not be infinite
 many solutions. Then one does not come with the tests to the conclusion.
 
 00:27:05,740 --> 00:27:14,350
