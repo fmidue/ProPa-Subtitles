@@ -3,28 +3,28 @@
 Let us also discuss a bit more syntax today.
 
 00:00:06,260 --> 00:00:11,980
-And essentially, this will be more stuff on
-programming by case distinction.
+And essentially, this will be more stuff
+on programming by case distinction.
 
 00:00:11,980 --> 00:00:16,170
-So, this is, of course, an important aspect for
-defining functions.
+So, this is, of course, an important
+aspect for defining functions.
 
 00:00:16,170 --> 00:00:19,550
-We have seen this before, and we have used
-it in exercises.
+We have seen this before, and
+we have used it in exercises.
 
 00:00:19,550 --> 00:00:24,030
-And so far, this has been by "if-then-else"
-expressions.
+And so far, this has been by
+"if-then-else" expressions.
 
 00:00:24,030 --> 00:00:30,140
 You might even have had reasons in your exercise
 submissions to nest if-then-else expressions.
 
 00:00:30,140 --> 00:00:33,620
-And once you start doing that, this becomes
-a bit cumbersome.
+And once you start doing that,
+this becomes a bit cumbersome.
 
 00:00:33,620 --> 00:00:40,700
 So, there are other options, and some of them
@@ -59,18 +59,20 @@ First, remember how an if-then-else looks.
 So, that was an example that I used last week.
 
 00:01:11,000 --> 00:01:15,159
-And you have done similar things in the exercises.
+And you have done similar
+things in the exercises.
 
 00:01:15,159 --> 00:01:19,810
 So, in a function definition on the right-hand
 side (as an expression), we can use if-then-else.
 
 00:01:19,810 --> 00:01:23,520
-There must be a condition and then two expressions.
+There must be a condition
+and then two expressions.
 
 00:01:23,520 --> 00:01:26,840
-They must be of the same type; otherwise, it
-wouldn't make sense.
+They must be of the same type;
+otherwise, it wouldn't make sense.
 
 00:01:26,840 --> 00:01:28,260
 And they must always be there.
@@ -108,8 +110,8 @@ second condition.
 And this quickly becomes not so nice.
 
 00:02:02,920 --> 00:02:04,960
-Of course, in mathematics, there is a different
-approach.
+Of course, in mathematics,
+there is a different approach.
 
 00:02:04,960 --> 00:02:09,679
 In mathematics, in an expression like this,
@@ -128,8 +130,8 @@ of conditions and expressions here.
 
 57 # slide
 00:02:25,299 --> 00:02:29,669
-Something like this can be mirrored in Haskell
-as well.
+Something like this can be
+mirrored in Haskell as well.
 
 00:02:29,669 --> 00:02:31,760
 That could look like this.
@@ -139,8 +141,8 @@ You probably haven't seen this definition
 kind before, except if you have used HLint
 
 00:02:38,529 --> 00:02:41,670
-and it has suggested it, which it tends to
-do for nested if-then-else.
+and it has suggested it, which it
+tends to do for nested if-then-else.
 
 00:02:41,670 --> 00:02:48,480
 So, this could be an example we are viewing
@@ -157,24 +159,24 @@ than simply, if t is smaller than this, then
 So, we could have something like this.
 
 00:02:57,680 --> 00:03:01,430
-And actually, if you just read this, you probably
-know what is meant here.
+And actually, if you just read this,
+you probably know what is meant here.
 
 00:03:01,430 --> 00:03:07,199
-So, under the condition that t is smaller or equal
-to pi, we should do something.
+So, under the condition that t is smaller
+or equal to pi, we should do something.
 
 00:03:07,199 --> 00:03:13,389
-Under the condition that that is not the case,
-but t is actually greater than pi but less or equal
+Under the condition that that is not the case, but
+t is actually greater than pi but less or equal
 
 00:03:13,389 --> 00:03:16,629
-to the double of pi, then we should have
-something else.
+to the double of pi, then we
+should have something else.
 
 00:03:16,629 --> 00:03:24,530
-And under a third condition, namely that t
-is actually greater than 2 * pi, then yet another
+And under a third condition, namely that t is
+actually greater than 2 * pi, then yet another
 
 00:03:24,530 --> 00:03:26,599
 expression should be evaluated.
@@ -187,15 +189,15 @@ behavior, and it very directly corresponds
 to what mathematicians like to write.
 
 00:03:37,109 --> 00:03:46,249
-Here is a function definition f(x) = ..., and
-then maybe also three mutually exclusive conditions
+Here is a function definition f(x) = ..., and then
+maybe also three mutually exclusive conditions
 
 00:03:46,249 --> 00:03:49,010
 on the x value.
 
 00:03:49,010 --> 00:03:55,839
-And depending on what we have here, we get
-different expressions.
+And depending on what we have
+here, we get different expressions.
 
 00:03:55,839 --> 00:04:02,219
 Now, just as here, we could write any Boolean
@@ -205,8 +207,8 @@ condition: anything that can be evaluated
 or checked in mathematics.
 
 00:04:04,180 --> 00:04:07,569
-Here we can write anything that is of Boolean
-type.
+Here we can write anything
+that is of Boolean type.
 
 00:04:07,569 --> 00:04:12,519
 Often, of course, these will be comparisons
@@ -216,8 +218,8 @@ like here, or combinations of comparisons.
 But that need not be the case.
 
 00:04:13,869 --> 00:04:17,440
-You could have written any expression which
-evaluates to a Boolean.
+You could have written any expression
+which evaluates to a Boolean.
 
 00:04:17,440 --> 00:04:23,259
 It doesn't have to be arithmetic comparisons
@@ -259,8 +261,8 @@ So, these conditions are called guards.
 This is expressing a function with guards.
 
 00:05:06,260 --> 00:05:10,139
-And a guard is this kind of Boolean expression
-that can be written here.
+And a guard is this kind of Boolean
+expression that can be written here.
 
 00:05:10,139 --> 00:05:14,580
 In if-then-else, it's clear what happens: You
@@ -274,8 +276,8 @@ So, there is no question of order because
 the "then" and the "else" are clear about
 
 00:05:19,740 --> 00:05:26,790
-in which cases they execute (or the corresponding
-expression is evaluated).
+in which cases they execute (or the
+corresponding expression is evaluated).
 
 00:05:26,790 --> 00:05:31,940
 Here, we now of course at least have to ask
@@ -285,8 +287,8 @@ what happens if, for example, these guards
 overlap.
 
 00:05:33,069 --> 00:05:36,069
-Or does it matter in which order you write
-them down?
+Or does it matter in which
+order you write them down?
 
 00:05:36,069 --> 00:05:41,820
 I will discuss this on the factorial example,
@@ -296,7 +298,8 @@ which is also a very simple example for recursion,
 of course.
 
 00:05:42,850 --> 00:05:46,719
-So, the factorial function as defined in mathematics.
+So, the factorial function
+as defined in mathematics.
 
 00:05:46,719 --> 00:05:53,090
 It could be written via an if-then-else, of
@@ -323,19 +326,19 @@ That looks reasonable.
 Now what about the order of the clauses?
 
 00:06:15,969 --> 00:06:20,819
-So, does it matter in which order I write
-these things down?
+So, does it matter in which
+order I write these things down?
 
 00:06:20,819 --> 00:06:22,919
 Well, it depends on the conditions.
 
 00:06:22,919 --> 00:06:26,789
-In this case here, these two conditions are
-mutually exclusive:
+In this case here, these two
+conditions are mutually exclusive:
 
 00:06:26,789 --> 00:06:33,060
-There is no input n possible that would be
-both zero and greater than zero.
+There is no input n possible that would
+be both zero and greater than zero.
 
 00:06:33,060 --> 00:06:39,999
 And since that is the case, the following
@@ -352,8 +355,8 @@ which of them is taken, and the order in which
 these are written down does not matter.
 
 00:06:51,229 --> 00:06:55,219
-Now I will consider further examples where
-I change the guards, etc.
+Now I will consider further examples
+where I change the guards, etc.
 
 00:06:55,219 --> 00:07:00,009
 And what I would have done in the past is
@@ -364,8 +367,8 @@ have this program in Haskell and edit the
 program, and let it run to see the effects
 
 00:07:05,360 --> 00:07:09,330
-of changing the order of things and changing
-conditions in the guards, etc.
+of changing the order of things and
+changing conditions in the guards, etc.
 
 00:07:09,330 --> 00:07:13,749
 I don't want to do this now, because that
@@ -375,8 +378,8 @@ would be too much stopping and restarting
 my video recording.
 
 00:07:15,199 --> 00:07:20,360
-So, what I suggest, if you want to follow
-the arguments here, is that you do this yourself.
+So, what I suggest, if you want to follow the
+arguments here, is that you do this yourself.
 
 00:07:20,360 --> 00:07:26,639
 You can stop the video and copy the code into
@@ -393,8 +396,8 @@ you can check yourself (if you have copied
 the code).
 
 00:07:36,120 --> 00:07:39,150
-But I will not actually demonstrate this here
-for all the versions.
+But I will not actually demonstrate
+this here for all the versions.
 
 00:07:39,150 --> 00:07:40,340
 I will simply talk about this.
@@ -419,8 +422,8 @@ numbers might be a problem, but let's only
 call "factorial" on non-negative inputs now),
 
 00:08:06,419 --> 00:08:16,319
-then these two versions that we see here and
-here behave the same.
+then these two versions that we
+see here and here behave the same.
 
 59 # slide
 00:08:16,319 --> 00:08:18,180
@@ -444,16 +447,16 @@ This could correspond to changing that greater
 Then suddenly there is a difference.
 
 00:08:37,579 --> 00:08:43,409
-Suddenly, this version still works fine, but
-this one is problematic.
+Suddenly, this version still works
+fine, but this one is problematic.
 
 00:08:43,409 --> 00:08:49,970
 Maybe you can already guess what would happen,
 or you can check on the side what happens
 
 00:08:49,970 --> 00:08:58,050
-if you take this code and run it again maybe
-with input 12.
+if you take this code and run
+it again maybe with input 12.
 
 00:08:58,050 --> 00:09:09,070
 What you should see is a runtime error.
@@ -475,20 +478,20 @@ And then 11 is again in this case.
 So, it is 11 * factorial 10.
 
 00:09:25,810 --> 00:09:28,650
-This goes down, down, down, ... until factorial
-0.
+This goes down, down, down,
+... until factorial 0.
 
 00:09:28,650 --> 00:09:34,300
-Then what happens is that factorial 0 would
-match the second case.
+Then what happens is that factorial
+0 would match the second case.
 
 00:09:34,300 --> 00:09:38,100
-But actually, Haskell will evaluate these
-from top to bottom.
+But actually, Haskell will
+evaluate these from top to bottom.
 
 00:09:38,100 --> 00:09:41,760
-So, it will first check whether the first guard
-is satisfied.
+So, it will first check whether
+the first guard is satisfied.
 
 00:09:41,760 --> 00:09:47,380
 And for the input n = 0, actually, this first
@@ -505,8 +508,8 @@ And actually, Haskell will not somehow magically
 say: "Well, 0 * something is irrelevant."
 
 00:09:58,360 --> 00:10:03,310
-Instead, it will actually try to compute factorial
-of -1.
+Instead, it will actually try
+to compute factorial of -1.
 
 00:10:03,310 --> 00:10:09,750
 And then for factorial of -1, if you go again
@@ -554,8 +557,8 @@ So, the output will be 1.
 And then the recursion stops.
 
 00:10:37,279 --> 00:10:44,480
-So, if you have a base case like here, then
-this base case should be first in such a sequence
+So, if you have a base case like here, then this
+base case should be first in such a sequence
 
 00:10:44,480 --> 00:10:48,540
 of checks.
@@ -565,16 +568,16 @@ Sometimes, the compiler will be able to warn
 about cases like this because, essentially,
 
 00:10:57,340 --> 00:11:01,160
-the runtime error that we get from this is
-that this is not fully defined.
+the runtime error that we get from
+this is that this is not fully defined.
 
 00:11:01,160 --> 00:11:05,890
 Integers contain negative numbers, but for
 negative numbers we don't give a case.
 
 00:11:05,890 --> 00:11:11,279
-Sometimes, the compiler will be able to warn
-about this.
+Sometimes, the compiler will
+be able to warn about this.
 
 60 # slide
 00:11:11,279 --> 00:11:18,940
@@ -599,16 +602,16 @@ But if we, right away, call this function
 with -1, we again have a runtime error.
 
 00:11:41,010 --> 00:11:46,920
-So, if we call with -1, then neither the base
-case matches nor the recursive case.
+So, if we call with -1, then neither the
+base case matches nor the recursive case.
 
 00:11:46,920 --> 00:11:51,560
 So, we get a runtime error.
 
 61 # slide
 00:11:51,560 --> 00:11:58,199
-As mentioned before, with appropriate settings,
-the compiler can warn us about this.
+As mentioned before, with appropriate
+settings, the compiler can warn us about this.
 
 00:11:58,199 --> 00:12:05,230
 And in Autotool, we will henceforth enable
@@ -622,8 +625,8 @@ to make sure that there's always a case that
 matches, then the compiler will complain.
 
 00:12:15,380 --> 00:12:18,800
-The compiler, of course, cannot know for sure
-whether you have matched all cases.
+The compiler, of course, cannot know for
+sure whether you have matched all cases.
 
 00:12:18,800 --> 00:12:21,250
 So, the compiler will be overcautious.
@@ -655,8 +658,8 @@ In the example from before, instead of having
 two conditions, one being n==0 and the other
 
 00:12:53,410 --> 00:12:58,230
-being something like n>0 or n>=0, you could
-say "otherwise".
+being something like n>0 or
+n>=0, you could say "otherwise".
 
 00:12:58,230 --> 00:13:05,399
 Then, checking from top to bottom, for every
@@ -673,16 +676,16 @@ in the sense that for some input, the factorial
 function doesn't know what to compute.
 
 00:13:15,540 --> 00:13:21,320
-So, now in GHCi, this wouldn't lead to a runtime
-error.
+So, now in GHCi, this wouldn't
+lead to a runtime error.
 
 00:13:21,320 --> 00:13:25,670
 Of course, it could still be a problem if
 you call with negative values, but then not
 
 00:13:25,670 --> 00:13:31,190
-because of a runtime error (of a missing case),
-but actually because of non-termination.
+because of a runtime error (of a missing
+case), but actually because of non-termination.
 
 00:13:31,190 --> 00:13:36,860
 Because then, you will run (if you call this
@@ -726,8 +729,8 @@ compiler, because the compiler can tell that
 we have covered all cases.
 
 00:14:12,820 --> 00:14:18,170
-It also never has a problem at runtime in
-terms of not knowing which case to take, precisely
+It also never has a problem at runtime in terms
+of not knowing which case to take, precisely
 
 00:14:18,170 --> 00:14:19,430
 because of this last case.
@@ -751,15 +754,15 @@ reducing this many times, or right away if
 called with a negative value, we will always
 
 00:14:42,629 --> 00:14:49,519
-reach this case (either immediately or after
-a finite number of steps).
+reach this case (either immediately
+or after a finite number of steps).
 
 00:14:49,519 --> 00:14:53,760
 So, some lessons here:
 
 00:14:53,760 --> 00:14:58,649
-The order matters in selecting which line
-to take.
+The order matters in
+selecting which line to take.
 
 00:14:58,649 --> 00:15:03,470
 The semantics will consider the order.
@@ -781,20 +784,20 @@ we know that the preceding guards have already
 been checked.
 
 00:15:24,089 --> 00:15:29,459
-Exhaustiveness matters because we want to
-avoid runtime errors.
+Exhaustiveness matters because
+we want to avoid runtime errors.
 
 63 # slide
 00:15:29,459 --> 00:15:37,350
 Now, some further remarks.
 
 00:15:37,350 --> 00:15:40,610
-The compiler checks ahead of time are nice,
-but they are not perfect.
+The compiler checks ahead of time
+are nice, but they are not perfect.
 
 00:15:40,610 --> 00:15:44,230
-They can't be perfect because of, for example,
-"the halting problem".
+They can't be perfect because of,
+for example, "the halting problem".
 
 00:15:44,230 --> 00:15:48,560
 So, it's impossible in general to detect infinite
@@ -815,23 +818,23 @@ for perfection are not as powerful as one
 might sometimes hope.
 
 00:16:08,220 --> 00:16:13,149
-Sometimes, from some mathematical insight
-into your problem, you might think the compiler
+Sometimes, from some mathematical insight into
+your problem, you might think the compiler
 
 00:16:13,149 --> 00:16:17,019
-should be able to tell that a certain definition
-is exhaustive.
+should be able to tell that a
+certain definition is exhaustive.
 
 00:16:17,019 --> 00:16:19,519
-But sometimes that's not happening, and for
-a good reason.
+But sometimes that's not
+happening, and for a good reason.
 
 00:16:19,519 --> 00:16:20,550
 Here is an example.
 
 00:16:20,550 --> 00:16:26,930
-It will warn you against trying to rely on
-certain properties, about relations from mathematics,
+It will warn you against trying to rely on certain
+properties, about relations from mathematics,
 
 00:16:26,930 --> 00:16:27,930
 for example.
@@ -856,12 +859,12 @@ things are opposites of each other, so only
 and exactly one of them will be true".
 
 00:16:50,480 --> 00:16:54,360
-That is a reasonable thing to assume, but
-actually not so simple.
+That is a reasonable thing to
+assume, but actually not so simple.
 
 00:16:54,360 --> 00:17:00,110
-There is a good reason why this is not considered
-safe in general by the compiler.
+There is a good reason why this is not
+considered safe in general by the compiler.
 
 00:17:00,110 --> 00:17:06,830
 And the reason is that certainly this is true
@@ -880,12 +883,12 @@ as a programmer from writing a new type with
 equality and inequality checks, where there
 
 00:17:24,371 --> 00:17:29,050
-are some pairs of values x and y where neither
-of these two conditions is true.
+are some pairs of values x and y where
+neither of these two conditions is true.
 
 00:17:29,050 --> 00:17:32,410
-And then the compiler cannot promise that
-one of them will always be true.
+And then the compiler cannot promise
+that one of them will always be true.
 
 00:17:32,410 --> 00:17:34,930
 Maybe it's not even the case for your own
@@ -905,8 +908,8 @@ Also, in an ideal world, we wouldn't depend
 so much on massaging our guard conditions.
 
 00:18:01,790 --> 00:18:06,790
-So, let's return to this issue, where we had
-problems with negative inputs.
+So, let's return to this issue, where
+we had problems with negative inputs.
 
 00:18:06,790 --> 00:18:13,190
 And the fix was to switch from n == 0 to n ≤ 0
@@ -921,8 +924,8 @@ One might argue that this is not what one
 wants: that this factorial function returns
 
 00:18:26,040 --> 00:18:29,400
-one for all negative numbers, if you change
-to "n≤0" here.
+one for all negative numbers,
+if you change to "n≤0" here.
 
 00:18:29,400 --> 00:18:35,240
 So, the real fix (the conceptually most appealing
@@ -943,8 +946,8 @@ function will, in a given program, never be
 called on negative numbers.
 
 00:18:50,910 --> 00:18:56,400
-That is possible, but it
-is really a topic for another lecture, and
+That is possible, but it is really
+a topic for another lecture, and
 
 00:18:56,400 --> 00:18:57,770
 maybe not even for this course.
@@ -957,8 +960,8 @@ or an advanced lecture, not necessarily this
 semester.
 
 00:19:04,741 --> 00:19:16,760
-I just wanted to mention that such a more
-static fix is also possible.
+I just wanted to mention that such
+a more static fix is also possible.
 
 65 # slide
 00:19:16,760 --> 00:19:18,000
@@ -982,8 +985,8 @@ I check whether t is less than or equal to pi,
 then I check the next period from pi to 2 * pi,
 
 00:19:36,550 --> 00:19:40,260
-and then above 2 * pi (this could be something
-that I want to express).
+and then above 2 * pi (this could be
+something that I want to express).
 
 00:19:40,260 --> 00:19:46,180
 Now given what we know about the order of
@@ -997,7 +1000,8 @@ So, the ideal way to write this would be something
 like this, which is both shorter and has some
 
 00:19:58,990 --> 00:20:02,680
-additional benefits like predictable exhaustiveness.
+additional benefits like
+predictable exhaustiveness.
 
 00:20:02,680 --> 00:20:04,130
 What is the difference here?
@@ -1010,31 +1014,31 @@ In the second condition, it isn't required
 to check that t is greater than pi, because
 
 00:20:13,870 --> 00:20:18,760
-we know the second line will only be checked
-if this first line didn't hold.
+we know the second line will only be
+checked if this first line didn't hold.
 
 00:20:18,760 --> 00:20:24,090
-So, we will only reach the second line if
-the first condition wasn't true.
+So, we will only reach the second line
+if the first condition wasn't true.
 
 00:20:24,090 --> 00:20:30,300
-And since these are floating-point numbers,
-we really know that if t is not less than or equal
+And since these are floating-point numbers, we
+really know that if t is not less than or equal
 
 00:20:30,300 --> 00:20:32,590
 to pi, then t will be greater than pi.
 
 00:20:32,590 --> 00:20:36,830
-So, actually, in this guard here, this check
-is redundant in that sense.
+So, actually, in this guard here,
+this check is redundant in that sense.
 
 00:20:36,830 --> 00:20:43,460
 That is because, anyway, we reach the second
 line only if this first one was not valid.
 
 00:20:43,460 --> 00:20:50,380
-And somewhat similarly, we can argue that
-in the last line we don't have to check this,
+And somewhat similarly, we can argue that in
+the last line we don't have to check this,
 
 00:20:50,380 --> 00:20:55,680
 because if this wouldn't be true, then we
@@ -1055,8 +1059,8 @@ redundant checks by exploiting the order and
 what we know about exhaustiveness.
 
 00:21:20,220 --> 00:21:26,330
-And in some way, I would argue that we also
-made the definition more readable.
+And in some way, I would argue that we
+also made the definition more readable.
 
 00:21:26,330 --> 00:21:31,520
 So, you might try to apply strategies like
@@ -1067,8 +1071,8 @@ have complex conditions like above.
 
 66 # slide
 00:21:37,420 --> 00:21:43,290
-Let us look at a few more examples and different
-ways of writing definitions.
+Let us look at a few more examples and
+different ways of writing definitions.
 
 00:21:43,290 --> 00:21:49,570
 So far, we have always considered the case
@@ -1078,8 +1082,8 @@ that we basically have one "function head",
 if you want, and then possibly several guards.
 
 00:21:52,230 --> 00:21:56,680
-Actually, we can also write several lines
-for a function definition.
+Actually, we can also write several
+lines for a function definition.
 
 00:21:56,680 --> 00:22:02,100
 So, instead of having "factorial n" and then
@@ -1101,16 +1105,16 @@ because it is always true),
 computes n * factorial (n – 1).
 
 00:22:16,640 --> 00:22:19,890
-So, this would be equivalent to the versions
-we have seen before.
+So, this would be equivalent to
+the versions we have seen before.
 
 00:22:19,890 --> 00:22:24,790
-Why would we even do this (to write this several
-times)?
+Why would we even do this (to
+write this several times)?
 
 00:22:24,790 --> 00:22:30,750
-Well, thanks to the top-down evaluation order,
-regarding selecting cases, we can then,
+Well, thanks to the top-down evaluation
+order, regarding selecting cases, we can then,
 
 00:22:30,750 --> 00:22:33,240
 for example, write it also like this.
@@ -1130,8 +1134,8 @@ it has the same semantics as what we have
 written up here.
 
 00:22:49,420 --> 00:22:54,920
-It's also, of course again, vulnerable to
-changes of the order.
+It's also, of course again,
+vulnerable to changes of the order.
 
 00:22:54,920 --> 00:22:59,750
 So, if we change orders here, then that might
@@ -1141,23 +1145,23 @@ completely change what is computed, or whether
 it terminates.
 
 00:23:01,630 --> 00:23:09,540
-Another syntactic option is something like
-a check like this: factorial n under the condition
+Another syntactic option is something like a
+check like this: factorial n under the condition
 
 00:23:09,540 --> 00:23:11,880
 that n equals zero, is something.
 
 00:23:11,880 --> 00:23:15,060
-This condition "n == 0" in mathematics, you
-would write differently.
+This condition "n == 0" in mathematics,
+you would write differently.
 
 00:23:15,060 --> 00:23:17,270
 You would simply say: factorial of zero is
 one.
 
 00:23:17,270 --> 00:23:21,130
-Instead of saying: factorial of n, if that
-equals zero, is one.
+Instead of saying: factorial of
+n, if that equals zero, is one.
 
 00:23:21,130 --> 00:23:24,210
 Then we can write the first line also like
@@ -1168,8 +1172,8 @@ And then, it really pays off that we write
 several lines instead of relying on guards.
 
 00:23:28,740 --> 00:23:34,470
-Here, we say: factorial of zero is one, and
-factorial of n is this.
+Here, we say: factorial of zero is
+one, and factorial of n is this.
 
 00:23:34,470 --> 00:23:41,460
 And since we check from top to bottom, actually
@@ -1183,8 +1187,8 @@ And this is now again something that you would
 also find similarly written in a textbook
 
 00:23:49,760 --> 00:23:52,520
-definition (in mathematics) of the factorial
-function.
+definition (in mathematics)
+of the factorial function.
 
 00:23:52,520 --> 00:23:57,750
 It says: factorial 0 is this and factorial
@@ -1209,8 +1213,8 @@ So, let's look at another example, where we
 have several input values and then we also
 
 00:24:19,080 --> 00:24:28,650
-mix this kind of guard style and matching-against-constants
-style.
+mix this kind of guard style and
+matching-against-constants style.
 
 67 # slide
 00:24:28,650 --> 00:24:29,830
@@ -1221,11 +1225,12 @@ This is the Ackermann function that you might
 know from your lecture on complexity theory.
 
 00:24:37,930 --> 00:24:40,000
-And even if you don't, it is not really important.
+And even if you don't, it
+is not really important.
 
 00:24:40,000 --> 00:24:43,530
-It's a function that has some interesting
-and complex conditions.
+It's a function that has some
+interesting and complex conditions.
 
 00:24:43,530 --> 00:24:45,220
 So, it has different base cases.
@@ -1238,8 +1243,8 @@ but there are also some conditions on the
 other input in each case.
 
 00:24:53,540 --> 00:24:58,520
-You can express both, the matching against
-the constant, but also the additional condition
+You can express both, the matching against the
+constant, but also the additional condition
 
 00:24:58,520 --> 00:25:00,450
 on the other input.
@@ -1255,12 +1260,12 @@ on the second argument, and some explicitly
 formulated constraints on the first input.
 
 00:25:11,510 --> 00:25:18,480
-And there is also a case where we have numeric
-checks on both inputs.
+And there is also a case where we
+have numeric checks on both inputs.
 
 00:25:18,480 --> 00:25:22,600
-Then in each case, we have some expression
-that needs to be computed.
+Then in each case, we have some
+expression that needs to be computed.
 
 00:25:22,600 --> 00:25:26,200
 It doesn't really matter what the function
@@ -1295,8 +1300,8 @@ You might want to take a look at the warnings
 and try to interpret them to see how far
 
 00:25:57,390 --> 00:26:03,370
-the compiler has managed to analyze this program
-and the different cases that occur here.
+the compiler has managed to analyze this
+program and the different cases that occur here.
 
 68 # slide
 00:26:03,370 --> 00:26:08,440
@@ -1309,8 +1314,8 @@ Let us actually return to some general remarks.
 And this will be almost the end of this video.
 
 00:26:16,290 --> 00:26:21,810
-So, let's recap what the general rules for
-function definitions are.
+So, let's recap what the general
+rules for function definitions are.
 
 00:26:21,810 --> 00:26:23,110
 We can have one or more equations.
@@ -1319,8 +1324,8 @@ We can have one or more equations.
 We started with one.
 
 00:26:24,110 --> 00:26:27,580
-But now we have seen that we can have several
-equations for one function.
+But now we have seen that we can have
+several equations for one function.
 
 00:26:27,580 --> 00:26:29,910
 And they will be checked from top to bottom.
@@ -1336,8 +1341,8 @@ factorial function.
 There can be one or more arguments.
 
 00:26:43,810 --> 00:26:49,290
-So far, these arguments will be variable names
-on which maybe you want to express some conditions
+So far, these arguments will be variable names on
+which maybe you want to express some conditions
 
 00:26:49,290 --> 00:26:55,990
 via guards, or they can be constants like
@@ -1362,16 +1367,16 @@ And then, in order not to have the compiler
 complain that we named a variable that we
 
 00:27:13,560 --> 00:27:18,510
-are not using, we can use the "_" as a variable
-that we will never use.
+are not using, we can use the "_" as
+a variable that we will never use.
 
 00:27:18,510 --> 00:27:25,300
-This will be useful, as you will see on the
-next slide.
+This will be useful, as you
+will see on the next slide.
 
 00:27:25,300 --> 00:27:28,200
-Inside one equation, the variable names have
-to be unique.
+Inside one equation, the variable
+names have to be unique.
 
 00:27:28,200 --> 00:27:33,390
 So, as we saw a few slides back, we can have
@@ -1381,20 +1386,20 @@ two equations for factorial with the same
 variable name, but these are different equations.
 
 00:27:35,870 --> 00:27:39,300
-In one equation, we can't have TWICE THE SAME
-variable name.
+In one equation, we can't have
+TWICE THE SAME variable name.
 
 00:27:39,300 --> 00:27:42,420
-We can't have ackermann of n and n
-(ackermann n n).
+We can't have ackermann of
+n and n (ackermann n n).
 
 00:27:42,420 --> 00:27:46,630
-We can have ackermann of n and m, but not
-ackermann of n and n.
+We can have ackermann of n and
+m, but not ackermann of n and n.
 
 00:27:46,630 --> 00:27:50,260
-Because in one line, in one equation, the
-variable names must be unique.
+Because in one line, in one equation,
+the variable names must be unique.
 
 00:27:50,260 --> 00:27:53,290
 This does not apply to anonymous variables.
@@ -1430,8 +1435,8 @@ kind that people sometimes write in mathematics
 for all even integers, so they say: f(2*n)=
 
 00:28:39,140 --> 00:28:41,400
-...); but this is not something that Haskell
-would accept.
+...); but this is not something
+that Haskell would accept.
 
 00:28:41,400 --> 00:28:46,520
 Because then, Haskell would have to work out
@@ -1455,8 +1460,8 @@ So, in these argument positions, we can have
 simple things, like constants, variable names,
 
 00:29:03,000 --> 00:29:09,070
-later also some patterns over datatypes,
-but not something like an arithmetic expression
+later also some patterns over datatypes, but
+not something like an arithmetic expression
 
 00:29:09,070 --> 00:29:12,080
 of arbitrary kind, like 2 * n.
@@ -1472,8 +1477,8 @@ to take for a certain input situation.
 This is just a side remark.
 
 00:29:28,830 --> 00:29:33,350
-Let me actually finish by, mainly, showing
-an example for this.
+Let me actually finish by, mainly,
+showing an example for this.
 
 00:29:33,350 --> 00:29:35,100
 What do I mean by anonymous variables?
@@ -1486,24 +1491,24 @@ And why are they useful?
 Well, let's consider this example.
 
 00:29:42,020 --> 00:29:50,720
-So, let's say we want to define the logic operations
-on the Boolean type.
+So, let's say we want to define the
+logic operations on the Boolean type.
 
 00:29:50,720 --> 00:29:53,410
-We could say "not True = False" and "not False
-= True".
+We could say "not True =
+False" and "not False = True".
 
 00:29:53,410 --> 00:29:58,860
 But actually, in the second line, we don't
 have to write "not False = True", because
 
 00:29:58,860 --> 00:30:04,040
-the only thing that can be here would be "False",
-because "True" is already handled.
+the only thing that can be here would be
+"False", because "True" is already handled.
 
 00:30:04,040 --> 00:30:10,220
-Then we could say: Well, let's write "not
-x = True", so using a variable named x here.
+Then we could say: Well, let's write "not x
+= True", so using a variable named x here.
 
 00:30:10,220 --> 00:30:14,610
 But this also would not be so nice, because
@@ -1514,69 +1519,70 @@ And with certain settings, the compiler would
 even complain that you introduce a variable
 
 00:30:18,800 --> 00:30:22,520
-x, but then in the scope you don't even make
-use of the x.
+x, but then in the scope you
+don't even make use of the x.
 
 00:30:22,520 --> 00:30:25,600
-And then the solution is "_", which basically
-says "I don't care".
+And then the solution is "_", which
+basically says "I don't care".
 
 00:30:25,600 --> 00:30:30,860
 So, "not" of "True" is "False", and "not" of
 whatever is "True", which, given the order
 
 00:30:30,860 --> 00:30:34,140
-in which it is evaluated, is a perfect definition.
+in which it is evaluated,
+is a perfect definition.
 
 00:30:34,140 --> 00:30:37,450
 And it's also very intuitively written.
 
 00:30:37,450 --> 00:30:41,200
-And similarly, you could proceed for other
-logical operations.
+And similarly, you could proceed
+for other logical operations.
 
 00:30:41,200 --> 00:30:46,790
-So, let's say, for example, we want to implement
-the conjunction of Boolean values.
+So, let's say, for example, we want to
+implement the conjunction of Boolean values.
 
 00:30:46,790 --> 00:30:51,380
 Then we could say: "True and True is True",
 and we could write three cases like "True
 
 00:30:51,380 --> 00:30:55,150
-and False is False", "False and True is False",
-and "False and False is False".
+and False is False", "False and True is
+False", and "False and False is False".
 
 00:30:55,150 --> 00:30:59,970
 But why should we do this if we can also
 say: "whatever and whatever is False", given
 
 00:30:59,970 --> 00:31:03,060
-that "True and True" has already been checked
-by the first line?
+that "True and True" has already
+been checked by the first line?
 
 00:31:03,060 --> 00:31:09,070
-Then this very compactly defines how conjunction
-works.
+Then this very compactly
+defines how conjunction works.
 
 00:31:09,070 --> 00:31:14,490
 And similarly, we could use a different style.
 
 00:31:14,490 --> 00:31:20,040
-We could say: "b and True is b" and "whatever
-and whatever is False".
+We could say: "b and True is b" and
+"whatever and whatever is False".
 
 00:31:20,040 --> 00:31:23,040
 Then we would handle two cases in the first
 line.
 
 00:31:23,040 --> 00:31:32,260
-It is maybe a matter of taste, a bit, which
-of these two versions to choose.
+It is maybe a matter of taste, a bit,
+which of these two versions to choose.
 
 00:31:32,260 --> 00:31:35,660
-It's not really important for your exercise
-tasks.
+It's not really important
+for your exercise tasks.
 
 00:31:35,660 --> 00:31:41,820
 In reality, there is a slight difference between

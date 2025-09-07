@@ -45,8 +45,8 @@ operational semantics is also considered.
 Because they are not exactly equivalent.
 
 00:01:03,520 --> 00:01:08,400
-They are different from the situation of Haskell
-where notational semantics, the
+They are different from the situation of
+Haskell where notational semantics, the
 
 00:01:09,040 --> 00:01:13,440
 mathematical thinking and meaning,
@@ -97,8 +97,8 @@ So, non-logical features that Prolog
 has that we will not consider in the
 
 00:02:00,080 --> 00:02:06,000
-course are also outside the domain, outside the
-reach of this Herbrand model semantics.
+course are also outside the domain, outside
+the reach of this Herbrand model semantics.
 
 00:02:06,720 --> 00:02:10,000
 Okay, so this is one downside of that semantics.
@@ -200,12 +200,12 @@ So, in particular for those programs
 where both semantics are applicable.
 
 00:03:52,880 --> 00:03:56,480
-So, if you do not use the non-logical
-features, then
+So, if you do not use the
+non-logical features, then
 
 00:03:57,040 --> 00:04:05,920
-one could state as a theorem how
-these two semantics relate.
+one could state as a theorem
+how these two semantics relate.
 
 00:04:06,480 --> 00:04:10,160
 And well, this relation is
@@ -290,8 +290,8 @@ And indeed, the first motivating example
 for why we want operational semantics will
 
 00:05:39,040 --> 00:05:45,680
-really depend on, and will be related
-to, this observation in the last item here.
+really depend on, and will be related to,
+this observation in the last item here.
 
 47 # slide
 00:05:50,160 --> 00:05:56,000
@@ -362,8 +362,8 @@ Yes, a small database of connections supposedly
 of direct flights in the first four lines.
 
 00:07:26,480 --> 00:07:34,480
-So, for some city constant, we say that there
-are direct connections, direct flights.
+So, for some city constant, we say that
+there are direct connections, direct flights.
 
 00:07:34,480 --> 00:07:37,520
 And then we have a predicate that defines
@@ -398,20 +398,20 @@ So, that's a useful definition.
 And we can use it with some queries.
 
 00:08:08,480 --> 00:08:11,600
-So, we can ask whether there is
-a connection from Frankfurt to Maui.
+So, we can ask whether there is a
+connection from Frankfurt to Maui.
 
 00:08:11,600 --> 00:08:17,680
 And then by combining this, it would be basically
 computing the transitive closure of the direct
 
 00:08:17,680 --> 00:08:22,880
-relationship. Prolog finds
-that yes, there is such a connection.
+relationship. Prolog finds that
+yes, there is such a connection.
 
 00:08:23,600 --> 00:08:29,200
-You could also have a variable X and ask whether that is
-anything that you can reach from San Francisco.
+You could also have a variable X and ask whether that
+is anything that you can reach from San Francisco.
 
 00:08:29,200 --> 00:08:33,360
 And actually, what is reachable from San
@@ -422,7 +422,8 @@ And the answers will be that, well,
 there is a connection to Honolulu,
 
 00:08:36,720 --> 00:08:39,520
-there's a connection to Maui, but no further ones.
+there's a connection to
+Maui, but no further ones.
 
 00:08:39,520 --> 00:08:45,200
 And again, this could be worked out
@@ -437,7 +438,8 @@ And the answer is no, because there's
 no direct connection, as we can see.
 
 00:08:52,960 --> 00:08:55,440
-And then there can also be no indirect connection.
+And then there can also
+be no indirect connection.
 
 00:08:56,400 --> 00:09:03,120
 Okay, so what we see here can be explained
@@ -477,8 +479,8 @@ Because there's a connection between San
 Francisco and Honolulu, as a literal.
 
 00:09:49,280 --> 00:09:51,520
-There is a connection between
-San Francisco and Maui, as a literal.
+There is a connection between San
+Francisco and Maui, as a literal.
 
 00:09:51,520 --> 00:09:57,200
 And there are no other literals with San
@@ -527,12 +529,12 @@ positions of
 direct and connection, right?
 
 00:10:47,520 --> 00:10:51,840
-Previously, it was said that there must be a
-direct flight from x to z and a connection from z to y.
+Previously, it was said that there must be a direct
+flight from x to z and a connection from z to y.
 
 00:10:51,840 --> 00:10:56,640
-Now I'm saying that there must be a
-connection from x to z and a direct flight from z to y.
+Now I'm saying that there must be a connection
+from x to z and a direct flight from z to y.
 
 00:10:56,640 --> 00:11:00,720
 Logically, in terms of the meaning of this
@@ -554,8 +556,8 @@ gets an error, a runtime error, okay?
 So, something has gone wrong.
 
 00:11:15,920 --> 00:11:22,000
-I made an innocent change, but the
-behavior of the program is now very bad, okay?
+I made an innocent change, but the behavior
+of the program is now very bad, okay?
 
 00:11:22,800 --> 00:11:29,840
 This also means that these logical operations,
@@ -573,27 +575,27 @@ clauses and that would correspond to an
 error because previously we said that several
 
 00:11:45,520 --> 00:11:51,840
-clauses correspond to a conjunction of
-statements, or by simply switching the order here.
+clauses correspond to a conjunction of statements,
+or by simply switching the order here.
 
 00:11:52,480 --> 00:11:57,920
-Logically, this would mean from A or B, I made B
-or A, that shouldn't really make a difference.
+Logically, this would mean from A or B, I made
+B or A, that shouldn't really make a difference.
 
 00:11:57,920 --> 00:12:01,440
 And similarly, also when the rules of connection
 
 00:12:01,440 --> 00:12:07,200
-and direct are changed here, that could be
-seen as something like an “and”.
+and direct are changed here, that could
+be seen as something like an “and”.
 
 00:12:07,200 --> 00:12:14,960
 Or it's not exactly just switching the two
 parts here, but anyway it's strange that
 
 00:12:14,960 --> 00:12:22,240
-this would have such a big impact where "and" is a
-logical operation and it should be commutative.
+this would have such a big impact where "and" is
+a logical operation and it should be commutative.
 
 00:12:23,120 --> 00:12:23,520
 Okay?
@@ -620,8 +622,8 @@ Yes.
 So, this program here has the exact same
 
 00:12:46,160 --> 00:12:51,760
-smallest Herbrand model as the previous
-program, but the behavior is completely different.
+smallest Herbrand model as the previous program,
+but the behavior is completely different.
 
 00:12:51,760 --> 00:12:53,840
 So, something is going on.
@@ -674,8 +676,8 @@ Yes, x + 0 = x and x plus the successor of something
 is the successor of something else if x and the
 
 00:14:01,680 --> 00:14:06,960
-other thing of which I took a successor of here is
-the thing from which this is the successor.
+other thing of which I took a successor of here
+is the thing from which this is the successor.
 
 00:14:06,960 --> 00:14:09,520
 Okay, so this makes mathematically perfect sense.
@@ -706,15 +708,16 @@ Defining subtraction in terms of addition.
 Okay, so all is fine.
 
 00:14:33,040 --> 00:14:37,520
-Logically, these both are equally useful programs.
+Logically, these both are
+equally useful programs.
 
 00:14:39,200 --> 00:14:45,760
 However, that might change when we look
 at instantiations on queries, right?
 
 00:14:45,760 --> 00:14:53,280
-So, for example, here we can run 2 - 1,
-and we get a useful result: 1.
+So, for example, here we can run 2
+- 1, and we get a useful result: 1.
 
 00:14:53,280 --> 00:14:54,080
 Okay, that's good.
@@ -738,8 +741,8 @@ Okay, so what will happen?
 Nothing very useful.
 
 00:15:13,920 --> 00:15:20,320
-Above here, we had this result repeated from an
-earlier slide, but what's happens down here?
+Above here, we had this result repeated from
+an earlier slide, but what's happens down here?
 
 00:15:20,960 --> 00:15:26,400
 Where instead of getting a nice solution
@@ -805,8 +808,8 @@ Yes, once we have an addition, definitely we can
 also define multiplication; 0 * something is 0.
 
 00:16:44,260 --> 00:16:53,600
-And s(x) * y is z if we can easily work out by
-multiplying X and Y to U, and then adding
+And s(x) * y is z if we can easily work out
+by multiplying X and Y to U, and then adding
 
 00:16:54,320 --> 00:16:58,720
 Y again, you actually get
@@ -848,12 +851,12 @@ don't have to commit whether we want
 to go forward or backward, right?
 
 00:17:38,880 --> 00:17:43,600
-Just as we did for addition earlier,
-however, there is also a very strange situation.
+Just as we did for addition earlier, however,
+there is also a very strange situation.
 
 00:17:43,600 --> 00:17:48,160
-So, with this very same definition,
-we might also ask ourselves, or Prolog,
+So, with this very same definition, we
+might also ask ourselves, or Prolog,
 
 00:17:48,880 --> 00:17:52,320
 what two things do we have to
@@ -910,8 +913,8 @@ One way to put it here is to say that
 multiplication supports the so-called call mode;
 
 00:18:55,840 --> 00:19:06,080
-+X, +Y, ?Z and +X, ?Y, +Z. So, this is a way
-in Prolog libraries document so that,
++X, +Y, ?Z and +X, ?Y, +Z. So, this is a
+way in Prolog libraries document so that,
 
 00:19:06,080 --> 00:19:09,280
 for example, multiplication can
@@ -943,8 +946,8 @@ there's also one that won’t work,
 at least not nicely, right?
 
 00:19:32,000 --> 00:19:35,040
-So, for example, here we see that we can’t
-in general
+So, for example, here we
+see that we can’t in general
 
 00:19:35,920 --> 00:19:45,040
 use this predicate by providing the third argument
@@ -1029,8 +1032,8 @@ so that the multiplication function
 will also work in this flexible way.
 
 00:21:18,000 --> 00:21:23,120
-And again, the declarative semantics can't explain
-this or can't help us. We really need
+And again, the declarative semantics can't
+explain this or can't help us. We really need
 
 00:21:23,120 --> 00:21:27,600
 to have an insight into the operational
@@ -1058,7 +1061,8 @@ understanding how it will be executed.
 
 53 # slide
 00:21:58,720 --> 00:22:05,200
-And as a final example here for what is strange or
+And as a final example
+here for what is strange or
 
 00:22:06,080 --> 00:22:10,880
 highly declarative semantics, it's not enough
@@ -1102,15 +1106,16 @@ constraint first, to the front of this
 right side of this loves-rule, okay?
 
 00:22:53,600 --> 00:22:55,360
-Again, logically that shouldn't make a difference.
+Again, logically that
+shouldn't make a difference.
 
 00:22:55,360 --> 00:23:01,840
 If the comma is really a logical “and”. And
 “and” as we know, is a commutative operation,
 
 00:23:01,840 --> 00:23:06,160
-then it shouldn’t make a difference whether
-this is put here or here or actually at the front.
+then it shouldn’t make a difference whether this
+is put here or here or actually at the front.
 
 00:23:06,960 --> 00:23:10,560
 However, this logical reading apparently is not
@@ -1146,8 +1151,8 @@ we don't get any results.
 Nobody is jealous, right?
 
 00:23:42,640 --> 00:23:48,080
-That's not what we understood this
-conceptualization to mean.
+That's not what we understood
+this conceptualization to mean.
 
 00:23:48,080 --> 00:23:50,960
 Indeed, before this change,
@@ -1262,8 +1267,8 @@ The slides in the Moodle course from
 Professor König's lecture. But the first two
 
 00:25:50,880 --> 00:25:56,800
-actually are there, just the concepts, also
-occurring in the last Logik lecture.
+actually are there, just the concepts,
+also occurring in the last Logik lecture.
 
 00:25:56,800 --> 00:26:08,080
 I will provide some repetition on this, but I will

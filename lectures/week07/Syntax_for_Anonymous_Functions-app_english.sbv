@@ -7,8 +7,8 @@ functions on lists, it would probably be good to
 make another whiteboard style video where I again,
 
 0:00:15.840,0:00:21.200
-briefly talk about the syntax of function
-definitions, in particular anonymous functions, sections
+briefly talk about the syntax of function definitions,
+in particular anonymous functions, sections
 
 0:00:21.200,0:00:26.720
 that we could then pass on to those
@@ -22,8 +22,8 @@ the slides in the previous video,
 maybe they didn't work so nicely in all cases.
 
 0:00:36.160,0:00:40.800
-Also because of my technical
-problems, so I'm back to this setup here.
+Also because of my technical problems,
+so I'm back to this setup here.
 
 0:00:40.800,0:00:43.520
 And well, what I'm going to
@@ -83,15 +83,16 @@ the lambda would look like this.
 But as you have seen on the slides, in
 
 0:01:45.520,0:01:49.440
-ASCII syntax, we use the backslash
-for this, instead of the lambda symbol.
+ASCII syntax, we use the backslash for
+this, instead of the lambda symbol.
 
 0:01:49.440,0:01:54.320
 But when I write it down, I will sometimes
 write the explicit Greek lambda for this.
 
 0:01:55.280,0:01:59.360
-So, that's why it's called lambda expressions/abstractions.
+So, that's why it's called
+lambda expressions/abstractions.
 
 0:01:59.360,0:02:03.440
 So, we could have written this line
@@ -106,15 +107,16 @@ right-hand side directly in some function call
 where we otherwise would pass the 'newFunction'.
 
 0:02:15.680,0:02:19.360
-So, let's say we have somewhere a function call 'f'.
+So, let's say we have
+somewhere a function call 'f'.
 
 0:02:19.360,0:02:24.960
-And then it needs an argument, which is a function
-from Int to Int, and we could have
+And then it needs an argument, which is a
+function from Int to Int, and we could have
 
 0:02:25.840,0:02:31.760
-passed a new function as
-an argument to that other function 'f'.
+passed a new function as an
+argument to that other function 'f'.
 
 0:02:31.760,0:02:33.680
 Or we could also write 'f'.
@@ -131,8 +133,8 @@ Okay, and the important thing here is that here, we
 need these brackets around the lambda expression,
 
 0:02:51.760,0:02:54.880
-we don't need this here
-in the definition line as above.
+we don't need this here in
+the definition line as above.
 
 0:02:55.680,0:03:01.040
 And if you pass it as an argument to some other
@@ -142,8 +144,8 @@ function, we usually have to use these parentheses.
 Why?
 
 0:03:01.680,0:03:04.160
-Because, for example, there could be
-another argument later on, right?
+Because, for example, there could
+be another argument later on, right?
 
 0:03:04.160,0:03:06.320
 So, maybe 'f' takes more than one argument.
@@ -153,7 +155,8 @@ And then we need to know
 basically what the scope is.
 
 0:03:10.080,0:03:12.560
-So, this introduces a variable x, what's the scope?
+So, this introduces a
+variable x, what's the scope?
 
 0:03:12.560,0:03:18.800
 Well, in a place like this, it's until the end
@@ -210,8 +213,8 @@ So, we had some things like "smaller
 than five" as a predicate, for example,
 
 0:04:09.440,0:04:15.680
-you could also have this or maybe something like
-this: > 0.5. So, this would be
+you could also have this or maybe something
+like this: > 0.5. So, this would be
 
 0:04:15.680,0:04:21.200
 the section syntax because we apply this
@@ -228,16 +231,16 @@ Let me also write this now with brackets
 inside a lambda abstraction.
 
 0:04:35.280,0:04:41.920
-And inside the lambda abstraction, this would
-be the same as an anonymous function which takes
+And inside the lambda abstraction, this would be
+the same as an anonymous function which takes
 
 0:04:41.920,0:04:51.200
-an argument and then computes x > 0.5.
-And if you use a section the other way around,
+an argument and then computes x > 0.5. And
+if you use a section the other way around,
 
 0:04:51.200,0:04:55.840
-where we provide the left-hand side, the
-left arguments…. So, if you had instead written
+where we provide the left-hand side, the left
+arguments…. So, if you had instead written
 
 0:04:56.400,0:05:07.200
 “0.5 >” and used this as our new function,
@@ -289,16 +292,16 @@ But operations that work semantically on
 functions in mathematics can also be used here.
 
 0:06:08.000,0:06:13.040
-And the most well-known,
-I think, is function composition, right?
+And the most well-known, I think,
+is function composition, right?
 
 0:06:13.040,0:06:17.200
 So, if in mathematics, you have functions,
 and the domain and co-domain of two functions
 
 0:06:17.200,0:06:21.920
-agree in a certain way, then you can
-compose them. You should know
+agree in a certain way, then you
+can compose them. You should know
 
 0:06:22.960,0:06:28.080
 from your discrete mathematics course, for
@@ -317,12 +320,12 @@ and f is a function from natural numbers
 to real numbers, for example, then you can
 
 0:06:52.320,0:07:02.320
-make from this: “function f compose g”, which
-goes from the rationals to the reals,
+make from this: “function f compose g”,
+which goes from the rationals to the reals,
 
 0:07:02.320,0:07:07.360
-because basically, a rational number comes
-in, a natural number comes out, and then this,
+because basically, a rational number comes in,
+a natural number comes out, and then this,
 
 0:07:07.360,0:07:13.440
 via composition, is passed to the second
@@ -333,8 +336,8 @@ Okay, that's a typical operation
 on functions in mathematics.
 
 0:07:17.840,0:07:22.000
-And well, the same is possible in Haskell,
-of course, we don't use this
+And well, the same is possible in
+Haskell, of course, we don't use this
 
 0:07:22.560,0:07:26.400
 strange or funny circle here,
@@ -345,7 +348,8 @@ And actually, we also need to
 think about these domain sets.
 
 0:07:31.920,0:07:33.600
-And of course, the function is polymorphic, right?
+And of course, the function
+is polymorphic, right?
 
 0:07:33.600,0:07:38.960
 I simply use the rationals, naturals, and real
@@ -373,8 +377,8 @@ these brackets. And what's its type?
 Well, it's very polymorphic.
 
 0:08:02.560,0:08:08.640
-So, it has some type variables b and c and the
-function between those types.
+So, it has some type variables b and c
+and the function between those types.
 
 0:08:08.640,0:08:11.840
 And there must be another
@@ -408,18 +412,19 @@ passes it to 'g', where 'g' is basically a function
 of this type, so we can give it an (a) value.
 
 0:08:51.120,0:08:55.200
-I have used the same term variable as
-the type variable here. That's, of course, not
+I have used the same term variable as the
+type variable here. That's, of course, not
 
 0:08:55.200,0:08:57.040
 forced, but I just did it like that.
 
 0:08:57.680,0:09:00.880
-If I apply 'g' to something of type (a), I get a (b),
+If I apply 'g' to something
+of type (a), I get a (b),
 
 0:09:01.440,0:09:07.840
-and (b) is something of type (b). It is something I can
-pass into the other function, the function 'f'.
+and (b) is something of type (b). It is something I
+can pass into the other function, the function 'f'.
 
 0:09:09.360,0:09:17.120
 Okay, so what I get here is 'f' of 'g' of 'a',

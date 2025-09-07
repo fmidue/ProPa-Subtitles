@@ -34,8 +34,8 @@ and you know what head and tail are.
 Now, how do we evaluate this?
 
 0:00:39.440,0:00:42.480
-Well, you could say, well, let's simply
-evaluate this 3 + 1 to 4.
+Well, you could say, well, let's
+simply evaluate this 3 + 1 to 4.
 
 0:00:42.480,0:00:43.440
 But that would be wrong.
@@ -44,8 +44,8 @@ But that would be wrong.
 Because we only want to evaluate on demand.
 
 0:00:47.120,0:00:49.680
-You only want to evaluate
-things that are needed, actually.
+You only want to evaluate things
+that are needed, actually.
 
 0:00:49.680,0:00:54.160
 And we can't tell this now upfront that
@@ -55,8 +55,8 @@ this will be eventually needed, this 4.
 Because maybe this 'f' discards that element.
 
 0:00:56.560,0:01:00.560
-And then we shouldn't compute 3 + 1
-is 4 if we are not going to use the thing.
+And then we shouldn't compute 3 + 1 is
+4 if we are not going to use the thing.
 
 0:01:00.560,0:01:02.400
 So, how do we instead proceed?
@@ -87,7 +87,8 @@ know whether that something
 is the empty list or not.
 
 0:01:24.240,0:01:27.840
-So, we will have to compute this 'f' of that list.
+So, we will have to compute
+this 'f' of that list.
 
 0:01:27.840,0:01:30.720
 Now if you look at the slide, the
@@ -105,8 +106,8 @@ So, it doesn't have a case for two element lists,
 but it has this case with the empty list or with
 
 0:01:40.160,0:01:43.280
-the cons constructor (':') between
-some variables x and xs.
+the cons constructor (':')
+between some variables x and xs.
 
 0:01:44.320,0:01:47.200
 Okay, so how do we proceed then here?
@@ -137,14 +138,15 @@ And what that then means is that we
 should apply 'g' to x, so to this 3,
 
 0:02:34.480,0:02:38.400
-and have cons (':') and 'f' applied to the rest of the list.
+and have cons (':') and 'f'
+applied to the rest of the list.
 
 0:02:39.440,0:02:41.840
 Right to this list.
 
 0:02:41.840,0:02:45.120
-And again, we don't evaluate the
-3 + 1 to 4 at this point.
+And again, we don't evaluate
+the 3 + 1 to 4 at this point.
 
 0:02:45.120,0:02:48.800
 Because we are not yet certain
@@ -180,7 +182,8 @@ Okay, should we maybe now compute g 3?
 No, we shouldn't.
 
 0:03:13.760,0:03:17.280
-Because the tail will actually just cut this part.
+Because the tail will
+actually just cut this part.
 
 0:03:17.280,0:03:21.360
 So, the tail of a non-empty list
@@ -194,19 +197,19 @@ the tail definition would look like this.
 So, this x is not used.
 
 0:03:31.680,0:03:35.680
-So, we shouldn't compute the g 3,
-that would be a superfluous computation.
+So, we shouldn't compute the g 3, that
+would be a superfluous computation.
 
 0:03:36.720,0:03:38.720
 That wouldn't be lazy, but we want to be lazy.
 
 0:03:40.640,0:03:47.200
-Okay, so instead, the tail of something
-rest list is the rest list.
+Okay, so instead, the tail of
+something rest list is the rest list.
 
 0:03:47.760,0:03:59.840
-So, at this point, we will simply
-project to this 'f' of this singleton list.
+So, at this point, we will simply project
+to this 'f' of this singleton list.
 
 0:04:00.400,0:04:01.440
 So, this is the next step.
@@ -247,11 +250,12 @@ we get a 'g' call on the first argument
 on the first element of that list.
 
 0:04:35.120,0:04:37.600
-And again, we don't compute the
-3 + 1 at this point,
+And again, we don't compute
+the 3 + 1 at this point,
 
 0:04:37.600,0:04:39.680
-because it's not yet clear that we will need this.
+because it's not yet clear
+that we will need this.
 
 0:04:40.880,0:04:43.040
 And what is the remainder of this call?
@@ -327,20 +331,20 @@ Well, we reduced this to 4.
 So, now we have to compute g 4.
 
 0:05:54.320,0:05:57.520
-Okay, look, again, at the
-definition of g, it tests two cases.
+Okay, look, again, at the definition
+of g, it tests two cases.
 
 0:05:57.520,0:05:59.920
 The first case doesn't match
 here, because we have a different
 
 0:05:59.920,0:06:04.960
-constant number in the first case
-of the 'g' call of the 'g' definition.
+constant number in the first case of
+the 'g' call of the 'g' definition.
 
 0:06:04.960,0:06:09.120
-So, we have to apply the second one and
-the second one is g n is n + 1.
+So, we have to apply the second one
+and the second one is g n is n + 1.
 
 0:06:09.760,0:06:11.040
 Okay, so now it is,

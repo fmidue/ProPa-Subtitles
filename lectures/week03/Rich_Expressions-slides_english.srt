@@ -240,7 +240,8 @@ functions, and they looked a bit different.
 I will come back to this later.
 
 00:04:51,040 --> 00:04:54,640
-That actually, for syntactical reasons, or reasons
+That actually, for syntactical
+reasons, or reasons
 
 00:04:54,640 --> 00:04:59,200
 about the organization of function application
@@ -470,7 +471,8 @@ case that you use CodeWorld online, or
 in other ways if you use it offline).
 
 00:09:23,680 --> 00:09:27,680
-The point is, the animationOf construct does this.
+The point is, the animationOf
+construct does this.
 
 00:09:27,680 --> 00:09:32,160
 It is a function which takes another function,
@@ -493,7 +495,8 @@ Also you, in the next exercise tasks.
 
 34 # slide
 00:09:52,480 --> 00:09:55,840
-The use of functions to describe dynamic behaviors
+The use of functions to
+describe dynamic behaviors
 
 00:09:55,840 --> 00:10:00,000
 shouldn't come as a surprise to
@@ -516,8 +519,8 @@ So, let's look at this case
 of, basically, throwing a ball.
 
 00:10:22,640 --> 00:10:28,240
-I think in physics schoolbooks,
-this would be called "parabolic throwing".
+I think in physics schoolbooks, this
+would be called "parabolic throwing".
 
 00:10:28,240 --> 00:10:30,640
 Where we throw something at a starting angle.
@@ -813,8 +816,8 @@ things throughout space,
 unlike time moving forward.
 
 00:16:11,360 --> 00:16:15,840
-So, for every point we simply have
-to say where our triangle is.
+So, for every point we simply
+have to say where our triangle is.
 
 00:16:16,640 --> 00:16:19,680
 Now, we maybe want to have a
@@ -840,8 +843,8 @@ The programmer could take our old 'scene' function,
 which given the parameter places the triangle at
 
 00:16:40,000 --> 00:16:45,520
-some point, and previously used this parameter
-in the 'animationOf' function to express movement.
+some point, and previously used this parameter in
+the 'animationOf' function to express movement.
 
 00:16:45,520 --> 00:16:47,760
 Now we could simply say: Let's instead make
@@ -870,8 +873,8 @@ And if you want to have ten copies of
 the triangle, then you would have to ask
 
 00:17:09,120 --> 00:17:13,520
-ten calls to this 'scene' function
-which draws one triangle.
+ten calls to this 'scene'
+function which draws one triangle.
 
 00:17:13,520 --> 00:17:15,920
 But that is not something you want
@@ -898,8 +901,8 @@ What would we do?
 That would probably take a for-loop.
 
 00:17:30,240 --> 00:17:36,400
-We would say we want ten copies
-of our call of the 'scene' function.
+We would say we want ten copies of
+our call of the 'scene' function.
 
 00:17:36,400 --> 00:17:42,320
 Then let's write a for-loop in which we use
@@ -930,7 +933,8 @@ in that way in a functional language.
 We don't have this.
 
 00:18:06,720 --> 00:18:09,040
-Well, then probably we should have something else.
+Well, then probably we
+should have something else.
 
 00:18:10,720 --> 00:18:12,880
 We want to be able to express this, of course.
@@ -1039,15 +1043,15 @@ They are this expression here, which is
 repeated here, a "list comprehension".
 
 00:19:57,440 --> 00:20:02,960
-Because it comprehensively describes several
-elements of the list at a time.
+Because it comprehensively describes
+several elements of the list at a time.
 
 00:20:02,960 --> 00:20:04,500
 And how does it do that?
 
 00:20:04,500 --> 00:20:07,410
-Well, it contains calls of the 'scene' function
-for some values.
+Well, it contains calls of the
+'scene' function for some values.
 
 00:20:07,410 --> 00:20:12,460
 And these values are drawn from some other
@@ -1057,12 +1061,12 @@ list.
 What it is saying, in a sense, precisely is:
 
 00:20:16,470 --> 00:20:27,479
-Let the d variable be taken from 0, 1, 2,
-3, 4, 5, so six calls (basically six copies);
+Let the d variable be taken from 0, 1, 2, 3,
+4, 5, so six calls (basically six copies);
 
 00:20:27,479 --> 00:20:34,170
-and for each of these values, call the 'scene' function,
-which will give one version of this moved
+and for each of these values, call the 'scene'
+function, which will give one version of this moved
 
 00:20:34,170 --> 00:20:40,830
 triangle; put them all into a list; pass that
@@ -1082,12 +1086,12 @@ six triangles at different places throughout
 the space of our coordinate system.
 
 00:20:56,410 --> 00:21:01,210
-So, in some sense, of course, this reminds
-us of a for-loop.
+So, in some sense, of course,
+this reminds us of a for-loop.
 
 00:21:01,210 --> 00:21:03,870
-You could say this is a for-loop, but it really
-isn't.
+You could say this is a
+for-loop, but it really isn't.
 
 00:21:03,870 --> 00:21:05,109
 And that's important for several reasons.
@@ -1096,20 +1100,20 @@ And that's important for several reasons.
 This is not a for-loop.
 
 00:21:07,190 --> 00:21:09,810
-For example, there really is not "one after
-another."
+For example, there really
+is not "one after another."
 
 00:21:09,810 --> 00:21:18,400
-So, it is not like: first draw this; then draw this;
-somehow put them into an order.
+So, it is not like: first draw this; then
+draw this; somehow put them into an order.
 
 00:21:18,400 --> 00:21:23,179
-What comes out here is a list of values, and
-these are completely independent.
+What comes out here is a list of values,
+and these are completely independent.
 
 00:21:23,179 --> 00:21:26,840
-None of them is computed before or after the
-other, mathematically.
+None of them is computed before or
+after the other, mathematically.
 
 00:21:26,840 --> 00:21:31,510
 Of course, on our sequential computer, they
@@ -1119,8 +1123,8 @@ will be evaluated in some order, but this
 is completely irrelevant for the values.
 
 00:21:33,309 --> 00:21:37,410
-Mathematically, it is just a list of, in this
-case, six values.
+Mathematically, it is just a list
+of, in this case, six values.
 
 00:21:37,410 --> 00:21:41,669
 And there is not a before- or after-notion,
@@ -1130,15 +1134,15 @@ which is, of course, the crucial notion for
 a for-loop.
 
 00:21:42,669 --> 00:21:45,059
-For a for-loop, you want to know whether it
-will work backwards or forwards.
+For a for-loop, you want to know whether
+it will work backwards or forwards.
 
 00:21:45,059 --> 00:21:46,730
 So, does it count up or down?
 
 00:21:46,730 --> 00:21:51,730
-These all are things that are important for
-a for-loop or any kind of loop in an imperative
+These all are things that are important for a
+for-loop or any kind of loop in an imperative
 
 00:21:51,730 --> 00:21:53,839
 language, but not for list comprehensions.
@@ -1147,16 +1151,16 @@ language, but not for list comprehensions.
 So, these are independent computations.
 
 00:21:56,690 --> 00:22:02,169
-There is also no effect, where somehow one
-iteration influences the next one.
+There is also no effect, where somehow
+one iteration influences the next one.
 
 00:22:02,169 --> 00:22:09,810
-So, the scene-call for the value, let's say
-d = 1, cannot have any effect on the "scene"-call
+So, the scene-call for the value, let's say d
+= 1, cannot have any effect on the "scene"-call
 
 00:22:09,810 --> 00:22:15,880
-for the value d = 4, no matter whether 4 occurs
-after or before 1 in this list.
+for the value d = 4, no matter whether
+4 occurs after or before 1 in this list.
 
 00:22:15,880 --> 00:22:20,870
 So, these are independent computations, whereas
@@ -1175,8 +1179,8 @@ could really have an impact on what happens
 in the fifth or sixth or whatever iteration.
 
 00:22:36,860 --> 00:22:42,859
-That's not something that happens here, because
-this is really like a mathematical set comprehension.
+That's not something that happens here, because this
+is really like a mathematical set comprehension.
 
 00:22:42,859 --> 00:22:47,490
 This notation that you know from mathematics:
@@ -1186,38 +1190,38 @@ Let me take the set of all "2 * n", where
 n comes from the natural numbers.
 
 00:22:50,070 --> 00:22:53,760
-This is what you should think of when you
-think about a list comprehension.
+This is what you should think of when
+you think about a list comprehension.
 
 00:22:53,760 --> 00:22:58,500
-It is also very close in syntax, and that's
-by design.
+It is also very close in
+syntax, and that's by design.
 
 00:22:58,500 --> 00:23:01,609
-So, you could think of this as the "element
-symbol".
+So, you could think of this
+as the "element symbol".
 
 00:23:01,609 --> 00:23:03,890
 So, d is an element of this list.
 
 00:23:03,890 --> 00:23:09,600
-And for each such element, I compute whatever
-is written here.
+And for each such element, I
+compute whatever is written here.
 
 00:23:09,600 --> 00:23:11,130
 Then I get different pictures.
 
 00:23:11,130 --> 00:23:16,070
-I put them into a list, just as here they
-are put into a set.
+I put them into a list, just as
+here they are put into a set.
 
 00:23:16,070 --> 00:23:19,880
-And that list, like here this set, is then
-what I pass on.
+And that list, like here this
+set, is then what I pass on.
 
 00:23:19,880 --> 00:23:24,499
-In this case, it is what is passed to the 'pictures' function,
-in order to combine my different pictures
+In this case, it is what is passed to the 'pictures'
+function, in order to combine my different pictures
 
 00:23:24,499 --> 00:23:27,490
 into one big one, which is then drawn.
@@ -1231,16 +1235,16 @@ after another).
 
 38 # slide
 00:23:39,499 --> 00:23:43,620
-To further explain list comprehensions: a
-few artificial examples.
+To further explain list comprehensions:
+a few artificial examples.
 
 00:23:43,620 --> 00:23:47,409
-Not about pictures, just numbers, pairs of
-numbers, etc.
+Not about pictures, just
+numbers, pairs of numbers, etc.
 
 00:23:47,409 --> 00:23:55,499
-Though, to start: something already shown
-on the previous slide was a notation for simply
+Though, to start: something already shown on
+the previous slide was a notation for simply
 
 00:23:55,499 --> 00:23:56,790
 having a list of values.
@@ -1259,8 +1263,8 @@ For example, one could get odd numbers by
 starting with 1, 3.. and then an upper bound.
 
 00:24:12,810 --> 00:24:17,050
-Then it would give all the odd numbers up
-to that number.
+Then it would give all the
+odd numbers up to that number.
 
 00:24:17,050 --> 00:24:21,089
 So, in this case, where the last number is
@@ -1270,19 +1274,19 @@ So, in this case, where the last number is
 stop at 9.
 
 00:24:22,089 --> 00:24:27,140
-And this could be used as one of the lists,
-for example, that you put into a list comprehension
+And this could be used as one of the lists, for
+example, that you put into a list comprehension
 
 00:24:27,140 --> 00:24:30,770
 (to draw values like d on the previous slide).
 
 00:24:30,770 --> 00:24:35,070
-Generally, these list comprehensions can have
-this form.
+Generally, these list
+comprehensions can have this form.
 
 00:24:35,070 --> 00:24:39,040
-Here we can see the parts that make up a list
-comprehension.
+Here we can see the parts that
+make up a list comprehension.
 
 00:24:39,040 --> 00:24:40,040
 In general, we have:
@@ -1308,8 +1312,8 @@ of the list comprehension.
 And here we have generators.
 
 00:25:01,920 --> 00:25:08,310
-Something like "x from this 1..10" would be
-a generator, because it generates new elements
+Something like "x from this 1..10" would be a
+generator, because it generates new elements
 
 00:25:08,310 --> 00:25:10,290
 for which you compute the body.
@@ -1328,8 +1332,8 @@ You have not seen this yet, but there is a
 function 'even' in Haskell, which takes a number
 
 00:25:21,420 --> 00:25:25,730
-and gives "true" if that number is even;
-otherwise it gives "false".
+and gives "true" if that number is
+even; otherwise it gives "false".
 
 00:25:25,730 --> 00:25:31,869
 So, what we are saying here is: For each x
@@ -1353,8 +1357,8 @@ And the results will be accumulated in the
 list.
 
 00:25:45,830 --> 00:25:50,799
-So, this will be square numbers of all the
-even numbers between 1 and 10.
+So, this will be square numbers of
+all the even numbers between 1 and 10.
 
 00:25:50,799 --> 00:25:55,160
 So: 2^2, 4^2, 6^2, 8^2, and 10^2.
@@ -1370,8 +1374,8 @@ this list of things, like generators and guards,
 we can also define local variables.
 
 00:26:08,570 --> 00:26:13,790
-So let's say that we want to do something
-that results in the same list, but in a different
+So let's say that we want to do something that
+results in the same list, but in a different
 
 00:26:13,790 --> 00:26:14,950
 way.
@@ -1384,8 +1388,8 @@ Let x be anything from 1 to 10 (so this will
 choose 1 to 10, one after the other, for x).
 
 00:26:23,929 --> 00:26:28,080
-Then, for each such x, we compute some auxiliary
-value.
+Then, for each such x, we
+compute some auxiliary value.
 
 00:26:28,080 --> 00:26:34,700
 So, we compute y from the x that we have drawn
@@ -1399,31 +1403,31 @@ So, what this is doing is that it takes all
 the numbers from 1 to 10, computes the squares,
 
 00:26:40,589 --> 00:26:43,630
-and checks whether the squares are divisible
-by 4.
+and checks whether the
+squares are divisible by 4.
 
 00:26:43,630 --> 00:26:47,440
-Which, of course, ends up with the same result
-as here.
+Which, of course, ends up
+with the same result as here.
 
 00:26:47,440 --> 00:26:52,260
 Because this will be exactly the squares of
 even numbers, because of course, the square
 
 00:26:52,260 --> 00:26:57,210
-is divisible by 4 exactly if the original
-number is even.
+is divisible by 4 exactly if
+the original number is even.
 
 00:26:57,210 --> 00:27:00,290
 But it just happens in this case.
 
 00:27:00,290 --> 00:27:05,839
-The point is that we can define local values
-in between and use them.
+The point is that we can define
+local values in between and use them.
 
 00:27:05,839 --> 00:27:10,060
-Another thing to notice in this example is
-this "==".
+Another thing to notice in
+this example is this "==".
 
 00:27:10,060 --> 00:27:12,670
 This is the equality operator.
@@ -1436,8 +1440,8 @@ So, this is defining y to be x^2, and this
 "==" is the operator which checks whether
 
 00:27:21,280 --> 00:27:30,730
-this call computing the modulo of y at division
-by 4 is equal to the value 0.
+this call computing the modulo of y at
+division by 4 is equal to the value 0.
 
 00:27:30,730 --> 00:27:38,760
 Then we can have cases where we not only have
@@ -1447,16 +1451,16 @@ several guards, but also have several generators.
 This happens here.
 
 00:27:40,360 --> 00:27:45,639
-Instead of having just one variable, like
-here, or one generator variable and one computed
+Instead of having just one variable, like here,
+or one generator variable and one computed
 
 00:27:45,639 --> 00:27:51,049
 auxiliary variable, we can actually have two
 variables which are drawn from generators.
 
 00:27:51,049 --> 00:27:57,339
-So, here we are saying: Let's take x from [1,
-2, 3] and also y from [1, 2, 3] and then compute
+So, here we are saying: Let's take x from [1, 2,
+3] and also y from [1, 2, 3] and then compute
 
 00:27:57,339 --> 00:28:00,250
 something like the product of x and y.
@@ -1481,8 +1485,8 @@ Once you have more than one variable in the
 body of a list comprehension, the question
 
 00:28:29,250 --> 00:28:34,729
-becomes: In which order are the things combined
-into a result list?
+becomes: In which order are the
+things combined into a result list?
 
 00:28:34,729 --> 00:28:40,109
 In the previous example with the multiplication,
@@ -1517,8 +1521,8 @@ And then we get all combinations where x has
 chosen the second element of its generator
 
 00:29:13,880 --> 00:29:19,159
-and this is combined with y being 4 and 5
-in these two elements, and so on.
+and this is combined with y being 4
+and 5 in these two elements, and so on.
 
 00:29:19,159 --> 00:29:22,410
 So, we get this list of results.
@@ -1532,8 +1536,8 @@ And the order in which it is output is by
 first making a choice for x, and then all
 
 00:29:36,880 --> 00:29:40,550
-possible choices for y, and then taking the
-next choice for x, etc.
+possible choices for y, and then
+taking the next choice for x, etc.
 
 00:29:40,550 --> 00:29:47,550
 This also means that if you change the order
@@ -1554,8 +1558,8 @@ Because now first the y is chosen, and then
 for each valid choice for y, for example for
 
 00:30:01,510 --> 00:30:05,909
-the choice "y is 4", we consider all choices
-for the x.
+the choice "y is 4", we
+consider all choices for the x.
 
 00:30:05,909 --> 00:30:09,190
 So, we get (1,4), (2,4), (3,4).
@@ -1582,8 +1586,8 @@ list of generators.
 This can also become more interesting.
 
 00:30:38,080 --> 00:30:41,300
-The generators themselves can depend on each
-other.
+The generators themselves
+can depend on each other.
 
 00:30:41,300 --> 00:30:47,979
 Or more precisely, a later generator list
@@ -1610,8 +1614,8 @@ also have the choice "1", because [1 .. 1]
 So, we only get (1,1).
 
 00:31:08,120 --> 00:31:12,219
-But for the choice "x is 2", we get that y
-is chosen from 1 to 2.
+But for the choice "x is 2", we
+get that y is chosen from 1 to 2.
 
 00:31:12,219 --> 00:31:13,229
 So, we get (2,1) and (2,2).
@@ -1627,8 +1631,8 @@ because we have different lists in this place.
 It wouldn't work the other way around.
 
 00:31:26,290 --> 00:31:31,250
-We couldn't mention y here, if y occurs as
-a later generator variable.
+We couldn't mention y here, if y
+occurs as a later generator variable.
 
 00:31:31,250 --> 00:31:38,410
 Of course, you could use y at this place,
@@ -1638,24 +1642,24 @@ because y is the first generator variable
 here.
 
 00:31:40,440 --> 00:31:43,300
-And this can become interesting also in different
-ways.
+And this can become interesting
+also in different ways.
 
 00:31:43,300 --> 00:31:49,260
-For example, you could also decide to actually
-pick x and y at once.
+For example, you could also decide
+to actually pick x and y at once.
 
 00:31:49,260 --> 00:31:52,039
-For this, we actually have to have a list
-of pairs here.
+For this, we actually have to
+have a list of pairs here.
 
 00:31:52,039 --> 00:31:56,210
 So, you also see here: It doesn't just work
 for numbers (actually, we have seen it before
 
 00:31:56,210 --> 00:31:59,649
-in the context of pictures), but it also works
-for other datatypes in Haskell.
+in the context of pictures), but it also
+works for other datatypes in Haskell.
 
 00:31:59,649 --> 00:32:00,979
 So, let's say we take strings.
@@ -1665,8 +1669,8 @@ If you have a list of pairs of strings, then
 we could also have a generator expression
 
 00:32:05,490 --> 00:32:12,580
-which says "let me pick all the (x,y) pairs
-from this list".
+which says "let me pick all the
+(x,y) pairs from this list".
 
 00:32:12,580 --> 00:32:17,250
 And then, of course, we wouldn't get a Cartesian
@@ -1676,8 +1680,8 @@ product as above (where every choice for
 this is combined with every choice for that).
 
 00:32:19,070 --> 00:32:23,880
-Now here, what we say, is: The first choices
-x and y are this and this.
+Now here, what we say, is: The first
+choices x and y are this and this.
 
 00:32:23,880 --> 00:32:25,779
 And then we collect their concatenation.
@@ -1686,8 +1690,8 @@ And then we collect their concatenation.
 That's what this symbol does.
 
 00:32:26,779 --> 00:32:29,330
-So, we concatenate "a" and "b", which gives
-the string "ab".
+So, we concatenate "a" and "b",
+which gives the string "ab".
 
 00:32:29,330 --> 00:32:32,080
 And the next choice is not somehow "a" with
@@ -1701,23 +1705,23 @@ this pair pattern and get its ingredients
 from the next pair of the generator list.
 
 00:32:41,479 --> 00:32:44,779
-So, the next choice would be: x is "c" and
-y is "d".
+So, the next choice would
+be: x is "c" and y is "d".
 
 00:32:44,779 --> 00:32:49,870
-So, the next thing to be computed here would
-be the string "cd", and that's it.
+So, the next thing to be computed here
+would be the string "cd", and that's it.
 
 00:32:49,870 --> 00:32:53,979
-No crosswise comparison, because here we bind
-x and y.
+No crosswise comparison,
+because here we bind x and y.
 
 00:32:53,979 --> 00:32:57,570
 We choose x and y at once from all these pairs.
 
 00:32:57,570 --> 00:33:00,940
-Whereas here, we had independent choices for
-the x and for the y.
+Whereas here, we had independent
+choices for the x and for the y.
 
 00:33:00,940 --> 00:33:03,260
 That's why we get more results up here.
@@ -1735,22 +1739,23 @@ Taking a step back again, let's ask where
 we are now, concerning expressiveness.
 
 00:33:24,339 --> 00:33:27,289
-Some take-home messages from the examples we have seen:
+Some take-home messages from
+the examples we have seen:
 
 00:33:27,289 --> 00:33:31,860
-We can now via a function express non-constant
-behavior.
+We can now via a function
+express non-constant behavior.
 
 00:33:31,860 --> 00:33:35,720
 So, functions in the mathematical sense.
 
 00:33:35,720 --> 00:33:41,450
-No weird keywords for imperative behavior,
-no loops, just pure expressions.
+No weird keywords for imperative
+behavior, no loops, just pure expressions.
 
 00:33:41,450 --> 00:33:47,690
-Such a description, like for our animations,
-defines behavior as a whole.
+Such a description, like for our
+animations, defines behavior as a whole.
 
 00:33:47,690 --> 00:33:49,210
 So, not in a piecemeal fashion.
@@ -1774,8 +1779,8 @@ Indeed, there is not even a concept of "this
 piece of animation stops at some point".
 
 00:34:09,659 --> 00:34:14,120
-We didn't say "use this from 0 to 10 seconds"
-or something like that.
+We didn't say "use this from 0 to
+10 seconds" or something like that.
 
 00:34:14,120 --> 00:34:20,289
 We said: f(t) is something, namely an expression
@@ -1788,15 +1793,15 @@ occur.
 And that then is an ever-running animation.
 
 00:34:27,360 --> 00:34:33,219
-It does this for increasing t however long
-this may be.
+It does this for increasing
+t however long this may be.
 
 00:34:33,219 --> 00:34:37,660
 There is no end point.
 
 00:34:37,660 --> 00:34:42,890
-Of course, this doesn't mean that we don't
-want to express possibly non-continuous behavior.
+Of course, this doesn't mean that we don't want
+to express possibly non-continuous behavior.
 
 00:34:42,890 --> 00:34:48,890
 You might want to run an animation just for
@@ -1810,8 +1815,8 @@ animation), based on some condition about
 time (for example, time intervals).
 
 00:34:57,909 --> 00:35:00,580
-But we are not going to do this by resorting
-to sequential commands.
+But we are not going to do this by
+resorting to sequential commands.
 
 00:35:00,580 --> 00:35:05,650
 We are not going to use imperative keywords,
@@ -1821,8 +1826,8 @@ or semicolons for composition in a sequential
 way.
 
 00:35:06,650 --> 00:35:08,479
-Like saying: "this animation and then that
-animation."
+Like saying: "this animation
+and then that animation."
 
 00:35:08,479 --> 00:35:15,670
 That would be too big a deviation from the
@@ -1832,20 +1837,20 @@ mathematical idea of expressing functions.
 So, we need something else.
 
 00:35:17,250 --> 00:35:20,210
-Unfortunately, list comprehensions are not
-the answer either.
+Unfortunately, list comprehensions
+are not the answer either.
 
 00:35:20,210 --> 00:35:30,250
 We just introduced them in the last examples
 for avoiding duplication of expressions.
 
 00:35:30,250 --> 00:35:34,599
-For example, for expressing this discrete
-distribution.
+For example, for expressing
+this discrete distribution.
 
 00:35:34,599 --> 00:35:38,820
-But it's not something that is used to define
-functions.
+But it's not something that
+is used to define functions.
 
 00:35:38,820 --> 00:35:40,080
 List comprehensions define values.
@@ -1861,8 +1866,8 @@ animation which consists of several pieces.
 So, we need something else.
 
 00:35:51,159 --> 00:35:58,340
-And actually, some keywords which are used
-inside expressions.
+And actually, some keywords which
+are used inside expressions.
 
 41 # slide
 00:35:58,340 --> 00:36:01,479
@@ -1882,8 +1887,8 @@ Actually here, by "if-then-else".
 So let's look at an example.
 
 00:36:12,469 --> 00:36:14,800
-The "if", "then", and "else" are, of course,
-keywords.
+The "if", "then", and "else"
+are, of course, keywords.
 
 00:36:14,800 --> 00:36:17,019
 But they are used inside expressions.
@@ -1892,34 +1897,34 @@ But they are used inside expressions.
 So let's consider these examples.
 
 00:36:19,110 --> 00:36:23,920
-This example scene is, again, an animation;
-because: from time to something.
+This example scene is, again, an
+animation; because: from time to something.
 
 00:36:23,920 --> 00:36:25,479
 And what does it say?
 
 00:36:25,479 --> 00:36:29,459
-It makes a check on the time, whether it is
-smaller than 3 or not.
+It makes a check on the time,
+whether it is smaller than 3 or not.
 
 00:36:29,459 --> 00:36:34,349
-And if so, then it computes this expression,
-which depends on t.
+And if so, then it computes this
+expression, which depends on t.
 
 00:36:34,349 --> 00:36:40,390
 And if you look at it a bit, you will see
 that it will basically animate a moving circle
 
 00:36:40,390 --> 00:36:46,930
-which moves somehow diagonally (because x
-and y will always have the same value, namely
+which moves somehow diagonally (because x and
+y will always have the same value, namely
 
 00:36:46,930 --> 00:36:48,530
 the current time in seconds).
 
 00:36:48,530 --> 00:36:53,670
-So, this will be a small circle that from the
-origin moves in a diagonal fashion here.
+So, this will be a small circle that from
+the origin moves in a diagonal fashion here.
 
 00:36:53,670 --> 00:36:57,349
 But it does so only until t becomes 3.
@@ -1929,8 +1934,8 @@ Because when t is 3 plus something, then this
 "if-then-else" will actually mean that the
 
 00:37:02,520 --> 00:37:07,310
-"then" branch is not important and the "else"
-branch will be the relevant one.
+"then" branch is not important and the
+"else" branch will be the relevant one.
 
 00:37:07,310 --> 00:37:08,590
 What do we have there?
@@ -1948,8 +1953,8 @@ It's a predefined picture which shows nothing.
 It's an empty picture.
 
 00:37:14,750 --> 00:37:17,740
-Which you might consider to be a stupid picture
-to have.
+Which you might consider to
+be a stupid picture to have.
 
 00:37:17,740 --> 00:37:23,370
 But actually here in this case, that is a
@@ -1959,8 +1964,8 @@ nice way to express that after three seconds
 our animation shouldn't show anything anymore.
 
 00:37:25,290 --> 00:37:28,770
-So, it will show the empty picture, namely
-nothing.
+So, it will show the empty
+picture, namely nothing.
 
 00:37:28,770 --> 00:37:36,860
 Now, this notation here (this way of expressing
@@ -1981,19 +1986,19 @@ Mathematically, they are functions like f(x)
 is: If x is more than zero (or some other
 
 00:37:53,000 --> 00:37:56,290
-property), then this expression; otherwise
-this expression.
+property), then this expression;
+otherwise this expression.
 
 00:37:56,290 --> 00:37:58,250
 And it will always evaluate to one of them.
 
 00:37:58,250 --> 00:38:01,770
-It won't evaluate to both of them, nor to
-one after the other.
+It won't evaluate to both of
+them, nor to one after the other.
 
 00:38:01,770 --> 00:38:04,510
-It's a pure expression depending on the value
-of x.
+It's a pure expression
+depending on the value of x.
 
 00:38:04,510 --> 00:38:07,010
 This is what we evaluate, or this.
@@ -2003,19 +2008,19 @@ And the same happens up here.
 
 42 # slide
 00:38:14,620 --> 00:38:20,580
-We can also compare the situation to other
-languages you know, like C or Java.
+We can also compare the situation to
+other languages you know, like C or Java.
 
 00:38:20,580 --> 00:38:27,610
-There you also have an "if" construct and
-an "if-else" construct.
+There you also have an "if"
+construct and an "if-else" construct.
 
 00:38:27,610 --> 00:38:29,780
 So, this is the syntax for C or Java.
 
 00:38:29,780 --> 00:38:33,490
-There are, of course, some syntactical differences
-to what we've just seen.
+There are, of course, some syntactical
+differences to what we've just seen.
 
 00:38:33,490 --> 00:38:38,130
 But actually, the more important difference
@@ -2029,12 +2034,12 @@ Whereas in an expression language, the form
 without the "else" does not make any sense.
 
 00:38:44,400 --> 00:38:47,750
-So in Haskell we always have, and must have,
-if-then-else.
+So in Haskell we always have,
+and must have, if-then-else.
 
 00:38:47,750 --> 00:38:51,250
-Because we have a condition here, and either
-this condition is true or false.
+Because we have a condition here, and
+either this condition is true or false.
 
 00:38:51,250 --> 00:38:54,410
 And even if it is false, we must have some
@@ -2059,15 +2064,15 @@ That's a reasonable thing to say in a command-based
 language, where you have commands that execute.
 
 00:39:11,640 --> 00:39:14,770
-Then you can say: Well, in some cases I don't
-do anything.
+Then you can say: Well, in
+some cases I don't do anything.
 
 00:39:14,770 --> 00:39:15,770
 That's fine.
 
 00:39:15,770 --> 00:39:21,010
-But in a mathematical/expression-based language,
-you must have some value.
+But in a mathematical/expression-based
+language, you must have some value.
 
 00:39:21,010 --> 00:39:24,050
 Everything must evaluate to some value, and
@@ -2080,8 +2085,8 @@ I don't evaluate to anything.
 You have to have some value.
 
 00:39:26,590 --> 00:39:30,750
-So, you cannot have an "if-then" without the
-"else" branch.
+So, you cannot have an "if-then"
+without the "else" branch.
 
 00:39:30,750 --> 00:39:32,110
 Because you have to compute a value.
@@ -2097,8 +2102,8 @@ That's fine.
 That is some action.
 
 00:39:39,240 --> 00:39:41,810
-It will be a no-action, but there is no value
-required.
+It will be a no-action, but
+there is no value required.
 
 00:39:41,810 --> 00:39:49,960
 So actually, the "if-then-else" in Haskell
@@ -2108,39 +2113,39 @@ is not really so similar to "if-else", as
 keywords, in C or Java.
 
 00:39:52,480 --> 00:39:56,860
-It's actually more similar to this conditional
-operator in those languages.
+It's actually more similar to this
+conditional operator in those languages.
 
 00:39:56,860 --> 00:40:02,100
 Which is also something that in C or Java
 you use on the expression level; not with
 
 00:40:02,100 --> 00:40:05,800
-commands (here, here, and here), but actually
-with expressions.
+commands (here, here, and here),
+but actually with expressions.
 
 00:40:05,800 --> 00:40:11,250
 This is something that could occur in an expression
 on the right-hand side of a variable assignment,
 
 00:40:11,250 --> 00:40:17,080
-whereas something like this cannot occur in
-C or Java on the right-hand side of a variable
+whereas something like this cannot occur in C
+or Java on the right-hand side of a variable
 
 00:40:17,080 --> 00:40:18,080
 assignment.
 
 00:40:18,080 --> 00:40:20,310
-Because it is about commands, and not about
-expressions.
+Because it is about commands,
+and not about expressions.
 
 00:40:20,310 --> 00:40:30,000
 It is also a bit strange that you have two
 ways of expressing conditionals in C and Java.
 
 00:40:30,000 --> 00:40:33,640
-But that's because you have these two levels:
-you have the commands and you have the expressions.
+But that's because you have these two levels: you
+have the commands and you have the expressions.
 
 00:40:33,640 --> 00:40:37,040
 And in a language where you have only expressions
@@ -2150,26 +2155,26 @@ And in a language where you have only expressions
 have only one of these forms.
 
 00:40:39,620 --> 00:40:47,370
-This also means, for example, that in Haskell
-(with all of this talk about syntactic compositionality
+This also means, for example, that in Haskell (with
+all of this talk about syntactic compositionality
 
 00:40:47,370 --> 00:40:50,840
-I already mentioned) you can name arbitrary
-parts of these expressions.
+I already mentioned) you can name
+arbitrary parts of these expressions.
 
 00:40:50,840 --> 00:40:53,080
 You can name the expression as a whole.
 
 00:40:53,080 --> 00:40:57,020
-You can put an "if-then-else" as an expression
-inside a function call.
+You can put an "if-then-else" as an
+expression inside a function call.
 
 00:40:57,020 --> 00:40:58,230
 You can name parts of it.
 
 00:40:58,230 --> 00:41:04,270
-Whereas for example here, you cannot name
-this part of an "if".
+Whereas for example here, you
+cannot name this part of an "if".
 
 00:41:04,270 --> 00:41:09,880
 That's the discussion I had in an earlier
@@ -2186,16 +2191,17 @@ the command-based setting, which is where
 the "if" and "if-else" of Java live in.
 
 00:41:21,910 --> 00:41:24,260
-It's a bit different for this, because it's
-expression-based.
+It's a bit different for this,
+because it's expression-based.
 
 00:41:24,260 --> 00:41:29,570
-But well, in Haskell everything is expression-based.
+But well, in Haskell
+everything is expression-based.
 
 43 # slide
 00:41:29,570 --> 00:41:36,630
-For the if-then-else in the earlier example,
-we somehow intuitively want an "if-then" without
+For the if-then-else in the earlier example, we
+somehow intuitively want an "if-then" without
 
 00:41:36,630 --> 00:41:37,630
 an "else".
@@ -2204,8 +2210,8 @@ an "else".
 Which we cannot have.
 
 00:41:39,780 --> 00:41:43,580
-Then there must be some neutral value in an
-algebraic sense.
+Then there must be some neutral
+value in an algebraic sense.
 
 00:41:43,580 --> 00:41:49,040
 So, there cannot be no value, but of course,
@@ -2215,8 +2221,8 @@ there are certain values that correspond to
 "nothing".
 
 00:41:50,040 --> 00:41:53,260
-Like in the picture case: the "blank" is something
-like "no picture".
+Like in the picture case: the "blank"
+is something like "no picture".
 
 00:41:53,260 --> 00:41:54,260
 But it is a picture.
@@ -2234,8 +2240,8 @@ It's not "no value".
 And the same is true for many types.
 
 00:42:00,940 --> 00:42:03,710
-So let's say we have the same situation in
-a list context.
+So let's say we have the same
+situation in a list context.
 
 00:42:03,710 --> 00:42:07,800
 We want to say: If a condition is true, then
@@ -2256,8 +2262,8 @@ empty list is algebraically a neutral value
 in the type of lists.
 
 00:42:18,330 --> 00:42:25,390
-That is an observation that will probably
-be useful for at least one of the next exercise
+That is an observation that will probably be
+useful for at least one of the next exercise
 
 00:42:25,390 --> 00:42:26,840
 tasks.
@@ -2284,7 +2290,8 @@ So, what I want to emphasize here is really
 this point of not hesitating, of really freely
 
 00:42:52,130 --> 00:42:55,460
-using "if-then-else" as part of other expressions.
+using "if-then-else" as
+part of other expressions.
 
 00:42:55,460 --> 00:43:02,350
 I have observed many times in the past that
@@ -2360,8 +2367,8 @@ It is more explicitly expressing that in any
 case, you will apply f to x and y, and you
 
 00:44:11,650 --> 00:44:15,880
-only still have to decide whether the last
-argument is exp2 or exp3.
+only still have to decide whether
+the last argument is exp2 or exp3.
 
 00:44:15,880 --> 00:44:21,720
 This is perfectly expressed in the first line,
@@ -2382,8 +2389,8 @@ But for this, you have to accept that "if-then-else"
 is just an expression that can be used as
 
 00:44:37,070 --> 00:44:45,240
-subexpression of whatever: other expressions,
-function calls, etc.
+subexpression of whatever: other
+expressions, function calls, etc.
 
 44 # slide
 00:44:45,240 --> 00:44:48,550
@@ -2393,8 +2400,8 @@ Okay, I have to correct myself.
 I actually didn't yet want to close the video.
 
 00:44:53,220 --> 00:44:59,570
-I actually want to make a few more remarks
-on syntax and types, and also syntax of types.
+I actually want to make a few more remarks on
+syntax and types, and also syntax of types.
 
 00:44:59,570 --> 00:45:04,580
 So, I actually announced this earlier in the
@@ -2423,8 +2430,8 @@ For example, for a three-argument function
 like "translated", I said that there is this
 
 00:45:33,740 --> 00:45:38,450
-Cartesian product of twice the real numbers,
-and then the Picture type.
+Cartesian product of twice the real
+numbers, and then the Picture type.
 
 00:45:38,450 --> 00:45:42,300
 And I also said: This is not exactly what
@@ -2445,20 +2452,20 @@ But this is really just, for certain reasons,
 a different way of writing things down.
 
 00:45:56,540 --> 00:45:59,930
-For example, if let's look at the "translated"
-function.
+For example, if let's look
+at the "translated" function.
 
 00:45:59,930 --> 00:46:04,220
-It's a function with three arguments and whose
-result is Picture.
+It's a function with three arguments
+and whose result is Picture.
 
 00:46:04,220 --> 00:46:10,570
 Then how it's actually written as a type in
 Haskell, is this notation, where even before
 
 00:46:10,570 --> 00:46:13,350
-the first few arguments you also have this
-arrow symbol.
+the first few arguments you
+also have this arrow symbol.
 
 00:46:13,350 --> 00:46:19,930
 So instead of having these three arguments
@@ -2480,16 +2487,16 @@ Other than that, and of course switching from
 this mathematical symbol for the real numbers
 
 00:46:36,920 --> 00:46:40,800
-to the actual type "Double" in Haskell, that's
-equivalent to up here.
+to the actual type "Double" in
+Haskell, that's equivalent to up here.
 
 00:46:40,800 --> 00:46:43,370
-And all the other types are also likewise
-and similar.
+And all the other types are
+also likewise and similar.
 
 00:46:43,370 --> 00:46:46,800
-Here, inside the list, there is also a different
-thing.
+Here, inside the list, there
+is also a different thing.
 
 00:46:46,800 --> 00:46:50,500
 So, you really want a list of pairs.
@@ -2499,24 +2506,24 @@ It is not a function like here, where you
 say: turn this three-argument function into
 
 00:46:56,911 --> 00:47:01,650
-a notation like this, where we always have
-the function arrow.
+a notation like this, where we
+always have the function arrow.
 
 00:47:01,650 --> 00:47:05,770
-This would not make sense here, because this
-is really a set of pairs.
+This would not make sense here,
+because this is really a set of pairs.
 
 00:47:05,770 --> 00:47:10,240
 And then the notation in Haskell simply is
 not with the cross for the Cartesian product,
 
 00:47:10,240 --> 00:47:13,360
-but actually also at the type level you simply
-write pairs.
+but actually also at the type
+level you simply write pairs.
 
 00:47:13,360 --> 00:47:21,120
-So, this is the type of pairs of Doubles and
-Doubles.
+So, this is the type of
+pairs of Doubles and Doubles.
 
 46 # slide
 00:47:21,120 --> 00:47:27,930
@@ -2538,8 +2545,8 @@ that we write in this form without that many
 brackets or commas.
 
 00:47:43,200 --> 00:47:45,970
-For nested function application, of course,
-we do need brackets sometimes.
+For nested function application, of
+course, we do need brackets sometimes.
 
 00:47:45,970 --> 00:47:52,360
 For example, where an f call occurs as an
@@ -2571,40 +2578,40 @@ The same syntax as this one in particular,
 where function application is with spaces
 
 00:48:18,320 --> 00:48:21,830
-and without commas, is what is used at function
-definition sites.
+and without commas, is what is
+used at function definition sites.
 
 00:48:21,830 --> 00:48:27,770
 Again, you have seen this at least for "scene
 t = something" (scene of t is something).
 
 00:48:27,770 --> 00:48:31,200
-And it also applies if we have functions with
-more than one argument.
+And it also applies if we have
+functions with more than one argument.
 
 00:48:31,200 --> 00:48:37,000
 So, something which in Java or C would look
 like so: We declare that f is a function which
 
 00:48:37,000 --> 00:48:41,770
-takes an integer and a character and returns
-a float.
+takes an integer and a
+character and returns a float.
 
 00:48:41,770 --> 00:48:47,960
 This would in Haskell turn into this more
 mathematical way of writing down the types.
 
 00:48:47,960 --> 00:48:52,790
-So, integer and character are the two argument
-types, and float is the return type.
+So, integer and character are the two
+argument types, and float is the return type.
 
 00:48:52,790 --> 00:48:57,490
 There are of course syntax differences like
 that these types are written in uppercase.
 
 00:48:57,490 --> 00:49:03,180
-But that of course is just how the language
-works on the lexical level.
+But that of course is just how the
+language works on the lexical level.
 
 00:49:03,180 --> 00:49:08,200
 And then, naming the function: where here
@@ -2632,19 +2639,19 @@ from this call, because a function in Java
 need not return something.
 
 00:49:31,810 --> 00:49:36,060
-Well, here it would return a float, but you
-could have "void", for example.
+Well, here it would return a float,
+but you could have "void", for example.
 
 00:49:36,060 --> 00:49:37,460
-And then maybe the function doesn't return
-anything.
+And then maybe the function
+doesn't return anything.
 
 00:49:37,460 --> 00:49:39,290
 So, it is not really a mathematical function.
 
 00:49:39,290 --> 00:49:42,510
-In contrast, in Haskell, of course, there
-has to be some expression here.
+In contrast, in Haskell, of course,
+there has to be some expression here.
 
 00:49:42,510 --> 00:49:49,080
 So, there must always come a float out of a
@@ -2654,16 +2661,16 @@ call of f on a and b (on some values, some
 arguments).
 
 00:49:50,080 --> 00:49:55,890
-And also there are differences like the semantics
-of these local variables.
+And also there are differences like
+the semantics of these local variables.
 
 00:49:55,890 --> 00:50:00,250
-What they do is different in Haskell from
-these imperative languages.
+What they do is different in Haskell
+from these imperative languages.
 
 00:50:00,250 --> 00:50:03,650
-Here you could have assignments, where you
-overwrite a and b.
+Here you could have assignments,
+where you overwrite a and b.
 
 00:50:03,650 --> 00:50:09,830
 Here a and b are inputs and they can be used
@@ -2681,20 +2688,20 @@ course.
 
 47 # slide
 00:50:19,140 --> 00:50:22,590
-Then there is an issue of whitespace and layout
-in Haskell.
+Then there is an issue of
+whitespace and layout in Haskell.
 
 00:50:22,590 --> 00:50:28,640
 Haskell is a layout-sensitive language, which
 means that if you group things like local
 
 00:50:28,640 --> 00:50:31,780
-definitions, then the horizontal layout is
-important.
+definitions, then the
+horizontal layout is important.
 
 00:50:31,780 --> 00:50:40,670
-The layout in the sense: in which column things
-start.
+The layout in the sense: in
+which column things start.
 
 00:50:40,670 --> 00:50:41,670
 What does this mean?
@@ -2703,7 +2710,8 @@ What does this mean?
 Let's consider "let" and "in".
 
 00:50:43,200 --> 00:50:46,490
-This is another way to organize local definitions.
+This is another way to
+organize local definitions.
 
 00:50:46,490 --> 00:50:51,820
 We already saw something like: "f x is something,
@@ -2714,20 +2722,20 @@ Where the things that are locally defined
 are mentioned after the main expression.
 
 00:50:57,240 --> 00:51:00,910
-We can also have it the other way around,
-but then we don't use "where" but rather "let-in".
+We can also have it the other way around, but
+then we don't use "where" but rather "let-in".
 
 00:51:00,910 --> 00:51:07,410
 So, what this is saying here is: We want to
 compute the expression f c + f d, and inside
 
 00:51:07,410 --> 00:51:10,570
-there we want to use some things, for example,
-the y and the f.
+there we want to use some things,
+for example, the y and the f.
 
 00:51:10,570 --> 00:51:13,740
-Actually, y is used here, and f is a function
-which will be used here.
+Actually, y is used here, and f is
+a function which will be used here.
 
 00:51:13,740 --> 00:51:17,280
 So, it is not a top-level function which occurs
@@ -2737,8 +2745,8 @@ somewhere else in the program, but it's local
 to this expression.
 
 00:51:18,610 --> 00:51:24,900
-And then we say "let something and something
-in" and then we use what we have defined before.
+And then we say "let something and something in"
+and then we use what we have defined before.
 
 00:51:24,900 --> 00:51:29,710
 Differently than in the "where" case, where
@@ -2751,20 +2759,20 @@ the expression in which they are used.
 This is something that you can write down.
 
 00:51:33,920 --> 00:51:38,360
-And it's important that these things start
-in the same column here.
+And it's important that these things
+start in the same column here.
 
 00:51:38,360 --> 00:51:44,780
-So in that sense, the layout (how far you
-indent things) is important.
+So in that sense, the layout (how
+far you indent things) is important.
 
 00:51:44,780 --> 00:51:50,590
-We could also avoid this and write explicit
-grouping.
+We could also avoid this
+and write explicit grouping.
 
 00:51:50,590 --> 00:51:55,720
-So, this is also valid in Haskell, where I
-don't use layout.
+So, this is also valid in
+Haskell, where I don't use layout.
 
 00:51:55,720 --> 00:52:02,830
 I simply say: I want to group these two definitions,
@@ -2784,15 +2792,15 @@ layout, because these curly brackets and the
 semicolon explain what the grouping is.
 
 00:52:15,060 --> 00:52:21,390
-But if you don't use this, then you have to
-be careful of the layout, as in other layout-sensitive
+But if you don't use this, then you have to be
+careful of the layout, as in other layout-sensitive
 
 00:52:21,390 --> 00:52:23,720
 languages like Python (which came after).
 
 00:52:23,720 --> 00:52:29,140
-This also means that, for example, these two
-pieces of program are not accepted.
+This also means that, for example, these
+two pieces of program are not accepted.
 
 00:52:29,140 --> 00:52:35,420
 They would be rejected or not mean what you
@@ -2806,20 +2814,20 @@ Which also means that if you write Haskell
 code, then you should prefer an editor in
 
 00:52:43,100 --> 00:52:48,890
-which you can ensure that indenting via spaces
-and via tabs is not mixed.
+which you can ensure that indenting
+via spaces and via tabs is not mixed.
 
 00:52:48,890 --> 00:52:54,980
 You should usually use spaces instead of tab
 characters, because the compiler cannot, by
 
 00:52:54,980 --> 00:53:02,940
-default, know what indentation level a tab
-symbol corresponds to in your editor.
+default, know what indentation level a
+tab symbol corresponds to in your editor.
 
 00:53:02,940 --> 00:53:08,290
-So, things might look okay to you when you
-look in your editor, but actually what a compiler
+So, things might look okay to you when you look
+in your editor, but actually what a compiler
 
 00:53:08,290 --> 00:53:09,350
 sees is something like that.
@@ -2844,16 +2852,16 @@ I mentioned already that we use fewer brackets
 than you might expect if you haven't programmed
 
 00:53:38,330 --> 00:53:41,010
-in a language with this kind of syntax rules
-before.
+in a language with this
+kind of syntax rules before.
 
 00:53:41,010 --> 00:53:46,350
 So, for example, we don't need to bracket
 the x argument in a call like this because
 
 00:53:46,350 --> 00:53:50,880
-this expression is just the same and is uniquely
-parsable.
+this expression is just the
+same and is uniquely parsable.
 
 00:53:50,880 --> 00:53:51,910
 So, it's clear what this means.
@@ -2869,12 +2877,12 @@ need brackets around these two function calls
 whose results are added.
 
 00:54:02,010 --> 00:54:07,090
-Because this function application (basically
-this space here) binds tighter than all operators.
+Because this function application (basically this
+space here) binds tighter than all operators.
 
 00:54:07,090 --> 00:54:12,560
-So, it is not necessary to say that you want
-(f x) and then add this to (g y).
+So, it is not necessary to say that you
+want (f x) and then add this to (g y).
 
 00:54:12,560 --> 00:54:17,040
 Actually, even if you write it like that,
@@ -2916,8 +2924,8 @@ But I have to say I don't like the dollar-operator,
 in particular in beginners' code, because
 
 00:54:57,950 --> 00:55:03,570
-it gets easily misused or used in a way that
-doesn't really improve readability.
+it gets easily misused or used in a way
+that doesn't really improve readability.
 
 00:55:03,570 --> 00:55:09,540
 So actually, again, Autotool will discourage
@@ -2928,8 +2936,8 @@ But I wanted to mention it at least, because
 I know that some students read about it in
 
 00:55:14,040 --> 00:55:19,610
-other places and then maybe are wondering
-why they cannot use it in their exercise submissions.
+other places and then maybe are wondering why
+they cannot use it in their exercise submissions.
 
 00:55:19,610 --> 00:55:25,620
 That's basically because I am the dictator
@@ -2939,12 +2947,12 @@ here, and I prefer not to let you use this
 too early, at least.
 
 00:55:26,920 --> 00:55:30,780
-For more advanced Haskell programmers, this
-can be an important function to use in structuring
+For more advanced Haskell programmers, this can
+be an important function to use in structuring
 
 00:55:30,780 --> 00:55:36,160
-their code, but not for you, I would say at
-this point.
+their code, but not for you,
+I would say at this point.
 
 00:55:36,160 --> 00:55:43,360
 And as mentioned, sometimes Autotool gives
@@ -2954,8 +2962,8 @@ warnings about things like redundant brackets
 or even overuse of this dollar-symbol.
 
 00:55:45,910 --> 00:55:49,680
-And sometimes these are not just warnings,
-but they are really enforced.
+And sometimes these are not just
+warnings, but they are really enforced.
 
 00:55:49,680 --> 00:55:52,430
 So, you will always have to read the feedback.

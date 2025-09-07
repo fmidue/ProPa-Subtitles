@@ -26,8 +26,8 @@ Okay, and to remind you, so the base
 idea of this translation was that
 
 0:00:38.400,0:00:43.840
-if in Haskell, well, in order to
-avoid nested function calls in Haskell.
+if in Haskell, well, in order to avoid
+nested function calls in Haskell.
 
 0:00:48.680,0:00:49.680
 Yeah,
@@ -45,14 +45,16 @@ predicate applications, literals that
 occur in rules, facts, and queries.
 
 0:01:12.400,0:01:21.600
-So, there was this basic idea of
-if you have something like 'f (g x y) z'.
+So, there was this basic idea of if
+you have something like 'f (g x y) z'.
 
 0:01:21.600,0:01:25.040
-So, a nested function call of a function which has
+So, a nested function call
+of a function which has
 
 0:01:25.040,0:01:28.080
-an argument that has another function call nested.
+an argument that has another
+function call nested.
 
 0:01:29.680,0:01:31.200
 And the idea is that
@@ -107,12 +109,12 @@ non-empty list, and then what?
 Well, that is the length of the rest list + 1.
 
 0:02:52.800,0:02:56.080
-And of course, this is also
-a nested function call here, right?
+And of course, this is also a
+nested function call here, right?
 
 0:02:56.080,0:03:00.800
-So, I mean, you don't necessarily have to write these
-brackets and that is because of parsing rules,
+So, I mean, you don't necessarily have to write
+these brackets and that is because of parsing rules,
 
 0:03:00.800,0:03:03.120
 but this is really a nested function call.
@@ -122,8 +124,8 @@ Where the outer function is the '+',
 and the inner function is the 'length'.
 
 0:03:06.160,0:03:12.560
-So, it fits the pattern above, we couldn't directly
-write something like this in Prolog, okay?
+So, it fits the pattern above, we couldn't
+directly write something like this in Prolog, okay?
 
 0:03:13.120,0:03:15.200
 What can we do, however?
@@ -139,23 +141,23 @@ as a binary predicate, right?
 Because it has two constants.
 
 0:03:23.040,0:03:26.960
-The empty list as one constant and
-zero as the result constant.
+The empty list as one constant
+and zero as the result constant.
 
 0:03:26.960,0:03:32.720
 So, this in Prolog would
 simply be written like this.
 
 0:03:32.720,0:03:41.680
-Simply say, it is true as a fact that
-the length of the empty list is zero, right?
+Simply say, it is true as a fact that the
+length of the empty list is zero, right?
 
 0:03:43.200,0:03:44.920
 Written as a fact, okay?
 
 0:03:45.840,0:03:49.200
-Now what about the other rules where
-we just said we would have to
+Now what about the other rules
+where we just said we would have to
 
 0:03:49.200,0:03:52.400
 interpret this as something
@@ -165,8 +167,8 @@ without a nested function call.
 So, the reasonable way would be to say, the -.
 
 0:03:58.880,0:04:13.520
-First, we formulate this as let’s
-say, m + 1 where m is the length of xs.
+First, we formulate this as let’s say,
+m + 1 where m is the length of xs.
 
 0:04:13.520,0:04:18.240
 And the benefit of this is that 'length xs'
@@ -226,19 +228,20 @@ So, let's, for the moment, do this symbolically.
 So, if this original idea
 
 0:05:34.080,0:05:39.600
-that was also used for the 'add' predicate
-that we don’t write extra numbers two, three, etc.
+that was also used for the 'add' predicate that
+we don’t write extra numbers two, three, etc.
 
 0:05:39.600,0:05:45.120
-but something like; SS0 for the number two, right?
+but something like; SS0
+for the number two, right?
 
 0:05:45.120,0:05:49.360
 So, let's express this +1 with
 the successor constructor.
 
 0:05:50.240,0:05:55.040
-So, then we would here write
-that the length of this is 'm + 1'.
+So, then we would here write that
+the length of this is 'm + 1'.
 
 0:05:55.040,0:06:02.000
 So, the successor of some
@@ -273,8 +276,8 @@ give this instantiation a value for
 the length and ask about the list?
 
 0:06:48.320,0:06:52.720
-Which is not possible in Haskell, of
-course, because it only works forwards with functions.
+Which is not possible in Haskell, of course,
+because it only works forwards with functions.
 
 0:06:54.080,0:06:58.000
 Okay, so this was the length function
@@ -299,8 +302,8 @@ So, let’s remember what the definition and also
 syntax actually on the Haskell side will be.
 
 0:07:29.280,0:07:33.840
-It is a polymorphic function and, of course, we
-won’t write down this type in Prolog because
+It is a polymorphic function and, of course,
+we won’t write down this type in Prolog because
 
 0:07:33.840,0:07:37.680
 Prolog is not typed, but on the Haskell side
@@ -315,8 +318,8 @@ and the non-empty list appended
 with another list is what?
 
 0:07:52.320,0:07:57.840
-Well, the definition actually is,
-it is x in front of whatever
+Well, the definition actually
+is, it is x in front of whatever
 
 0:07:59.760,0:08:04.880
 is the appending of xs and ys, okay?
@@ -333,12 +336,12 @@ Well, mainly because of
 this nested function, right?
 
 0:08:20.080,0:08:22.640
-This is a function call
-which produces some list which is then
+This is a function call which
+produces some list which is then
 
 0:08:22.640,0:08:25.360
-combined with another element
-to produce the final output list.
+combined with another element to
+produce the final output list.
 
 0:08:25.360,0:08:30.080
 So, that's a nested function call which we
@@ -353,8 +356,8 @@ Well, you would have to rename the
 subexpression, which is another function call.
 
 0:08:40.960,0:08:46.480
-So, actually, we
-could rewrite on the Haskell side
+So, actually, we could
+rewrite on the Haskell side
 
 0:08:46.480,0:09:00.320
 by saying: Well, this is actually x in front of zs,
@@ -377,23 +380,23 @@ Okay, so what do we have to
 do on the Prolog side then?
 
 0:09:16.240,0:09:21.600
-Well, as I said, we won't use an operator
-like this. Rather, we will use a named predicate.
+Well, as I said, we won't use an operator like
+this. Rather, we will use a named predicate.
 
 0:09:21.600,0:09:25.360
 So, let's call it 'append'.
 
 0:09:28.000,0:09:31.920
-And while we can’t write down the type, we
-can at least write down that it is a ternary predicate.
+And while we can’t write down the type, we can at
+least write down that it is a ternary predicate.
 
 0:09:32.800,0:09:37.680
 Syntax was also mentioned on slides that
 sometimes, for documentation purposes for
 
 0:09:37.680,0:09:42.560
-example, we at least write down the
-arity of a predicate in Prolog.
+example, we at least write down
+the arity of a predicate in Prolog.
 
 0:09:42.560,0:09:45.280
 Also, because the same predicate
@@ -406,8 +409,8 @@ so, it’s helpful to have that information.
 And then what are the rules?
 
 0:09:49.360,0:09:54.160
-Well, their first rule is just
-a fact and should be very simple.
+Well, their first rule is just a
+fact and should be very simple.
 
 0:09:54.160,0:09:58.560
 Yes, it’s stating something about three
@@ -526,8 +529,8 @@ which isn't a recursive example but
 illustrates the pattern-match syntax again.
 
 0:12:17.200,0:12:23.840
-So, let's look at a very simple function for
-a second on the Haskell side, which essentially
+So, let's look at a very simple function for a
+second on the Haskell side, which essentially
 
 0:12:24.560,0:12:29.680
 given any list is supposed to return
@@ -538,8 +541,8 @@ to do this with list indexing or something
 like that, but simply with pattern-match.
 
 0:12:33.760,0:12:36.640
-So, how could this be expressed
-on the Haskell side?
+So, how could this be
+expressed on the Haskell side?
 
 0:12:36.640,0:12:37.840
 We are going to write something like this.
@@ -560,8 +563,8 @@ then we have some element that we are
 interested in, so we have to name it.
 
 0:12:58.080,0:13:02.880
-And then there must be some rest, but
-that is again something we don’t care about.
+And then there must be some rest, but that
+is again something we don’t care about.
 
 0:13:02.880,0:13:05.200
 It must be there because we need
@@ -605,7 +608,8 @@ Because it's a function with
 one argument, one result.
 
 0:13:45.200,0:13:47.520
-On the Prolog side, the predicate should be binary
+On the Prolog side, the
+predicate should be binary
 
 0:13:47.520,0:13:50.880
 to have places both for the
@@ -638,7 +642,8 @@ So, we don't care about the first
 thing; then we have a rest list
 
 0:14:23.440,0:14:27.200
-of which we know that the head element would be X.
+of which we know that the
+head element would be X.
 
 0:14:27.200,0:14:30.800
 And then there is another rest
@@ -672,8 +677,8 @@ We want to have a list; we don’t
 care about the first element,
 
 0:15:06.640,0:15:12.480
-we care about the second element; it should be the
-variable X or matched/bound to the variable X.
+we care about the second element; it should be
+the variable X or matched/bound to the variable X.
 
 0:15:13.280,0:15:16.000
 And then there is some rest we don't care about.
@@ -689,15 +694,15 @@ use the '.' as the constructor
 for basically the cons constructor from Haskell.
 
 0:15:34.560,0:15:38.800
-Then this would be written
-as this pattern for binary '.'
+Then this would be written as
+this pattern for binary '.'
 
 0:15:40.000,0:15:42.400
 with the first element of the list.
 
 0:15:42.400,0:15:46.720
-That is something we don't really care
-about, and there is a rest list which is again
+That is something we don't really care about,
+and there is a rest list which is again
 
 0:15:46.720,0:15:52.240
 constructed with the data constructor, and the
@@ -741,8 +746,8 @@ Okay, but let's not focus
 on Haskell now; let’s just
 
 0:16:34.880,0:16:40.160
-appreciate and consider these
-different ways of writing this in Prolog.
+appreciate and consider these different
+ways of writing this in Prolog.
 
 0:16:43.040,0:16:49.840
 Okay, that’s it for these examples.

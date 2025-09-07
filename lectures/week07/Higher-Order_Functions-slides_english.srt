@@ -1,7 +1,7 @@
 104 # slide
 00:00:03,670 --> 00:00:09,320
-This week, we get to talk about what is called
-higher-order functions.
+This week, we get to talk about what
+is called higher-order functions.
 
 00:00:09,320 --> 00:00:14,370
 And when we say higher-order functions, then
@@ -66,7 +66,8 @@ them other than simply leave them as they
 were given in the task templates.
 
 00:01:21,530 --> 00:01:26,020
-Here I will briefly remind you of these instances.
+Here I will briefly remind
+you of these instances.
 
 00:01:26,020 --> 00:01:30,859
 And then we will look at a few, probably,
@@ -83,8 +84,8 @@ functions.
 So, I have to introduce *this*.
 
 00:01:38,591 --> 00:01:42,130
-And some of this will maybe look very strange
-at the beginning.
+And some of this will maybe look
+very strange at the beginning.
 
 00:01:42,130 --> 00:01:48,759
 And then we will come back again to more useful
@@ -95,8 +96,8 @@ use in the exercises, or that are generally
 important for programming in Haskell.
 
 00:01:56,439 --> 00:02:04,520
-As I have just said, so far, we have mainly
-dealt with first-order functions.
+As I have just said, so far, we have
+mainly dealt with first-order functions.
 
 00:02:04,520 --> 00:02:09,890
 So, functions that take normal data as input
@@ -120,8 +121,8 @@ pass to another function, and the output may
 be also printed.
 
 00:02:27,020 --> 00:02:30,440
-So, if you think of functions that you have
-seen, actually the 'reverse' function:
+So, if you think of functions that you
+have seen, actually the 'reverse' function:
 
 00:02:30,440 --> 00:02:32,020
 You give it a list, it gives back a list.
@@ -130,44 +131,45 @@ You give it a list, it gives back a list.
 That is a typical first-order function.
 
 00:02:33,630 --> 00:02:35,800
-Or, the addition of numbers is a first-order
-function:
+Or, the addition of numbers
+is a first-order function:
 
 00:02:35,800 --> 00:02:38,280
-You give it two numbers, it gives you back
-a number.
+You give it two numbers,
+it gives you back a number.
 
 00:02:38,280 --> 00:02:40,490
 That's first-order, normal data.
 
 00:02:40,490 --> 00:02:46,400
-In a few occasions, we have actually at least
-got in touch already with higher-order
+In a few occasions, we have actually at
+least got in touch already with higher-order
 
 00:02:46,400 --> 00:02:48,320
 functions, namely 'quickCheck' and 'animationOf'.
 
 00:02:48,320 --> 00:02:54,670
-So, if you think about 'quickCheck' as the
-driver of this testing approach, and 'animationOf'
+So, if you think about 'quickCheck' as the driver
+of this testing approach, and 'animationOf'
 
 00:02:54,670 --> 00:03:00,630
 as one of the main drivers of the CodeWorld
 approach (of this small language for describing
 
 00:03:00,630 --> 00:03:04,630
-animations), these two are higher-order functions.
+animations), these two are
+higher-order functions.
 
 00:03:04,630 --> 00:03:06,390
 Because we passed other functions to them.
 
 00:03:06,390 --> 00:03:10,800
-In the case of quickCheck, we didn't call
-this out very explicitly.
+In the case of quickCheck, we didn't
+call this out very explicitly.
 
 00:03:10,800 --> 00:03:13,460
-But actually, what we gave to 'quickCheck'
-were functions.
+But actually, what we gave to
+'quickCheck' were functions.
 
 00:03:13,460 --> 00:03:19,230
 So, I mentioned that I give a property to
@@ -181,8 +183,8 @@ of their concatenation is the same as the
 sum of the lengths.
 
 00:03:27,140 --> 00:03:32,150
-That is something like "for all xs, for all
-ys, the following condition holds".
+That is something like "for all xs, for
+all ys, the following condition holds".
 
 00:03:32,150 --> 00:03:33,840
 Well, this is really a predicate.
@@ -201,20 +203,20 @@ False).
 So, it's a predicate.
 
 00:03:43,280 --> 00:03:49,160
-And a predicate is a function from some domain
-to True and False (the Bool type).
+And a predicate is a function from some
+domain to True and False (the Bool type).
 
 00:03:49,160 --> 00:03:52,310
-And 'quickCheck' took such a predicate as an
-argument.
+And 'quickCheck' took such
+a predicate as an argument.
 
 00:03:52,310 --> 00:04:02,120
 So, if 'quickCheck' is seen as a function, which
 it should be because what we are using here
 
 00:04:02,120 --> 00:04:07,600
-from the QuickCheck library is a function;
-you give it a predicate, and it does something
+from the QuickCheck library is a function; you
+give it a predicate, and it does something
 
 00:04:07,600 --> 00:04:08,600
 with it.
@@ -227,12 +229,12 @@ function (a predicate) as an argument.
 And similarly for 'animationOf'.
 
 00:04:15,600 --> 00:04:19,060
-If you remember: First, in CodeWorld, we programmed
-Pictures.
+If you remember: First, in
+CodeWorld, we programmed Pictures.
 
 00:04:19,060 --> 00:04:24,900
-So, then we had something like simply a Picture,
-that is first-order data.
+So, then we had something like simply
+a Picture, that is first-order data.
 
 00:04:24,900 --> 00:04:26,979
 The first scene calls were using 'drawingOf'.
@@ -261,11 +263,12 @@ So, we had something like "main = animationOf
 scene" (as an argument, the 'scene' function).
 
 00:04:44,800 --> 00:04:49,389
-So, we had animations, functions from "time"
-to Picture.
+So, we had animations, functions
+from "time" to Picture.
 
 00:04:49,389 --> 00:04:52,469
-And then we gave such a function to 'animationOf'.
+And then we gave such a
+function to 'animationOf'.
 
 00:04:52,469 --> 00:04:54,979
 So, 'animationOf' again was a function.
@@ -281,11 +284,12 @@ and 'drawingOf', for example, or 'quickCheck'
 and other functions that we have seen.
 
 00:05:08,819 --> 00:05:12,129
-So, let's indeed look at the type of 'animationOf'.
+So, let's indeed look at
+the type of 'animationOf'.
 
 00:05:12,129 --> 00:05:17,650
-We could make a similar observation for 'quickCheck',
-but let's do it on 'animationOf'.
+We could make a similar observation for
+'quickCheck', but let's do it on 'animationOf'.
 
 00:05:17,650 --> 00:05:18,650
 What do we have here?
@@ -310,23 +314,23 @@ have "the argument as a Picture, and the outcome
 is: do something interactive, in this case,
 
 00:05:41,099 --> 00:05:46,849
-drawing it to the browser window", now "animationOf"
-gets a function as an argument.
+drawing it to the browser window", now
+"animationOf" gets a function as an argument.
 
 00:05:46,849 --> 00:05:51,699
 So, what we are saying here is: the first
 argument of 'animationOf' is itself a function
 
 00:05:51,699 --> 00:05:55,310
-from Double to Picture, and then there is
-some output.
+from Double to Picture, and
+then there is some output.
 
 00:05:55,310 --> 00:05:57,310
 The latter is the interactive aspect.
 
 00:05:57,310 --> 00:06:02,150
-But the interesting bit is this part here,
-and in particular, that there are these brackets.
+But the interesting bit is this part here, and
+in particular, that there are these brackets.
 
 00:06:02,150 --> 00:06:11,550
 This is important here, to indicate that this
@@ -337,8 +341,8 @@ the *input* is a function from Double to Picture;
 and not that 'animationOf' is a function somehow
 
 00:06:17,439 --> 00:06:20,590
-of two arguments: Double and Picture, and
-then something comes out.
+of two arguments: Double and Picture,
+and then something comes out.
 
 00:06:20,590 --> 00:06:22,319
 That would be a wrong way of reading it.
@@ -347,28 +351,28 @@ That would be a wrong way of reading it.
 So, these brackets here are really important.
 
 00:06:23,589 --> 00:06:29,340
-And we will come back to this syntax difference
-and its importance.
+And we will come back to this syntax
+difference and its importance.
 
 00:06:29,340 --> 00:06:33,970
-An important note here: Every function is
-a value, of course.
+An important note here: Every
+function is a value, of course.
 
 00:06:33,970 --> 00:06:37,779
-So, usually, you think about functions as
-taking values as arguments.
+So, usually, you think about functions
+as taking values as arguments.
 
 00:06:37,779 --> 00:06:42,620
 And once you realize that a function is itself
 also a value (mathematically), there is no
 
 00:06:42,620 --> 00:06:47,020
-real surprise, maybe, that a function can
-take another function as an argument.
+real surprise, maybe, that a function
+can take another function as an argument.
 
 00:06:47,020 --> 00:06:52,479
-That may be a surprise only because in programming,
-we often cannot do this so simply.
+That may be a surprise only because in
+programming, we often cannot do this so simply.
 
 00:06:52,479 --> 00:06:58,669
 But mathematically, if we accept (and we should)
@@ -379,15 +383,15 @@ clearly, functions that can take values as
 arguments should also be allowed to take functions
 
 00:07:02,809 --> 00:07:05,979
-as arguments (if the type allows this, like
-in this case).
+as arguments (if the type
+allows this, like in this case).
 
 00:07:05,979 --> 00:07:09,729
 Conversely, not every value is a function.
 
 00:07:09,729 --> 00:07:16,830
-We have values in Haskell, like values of
-type Double, to which you cannot pass an argument.
+We have values in Haskell, like values of type
+Double, to which you cannot pass an argument.
 
 00:07:16,830 --> 00:07:18,360
 So, Double itself is not a function.
@@ -396,8 +400,8 @@ So, Double itself is not a function.
 "Double → Picture" is a function.
 
 00:07:19,990 --> 00:07:26,460
-And to this function you can give an argument,
-like the time Double value 3.5.
+And to this function you can give an
+argument, like the time Double value 3.5.
 
 00:07:26,460 --> 00:07:30,069
 But a value of type Double is of course not
@@ -407,16 +411,16 @@ a function, so you cannot give an argument
 to it.
 
 00:07:31,979 --> 00:07:37,349
-That is a really important observation and
-thing to keep in mind:
+That is a really important observation
+and thing to keep in mind:
 
 00:07:37,349 --> 00:07:42,009
 Every function is a value, of course, mathematically
 speaking, and that's then embodied here in
 
 00:07:42,009 --> 00:07:46,410
-how we can program with these entities. But
-not every value is a function.
+how we can program with these entities.
+But not every value is a function.
 
 00:07:46,410 --> 00:07:51,599
 So, saying something like: "Haskell is a functional
@@ -433,15 +437,15 @@ Also, maybe when I talked about 'quickCheck'
 here, I almost stumbled about this.
 
 00:08:01,159 --> 00:08:05,369
-Of course, we also have things that are not
-functions.
+Of course, we also have
+things that are not functions.
 
 00:08:05,369 --> 00:08:11,689
 So, here is the type, again, of 'animationOf'.
 
 00:08:11,689 --> 00:08:16,580
-And here more explicitly what I already said
-on the previous slide.
+And here more explicitly what I
+already said on the previous slide.
 
 00:08:16,580 --> 00:08:21,849
 These brackets here are very important because
@@ -455,24 +459,24 @@ Remember that on the expression level, basically
 for data, for expressions, for values, we
 
 00:08:32,130 --> 00:08:37,710
-(and also Autotool) somehow pushed you into
-the direction of using fewer brackets.
+(and also Autotool) somehow pushed you
+into the direction of using fewer brackets.
 
 00:08:37,710 --> 00:08:39,930
-There were all of these warnings/suggestions
-like:
+There were all of these
+warnings/suggestions like:
 
 00:08:39,930 --> 00:08:43,960
-"You don't need brackets here, write it more
-simply with fewer brackets."
+"You don't need brackets here, write
+it more simply with fewer brackets."
 
 00:08:43,960 --> 00:08:47,200
 On the type level, for example, between this
 type and this type, you will not get these
 
 00:08:47,200 --> 00:08:49,480
-kinds of warnings because it would be completely
-wrong.
+kinds of warnings because it
+would be completely wrong.
 
 00:08:49,480 --> 00:08:51,870
 These mean completely different things.
@@ -482,8 +486,8 @@ This is a thing that takes a function as
 an argument and then something happens.
 
 00:08:58,100 --> 00:09:03,190
-And this type here says: We have a function
-to which we give two normal values (two non-function
+And this type here says: We have a function to
+which we give two normal values (two non-function
 
 00:09:03,190 --> 00:09:09,200
 values), namely a Double (a number) and a
@@ -500,7 +504,8 @@ second line here, you could only provide a
 number and a fixed Picture.
 
 00:09:17,010 --> 00:09:18,710
-That wouldn't be the basis for an actual animation.
+That wouldn't be the basis
+for an actual animation.
 
 00:09:18,710 --> 00:09:20,700
 For that, we need a function.
@@ -509,24 +514,24 @@ For that, we need a function.
 And the brackets here explain/indicate this.
 
 00:09:24,220 --> 00:09:30,430
-So, these brackets here are very significant
-and can't be omitted.
+So, these brackets here are very
+significant and can't be omitted.
 
 00:09:30,430 --> 00:09:38,830
 And to drive home this point, I will discuss
 this on a simpler example where we don't have
 
 00:09:38,830 --> 00:09:42,560
-this strange 'IO' here, which maybe also confuses
-you.
+this strange 'IO' here, which
+maybe also confuses you.
 
 00:09:42,560 --> 00:09:47,400
 So, I will make an example where we have just
 numbers, but the same kind of difference between
 
 00:09:47,400 --> 00:09:52,080
-something like this and something like this
-will appear.
+something like this and
+something like this will appear.
 
 00:09:52,080 --> 00:10:02,500
 So, this is the example that I want to use
@@ -536,20 +541,20 @@ for this discussion: a simple function you
 have seen many times before.
 
 00:10:03,870 --> 00:10:08,690
-So, from the syntax perspective, a function
-that takes two arguments.
+So, from the syntax perspective, a
+function that takes two arguments.
 
 00:10:08,690 --> 00:10:12,230
-And we know that that's how this is written:
-Int to Int to Int.
+And we know that that's how this
+is written: Int to Int to Int.
 
 00:10:12,230 --> 00:10:16,900
-Two inputs that are integers and an output
-that is also an integer.
+Two inputs that are integers and
+an output that is also an integer.
 
 00:10:16,900 --> 00:10:19,570
-Now you can ask yourself: What are some functions
-of that type?
+Now you can ask yourself: What
+are some functions of that type?
 
 00:10:19,570 --> 00:10:25,390
 And I'm sure you can immediately have some
@@ -570,8 +575,8 @@ In contrast, we have this type where we added
 these brackets, which, we now know, mean that
 
 00:10:42,700 --> 00:10:48,270
-this part here means we have a function as
-an argument instead of two numbers as arguments.
+this part here means we have a function as an
+argument instead of two numbers as arguments.
 
 00:10:48,270 --> 00:10:57,690
 And then, to think about what kind of things
@@ -594,28 +599,28 @@ There are two things we have to wonder about:
 What kind of inputs?
 
 00:11:11,630 --> 00:11:14,430
-What can we give to this 'f'? And we know this:
-two numbers.
+What can we give to this 'f'?
+And we know this: two numbers.
 
 00:11:14,430 --> 00:11:17,670
 And what kind of inputs can we give to this
 'f'?
 
 00:11:17,670 --> 00:11:22,170
-And intuitively, we know: well, functions from
-integers to integers.
+And intuitively, we know: well,
+functions from integers to integers.
 
 00:11:22,170 --> 00:11:26,770
-Not two arguments, but instead here one is
-input and one is output.
+Not two arguments, but instead here
+one is input and one is output.
 
 00:11:26,770 --> 00:11:29,320
-And then, what can these functions do with
-their inputs?
+And then, what can these
+functions do with their inputs?
 
 00:11:29,320 --> 00:11:33,460
-For this type, we know what this function
-can do with its numbers.
+For this type, we know what this
+function can do with its numbers.
 
 00:11:33,460 --> 00:11:38,850
 It can look at them, add them, subtract them,
@@ -628,8 +633,8 @@ for example.
 What about this function?
 
 00:11:42,000 --> 00:11:45,640
-Knowing that it takes a function as an argument
-is nice.
+Knowing that it takes a
+function as an argument is nice.
 
 00:11:45,640 --> 00:11:50,670
 But now, what does it do with that argument?
@@ -669,23 +674,24 @@ That's something we need to discuss in order
 to get a good grasp of what really happens in
 
 00:12:24,000 --> 00:12:26,630
-such a higher-order function, or what makes
-a higher-order function.
+such a higher-order function, or
+what makes a higher-order function.
 
 00:12:26,630 --> 00:12:29,860
-So, let's do this with these two simple functions.
+So, let's do this with
+these two simple functions.
 
 00:12:29,860 --> 00:12:33,840
-And the main point is about the second one,
-of course.
+And the main point is about
+the second one, of course.
 
 00:12:33,840 --> 00:12:44,190
 The first one is just a standard function
 kind, of which you have already seen examples.
 
 00:12:44,190 --> 00:12:56,600
-So, let's consider this first example: functions
-of this simple first-order type.
+So, let's consider this first example:
+functions of this simple first-order type.
 
 00:12:56,600 --> 00:12:57,850
 What could be such functions?
@@ -705,23 +711,23 @@ output could be x + y, or of course, f x y
 = x – y.
 
 00:13:16,021 --> 00:13:22,530
-Or maybe 'f' ignores the first argument and
-simply returns the second one.
+Or maybe 'f' ignores the first argument
+and simply returns the second one.
 
 00:13:22,530 --> 00:13:30,840
-Or maybe 'f' will even ignore both arguments
-and return 12 or some other thing.
+Or maybe 'f' will even ignore both
+arguments and return 12 or some other thing.
 
 00:13:30,840 --> 00:13:33,510
-We could write more complex expressions on
-the right-hand side.
+We could write more complex
+expressions on the right-hand side.
 
 00:13:33,510 --> 00:13:35,700
 So, these are functions of this type.
 
 00:13:35,700 --> 00:13:43,000
-And I don't mean one function with these four
-definitions, but basically one of them.
+And I don't mean one function with these
+four definitions, but basically one of them.
 
 00:13:43,000 --> 00:13:48,810
 So, 'f :: ...' and the first one or second one
@@ -742,8 +748,8 @@ other type, which was written like this, with
 these extra brackets.
 
 00:14:06,040 --> 00:14:09,930
-And I have already indicated or tried to explain
-why they are important.
+And I have already indicated or tried
+to explain why they are important.
 
 00:14:09,930 --> 00:14:16,010
 And now we see this in more detail.
@@ -761,8 +767,8 @@ It has to take an argument.
 What would be its argument?
 
 00:14:21,750 --> 00:14:25,430
-The argument is only one, namely the thing
-that is written in brackets above.
+The argument is only one, namely the
+thing that is written in brackets above.
 
 00:14:25,430 --> 00:14:26,640
 It takes as argument a function.
@@ -771,12 +777,12 @@ It takes as argument a function.
 So, let's maybe not call this x.
 
 00:14:28,440 --> 00:14:33,380
-Let's call this g or h, which sounds more
-like a function.
+Let's call this g or h, which
+sounds more like a function.
 
 00:14:33,380 --> 00:14:36,360
-So, this takes only one argument, which is
-a function.
+So, this takes only one
+argument, which is a function.
 
 00:14:36,360 --> 00:14:37,750
 Let's call it h.
@@ -801,8 +807,8 @@ So, what could it return?
 Well, maybe let's use the 'h' somehow.
 
 00:14:53,630 --> 00:14:57,160
-We have a function from Int to Int, and we
-should give back an Int.
+We have a function from Int to Int,
+and we should give back an Int.
 
 00:14:57,160 --> 00:14:58,160
 What could we do?
@@ -815,8 +821,8 @@ to 7.
 Yes, 'h' is a function from Int to Int.
 
 00:15:03,210 --> 00:15:08,020
-We give it an Int, it returns an Int, whatever
-h of 7 is.
+We give it an Int, it returns
+an Int, whatever h of 7 is.
 
 00:15:08,020 --> 00:15:13,580
 And that's the outcome of our f-function,
@@ -836,8 +842,8 @@ each of them itself is a reasonable definition
 of 'f' with the type above.
 
 00:15:24,680 --> 00:15:30,280
-So, for example, we could also decide to ignore
-the function argument (the argument that
+So, for example, we could also decide to
+ignore the function argument (the argument that
 
 00:15:30,280 --> 00:15:36,150
 is a function) here, and just like on the
@@ -853,26 +859,26 @@ What else could 'f' do with its input?
 The input is a function h.
 
 00:15:43,360 --> 00:15:46,580
-What could 'f' do with a function 'h' (from Int
-to Int)?
+What could 'f' do with a
+function 'h' (from Int to Int)?
 
 00:15:46,580 --> 00:15:50,930
-Of course, it could apply it to other things
-than 7 above.
+Of course, it could apply it
+to other things than 7 above.
 
 00:15:50,930 --> 00:15:52,380
 But there are more things that it could do.
 
 00:15:52,380 --> 00:16:01,930
-For example, it could apply this h-function
-to the result of 'h' applied to 13, so 'h (h 13)',
+For example, it could apply this h-function to
+the result of 'h' applied to 13, so 'h (h 13)',
 
 00:16:01,930 --> 00:16:05,680
 or other combinations.
 
 00:16:05,680 --> 00:16:14,191
-Or it could decide to call 'h' once on 4,
-so 'h 4', and add this together with the result of
+Or it could decide to call 'h' once on 4, so
+'h 4', and add this together with the result of
 
 00:16:14,191 --> 00:16:16,820
 'h' on 7, 'h 7'.
@@ -881,12 +887,12 @@ so 'h 4', and add this together with the result of
 Or, again, very many further possibilities.
 
 00:16:20,350 --> 00:16:27,100
-So, again, this is meant as an "or", many
-lines that would be possible.
+So, again, this is meant as an "or",
+many lines that would be possible.
 
 00:16:27,100 --> 00:16:29,620
-And completely different lines on the left
-and on the right, of course.
+And completely different lines on the
+left and on the right, of course.
 
 00:16:29,620 --> 00:16:30,620
 That's the important point.
@@ -900,12 +906,12 @@ with these numbers (and you know many things
 that you could do with numbers), while on
 
 00:16:38,410 --> 00:16:41,440
-the right we have a function that takes a
-function as an argument.
+the right we have a function that
+takes a function as an argument.
 
 00:16:41,440 --> 00:16:45,420
-And then there are fewer things that you can
-do with this, but still quite a few.
+And then there are fewer things that you
+can do with this, but still quite a few.
 
 00:16:45,420 --> 00:16:48,560
 So, you cannot add 'h' to 'h', for example.
@@ -917,8 +923,8 @@ Since 'h' is a function.
 You cannot add two functions.
 
 00:16:50,630 --> 00:16:53,500
-But you can apply 'h' to something, then you
-get a number.
+But you can apply 'h' to
+something, then you get a number.
 
 00:16:53,500 --> 00:16:59,020
 And with this number, you can continue computing,
@@ -929,20 +935,20 @@ to h, combining it with other values that
 come out of h, for other inputs, etc.
 
 00:17:06,500 --> 00:17:16,380
-What we see on the right here, we call this
-extensional uses of this function.
+What we see on the right here, we call
+this extensional uses of this function.
 
 00:17:16,380 --> 00:17:22,350
-That is a notion from mathematics: function
-extensionality.
+That is a notion from mathematics:
+function extensionality.
 
 00:17:22,350 --> 00:17:32,230
-What this means is that we are not looking
-at the syntax of h.
+What this means is that we are
+not looking at the syntax of h.
 
 00:17:32,230 --> 00:17:41,460
-(I don't know why this above was somehow struck
-through.)
+(I don't know why this above
+was somehow struck through.)
 
 00:17:41,460 --> 00:17:43,920
 So, what I mean here: pure extensional uses.
@@ -957,16 +963,16 @@ So, 'f' gets 'h' as an argument.
 It can work with it.
 
 00:17:51,420 --> 00:17:55,860
-It can apply it to numbers, work with the
-results, etc.
+It can apply it to numbers,
+work with the results, etc.
 
 00:17:55,860 --> 00:17:59,790
-But 'f' cannot, for example, look into the syntax
-of 'h' and say:
+But 'f' cannot, for example, look
+into the syntax of 'h' and say:
 
 00:17:59,790 --> 00:18:04,180
-"Oh, you are a function from Int to Int. Let
-me look whether you do this by case distinction,
+"Oh, you are a function from Int to Int. Let me
+look whether you do this by case distinction,
 
 00:18:04,180 --> 00:18:05,530
 or whether you are a constant function."
@@ -975,8 +981,8 @@ or whether you are a constant function."
 Or something like that.
 
 00:18:06,800 --> 00:18:10,710
-That's not what a function can do with an
-argument which is a function.
+That's not what a function can do
+with an argument which is a function.
 
 00:18:10,710 --> 00:18:12,920
 We have pure extensional uses.
@@ -993,19 +999,20 @@ Then, a reasonable question at this point
 is:
 
 00:18:30,440 --> 00:18:35,720
-Where do we get those functions from, that
-we can pass as arguments to higher-order functions?
+Where do we get those functions from, that we
+can pass as arguments to higher-order functions?
 
 00:18:35,720 --> 00:18:41,410
-In the previous slide, where do we get the
-h from that we pass to f?
+In the previous slide, where do we
+get the h from that we pass to f?
 
 00:18:41,410 --> 00:18:44,840
-I showed you 'f' of 'h' is something, some definitions.
+I showed you 'f' of 'h' is
+something, some definitions.
 
 00:18:44,840 --> 00:18:48,950
-But if I want to call the function f, I must
-give it some argument, which should be a function.
+But if I want to call the function f, I must give
+it some argument, which should be a function.
 
 00:18:48,950 --> 00:18:51,170
 Where do I get those functions from?
@@ -1027,23 +1034,24 @@ We simply have to choose some that we consider
 useful to be passed as arguments to f.
 
 00:19:05,970 --> 00:19:09,830
-So, of course, we could take any predefined
-function.
+So, of course, we could take
+any predefined function.
 
 00:19:09,830 --> 00:19:12,380
-They have names, so they can be used as arguments.
+They have names, so they
+can be used as arguments.
 
 00:19:12,380 --> 00:19:16,150
-We can refer to them by their name and then
-pass them as arguments to f.
+We can refer to them by their name
+and then pass them as arguments to f.
 
 00:19:16,150 --> 00:19:21,360
-In the previous example, if we take some predefined
-functions from Int to Int.
+In the previous example, if we take some
+predefined functions from Int to Int.
 
 00:19:21,360 --> 00:19:26,809
-We could use functions that we have explicitly
-defined in our own program.
+We could use functions that we have
+explicitly defined in our own program.
 
 00:19:26,809 --> 00:19:33,200
 That is exactly what you did when you passed
@@ -1066,8 +1074,8 @@ And, an important example way of producing,
 or having, functions are partial applications
 
 00:19:49,280 --> 00:19:53,790
-of any of the above kinds of functions (predefined
-functions, own functions).
+of any of the above kinds of functions
+(predefined functions, own functions).
 
 00:19:53,790 --> 00:19:58,590
 Once we have a function with two arguments,
@@ -1089,16 +1097,16 @@ then what you get is a function from one Int
 to one Int.
 
 00:20:19,390 --> 00:20:25,970
-We have already discussed this bit when I
-talked about eta-reduction in one of the previous
+We have already discussed this bit when I talked
+about eta-reduction in one of the previous
 
 00:20:25,970 --> 00:20:31,270
 videos, where I talked also about why the
 Haskell function syntax is like it is.
 
 00:20:31,270 --> 00:20:34,540
-In particular, it is like this to allow partial
-application.
+In particular, it is like this
+to allow partial application.
 
 00:20:34,540 --> 00:20:39,410
 That is: If I have a two-argument function,
@@ -1112,8 +1120,8 @@ On the previous slide, we had this f, and
 it took an "Int to Int" as an argument.
 
 00:20:46,640 --> 00:20:49,860
-It could, for example, take the "(+) 5" as
-an argument.
+It could, for example, take
+the "(+) 5" as an argument.
 
 00:20:49,860 --> 00:20:51,360
 That is useful.
@@ -1123,8 +1131,8 @@ Of course, it depends on what we want to do,
 but the point is we have the possibility to
 
 00:20:57,360 --> 00:21:00,970
-make a function from Int to Int by taking
-a function which takes two integer arguments
+make a function from Int to Int by taking a
+function which takes two integer arguments
 
 00:21:00,970 --> 00:21:04,010
 and providing one of them.
@@ -1137,12 +1145,12 @@ they have all the rights of any other function
 or value in Haskell.
 
 00:21:10,270 --> 00:21:13,240
-So, they can be passed as an argument to some
-other function.
+So, they can be passed as an
+argument to some other function.
 
 00:21:13,240 --> 00:21:19,200
-They can be stored in a data structure, for
-example.
+They can be stored in a
+data structure, for example.
 
 00:21:19,200 --> 00:21:30,240
 So, let us see and let's use, from the slide
@@ -1156,16 +1164,16 @@ So, that was one of these functions "from
 Int to Int, as a function, goes to Int".
 
 00:21:37,160 --> 00:21:42,610
-And let's call this 'f' on one of these partial
-applications.
+And let's call this 'f' on one
+of these partial applications.
 
 00:21:42,610 --> 00:21:48,910
 It was written like this: plus is a binary
 operation (+) which takes two numbers, we
 
 00:21:48,910 --> 00:21:51,690
-give it one number, then we have a function
-from Int to Int.
+give it one number, then we
+have a function from Int to Int.
 
 00:21:51,690 --> 00:21:53,660
 And this function, we give to f.
@@ -1188,28 +1196,28 @@ to 5, because this is h, and then applied
 to 7, which is simply 12.
 
 00:22:24,660 --> 00:22:30,910
-Right, the plus function (+) applied to 5
-and 7, which is 12.
+Right, the plus function (+)
+applied to 5 and 7, which is 12.
 
 00:22:30,910 --> 00:22:36,480
-So, we simply use 'h' as an argument, and place
-it wherever it needs to be.
+So, we simply use 'h' as an argument,
+and place it wherever it needs to be.
 
 00:22:36,480 --> 00:22:40,130
-It needs to be the function to which we pass
-7 as an argument.
+It needs to be the function to
+which we pass 7 as an argument.
 
 00:22:40,130 --> 00:22:45,179
-So, then we have "h 7" is "(+) 5 of 7", (+)
-5 7, which is 12.
+So, then we have "h 7" is "(+)
+5 of 7", (+) 5 7, which is 12.
 
 00:22:45,179 --> 00:22:50,220
-And on the next slide, I think, we will also
-see another syntax quirk.
+And on the next slide, I think, we
+will also see another syntax quirk.
 
 00:22:50,220 --> 00:22:55,750
-So, actually, this "(+) applied to 5" can
-also be written in a different way.
+So, actually, this "(+) applied to 5"
+can also be written in a different way.
 
 00:22:55,750 --> 00:22:59,081
 Equivalently, we can write something like
@@ -1219,16 +1227,16 @@ this.
 This is called a section.
 
 00:23:00,630 --> 00:23:10,570
-So, this strange incomplete-looking addition
-here, this also could be 'h'.
+So, this strange incomplete-looking
+addition here, this also could be 'h'.
 
 00:23:10,570 --> 00:23:12,740
 It is the same as above, just a different
 syntax.
 
 00:23:12,740 --> 00:23:15,820
-Then it becomes even more obvious what is
-happening here, in some sense.
+Then it becomes even more obvious
+what is happening here, in some sense.
 
 00:23:15,820 --> 00:23:18,360
 So, then what we have, again, f h is something.
@@ -1243,12 +1251,12 @@ It is 'h' of 7.
 So, it is this 'h' here applied to 7.
 
 00:23:23,800 --> 00:23:31,770
-So, it is this incomplete-looking (5 +), which
-is 'h', applied to 7.
+So, it is this incomplete-looking
+(5 +), which is 'h', applied to 7.
 
 00:23:31,770 --> 00:23:38,230
-And then we, even more directly, see 5 + 7,
-which is 12.
+And then we, even more directly,
+see 5 + 7, which is 12.
 
 00:23:38,230 --> 00:23:41,090
 And again, this 'h' is used extensionally, here.
@@ -1267,16 +1275,16 @@ No, it is simply saying: f h is h 7.
 So, it uses the 'h' extensionally as a function.
 
 00:23:54,060 --> 00:24:00,940
-And all we can really do is pass some argument
-to it; in this case, 7.
+And all we can really do is pass
+some argument to it; in this case, 7.
 
 00:24:00,940 --> 00:24:17,640
-(I keep getting these strange changes to what
-I have written. I don't know why this is happening,
+(I keep getting these strange changes to what I
+have written. I don't know why this is happening,
 
 00:24:17,640 --> 00:24:28,590
-actually. Apparently, I am not yet very firm
-in this new note-taking thing here.)
+actually. Apparently, I am not yet very
+firm in this new note-taking thing here.)
 
 00:24:28,590 --> 00:24:42,640
 So, 'h' is used purely extensionally.
@@ -1286,16 +1294,16 @@ Which means all you can do with the function,
 really, apart from storing it in data structures,
 
 00:24:47,730 --> 00:24:50,880
-passing it around, is to apply it to some
-argument.
+passing it around, is to
+apply it to some argument.
 
 00:24:50,880 --> 00:24:52,210
-Which happens here with the h, when it is
-applied to 7.
+Which happens here with the
+h, when it is applied to 7.
 
 00:24:52,210 --> 00:25:04,500
-One way to
-get a better grasp of this partial application
+One way to get a better grasp
+of this partial application
 
 00:25:04,500 --> 00:25:11,840
 business is probably to realize that, actually,
@@ -1306,8 +1314,8 @@ that would also be the type of the plus operator
 (+), can also be read as: 'Int → (Int → Int)',
 
 00:25:17,200 --> 00:25:19,840
-that is: Int to a bracket that contains
-"Int to Int".
+that is: Int to a bracket
+that contains "Int to Int".
 
 00:25:19,840 --> 00:25:24,660
 We just discussed this difference for the
@@ -1321,8 +1329,8 @@ Now I am saying, the case where we don't have
 brackets around this first arrow here is equivalent
 
 00:25:32,390 --> 00:25:36,990
-or could be read as this one where we add
-brackets around here.
+or could be read as this one
+where we add brackets around here.
 
 00:25:36,990 --> 00:25:38,940
 And indeed, these brackets can be omitted.
@@ -1332,8 +1340,8 @@ So, this is, again, where we would say: don't
 write these brackets because it is clear
 
 00:25:43,160 --> 00:25:47,570
-enough that this is a function of two arguments
-which returns an integer.
+enough that this is a function of two
+arguments which returns an integer.
 
 00:25:47,570 --> 00:25:49,440
 We could also see it as this.
@@ -1365,8 +1373,8 @@ one integer, namely this one, and returns
 one integer.
 
 00:26:26,559 --> 00:26:31,940
-That is just a viewpoint question between
-this and this syntax.
+That is just a viewpoint question
+between this and this syntax.
 
 00:26:31,940 --> 00:26:34,070
 But they are the same, mathematically.
@@ -1393,8 +1401,8 @@ example of the opening rectangle before.
 So, both of these viewpoints are valid.
 
 00:26:55,080 --> 00:27:00,670
-There is no difference in usage, whether we
-consider one or the other perspective.
+There is no difference in usage, whether
+we consider one or the other perspective.
 
 00:27:00,670 --> 00:27:05,630
 And this is thanks to Haskell's function application
@@ -1428,32 +1436,32 @@ the addition, is in some sense also higher-order,
 because it also operates on functions.
 
 00:27:34,309 --> 00:27:38,840
-Namely, it can be seen as taking a number
-and giving back a function.
+Namely, it can be seen as taking a
+number and giving back a function.
 
 00:27:38,840 --> 00:27:42,640
-So, it doesn't take a function as an argument,
-but it has a function as a result.
+So, it doesn't take a function as an
+argument, but it has a function as a result.
 
 00:27:42,640 --> 00:27:45,799
-But usually, we don't call a function like
-this higher-order.
+But usually, we don't call a
+function like this higher-order.
 
 00:27:45,799 --> 00:27:56,872
-Usually, with "higher-order" we say that one
-of the arguments is a function.
+Usually, with "higher-order" we say that
+one of the arguments is a function.
 
 00:27:56,872 --> 00:28:01,040
-And, of course, this also fits with our narrative
-that all functions are values.
+And, of course, this also fits with our
+narrative that all functions are values.
 
 00:28:01,040 --> 00:28:04,600
-A function is something that takes something
-and gives back a value.
+A function is something that takes
+something and gives back a value.
 
 00:28:04,600 --> 00:28:10,740
-And this value can be a function, like in
-this case.
+And this value can be a
+function, like in this case.
 
 00:28:10,740 --> 00:28:16,450
 And then, this other syntactic specialty that
@@ -1470,19 +1478,19 @@ If we have a binary operator which is written
 like this as a function, and then we provide
 
 00:28:29,970 --> 00:28:36,330
-one argument, like the 5, then we can also
-write it as basically: "I am an operator application
+one argument, like the 5, then we can also write
+it as basically: "I am an operator application
 
 00:28:36,330 --> 00:28:38,890
 where there is still missing one argument".
 
 00:28:38,890 --> 00:28:43,960
-So, the first one is already there, but the
-second part of "+" is still missing.
+So, the first one is already there, but
+the second part of "+" is still missing.
 
 00:28:43,960 --> 00:28:54,500
-And I will, again, discuss this on the next
-slide with a few notes.
+And I will, again, discuss this on
+the next slide with a few notes.
 
 00:28:54,500 --> 00:28:57,900
 So, let's briefly talk about operator syntax.
@@ -1491,8 +1499,8 @@ So, let's briefly talk about operator syntax.
 Probably I have to do this first.
 
 00:29:01,820 --> 00:29:06,700
-Known from other languages is that there are
-prefix and infix operators.
+Known from other languages is that
+there are prefix and infix operators.
 
 00:29:06,700 --> 00:29:12,600
 And in Haskell there is a special syntax for
@@ -1509,8 +1517,8 @@ to write something like (+), and then I could
 apply it to arguments like 5 and 7.
 
 00:29:22,650 --> 00:29:25,140
-So, this is prefix because it comes before
-the arguments.
+So, this is prefix because it
+comes before the arguments.
 
 00:29:25,140 --> 00:29:29,490
 And of course, also the usual functions like
@@ -1524,15 +1532,15 @@ seen.
 So, they are usually written as prefix.
 
 00:29:34,300 --> 00:29:36,330
-It means that you have the function and then
-you have two arguments.
+It means that you have the function
+and then you have two arguments.
 
 00:29:36,330 --> 00:29:39,890
 Then there is infix syntax.
 
 00:29:39,890 --> 00:29:43,560
-And that's for operators, typically things
-like "1 + 2".
+And that's for operators,
+typically things like "1 + 2".
 
 00:29:43,560 --> 00:29:46,990
 So, here, the "+" is an infix operator.
@@ -1542,8 +1550,8 @@ And you have also seen on the slides that
 binary functions that would usually be written
 
 00:29:53,030 --> 00:29:57,890
-prefix can also be written infix, if you put
-them in these back-ticks `...`.
+prefix can also be written infix, if
+you put them in these back-ticks `...`.
 
 00:29:57,890 --> 00:30:00,510
 So, the "mod" is a binary function.
@@ -1559,12 +1567,12 @@ They apply to operators/functions that are
 prefix, but that we want to use in a kind
 
 00:30:13,731 --> 00:30:16,120
-of infix style with just one of two arguments
-given.
+of infix style with just
+one of two arguments given.
 
 00:30:16,120 --> 00:30:19,419
-This is the "5 +" that you saw on the previous
-slide.
+This is the "5 +" that you
+saw on the previous slide.
 
 00:30:19,419 --> 00:30:20,780
 What was this?
@@ -1589,8 +1597,8 @@ say: Let me write the section in this way.
 So, we have this binary operator (+).
 
 00:30:51,650 --> 00:30:54,190
-And I provide one of its arguments, namely
-the second one.
+And I provide one of its
+arguments, namely the second one.
 
 00:30:54,190 --> 00:31:00,410
 Then I get a function to which I can pass
@@ -1600,12 +1608,12 @@ a value, and then what is computed is that
 value, which was passed last, plus 5.
 
 00:31:03,930 --> 00:31:09,280
-Of course, in the case of "plus", this doesn't
-make a difference.
+Of course, in the case of "plus",
+this doesn't make a difference.
 
 00:31:09,280 --> 00:31:15,049
-Semantically, this is of course not an interesting
-difference.
+Semantically, this is of course
+not an interesting difference.
 
 00:31:15,049 --> 00:31:30,570
 We will compute the same thing, assuming that
@@ -1615,16 +1623,16 @@ plus (+) is commutative, which at least on
 the integers, it is.
 
 00:31:31,570 --> 00:31:38,380
-But, for example, if we did this with (-), so
-(5 -).
+But, for example, if we did
+this with (-), so (5 -).
 
 00:31:38,380 --> 00:31:46,900
-This is also possible, because (-) is a binary
-operator.
+This is also possible, because
+(-) is a binary operator.
 
 00:31:46,900 --> 00:31:54,809
-And then, written as (- 5) [ACTUALLY, WOULD HAVE TO WRITE (subtract 5) FOR THIS],
-they do different things.
+And then, written as (- 5) [ACTUALLY, WOULD HAVE TO
+WRITE (subtract 5) FOR THIS], they do different things.
 
 00:31:54,809 --> 00:31:59,179
 Why is that?
@@ -1642,8 +1650,8 @@ Simply, we will apply both of these two versions
 to 7, and then you will see different outcomes.
 
 00:32:26,060 --> 00:32:32,600
-The first of these two functions applied to
-7 has the result -2.
+The first of these two functions
+applied to 7 has the result -2.
 
 00:32:32,600 --> 00:32:35,880
 The second, applied to 7, will result in 5.
@@ -1655,12 +1663,12 @@ Because we could compute 7 - 5.
 Why is this useful?
 
 00:32:39,530 --> 00:32:43,210
-Is this all just somehow syntactic games that
-we play?
+Is this all just somehow
+syntactic games that we play?
 
 00:32:43,210 --> 00:32:49,020
-Well, it often gives very nice, short, declarative
-predicates, for example.
+Well, it often gives very nice, short,
+declarative predicates, for example.
 
 00:32:49,020 --> 00:33:12,070
 In this case above here, it was arithmetic
@@ -1674,8 +1682,8 @@ So, for example, something like '< 5' is a
 function from Int to Bool, because '<' is
 
 00:33:33,299 --> 00:33:37,770
-an operation between two integers,
-'Int → Int → Bool'.
+an operation between two
+integers, 'Int → Int → Bool'.
 
 00:33:37,770 --> 00:33:43,990
 And if I write '(< 5)', then it is a function
@@ -1689,15 +1697,15 @@ namely, whether that thing is smaller than
 5.
 
 00:33:50,250 --> 00:34:05,850
-So, if I apply the function you see here to
-3, the answer will be True, because 3 is smaller
+So, if I apply the function you see here to 3,
+the answer will be True, because 3 is smaller
 
 00:34:05,850 --> 00:34:06,850
 than 5.
 
 00:34:06,850 --> 00:34:10,190
-Applying it to 7 would give False, because
-7 is not smaller than 5.
+Applying it to 7 would give False,
+because 7 is not smaller than 5.
 
 00:34:10,190 --> 00:34:13,050
 So, we simply read this as "smaller than five".
@@ -1720,8 +1728,8 @@ So, this written above is a function waiting
 for an argument x and then computing 5 – x.
 
 00:35:06,680 --> 00:35:16,520
-And the same way for all the other section
-syntax cases above.
+And the same way for all the
+other section syntax cases above.
 
 00:35:16,520 --> 00:35:23,380
 Apart from the special syntax cases using
@@ -1746,8 +1754,8 @@ Such functions are called anonymous, and they
 use the so-called lambda-abstraction syntax.
 
 00:35:43,980 --> 00:35:47,760
-We have already seen this before, namely in
-the context of QuickCheck tests.
+We have already seen this before, namely
+in the context of QuickCheck tests.
 
 00:35:47,760 --> 00:35:55,140
 There was this syntax, and I said something
@@ -1780,19 +1788,19 @@ again, so we could use the '_'), and then
 the whole thing that we have here is, in this
 
 00:36:25,380 --> 00:36:29,109
-case, a function which, given an x, computes
-x + x.
+case, a function which,
+given an x, computes x + x.
 
 00:36:29,109 --> 00:36:30,830
 And we don't give a name to this function.
 
 00:36:30,830 --> 00:36:36,900
-So, we don't write a line "function name = some
-expression".
+So, we don't write a line
+"function name = some expression".
 
 00:36:36,900 --> 00:36:40,400
-Simply, this itself is a function, which doesn't
-get its own name.
+Simply, this itself is a function,
+which doesn't get its own name.
 
 00:36:40,400 --> 00:36:42,220
 In that sense, it is anonymous.
@@ -1812,19 +1820,19 @@ had this 'f' which expected a function from
 Int to Int and gave back an Int:
 
 00:36:59,980 --> 00:37:03,740
-There are really many ways in which we can
-use this.
+There are really many ways
+in which we can use this.
 
 00:37:03,740 --> 00:37:07,530
 The identity function (id) could be used here.
 
 00:37:07,530 --> 00:37:12,000
-So, an existing library function could be
-used as an argument.
+So, an existing library function
+could be used as an argument.
 
 00:37:12,000 --> 00:37:15,740
-And there are other ones that work on integers,
-for example.
+And there are other ones that
+work on integers, for example.
 
 00:37:15,740 --> 00:37:22,590
 I just took some existing functions or partial
@@ -1835,8 +1843,8 @@ Then this is something we have explicitly
 discussed: that we can use operators, partially
 
 00:37:27,510 --> 00:37:30,890
-apply them, and then get functions that could
-have the appropriate type.
+apply them, and then get functions
+that could have the appropriate type.
 
 00:37:30,890 --> 00:37:33,330
 We can pass an anonymous function.
@@ -1846,8 +1854,8 @@ So, what I showed here: when we want to pass
 this to f, then we have to put it in brackets
 
 00:37:38,300 --> 00:37:42,200
-to make clear that this is the argument to
-this f.
+to make clear that this
+is the argument to this f.
 
 00:37:42,200 --> 00:37:43,680
 So, this goes in this place.
@@ -1863,8 +1871,8 @@ then write arbitrary expressions inside this
 body and create arbitrary anonymous functions.
 
 00:38:01,840 --> 00:38:08,150
-And actually, this lambda-abstraction syntax
-is also another point where we can get a clearer
+And actually, this lambda-abstraction syntax is
+also another point where we can get a clearer
 
 00:38:08,150 --> 00:38:10,390
 view on Haskell's function definition syntax.
@@ -1884,8 +1892,8 @@ an Int, or seeing it as a function that takes
 one Int and then returns another function.
 
 00:38:24,520 --> 00:38:32,270
-With lambda-abstraction syntax, we can actually
-make this even more apparent.
+With lambda-abstraction syntax, we can
+actually make this even more apparent.
 
 00:38:32,270 --> 00:38:37,170
 Let's look at this specific case here.
@@ -1913,16 +1921,16 @@ function which is waiting for some argument
 and then returns the sum of the two.
 
 00:39:00,670 --> 00:39:04,490
-So, for these two, we could use both these
-perspectives.
+So, for these two, we could
+use both these perspectives.
 
 00:39:04,490 --> 00:39:08,780
 This one, or the one where we have brackets
 around here from a few slides back.
 
 00:39:08,780 --> 00:39:11,849
-But they are equivalent, because these two
-function definitions are equivalent.
+But they are equivalent, because these
+two function definitions are equivalent.
 
 00:39:11,849 --> 00:39:16,090
 To have a function which takes two arguments
@@ -1933,8 +1941,8 @@ function which takes an argument and then
 gives back a function which takes another
 
 00:39:19,460 --> 00:39:24,510
-argument and returns the sum of what has been
-provided here and here.
+argument and returns the sum of what
+has been provided here and here.
 
 00:39:24,510 --> 00:39:27,130
 And we could even go to further extremes and
@@ -1945,8 +1953,8 @@ Actually, add is just something which is a
 function which takes an x, and then returns
 
 00:39:32,440 --> 00:39:34,970
-a function which takes a y, and then returns
-the sum of these.
+a function which takes a y, and
+then returns the sum of these.
 
 00:39:34,970 --> 00:39:40,950
 We can even move the first argument to the
@@ -1963,15 +1971,15 @@ and, in lambda-abstraction syntax, directly
 introduce several variables at once.
 
 00:39:50,030 --> 00:39:56,700
-So, all these four ways are expressing the
-very same thing and will be handled equivalently
+So, all these four ways are expressing the very
+same thing and will be handled equivalently
 
 00:39:56,700 --> 00:39:58,080
 by the compiler.
 
 00:39:58,080 --> 00:40:03,950
-So, this explains, again, why we don't use
-the standard mathematical notation.
+So, this explains, again, why we don't
+use the standard mathematical notation.
 
 00:40:03,950 --> 00:40:09,360
 Because if we had written addition as a function
@@ -1982,7 +1990,8 @@ brackets where we give it two arguments separated
 by a comma, then it would not have been so
 
 00:40:14,380 --> 00:40:16,470
-clear how to express these different perspectives.
+clear how to express these
+different perspectives.
 
 00:40:16,470 --> 00:40:19,920
 We couldn't simply move from one to the other.
@@ -2011,8 +2020,8 @@ Because it looked all a bit esoteric, maybe,
 because I had to introduce all these different
 
 00:40:47,500 --> 00:40:50,869
-ways of writing functions to pass to other
-functions.
+ways of writing functions
+to pass to other functions.
 
 00:40:50,869 --> 00:40:58,330
 It was all artificial so far, except maybe
@@ -2027,8 +2036,8 @@ that we have been using), which you cannot
 write yourself yet, in some parts because
 
 00:41:08,010 --> 00:41:11,599
-they interact with 'IO' (like drawing something
-on screen, for example).
+they interact with 'IO' (like drawing
+something on screen, for example).
 
 00:41:11,599 --> 00:41:16,890
 That is something that you don't know how
@@ -2039,19 +2048,19 @@ So, in that sense, even though you have seen
 some higher-order functions, you cannot really
 
 00:41:22,190 --> 00:41:26,120
-write your own yet, or haven't, maybe, seen
-a need for this.
+write your own yet, or haven't,
+maybe, seen a need for this.
 
 00:41:26,120 --> 00:41:29,520
 Hence, so far, this might seem a bit esoteric.
 
 00:41:29,520 --> 00:41:36,190
-But some usages would be already apparent
-to you maybe now, namely for example, in the
+But some usages would be already apparent to
+you maybe now, namely for example, in the
 
 00:41:36,190 --> 00:41:40,300
-exercise tasks where you had to draw a game
-level.
+exercise tasks where you
+had to draw a game level.
 
 00:41:40,300 --> 00:41:42,370
 Then what was the ingredient for this?
@@ -2064,16 +2073,16 @@ integers and gave back a code for what tile
 to draw on the screen.
 
 00:41:51,530 --> 00:41:54,930
-And this 'level' function could be seen as
-data itself.
+And this 'level' function
+could be seen as data itself.
 
 00:41:54,930 --> 00:41:58,560
 You could, for example, instead of having
 it as a top-level definition, simply have
 
 00:41:58,560 --> 00:42:03,750
-another function to which you can give a "level"
-function.
+another function to which you
+can give a "level" function.
 
 00:42:03,750 --> 00:42:12,060
 And indeed, the current task from the exercises
@@ -2101,8 +2110,8 @@ Again, that is something that you haven't
 written yourself, but very soon, actually
 
 00:42:35,980 --> 00:42:42,250
-in the next video, we will see more examples
-of uses of higher-order.
+in the next video, we will see more
+examples of uses of higher-order.
 
 00:42:42,250 --> 00:42:49,430
 And we will do this in the case of lists,
@@ -2123,8 +2132,8 @@ to other functions and also provide certain
 syntactic prerequisites.
 
 00:43:06,869 --> 00:43:14,089
-Now, in the next video, we can use this to
-do something useful on lists using higher-order
+Now, in the next video, we can use this to do
+something useful on lists using higher-order
 
 00:43:14,089 --> 00:43:14,589
 functions.

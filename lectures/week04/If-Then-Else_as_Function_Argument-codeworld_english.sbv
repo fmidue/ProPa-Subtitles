@@ -2,8 +2,8 @@
 Okay, another discussion on an example.
 
 0:00:03.860,0:00:08.720
-And actually, it's one of the examples from
-the last exercise week.
+And actually, it's one of the
+examples from the last exercise week.
 
 0:00:08.720,0:00:13.519
 And of course, I won't discuss this in full
@@ -13,8 +13,8 @@ now here because that's the job of the exercise
 videos that will also be made.
 
 0:00:14.929,0:00:19.570
-So, there will be a full discussion of the
-example and alternatives, et cetera.
+So, there will be a full discussion of
+the example and alternatives, et cetera.
 
 0:00:19.570,0:00:24.680
 But there's one thing that I wanted to point
@@ -47,8 +47,8 @@ condition and if this condition is fulfilled,
 then you apply some function to something;
 
 0:01:01.739,0:01:06.180
-else, we'll say expression one that was
-a more complicated version on the slide, like
+else, we'll say expression one that was a
+more complicated version on the slide, like
 
 0:01:06.180,0:01:11.390
 f x y (if exp1 then exp2 else exp3), let's say
@@ -58,16 +58,16 @@ we have something like if a condition holds,
 then something which applies f to an expression.
 
 0:01:15.560,0:01:21.829
-And else, it so happens that we apply the
-same function to another expression.
+And else, it so happens that we apply
+the same function to another expression.
 
 0:01:21.829,0:01:26.840
 Okay, and then there was this comment in the
 slides that actually does the equivalent,
 
 0:01:26.840,0:01:28.780
-I think it was written the other way around
-in the slide.
+I think it was written the
+other way around in the slide.
 
 0:01:28.780,0:01:29.939
 But of course, it's an equation.
@@ -113,8 +113,8 @@ languages, in which if-then-else is usually
 understood as a command-level thing where
 
 0:02:17.680,0:02:22.099
-such nesting doesn't seem very favorable or
-is not even possible.
+such nesting doesn't seem very
+favorable or is not even possible.
 
 0:02:22.099,0:02:27.370
 Okay, well, it was an abstract comment, and
@@ -124,8 +124,8 @@ well, we did an action in your submissions.
 This is not exactly.
 
 0:02:29.120,0:02:34.620
-I won't call out one specific student, but
-I had a look at the submissions for the first
+I won't call out one specific student, but I
+had a look at the submissions for the first
 
 0:02:34.620,0:02:35.980
 task of this week.
@@ -146,32 +146,32 @@ So, if somehow the time parameter is smaller
 than pi, then something is drawn, grass and
 
 0:02:53.650,0:02:56.480
-the rotated sun, and otherwise, just grass
-is drawn.
+the rotated sun, and
+otherwise, just grass is drawn.
 
 0:02:56.480,0:03:01.849
 It's, of course, organized here, that sun and
 grass are actually given names and used as
 
 0:03:01.849,0:03:06.049
-reusable constructs, rather than writing somehow
-complicated.
+reusable constructs, rather than
+writing somehow complicated.
 
 0:03:06.049,0:03:10.409
 For example, this colored green rectangle
 in these two places, so that there's grass,
 
 0:03:10.409,0:03:15.500
-grass instead of two times. This expression
-is, of course, already nice.
+grass instead of two times. This
+expression is, of course, already nice.
 
 0:03:15.500,0:03:19.049
 But there's something else that can be improved
 here, following this remark from above here,
 
 0:03:19.049,0:03:22.170
-which is one version when you run it, and
-it solves the task.
+which is one version when you
+run it, and it solves the task.
 
 0:03:22.170,0:03:25.610
 So, there's nothing bad about this.
@@ -194,8 +194,8 @@ leaving it there is also nice, basically
 stopping this rotation
 
 0:03:44.950,0:03:51.159
-already, before we have made a half circle
-or something like stopping at some point above
+already, before we have made a half circle or
+something like stopping at some point above
 
 0:03:51.159,0:03:58.030
 the horizon. Then there is this again and if-then-else,
@@ -206,12 +206,12 @@ we draw grass and the sun rotates to somewhere,
 and otherwise, we also draw the grass and
 
 0:04:04.310,0:04:07.270
-the sun rotated to somewhere else, namely
-to this stopping point, right?
+the sun rotated to somewhere else,
+namely to this stopping point, right?
 
 0:04:07.270,0:04:09.670
-And if you run this, then we get a similar
-picture.
+And if you run this, then
+we get a similar picture.
 
 0:04:09.670,0:04:15.220
 Well, it now looks—or similar animation that
@@ -243,8 +243,8 @@ or just grass or grass and something,
 or your grass and something else.
 
 0:04:38.759,0:04:42.340
-Okay, and now, duplication is the enemy
-of programmers.
+Okay, and now, duplication
+is the enemy of programmers.
 
 0:04:42.340,0:04:48.090
 So, one might ask, wouldn't it be nicer to
@@ -258,20 +258,20 @@ Otherwise, we draw grass and yet something
 else.
 
 0:04:53.620,0:04:57.060
-Yeah, both in the "then" and "else" branch, we
-have to draw the grass.
+Yeah, both in the "then" and "else"
+branch, we have to draw the grass.
 
 0:04:57.060,0:05:01.509
-So, why do we even say this inside the then-else
-if it's an unchanged part?
+So, why do we even say this inside the
+then-else if it's an unchanged part?
 
 0:05:01.509,0:05:05.830
 So, somehow the grass is not something which
 differs between the "then" and the "else" branch,
 
 0:05:05.830,0:05:09.990
-so it shouldn't be necessary to put it into
-the then-else parts.
+so it shouldn't be necessary to
+put it into the then-else parts.
 
 0:05:09.990,0:05:12.789
 Okay, and how can we actually do this?
@@ -280,8 +280,8 @@ Okay, and how can we actually do this?
 But what can we do?
 
 0:05:13.789,0:05:16.770
-Well, that is exactly an instance of this
-pattern here, right?
+Well, that is exactly an instance
+of this pattern here, right?
 
 0:05:16.770,0:05:18.889
 So, if some condition, right?
@@ -304,8 +304,8 @@ as we do the something.
 So, that's what a function is, right?
 
 0:05:35.370,0:05:39.610
-It describes some computation, and only the argument
-is conditional.
+It describes some computation, and
+only the argument is conditional.
 
 0:05:39.610,0:05:41.910
 Okay, how does this fit in here?
@@ -315,12 +315,12 @@ Well, let's consider this operation of putting
 the grass beside something else as a function
 
 0:05:46.360,0:05:49.750
-to let's say, this "grass and …" is our function
-f.
+to let's say, this "grass
+and …" is our function f.
 
 0:05:49.750,0:05:53.780
-What we have here is if some condition, then
-"grass and".
+What we have here is if some
+condition, then "grass and".
 
 0:05:53.780,0:05:55.970
 And that's the changing subexpression.
@@ -339,27 +339,27 @@ could have said this as saying the scene
 of t is "grass and",
 
 0:06:08.870,0:06:14.180
-so we will always draw grass, not just under
-some conditions, and well, what is (after) the "and"?
+so we will always draw grass, not just under some
+conditions, and well, what is (after) the "and"?
 
 0:06:14.180,0:06:15.639
 What do we also have to draw?
 
 0:06:15.639,0:06:22.259
-Well, if t is smaller than this stopping time,
-then we draw one kind of rotated sun,
+Well, if t is smaller than this stopping
+time, then we draw one kind of rotated sun,
 
 0:06:22.259,0:06:24.729
-and otherwise we draw the other kind of rotated
-sun.
+and otherwise we draw the
+other kind of rotated sun.
 
 0:06:24.729,0:06:30.199
 So, we move this common part of these two
 expressions outside if-then-else because
 
 0:06:30.199,0:06:33.319
-this doesn't depend on the condition; it doesn't
-even depend on the t, right?
+this doesn't depend on the condition;
+it doesn't even depend on the t, right?
 
 0:06:33.319,0:06:39.470
 So, previously, it looked like grass, depending
@@ -372,8 +372,8 @@ also on the t, but grass is a constant here.
 So, it doesn't depend on a t.
 
 0:06:43.810,0:06:47.970
-Okay, so we avoid some duplication; of course,
-not a big amount of duplication.
+Okay, so we avoid some duplication; of
+course, not a big amount of duplication.
 
 0:06:47.970,0:06:52.560
 But in other expressions, it could be a larger
@@ -393,8 +393,8 @@ different versions of the sun.
 Okay, does this still work?
 
 0:07:05.259,0:07:10.760
-Well, of course it does, because mathematically
-we have said exactly the same.
+Well, of course it does, because
+mathematically we have said exactly the same.
 
 0:07:10.760,0:07:15.800
 Because what I gave here and on a slide
@@ -404,20 +404,20 @@ last week is really a mathematical identity.
 Yes, it does make perfect sense.
 
 0:07:17.900,0:07:20.889
-So, that's something that motivates this
-moving out.
+So, that's something that
+motivates this moving out.
 
 0:07:20.889,0:07:26.910
-Okay, now we can ask ourselves there, was
-this just because of this syntactic happenstance
+Okay, now we can ask ourselves there, was this
+just because of this syntactic happenstance
 
 0:07:26.910,0:07:30.580
 that it looked exactly the same "grass and"
 and we don't even have this here, right?
 
 0:07:30.580,0:07:33.000
-So, how can we move the grass out of the scene1
-function?
+So, how can we move the grass
+out of the scene1 function?
 
 0:07:33.000,0:07:40.449
 Yes, I just switched to scene1 here, which
@@ -428,8 +428,8 @@ could be well, what now, so I can't move the
 "grass and" outside of this thing, because it
 
 0:07:47.319,0:07:51.800
-doesn't occur in both the "then" and the "else"
-branch.
+doesn't occur in both the
+"then" and the "else" branch.
 
 0:07:51.800,0:07:57.410
 Well, doesn't it? Let's consider again last
@@ -453,8 +453,8 @@ something, and the easy thing to do this is to say,
 let's consider this grass as "grass and blank".
 
 0:08:14.659,0:08:20.500
-Yes, the blank picture is something that I can
-always put beside my grass, for example.
+Yes, the blank picture is something that I
+can always put beside my grass, for example.
 
 0:08:20.500,0:08:22.479
 And of course, the question is, would I do
@@ -468,8 +468,8 @@ It looks stupid now, why did I complicate this
 as branch from grass to "grass and blank"?
 
 0:08:29.039,0:08:33.270
-Well, on its own that would probably indeed
-be a stupid change.
+Well, on its own that would
+probably indeed be a stupid change.
 
 0:08:33.270,0:08:40.710
 But now, I have actually rephrased my program
@@ -488,8 +488,8 @@ both branches, because I've made the nothing,
 the two main blank picture explicit, but then
 
 0:08:57.020,0:09:03.100
-I can again pull this out, I can say well,
-my scene1 is always grass.
+I can again pull this out, I can
+say well, my scene1 is always grass.
 
 0:09:03.100,0:09:06.800
 Let's express this by having this here.
@@ -499,8 +499,8 @@ That's always grass and then conditioned on
 this, I either have rotated the sun or simply
 
 0:09:16.000,0:09:21.490
-syntactically throwing away the "grass and"
-here, otherwise, I have blank which also expresses
+syntactically throwing away the "grass and" here,
+otherwise, I have blank which also expresses
 
 0:09:21.490,0:09:22.490
 this nicely.
@@ -510,8 +510,8 @@ We always have the grass, under some conditions
 I have rotated some sun, under other conditions
 
 0:09:27.030,0:09:31.200
-after some time, I have nothing, maybe just
-the grass.
+after some time, I have
+nothing, maybe just the grass.
 
 0:09:31.200,0:09:36.730
 And again, this is more conceptually appealing
@@ -522,8 +522,8 @@ eliminated this duplicate grass occurrence
 and I've made more conceptually clear what
 
 0:09:41.640,0:09:46.029
-is actually depending on the time, namely,
-detect whether or not
+is actually depending on the time,
+namely, detect whether or not
 
 0:09:46.029,0:09:50.330
 I have a picture and if I have a picture of
@@ -542,9 +542,9 @@ Let's check this.
 And it still works exactly the same way.
 
 0:10:03.730,0:10:08.120
-Okay, we have massaged the program a bit using
-this hint.
+Okay, we have massaged the
+program a bit using this hint.
 
 0:10:08.120,0:10:15.010
-Later in the future, maybe you do this kind
-of refactoring on your own already.
+Later in the future, maybe you do this
+kind of refactoring on your own already.

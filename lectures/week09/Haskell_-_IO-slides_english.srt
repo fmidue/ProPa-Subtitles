@@ -31,8 +31,8 @@ apply our functions to some input, then we
 would have to call them in the interpreter.
 
 00:00:51,600 --> 00:00:55,600
-We haven't written stand-alone programs that ask
-the user for input and return an output.
+We haven't written stand-alone programs that
+ask the user for input and return an output.
 
 00:00:57,200 --> 00:01:02,160
 To be taken seriously, a language should have
@@ -212,8 +212,8 @@ input commands is executed first, etc. Simply
 adding such imperative commands as expressions
 
 00:05:12,240 --> 00:05:19,600
-is a no-go because that would destroy
-the mathematics of the language. Nevertheless,
+is a no-go because that would destroy the
+mathematics of the language. Nevertheless,
 
 00:05:19,600 --> 00:05:24,720
 we need such facilities in some sense. We have to
@@ -240,8 +240,8 @@ the do-notation because the main definitions
 where the test suites were integrated in many of
 
 00:05:55,200 --> 00:05:59,840
-Autotool tasks already used the do-notation. There
-was some printing to the screen and then the execution
+Autotool tasks already used the do-notation. There was
+some printing to the screen and then the execution
 
 00:05:59,840 --> 00:06:05,840
 of test suites, etc. This was, of course, already
@@ -305,8 +305,8 @@ was referring to on the previous slide as well.
 
 151 # slide
 00:07:24,560 --> 00:07:31,440
-So here's the first example, very simple. We
-want the “hello world” of the Haskell do-notation.
+So here's the first example, very simple. We want
+the “hello world” of the Haskell do-notation.
 
 00:07:32,080 --> 00:07:36,160
 And the task is to get two numbers from the
@@ -349,8 +349,8 @@ and then the result is printed. What does the
 do-notation give us? It gives us a means of
 
 00:08:36,240 --> 00:08:42,480
-sequentializing. That the point was: we shouldn't
-be printing something like the product of read times
+sequentializing. That the point was: we shouldn't be
+printing something like the product of read times
 
 00:08:42,480 --> 00:08:49,040
 read. Because then, the order becomes unclear.
@@ -377,16 +377,16 @@ printing this out. What you may notice
 is that we don't need to say here that
 
 00:09:17,280 --> 00:09:22,400
-n should be an Integer. There's no “scanf”
-like in C, with some special
+n should be an Integer. There's no
+“scanf” like in C, with some special
 
 00:09:23,840 --> 00:09:29,360
-format string to express what
-is read. This will be decided by
+format string to express what is
+read. This will be decided by
 
 00:09:30,400 --> 00:09:36,240
-type inference. Since the n and m variables,
-which are not type annotated here, will be used as
+type inference. Since the n and m variables, which
+are not type annotated here, will be used as
 
 00:09:36,240 --> 00:09:40,960
 inputs to the prod function, which is Integer
@@ -401,16 +401,16 @@ pass as an Integer, because they use “abc”,
 not just digits, then this will be rejected.
 
 00:09:52,640 --> 00:09:58,320
-But that's the main point (type inference).
-The main point is the separation of do-code and
+But that's the main point (type inference). The
+main point is the separation of do-code and
 
 00:09:58,320 --> 00:10:04,640
 the computation code, and the fact that here
 the “do”, we have this sequential behavior
 
 00:10:04,640 --> 00:10:10,480
-which makes clear, and is corresponding to
-C or Python code in the sense that we
+which makes clear, and is corresponding
+to C or Python code in the sense that we
 
 00:10:10,480 --> 00:10:18,400
 have commands. We can read these as commands,
@@ -591,8 +591,8 @@ it's a computation that depends on what the
 user is doing, what the user is providing,
 
 00:14:32,480 --> 00:14:37,840
-and then there is a Char. If the user answers with
-the Char 'a', then the outcome here is 'a'.
+and then there is a Char. If the user answers
+with the Char 'a', then the outcome here is 'a'.
 
 00:14:37,840 --> 00:14:42,000
 And if the user enters the Char 'b', then the
@@ -611,8 +611,8 @@ there will be a further function which does the
 same for a String, etc. But the basic primitive is
 
 00:15:03,520 --> 00:15:07,760
-to put a Char on the screen. This is
-a function, so we have to provide a Char.
+to put a Char on the screen. This is a
+function, so we have to provide a Char.
 
 00:15:07,760 --> 00:15:12,080
 And then what is it doing? It performs some
@@ -627,16 +627,16 @@ put something to the screen. There is no
 user input that has to be reflected to the
 
 00:15:22,080 --> 00:15:26,800
-caller of the function. That's why it's
-a function which takes a Char,
+caller of the function. That's why
+it's a function which takes a Char,
 
 00:15:26,800 --> 00:15:32,320
 does some IO, and then doesn't need to give back a
 result. It could give back an error code, maybe if
 
 00:15:32,960 --> 00:15:37,840
-putting a Char to the screen could fail
-for some reason. But it is simple. The type is
+putting a Char to the screen could fail for
+some reason. But it is simple. The type is
 
 00:15:38,720 --> 00:15:47,760
 to have Char as input and IO nothing as the
@@ -671,8 +671,8 @@ knows how to convert some type like Integer
 or Trees or whatever, from and to Strings,
 
 00:16:32,480 --> 00:16:37,360
-then we can also use 'readLn' and the
-print functions. They have these interesting
+then we can also use 'readLn' and the print
+functions. They have these interesting
 
 00:16:38,960 --> 00:16:45,760
 constraints here. They are polymorphic. So, 'readLn'
@@ -1230,8 +1230,8 @@ the "while" should be, an IO something.
 That's if we entered the end of the loop
 
 00:31:25,200 --> 00:31:31,920
-once the predicate does not hold anymore. And while the
-predicate is still holding, we do the first option
+once the predicate does not hold anymore. And while
+the predicate is still holding, we do the first option
 
 00:31:31,920 --> 00:31:36,880
 here… the first variant here. What is it doing?
@@ -1306,8 +1306,8 @@ where we want to say something like: I want to
 start a while-loop with the original value zero,
 
 00:33:20,720 --> 00:33:26,320
-the predicate is the section “smaller than ten” (<10).
-So, we want to do this while the current value
+the predicate is the section “smaller than ten”
+(<10). So, we want to do this while the current value
 
 00:33:26,320 --> 00:33:31,280
 is still smaller than 10. So, that's like a

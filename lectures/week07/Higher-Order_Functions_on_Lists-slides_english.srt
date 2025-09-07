@@ -23,12 +23,12 @@ Similar functions to the ones I'm going to
 show you now (and you're going to use in the
 
 00:00:33,520 --> 00:00:37,809
-next exercises, probably) are available for
-other datatypes as well.
+next exercises, probably) are
+available for other datatypes as well.
 
 00:00:37,809 --> 00:00:42,149
-So, lists are just a stand-in, here, for generally
-structured datatypes.
+So, lists are just a stand-in, here,
+for generally structured datatypes.
 
 00:00:42,149 --> 00:00:46,690
 And this approach of using higher-order functions,
@@ -39,41 +39,41 @@ with them is valid and useful for other data
 types as well: for trees or other things that
 
 00:00:52,460 --> 00:00:57,339
-are yet to come or will not even be covered
-in this lecture, but that are useful in practice.
+are yet to come or will not even be covered in
+this lecture, but that are useful in practice.
 
 00:00:57,339 --> 00:01:06,630
-So, lists, just because lists are so simple,
-and we can directly use them.
+So, lists, just because lists are so
+simple, and we can directly use them.
 
 117 # slide
 00:01:06,630 --> 00:01:10,439
-Let's look at a first example, a first higher-order
-function on lists.
+Let's look at a first example, a
+first higher-order function on lists.
 
 00:01:10,439 --> 00:01:13,380
-This is this function that has a somewhat
-strange name, maybe.
+This is this function that has
+a somewhat strange name, maybe.
 
 00:01:13,380 --> 00:01:18,909
-So, maybe it is not immediately obvious why
-this is called 'foldl1'.
+So, maybe it is not immediately
+obvious why this is called 'foldl1'.
 
 00:01:18,909 --> 00:01:23,119
 There is some systematics behind this because
 there are other versions without the "1",
 
 00:01:23,119 --> 00:01:26,100
-and there are versions with an "r" instead
-of the "l" here.
+and there are versions with an
+"r" instead of the "l" here.
 
 00:01:26,100 --> 00:01:31,399
 Let's, for the moment, accept this strange
 name and look at what the function does.
 
 00:01:31,399 --> 00:01:36,159
-And then later, we can discuss and see what
-other versions there are.
+And then later, we can discuss and
+see what other versions there are.
 
 00:01:36,159 --> 00:01:37,880
 So, what is this doing?
@@ -85,8 +85,8 @@ First, let's look at the type.
 It is a polymorphic type.
 
 00:01:43,380 --> 00:01:45,700
-And in that, we can, of course, see the higher-order-ness
-here.
+And in that, we can, of course,
+see the higher-order-ness here.
 
 00:01:45,700 --> 00:01:49,660
 Because the first argument is a function,
@@ -99,8 +99,8 @@ We have a type variable 'a' here.
 So, "'a' to 'a' to 'a'" for whatever 'a' is.
 
 00:01:54,460 --> 00:01:57,640
-So, for some type, we have a binary function
-here.
+So, for some type, we have
+a binary function here.
 
 00:01:57,640 --> 00:02:04,030
 And actually, down here, we also see that
@@ -110,15 +110,16 @@ it is expected to be left-associative (or
 to be used in that way).
 
 00:02:09,690 --> 00:02:10,950
-But that is not something that the type expresses.
+But that is not something
+that the type expresses.
 
 00:02:10,950 --> 00:02:17,960
 The type simply says that we have a binary
 function and then we have a list of 'a's,
 
 00:02:17,960 --> 00:02:24,750
-so, a list of elements of the kind on which
-this function can operate.
+so, a list of elements of the kind
+on which this function can operate.
 
 00:02:24,750 --> 00:02:27,280
 And the outcome will also be one of those
@@ -139,8 +140,8 @@ can operate on).
 And what does this function do?
 
 00:02:39,250 --> 00:02:42,800
-This is not seen in the type directly, but
-it is explained here.
+This is not seen in the type
+directly, but it is explained here.
 
 00:02:42,800 --> 00:02:49,000
 So, it puts a function (an operator), namely
@@ -158,15 +159,15 @@ So, we expect that this list is non-empty,
 and this is actually what the "1" stands for.
 
 00:02:59,980 --> 00:03:04,170
-The "l" stands for "left", and the "1" stands
-for "at least one element".
+The "l" stands for "left", and the
+"1" stands for "at least one element".
 
 00:03:04,170 --> 00:03:06,500
 We won't use this function for an empty list.
 
 00:03:06,500 --> 00:03:12,740
-And the function puts an operator between
-all elements of the non-empty list, in a left-associative
+And the function puts an operator between all
+elements of the non-empty list, in a left-associative
 
 00:03:12,740 --> 00:03:13,740
 fashion.
@@ -185,8 +186,8 @@ list.
 We have a list, say, of integers.
 
 00:03:21,740 --> 00:03:26,050
-So, then 'a' will be Int; and we have a list;
-and we want to compute the sum.
+So, then 'a' will be Int; and we have
+a list; and we want to compute the sum.
 
 00:03:26,050 --> 00:03:27,140
 What does this mean?
@@ -206,8 +207,8 @@ is exactly what is explained here: putting
 a certain operator there.
 
 00:03:41,780 --> 00:03:48,300
-So, "+" is actually associative, so it doesn't
-really matter how we bracket here.
+So, "+" is actually associative, so it
+doesn't really matter how we bracket here.
 
 00:03:48,300 --> 00:03:52,091
 For other operators like "-", of course, this
@@ -222,8 +223,8 @@ this, and then for the whole list, or whether
 we want to compute somehow differently, like
 
 00:04:03,490 --> 00:04:06,830
-first this, then this, and then the whole
-expression.
+first this, then this, and
+then the whole expression.
 
 00:04:06,830 --> 00:04:08,760
 For "+", it doesn't matter.
@@ -244,7 +245,8 @@ previous week when we had this convenient
 have the 'sum' function available on lists,
 
 00:04:28,620 --> 00:04:31,759
-we could simply write it with very few keystrokes.
+we could simply write it
+with very few keystrokes.
 
 00:04:31,759 --> 00:04:34,129
 Basically, these are the keystrokes that we
@@ -254,8 +256,8 @@ need.
 So, this is the 'sum' function.
 
 00:04:36,229 --> 00:04:39,770
-It takes some list and puts "+" between all
-neighboring elements.
+It takes some list and puts "+"
+between all neighboring elements.
 
 00:04:39,770 --> 00:04:43,569
 That's what summing the elements of a list
@@ -272,28 +274,28 @@ If we had something like a list of Boolean
 values, then we cannot add them, but we can
 
 00:04:53,230 --> 00:04:56,600
-maybe conjunct them, or disjunct them, with
-'and' and 'or'.
+maybe conjunct them, or disjunct
+them, with 'and' and 'or'.
 
 00:04:56,600 --> 00:05:01,069
-And then we can use the same polymorphic function,
-just with a different operator here.
+And then we can use the same polymorphic
+function, just with a different operator here.
 
 00:05:01,069 --> 00:05:09,150
 We have polymorphism, and we have higher-order-ness,
 and they combine to very nice uses here.
 
 00:05:09,150 --> 00:05:15,360
-And we will see more functions of that kind,
-and applications of this principle, this combination
+And we will see more functions of that kind, and
+applications of this principle, this combination
 
 00:05:15,360 --> 00:05:16,699
 of polymorphism and higher-order-ness.
 
 118 # slide
 00:05:16,699 --> 00:05:25,050
-Here is another example of a higher-order
-function on lists.
+Here is another example of a
+higher-order function on lists.
 
 00:05:25,050 --> 00:05:31,050
 And again, while as shown here it's a function
@@ -317,8 +319,8 @@ exactly the same name, but with the same ideas.
 So, what does 'map' mean?
 
 00:05:50,009 --> 00:05:53,900
-As written here, it's a polymorphic function
-and it's a higher-order function.
+As written here, it's a polymorphic
+function and it's a higher-order function.
 
 00:05:53,900 --> 00:05:57,360
 It is parameterized over whatever function.
@@ -337,15 +339,15 @@ So, 'a' and 'b' are possibly different types
 And then what do we get?
 
 00:06:08,979 --> 00:06:11,849
-The second argument is a list of 'a's and
-it returns a list of 'b's.
+The second argument is a list of
+'a's and it returns a list of 'b's.
 
 00:06:11,849 --> 00:06:13,449
 What does the function do?
 
 00:06:13,449 --> 00:06:18,779
-It applies this function to all elements of
-a list and gives back a list with the changed
+It applies this function to all elements of a
+list and gives back a list with the changed
 
 00:06:18,779 --> 00:06:19,779
 elements.
@@ -354,8 +356,8 @@ elements.
 Of course, they are not changed in place.
 
 00:06:20,779 --> 00:06:22,939
-We don't want to change this list and turn
-the 'a's into 'b's.
+We don't want to change this
+list and turn the 'a's into 'b's.
 
 00:06:22,939 --> 00:06:28,419
 No, we give *in* a list of 'a's, and we get
@@ -383,8 +385,8 @@ here.
 How could we use this?
 
 00:06:52,000 --> 00:07:00,430
-For example, we could call it with the 'even'
-predicate on some list of integers.
+For example, we could call it with the
+'even' predicate on some list of integers.
 
 00:07:00,430 --> 00:07:02,999
 So, let's discuss what would happen here.
@@ -411,16 +413,16 @@ For each element here, we would apply the
 'even' predicate, so checking whether the
 
 00:07:21,039 --> 00:07:25,189
-number is even or not, and accumulating the
-outcomes in the list.
+number is even or not, and
+accumulating the outcomes in the list.
 
 00:07:25,189 --> 00:07:29,590
-So, the outcome of this call here will be a
-list with 10 elements.
+So, the outcome of this call here
+will be a list with 10 elements.
 
 00:07:29,590 --> 00:07:33,460
-The first element is False because "1" is
-not even.
+The first element is False
+because "1" is not even.
 
 00:07:33,460 --> 00:07:37,529
 The second element of the result will be True,
@@ -430,8 +432,8 @@ because the second element from this list
 is "2", which is even, and so on.
 
 00:07:39,910 --> 00:07:43,780
-We have False, True, False, True, False, True,
-False, True, False, True.
+We have False, True, False, True,
+False, True, False, True, False, True.
 
 00:07:43,780 --> 00:07:45,079
 Overall, 10 Boolean values.
@@ -464,8 +466,8 @@ in a function from Pictures to Pictures.
 Well, let's think of the CodeWorld library.
 
 00:08:11,699 --> 00:08:15,639
-For example, 'dilated 5' is a function from
-Pictures to Pictures.
+For example, 'dilated 5' is a
+function from Pictures to Pictures.
 
 00:08:15,639 --> 00:08:20,800
 Namely, it takes a Picture and scales it by
@@ -478,23 +480,23 @@ So, this is a partial application.
 It's a function.
 
 00:08:23,389 --> 00:08:27,539
-Actually, 'dilated' takes a number and a Picture
-and gives a Picture.
+Actually, 'dilated' takes a number
+and a Picture and gives a Picture.
 
 00:08:27,539 --> 00:08:31,560
 So, if we apply it partially to just a number,
 then we get a function from Picture to Picture.
 
 00:08:31,560 --> 00:08:37,440
-That is something we can pass in here, if
-'a' and 'b' are both Picture.
+That is something we can pass in
+here, if 'a' and 'b' are both Picture.
 
 00:08:37,440 --> 00:08:39,150
 Then we have to give a list of Pictures.
 
 00:08:39,150 --> 00:08:42,790
-So, let's say we have three Pictures: pic1,
-pic2, pic3.
+So, let's say we have three
+Pictures: pic1, pic2, pic3.
 
 00:08:42,790 --> 00:08:44,330
 Then we can pass this in.
@@ -503,8 +505,8 @@ Then we can pass this in.
 And what would be the outcome?
 
 00:08:45,630 --> 00:08:49,910
-Again, a list of Pictures because 'b' will
-also be Picture in this case.
+Again, a list of Pictures because 'b'
+will also be Picture in this case.
 
 00:08:49,910 --> 00:08:51,960
 And what is the outcome list?
@@ -540,8 +542,8 @@ What are the ingredients now?
 Again, we have a function.
 
 00:09:26,710 --> 00:09:29,220
-But now it's not a function from 'a' to some
-'b' (to anything).
+But now it's not a function from
+'a' to some 'b' (to anything).
 
 00:09:29,220 --> 00:09:32,170
 It's a function of type from 'a' to Bool.
@@ -553,8 +555,8 @@ So, it is a predicate.
 The 'a' is still polymorphic.
 
 00:09:35,370 --> 00:09:40,330
-But the outcome of this function type is specifically
-Bool.
+But the outcome of this function
+type is specifically Bool.
 
 00:09:40,330 --> 00:09:44,180
 Which was allowed in the previous case with
@@ -567,8 +569,8 @@ there.
 There, 'b' could be anything.
 
 00:09:46,340 --> 00:09:51,710
-Then, again, we get a list of 'a's, so, of
-the things to which this predicate (this function)
+Then, again, we get a list of 'a's, so, of the
+things to which this predicate (this function)
 
 00:09:51,710 --> 00:09:53,010
 can be applied.
@@ -577,15 +579,15 @@ can be applied.
 And the outcome is a list of 'a's.
 
 00:09:54,110 --> 00:09:59,120
-Previously, it was a list of 'b's because
-we outputted the results of applying the function
+Previously, it was a list of 'b's because we
+outputted the results of applying the function
 
 00:09:59,120 --> 00:10:00,210
 to elements from here.
 
 00:10:00,210 --> 00:10:05,390
-Now for the 'filter' instead of the 'map' function,
-we instead return a list of 'a's.
+Now for the 'filter' instead of the 'map'
+function, we instead return a list of 'a's.
 
 00:10:05,390 --> 00:10:06,390
 Which 'a's are this?
@@ -605,12 +607,12 @@ So, this could be a shorter list than this
 one, because some elements from this list
 
 00:10:21,380 --> 00:10:25,130
-might not satisfy this predicate, and then
-they are discarded.
+might not satisfy this predicate,
+and then they are discarded.
 
 00:10:25,130 --> 00:10:28,150
-Let's think about using this with the 'even'
-predicate again.
+Let's think about using this
+with the 'even' predicate again.
 
 00:10:28,150 --> 00:10:33,480
 In the previous slide, I had 'map' and 'even'
@@ -627,19 +629,19 @@ False, True, etc., because 1 is not even,
 but 2 is even, 3 is not even, etc.
 
 00:10:44,350 --> 00:10:46,310
-What would happen if we apply 'filter' and
-'even'?
+What would happen if we
+apply 'filter' and 'even'?
 
 00:10:46,310 --> 00:10:47,720
 What does it say?
 
 00:10:47,720 --> 00:10:51,750
-Take the elements from that list [1..10] which
-satisfy the predicate.
+Take the elements from that list
+[1..10] which satisfy the predicate.
 
 00:10:51,750 --> 00:10:59,690
-So, the ones to which the function applied
-gives False would now not be kept.
+So, the ones to which the function
+applied gives False would now not be kept.
 
 00:10:59,690 --> 00:11:02,800
 So, we don't keep 1, 3, 5, etc.
@@ -648,8 +650,8 @@ So, we don't keep 1, 3, 5, etc.
 The other ones are kept.
 
 00:11:04,070 --> 00:11:07,580
-And we don't output True for them because
-we don't output Bool.
+And we don't output True for them
+because we don't output Bool.
 
 00:11:07,580 --> 00:11:09,270
 The output is the elements themselves.
@@ -662,8 +664,8 @@ True, False, True, ...], "filter even [1..10]"
 gives [2, 4, 6, 8, 10].
 
 00:11:17,260 --> 00:11:21,150
-We get the list of numbers that satisfy the
-predicate.
+We get the list of numbers
+that satisfy the predicate.
 
 00:11:21,150 --> 00:11:24,560
 This was one example, with the 'even' predicate.
@@ -672,23 +674,23 @@ This was one example, with the 'even' predicate.
 We can think of other examples.
 
 00:11:28,470 --> 00:11:32,800
-Let's take the 'isPalindrome' function that
-we used in the slides (and you also programmed
+Let's take the 'isPalindrome' function that we
+used in the slides (and you also programmed
 
 00:11:32,800 --> 00:11:34,980
 a version of it in the exercises).
 
 00:11:34,980 --> 00:11:38,240
-And let's say we have a "completeDictionary"
-as a list of Strings.
+And let's say we have a
+"completeDictionary" as a list of Strings.
 
 00:11:38,240 --> 00:11:44,270
-And we want to know which of the words in
-our dictionary are palindromes.
+And we want to know which of the words
+in our dictionary are palindromes.
 
 00:11:44,270 --> 00:11:49,680
-We simply have to filter that complete dictionary
-by this isPalindrome predicate.
+We simply have to filter that complete
+dictionary by this isPalindrome predicate.
 
 00:11:49,680 --> 00:11:57,700
 So, this would be a list of Strings, and 'isPalindrome'
@@ -709,8 +711,8 @@ as Double values, and we want to keep only
 those that are greater than 50%.
 
 00:12:14,750 --> 00:12:20,910
-Then we could pass this section, this anonymous
-function, to the 'filter' function.
+Then we could pass this section, this
+anonymous function, to the 'filter' function.
 
 00:12:20,910 --> 00:12:25,280
 So, the predicate would be from Double to Bool
@@ -725,8 +727,8 @@ than 0.5), this would be a list of Doubles
 would be a possibly shorter list of Doubles,
 
 00:12:35,760 --> 00:12:39,620
-namely, only those kept that are greater than
-50%.
+namely, only those kept
+that are greater than 50%.
 
 00:12:39,620 --> 00:12:49,360
 And again, when I say "It selects list elements",
@@ -739,8 +741,8 @@ This is a list that comes in.
 It is the input.
 
 00:12:51,760 --> 00:12:57,410
-And out comes another list, which is probably,
-in most cases, a bit shorter because some elements
+And out comes another list, which is probably, in
+most cases, a bit shorter because some elements
 
 00:12:57,410 --> 00:12:58,410
 will not be selected.
@@ -753,12 +755,12 @@ We give back a new list that has fewer elements.
 
 120 # slide
 00:13:07,370 --> 00:13:11,070
-Now we could ask ourselves how 'map' and 'filter'
-are defined.
+Now we could ask ourselves how
+'map' and 'filter' are defined.
 
 00:13:11,070 --> 00:13:18,470
-Actually, you should be able to come up with
-this on your own.
+Actually, you should be able to
+come up with this on your own.
 
 00:13:18,470 --> 00:13:22,620
 Namely, 'map' and 'filter', applying a function
@@ -779,8 +781,8 @@ this slide as the definitions of 'map' and
 'filter'.
 
 00:13:37,460 --> 00:13:43,200
-The 'map' function takes a function, takes
-a list, and what does it do?
+The 'map' function takes a function,
+takes a list, and what does it do?
 
 00:13:43,200 --> 00:13:50,660
 It selects each element from the list, applies
@@ -813,12 +815,12 @@ You couldn't have used that sometimes because
 that was excluded from the exercise tasks.
 
 00:14:14,459 --> 00:14:18,370
-But from now on, where appropriate, you can
-use this.
+But from now on, where
+appropriate, you can use this.
 
 00:14:18,370 --> 00:14:21,630
-And similarly 'filter', about selecting things
-from a list.
+And similarly 'filter', about
+selecting things from a list.
 
 00:14:21,630 --> 00:14:25,670
 That is also something we have done so far
@@ -829,11 +831,12 @@ expressions saying: I take each element from
 a list that satisfies a predicate (something
 
 00:14:32,490 --> 00:14:38,141
-like "even a", for example), and then the
-'a' is kept.
+like "even a", for example),
+and then the 'a' is kept.
 
 00:14:38,141 --> 00:14:41,350
-This is exactly as described for the 'filter' function.
+This is exactly as described
+for the 'filter' function.
 
 00:14:41,350 --> 00:14:48,550
 So, 'map' and 'filter' are somehow replacements
@@ -847,7 +850,8 @@ And that is a way to maybe remember, and better
 understand these functions from your perspective
 
 00:14:54,090 --> 00:14:57,710
-now, because you already know list comprehensions.
+now, because you already
+know list comprehensions.
 
 00:14:57,710 --> 00:15:04,730
 But also the opposite is true, namely: conversely,
@@ -868,8 +872,8 @@ in addition (which was introduced earlier).
 It is not a higher-order function.
 
 00:15:18,190 --> 00:15:21,560
-It is a polymorphic function that basically
-flattens list levels.
+It is a polymorphic function that
+basically flattens list levels.
 
 00:15:21,560 --> 00:15:25,680
 So, if we have a list of lists of 'a's, then
@@ -887,8 +891,8 @@ Because whatever you could express with even
 complicated list comprehension expressions
 
 00:15:35,500 --> 00:15:38,590
-can also be expressed with 'map', 'filter',
-and 'concat'.
+can also be expressed with
+'map', 'filter', and 'concat'.
 
 00:15:38,590 --> 00:15:41,871
 And indeed, that is what the compiler does.
@@ -922,7 +926,8 @@ So far, my examples of wholemeal programming
 were about using list comprehensions instead
 
 00:16:23,590 --> 00:16:27,140
-of explicit recursion or instead of list indexing.
+of explicit recursion or
+instead of list indexing.
 
 00:16:27,140 --> 00:16:31,940
 So, now, if I go to 'map' and 'filter' and
@@ -938,12 +943,12 @@ Yes, absolutely!
 In some sense, even more so.
 
 00:16:38,090 --> 00:16:41,760
-Since these higher-order functions provide
-a first step in the direction of more abstraction.
+Since these higher-order functions provide a
+first step in the direction of more abstraction.
 
 00:16:41,760 --> 00:16:46,040
-As I said, they are available for other data
-structures as well.
+As I said, they are available for
+other data structures as well.
 
 00:16:46,040 --> 00:16:47,190
 List comprehensions are for lists.
@@ -960,8 +965,8 @@ If we have trees or generally not just lists,
 but some more structured data structures?
 
 00:16:59,930 --> 00:17:04,710
-Then we won't have list comprehensions anymore,
-because they are about lists.
+Then we won't have list comprehensions
+anymore, because they are about lists.
 
 00:17:04,710 --> 00:17:08,399
 But these 'map' and 'filter' and similar functions,
@@ -971,12 +976,12 @@ they are available for other datatypes as
 well.
 
 00:17:09,399 --> 00:17:12,639
-Then we can think about wholemeal programming
-on other types as well.
+Then we can think about wholemeal
+programming on other types as well.
 
 00:17:12,639 --> 00:17:21,049
-And this is actually a benefit of this more
-general perspective.
+And this is actually a benefit
+of this more general perspective.
 
 00:17:21,049 --> 00:17:25,680
 Discussing this on lists with the 'map' and
@@ -1021,15 +1026,15 @@ that we are interested in numbers divisible
 by 4.
 
 00:18:08,720 --> 00:18:12,630
-But what do we mean by "We are interested
-in numbers divisible by 4"?
+But what do we mean by "We are
+interested in numbers divisible by 4"?
 
 00:18:12,630 --> 00:18:14,889
 We are not yet clear.
 
 00:18:14,889 --> 00:18:20,539
-Is it that we want to make sure that we only
-square numbers divisible by 4?
+Is it that we want to make sure that
+we only square numbers divisible by 4?
 
 00:18:20,539 --> 00:18:26,200
 Or do we want to check that after we square
@@ -1053,8 +1058,8 @@ ways), and with 'map' and 'filter'.
 Let's look at this.
 
 00:18:43,970 --> 00:18:49,080
-Here are two list comprehension expressions
-for the two cases.
+Here are two list comprehension
+expressions for the two cases.
 
 00:18:49,080 --> 00:18:52,799
 What is the first line saying?
@@ -1070,12 +1075,12 @@ by 4; and if so, I keep it and square it.
 This is one of the two versions.
 
 00:19:04,179 --> 00:19:09,799
-This is the version where I only square numbers
-which are divisible by 4.
+This is the version where I only square
+numbers which are divisible by 4.
 
 00:19:09,799 --> 00:19:15,440
-And the other version is: I decide that what
-I want is that the square numbers are divisible
+And the other version is: I decide that what I
+want is that the square numbers are divisible
 
 00:19:15,440 --> 00:19:16,440
 by 4.
@@ -1098,45 +1103,45 @@ And only if this passes, then I keep the y.
 These are the two versions.
 
 00:19:35,279 --> 00:19:39,360
-And I have to do some work to switch from
-one to the other.
+And I have to do some work to
+switch from one to the other.
 
 00:19:39,360 --> 00:19:45,860
-It is not an obvious transformation from here
-to there, or from here to there.
+It is not an obvious transformation from
+here to there, or from here to there.
 
 00:19:45,860 --> 00:19:47,850
 And the only difference conceptually is:
 
 00:19:47,850 --> 00:19:51,440
-Do I want to square those things which are
-divisible by 4?
+Do I want to square those
+things which are divisible by 4?
 
 00:19:51,440 --> 00:19:56,610
-Or do I want to square things and the outcome
-should be divisible by 4?
+Or do I want to square things and
+the outcome should be divisible by 4?
 
 00:19:56,610 --> 00:19:59,710
 This leads to quite different code.
 
 00:19:59,710 --> 00:20:05,750
-Well, it is not completely different code,
-but I had to rearrange this list comprehension.
+Well, it is not completely different code, but
+I had to rearrange this list comprehension.
 
 00:20:05,750 --> 00:20:10,230
-What is the message here if I do this, instead,
-with 'map' and 'filter'?
+What is the message here if I do this,
+instead, with 'map' and 'filter'?
 
 00:20:10,230 --> 00:20:13,370
 It becomes more symmetric, in a way.
 
 00:20:13,370 --> 00:20:15,960
-Writing this with 'map' and 'filter', what
-would I do?
+Writing this with 'map' and
+'filter', what would I do?
 
 00:20:15,960 --> 00:20:22,070
-Well, the first version is: I want to look
-at all the values from the original list which
+Well, the first version is: I want to look at
+all the values from the original list which
 
 00:20:22,070 --> 00:20:24,179
 are divisible by 4; then I want to square
@@ -1192,12 +1197,12 @@ This, simply, means to switch the order of
 the constituents of this function composition.
 
 00:21:14,380 --> 00:21:19,400
-Now, I first apply 'map' to square each element
-of my given list.
+Now, I first apply 'map' to square
+each element of my given list.
 
 00:21:19,400 --> 00:21:23,080
-So, these two expressions will, of course,
-be applied to this list.
+So, these two expressions will, of
+course, be applied to this list.
 
 00:21:23,080 --> 00:21:25,230
 These are functions after composition.
@@ -1225,8 +1230,8 @@ Whereas on the somewhat lower level of list
 comprehensions, we needed more transformation
 
 00:21:53,139 --> 00:21:56,250
-of syntax to switch from one version to the
-other.
+of syntax to switch from
+one version to the other.
 
 00:21:56,250 --> 00:22:03,570
 In that sense, this is a nicer and more general
@@ -1236,11 +1241,12 @@ way of expressing manipulation of lists or
 list elements.
 
 00:22:04,570 --> 00:22:07,659
-This is also fine, of course, list comprehensions.
+This is also fine, of
+course, list comprehensions.
 
 00:22:07,659 --> 00:22:17,640
-But this is more pleasing from an algebraic
-perspective.
+But this is more pleasing
+from an algebraic perspective.
 
 123 # slide
 00:22:17,640 --> 00:22:26,640
@@ -1248,12 +1254,12 @@ And interestingly, also when it comes to expressing
 algebraic laws, this perspective of higher-order
 
 00:22:26,640 --> 00:22:31,779
-functions becomes more general and maybe also
-more useful.
+functions becomes more general
+and maybe also more useful.
 
 00:22:31,779 --> 00:22:38,960
-So, let's recall this law that we mentioned
-a while back, about 'reverse' and list comprehensions.
+So, let's recall this law that we mentioned a while
+back, about 'reverse' and list comprehensions.
 
 00:22:38,960 --> 00:22:45,809
 Actually, it was discussed already that thanks
@@ -1271,23 +1277,23 @@ to each element from a given list (and then
 reversing), is the same as doing the same
 
 00:22:58,759 --> 00:23:02,980
-but on the reversed list, and then not having
-the ultimate 'reverse' call.
+but on the reversed list, and then not
+having the ultimate 'reverse' call.
 
 00:23:02,980 --> 00:23:09,029
-And now that we know that this is basically
-a 'map' call, we can express this with function
+And now that we know that this is basically a
+'map' call, we can express this with function
 
 00:23:09,029 --> 00:23:13,940
-composition, by saying: "reverse after map f
-is the same as map f after reverse".
+composition, by saying: "reverse after map
+f is the same as map f after reverse".
 
 00:23:13,940 --> 00:23:15,230
 It uses reverse/reverse.
 
 00:23:15,230 --> 00:23:18,850
-It uses the expression of this list comprehension
-by map.
+It uses the expression of this
+list comprehension by map.
 
 00:23:18,850 --> 00:23:24,870
 And of course, this is also a 'map' call,
@@ -1298,8 +1304,8 @@ And then, if we also use function composition
 (this mathematical notion), then we can actually
 
 00:23:31,120 --> 00:23:33,960
-say: "reverse after map is the same as map
-after reverse".
+say: "reverse after map is the
+same as map after reverse".
 
 00:23:33,960 --> 00:23:37,190
 This is also very nice to remember.
@@ -1316,29 +1322,29 @@ And since map can also be similarly defined
 on other data structures, and polymorphic
 
 00:23:51,299 --> 00:23:56,340
-functions exist on other data structures,
-we can have the same kind of result then also
+functions exist on other data structures, we
+can have the same kind of result then also
 
 00:23:56,340 --> 00:23:58,350
 for other things than lists.
 
 00:23:58,350 --> 00:24:03,309
-Which wouldn't be clear how to express if
-we want to generalize from these list comprehensions
+Which wouldn't be clear how to express if we
+want to generalize from these list comprehensions
 
 00:24:03,309 --> 00:24:04,529
 to some other datatype.
 
 00:24:04,529 --> 00:24:06,980
-Because list comprehension syntax does not
-exist for other datatypes.
+Because list comprehension syntax
+does not exist for other datatypes.
 
 00:24:06,980 --> 00:24:10,320
 But 'map' and polymorphic functions do.
 
 00:24:10,320 --> 00:24:13,649
-So, that's one thing, that we can express laws
-like this.
+So, that's one thing, that we
+can express laws like this.
 
 00:24:13,649 --> 00:24:17,179
 Then, of course, we can also ask ourselves:
@@ -1351,12 +1357,12 @@ Do they also satisfy such laws?
 So, for example, we could ask ourselves:
 
 00:24:21,379 --> 00:24:24,750
-Now we have 'map' and 'filter', do they also
-commute in some way?
+Now we have 'map' and 'filter',
+do they also commute in some way?
 
 00:24:24,750 --> 00:24:30,039
-If I have a map-call and a filter-call, can
-I also exchange the order of these?
+If I have a map-call and a filter-call,
+can I also exchange the order of these?
 
 00:24:30,039 --> 00:24:31,239
 The answer is: not always.
@@ -1369,36 +1375,36 @@ these need to be different predicates, because
 the f might change the type of the list elements.
 
 00:24:37,200 --> 00:24:41,049
-So, it is not even clear that p and q could
-have the same types.
+So, it is not even clear that p
+and q could have the same types.
 
 00:24:41,049 --> 00:24:43,410
-So, certainly, they are not simply the same
-predicate.
+So, certainly, they are not
+simply the same predicate.
 
 00:24:43,410 --> 00:24:45,519
-But maybe there is some relationship between
-them.
+But maybe there is some
+relationship between them.
 
 00:24:45,519 --> 00:24:52,690
 Actually, I would invite you to think a bit
 about this, because this will improve your
 
 00:24:52,690 --> 00:24:55,441
-understanding of what 'map' and 'filter' are
-doing.
+understanding of what 'map'
+and 'filter' are doing.
 
 00:24:55,441 --> 00:25:03,440
-I am not going to discuss this now, but it's
-a nice thing to consider.
+I am not going to discuss this now,
+but it's a nice thing to consider.
 
 00:25:03,440 --> 00:25:08,960
 And generally, it can be said and observed
 that higher-order functions are themselves
 
 00:25:08,960 --> 00:25:14,529
-a boon, are of benefit, for this idea of lawful
-program construction.
+a boon, are of benefit, for this
+idea of lawful program construction.
 
 00:25:14,529 --> 00:25:20,249
 Remember the quote by Richard Bird that I
@@ -1419,16 +1425,17 @@ good way of writing wholemeal programs, it
 makes sense that they have nice properties,
 
 00:25:41,510 --> 00:25:44,529
-nice laws, and can be used for program construction.
+nice laws, and can be used
+for program construction.
 
 00:25:44,529 --> 00:25:48,870
-For designing programs from ideas about algebraic
-properties, for example.
+For designing programs from ideas about
+algebraic properties, for example.
 
 00:25:48,870 --> 00:25:55,299
-Again, this is not something we are going
-to do here, but that you might see in action
+Again, this is not something we are going to
+do here, but that you might see in action
 
 00:25:55,299 --> 00:25:59,970
-when you see some of the examples and think
-about how they are related.
+when you see some of the examples
+and think about how they are related.

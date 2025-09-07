@@ -80,8 +80,8 @@ Okay, so the rules are establishing positive
 knowledge from given positive knowledge.
 
 00:01:49,440 --> 00:01:58,000
-So, apparently, something special then
-has to happen if we want to have negation.
+So, apparently, something special then has
+to happen if we want to have negation.
 
 00:01:58,560 --> 00:02:02,080
 Okay, so Prolog has negation
@@ -208,8 +208,8 @@ So, let's say we have a predicate, and that's
 actually a predefined predicate in Prolog
 
 00:04:40,800 --> 00:04:48,400
-for checking whether an element, well, any
-term is in a list.
+for checking whether an element,
+well, any term is in a list.
 
 00:04:49,520 --> 00:04:51,920
 Then we can ask a negated question.
@@ -218,7 +218,8 @@ Then we can ask a negated question.
 We can ask, is it true that not 4
 
 00:04:55,440 --> 00:04:58,960
-is a member of the list [2,3], and indeed it is provable.
+is a member of the list [2,3],
+and indeed it is provable.
 
 00:04:58,960 --> 00:04:59,600
 Why?
@@ -298,8 +299,8 @@ Namely, where we have a variable here.
 And let's actually ask Prolog,
 
 00:06:21,520 --> 00:06:24,880
-whether there is something which is
-an element of the list [2,3]?
+whether there is something which
+is an element of the list [2,3]?
 
 00:06:24,880 --> 00:06:29,040
 Then, well, Prolog will say yes,
@@ -326,12 +327,12 @@ to get the answer 4 here.
 Right?
 
 00:06:45,360 --> 00:06:49,840
-So, asking, you could read this as asking for
-an X, which is not a member of [2,3].
+So, asking, you could read this as asking
+for an X, which is not a member of [2,3].
 
 00:06:49,840 --> 00:06:53,200
-And we know that, for example, 4
-is not a member of [2,3].
+And we know that, for example,
+4 is not a member of [2,3].
 
 00:06:53,200 --> 00:06:56,800
 However, Prolog will not
@@ -345,8 +346,8 @@ Yes, so Prolog will basically say, I cannot
 prove that X is not an element of [2,3].
 
 00:07:07,440 --> 00:07:11,760
-Or, I cannot prove that there is
-no element of the list [2,3].
+Or, I cannot prove that there
+is no element of the list [2,3].
 
 00:07:13,200 --> 00:07:17,120
 Yes, so this is in slight conflict to this here.
@@ -355,8 +356,8 @@ Yes, so this is in slight conflict to this here.
 So, 4 is not a member of [2,3].
 
 00:07:18,880 --> 00:07:21,840
-But if I asked with a variable,
-I don't get X = 4.
+But if I asked with a
+variable, I don't get X = 4.
 
 00:07:21,840 --> 00:07:22,480
 I get false.
@@ -376,11 +377,12 @@ say not, not of something is that something.
 But well, you can actually negate this again.
 
 00:07:38,560 --> 00:07:43,520
-So, if I ask "not (not (member X of list [2,3]))",
+So, if I ask "not (not
+(member X of list [2,3]))",
 
 00:07:43,520 --> 00:07:47,680
-then you might expect that it's the same
-as asking X member of list [2,3].
+then you might expect that it's the
+same as asking X member of list [2,3].
 
 00:07:47,680 --> 00:07:51,600
 So, you would expect to get the
@@ -409,7 +411,8 @@ Yes, with negation you get false or
 true, but you don't get concrete results
 
 00:08:17,520 --> 00:08:21,200
-for any variables that occur in the negated calls.
+for any variables that
+occur in the negated calls.
 
 00:08:22,240 --> 00:08:28,800
 And that's already strange that this
@@ -421,7 +424,8 @@ as you would expect from normal logical reasoning.
 
 98 # slide
 00:08:40,320 --> 00:08:44,080
-So, what is the role of finite failure trees here?
+So, what is the role of
+finite failure trees here?
 
 00:08:44,080 --> 00:08:49,520
 Well, it's these two points here coming together.
@@ -459,8 +463,8 @@ establishes that something is wrong.
 We only derive positive stuff.
 
 00:09:24,800 --> 00:09:31,520
-Okay, so, the only choice we have,
-as I said on the previous slide, is exactly what
+Okay, so, the only choice we have, as I
+said on the previous slide, is exactly what
 
 00:09:31,520 --> 00:09:38,640
 Prolog is doing, it basically is saying,
@@ -555,7 +559,8 @@ So, that's the bare minimum in order to
 accept this negation-as-failure principle.
 
 00:11:26,320 --> 00:11:29,360
-Okay, that's exactly how negation works in Prolog.
+Okay, that's exactly how
+negation works in Prolog.
 
 00:11:30,640 --> 00:11:36,160
 What's underlying all this, of course, is a very
@@ -673,7 +678,8 @@ Otherwise, or maybe there is a built-in timeout
 in the interpreter, then this will also abort.
 
 00:13:36,240 --> 00:13:38,320
-Because otherwise, there would be infinite search.
+Because otherwise, there
+would be infinite search.
 
 00:13:38,320 --> 00:13:39,440
 Why is that?
@@ -685,8 +691,8 @@ Well, how does this behave?
 How is it executed?
 
 00:13:43,280 --> 00:13:50,320
-Well, let's look at this in
-derivation tree style.
+Well, let's look at this
+in derivation tree style.
 
 00:13:50,960 --> 00:13:53,520
 So, let's say it is our root query \+ p.
@@ -780,8 +786,8 @@ But for the sake of the example here,
 let's say we have a program, which
 
 00:15:36,000 --> 00:15:40,320
-has a somewhat similar idea, but for
-q, we have a base fact for q.
+has a somewhat similar idea, but
+for q, we have a base fact for q.
 
 00:15:40,320 --> 00:15:43,440
 And we have q follows from q, and we have
@@ -794,7 +800,8 @@ that it holds if q does not hold.
 And our actual query is the negation of p.
 
 00:15:52,400 --> 00:15:54,800
-So, there is, again, some kind of double negation.
+So, there is, again, some
+kind of double negation.
 
 00:15:54,800 --> 00:15:59,440
 The query is \+ p and p is \+ q
@@ -807,11 +814,12 @@ Okay, how will this now turn out?
 So, let's say we ask this.
 
 00:16:05,840 --> 00:16:08,800
-So, this will give us true and in a finite manner.
+So, this will give us true
+and in a finite manner.
 
 00:16:08,800 --> 00:16:11,760
-So, it will really give an answer
-and will actually say that \+ p is true.
+So, it will really give an answer and
+will actually say that \+ p is true.
 
 00:16:11,760 --> 00:16:13,120
 So, why is that?
@@ -869,8 +877,8 @@ But of course, there are also similar,
 infinite branches like here, right?
 
 00:17:03,440 --> 00:17:08,480
-So, because q can also be reduced to q, and
-this q could then again be successful.
+So, because q can also be reduced to q,
+and this q could then again be successful.
 
 00:17:08,480 --> 00:17:09,760
 But there's also this infinite branch.
@@ -894,35 +902,35 @@ after this first success for q, Prolog will
 not even try to establish anything more.
 
 00:17:36,320 --> 00:17:41,680
-Because one successful branch for
-q suffices to let \+ q fail.
+Because one successful branch
+for q suffices to let \+ q fail.
 
 00:17:43,440 --> 00:17:45,840
 Yes, we said negation-as-failure.
 
 00:17:47,120 --> 00:17:50,450
-If we fail to reduce q and fail
-in a finite way, this was infinite.
+If we fail to reduce q and fail in
+a finite way, this was infinite.
 
 00:17:50,450 --> 00:17:56,000
 But if you fail in the finite way,
 then we might say that not q is true.
 
 00:17:56,000 --> 00:18:01,920
-If we have success in establishing q, then
-of course, immediately \+ q is false.
+If we have success in establishing q,
+then of course, immediately \+ q is false.
 
 00:18:01,920 --> 00:18:09,040
-So, this means that because we have one
-success here, the negation of q fails, is false.
+So, this means that because we have one success
+here, the negation of q fails, is false.
 
 00:18:09,600 --> 00:18:13,840
 And this now means that this whole
 thing here is a finite failure tree.
 
 00:18:13,840 --> 00:18:19,360
-Because with this part here, there is
-no other thing to find as an alternative.
+Because with this part here, there is no
+other thing to find as an alternative.
 
 00:18:19,360 --> 00:18:20,560
 So, this has failed now.
@@ -942,8 +950,8 @@ And this in turn means that
 That's why we have this true answer here.
 
 00:18:38,080 --> 00:18:44,240
-So, maybe it takes a bit of thinking about these two
-cases, but they are really consistent with this
+So, maybe it takes a bit of thinking about these
+two cases, but they are really consistent with this
 
 00:18:44,240 --> 00:18:51,120
 negation-as-failure and closed world assumption and
@@ -973,8 +981,8 @@ And actually, I'm coming back
 to the Pulp Fiction example.
 
 00:19:22,480 --> 00:19:29,280
-So, we had something very similar to this in the
-very first week of the Prolog part, I think.
+So, we had something very similar to this in
+the very first week of the Prolog part, I think.
 
 00:19:29,840 --> 00:19:30,800
 Not exactly these rules.
@@ -1034,8 +1042,8 @@ We will prefer negated
 occurrences of this predicate.
 
 00:20:28,560 --> 00:20:32,480
-So, we can, for example, ask
-whether somebody is single and, well,
+So, we can, for example, ask whether
+somebody is single and, well,
 
 00:20:32,480 --> 00:20:35,680
 Marsellus is single because
@@ -1111,8 +1119,8 @@ And the conjunction and is
 usually taken to be commutative,
 
 00:21:34,480 --> 00:21:37,840
-which shouldn't matter whether I
-asked the question this way or this way.
+which shouldn't matter whether I asked
+the question this way or this way.
 
 00:21:37,840 --> 00:21:41,280
 However, if you actually run it
@@ -1166,8 +1174,8 @@ If I asked, is Marsellus single?
 The answer is true.
 
 00:22:11,360 --> 00:22:16,400
-Then, of course, I would have expected also
-here the answer X = marsellus.
+Then, of course, I would have expected
+also here the answer X = marsellus.
 
 00:22:16,400 --> 00:22:20,160
 So, this is a contradiction
@@ -1332,8 +1340,8 @@ conclusion about whether or not the negated
 version should be taken to be true or false.
 
 00:25:18,400 --> 00:25:26,560
-Okay, so, we ask, is there a Y1 such that
-Marsellus is married to this person?
+Okay, so, we ask, is there a Y1 such
+that Marsellus is married to this person?
 
 00:25:26,560 --> 00:25:32,800
 And well, we can directly see that there's
@@ -1368,7 +1376,8 @@ Then we can say, well, then the negation is true.
 Okay, then we have a success node.
 
 00:25:56,880 --> 00:26:00,080
-And well, what about our X from the original query?
+And well, what about our
+X from the original query?
 
 00:26:00,080 --> 00:26:01,440
 Well, we have a solution for this.
@@ -1473,8 +1482,8 @@ Okay, this new order, of course, now means
 that if we do this from left to right here,
 
 00:27:41,040 --> 00:27:44,640
-we will now focus on this
-literal as before on the previous slide.
+we will now focus on this literal
+as before on the previous slide.
 
 00:27:44,640 --> 00:27:47,520
 But we'll directly work with this.
@@ -1520,8 +1529,8 @@ Okay, what does this mean?
 Well, we try to work with this.
 
 00:28:21,600 --> 00:28:27,040
-Actually, we want to fail in order
-to make the negation positive or if we
+Actually, we want to fail in order to
+make the negation positive or if we
 
 00:28:27,040 --> 00:28:33,200
 succeed with this tree, then the negation
@@ -1539,8 +1548,8 @@ Okay, so there is a side branch
 married(X1,Y1), normal resolution.
 
 00:28:42,160 --> 00:28:46,560
-Well, there are two rules or
-facts to work with here.
+Well, there are two rules
+or facts to work with here.
 
 00:28:47,920 --> 00:28:48,800
 This one and this one.
@@ -1679,16 +1688,16 @@ means the negation is taken to be true.
 Okay, so this actually is resolved.
 
 00:31:14,800 --> 00:31:19,200
-So, we are left with the rest of
-the query, which is human(marsellus).
+So, we are left with the rest of the
+query, which is human(marsellus).
 
 00:31:19,200 --> 00:31:23,600
-And well, this is something that
-we know as a fact from the program.
+And well, this is something that we
+know as a fact from the program.
 
 00:31:23,600 --> 00:31:28,560
-So, actually, this will also be
-resolved and we will get a success node.
+So, actually, this will also be resolved
+and we will get a success node.
 
 00:31:28,560 --> 00:31:30,800
 So, indeed, if we asked Prolog
@@ -1702,7 +1711,8 @@ Even though on the previous slide
 asking for the same program,
 
 00:31:38,320 --> 00:31:41,280
-whether there is someone single, the answer was no.
+whether there is someone
+single, the answer was no.
 
 00:31:42,160 --> 00:31:48,240
 Okay, so it's really valuable to compare in
@@ -1741,8 +1751,8 @@ translate our relevant program
 clauses into logical formulas.
 
 00:32:41,440 --> 00:32:44,080
-We haven't done this
-systematically, but at least we have
+We haven't done this systematically,
+but at least we have
 
 00:32:45,600 --> 00:32:50,640
 at some point talked about how this
@@ -1914,8 +1924,8 @@ human, to some specific person.
 That's why this will in the logical
 
 00:35:40,000 --> 00:35:45,040
-reading conflate to not exist
-X, Y such that they are married.
+reading conflate to not exist X,
+Y such that they are married.
 
 00:35:45,040 --> 00:35:48,640
 Okay, this must be true, and it
@@ -1955,8 +1965,8 @@ literal late in the query, late in the
 right-hand side of our clause to give
 
 00:36:36,160 --> 00:36:41,680
-the X a chance to first be instantiated
-by some other literals occurring in the code.
+the X a chance to first be instantiated by
+some other literals occurring in the code.
 
 00:36:42,720 --> 00:36:45,120
 That's then giving the desired reading.
@@ -1991,7 +2001,8 @@ we simply have to accept this that Prolog doesn't
 establish or provide a real logical negation.
 
 00:37:32,560 --> 00:37:34,320
-Instead, there is the negation-as-failure concept,
+Instead, there is the
+negation-as-failure concept,
 
 00:37:34,320 --> 00:37:39,600
 which is often good enough, which is useful in
@@ -2008,8 +2019,8 @@ properties like double negation being
 the same as the original literal.
 
 00:37:48,960 --> 00:37:53,680
-Okay, and all these strange behaviors
-with or without variables.
+Okay, and all these strange
+behaviors with or without variables.
 
 00:37:55,680 --> 00:37:57,120
 Okay, how is it realized?
@@ -2032,8 +2043,8 @@ the side branch, we will decide
 what is true about the negated literal.
 
 00:38:19,920 --> 00:38:23,920
-Okay, and the side branch is not really a side
-branch in that it doesn't influence,
+Okay, and the side branch is not really a
+side branch in that it doesn't influence,
 
 00:38:23,920 --> 00:38:29,040
 it only tells us whether to consider
@@ -2062,7 +2073,8 @@ bindings or solutions found in that
 side branch into the main proof tree.
 
 00:38:48,240 --> 00:38:50,800
-As we have seen in the examples that we looked at.
+As we have seen in the
+examples that we looked at.
 
 00:38:52,000 --> 00:38:55,440
 Okay, it can only be truly understood
@@ -2084,8 +2096,8 @@ like determination questions, but
 we also had to think operationally.
 
 00:39:10,560 --> 00:39:13,600
-Plus, the declarative
-reading of the Herbrand model
+Plus, the declarative reading
+of the Herbrand model
 
 00:39:13,600 --> 00:39:17,760
 wasn't enough for understanding
@@ -2147,7 +2159,8 @@ of the facts and rules in the
 program affects the outcome.
 
 00:40:20,880 --> 00:40:26,000
-And in the Herbrand semantics, this didn't happen.
+And in the Herbrand
+semantics, this didn't happen.
 
 00:40:26,000 --> 00:40:32,240
 As the order was not important for
@@ -2162,8 +2175,8 @@ used in the declarative semantics would not be
 monotone in the presence of negation or failure.
 
 00:40:46,480 --> 00:40:54,560
-In the sense that, well, giving it a bigger set
-should always also get a bigger result set.
+In the sense that, well, giving it a bigger
+set should always also get a bigger result set.
 
 00:40:54,560 --> 00:40:57,520
 That was important for this fixed-point property.

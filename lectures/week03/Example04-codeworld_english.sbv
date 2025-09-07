@@ -1,14 +1,14 @@
 0:00:02.800,0:00:06.700
-Let me also briefly show this example from
-the slides in action.
+Let me also briefly show this
+example from the slides in action.
 
 0:00:06.700,0:00:17.260
-So, this was the physics animation/simulation example.
-So, throwing a ball.
+So, this was the physics animation/simulation
+example. So, throwing a ball.
 
 0:00:17.260,0:00:23.470
-And what I wanted to explain or briefly discuss
-here was the scope issue.
+And what I wanted to explain or briefly
+discuss here was the scope issue.
 
 0:00:23.470,0:00:31.460
 So, the point that here the x and y can use
@@ -21,20 +21,20 @@ argument.
 Why is that?
 
 0:00:33.820,0:00:38.610
-Because what I said… because they are in
-the local definition here, right?
+Because what I said… because they are
+in the local definition here, right?
 
 0:00:38.610,0:00:44.280
-And this scope from the t extends also through
-local definitions.
+And this scope from the t extends
+also through local definitions.
 
 0:00:44.280,0:00:50.840
 So, what would we have had to do if we somehow
 wanted to have this as a top-level definition?
 
 0:00:50.840,0:00:55.010
-So, it wouldn't directly work and would be
-surprising if it worked.
+So, it wouldn't directly work and
+would be surprising if it worked.
 
 0:00:55.010,0:00:57.010
 Why should it?
@@ -47,8 +47,8 @@ top level, then this wouldn’t work.
 And you see it already here. Why is that?
 
 0:01:06.110,0:01:11.960
-We get all these arrows, where somehow,
-Haskell is not happy that there is this variable
+We get all these arrows, where somehow, Haskell
+is not happy that there is this variable
 
 0:01:11.960,0:01:13.020
 not in scope.
@@ -76,15 +76,15 @@ So, the other function doesn’t know it.
 So, I could actually introduce it, right?
 
 0:01:28.870,0:01:33.570
-I could say, well, let me make these x and
-y into functions, which take t as an argument,
+I could say, well, let me make these x and y
+into functions, which take t as an argument,
 
 0:01:33.570,0:01:35.190
 then this works.
 
 0:01:35.190,0:01:38.420
-But of course, these are now not the x and
-y that are used here.
+But of course, these are now not
+the x and y that are used here.
 
 0:01:38.420,0:01:45.220
 So, they are still using the x and y from here,
@@ -94,8 +94,8 @@ because again, now these x and y are in scope
 for this whole function.
 
 0:01:48.220,0:01:54.170
-But this x and y, they are simply names of
-some other functions on the top level.
+But this x and y, they are simply names
+of some other functions on the top level.
 
 0:01:54.170,0:01:59.850
 Let me actually get rid of these local definitions
@@ -108,8 +108,8 @@ refer to these x and y.
 But now, of course, there's another error.
 
 0:02:03.800,0:02:08.319
-And if you look at it basically, it boils
-down to a type issue.
+And if you look at it basically,
+it boils down to a type issue.
 
 0:02:08.319,0:02:13.790
 So, now x and y are used here as numbers,
@@ -123,12 +123,12 @@ pass the t along to these functions.
 Okay, then everything would compile, apparently.
 
 0:02:28.490,0:02:31.330
-At least there are no obvious errors that
-are shown here.
+At least there are no obvious
+errors that are shown here.
 
 0:02:31.330,0:02:36.380
-And actually, if I compile and run it, it
-will work, I hope.
+And actually, if I compile and
+run it, it will work, I hope.
 
 0:02:36.380,0:02:42.310
 Yes, it does work and it does the same as
@@ -149,8 +149,8 @@ this also extending to the local definitions
 here,
 
 0:02:55.840,0:02:58.790
-as we had before, is of course a nice
-thing to have.
+as we had before, is of
+course a nice thing to have.
 
 0:02:58.790,0:03:04.010
 Simply, we can have these expressions
@@ -160,8 +160,8 @@ here.
 And they are referring to this t, etc.
 
 0:03:10.760,0:03:14.220
-So, actually translating this back into the
-function that you saw before.
+So, actually translating this back
+into the function that you saw before.
 
 0:03:14.220,0:03:19.060
 I don't have to do this now, you can download

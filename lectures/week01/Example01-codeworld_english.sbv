@@ -3,8 +3,8 @@ So, for this video, I want
 to demonstrate CodeWorld.
 
 0:00:09.850,0:00:17.880
-And at the same time, try out my setup for
-videotaping some live programming.
+And at the same time, try out my setup
+for videotaping some live programming.
 
 0:00:17.880,0:00:23.099
 And then this is meant here as a first glimpse
@@ -35,8 +35,8 @@ And the Haskell examples in the first few
 weeks will mainly be based on CodeWorld.
 
 0:00:50.610,0:00:57.219
-So in theory, you could do the first exercises
-on this website without a local Haskell implementation,
+So in theory, you could do the first exercises on
+this website without a local Haskell implementation,
 
 0:00:57.219,0:01:04.519
 but sooner or later, you should also
@@ -61,7 +61,8 @@ Okay, now, the first example, it's actually
 not so much about functional programming,
 
 0:01:26.540,0:01:30.020
-but mainly about expression- and value-based programming.
+but mainly about expression-
+and value-based programming.
 
 0:01:30.020,0:01:31.820
 Okay, so let's take a look.
@@ -78,12 +79,12 @@ And then we have a more complex expression,
 which is built from several parts.
 
 0:01:45.840,0:01:53.659
-So, there seems to be a polygon, which has
-three pairs of numbers; so, probably that's three points.
+So, there seems to be a polygon, which has three
+pairs of numbers; so, probably that's three points.
 
 0:01:53.659,0:01:59.590
-So, this would be a triangle, and it gets
-a color "red" and the "translation" here is not meant
+So, this would be a triangle, and it gets a color
+"red" and the "translation" here is not meant
 
 0:01:59.590,0:02:04.930
 in the sense of translating a language,
@@ -97,20 +98,20 @@ was really a small complete Haskell program
 using that library.
 
 0:02:10.041,0:02:13.470
-And what we can do here is we can click Run,
-and what will we get?
+And what we can do here is we can
+click Run, and what will we get?
 
 0:02:13.470,0:02:19.970
 Well, we get a picture of a circle, and a
 red triangle that is somewhat moved outside
 
 0:02:19.970,0:02:25.040
-the center. So, the circle somehow has
-a midpoint here, at the origin of the coordinate
+the center. So, the circle somehow has a
+midpoint here, at the origin of the coordinate
 
 0:02:25.040,0:02:32.620
-system, and the triangle apparently was translated
-or moved three units to the right.
+system, and the triangle apparently was
+translated or moved three units to the right.
 
 0:02:32.620,0:02:33.620
 Okay.
@@ -123,8 +124,8 @@ One immediate question that sometimes arises
 with such an example, when I first show this,
 
 0:02:40.180,0:02:46.450
-is: Why is the triangle right here and
-not somehow first at the origin of the coordinate
+is: Why is the triangle right here and not
+somehow first at the origin of the coordinate
 
 0:02:46.450,0:02:51.650
 system and then moved? Because after all, we
@@ -134,8 +135,8 @@ say something like: This is a red triangle, and
 then it is translated to somewhere else.
 
 0:02:54.550,0:03:00.080
-So, one might expect naively that first we
-have a triangle here, and then it's moved to the right.
+So, one might expect naively that first we have a
+triangle here, and then it's moved to the right.
 
 0:03:00.080,0:03:01.700
 But that's not actually what happens.
@@ -158,12 +159,12 @@ computed is this picture of a circle and,
 moved to the right, red triangle.
 
 0:03:19.000,0:03:26.269
-Okay, and we can even use this button here
-to inspect this in more detail. What do we get
+Okay, and we can even use this button here to
+inspect this in more detail. What do we get
 
 0:03:26.269,0:03:30.040
-then, here? That's also useful for your own
-examples later on, probably.
+then, here? That's also useful for
+your own examples later on, probably.
 
 0:03:30.040,0:03:37.790
 And basically, we get a tree view of the expression
@@ -177,23 +178,24 @@ the mouse over parts of the tree, then on
 the left, I see the expression.
 
 0:03:45.560,0:03:49.920
-So, for example, if I am here, then I just see the circle.
+So, for example, if I am here,
+then I just see the circle.
 
 0:03:49.920,0:03:55.140
-Or if I go here, then I see the colored red
-triangle.
+Or if I go here, then I see
+the colored red triangle.
 
 0:03:55.140,0:03:59.470
-And actually, I can also make this visible
-in the actual picture.
+And actually, I can also make this
+visible in the actual picture.
 
 0:03:59.470,0:04:03.780
-So, if I click on the circle, then I see just
-the circle.
+So, if I click on the circle,
+then I see just the circle.
 
 0:04:03.780,0:04:11.269
-If I click on the polygon, then I would indeed
-see the polygon in black at the origin of the coordinate system.
+If I click on the polygon, then I would indeed see the
+polygon in black at the origin of the coordinate system.
 
 0:04:11.269,0:04:17.940
 If I click on the subtree, which is the colored
@@ -215,12 +217,12 @@ individual pictures that, on the top level,
 are combined to form the overall scene.
 
 0:04:46.130,0:04:55.000
-Okay, and, of course, you learn more possibilities
-to combine expressions.
+Okay, and, of course, you learn more
+possibilities to combine expressions.
 
 0:04:55.000,0:05:01.540
-Okay, so that's a first glimpse of this program
-and this website.
+Okay, so that's a first glimpse
+of this program and this website.
 
 0:05:01.540,0:05:05.940
 So, what I want to do now is to make this
@@ -235,8 +237,8 @@ I am writing here. The idea is really just
 to get an impression of what I'm doing and
 
 0:05:15.880,0:05:19.730
-how a Haskell program might look like, okay,
-and all
+how a Haskell program might
+look like, okay, and all
 
 0:05:19.730,0:05:25.620
 the syntactic details that I am now simply
@@ -246,24 +248,24 @@ using will, of course, later be explained
 and introduced in more detail.
 
 0:05:27.470,0:05:34.700
-Okay, so what could we do? I will cheat a
-bit, I will actually copy material from another
+Okay, so what could we do? I will cheat a bit,
+I will actually copy material from another
 
 0:05:34.700,0:05:38.240
-buffer, where I have already played around
-before.
+buffer, where I have already
+played around before.
 
 0:05:38.240,0:05:43.850
-So, for example, one thing we could do is
-actually introduce a few more forms.
+So, for example, one thing we could do
+is actually introduce a few more forms.
 
 0:05:43.850,0:05:50.920
 So, let me, for example, say, I also want to
 see a solid rectangle with certain dimensions.
 
 0:05:50.920,0:05:55.710
-So, it will be a square because it has these
-two equal values here.
+So, it will be a square because it
+has these two equal values here.
 
 0:05:55.710,0:06:01.130
 And I color it green, and I introduce it in
@@ -290,8 +292,8 @@ rectangle, then the thing that I mentioned
 first will actually take precedence.
 
 0:06:22.790,0:06:32.730
-So if I, for example, were to move this around
-here, then the circle should disappear behind the rectangle.
+So if I, for example, were to move this around here,
+then the circle should disappear behind the rectangle.
 
 0:06:32.730,0:06:44.060
 Okay, maybe I want it the other way around and
@@ -304,8 +306,8 @@ so that I don't get such overlaps.
 So, let's say I make the circle much bigger.
 
 0:06:52.250,0:06:58.620
-And let me also move the triangle to the perimeter
-of the new circle.
+And let me also move the triangle
+to the perimeter of the new circle.
 
 0:06:58.620,0:07:01.340
 What do I get?
@@ -314,8 +316,8 @@ What do I get?
 Well, a picture that looks like that.
 
 0:07:04.140,0:07:11.190
-Okay, so now we have different forms, we have
-colors, we have translation for moving something around.
+Okay, so now we have different forms, we have colors,
+we have translation for moving something around.
 
 0:07:11.190,0:07:12.360
 And what else could we do?
@@ -335,8 +337,8 @@ library function for that.
 It's called "rotated".
 
 0:07:32.280,0:07:34.910
-I can say I want to rotate, what do I want
-to rotate?
+I can say I want to rotate,
+what do I want to rotate?
 
 0:07:34.910,0:07:37.230
 Well, I have to add some brackets here.
@@ -345,44 +347,44 @@ Well, I have to add some brackets here.
 That's why this red mark has appeared.
 
 0:07:41.620,0:07:46.910
-So, I have to put the thing that I want to
-rotate in brackets.
+So, I have to put the thing that
+I want to rotate in brackets.
 
 0:07:46.910,0:07:50.670
 Then, there is still an error here.
 
 0:07:50.670,0:07:58.950
-Okay, I think I have fixed that with my additional
-bracket.
+Okay, I think I have fixed that
+with my additional bracket.
 
 0:07:58.950,0:08:01.820
 Maybe I didn't.
 
 0:08:01.820,0:08:04.040
-Now I have, but there seems to be another
-problem.
+Now I have, but there seems
+to be another problem.
 
 0:08:04.040,0:08:05.530
 Why is that?
 
 0:08:05.530,0:08:13.840
-Well, that now is a type error, which is maybe
-not immediately obvious to you.
+Well, that now is a type error, which
+is maybe not immediately obvious to you.
 
 0:08:13.840,0:08:16.210
 But I know what the problem is.
 
 0:08:16.210,0:08:22.990
-Namely, I should also say by what amount I
-want to rotate my triangle.
+Namely, I should also say by what
+amount I want to rotate my triangle.
 
 0:08:22.990,0:08:30.020
-And that would be an angle, of course.
-And in CodeWorld, as in Haskell, angles are given in radians.
+And that would be an angle, of course. And in
+CodeWorld, as in Haskell, angles are given in radians.
 
 0:08:30.020,0:08:36.240
-So, I have to say, half pi, for example, if
-I want to have 90 degrees.
+So, I have to say, half pi, for
+example, if I want to have 90 degrees.
 
 0:08:36.240,0:08:39.430
 Let's do this.
@@ -391,12 +393,12 @@ Let's do this.
 And the error has disappeared.
 
 0:08:40.800,0:08:45.860
-Okay, so there's hope that if I now compile
-this, I will get something useful.
+Okay, so there's hope that if I now
+compile this, I will get something useful.
 
 0:08:45.860,0:08:52.640
-Okay, so now I have my triangle up here because
-it has been rotated.
+Okay, so now I have my triangle up
+here because it has been rotated.
 
 0:08:52.640,0:08:53.640
 Yeah.
@@ -405,8 +407,8 @@ Yeah.
 Now, this is all very static.
 
 0:08:55.110,0:09:00.060
-So, I mentioned earlier that we might also
-want to do animations.
+So, I mentioned earlier that we
+might also want to do animations.
 
 0:09:00.060,0:09:03.240
 So, what does it mean to be an animation?
@@ -418,12 +420,12 @@ Well, an animation depends on time.
 What could this mean here?
 
 0:09:07.990,0:09:11.590
-And we don't simply have a drawing, we need
-to have an animation.
+And we don't simply have a drawing,
+we need to have an animation.
 
 0:09:11.590,0:09:16.580
-Okay, that's something that I know by heart,
-I need this other function.
+Okay, that's something that I know
+by heart, I need this other function.
 
 0:09:16.580,0:09:18.380
 Then there is, again, a type error.
@@ -445,12 +447,12 @@ to have something of type Double to Picture.
 Why is that?
 
 0:09:29.430,0:09:33.310
-Because "animation", essentially, is a function
-from "time" to Picture.
+Because "animation", essentially, is
+a function from "time" to Picture.
 
 0:09:33.310,0:09:38.710
-Okay, and I can make this happen by introducing
-a parameter in this scene here.
+Okay, and I can make this happen by
+introducing a parameter in this scene here.
 
 0:09:38.710,0:09:43.100
 I can say, well, there's some time parameter,
@@ -460,15 +462,15 @@ t.
 Then I can run this again.
 
 0:09:48.130,0:09:51.400
-It will work, but do nothing else than it did
-before.
+It will work, but do nothing
+else than it did before.
 
 0:09:51.400,0:09:52.820
 Why is that?
 
 0:09:52.820,0:09:57.070
-Basically, because I haven't used the time parameter,
-t.
+Basically, because I haven't
+used the time parameter, t.
 
 0:09:57.070,0:09:58.070
 How could I use it?
@@ -488,8 +490,8 @@ something like t, which is measured in seconds,
 by half of pi.
 
 0:10:16.340,0:10:23.500
-It would mean that after one second, I would
-be where I am right now, here in this previous example.
+It would mean that after one second, I would be
+where I am right now, here in this previous example.
 
 0:10:23.500,0:10:26.570
 And as t increases, this will change.
@@ -512,15 +514,15 @@ rotate in one second by a quarter of pi,
 so by 45 degrees.
 
 0:10:48.070,0:10:55.340
-And if I do this again, then I will get a
-slower animation.
+And if I do this again, then
+I will get a slower animation.
 
 0:10:55.340,0:10:59.850
 Okay, so that's something I can do.
 
 0:10:59.850,0:11:08.170
-Now there's a delay, probably because my video
-capture interferes with the computation of the Pictures.
+Now there's a delay, probably because my video capture
+interferes with the computation of the Pictures.
 
 0:11:08.170,0:11:10.620
 Okay, so that's still a bit boring.
@@ -532,8 +534,8 @@ What else could I do?
 Let me cheat a bit again by copying something,
 
 0:11:19.180,0:11:28.150
-and then explaining only very briefly what's
-happening.
+and then explaining only very
+briefly what's happening.
 
 0:11:28.150,0:11:36.240
 Let me add this, and let me actually turn
@@ -543,8 +545,8 @@ the triangle back into a static triangle,
 so, not moving around, why?
 
 0:11:37.860,0:11:41.320
-Because I will, anyway, be using the t parameter
-down here.
+Because I will, anyway, be
+using the t parameter down here.
 
 0:11:41.320,0:11:45.210
 So, I will still have something dynamic.
@@ -573,22 +575,22 @@ Well, apparently, I have now drawn many squares
 or rectangles, right? I did something similar
 
 0:12:17.860,0:12:21.770
-to the solidRectangle up here, but I omitted
-the "solid".
+to the solidRectangle up here,
+but I omitted the "solid".
 
 0:12:21.770,0:12:25.380
 So, I just draw a rectangle.
 
 0:12:25.380,0:12:32.040
-And then the parameters here are not
-simply 4 and 4, but something bigger, 4 + a.
+And then the parameters here are not simply
+4 and 4, but something bigger, 4 + a.
 
 0:12:32.040,0:12:33.590
 Where does the "a" come from?
 
 0:12:33.590,0:12:39.420
-Well, I simply expressed that "a" comes from
-a certain set or a certain list, namely the list
+Well, I simply expressed that "a" comes from a
+certain set or a certain list, namely the list
 
 0:12:39.420,0:12:47.840
 [0, 0.5, ... 9] up to nine. The meaning being that
@@ -599,8 +601,8 @@ actually, by this highlighted expression here,
 1, 1.5, 2, etc., up to 8.5 and 9, so
 
 0:12:56.910,0:13:05.740
-something like 18, 19 or 20 values for "a",
-and for each value of such an "a", this rectangle will be drawn.
+something like 18, 19 or 20 values for "a", and for
+each value of such an "a", this rectangle will be drawn.
 
 0:13:05.740,0:13:12.790
 So, in some sense, that's similar to a loop
@@ -631,8 +633,8 @@ and such so that a certain condition holds.
 Okay.
 
 0:13:40.980,0:13:46.779
-So, in that sense, in this way, I get this
-more complicated picture.
+So, in that sense, in this way, I
+get this more complicated picture.
 
 0:13:46.779,0:13:52.060
 And then if I want to make this even more fancy,
@@ -643,27 +645,27 @@ Yes, I could add something like "rotate" it,
 and again, something dependent on t as before.
 
 0:14:05.600,0:14:14.750
-Say, let me rotate each picture by something
-like this, for example.
+Say, let me rotate each picture by
+something like this, for example.
 
 0:14:14.750,0:14:20.480
-Then, they would all rotate at the same speed
-around the origin.
+Then, they would all rotate at
+the same speed around the origin.
 
 0:14:20.480,0:14:28.000
 Okay, and then actually, the expression that
 I had here before was a bit fancier even,
 
 0:14:28.000,0:14:37.180
-because it computed the angle
-by which each individual square has to be
+because it computed the angle by
+which each individual square has to be
 
 0:14:37.180,0:14:40.200
 rotated from both a and t.
 
 0:14:40.200,0:14:45.650
-So, not the same angle is actually used for all
-the squares, but actually also the "a"
+So, not the same angle is actually used for
+all the squares, but actually also the "a"
 
 0:14:45.650,0:14:53.770
 value is integrated, and it may not be easy
@@ -684,8 +686,8 @@ the way we will be using it to describe
 pictures and animations, etc.
 
 0:15:21.430,0:15:26.640
-And by doing so, we get to know the constructs of
-Haskell.
+And by doing so, we get to
+know the constructs of Haskell.
 
 0:15:26.640,0:15:28.110
 Okay.

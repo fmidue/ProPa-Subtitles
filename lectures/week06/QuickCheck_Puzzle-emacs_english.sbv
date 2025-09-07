@@ -10,8 +10,8 @@ warning in particular about an interaction
 that polymorphism can have with testing.
 
 0:00:16.880,0:00:22.960
-So, there will be a short
-session in an interpreter session here,
+So, there will be a short session
+in an interpreter session here,
 
 0:00:22.960,0:00:27.680
 where I want to point out something which may,
@@ -21,8 +21,8 @@ at first, be a bit surprising or puzzling.
 And then we will see what is going on.
 
 0:00:30.560,0:00:34.160
-And it has to do with polymorphism
-as a warning, okay.
+And it has to do with
+polymorphism as a warning, okay.
 
 0:00:34.160,0:00:38.320
 And so, let me actually call GHCi.
@@ -42,8 +42,8 @@ polymorphic 'reverse' function that I have
 introduced in or discussed in the previous video.
 
 0:00:58.000,0:01:02.400
-So, what could be a nice
-property of the 'reverse' function?
+So, what could be a nice property
+of the 'reverse' function?
 
 0:01:02.400,0:01:07.760
 So, for example, it certainly is
@@ -74,8 +74,8 @@ Okay.
 And I could think of some further properties of
 
 0:01:30.240,0:01:34.560
-the 'reverse' function, also check
-them and find: Well, they are all true.
+the 'reverse' function, also check them
+and find: Well, they are all true.
 
 0:01:35.760,0:01:42.400
 Okay, then at some point, I might become
@@ -104,8 +104,8 @@ And that's not by happenstance by
 somehow the random generator that
 
 0:02:10.960,0:02:14.320
-accidentally created 100
-lists where this is actually true.
+accidentally created 100 lists
+where this is actually true.
 
 0:02:14.320,0:02:15.040
 No, it's not true.
@@ -141,11 +141,12 @@ Well, what I told you to do
 in order to investigate what
 
 0:02:46.640,0:02:50.080
-is going on with QuickCheck tests, either for your own
+is going on with QuickCheck
+tests, either for your own
 
 0:02:51.600,0:02:57.360
-peace of mind to know what has actually been
-tested or just out of curiosity.
+peace of mind to know what has actually
+been tested or just out of curiosity.
 
 0:02:57.920,0:03:03.120
 And you can always replace quickCheck by verboseCheck,
@@ -195,8 +196,8 @@ doesn't change the list.
 Okay, so what is the lesson here?
 
 0:03:50.560,0:03:53.280
-If you check a polymorphic
-function, like the 'reverse' function,
+If you check a polymorphic function,
+like the 'reverse' function,
 
 0:03:53.280,0:03:55.360
 it's really important on what to check it.
@@ -217,8 +218,8 @@ show that our property was wrong.
 Yes.
 
 0:04:12.480,0:04:20.320
-So, what happened that these strange lists
-were tested, and they all are okay,
+So, what happened that these strange
+lists were tested, and they all are okay,
 
 0:04:20.320,0:04:24.560
 but this doesn't tell me anything about
@@ -251,8 +252,8 @@ let's check this on lists of integers.
 And I can do this by in the property,
 
 0:04:48.720,0:04:55.200
-you're assigning or declaring that this xs
-should be a list of integers, for example, right?
+you're assigning or declaring that this xs should
+be a list of integers, for example, right?
 
 0:04:55.200,0:05:02.640
 Then I prevent that QuickCheck makes a decision
@@ -274,32 +275,32 @@ it gives the same list.
 And I could also have done this with strings.
 
 0:05:21.920,0:05:25.120
-For example, I could say
-for every String this will hold.
+For example, I could say for
+every String this will hold.
 
 0:05:25.680,0:05:29.680
-I would expect that QuickCheck finds
-a counterexample. It says no, for a string "ab",
+I would expect that QuickCheck finds a
+counterexample. It says no, for a string "ab",
 
 0:05:29.680,0:05:34.080
 it's not true, the property, or I could
 even have taken lists of Bools here,
 
 0:05:34.080,0:05:37.600
-it would have found a counterexample
-that is [True, False] in the context of it.
+it would have found a counterexample that
+is [True, False] in the context of it.
 
 0:05:37.600,0:05:43.360
 So, for any non-trivial type, you get a counterexample,
 except for the case, where we don't give a type,
 
 0:05:43.360,0:05:47.040
-where we simply leave it to QuickCheck and
-QuickCheck makes a very poor choice,
+where we simply leave it to QuickCheck
+and QuickCheck makes a very poor choice,
 
 0:05:47.040,0:05:52.640
-namely, this one. Okay, so we have to
-be very aware of this when we write tests.
+namely, this one. Okay, so we have to be
+very aware of this when we write tests.
 
 0:05:52.640,0:05:56.640
 And of course, in our tests for your

@@ -36,8 +36,8 @@ natural numbers and one integer number.
 Okay, so let's start with the integers.
 
 0:01:11.520,0:01:17.920
-Abstractly, what we would like to define
-is something like starting with 0
+Abstractly, what we would like to
+define is something like starting with 0
 
 0:01:19.840,0:01:26.640
 then we take all the natural numbers
@@ -122,8 +122,8 @@ So if you, for example, have a list
 [1, 2] and [3, 4], something like that,
 
 0:04:06.960,0:04:13.840
-then concat [[1, 2], [3, 4]] will give us
-the list without the nesting of lists.
+then concat [[1, 2], [3, 4]] will give
+us the list without the nesting of lists.
 
 0:04:17.280,0:04:32.640
 We can use this here to take n and
@@ -154,8 +154,8 @@ because obviously this is an infinite list
 and we cannot print out all the elements.
 
 0:05:22.720,0:05:29.280
-So now we have this list where
-we have 1, -1, 2, -2, 3, -3, and so on.
+So now we have this list where we
+have 1, -1, 2, -2, 3, -3, and so on.
 
 0:05:31.360,0:05:32.720
 Only the 0 is missing.
@@ -197,8 +197,8 @@ Again, let's start with a list comprehension
 and we want some pairs x and y.
 
 0:06:50.640,0:07:00.800
-And our first approach might be to say,
-natural numbers, okay, these are basically these.
+And our first approach might be to say, natural
+numbers, okay, these are basically these.
 
 0:07:01.760,0:07:04.000
 Let's just try it this way, right.
@@ -221,8 +221,8 @@ Okay, so now we're getting
 (0,0), (0,1), (0,2), (0,3).
 
 0:07:36.720,0:07:44.320
-So the first element always stays 0, and then we
-enumerate all the other natural numbers.
+So the first element always stays 0, and then
+we enumerate all the other natural numbers.
 
 0:07:47.360,0:07:53.600
 But that's a problem because we will
@@ -274,8 +274,8 @@ which is (0, 1) and (1, 0),
 and then for 2 and so on.
 
 0:09:39.520,0:09:54.000
-So we would have (0, 2) then
-(1, 1) and then (2, 0) and so on.
+So we would have (0, 2) then (1,
+1) and then (2, 0) and so on.
 
 0:09:54.560,0:09:56.080
 And for each of these
@@ -371,7 +371,8 @@ the 2s, the 3s, and so on,
 so this still works, okay.
 
 0:14:04.080,0:14:08.640
-Very good. Now this is where it gets really tricky.
+Very good. Now this is
+where it gets really tricky.
 
 0:14:09.680,0:14:15.840
 We really have to think about
@@ -430,7 +431,8 @@ then enumerate all the integers which means we
 never get into the (0,1,_) tuple from the list.
 
 0:16:10.560,0:16:17.360
-Okay, so what's the observation you can make here?
+Okay, so what's the
+observation you can make here?
 
 0:16:18.080,0:16:23.760
 You can try to figure out some way like
@@ -462,28 +464,28 @@ all the combinations of
 elements of these two lists.
 
 0:17:05.680,0:17:14.720
-So if we take the 'pairs' list as a
-way to produce all the different
+So if we take the 'pairs' list as
+a way to produce all the different
 
 0:17:14.720,0:17:25.360
 possibilities how to index two lists, if we
 look at it that way we can see that we have to
 
 0:17:25.360,0:17:33.760
-combine the 0th element of one list with
-the 0th element of the second list and so on.
+combine the 0th element of one list with the
+0th element of the second list and so on.
 
 0:17:33.760,0:17:39.280
 Take element 0 from the first list
 and element 1 from the second list,
 
 0:17:39.920,0:17:46.240
-element 1 from the first list and element 0
-from the second list, then element 0 from
+element 1 from the first list and element
+0 from the second list, then element 0 from
 
 0:17:48.800,0:17:51.840
-the first list and element 2 from
-the second list and so on.
+the first list and element 2
+from the second list and so on.
 
 0:17:52.400,0:17:55.680
 And by doing this along this scheme,
@@ -514,8 +516,8 @@ So (x,y) is the 'pairs' list and index i, and
 z is the integer list at index j.
 
 0:19:16.000,0:19:25.440
-Okay, so now there's a type error here
-because the indexing function expects us to use
+Okay, so now there's a type error here because
+the indexing function expects us to use
 
 0:19:27.360,0:19:46.160
 Ints but we have Integers here, so we need one
@@ -553,8 +555,8 @@ actually take every combination of possible
 indexing from this pair and then use
 
 0:21:05.600,0:21:17.600
-these indices to index 'pairs' and 'Ints', then we
-will actually enumerate all of these triples.
+these indices to index 'pairs' and 'Ints', then
+we will actually enumerate all of these triples.
 
 0:21:19.040,0:21:24.880
 Okay, that's basically the task.

@@ -58,8 +58,8 @@ constructors and constants, but no variables.
 Okay?
 
 00:01:32,480 --> 00:01:39,360
-And the notation here is meant to mean that P and
-Q could be sequences of such literals.
+And the notation here is meant to mean that
+P and Q could be sequences of such literals.
 
 00:01:39,360 --> 00:01:41,120
 And L is one specific literal.
@@ -77,8 +77,8 @@ are currently interested in or that you
 will deal with in this resolution step.
 
 00:01:54,160 --> 00:01:57,680
-And then we may have, I don't know,
-two further literals in Q.
+And then we may have, I don't
+know, two further literals in Q.
 
 00:01:58,320 --> 00:02:01,760
 Okay, and then the resolution
@@ -98,8 +98,8 @@ and L and all literals in Q are true, right?
 The comma corresponds to "and", as we know.
 
 00:02:16,080 --> 00:02:21,040
-And we want to prove this, or at least you want
-to make one step in such a proof. So that would not
+And we want to prove this, or at least you want to
+make one step in such a proof. So that would not
 
 00:02:21,040 --> 00:02:26,880
 be a proof of the whole statement at once, but
@@ -133,8 +133,8 @@ be considered to be without variables.
 So also L occurring in the head of a clause
 
 00:03:00,960 --> 00:03:05,120
-would be without variables, which is of
-course not very generally the case.
+would be without variables, which is
+of course not very generally the case.
 
 00:03:06,560 --> 00:03:08,560
 Okay, so how can we make progress?
@@ -205,8 +205,8 @@ this will have become smaller because
 then the sequence is actually the empty sequence.
 
 00:04:22,720 --> 00:04:29,280
-Then really L has been eliminated since
-we had a fact. That holds if n equals zero.
+Then really L has been eliminated since we
+had a fact. That holds if n equals zero.
 
 00:04:30,160 --> 00:04:33,440
 Okay, but this is a very intuitive proof step.
@@ -330,8 +330,8 @@ few times we apply rules, we apply facts, which
 don't have a right-hand side, and stuff vanishes.
 
 00:06:53,760 --> 00:06:57,040
-But it might be that first we
-have to introduce more
+But it might be that first
+we have to introduce more
 
 00:06:58,400 --> 00:07:04,720
 subliterals and only at some point later on
@@ -451,8 +451,8 @@ Okay, now where does this unifier come
 from and how is now the rule selected?
 
 00:09:12,880 --> 00:09:17,280
-Because we won't,
-take a rule which has exactly L as its head.
+Because we won't, take a rule
+which has exactly L as its head.
 
 00:09:17,840 --> 00:09:21,520
 Instead, we look for something
@@ -477,19 +477,19 @@ which is similar to L, which is unifiable.
 Okay?
 
 00:09:41,600 --> 00:09:46,320
-So, the program clause will be something
-like: L0 implied by L1 to Ln.
+So, the program clause will be
+something like: L0 implied by L1 to Ln.
 
 00:09:46,320 --> 00:09:50,640
-And L1 to Ln are the things to which
-we reduced here.
+And L1 to Ln are the things
+to which we reduced here.
 
 00:09:50,640 --> 00:09:53,360
 Again, we replace L by the conjunction
 
 00:09:53,360 --> 00:09:59,120
-L1 to Ln because the rule,
-which is from L1 to Ln for n >= 0,
+L1 to Ln because the rule, which
+is from L1 to Ln for n >= 0,
 
 00:09:59,120 --> 00:10:02,160
 it could also be a fact for n = 0,
@@ -498,8 +498,8 @@ it could also be a fact for n = 0,
 for n > 0 it's a real rule,
 
 00:10:06,240 --> 00:10:12,720
-and these L1 to Ln do imply L0,
-which should be unifiable with L, okay?
+and these L1 to Ln do imply L0, which
+should be unifiable with L, okay?
 
 00:10:12,720 --> 00:10:20,320
 And since you have variables now, both
@@ -514,11 +514,12 @@ And as a rule of thumb, you could simply
 always rename the variables in the program.
 
 00:10:31,440 --> 00:10:34,720
-Yes, if you have a program
-where P (X) is implied by Q (X),
+Yes, if you have a program where
+P (X) is implied by Q (X),
 
 00:10:34,720 --> 00:10:37,520
-you might as well write P (Y) is implied by Q (Y).
+you might as well write P
+(Y) is implied by Q (Y).
 
 00:10:37,520 --> 00:10:40,240
 If you consistently rename variables by renaming
@@ -569,8 +570,8 @@ And of course, as mentioned earlier, we are
 always looking for the most general unifier.
 
 00:11:32,240 --> 00:11:37,600
-If you don't just want to have any way
-to make L and L0 match or equal,
+If you don't just want to have any
+way to make L and L0 match or equal,
 
 00:11:37,600 --> 00:11:41,120
 we want to have to do this
@@ -585,8 +586,8 @@ Okay, and the idea here is if you want to
 prove P and L and Q, and we have a rule
 
 00:11:54,960 --> 00:11:58,080
-saying that L0 is implied by
-a conjunction of some other things,
+saying that L0 is implied by a
+conjunction of some other things,
 
 00:11:58,080 --> 00:12:03,040
 and L and L0 are similar enough that they can
@@ -613,8 +614,8 @@ Okay, so you could replace
 U(L) by U(L1) to U(Ln).
 
 00:12:31,440 --> 00:12:33,920
-Yes, because then we would
-have simply applied a unifier to
+Yes, because then we would have
+simply applied a unifier to
 
 00:12:34,560 --> 00:12:40,480
 this rule as a whole, simply renaming
@@ -646,16 +647,16 @@ these kinds of queries that the
 variables occur in several literals.
 
 00:13:04,320 --> 00:13:08,640
-So, if X is in L, we can't simply say
-the unifier replaces X with zero
+So, if X is in L, we can't simply
+say the unifier replaces X with zero
 
 00:13:10,000 --> 00:13:15,120
 in L, but we leave the X
 occurrences of P and Q unchanged.
 
 00:13:15,120 --> 00:13:20,080
-That wouldn't be a valid way
-to delete this query.
+That wouldn't be a valid
+way to delete this query.
 
 00:13:20,080 --> 00:13:20,320
 Okay?
@@ -665,14 +666,16 @@ So, if you decide, well, in
 order to make L and L0 unified
 
 00:13:24,560 --> 00:13:28,800
-to make them equal, we
-replace X with zero, say in L.
+to make them equal, we replace
+X with zero, say in L.
 
 00:13:29,520 --> 00:13:31,600
-Then we can only do this if we also do so in P and Q.
+Then we can only do this if
+we also do so in P and Q.
 
 00:13:32,160 --> 00:13:34,400
-If we make a choice to instantiate X to zero, then
+If we make a choice to
+instantiate X to zero, then
 
 00:13:35,840 --> 00:13:40,640
 we have applied U to P and L and Q, and

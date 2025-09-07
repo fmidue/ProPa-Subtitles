@@ -10,19 +10,20 @@ So, how you could think about execution going on.
 This will not be done in detail here.
 
 00:00:12,960 --> 00:00:18,400
-Also, we will actually handle this
-more formally later in another week (optionally).
+Also, we will actually handle this more
+formally later in another week (optionally).
 
 00:00:18,400 --> 00:00:26,480
-But it's useful at the beginning to already have
-some idea of what's going on in principle.
+But it's useful at the beginning to already
+have some idea of what's going on in principle.
 
 00:00:26,480 --> 00:00:34,480
 Of course, the idea of deducing new information
 from given information is already the main idea.
 
 00:00:34,480 --> 00:00:37,760
-But how could this play out on a concrete program?
+But how could this play
+out on a concrete program?
 
 14 # slide
 00:00:38,640 --> 00:00:44,160
@@ -44,7 +45,8 @@ So, one thing I already called out
 earlier is the fact that we don't have
 
 00:00:58,720 --> 00:01:01,440
-evaluation of expressions to values as in Haskell.
+evaluation of expressions
+to values as in Haskell.
 
 00:01:02,480 --> 00:01:05,360
 So, instead, given such a program,
@@ -92,7 +94,8 @@ We have already seen how this can be
 something or something else, for example.
 
 00:01:51,360 --> 00:01:54,240
-So, here, there will be two solutions for this query.
+So, here, there will be two
+solutions for this query.
 
 00:01:54,240 --> 00:01:56,960
 And that's why we get two variable substitutions.
@@ -102,8 +105,8 @@ And that's why we get two variable substitutions.
 Okay, how would this happen in a bit more detail?
 
 00:02:03,120 --> 00:02:08,480
-So, how does this resolution work? It would later be done
-with an explicit tree representation.
+So, how does this resolution work? It would later
+be done with an explicit tree representation.
 
 00:02:08,480 --> 00:02:13,280
 But here, I will just explain it in
@@ -146,7 +149,8 @@ Okay, so the first thing is to match this
 thing that we are looking for, the solution
 
 00:02:50,960 --> 00:02:55,440
-that we want to have against the head of our rules.
+that we want to have against
+the head of our rules.
 
 00:02:55,440 --> 00:02:59,600
 And that could be seen as a form of
@@ -167,8 +171,8 @@ and the X will be whatever E is.
 Okay, so we match this or pass some parameters.
 
 00:03:14,160 --> 00:03:17,440
-Okay, so that's for the
-first rule. First, we try this,
+Okay, so that's for the first
+rule. First, we try this,
 
 00:03:17,440 --> 00:03:20,480
 we already know if we have two rules with
@@ -230,12 +234,12 @@ And if you see here, well then actually there
 is exactly one statement about "kurt" being
 
 00:04:19,280 --> 00:04:23,840
-vaterVon (father of) something, somebody
-("fritz"). So, this means
+vaterVon (father of) something,
+somebody ("fritz"). So, this means
 
 00:04:23,840 --> 00:04:27,840
-that by matching against
-the fact now, that V should be "fritz".
+that by matching against the fact
+now, that V should be "fritz".
 
 16 # slide
 00:04:29,200 --> 00:04:32,640
@@ -251,8 +255,8 @@ Well, this is the first subquery
 which we have solved here.
 
 00:04:41,040 --> 00:04:46,880
-And then there might be more to discover or more
-to find out in subqueries to the right.
+And then there might be more to discover or
+more to find out in subqueries to the right.
 
 00:04:46,880 --> 00:04:52,160
 Indeed, now that we know that V should be
@@ -267,8 +271,8 @@ Because you know, in the same rule, the same
 variables correspond to the same entities.
 
 00:05:01,360 --> 00:05:08,320
-So, a second reduction we need to find out
-whether this now instantiated for V equals "fritz",
+So, a second reduction we need to find out whether
+this now instantiated for V equals "fritz",
 
 00:05:08,320 --> 00:05:10,160
 is also true or can be made true.
@@ -359,7 +363,8 @@ Well, at this point, where we had this "fritz" and
 E, I looked here and found out that E can be "paul".
 
 00:06:31,200 --> 00:06:33,200
-But I already mentioned that E could also be "hans".
+But I already mentioned that
+E could also be "hans".
 
 00:06:33,200 --> 00:06:36,960
 How is this actually found or chosen by Prolog?
@@ -374,8 +379,8 @@ But then actually since a relation is
 not a unique mapping, exactly like here,
 
 00:06:53,040 --> 00:06:57,120
-so, there's not exactly one
-person of whom "fritz" is Vater (father).
+so, there's not exactly one person
+of whom "fritz" is Vater (father).
 
 00:06:57,840 --> 00:07:03,440
 And Prolog will also consider further
@@ -386,8 +391,8 @@ So, if after this, we decide we want to
 retry, you want to find another solution,
 
 00:07:07,760 --> 00:07:14,720
-then Prolog would go back to this point and see:
-well, regarding this fact I have just used,
+then Prolog would go back to this point and
+see: well, regarding this fact I have just used,
 
 00:07:14,720 --> 00:07:17,040
 is there another possibility
@@ -412,7 +417,8 @@ top to bottom, are there other possible choices?
 Yes, "paul" is now not active anymore.
 
 00:07:33,200 --> 00:07:35,600
-And well, indeed, there is another solution found.
+And well, indeed, there
+is another solution found.
 
 00:07:35,600 --> 00:07:37,680
 Namely, by this last rule.
@@ -430,15 +436,15 @@ Well, basically, at that point where we could
 do this retry, and the rest is replayed, right?
 
 00:07:50,720 --> 00:07:54,720
-So, now, instead of up to
-here, we had found that V should be "fritz".
+So, now, instead of up to here, we
+had found that V should be "fritz".
 
 00:07:54,720 --> 00:07:56,320
 Then we found E is "paul".
 
 00:07:56,320 --> 00:08:01,600
-If you retry, then we retry this
-part again, and find that E is "hans".
+If you retry, then we retry this part
+again, and find that E is "hans".
 
 00:08:01,600 --> 00:08:07,520
 And this is then, of course, also
@@ -526,8 +532,8 @@ Well, then we have to try this right-hand
 side, which looks very similar.
 
 00:09:25,760 --> 00:09:28,240
-Except for different
-variables, so again for this M,
+Except for different variables,
+so again for this M,
 
 00:09:28,800 --> 00:09:36,480
 we will find the solution "fritz"
@@ -577,7 +583,8 @@ Actually, the two things we
 have already found for X,
 
 00:10:18,560 --> 00:10:20,960
-namely, "paul" and "hans" will be the only solutions.
+namely, "paul" and "hans"
+will be the only solutions.
 
 00:10:22,480 --> 00:10:24,640
 And then the search will be complete.
@@ -612,12 +619,12 @@ And what I'm showing here, which corresponds
 to what we saw on previous slides,
 
 00:10:56,080 --> 00:11:00,080
-and can be better compared and
-aligned with what the Prolog system does.
+and can be better compared and aligned
+with what the Prolog system does.
 
 00:11:00,080 --> 00:11:05,680
-So, you might actually want to try
-to load this program into the Prolog interpreter.
+So, you might actually want to try to load
+this program into the Prolog interpreter.
 
 00:11:06,560 --> 00:11:13,440
 Issue it with this trace command. And afterwards,
@@ -682,8 +689,8 @@ but also pass the variable X to the variable E.
 Then we have this subproblem.
 
 00:12:19,680 --> 00:12:24,000
-Then, we saw that this
-can be solved by choosing V
+Then, we saw that this can
+be solved by choosing V
 
 00:12:24,000 --> 00:12:27,680
 to be "fritz" because of the first fact here.
@@ -700,12 +707,12 @@ to right, where now V is, of course, "fritz" already.
 Okay, then we have this subproblem.
 
 00:12:40,640 --> 00:12:43,360
-And this matches one of
-the facts, namely, this one,
+And this matches one of the
+facts, namely, this one,
 
 00:12:44,320 --> 00:12:50,080
-telling us that X could be "paul", which is exactly
-the first result that Prolog would deliver.
+telling us that X could be "paul", which is
+exactly the first result that Prolog would deliver.
 
 00:12:50,080 --> 00:12:51,760
 And then there's nothing left to check, right?
@@ -751,8 +758,8 @@ So, this is again finished,
 but now with this result.
 
 00:13:37,600 --> 00:13:40,400
-Okay, then we can say: well,
-let me also undo this and actually
+Okay, then we can say: well, let
+me also undo this and actually
 
 00:13:40,400 --> 00:13:43,760
 see whether there are other
@@ -783,8 +790,8 @@ rule had some alternatives.
 Because instead of using this 
 
 00:14:01,280 --> 00:14:04,720
-"istVaterVon, istVaterVon", we could have used
-the "istVaterVon, istMutterVon" rule.
+"istVaterVon, istVaterVon", we could have
+used the "istVaterVon, istMutterVon" rule.
 
 00:14:04,720 --> 00:14:06,400
 Okay, this is what will happen now.
@@ -793,8 +800,8 @@ Okay, this is what will happen now.
 So, this will now be reduced to this subquery.
 
 00:14:10,800 --> 00:14:16,240
-Now, with these two choices, of
-course, again, "kurt" is set for the G.
+Now, with these two choices, of course,
+again, "kurt" is set for the G.
 
 00:14:16,800 --> 00:14:22,080
 There is the free variable M and whatever

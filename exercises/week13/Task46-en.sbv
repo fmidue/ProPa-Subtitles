@@ -15,8 +15,8 @@ that has this list [a, b] and this list
 [c, d, e], and then the result should be
 
 0:00:39.720,0:00:47.480
-b, a which is the reverse of the first list and
-e, d, c which is the reversed second list.
+b, a which is the reverse of the first list
+and e, d, c which is the reversed second list.
 
 0:00:48.120,0:00:54.280
 And to do so we shall not use
@@ -43,7 +43,8 @@ You can also ask for the
 second parameter, obviously.
 
 0:01:52.440,0:02:02.760
-If we say, okay, [1, 2, 3] and then [4, 5] and so on.
+If we say, okay, [1, 2, 3]
+and then [4, 5] and so on.
 
 0:02:06.120,0:02:25.160
 Reverse works basically the same way, we have
@@ -118,7 +119,8 @@ Okay, so now what do we need to append Y to
 in order to implement the desired behavior?
 
 0:05:04.840,0:05:13.480
-Well, we want to basically do the recursion on Xs.
+Well, we want to basically
+do the recursion on Xs.
 
 0:05:13.480,0:05:28.040
 So you can say, put Xs into h,
@@ -131,8 +133,8 @@ And then onto this list, we append Y.
 And that gives us our final result.
 
 0:05:44.200,0:05:50.520
-Ys the result of appending
-Y to Zs, and that comes from
+Ys the result of appending Y
+to Zs, and that comes from
 
 0:05:53.320,0:06:03.240
 our recursive call, and Y
@@ -215,7 +217,8 @@ We've used slightly different variables, but if
 we change this, flip around the variables a bit
 
 0:09:23.720,0:09:45.080
-like this, use the double s's here too, like this.
+like this, use the double
+s's here too, like this.
 
 0:09:48.280,0:09:54.080
 Then we can see that this is actually
@@ -229,8 +232,8 @@ We have this h call which is right here
 we call h of xss and the result is yss.
 
 0:10:07.720,0:10:18.280
-We call reverse of xs and the result
-is ys and we call append on ys and yss.
+We call reverse of xs and the result is
+ys and we call append on ys and yss.
 
 0:10:18.280,0:10:22.280
 And append is an infix operator in Haskell
@@ -245,7 +248,8 @@ And in the same way, we can shift these
 definitions around. We can, in principle,
 
 0:10:49.320,0:10:56.440
-use a different ordering of these conditions here.
+use a different ordering
+of these conditions here.
 
 0:11:01.320,0:11:08.200
 But even though in the declarative
@@ -275,8 +279,8 @@ what kind of possible splits
 for these variables we have.
 
 0:12:19.400,0:12:32.440
-Because at this point, when we have this
-query, we instantiate Xs with [a, b] and Xss with
+Because at this point, when we have this query,
+we instantiate Xs with [a, b] and Xss with
 
 0:12:34.280,0:12:41.640
 the list containing this
@@ -287,11 +291,12 @@ But this means that Ys, Yss, and Zs are
 all unknown in this call to append since
 
 0:12:54.440,0:13:03.640
-Yss is only defined here and Ys only here,
-or can be resolved more easily, we should say.
+Yss is only defined here and Ys only here, or
+can be resolved more easily, we should say.
 
 0:13:05.240,0:13:14.840
-So we then just do append basically of X, Y, and Z.
+So we then just do append
+basically of X, Y, and Z.
 
 0:13:15.400,0:13:17.480
 This obviously is a call that

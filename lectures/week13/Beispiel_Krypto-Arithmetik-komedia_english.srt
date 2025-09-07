@@ -1,7 +1,7 @@
 123 # slide
 00:00:00,880 --> 00:00:08,790
-So, let's look at another example
-of generate-and-test. And this is supposed
+So, let's look at another example of
+generate-and-test. And this is supposed
 
 00:00:08,790 --> 00:00:16,490
 to be a little arithmetic puzzle.
@@ -24,40 +24,40 @@ read it similarly as I do here
 now. The point is: We have
 
 00:00:41,990 --> 00:00:49,340
-sketched several such calculations here.
-There are letters in it. They are supposed to stand for digits.
+sketched several such calculations here. There are
+letters in it. They are supposed to stand for digits.
 
 00:00:49,340 --> 00:00:53,980
 Each letter stands for a different digit.
 So, A and B cannot be replaced by the
 
 00:00:53,980 --> 00:01:00,280
-same digit. And of course, what is here
-in the rows, as well as in the
+same digit. And of course, what is
+here in the rows, as well as in the
 
 00:01:00,280 --> 00:01:05,719
-columns as calculations/equations,
-must be fulfilled for a suitable assignment.
+columns as calculations/equations, must
+be fulfilled for a suitable assignment.
 
 00:01:05,719 --> 00:01:10,550
-And actually, at the end also a result comes out.
-That does not interest us so much.
+And actually, at the end also a result comes
+out. That does not interest us so much.
 
 00:01:10,550 --> 00:01:17,799
 We are interested in a suitable assignment.
 And in such a way that here and here the same
 
 00:01:17,799 --> 00:01:22,941
-value comes out. Which one that is concretely, that one can calculate at the end
-easily calculated at the end. But the point is that the assignments
+value comes out. Which one that is concretely, that one can calculate at
+the end easily calculated at the end. But the point is that the assignments
 
 00:01:22,941 --> 00:01:26,439
-are, of course, limited by the fact that in the first place
-all other equations must also be valid
+are, of course, limited by the fact that in the
+first place all other equations must also be valid
 
 00:01:26,439 --> 00:01:36,609
-and the equality of these two calculations.
-How can we now arrive at such a valid assignment?
+and the equality of these two calculations. How
+can we now arrive at such a valid assignment?
 
 00:01:36,609 --> 00:01:44,350
 We're in the generate-and-test part.
@@ -65,28 +65,28 @@ We're discussing that right now.
 
 124 # slide
 00:01:44,350 --> 00:01:51,810
-So, maybe it is obvious to try a generate-and-test
-solution. So, what would be
+So, maybe it is obvious to try a
+generate-and-test solution. So, what would be
 
 00:01:51,810 --> 00:01:58,179
-our answers that we want to have here?
-We want to have assignments/values for A, B, C, D, E, F, G, H.
+our answers that we want to have here? We want to
+have assignments/values for A, B, C, D, E, F, G, H.
 
 00:01:58,179 --> 00:02:04,939
 A solution will consist of these
 eight values. So, we should
 
 00:02:04,939 --> 00:02:09,720
-generate them on the one hand. So, describe, from which
-search space these solutions can come from.
+generate them on the one hand. So, describe, from
+which search space these solutions can come from.
 
 00:02:09,720 --> 00:02:15,750
 Then we have to express the conditions
 in the test that actually such an
 
 00:02:15,750 --> 00:02:23,210
-assignment of digits for A, B, C to H
-is really valid and desired.
+assignment of digits for A, B, C
+to H is really valid and desired.
 
 00:02:23,210 --> 00:02:31,930
 Then we could come to a concrete solution.
@@ -101,72 +101,72 @@ And then the validity, that is the fulfillment
 of all these equations, would be the test part.
 
 00:02:44,560 --> 00:02:49,910
-So, what is the generate part? Which says:
-Each letter would correspond to a digit, and to a
+So, what is the generate part? Which says: Each
+letter would correspond to a digit, and to a
 
 00:02:49,910 --> 00:02:56,020
-other digit. So, we are looking for assignments of the
-letters A to H to single digits.
+other digit. So, we are looking for assignments
+of the letters A to H to single digits.
 
 00:02:56,020 --> 00:03:03,480
-So, finally, numbers from 0 to 9. And in such a way,
-that different letters have different digits.
+So, finally, numbers from 0 to 9. And in such a
+way, that different letters have different digits.
 
 00:03:03,480 --> 00:03:10,090
-We have already seen something like this several times.
-Also in the cube example.
+We have already seen something like this
+several times. Also in the cube example.
 
 00:03:10,090 --> 00:03:14,460
-How can I express such a selection and
-diversity at the same time?
+How can I express such a selection
+and diversity at the same time?
 
 00:03:14,460 --> 00:03:22,870
-By using the permutation predicate.
-So, I could say: These A to H, these are values,
+By using the permutation predicate. So, I
+could say: These A to H, these are values,
 
 00:03:22,870 --> 00:03:28,960
-are taken from a permutation of this list of all possible digits;
-can be taken. And as in the other example,
+are taken from a permutation of this list of all possible
+digits; can be taken. And as in the other example,
 
 00:03:28,960 --> 00:03:32,790
-it is again, since these are ten digits,
-I have to provide ten places in
+it is again, since these are ten
+digits, I have to provide ten places in
 
 00:03:32,790 --> 00:03:37,630
-the permutation, but two of
-them should not interest me because I actually
+the permutation, but two of them should
+not interest me because I actually
 
 00:03:37,630 --> 00:03:41,570
 only eight letters to occupy. So, we have ten
 digits, but in the puzzle, only eight letters occur.
 
 00:03:41,570 --> 00:03:46,720
-That means two digits will remain unused.
-I can express this unused with this anonymous variable, where
+That means two digits will remain unused. I can
+express this unused with this anonymous variable, where
 
 00:03:46,720 --> 00:03:53,040
-I say: I am not interested in the last two
-places do not interest me. With this, I would have already
+I say: I am not interested in the last two places
+do not interest me. With this, I would have already
 
 00:03:53,040 --> 00:03:59,710
-the generation part. This is
-often the easier part of the generate-and-test.
+the generation part. This is often the
+easier part of the generate-and-test.
 
 00:03:59,710 --> 00:04:10,180
-So, also here. What does the test part look like?
-So, how do I express that such a
+So, also here. What does the test part look
+like? So, how do I express that such a
 
 00:04:10,180 --> 00:04:14,160
-assignment, which was generated here (which can be very many
-different), that it is valid?
+assignment, which was generated here (which
+can be very many different), that it is valid?
 
 00:04:14,160 --> 00:04:19,630
-So, now the question, how I write this test predicate,
-what conditions I have here. And of course,
+So, now the question, how I write this test
+predicate, what conditions I have here. And of course,
 
 00:04:19,630 --> 00:04:26,010
-I must have there what occurs in my puzzle.
-That's several conditions.
+I must have there what occurs in my
+puzzle. That's several conditions.
 
 00:04:26,010 --> 00:04:34,540
 Ultimately, every row and every column would somehow
@@ -177,85 +177,85 @@ calculations that are symbolic here, those are the conditions,
 that really make up the validity of an assignment.
 
 00:04:40,200 --> 00:04:52,720
-So, how about the first line, for example?
-It says: ABB - CD = EED
+So, how about the first line, for
+example? It says: ABB - CD = EED
 
 00:04:52,720 --> 00:04:57,630
-That is, that's where we have to do the math. If we have an
-assignment for A, B, C, etc., we could form the
+That is, that's where we have to do the math. If we
+have an assignment for A, B, C, etc., we could form the
 
 00:04:57,630 --> 00:05:04,740
-value ABB. By finally in the
-system of digits, the digit A × 100 + B × 10 + B × 1.
+value ABB. By finally in the system of
+digits, the digit A × 100 + B × 10 + B × 1.
 
 00:05:04,740 --> 00:05:10,790
-And we could do the same
-for these two numbers respectively
+And we could do the same for
+these two numbers respectively
 
 00:05:10,790 --> 00:05:15,880
-from their digit representation.
-Then we would simply have to check whether
+from their digit representation. Then
+we would simply have to check whether
 
 00:05:15,880 --> 00:05:20,120
-this equality really holds.
-So, calculate the left part. The right number
+this equality really holds. So, calculate
+the left part. The right number
 
 00:05:20,120 --> 00:05:23,960
-and see if they are equal.
-These are all things that we've already seen how
+and see if they are equal. These are
+all things that we've already seen how
 
 00:05:23,960 --> 00:05:32,410
-we can do this in Prolog. The first line could be this
-condition. In the test, we have now
+we can do this in Prolog. The first line could
+be this condition. In the test, we have now
 
 00:05:32,410 --> 00:05:36,990
 assumed that we have chosen any digits for A, B, C, etc.
 have been chosen. So, we can take those and from them
 
 00:05:36,990 --> 00:05:42,370
-form the numbers. That would be the first number ABB.
-That would be the second number CD, and that is
+form the numbers. That would be the first number
+ABB. That would be the second number CD, and that is
 
 00:05:42,370 --> 00:05:49,100
 what is written in the first line as the result EED.
 And we demand that this number minus this number
 
 00:05:49,100 --> 00:05:59,540
-should be arithmetically equal to this number.
-This is a very direct translation
+should be arithmetically equal to this
+number. This is a very direct translation
 
 00:05:59,540 --> 00:06:05,050
-of this first line. In the same way, we can do
-for the columns below. If we look at the first column
+of this first line. In the same way, we can do for
+the columns below. If we look at the first column
 
 00:06:05,050 --> 00:06:09,740
-read downwards like this. Then we would have
-for ABB again as before.
+read downwards like this. Then we
+would have for ABB again as before.
 
 00:06:09,740 --> 00:06:16,419
-FD would be F × 10 + D × 1 and EGD can also be
-from the number entries for EGD.
+FD would be F × 10 + D × 1 and EGD can
+also be from the number entries for EGD.
 
 00:06:16,419 --> 00:06:22,930
-And then we require that this subtraction must
-be valid. That means, we get for the
+And then we require that this subtraction
+must be valid. That means, we get for the
 
 00:06:22,930 --> 00:06:30,240
-first column, this condition. First row. First column.
-The next thing would be, for example, to convert the second row
+first column, this condition. First row. First column. The
+next thing would be, for example, to convert the second row
 
 125 # slide
 00:06:30,240 --> 00:06:41,430
-and second column. That goes like this:
-(You can look that up again in the illustration here).
+and second column. That goes like this: (You can
+look that up again in the illustration here).
 
 00:06:41,430 --> 00:06:47,150
-This is even a little bit shorter because now in
-the second row and second column do not contain any three-digit
+This is even a little bit shorter because now in the
+second row and second column do not contain any three-digit
 
 00:06:47,150 --> 00:06:52,060
-numbers. Therefore, the assembly
-of the numbers from the digits is somewhat simpler/ somewhat shorter.
+numbers. Therefore, the assembly of the numbers from
+the digits is somewhat simpler/ somewhat shorter.
 
 00:06:52,060 --> 00:07:01,070
 That's why each condition fits into one line.
@@ -266,60 +266,60 @@ That's why this is a bit shorter here, but
 corresponds exactly to the same scheme.
 
 00:07:05,790 --> 00:07:12,871
-Then we have to take care of the last row and
-last column. For them, it is like this,
+Then we have to take care of the last row
+and last column. For them, it is like this,
 
 00:07:12,871 --> 00:07:18,979
-there is this question mark. So, we cannot
-say: "The number built * the number built is somehow
+there is this question mark. So, we cannot say:
+"The number built * the number built is somehow
 
 00:07:18,979 --> 00:07:24,770
-a very concrete number."
-The way it was in the other rows and columns.
+a very concrete number." The way it
+was in the other rows and columns.
 
 00:07:24,770 --> 00:07:31,930
-Now the condition here is simply
-that with this multiplication and this multiplication
+Now the condition here is simply that with
+this multiplication and this multiplication
 
 00:07:31,930 --> 00:07:37,479
-the same thing has to come out. Anything, but
-the same. We don't have a specific requirement for that,
+the same thing has to come out. Anything, but the
+same. We don't have a specific requirement for that,
 
 00:07:37,479 --> 00:07:44,470
-that this should somehow be ABEHG or something.
-But of course, we can also use this
+that this should somehow be ABEHG or
+something. But of course, we can also use this
 
 00:07:44,470 --> 00:07:49,130
-equality of these two multiplications in Prolog,
-to express it. Similarly as we have expressed the other
+equality of these two multiplications in Prolog, to
+express it. Similarly as we have expressed the other
 
 00:07:49,130 --> 00:07:53,600
-rows and columns. We simply form
-the numbers from the digits. Multiply
+rows and columns. We simply form the
+numbers from the digits. Multiply
 
 00:07:53,600 --> 00:07:58,320
 once what is in the last row.
 Once what is in the last column.
 
 00:07:58,320 --> 00:08:04,010
-And simply require that the results be equal.
-Not somehow equal to a certain constant, but simply equal.
+And simply require that the results be equal. Not
+somehow equal to a certain constant, but simply equal.
 
 00:08:04,010 --> 00:08:13,501
 We can express it like this. We form one number,
 the other number, and require that they be equal.
 
 00:08:13,501 --> 00:08:20,560
-So, this test here or
-this line/this part of the test exactly
+So, this test here or this
+line/this part of the test exactly
 
 00:08:20,560 --> 00:08:26,410
-corresponds to the fact that the same thing has to come out here
-in the last row and last column.
+corresponds to the fact that the same thing has
+to come out here in the last row and last column.
 
 00:08:26,410 --> 00:08:35,180
-So, we are done with that. Now we just have to do the things,
-that we have just set up as equations here,
+So, we are done with that. Now we just have to do the
+things, that we have just set up as equations here,
 
 126 # slide
 00:08:35,180 --> 00:08:42,380
@@ -327,28 +327,28 @@ together in the test predicate.
 These are the same conditions
 
 00:08:42,380 --> 00:08:47,920
-that I had just set up step by step.
-I'll put those all together, linked by conjunction.
+that I had just set up step by step. I'll put
+those all together, linked by conjunction.
 
 00:08:47,920 --> 00:08:52,330
 Separated by commas on the right side, as usual in Prolog.
 Multiple conditions, they're joined by conjunction.
 
 00:08:52,330 --> 00:08:56,210
-So, they all have to apply.
-And these are conditions for such
+So, they all have to apply. And
+these are conditions for such
 
 00:08:56,210 --> 00:09:05,130
-a candidate solution consisting of eight digits for A to H.
-Then we have completed a Prolog program.
+a candidate solution consisting of eight digits for
+A to H. Then we have completed a Prolog program.
 
 00:09:05,130 --> 00:09:10,390
-Now we can simply pass the Prolog
-and let it solve.
+Now we can simply pass the
+Prolog and let it solve.
 
 00:09:10,390 --> 00:09:18,649
-To let it solve means in this case, of course: calling our
-solve predicate, which merges the generation and the
+To let it solve means in this case, of course: calling
+our solve predicate, which merges the generation and the
 
 00:09:18,649 --> 00:09:26,279
 test part together. Then we would have to
@@ -363,16 +363,16 @@ several occupancies/several choices, but
 in fact, we get exactly one occupancy.
 
 00:09:35,970 --> 00:09:43,050
-Namely, this one. Prolog answers that
-A = 2, B = 0, C = 8, and so on.
+Namely, this one. Prolog answers
+that A = 2, B = 0, C = 8, and so on.
 
 00:09:43,050 --> 00:09:48,160
-Of course, Prolog thereby also asserts that all of
-these conditions, otherwise this would not be the answer.
+Of course, Prolog thereby also asserts that all of these
+conditions, otherwise this would not be the answer.
 
 00:09:48,160 --> 00:09:54,140
-Then we can put this into our scheme
-and just see how the solution
+Then we can put this into our
+scheme and just see how the solution
 
 127 # slide
 00:09:54,140 --> 00:09:59,910
@@ -380,32 +380,32 @@ looks like when we write it down.
 Then we would get this picture.
 
 00:09:59,910 --> 00:10:07,540
-These are now for A, B, C, etc. simply
-the numbers from this
+These are now for A, B, C, etc.
+simply the numbers from this
 
 00:10:07,540 --> 00:10:13,110
-answer from Prolog. The number here below is simply calculated.
-Perhaps simply only to test for us again,
+answer from Prolog. The number here below is simply
+calculated. Perhaps simply only to test for us again,
 
 00:10:13,110 --> 00:10:17,610
-that really the same value comes out.
-In the puzzle, it didn't matter what was written there.
+that really the same value comes out. In the
+puzzle, it didn't matter what was written there.
 
 00:10:17,610 --> 00:10:22,610
-It only had to be the same, this question mark. If we now have concrete assignments,
-we can simply calculate what comes out.
+It only had to be the same, this question mark. If we now have
+concrete assignments, we can simply calculate what comes out.
 
 00:10:22,610 --> 00:10:26,550
-Of course, Prolog has already done that in the search,
-because that was one of the conditions to check that these two multiplications
+Of course, Prolog has already done that in the search, because that
+was one of the conditions to check that these two multiplications
 
 00:10:26,550 --> 00:10:31,730
-have the same result.
-In this case, the result is 9315.
+have the same result. In this
+case, the result is 9315.
 
 00:10:31,730 --> 00:10:36,790
-What we also see is that not all digits
-have been used. If we look here,
+What we also see is that not all
+digits have been used. If we look here,
 
 00:10:36,790 --> 00:10:40,160
 we see that the digits four and seven were not used.
@@ -420,20 +420,20 @@ that two digits are not used. In this
 case, these are the four and the seven,
 
 00:10:49,589 --> 00:10:54,990
-which are not needed for this solution.
-What we also see is that (fortunately, one could say)
+which are not needed for this solution. What we
+also see is that (fortunately, one could say)
 
 00:10:54,990 --> 00:10:59,820
-now somehow the zero was not taken for a first digit
-that was taken. We could have been worried
+now somehow the zero was not taken for a first
+digit that was taken. We could have been worried
 
 00:10:59,820 --> 00:11:05,980
-if instead of six the zero would be here, whether it is
-still a meaningful number in 05?
+if instead of six the zero would be here,
+whether it is still a meaningful number in 05?
 
 00:11:05,980 --> 00:11:11,160
-Now it is with this solution in such a way that the zero never stands
-in the first place. Of course, we could have simply demanded in the generate part
+Now it is with this solution in such a way that the zero never stands in the
+first place. Of course, we could have simply demanded in the generate part
 
 00:11:11,160 --> 00:11:17,390
 we could have simply demanded that everything,
@@ -444,61 +444,61 @@ puzzle, i.e. A, C, etc., which must not be zero.
 Then we might have narrowed the search a bit.
 
 00:11:23,640 --> 00:11:31,870
-We could have simply forbidden this predicate,
-that, for example, A = 0 may be.
+We could have simply forbidden this
+predicate, that, for example, A = 0 may be.
 
 00:11:31,870 --> 00:11:38,120
-We did not do that. But it was also not necessary.
-In so far as the resulting solution
+We did not do that. But it was also not
+necessary. In so far as the resulting solution
 
 00:11:38,120 --> 00:11:47,740
-has the property that there is never a zero in front.
-So, Prolog helped us to solve this
+has the property that there is never a zero
+in front. So, Prolog helped us to solve this
 
 00:11:47,740 --> 00:11:52,279
-concrete puzzle. Of course,
-similar puzzles can be solved in an analogous
+concrete puzzle. Of course, similar
+puzzles can be solved in an analogous
 
 00:11:52,279 --> 00:11:58,370
 way. One must simply always describe
 what can be generated at all.
 
 00:11:58,370 --> 00:12:02,540
-So, what comes into question and under
-which conditions it may or may not be possible to
+So, what comes into question and under which
+conditions it may or may not be possible to
 
 00:12:02,540 --> 00:12:07,730
 numbers may or may not be assigned from the task.
 For example, that different letters may not have
 
 00:12:07,730 --> 00:12:13,360
-the same number. We have to express this
-in the generation predicate. That was done here by
+the same number. We have to express this in
+the generation predicate. That was done here by
 
 00:12:13,360 --> 00:12:17,950
-the permutation. In other tasks this
-may not be a requirement. There you have to describe it differently.
+the permutation. In other tasks this may not be a
+requirement. There you have to describe it differently.
 
 00:12:17,950 --> 00:12:24,310
-Maybe only with member, instead of permuting.
-Then you have to express all conditions in the test part.
+Maybe only with member, instead of permuting. Then
+you have to express all conditions in the test part.
 
 00:12:24,310 --> 00:12:29,660
-Then you can solve it with Prolog.
-And similarly, of course
+Then you can solve it with
+Prolog. And similarly, of course
 
 00:12:29,660 --> 00:12:36,060
 many such arithmetic or combinatorial problems can be
 solved, in principle. So, also Sudoku can be solved in a
 
 00:12:36,060 --> 00:12:40,790
-similar way in Prolog.
-There, the search takes only somewhat longer, probably, because
+similar way in Prolog. There, the search
+takes only somewhat longer, probably, because
 
 00:12:40,790 --> 00:12:45,330
-Sudoku puzzles are larger and allow many more choices
-than now simply the assignment of these
+Sudoku puzzles are larger and allow many more
+choices than now simply the assignment of these
 
 00:12:45,330 --> 00:12:55,240
-eight letters. But the general principle
-can be applied to many such combinatorial problems.
+eight letters. But the general principle can
+be applied to many such combinatorial problems.

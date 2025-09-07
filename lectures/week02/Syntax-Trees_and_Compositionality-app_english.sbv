@@ -6,46 +6,47 @@ discuss expressions and compositionality in
 terms of syntax trees.
 
 0:00:11.630,0:00:24.529
-So, in the slides, I had this arithmetic expression.
+So, in the slides, I had
+this arithmetic expression.
 
 0:00:24.529,0:00:29.650
 And I mentioned that it's built up of subexpressions
 and they could be visualized in a tree.
 
 0:00:29.650,0:00:35.750
-And I assume that you have seen such trees
-before in some form.
+And I assume that you have seen
+such trees before in some form.
 
 0:00:35.750,0:00:43.510
 So, in a top-down decomposition and taking
 into account the usual rules for precedence
 
 0:00:43.510,0:00:51.859
-between arithmetic operations, so that multiplications
-have a tighter binding
+between arithmetic operations, so that
+multiplications have a tighter binding
 
 0:00:51.859,0:00:56.539
-than addition, for example. So, we should have
-the following structures. So, 2 times 10,
+than addition, for example. So, we should
+have the following structures. So, 2 times 10,
 
 0:00:56.539,0:01:05.780
-we have this multiplication, which has an argument
-3 and something which is squared.
+we have this multiplication, which has an
+argument 3 and something which is squared.
 
 0:01:05.780,0:01:07.140
 And what is squared?
 
 0:01:07.140,0:01:16.000
-Well, the sum of two things, of which the first is
-the variable x, and the second is the number 1.
+Well, the sum of two things, of which the first
+is the variable x, and the second is the number 1.
 
 0:01:16.000,0:01:23.320
-So, this would be the syntax tree depiction
-of the above expression.
+So, this would be the syntax tree
+depiction of the above expression.
 
 0:01:23.320,0:01:27.860
-And in this way, we can easily identify the
-subexpressions.
+And in this way, we can easily
+identify the subexpressions.
 
 0:01:27.860,0:01:35.250
 So, whenever I point to some node in this tree,
@@ -58,52 +59,52 @@ be a subexpression.
 So, x plus 1 is, of course, a subexpression.
 
 0:01:40.930,0:01:48.870
-And the same applies to any other thing that
-I identify.
+And the same applies to any
+other thing that I identify.
 
 0:01:48.870,0:01:55.490
-Even just this 3, of course, is also a
-subexpression.
+Even just this 3, of course,
+is also a subexpression.
 
 0:01:55.490,0:02:01.920
-Okay, now, I talked about compositional typing,
-and compositional evaluation.
+Okay, now, I talked about compositional
+typing, and compositional evaluation.
 
 0:02:01.920,0:02:07.160
 So, typing is not very interesting in this
 example, because everything is just a number,
 
 0:02:07.160,0:02:12.120
-we will see another example, in the CodeWorld
-spirit, later.
+we will see another example,
+in the CodeWorld spirit, later.
 
 0:02:12.120,0:02:17.740
-And here, we can talk about compositional
-evaluation.
+And here, we can talk about
+compositional evaluation.
 
 0:02:17.740,0:02:27.340
 And again, it is exactly what you are used
 to when you calculate in arithmetic by hand.
 
 0:02:27.340,0:02:35.780
-So, let's say that for the x, we have from
-the context, some value, so this x is in scope.
+So, let's say that for the x, we have from the
+context, some value, so this x is in scope.
 
 0:02:35.780,0:02:44.720
 And let us say, for example, that the value
 is 5, then we can compositionally evaluate
 
 0:02:44.720,0:02:48.920
-each subexpression, and that will lead to
-a value for the whole thing, right?
+each subexpression, and that will lead
+to a value for the whole thing, right?
 
 0:02:48.920,0:02:55.670
-So, of course, the value of a constant is just
-this constant, the value of addition of
+So, of course, the value of a constant is
+just this constant, the value of addition of
 
 0:02:55.670,0:03:02.720
-two values is the addition of those
-two values. It will just give 6, this is 36,
+two values is the addition of those two
+values. It will just give 6, this is 36,
 
 0:03:02.720,0:03:04.069
 This is 3.
@@ -118,8 +119,8 @@ No, it's multiplication.
 So, this is 108.
 
 0:03:12.490,0:03:24.060
-And this is 2 if I haven't made a mistake,
-which is, of course, possible.
+And this is 2 if I haven't made a
+mistake, which is, of course, possible.
 
 0:03:24.060,0:03:26.370
 And this would be 110.
@@ -155,8 +156,8 @@ these are mathematical operations and functions.
 It is not.
 
 0:03:53.330,0:04:02.849
-So, if we simply switch to a very small but
-different example.
+So, if we simply switch to a
+very small but different example.
 
 0:04:02.849,0:04:09.230
 So, let's look again at something I did in
@@ -170,12 +171,12 @@ like a function call maybe in an imperative
 language.
 
 0:04:18.229,0:04:28.340
-And let's take two such calls to make subexpressions
-of a larger expression.
+And let's take two such calls to make
+subexpressions of a larger expression.
 
 0:04:28.340,0:04:34.439
-And now, once I have depicted this, it's,
-of course, also compositional.
+And now, once I have depicted this,
+it's, of course, also compositional.
 
 0:04:34.439,0:04:39.779
 Right, it's compositional syntactically, but
@@ -189,16 +190,16 @@ Because it's not really true that I only need
 to know the values of these two read-calls.
 
 0:04:47.889,0:04:52.539
-I, for example, also need to know the order
-in which they are evaluated.
+I, for example, also need to know the
+order in which they are evaluated.
 
 0:04:52.539,0:04:58.260
 Now, of course, in any given language, we
 might say, we always evaluate the first thing
 
 0:04:58.260,0:05:00.939
-and then the second thing, but it's not compositional,
-right?
+and then the second thing, but
+it's not compositional, right?
 
 0:05:00.939,0:05:06.340
 It's not the same as in the previous example.
@@ -229,8 +230,8 @@ And let's say we use this for evaluating the
 left-hand side, or the left branch of this
 
 0:05:39.819,0:05:44.699
-tree, then the result would be 7 minus
-5, would be 2.
+tree, then the result would
+be 7 minus 5, would be 2.
 
 0:05:44.699,0:05:54.639
 But, of course, this depended on the order.
@@ -241,23 +242,23 @@ then this would have been the 5, and then
 evaluating the other side would have been
 
 0:06:00.800,0:06:05.729
-the 7, and then suddenly, the result would
-have been -2.
+the 7, and then suddenly, the
+result would have been -2.
 
 0:06:05.729,0:06:08.020
 Yes, that's a trivial example.
 
 0:06:08.020,0:06:17.029
-But it already shows that the order of evaluation
-is important if we have effects.
+But it already shows that the order of
+evaluation is important if we have effects.
 
 0:06:17.029,0:06:24.689
 And it's also the reason why we can't rename
 subexpressions, or simply replace two common
 
 0:06:24.689,0:06:29.330
-subexpressions, for example, by a common name
-and assigning the value
+subexpressions, for example, by a
+common name and assigning the value
 
 0:06:29.330,0:06:35.039
 of the subexpression to that name before as
@@ -271,8 +272,8 @@ And then I mentioned, I also want to talk
 about the CodeWorld example, because this will
 
 0:06:44.169,0:06:51.430
-be used in the next video for playing around
-on the CodeWorld website again. And the expression
+be used in the next video for playing around on
+the CodeWorld website again. And the expression
 
 0:06:51.430,0:06:58.349
 from which I will start there is on the slides,
@@ -289,23 +290,23 @@ the types. And then in the CodeWorld website,
 we will actually play with the example.
 
 0:07:10.860,0:07:18.689
-So, let me draw this syntax tree of the expression
-I will then use in the slides.
+So, let me draw this syntax tree of the
+expression I will then use in the slides.
 
 0:07:18.689,0:07:27.110
-Frankly, I'm not very good at drawing this
-symbol, okay.
+Frankly, I'm not very good
+at drawing this symbol, okay.
 
 0:07:27.110,0:07:32.879
-You will see it when I type it out, in
-the… So, that's supposed to be the ampersand
+You will see it when I type it out, in the…
+So, that's supposed to be the ampersand
 
 0:07:32.879,0:07:33.879
 symbol (&).
 
 0:07:33.879,0:07:38.099
-Okay, and it's used on the top level here, because
-we want to combine two pictures.
+Okay, and it's used on the top level here,
+because we want to combine two pictures.
 
 0:07:38.099,0:07:43.969
 And one of these pictures will be a circle.
@@ -323,8 +324,8 @@ for movement of pictures. It had three arguments,
 something in the x direction, something in
 
 0:07:59.349,0:08:02.800
-the y direction, and something that should
-be moved.
+the y direction, and something
+that should be moved.
 
 0:08:02.800,0:08:12.119
 And again, similarly to last week, I will
@@ -348,8 +349,8 @@ basically, some pairs of numbers in such square
 brackets.
 
 0:08:32.150,0:08:39.259
-Okay, so this will be an expression that you
-will type out in the editor.
+Okay, so this will be an expression
+that you will type out in the editor.
 
 0:08:39.259,0:08:45.699
 And what I wanted to talk about here is types,
@@ -359,35 +360,35 @@ because different from the number examples
 from above,
 
 0:08:46.920,0:08:52.130
-now also in the program, we will have
-some more interesting types.
+now also in the program, we will
+have some more interesting types.
 
 0:08:52.130,0:09:00.209
 So, what you probably already know or remember
 from the example last week is that overall,
 
 0:09:00.209,0:09:05.579
-there was something like “scene”, which is a picture.
-So, somehow, ultimately up here we want to
+there was something like “scene”, which is a
+picture. So, somehow, ultimately up here we want to
 
 0:09:05.579,0:09:08.750
 have the type Picture.
 
 0:09:08.750,0:09:15.300
-And to make sure that this will be
-a picture, we have to look at the subexpressions
+And to make sure that this will be a picture,
+we have to look at the subexpressions
 
 0:09:15.300,0:09:18.920
-top down, or you could start at the least
-and work bottom up.
+top down, or you could start at
+the least and work bottom up.
 
 0:09:18.920,0:09:22.110
-Of course, this doesn't make a difference
-if it's compositional.
+Of course, this doesn't make a
+difference if it's compositional.
 
 0:09:22.110,0:09:28.400
-So, what we have here, or what we will find is
-that this operator here takes two pictures
+So, what we have here, or what we will find
+is that this operator here takes two pictures
 
 0:09:28.400,0:09:30.149
 and combines them into one picture.
@@ -397,8 +398,8 @@ So, what we expect is that both on the left
 and on the right, we have pictures. So far
 
 0:09:36.060,0:09:38.190
-that's like with numbers; we combine numbers
-to numbers.
+that's like with numbers; we
+combine numbers to numbers.
 
 0:09:38.190,0:09:43.560
 So, here we combine pictures to pictures,
@@ -409,8 +410,8 @@ have other things; for example, the 0.1 here
 is not, of course, a picture; it's a floating
 
 0:09:50.430,0:09:57.180
-point number and actually, it will be a Double
-in this specific library.
+point number and actually, it will
+be a Double in this specific library.
 
 0:09:57.180,0:10:05.430
 And similarly, all the other numbers that we
@@ -432,19 +433,19 @@ So, what is this here?
 I said it's a list of pairs of numbers.
 
 0:10:25.750,0:10:30.470
-And actually, there is a specific type for
-points in CodeWorld.
+And actually, there is a specific
+type for points in CodeWorld.
 
 0:10:30.470,0:10:40.660
-So, what actually will be typewise is a
-list of points. So, a list syntax. (The square
+So, what actually will be typewise is a list
+of points. So, a list syntax. (The square
 
 0:10:40.660,0:10:42.270
 brackets of list syntax.)
 
 0:10:42.270,0:10:47.379
-And the thing that will be occurring in the
-list is this point type.
+And the thing that will be occurring
+in the list is this point type.
 
 0:10:47.379,0:10:53.730
 And then 'polygon' is a function that takes
@@ -457,16 +458,16 @@ So, the type at this node will be 'Picture'.
 And then what about “colored”?
 
 0:11:00.420,0:11:07.120
-Well, “colored” should take a color and a
-Picture and return a Picture.
+Well, “colored” should take a color
+and a Picture and return a Picture.
 
 0:11:07.120,0:11:12.460
 So, what we need here is a color. And “red”
 is indeed a color constant; then the color
 
 0:11:12.460,0:11:18.509
-and the Picture can be combined by the 'colored'
-function into a Picture.
+and the Picture can be combined by
+the 'colored' function into a Picture.
 
 0:11:18.509,0:11:23.529
 And then now everything works out because

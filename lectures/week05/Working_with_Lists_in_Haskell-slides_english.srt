@@ -1,11 +1,11 @@
 70 # slide
 00:00:01,780 --> 00:00:08,250
-Okay, so I wanted to start by giving some
-observations from the exercises.
+Okay, so I wanted to start by giving
+some observations from the exercises.
 
 00:00:08,250 --> 00:00:17,580
-And to some extent, I - of course - have already
-done so in the previous video.
+And to some extent, I - of course - have
+already done so in the previous video.
 
 71 # slide
 00:00:17,580 --> 00:00:26,180
@@ -16,8 +16,8 @@ aspect that Autotool or HLint sometimes warns
 you about.
 
 00:00:27,180 --> 00:00:28,180
-Some of you have already seen this in your
-own submissions.
+Some of you have already seen
+this in your own submissions.
 
 00:00:28,180 --> 00:00:34,540
 I don't have to talk through this again here
@@ -27,8 +27,8 @@ in this slide because it is in the previous
 video.
 
 00:00:35,540 --> 00:00:41,909
-So, here you have just another example, something
-that occurred probably last year.
+So, here you have just another example,
+something that occurred probably last year.
 
 00:00:41,909 --> 00:00:49,249
 So, again, the same idea: having a function
@@ -38,8 +38,8 @@ that takes an argument which it simply passes
 on to another function.
 
 00:00:52,839 --> 00:00:56,449
-So, somebody defined a ball function which
-takes a "time" and gives a Picture.
+So, somebody defined a ball function
+which takes a "time" and gives a Picture.
 
 00:00:56,449 --> 00:00:57,749
 And how is "ball" defined?
@@ -66,8 +66,8 @@ And the second version is a bit more elegant.
 Even just pragmatically, you could say:
 
 00:01:27,289 --> 00:01:29,689
-At least you don't have to think about the
-parameter name.
+At least you don't have to
+think about the parameter name.
 
 00:01:29,689 --> 00:01:35,030
 In this case, maybe t is the obvious choice;
@@ -77,8 +77,8 @@ but in another situation, you might not have
 a good idea how to name your parameter.
 
 00:01:36,550 --> 00:01:44,110
-Well, if you use eta-reduction, you don't
-always have to name the parameters.
+Well, if you use eta-reduction, you
+don't always have to name the parameters.
 
 00:01:44,110 --> 00:01:52,210
 And we also saw this example in the taped
@@ -99,8 +99,8 @@ So, it was not flipping the Picture.
 It was flipping the 'rectangle' function.
 
 00:02:06,450 --> 00:02:09,700
-So, it would apply to any function of two
-arguments.
+So, it would apply to any
+function of two arguments.
 
 00:02:09,700 --> 00:02:14,650
 In this case, for the 'rectangle' function,
@@ -114,16 +114,16 @@ we flipped the parameter arguments of the
 'rectangle' function.
 
 00:02:20,959 --> 00:02:23,760
-But the 'flip' function itself, it's not a function
-that operates on pictures only.
+But the 'flip' function itself, it's not
+a function that operates on pictures only.
 
 00:02:23,760 --> 00:02:28,040
 It is a function that operates on other functions;
 in this case, on the 'rectangle' function.
 
 00:02:28,040 --> 00:02:34,989
-And you have seen this in action, what this
-actually means for this case.
+And you have seen this in action, what
+this actually means for this case.
 
 00:02:34,989 --> 00:02:38,140
 And another remark maybe at this point is:
@@ -151,16 +151,16 @@ Because then it would make sense to make this
 parameter the last parameter, because then
 
 00:03:04,439 --> 00:03:08,489
-you can apply this trick, this eta-reduction
-refactoring.
+you can apply this trick, this
+eta-reduction refactoring.
 
 00:03:08,489 --> 00:03:14,720
 That is also actually the reason, one could
 argue, for CodeWorld always having the Picture
 
 00:03:14,720 --> 00:03:16,879
-as the last argument in the transformation
-functions.
+as the last argument in the
+transformation functions.
 
 00:03:16,879 --> 00:03:22,780
 If you think about the 'translated' function
@@ -174,8 +174,8 @@ It could also take the Picture and then the
 two coordinates, but then one couldn't in
 
 00:03:27,010 --> 00:03:31,060
-some situations, where it is useful, apply
-the eta-reduction.
+some situations, where it is
+useful, apply the eta-reduction.
 
 00:03:31,060 --> 00:03:37,430
 So, it makes sense in designing an API, designing
@@ -193,25 +193,25 @@ not the parameter arguments for moving in
 the x- and y-directions) as the last argument.
 
 00:03:53,930 --> 00:03:57,160
-Because this opens up possibilities to make
-good use of eta-reduction.
+Because this opens up possibilities
+to make good use of eta-reduction.
 
 00:03:57,160 --> 00:04:01,980
 It is not super relevant for you at the moment,
 because you are not defining your own libraries,
 
 00:04:01,980 --> 00:04:05,030
-or designing libraries for someone else's
-consumption.
+or designing libraries for
+someone else's consumption.
 
 00:04:05,030 --> 00:04:11,049
-But it is still maybe interesting to at least
-be aware of this choice.
+But it is still maybe interesting to
+at least be aware of this choice.
 
 72 # slide
 00:04:12,049 --> 00:04:24,380
-Then another observation, which is also a
-recurring one, and in particular was seen in task 8.
+Then another observation, which is also a recurring
+one, and in particular was seen in task 8.
 
 00:04:24,380 --> 00:04:33,530
 That was apparent from some of your submissions,
@@ -225,12 +225,12 @@ a data structure by index, then usually that
 is not the best choice of expression.
 
 00:04:41,210 --> 00:04:44,419
-And sometimes, we will actually actively prevent
-this.
+And sometimes, we will
+actually actively prevent this.
 
 00:04:44,419 --> 00:04:51,440
-And I tried in the case of task 8 to prevent
-this with my Moodle message a few days ago (in another year).
+And I tried in the case of task 8 to prevent this with
+my Moodle message a few days ago (in another year).
 
 00:04:51,440 --> 00:04:56,440
 I explained that you were supposed to really
@@ -260,16 +260,16 @@ So, what do I mean by this?
 Consider something like this:
 
 00:05:15,860 --> 00:05:22,620
-Some list is taken, from this list we take
-some arguments, one after the other.
+Some list is taken, from this list we
+take some arguments, one after the other.
 
 00:05:22,620 --> 00:05:26,250
-Some argument is being drawn from this list,
-and then we compute something from this argument,
+Some argument is being drawn from this list, and
+then we compute something from this argument,
 
 00:05:26,250 --> 00:05:29,020
-put all results in a list, and then we do
-whatever with this list.
+put all results in a list, and
+then we do whatever with this list.
 
 00:05:29,020 --> 00:05:36,770
 So, this is a nice rich expression in the
@@ -279,8 +279,8 @@ form of what I also introduced last week in
 examples.
 
 00:05:38,400 --> 00:05:44,160
-Of course, you could, and some people did do,
-instead write code like this.
+Of course, you could, and some people
+did do, instead write code like this.
 
 00:05:44,160 --> 00:05:46,090
 So, what is this saying?
@@ -293,8 +293,8 @@ Give me the list and I take the length and
 then I will build an index from zero (because,
 
 00:05:53,110 --> 00:05:58,460
-as you will find out, list indexing in Haskell
-starts with the index zero).
+as you will find out, list indexing in
+Haskell starts with the index zero).
 
 00:05:58,460 --> 00:06:08,830
 So, compute the index to be each value from
@@ -315,8 +315,8 @@ in the sense that they compute the same thing,
 but the first one is the idiomatic one.
 
 00:06:21,560 --> 00:06:23,950
-The first one is what really expresses the
-intent.
+The first one is what
+really expresses the intent.
 
 00:06:23,950 --> 00:06:31,139
 The second one is somehow artificially working
@@ -326,8 +326,8 @@ with indices and is not very elegant, and
 also not very well maintainable.
 
 00:06:32,740 --> 00:06:43,690
-This is sometimes called indexitis (the sickness
-of using too many indices).
+This is sometimes called indexitis (the
+sickness of using too many indices).
 
 00:06:43,690 --> 00:06:51,141
 That might be the only choice to work with
@@ -337,13 +337,13 @@ data structures in some other languages, but
 certainly not in Haskell.
 
 00:06:52,479 --> 00:06:58,479
-So, try to work in the spirit of the first
-example here.
+So, try to work in the spirit
+of the first example here.
 
 73 # slide
 00:06:58,479 --> 00:07:04,560
-This also brings us to more generally working
-with lists.
+This also brings us to more
+generally working with lists.
 
 00:07:04,560 --> 00:07:10,460
 So, this will be the topic of the next few
@@ -360,15 +360,15 @@ lists.
 There are other functions.
 
 00:07:16,669 --> 00:07:20,710
-There is actually a small but powerful library
-of functions on lists.
+There is actually a small but powerful
+library of functions on lists.
 
 00:07:20,710 --> 00:07:26,020
 But even then, list indexing is the last resort.
 
 00:07:26,020 --> 00:07:29,050
-So, usually, it's not a good idea to work with
-list indices.
+So, usually, it's not a good
+idea to work with list indices.
 
 00:07:29,050 --> 00:07:30,889
 I can't stress this enough.
@@ -378,8 +378,8 @@ Nevertheless, first, a few more general comments
 on lists and then I will introduce some of
 
 00:07:39,599 --> 00:07:45,620
-the functions that you might want to use for
-some of the next exercise tasks.
+the functions that you might want to
+use for some of the next exercise tasks.
 
 74 # slide
 00:07:45,620 --> 00:07:53,240
@@ -391,16 +391,16 @@ that we will, from now on, use lists a lot
 in the examples in lectures and exercises.
 
 00:07:58,509 --> 00:08:02,129
-So far, most of our examples have been with
-the CodeWorld library.
+So far, most of our examples have
+been with the CodeWorld library.
 
 00:08:02,129 --> 00:08:07,970
-So, you got to know the Picture type and all
-kinds of operations on it.
+So, you got to know the Picture type
+and all kinds of operations on it.
 
 00:08:07,970 --> 00:08:14,600
-And similarly, the next material
-will be mostly about lists and functions working
+And similarly, the next material will be
+mostly about lists and functions working
 
 00:08:14,600 --> 00:08:15,840
 on lists.
@@ -420,8 +420,8 @@ in the sense that you don't really have operations
 to look inside the Picture.
 
 00:08:34,270 --> 00:08:36,870
-So, all of the operations that you have done
-are *on* Pictures.
+So, all of the operations that
+you have done are *on* Pictures.
 
 00:08:36,870 --> 00:08:38,710
 You never looked *inside* a Picture.
@@ -447,8 +447,8 @@ type.
 Why this focus on lists?
 
 00:09:03,470 --> 00:09:05,580
-Not because lists are always the best data
-structure.
+Not because lists are always
+the best data structure.
 
 00:09:05,580 --> 00:09:11,070
 They certainly aren't so often, in particular
@@ -459,8 +459,8 @@ There are more appropriate data structure
 choices for doing something in Haskell.
 
 00:09:16,880 --> 00:09:21,100
-And to some extent, you will also see how
-to define your own datatypes.
+And to some extent, you will also
+see how to define your own datatypes.
 
 00:09:21,100 --> 00:09:22,770
 But that's not what we will start with.
@@ -470,8 +470,8 @@ We will start now with lists, because they
 are already existing; they have syntactic
 
 00:09:26,900 --> 00:09:30,200
-support like list comprehensions, but also
-other functions.
+support like list comprehensions,
+but also other functions.
 
 00:09:30,200 --> 00:09:37,210
 So, mostly for didactic reasons, to be able
@@ -484,19 +484,19 @@ lists.
 Not because you should always use lists.
 
 00:09:40,000 --> 00:09:45,810
-That's an important other lesson that I want
-to make upfront.
+That's an important other lesson
+that I want to make upfront.
 
 00:09:45,810 --> 00:09:50,130
 There is a lot of list support in Haskell.
 
 00:09:50,130 --> 00:09:53,460
-You see this already with the special syntax
-like list comprehensions.
+You see this already with the special
+syntax like list comprehensions.
 
 00:09:53,460 --> 00:09:58,470
-In some sense, this is partly due to historical
-precedents.
+In some sense, this is partly
+due to historical precedents.
 
 00:09:58,470 --> 00:10:03,700
 I mentioned, I think in the first lecture,
@@ -517,8 +517,8 @@ Even Haskell also has a lot of support for
 list processing, despite my previous comments
 
 00:10:26,000 --> 00:10:30,380
-that, in fact, you should often use other
-data structures.
+that, in fact, you should often
+use other data structures.
 
 00:10:30,380 --> 00:10:36,340
 I already mentioned that there is special
@@ -531,8 +531,8 @@ our example considerations.
 It is not true for all other data structures.
 
 00:10:42,570 --> 00:10:49,600
-Another thing that I want to repeat is: Haskell
-lists are homogeneous.
+Another thing that I want to repeat
+is: Haskell lists are homogeneous.
 
 00:10:49,600 --> 00:10:50,730
 That is different from Lisp.
@@ -542,8 +542,8 @@ In Lisp, you could put everything in the same
 list, whereas in Haskell, lists are homogeneous.
 
 00:10:55,710 --> 00:11:00,530
-What this means is that you can't have different
-types of elements in the same list.
+What this means is that you can't have
+different types of elements in the same list.
 
 00:11:00,530 --> 00:11:04,160
 You can have a list of characters, you can
@@ -558,20 +558,20 @@ a list where different kinds of values are
 mixed.
 
 00:11:11,770 --> 00:11:14,910
-There are other data structures which allow
-this, but not lists.
+There are other data structures
+which allow this, but not lists.
 
 00:11:14,910 --> 00:11:20,610
-So, this must always be in the back
-of your mind when you think, for example,
+So, this must always be in the back of
+your mind when you think, for example,
 
 00:11:20,610 --> 00:11:27,330
 about the functions I'm going to show you.
 
 75 # slide
 00:11:27,330 --> 00:11:32,750
-Let me talk you through a few functions from
-the standard library on lists.
+Let me talk you through a few functions
+from the standard library on lists.
 
 00:11:32,750 --> 00:11:39,450
 In some sense, these could be seen as a small
@@ -585,8 +585,8 @@ And to a good extent, they are accessor functions,
 so: getting something out of a list; exactly
 
 00:11:48,860 --> 00:11:52,060
-the kind of functions that you don't have
-for Pictures.
+the kind of functions that
+you don't have for Pictures.
 
 00:11:52,060 --> 00:11:55,450
 Because for Pictures, you could only construct
@@ -607,8 +607,8 @@ I will simply give examples and the names
 of the functions, and then these examples
 
 00:12:11,040 --> 00:12:14,450
-should be clear enough to tell you what the
-function is doing.
+should be clear enough to tell
+you what the function is doing.
 
 00:12:14,450 --> 00:12:18,820
 So, henceforth, you can use these functions
@@ -618,12 +618,12 @@ in writing your exercise task submissions.
 So, what do we have?
 
 00:12:20,200 --> 00:12:25,080
-For example, we have a function to access
-a prefix of a list.
+For example, we have a function
+to access a prefix of a list.
 
 00:12:25,080 --> 00:12:27,900
-So, let's say we have a list of the values
-1 to 10.
+So, let's say we have a
+list of the values 1 to 10.
 
 00:12:27,900 --> 00:12:29,440
 We want to take the first three elements.
@@ -632,8 +632,8 @@ We want to take the first three elements.
 We can simply say "take 3 of this list".
 
 00:12:31,831 --> 00:12:36,020
-And what we get is exactly what you see here
-on the right.
+And what we get is exactly
+what you see here on the right.
 
 00:12:36,020 --> 00:12:42,840
 I will always show, to the left, an expression
@@ -644,8 +644,8 @@ and on the right you will then see what this
 evaluates to (if you, for example, were to
 
 00:12:48,280 --> 00:12:54,740
-put this expression into the Haskell interpreter
-GHCi).
+put this expression into the
+Haskell interpreter GHCi).
 
 00:12:54,740 --> 00:12:57,620
 So, you can take a prefix.
@@ -677,8 +677,8 @@ but actually the name is just 'null'.
 So, we give it the list.
 
 00:13:19,500 --> 00:13:21,910
-And if you give it the empty list, then it
-returns True.
+And if you give it the empty
+list, then it returns True.
 
 00:13:21,910 --> 00:13:26,580
 And if you give it a non-empty list, for example
@@ -703,12 +703,12 @@ in the list; in this case, the number of characters,
 of course not just the number of unique elements.
 
 00:13:50,340 --> 00:13:53,450
-So, if you have five 'a's, it will also give
-you 5.
+So, if you have five 'a's,
+it will also give you 5.
 
 00:13:53,450 --> 00:13:55,960
-It won't count how many different elements
-occurred.
+It won't count how many
+different elements occurred.
 
 00:13:55,960 --> 00:13:57,990
 It will simply say how long the list is.
@@ -731,12 +731,11 @@ list containing 1 (like this: [1]), whereas
 "head [1..10]" is just 1 (like this: 1).
 
 00:14:18,420 --> 00:14:23,510
-Or, in the case of a String, head "abcde" is
-not a String consisting of the letter 'a'
+Or, in the case of a String, head "abcde"
+is not a String consisting of the letter 'a'
 
 00:14:23,510 --> 00:14:26,200
-(like this: "a"), but the character 'a'
-(like this: 'a').
+(like this: "a"), but the character 'a' (like this: 'a').
 (Attention: 'a' is a Char, "a" is a String, that is [Char].)
 
 00:14:26,200 --> 00:14:34,350
@@ -764,19 +763,19 @@ of the list, and "tail" means you get all
 the rest.
 
 00:14:56,180 --> 00:15:02,170
-So, if you take the first element away, what
-remains is the list "bcde".
+So, if you take the first element
+away, what remains is the list "bcde".
 
 00:15:02,170 --> 00:15:08,520
-Also, we could apply "tail" to [1..10] and
-we would get [2..10].
+Also, we could apply "tail" to
+[1..10] and we would get [2..10].
 
 00:15:08,520 --> 00:15:11,690
 In that sense, "tail" corresponds to "head".
 
 00:15:11,690 --> 00:15:15,270
-It gives you what is left over if you take
-the head away.
+It gives you what is left over
+if you take the head away.
 
 00:15:15,270 --> 00:15:17,140
 And something similar exists for "last".
@@ -785,15 +784,16 @@ And something similar exists for "last".
 So, "last" gives the last element in the list.
 
 00:15:19,890 --> 00:15:22,870
-And "init" gives the list without that last
-element.
+And "init" gives the list
+without that last element.
 
 00:15:22,870 --> 00:15:26,230
-So, here, "last" gave 'e', and "init" gives
-"abcd".
+So, here, "last" gave 'e',
+and "init" gives "abcd".
 
 00:15:26,230 --> 00:15:28,470
-Of course, these are lists and not just characters.
+Of course, these are lists
+and not just characters.
 
 00:15:28,470 --> 00:15:32,770
 Here, we get a character because it is one
@@ -803,20 +803,20 @@ element from the list, but "tail" and "init"
 always have to return lists.
 
 00:15:34,220 --> 00:15:38,840
-So, in this case, it is a list of characters,
-a String.
+So, in this case, it is a
+list of characters, a String.
 
 00:15:38,840 --> 00:15:46,870
 Then there are more fancy ways of splitting
 a list, and not just into its head and rest,
 
 00:15:46,870 --> 00:15:51,970
-or last and whatever comes before that, but
-at some arbitrary point.
+or last and whatever comes before
+that, but at some arbitrary point.
 
 00:15:51,970 --> 00:15:56,270
-So, you could say, I have a String / list and
-I want to split it at some point.
+So, you could say, I have a String / list
+and I want to split it at some point.
 
 00:15:56,270 --> 00:16:02,170
 And then this means that you take as many
@@ -826,12 +826,12 @@ elements from the front of the list as the
 number says.
 
 00:16:03,170 --> 00:16:06,900
-So, in this case, "abc", and the rest is put
-into a second result.
+So, in this case, "abc", and the
+rest is put into a second result.
 
 00:16:06,900 --> 00:16:12,810
-So, in some sense, you could see this as a
-combination of "take" and "drop".
+So, in some sense, you could see this
+as a combination of "take" and "drop".
 
 00:16:12,810 --> 00:16:19,800
 You get "take 3" and you get "drop 3", but
@@ -844,8 +844,8 @@ having two different functions for doing this.
 Then there is the infamous index access.
 
 00:16:27,310 --> 00:16:33,300
-So, you can, in Haskell, with this operator '!!',
-access an element at a certain index.
+So, you can, in Haskell, with this operator
+'!!', access an element at a certain index.
 
 00:16:33,300 --> 00:16:35,100
 Counting starts with 0.
@@ -858,12 +858,12 @@ is almost forbidden in code that you write
 in your exercises.
 
 00:16:42,640 --> 00:16:47,580
-So, usually, you are supposed to write your
-code without using the index operator.
+So, usually, you are supposed to write
+your code without using the index operator.
 
 00:16:47,580 --> 00:16:52,040
-Simply because in Haskell it is a very bad
-habit to use this.
+Simply because in Haskell it is
+a very bad habit to use this.
 
 00:16:52,040 --> 00:16:54,560
 Usually, there is a better way.
@@ -879,12 +879,12 @@ parts of it.
 For example, the 'reverse' function is useful.
 
 00:17:04,630 --> 00:17:07,660
-It takes a list and gives it back in the opposite
-order.
+It takes a list and gives it
+back in the opposite order.
 
 00:17:07,660 --> 00:17:14,020
-So, for a String, it simply creates the String
-as if you were reading it backward.
+So, for a String, it simply creates the
+String as if you were reading it backward.
 
 00:17:14,020 --> 00:17:16,060
 I think this is very natural.
@@ -894,27 +894,28 @@ The reverse of the empty list is the empty
 list.
 
 00:17:18,800 --> 00:17:21,750
-The reverse of the empty String is the empty
-String, of course.
+The reverse of the empty String
+is the empty String, of course.
 
 00:17:21,750 --> 00:17:24,880
-Then, you can combine lists or Strings (using '++').
+Then, you can combine lists
+or Strings (using '++').
 
 00:17:24,880 --> 00:17:28,770
-Here again written for Strings, but it also
-works on other types of lists.
+Here again written for Strings, but it
+also works on other types of lists.
 
 00:17:28,770 --> 00:17:31,650
-But both, of course, have to be the same kind
-of lists.
+But both, of course, have to
+be the same kind of lists.
 
 00:17:31,650 --> 00:17:36,860
-So, you cannot concatenate the String "abc"
-and the list [1..10].
+So, you cannot concatenate the
+String "abc" and the list [1..10].
 
 00:17:36,860 --> 00:17:39,580
-But you could concatenate these two lists,
-for example.
+But you could concatenate
+these two lists, for example.
 
 00:17:39,580 --> 00:17:41,490
 And what does it do?
@@ -956,24 +957,24 @@ of the second argument, ('b','e'), and so
 on.
 
 00:18:18,040 --> 00:18:21,701
-If one of the two lists is shorter than the
-other, then this stops early.
+If one of the two lists is shorter
+than the other, then this stops early.
 
 00:18:21,701 --> 00:18:30,040
-It stops at the point where one of the two
-lists has no further elements.
+It stops at the point where one of
+the two lists has no further elements.
 
 00:18:30,040 --> 00:18:32,270
-And there is a version of ++ to work with
-nested lists.
+And there is a version of ++
+to work with nested lists.
 
 00:18:32,270 --> 00:18:36,420
-So, this concatenation (++) takes two lists
-and concatenates them.
+So, this concatenation (++) takes
+two lists and concatenates them.
 
 00:18:36,420 --> 00:18:41,420
-But sometimes you have the case where you
-want to have more than two lists and concatenate
+But sometimes you have the case where you want
+to have more than two lists and concatenate
 
 00:18:41,420 --> 00:18:42,420
 all of them.
@@ -1006,16 +1007,16 @@ the concatenation, so in this case you would
 get the output list [1,2,3].
 
 00:19:13,649 --> 00:19:18,990
-And with these functions, you can already
-write quite a bit of code.
+And with these functions, you can
+already write quite a bit of code.
 
 00:19:18,990 --> 00:19:24,250
 In particular, in the beginning, you could
 use the test for emptiness ("null"), accessing
 
 00:19:24,250 --> 00:19:31,810
-the head ("head"), and the tail of a list
-or a String ("tail"), to write code that recursively
+the head ("head"), and the tail of a list or a
+String ("tail"), to write code that recursively
 
 00:19:31,810 --> 00:19:32,810
 destructs a list.
@@ -1052,8 +1053,8 @@ are intended to be without pattern-matching.
 
 76 # slide
 00:20:07,530 --> 00:20:15,280
-We now have different choices when we write
-a list function.
+We now have different choices
+when we write a list function.
 
 00:20:15,280 --> 00:20:20,620
 For example, we can decide whether we will
@@ -1067,12 +1068,12 @@ we have just seen, or possibly using list
 comprehensions.
 
 00:20:28,340 --> 00:20:30,850
-So, let me discuss this on an example from
-a previous exercise.
+So, let me discuss this on an
+example from a previous exercise.
 
 00:20:30,850 --> 00:20:36,830
-There, the task was to decide whether a certain
-String was a palindrome.
+There, the task was to decide whether
+a certain String was a palindrome.
 
 00:20:36,830 --> 00:20:40,150
 The predicate is-a-palindrome?
@@ -1082,8 +1083,8 @@ And one way to think about this is to first
 consider that a palindrome is certainly present
 
 00:20:48,300 --> 00:20:56,150
-if you have a very short String that just
-contains zero or one element.
+if you have a very short String that
+just contains zero or one element.
 
 00:20:56,150 --> 00:21:01,620
 So, checking the length of this String (which
@@ -1101,8 +1102,8 @@ And if it isn't that short, then either by
 pattern-matching (which I just said, I won't
 
 00:21:12,910 --> 00:21:17,770
-show yet) or by using the 'head' and 'last' functions,
-so checking whether the first element and
+show yet) or by using the 'head' and 'last'
+functions, so checking whether the first element and
 
 00:21:17,770 --> 00:21:23,780
 the last element of this String are the same
@@ -1116,8 +1117,8 @@ if you remove these first and last elements
 then the remainder is also a palindrome.
 
 00:21:31,050 --> 00:21:35,740
-So, certainly, this is a valid definition
-for checking whether a String is a palindrome.
+So, certainly, this is a valid definition for
+checking whether a String is a palindrome.
 
 00:21:35,740 --> 00:21:38,430
 It doesn't use indexing.
@@ -1127,8 +1128,8 @@ It is not a very idiomatic solution for this,
 but actually at least avoids using list indexing
 
 00:21:47,490 --> 00:21:50,730
-(which one could also use when solving this
-task).
+(which one could also use
+when solving this task).
 
 00:21:50,730 --> 00:21:56,081
 But actually, it is worthwhile to think whether,
@@ -1155,8 +1156,8 @@ Well, actually reversing a String doesn't
 ever "change" it, it just returns another
 
 00:22:13,300 --> 00:22:15,870
-String which is the reverse of the original
-String.
+String which is the reverse
+of the original String.
 
 00:22:15,870 --> 00:22:19,850
 But then we can check whether the reverse
@@ -1166,16 +1167,16 @@ of the String is equal to the String itself.
 That is a definition of "isPalindrome".
 
 00:22:22,440 --> 00:22:27,140
-And it is certainly preferable to the definition
-seen up here.
+And it is certainly preferable
+to the definition seen up here.
 
 00:22:27,140 --> 00:22:30,530
 You might think that the first version is
 more efficient, because here you have to first
 
 00:22:30,530 --> 00:22:35,940
-reverse the String, which is certainly an
-expensive computation.
+reverse the String, which is
+certainly an expensive computation.
 
 00:22:35,940 --> 00:22:37,560
 But actually, you don't know.
@@ -1199,15 +1200,15 @@ programming mindset) that this must be the
 more efficient version.
 
 00:22:59,460 --> 00:23:03,440
-You cannot really tell at the moment, I would
-say.
+You cannot really tell at
+the moment, I would say.
 
 00:23:03,440 --> 00:23:06,930
 So, try to think in the spirit of this task.
 
 00:23:06,930 --> 00:23:19,660
-Here, I would clearly have preferred this
-submission to the above one.
+Here, I would clearly have preferred
+this submission to the above one.
 
 77 # slide
 00:23:19,660 --> 00:23:26,380
@@ -1218,22 +1219,22 @@ that in Haskell we can even work with infinite
 lists.
 
 00:23:27,380 --> 00:23:30,880
-So, there are expressions and values that represent
-infinite lists.
+So, there are expressions and values
+that represent infinite lists.
 
 00:23:30,880 --> 00:23:32,930
 For example, what you see here.
 
 00:23:32,930 --> 00:23:39,860
-We have seen something similar before, where
-we used some expression like [1..10] or [1,3..9],
+We have seen something similar before, where we
+used some expression like [1..10] or [1,3..9],
 
 00:23:39,860 --> 00:23:46,309
 where we got all odd numbers from 1 to 9.
 
 00:23:46,309 --> 00:23:51,220
-You can actually leave out the upper bound,
-and simply say you want [1,3..].
+You can actually leave out the upper
+bound, and simply say you want [1,3..].
 
 00:23:51,220 --> 00:23:58,730
 Then you will mathematically get (conceptually,
@@ -1250,8 +1251,8 @@ explicit list form, you can write it down
 as an expression.
 
 00:24:05,170 --> 00:24:11,280
-And this semantically means the infinite list
-of all odd numbers.
+And this semantically means the
+infinite list of all odd numbers.
 
 00:24:11,280 --> 00:24:13,800
 Now, what can you do with such a list?
@@ -1263,8 +1264,8 @@ Of course, you cannot print it.
 But you can work with it.
 
 00:24:16,260 --> 00:24:19,690
-For example, you can define other lists in
-terms of it.
+For example, you can define
+other lists in terms of it.
 
 00:24:19,690 --> 00:24:26,950
 So, you could, for example, say: I want to
@@ -1288,8 +1289,8 @@ of all natural numbers.
 We get all the square numbers.
 
 00:24:45,280 --> 00:24:50,810
-You cannot print this out, but it is defined
-and you can work with it.
+You cannot print this out, but it
+is defined and you can work with it.
 
 00:24:50,810 --> 00:24:51,810
 How can you work with it?
@@ -1330,27 +1331,27 @@ need.
 So, you define them as an infinite list.
 
 00:25:27,850 --> 00:25:32,040
-But then, at a certain usage point, you say:
-Give me the first three.
+But then, at a certain usage point,
+you say: Give me the first three.
 
 00:25:32,040 --> 00:25:37,640
-And then you really get the first three, and
-the other ones won't even be computed.
+And then you really get the first three,
+and the other ones won't even be computed.
 
 00:25:37,640 --> 00:25:43,740
 So, the functionality here is not that Haskell
 will try to compute this infinite list of
 
 00:25:43,740 --> 00:25:50,880
-all the square numbers and then realize that
-that is not something it can do.
+all the square numbers and then realize
+that that is not something it can do.
 
 00:25:50,880 --> 00:25:51,880
 No.
 
 00:25:51,880 --> 00:25:56,140
-Instead, what will happen is that Haskell
-will work out that it will only need the first
+Instead, what will happen is that Haskell will
+work out that it will only need the first
 
 00:25:56,140 --> 00:25:57,620
 three of these elements.
@@ -1376,12 +1377,12 @@ go.
 No, this works for almost all the list functions.
 
 00:26:15,600 --> 00:26:18,210
-You cannot reverse an infinite list; that
-doesn't make sense.
+You cannot reverse an infinite
+list; that doesn't make sense.
 
 00:26:18,210 --> 00:26:22,960
-You also can't get the last element of an
-infinite list.
+You also can't get the last
+element of an infinite list.
 
 00:26:22,960 --> 00:26:27,370
 And some uses of recursion are also problematic.
@@ -1402,8 +1403,8 @@ For example, you could say something like:
 I want to zip the infinite list of all the
 
 00:26:42,020 --> 00:26:47,260
-natural numbers including zero ([0..]) and
-the finite String "ab".
+natural numbers including zero
+([0..]) and the finite String "ab".
 
 00:26:47,260 --> 00:26:48,260
 What would you get?
@@ -1412,12 +1413,12 @@ What would you get?
 As I said about the 'zip' function:
 
 00:26:49,580 --> 00:26:52,830
-It stops when one of the two lists has no
-further elements.
+It stops when one of the two
+lists has no further elements.
 
 00:26:52,830 --> 00:26:57,080
-So, in this case, this finite list is the
-one which will stop first.
+So, in this case, this finite list
+is the one which will stop first.
 
 00:26:57,080 --> 00:26:58,760
 It contains only 'a' and 'b'.
@@ -1430,15 +1431,16 @@ numbers, only the 0 and the 1 will be consumed,
 and the rest will never be computed.
 
 00:27:06,620 --> 00:27:08,760
-And this is not a special case on the first
-argument.
+And this is not a special
+case on the first argument.
 
 00:27:08,760 --> 00:27:12,760
-If you switch the two arguments here, it will
-also work.
+If you switch the two arguments
+here, it will also work.
 
 00:27:12,760 --> 00:27:15,170
-That is because of the feature of "lazy evaluation".
+That is because of the
+feature of "lazy evaluation".
 
 00:27:15,170 --> 00:27:19,130
 It was something that I mentioned in the first
@@ -1467,12 +1469,12 @@ This does not mean that some magic is going
 on.
 
 00:27:44,060 --> 00:27:47,980
-So, Haskell does not solve arbitrary mathematical
-problems.
+So, Haskell does not solve
+arbitrary mathematical problems.
 
 00:27:47,980 --> 00:27:54,610
-Let's consider this example here, where we
-have the list of all square numbers.
+Let's consider this example here, where
+we have the list of all square numbers.
 
 00:27:54,610 --> 00:28:01,210
 Which is an infinite list, because we do this
@@ -1521,8 +1523,8 @@ list is increasing, and we square the numbers,
 this will also be an increasing list, so once
 
 00:28:47,650 --> 00:28:51,390
-we have seen the 100, we cannot ever again
-see a *smaller* number.
+we have seen the 100, we cannot
+ever again see a *smaller* number.
 
 00:28:51,390 --> 00:28:56,500
 That would be possible for this very specific
@@ -1539,8 +1541,8 @@ again gives something which is smaller than
 And then, this should go into the output list.
 
 00:29:06,910 --> 00:29:12,420
-So, it is very specific that for the square
-numbers, they are ever-increasing.
+So, it is very specific that for the
+square numbers, they are ever-increasing.
 
 00:29:12,420 --> 00:29:18,130
 But Haskell shouldn't use this knowledge,
@@ -1572,8 +1574,8 @@ won't ever see a smaller number again, let's
 say that this is some other expression which
 
 00:29:42,950 --> 00:29:48,080
-also computes the square numbers, but in some
-other way.
+also computes the square
+numbers, but in some other way.
 
 00:29:48,080 --> 00:29:50,620
 In some, maybe, less obvious way.
@@ -1611,15 +1613,16 @@ for any or every other expression that happens
 to give us the same list.
 
 00:30:20,660 --> 00:30:23,130
-But the two programs shouldn't behave differently.
+But the two programs
+shouldn't behave differently.
 
 00:30:23,130 --> 00:30:28,630
 So, the only way to make sure that is the
 case is that also in this case Haskell will
 
 00:30:28,630 --> 00:30:32,610
-actually try out all the numbers that come
-from this list.
+actually try out all the numbers
+that come from this list.
 
 00:30:32,610 --> 00:30:38,860
 And since it cannot try them all out in a
@@ -1629,8 +1632,8 @@ finite time, it will not produce a finite
 list here.
 
 00:30:39,860 --> 00:30:43,730
-So, this is completely different from the
-case where we had "take 3".
+So, this is completely different
+from the case where we had "take 3".
 
 00:30:43,730 --> 00:30:50,390
 Because there, the 3 really allows Haskell,
@@ -1655,8 +1658,8 @@ By this principle (lazy evaluation), Haskell
 uses case distinction to know what to do,
 
 00:31:12,710 --> 00:31:17,170
-and evaluates only arguments that are needed
-to make these case distinctions.
+and evaluates only arguments that are
+needed to make these case distinctions.
 
 00:31:17,170 --> 00:31:25,370
 And this often allows us to get finite computations
@@ -1667,19 +1670,20 @@ magical mystery solver.
 
 79 # slide
 00:31:36,290 --> 00:31:40,600
-To finish up for today, I want to discuss
-this example.
+To finish up for today, I
+want to discuss this example.
 
 00:31:40,600 --> 00:31:44,880
-This is, as the name suggests, a sorting function.
+This is, as the name
+suggests, a sorting function.
 
 00:31:44,880 --> 00:31:48,990
-And actually, it is essentially implementing
-the idea of Quicksort.
+And actually, it is essentially
+implementing the idea of Quicksort.
 
 00:31:48,990 --> 00:31:54,150
-So, you see some of the features in action
-that we have introduced so far.
+So, you see some of the features in
+action that we have introduced so far.
 
 00:31:54,150 --> 00:32:03,790
 We have case distinction: so, saying that
@@ -1696,8 +1700,8 @@ comprehensions to, basically, split our input
 list into smaller and greater values.
 
 00:32:18,270 --> 00:32:22,650
-And then, we have recursive calls on these
-"smaller" and "greater" elements.
+And then, we have recursive calls on
+these "smaller" and "greater" elements.
 
 00:32:22,650 --> 00:32:28,190
 And then, we combine the results with this
@@ -1715,9 +1719,9 @@ I want to discuss this, but actually I want
 to see some aspects that are better explained
 
 00:32:39,210 --> 00:32:41,890
-in an editor, where we also see the program
-running.
+in an editor, where we also
+see the program running.
 
 00:32:41,890 --> 00:32:46,909
-So, actually, I will make a separate video
-for this part.
+So, actually, I will make a
+separate video for this part.

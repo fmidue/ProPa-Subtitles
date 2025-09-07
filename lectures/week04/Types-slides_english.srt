@@ -7,23 +7,23 @@ I said in the previous video that I finished
 last lecture week with the slide on moving
 
 00:00:15,370 --> 00:00:22,420
-if-then-else expressions in and out of function
-argument positions.
+if-then-else expressions in and
+out of function argument positions.
 
 00:00:22,420 --> 00:00:23,610
 That wasn't actually true.
 
 00:00:23,610 --> 00:00:27,420
-That was slide 43, whereas last week's lectures
-ended with slide 48.
+That was slide 43, whereas last
+week's lectures ended with slide 48.
 
 00:00:27,420 --> 00:00:33,340
-So, there was some other material afterward,
-namely, talking about syntax.
+So, there was some other material
+afterward, namely, talking about syntax.
 
 00:00:33,340 --> 00:00:42,210
-I want to call out another observation
-from the exercises here.
+I want to call out another
+observation from the exercises here.
 
 00:00:42,210 --> 00:00:49,039
 Actually, this is not exactly from this year's
@@ -37,14 +37,15 @@ There was some observation that I want to
 make here again, even though it's not exactly
 
 00:00:55,699 --> 00:01:01,660
-the example that was used in this year's exercises.
+the example that was used
+in this year's exercises.
 
 00:01:01,660 --> 00:01:04,680
 It's about common subexpressions.
 
 00:01:04,680 --> 00:01:08,571
-So, it appears here in the case of an if-then-else,
-but that's not the main point.
+So, it appears here in the case of an
+if-then-else, but that's not the main point.
 
 00:01:08,571 --> 00:01:11,550
 The point is about common subexpressions.
@@ -54,11 +55,12 @@ Also, Marcellus and Oliver talked about this
 in their videos, about moving expressions
 
 00:01:19,870 --> 00:01:25,390
-that appear repeatedly, to somehow named entities.
+that appear repeatedly,
+to somehow named entities.
 
 00:01:25,390 --> 00:01:29,530
-And that was used there for the grass, for
-the sun, for branches, etc.
+And that was used there for the
+grass, for the sun, for branches, etc.
 
 00:01:29,530 --> 00:01:32,130
 So, basically for constant expressions.
@@ -97,8 +99,8 @@ Maybe this was blank here.
 Maybe something else.
 
 00:02:04,400 --> 00:02:07,930
-The important thing here is that there was
-a recomputation.
+The important thing here is
+that there was a recomputation.
 
 00:02:07,930 --> 00:02:13,489
 So, this value is computed here, and then at
@@ -115,35 +117,35 @@ Yes, just computing the sine may not be the
 most problematic case, but it would be both
 
 00:02:24,780 --> 00:02:29,769
-more efficient and also clearer to say: Let's
-give names to these things.
+more efficient and also clearer to
+say: Let's give names to these things.
 
 00:02:29,769 --> 00:02:35,849
 We can simply name things that contain no
 other variables, but of course, we can also
 
 00:02:35,849 --> 00:02:40,420
-name the subexpressions "8 * cos t" and "8
-* sin t".
+name the subexpressions "8
+* cos t" and "8 * sin t".
 
 00:02:40,420 --> 00:02:44,959
-And then it becomes clearer because then
-we can see that we actually check if the y-coordinate
+And then it becomes clearer because then we can
+see that we actually check if the y-coordinate
 
 00:02:44,959 --> 00:02:52,249
-is greater than zero; then we move whatever
-we had here to the x and y position; otherwise,
+is greater than zero; then we move whatever we
+had here to the x and y position; otherwise,
 
 00:02:52,249 --> 00:02:53,349
 we do something else.
 
 00:02:53,349 --> 00:02:58,060
-So, this is both clearer (the second version),
-and also slightly more efficient.
+So, this is both clearer (the second
+version), and also slightly more efficient.
 
 00:02:58,060 --> 00:03:06,390
-Because we don't compute this very same mathematical
-expression twice.
+Because we don't compute this very
+same mathematical expression twice.
 
 00:03:06,390 --> 00:03:10,920
 There is a concern that sometimes comes up
@@ -154,8 +156,8 @@ student originally writing this code didn't
 do this renaming, that, well, maybe in the
 
 00:03:17,569 --> 00:03:23,219
-"else" branch we don't need the cosine (the
-x value).
+"else" branch we don't need
+the cosine (the x value).
 
 00:03:23,219 --> 00:03:27,180
 So, here we say: If this condition is true,
@@ -165,12 +167,12 @@ then we compute this, and then we have to
 compute this a second time.
 
 00:03:28,920 --> 00:03:31,840
-But if this condition is false, we go to the
-"else" branch.
+But if this condition is false,
+we go to the "else" branch.
 
 00:03:31,840 --> 00:03:34,900
-And maybe in the "else" branch we don't have
-the cosine or the sine.
+And maybe in the "else" branch we
+don't have the cosine or the sine.
 
 00:03:34,900 --> 00:03:36,569
 Maybe the "else" branch is really "blank".
@@ -184,12 +186,12 @@ the y is positive (if so, then of course we
 use the x and y), and otherwise we do nothing
 
 00:03:46,139 --> 00:03:50,540
-(we have the "blank"); then why do we have
-the computation of x?
+(we have the "blank"); then why
+do we have the computation of x?
 
 00:03:50,540 --> 00:03:54,939
-That is a concern that students might have
-or have had at this point.
+That is a concern that students might
+have or have had at this point.
 
 00:03:54,939 --> 00:03:57,669
 And well, this concern is unfounded.
@@ -201,8 +203,8 @@ Why?
 Because we are not in an imperative language.
 
 00:03:59,709 --> 00:04:03,349
-So, it's not even true that at this point we
-compute x and y.
+So, it's not even true that at
+this point we compute x and y.
 
 00:04:03,349 --> 00:04:04,530
 It's not a variable assignment.
@@ -212,16 +214,16 @@ It is not like you go through this piece of
 code, and you compute this value, assign it
 
 00:04:09,590 --> 00:04:15,620
-to x, compute this value, assign it to y,
-do the check, and if we end up in the "else"
+to x, compute this value, assign it to y, do
+the check, and if we end up in the "else"
 
 00:04:15,620 --> 00:04:21,430
-branch and have a "blank", then we have computed
-the x to no purpose.
+branch and have a "blank", then we
+have computed the x to no purpose.
 
 00:04:21,430 --> 00:04:25,949
-That's not what's happening here because
-this is not sequential code by which we compute
+That's not what's happening here because this
+is not sequential code by which we compute
 
 00:04:25,949 --> 00:04:27,949
 this, and this, and this.
@@ -250,15 +252,15 @@ And the same goes for y.
 Then, we check the y, of course.
 
 00:04:52,250 --> 00:04:56,340
-The y will indeed be computed, but isn't computed
-at this point when it is declared.
+The y will indeed be computed, but isn't
+computed at this point when it is declared.
 
 00:04:56,340 --> 00:04:57,930
 It's computed when this check happens.
 
 00:04:57,930 --> 00:05:01,590
-And of course, we need the value of y in order
-to do this comparison.
+And of course, we need the value of
+y in order to do this comparison.
 
 00:05:01,590 --> 00:05:05,280
 So, the y will be computed when we do this
@@ -275,12 +277,12 @@ x.
 And that's when the x would be computed.
 
 00:05:10,919 --> 00:05:16,470
-So then that's when the cos t will be computed
-here.
+So then that's when the cos
+t will be computed here.
 
 00:05:16,470 --> 00:05:21,110
-If, however, the y turns out to not be positive,
-we end up in the "else" branch.
+If, however, the y turns out to not be
+positive, we end up in the "else" branch.
 
 00:05:21,110 --> 00:05:23,030
 The "else" branch is "blank", for example.
@@ -303,8 +305,8 @@ the expensive y, and then I do something with
 those values.
 
 00:05:39,180 --> 00:05:42,440
-That's not what's happening, because this
-is not sequential code.
+That's not what's happening, because
+this is not sequential code.
 
 00:05:42,440 --> 00:05:45,930
 It's mathematical declarations.
@@ -324,8 +326,8 @@ Let's talk a bit about types.
 And first of all, about number types.
 
 00:06:03,110 --> 00:06:07,940
-That is also something that is now increasingly
-coming up in the exercises.
+That is also something that is now
+increasingly coming up in the exercises.
 
 00:06:07,940 --> 00:06:11,889
 The first examples in CodeWorld, of course,
@@ -339,7 +341,8 @@ Then, in the last exercise task, about the
 list of natural numbers, there was already
 
 00:06:22,099 --> 00:06:25,930
-this integer type for non-fractional values (whole numbers).
+this integer type for non-fractional
+values (whole numbers).
 
 00:06:25,930 --> 00:06:32,389
 And actually, some students already mixed
@@ -352,20 +355,20 @@ It was not needed.
 There was a way to compute this just on integers.
 
 00:06:36,050 --> 00:06:41,130
-But some students tried to use conversion
-for detecting the number of digits of a number.
+But some students tried to use conversion for
+detecting the number of digits of a number.
 
 00:06:41,130 --> 00:06:43,970
-Instead of working with division and rounding
-of values, etc.
+Instead of working with division
+and rounding of values, etc.
 
 00:06:43,970 --> 00:06:51,490
 So, they already worked with functions that
 move between floating-point and integer values.
 
 00:06:51,490 --> 00:06:56,320
-You will, at some places, need both and also
-their interplay.
+You will, at some places, need
+both and also their interplay.
 
 00:06:56,320 --> 00:06:58,020
 So, we have to talk about this.
@@ -379,12 +382,12 @@ than what you have seen so far in function
 types.
 
 00:07:06,070 --> 00:07:09,990
-First of all, from the outside, Haskell does
-have various number types.
+First of all, from the outside,
+Haskell does have various number types.
 
 00:07:09,990 --> 00:07:14,569
-Like in most programming languages, there
-are integer types of different sizes and there
+Like in most programming languages, there are
+integer types of different sizes and there
 
 00:07:14,569 --> 00:07:17,150
 are floating-point types of different sizes.
@@ -393,31 +396,31 @@ are floating-point types of different sizes.
 So, you see here Float and Double.
 
 00:07:18,949 --> 00:07:26,270
-They correspond roughly to what you find in
-other languages with those type names.
+They correspond roughly to what you find
+in other languages with those type names.
 
 00:07:26,270 --> 00:07:29,300
-The Rational type is maybe not so common in
-other languages.
+The Rational type is maybe not
+so common in other languages.
 
 00:07:29,300 --> 00:07:33,319
-It's really a type of the rational numbers
-with arbitrary precision.
+It's really a type of the rational
+numbers with arbitrary precision.
 
 00:07:33,319 --> 00:07:35,169
 These are not floating-point numbers.
 
 00:07:35,169 --> 00:07:39,009
-Actually, every rational number is exactly
-representable in this type.
+Actually, every rational number is
+exactly representable in this type.
 
 00:07:39,009 --> 00:07:43,930
-So, there is no loss of precision when, for
-example, adding rational numbers.
+So, there is no loss of precision when,
+for example, adding rational numbers.
 
 00:07:43,930 --> 00:07:47,759
-And also, for integers there is this interesting
-distinction between Int and Integer.
+And also, for integers there is this
+interesting distinction between Int and Integer.
 
 00:07:47,759 --> 00:07:52,729
 And the way to think about this is that Int
@@ -428,8 +431,8 @@ which has a fixed bit length like 32 or 64
 bits.
 
 00:07:56,190 --> 00:08:04,270
-So, there is a finite range of integer numbers
-that can be represented in Int.
+So, there is a finite range of integer
+numbers that can be represented in Int.
 
 00:08:04,270 --> 00:08:06,650
 Whereas Integer is the mathematical integer
@@ -454,19 +457,19 @@ So, the number three, just a constant written
 3, can be an Int, can be a Float, can be an
 
 00:08:31,760 --> 00:08:34,580
-Integer, or can be a Rational, or many other
-types.
+Integer, or can be a
+Rational, or many other types.
 
 00:08:34,580 --> 00:08:39,070
-So, for a number you don't see, as given, which
-type it is.
+So, for a number you don't see,
+as given, which type it is.
 
 00:08:39,070 --> 00:08:41,310
 That is basically polymorphic or overloaded.
 
 00:08:41,310 --> 00:08:45,880
-There are also constants that don't have all
-the number types.
+There are also constants that
+don't have all the number types.
 
 00:08:45,880 --> 00:08:51,050
 So, if you write 3.5, then the compiler knows
@@ -476,19 +479,19 @@ So, if you write 3.5, then the compiler knows
 an Integer.
 
 00:08:52,050 --> 00:08:55,889
-So, 3.5 could be a Float or a Double, but it
-couldn't be an Integer, for example.
+So, 3.5 could be a Float or a Double, but
+it couldn't be an Integer, for example.
 
 00:08:55,889 --> 00:08:58,630
 Whereas 3 can be both an Integer and a Float.
 
 00:08:58,630 --> 00:09:03,570
-That's a common practice in other languages
-as well.
+That's a common practice
+in other languages as well.
 
 00:09:03,570 --> 00:09:07,510
-Also, as expected in some sense, there are
-conversion functions.
+Also, as expected in some sense,
+there are conversion functions.
 
 00:09:07,510 --> 00:09:13,500
 But we will see that they play a slightly
@@ -498,12 +501,12 @@ different role in some situations on the next
 slide.
 
 00:09:14,500 --> 00:09:19,730
-But if we need to convert between some of
-these number types, then we can do so.
+But if we need to convert between some
+of these number types, then we can do so.
 
 00:09:19,730 --> 00:09:23,740
-So, there are conversion functions that don't
-lose precision.
+So, there are conversion functions
+that don't lose precision.
 
 00:09:23,740 --> 00:09:30,839
 These are functions that go from Int to Integer,
@@ -517,7 +520,8 @@ For example, if you want to go from machine
 integers to this arbitrary precision integer
 
 00:09:35,350 --> 00:09:37,230
-type, then you can use the function "fromIntegral".
+type, then you can use the
+function "fromIntegral".
 
 00:09:37,230 --> 00:09:39,851
 It is not "fromInteger" or something like
@@ -553,8 +557,8 @@ So, it can convert an Int to an Integer, an
 Integer to an Int, an Int to a Rational, and
 
 00:10:05,790 --> 00:10:09,029
-an Int to a Float/Rational/Double, as I mentioned
-already.
+an Int to a Float/Rational/Double,
+as I mentioned already.
 
 00:10:09,029 --> 00:10:15,670
 So, these are basically from one integer type
@@ -571,7 +575,8 @@ Well, in the case of "from Integer to Int",
 there is some loss of precision, of course.
 
 00:10:21,570 --> 00:10:26,850
-There must be, because of the limited expressiveness.
+There must be, because of
+the limited expressiveness.
 
 00:10:26,850 --> 00:10:31,260
 But there's no loss of precision in terms
@@ -581,8 +586,8 @@ of rounding errors because of digits after
 the comma sign or something like that.
 
 00:10:35,560 --> 00:10:38,970
-Because this just goes from Integer and similar
-types.
+Because this just goes from
+Integer and similar types.
 
 00:10:38,970 --> 00:10:43,760
 In the opposite direction, in some sense,
@@ -599,12 +604,12 @@ then you have to go to 3 or 4, so you must
 make a change.
 
 00:10:53,560 --> 00:10:56,670
-You can round up, you can round down, you
-can truncate.
+You can round up, you can
+round down, you can truncate.
 
 00:10:56,670 --> 00:11:00,800
-And basically, for all these different modes,
-there are functions in Haskell.
+And basically, for all these different
+modes, there are functions in Haskell.
 
 00:11:00,800 --> 00:11:07,730
 So "truncate" would go from 3.5 to 3, whereas
@@ -621,32 +626,32 @@ but behave differently depending on whether
 they get negative or positive numbers.
 
 00:11:18,029 --> 00:11:23,210
-Which types do these precision-losing conversion
-functions have?
+Which types do these precision-losing
+conversion functions have?
 
 00:11:23,210 --> 00:11:26,529
-They can move from a Float to an Int, for
-example.
+They can move from a Float
+to an Int, for example.
 
 00:11:26,529 --> 00:11:30,860
 Because the input would be a floating-point
 number, because we have something like 3.5.
 
 00:11:30,860 --> 00:11:35,420
-The outcome will be, again, an integral type
-like Int or Integer.
+The outcome will be, again, an
+integral type like Int or Integer.
 
 00:11:35,420 --> 00:11:38,550
-That's because after you have "truncated",
-you have a 3 or a 4.
+That's because after you have
+"truncated", you have a 3 or a 4.
 
 00:11:38,550 --> 00:11:41,459
-So, you don't need a floating-point number
-anymore.
+So, you don't need a
+floating-point number anymore.
 
 00:11:41,459 --> 00:11:53,010
-You can move, with these functions, from this
-to an Integer or Int type.
+You can move, with these functions,
+from this to an Integer or Int type.
 
 51 # slide
 00:11:53,010 --> 00:11:59,890
@@ -721,8 +726,8 @@ It will work out that the x must also be a
 floating-point value, because otherwise you
 
 00:13:11,370 --> 00:13:16,399
-couldn't double it and then add it with a
-floating-point addition.
+couldn't double it and then add
+it with a floating-point addition.
 
 00:13:16,399 --> 00:13:22,361
 Similarly, if you have some other function
@@ -736,12 +741,12 @@ be a floating-point thing, because of this
 expression.
 
 00:13:29,399 --> 00:13:33,600
-And that works out nicely because the 4 can
-also be seen as a floating-point value.
+And that works out nicely because the 4
+can also be seen as a floating-point value.
 
 00:13:33,600 --> 00:13:36,839
-Then the outcome of the f will also be floating-point
-values.
+Then the outcome of the f will
+also be floating-point values.
 
 00:13:36,839 --> 00:13:41,699
 So, the g will actually know that this division
@@ -751,12 +756,12 @@ must be a floating-point division, so y must
 also be a floating-point number.
 
 00:13:42,699 --> 00:13:48,319
-So if you write something like this, then
-we don't have to convert, because the language
+So if you write something like this, then we
+don't have to convert, because the language
 
 00:13:48,319 --> 00:13:52,230
-overloads both the constants and the mathematical
-operations.
+overloads both the constants
+and the mathematical operations.
 
 00:13:52,230 --> 00:13:57,470
 That's the case here, because we leave the
@@ -773,8 +778,8 @@ and made no constraints on x and y, nor on
 the outcome of these functions.
 
 00:14:04,880 --> 00:14:10,000
-So, the compiler can, via overloading, choose
-appropriate number types for x and y.
+So, the compiler can, via overloading,
+choose appropriate number types for x and y.
 
 00:14:10,000 --> 00:14:14,220
 In this case, it will choose floating-point
@@ -785,34 +790,34 @@ If, on the other hand, we do write down explicit
 function types, and those also constrain the
 
 00:14:21,079 --> 00:14:27,380
-input and output types, for example to integers,
-then we need to convert.
+input and output types, for example
+to integers, then we need to convert.
 
 00:14:27,380 --> 00:14:32,570
-To illustrate this, let's look at a similar
-example.
+To illustrate this, let's
+look at a similar example.
 
 00:14:32,570 --> 00:14:36,800
 First, let's look at this here.
 
 00:14:36,800 --> 00:14:40,339
-Let's say I want f to be a function from integers
-to floats.
+Let's say I want f to be a
+function from integers to floats.
 
 00:14:40,339 --> 00:14:48,970
 Then if I want to use the same expression
 as here, I actually have to make sure that
 
 00:14:48,970 --> 00:14:51,589
-this value in this position is a floating-point
-value.
+this value in this position
+is a floating-point value.
 
 00:14:51,589 --> 00:14:54,130
 And it isn't.
 
 00:14:54,130 --> 00:14:58,250
-If I say, f goes from integer to float, then
-x would be an integer.
+If I say, f goes from integer to
+float, then x would be an integer.
 
 00:14:58,250 --> 00:15:01,860
 Then in order to use it for floating-point
@@ -826,12 +831,12 @@ then I have to convert this x from Int to
 a floating-point number.
 
 00:15:07,889 --> 00:15:12,029
-And that's what "fromIntegral" can do, because
-as I said on the previous slide, this "fromIntegral"
+And that's what "fromIntegral" can do, because as
+I said on the previous slide, this "fromIntegral"
 
 00:15:12,029 --> 00:15:15,110
-can go from types like Int or Integer to any
-suitable other type.
+can go from types like Int or
+Integer to any suitable other type.
 
 00:15:15,110 --> 00:15:16,870
 So, it could go to Float.
@@ -843,27 +848,27 @@ So, this will work.
 And this is then a kind of conversion.
 
 00:15:21,550 --> 00:15:25,279
-Yes, it is not a syntactic conversion as happens
-in C.
+Yes, it is not a syntactic
+conversion as happens in C.
 
 00:15:25,279 --> 00:15:27,600
 It's a function which does this conversion.
 
 00:15:27,600 --> 00:15:33,149
-So, it is not somehow a built-in extra syntactic
-construct.
+So, it is not somehow a built-in
+extra syntactic construct.
 
 00:15:33,149 --> 00:15:35,839
-And similarly, if for example I do an example
-as above:
+And similarly, if for example
+I do an example as above:
 
 00:15:35,839 --> 00:15:43,000
 So, the f x is again free to choose its type,
 but somehow in the second function, instead
 
 00:15:43,000 --> 00:15:50,040
-of putting the value 4 here, I want to have
-the length of the string "abcd".
+of putting the value 4 here, I want to
+have the length of the string "abcd".
 
 00:15:50,040 --> 00:15:54,850
 Now I would have to know that the 'length' function
@@ -897,8 +902,8 @@ the compiler decided, via overloading: "Well,
 I consider this 4 to be a floating-point number".
 
 00:16:14,399 --> 00:16:17,070
-This can't be done here if I say it is the
-result of the 'length' function.
+This can't be done here if I say it is
+the result of the 'length' function.
 
 00:16:17,070 --> 00:16:20,279
 The 'length' function always returns an integer.
@@ -932,8 +937,8 @@ Now, at this point, students sometimes ask:
 explicit conversions, whereas here they are
 
 00:16:48,759 --> 00:16:52,600
-somehow hidden? Maybe the compiler is introducing
-silent conversions here."
+somehow hidden? Maybe the compiler is
+introducing silent conversions here."
 
 00:16:52,600 --> 00:16:54,380
 But that's not how to view this.
@@ -952,15 +957,15 @@ No.
 What's actually happening is:
 
 00:17:02,220 --> 00:17:06,130
-Here we need conversions, here we don't need
-conversions.
+Here we need conversions, here
+we don't need conversions.
 
 00:17:06,130 --> 00:17:07,900
 So, there are no hidden conversions.
 
 00:17:07,900 --> 00:17:11,740
-Just by not giving types for f and g, we let
-the compiler choose what the types are.
+Just by not giving types for f and g, we
+let the compiler choose what the types are.
 
 00:17:11,740 --> 00:17:15,959
 And the compiler can, in this case, choose
@@ -970,26 +975,26 @@ the types in such a way that no conversions
 are necessary.
 
 00:17:16,959 --> 00:17:19,319
-Because the compiler simply decides that x
-is a Float.
+Because the compiler simply
+decides that x is a Float.
 
 00:17:19,319 --> 00:17:21,970
 Then there is no need for conversion.
 
 00:17:21,970 --> 00:17:25,559
-If we say "No, the x is an integer", then
-conversion is necessary.
+If we say "No, the x is an integer",
+then conversion is necessary.
 
 00:17:25,559 --> 00:17:28,100
-And the compiler won't introduce conversion
-on its own.
+And the compiler won't
+introduce conversion on its own.
 
 00:17:28,100 --> 00:17:29,340
 We have to write it.
 
 00:17:29,340 --> 00:17:42,850
-Otherwise, it would defeat the discipline
-of types in Haskell (also for number types).
+Otherwise, it would defeat the discipline of
+types in Haskell (also for number types).
 
 52 # slide
 00:17:42,850 --> 00:17:47,669
@@ -1016,8 +1021,8 @@ not available on integer types.
 It is a floating-point style operation.
 
 00:18:05,450 --> 00:18:10,770
-It does work on the rationals, but not on
-integer types.
+It does work on the rationals,
+but not on integer types.
 
 00:18:10,770 --> 00:18:12,170
 What do we have instead?
@@ -1026,12 +1031,12 @@ What do we have instead?
 We have a dedicated division function.
 
 00:18:15,000 --> 00:18:17,960
-This operator "div" is also known from other
-languages.
+This operator "div" is also
+known from other languages.
 
 00:18:17,960 --> 00:18:23,210
-It operates on Int or Integer, but not on
-floating-point numbers, for example.
+It operates on Int or Integer, but not
+on floating-point numbers, for example.
 
 00:18:23,210 --> 00:18:27,650
 So, it is really a different operation, a
@@ -1052,8 +1057,8 @@ So while there is no slash operator for division
 in Haskell, this function can be used as an
 
 00:18:46,250 --> 00:18:50,860
-operator by simply writing it infix and with
-these backticks.
+operator by simply writing it
+infix and with these backticks.
 
 00:18:50,860 --> 00:18:52,539
 But that's just syntactic sugar.
@@ -1063,8 +1068,8 @@ So for "17 `div` 3", written this way, the
 compiler knows that it is the same as applying
 
 00:18:59,880 --> 00:19:04,620
-the binary function "div" to 17 and 3 as its
-two arguments.
+the binary function "div" to
+17 and 3 as its two arguments.
 
 00:19:04,620 --> 00:19:08,980
 It is just a different way of writing it.
@@ -1104,20 +1109,20 @@ names, similar to mathematical libraries in
 other languages.
 
 00:19:35,090 --> 00:19:38,010
-I won't introduce all of them; they will simply
-come up in examples.
+I won't introduce all of them; they
+will simply come up in examples.
 
 00:19:38,010 --> 00:19:44,730
-So if you find a need, then maybe look up
-in some Haskell library or the standard library
+So if you find a need, then maybe look up in
+some Haskell library or the standard library
 
 00:19:44,730 --> 00:19:47,300
-what the function is that you need for a certain
-purpose.
+what the function is that you
+need for a certain purpose.
 
 00:19:47,300 --> 00:19:54,450
-So, I will not give a complete list or something
-like that.
+So, I will not give a complete
+list or something like that.
 
 00:19:54,450 --> 00:19:57,909
 That shouldn't be needed.
@@ -1131,8 +1136,8 @@ me also make an observation based on past
 years' exercises.
 
 00:20:05,120 --> 00:20:10,620
-So, this is also something that probably will
-come up again in exercise tasks now.
+So, this is also something that probably
+will come up again in exercise tasks now.
 
 00:20:10,620 --> 00:20:14,140
 I mentioned the need for conversion.
@@ -1155,8 +1160,8 @@ Why is that?
 They may have many different types.
 
 00:20:31,510 --> 00:20:34,620
-So, among others, they have types
-like "Int → Int".
+So, among others, they have
+types like "Int → Int".
 
 00:20:34,620 --> 00:20:40,250
 So if you have something which maybe draws
@@ -1166,8 +1171,8 @@ from a generator list in a list comprehension,
 0 to 10 or something like that:
 
 00:20:41,720 --> 00:20:45,020
-It would be an Int, but maybe you need to
-use it as a Double.
+It would be an Int, but maybe
+you need to use it as a Double.
 
 00:20:45,020 --> 00:20:49,590
 Then it doesn't hurt to add a "fromIntegral"
@@ -1192,8 +1197,8 @@ are also fine, because you have added this
 the integer into a Double, for example.
 
 00:21:03,470 --> 00:21:07,910
-In that sense, "fromIntegral" in the worst case
-will be a no-op.
+In that sense, "fromIntegral" in
+the worst case will be a no-op.
 
 00:21:07,910 --> 00:21:12,460
 So, it doesn't really hurt to add it at certain
@@ -1274,8 +1279,8 @@ dealing with certain complicated-looking types
 like the one here.
 
 00:22:30,460 --> 00:22:36,651
-So if you write some function on numbers, and
-you don't say "I want this to be a function from Float
+So if you write some function on numbers, and you
+don't say "I want this to be a function from Float
 
 00:22:36,651 --> 00:22:37,651
 to Float",
@@ -1288,12 +1293,12 @@ It might infer something that looks somewhat
 daunting like this "Floating a" and "Ord a",
 
 00:22:46,360 --> 00:22:51,880
-and then this strange arrow which isn't a
-function arrow, and then "a → a".
+and then this strange arrow which isn't
+a function arrow, and then "a → a".
 
 00:22:51,880 --> 00:22:56,230
-At the moment, you are not expected to understand
-this.
+At the moment, you are not
+expected to understand this.
 
 00:22:56,230 --> 00:23:01,000
 If you want to have some inkling of what's
@@ -1310,8 +1315,8 @@ declared with "interface").
 But you don't need this at this point.
 
 00:23:13,940 --> 00:23:20,470
-And you can avoid such concepts in Haskell
-by being more explicit.
+And you can avoid such concepts
+in Haskell by being more explicit.
 
 00:23:20,470 --> 00:23:25,409
 So, if you write down that your "fun" is a
@@ -1321,16 +1326,16 @@ function from Int to Int, then the compiler
 will believe you.
 
 00:23:26,520 --> 00:23:31,030
-Well, it will not simply believe you, it will
-check it.
+Well, it will not simply
+believe you, it will check it.
 
 00:23:31,030 --> 00:23:37,150
 And you don't have to rely on inference which
 might lead to such complicated-looking types.
 
 00:23:37,150 --> 00:23:40,030
-So, this is a comment specifically about number
-types.
+So, this is a comment
+specifically about number types.
 
 00:23:40,030 --> 00:23:44,210
 But also more generally, at least top-level
@@ -1365,26 +1370,26 @@ And I will talk through some basic types on
 this slide and probably afterwards make a
 
 00:24:17,520 --> 00:24:24,429
-small video with the whiteboard to look at
-some example values, in particular, for compound
+small video with the whiteboard to look at some
+example values, in particular, for compound
 
 00:24:24,429 --> 00:24:25,429
 types.
 
 00:24:25,429 --> 00:24:29,440
-So, let's go through the preexisting types
-quickly, besides numbers.
+So, let's go through the preexisting
+types quickly, besides numbers.
 
 00:24:29,440 --> 00:24:32,030
 So, there is a type of Boolean values.
 
 00:24:32,030 --> 00:24:35,180
-And actually the only inhabitants of that
-type are "True" and "False".
+And actually the only inhabitants of
+that type are "True" and "False".
 
 00:24:35,180 --> 00:24:40,500
-And on those values, you have operators like
-"&&" (and), "||" (or), "not".
+And on those values, you have operators
+like "&&" (and), "||" (or), "not".
 
 00:24:40,500 --> 00:24:42,830
 So, the logical operators on the Boolean type.
@@ -1393,24 +1398,24 @@ So, the logical operators on the Boolean type.
 It is really a separate type.
 
 00:24:43,980 --> 00:24:49,830
-It is not like in C, where somehow 0 and 1
-of an integer type also act as Boolean values.
+It is not like in C, where somehow 0 and 1 of
+an integer type also act as Boolean values.
 
 00:24:49,830 --> 00:24:54,690
-That is really a separate type: True and False,
-and operators on them.
+That is really a separate type: True
+and False, and operators on them.
 
 00:24:54,690 --> 00:25:00,370
-And of course, this type is actually also
-the type of conditions you use in "if-then-else".
+And of course, this type is actually also the
+type of conditions you use in "if-then-else".
 
 00:25:00,370 --> 00:25:03,770
-The condition must be something that evaluates
-to a "Bool".
+The condition must be something
+that evaluates to a "Bool".
 
 00:25:03,770 --> 00:25:08,000
-And also of course, you can use these Boolean
-operators in these places.
+And also of course, you can use these
+Boolean operators in these places.
 
 00:25:08,000 --> 00:25:11,480
 So, this is one thing.
@@ -1429,12 +1434,12 @@ that you can have, also special characters
 like "a new line" ('\n'), etc.
 
 00:25:27,870 --> 00:25:37,270
-There are operations like moving forwards
-or backwards in the ASCII table, in a sense.
+There are operations like moving forwards or
+backwards in the ASCII table, in a sense.
 
 00:25:37,270 --> 00:25:42,120
-The successor of 'a' is 'b', and the predecessor
-of 'b' as a character is 'a'.
+The successor of 'a' is 'b', and the
+predecessor of 'b' as a character is 'a'.
 
 00:25:42,120 --> 00:25:47,340
 You can also compare characters with the usual
@@ -1447,8 +1452,8 @@ use on numbers.
 So, these are also overloaded.
 
 00:25:49,340 --> 00:25:53,669
-More interestingly, there is a construction
-of list types.
+More interestingly, there is
+a construction of list types.
 
 00:25:53,669 --> 00:25:58,020
 We have already seen some lists, namely when
@@ -1473,8 +1478,8 @@ You can have a list of lists of integers.
 And there are many predefined functions.
 
 00:26:10,110 --> 00:26:14,990
-You see some of them later on, or maybe next
-week.
+You see some of them later
+on, or maybe next week.
 
 00:26:14,990 --> 00:26:23,230
 But anyway, there is a lot of available machinery
@@ -1484,8 +1489,8 @@ to work on lists, such as the list comprehensions,
 but also defining functions and operators.
 
 00:26:26,010 --> 00:26:30,470
-So, you have, for example, the 'reverse' function
-which takes a list, reverses the order.
+So, you have, for example, the 'reverse'
+function which takes a list, reverses the order.
 
 00:26:30,470 --> 00:26:36,380
 Or functions for selecting certain parts of
@@ -1495,8 +1500,8 @@ a list, the prefix or suffix, or whatever.
 And: lists are homogeneous.
 
 00:26:38,560 --> 00:26:43,170
-So, if you have a list of Ints (integers),
-then in that list you can only have Int (integer)
+So, if you have a list of Ints (integers), then
+in that list you can only have Int (integer)
 
 00:26:43,170 --> 00:26:44,170
 numbers.
@@ -1533,12 +1538,12 @@ Yes, we can write a special notation ("abc"),
 but what it really is under the hood, is
 
 00:27:14,590 --> 00:27:19,539
-a normal list, where the element type is the
-character type (Char).
+a normal list, where the element
+type is the character type (Char).
 
 00:27:19,539 --> 00:27:23,260
-So "abc" is actually the list of these three
-characters 'a', 'b' and 'c'.
+So "abc" is actually the list of these
+three characters 'a', 'b' and 'c'.
 
 00:27:23,260 --> 00:27:27,890
 So, something like the 'reverse' function I
@@ -1548,12 +1553,12 @@ just mentioned is also applicable on strings,
 because strings are also just lists.
 
 00:27:29,480 --> 00:27:34,220
-It just happens to be the case that it's a
-list of characters.
+It just happens to be the case
+that it's a list of characters.
 
 00:27:34,220 --> 00:27:42,679
-Important in this connection is that in CodeWorld,
-this String type is not directly used.
+Important in this connection is that in
+CodeWorld, this String type is not directly used.
 
 00:27:42,679 --> 00:27:44,730
 So CodeWorld uses its own text type.
@@ -1580,12 +1585,12 @@ So, if you want to use strings or character
 sequences in CodeWorld, then do it in the
 
 00:28:02,929 --> 00:28:07,440
-same way it was done in the previous exercise
-week.
+same way it was done in
+the previous exercise week.
 
 00:28:07,440 --> 00:28:12,980
-From there, use the examples for how this
-is done.
+From there, use the examples
+for how this is done.
 
 00:28:12,980 --> 00:28:19,960
 And then, there's another way to combine or
@@ -1599,32 +1604,32 @@ But the difference with them is that, on the
 one hand, they don't have to be homogeneous.
 
 00:28:26,630 --> 00:28:31,040
-So, you can have a pair of integers or a triple
-of integers, strings, and Booleans.
+So, you can have a pair of integers or a
+triple of integers, strings, and Booleans.
 
 00:28:31,040 --> 00:28:34,800
-So, it doesn't have to be homogeneous, but
-with a fixed length.
+So, it doesn't have to be
+homogeneous, but with a fixed length.
 
 00:28:34,800 --> 00:28:39,080
-If you have a triple type, then all values
-of the type must be triples.
+If you have a triple type, then all
+values of the type must be triples.
 
 00:28:39,080 --> 00:28:44,100
 You can't, like in a list type, have several
 lists of different lengths, for example.
 
 00:28:44,100 --> 00:28:49,260
-So, list types are homogeneous and a list value
-can be arbitrarily long.
+So, list types are homogeneous and a
+list value can be arbitrarily long.
 
 00:28:49,260 --> 00:28:57,350
 Tuple types are not homogeneous: You can have
 triples of different types as ingredients,
 
 00:28:57,350 --> 00:29:00,429
-but every element of this type has to be a
-triple.
+but every element of this
+type has to be a triple.
 
 00:29:00,429 --> 00:29:05,450
 You can't have a type that contains some
@@ -1634,8 +1639,8 @@ pairs and some triples, for example.
 And all these constructs can be combined.
 
 00:29:07,970 --> 00:29:13,700
-So, you can have lists of pairs, pairs of lists,
-lists of pairs of lists, and pairs.
+So, you can have lists of pairs, pairs of
+lists, lists of pairs of lists, and pairs.
 
 00:29:13,700 --> 00:29:17,419
 You can nest basic types at all places.
@@ -1655,8 +1660,8 @@ constructors and you can combine them in many
 different ways.
 
 00:29:35,179 --> 00:29:40,299
-And already with the basic things that you
-see on this slide, you have quite a few choices
+And already with the basic things that you see
+on this slide, you have quite a few choices
 
 00:29:40,299 --> 00:29:42,539
 to arrange your data.

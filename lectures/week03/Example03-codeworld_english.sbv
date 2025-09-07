@@ -13,15 +13,15 @@ So, let's first run this and see what
 happens. Well, as hypothesized, there is this
 
 0:00:19.210,0:00:24.419
-triangle which moves to the right because
-there is this change of t.
+triangle which moves to the right
+because there is this change of t.
 
 0:00:24.419,0:00:25.749
 And this happens continuously.
 
 0:00:25.749,0:00:31.619
-So, there's no discrete sampling
-here, at least not visibly, because the animationOf
+So, there's no discrete sampling here, at
+least not visibly, because the animationOf
 
 0:00:31.619,0:00:38.090
 function somehow, internally makes sure
@@ -59,8 +59,8 @@ And then, for example, this would now somehow
 draw three time-steps (three snapshots) of
 
 0:01:20.340,0:01:29.590
-this triangle. So, at the places
-at the points where I chose by changing the
+this triangle. So, at the places at the
+points where I chose by changing the
 
 0:01:29.590,0:01:36.110
 values here. Of course, I can also take something
@@ -83,16 +83,16 @@ Also, as seen later, we could… if you have
 more than two values, two pictures that you
 
 0:01:55.900,0:02:00.880
-want to combine, you could also use this "pictures"
-function, just to illustrate this here.
+want to combine, you could also use this
+"pictures" function, just to illustrate this here.
 
 0:02:00.880,0:02:09.939
 And then I can put arbitrarily many pictures.
 In this case, calls of this 'scene' function
 
 0:02:09.939,0:02:14.819
-into this list, and the output here will be
-the same.
+into this list, and the
+output here will be the same.
 
 0:02:14.819,0:02:23.290
 Okay, so that's by actually combining many
@@ -102,15 +102,15 @@ of such calls in a way that we don't need
 to explicitly control.
 
 0:02:24.700,0:02:32.350
-Also, the 'animationOf' function works,
-then we don't actually say at which time stamps
+Also, the 'animationOf' function works, then
+we don't actually say at which time stamps
 
 0:02:32.350,0:02:33.800
 we want to see the function.
 
 0:02:33.800,0:02:41.110
-But the 'animationOf' function
-does this for us by using such copies of the
+But the 'animationOf' function does
+this for us by using such copies of the
 
 0:02:41.110,0:02:45.430
 triangle and showing it over time.
@@ -120,8 +120,8 @@ Okay, this also provides us with some means
 or possibilities of manipulating this. For
 
 0:02:53.780,0:02:59.940
-example, we could say we want to make the
-whole thing quicker.
+example, we could say we want
+to make the whole thing quicker.
 
 0:02:59.940,0:03:00.940
 Yes.
@@ -130,8 +130,8 @@ Yes.
 So, let's say you want to have a quicker scene.
 
 0:03:03.350,0:03:11.300
-And, of course, you could say we do this by
-somehow changing this here, right?
+And, of course, you could say we do this
+by somehow changing this here, right?
 
 0:03:11.300,0:03:16.751
 Or we could say, well, we don't want to change
@@ -142,8 +142,8 @@ maybe this is used elsewhere, or at least
 is somehow a thing that we don't want
 
 0:03:20.349,0:03:24.030
-to change because there are some fixed semantics
-for us.
+to change because there are
+some fixed semantics for us.
 
 0:03:24.030,0:03:29.599
 But we still want to have somehow a quicker
@@ -153,7 +153,8 @@ animation here or a quicker version of the
 'scene' function
 
 0:03:30.599,0:03:32.720
-of this animation. Now, of course, it's not defined.
+of this animation. Now, of
+course, it's not defined.
 
 0:03:32.720,0:03:34.319
 So, how can I define it?
@@ -173,16 +174,16 @@ function is exactly the same as the 'scene'
 function.
 
 0:03:52.540,0:03:56.680
-This would work and wouldn't actually change
-anything in what we see.
+This would work and wouldn't actually
+change anything in what we see.
 
 0:03:56.680,0:04:01.409
 But let me say that actually, I wanted the
 'quickerScene' function to take some additional
 
 0:04:01.409,0:04:06.080
-argument, expressing by how much things should
-be faster.
+argument, expressing by how
+much things should be faster.
 
 0:04:06.080,0:04:07.850
 Let me say, I wanted that.
@@ -198,20 +199,20 @@ I want the scene to be quicker by a factor
 of five.
 
 0:04:21.829,0:04:26.240
-Okay, that's what this parameter is about,
-this f parameter.
+Okay, that's what this parameter
+is about, this f parameter.
 
 0:04:26.240,0:04:31.180
-And then it should somehow be a quicker version
-of the scene.
+And then it should somehow be
+a quicker version of the scene.
 
 0:04:31.180,0:04:35.710
-Of course, if I simply say it's equal to scene,
-that's not what's going to happen.
+Of course, if I simply say it's equal to
+scene, that's not what's going to happen.
 
 0:04:35.710,0:04:40.340
-Let me say, what do I want to be the case
-at a given point in time?
+Let me say, what do I want to be
+the case at a given point in time?
 
 0:04:40.340,0:04:47.050
 Well, if I want the scene to move quicker,
@@ -221,15 +222,15 @@ then I should say that, actually, I somehow
 speed up the time.
 
 0:04:48.130,0:04:54.370
-I can do this by multiplying the factor.
-I can say, when quickerScene is
+I can do this by multiplying the
+factor. I can say, when quickerScene is
 
 0:04:54.370,0:04:56.650
 called with time 1,
 
 0:04:56.650,0:05:02.160
-then I actually want to call scene with time
-5, which is what will happen if I give
+then I actually want to call scene with
+time 5, which is what will happen if I give
 
 0:05:02.160,0:05:04.090
 the 5 argument here.
@@ -242,7 +243,8 @@ I get the same animation, but it's quicker
 without actually changing the 'scene' function.
 
 0:05:15.340,0:05:19.139
-Because I just do function composition, I define new functions.
+Because I just do function
+composition, I define new functions.
 
 0:05:19.139,0:05:24.111
 And in this case, I defined the 'quickerScene'
@@ -279,31 +281,31 @@ So, let me say I want to have this new function,
 which is the combination of the other two.
 
 0:05:54.310,0:05:59.000
-It will be an animation, so it must go from
-double to picture.
+It will be an animation, so it
+must go from double to picture.
 
 0:05:59.000,0:06:03.380
-And what I want to do here is I want to run
-this combined thing.
+And what I want to do here is I
+want to run this combined thing.
 
 0:06:03.380,0:06:12.150
-Okay, then what should "combined" be?
-I should define what it is at a certain point t.
+Okay, then what should "combined" be? I should
+define what it is at a certain point t.
 
 0:06:12.150,0:06:13.740
 And what do I do there?
 
 0:06:13.740,0:06:21.139
-Well, what I really want is, it should be
-the original scene, combined with my
+Well, what I really want is, it should
+be the original scene, combined with my
 
 0:06:21.139,0:06:26.470
-quickerScene, but of course at the same point in
-time.
+quickerScene, but of course
+at the same point in time.
 
 0:06:26.470,0:06:34.280
-Okay, now, if I run this, what should I expect
-to happen / to see?
+Okay, now, if I run this, what
+should I expect to happen / to see?
 
 0:06:34.280,0:06:41.539
 Well, I should expect a combination of the

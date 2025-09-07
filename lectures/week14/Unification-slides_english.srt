@@ -25,8 +25,8 @@ which corresponds to a Haskell program of course,
 but that's not really the point here.
 
 00:00:33,470 --> 00:00:38,440
-We have these two clauses, one is the fact,
-and one is a rule.
+We have these two clauses, one
+is the fact, and one is a rule.
 
 00:00:38,440 --> 00:00:45,800
 And we see here as an example, a query in
@@ -36,8 +36,8 @@ which we have three specific terms as the
 arguments.
 
 00:00:46,800 --> 00:00:49,240
-And the question is whether this query is
-true or false.
+And the question is whether
+this query is true or false.
 
 00:00:49,240 --> 00:00:50,240
 Therefore, whether it's satisfied.
@@ -82,8 +82,8 @@ it has a pattern mismatch, okay?
 But what about the second rule?
 
 00:01:37,420 --> 00:01:41,210
-Well, the head of the second rule actually
-matches the query.
+Well, the head of the second
+rule actually matches the query.
 
 00:01:41,210 --> 00:01:51,659
 Because we can set or interpret the XS (S
@@ -104,8 +104,8 @@ be the second argument here and the third
 argument of S of something, and this is also
 
 00:02:00,359 --> 00:02:07,509
-S of something so defined an assignment if
-you wish for the X, Y, and Z.
+S of something so defined an assignment
+if you wish for the X, Y, and Z.
 
 00:02:07,509 --> 00:02:08,509
 Okay?
@@ -115,8 +115,8 @@ And then the idea was well then, this rule
 is applicable and we can reduce this query
 
 00:02:13,510 --> 00:02:18,350
-to the right-hand side, to the body of the
-chosen rule.
+to the right-hand side, to
+the body of the chosen rule.
 
 00:02:18,350 --> 00:02:22,890
 And that of course means that the knowledge
@@ -126,8 +126,8 @@ about what X, Y, and Z are from this matching
 will now be used in the right-hand side.
 
 00:02:25,510 --> 00:02:31,880
-So, we will replace this literal from the
-query by the right-hand side part of the instantiation
+So, we will replace this literal from the query
+by the right-hand side part of the instantiation
 
 00:02:31,880 --> 00:02:34,260
 for XYZ as just identified.
@@ -140,12 +140,12 @@ each from the first and last argument because
 we have X, Y, Z here.
 
 00:02:41,430 --> 00:02:46,050
-Okay, that's why this S disappears and this
-S disappears.
+Okay, that's why this S
+disappears and this S disappears.
 
 00:02:46,050 --> 00:02:49,280
-Okay, and then this will go on a few more
-times, right?
+Okay, and then this will go
+on a few more times, right?
 
 00:02:49,280 --> 00:02:53,570
 So, again, actually this query would
@@ -163,16 +163,16 @@ Now, the last rule would not anymore
 apply because now we have S of zero, S of
 
 00:03:07,570 --> 00:03:11,300
-something in the pattern here, but zero in
-the argument position.
+something in the pattern here,
+but zero in the argument position.
 
 00:03:11,300 --> 00:03:18,300
 But now of course, luckily the first clause
 applies namely this fact, by realizing that
 
 00:03:18,300 --> 00:03:24,900
-it's okay to match this query against this
-fact because indeed these two argument positions
+it's okay to match this query against this fact
+because indeed these two argument positions
 
 00:03:24,900 --> 00:03:25,900
 are the same, right?
@@ -182,8 +182,8 @@ That is something that now has to be checked
 that wasn't a necessity in Haskell because
 
 00:03:29,600 --> 00:03:34,651
-in Haskell, you wouldn't even have in the function
-definition something we have here.
+in Haskell, you wouldn't even have in the
+function definition something we have here.
 
 00:03:34,651 --> 00:03:36,480
 We have the same variable twice, okay?
@@ -200,16 +200,16 @@ Okay, and then this is replaced by the right-hand
 side, but there isn't a right-hand side.
 
 00:03:48,880 --> 00:03:52,850
-So, this is simply the empty query which is
-nothing else than true.
+So, this is simply the empty query
+which is nothing else than true.
 
 00:03:52,850 --> 00:03:57,320
 Because remember a query is a conjunction
 of several things, separated by commas if
 
 00:03:57,320 --> 00:04:00,420
-there are more than one and an empty conjunction
-is just true.
+there are more than one and an
+empty conjunction is just true.
 
 00:04:00,420 --> 00:04:06,470
 So, that's why and how this would resolve,
@@ -220,8 +220,8 @@ By basically doing pattern-matching using
 these rules and this additional knowledge
 
 00:04:10,380 --> 00:04:14,790
-that X and S must be the same until you end
-here, okay?
+that X and S must be the same
+until you end here, okay?
 
 00:04:14,790 --> 00:04:18,160
 Which is the case here.
@@ -235,8 +235,8 @@ in Haskell, we have a variable in the query
 as well, right?
 
 00:04:28,350 --> 00:04:33,170
-That's something where pure pattern-matching
-doesn't work anymore.
+That's something where pure
+pattern-matching doesn't work anymore.
 
 00:04:33,170 --> 00:04:39,190
 Yes, you can of course still see that the first
@@ -264,8 +264,8 @@ Yes, so it's not really pattern-matching.
 It’s not like S of S of something.
 
 00:04:59,770 --> 00:05:03,540
-And then you see where S of Z matches because
-Z could be the something.
+And then you see where S of Z matches
+because Z could be the something.
 
 00:05:03,540 --> 00:05:09,230
 No, now suddenly we have something less determined
@@ -317,8 +317,8 @@ Because now if you, for example, decide whether
 the N should be something of the form S of
 
 00:05:56,530 --> 00:06:02,669
-that, for example, then for example, this
-N could also have appeared in another literal
+that, for example, then for example, this N
+could also have appeared in another literal
 
 00:06:02,669 --> 00:06:08,040
 in the same query, then we need to propagate
@@ -329,23 +329,23 @@ So, it's really more and more involved a
 process than simply pattern-matching of one
 
 00:06:13,960 --> 00:06:18,580
-term, one expression against one function
-definition left inside.
+term, one expression against one
+function definition left inside.
 
 00:06:18,580 --> 00:06:26,080
 Well, what it actually boils down to is determining
 and propagating information about when two
 
 00:06:26,080 --> 00:06:30,930
-terms, both possibly involving variables, are
-equal or can be made equal.
+terms, both possibly involving variables,
+are equal or can be made equal.
 
 00:06:30,930 --> 00:06:32,580
 Because here these are not equal, right?
 
 00:06:32,580 --> 00:06:36,740
-But we can make them equal by deciding that
-N should be S of M, for example.
+But we can make them equal by deciding
+that N should be S of M, for example.
 
 00:06:36,740 --> 00:06:37,740
 Okay.
@@ -354,25 +354,25 @@ Okay.
 So, this is what unification is about.
 
 00:06:41,370 --> 00:06:49,830
-To that end, let's first discuss what this notion
-of equal could be.
+To that end, let's first discuss
+what this notion of equal could be.
 
 58 # slide
 00:06:49,830 --> 00:06:53,620
-If we don't have variables, it's actually
-pretty simple.
+If we don't have variables,
+it's actually pretty simple.
 
 00:06:53,620 --> 00:06:57,100
-So, then we simply compare the terms as they
-are, right?
+So, then we simply compare
+the terms as they are, right?
 
 00:06:57,100 --> 00:07:01,520
-So, a constant is equal to itself, but not
-to any other constant.
+So, a constant is equal to itself,
+but not to any other constant.
 
 00:07:01,520 --> 00:07:06,290
-And if you have structured data, then they
-must not be equal.
+And if you have structured data,
+then they must not be equal.
 
 00:07:06,290 --> 00:07:11,850
 Two terms must really be structured equally
@@ -382,8 +382,8 @@ or have the same atoms at the same positions.
 Also, we really have to respect the order.
 
 00:07:15,340 --> 00:07:19,190
-So, we don't have sets of arguments; we have
-lists of arguments.
+So, we don't have sets of arguments;
+we have lists of arguments.
 
 00:07:19,190 --> 00:07:23,800
 So, it's not enough to have the three same atoms
@@ -431,27 +431,27 @@ well, of course the numbers five and two are
 not equal, obviously.
 
 00:08:01,540 --> 00:08:04,130
-But also, the terms five and two plus three
-are not equal.
+But also, the terms five and
+two plus three are not equal.
 
 00:08:04,130 --> 00:08:08,530
-This is the point about the syntactic treatment
-of all terms, right?
+This is the point about the syntactic
+treatment of all terms, right?
 
 00:08:08,530 --> 00:08:10,560
 There's no computation going on.
 
 00:08:10,560 --> 00:08:14,500
-Indeed, two plus three is also just a structural
-term like this, right?
+Indeed, two plus three is also just
+a structural term like this, right?
 
 00:08:14,500 --> 00:08:15,981
 Binary operator which could be written like
 this.
 
 00:08:15,981 --> 00:08:22,160
-This has two arguments, not some real semantic
-expression that evaluates to five.
+This has two arguments, not some real
+semantic expression that evaluates to five.
 
 00:08:22,160 --> 00:08:23,160
 Okay?
@@ -480,16 +480,16 @@ these variables by some terms such that afterwards,
 the terms are really again structurally equal.
 
 00:08:54,320 --> 00:08:59,760
-So, if you have something like this example here,
-then of course these terms per se are not
+So, if you have something like this example
+here, then of course these terms per se are not
 
 00:08:59,760 --> 00:09:04,330
-equal because we have differences in this
-position and in this position.
+equal because we have differences in
+this position and in this position.
 
 00:09:04,330 --> 00:09:08,040
-But since the blue things are variables, they
-could be replaced by something.
+But since the blue things are variables,
+they could be replaced by something.
 
 00:09:08,040 --> 00:09:11,390
 And if you can consistently replace them,
@@ -500,15 +500,15 @@ again, really structurally equal, then that's
 good enough to also have a solution or to
 
 00:09:18,940 --> 00:09:24,029
-interpret this as a way to make these two
-terms equal.
+interpret this as a way to
+make these two terms equal.
 
 00:09:24,029 --> 00:09:25,029
 Okay?
 
 00:09:25,029 --> 00:09:28,110
-So, for example, you could say in this case
-it's the only solution, actually.
+So, for example, you could say in this
+case it's the only solution, actually.
 
 00:09:28,110 --> 00:09:34,470
 You could say that we substitute this atom
@@ -521,8 +521,8 @@ variable.
 And afterwards they are equal, right?
 
 00:09:37,430 --> 00:09:42,010
-After the substitution, the terms are obviously
-equal.
+After the substitution, the
+terms are obviously equal.
 
 00:09:42,010 --> 00:09:46,910
 So, what we're looking for is this information,
@@ -536,8 +536,8 @@ in more interesting or deeply nested cases,
 for example.
 
 00:09:53,620 --> 00:09:58,000
-Or if you have several occurrences of these
-variables.
+Or if you have several
+occurrences of these variables.
 
 60 # slide
 00:09:58,000 --> 00:10:06,550
@@ -545,8 +545,8 @@ So, here are a few more rather simple cases
 still in each of these lines; it shouldn't
 
 00:10:06,550 --> 00:10:10,940
-be difficult to write down what the variables
-have to be substituted by, right?
+be difficult to write down what the
+variables have to be substituted by, right?
 
 00:10:10,940 --> 00:10:15,610
 Like in case we have exactly one variable
@@ -556,12 +556,12 @@ occurring in one of the two sides only, then
 this is still unidirectional.
 
 00:10:17,120 --> 00:10:20,560
-But in general, like here, we will have variables
-on both sides.
+But in general, like here, we
+will have variables on both sides.
 
 00:10:20,560 --> 00:10:26,510
-And then we also have to find values for all
-the variables here on both sides.
+And then we also have to find values for
+all the variables here on both sides.
 
 00:10:26,510 --> 00:10:27,801
 And, even in this case
@@ -625,12 +625,12 @@ where we now want to know, is it possible
 to make these two lists equal?
 
 00:11:25,450 --> 00:11:29,750
-And if so, what would be the values for X,
-Y, and Z?
+And if so, what would be
+the values for X, Y, and Z?
 
 00:11:29,750 --> 00:11:37,589
-Well, it's probably not too complicated
-to see that probably X could be 'the' and Y
+Well, it's probably not too complicated to
+see that probably X could be 'the' and Y
 
 00:11:37,589 --> 00:11:44,820
 could be 'dog' because then we find an agreement
@@ -641,8 +641,8 @@ to be a bit more careful with what the Z
 should be because that can't simply be this
 
 00:11:48,779 --> 00:11:52,400
-list because then it wouldn't be the tail
-of this first list, right?
+list because then it wouldn't be
+the tail of this first list, right?
 
 00:11:52,400 --> 00:11:58,170
 So, if you look at this here and if you think
@@ -652,8 +652,8 @@ in terms of types, then that should be a list
 of lists of something.
 
 00:11:59,170 --> 00:12:06,899
-Yes, we will see here just another entry in
-the outer list.
+Yes, we will see here just
+another entry in the outer list.
 
 00:12:06,899 --> 00:12:07,899
 Okay?
@@ -663,20 +663,20 @@ The point here being that if we need to decide
 equalities like this, then it's important
 
 00:12:15,380 --> 00:12:19,490
-to be aware again of how list syntax in
-Prolog works, right?
+to be aware again of how list
+syntax in Prolog works, right?
 
 00:12:19,490 --> 00:12:27,330
 So, one strategy could be to always translate
 all such lists, expressions, list terms into
 
 00:12:27,330 --> 00:12:34,089
-for example, this very systematic rotation,
-that is the last thing here.
+for example, this very systematic
+rotation, that is the last thing here.
 
 00:12:34,089 --> 00:12:40,060
-The tree representation and then we have simple
-terms like up here that we can compare.
+The tree representation and then we have
+simple terms like up here that we can compare.
 
 00:12:40,060 --> 00:12:48,089
 But with some practice, it's also possible
@@ -696,8 +696,8 @@ Okay?
 Then there's another possible problem.
 
 00:13:02,959 --> 00:13:09,600
-For example, since variables can appear both
-on the left- and right-hand side, we could in principle
+For example, since variables can appear both on the
+left- and right-hand side, we could in principle
 
 00:13:09,600 --> 00:13:12,030
 also have questions like this.
@@ -738,8 +738,8 @@ So, actually, Prolog, for efficiency reasons,
 does usually not prevent cases like this.
 
 00:13:55,709 --> 00:14:01,080
-So, Prolog would actually accept
-that this is an equality that's considered
+So, Prolog would actually accept that
+this is an equality that's considered
 
 00:14:01,080 --> 00:14:03,310
 to be true.
@@ -766,8 +766,8 @@ going to be replaced.
 Yes, which would be the situation here.
 
 00:14:24,240 --> 00:14:28,880
-In all the exercise tasks, et cetera, we also
-take this cleaner approach.
+In all the exercise tasks, et cetera,
+we also take this cleaner approach.
 
 00:14:28,880 --> 00:14:37,519
 So, it is, if we ask you to answer questions
@@ -806,8 +806,8 @@ So, it would, of course, be possible to say,
 well, X has a solution because we can replace
 
 00:15:07,089 --> 00:15:09,870
-X by Mia, because then we have this agreement
-here.
+X by Mia, because then we
+have this agreement here.
 
 00:15:09,870 --> 00:15:13,480
 And likewise, you could say, well, X would
@@ -821,12 +821,12 @@ But that would only be possible both at the
 same time if this wouldn't be the same X;
 
 00:15:18,519 --> 00:15:21,610
-it would be X1, X2, or X and Y, then we could
-do this.
+it would be X1, X2, or X and
+Y, then we could do this.
 
 00:15:21,610 --> 00:15:26,260
-But since it's the same X, we would have to
-replace X by one and only one thing.
+But since it's the same X, we would have
+to replace X by one and only one thing.
 
 00:15:26,260 --> 00:15:31,290
 And so, we can't replace it either by Mia or
@@ -836,15 +836,15 @@ Vincent, because in either case we get a mismatch
 in one of the two positions.
 
 00:15:32,839 --> 00:15:38,149
-So, that's why this is not unifiable, as you
-would say.
+So, that's why this is not
+unifiable, as you would say.
 
 00:15:38,149 --> 00:15:39,149
 Okay?
 
 00:15:39,149 --> 00:15:43,570
-And of course, this can also happen if variables
-occur only on one side.
+And of course, this can also happen
+if variables occur only on one side.
 
 00:15:43,570 --> 00:15:48,089
 Yes, this is not just happening because we
@@ -862,8 +862,8 @@ Because now if you wanted X to be Marsellus
 to make this match, then we also would have
 
 00:16:03,570 --> 00:16:06,910
-to replace this X by Marsellus because it
-is the same variable.
+to replace this X by Marsellus
+because it is the same variable.
 
 00:16:06,910 --> 00:16:08,650
 But then Marsellus and Mia do not match.
@@ -872,8 +872,8 @@ But then Marsellus and Mia do not match.
 So, it would also be a no answer.
 
 00:16:11,660 --> 00:16:17,390
-And similarly, you can work out that
-this would be a problem.
+And similarly, you can work out
+that this would be a problem.
 
 00:16:17,390 --> 00:16:22,300
 So, it's similar to an example on the previous
@@ -898,8 +898,8 @@ the tree, the structure is the same as it
 is.
 
 00:16:41,990 --> 00:16:44,170
-There is a contradiction here because of these
-two items.
+There is a contradiction here
+because of these two items.
 
 00:16:44,170 --> 00:16:46,329
 Okay, what else?
@@ -914,8 +914,8 @@ Why is that?
 Because we have to respect arity.
 
 00:16:51,050 --> 00:16:53,820
-As mentioned earlier, Prolog doesn't have
-a type system.
+As mentioned earlier, Prolog
+doesn't have a type system.
 
 00:16:53,820 --> 00:16:58,820
 It even allows the same predicate name to
@@ -932,16 +932,16 @@ So, you can't say that X is b, b or something.
 The X must be replaced by one term.
 
 00:17:07,600 --> 00:17:11,790
-And whatever one term you replace, you put
-into place of X.
+And whatever one term you
+replace, you put into place of X.
 
 00:17:11,790 --> 00:17:15,410
-Usually on the right-hand side, P has
-a unary application to one term.
+Usually on the right-hand side, P
+has a unary application to one term.
 
 00:17:15,410 --> 00:17:19,722
-We have on the left, we have P as a binary
-application to two terms.
+We have on the left, we have P as
+a binary application to two terms.
 
 00:17:19,722 --> 00:17:21,610
 This is incompatible.
@@ -962,8 +962,8 @@ talk about the underlying formal concepts.
 The notions that are used here.
 
 00:17:38,900 --> 00:17:42,210
-So, of course, there is this notion of substitution
-that I already mentioned.
+So, of course, there is this notion of
+substitution that I already mentioned.
 
 00:17:42,210 --> 00:17:47,220
 So, the idea of replacing variables by either
@@ -980,19 +980,19 @@ but many work with structures and lists here.
 This upfront is just the mapping for variables.
 
 00:18:03,120 --> 00:18:06,580
-But then, of course, it is also applied to terms
-that contain variables.
+But then, of course, it is also applied
+to terms that contain variables.
 
 00:18:06,580 --> 00:18:12,750
-If you extend substitution, which is just
-a mapping from variables to terms into a function,
+If you extend substitution, which is just a
+mapping from variables to terms into a function,
 
 00:18:12,750 --> 00:18:15,190
 that maps terms to terms.
 
 00:18:15,190 --> 00:18:19,980
-So, given a term, which might, and in general will
-contain variables.
+So, given a term, which might, and
+in general will contain variables.
 
 00:18:19,980 --> 00:18:25,330
 If you get a new term, which has the same
@@ -1037,16 +1037,16 @@ last name by the term that gives a constant,
 but could be an arbitrary term, Mueller.
 
 00:19:03,480 --> 00:19:07,080
-And to replace this, the variable MM by this
-term.
+And to replace this, the
+variable MM by this term.
 
 00:19:07,080 --> 00:19:13,770
 Okay, of course, no variable can be listed
 several times in such a list in such a notation,
 
 00:19:13,770 --> 00:19:16,809
-because then it wouldn't be clear what the
-variable should be mapped to.
+because then it wouldn't be clear
+what the variable should be mapped to.
 
 00:19:16,809 --> 00:19:18,980
 But we can have incomplete listings here.
@@ -1150,8 +1150,8 @@ and they will be really equal in the sense
 of no need to do any further changes to them.
 
 00:21:17,960 --> 00:21:21,080
-Because the unifier, the substitution has
-taken care of this.
+Because the unifier, the
+substitution has taken care of this.
 
 00:21:21,080 --> 00:21:22,919
 That’s then a unifier for these two terms.
@@ -1160,16 +1160,16 @@ That’s then a unifier for these two terms.
 Okay.
 
 00:21:23,919 --> 00:21:27,210
-Now there can be very many unifiers for a
-given pair of terms.
+Now there can be very many
+unifiers for a given pair of terms.
 
 00:21:27,210 --> 00:21:31,130
-So, for example, you could use substitution
-U prime.
+So, for example, you could
+use substitution U prime.
 
 00:21:31,130 --> 00:21:34,900
-Where we also say that the variable Z is mapped
-to whatever.
+Where we also say that the
+variable Z is mapped to whatever.
 
 00:21:34,900 --> 00:21:36,809
 That would also be a unifier.
@@ -1179,8 +1179,8 @@ The Z doesn't even occur in these two terms,
 but it would be a unifier because after applying
 
 00:21:42,440 --> 00:21:46,760
-this U prime to these two terms you would
-also have obviously equal things.
+this U prime to these two terms you
+would also have obviously equal things.
 
 00:21:46,760 --> 00:21:54,630
 Okay, to not have these strange and interesting
@@ -1190,46 +1190,46 @@ unifiers, there is a concept of the most general
 unifier.
 
 00:21:55,630 --> 00:21:59,880
-And that should ring a bell if you are from
-the lecture by Professor König.
+And that should ring a bell if you are
+from the lecture by Professor König.
 
 00:21:59,880 --> 00:22:01,970
 So, what is the most general unifier?
 
 00:22:01,970 --> 00:22:07,340
-It's a unifier that makes the least amount
-of choice necessary.
+It's a unifier that makes the
+least amount of choice necessary.
 
 00:22:07,340 --> 00:22:10,550
-So, it leaves as many variables as possible
-unchanged.
+So, it leaves as many variables
+as possible unchanged.
 
 00:22:10,550 --> 00:22:15,190
-And it doesn't introduce specific terms where
-variables suffice.
+And it doesn't introduce specific
+terms where variables suffice.
 
 00:22:15,190 --> 00:22:20,270
 So, if it's enough to replace one variable
 by another variable, then this would be done
 
 00:22:20,270 --> 00:22:24,150
-instead of replacing both variables by some
-arbitrary constant, like zero.
+instead of replacing both variables
+by some arbitrary constant, like zero.
 
 00:22:24,150 --> 00:22:28,420
-It would be more specific than is actually
-needed.
+It would be more specific
+than is actually needed.
 
 00:22:28,420 --> 00:22:29,420
 Okay?
 
 00:22:29,420 --> 00:22:33,679
-So, an example for this, let's say these are
-the two terms we are interested in.
+So, an example for this, let's say these
+are the two terms we are interested in.
 
 00:22:33,679 --> 00:22:38,370
-And here are two substitutions to unify us
-for these two terms, right?
+And here are two substitutions to
+unify us for these two terms, right?
 
 00:22:38,370 --> 00:22:46,190
 If we apply what the first substitution says
@@ -1248,20 +1248,20 @@ So, this is a unifier for these two terms.
 However, there’s another one.
 
 00:23:00,070 --> 00:23:04,290
-So, this U2 is also a unifier for these two
-terms.
+So, this U2 is also a
+unifier for these two terms.
 
 00:23:04,290 --> 00:23:11,760
 Because if we replaced this, according to
 the substitution, we get D here, 11 here,
 
 00:23:11,760 --> 00:23:17,240
-2007 here and here we get no change to D because
-D is not mentioned as a variable on the
+2007 here and here we get no change to D
+because D is not mentioned as a variable on the
 
 00:23:17,240 --> 00:23:21,310
-left-hand side of any of these pairs in the
-second unifier.
+left-hand side of any of these
+pairs in the second unifier.
 
 00:23:21,310 --> 00:23:25,270
 We get 11, which is okay because we also
@@ -1285,12 +1285,12 @@ And now we have two candidate unifiers, and
 actually, the second one is more general.
 
 00:23:37,710 --> 00:23:42,600
-We can see this because it doesn't make an
-arbitrary choice of 27.
+We can see this because it doesn't
+make an arbitrary choice of 27.
 
 00:23:42,600 --> 00:23:47,680
-There's no good motivation to replace
-anything by 27.
+There's no good motivation
+to replace anything by 27.
 
 00:23:47,680 --> 00:23:50,630
 If you see, they are all just showing you two
@@ -1300,8 +1300,8 @@ terms because when these haven’t even been
 mentioned.
 
 00:23:51,630 --> 00:23:54,130
-So, U1 is a unifier, but it is unnecessarily
-specific.
+So, U1 is a unifier, but it
+is unnecessarily specific.
 
 00:23:54,130 --> 00:23:56,070
 It's not a most general unifier.
@@ -1331,8 +1331,8 @@ value 2007 because otherwise you don't get
 agreement here.
 
 00:24:17,490 --> 00:24:22,630
-There's no way to make a more general unifier
-than this U2.
+There's no way to make a more
+general unifier than this U2.
 
 00:24:22,630 --> 00:24:24,049
 Okay.
@@ -1348,27 +1348,27 @@ be a most general unifier.
 That will also be more general than U1.
 
 00:24:33,309 --> 00:24:37,740
-And actually, these two would be U2 and this
-U3 would be equally general.
+And actually, these two would be U2
+and this U3 would be equally general.
 
 00:24:37,740 --> 00:24:49,660
-Yes, so there's not one most general unifier,
-but a unifier can be most general.
+Yes, so there's not one most general
+unifier, but a unifier can be most general.
 
 64 # slide
 00:24:49,660 --> 00:24:53,570
 So, how does Prolog find a most general unifier?
 
 00:24:53,570 --> 00:24:56,870
-Yes, because Prolog will always look for a most general
-unifier.
+Yes, because Prolog will always
+look for a most general unifier.
 
 00:24:56,870 --> 00:24:59,790
 So, it needs an algorithm for this.
 
 00:24:59,790 --> 00:25:05,400
-Okay, now in the slides, there is a description
-of one concrete algorithm.
+Okay, now in the slides, there is a
+description of one concrete algorithm.
 
 00:25:05,400 --> 00:25:08,799
 However, I will not go through these slides
@@ -1378,8 +1378,8 @@ now.
 Yes, I will skip over these slides.
 
 00:25:11,260 --> 00:25:16,140
-You can, of course, download them, but I will
-not talk through them in this video.
+You can, of course, download them, but I
+will not talk through them in this video.
 
 00:25:16,140 --> 00:25:22,559
 And one reason is that you should have seen
@@ -1411,8 +1411,8 @@ this algorithm and show how you apply the
 algorithm.
 
 00:25:47,060 --> 00:25:51,150
-It's only needed to know what the most general
-unifier of two terms is.
+It's only needed to know what the
+most general unifier of two terms is.
 
 00:25:51,150 --> 00:25:56,919
 You can, of course, arrive at this by really
@@ -1436,57 +1436,57 @@ is the result.
 But that's all you will need.
 
 00:26:10,309 --> 00:26:15,090
-You will have to correctly tell what the most
-general unifier for a pair of terms is.
+You will have to correctly tell what the
+most general unifier for a pair of terms is.
 
 00:26:15,090 --> 00:26:20,480
 You don't have to demonstrate that you can
 compute that unifier via a concrete algorithm.
 
 00:26:20,480 --> 00:26:22,950
-So, that's simply something that's not part
-of this lecture.
+So, that's simply something
+that's not part of this lecture.
 
 00:26:22,950 --> 00:26:24,950
 That's not something we want to do here.
 
 00:26:24,950 --> 00:26:29,900
-But we need to be able to identify a most
-general unifier, okay?
+But we need to be able to identify
+a most general unifier, okay?
 
 00:26:29,900 --> 00:26:34,400
-So, that's why I will not handle this algorithm
-here.
+So, that's why I will not
+handle this algorithm here.
 
 00:26:34,400 --> 00:26:39,370
-As an aside, I think I already mentioned a moment
-ago.
+As an aside, I think I already
+mentioned a moment ago.
 
 00:26:39,370 --> 00:26:44,600
 This occurs check which I briefly mentioned
 on the previous slide when we talked about
 
 00:26:44,600 --> 00:26:49,660
-this infinite matching; P of (X, Y) versus
-P of (Q(X)).
+this infinite matching; P of
+(X, Y) versus P of (Q(X)).
 
 00:26:49,660 --> 00:26:52,470
 And which also occurs in the slides.
 
 00:26:52,470 --> 00:26:59,919
-So, this occurs check is an algorithmic detail,
-that can be used or not.
+So, this occurs check is an algorithmic
+detail, that can be used or not.
 
 00:26:59,919 --> 00:27:05,309
-It will not be relevant for you in the exercise
-or the exam.
+It will not be relevant for you
+in the exercise or the exam.
 
 00:27:05,309 --> 00:27:06,309
 Okay?
 
 00:27:06,309 --> 00:27:10,169
-So, Prolog considers this but you won't
-have to be aware of this.
+So, Prolog considers this but you
+won't have to be aware of this.
 
 00:27:10,169 --> 00:27:16,270
 You can always use the intuitive notion of

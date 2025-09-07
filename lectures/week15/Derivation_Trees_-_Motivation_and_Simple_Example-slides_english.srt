@@ -39,8 +39,8 @@ very similar to the general
 setting from that other lecture,
 
 00:00:56,720 --> 00:01:01,920
-but the derivation trees that you'll see here are
-not something that appeared there, I think.
+but the derivation trees that you'll see here
+are not something that appeared there, I think.
 
 00:01:01,920 --> 00:01:04,880
 Because they are really tailored towards Prolog,
@@ -54,8 +54,8 @@ resolution steps as seen before.
 As a reminder for why we even want to have
 
 00:01:16,320 --> 00:01:22,320
-operational semantics and see what is going
-on during execution, we had this example earlier
+operational semantics and see what is going on
+during execution, we had this example earlier
 
 00:01:22,320 --> 00:01:32,080
 on, and we would know how to use the declarative
@@ -197,8 +197,8 @@ where we will also see why some queries
 are problematic for the program as written,
 
 00:03:58,880 --> 00:04:03,120
-even though logically the
-rules that we have here are perfectly okay.
+even though logically the rules that
+we have here are perfectly okay.
 
 00:04:03,760 --> 00:04:08,080
 And then we'll use this example by
@@ -209,16 +209,16 @@ exploring how we could change it in
 such a way that it becomes more useful.
 
 00:04:13,920 --> 00:04:16,320
-And by doing this, you
-will again and again look at
+And by doing this, you will
+again and again look at
 
 00:04:16,320 --> 00:04:20,160
 derivation trees because that's
 how we find out what is going on.
 
 00:04:20,160 --> 00:04:27,840
-And in that sense, this example will also both serve
-for introducing derivation trees and seeing
+And in that sense, this example will also both
+serve for introducing derivation trees and seeing
 
 00:04:29,920 --> 00:04:34,320
 several different examples of derivation
@@ -241,8 +241,8 @@ So, let us look at this small program, just
 the addition rules from the previous slide.
 
 00:05:00,960 --> 00:05:05,760
-And let's look at this query which is
-similar to the multi-query
+And let's look at this query which
+is similar to the multi-query
 
 00:05:05,760 --> 00:05:07,840
 from the previous slide that didn't work
@@ -293,7 +293,8 @@ you want to know an answer to
 this, and we have the program.
 
 00:05:57,280 --> 00:06:04,080
-And as mentioned before, we proceed by resolution.
+And as mentioned before,
+we proceed by resolution.
 
 00:06:04,080 --> 00:06:07,920
 So, we try to resolve the query
@@ -362,8 +363,8 @@ this is actually quite apparent
 that yes, these are unifiable.
 
 00:07:12,160 --> 00:07:19,840
-We only need to replace N by 0, and
-M and X both by s(s(0)), right?
+We only need to replace N by 0,
+and M and X both by s(s(0)), right?
 
 00:07:19,840 --> 00:07:20,640
 So, this is forced.
@@ -443,8 +444,8 @@ by the right-hand side of the program
 clause by which we have resolved.
 
 00:08:42,560 --> 00:08:45,120
-Okay, now this program clause
-in this specific case is a fact.
+Okay, now this program clause in
+this specific case is a fact.
 
 00:08:45,120 --> 00:08:47,840
 So, there is no body, the right side is empty.
@@ -515,15 +516,15 @@ If you have variables appearing in the
 query, then when we have a successful
 
 00:09:50,640 --> 00:09:56,320
-proof of the predicate of the query,
-we want to see the results for N and M.
+proof of the predicate of the query, we
+want to see the results for N and M.
 
 00:09:56,320 --> 00:09:57,600
 Now, where could they come from?
 
 00:09:57,600 --> 00:10:01,760
-Well, of course they have to come
-from the unification, right?
+Well, of course they have to
+come from the unification, right?
 
 00:10:01,760 --> 00:10:06,240
 This was where we found out
@@ -537,8 +538,8 @@ And well, if in the end you want to
 know what N and M are in our solution,
 
 00:10:13,280 --> 00:10:15,600
-then of course they are what is
-written here, 0 and s(s(0)).
+then of course they are what
+is written here, 0 and s(s(0)).
 
 00:10:16,560 --> 00:10:20,560
 This would be more complicated if you have several
@@ -556,8 +557,8 @@ simply read off the values of N and M from this
 one unification, this substitution.
 
 00:10:31,440 --> 00:10:34,720
-Okay?
-So, actually, that's what Prolog would now output.
+Okay? So, actually, that's
+what Prolog would now output.
 
 00:10:34,720 --> 00:10:39,440
 The value for N and the value for M
@@ -600,8 +601,8 @@ equation per function definition.
 It always tries all of them.
 
 00:11:16,080 --> 00:11:22,640
-And trying means checking whether this literal could
-also have been unified with the head of
+And trying means checking whether this literal
+could also have been unified with the head of
 
 00:11:23,600 --> 00:11:24,480
 the second clause.
@@ -614,8 +615,8 @@ Okay, now this is a bit more complicated
 of course, because we have variables in
 
 00:11:31,680 --> 00:11:37,920
-different places where we don't simply match
-all these variables against a ground term, right?
+different places where we don't simply match all
+these variables against a ground term, right?
 
 00:11:37,920 --> 00:11:39,440
 Because you have, for example, N and s(X).
@@ -686,8 +687,8 @@ So, instead of actually unifying this
 literal with the rule as written here,
 
 00:13:00,080 --> 00:13:04,160
-I will in my head, and you will see now,
-in the unification variable names accordingly,
+I will in my head, and you will see now, in
+the unification variable names accordingly,
 
 00:13:04,160 --> 00:13:10,320
 I will replace this X by X1, Y by Y1, Z by Z1, et
@@ -731,7 +732,8 @@ replacing it by the right-hand side
 of the rule from the program that you have used.
 
 00:13:57,360 --> 00:13:59,360
-And now that this is really non-empty, we won't get
+And now that this is really
+non-empty, we won't get
 
 00:14:00,080 --> 00:14:06,800
 the empty query immediately because now we place
@@ -748,8 +750,8 @@ So, X1, Y1, Z1, but we apply the unifier to them.
 Okay?
 
 00:14:16,480 --> 00:14:24,720
-So, we don't get add(X1,Y1,Z1), but
-actually add(X1,Y1,...), because they are not
+So, we don't get add(X1,Y1,Z1), but actually
+add(X1,Y1,...), because they are not
 
 00:14:24,720 --> 00:14:28,000
 mapped by the substitution,
@@ -806,7 +808,8 @@ We look at this query and we look
 at this head and we do unification.
 
 00:15:26,640 --> 00:15:29,760
-Actually, we always also replace the X by X2 here.
+Actually, we always also
+replace the X by X2 here.
 
 00:15:30,880 --> 00:15:37,680
 So, we look at the fact add(0, X2, X2) and
@@ -835,8 +838,8 @@ Okay, so the unifier that you
 will get here is this one,
 
 00:16:02,400 --> 00:16:08,320
-X1/0 because of this, and both Y1
-and the implicit X2 here must be s(0).
+X1/0 because of this, and both Y1 and
+the implicit X2 here must be s(0).
 
 00:16:10,080 --> 00:16:11,520
 Okay, then we have that unified.
@@ -877,14 +880,16 @@ And that means that you look
 at the variables that occurred
 
 00:16:43,040 --> 00:16:45,040
-in the query for which you want to have an answer.
+in the query for which you
+want to have an answer.
 
 00:16:45,040 --> 00:16:49,280
 And then we go through the substitutions
 and see what happens to these variables.
 
 00:16:49,280 --> 00:16:52,640
-So, N becomes s(X1), but the answer can't be s(X1)
+So, N becomes s(X1), but
+the answer can't be s(X1)
 
 00:16:52,640 --> 00:16:56,640
 because actually X1 is also
@@ -968,8 +973,8 @@ you would have found a most general unifier.
 Okay, we will actually use this one.
 
 00:18:23,680 --> 00:18:31,840
-So, X1 is replaced by s(X3), Y1 replaced
-by Y3, and Z3 replaced by 0.
+So, X1 is replaced by s(X3), Y1
+replaced by Y3, and Z3 replaced by 0.
 
 00:18:32,400 --> 00:18:35,040
 Then this has been unified, okay?
@@ -1062,8 +1067,8 @@ it through here, becomes 0.
 So, we have the answer, N is s(s(0)) and M is 0.
 
 00:20:25,600 --> 00:20:31,120
-Which is the third useful answer for
-asking whether addition of N + M should be 2.
+Which is the third useful answer for asking
+whether addition of N + M should be 2.
 
 00:20:32,320 --> 00:20:35,040
 Okay, now then I could again
@@ -1116,8 +1121,8 @@ Prolog has this query to solve with this program.
 
 78 # slide
 00:21:34,240 --> 00:21:39,360
-So, let's keep track of what we have just
-done on this example and then later
+So, let's keep track of what we have
+just done on this example and then later
 
 00:21:39,360 --> 00:21:44,240
 apply the same procedure to
@@ -1169,8 +1174,8 @@ And we always select the leftmost one.
 Okay?
 
 00:22:27,440 --> 00:22:30,560
-Of course, in the beginning, there is
-just the one we have at the root.
+Of course, in the beginning, there
+is just the one we have at the root.
 
 00:22:31,440 --> 00:22:38,480
 Okay, then having a node that has to be worked
@@ -1249,7 +1254,8 @@ What this gives us are new nodes
 that still have to be worked on.
 
 00:24:12,880 --> 00:24:15,760
-So, they are arranged from left to right according
+So, they are arranged from
+left to right according
 
 00:24:15,760 --> 00:24:19,280
 to the order of appearance of
@@ -1278,8 +1284,8 @@ we always put it to the right.
 Okay?
 
 00:24:38,880 --> 00:24:42,560
-So, these successors are arranged
-in this fashion, from left to right.
+So, these successors are arranged in
+this fashion, from left to right.
 
 00:24:43,440 --> 00:24:50,960
 First rule from the program
@@ -1328,8 +1334,8 @@ Then that's a finished node
 and it's a solution node.
 
 00:25:37,920 --> 00:25:43,600
-There’s also another case that can happen,
-and you'll see that later on. It can also be the case
+There’s also another case that can happen, and
+you'll see that later on. It can also be the case
 
 00:25:43,600 --> 00:25:49,200
 that we have a query which is not yet empty, but

@@ -1,11 +1,11 @@
 138 # slide
 00:00:01,840 --> 00:00:10,160
-Last week we talked about
-algebraic datatypes, and specifically about
+Last week we talked about algebraic
+datatypes, and specifically about
 
 00:00:10,720 --> 00:00:17,120
-computation by pattern-matching which, of course,
-was just an additional way to
+computation by pattern-matching which,
+of course, was just an additional way to
 
 00:00:17,760 --> 00:00:23,520
 program by case distinction. Except that this
@@ -16,8 +16,8 @@ or guards, but via matching against the different
 cases that the value of the defined algebraic
 
 00:00:31,360 --> 00:00:40,400
-datatype can take. We will continue with this
-today, insofar as that later, we will
+datatype can take. We will continue with
+this today, insofar as that later, we will
 
 00:00:40,400 --> 00:00:45,920
 briefly look a bit more at how pattern
@@ -28,8 +28,8 @@ in general. Basically, also how lazy evaluation
 is ultimately driven by pattern-matching. But
 
 00:00:52,560 --> 00:00:58,320
-before doing that, we will actually take a look
-at lists, which so far in the lecture have received
+before doing that, we will actually take a look at
+lists, which so far in the lecture have received
 
 00:00:58,320 --> 00:01:04,320
 some special treatment via specific syntax, via
@@ -53,8 +53,8 @@ Then we would define one ourselves.
 We certainly could do that
 
 00:01:28,880 --> 00:01:33,520
-using the kind of definition we saw
-last week. And since lists are polymorphic,
+using the kind of definition we saw last
+week. And since lists are polymorphic,
 
 00:01:33,520 --> 00:01:37,440
 this could look something like this. We
@@ -77,8 +77,8 @@ And on the other hand, there would be a binary
 constructor for the case of non-empty lists. And
 
 00:02:01,040 --> 00:02:09,600
-what should this be called? It's often called
-Cons, for "constructor". In a way, if a list is the
+what should this be called? It's often called Cons,
+for "constructor". In a way, if a list is the
 
 00:02:09,600 --> 00:02:16,320
 first datatype that you imagine, then maybe simply
@@ -101,8 +101,8 @@ rest list. And then a recursive occurrence of
 what? Of a list of 'a's. This is very similar,
 
 00:02:35,440 --> 00:02:42,000
-of course, to the tree datatype we saw last
-week, where we had Leaf and then Node with a left
+of course, to the tree datatype we saw last week,
+where we had Leaf and then Node with a left
 
 00:02:42,000 --> 00:02:49,200
 successor, a label, and a right successor. We don't
@@ -335,8 +335,8 @@ but not seen the definitions
 of. This is the length function.
 
 00:08:17,120 --> 00:08:23,920
-And it is defined just as two slides ago where
-I did with the Nil-Cons syntax for lists, but now
+And it is defined just as two slides ago where I
+did with the Nil-Cons syntax for lists, but now
 
 00:08:23,920 --> 00:08:29,200
 it's actually using the symbolic syntax. So, we
@@ -491,8 +491,8 @@ decomposes into the first element
 x and some rest, and the second
 
 00:12:03,680 --> 00:12:07,680
-decomposes into a non-empty list
-with the first element y and some rest.
+decomposes into a non-empty list with
+the first element y and some rest.
 
 00:12:07,680 --> 00:12:14,240
 And what to return then? The pair (x,y)
@@ -713,8 +713,8 @@ does when it applies a function to each
 element from an input list used as a generator,
 
 00:17:59,680 --> 00:18:05,280
-but I also mentioned already that that
-is not to be the definition of map. Also,
+but I also mentioned already that that is
+not to be the definition of map. Also,
 
 00:18:05,280 --> 00:18:09,040
 this is not exactly the definition of map because
@@ -745,8 +745,8 @@ happens if we map the function f over a non-empty
 list consisting of x and the rest list? The first
 
 00:18:40,080 --> 00:18:44,720
-element of the result list should be the result
-of applying 'f' to 'x', which is what happens here,
+element of the result list should be the result of
+applying 'f' to 'x', which is what happens here,
 
 00:18:44,720 --> 00:18:50,000
 and then we have a recursive call which applies
@@ -773,8 +773,8 @@ higher-order functions which correspond to things
 that, on lists, correspond to list comprehension.
 
 00:19:22,000 --> 00:19:28,160
-While we don't have Tree comprehensions like we
-have list comprehensions, we do have tree versions of
+While we don't have Tree comprehensions like we have
+list comprehensions, we do have tree versions of
 
 00:19:28,160 --> 00:19:35,120
 typical functions that we apply to lists in order
@@ -822,16 +822,16 @@ of the list elements. Hopefully now, we can
 imagine how this would be defined using this list
 
 00:20:46,080 --> 00:20:52,080
-pattern-matching syntax. On this slide, let me not
-define exactly this function,
+pattern-matching syntax. On this slide,
+let me not define exactly this function,
 
 00:20:52,080 --> 00:20:58,720
 but instead, a similar one, the 'foldr' function.
 Because that one is more prominent and more often used.
 
 00:20:59,680 --> 00:21:10,080
-But in concept, it is a similar function. It uses the
-r-mnemonic here instead of 'l' because it thinks
+But in concept, it is a similar function. It uses
+the r-mnemonic here instead of 'l' because it thinks
 
 00:21:10,080 --> 00:21:15,840
 about its operator as a right associative one,
@@ -858,8 +858,8 @@ would be an infinite list, so xs would not end at
 some point, we still can compute something because
 
 00:21:47,920 --> 00:21:53,920
-at least we can compute 'f' of 'x' and whatever, and
-maybe this whatever is not used depending on the
+at least we can compute 'f' of 'x' and whatever,
+and maybe this whatever is not used depending on the
 
 00:21:53,920 --> 00:22:00,160
 'f'. And then we can produce some productive output

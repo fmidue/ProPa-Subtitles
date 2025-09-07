@@ -1,7 +1,7 @@
 1 # slide
 00:00:01,689 --> 00:00:06,180
-Okay, welcome back to the Programming Paradigms
-lecture.
+Okay, welcome back to the
+Programming Paradigms lecture.
 
 00:00:06,180 --> 00:00:12,509
 Already from the layout and style of this
@@ -25,16 +25,16 @@ announced early on, that the lecture will be
 split into these two parts.
 
 00:00:32,660 --> 00:00:40,589
-Also, obviously, this is the smaller part
-of the course, mainly since we are
+Also, obviously, this is the smaller
+part of the course, mainly since we are
 
 00:00:40,589 --> 00:00:43,820
-now after nine lectures, and we have fewer lectures
-left.
+now after nine lectures, and
+we have fewer lectures left.
 
 00:00:43,820 --> 00:00:51,000
-So, it's about 30% of the course. That has
-in part to do with the following fact:
+So, it's about 30% of the course. That
+has in part to do with the following fact:
 
 00:00:51,000 --> 00:00:55,109
 A lot of what we did in the Haskell part can
@@ -52,16 +52,16 @@ Prolog part, which is about logic programming,
 is actually a course on logic, as most of
 
 00:01:09,800 --> 00:01:13,720
-you will have heard by Professor König, or
-maybe elsewhere.
+you will have heard by Professor
+König, or maybe elsewhere.
 
 00:01:13,720 --> 00:01:19,060
 But mainly, I guess, the lecture by Professor
 König will be your logic foundation.
 
 00:01:19,060 --> 00:01:24,050
-So, this is, of course, a prerequisite or
-strong influence for this part.
+So, this is, of course, a prerequisite
+or strong influence for this part.
 
 00:01:24,050 --> 00:01:28,270
 But also, a lot of the things that we have
@@ -71,8 +71,8 @@ done in the Haskell part actually will play
 out here as well.
 
 00:01:29,580 --> 00:01:35,630
-So, that starts with the general idea of considering
-a completely new programming paradigm.
+So, that starts with the general idea of
+considering a completely new programming paradigm.
 
 00:01:35,630 --> 00:01:41,320
 So, that things are really different than
@@ -89,24 +89,24 @@ that is common to both Haskell and Prolog
 or both function and logic programming.
 
 00:01:50,980 --> 00:01:56,330
-But also, more specific individual techniques
-will be shown by me again.
+But also, more specific individual
+techniques will be shown by me again.
 
 00:01:56,330 --> 00:02:02,730
-So, that involves, for example, the fact that
-we will do something similar to pattern-matching.
+So, that involves, for example, the fact that we
+will do something similar to pattern-matching.
 
 00:02:02,730 --> 00:02:06,490
-So, pattern-matching from the Haskell side
-will have its counterpart here.
+So, pattern-matching from the Haskell
+side will have its counterpart here.
 
 00:02:06,490 --> 00:02:11,180
-Also, the way in which non-basic types are
-structured.
+Also, the way in which
+non-basic types are structured.
 
 00:02:11,180 --> 00:02:15,620
-So, the recursive data structures that we have
-seen in Haskell will have an analogue
+So, the recursive data structures that we
+have seen in Haskell will have an analogue
 
 00:02:15,620 --> 00:02:17,790
 also in the Prolog part.
@@ -119,8 +119,8 @@ the ideas of those recursive data structures
 will reappear.
 
 00:02:23,290 --> 00:02:30,819
-And also, some aspects of separation semantics
-of the stepwise evaluation or stepwise development
+And also, some aspects of separation semantics of
+the stepwise evaluation or stepwise development
 
 00:02:30,819 --> 00:02:40,640
 of execution of queries in the case of Prolog
@@ -133,23 +133,23 @@ we have seen in Haskell.
 Okay.
 
 00:02:42,810 --> 00:02:44,790
-Nevertheless, there will also be important
-differences.
+Nevertheless, there will also
+be important differences.
 
 00:02:44,790 --> 00:02:50,080
-So, for one thing, Prolog is neither command
-nor expression based.
+So, for one thing, Prolog is neither
+command nor expression based.
 
 00:02:50,080 --> 00:02:54,540
-So, then in the Haskell part I always made
-this distinction between command-based languages
+So, then in the Haskell part I always made this
+distinction between command-based languages
 
 00:02:54,540 --> 00:02:58,550
 which I subsume things like Python or Java.
 
 00:02:58,550 --> 00:03:02,500
-And expression-based programming, which is
-what I focused on in the Haskell part.
+And expression-based programming, which
+is what I focused on in the Haskell part.
 
 00:03:02,500 --> 00:03:06,270
 But Prolog is certainly not command-based,
@@ -166,8 +166,8 @@ a value.
 Instead, Prolog is based on propositions.
 
 00:03:16,350 --> 00:03:21,520
-So, we have atomic propositions and logical
-connectives between those.
+So, we have atomic propositions and
+logical connectives between those.
 
 00:03:21,520 --> 00:03:27,849
 And I already mentioned queries or evaluation
@@ -177,12 +177,12 @@ or operational execution of Prolog programs
 will be driven by queries.
 
 00:03:29,410 --> 00:03:33,740
-And the point of a query is to see whether
-some logical statement is true.
+And the point of a query is to see
+whether some logical statement is true.
 
 00:03:33,740 --> 00:03:36,720
-And not to evaluate something to a value,
-to a number, for example.
+And not to evaluate something to
+a value, to a number, for example.
 
 00:03:36,720 --> 00:03:42,160
 So, the main drive will be to have a query
@@ -193,20 +193,20 @@ of the Prolog execution system will be to
 find out whether that query is true or not.
 
 00:03:47,270 --> 00:03:54,319
-So, it's a question of satisfiability mainly
-and results will be side products in the sense that
+So, it's a question of satisfiability mainly and
+results will be side products in the sense that
 
 00:03:54,319 --> 00:04:00,629
-if you have a query that involves variables,
-maybe several ones, then part of the satisfiability
+if you have a query that involves variables, maybe
+several ones, then part of the satisfiability
 
 00:04:00,629 --> 00:04:04,690
-check will be to assign concrete instantiations
-to these variables.
+check will be to assign concrete
+instantiations to these variables.
 
 00:04:04,690 --> 00:04:08,440
-And then this could be seen as the output
-of the program.
+And then this could be seen
+as the output of the program.
 
 00:04:08,440 --> 00:04:11,870
 Completely different from the Haskell part
@@ -216,25 +216,25 @@ that the outcome is the value to which an
 expression has been reduced in the end.
 
 00:04:13,100 --> 00:04:17,430
-So, there are differences; also pattern-matching
-will be similar but different.
+So, there are differences; also
+pattern-matching will be similar but different.
 
 00:04:17,430 --> 00:04:22,840
-So, there will be another aspect to Prolog
-style pattern-matching.
+So, there will be another aspect
+to Prolog style pattern-matching.
 
 00:04:22,840 --> 00:04:29,810
 But some ideas will be transferable, and I
 just mentioned the operational semantics has
 
 00:04:29,810 --> 00:04:36,510
-some similar aspects, but it's not exactly
-the same.
+some similar aspects, but
+it's not exactly the same.
 
 2 # slide
 00:04:36,510 --> 00:04:39,380
-Okay, we will start today with looking at
-some Prolog basics.
+Okay, we will start today with
+looking at some Prolog basics.
 
 00:04:39,380 --> 00:04:41,280
 Yes, we need some introduction, of course.
@@ -251,15 +251,15 @@ But certainly today, to a large extent taken
 from the book Learn Prolog Now, that's one
 
 00:04:56,350 --> 00:05:01,650
-of the books I suggested as literature for
-Prolog in the very first lecture.
+of the books I suggested as literature
+for Prolog in the very first lecture.
 
 00:05:01,650 --> 00:05:04,190
 So, this was a book that is available online.
 
 00:05:04,190 --> 00:05:08,130
-So, you don't have to buy it, you can simply
-browse it via the web.
+So, you don't have to buy it, you
+can simply browse it via the web.
 
 00:05:08,130 --> 00:05:14,020
 And you will see that a lot of examples that
@@ -269,12 +269,12 @@ I've used today can also be found in that
 book.
 
 00:05:15,020 --> 00:05:17,840
-I have changed some of them to make some points
-that I want to make.
+I have changed some of them to make
+some points that I want to make.
 
 00:05:17,840 --> 00:05:22,190
-So, it's not exactly the same small programs,
-but very similar.
+So, it's not exactly the same
+small programs, but very similar.
 
 00:05:22,190 --> 00:05:30,750
 That also explains that you will see in a
@@ -285,8 +285,8 @@ and you will see that a lot of the examples
 in the book and then taken here refer
 
 00:05:36,490 --> 00:05:42,100
-to a popular movie that maybe you will recognize,
-or maybe you will not.
+to a popular movie that maybe you
+will recognize, or maybe you will not.
 
 00:05:42,100 --> 00:05:43,100
 Okay.
@@ -300,8 +300,8 @@ There I just mentioned queries already, and
 on a very first view, Prolog programs can be
 
 00:05:58,669 --> 00:06:02,900
-seen as kind of databases that contain some
-facts.
+seen as kind of databases
+that contain some facts.
 
 00:06:02,900 --> 00:06:04,479
 And then you can ask questions about this.
@@ -311,16 +311,16 @@ Actually, this is often also called Datalog,
 which is a subset of Prolog where you just
 
 00:06:09,400 --> 00:06:12,419
-have these kinds of atomic facts that you
-see here.
+have these kinds of atomic
+facts that you see here.
 
 00:06:12,419 --> 00:06:17,430
-So, I will use this to start explaining
-the syntax.
+So, I will use this to
+start explaining the syntax.
 
 00:06:17,430 --> 00:06:21,870
-So, what we see here is a statement like Mia
-is a woman.
+So, what we see here is a
+statement like Mia is a woman.
 
 00:06:21,870 --> 00:06:22,870
 Jody is a woman.
@@ -329,8 +329,8 @@ Jody is a woman.
 So, that's the way it is expressed here.
 
 00:06:25,140 --> 00:06:29,040
-So, this is a predicate, some property that
-some entity can have.
+So, this is a predicate, some
+property that some entity can have.
 
 00:06:29,040 --> 00:06:33,660
 And the things that occur in brackets here
@@ -341,8 +341,8 @@ So, in this case, this is an individual person,
 but of course, it's just simpler ultimately.
 
 00:06:38,790 --> 00:06:43,400
-So, what we're saying is Mia is a woman, Jody
-is a woman, Yolanda is a woman.
+So, what we're saying is Mia is a woman,
+Jody is a woman, Yolanda is a woman.
 
 00:06:43,400 --> 00:06:48,680
 And it appears that Jody plays the air guitar.
@@ -355,8 +355,8 @@ could put into a file and then load into a
 Prolog engine.
 
 00:06:56,810 --> 00:07:00,240
-And then the interaction with the program would
-be via queries.
+And then the interaction with
+the program would be via queries.
 
 00:07:00,240 --> 00:07:05,640
 So, just as in the Haskell interpreter, you
@@ -367,35 +367,35 @@ expressions and expect that they evaluate
 to something that is then output.
 
 00:07:09,610 --> 00:07:14,590
-Here, you would load your fact base into
-the engine, and then this is a prompt, and then
+Here, you would load your fact base into the
+engine, and then this is a prompt, and then
 
 00:07:14,590 --> 00:07:16,490
 you ask some questions.
 
 00:07:16,490 --> 00:07:20,539
-And questions are things that are statements
-that can be true or false.
+And questions are things that are
+statements that can be true or false.
 
 00:07:20,539 --> 00:07:23,320
-You won't get 15 out, but you'll get true
-or false out.
+You won't get 15 out, but
+you'll get true or false out.
 
 00:07:23,320 --> 00:07:28,750
 So, if you load this program, these facts
 then we can ask things like, is Mia a woman?
 
 00:07:28,750 --> 00:07:32,610
-And then Prolog will truthfully answer yes,
-or true, right?
+And then Prolog will truthfully
+answer yes, or true, right?
 
 00:07:32,610 --> 00:07:37,320
-Because that's something that was contained
-in the database.
+Because that's something that
+was contained in the database.
 
 00:07:37,320 --> 00:07:42,290
-Okay, an important syntactical aspect here when
-you start trying this in the interpreter.
+Okay, an important syntactical aspect here
+when you start trying this in the interpreter.
 
 00:07:42,290 --> 00:07:44,440
 So, this dot here is really essential.
@@ -404,8 +404,8 @@ So, this dot here is really essential.
 Both here it's really part of the syntax.
 
 00:07:46,150 --> 00:07:50,460
-Well, here it's basically the point where
-we say that this statement is complete, right?
+Well, here it's basically the point where we
+say that this statement is complete, right?
 
 00:07:50,460 --> 00:07:55,000
 And these facts, and also if you pose a query,
@@ -422,19 +422,19 @@ here without the dot, then it will not happen
 what you would expect to happen.
 
 00:08:07,130 --> 00:08:10,039
-I mean that the engine starts answering this
-question.
+I mean that the engine starts
+answering this question.
 
 00:08:10,039 --> 00:08:12,940
-Okay, that is really something that you should
-do.
+Okay, that is really
+something that you should do.
 
 00:08:12,940 --> 00:08:15,190
 Okay, then let's ask some other questions.
 
 00:08:15,190 --> 00:08:19,220
-So, of course, we can also ask: Does Jody
-play air guitar?
+So, of course, we can also
+ask: Does Jody play air guitar?
 
 00:08:19,220 --> 00:08:20,820
 And the answer will also be true.
@@ -443,8 +443,8 @@ And the answer will also be true.
 Well, simply because it's set in the facts.
 
 00:08:24,520 --> 00:08:28,330
-Okay, then we can also ask questions that
-turn out to be false.
+Okay, then we can also ask
+questions that turn out to be false.
 
 00:08:28,330 --> 00:08:32,870
 So, for example, here we ask whether Mia is
@@ -458,8 +458,8 @@ insight maybe, or thing that you should
 be aware of.
 
 00:08:40,300 --> 00:08:44,180
-Namely, of course, we didn't ever say that
-Mia does not play the guitar, right?
+Namely, of course, we didn't ever say
+that Mia does not play the guitar, right?
 
 00:08:44,180 --> 00:08:46,320
 We said that Jody plays the air guitar.
@@ -512,12 +512,12 @@ the sense that Prolog considers this to be
 not true, because it can't prove it.
 
 00:09:35,510 --> 00:09:39,830
-Okay, that's not necessarily the way that
-you understand mathematical logic.
+Okay, that's not necessarily the way
+that you understand mathematical logic.
 
 00:09:39,830 --> 00:09:44,660
-Where you say that if I had not proven that, or
-I don't know that Mia plays the air guitar,
+Where you say that if I had not proven that,
+or I don't know that Mia plays the air guitar,
 
 00:09:44,660 --> 00:09:45,950
 because it's not said here.
@@ -534,15 +534,15 @@ Okay, if we have a question which is not answered
 positively by the knowledge base that we have,
 
 00:09:56,770 --> 00:10:04,930
-then actually the statement is considered
-to be not true, not the case.
+then actually the statement is
+considered to be not true, not the case.
 
 00:10:04,930 --> 00:10:07,500
 Okay.
 
 00:10:07,500 --> 00:10:13,180
-That even extends to situations like this
-where we ask something about a person or individual
+That even extends to situations like this where
+we ask something about a person or individual
 
 00:10:13,180 --> 00:10:15,690
 or entity that isn't part of the program.
@@ -554,12 +554,12 @@ Right?
 Well, for Mia, we knew it's a woman.
 
 00:10:19,420 --> 00:10:22,100
-We didn't know anything about her playing
-air guitar.
+We didn't know anything
+about her playing air guitar.
 
 00:10:22,100 --> 00:10:24,390
-So, Prolog said, well, she doesn't play the
-air guitar.
+So, Prolog said, well, she
+doesn't play the air guitar.
 
 00:10:24,390 --> 00:10:28,260
 Now, if you ask whether Vincent is playing
@@ -590,22 +590,22 @@ plays air guitar and Prolog will say no.
 I have never heard about Vincent.
 
 00:10:47,150 --> 00:10:49,190
-I've never heard something about him playing
-air guitar.
+I've never heard something
+about him playing air guitar.
 
 00:10:49,190 --> 00:10:51,200
 So, it's not true.
 
 00:10:51,200 --> 00:10:56,250
-It's actually false that he's playing the
-air guitar.
+It's actually false that
+he's playing the air guitar.
 
 00:10:56,250 --> 00:10:57,450
 Okay.
 
 00:10:57,450 --> 00:11:04,130
-And then some final examples, basic example,
-we could also ask whether Jody plays the piano.
+And then some final examples, basic example, we
+could also ask whether Jody plays the piano.
 
 00:11:04,130 --> 00:11:05,980
 We don't know anything about that, right?
@@ -641,24 +641,24 @@ the properties.
 That's where we get false here.
 
 00:11:32,600 --> 00:11:35,170
-If you actually ask a question that's not
-defined.
+If you actually ask a
+question that's not defined.
 
 00:11:35,170 --> 00:11:39,010
-So, there's nothing known about anybody playing
-piano.
+So, there's nothing known
+about anybody playing piano.
 
 00:11:39,010 --> 00:11:43,790
-So, if you ask something like "Does Jody play
-piano?", some Prolog systems will
+So, if you ask something like "Does Jody
+play piano?", some Prolog systems will
 
 00:11:43,790 --> 00:11:49,519
-actually assume that we made a typo and maybe
-have written a wrong predicate here.
+actually assume that we made a typo and
+maybe have written a wrong predicate here.
 
 00:11:49,519 --> 00:11:53,720
-So, there's some useful interpretation saying,
-well, it's false.
+So, there's some useful interpretation
+saying, well, it's false.
 
 00:11:53,720 --> 00:11:59,420
 But actually, some systems will rather complain
@@ -703,12 +703,12 @@ just facts, but also some implications or
 rules, right?
 
 00:12:41,519 --> 00:12:45,050
-So, the first two lines are things of a style,
-you have already seen.
+So, the first two lines are things
+of a style, you have already seen.
 
 00:12:45,050 --> 00:12:48,240
-Then saying something like, well, Yolanda
-is happy.
+Then saying something like,
+well, Yolanda is happy.
 
 00:12:48,240 --> 00:12:51,330
 And Mia listens to music, okay.
@@ -721,24 +721,24 @@ line, and then the other two lines are similar.
 Namely, we have this strange symbol here.
 
 00:12:58,680 --> 00:13:02,060
-And then we have to the left and to the right,
-we have some statement, right?
+And then we have to the left and to the
+right, we have some statement, right?
 
 00:13:02,060 --> 00:13:07,320
-To the left, we have Yolanda listens to music, and
-to the right, we have Yolanda is happy.
+To the left, we have Yolanda listens to music,
+and to the right, we have Yolanda is happy.
 
 00:13:07,320 --> 00:13:10,640
-If you take this again as a property of this
-entity.
+If you take this again as
+a property of this entity.
 
 00:13:10,640 --> 00:13:13,860
 Okay, so what is the meaning of the symbol
 here?
 
 00:13:13,860 --> 00:13:17,110
-And likewise, of course, in the other two
-lines, that it's an if.
+And likewise, of course, in the
+other two lines, that it's an if.
 
 00:13:17,110 --> 00:13:20,209
 So, this is the rule that we have here.
@@ -751,26 +751,26 @@ the right-hand side is called the body.
 Yes, many rule-based settings.
 
 00:13:26,250 --> 00:13:30,710
-So, the idea is that is the head, which is
-implied by the body.
+So, the idea is that is the head,
+which is implied by the body.
 
 00:13:30,710 --> 00:13:32,579
 So, how is this to be read?
 
 00:13:32,579 --> 00:13:37,560
-It's if Yolanda is happy, then she listens to
-music.
+It's if Yolanda is happy,
+then she listens to music.
 
 00:13:37,560 --> 00:13:39,240
 That's an adaptation of this rule.
 
 00:13:39,240 --> 00:13:44,240
-And likewise, if Mia listens to music, then
-Mia plays air guitar.
+And likewise, if Mia listens to
+music, then Mia plays air guitar.
 
 00:13:44,240 --> 00:13:48,620
-If Yolanda listens to music, then Yolanda
-plays air guitar.
+If Yolanda listens to music,
+then Yolanda plays air guitar.
 
 00:13:48,620 --> 00:13:55,209
 Okay, so these two are facts and these three
@@ -784,34 +784,34 @@ So, now we can ask questions that are not
 explicitly answerable just by looking at facts,
 
 00:14:01,180 --> 00:14:06,050
-but where actually Prolog needs to combine
-the facts that are known.
+but where actually Prolog needs to
+combine the facts that are known.
 
 00:14:06,050 --> 00:14:09,910
 Plus, some statements, implications, some rules.
 
 00:14:09,910 --> 00:14:16,050
-Okay, in this look where, for example, you
-can ask whether Mia plays air guitar.
+Okay, in this look where, for example,
+you can ask whether Mia plays air guitar.
 
 00:14:16,050 --> 00:14:20,060
-And while there is no fact stating that actually
-Prolog will nevertheless say true.
+And while there is no fact stating that
+actually Prolog will nevertheless say true.
 
 00:14:20,060 --> 00:14:21,230
 And how is that?
 
 00:14:21,230 --> 00:14:27,350
-Well, because Prolog knows that Mia listens
-to music, that was a fact.
+Well, because Prolog knows that Mia
+listens to music, that was a fact.
 
 00:14:27,350 --> 00:14:31,380
-And then there's the rule that if Mia listens
-to music, then Mia plays air guitar.
+And then there's the rule that if Mia
+listens to music, then Mia plays air guitar.
 
 00:14:31,380 --> 00:14:35,680
-So, Prolog will deduce this from what we know
-about the facts and the rules.
+So, Prolog will deduce this from what
+we know about the facts and the rules.
 
 00:14:35,680 --> 00:14:38,760
 That indeed, yes, Mia plays air guitar.
@@ -831,8 +831,8 @@ find that Prolog is right in answering true.
 So, actually, it's now a two-step reasoning.
 
 00:14:55,459 --> 00:15:00,530
-Namely, it's not as simple as for Mia, where
-we have, if she listens to music then
+Namely, it's not as simple as for Mia,
+where we have, if she listens to music then
 
 00:15:00,530 --> 00:15:01,750
 she plays air guitar.
@@ -845,8 +845,8 @@ that she listens to music in order to establish
 that she plays air guitar.
 
 00:15:09,250 --> 00:15:12,640
-But actually that Yolanda listens to music
-is not itself a fact.
+But actually that Yolanda listens
+to music is not itself a fact.
 
 00:15:12,640 --> 00:15:15,130
 It's also something that only follows from
@@ -864,8 +864,8 @@ So, actually, Prolog will use the knowledge
 to the maximum extent and really work out
 
 00:15:25,380 --> 00:15:29,459
-in this case that Yolanda indeed plays the
-air guitar.
+in this case that Yolanda
+indeed plays the air guitar.
 
 00:15:29,459 --> 00:15:35,300
 Using this reasoning well since Yolanda is
@@ -905,15 +905,15 @@ some debug features where you could find out
 how Prolog arrived at this conclusion.
 
 00:16:03,899 --> 00:16:08,519
-But actually, this is not visible and interpreter
-just as in Haskell.
+But actually, this is not visible
+and interpreter just as in Haskell.
 
 00:16:08,519 --> 00:16:09,990
 If you enter an expression, you get the result.
 
 00:16:09,990 --> 00:16:14,050
-You don't get the stepwise evaluation of that
-result, not by default at least.
+You don't get the stepwise evaluation of
+that result, not by default at least.
 
 00:16:14,050 --> 00:16:20,070
 Okay, so here, we ask a question, and Prolog
@@ -944,23 +944,23 @@ From logic, you know that of course, you can
 have more complicated implications where maybe
 
 00:16:42,850 --> 00:16:47,140
-you have to combine several statements to
-derive another one.
+you have to combine several
+statements to derive another one.
 
 00:16:47,140 --> 00:16:50,380
-So, that would be something like this in Prolog
-as well.
+So, that would be something
+like this in Prolog as well.
 
 00:16:50,380 --> 00:16:55,440
-Otherwise, it could only write very simple
-programs and rules.
+Otherwise, it could only write
+very simple programs and rules.
 
 00:16:55,440 --> 00:16:57,730
 Let's look at some more complex rules.
 
 00:16:57,730 --> 00:17:04,449
-And there are basically two things that are
-relevant on this slide.
+And there are basically two things
+that are relevant on this slide.
 
 00:17:04,449 --> 00:17:08,439
 The first thing is that we can have on the
@@ -983,14 +983,15 @@ if?
 Well, if two things are true apparently, right?
 
 00:17:22,589 --> 00:17:25,890
-So, indeed, this comma here is simply the interpretation
-of and.
+So, indeed, this comma here is
+simply the interpretation of and.
 
 00:17:25,890 --> 00:17:28,659
 So, you can add a list of things here.
 
 00:17:28,659 --> 00:17:32,559
-And then the logical interpretation is, well, all of these things have to be true
+And then the logical interpretation is,
+well, all of these things have to be true
 
 00:17:32,559 --> 00:17:33,720
 in order to apply these rules.
@@ -999,19 +1000,19 @@ in order to apply these rules.
 Basically, it's the same.
 
 00:17:34,720 --> 00:17:37,929
-Vincent plays the air guitar if this is the
-case and this is the case.
+Vincent plays the air guitar if this
+is the case and this is the case.
 
 00:17:37,929 --> 00:17:41,080
 So, the comma is the and.
 
 00:17:41,080 --> 00:17:43,740
-There we don't write and, we simply use the
-comma.
+There we don't write and,
+we simply use the comma.
 
 00:17:43,740 --> 00:17:48,980
-Okay, then we can ask whether Vincent plays
-air guitar.
+Okay, then we can ask whether
+Vincent plays air guitar.
 
 00:17:48,980 --> 00:17:51,580
 And whether this will be the case, let's look.
@@ -1033,12 +1034,12 @@ One of these is true.
 Vincent is indeed happy.
 
 00:18:03,929 --> 00:18:06,919
-But we don't know anything about Vincent listening
-to music.
+But we don't know anything about
+Vincent listening to music.
 
 00:18:06,919 --> 00:18:10,460
-Because the only fact is about Butch, not
-about Vincent.
+Because the only fact is about
+Butch, not about Vincent.
 
 00:18:10,460 --> 00:18:14,999
 There are also no rules that would establish
@@ -1055,16 +1056,16 @@ reasoning or the interpretation mentioned
 before.
 
 00:18:23,360 --> 00:18:25,870
-And then it's not the case that both of these
-things are true.
+And then it's not the case that
+both of these things are true.
 
 00:18:25,870 --> 00:18:30,360
 So, we can't deduce that Vincent plays air
 guitar, and if Prolog can't deduce that Vincent
 
 00:18:30,360 --> 00:18:33,519
-plays air guitar, then Prolog assumes that
-he doesn't.
+plays air guitar, then Prolog
+assumes that he doesn't.
 
 00:18:33,519 --> 00:18:35,200
 Okay, the answer is here false.
@@ -1085,8 +1086,8 @@ Well, there are two rules about Butch.
 How should this be interpreted?
 
 00:18:49,929 --> 00:18:55,710
-Maybe also, we can't establish that Butch
-plays the air guitar because we don't know anything
+Maybe also, we can't establish that Butch plays
+the air guitar because we don't know anything
 
 00:18:55,710 --> 00:18:56,909
 about him being happy.
@@ -1098,19 +1099,19 @@ Right.
 We know this about Vincent, but not about Butch.
 
 00:19:01,429 --> 00:19:07,249
-But there's another rule which claims that
-if Butch listens to music, then he plays the air
+But there's another rule which claims that if
+Butch listens to music, then he plays the air
 
 00:19:07,249 --> 00:19:08,249
 guitar.
 
 00:19:08,249 --> 00:19:11,479
-And we actually do know that Butch listens
-to music.
+And we actually do know
+that Butch listens to music.
 
 00:19:11,479 --> 00:19:16,649
-Okay, so actually, this will be evaluated
-or derived as true.
+Okay, so actually, this will be
+evaluated or derived as true.
 
 00:19:16,649 --> 00:19:18,320
 So, this is a statement that is true.
@@ -1119,12 +1120,12 @@ So, this is a statement that is true.
 Why?
 
 00:19:19,320 --> 00:19:21,950
-Because we have these two rules, and Prolog
-can choose to use either of them.
+Because we have these two rules, and
+Prolog can choose to use either of them.
 
 00:19:21,950 --> 00:19:25,820
-And if Prolog chooses to use this, or actually
-it will try both.
+And if Prolog chooses to use this,
+or actually it will try both.
 
 00:19:25,820 --> 00:19:30,580
 And for the first one, it won't have success
@@ -1145,8 +1146,8 @@ it's right to say, well, indeed, Butch does
 play air guitar.
 
 00:19:42,429 --> 00:19:47,519
-So, if you have something like these two rules
-which have the same head, then that's an alternative.
+So, if you have something like these two rules which
+have the same head, then that's an alternative.
 
 00:19:47,519 --> 00:19:48,690
 It's like an or.
@@ -1158,8 +1159,8 @@ Right?
 The comma here means and.
 
 00:19:51,250 --> 00:19:53,649
-These two things have to be true for this
-to be true.
+These two things have to be
+true for this to be true.
 
 00:19:53,649 --> 00:19:55,809
 Here we have, if this is true, then this is
@@ -1173,8 +1174,8 @@ the same as saying that if either of these
 is true, then we have this, right?
 
 00:20:01,340 --> 00:20:06,429
-So, we don't have to establish both, we can
-establish one.
+So, we don't have to establish
+both, we can establish one.
 
 00:20:06,429 --> 00:20:07,880
 And then deduce what we want.
@@ -1189,19 +1190,19 @@ Indeed, there is an alternative notation.
 Where this is made more explicit.
 
 00:20:14,809 --> 00:20:20,309
-So, we could combine these two rules into
-one with the common head.
+So, we could combine these two
+rules into one with the common head.
 
 00:20:20,309 --> 00:20:23,600
-And in the body, we would combine these two
-bodies with a semicolon.
+And in the body, we would combine
+these two bodies with a semicolon.
 
 00:20:23,600 --> 00:20:26,289
 So, whereas the comma is used as the and.
 
 00:20:26,289 --> 00:20:29,220
-And we could use the semicolon as an or on
-the right-hand side.
+And we could use the semicolon
+as an or on the right-hand side.
 
 00:20:29,220 --> 00:20:34,519
 But this is equivalent to having these two rules
@@ -1212,8 +1213,8 @@ and also in the examples in this course, from
 my side at least, I will use the comma for
 
 00:20:43,029 --> 00:20:46,869
-the and, for putting several things on the
-right-hand side of one rule.
+the and, for putting several things
+on the right-hand side of one rule.
 
 00:20:46,869 --> 00:20:48,299
 But I won't usually use the semicolon.
@@ -1223,20 +1224,20 @@ So, if I have something like this, I would
 rather write two rules which are independent,
 
 00:20:53,350 --> 00:20:58,289
-and each of them establishes something under
-one of the preconditions.
+and each of them establishes something
+under one of the preconditions.
 
 00:20:58,289 --> 00:21:01,490
-And I wouldn't put them into one rule with
-the semicolon.
+And I wouldn't put them into
+one rule with the semicolon.
 
 00:21:01,490 --> 00:21:04,970
-Partly because it's easy to confuse the comma
-and the semicolon for beginners, right?
+Partly because it's easy to confuse the
+comma and the semicolon for beginners, right?
 
 00:21:04,970 --> 00:21:08,960
-So, if you see these two rules, one is with
-a comma, and one is with a semicolon, you might
+So, if you see these two rules, one is with a
+comma, and one is with a semicolon, you might
 
 00:21:08,960 --> 00:21:14,429
 not immediately spot the very important logical
@@ -1254,8 +1255,8 @@ Okay, it's probably better to write it like
 this.
 
 00:21:24,989 --> 00:21:31,440
-But I will write it like this in I think all
-or almost all cases.
+But I will write it like this in
+I think all or almost all cases.
 
 00:21:31,440 --> 00:21:43,649
 Okay, that was more complex rules now involving
@@ -1265,8 +1266,8 @@ logical connectives or equivalent descriptions
 to a logical or in this case.
 
 00:21:46,979 --> 00:21:51,990
-Okay, what else can we make more interesting
-about the examples?
+Okay, what else can we make more
+interesting about the examples?
 
 00:21:51,990 --> 00:21:57,039
 Well, these statements are all boring in some
@@ -1292,8 +1293,8 @@ or one individual.
 We don't have statements that relate to that.
 
 00:22:10,159 --> 00:22:13,950
-So far, we don't have statements that relate to
-several entities.
+So far, we don't have statements
+that relate to several entities.
 
 00:22:13,950 --> 00:22:14,950
 Okay.
@@ -1302,8 +1303,8 @@ Okay.
 That’s something we should certainly change.
 
 00:22:17,440 --> 00:22:22,389
-And indeed, the way to do this is to consider
-basically relations.
+And indeed, the way to do this is
+to consider basically relations.
 
 00:22:22,389 --> 00:22:26,039
 So, logical programming is sometimes also called
@@ -1323,12 +1324,12 @@ Some relation has its semantic interpretation.
 How is this syntactically treated?
 
 00:22:42,809 --> 00:22:46,649
-Well, we would have statements that relate
-more than one person.
+Well, we would have statements
+that relate more than one person.
 
 00:22:46,649 --> 00:22:51,899
-So, basically, in the brackets here, we can
-list more than one individual.
+So, basically, in the brackets here,
+we can list more than one individual.
 
 6 # slide
 00:22:51,899 --> 00:22:54,639
@@ -1338,22 +1339,23 @@ Okay, that's happened in this program.
 For example, what do we have here?
 
 00:22:56,720 --> 00:23:01,019
-We have some basic facts about one individual
-each, right?
+We have some basic facts about
+one individual each, right?
 
 00:23:01,019 --> 00:23:02,830
 Mia is a woman, Jody, and Yolanda is a woman.
 
 00:23:02,830 --> 00:23:05,359
-Those are facts, which we have seen before already.
+Those are facts, which we
+have seen before already.
 
 00:23:05,359 --> 00:23:11,119
-But then we can also have predicate statements
-that relate two individuals.
+But then we can also have predicate
+statements that relate two individuals.
 
 00:23:11,119 --> 00:23:15,580
-So, here the interpretation is: Vincent
-loves Mia.
+So, here the interpretation
+is: Vincent loves Mia.
 
 00:23:15,580 --> 00:23:17,059
 Marsellus loves Mia.
@@ -1365,8 +1367,8 @@ Mia loves Vincent.
 And Vincent is self-loving.
 
 00:23:22,119 --> 00:23:27,830
-Okay, that way now you know which movie this
-is about.
+Okay, that way now you know
+which movie this is about.
 
 00:23:27,830 --> 00:23:29,690
 Okay.
@@ -1386,23 +1388,23 @@ interpretation saying something, which are
 the women, these three.
 
 00:23:48,840 --> 00:23:55,230
-Here we have a relation in the binary predicate
-relating always two entities.
+Here we have a relation in the binary
+predicate relating always two entities.
 
 00:23:55,230 --> 00:23:59,080
-Okay, what kind of queries can be asked about
-this?
+Okay, what kind of queries
+can be asked about this?
 
 00:23:59,080 --> 00:24:03,470
-Well, of course, you could ask questions like
-does Marsellus love Mia?
+Well, of course, you could ask
+questions like does Marsellus love Mia?
 
 00:24:03,470 --> 00:24:04,649
 And the answer would be true.
 
 00:24:04,649 --> 00:24:07,999
-We could ask does Marsellus, or does Mia love
-Marsellus?
+We could ask does Marsellus,
+or does Mia love Marsellus?
 
 00:24:07,999 --> 00:24:09,429
 And the answer would be wrong.
@@ -1435,8 +1437,8 @@ So, let's use a query like this.
 So, we can ask queries where we have variables.
 
 00:24:36,869 --> 00:24:42,390
-And here you already see the maybe unfortunate
-difference to Haskell.
+And here you already see the maybe
+unfortunate difference to Haskell.
 
 00:24:42,390 --> 00:24:47,009
 It's not unfortunate in general, but of course,
@@ -1450,23 +1452,23 @@ are basically switched between Haskell and
 Prolog, right?
 
 00:24:55,969 --> 00:24:58,419
-So, in Haskell, variables would always be
-lowercase.
+So, in Haskell, variables
+would always be lowercase.
 
 00:24:58,419 --> 00:25:04,749
-Whereas in Prolog, the convention is that upper
-case things are variables.
+Whereas in Prolog, the convention is
+that upper case things are variables.
 
 00:25:04,749 --> 00:25:07,210
 Okay, so what is this saying?
 
 00:25:07,210 --> 00:25:11,769
-It's a query where we don't ask, "Is Mia a woman
-or is Jody or is Vincent a woman?"
+It's a query where we don't ask, "Is Mia
+a woman or is Jody or is Vincent a woman?"
 
 00:25:11,769 --> 00:25:19,289
-But we ask, "Is X a woman?" The question basically
-means, "Is there an X that is a woman?"
+But we ask, "Is X a woman?" The question
+basically means, "Is there an X that is a woman?"
 
 00:25:19,289 --> 00:25:21,330
 What should Prolog answer in this case?
@@ -1478,8 +1480,8 @@ Well, you could say it should answer yes.
 Because we have entities that are women.
 
 00:25:27,269 --> 00:25:30,940
-But then we wouldn't learn as much as actually
-what are the X.
+But then we wouldn't learn as
+much as actually what are the X.
 
 00:25:30,940 --> 00:25:31,940
 Right?
@@ -1489,16 +1491,16 @@ So, what Prolog is doing in a query like this
 with variables, not only saying true and false
 
 00:25:35,979 --> 00:25:38,369
-as in all the previous examples that didn't
-have variables.
+as in all the previous examples
+that didn't have variables.
 
 00:25:38,369 --> 00:25:42,669
-If you had a query with variables, then Prolog
-might also say false.
+If you had a query with variables,
+then Prolog might also say false.
 
 00:25:42,669 --> 00:25:46,840
-If simply, there's no way to establish the
-statement here.
+If simply, there's no way to
+establish the statement here.
 
 00:25:46,840 --> 00:25:53,259
 But if there is, then it won't simply say "true",
@@ -1508,15 +1510,15 @@ it will actually tell us for which X it is
 true.
 
 00:25:54,259 --> 00:26:00,059
-So, if we issue this query to Prolog, it will
-say something like X is Mia.
+So, if we issue this query to Prolog,
+it will say something like X is Mia.
 
 00:26:00,059 --> 00:26:02,179
 So, it's not just saying true.
 
 00:26:02,179 --> 00:26:06,489
-It's actually saying X is Mia, and the meaning
-of this is: yes, it's true.
+It's actually saying X is Mia, and the
+meaning of this is: yes, it's true.
 
 00:26:06,489 --> 00:26:08,580
 For the case that X is Mia.
@@ -1533,31 +1535,31 @@ So, Prolog would output this like this: X is
 Mia.
 
 00:26:15,799 --> 00:26:20,070
-And then it would be the user's task to either
-accept this.
+And then it would be the user's
+task to either accept this.
 
 00:26:20,070 --> 00:26:22,080
 And enter a dot and say, okay, that's fine.
 
 00:26:22,080 --> 00:26:28,440
-So, you would use the dot now to actually
-say fine, or you could answer with a semicolon.
+So, you would use the dot now to actually say
+fine, or you could answer with a semicolon.
 
 00:26:28,440 --> 00:26:33,860
-And remember, the semicolon corresponds
-in Prolog interpretation of logic to an "or".
+And remember, the semicolon corresponds in
+Prolog interpretation of logic to an "or".
 
 00:26:33,860 --> 00:26:40,969
 So, basically, what it is meaning is, if the
 user enters this, then you would be asking
 
 00:26:40,969 --> 00:26:45,100
-Prolog that Prolog has told you that X equals
-Mia is a woman.
+Prolog that Prolog has told you
+that X equals Mia is a woman.
 
 00:26:45,100 --> 00:26:49,649
-Then you could say "or" in the sense of: or,
-is there maybe also another X?
+Then you could say "or" in the sense
+of: or, is there maybe also another X?
 
 00:26:49,649 --> 00:26:50,649
 Yes.
@@ -1624,8 +1626,8 @@ that anybody else would fit this predicate.
 Okay, so that's nice.
 
 00:27:44,999 --> 00:27:48,789
-You can ask questions like that, that don't
-yet involve these binary predicates.
+You can ask questions like that, that
+don't yet involve these binary predicates.
 
 00:27:48,789 --> 00:27:53,979
 But we can, of course, now with variables also
@@ -1639,8 +1641,8 @@ some positions of the predicates are indeed
 concrete entities and others are variables.
 
 00:28:04,259 --> 00:28:10,840
-So, for example, we can ask whether it is
-true that Vincent loves somebody?
+So, for example, we can ask whether it
+is true that Vincent loves somebody?
 
 00:28:10,840 --> 00:28:12,399
 Okay.
@@ -1686,12 +1688,12 @@ who is a woman and who is loved by Vincent?
 Yes.
 
 00:28:54,299 --> 00:29:00,440
-Also, of course, then excluding this last, or
-this answer here.
+Also, of course, then excluding
+this last, or this answer here.
 
 00:29:00,440 --> 00:29:05,489
-And that can be done by also in the query
-using our connectives.
+And that can be done by also in
+the query using our connectives.
 
 00:29:05,489 --> 00:29:10,369
 So, I previously in the previous slide, used
@@ -1707,8 +1709,8 @@ And something else also has to be true.
 And I can also do this in a query.
 
 00:29:15,080 --> 00:29:18,879
-So, a query need not be just one predicate with
-some arguments.
+So, a query need not be just one
+predicate with some arguments.
 
 00:29:18,879 --> 00:29:20,360
 A query could also look like this.
@@ -1721,12 +1723,12 @@ So, I'm asking here, these two questions at
 once.
 
 00:29:26,750 --> 00:29:31,559
-And, of course, at once also in the sense that
-I want to use the same X here.
+And, of course, at once also in the sense
+that I want to use the same X here.
 
 00:29:31,559 --> 00:29:36,100
-So, I don't get all combinations of what was
-possible here.
+So, I don't get all combinations
+of what was possible here.
 
 00:29:36,100 --> 00:29:42,690
 So, I'm getting combinations where Vincent
@@ -1747,39 +1749,39 @@ What might happen here is not necessarily
 the case in all Prolog implementations.
 
 00:29:56,239 --> 00:30:00,690
-But, well, of course, we know that Mia is the
-only answer here.
+But, well, of course, we know
+that Mia is the only answer here.
 
 00:30:00,690 --> 00:30:04,929
-So, Prolog could also have put a dot here
-and be done with it.
+So, Prolog could also have put
+a dot here and be done with it.
 
 00:30:04,929 --> 00:30:11,379
 But actually, due to the internal way of how
 this logic solving is organized, it will often
 
 00:30:11,379 --> 00:30:15,109
-be the case that Prolog actually at this point
-still offers possible alternatives.
+be the case that Prolog actually at this
+point still offers possible alternatives.
 
 00:30:15,109 --> 00:30:19,039
-So, the user would say: Well,
-"or", is there maybe another solution?
+So, the user would say: Well, "or",
+is there maybe another solution?
 
 00:30:19,039 --> 00:30:20,980
 And only then Prolog will say false.
 
 00:30:20,980 --> 00:30:25,029
-Where it's equivalent to saying X is Mia or
-false.
+Where it's equivalent to
+saying X is Mia or false.
 
 00:30:25,029 --> 00:30:27,549
-And where something or false is just that
-something.
+And where something or false
+is just that something.
 
 00:30:27,549 --> 00:30:32,219
-So, it is equivalent to saying that X equals
-Mia is the only solution.
+So, it is equivalent to saying that
+X equals Mia is the only solution.
 
 00:30:32,219 --> 00:30:40,690
 Okay, which makes perfect sense because that's
@@ -1789,12 +1791,12 @@ exactly what follows from what we had here.
 Okay, that's already a nice, interesting example.
 
 00:30:44,960 --> 00:30:49,750
-Okay, what else could we hope for in terms
-of a programming language?
+Okay, what else could we hope for
+in terms of a programming language?
 
 00:30:49,750 --> 00:30:56,259
-Well, maybe we don't want to use variables just
-in queries, but also in the program.
+Well, maybe we don't want to use variables
+just in queries, but also in the program.
 
 00:30:56,259 --> 00:30:57,259
 Right?
@@ -1814,15 +1816,15 @@ We did have unary predicates, binary predicates,
 we did have rules, we have something appeared
 
 00:31:10,849 --> 00:31:13,129
-on the right-hand side, but it was always
-very concrete.
+on the right-hand side, but
+it was always very concrete.
 
 00:31:13,129 --> 00:31:15,409
 We always mentioned certain specifics.
 
 00:31:15,409 --> 00:31:23,340
-Well, in this case, persons, otherwise, simply
-entities, atoms in our statements.
+Well, in this case, persons, otherwise,
+simply entities, atoms in our statements.
 
 00:31:23,340 --> 00:31:25,499
 And now we used variables in querying.
@@ -1839,8 +1841,8 @@ And an example of this would be as follows.
 Okay, what do we have here?
 
 00:31:40,320 --> 00:31:42,950
-Well, now the statements become even more
-interesting.
+Well, now the statements
+become even more interesting.
 
 00:31:42,950 --> 00:31:49,860
 So, we have, again, some basic facts about
@@ -1859,8 +1861,8 @@ And Mia loves Vincent.
 Okay, good for him.
 
 00:31:56,979 --> 00:32:00,729
-Maybe depending on characteristics of Mia,
-of course.
+Maybe depending on characteristics
+of Mia, of course.
 
 00:32:00,729 --> 00:32:02,209
 She's a bit crazy.
@@ -1869,8 +1871,8 @@ She's a bit crazy.
 If you know the movie.
 
 00:32:05,780 --> 00:32:10,149
-Well, and then there is some statement about
-variables.
+Well, and then there is some
+statement about variables.
 
 00:32:10,149 --> 00:32:14,249
 So, we define basically a new relation.
@@ -1883,8 +1885,8 @@ some pairs that fulfill this relationship.
 But actually, it's a derived property.
 
 00:32:23,470 --> 00:32:27,559
-It's a rule involving generalized cases with
-variables.
+It's a rule involving
+generalized cases with variables.
 
 00:32:27,559 --> 00:32:32,599
 What this is saying is, well, X is jealous
@@ -1894,8 +1896,8 @@ of Y.
 If X loves Z and Y loves Z.
 
 00:32:35,940 --> 00:32:45,529
-So, in some sense, if X and Y love the same
-third entity, then X is jealous of Y.
+So, in some sense, if X and Y love the
+same third entity, then X is jealous of Y.
 
 00:32:45,529 --> 00:32:49,889
 That's a reasonable concept of jealousy, I
@@ -1925,8 +1927,8 @@ Because they both love Mia.
 Okay, so it's reasonable to get this answer.
 
 00:33:14,799 --> 00:33:17,589
-And then we could ask again whether maybe
-there's some other solution.
+And then we could ask again whether
+maybe there's some other solution.
 
 00:33:17,589 --> 00:33:18,789
 So, maybe we get false here.
@@ -1935,8 +1937,8 @@ So, maybe we get false here.
 Well, let's see what will actually happen.
 
 00:33:21,450 --> 00:33:27,490
-If we asked whether Marsellus is jealous of
-somebody else as well.
+If we asked whether Marsellus is
+jealous of somebody else as well.
 
 00:33:27,490 --> 00:33:28,960
 Well, indeed he is.
@@ -1948,12 +1950,12 @@ Then he is also jealous of himself.
 Okay, that's maybe surprising.
 
 00:33:35,190 --> 00:33:39,840
-But not if we take this logical reading here
-into account.
+But not if we take this logical
+reading here into account.
 
 00:33:39,840 --> 00:33:45,139
-Because what it is saying is well, X is jealous
-of Y if they both love the same person.
+Because what it is saying is well, X is
+jealous of Y if they both love the same person.
 
 00:33:45,139 --> 00:33:50,919
 And actually, even though there are two variables
@@ -1967,20 +1969,20 @@ So, that's the same as in most programming
 languages, also in Haskell, of course.
 
 00:33:55,059 --> 00:33:58,690
-If we have two variables, then they need not
-have the same instantiation.
+If we have two variables, then they
+need not have the same instantiation.
 
 00:33:58,690 --> 00:34:04,470
-But there we might have: well, if you have
-an equation, "function f x y is something" and
+But there we might have: well, if you have an
+equation, "function f x y is something" and
 
 00:34:04,470 --> 00:34:09,570
-of course, nobody prevents f from being called with
-five and five.
+of course, nobody prevents f from
+being called with five and five.
 
 00:34:09,570 --> 00:34:15,849
-And similarly, here, this concept also can
-be used for situations where X and Y are actually
+And similarly, here, this concept also can be
+used for situations where X and Y are actually
 
 00:34:15,849 --> 00:34:16,849
 the same.
@@ -1990,15 +1992,15 @@ So, if we use Marsellus and Marsellus here,
 then since Marsellus loves Mia, then Marsellus
 
 00:34:22,730 --> 00:34:26,190
-is jealous of Marsellus, and hence, this is
-a valid solution here.
+is jealous of Marsellus, and hence,
+this is a valid solution here.
 
 00:34:26,190 --> 00:34:27,579
 There are no further solutions here.
 
 00:34:27,579 --> 00:34:30,389
-If we ask for further solutions, the answer
-would be "false".
+If we ask for further solutions,
+the answer would be "false".
 
 00:34:30,389 --> 00:34:36,519
 Okay, so there is use of interpretation, given
@@ -2011,8 +2013,8 @@ to the same entity.
 Well, of course, also is detailed here.
 
 00:34:41,440 --> 00:34:45,149
-But good to know that of course, this X here
-has nothing to do with this X.
+But good to know that of course, this
+X here has nothing to do with this X.
 
 00:34:45,149 --> 00:34:46,149
 Right?
@@ -2048,27 +2050,27 @@ clear that this is the first, and this is the
 second argument.
 
 00:35:13,510 --> 00:35:17,170
-So, there is no interaction with this X and
-that X here.
+So, there is no interaction
+with this X and that X here.
 
 00:35:17,170 --> 00:35:21,930
 Yeah, so this is valid, exactly as written
 here.
 
 00:35:21,930 --> 00:35:26,300
-Okay, so that's something we can ask whom
-Marsellus is jealous of.
+Okay, so that's something we can
+ask whom Marsellus is jealous of.
 
 00:35:26,300 --> 00:35:28,920
-And maybe surprisingly, he is jealous of himself
-as well.
+And maybe surprisingly, he is
+jealous of himself as well.
 
 00:35:28,920 --> 00:35:30,570
 But that's actually not that surprising.
 
 00:35:30,570 --> 00:35:34,859
-If you read this logically, then there are
-some other things we could ask.
+If you read this logically, then there
+are some other things we could ask.
 
 00:35:34,859 --> 00:35:37,029
 So, for example, we can ask something like
@@ -2078,8 +2080,8 @@ this.
 What's the meaning of that?
 
 00:35:39,190 --> 00:35:45,390
-Well, it's also asking whether X is jealous
-of ... and then there's this strange underscore,
+Well, it's also asking whether X is jealous of
+... and then there's this strange underscore,
 
 00:35:45,390 --> 00:35:47,319
 but it's not so strange, actually.
@@ -2088,8 +2090,8 @@ but it's not so strange, actually.
 It's just an anonymous variable.
 
 00:35:49,770 --> 00:35:53,349
-Yeah, that's actually the same syntax as in
-Haskell, right?
+Yeah, that's actually the same
+syntax as in Haskell, right?
 
 00:35:53,349 --> 00:35:55,500
 The underscore for "something we don't care".
@@ -2101,12 +2103,12 @@ We don't know.
 We don't care.
 
 00:35:57,500 --> 00:36:03,109
-What this is saying is whether jealous X something,
-someone in this case.
+What this is saying is whether jealous
+X something, someone in this case.
 
 00:36:03,109 --> 00:36:06,180
-And we are not interested in who that other
-person is.
+And we are not interested
+in who that other person is.
 
 00:36:06,180 --> 00:36:09,460
 So, we will get solutions for X.
@@ -2122,36 +2124,36 @@ jealous.
 But this will not be printed, right?
 
 00:36:15,720 --> 00:36:19,779
-So, this is something like a variable that
-we don't care about the result, about instantiation.
+So, this is something like a variable that we
+don't care about the result, about instantiation.
 
 00:36:19,779 --> 00:36:23,200
-So, hence, what would happen if we issue this
-statement?
+So, hence, what would happen
+if we issue this statement?
 
 00:36:23,200 --> 00:36:26,130
-Well, we already know that Marsellus is jealous
-of somebody.
+Well, we already know that
+Marsellus is jealous of somebody.
 
 00:36:26,130 --> 00:36:29,740
-We also know, for the same reason, that Vincent
-is jealous of somebody.
+We also know, for the same reason,
+that Vincent is jealous of somebody.
 
 00:36:29,740 --> 00:36:33,660
-Because we could as well have asked this question
-with Vincent here.
+Because we could as well have asked
+this question with Vincent here.
 
 00:36:33,660 --> 00:36:37,490
-Okay, so certainly, Vincent is jealous of
-somebody.
+Okay, so certainly, Vincent
+is jealous of somebody.
 
 00:36:37,490 --> 00:36:42,269
-So, indeed, if we ask this question, then we'll
-get an answer for X, namely, Vincent.
+So, indeed, if we ask this question, then
+we'll get an answer for X, namely, Vincent.
 
 00:36:42,269 --> 00:36:45,882
-And there's no answer for this underscore,
-because this is anonymous.
+And there's no answer for this
+underscore, because this is anonymous.
 
 00:36:45,882 --> 00:36:47,900
 We don't care about that.
@@ -2163,8 +2165,8 @@ Okay, what else?
 Well, Vincent again.
 
 00:36:52,030 --> 00:36:55,980
-So, we ask this question and Prolog will say,
-well, X is Vincent.
+So, we ask this question and Prolog
+will say, well, X is Vincent.
 
 00:36:55,980 --> 00:36:58,480
 And by the way, X is Vincent is another solution.
@@ -2177,15 +2179,15 @@ Well, basically, Prolog will explore all possibilities
 how X could be jealous of somebody else.
 
 00:37:06,849 --> 00:37:13,130
-And well, since, by the same reasoning as
-above here, Vincent is both jealous of Marsellus
+And well, since, by the same reasoning as above
+here, Vincent is both jealous of Marsellus
 
 00:37:13,130 --> 00:37:14,789
 but also jealous of himself.
 
 00:37:14,789 --> 00:37:18,340
-There's actually two ways in which Vincent
-can be jealous.
+There's actually two ways in
+which Vincent can be jealous.
 
 00:37:18,340 --> 00:37:20,560
 So, actually, we get two solutions.
@@ -2202,27 +2204,27 @@ So, Prolog will not give every answer only
 once.
 
 00:37:29,279 --> 00:37:33,920
-Prolog will give every answer as many times
-as it was established to be true.
+Prolog will give every answer as many
+times as it was established to be true.
 
 00:37:33,920 --> 00:37:39,680
-And likewise, there are two ways in which
-Marsellus is jealous of somebody.
+And likewise, there are two ways in
+which Marsellus is jealous of somebody.
 
 00:37:39,680 --> 00:37:42,010
 We have actually seen this above here.
 
 00:37:42,010 --> 00:37:47,250
-So, again, Prolog will twice answer that Marsellus
-is jealous of somebody.
+So, again, Prolog will twice answer
+that Marsellus is jealous of somebody.
 
 00:37:47,250 --> 00:37:52,880
-And we ignore of whom he is jealous, but nevertheless,
-you get two solutions.
+And we ignore of whom he is jealous,
+but nevertheless, you get two solutions.
 
 00:37:52,880 --> 00:37:58,130
-Okay, and if we then ask for further solutions,
-and actually, Mia is also jealous.
+Okay, and if we then ask for further
+solutions, and actually, Mia is also jealous.
 
 00:37:58,130 --> 00:38:00,150
 Of whom is Mia jealous?
@@ -2254,12 +2256,12 @@ Okay, how could we repair this, maybe?
 Well, let's say we don't want this.
 
 00:38:26,730 --> 00:38:31,579
-We really only want a person to be jealous
-if there is some competitor.
+We really only want a person to be
+jealous if there is some competitor.
 
 00:38:31,579 --> 00:38:37,220
-Yes, we maybe don't want that Mia is seen
-to be jealous just because she loves Vincent.
+Yes, we maybe don't want that Mia is seen to
+be jealous just because she loves Vincent.
 
 00:38:37,220 --> 00:38:39,210
 So, she shouldn't be jealous of herself.
@@ -2269,26 +2271,26 @@ Well, I already mentioned that different variables
 can be the same person here, the same entity.
 
 00:38:45,310 --> 00:38:49,780
-So, if you don't want this, you have to explicitly
-forbid this.
+So, if you don't want this, you
+have to explicitly forbid this.
 
 00:38:49,780 --> 00:38:51,130
 Can we do this?
 
 00:38:51,130 --> 00:38:56,319
-Yes, we can say something like, and the syntax
-will be shown in a moment,
+Yes, we can say something like, and
+the syntax will be shown in a moment,
 
 00:38:56,319 --> 00:39:00,619
-we can say X is jealous of Y if they both
-love the same person.
+we can say X is jealous of Y if
+they both love the same person.
 
 00:39:00,619 --> 00:39:03,539
 And actually, they are two different entities.
 
 00:39:03,539 --> 00:39:09,089
-So, we could say something like if X is different
-from Y and X loves Z, and Y loves Z,
+So, we could say something like if X is
+different from Y and X loves Z, and Y loves Z,
 
 00:39:09,089 --> 00:39:11,400
 then X is jealous of Y.
@@ -2301,26 +2303,26 @@ Okay, here is how this has to be written.
 Yes.
 
 00:39:17,170 --> 00:39:22,119
-So, this is slightly different than Haskell
-syntax for not equal.
+So, this is slightly different
+than Haskell syntax for not equal.
 
 00:39:22,119 --> 00:39:23,119
 Yes.
 
 00:39:23,119 --> 00:39:27,260
-In Haskell, the slash would be differently
-oriented.
+In Haskell, the slash would
+be differently oriented.
 
 00:39:27,260 --> 00:39:30,500
-So, here this backslash is the negation of
-equality.
+So, here this backslash is
+the negation of equality.
 
 00:39:30,500 --> 00:39:34,029
 Okay, so the base facts are the same.
 
 00:39:34,029 --> 00:39:37,680
-The rule is almost the same but now we explicitly
-say: X is different from Y.
+The rule is almost the same but now we
+explicitly say: X is different from Y.
 
 00:39:37,680 --> 00:39:40,960
 Okay, does it have the desired effect?
@@ -2332,12 +2334,12 @@ Let's check.
 Well, let me come back to this in a moment.
 
 00:39:46,599 --> 00:39:50,930
-So, the reason that I put this here and not
-at the beginning, but does it work?
+So, the reason that I put this here and
+not at the beginning, but does it work?
 
 00:39:50,930 --> 00:39:56,970
-Well, it does work in the sense that if I
-now ask whether Marsellus is jealous of someone,
+Well, it does work in the sense that if I now
+ask whether Marsellus is jealous of someone,
 
 00:39:56,970 --> 00:39:58,940
 then the answer is yes.
@@ -2353,8 +2355,8 @@ There's no answer anymore that Marsellus is
 jealous of himself because we have excluded
 
 00:40:08,460 --> 00:40:14,289
-exactly this strange jealousness by this property,
-by this statement.
+exactly this strange jealousness by
+this property, by this statement.
 
 00:40:14,289 --> 00:40:19,280
 Okay, and for the other question whether or
@@ -2374,8 +2376,8 @@ all these self-jealousness situations are
 excluded now by this constraint.
 
 00:40:32,269 --> 00:40:37,020
-And importantly, we don't get that Mia is
-jealous.
+And importantly, we don't
+get that Mia is jealous.
 
 00:40:37,020 --> 00:40:41,940
 Because she isn't under the interpretation
@@ -2389,33 +2391,33 @@ And of course, well, if you are actually interested
 in who is jealous of whom and not just whether
 
 00:40:50,880 --> 00:41:00,520
-somebody is jealous at all, you could also avoid
-or defer this anonymous variable.
+somebody is jealous at all, you could also
+avoid or defer this anonymous variable.
 
 00:41:00,520 --> 00:41:02,190
 And use a real variable here.
 
 00:41:02,190 --> 00:41:04,390
-Something like Y and then you could ask questions
-like that.
+Something like Y and then you
+could ask questions like that.
 
 00:41:04,390 --> 00:41:06,690
-And then we would get well, Vincent is jealous
-of Marsellus.
+And then we would get well,
+Vincent is jealous of Marsellus.
 
 00:41:06,690 --> 00:41:09,069
 That explains the first answer here.
 
 00:41:09,069 --> 00:41:12,220
-But also Marsellus is jealous of Vincent,
-that explains the second answer.
+But also Marsellus is jealous of
+Vincent, that explains the second answer.
 
 00:41:12,220 --> 00:41:14,250
 And there are no further cases.
 
 00:41:14,250 --> 00:41:20,650
-So, that's now also a reasonable connection
-between these two observations.
+So, that's now also a reasonable
+connection between these two observations.
 
 00:41:20,650 --> 00:41:28,540
 Okay, an important thing here is this part,
@@ -2428,8 +2430,8 @@ end of the rule.
 I won't go into detail at this point.
 
 00:41:31,980 --> 00:41:35,240
-Why that is the case for now, and also for
-the exercise tasks.
+Why that is the case for now,
+and also for the exercise tasks.
 
 00:41:35,240 --> 00:41:39,940
 Keep in mind that if you want to express something
@@ -2453,7 +2455,8 @@ and others might give surprising results.
 Okay.
 
 00:41:58,900 --> 00:42:05,750
-So, in general, negation has to be used carefully.
+So, in general, negation
+has to be used carefully.
 
 00:42:05,750 --> 00:42:12,859
 That also refers to things like, later checking
@@ -2467,8 +2470,8 @@ matching to distinguish between empty, non-empty
 lists.
 
 00:42:19,160 --> 00:42:23,180
-Or we could have a statement like: if xs is
-not the empty list.
+Or we could have a statement like:
+if xs is not the empty list.
 
 00:42:23,180 --> 00:42:25,650
 In Haskell, this was equivalent.
@@ -2478,8 +2481,8 @@ In Prolog, there are subtle differences between
 expressing something with a pattern-match,
 
 00:42:31,130 --> 00:42:35,750
-as you will see is possible just similarly
-to in Haskell.
+as you will see is possible
+just similarly to in Haskell.
 
 00:42:35,750 --> 00:42:38,460
 It's also possible to use negation.
@@ -2488,8 +2491,8 @@ It's also possible to use negation.
 But negation is always a bit special in Prolog.
 
 00:42:42,790 --> 00:42:46,950
-So, if you can express something without
-negation, that's better.
+So, if you can express something
+without negation, that's better.
 
 00:42:46,950 --> 00:42:53,509
 If you have to express something with negation,
@@ -2500,8 +2503,8 @@ as late as possible in this case, by putting
 it at the end of this statement here.
 
 00:42:59,609 --> 00:43:03,259
-For a moment that's the only thing you have
-to remember really for the exercise.
+For a moment that's the only thing you
+have to remember really for the exercise.
 
 00:43:03,259 --> 00:43:07,720
 If you have something negative like this not

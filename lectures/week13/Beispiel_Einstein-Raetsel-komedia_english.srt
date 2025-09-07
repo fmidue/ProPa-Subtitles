@@ -1,23 +1,23 @@
 128 # slide
 00:00:01,140 --> 00:00:07,730
-As a more complex example of Generate-and-Test
-I would like to return to this so-called Einstein
+As a more complex example of Generate-and-Test I
+would like to return to this so-called Einstein
 
 00:00:07,730 --> 00:00:13,780
-puzzle. I had already mentioned this in
-the introduction/motivation of the
+puzzle. I had already mentioned this
+in the introduction/motivation of the
 
 00:00:13,780 --> 00:00:19,039
-course ["Introduction to Logic" for Komedia] and I had also claimed at the beginning
-of the Prolog part that it could be solved
+course ["Introduction to Logic" for Komedia] and I had also claimed
+at the beginning of the Prolog part that it could be solved
 
 00:00:19,039 --> 00:00:26,050
 this could be solved well with Prolog. Reminder:
 That was the situation that somehow was said:
 
 00:00:26,050 --> 00:00:31,829
-"Five Houses.
-Each of a different color and inhabited by a man of a different nationality.
+"Five Houses. Each of a different color and
+inhabited by a man of a different nationality.
 
 00:00:31,829 --> 00:00:37,399
 Different pet, drink and brand of smokes."
@@ -32,20 +32,20 @@ And then properties of who lives in the house.
 And there are a number of clues given in natural
 
 00:00:50,760 --> 00:00:56,500
-language, which we can of course
-somehow then convert to logic or, in our case now
+language, which we can of course somehow
+then convert to logic or, in our case now
 
 00:00:56,500 --> 00:01:02,339
-Prolog would have to convert. Then through
-these clues, so to speak,
+Prolog would have to convert. Then
+through these clues, so to speak,
 
 00:01:02,339 --> 00:01:07,000
-the situation is described and at the end there is
-the question from the riddle, who is the owner of the zebra
+the situation is described and at the end there is the
+question from the riddle, who is the owner of the zebra
 
 00:01:07,000 --> 00:01:14,360
-and who is the water drinker. So, certain
-characteristics from these clues.
+and who is the water drinker. So,
+certain characteristics from these clues.
 
 00:01:14,360 --> 00:01:20,820
 In that case: who owns the zebra and who drinks water.
@@ -61,80 +61,80 @@ That is, we already know that we should probably
 
 129 # slide
 00:01:32,690 --> 00:01:39,790
-first of all think about
-how we can implement the generate part.
+first of all think about how we
+can implement the generate part.
 
 00:01:39,790 --> 00:01:43,780
-This is actually a little bit different than in
-the examples before. There we had always used either
+This is actually a little bit different than in the
+examples before. There we had always used either
 
 00:01:43,780 --> 00:01:49,619
 member or permutation because, for example,
 we just wanted to draw the cube numbers from
 
 00:01:49,619 --> 00:01:58,100
-a fixed pool. Or had certain
-digits and were looking for combinations of how
+a fixed pool. Or had certain digits and
+were looking for combinations of how
 
 00:01:58,100 --> 00:02:02,189
-to map them to individual letters, or to map
-the letters to the numbers. Then the
+to map them to individual letters, or to
+map the letters to the numbers. Then the
 
 00:02:02,189 --> 00:02:08,869
-permutation was a relevant tool. Here it is now a
-bit different. Here it is not such an area,
+permutation was a relevant tool. Here it is now
+a bit different. Here it is not such an area,
 
 00:02:08,869 --> 00:02:13,099
-to which one draws something, but it is simply a matter of the fact
-that these different constellations that the houses could
+to which one draws something, but it is simply a matter of the
+fact that these different constellations that the houses could
 
 00:02:13,099 --> 00:02:18,610
-have is the search space. Then we could
-first of all approach it in a very abstract way and say:
+have is the search space. Then we could first of
+all approach it in a very abstract way and say:
 
 00:02:18,610 --> 00:02:28,370
 Our Generate part is simply the expression
 that there are five houses. So, we want to
 
 00:02:28,370 --> 00:02:32,980
-put the houses in a list, so to speak.
-We know at the beginning that it's a five-element list,
+put the houses in a list, so to speak. We know
+at the beginning that it's a five-element list,
 
 00:02:32,980 --> 00:02:38,120
-because there are five houses. But we say at the search space
-first of all: "This is quite general. There are only these five houses.
+because there are five houses. But we say at the search space first
+of all: "This is quite general. There are only these five houses.
 
 00:02:38,120 --> 00:02:42,239
-We don't know anything about their properties yet."
-That is, the entire search space would be
+We don't know anything about their properties
+yet." That is, the entire search space would be
 
 00:02:42,239 --> 00:02:47,379
-simply all the possible expressions that exist here.
-That's where we can again use this _
+simply all the possible expressions that exist
+here. That's where we can again use this _
 
 00:02:47,379 --> 00:02:51,849
-as an anonymous variable. So, information that
-still has to be assigned of course,
+as an anonymous variable. So, information
+that still has to be assigned of course,
 
 00:02:51,849 --> 00:02:58,620
-but is completely free at the beginning. So, the search space would be
-correspondingly large. We could also be a bit more specific.
+but is completely free at the beginning. So, the search space would
+be correspondingly large. We could also be a bit more specific.
 
 00:02:58,620 --> 00:03:05,290
-We will have to store five properties for each
-house, according to what the
+We will have to store five properties
+for each house, according to what the
 
 00:03:05,290 --> 00:03:12,299
-puzzle gives as attributes for the houses.
-So, their color, nationality of the inhabitant, etc.
+puzzle gives as attributes for the houses. So,
+their color, nationality of the inhabitant, etc.
 
 00:03:12,299 --> 00:03:17,560
-Then we can make it a bit more
-specific/refined and say:
+Then we can make it a bit
+more specific/refined and say:
 
 00:03:17,560 --> 00:03:22,840
-We have these five houses. Each of these five houses
-has five characteristics, but they are
+We have these five houses. Each of these five
+houses has five characteristics, but they are
 
 00:03:22,840 --> 00:03:29,849
 all set empty, so to speak, at the beginning.
@@ -149,60 +149,60 @@ properties, but they are all unknown at the beginning.
 Of course, this corresponds (relatively well even) to,
 
 00:03:42,019 --> 00:03:45,689
-what we did with our manual solution.
-There we had started to fill such a matrix.
+what we did with our manual solution. There
+we had started to fill such a matrix.
 
 00:03:45,689 --> 00:03:57,700
-I remind you of it once again.
-It looked like this. This is how we started,
+I remind you of it once again. It looked
+like this. This is how we started,
 
 00:03:57,700 --> 00:04:03,120
-the manual solution. So, we set up this matrix.
-There were also these five houses.
+the manual solution. So, we set up this
+matrix. There were also these five houses.
 
 00:04:03,120 --> 00:04:08,379
-Then five properties each.
-So, somehow 25 positions to fill.
+Then five properties each. So,
+somehow 25 positions to fill.
 
 00:04:08,379 --> 00:04:13,760
-At the beginning, there was nothing in it. This corresponds now to
-these _ that we have everything still empty.
+At the beginning, there was nothing in it. This corresponds
+now to these _ that we have everything still empty.
 
 00:04:13,760 --> 00:04:20,510
-Somewhat we must pay attention that in the Prolog list representation,
-(due to the fact, how these lists are written down)
+Somewhat we must pay attention that in the Prolog list
+representation, (due to the fact, how these lists are written down)
 
 00:04:20,510 --> 00:04:25,190
-the matrix is to be read exactly transposed, so to speak.
-So, here it says: 1st house, 2nd house, 3rd house, 4th house, 5th house.
+the matrix is to be read exactly transposed, so to speak. So, here
+it says: 1st house, 2nd house, 3rd house, 4th house, 5th house.
 
 00:04:25,190 --> 00:04:32,570
-And here would be the five characteristics in the columns,
-while just here, so to speak
+And here would be the five characteristics
+in the columns, while just here, so to speak
 
 00:04:32,570 --> 00:04:39,880
-the columns were the houses and
-in the rows the properties
+the columns were the houses
+and in the rows the properties
 
 00:04:39,880 --> 00:04:46,170
 per house were indicated. Apart from that,
 this corresponds very well to that idea:
 
 00:04:46,170 --> 00:04:51,110
-You simply have as a search space this table,
-which you have to fill somehow.
+You simply have as a search space this
+table, which you have to fill somehow.
 
 00:04:51,110 --> 00:04:59,040
 And the test part then hopefully makes sure
 that we or Prolog can solve the problem.
 
 00:04:59,040 --> 00:05:10,280
-How do we then go through for the test part?
-We just look at the individual clues.
+How do we then go through for the test
+part? We just look at the individual clues.
 
 00:05:10,280 --> 00:05:14,700
-We have this list of clues. These are of course
-expressed linguistically/verbally.
+We have this list of clues. These are of
+course expressed linguistically/verbally.
 
 00:05:14,700 --> 00:05:20,280
 We look at each one of them and figure out,
@@ -213,12 +213,12 @@ Of course, about this search space. So, related to such
 a list of houses. For example, the first clue says:
 
 00:05:27,641 --> 00:05:34,460
-"The Englishman lives in the red house."
-Then we still have to determine how we want to interpret
+"The Englishman lives in the red house." Then we
+still have to determine how we want to interpret
 
 00:05:34,460 --> 00:05:38,750
-the positions. So, which position
-corresponds to which property? There we would,
+the positions. So, which position corresponds
+to which property? There we would,
 
 130 # slide
 00:05:38,750 --> 00:05:47,320
@@ -226,20 +226,20 @@ for example, decide on the order:
 "color, nationality, drink, pet, smoke".
 
 00:05:47,320 --> 00:05:59,240
-That was the order in which the matrix was also
-manually, so to speak.
+That was the order in which the
+matrix was also manually, so to speak.
 
 00:05:59,240 --> 00:06:05,520
 This sequence "color, nationality, drink, pet, smoke".
 That's what I'm going for now when I interpret these lists.
 
 00:06:05,520 --> 00:06:10,470
-Then the hint that the Englishman
-lives in the red house would simply be the statement that
+Then the hint that the Englishman lives in the
+red house would simply be the statement that
 
 00:06:10,470 --> 00:06:15,780
-there must be one among the houses which has the
-color red and accommodates the Englishman.
+there must be one among the houses which has
+the color red and accommodates the Englishman.
 
 00:06:15,780 --> 00:06:23,630
 Which house that is, we don't know yet.
@@ -250,24 +250,24 @@ We also don't know anything about the other attributes,
 that are present in this house. We just want to at least
 
 00:06:29,930 --> 00:06:35,620
-exactly express what this clue says.
-Namely, "The Englishman lives in the red house."
+exactly express what this clue says. Namely,
+"The Englishman lives in the red house."
 
 00:06:35,620 --> 00:06:41,370
-That is, there must be a house where the color is red
-and the inhabitant is English. The other things don't matter for now,
+That is, there must be a house where the color is red and the
+inhabitant is English. The other things don't matter for now,
 
 00:06:41,370 --> 00:06:46,300
-because they are not determined by
-this clue. That means this still provides
+because they are not determined by this
+clue. That means this still provides
 
 00:06:46,300 --> 00:06:50,770
-many possibilities, but restricts the search space
-somewhat. Namely, in the sense that no
+many possibilities, but restricts the search
+space somewhat. Namely, in the sense that no
 
 00:06:50,770 --> 00:06:56,400
-constellations are conceivable where this occupancy does not exist
-in one of the houses. No matter what the
+constellations are conceivable where this occupancy
+does not exist in one of the houses. No matter what the
 
 00:06:56,400 --> 00:07:03,740
 other three positions, i.e. to the drink,
@@ -278,68 +278,68 @@ They are not relevant for this first clue.
 That's why we don't assign them here in any way.
 
 00:07:08,380 --> 00:07:14,880
-So, we use this member predicate for this,
-although this is now in the test part. Before, in the other
+So, we use this member predicate for this, although
+this is now in the test part. Before, in the other
 
 00:07:14,880 --> 00:07:20,190
-examples, we often used member in the generate part.
-I had just talked about that.
+examples, we often used member in the
+generate part. I had just talked about that.
 
 00:07:20,190 --> 00:07:24,150
 Now, here it would actually be in the test part.
 By means of the member predicate, we express
 
 00:07:24,150 --> 00:07:31,140
-that one of the houses has certain properties.
-That was the first clue.
+that one of the houses has certain
+properties. That was the first clue.
 
 00:07:31,140 --> 00:07:40,770
-We kind of had 14 clues. So, we have to
-do that for each clue now.
+We kind of had 14 clues. So, we
+have to do that for each clue now.
 
 00:07:40,770 --> 00:07:45,760
-We just do it in order. We don't have to think about it too much,
-as with the manual solution, whether we first take the seventh or the
+We just do it in order. We don't have to think about it too much, as
+with the manual solution, whether we first take the seventh or the
 
 00:07:45,760 --> 00:07:51,320
-tenth clue. We are not yet describing
-any search at all. We are only describing what we want.
+tenth clue. We are not yet describing any search
+at all. We are only describing what we want.
 
 00:07:51,320 --> 00:07:57,480
-If you think back to the video before last: What? vs. How?
-with the permutation sorting.
+If you think back to the video before last:
+What? vs. How? with the permutation sorting.
 
 00:07:57,480 --> 00:08:03,320
 We're just describing what we want now. We do not have to
 yet specify a strategy for how we will find the solution.
 
 00:08:03,320 --> 00:08:07,720
-Therefore, the order in which we treat these
-clues does not matter. If we look for a solution concretely
+Therefore, the order in which we treat these clues
+does not matter. If we look for a solution concretely
 
 00:08:07,720 --> 00:08:13,150
-by hand, we may have to do it in a certain order.
-But here, where we only describe what we actually want,
+by hand, we may have to do it in a certain order. But
+here, where we only describe what we actually want,
 
 00:08:13,150 --> 00:08:19,920
-we can just do it one by one. So, we can
-take the second clue. The one that said, "The Spaniard owns a dog."
+we can just do it one by one. So, we can take the second
+clue. The one that said, "The Spaniard owns a dog."
 
 00:08:19,920 --> 00:08:26,000
-We can describe that again quite analogously to this clue.
-Among the houses, there must be one that accommodates the Spaniard
+We can describe that again quite analogously to this clue. Among
+the houses, there must be one that accommodates the Spaniard
 
 00:08:26,000 --> 00:08:31,090
-and where a dog lives. And of course,
-we already know that then obviously this cannot be
+and where a dog lives. And of course, we
+already know that then obviously this cannot be
 
 00:08:31,090 --> 00:08:34,970
-the same house. But that is not
-our task currently, to somehow express
+the same house. But that is not our
+task currently, to somehow express
 
 00:08:34,970 --> 00:08:43,840
-or to take it into account. We simply translate
-the individual clues. They limit
+or to take it into account. We simply
+translate the individual clues. They limit
 
 00:08:43,840 --> 00:08:53,770
 what Prolog has in terms of possible solutions.
@@ -354,8 +354,8 @@ part, which Prolog may do afterwards,
 finding the solution. We simply express the
 
 00:09:03,900 --> 00:09:11,280
-individual clues. Then this is quite analogous to
-this first hint and refers of course again
+individual clues. Then this is quite analogous
+to this first hint and refers of course again
 
 00:09:11,280 --> 00:09:20,170
 to the completely unrestricted house list
@@ -363,24 +363,24 @@ from the slide before. The next hints
 
 131 # slide
 00:09:20,170 --> 00:09:24,690
-can also be treated analogously. The third and fourth
-hints are also hints in the form that somehow
+can also be treated analogously. The third and
+fourth hints are also hints in the form that somehow
 
 00:09:24,690 --> 00:09:31,130
-exactly two properties of houses are set.
-So, it is said that there are houses which have exactly
+exactly two properties of houses are set. So, it
+is said that there are houses which have exactly
 
 00:09:31,130 --> 00:09:35,890
-two properties at the same time.
-For example, that coffee is drunk in the green house,
+two properties at the same time. For example,
+that coffee is drunk in the green house,
 
 00:09:35,890 --> 00:09:41,320
 just means: There is a house which is green
 and coffee is drunk there. The same applies
 
 00:09:41,320 --> 00:09:48,360
-for the fourth clue. So, you can simply translate them
-analogously to the first and second clues.
+for the fourth clue. So, you can simply translate
+them analogously to the first and second clues.
 
 132 # slide
 00:09:48,360 --> 00:09:56,970
@@ -396,72 +396,72 @@ Because here it says: "The green house is
 directly to the right of the ivory house."
 
 00:10:07,630 --> 00:10:12,940
-This is not, after all, a property that refers only to
-one house, like coffee in the green house.
+This is not, after all, a property that refers
+only to one house, like coffee in the green house.
 
 00:10:12,940 --> 00:10:19,520
-But here, somehow, two houses are
-in relation to each other. In this case, in terms of their color.
+But here, somehow, two houses are in relation to
+each other. In this case, in terms of their color.
 
 00:10:19,520 --> 00:10:24,750
-So, member is not enough here. Member would only be able to say something about a
-about one house. We have to say something about two houses.
+So, member is not enough here. Member would only be able to say something
+about a about one house. We have to say something about two houses.
 
 00:10:24,750 --> 00:10:30,270
-And that is in the list of all houses.
-How could we express that? We could, if we had
+And that is in the list of all houses. How
+could we express that? We could, if we had
 
 00:10:30,270 --> 00:10:34,820
 a predicate, what this "rightOf" this
 right of something could/would express,
 
 00:10:34,820 --> 00:10:42,270
-then we could write the following:
-We could say there must be a house. Its properties
+then we could write the following: We could
+say there must be a house. Its properties
 
 00:10:42,270 --> 00:10:46,900
-except for the color do not matter to us. But it is
-the green house. And there is the ivory house,
+except for the color do not matter to us. But it
+is the green house. And there is the ivory house,
 
 00:10:46,900 --> 00:10:52,010
-whose other properties are also indifferent to us
-for this reference. We want to express
+whose other properties are also indifferent
+to us for this reference. We want to express
 
 00:10:52,010 --> 00:10:57,180
 that exactly this one house is to the right of the other one
 in the list of houses. We can refer this only to a concrete
 
 00:10:57,180 --> 00:11:04,670
-list. Green house next to the ivory
-house in our list of houses, which is finally our
+list. Green house next to the ivory house
+in our list of houses, which is finally our
 
 00:11:04,670 --> 00:11:11,250
-candidate for the solution of the puzzle.
-Such a "rightOf" predicate does not exist in such a predefined way.
+candidate for the solution of the puzzle. Such a "rightOf"
+predicate does not exist in such a predefined way.
 
 00:11:11,250 --> 00:11:15,700
 But we know how to define list predicates
 ourselves. It is simply a matter of
 
 00:11:15,700 --> 00:11:21,020
-expressing in a list (in this case a list of houses)
-that two certain elements
+expressing in a list (in this case a
+list of houses) that two certain elements
 
 00:11:21,020 --> 00:11:27,360
-occur in the same way, that one is to the right of the other.
-So, we simply define this.
+occur in the same way, that one is to the
+right of the other. So, we simply define this.
 
 00:11:27,360 --> 00:11:34,530
-We need such a predicate. This does not exist yet.
-We can define it. And in a simple
+We need such a predicate. This does not
+exist yet. We can define it. And in a simple
 
 00:11:34,530 --> 00:11:39,840
-way, with means that we have already seen,
-which we have also practiced. Remember: There was an example in the
+way, with means that we have already seen, which we have
+also practiced. Remember: There was an example in the
 
 00:11:39,840 --> 00:11:45,720
-example where we had to grab or describe the first or fifth element of
-a list or to describe it.
+example where we had to grab or describe the first
+or fifth element of a list or to describe it.
 
 00:11:45,720 --> 00:11:50,780
 We had been able to use append for that.
@@ -472,12 +472,12 @@ You can say "right of left for two
 concrete elements means there is a place
 
 00:11:57,130 --> 00:12:01,400
-in the overall list where exactly the two are in
-the order." There one could say, for example,
+in the overall list where exactly the two are
+in the order." There one could say, for example,
 
 00:12:01,400 --> 00:12:07,550
-grab a prefix from the list,
-that should go exactly up to and including these two elements
+grab a prefix from the list, that should go
+exactly up to and including these two elements
 
 00:12:07,550 --> 00:12:14,650
 should go. Accessing a prefix simply means,
@@ -492,12 +492,12 @@ In this prefix, we would like the [L, R]
 in exactly this order at the very end.
 
 00:12:25,620 --> 00:12:31,220
-Because if they are at the end of a prefix of the list,
-then that means they are somewhere in the list.
+Because if they are at the end of a prefix of the
+list, then that means they are somewhere in the list.
 
 00:12:31,220 --> 00:12:36,810
-That they are at the end of the prefix in that order,
-you could say: there must be an uninteresting list (it could be empty).
+That they are at the end of the prefix in that order, you could
+say: there must be an uninteresting list (it could be empty).
 
 00:12:36,810 --> 00:12:42,100
 (which could also be empty).
@@ -508,20 +508,20 @@ It doesn't have to be the same as that. Anonymous always means something,
 completely independent of other occurrences of the anonymous variable.
 
 00:12:47,090 --> 00:12:52,550
-Namely, there should be some list,
-so that if we add exactly the list [L, R] to it,
+Namely, there should be some list, so that
+if we add exactly the list [L, R] to it,
 
 00:12:52,550 --> 00:12:56,770
-we get exactly this prefix,
-which in turn, if we append something else to it,
+we get exactly this prefix, which in
+turn, if we append something else to it,
 
 00:12:56,770 --> 00:13:05,410
 would result in the total list. This expresses in a very
 declarative way that somewhere in the complete list, List,
 
 00:13:05,410 --> 00:13:10,790
-L and an R occur in that order.
-So, in other words, that R occurs to the right of L in the list.
+L and an R occur in that order. So, in other
+words, that R occurs to the right of L in the list.
 
 00:13:10,790 --> 00:13:18,930
 And then we can use this
@@ -537,36 +537,36 @@ clues that we can implement directly with the member.
 Directly with member. I'm not going to give that again here.
 
 00:13:31,210 --> 00:13:35,290
-But there is a slide at the end where all the hints are
-translated on it. But here
+But there is a slide at the end where all
+the hints are translated on it. But here
 
 00:13:35,290 --> 00:13:44,839
-six and seven would simply be analogous to 1, 2, 3, 4.
-After that, it gets even more exciting.
+six and seven would simply be analogous to 1,
+2, 3, 4. After that, it gets even more exciting.
 
 00:13:44,839 --> 00:13:49,110
 Because eighth and ninth clues look like this:
 Again, they only say something about a house.
 
 00:13:49,110 --> 00:13:53,860
-But about the position. So, not somehow "coffee in the green house",
-but "milk in the middle house".
+But about the position. So, not somehow "coffee in
+the green house", but "milk in the middle house".
 
 00:13:53,860 --> 00:14:00,020
-What is the middle house here
-is not expressed by an attribute in this
+What is the middle house here is not
+expressed by an attribute in this
 
 00:14:00,020 --> 00:14:05,690
-list of five, where the color, nationality, etc., are written.
-That is, that is rather again a
+list of five, where the color, nationality, etc.,
+are written. That is, that is rather again a
 
 00:14:05,690 --> 00:14:10,060
-structural property, which refers to the
-house list as a whole.
+structural property, which refers
+to the house list as a whole.
 
 00:14:10,060 --> 00:14:14,220
-The same is true for clue nine. That one also says something,
-not about the drink, but about the nationality.
+The same is true for clue nine. That one also says
+something, not about the drink, but about the nationality.
 
 00:14:14,220 --> 00:14:21,120
 But also says: "in the leftmost house".
@@ -577,20 +577,20 @@ Basically, we reach a little bit
 into the Generate part or over.
 
 00:14:31,820 --> 00:14:36,290
-An encroachment, so to speak, on the Generate part.
-We can simply say, instead of starting at the beginning,
+An encroachment, so to speak, on the Generate part. We
+can simply say, instead of starting at the beginning,
 
 00:14:36,290 --> 00:14:42,220
-start with, "Houses are...", and then it said
-just never mind, never mind, never mind." Can we refine that
+start with, "Houses are...", and then it said just
+never mind, never mind, never mind." Can we refine that
 
 00:14:42,220 --> 00:14:49,170
-by saying: The list of houses is a list of five things,
-each of which can be lists. And by the way,
+by saying: The list of houses is a list of five
+things, each of which can be lists. And by the way,
 
 00:14:49,170 --> 00:14:56,170
-on the first house, it doesn't really matter
-which form it has, but the nationality entry in there
+on the first house, it doesn't really matter which
+form it has, but the nationality entry in there
 
 00:14:56,170 --> 00:15:02,930
 has to be Norwegian. Before it said
@@ -601,105 +601,105 @@ Or five underscores in a list. Now I say,
 in the second position may be the Norwegian.
 
 00:15:08,150 --> 00:15:13,560
-This is then the ninth clue, which just says:
-The leftmost house, that is the first house of this list is
+This is then the ninth clue, which just says: The
+leftmost house, that is the first house of this list is
 
 00:15:13,560 --> 00:15:18,810
-where the Norwegian lives. And that milk is drunk in the middle house,
-I express by the fact that from this list of houses
+where the Norwegian lives. And that milk is drunk in the middle
+house, I express by the fact that from this list of houses
 
 00:15:18,810 --> 00:15:23,270
 at the third position (This is the first position.
 This underscore is the second position.) and at the
 
 00:15:23,270 --> 00:15:28,040
-third position is a house that has five attributes,
-of which the middle one, namely the beverage attribute,
+third position is a house that has five attributes, of
+which the middle one, namely the beverage attribute,
 
 00:15:28,040 --> 00:15:39,790
-is milk. The fourth and fifth houses again don't matter.
-For nothing is said about them in the eighth and ninth clues.
+is milk. The fourth and fifth houses again don't matter. For
+nothing is said about them in the eighth and ninth clues.
 
 00:15:39,790 --> 00:15:45,940
-We would have, analogously or alternatively, the eighth and ninth clues,
-instead of intervening in this house representation, also
+We would have, analogously or alternatively, the eighth and ninth
+clues, instead of intervening in this house representation, also
 
 00:15:45,940 --> 00:15:53,910
 expressed, for example, with a first- and third-predicate.
 So, simply saying, in the test part it is true,
 
 00:15:53,910 --> 00:16:00,790
-that a list of this form is the first element of the list of houses.
-We also had this first-predicate in the exercise.
+that a list of this form is the first element of the list
+of houses. We also had this first-predicate in the exercise.
 
 00:16:00,790 --> 00:16:07,600
-That could have been used here as well, instead of
-refining this, so to speak. One would have here
+That could have been used here as well, instead
+of refining this, so to speak. One would have here
 
 00:16:07,600 --> 00:16:12,110
-several possibilities. I have chosen this one now because
-it is very illustrative how I can express it.
+several possibilities. I have chosen this one now
+because it is very illustrative how I can express it.
 
 00:16:12,110 --> 00:16:18,850
 Even if I intervene a bit in the Generate part, so to speak.
 In the end, this is just an idea of the Generate-and-Test.
 
 00:16:18,850 --> 00:16:24,660
-You can play around with it a bit and
-not have to adhere strictly to the rule that the eighth and ninth
+You can play around with it a bit and not have to
+adhere strictly to the rule that the eighth and ninth
 
 00:16:24,660 --> 00:16:32,430
-that in no case the eighth and ninth clue should be directly expressed
-be expressed directly in this list of houses.
+that in no case the eighth and ninth clue should be directly
+expressed be expressed directly in this list of houses.
 
 134 # slide
 00:16:32,430 --> 00:16:41,080
-Now we have the ninth clue. What happens next?
-The next clue is this: "The man who smokes Chesterfield,
+Now we have the ninth clue. What happens next? The
+next clue is this: "The man who smokes Chesterfield,
 
 00:16:41,080 --> 00:16:55,029
 lives in the house next to the one with the fox."
 This is a bit like the rightOf - "right of".
 
 00:16:55,029 --> 00:17:01,029
-However, it just says, "next to".
-So, that could be either left or right.
+However, it just says, "next to". So,
+that could be either left or right.
 
 00:17:01,029 --> 00:17:07,130
-So, we can't use our rightOf directly,
-because it doesn't say anything about "next to", but right of.
+So, we can't use our rightOf directly, because it
+doesn't say anything about "next to", but right of.
 
 00:17:07,130 --> 00:17:15,660
-So, we need another auxiliary predicate.
-We would like to say something like: "The house where Chesterfield
+So, we need another auxiliary predicate. We would like
+to say something like: "The house where Chesterfield
 
 00:17:15,660 --> 00:17:24,920
-is smoked is next to the house where the fox lives."
-Within this list of houses, but just
+is smoked is next to the house where the fox
+lives." Within this list of houses, but just
 
 00:17:24,920 --> 00:17:30,309
 not "rightOf", but "nextTo". So, we have to
 define a predicate for it. That does not
 
 00:17:30,309 --> 00:17:35,060
-exist yet either. But it is not difficult to define,
-because "nextTo" simply means: Either the one house is to the
+exist yet either. But it is not difficult to define, because
+"nextTo" simply means: Either the one house is to the
 
 00:17:35,060 --> 00:17:41,620
-right of the other or vice versa. We can express this
-very simply. We have defined "rightOf".
+right of the other or vice versa. We can express
+this very simply. We have defined "rightOf".
 
 00:17:41,620 --> 00:17:46,040
 When is an element to the right of another element in a list?
 That two elements are simply next to each other is called:
 
 00:17:46,040 --> 00:17:56,920
-either X is to the right of Y or Y is to the right of X.
-In both cases, and exactly in these two cases,
+either X is to the right of Y or Y is to the right
+of X. In both cases, and exactly in these two cases,
 
 00:17:56,920 --> 00:18:07,670
-X is next to Y in the list.
-This allows us to express clue ten.
+X is next to Y in the list. This
+allows us to express clue ten.
 
 135 # slide
 00:18:07,670 --> 00:18:13,470
@@ -723,20 +723,20 @@ Or the nationality and the cigarette brand.
 They are again expressed with such member lines,
 
 00:18:37,120 --> 00:18:47,610
-like hint 1, hint 2, etc.
-Note 14 is again a "nextTo" note.
+like hint 1, hint 2, etc. Note
+14 is again a "nextTo" note.
 
 00:18:47,610 --> 00:18:54,570
 So, it would again be expressed like the tenth hint
 can be expressed. And then we would actually have
 
 00:18:54,570 --> 00:19:02,500
-expressed all 14 clues. Are we done?
-Almost. We still have to say what we actually want.
+expressed all 14 clues. Are we done? Almost.
+We still have to say what we actually want.
 
 00:19:02,500 --> 00:19:09,090
-We still have to ask our question. Ultimately
-the task was to find out the owner of the zebra and the
+We still have to ask our question. Ultimately the
+task was to find out the owner of the zebra and the
 
 00:19:09,090 --> 00:19:15,110
 zebra owner and the water drinker,
@@ -759,77 +759,77 @@ Analogous for the water drinker.
 So, we just use variables
 
 00:19:40,710 --> 00:19:46,620
-for these two unknowns, according to which we want
-to solve for, and further member calls,
+for these two unknowns, according to which we
+want to solve for, and further member calls,
 
 00:19:46,620 --> 00:19:52,670
-which expresses that the zebra owner is exactly the person
-who lives in the house where the zebra lives.
+which expresses that the zebra owner is exactly the
+person who lives in the house where the zebra lives.
 
 136 # slide
 00:19:52,670 --> 00:20:02,610
-Then we can write it down altogether like this.
-Here are the auxiliary predicates "rightOf" and "nextTo".
+Then we can write it down altogether like this. Here
+are the auxiliary predicates "rightOf" and "nextTo".
 
 00:20:02,610 --> 00:20:08,030
-Here's the predicate that we're going to call.
-So, "solve", we want to solve.
+Here's the predicate that we're going
+to call. So, "solve", we want to solve.
 
 00:20:08,030 --> 00:20:12,950
-We want to find out the zebra owner and the water drinker.
-Here are the clues processed,
+We want to find out the zebra owner and the
+water drinker. Here are the clues processed,
 
 00:20:12,950 --> 00:20:20,450
-as it was just talked through in the past slides.
-So, here, for example, the eighth and ninth clues in this house spelling.
+as it was just talked through in the past slides. So, here,
+for example, the eighth and ninth clues in this house spelling.
 
 00:20:20,450 --> 00:20:26,200
-Then each of the clues with member,
-rightOf or nextTo expressed. So, up to here is that,
+Then each of the clues with member, rightOf
+or nextTo expressed. So, up to here is that,
 
 00:20:26,200 --> 00:20:31,160
 What we discussed in the previous slides.
 And then the two queries for the zebra owner
 
 00:20:31,160 --> 00:20:34,460
-and the water drinker we can express,
-by saying, for the variables, for these unknowns.
+and the water drinker we can express, by
+saying, for the variables, for these unknowns.
 
 00:20:34,460 --> 00:20:41,260
-must hold, for example: Among the houses
-there must be one where the zebra lives as a pet.
+must hold, for example: Among the houses there
+must be one where the zebra lives as a pet.
 
 00:20:41,260 --> 00:20:47,260
-And the nationality of the inhabitant of this house,
-we would like to get back as ZebraOwner in the variable.
+And the nationality of the inhabitant of this house, we
+would like to get back as ZebraOwner in the variable.
 
 00:20:47,260 --> 00:20:54,920
 And analogously for the water drinker.
 Now we can actually enter the program,
 
 00:20:54,920 --> 00:21:03,390
-ask Prolog the query solve(ZebraOwner, WaterDrinker),
-and would get as an answer:
+ask Prolog the query solve(ZebraOwner,
+WaterDrinker), and would get as an answer:
 
 00:21:03,390 --> 00:21:10,220
-ZebraOwner is Japanese. Japanese would come
-as the assignment for ZebraOwner.
+ZebraOwner is Japanese. Japanese would
+come as the assignment for ZebraOwner.
 
 00:21:10,220 --> 00:21:17,820
 And for the WaterDrinker we would have to get the Norwegian.
 This is the solution we had also determined by hand.
 
 00:21:17,820 --> 00:21:30,380
-At the beginning of the discussion in the first
-or second lecture. Then we would have
+At the beginning of the discussion in the
+first or second lecture. Then we would have
 
 00:21:30,380 --> 00:21:38,980
-solved our puzzle the Prolog way.
-Is this now better than the manual search?
+solved our puzzle the Prolog way. Is
+this now better than the manual search?
 
 00:21:38,980 --> 00:21:42,310
-It's certainly a matter of perspective.
-Maybe it is more fun to solve such a puzzle by hand.
+It's certainly a matter of perspective. Maybe
+it is more fun to solve such a puzzle by hand.
 
 00:21:42,310 --> 00:21:48,620
 But this is just a solution that can be transferred.
@@ -840,40 +840,40 @@ to concentrate on the "what? Namely, on the implementation
 of these clues and not to somehow pursue special
 
 00:21:52,400 --> 00:21:58,860
-search strategies. We leave that to the
-Prolog system. We did not have to
+search strategies. We leave that to
+the Prolog system. We did not have to
 
 00:21:58,860 --> 00:22:02,950
 order or think about any order,
 in which we work with the clues,
 
 00:22:02,950 --> 00:22:09,590
-because that's not our problem, it's Prolog's problem.
-And we could (this is perhaps almost the most important point)
+because that's not our problem, it's Prolog's problem. And
+we could (this is perhaps almost the most important point)
 
 00:22:09,590 --> 00:22:17,870
-adjust that very easily.
-So, if we solve the problem by hand,
+adjust that very easily. So, if
+we solve the problem by hand,
 
 00:22:17,870 --> 00:22:23,640
 as we did at the beginning in the lecture,
 then we had to work with the hints.
 
 00:22:23,640 --> 00:22:29,620
-Sometimes also had to revise things.
-Let's assume that we had made a mistake somewhere in the process or that
+Sometimes also had to revise things. Let's assume that
+we had made a mistake somewhere in the process or that
 
 00:22:29,620 --> 00:22:34,120
-we would realize while working with the puzzle,
-that we had misinterpreted a clue, that it was actually meant in a different
+we would realize while working with the puzzle, that we had
+misinterpreted a clue, that it was actually meant in a different
 
 00:22:34,120 --> 00:22:38,990
-that it was meant differently, then it would probably mean here with this manual solution
-it would probably mean that we would have to start from scratch.
+that it was meant differently, then it would probably mean here with this
+manual solution it would probably mean that we would have to start from scratch.
 
 00:22:38,990 --> 00:22:43,530
-If we have used a hint somewhere in between,
-but it was meant differently
+If we have used a hint somewhere in
+between, but it was meant differently
 
 00:22:43,530 --> 00:22:47,850
 or the puzzle changes and someone
@@ -884,36 +884,36 @@ then we cannot reuse much of what we do here by hand.
 we can't reuse much of what we do by hand. In the
 
 00:22:52,320 --> 00:22:56,970
-worst case, we would have to solve the puzzle completely from scratch, because we
-perhaps indirectly used something somewhere that is no longer true.
+worst case, we would have to solve the puzzle completely from scratch,
+because we perhaps indirectly used something somewhere that is no longer true.
 
 00:22:56,970 --> 00:23:02,059
 Of course, we also come to a solution for a concrete constellation.
 If we interpret everything correctly, we also come to the
 
 00:23:02,059 --> 00:23:11,130
-same solution with the Norwegian, who drinks water
-and the Japanese, who owns the zebra.
+same solution with the Norwegian, who drinks
+water and the Japanese, who owns the zebra.
 
 00:23:11,130 --> 00:23:17,790
-But we are just, so to speak, fixed on it,
-to do it with the exact clues and can't adapt it
+But we are just, so to speak, fixed on it, to
+do it with the exact clues and can't adapt it
 
 00:23:17,790 --> 00:23:22,920
-not be able to adapt it if we want to solve a
-slightly different problem.
+not be able to adapt it if we want to
+solve a slightly different problem.
 
 00:23:22,920 --> 00:23:27,820
-On the other hand, in our Prolog solution we
-can edit each hint individually and then just let
+On the other hand, in our Prolog solution we can
+edit each hint individually and then just let
 
 00:23:27,820 --> 00:23:35,500
-Prolog reprocess that. So, if we change one
-of the clues, then we just need to change the clue
+Prolog reprocess that. So, if we change one of
+the clues, then we just need to change the clue
 
 00:23:35,500 --> 00:23:41,250
-appropriately and then we can again
-let Prolog do all the work of finding the solution.
+appropriately and then we can again let Prolog
+do all the work of finding the solution.
 
 00:23:41,250 --> 00:23:49,000
 And that will do that, of course, in this generate-and-test

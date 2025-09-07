@@ -88,20 +88,20 @@ then the addition of Zero and m is m. The first
 argument is not yet recursive. This is the
 
 00:02:22,000 --> 00:02:26,400
-basic case of the recursion. And if the first
-argument is not Zero, then it must be the successor of
+basic case of the recursion. And if the first argument
+is not Zero, then it must be the successor of
 
 00:02:26,400 --> 00:02:31,120
 something because there is no other choice because
 Zero and Succ are the only two data constructors
 
 00:02:31,680 --> 00:02:39,920
-of the Nat type. So, it is the successor of something.
-And this something is a variable. It can be
+of the Nat type. So, it is the successor of
+something. And this something is a variable. It can be
 
 00:02:41,120 --> 00:02:46,160
-replaced by a variable. So, this would
-be a natural number of the same type. And
+replaced by a variable. So, this would be
+a natural number of the same type. And
 
 00:02:46,160 --> 00:02:50,480
 the second argument is also a natural number.
@@ -185,8 +185,8 @@ app. But actually, there, the nesting was finite
 because there was no recursion going on. But here,
 
 00:04:50,160 --> 00:04:56,160
-since we can always again plug a Tree into the
-left or right successor of a Node,
+since we can always again plug a Tree into
+the left or right successor of a Node,
 
 00:04:56,160 --> 00:05:01,840
 this can be arbitrarily deeply nested
@@ -233,8 +233,8 @@ recursively the height of the left and right
 sub-Trees and take the maximum of that and add
 
 00:05:59,680 --> 00:06:05,840
-1. Then, we get an Integer which can be usefully
-interpreted as the height of that Tree.
+1. Then, we get an Integer which can be
+usefully interpreted as the height of that Tree.
 
 00:06:07,280 --> 00:06:10,480
 So, the same pattern as before: case distinction,
@@ -337,8 +337,8 @@ they become more interesting. I will not discuss
 this further here. So, my suggestion is that you
 
 00:08:45,120 --> 00:08:49,360
-put something like this definition
-into a Haskell file, load it into ghci,
+put something like this definition into
+a Haskell file, load it into ghci,
 
 00:08:49,360 --> 00:08:57,760
 and check the types of these constructors
@@ -426,8 +426,8 @@ that would otherwise be partial. So, functions
 that for some cases we don't have a return value.
 
 00:11:03,600 --> 00:11:08,640
-We don't want to have a return value, then we
-could treat the output part of that function as Maybe
+We don't want to have a return value, then we could
+treat the output part of that function as Maybe
 
 00:11:09,200 --> 00:11:12,640
 “whatever type it previously was”
@@ -478,8 +478,8 @@ we don't have one of these Tiles? Previously, we
 would have put the Blank tile. We will refactor
 
 00:12:13,200 --> 00:12:18,400
-the 'level' function a bit further. So, now, levels
-are functions from Integer coordinate pairs
+the 'level' function a bit further. So, now,
+levels are functions from Integer coordinate pairs
 
 00:12:18,400 --> 00:12:23,840
 to Maybe Tile (not just Tile). Previously, where
@@ -530,8 +530,8 @@ compiler will know where we have to add cases, etc. We
 just redesigned it to not have the Blank Tile as an
 
 00:13:32,320 --> 00:13:38,720
-actual tile. So, we used this partiality marker
-by saying: the 'level' function gives a 'Maybe Tile'.
+actual tile. So, we used this partiality marker by
+saying: the 'level' function gives a 'Maybe Tile'.
 
 137 # slide
 00:13:43,920 --> 00:13:49,440
@@ -539,8 +539,8 @@ So, finally now, there is a possible
 misunderstanding that I have to warn against,
 
 00:13:50,560 --> 00:13:59,680
-and that is the fact that the data that we get
-with datatypes, with tree structures as we have seen,
+and that is the fact that the data that we get with
+datatypes, with tree structures as we have seen,
 
 00:13:59,680 --> 00:14:04,720
 in Haskell, they are not the same as pointer
@@ -679,8 +679,8 @@ is called persistency of data structures. And
 that's a property that some datatypes have in
 
 00:17:24,880 --> 00:17:29,200
-imperative languages. So, if you compute 3 + 5 in
-an imperative language, you get a new value 8.
+imperative languages. So, if you compute 3 + 5
+in an imperative language, you get a new value 8.
 
 00:17:29,200 --> 00:17:33,600
 You don't overwrite the 3 with 8 or something

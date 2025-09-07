@@ -3,12 +3,12 @@
 Let us briefly come back to the length example.
 
 00:00:06,640 --> 00:00:14,160
-It was one of the examples that I derived
-in a previous video from the Haskell version.
+It was one of the examples that I derived in
+a previous video from the Haskell version.
 
 00:00:14,160 --> 00:00:22,320
-So, I started and then I derived
-this symbolic version of the length predicate in
+So, I started and then I derived this
+symbolic version of the length predicate in
 
 00:00:22,320 --> 00:00:27,680
 Prolog, which returns, if we give it a list,
@@ -18,7 +18,8 @@ the length of that list with this s(s(s(0)))
 constructors.
 
 00:00:32,480 --> 00:00:35,920
-Now, we might actually want to have a true number.
+Now, we might actually want
+to have a true number.
 
 00:00:36,480 --> 00:00:38,720
 So, I have to tell you about evaluation.
@@ -28,8 +29,8 @@ Because I have had so far that almost
 everything in Prolog is treated symbolically.
 
 00:00:42,480 --> 00:00:46,960
-So, even if you write three plus five, then
-this is three plus five and not eight.
+So, even if you write three plus five,
+then this is three plus five and not eight.
 
 00:00:46,960 --> 00:00:52,240
 So, if you really want to have actual numbers
@@ -108,8 +109,8 @@ And I ask about the result.
 And then what do I get?
 
 00:02:06,720 --> 00:02:11,040
-Well, I get as a result really the
-number three and not s of s of s of zero.
+Well, I get as a result really the number
+three and not s of s of s of zero.
 
 00:02:12,480 --> 00:02:12,980
 Okay.
@@ -127,7 +128,8 @@ we are not doomed to only use
 it in exactly one direction.
 
 00:02:30,240 --> 00:02:33,040
-So, for example, I could also say, well, what if I
+So, for example, I could
+also say, well, what if I
 
 00:02:33,840 --> 00:02:40,800
 give a number here and ask for
@@ -144,7 +146,8 @@ In Prolog, you could ask a question like this.
 What is a list?
 
 00:02:46,560 --> 00:02:50,320
-(so, using a variable here) that has length three?
+(so, using a variable here)
+that has length three?
 
 00:02:50,320 --> 00:02:51,520
 Okay, now, what could we expect?
@@ -235,8 +238,8 @@ there means that it could be filled with anything.
 Okay, then there is one reason for caution.
 
 00:04:16,240 --> 00:04:21,360
-Actually related to this issue of arithmetic
-versus symbolic interpretation
+Actually related to this issue of
+arithmetic versus symbolic interpretation
 
 00:04:23,600 --> 00:04:29,600
 (of addition or of this operation).
@@ -249,8 +252,8 @@ something like this without this "is" keyword
 for triggering an actual computation.
 
 00:04:40,960 --> 00:04:43,840
-Yes, just saying well, the
-length of the empty list is zero,
+Yes, just saying well, the length
+of the empty list is zero,
 
 00:04:43,840 --> 00:04:48,080
 the length of a non-empty list is M plus
@@ -288,8 +291,8 @@ not the point that we can't use
 this, but it has a different result.
 
 00:05:24,400 --> 00:05:28,400
-So, for example, if we now compute the
-length of this list [1,2,a] again,
+So, for example, if we now compute
+the length of this list [1,2,a] again,
 
 00:05:28,400 --> 00:05:30,960
 we don't get three, we get zero
@@ -312,7 +315,8 @@ zero plus one plus one plus one?
 And then I compute this down to three.
 
 00:05:45,120 --> 00:05:49,920
-Well, there are other side effects or side issues.
+Well, there are other side
+effects or side issues.
 
 00:05:49,920 --> 00:05:52,320
 So, for example, where previously I could say,
@@ -359,8 +363,8 @@ Because with this version of the predicate
 numbers are treated fully symbolically,
 
 00:06:34,880 --> 00:06:40,800
-so Prolog will not somehow make a match between
-this zero plus one plus one plus one and this three.
+so Prolog will not somehow make a match between this
+zero plus one plus one plus one and this three.
 
 00:06:40,800 --> 00:06:42,640
 It's simply not happening here.
@@ -379,8 +383,8 @@ Yes, this is what makes a difference.
 Which brings us from this down to three.
 
 00:06:56,880 --> 00:06:58,880
-Okay, that's something I
-want to show on this example.
+Okay, that's something I want
+to show on this example.
 
 00:06:59,440 --> 00:07:01,840
 And then I have another example.
@@ -429,8 +433,8 @@ the empty list. A Quicksort of something else
 is partitioning according to this head element.
 
 00:07:54,400 --> 00:07:59,760
-And then properly combining the results with
-recursive calls and append, etc.
+And then properly combining the results
+with recursive calls and append, etc.
 
 00:07:59,760 --> 00:08:02,800
 So, this is an example where
@@ -456,7 +460,8 @@ And add local definitions,
 and later interpret these as
 
 00:08:27,200 --> 00:08:30,320
-additional preconditions when writing down a rule.
+additional preconditions
+when writing down a rule.
 
 00:08:31,680 --> 00:08:40,080
 Yes, so one first step could be to introduce a
@@ -493,7 +498,8 @@ So, that should be the result,
 this list. This is this expression.
 
 00:09:24,160 --> 00:09:26,640
-And then, for example, these two lines are already
+And then, for example,
+these two lines are already
 
 00:09:26,640 --> 00:09:30,320
 in the form where we can directly
@@ -510,7 +516,8 @@ we don't have any nested calls anymore.
 Okay, so that's how this could then be written.
 
 00:09:49,360 --> 00:09:51,680
-Yes, so quicksort of the empty list is the empty list.
+Yes, so quicksort of the
+empty list is the empty list.
 
 00:09:51,680 --> 00:09:54,000
 That's a translation of the first equation here.
@@ -526,11 +533,12 @@ see direct matching to the Prolog side.
 So, quicksort of head and tail is some list.
 
 00:10:04,880 --> 00:10:09,760
-Alright, that's a translation of this line if ..., and
-then we list all the preconditions, which are the
+Alright, that's a translation of this line if ...,
+and then we list all the preconditions, which are the
 
 00:10:10,480 --> 00:10:12,960
-dependencies introduced in these local definitions.
+dependencies introduced in
+these local definitions.
 
 00:10:12,960 --> 00:10:14,240
 For example, that partition.
@@ -565,8 +573,8 @@ and l1, l2 as the outputs.
 So, the input-output is just by convention,
 
 00:10:40,320 --> 00:10:42,640
-because here, the first list is the
-inputs and then the outputs.
+because here, the first list is
+the inputs and then the outputs.
 
 00:10:42,640 --> 00:10:48,400
 That's not something that the predicate partition
@@ -584,8 +592,8 @@ they now turn into preconditions
 referring to the same predicate,
 
 00:10:59,040 --> 00:11:07,440
-quicksort of l1 is ls, quicksort of l1 is ls, quicksort
-of l2 is lg, quicksort of l2 is lg.
+quicksort of l1 is ls, quicksort of l1 is ls,
+quicksort of l2 is lg, quicksort of l2 is lg.
 
 00:11:07,440 --> 00:11:12,960
 And then this append-operator from the
@@ -628,8 +636,8 @@ of predicates with the downside that for this,
 we have to introduce new variable names, right?
 
 00:12:08,960 --> 00:12:14,240
-So, these ls, lg these are things we didn't
-need, indeed, to express the original Haskell version.
+So, these ls, lg these are things we didn't need,
+indeed, to express the original Haskell version.
 
 00:12:15,200 --> 00:12:21,680
 Okay, but we gain that now we at least can hope

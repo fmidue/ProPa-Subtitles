@@ -2,8 +2,8 @@
 Welcome back for probably a very short video.
 
 0:00:05.040,0:00:10.880
-So, I want to try out something; on one hand,
-I had these problems (yesterday) with my setup, that
+So, I want to try out something; on one hand, I
+had these problems (yesterday) with my setup, that
 
 0:00:10.880,0:00:15.920
 the interactive buffer was always slowing down,
@@ -44,8 +44,8 @@ So, instead of writing unit tests,
 the declarative approach of Haskell
 
 0:00:53.680,0:00:58.560
-encourages thinking about equations,
-because everything is an expression, so we can
+encourages thinking about equations, because
+everything is an expression, so we can
 
 0:00:59.120,0:01:04.160
 express behavior or semantics of our
@@ -76,7 +76,8 @@ or how the output will look like if you have
 more than one thing over which you quantify.
 
 0:01:31.040,0:01:34.240
-Right, I showed some examples of these properties.
+Right, I showed some
+examples of these properties.
 
 0:01:34.240,0:01:38.880
 And when they failed, we got the input
@@ -90,8 +91,8 @@ is to be seen if we have more than one input.
 And that might be relevant,
 
 0:01:45.280,0:01:49.120
-because you might also have
-to write functions of several parameters.
+because you might also have to write
+functions of several parameters.
 
 0:01:49.120,0:01:54.000
 And then you also have to be able to interpret
@@ -117,8 +118,8 @@ But let me somehow destroy the last line
 to write something that is nonsense.
 
 0:02:14.160,0:02:22.080
-So, if I now run this, I should get
-that there is a counterexample.
+So, if I now run this, I should
+get that there is a counterexample.
 
 0:02:22.080,0:02:23.120
 Okay, let's do this.
@@ -178,32 +179,32 @@ probably different argument.
 When you see something like this, it means
 
 0:03:15.120,0:03:20.800
-xs equals the empty list [], ys equals this
-list, [1,0], violates this property.
+xs equals the empty list [], ys equals
+this list, [1,0], violates this property.
 
 0:03:20.800,0:03:24.800
-And indeed, if you were to now run the
-left-hand side and the right-hand side of these two
+And indeed, if you were to now run the left-hand
+side and the right-hand side of these two
 
 0:03:26.320,0:03:30.160
 input data here, we would see
 that they are not the same thing,
 
 0:03:30.160,0:03:32.960
-because the sorting function is correct,
-but this property is nonsense.
+because the sorting function is
+correct, but this property is nonsense.
 
 0:03:33.920,0:03:38.160
 Okay, so this was one thing I wanted to
 show, simply how this has to be interpreted.
 
 0:03:38.160,0:03:40.320
-Then about the shrinking,
-how can we see what happens here?
+Then about the shrinking, how
+can we see what happens here?
 
 0:03:40.320,0:03:44.720
-I mentioned before that QuickCheck
-always tries to find small counterexamples.
+I mentioned before that QuickCheck always
+tries to find small counterexamples.
 
 0:03:44.720,0:03:47.120
 So, even if the first example it finds
@@ -317,8 +318,8 @@ But this, unfortunately, passed.
 So, this is not a good counterexample.
 
 0:05:36.960,0:05:40.320
-So, this so far is the best counterexample
-that QuickCheck has found.
+So, this so far is the best
+counterexample that QuickCheck has found.
 
 0:05:41.040,0:05:44.720
 And well, then try some other things.
@@ -343,22 +344,23 @@ so empty list, empty list
 actually has been tested before.
 
 0:06:09.600,0:06:15.920
-So, of course, it passes again, then tries maybe
-if I make it, it takes the second part of this list,
+So, of course, it passes again, then tries maybe if
+I make it, it takes the second part of this list,
 
 0:06:15.920,0:06:20.720
-but it also passes, so it cannot be a small
-counterexample, et cetera, et cetera.
+but it also passes, so it cannot be a
+small counterexample, et cetera, et cetera.
 
 0:06:20.720,0:06:25.120
 So then the system tries-
 
 0:06:25.120,0:06:27.680
-What other ways could I make this example simpler?
+What other ways could I
+make this example simpler?
 
 0:06:27.680,0:06:32.080
-So apparently it tried to, instead
-of minus one, what if I use just one.
+So apparently it tried to, instead of
+minus one, what if I use just one.
 
 0:06:32.880,0:06:35.760
 Is it still a counterexample?
@@ -371,7 +373,8 @@ And then probably also tries
 to get rid of the minus three.
 
 0:06:39.680,0:06:44.880
-And at some point, it realized, well, [0,3] passes.
+And at some point, it
+realized, well, [0,3] passes.
 
 0:06:44.880,0:06:46.240
 So this is not a counterexample.
@@ -403,8 +406,8 @@ but it can take zero and minus one.
 And that somehow is the conceptually
 
 0:07:16.960,0:07:22.880
-smallest counterexample to the
-property that we claimed but was wrong.
+smallest counterexample to the property
+that we claimed but was wrong.
 
 0:07:23.600,0:07:25.680
 And of course, usually, you don't see all
@@ -418,8 +421,8 @@ But well, at least in these
 points, you can see how hard
 
 0:07:32.960,0:07:35.120
-QuickCheck has tried to find
-a small counterexample.
+QuickCheck has tried to
+find a small counterexample.
 
 0:07:35.120,0:07:40.320
 So it didn't encounter this first pair of lists,

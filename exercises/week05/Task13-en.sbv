@@ -2,8 +2,8 @@
 Next, we have Task 13.
 
 0:00:05.600,0:00:11.600
-Here we should implement a
-function that sums a list of integers,
+Here we should implement a function
+that sums a list of integers,
 
 0:00:14.240,0:00:18.240
 and that uses some sort of
@@ -13,8 +13,8 @@ divide and conquer approach.
 That is, we should
 
 0:00:21.200,0:00:27.840
-use this 'splitAt' function to
-split the list into two parts of equal size.
+use this 'splitAt' function to split
+the list into two parts of equal size.
 
 0:00:28.720,0:00:36.080
 And then recursively compute the sum of
@@ -48,8 +48,8 @@ splitting the list into a and b.
 And let's just use the
 
 0:01:27.920,0:01:34.560
-function call from right here.
-Our list is called xs in this example.
+function call from right here. Our
+list is called xs in this example.
 
 0:01:34.560,0:01:46.640
 Okay, and now we also need to
@@ -79,12 +79,12 @@ divide and conquer approach:
 We split the list into two equal parts
 
 0:02:29.360,0:02:38.160
-in the middle, that's what this div 2 here
-does, and then we take the left part and sum it up,
+in the middle, that's what this div 2 here does,
+and then we take the left part and sum it up,
 
 0:02:38.720,0:02:47.200
-take the right part and sum it up by a recursive
-call, and then we combine the results.
+take the right part and sum it up by a
+recursive call, and then we combine the results.
 
 0:02:47.200,0:02:49.840
 Okay, so is that all?
@@ -121,8 +121,8 @@ Let's try it out.
 So sum [] = 0. Okay, so far so good.
 
 0:04:02.560,0:04:09.280
-Let's check a list with one
-element; oh, so nothing is happening.
+Let's check a list with one element;
+oh, so nothing is happening.
 
 0:04:11.120,0:04:15.440
 Or maybe there's something
@@ -135,7 +135,8 @@ Now we get a stack overflow.
 So what's the problem here?
 
 0:04:24.240,0:04:28.160
-Well, let's take a look at our splitting function:
+Well, let's take a look
+at our splitting function:
 
 0:04:29.520,0:04:35.040
 We have a list with one element,
@@ -153,8 +154,8 @@ if it isn't a clear division.
 Okay, so what we actually do is we do
 
 0:04:58.000,0:05:12.480
-splitAt 0 [1] in this case.
-So this is what this (a, b) does.
+splitAt 0 [1] in this case. So
+this is what this (a, b) does.
 
 0:05:12.480,0:05:15.360
 So we end up with [] and [1].
@@ -255,8 +256,8 @@ And else
 we do the divide and conquer strategy.
 
 0:08:53.440,0:09:01.680
-And now we have calculated length xs only once.
-Not necessarily for performance reasons
+And now we have calculated length xs only
+once. Not necessarily for performance reasons
 
 0:09:01.680,0:09:08.400
 but for readability and maintainability

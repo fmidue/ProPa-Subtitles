@@ -13,12 +13,12 @@ my editor because I want to show some
 additions and checks on this function.
 
 0:00:21.040,0:00:26.400
-And actually, if you look very carefully, you could see
-that I have introduced a bug into this program,
+And actually, if you look very carefully, you could
+see that I have introduced a bug into this program,
 
 0:00:26.400,0:00:30.240
-it's not actually a correct Quicksort, and
-we will see whether we can find this
+it's not actually a correct Quicksort,
+and we will see whether we can find this
 
 0:00:30.240,0:00:35.920
 bug; well, we will, because I will show you
@@ -127,8 +127,8 @@ testing framework inside Autotool.
 Okay, so the first thing is, we don't want to fix
 
 0:02:58.320,0:03:01.520
-or, well, to test our functions
-on some fixed inputs.
+or, well, to test our
+functions on some fixed inputs.
 
 0:03:01.520,0:03:06.480
 Also, because that would make it very simple
@@ -202,12 +202,12 @@ How could I do this?
 How do I express a property like this?
 
 0:04:29.440,0:04:38.080
-What I really want to say is something like: I don't
-want to sort some fixed list, but for example,
+What I really want to say is something like: I
+don't want to sort some fixed list, but for example,
 
 0:04:38.080,0:04:47.440
-I want to sort any list of the form '1..n',
-because I want to talk about any
+I want to sort any list of the form
+'1..n', because I want to talk about any
 
 0:04:49.840,0:04:54.080
 sorted list, and what should be
@@ -217,11 +217,12 @@ the outcome of such a sort call?
 Well, it would be that list itself.
 
 0:04:57.920,0:05:01.040
-Now, I can't write this as a check directly, right?
+Now, I can't write this as
+a check directly, right?
 
 0:05:01.040,0:05:06.000
-So, I couldn't have written it like this because
-where does the 'n' come from? The 'n' should be something,
+So, I couldn't have written it like this because where
+does the 'n' come from? The 'n' should be something,
 
 0:05:06.720,0:05:09.360
 not fixed, which would
@@ -266,11 +267,12 @@ Okay, now the question is
 what tests it has passed?
 
 0:06:30.880,0:06:37.280
-Or maybe this was just checked for n=1.
-Well, to make sure that that is not the case,
+Or maybe this was just checked for n=1. Well,
+to make sure that that is not the case,
 
 0:06:37.280,0:06:40.640
-I can, instead of 'quickCheck', use 'verboseCheck'.
+I can, instead of 'quickCheck',
+use 'verboseCheck'.
 
 0:06:43.600,0:06:50.480
 Yes, so, we're given a more verbose testing
@@ -323,8 +325,8 @@ And then if we reload this, and again,
 run the test suite, now it has, again,
 
 0:07:47.280,0:07:51.760
-run 100 tests, and if you check, inspect
-the values here, you will see that it has only
+run 100 tests, and if you check, inspect the
+values here, you will see that it has only
 
 0:07:52.320,0:07:55.040
 checked for positive 'n', which is nice.
@@ -341,8 +343,8 @@ And then we have one property,
 we haven't yet found our mistake.
 
 0:08:10.640,0:08:13.200
-Okay, so we have to do something else,
-maybe some more tests.
+Okay, so we have to do something
+else, maybe some more tests.
 
 0:08:13.200,0:08:14.160
 What else could we test?
@@ -366,8 +368,8 @@ try to check this one.
 Yes, given an 'n'.
 
 0:08:40.160,0:08:44.080
-If we take the list, '1..n', reverse it,
-so it’s the exact opposite,
+If we take the list, '1..n', reverse
+it, so it’s the exact opposite,
 
 0:08:44.080,0:08:46.160
 and we sort it, we should still get '1..n'.
@@ -379,8 +381,8 @@ Okay.
 And since we are already
 
 0:08:52.400,0:08:59.360
-in the process of writing more tests, maybe
-let's directly check this now.
+in the process of writing more tests,
+maybe let's directly check this now.
 
 0:08:59.360,0:09:04.000
 We would also run through, you have to believe
@@ -394,8 +396,8 @@ So, for example, instead of simply saying
 that we want to sort lists of '1..n', maybe
 
 0:09:15.360,0:09:21.840
-let's be more general and say how, or what should
-happen if you sort an arbitrary list.
+let's be more general and say how, or what
+should happen if you sort an arbitrary list.
 
 0:09:31.200,0:09:32.480
 Yes, so,
@@ -427,7 +429,8 @@ then there's a counterexample.
 This looks somewhat strange.
 
 0:10:02.240,0:10:06.480
-Why is '[0, 0]' a counterexample to this equation?
+Why is '[0, 0]' a
+counterexample to this equation?
 
 0:10:10.560,0:10:13.440
 Well, it's the wrong equation anyway.
@@ -522,8 +525,8 @@ implementation of sorting in mind,
 this is something one could expect.
 
 0:12:04.880,0:12:08.720
-So, if your task were to write a
-sorting function, then our test suite could
+So, if your task were to write a sorting
+function, then our test suite could
 
 0:12:10.160,0:12:11.840
 contain this last property.
@@ -532,8 +535,8 @@ contain this last property.
 And see there is a counterexample.
 
 0:12:16.400,0:12:27.280
-Namely, if I call the 'sort' function on '[3, 3]',
-there is a very strange result, which
+Namely, if I call the 'sort' function on '[3,
+3]', there is a very strange result, which
 
 0:12:28.160,0:12:30.560
 violates this length property.
@@ -543,12 +546,12 @@ And the reason is that in the splitting here, I
 introduced a bug by not splitting into '<' and
 
 0:12:37.760,0:12:44.080
-'≥', but '≤' and '≥'.
-Okay, so if I fix this bug, then my
+'≥', but '≤' and '≥'. Okay,
+so if I fix this bug, then my
 
 0:12:44.080,0:12:51.520
-test suite runs through again, and to make sure
-that we test this on some meaningful lists
+test suite runs through again, and to make
+sure that we test this on some meaningful lists
 
 0:12:51.520,0:13:00.480
 now, let me, again, add the 'verboseCheck'
@@ -593,8 +596,8 @@ we had there, or some other function?
 So, we had a concatenation function.
 
 0:13:50.320,0:13:54.720
-So, the '++' operator,
-and what does it operate on?
+So, the '++' operator, and
+what does it operate on?
 
 0:13:54.720,0:13:56.320
 Well, it operates on two lists.
@@ -630,8 +633,8 @@ But what probably can be said is that this would
 be the same as if I do it the other way around.
 
 0:14:39.440,0:14:44.240
-So, what if I switch the order
-in which 'xs' and 'ys' are appended,
+So, what if I switch the order in
+which 'xs' and 'ys' are appended,
 
 0:14:44.240,0:14:49.040
 this shouldn't make a difference if afterwards
@@ -648,8 +651,8 @@ and it will also pass the tests, I'm sure.
 Okay, in the cases where the tests didn't pass,
 
 0:15:08.640,0:15:11.360
-it was interesting that
-we got small counterexamples.
+it was interesting that we
+got small counterexamples.
 
 0:15:11.360,0:15:13.680
 So, when we tested and positively resolved,
@@ -666,8 +669,8 @@ I got very small counterexamples
 '[3, 3]', or '[0, 0]', or '[0, -1]'.
 
 0:15:24.640,0:15:30.480
-That's because QuickCheck not only tries to find
-counterexamples, but once it has found out
+That's because QuickCheck not only tries to
+find counterexamples, but once it has found out
 
 0:15:30.480,0:15:36.560
 that some property is not true, it is also
@@ -708,8 +711,8 @@ check that we don't make any mistakes or
 hopefully don't introduce new mistakes.
 
 0:16:16.720,0:16:19.200
-So, what could I improve about the
-program now that I fixed it?
+So, what could I improve about
+the program now that I fixed it?
 
 0:16:19.200,0:16:24.000
 Well, one thing that in an exercise
@@ -730,8 +733,8 @@ So, what would be a suggested fix here?
 So, maybe we should
 
 0:16:38.240,0:16:46.400
-instead replace these two calls by
-something that is computed as a local value.
+instead replace these two calls by something
+that is computed as a local value.
 
 0:16:47.360,0:16:55.040
 So, let's say the rest of the list is this
@@ -749,8 +752,8 @@ Okay, then we have 'head' and 'tail'
 here; this can be further improved.
 
 0:17:09.600,0:17:17.520
-So, we could, on the one hand, say: Well,
-it makes sense to do this in one step, so to speak.
+So, we could, on the one hand, say: Well, it
+makes sense to do this in one step, so to speak.
 
 0:17:17.520,0:17:20.240
 That one line, it won't change
@@ -805,8 +808,8 @@ Why is that?
 Well, basically, because splitting gives a list.
 
 0:18:16.080,0:18:19.040
-And this 'pivot' here is supposed
-to be just one element.
+And this 'pivot' here is
+supposed to be just one element.
 
 0:18:19.040,0:18:24.160
 So, what I can say is, let me
@@ -817,8 +820,8 @@ and then I get a singleton element
 list and I take the 'pivot' from that.
 
 0:18:29.280,0:18:33.760
-And I get the 'rest', which can be an arbitrarily long
-list and the 'rest' is used in these two places.
+And I get the 'rest', which can be an arbitrarily
+long list and the 'rest' is used in these two places.
 
 0:18:36.160,0:18:39.600
 Okay, and then, hopefully, my test suite.
@@ -850,11 +853,12 @@ So here, I get, for example, the first property
 is then wrong for the input 'n' being 2.
 
 0:19:17.280,0:19:19.760
-So it's not true that "sort ["1..n"] == [1..n]" holds.
+So it's not true that "sort
+["1..n"] == [1..n]" holds.
 
 0:19:20.320,0:19:25.440
-That is (in this test), 'sort [1..2]' is not '[1..2]'
-with this buggy program.
+That is (in this test), 'sort [1..2]'
+is not '[1..2]' with this buggy program.
 
 0:19:25.440,0:19:33.760
 Whereas in the original
